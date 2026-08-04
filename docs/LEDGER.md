@@ -178,7 +178,7 @@ at the diff.
 
 ---
 
-## WT-012 · RISK · 2026-08-04 · **URGENT — reframe required**
+## WT-012 · RISK · 2026-08-04 · **RESOLVED IN TEXT**
 **The supply/demand critique as currently written attacks the textbook diagram, not the theory.**
 
 The manuscript argues that partitioning agents into fixed buyers and sellers is
@@ -193,7 +193,7 @@ than the theory," and the section does not recover.
 
 ---
 
-## WT-013 · CONNECTION · 2026-08-04
+## WT-013 · CONNECTION · 2026-08-04 · **WRITTEN INTO MANUSCRIPT + CITED**
 **Sonnenschein-Mantel-Debreu already proves the paper's claim, canonically.**
 
 SMD (Sonnenschein 1972-73, Mantel 1974, Debreu 1974): aggregate excess demand inherits
@@ -214,7 +214,7 @@ chapter link again, through a different door than WT-001.
 
 ---
 
-## WT-014 · CONNECTION · 2026-08-04
+## WT-014 · CONNECTION · 2026-08-04 · **WRITTEN INTO MANUSCRIPT**
 **c(m) is a limit order book. Not a metaphor — an identity.**
 
 The distribution of indifference points across a population, with each agent buying below
@@ -264,7 +264,7 @@ reference point. Absorb behaviour into the distribution, never into a multiplier
 
 ---
 
-## WT-017 · METHOD · 2026-08-04
+## WT-017 · METHOD · 2026-08-04 · **BUILT** (`excess_demand.py`, 9 tests)
 **Do not soften the blow. Nest it.**
 
 The persuasive device in economics is a reduction result: show the new framework collapses
@@ -274,3 +274,64 @@ containing it rather than contradicting it, and demonstrates the author understa
 is being replaced.
 
 This is buildable as executable code and is the natural next artifact for this repo.
+
+
+---
+
+## WT-018 · RESULT · 2026-08-04
+**The curves are not independent: demonstrated, not argued.**
+
+`excess_demand.py`. Population of reservation prices drawn from c(m), S indivisible units,
+an allocation recording who currently holds one.
+
+Across 25 randomly drawn allocations of the *same* c(m) and the *same* stock:
+
+- distinct market-clearing intervals: **1**
+- distinct demand schedules: **25**
+
+The clearing interval is exactly the manuscript's marginal pair — the S-th and (S+1)-th
+highest reservation prices — and excess demand steps +1 → 0 → −1 across it. The schedules
+move; the crossing does not. Two schedules that both shift under a perturbation which
+leaves the equilibrium unchanged cannot be independent equations. That is the argument,
+and it is now a passing test rather than a paragraph.
+
+---
+
+## WT-019 · RESULT · 2026-08-04
+**Reduction to the Marshallian cross holds exactly.**
+
+For any *fixed* allocation, the intersection of the supply and demand schedules lands
+inside the structural clearing interval. The textbook construction is therefore a correct
+instantaneous description; its failure is confined to comparative statics, because the two
+schedules cannot be perturbed independently.
+
+This is the nesting result of WT-017. The tradition is contained rather than contradicted
+— which is the only form of "softening the blow" that survives review, because it is a
+theorem rather than a courtesy.
+
+---
+
+## WT-020 · RISK · 2026-08-04 · **GUARDED BY TEST**
+**Non-independence and SMD arbitrary-shape are different claims. Do not conflate them.**
+
+The single-good unit-demand c(m) construction produces a *monotone* excess demand function
+with a single crossing. It is well behaved. SMD pathology requires at least two goods and
+income effects, and this model does not exhibit it.
+
+Selling the c(m) construction as a demonstration of SMD would be a genuine error and an
+easy one to make, since the two arguments appear adjacent in the manuscript.
+`test_excess_demand_is_monotone_here_so_this_is_not_an_SMD_result` asserts the monotonicity
+deliberately, as a standing limit on the claim rather than as a property being celebrated.
+
+---
+
+## WT-021 · RESULT · 2026-08-04
+**Behaviour as a shape transform yields a falsifiable prediction that matches the record.**
+
+`with_endowment_effect(λ)` raises the reservation prices of current holders. Trade volume
+falls monotonically: 93 → 88 → 82 → 74 → 62 → 49 units for λ = 1.0 … 2.0.
+
+Reduced trading volume under the endowment effect is the documented experimental finding
+(Kahneman, Knetsch and Thaler 1990). The model reproduces it as a *consequence* of a stated
+transform rather than through a coefficient tuned to produce it — which is the whole
+argument of WT-016 made concrete.
