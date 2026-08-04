@@ -175,3 +175,102 @@ rendered as a list item rather than as body prose. Bullet removed, paragraph nor
 Found by the verification subagent as an incidental observation while checking something
 else — an argument for having the verifier look at the whole document rather than only
 at the diff.
+
+---
+
+## WT-012 · RISK · 2026-08-04 · **URGENT — reframe required**
+**The supply/demand critique as currently written attacks the textbook diagram, not the theory.**
+
+The manuscript argues that partitioning agents into fixed buyers and sellers is
+mathematically invalid because any agent buys below and sells above their reservation
+price. That observation is correct — but it is not a critique of general equilibrium. It
+*is* general equilibrium. Walras's excess demand `z_i(p) = x_i(p) - e_i` has exactly this
+property: positive means net buyer, negative means net seller, same agent, resolved by
+price. Arrow-Debreu never used the Marshallian cross; the cross is a pedagogical device.
+
+As written, a reviewer replies: "the author is attacking the introductory diagram rather
+than the theory," and the section does not recover.
+
+---
+
+## WT-013 · CONNECTION · 2026-08-04
+**Sonnenschein-Mantel-Debreu already proves the paper's claim, canonically.**
+
+SMD (Sonnenschein 1972-73, Mantel 1974, Debreu 1974): aggregate excess demand inherits
+from individually rational agents ONLY continuity, homogeneity of degree zero, and
+Walras's Law. It does **not** inherit downward slope, uniqueness of equilibrium, or
+stability under tatonnement. Aggregate excess demand can take essentially arbitrary shape.
+
+That is the manuscript's thesis — the intersection is descriptive, not predictive —
+established inside the mainstream, by a Nobel laureate among others, fifty years ago.
+
+*Why it matters:* converts the author from a lone critic of Econ 101 into someone
+building on a canonical impossibility result. Strongest available rhetorical position.
+
+*Second-order connection:* SMD denies tatonnement stability in general. WT-005 found
+Cournot tatonnement unstable for n >= 3 in the specific. The specific instance is a
+micro-instance of the general result — the Cournot chapter and the price-formation
+chapter link again, through a different door than WT-001.
+
+---
+
+## WT-014 · CONNECTION · 2026-08-04
+**c(m) is a limit order book. Not a metaphor — an identity.**
+
+The distribution of indifference points across a population, with each agent buying below
+and selling above their own reservation price, is exactly the structure of a limit order
+book: one population, bids below and asks above, and the "intersection" is merely where
+the book crosses.
+
+*Why it matters:* gives the c(m) formulation an empirical object with abundant data, and
+lands it inside an existing econophysics literature (order-book microstructure: Bouchaud,
+Farmer, Lillo) rather than outside all literatures. Candidate empirical test bed.
+
+---
+
+## WT-015 · DEAD-END · 2026-08-04
+**Schrodinger / superposition framing for agent role. Rejected.**
+
+Proposed as a way to soften the supply-demand critique for traditionalists. Rejected on
+technical grounds: superposition denotes genuine indeterminacy prior to measurement, but
+agents here hold a definite reservation price at all times and their role is a
+deterministic threshold function of that price against the market price. It is a sign
+function, not a superposition.
+
+Cost of using it anyway: a reviewer observes that quantum mechanics was invoked to
+describe a piecewise function, in a paper whose entire defensive strategy rests on
+dimensional rigour. Econophysics already carries reputational damage from loose physics
+metaphor; do not add to it.
+
+The metaphor also *undersells* the claim. "Both curves are expressions of one
+distribution, therefore they are not independent equations, therefore solving them
+simultaneously is invalid" is a precise mathematical statement. Fog makes it weaker.
+
+---
+
+## WT-016 · DEAD-END · 2026-08-04
+**A free coefficient to accommodate behavioural deviation. Rejected — same trap as WT-002.**
+
+Adding a tunable coefficient so the model can absorb behavioural objections makes it less
+falsifiable, not more durable. This is precisely the failure mode already rejected for
+the work-to-financial coefficient: a quantity that can accommodate any observation
+forbids nothing.
+
+*Correct treatment:* behavioural agents are not outside the framework. They are agents
+whose indifference point is noisy, reference-dependent, or time-inconsistent — all of
+which are **shape properties of c(m)**, and all measurable. Prospect theory, already
+cited in the manuscript, is a statement about how reservation prices shift with a
+reference point. Absorb behaviour into the distribution, never into a multiplier.
+
+---
+
+## WT-017 · METHOD · 2026-08-04
+**Do not soften the blow. Nest it.**
+
+The persuasive device in economics is a reduction result: show the new framework collapses
+*exactly* to the standard one under explicitly stated conditions. "Under conditions A and
+B, the c(m) formulation reduces to the Marshallian cross" respects the tradition by
+containing it rather than contradicting it, and demonstrates the author understands what
+is being replaced.
+
+This is buildable as executable code and is the natural next artifact for this repo.
