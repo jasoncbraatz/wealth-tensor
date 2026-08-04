@@ -29,7 +29,7 @@ telescope layer. Implemented in `solve_cournot()`; hand-verified.
 
 ---
 
-## WT-002 · OPEN · 2026-08-04
+## WT-002 · OPEN · 2026-08-04 · **ADDRESSED IN TEXT** (items 1–3 written; item 4 unbuilt)
 **Lambda's second component is dimensionally a price, and that is the paper's weakest wall.**
 
 `eta_work_to_financial` has units `[currency]/[J]`. A free scalar converting a physical
@@ -63,7 +63,7 @@ for defending WT-002.
 
 ---
 
-## WT-004 · RISK · 2026-08-04
+## WT-004 · RISK · 2026-08-04 · **RESOLVED IN TEXT**
 **Georgescu-Roegen is a hostile witness inside our own bibliography.**
 
 The manuscript quotes him: *"the real source of economic value is the subjective
@@ -122,7 +122,7 @@ and heterodox macro are preprint cultures. The access anxiety was unfounded.
 
 ---
 
-## WT-008 · HYGIENE · 2026-08-04 · DEFERRED
+## WT-008 · HYGIENE · 2026-08-04 · **FRAGMENTS FIXED** · checkboxes still deferred
 **Six duplicated/orphaned sentence fragments in the manuscript.**
 
 Each sits immediately after an italicised formula — the tell of a paste that split text
@@ -131,7 +131,7 @@ Efficiency Vector; the closing paragraph of Project 3) and a stray solitary peri
 
 Restore point taken and verified before any edit:
 `RESTORE POINT 2026-08-04 — Axiomatic Reconstruction of Wealth (pre-Claude-edit)`
-(40,052 chars · 253 paragraphs · 4 tables). **No edits applied — held at author's request.**
+(40,052 chars · 253 paragraphs · 4 tables). All six defects removed 2026-08-04 (716 chars, arithmetic reconciled) and verified absent by independent read-back. Checkbox-list question remains unanswered.
 
 Also deferred: all bulleted lists in the manuscript are *checkbox* lists, including all
 57 references. Intent unconfirmed.
@@ -144,3 +144,34 @@ Also deferred: all bulleted lists in the manuscript are *checkbox* lists, includ
 `2The Axiomatic Reconstruction of` (19KB, 2026-08-03) sits alongside the canonical 29KB
 version. Title truncated mid-sentence. Not yet diffed; unknown whether it is an earlier
 draft, a partial export, or holds unique content the canonical copy lost.
+
+
+---
+
+## WT-010 · METHOD · 2026-08-04
+**Google Docs API: two formatting traps, both found the hard way.**
+
+1. **Insertion inherits the style of the paragraph you insert into.** Inserting at an
+   index that is the *first character of a heading* silently gives every inserted
+   paragraph that heading's style. Eight body paragraphs came out as H2. Symptomless in
+   the API response — it reports success. Only a read-back reveals it.
+2. **Applying `NORMAL_TEXT` wipes character formatting that spans the whole paragraph.**
+   A partial bold run survived; a full-width italic run did not. Apply paragraph styles
+   *before* character styles, never after.
+
+*Standing rule for this project:* every batch of doc edits is followed by an independent
+read-back that checks rendering, not just the API's success reply. The API reporting
+"6 operations succeeded" says nothing about whether the result is correct.
+
+---
+
+## WT-011 · HYGIENE · 2026-08-04 · FIXED
+**Body paragraph absorbed into a checkbox list.**
+
+"To capture financial capitalism, this exchange framework is extended to the loan
+interest model..." was glued to the final item of the Policy Interventions list, so it
+rendered as a list item rather than as body prose. Bullet removed, paragraph normalised.
+
+Found by the verification subagent as an incidental observation while checking something
+else — an argument for having the verifier look at the whole document rather than only
+at the diff.
