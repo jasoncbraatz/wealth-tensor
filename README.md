@@ -5,6 +5,18 @@ Executable mathematical models for a thermodynamic–financial theory of wealth.
 Every equation in the companion manuscript should exist here twice: once as a symbol,
 once as code that runs. If a model cannot be executed, it is a claim, not a result.
 
+## `docs/` is a working lab notebook, deliberately
+
+`docs/LEDGER.md`, `docs/HANDOFF.md`, `docs/sessions/` and `docs/preregistration/` are the
+project's working notes and they are public on purpose. They contain candid internal assessments,
+dead ends recorded with equal weight, claims that half-failed and were narrowed rather than
+defended — and, in `docs/preregistration/`, a prediction registered before the data were touched
+together with the two runs in which it lost.
+
+That is not an embarrassment to be scrubbed before publication. A paper whose method insists dead
+ends be recorded is strengthened by a notebook that visibly does it, and the intended reader of
+this project is someone learning how to think, for whom the method is the message.
+
 ## Why this repo is public
 
 Git commit timestamps are a priority record. Preprint culture in econophysics and
