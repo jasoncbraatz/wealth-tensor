@@ -335,3 +335,102 @@ Reduced trading volume under the endowment effect is the documented experimental
 (Kahneman, Knetsch and Thaler 1990). The model reproduces it as a *consequence* of a stated
 transform rather than through a coefficient tuned to produce it — which is the whole
 argument of WT-016 made concrete.
+
+---
+
+## WT-022 · CONNECTION · 2026-08-05 · **MAJOR — reframes the whole Piketty chapter**
+**Piketty is not wrong. He is measuring the abstraction layer.**
+
+Author's counterfactual exercise: adopt "Piketty is 100% correct, no exceptions", re-read the
+data, methods and conclusions, cross-check against EDGAR filings and St Louis Fed series.
+
+Result: the disagreement is not about correctness. It is about **layer**. Piketty's datasets
+and rigour are not in question; his measurements are taken on virtual wealth — the financial
+abstraction — not on the atomic units beneath it.
+
+*Why this is the single most valuable move available to the paper:* it converts the entire
+Piketty section from a refutation into a **scope statement**. r > g may hold exactly as
+described at the abstraction layer while being silent about the atomic layer. The paper stops
+being a hit-piece and becomes complementary — which is both more honest and far more likely
+to survive review. A reviewer who is a Piketty admirer becomes a potential ally rather than a
+guaranteed rejection.
+
+---
+
+## WT-023 · CONNECTION · 2026-08-05
+**Virtual wealth is a transfer function, not merely an abstraction.**
+
+The author's mechanism: virtual wealth is an abstraction of real wealth, and abstraction
+*delays information*. Technical debt is off-balance-sheet entropy — the asset degrades, the
+financials show steady dividends, and the information arrives only when the deferral can no
+longer be sustained.
+
+Stated properly this is a **signal-processing claim**: virtual wealth is a low-pass filter on
+real wealth. That is enormously more useful than a metaphor, because filters have measurable
+properties:
+
+- **phase lag** between physical/operational condition and financial indicators
+- **variance suppression** — the financial series is smoother than the underlying
+- **industry-dependent time constants** — a warehouse retailer re-provisions on a decade;
+  a SaaS firm faces zero-days continuously
+- **accumulated unmodelled error released as a step discontinuity** — which is what a crisis
+  *is* under this reading
+
+Each of these is falsifiable, which is exactly what the paper needs.
+
+*Third instance of the author's signature move.* 1993: predict the next byte with a learned
+model so the checksum is unnecessary. 2015: economics has thermodynamic structure. 2026:
+the checksum (real wealth) arrives too late and the predictor (virtual wealth) drifts. Same
+structural isomorphism, three times, thirty years apart.
+
+---
+
+## WT-024 · CONNECTION · 2026-08-05 · **unifies WT-002**
+**Λ's drift is the accumulated deferred information.**
+
+WT-002 demoted the work-to-financial coefficient to a dependent variable and asserted that
+its *drift and variance* are the phenomenon. WT-023 supplies the mechanism: Λ diverges
+precisely when the abstraction layer is deferring information about atomic-layer decay.
+
+**Λ's divergence is the integral of undelivered entropy.** The wedge Georgescu-Roegen
+identified (WT-004) and the lag the author observed in 10-K filings are the same quantity
+measured two ways. Two chapters and three prior ledger entries collapse into one mechanism.
+
+---
+
+## WT-025 · RISK · 2026-08-05
+**Three attack surfaces on the lag thesis, in order of severity.**
+
+1. **Forward-looking markets.** Efficient-markets reply: prices should already discount
+   deferred maintenance. The thesis requires that this information is *systematically* not
+   incorporated. This must be argued with evidence, not asserted. (Armour exists — see
+   WT-026 — but it must be cited explicitly.)
+2. **"The dual tensor is the *only* solution."** Overclaim. Reviewers hunt the word "only".
+   Replace with necessary-conditions language: state what any adequate solution must do, then
+   show the construction satisfies it.
+3. **Quine-Duhem is being used for the wrong problem.** Heterogeneous entropy rates across
+   industries is an *identification/heterogeneity* problem with standard remedies (fixed
+   effects, hierarchical priors), not a Quine-Duhem problem. A genuine Q-D issue does exist —
+   a failed test cannot distinguish a false theory from a bad entropy proxy — but it must be
+   stated precisely or it reads as borrowed vocabulary.
+
+Also: Japan 1990s is N=1. Motivating illustration, not evidence. Needs companion cases, and
+more importantly a deliberate search for *disconfirming* ones.
+
+---
+
+## WT-026 · METHOD · 2026-08-05
+**The lag is selective, not uniform — and that asymmetry is the actual mechanism.**
+
+A pure-delay model is falsified by any case where financial signals *lead* physical change,
+and such cases plainly exist (markets price an announced technology transition before the
+capital is built).
+
+The defensible and more interesting claim: the abstraction layer **leads on announced or
+observable change and lags on deferred or unobservable degradation.** The asymmetry is the
+mechanism, and it makes a sharper prediction than uniform delay: lag magnitude should scale
+with the *unobservability* of the underlying degradation.
+
+This is testable and it is where the accounting literature becomes armour rather than
+obstacle, since the categories that are hardest to observe are precisely those the accounting
+standards decline to capitalise.
