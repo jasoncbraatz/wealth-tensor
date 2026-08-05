@@ -46,6 +46,11 @@ Four-part defence, in priority order:
    cancels.
 4. Publish a sensitivity sweep showing conclusions invariant across orders of magnitude.
 
+**Reframed by WT-038 (2026-08-05): Λ is an ENTAILMENT of the composition axiom, not a posit.**
+If wealth is a compound of two components in different units, a coupling between them must
+exist; it was obliged, not introduced. That answers this entry at the root rather than the
+perimeter, and supersedes the defensive ordering of the four-part defence below.
+
 Item 4 is the empirical rebuttal and is the reason this repo exists. **Built 2026-08-05** —
 `lambda_sensitivity.py`, spread exactly zero across twelve orders of magnitude. See WT-036.
 
@@ -750,6 +755,10 @@ paper: **a reviewer cannot check any of it.** It is also the cheapest remaining 
 unit of effort, because every number already exists, is regenerable from
 `scripts/wt030_report.py` and `scripts/wt002_lambda_report.py`, and is defended by tests.
 
+*Diagnosis superseded by WT-040:* the gap is real but it is a symptom. The paper does not
+merely lack a results section — its contribution begins at 76% of the body. Fixing the
+symptom without the restructure puts five results at the end of a paper nobody reached.
+
 *Recommended shape, not yet built:* a Results section carrying four or five collapsed tables
 plus the Λ scaling collapse as the one figure, and a Reproducibility note naming the repository
 and the exact test command. This does not require new science. It requires transcription.
@@ -765,3 +774,277 @@ recommendation is to **leave them exactly where they are** and add one README li
 `docs/` as a working lab notebook. A paper whose method section insists dead ends be recorded
 with equal weight is strengthened, not embarrassed, by a public ledger that does it. But it is
 Jason's call, not a Claude's.
+
+---
+
+## WT-038 · METHOD · 2026-08-05 · **reframes WT-002** · from Jason's note #3
+**A first principle is an invariant with a stated domain, not an undeniable truth — and on that footing Λ is an entailment rather than a posit.**
+
+The manuscript uses "first principles" four times and never defines one. Zero occurrences of
+Aristotle, ontology, epistemology or primitive. The connection Jason was struggling to word was
+not weak; it was **absent from the page**, carried in his head. Absent is far cheaper than broken.
+
+**The type error.** An axiom is a *proposition* — truth-apt, deniable. A model is a *structure* —
+it has interpretations, not a truth value. Promoting a structure to a proposition cannot be done
+by rewording, which is why every wording attempt failed. The tensor is not the axiom. **The axiom
+is the proposition that wealth has the structure the tensor formalises.**
+
+**"Undeniable" is self-defeating and must go.** An axiom nobody can deny is a definition, and
+definitions generate no empirical content. This repo *proves* the axioms are deniable: φ = 1 in
+`lag.py` annihilates the phenomenon, realisation = 0 in `redistribution.py` makes a confiscatory
+levy inert. Those regimes are committed, tested code. They are the evidence the claims are
+empirical, not an embarrassment to be hidden behind a stronger word.
+
+**Replacement, in the author's own idiom (CS, not philosophy).** A first principle in computing
+is an **invariant**: never proved undeniable, proved *preserved*, within a *stated domain*.
+P1 is a type declaration (`wealth : (Physical, Claim)`); P2 is a loop invariant; P3 is
+compositionality. "Sound within a stated domain" is defensible; "undeniable" is not.
+
+**Candidate axiom set**, stated as propositions a competent economist can deny:
+- **P1 Composition** — every unit of wealth is a compound of a physical and a claim component,
+  obeying different laws (thermodynamics vs arithmetic). Soddy, made axiomatic.
+- **P2 Decay** — the physical component degrades absent maintenance; no store is inert.
+- **P3 Atomism** — measured aggregates are folds over units; no aggregate is more fundamental
+  than its constituents. This is what an aggregate-production-function economist denies.
+
+Check independence before publishing. Three, not ten.
+
+**The test that separates a principle from a result:** *denying a first principle produces a
+different science; denying a result produces a wrong number.* Deny r > g → a different empirical
+claim, same science. Deny "wealth has a physical component subject to entropy" → neoclassical
+economics. Different science. The commitment passes.
+
+**THE PRIZE — Λ stops being the weakest wall.** If P1 holds, wealth is a compound of two
+components in different units, so **a relation between them must exist**. Λ is its name. The
+coefficient was not introduced; it is *obliged*. The standing objection — "you invented a scalar
+converting joules to dollars" — is answered not at the perimeter but at the root: nothing was
+invented, and the only open question is whether the coupling is stable. It is not, and its drift
+is the phenomenon (WT-024, WT-036). Three sessions of defending WT-002 are superseded by
+reordering the argument.
+
+**Open, and Jason should decide it:** P1 may not be indemonstrable. It may be an instance of a
+general map/territory claim about representation and deferred information, of which wealth is one
+domain. That is a more ambitious and more attackable paper — and given the author's signature
+move recurs in 1993 (checksums) and 2026 (10-Ks), it may be closer to what he actually believes.
+
+---
+
+## WT-039 · METHOD · 2026-08-05 · **name it and do it on purpose** · from notes #3–#5
+**The author's rhetorical method is relocation: never "you are wrong", always "you are a special case."**
+
+Four instances, arrived at independently and none of them recognised as a pattern until now:
+
+| target | the relocation | entry |
+|---|---|---|
+| Piketty | not wrong — measuring a different **layer** | WT-022 |
+| SMD | not opposition — the mainstream **already proved it** | WT-013 |
+| Austrian school | different cause, **same architecture** | WT-031 |
+| Solow / scalar capital | not wrong — different **constraints** | WT-042 |
+
+Every time, the disagreement is moved somewhere other than correctness, and a probable enemy
+becomes a possible ally. For an outsider with no institutional armour this is not a stylistic
+tic — it is the single strongest reason the paper could survive review.
+
+*Action:* state it in the methods section as a deliberate strategy, and apply it consciously from
+here. A method used four times by accident is worth more used deliberately the fifth.
+
+---
+
+## WT-040 · RESULT · 2026-08-05 · **supersedes the diagnosis in WT-037** · from note #4
+**Measured: the contribution begins at 76% of the body and is one third the size of the history it follows.**
+
+Jason asked whether the Cournot/Bertrand history should be condensed. Measurement says the
+instinct was right and the diagnosis inverted.
+
+- Cournot + Bertrand: **5,603 chars = 8.9%** of the document. Three sections are individually
+  larger (Price Indifference 12.0%, Kinetic Exchange Summary 10.7%, Layer-Not-Error 10.5%).
+  Halving it buys 4.5% and costs a join.
+- Everything before "The Research Whitespace" is **40,411 of a 53,363-char body — 76%.** The paper
+  is three-quarters over before it defines its own central object.
+- "Define the Atomic Unit: The Thermodynamic-Financial Dual Tensor" is **1,893 chars** — *one third*
+  of what Cournot and Bertrand receive.
+
+**Do not condense Cournot — re-genre it.** It is not history in this paper; it is evidence
+(WT-001 the corner solution *is* the marginal pair; WT-005 tatonnement unstable for n>=3;
+WT-013's micro-instance). What is wrong is the *verb*: it narrates where it should assert.
+History narrates, results assert — and asserting is shorter.
+
+**The restructure all six notes converge on. Flip the paper: contribution first, literature second.**
+
+1. **The constraint expired** — force-fit not form-fit, with dates and numbers (WT-042). Answers
+   *why now*, which the paper currently never answers.
+2. **What wealth is** — P1/P2/P3 as propositions with stated domains (WT-038). Currently the
+   smallest substantive section; should be the largest.
+3. **What follows** — the five verified results, currently in the repo and nowhere in the paper.
+4. **Relation to existing frameworks** — the relocation method run as a section (WT-039). Absorbs
+   most of the current historical material at roughly half the length, re-genred.
+5. **What this does not settle** — Quine-Duhem stated honestly, architecture left open, WT-026
+   named as the unrun severe test.
+
+Note what §4 buys: every adversary the paper currently spends three-quarters of its length
+fighting becomes, in one section, a special case of the thing just proposed.
+
+*Cost is lower than it looks:* moving sections, changing verbs, transcribing results that already
+exist, and writing one genuinely new page (§1).
+
+---
+
+## WT-041 · RISK · 2026-08-05 · **the ledger's own guard fired** · from note #5
+**SMD is the shield, not the sword. The Marshallian cross is a conceded target; scalar capital is the live one.**
+
+Jason proposed making SMD the absolute centerpiece of the defence against neoclassical defenders
+of the Marshallian cross. Two prior entries had already forbidden exactly this, and
+`test_excess_demand_is_monotone_here_so_this_is_not_an_SMD_result` exists to enforce one of them.
+**The fence worked.** Best single argument for the ledger discipline the project has produced.
+
+**Technical objection (WT-020).** SMD needs at least two goods with income effects. The c(m)
+construction is one good with unit demand and yields a *monotone* excess demand with a single
+crossing. The two arguments attack different targets: c(m) attacks the *independence of the two
+curves*; SMD attacks *uniqueness and stability under aggregation*. Centring SMD hands a referee a
+ten-minute rejection: a multi-good general-equilibrium theorem misapplied to a single-good
+partial model.
+
+**Strategic objection.** SMD is fifty-one years old and fully digested — Hildenbrand and Grandmont
+restrict preference heterogeneity and recover well-behaved aggregate demand; the standard reply
+is that it is a possibility result, not an empirical claim. If SMD is the centerpiece, the
+centerpiece is a half-century-old theorem the author did not prove, and the rejection is for
+*unoriginality*, which is worse than being wrong because the actual contribution is not unoriginal.
+
+**Target objection (WT-012).** Nobody defends the Marshallian cross; it is a pedagogical device
+and Arrow-Debreu never used it. Arming heavily against an abandoned position reads as timid.
+
+**The swap.** The live adversary is **capital as a malleable scalar** — the aggregate production
+function, named in the manuscript's own opening paragraph. It is defended by working
+macroeconomists today, it is where the Cambridge fight was actually fought, it is exactly what P3
+denies, and it is where the zero-count names live (Sraffa, Robinson, Samuelson). SMD gets one
+early paragraph whose only job is to establish that doubting inherited aggregation is *inside*
+the mainstream. Then it stops being mentioned.
+
+---
+
+## WT-042 · CONNECTION · 2026-08-05 · **Jason's phrase, and it is better than the alternatives** · from note #5
+**"Force-fit, not form-fit" — the scalar was a rational response to constraints that have since expired.**
+
+The concession Jason intended — "the malleable scalar was necessary for simplification" — gives
+away too much. It grants that the simplification was *innocent*, and the entire Cambridge
+controversy was about it not being: Samuelson conceded in 1966 that with reswitching on the table
+the marginal-productivity account cannot be recovered from an aggregate capital measure. A referee
+reading the soft version replies: *the author grants the aggregation was harmless, then argues it
+wasn't.*
+
+**The version that costs nothing:** the scalar was necessary **given the computational and data
+constraints of the mid-1950s**, its cost was known and explicitly accepted at the time, and **both
+conditions have since expired.** Solow was explicit that the one-good economy was a device;
+Samuelson conceded the cost; and the constraints are datable.
+
+- **Compute** — a model of that era had to be analytically solvable because numerical solution was
+  not available. Order 10^4 operations per second then; order 10^11 on a laptop now. Roughly seven
+  orders of magnitude between "must have a closed form" and "hold a tensor per agent and iterate."
+  *Source the figures from a citable spec sheet; do not take them from a Claude.*
+- **Data** — the stronger half and usually forgotten. No firm-level panel, no machine-readable
+  EDGAR, no national input-output energy tables at usable granularity, no SDG 7.3.1 series. The
+  scalar was not merely cheaper to compute; it was the only object anyone could **populate**.
+
+**Jason's criterion, in his words, and it beats the alternatives:** the old models were
+**force-fit, not form-fit**. Distinguish a *benign* simplification (drops detail, preserves
+structure, refining it changes numbers) from a *structural* one (collapses a distinction the
+theory needs, refining it changes conclusions). Tested four times in this repo, structural every
+time: collapse real and reported in `lag.py` and the phenomenon vanishes; collapse the levy base
+in `redistribution.py` and a 100% levy reads identical to none.
+
+*Why this matters beyond the concession:* it converts an apology into the paper's **motivation
+section**, which the manuscript currently lacks — it motivates by *gap* (whitespace), never by
+*use*. And it accuses no one of error, which is WT-039 applied to Solow.
+
+*Related, from the same note and not yet in the text:* the representation is n-dimensional with
+n >= 3; central banks run 2D regressions; COVID-19 documented the playbook gap. That is the
+concrete "why care" and it belongs in §1 of the restructure.
+
+---
+
+## WT-043 · METHOD · 2026-08-05 · from note #6
+**Defend Λ once, decisively, then stop. And what actually escapes the Odum trap is a result, not a paragraph.**
+
+Jason asked whether the Λ dimensional defence should stay prominent by *constantly* emphasising
+dynamic variance over a fixed value. Prominent yes; constant no. **A defence that recurs is a
+tell** — five defences of one quantity tells a referee there are five soft places, and recruits
+attention to precisely the spot one would rather they walked past.
+
+**Three independent legs, deployed once, in one section, then never again:** Λ is an *entailment*
+of P1 (WT-038); the numeraire *cancels*, spread exactly 0.0 across twelve orders of magnitude and
+publicly checkable (WT-036); Λ^-1 *is* UN SDG indicator 7.3.1 (WT-003). Nothing signals a settled
+question like an author who has stopped arguing about it.
+
+**Posture correction.** "Emphasise variance over fixed value" still fights from the back foot. The
+forward version: *a fixed value would be uninteresting; the trajectory is the finding.* Λ is the
+paper's primary observable, not a nuisance parameter under guard. The Λ section becomes a results
+section — same content, opposite posture.
+
+**What the Odum trap actually was**, and how this framework scores:
+- **(a) coefficients not independently measurable** — emergy transformities were derived from the
+  accounting system that used them. Circular. **This framework passes decisively** (WT-003).
+- **(b) no risky prediction** — it became closed accounting rather than a theory that could lose.
+- **(c) therefore bookkeeping, not science** — follows entirely from (b).
+
+So (c) hinges on (b), and (b) is **WT-026**: lag magnitude scaling with the unobservability of
+degradation, where accounting standards themselves identify the unobservable categories and
+neoclassical finance predicts no such gradient. **No amount of prose does the work that one
+empirical result does.** Third independent time in one session that WT-026 surfaced as the
+highest-value unbuilt item.
+
+**Trap inside the proposal.** A Λ that varies freely and is never pinned forbids nothing — WT-016
+in a new coat. Emphasise not that Λ *varies* but that it varies in a **specific parameterised
+shape**: floor at unity at every correction, ceiling set by observability, mean 1.137 at φ = 0.3
+(WT-036). A free variable is a liability; a shaped one is a prediction.
+
+---
+
+## WT-044 · HYGIENE · 2026-08-05
+**Proper-noun audit: zero errors. The defect is missing attribution, not misspelling.**
+
+Jason flagged that he types by phoneme rather than by memorised spelling (he wrote "Carnot" for
+Cournot and "Odom" for Odum in conversation), so every name in the manuscript was audited.
+
+**Clean.** `Carnot` appears once and is correct — Sadi Carnot, in "bounded above by the Carnot
+limit," in the Λ dimensional-status section. Every near-miss resolved to something right:
+`Chakrabarti` / `Chakraborti` / `Chakravarty` are three distinct real econophysicists and
+co-authors of the manuscript's own reference #31; the R-model is correctly attributed to
+Chatterjee-Chakrabarti-Manna; `Lorenzo` is Lorenzo Peccati; `Fairer` is a Niskanen Center title.
+Zero common phonemic misspellings in the prose. The risk was real and the text is already clear of it.
+
+**The actual finding — the ledger is ahead of the manuscript on attribution.** Names the arguments
+depend on, appearing **zero** times in the body:
+
+| absent | what depends on it |
+|---|---|
+| Mises, "malinvestment" | WT-031's Austrian convergence, the paper's strongest non-tribal move |
+| Godley, Lavoie | an entire project titled *Thermodynamic Stock-Flow Consistent Systems* |
+| Farmer, Lillo | WT-014's order-book microstructure landing ground (only Bouchaud, once) |
+| Sraffa, Robinson, Samuelson | the Cambridge capital controversy — now the paper's live target (WT-041) |
+
+Citations, not rewrites. Cheapest fix-to-value ratio in the document: each one moves an argument
+from *floating free* to *standing in a literature*, which is how a referee decides whether the
+author has read the room.
+
+---
+
+## WT-045 · HYGIENE · 2026-08-05 · **DONE**
+**GNN demoted from asserted method to open empirical question; KAN added with a principled reason.**
+
+Project 3's Mathematical Formulation asserted that "by training Graph Neural Networks (GNNs) and
+Graph Attention Networks (GATs)... the econometrician can simulate contagion dynamics." A specific
+ML architecture was load-bearing in a paper whose contribution is axiomatic — dating the work,
+widening the attack surface to training data and generalisation, and repeating WT-015's failure
+mode (borrowed glamour) in a new field. None of the five verified modules uses a neural anything.
+
+Replaced with an architecture-agnostic paragraph: the estimation problem is posed but not settled,
+**nothing in the axioms depends on how it is solved**, GNN/GAT are the obvious first candidates,
+and spline-based approximators such as Kolmogorov-Arnold networks may suit a domain where the
+learned couplings are expected smooth and low-dimensional **and where interpretability of the
+fitted function is a requirement rather than a courtesy**.
+
+That last clause is Jason's KAN instinct, and it is stronger than he pitched it: a GNN returns a
+prediction, a KAN returns the learned univariate functions themselves. For a paper whose entire
+defence is dimensional rigour and measurability, an approximator whose output can be *read* is a
+principled preference rather than a fashionable swap. Verified structurally: 33 headings and 14
+list lines byte-identical. Restore point `12jJh93VhgfOe8EQ3J23G9heQekSCdzxHTm75ut8RL6g`.

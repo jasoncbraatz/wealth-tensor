@@ -1,6 +1,6 @@
 ---
 project: wealth-tensor
-gh_sha: 2bb062228accbfa0fd4ffa059a241ec3e39f7ef8
+gh_sha: PENDING
 updated: 2026-08-05
 session: S2
 gate_passed: true
@@ -18,16 +18,11 @@ The desktop bridge rotates its websocket every ~27–33 min (claude-code#81248).
 self-heal in ~1s. **It is not darwin and it is not broken.** Run `~/Scripts/bridge-status.sh`,
 then say in chat that you are briefed.
 
-**S2 did not fight the bridge once, and neither should you.** Stand up darlish at Step 0 and
-the problem disappears: one bridge call for the dsh-fire secret, then `/tmp/dx` for everything.
-S2's bridge rotated mid-session — the disease attended the cure's ceremony — and nothing
-noticed. The procedure is in Jason's standing brief; follow it verbatim.
-
-**Fixed this session, so it will not cost you what it cost S2:** `darlish-up` step 1/6 used to
-throw away pip's output, so a fresh cloud container reported `cannot import
-websockets/asyncssh` with no explanation. It now retries across pip/pip3/`python3 -m pip`,
-logs to `/tmp/darlish-deps.log`, and prints the last 25 lines before dying. Both paths were
-exercised, not assumed. If you still see it fail, the log will tell you why.
+**S2 never fought the bridge and neither should you.** Stand up darlish at Step 0 per Jason's
+standing brief: one bridge call for the dsh-fire secret, then `/tmp/dx` for everything. S2's
+bridge rotated mid-session and nothing noticed. If `darlish-up` fails at 1/6 it now **prints why**
+and names `/tmp/darlish-deps.log` (fixed in S2); the unblock is
+`pip install websockets asyncssh --break-system-packages`.
 
 ## 1 · IDENTITY + MISSION
 
@@ -35,137 +30,146 @@ You are Jason's co-author on **wealth-tensor** — an eleven-year, 210-paper pat
 tightened into a pre-print proposing an atomic unit of wealth (a thermodynamic-financial dual
 tensor) at a genuine whitespace in economic thought.
 
-**Two intentions, equally weighted.** (1) Get it pre-print ready and build a substrate for
-Jason to become an academic author later, likely in CS. (2) **Have fun.** Nobody is making him
-write this. If it stops being enjoyable, that is a defect, not a mood.
+**Two intentions, equally weighted.** (1) Get it pre-print ready. (2) **Have fun.** This is a
+hobby; no tenure rides on it; he is not trying to be safe and says so. If it stops being
+enjoyable that is a defect, not a mood.
 
-**Method: French polish.** Small area, thin coat, rub in, build up. Never a rewrite — a rewrite
-is spray paint. One note at a time; Jason verifies each dot before the next is connected.
+**He invites criticism and means it.** S2's most useful moves were all disagreements — talking
+him out of centring SMD, out of condensing the wrong section, out of the word "undeniable", and
+out of a graph-neural-network dependency. Agreeing with him is not the job.
 
-**The prose is disposable; the structure is precious.** Jason remasters every sentence in his
-own voice, so LLM-register drafting is explicitly fine. What must NOT happen is quietly
-laundering *his* insight into your paraphrase and losing a connection he made in 2019 and
-cannot reconstruct. If you cannot tell whose idea it is, stop and ask.
+**The prose is disposable; the structure is precious.** He remasters every sentence in his own
+voice, so LLM-register drafting is fine. What must NOT happen is laundering *his* insight into
+your paraphrase. When he coins something — "force-fit, not form-fit" (WT-042) — it goes in
+**verbatim** and it is credited to him in the ledger. If you cannot tell whose idea it is, ask.
+
+**How he works on content:** his research notes are **on paper**. He reads one at a time and wants
+to digest and discuss, not receive a report. Answer at the length the note earns. Read the note
+back to him before building on it — paper → his hands → you is a lossy channel, and the loss this
+project cannot absorb is a 2019 insight quietly becoming your paraphrase.
 
 ## 2 · ORIENT — run these, do not skim
 
 ```
 git -C ~/repos/wealth-tensor pull --ff-only
-python3 ~/repos/wealth-tensor/scripts/handoff_gate.py --check     # blocker if code drifted
-cat  ~/repos/wealth-tensor/docs/LEDGER.md                          # 37 entries — READ THIS FIRST
+python3 ~/repos/wealth-tensor/scripts/handoff_gate.py --check   # 0 pass · 1 blocker · 2 CANNOT VERIFY
+cat  ~/repos/wealth-tensor/docs/LEDGER.md                        # 45 entries — READ THIS FIRST
 python3 ~/repos/claude-blackbook/lessons.py search "google docs api" --scope global
 python3 ~/repos/claude-blackbook/lessons.py doctrine
 ```
 
-**`docs/LEDGER.md` is the project's brain.** 37 dated entries. Every conclusion below traces to
-a WT-nnn. Do not re-derive anything in it. Corroborate what you use:
-`lessons.py use <id> --task <tag>` at orient, `lessons.py record-outcome <tag> pass` at wrap.
+**`docs/LEDGER.md` is the project's brain** and in S2 it *earned that* — Jason proposed centring
+SMD, and WT-012 and WT-020 had already forbidden exactly that, with a test enforcing it. The fence
+held. Do not re-derive anything in it. Corroborate what you use: `lessons.py use <id> --task <tag>`
+at orient, `lessons.py record-outcome <tag> pass` at wrap.
 
-## 3 · STATE — where things actually stand
+## 3 · STATE
 
-- **Manuscript** (Google Doc `1RjAHJ7jHCX_N3ToHtstQvjlMb-BQz-iejBZ9Y4f58V8`, 62,834 chars) —
-  the redistribution passage now states the *measured* claim rather than the guessed one.
-  Verified by structural read-back: 33 headings and 14 list lines byte-identical, exactly one
-  paragraph changed.
-  Restore points, both verified byte-identical to their originals:
-  S1 `1fszgf295NGfvfQlT3VaCrRXrXA4K589tlS-bVsUIok4` ·
-  S2 `1FeXUSbrFQQXDOaSxCoul13lE6LWicxMuJGL8xJKSLjs`.
 - **Code** — **58 tests passing**, tree clean and pushed. Five modules: `cournot.py`,
-  `excess_demand.py`, `lag.py`, **`redistribution.py`** (new), **`lambda_sensitivity.py`**
-  (new). Two regenerable report scripts: `scripts/wt030_report.py`,
-  `scripts/wt002_lambda_report.py`.
-- **Closed this session** — WT-030 (built, and *refined*: see WT-033) and **WT-002 in full**
-  (item 4 built as WT-036). WT-002 was the paper's weakest wall and it is now the best-defended
-  thing in it.
-- **Open, and it is the big one** — **WT-037**: the manuscript contains zero figures, zero
-  results tables, zero appendices and zero mention of the repository, while leaning on five
-  modules' worth of results. See §5.
+  `excess_demand.py`, `lag.py`, `redistribution.py`, `lambda_sensitivity.py`. Reports regenerate
+  from `scripts/wt030_report.py` and `scripts/wt002_lambda_report.py`.
+- **Manuscript** (Google Doc `1RjAHJ7jHCX_N3ToHtstQvjlMb-BQz-iejBZ9Y4f58V8`, 63,283 chars) —
+  three edits this session, all verified structurally (33 headings, 14 list lines byte-identical
+  each time). Restore points, all verified: S1 `1fszgf295NGfvfQlT3VaCrRXrXA4K589tlS-bVsUIok4` ·
+  S2a `1FeXUSbrFQQXDOaSxCoul13lE6LWicxMuJGL8xJKSLjs` ·
+  S2b `12jJh93VhgfOe8EQ3J23G9heQekSCdzxHTm75ut8RL6g`.
+- **Closed** — WT-002 entirely (and now *reframed*: Λ is an entailment, not a posit — WT-038),
+  WT-030 (built and refined by WT-033).
+- **The paper's real problem, now measured** — WT-040. The contribution begins at **76% of the
+  body**, and the section defining the atomic unit is **1,893 chars**, one third the size of the
+  Cournot/Bertrand history preceding it. Everything Jason raised in notes #3–#6 converges on one
+  restructure.
 
 ## 4 · DOCTRINE / GUARDRAILS
 
-- **Jason has granted blanket edit permission on the manuscript.** "This is a construction zone
-  to build a mock-up; I'll take the mock-up and rebuild it into a building." Fix what you catch.
-- **Take a fresh restore point before every edit session, and VERIFY it** — copy the doc via the
-  cloud `Google_Drive__copy_file`, then read the copy back and assert it is byte-identical to
-  the pre-edit original. S2 did this in one extra call. A restore point you never read is not a
-  restore point.
-- **Read the doc back after every edit batch.** A successful API reply proves nothing about
-  rendering. This burned S1 twice. L12 makes the read-back cheap *and* stricter.
-- **Never add a free parameter to absorb an objection.** Rejected three times now (WT-002,
-  WT-016, and the temptation in WT-033 to define "flow" so the claim came out right). A quantity
-  that fits anything forbids nothing. `realization` survives that test only because it is a
-  stated structural property of every real tax system, and because it is *swept* rather than
-  chosen.
-- **Do not oversell.** Two standing guard-tests exist purely to stop a future session
-  overclaiming: `test_excess_demand_is_monotone_here_so_this_is_not_an_SMD_result` and
+- **Blanket edit permission on the manuscript.** "A construction zone to build a mock-up."
+- **Fresh restore point before every edit session, and VERIFY it** — `Google_Drive__copy_file`
+  (works without the bridge), then read the copy back and assert byte-identity with the original.
+  S2 did this twice at one call each. A restore point you never read is not a restore point.
+- **Read back after every edit batch** — structurally, per L12. Cheaper and stricter than a
+  subagent.
+- **Never add a free parameter to absorb an objection.** Rejected four times now: WT-002, WT-016,
+  the temptation in WT-033 to define "flow" so the claim came out right, and WT-043's warning that
+  a freely-varying Λ forbids nothing. `realization` survives only because it is a stated structural
+  property *and* it is swept rather than chosen.
+- **Do not oversell.** Two standing guard-tests exist to stop a future session overclaiming:
+  `test_excess_demand_is_monotone_here_so_this_is_not_an_SMD_result` and
   `test_a_flat_gini_does_not_mean_a_bounded_one`. If either fails, someone is overclaiming.
-- **When a sharp claim half-survives, the refinement is the prize.** WT-030 said "the base is
-  decisive regardless of rate". The sweep falsified "regardless of rate" and produced something
-  better: the base is decisive *through realisation*. Do not weaken to mush and do not defend
-  the original. Find what is actually true and state that.
+- **When a sharp claim half-survives, the refinement is the prize** (WT-033). Do not weaken to
+  mush and do not defend the original.
 - **The tone is load-bearing.** No grumpiness; humour lands the news.
 
-## 5 · MISSION — the next at-bat, ranked
+## 5 · MISSION — ranked, with reasons
 
-### START HERE — **a Results section, and a Reproducibility note (WT-037)**
+### START HERE — **WT-026: the severe test.** Build it.
 
-`verify: grep -ci "appendix\|figure\|github" on a fresh export of the doc — 0 means still live.`
+`verify: grep -ril "10-K\|edgar\|unobserv" src/ scripts/` — no hits means still live.
 
-The paper says "swept numerically over that process" and gives the reader nothing to inspect.
-Five modules, 58 tests, and every number regenerable — none of it appears in the manuscript.
-For a pre-print this is the difference between a synthesis essay and a paper: **a reviewer
-cannot check any of it.** It is also the cheapest large improvement available, because no new
-science is required. Transcription, and one decision from Jason.
+The claim: **lag magnitude scales with the *unobservability* of the degradation**, and accounting
+standards themselves identify the unobservable categories — they are precisely the ones GAAP
+declines to capitalise. Neoclassical finance predicts no such gradient. EDGAR is public and
+machine-readable.
 
-Recommended shape:
+**Why this is first, ahead of the manuscript work.** It surfaced three times independently in one
+session as the highest-value unbuilt item, and the third time settled it: WT-043 shows that what
+saves this framework from the Odum trap is *not prose*. Emergy died of (a) coefficients that were
+not independently measurable and (b) no risky prediction. This framework passes (a) decisively —
+Λ⁻¹ is UN SDG indicator 7.3.1. (b) is unbuilt, and (b) is the whole difference between a theory
+and an accounting scheme. It is also fully self-contained: no judgement calls from Jason, no
+manuscript risk, and its result slots straight into §3 of the restructure below.
 
-1. Four compact results tables — Cournot instability (WT-005), allocation-invariance 25:1
-   (WT-018), the lag/observability ladder (WT-027), and the redistribution sweep (WT-033).
-   Every figure already printed by the two report scripts.
-2. One figure: the Λ scaling collapse (WT-036). Two systems, wildly different units, one curve.
-   A collapse is checkable in a glance; a paragraph about Buckingham pi gets skimmed.
-3. A Reproducibility note: `github.com/jasoncbraatz/wealth-tensor`, the commit SHA, and
-   `./.venv/bin/python -m pytest tests/ -q` (58 passed).
+**Scope honestly.** This is a data project, not an afternoon. Prefer a scoped pilot — one sector,
+a defined firm set, a stated pre-registered prediction — over a study that never lands. Say in the
+handoff what you sampled and what you dropped.
 
-**Nothing blocks you.** The repository is **already public** —
-`github.com/jasoncbraatz/wealth-tensor`, confirmed via `gh repo view`, visibility PUBLIC — so
-the Reproducibility note can cite it today. Write the whole section without asking anyone.
+### 2 — **The restructure (WT-040).** Flip the paper: contribution first, literature second.
 
-**ASK JASON, but only after the section exists, and it is a nice-to-have not a blocker.**
-`docs/LEDGER.md`, `docs/HANDOFF.md` and `docs/sessions/` are already world-readable and contain
-candid internal assessments ("the paper's weakest wall", "reads as ideology"). Options:
-   - **(a) Leave them public, add one README line framing `docs/` as a working lab notebook
-     (recommended).** A paper whose method insists dead ends be recorded with equal weight is
-     strengthened, not embarrassed, by a ledger that visibly does it. WT-015 and WT-016 are
-     better advertisements for the work than anything in the abstract.
-   - **(b) Split the working notes into a private companion repo.** Keeps `src/`, `tests/` and
-     `scripts/` public, which is all a reviewer actually needs.
-   - **(c) Leave it and revisit at submission.** Free, and the honest default if he is not around.
+The spine, made entirely of material that already exists:
 
-### Then, in order
+1. **The constraint expired.** *Force-fit, not form-fit* (WT-042) with dates and numbers, plus the
+   n≥3 / central-bank / COVID motivation. Answers *why now*, which the paper never answers. This
+   is the one genuinely new page.
+2. **What wealth is.** P1/P2/P3 as propositions with stated domains (WT-038). Should be the
+   largest section; is currently the smallest.
+3. **What follows.** The five verified results — WT-037. Currently in the repo and nowhere in the
+   paper.
+4. **Relation to existing frameworks.** The relocation method run as a section (WT-039). Absorbs
+   most of the current history at half the length, re-genred from narration to assertion.
+5. **What this does not settle.** Quine–Duhem stated honestly, architecture left open, WT-026
+   named.
 
-2. **Citation-graph whitespace test (WT-006).** Turn "I searched and found nothing" into a
-   co-citation matrix — the whitespace claim is the first thing a reviewer attacks and it is
-   currently an anecdote. OpenAlex CC0 snapshot; `shellac` (96GB, RTX 3090) is idle and sized
-   for it. *Highest-value new science remaining.*
-   `verify: grep -ril openalex src/ scripts/` — no hits means still live.
-3. **HITL — checkbox lists (WT-008).** All 57 references render as `- [ ]` to-do boxes, as do
-   the VNM axioms and the policy lists. Jason has never said whether that is deliberate. Cheap
-   to ask, cheap to fix, and it is the first thing a reader sees.
-   `verify: ask Jason.`
-4. **HITL — the twin document (WT-009).** `2The Axiomatic Reconstruction of` (19KB, 2026-08-03)
-   sits beside the canonical version, title truncated mid-sentence, never diffed. It may hold
-   content the canonical copy lost — which is the one failure mode this project cannot tolerate.
-   `verify: search Drive for "2The Axiomatic" — present means still live.`
-5. **Disconfirming-case hunt for the lag thesis (WT-025).** Japan 1990s is N=1 and is an
-   illustration, not evidence. Deliberately hunt a case where the reported layer *led*. Research,
-   not code.
-6. **Language remaster.** Jason's job, explicitly. Do not do this for him.
+**Why second, not first:** it is mostly *moving*, but moving sections is exactly where the Docs
+index minefield bites (L11 does not help you relocate structure, only replace text), and each
+section's placement is a judgement call that is better made with Jason present and with WT-026's
+result in hand.
 
-**Deliberately deferred, with reasons:** off-bridge Google Docs access (parked in S1, parked
-again — darlish plus the cloud Drive connector already covers read *and* write comfortably, so
-this now solves a problem nobody has); and a plotting dependency for the Λ collapse figure — the
-numbers are in hand and the format decision belongs with the Results section, not before it.
+### 3 — **Attribution pass (WT-044).** Cheapest fix-to-value ratio in the document.
+
+Zero occurrences in the body of: **Mises**, **malinvestment**, **Godley**, **Lavoie**, **Farmer**,
+**Lillo**, **Sraffa**, **Robinson**, **Samuelson**. Each supports an argument the paper already
+makes. Citations, not rewrites. Sraffa/Robinson/Samuelson matter most now that scalar capital is
+the live target (WT-041).
+
+*Name audit is already done and came back clean* — do not redo it. Carnot is correct;
+Chakrabarti/Chakraborti/Chakravarty are three real people.
+
+### 4 — **Citation-graph whitespace test (WT-006).** Demoted from S2's ranking, deliberately.
+
+It defends the paper's *novelty*; WT-026 defends its *theory*. `shellac` is idle and sized for it.
+`verify: grep -ril openalex src/ scripts/` — no hits means still live.
+
+### 5 — **HITL, both cheap, both need Jason.** Checkbox lists (WT-008): all 57 references render as
+`- [ ]` to-do boxes and he has never said whether that is deliberate — it is the first thing a
+reader sees. The twin document (WT-009): `2The Axiomatic Reconstruction of`, 19KB, never diffed,
+may hold content the canonical copy lost.
+
+### 6 — **Language remaster.** His job, explicitly. Do not do it for him.
+
+**ASK JASON when the moment is right, not as a blocker.** `docs/` is world-readable (the repo is
+public at `github.com/jasoncbraatz/wealth-tensor`) and contains candid internal assessments.
+Recommendation: leave it and add one README line framing `docs/` as a working lab notebook — a
+paper whose method insists dead ends be recorded with equal weight is strengthened by a ledger
+that visibly does it. His call.
 
 ## 6 · VERIFY GATE
 
@@ -178,20 +182,16 @@ python3 scripts/handoff_gate.py --emit                               # blesses i
 bash ~/Scripts/gate-selfcheck.sh                                     # expect PASS
 ```
 
-**`--emit` does not stamp.** S2 assumed it did, left `gh_sha: PENDING`, and the gate cheerfully
-reported "sha matches HEAD" — because `sh()` swallowed git's error and a bad sha resolved to an
-empty diff, which looks exactly like no drift. Fixed the same session: exit codes are now
-tri-state (0 pass · 1 blocker · **2 CANNOT VERIFY, which is not a pass**), a placeholder sha is
-a blocker, and a well-formed sha absent from the clone is a 2. All three paths were exercised
-before the fix was committed.
-
-Walk `~/Desktop/downloads/HANDOFF-GATE.md` (G-A→G-AB, v2.40) at wrap. Overwrite this file; do
-not append. Trust the gate file's own header for its version, never a version quoted in prose.
+**`--emit` does not stamp.** S2 assumed it did and the gate reported "sha matches HEAD" over a
+literal `PENDING` — `sh()` swallowed git's error and a bad sha resolved to an empty diff, which
+looks exactly like no drift. Fixed the same session: tri-state exit codes, a placeholder sha is a
+blocker, a well-formed sha absent from the clone is a 2. Walk
+`~/Desktop/downloads/HANDOFF-GATE.md` (G-A→G-AB, v2.40 — trust the file header, not this line).
 
 ## 7 · ORIENT-THEN-GO
 
-Emit ONE orientation line — `Oriented: <state> · next at-bat: <X> · opening with <first
-action>.` — then **proceed straight into the work.** Do not wait for Jason's go.
+Emit ONE orientation line — `Oriented: <state> · next at-bat: <X> · opening with <first action>.`
+— then proceed. Do not wait for Jason's go.
 
 ---
 
@@ -201,37 +201,49 @@ action>.` — then **proceed straight into the work.** Do not wait for Jason's g
 
 | # | Fact |
 |---|---|
-| **L11** | **To CHANGE existing text, use `find_and_replace_doc`. It needs no indices at all**, so L1, L3 and WT-032 — the whole index-arithmetic minefield that cost S1 several round-trips and nearly wrote four paragraphs into the bibliography — simply cannot bite. S2 made two manuscript edits this way with zero index calculations. Indices are only unavoidable when inserting genuinely *new* structure. Reach for replace first and shape the edit to fit it. |
-| **L12** | **Verify a doc edit structurally, not by reading it.** Pull the doc through the *cloud* `Google_Drive__read_file_content` (rotation-immune, and it auto-saves to a file so it costs almost no context), then in python compare the list of `#`-prefixed lines and the list of list-item lines against the pre-edit export. Identical heading and list arrays prove no style corruption happened, which is exactly the L1/L2 failure mode — and a unified diff over paragraphs shows precisely how many changed. S2's edit: 33 headings identical, 14 list lines identical, 1 paragraph changed. Cheaper and stricter than the subagent read of L5, which is still the right tool for *meaning*. |
-| L1 | `insert_text` at an index that is the first character of a heading makes the inserted text inherit that heading's style. Insert at `end_index - 1` of the preceding body paragraph with a leading newline. *(Only relevant when L11 does not apply.)* |
-| L2 | Applying `named_style_type: NORMAL_TEXT` wipes character formatting whose run spans the whole paragraph. Apply paragraph styles BEFORE character styles. |
-| L3 | **Never infer indices by arithmetic.** S1 was wrong by 6,944 chars off a stale snapshot. Re-run `inspect_doc_structure` after every mutation. |
-| L4 | `inspect_doc_structure` detailed on this doc exceeds the tool token limit and auto-saves to a file. Parse it with python; do not read it inline. |
-| L5 | For *semantic* whole-document verification use a subagent — it keeps a 60k-char read out of the main context. Give it explicit PASS/FAIL checks. For *structural* verification prefer L12. |
-| L6 | Comments and body edits are attributed to **Jason**, not Claude. Harmless in a sandbox; bad in anything shared. |
-| L7 | The cloud `Google_Drive` connector is create/read only — no in-place edit. But `copy_file` **is** a create, so **restore points can be taken without the bridge**. Editing still needs the bridge-bound `google_workspace` MCP on darwin. |
-| L8 | `google_workspace` runs on GCP project **1054330720958**; all Workspace APIs enabled 2026-08-04. A `SERVICE_DISABLED` 403 is an API-not-enabled error wearing an auth-error costume. |
+| **L11** | **To CHANGE existing text use `find_and_replace_doc`. It needs no indices**, so L1/L3/WT-032 — the index minefield that nearly wrote four paragraphs into the bibliography — cannot bite. S2 made three manuscript edits this way with zero index calculations. Anchor on a long verbatim span; the API reports the occurrence count, which is itself a check that your anchor was as unique as you believed. Indices remain unavoidable for inserting or **relocating** structure — which is why the restructure is real work. |
+| **L12** | **Verify a doc edit structurally.** Export via the *cloud* `Google_Drive__read_file_content` (rotation-immune, auto-persists to a file so it costs almost no context), then in python compare the array of `#`-prefixed lines and the array of list-item lines against the pre-edit export. Identical arrays are positive proof no style corruption occurred; a paragraph diff shows how many changed. Expect 1 for a one-paragraph edit — S2 saw 4 once and it was a paragraph boundary shifting, confirmed by eye rather than assumed. |
+| L1 | `insert_text` at a heading's first character makes the inserted text inherit that heading's style. Insert at `end_index - 1` of the preceding body paragraph. |
+| L2 | `named_style_type: NORMAL_TEXT` wipes character formatting spanning a whole paragraph. Paragraph styles BEFORE character styles. |
+| L3 | **Never infer indices by arithmetic.** S1 was wrong by 6,944 chars off a stale snapshot. |
+| L4 | `inspect_doc_structure` detailed exceeds the tool token limit and auto-saves to a file. Parse with python. |
+| L5 | For *semantic* whole-document verification use a subagent. For *structural*, use L12. |
+| L6 | Comments and body edits are attributed to **Jason**, not Claude. |
+| L7 | Cloud `Google_Drive` is create/read only — but `copy_file` **is** a create, so **restore points need no bridge**. Editing still needs `google_workspace` on darwin. |
+| L8 | `google_workspace` runs on GCP project **1054330720958**. A `SERVICE_DISABLED` 403 is an API-not-enabled error in an auth-error costume. |
 
 **Repo and tooling**
 
 | # | Fact |
 |---|---|
-| L9 | venv at `.venv`. Tests: `./.venv/bin/python -m pytest tests/ -q`. Imports resolve via the root `conftest.py`, which inserts `src/`. |
-| L10 | Every model must be checked against a closed form, a published result, or a hand-verified case. Not style: the Cournot suite caught a real bug on its first run, and that bug turned out to BE the manuscript's marginal pair (WT-001). |
-| **L13** | **A multi-line commit message will not survive `dx`'s shell quoting** — S2's first attempt died with exit 2 (a refusal: nothing ran, safe to retry). Write the message locally, `dx --put` it to **`.git/COMMIT_DRAFT`**, then `git commit -F .git/COMMIT_DRAFT`. Inside `.git/` specifically, because a draft in the repo root gets swept up by `git add -A` and committed — S2 did exactly that in `~/Scripts` and needed a follow-up commit to clean it. |
-| **L14** | `conftest.py` only fires under pytest, so anything in `scripts/` needs its own two-line shim: `sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent / "src"))`. |
-| **L15** | **Mutation-test any result you intend to publish.** Copy the module, break one line, confirm the suite screams — and confirm the *right* test screams. S2 ran eight mutations across the two new modules; all eight were caught by the intended test. It costs one tool call and it is the difference between "the tests pass" and "the tests mean something". Watch the anchor: a `\n` passed through a heredoc argument is literal, and a mutation whose anchor silently misses produces a *spurious pass*. |
+| L9 | venv at `.venv`. Tests: `./.venv/bin/python -m pytest tests/ -q`. Root `conftest.py` inserts `src/`. |
+| L10 | Every model checked against a closed form, a published result, or a hand-verified case. The Cournot suite caught a real bug on its first run and that bug turned out to BE the manuscript's marginal pair (WT-001). |
+| **L13** | **A multi-line commit message will not survive `dx`'s quoting** — exit 2 is dx's refusal, meaning nothing ran and retry is safe. `dx --put` it to **`.git/COMMIT_DRAFT`**, then `git commit -F`. Inside `.git/` specifically: a draft in the working tree gets swept up by `git add -A` and committed, which S2 did. Also: `$HOME` in the cloud shell is `/root`, not darwin's home — use literal `~` in dx paths. |
+| **L14** | `conftest.py` only fires under pytest; `scripts/` needs its own shim: `sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent / "src"))`. |
+| **L15** | **Mutation-test any result you intend to publish**, and confirm the *right* test screams. S2 ran eight mutations across two modules; all eight caught. Watch the anchor: a literal `\n` in a heredoc argument does not match, the replacement silently no-ops, and you get a **spurious pass** that reads like a weak test. Assert the anchor exists, and always run an unmutated control. |
+| **L16** | **Measure the manuscript, don't opine about it.** Jason asked whether a section was too long; counting sections showed it was 8.9% of the document while the contribution was 3.0% and arrived at 76% of the body. That turned an editorial opinion into WT-040. `manuscript_after.md` parsing is three lines of python and it has been right every time. |
 
-## WHAT S2 DID — one paragraph, for context
+## WHAT S2 DID
 
-Built `redistribution.py` (WT-030) and swept it. The sharp claim half-survived: at a matched
-rate the two bases are an order of magnitude apart as predicted, but "regardless of rate" is
-false — a fully-realised flow levy does bound the Gini, it is merely weak. The surviving and
-sharper claim is about **realisation**: at rho = 0 a 100% flow levy is statistically
-indistinguishable from no levy at all. Ledgered as WT-033, and the manuscript sentence was
-replaced to match. Along the way `is_bounded` was caught scoring the *unopposed* process as
-bounded, because the Gini saturates at the (N-1)/N ceiling — WT-034, and a standing guard test.
-Then built `lambda_sensitivity.py`, closing WT-002 item 4 and with it the whole of WT-002: the
-numeraire cancels, spread exactly 0.0 across twelve orders of magnitude, dimensional outputs
-scaling at slope 1.000000000000. Finally, audited the manuscript against the repo and found
-WT-037 — five modules of results, none of them in the paper. That is your at-bat.
+Two at-bats and six of Jason's paper notes.
+
+Built `redistribution.py` (WT-030→033/034/035): the sharp claim half-survived — at matched rates
+the bases are an order of magnitude apart as predicted, but "regardless of rate" is false. The
+surviving, sharper claim is **realisation**: at ρ = 0 a 100% flow levy is indistinguishable from
+no levy. Caught `is_bounded` scoring total condensation as *bounded* because the Gini saturates at
+the (N−1)/N ceiling (WT-034, now a standing guard test). Built `lambda_sensitivity.py` (WT-036),
+closing WT-002 entirely: the numeraire cancels, spread exactly 0.0 across twelve orders of
+magnitude, dimensional outputs at slope 1.000000000000.
+
+Then notes #3–#6 with Jason, which produced more than the code did: **WT-038** (a first principle
+is an invariant with a stated domain, not an undeniable truth — and on that footing Λ is an
+*entailment*, which retires three sessions of defending WT-002), **WT-039** (his relocation
+method, named), **WT-040** (the 76% measurement and the restructure), **WT-041** (SMD is the
+shield; scalar capital is the sword), **WT-042** (*force-fit, not form-fit* — his phrase, and the
+constraint-expiry argument), **WT-043** (defend Λ once, and WT-026 is what escapes the Odum trap),
+**WT-044** (names audit clean; attribution absent), **WT-045** (GNN demoted, KAN added).
+
+Also fixed, outside this repo: `darlish-up` now logs why its dependency step failed;
+`handoff_gate.py` exit codes went tri-state after blessing a handoff carrying `gh_sha: PENDING`;
+and `gate-selfcheck.sh`'s range-ref detector learned to count past Z, which immediately surfaced
+four stale references it had been hiding.
