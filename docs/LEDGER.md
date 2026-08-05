@@ -29,7 +29,7 @@ telescope layer. Implemented in `solve_cournot()`; hand-verified.
 
 ---
 
-## WT-002 · OPEN · 2026-08-04 · **ADDRESSED IN TEXT** (items 1–3 written; item 4 unbuilt)
+## WT-002 · OPEN · 2026-08-04 · **CLOSED 2026-08-05** — items 1–3 written, item 4 built (WT-036)
 **Lambda's second component is dimensionally a price, and that is the paper's weakest wall.**
 
 `eta_work_to_financial` has units `[currency]/[J]`. A free scalar converting a physical
@@ -46,7 +46,8 @@ Four-part defence, in priority order:
    cancels.
 4. Publish a sensitivity sweep showing conclusions invariant across orders of magnitude.
 
-Item 4 is the empirical rebuttal and is the reason this repo exists. Not yet built.
+Item 4 is the empirical rebuttal and is the reason this repo exists. **Built 2026-08-05** —
+`lambda_sensitivity.py`, spread exactly zero across twelve orders of magnitude. See WT-036.
 
 ---
 
@@ -675,3 +676,82 @@ because the compression is done by the transfers at the top of the distribution.
 *Why it matters:* a threshold that exempts the poor is not a concession that weakens the
 mechanism, it is close to free. Any historical levy with a low exemption floor sits in the
 barely-weakened region, and that is a measured coordinate rather than an interpretation.
+
+---
+
+## WT-036 · RESULT · 2026-08-05 · **CLOSES WT-002 item 4** · `lambda_sensitivity.py`, 10 tests
+**The numeraire cancels. Twelve orders of magnitude, spread exactly zero.**
+
+WT-002 named the work-to-financial coefficient the paper's weakest wall: a free scalar with
+units `[currency]/[J]` is the failure mode that sank Odum's emergy programme. Three legs of
+the four-part defence were written in S1. This is the fourth and it is now built.
+
+The two-layer system of `lag.py` is dressed in units — real layer in joules at scale `E0`,
+reported layer in currency, coupling `eta` between them — so that invariance is *measured*
+rather than asserted from the algebra, which is exactly what a sceptical reviewer declines to
+take on trust.
+
+**Negative half.** Across `eta` from 1e-6 to 1e+6, the spread of every dimensionless
+diagnostic is **exactly 0.0**: recognition lag (22), variance suppression (0.6097), variance
+concentration (0.9199), crisis count (16), relative crisis magnitude (0.20138), and the mean,
+minimum and terminal coupling ratios. Not "within tolerance" — bit-identical, because the
+coupling never enters the recursion, only the dressing applied afterwards.
+
+**Positive half, and the half that makes it a test rather than a tautology.** Dimensional
+outputs scale with a log-log slope of **1.000000000000**. Deferred information runs
+6.32e6 → 6.32e18 currency units across the sweep. It would be trivially easy to build a module
+where nothing depends on `eta` because `eta` is never used; here it is used, the currency
+figures move with it exactly as a unit conversion must, and no conclusion moves at all.
+Mutation-tested both ways: leaking `eta` into the dynamics fails four tests, and removing the
+scaling fails two.
+
+**Scaling collapse.** Two systems differing in energy scale (1 J against 6.02e23 J) and in
+coupling (1e-6 against 42) lie on a single dimensionless curve to within 1e-12. This is the
+form the result should take in the manuscript — a collapse is a figure a reviewer checks in
+one glance, where a paragraph about Buckingham pi is a paragraph they skim.
+
+*Sentence available for the text:* "the conversion coefficient is a numeraire, and every
+result reported here is invariant to it across twelve orders of magnitude, while every
+currency-denominated quantity scales with it exactly linearly." That answers "you invented a
+constant" without conceding anything.
+
+*Incidental result worth its own line.* Λ equals its physical value **only at the instants
+the reported layer snaps to the real one**, and overstates it by roughly 14% on average in
+between (at phi = 0.3). The coupling is not a constant that occasionally wobbles; it is a
+sawtooth that touches truth only at corrections. That is WT-024's "Λ drift is the integral of
+undelivered entropy" rendered as a picture.
+
+**What this does not settle:** whether the coupling is *measurable* in practice, and whether
+its drift means what WT-024 says it means. Both are empirical and the module claims neither.
+
+---
+
+## WT-037 · RISK · 2026-08-05 · **the largest remaining pre-print gap**
+**The manuscript asserts computational results it does not contain, from a repository it does not name.**
+
+Audited after the WT-033 edit landed. The document has, in 62,834 characters: **zero figures,
+zero results tables, zero appendices, and zero references to the code.** The strings "github",
+"repository", "appendix", "figure" and "source code" do not occur.
+
+Meanwhile the repository holds five verified modules and 58 passing tests whose results the
+text now leans on:
+
+| module | result the text uses | ledger |
+|---|---|---|
+| `cournot.py` | tatonnement instability boundary at n>=3; the corner solution *is* the marginal pair | WT-001, WT-005 |
+| `excess_demand.py` | 25 allocations, 25 demand schedules, **1** clearing interval; exact reduction to the Marshallian cross | WT-018, WT-019, WT-021 |
+| `lag.py` | lag and crisis severity scale with unobservability; volatility relocated not suppressed | WT-027, WT-028 |
+| `redistribution.py` | the base caps the reachable region; realisation is the crux | WT-033, WT-035 |
+| `lambda_sensitivity.py` | the numeraire cancels across twelve orders of magnitude | WT-036 |
+
+The text currently says things like "swept numerically over that process" with nothing for the
+reader to inspect. For a pre-print that is the difference between a synthesis essay and a
+paper: **a reviewer cannot check any of it.** It is also the cheapest remaining improvement per
+unit of effort, because every number already exists, is regenerable from
+`scripts/wt030_report.py` and `scripts/wt002_lambda_report.py`, and is defended by tests.
+
+*Recommended shape, not yet built:* a Results section carrying four or five collapsed tables
+plus the Λ scaling collapse as the one figure, and a Reproducibility note naming the repository
+and the exact test command. This does not require new science. It requires transcription and a
+decision from Jason about whether the repository goes public with the pre-print — which is the
+one genuinely open question, and it is his to answer, not a Claude's.
