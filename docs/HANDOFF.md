@@ -124,18 +124,23 @@ Recommended shape:
    Every figure already printed by the two report scripts.
 2. One figure: the Λ scaling collapse (WT-036). Two systems, wildly different units, one curve.
    A collapse is checkable in a glance; a paragraph about Buckingham pi gets skimmed.
-3. A Reproducibility note: repository, commit SHA, `./.venv/bin/python -m pytest tests/ -q`.
+3. A Reproducibility note: `github.com/jasoncbraatz/wealth-tensor`, the commit SHA, and
+   `./.venv/bin/python -m pytest tests/ -q` (58 passed).
 
-**ASK JASON — the one genuinely open question, pre-framed so it is a decision and not a
-research request.** Does the repository go public alongside the pre-print?
-   - **(a) Public repo, named in the paper (recommended).** Strongest reviewer position;
-     matches the ~97%-open-access bibliography (WT-007) and preprint-culture norms in
-     econophysics. Cost: the ledger and these handoffs would want a scrub or a private split,
-     since they contain working notes never written for an audience.
-   - **(b) Private repo, results transcribed only.** Zero exposure, but "available on request"
-     is measurably weaker.
-   - **(c) Defer** — write the Results section now with a placeholder line, decide at submission.
-     Costs nothing and unblocks the work immediately. **Do this if Jason is not around.**
+**Nothing blocks you.** The repository is **already public** —
+`github.com/jasoncbraatz/wealth-tensor`, confirmed via `gh repo view`, visibility PUBLIC — so
+the Reproducibility note can cite it today. Write the whole section without asking anyone.
+
+**ASK JASON, but only after the section exists, and it is a nice-to-have not a blocker.**
+`docs/LEDGER.md`, `docs/HANDOFF.md` and `docs/sessions/` are already world-readable and contain
+candid internal assessments ("the paper's weakest wall", "reads as ideology"). Options:
+   - **(a) Leave them public, add one README line framing `docs/` as a working lab notebook
+     (recommended).** A paper whose method insists dead ends be recorded with equal weight is
+     strengthened, not embarrassed, by a ledger that visibly does it. WT-015 and WT-016 are
+     better advertisements for the work than anything in the abstract.
+   - **(b) Split the working notes into a private companion repo.** Keeps `src/`, `tests/` and
+     `scripts/` public, which is all a reviewer actually needs.
+   - **(c) Leave it and revisit at submission.** Free, and the honest default if he is not around.
 
 ### Then, in order
 

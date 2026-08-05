@@ -752,6 +752,16 @@ unit of effort, because every number already exists, is regenerable from
 
 *Recommended shape, not yet built:* a Results section carrying four or five collapsed tables
 plus the Λ scaling collapse as the one figure, and a Reproducibility note naming the repository
-and the exact test command. This does not require new science. It requires transcription and a
-decision from Jason about whether the repository goes public with the pre-print — which is the
-one genuinely open question, and it is his to answer, not a Claude's.
+and the exact test command. This does not require new science. It requires transcription.
+
+*Correction made the same day, before it could mislead anyone:* this entry first framed the open
+question as "does the repository go public". **It already is** —
+`github.com/jasoncbraatz/wealth-tensor`, visibility PUBLIC, created S1 and confirmed via
+`gh repo view`. So citing it in the paper costs nothing and is available immediately. The
+residual question is narrower and genuinely worth asking: `docs/LEDGER.md`, `docs/HANDOFF.md`
+and `docs/sessions/` are *already world-readable* and contain candid internal assessments —
+"the paper's weakest wall", "reads as ideology", "a reviewer finds this immediately". The
+recommendation is to **leave them exactly where they are** and add one README line framing
+`docs/` as a working lab notebook. A paper whose method section insists dead ends be recorded
+with equal weight is strengthened, not embarrassed, by a public ledger that does it. But it is
+Jason's call, not a Claude's.
