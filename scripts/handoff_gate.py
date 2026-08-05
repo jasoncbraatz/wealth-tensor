@@ -78,8 +78,14 @@ def emit():
     if fm.get("gate_passed", "").lower() != "true":
         problems.append("gate_passed is not true -- walk HANDOFF-GATE.md first")
     head = sh("git", "rev-parse", "HEAD")
-    if fm.get("gh_sha") != head:
-        problems.append(f"gh_sha {fm.get('gh_sha')} != HEAD {head} -- restamp before emitting")
+    recorded = fm.get("gh_sha", "")
+    if recorded != head:
+        # Stamping necessarily moves HEAD, so gh_sha trails by exactly the stamp commit.
+        # Tolerate that and only that: the sole file changed since gh_sha must be this file.
+        drifted = [f for f in files_changed_since(recorded) if f != "docs/HANDOFF.md"]
+        if drifted or not recorded:
+            problems.append(
+                f"gh_sha {recorded} != HEAD {head}; content changed since stamp: {drifted}")
     if sh("git", "status", "--porcelain"):
         problems.append("working tree is dirty -- commit before emitting")
     body = text.split("---", 2)[-1]
