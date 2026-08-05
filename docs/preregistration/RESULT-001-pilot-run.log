@@ -1,0 +1,82 @@
+Universe: SIC 5200-5999 (pilot)
+  673 registrants ever filing in range 2013-2024
+  50/673 firms, 5 events
+  100/673 firms, 22 events
+  150/673 firms, 34 events
+  200/673 firms, 44 events
+  250/673 firms, 55 events
+  300/673 firms, 70 events
+  350/673 firms, 72 events
+  400/673 firms, 87 events
+  450/673 firms, 89 events
+  500/673 firms, 96 events
+  550/673 firms, 101 events
+  600/673 firms, 106 events
+  650/673 firms, 119 events
+
+===== pilot SIC 5200-5999 · PRIMARY (as registered) =====
+  120 events across 72 firms
+  tier                                 n   median           IQR    mean
+  PP&E                                11      5.0       4.0-6.0    5.09
+  finite-lived intangible             12      3.0       3.0-3.2    3.33
+  indefinite-lived intangible         18      5.5       4.0-8.0    6.50
+  goodwill                            79      4.0       3.0-7.0    5.15
+  Jonckheere-Terpstra  J=1860  z=-0.177  p(1-sided)=0.57041
+  Mann-Whitney t3>t0   z=-0.635  p=0.73745
+  median(t3)-median(t0) = -1.0 quarters  [95% CI -3.0, +1.0]
+  censored 0.0% · annual-attributed 42.5%
+  VERDICT: PREDICTION FAILS
+
+===== SENSITIVITY · annual-attributed charges excluded =====
+  69 events across 43 firms
+  tier                                 n   median           IQR    mean
+  PP&E                                 6      4.5       4.0-5.8    5.00
+  finite-lived intangible              6      3.5       3.0-4.0    4.00
+  indefinite-lived intangible         12      5.5       4.0-8.2    6.75
+  goodwill                            45      4.0       2.0-6.0    4.69
+  Jonckheere-Terpstra  J=489  z=-1.757  p(1-sided)=0.96053
+  Mann-Whitney t3>t0   z=-1.192  p=0.88329
+  median(t3)-median(t0) = -0.5 quarters  [95% CI -4.0, +0.5]
+  censored 0.0% · annual-attributed 0.0%
+  VERDICT: INCONCLUSIVE (underpowered)
+
+===== SENSITIVITY · right-censored events excluded =====
+  120 events across 72 firms
+  tier                                 n   median           IQR    mean
+  PP&E                                11      5.0       4.0-6.0    5.09
+  finite-lived intangible             12      3.0       3.0-3.2    3.33
+  indefinite-lived intangible         18      5.5       4.0-8.0    6.50
+  goodwill                            79      4.0       3.0-7.0    5.15
+  Jonckheere-Terpstra  J=1860  z=-0.177  p(1-sided)=0.57041
+  Mann-Whitney t3>t0   z=-0.635  p=0.73745
+  median(t3)-median(t0) = -1.0 quarters  [95% CI -3.0, +1.0]
+  censored 0.0% · annual-attributed 42.5%
+  VERDICT: PREDICTION FAILS
+
+===== SENSITIVITY · one event per firm (largest charge) =====
+  72 events across 72 firms
+  tier                                 n   median           IQR    mean
+  PP&E                                 8      4.5       3.8-6.0    4.75
+  finite-lived intangible             10      3.0       3.0-3.0    3.00
+  indefinite-lived intangible          6      3.5       2.2-7.0    4.67
+  goodwill                            48      4.0       3.0-7.0    4.96
+  Jonckheere-Terpstra  J=754  z=1.002  p(1-sided)=0.15820
+  Mann-Whitney t3>t0   z=-0.237  p=0.59379
+  median(t3)-median(t0) = -0.5 quarters  [95% CI -2.5, +1.0]
+  censored 0.0% · annual-attributed 50.0%
+  VERDICT: INCONCLUSIVE (underpowered)
+
+  drop accounting (PRE-001 s9):
+    no_sic                             0
+    sic_out_of_range                   0
+    no_revenue_tag                    61
+    insufficient_history             180
+    below_materiality                909
+    no_assets_denominator             48
+    no_deterioration_run             373
+    right_censored                     0
+    ambiguous_tier                    57
+    duplicate_restated_fact         4056
+    firms with facts fetched         672
+
+  written: /tmp/wt/wt026_pilot.json
