@@ -338,7 +338,7 @@ argument of WT-016 made concrete.
 
 ---
 
-## WT-022 · CONNECTION · 2026-08-05 · **MAJOR — reframes the whole Piketty chapter**
+## WT-022 · CONNECTION · 2026-08-05 · **WRITTEN INTO MANUSCRIPT**
 **Piketty is not wrong. He is measuring the abstraction layer.**
 
 Author's counterfactual exercise: adopt "Piketty is 100% correct, no exceptions", re-read the
@@ -357,7 +357,7 @@ guaranteed rejection.
 
 ---
 
-## WT-023 · CONNECTION · 2026-08-05
+## WT-023 · CONNECTION · 2026-08-05 · **BUILT** (`lag.py`, 10 tests)
 **Virtual wealth is a transfer function, not merely an abstraction.**
 
 The author's mechanism: virtual wealth is an abstraction of real wealth, and abstraction
@@ -385,7 +385,7 @@ structural isomorphism, three times, thirty years apart.
 
 ---
 
-## WT-024 · CONNECTION · 2026-08-05 · **unifies WT-002**
+## WT-024 · CONNECTION · 2026-08-05 · **unifies WT-002** · **WRITTEN INTO MANUSCRIPT**
 **Λ's drift is the accumulated deferred information.**
 
 WT-002 demoted the work-to-financial coefficient to a dependent variable and asserted that
@@ -398,7 +398,7 @@ measured two ways. Two chapters and three prior ledger entries collapse into one
 
 ---
 
-## WT-025 · RISK · 2026-08-05
+## WT-025 · RISK · 2026-08-05 · **ALL THREE ADDRESSED IN TEXT**
 **Three attack surfaces on the lag thesis, in order of severity.**
 
 1. **Forward-looking markets.** Efficient-markets reply: prices should already discount
@@ -419,7 +419,7 @@ more importantly a deliberate search for *disconfirming* ones.
 
 ---
 
-## WT-026 · METHOD · 2026-08-05
+## WT-026 · METHOD · 2026-08-05 · **BUILT + WRITTEN**
 **The lag is selective, not uniform — and that asymmetry is the actual mechanism.**
 
 A pure-delay model is falsified by any case where financial signals *lead* physical change,
@@ -434,3 +434,54 @@ with the *unobservability* of the underlying degradation.
 This is testable and it is where the accounting literature becomes armour rather than
 obstacle, since the categories that are hardest to observe are precisely those the accounting
 standards decline to capitalise.
+
+
+---
+
+## WT-027 · RESULT · 2026-08-05
+**Lag and crisis severity scale with unobservability. Verified.**
+
+`lag.py`. Real layer decays at an entropy rate net of maintenance. A share phi of each
+change is observable and passes to the reported layer immediately; the remainder accrues
+unrecognised and is released when the gap exceeds a threshold.
+
+Filter isolated (crisis mechanism disabled), phi from 1.0 down to 0.0:
+
+| phi | recognition lag | smoothing | deferred information |
+|----|----|----|----|
+| 1.0 | 0 | 1.000 | 0.0 |
+| 0.8 | 2 | 0.919 | 398.5 |
+| 0.5 | 12 | 0.824 | 996.2 |
+| 0.2 | 20 | 0.771 | 1593.9 |
+| 0.0 | 25 | 0.762 | 1992.4 |
+
+phi = 1 is a perfect window: zero lag, zero deferred information, coupling identically 1.
+That is what answers the forward-looking-markets objection — disclosed change passes
+through untouched, so the objection holds exactly where the model predicts no lag and has
+nothing to act on where degradation is undisclosed.
+
+Crisis frequency over 400 periods by entropy rate: retail (d=0.01) **0**, industrial
+(d=0.05) **16**, SaaS (d=0.20) **100**. The Costco-versus-zero-day contrast is a position
+in parameter space, not a rhetorical flourish.
+
+---
+
+## WT-028 · RESULT · 2026-08-05 · **corrects a stated prediction**
+**Volatility is not suppressed. It is relocated.**
+
+The "over-smoothing" prediction was wrong as stated, and the probe caught it: measured
+across the whole path, reported changes are *more* volatile than real ones, because the
+corrections dominate.
+
+The true behaviour is better than the prediction. Between corrections the reported layer
+is far smoother than the underlying (0.93 → 0.80 → 0.52 → 0.35 as phi falls), while the
+share of total reported movement occurring inside corrections rises 0.00 → 0.69 → 0.96 →
+**0.99**. At zero observability essentially every reported movement is a correction.
+
+The signature is therefore not a quiet system but one that is quiet for long intervals and
+then abruptly is not — which is a far more recognisable description of the historical
+record than uniform smoothing, and a sharper empirical target.
+
+*Method note:* the original metric measured the wrong object. Two metrics now exist —
+`variance_suppression` on inter-crisis periods, `variance_concentration` on the corrections
+— because one number could not carry both claims.
