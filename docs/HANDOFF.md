@@ -165,10 +165,20 @@ numbers are in hand and the format decision belongs with the Results section, no
 ## 6 · VERIFY GATE
 
 ```
-cd ~/repos/wealth-tensor && ./.venv/bin/python -m pytest tests/ -q      # expect 58 passed
-python3 scripts/handoff_gate.py --emit                                  # before you hand off
-bash ~/Scripts/gate-selfcheck.sh                                        # expect PASS
+cd ~/repos/wealth-tensor && ./.venv/bin/python -m pytest tests/ -q   # expect 58 passed
+git commit ...                                                       # the LAST content commit
+python3 scripts/handoff_gate.py --stamp                              # writes gh_sha = HEAD
+git commit -am "docs: stamp handoff gh_sha to HEAD"
+python3 scripts/handoff_gate.py --emit                               # blesses it
+bash ~/Scripts/gate-selfcheck.sh                                     # expect PASS
 ```
+
+**`--emit` does not stamp.** S2 assumed it did, left `gh_sha: PENDING`, and the gate cheerfully
+reported "sha matches HEAD" — because `sh()` swallowed git's error and a bad sha resolved to an
+empty diff, which looks exactly like no drift. Fixed the same session: exit codes are now
+tri-state (0 pass · 1 blocker · **2 CANNOT VERIFY, which is not a pass**), a placeholder sha is
+a blocker, and a well-formed sha absent from the clone is a 2. All three paths were exercised
+before the fix was committed.
 
 Walk `~/Desktop/downloads/HANDOFF-GATE.md` (G-A→G-AB, v2.40) at wrap. Overwrite this file; do
 not append. Trust the gate file's own header for its version, never a version quoted in prose.
