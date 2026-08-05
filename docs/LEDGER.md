@@ -505,7 +505,7 @@ Text now states the boundary explicitly and maintains it.
 
 ---
 
-## WT-030 · CONNECTION · 2026-08-05
+## WT-030 · CONNECTION · 2026-08-05 · **BUILT — REFINED BY WT-033**
 **Classify redistribution by structural parameters, not institutional origin — and the base is decisive.**
 
 What determines whether a mechanism bounds inequality in a *multiplicative* wealth process
@@ -522,9 +522,11 @@ space bound the Gini below unity", which is a question the models answer and nob
 advocacy. Also dissolves the data problem — no causal field evidence on any historical
 institution is required, because the claim is a property of a model class.
 
-*Next artifact:* `redistribution.py` — sweep (base ∈ {stock, flow}) × rate × periodicity ×
+*Superseded by WT-033:* built. The base is decisive, but through
+**realisation**, not rate — see WT-033 for the corrected claim and the numbers.
+
+*Original next-artifact note:* `redistribution.py` — sweep (base ∈ {stock, flow}) × rate × periodicity ×
 threshold over the multiplicative-additive process, and map which regions bound the Gini.
-Not yet built.
 
 ---
 
@@ -565,3 +567,111 @@ Caught only by re-measuring before editing rather than trusting the derived numb
 *Rule:* re-run `inspect_doc_structure` after every mutation and read indices from it. A
 cached snapshot is valid only for style-only operations, which do not change length. The
 cost of measuring is one call; the cost of being wrong is a corrupted manuscript.
+
+---
+
+## WT-033 · RESULT · 2026-08-05 · **refines WT-030** · `redistribution.py`, 18 tests
+**The base is decisive — but the mechanism is realisation, not rate, and the sharp claim needed rewriting.**
+
+WT-030 asserted that a levy on stock opposes the multiplicative term and a levy on flow does
+not, *regardless of rate*. Built and swept, that is **half right, and the surviving half is
+better than the original**.
+
+Multiplicative-additive process, N=800, mu=0.05, sigma=0.20, wage=0.05, T=1200. The levy is a
+pure transfer — everything collected is redistributed per capita in the same period, verified
+to machine precision, so nothing below can be a growth artefact.
+
+| levy | Gini | kappa | top 10% | bounded |
+|---|---|---|---|---|
+| none | 0.994 | — | 1.000 | **no** |
+| stock, rate 0.025 | 0.443 | 0.0250 | 0.336 | yes |
+| stock, rate 0.100 | 0.222 | 0.1000 | 0.193 | yes |
+| flow, rate 0.025 | 0.812 | 0.0025 | 0.734 | yes |
+| flow, rate 0.100 | 0.596 | 0.0102 | 0.481 | yes |
+| flow, rate **1.000** | 0.125 | 0.1026 | 0.138 | yes |
+| flow, rate 1.000, **nothing realised** | 0.994 | 0.0006 | 1.000 | **no** |
+
+**What reproduced.** At a matched rate the two bases are roughly an order of magnitude apart,
+in the predicted direction, at every rate tested. The mechanism is `kappa`, the share of
+aggregate wealth actually moved per assessment: for a stock base `kappa = rate` exactly; for a
+flow base `kappa = rate * E[eta+]`, the *gross positive* growth rate, because a levy cannot
+rebate a loss. Closed form `E[eta+] = mu*Phi(mu/sigma) + sigma*phi(mu/sigma) = 0.1073` —
+asserted in the suite, matched to 5%. So a **confiscatory** flow levy has the compressive
+budget of a **10% stock levy**, and the base sets a ceiling the rate cannot cross.
+
+**What did not.** "Regardless of rate" is false as stated. At full mark-to-market realisation
+a flow levy *does* bound the Gini; it is merely weak. Rate at 1.00 reaches Gini 0.125, which a
+stock levy reaches at rate 0.25. The reachable frontiers are `stock 0.000 < flow 0.125`, so
+the bases occupy nested regions rather than disjoint ones.
+
+**The surviving claim, which is sharper.** The decisive quantity is **realisation** — the share
+of a period's gain the base can see. The multiplicative term operates on the *stock*; a flow
+base reaches it only through whatever share is recognised as income. At `rho = 0` — the pure
+rentier whose gains accrue but are never realised — a **100% flow levy is statistically
+indistinguishable from no levy at all** (Gini 0.994 vs 0.994, top decile 1.000 in both).
+*That* is the true "regardless of rate" result, and it is a statement about what a base can
+observe rather than about how hard it squeezes. Frontier by realisation:
+`rho=1.00 → 0.125 · rho=0.25 → 0.395 · rho=0.00 → 0.994`.
+
+**Manuscript action:** replace "regardless of rate" with the realisation statement. The
+weaker claim is the more defensible one and it names a real, documented feature of every tax
+system rather than a modelling convenience. It also connects: unrealised appreciation is
+precisely wealth whose growth the reporting layer has not been asked to recognise, which is
+WT-023's deferred information wearing a different hat.
+
+**Compatibility with WT-029.** No contradiction. WT-029's claim — redistribution *of any kind*
+prevents terminal condensation — survives: every levy with a visible base is `bounded`, down
+to a 1% flow levy (Gini 0.891, but not condensing). WT-033 is about *where* it lands, not
+whether it lands. Both belong in the text; conflating them would overclaim WT-029.
+
+---
+
+## WT-034 · METHOD · 2026-08-05
+**The Gini saturates, so "the Gini stopped rising" cannot detect condensation. Measure the top share.**
+
+`is_bounded` was first written as a drift test: the Gini has settled if its mean over the last
+quarter of the path exceeds the previous quarter's by less than a tolerance. It scored the
+**unopposed** process — the one the entire module exists to contrast against — as *bounded*.
+
+The Gini of N agents is capped at `(N-1)/N`. A fully condensed economy therefore also stops
+rising: not because it reached a stationary distribution but because it ran out of headroom.
+At N=800 the unopposed process reads Gini 0.977 and *flat*, while its top decile holds 0.988
+of everything. The drift test was measuring the ceiling, not the phenomenon.
+
+Fix: `is_bounded` requires both a settled Gini **and** a top decile below 0.90. The separation
+is then unambiguous — bounded runs sit at 0.19–0.50, condensed runs at 0.99–1.00, and the
+top-share statistic is horizon-stable where the Gini is not.
+
+*Rule, and it generalises past this module:* **a summary statistic with a hard ceiling cannot
+distinguish "converged" from "saturated."** Before using one as a convergence criterion, ask
+what its maximum is and whether the failure mode you are trying to detect drives it there.
+Same family as WT-028, where the volatility metric measured the wrong object and the probe
+caught it; twice now the first-draft metric has been the defect.
+
+Kept as a standing guard, not a comment: `test_a_flat_gini_does_not_mean_a_bounded_one`
+asserts the trap explicitly, so any future simplification of `is_bounded` fails loudly
+instead of quietly re-scoring condensation as success.
+
+---
+
+## WT-035 · RESULT · 2026-08-05
+**Periodicity and threshold are trim, not structure — and a low threshold is nearly free.**
+
+Both remaining parameters of WT-030 turn out to modulate the *effective rate* rather than
+open or close a region, which is what leaves base and rate as the two structural coordinates.
+
+**Periodicity.** Holding the average rate constant at 0.02 per period, assessing every P
+periods at rate `0.02*P` moves the stationary Gini from 0.486 (P=1) to 0.456 (P=20) — a
+lumpier assessment is very slightly *stronger*, because it catches dispersion that has had
+time to accumulate. An annual assessment is therefore not a watered-down continuous one, which
+is the relevant observation for any historical system assessed on a yearly cycle.
+
+**Threshold.** Monotone and smooth, no cliff: Gini 0.443 at zero exemption rising to 0.770 at
+20x the mean of the base. The useful part is the near end. A threshold at 0.25x the mean costs
+**nothing measurable** in compression (0.444 vs 0.443) while reducing `kappa` by a quarter —
+exempting small holders removes a quarter of the assessed volume and none of the effect,
+because the compression is done by the transfers at the top of the distribution.
+
+*Why it matters:* a threshold that exempts the poor is not a concession that weakens the
+mechanism, it is close to free. Any historical levy with a low exemption floor sits in the
+barely-weakened region, and that is a measured coordinate rather than an interpretation.
