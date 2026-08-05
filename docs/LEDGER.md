@@ -1048,3 +1048,57 @@ prediction, a KAN returns the learned univariate functions themselves. For a pap
 defence is dimensional rigour and measurability, an approximator whose output can be *read* is a
 principled preference rather than a fashionable swap. Verified structurally: 33 headings and 14
 list lines byte-identical. Restore point `12jJh93VhgfOe8EQ3J23G9heQekSCdzxHTm75ut8RL6g`.
+
+---
+
+## WT-046 · METHOD · 2026-08-05 · **DECIDED — see `docs/adr/ADR-001-paper-decomposition.md`**
+**The manuscript is four papers. Not too long — too broad for its length.**
+
+7,711 words of body across **eight topics** (~950 words each), which is why the atomic unit — the
+central object — receives **280 words**. The defect is breadth, not length, and it produces every
+symptom already logged: WT-040's 76%, WT-037's absent results, WT-038's undefined first principle.
+
+Every strategic move of S2 narrowed the attack surface. This applies the same discipline at the
+level nobody had applied it: the document.
+
+**I** price formation without independent curves (`excess_demand` + `cournot`, 20 tests) ·
+**II** redistribution as a parameter space (`redistribution`, 18 tests) ·
+**III** the dual tensor and the reporting layer — *the flagship*, carries the axioms
+(`lag` + `lambda_sensitivity`, 20 tests, needs WT-026) ·
+**IV** the atomic theory: composition across scales (cites I–III).
+
+Publication order **II → III → I → IV**: II is the *rehearsal*, because Jason's stated gap is
+preprint machinery rather than science, and WT-026 proceeds in parallel so the flagship is not
+deferred. Full reasoning, evidence allocation and alternatives in the ADR. Do not re-litigate
+without reading it.
+
+**Audience, stated by Jason and load-bearing:** his three children, 8, 11 and 17. The paper is a
+stewardship artifact. Two hard consequences follow, both now decided: `docs/` **stays public** —
+a ledger in which WT-030 half-failed and was sharpened rather than defended teaches more about
+method than any conclusion the papers reach — and **`Abandoned Approaches` is promoted from a
+distinctive section to a load-bearing one**, appearing in every paper, populated from the
+DEAD-END entries. When the audience is someone learning how to think, the method IS the message.
+
+---
+
+## WT-047 · HYGIENE · 2026-08-05
+**Measured: the standard apparatus of a 2026 preprint is entirely absent, and one TODO is live in the deliverable.**
+
+Zero occurrences of: **abstract** (the document opens with a rhetorical question), **keywords**,
+**JEL codes** (an economics convention with no CS analogue — Jason last published in 1993, in CS),
+**contributions statement**, **limitations section**, **data/code availability**, **affiliation**.
+
+The code-availability gap is the expensive one. Economics has a known-poor replication record;
+this project has five modules, 58 tests and every figure regenerable from two scripts, in a
+**public** repo — and the manuscript does not mention any of it exists. That is the largest
+unexploited asset in the project and it costs one paragraph.
+
+Live placeholder in the text: *"Further entries to be migrated from the project findings ledger
+as they accumulate."* The handoff gate refuses placeholders in handoffs; the manuscript has no
+such guard. Consider one.
+
+*Deltas since 1993 worth stating once, since they are the author's self-identified blind spot:*
+preprints went from irregular to primary; reproducibility became a review criterion; an explicit
+contributions list is now expected; related work is positioning rather than survey; and
+**arXiv q-fin and econ.GN require endorsement for unaffiliated first-time submitters** — SSRN
+does not, which matters for sequencing.

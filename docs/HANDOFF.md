@@ -99,6 +99,22 @@ at orient, `lessons.py record-outcome <tag> pass` at wrap.
   mush and do not defend the original.
 - **The tone is load-bearing.** No grumpiness; humour lands the news.
 
+## 4b · THE DECISION THAT FRAMES EVERYTHING BELOW
+
+**`docs/adr/ADR-001-paper-decomposition.md` — read it before planning anything.** The manuscript
+is not one paper, it is four, and that was decided with Jason in S2 with evidence allocated
+exhaustively and without overlap. Do not re-litigate it; bring a reason the ADR does not already
+answer, or proceed.
+
+**I** price formation without independent curves · **II** redistribution as a parameter space ·
+**III** the dual tensor and the reporting layer (*the flagship*, carries the axioms, needs WT-026)
+· **IV** the atomic theory. Order: **II → III → I → IV**, and II is the rehearsal.
+
+**Audience: Jason's three children, 8, 11 and 17.** He said so at the close of S2 and it is not
+decoration — it decided two things. `docs/` stays public, and `Abandoned Approaches` is promoted
+to a load-bearing section in every paper. When the reader is someone learning how to think, the
+method is the message. Behave accordingly: the ledger is part of the deliverable now.
+
 ## 5 · MISSION — ranked, with reasons
 
 ### START HERE — **WT-026: the severe test.** Build it.
@@ -143,6 +159,16 @@ index minefield bites (L11 does not help you relocate structure, only replace te
 section's placement is a judgement call that is better made with Jason present and with WT-026's
 result in hand.
 
+### 2b — **Draft Paper II** (redistribution). It is the rehearsal, and it can run alongside WT-026.
+
+`redistribution.py`, 18 tests, WT-033/034/035, a sharp counterintuitive result, no philosophical
+scaffolding, and the friendliest venue. Jason's self-identified gap is preprint machinery, not
+science — so learn abstracts, keywords, JEL codes, code-availability statements and the
+endorsement process on the paper where a mistake costs least. Per WT-047 the manuscript currently
+has **none** of that apparatus; Paper II is where the template gets built for the other three.
+
+`verify: ls docs/papers/` — absent means still live.
+
 ### 3 — **Attribution pass (WT-044).** Cheapest fix-to-value ratio in the document.
 
 Zero occurrences in the body of: **Mises**, **malinvestment**, **Godley**, **Lavoie**, **Farmer**,
@@ -165,7 +191,8 @@ may hold content the canonical copy lost.
 
 ### 6 — **Language remaster.** His job, explicitly. Do not do it for him.
 
-**ASK JASON when the moment is right, not as a blocker.** `docs/` is world-readable (the repo is
+**No open ASKs.** The `docs/`-stays-public question is **decided** (ADR-001) — keep it, add one
+README line framing `docs/` as a working lab notebook. Previously-open framing: `docs/` is world-readable (the repo is
 public at `github.com/jasoncbraatz/wealth-tensor`) and contains candid internal assessments.
 Recommendation: leave it and add one README line framing `docs/` as a working lab notebook — a
 paper whose method insists dead ends be recorded with equal weight is strengthened by a ledger
