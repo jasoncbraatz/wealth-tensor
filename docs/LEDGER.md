@@ -485,3 +485,83 @@ record than uniform smoothing, and a sharper empirical target.
 *Method note:* the original metric measured the wrong object. Two metrics now exist —
 `variance_suppression` on inter-crisis periods, `variance_concentration` on the corrections
 — because one number could not carry both claims.
+
+---
+
+## WT-029 · RISK · 2026-08-05 · **RESOLVED IN TEXT**
+**The redistribution section read as prescription. It is now positive, not normative.**
+
+The zakat/waqf/sadaqah passage entered the manuscript circa 2014 as an *observation* about
+what those systems appeared structurally designed to do. As written it read as advocacy for
+government intervention — which is the fastest available route to having a technical paper
+dismissed as ideology, and the first thing an Austrian-school reader would fire at.
+
+The defect was never the content. It was the missing positive/normative boundary. The
+finding is a property of a model class: within kinetic exchange models, continuous
+redistribution *of any kind* prevents terminal condensation. The historical systems are
+**instances demonstrating the property is implementable**, not recommendations.
+
+Text now states the boundary explicitly and maintains it.
+
+---
+
+## WT-030 · CONNECTION · 2026-08-05
+**Classify redistribution by structural parameters, not institutional origin — and the base is decisive.**
+
+What determines whether a mechanism bounds inequality in a *multiplicative* wealth process
+is not where it came from but its parameters: base, rate, periodicity, threshold.
+
+**The base does the work.** A levy on *flow* (income received in a period) does not directly
+oppose the multiplicative term, because that term operates on the *stock*. A levy on stock
+does. Zakat is analytically interesting on exactly this ground — assessed on qualifying
+wealth held above a threshold across a full year, not on income received — which places it
+in a different region of the parameter space from an income tax **regardless of rate**.
+
+*Why it matters:* converts "which system do you favour" into "which regions of the parameter
+space bound the Gini below unity", which is a question the models answer and nobody can call
+advocacy. Also dissolves the data problem — no causal field evidence on any historical
+institution is required, because the claim is a property of a model class.
+
+*Next artifact:* `redistribution.py` — sweep (base ∈ {stock, flow}) × rate × periodicity ×
+threshold over the multiplicative-additive process, and map which regions bound the Gini.
+Not yet built.
+
+---
+
+## WT-031 · CONNECTION · 2026-08-05 · **the counter-factual produced an ally**
+**Austrian business cycle theory has the same architecture as the two-layer lag model.**
+
+The author's adversarial exercise — "what would the Austrian school shoot at?" — surfaced
+convergence rather than conflict, in two places:
+
+1. **Hayek's knowledge problem.** "The Use of Knowledge in Society" holds that prices
+   transmit dispersed information and that the characteristic failure is *informational*,
+   not moral. WT-023's reporting layer as an information-deferring filter is a formalisation
+   of precisely that concern.
+2. **Malinvestment (Mises 1940).** Misallocated capital accumulates *unrecognised* through
+   the boom and is revealed and liquidated in the bust. Structurally identical to WT-027:
+   unrecognised accumulation followed by discontinuous correction.
+
+**Different causes, same architecture.** Austrians assign credit expansion; this framework
+assigns undisclosed physical degradation. Stated as a structural analogy, not an identity —
+overclaiming here would be easy and fatal.
+
+*Why it matters most:* a single mechanism that reproduces a phenomenon which mutually
+hostile traditions each describe in their own vocabulary is worth far more than alignment
+with any one of them. It makes the framework non-tribal, which is rare and defensible.
+
+---
+
+## WT-032 · METHOD · 2026-08-05
+**Never infer document indices by arithmetic. Measure them.**
+
+While placing the WT-029 edit, indices were computed by adding a known insertion length to a
+cached structure snapshot. The arithmetic was wrong by 6,944 characters — the cached snapshot
+had already been taken *after* that insertion, so the offset double-counted. Applying it
+would have written four paragraphs into the middle of the bibliography.
+
+Caught only by re-measuring before editing rather than trusting the derived number.
+
+*Rule:* re-run `inspect_doc_structure` after every mutation and read indices from it. A
+cached snapshot is valid only for style-only operations, which do not change length. The
+cost of measuring is one call; the cost of being wrong is a corrupted manuscript.
