@@ -1,0 +1,93 @@
+Universe: SIC 5200-5999 (pilot)
+  673 registrants ever filing in range 2013-2024
+Instrument: PRE-002 peak-to-charge · signal=revenue · alpha=0.025
+  50/673 firms, 9 events
+  100/673 firms, 34 events
+  150/673 firms, 59 events
+  200/673 firms, 81 events
+  250/673 firms, 95 events
+  300/673 firms, 112 events
+  350/673 firms, 122 events
+  400/673 firms, 144 events
+  450/673 firms, 160 events
+  500/673 firms, 175 events
+  550/673 firms, 192 events
+  600/673 firms, 228 events
+  650/673 firms, 242 events
+
+===== pilot SIC 5200-5999 · PRIMARY (PRE-002 peak-to-charge) =====
+  244 events across 121 firms
+  tier                                 n   median           IQR    mean
+  PP&E                                21      5.0       3.0-9.0    7.05
+  finite-lived intangible             34      4.0       1.0-8.0    5.71
+  indefinite-lived intangible         34      5.5       1.2-9.0    6.12
+  goodwill                           155      5.0       1.0-9.0    5.93
+  Jonckheere-Terpstra  J=8032  z=-0.290  p(1-sided)=0.61413
+  Mann-Whitney t3>t0   z=-0.822  p=0.79458
+  median(t3)-median(t0) = +0.0 quarters  [95% CI -4.0, +2.0]
+  censored 7.8% · annual-attributed 49.6%
+  VERDICT: PREDICTION FAILS
+
+===== SENSITIVITY · annual-attributed charges excluded =====
+  123 events across 77 firms
+  tier                                 n   median           IQR    mean
+  PP&E                                 8      9.5      7.0-15.2   10.00
+  finite-lived intangible             13      2.0       1.0-8.0    5.23
+  indefinite-lived intangible         15      9.0      5.5-10.5    8.33
+  goodwill                            87      5.0       2.0-8.0    5.98
+  Jonckheere-Terpstra  J=1492  z=-1.559  p(1-sided)=0.94048
+  Mann-Whitney t3>t0   z=-1.748  p=0.95979
+  median(t3)-median(t0) = -4.5 quarters  [95% CI -11.5, +4.0]
+  censored 10.6% · annual-attributed 0.0%
+  VERDICT: INCONCLUSIVE (underpowered)
+
+===== SENSITIVITY · right-censored events excluded =====
+  225 events across 109 firms
+  tier                                 n   median           IQR    mean
+  PP&E                                20      5.0       2.8-9.2    6.95
+  finite-lived intangible             28      2.5       1.0-5.0    3.96
+  indefinite-lived intangible         30      5.0       1.0-8.8    5.73
+  goodwill                           147      5.0       1.0-8.0    5.52
+  Jonckheere-Terpstra  J=6922  z=0.402  p(1-sided)=0.34374
+  Mann-Whitney t3>t0   z=-0.947  p=0.82812
+  median(t3)-median(t0) = +0.0 quarters  [95% CI -5.0, +2.5]
+  censored 0.0% · annual-attributed 51.1%
+  VERDICT: PREDICTION FAILS
+
+===== SENSITIVITY · one event per firm (largest charge) =====
+  121 events across 121 firms
+  tier                                 n   median           IQR    mean
+  PP&E                                15      5.0       2.0-8.0    6.53
+  finite-lived intangible             16      4.0       1.0-8.8    6.25
+  indefinite-lived intangible          6      7.0       3.5-9.8    6.67
+  goodwill                            84      6.0       2.0-9.0    6.21
+  Jonckheere-Terpstra  J=1832  z=0.359  p(1-sided)=0.35975
+  Mann-Whitney t3>t0   z=0.275  p=0.39155
+  median(t3)-median(t0) = +1.0 quarters  [95% CI -3.0, +4.0]
+  censored 11.6% · annual-attributed 47.1%
+  VERDICT: PREDICTION FAILS
+
+  NEGATIVE CONTROL (tier labels permuted, lag distribution held fixed):
+    null z: mean +0.007, sd 1.025 over 1000 draws   (must be ~0 +/- ~1 or nothing here is reportable)
+    observed z -0.290 -> empirical p = 0.5900   (does not rely on the normal approximation)
+  POWER (what this design could have detected, at these sizes and this spread):
+     0.5 quarters per tier -> power 0.65
+     1.0 quarters per tier -> power 0.95
+     2.0 quarters per tier -> power 1.00
+     3.0 quarters per tier -> power 1.00
+
+  drop accounting (PRE-001 s9).  NOTE: duplicate_restated_fact counts SUPERSEDED
+  FACTS replaced by a later filing, not events dropped -- restatement is routine.
+    no_sic                             0
+    sic_out_of_range                   0
+    no_revenue_tag                    61
+    insufficient_history             429
+    below_materiality                909
+    no_assets_denominator             48
+    no_deterioration_run               0
+    right_censored                    19
+    ambiguous_tier                    57
+    duplicate_restated_fact         4056
+    firms with facts fetched         672
+
+  written: /tmp/wt/p2_pilot.json

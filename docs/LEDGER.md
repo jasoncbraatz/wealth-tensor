@@ -425,8 +425,14 @@ more importantly a deliberate search for *disconfirming* ones.
 
 ---
 
-## WT-026 · METHOD · 2026-08-05 · **BUILT + WRITTEN**
+## WT-026 · METHOD · 2026-08-05 · **THEORY BUILT + WRITTEN (`lag.py` φ) · EMPIRICAL TEST RUN S3 AND FAILED — see WT-048**
 **The lag is selective, not uniform — and that asymmetry is the actual mechanism.**
+
+> **Header corrected S3.** This entry read `BUILT + WRITTEN`, which was true of the *theoretical*
+> asymmetry — φ in `lag.py`, written into the manuscript — and false of the *empirical* severe
+> test, which was the START HERE of two consecutive handoffs. Anyone reading the ledger without
+> the handoff would have concluded WT-026 was finished. Two claims were living under one number;
+> they now have two. The empirical half is WT-048.
 
 A pure-delay model is falsified by any case where financial signals *lead* physical change,
 and such cases plainly exist (markets price an announced technology transition before the
@@ -1102,3 +1108,139 @@ preprints went from irregular to primary; reproducibility became a review criter
 contributions list is now expected; related work is positioning rather than survey; and
 **arXiv q-fin and econ.GN require endorsement for unaffiliated first-time submitters** — SSRN
 does not, which matters for sequencing.
+
+---
+
+## WT-048 · RESULT · 2026-08-05 · **the severe test ran and the prediction LOST** · PRE-001, PRE-002, RESULT-001, RESULT-002
+**Recognition lag does not scale with GAAP-assigned unobservability. Registered in advance, tested twice, replicated in a second sector, and refuted with power.**
+
+WT-043 settled that what escapes the Odum trap is a risky prediction, not prose. The prediction was
+registered at commit `9722342` **before any lag was computed**, and the git ordering of that commit
+against the result commit is the only reason the word "prediction" applies to it.
+
+**The claim.** Lag between the onset of deterioration and its accounting recognition increases
+monotonically along an observability ladder that **US GAAP supplies and we did not**: PP&E
+(scheduled depreciation, ASC 360) → finite-lived intangibles (scheduled amortisation, ASC 350-30)
+→ indefinite-lived intangibles (annual test only) → goodwill (annual test only, ASC 350-20).
+Neoclassical finance predicts no gradient. The institutional prior ran *against* us and was
+registered as doing so: goodwill is the only tier standard-setters forced onto a mandatory annual
+calendar, and PP&E has no scheduled impairment test at all.
+
+**The result — four registered runs, four failures.**
+
+| registration | universe | n events | JT z | empirical p | median t3 − t0 |
+|---|---|---|---|---|---|
+| PRE-001 streak | retail 5200–5999 | 120 | −0.177 | — | **−1.0 q** |
+| PRE-001 streak | computer svcs 7370–7379 | 202 | +0.634 | — | 0.0 q |
+| PRE-002 peak | retail | 244 | −0.290 | 0.590 | 0.0 q |
+| PRE-002 peak | computer svcs | 444 | −0.095 | 0.520 | 0.0 q |
+
+**And the null has teeth, which is the part that took the work.** PRE-002's design detects a
+one-quarter-per-tier gradient with power **0.95** (retail) and **1.00** (computer services) at
+α = 0.025. The label-permutation control returns null *z* of mean +0.007 / sd 1.025 and
+−0.002 / 1.000 — the pipeline cannot manufacture a gradient, and the empirical p-values agree with
+the parametric ones despite tier sizes of 21/34/34/155. This is not an absence of evidence. Over
+the effect sizes the framework needs, it is evidence of absence.
+
+**The stopping rule fired.** PRE-002 §5 was written before its result: if it fails, the line stops.
+It failed and it stopped. There is no third instrument, because a hypothesis needing one on the
+same data is a hypothesis being fitted.
+
+**What this does NOT establish.** That the two-layer model is refuted. A failed test refutes a
+*conjunction* — theory, instrument, bridge — and which link broke is not settled by a p-value.
+Quine–Duhem is the paper's own stated caution (WT-025) and does not get to apply only when the
+result is inconvenient. Candidates, all post-hoc and none admissible as evidence, in
+RESULT-002 §4.
+
+**The Odum verdict is unchanged by the direction of the answer, and this is the entry's point.**
+Emergy's fatal defect was never that its predictions failed — it was that it *made none*. This
+framework registered one in public and lost it. **The trap is escaped by betting, not by winning.**
+A theory that has lost a stated bet is falsifiable, and that is the entire difference.
+
+---
+
+## WT-049 · METHOD · 2026-08-05 · **the most useful thing the failure produced** · post-hoc, not evidence
+**A model parameter and a measurable that share a name may not share a meaning — and the bridge between them is a proposition nobody wrote down.**
+
+`lag.py`'s φ is the observability **of degradation**. PRE-001 measured the observability **of the
+accounting treatment** — whether an asset class carries an amortisation schedule. The registration
+treated these as the same quantity and never said so out loud, because the identification felt
+like a definition rather than a claim.
+
+They may not merely differ; they may run *opposite*. Goodwill has no schedule, but its impairment
+is triggered by conspicuously public signals — a share-price fall, a missed segment, a lost
+contract. The physical condition of a distribution centre is on a schedule and is visible to
+essentially nobody outside the firm. On that reading the ladder is not a φ gradient at all.
+
+**This is WT-038's type error in a second costume.** There, a *structure* was being asked to do a
+*proposition's* work and no amount of rewording could promote it. Here, a model parameter was
+matched to a world quantity by name. The general rule, and it is worth more than the failed test:
+**the bridge from a model's parameter to its measurable is itself a proposition with a stated
+domain, and it must be written down and defended before it is measured — not assumed because the
+two things are called the same word.**
+
+Registered rule for this project, from here: **any pre-registration must state its bridge
+assumption explicitly, as a numbered proposition a competent critic could deny**, alongside the
+prediction. PRE-001 had a tier table and no bridge proposition. That is now a defect a
+pre-registration can be rejected for.
+
+*Status: conjecture. If it is ever tested it is registered fresh, from scratch, and it may not be
+cited as though the failure of PRE-001/002 supported it.*
+
+---
+
+## WT-050 · METHOD · 2026-08-05 · **the instrument, not the hypothesis, was the binding constraint the first time**
+**An unbroken-streak onset rule measures the volatility of the signal, not the phenomenon — and the tell was zero censoring.**
+
+PRE-001 dated onset as the start of an unbroken run of YoY revenue declines. Symptoms, all visible
+in the drop accounting before any theory was invoked:
+
+- **zero censoring in 322 events across two universes.** Not one reached the 20-quarter cap;
+- **69 % of lags ≤ 6 quarters**, piled at 2–4, observed maximum 15;
+- **1,047 material charges discarded** for having no qualifying run — three to five times the
+  number retained.
+
+A streak is terminated by the *noise* of the signal, not by the phenomenon. And the discards were
+not random: an event survived only if the firm happened to be in an unbroken decline, which
+preferentially retains firms whose deterioration was **already visible** — the exact opposite of
+the regime the hypothesis concerns.
+
+Replacing it with the pre-charge peak in trailing-twelve-month revenue doubled retention
+(322 → 688), took censoring to 8–14 %, and widened the IQRs to the registered range.
+
+**The generalisable tell, and it is cheap: if a duration measure never hits its own cap, the cap
+is not what is binding — something in the instrument is.** Same family as WT-034 (a saturating
+statistic cannot detect convergence) and WT-028 (the first-draft metric measured the wrong object).
+That is now three times in this project that the first-draft measurement was the defect. **Budget
+for it: the first metric is a draft, and the way to find out is to ask what would have to be true
+for the measure to reach its extremes, and then check whether anything ever does.**
+
+---
+
+## WT-051 · HYGIENE · 2026-08-05 · **verified against current documentation, not recalled**
+**arXiv needs an endorsement; SSRN does not — but SSRN's rejections are final, unexplained and unappealable, which inverts the naive sequencing argument.**
+
+WT-047 recorded that arXiv q-fin and econ.GN require endorsement for unaffiliated first-time
+submitters and that SSRN does not. Both confirmed 2026-08-05 against the live documentation.
+**One fact was missing and it changes the reasoning:** SSRN states that *"rejection decisions are
+final. We do not provide individualized reasons for each rejection"* and that it *"does not
+reconsider decisions to reject submissions."*
+
+So the two venues are not "hard gate" versus "easy gate". They are:
+
+- **arXiv** — a gate on the way in (find one endorser, who is asked only whether the paper belongs
+  in the category, not whether it is correct), and a visible process on the way out.
+- **SSRN** — no gate on the way in, and on the way out a **silent, permanent, uninstructive**
+  rejection.
+
+**Consequence for ADR-001's ordering, which survives but for a second and better reason.** Paper II
+being the "rehearsal" cannot mean treating its submission as a cheap draw — SSRN gives no feedback
+and no second attempt. Its rehearsal value is in **assembling the apparatus**, not in experimenting
+with the submission. And the endorsement ask for Paper III gets materially easier once a paper
+already exists in public with a clean apparatus and a public test suite, because the endorser is
+being asked a *category* question, not a quality one. II then III is right; the reason is now
+firmer than "SSRN is easier."
+
+Captured in `docs/papers/PREPRINT-CHECKLIST.md` with sources, so the next session re-verifies
+rather than re-researches.
+

@@ -1,0 +1,102 @@
+Universe: SIC 7370-7379 (replication)
+  1223 registrants ever filing in range 2013-2024
+Instrument: PRE-002 peak-to-charge · signal=revenue · alpha=0.025
+  100/1223 firms, 39 events
+  150/1223 firms, 77 events
+  200/1223 firms, 92 events
+  250/1223 firms, 118 events
+  300/1223 firms, 139 events
+  350/1223 firms, 156 events
+  400/1223 firms, 171 events
+  450/1223 firms, 183 events
+  500/1223 firms, 195 events
+  550/1223 firms, 219 events
+  600/1223 firms, 228 events
+  650/1223 firms, 247 events
+  700/1223 firms, 252 events
+  750/1223 firms, 267 events
+  800/1223 firms, 284 events
+  850/1223 firms, 315 events
+  900/1223 firms, 351 events
+  950/1223 firms, 358 events
+  1000/1223 firms, 379 events
+  1050/1223 firms, 400 events
+  1100/1223 firms, 416 events
+  1150/1223 firms, 432 events
+
+===== replication SIC 7370-7379 · PRIMARY (PRE-002 peak-to-charge) =====
+  444 events across 190 firms
+  tier                                 n   median           IQR    mean
+  PP&E                                34      5.0       1.2-9.8    6.62
+  finite-lived intangible            102      4.5      1.2-10.0    6.12
+  indefinite-lived intangible         46      6.0      2.2-11.0    6.85
+  goodwill                           262      5.0      1.0-10.0    6.46
+  Jonckheere-Terpstra  J=28574  z=-0.095  p(1-sided)=0.53774
+  Mann-Whitney t3>t0   z=-0.123  p=0.54881
+  median(t3)-median(t0) = +0.0 quarters  [95% CI -4.0, +2.5]
+  censored 14.2% · annual-attributed 35.8%
+  VERDICT: PREDICTION FAILS
+
+===== SENSITIVITY · annual-attributed charges excluded =====
+  285 events across 127 firms
+  tier                                 n   median           IQR    mean
+  PP&E                                21      3.0       1.0-9.0    5.52
+  finite-lived intangible             53      5.0      1.0-11.0    6.51
+  indefinite-lived intangible         24      4.5       1.0-9.5    6.21
+  goodwill                           187      5.0      1.0-10.0    6.51
+  Jonckheere-Terpstra  J=11037  z=0.643  p(1-sided)=0.26021
+  Mann-Whitney t3>t0   z=1.195  p=0.11600
+  median(t3)-median(t0) = +2.0 quarters  [95% CI -5.0, +5.0]
+  censored 14.4% · annual-attributed 0.0%
+  VERDICT: PREDICTION FAILS
+
+===== SENSITIVITY · right-censored events excluded =====
+  381 events across 171 firms
+  tier                                 n   median           IQR    mean
+  PP&E                                28      3.0       1.0-7.0    4.71
+  finite-lived intangible             86      4.0       1.0-7.0    4.85
+  indefinite-lived intangible         38      4.5       2.0-8.8    5.84
+  goodwill                           229      4.0       1.0-7.0    5.21
+  Jonckheere-Terpstra  J=21108  z=0.312  p(1-sided)=0.37766
+  Mann-Whitney t3>t0   z=0.348  p=0.36410
+  median(t3)-median(t0) = +1.0 quarters  [95% CI -3.0, +3.0]
+  censored 0.0% · annual-attributed 36.0%
+  VERDICT: PREDICTION FAILS
+
+===== SENSITIVITY · one event per firm (largest charge) =====
+  190 events across 190 firms
+  tier                                 n   median           IQR    mean
+  PP&E                                14      4.0       1.0-7.0    4.93
+  finite-lived intangible             38      4.0       1.0-7.8    5.11
+  indefinite-lived intangible         10      7.5      3.0-11.2    7.80
+  goodwill                           128      4.5      1.0-10.0    6.33
+  Jonckheere-Terpstra  J=4850  z=0.995  p(1-sided)=0.15993
+  Mann-Whitney t3>t0   z=1.000  p=0.15856
+  median(t3)-median(t0) = +0.5 quarters  [95% CI -3.0, +4.0]
+  censored 11.1% · annual-attributed 41.6%
+  VERDICT: PREDICTION FAILS
+
+  NEGATIVE CONTROL (tier labels permuted, lag distribution held fixed):
+    null z: mean -0.002, sd 1.000 over 1000 draws   (must be ~0 +/- ~1 or nothing here is reportable)
+    observed z -0.095 -> empirical p = 0.5200   (does not rely on the normal approximation)
+  POWER (what this design could have detected, at these sizes and this spread):
+     0.5 quarters per tier -> power 0.87
+     1.0 quarters per tier -> power 1.00
+     2.0 quarters per tier -> power 1.00
+     3.0 quarters per tier -> power 1.00
+
+  drop accounting (PRE-001 s9).  NOTE: duplicate_restated_fact counts SUPERSEDED
+  FACTS replaced by a later filing, not events dropped -- restatement is routine.
+    no_sic                             0
+    sic_out_of_range                   0
+    no_revenue_tag                   125
+    insufficient_history             793
+    below_materiality                591
+    no_assets_denominator             72
+    no_deterioration_run               0
+    right_censored                    63
+    ambiguous_tier                    94
+    duplicate_restated_fact         5728
+    firms with facts fetched        1218
+
+  written: /tmp/wt/p2_repl.json
