@@ -1,6 +1,6 @@
 ---
 project: wealth-tensor
-gh_sha: c43c4846da447c4092843fa1a3700b86a5d565a9
+gh_sha: 83e28f1ba78fdd14c32bf5c35642ed844c928ed6
 updated: 2026-08-05
 session: S3
 gate_passed: true
