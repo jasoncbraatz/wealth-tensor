@@ -84,17 +84,22 @@ def tatonnement(a: float, b: float, c, damping: float = 1.0,
     c = np.asarray(c, dtype=float)
     n = c.size
     q = np.zeros(n)
-    for i in range(max_iter):
-        Q_minus = q.sum() - q
-        target = np.maximum(0.0, (a - c - b * Q_minus) / (2 * b))
-        q_new = q + damping * (target - q)
-        if not np.all(np.isfinite(q_new)):
-            raise RuntimeError(f"tatonnement diverged at iteration {i}")
-        if np.max(np.abs(q_new - q)) < tol:
-            out = _summarise(a, b, c, q_new)
-            out["iterations"] = i + 1
-            return out
-        q = q_new
+    # Overflow here is not an error condition to be warned about -- it IS divergence, and
+    # divergence is a documented outcome of this function that the isfinite check below
+    # detects and reports. Left unsuppressed, numpy warns about an intermediate the very
+    # next line already handles, which puts a RuntimeWarning in a passing test suite.
+    with np.errstate(over="ignore", invalid="ignore"):
+        for i in range(max_iter):
+            Q_minus = q.sum() - q
+            target = np.maximum(0.0, (a - c - b * Q_minus) / (2 * b))
+            q_new = q + damping * (target - q)
+            if not np.all(np.isfinite(q_new)):
+                raise RuntimeError(f"tatonnement diverged at iteration {i}")
+            if np.max(np.abs(q_new - q)) < tol:
+                out = _summarise(a, b, c, q_new)
+                out["iterations"] = i + 1
+                return out
+            q = q_new
     raise RuntimeError(f"tatonnement did not converge in {max_iter} iterations")
 
 

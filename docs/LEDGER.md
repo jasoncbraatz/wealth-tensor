@@ -1671,3 +1671,103 @@ the attack, not in its verdict.
 *Standing amendment to the library-search procedure (HANDOFF L24):* search by **title**, treat a null
 as "not found in the indexed subset", and **ask Jason before removing a citation on the strength of
 one.**
+
+---
+
+## WT-063 · RESULT · 2026-08-10 · **the allocation cancels from the DIFFERENCE, identically — not just at the crossing** · session wealthTensor-06
+
+**Paper I's central claim was being made one step weaker than the code supports, and writing its
+regeneration script is what exposed the gap.**
+
+WT-018 reported the experiment as *the schedules move, the crossing does not*: 25 allocations of the
+same c(m) and the same S give **25 distinct demand schedules** and **1 distinct clearing interval**.
+From that pair a reader is invited to *infer* that the schedules cannot be independent equations —
+two things that both move under a perturbation which leaves the equilibrium fixed are not free to
+vary separately.
+
+The inference is unnecessary. Measured on 399 interior grid points with the ties excluded:
+
+| object | distinct values over 25 allocations |
+|---|---|
+| demand schedule D(p) | **25** |
+| supply schedule S(p) | **25** |
+| **excess demand z(p) = D(p) − S(p)** | **1** |
+
+and that one function equals `#{i : m_i > p} − S` **exactly, at every grid point**. The reason is a
+one-line partition argument and it is not asymptotic, statistical or seed-dependent:
+
+> The S holders split at any price p into those with m_i > p and those with m_i < p. So
+> S(p) = #{holders, m_i < p} = S − #{holders, m_i > p}, and
+> D(p) − S(p) = #{non-holders, m_i > p} − S + #{holders, m_i > p} = **#{m_i > p} − S.**
+
+*Why it matters, and it is the difference between a good paper and a sharp one.* "The curves are not
+independent" is an inference from two measurements. **"The allocation cancels from their difference
+identically" is an algebraic fact about the construction**, and it says something strictly stronger:
+the decomposition of z into a supply half and a demand half carries **no economic content whatever**.
+Only z is structural. D and S are a bookkeeping choice about which side of the ledger to write each
+agent on, and the textbook draws them as if the choice were data.
+
+This also gives the reduction result (WT-019) its proper shape. The Marshallian cross is a valid
+snapshot **because** it reads the zero of z correctly; it fails as a comparative static **because**
+it treats a bookkeeping split as two perturbable objects. Same theorem, both directions, one line.
+
+Pinned by `test_excess_demand_is_identically_invariant_to_the_allocation`, which asserts all three
+counts (25 / 25 / 1) *and* the closed form, so a future simplification cannot quietly weaken it back
+to the crossing-only claim.
+
+**A tie convention worth stating, because it cost twenty minutes and looked like a result.** The
+first run used a coarse 12-point grid spanning `[M.min(), M.max()]` and reported **4** distinct
+excess-demand schedules, which read as a partial invariance and nearly went into the paper as one.
+Both endpoints are themselves data points, and `demand_at`/`supply_at` use strict inequalities, so at
+p = min(m) the minimum agent is counted by neither — and whether that agent happens to hold a unit
+varies by allocation. Two endpoints × two holding states = the 4. **It was a boundary convention, not
+an economic effect.** The grid now excludes any point within 1e-9 of an m_i, in the script and in the
+test, with the reason written next to it.
+
+---
+
+## WT-064 · RESULT · 2026-08-10 · **the damping that rescues Cournot tâtonnement vanishes like 4/n, so the repair needs exactly what the model denies** · session wealthTensor-06
+
+**WT-005 established the instability. This is the sharper form of it, and it was found by a test
+failing for a real reason.**
+
+WT-005: the undamped best-response map has linearised gain (n−1)/2 — stable at n = 2, marginal at
+n = 3, non-convergent beyond — and the standing gloss was *"damping rescues convergence, but damping
+is an inertia assumption the original model does not contain."* True, and it undersells the point.
+
+Writing Paper I's regeneration script extended the existing test's n ∈ {3, 4, 6} to n = 10 at the
+same damping 0.4 the test uses, and it **failed**. Not a numerical artefact. Damped, q ← q + d(BR(q) − q)
+has linearised gain |1 − d(n+1)/2|, so the process is stable **iff d < 4/(n+1)**. Measured on a 0.02
+grid, the boundary is bracketed at every n tested:
+
+| n | 4/(n+1) | largest d converging | smallest d failing |
+|---|---|---|---|
+| 2 | 1.3333 | 1.32 | 1.34 |
+| 3 | 1.0000 | 0.98 | 1.00 |
+| 4 | 0.8000 | 0.78 | 0.80 |
+| 6 | 0.5714 | 0.56 | 0.58 |
+| 10 | 0.3636 | 0.36 | 0.38 |
+| 20 | 0.1905 | 0.18 | 0.20 |
+
+**The threshold is not a constant to be chosen once. It vanishes like 4/n.**
+
+*Why it matters.* The damping repair is usually treated as a technical patch — firms adjust
+sluggishly, convergence returns, move on. But the sluggishness required is **a function of n**, so
+each firm must know how many rivals it has and condition its own adjustment speed on that number.
+Cournot's dynamic is built on the expectation that rivals hold output constant; the repair for its
+instability demands that every firm track the size of the field and slow itself in proportion.
+**The fix requires precisely the information the assumption denies.** That is a structural claim
+about the model (WT-056) with no expiry date, and it is stronger than "damping is an extra
+assumption" because it says *which* assumption and *how much* of it — a quantity that grows without
+bound as the market gets more competitive, which is the direction the model is usually defended in.
+
+Pinned by `test_the_damping_that_rescues_tatonnement_shrinks_like_4_over_n`. The pre-existing
+`test_tatonnement_stability_boundary` now states, as an assertion rather than a comment, *why* its
+damping of 0.4 works for the three n it tests: 0.4 < 4/(n+1) holds only while n < 9. That trio was
+never arbitrary; nothing recorded that it was not.
+
+**Cleared on the way past (BUG SPRAY).** `tatonnement` overflowed to `inf` on the genuinely divergent
+branch, one line before its own `isfinite` guard caught it and raised — putting a numpy
+`RuntimeWarning` into a fully passing test suite. Divergence is a documented outcome of that function,
+not a surprise, so the loop is now wrapped in `np.errstate(over="ignore", invalid="ignore")` with the
+`isfinite` check left in place as the real guard, and the reason written above it. Suite is clean.

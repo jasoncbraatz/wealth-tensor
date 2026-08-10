@@ -59,16 +59,64 @@ def test_price_approaches_marginal_cost_as_n_grows():
 
 
 def test_tatonnement_stability_boundary():
-    """Undamped simultaneous adjustment: stable at n=2, non-convergent at n>=3."""
+    """Undamped simultaneous adjustment: stable at n=2, non-convergent at n>=3.
+
+    NOTE the damping used below is 0.4 and the n tested are 3, 4 and 6. That is not an
+    arbitrary trio: 0.4 rescues convergence only while 0.4 < 4/(n+1), i.e. n < 9. Adding
+    n = 10 to this list fails, and it fails for a real reason rather than a numerical one
+    -- see test_the_damping_that_rescues_tatonnement_shrinks_like_4_over_n.
+    """
     c2 = np.full(2, 10.0)
     assert cn.tatonnement(A, B, c2, damping=1.0)["iterations"] > 0
 
     for n in [3, 4, 6]:
+        assert 0.4 < 4.0 / (n + 1)           # the reason 0.4 works here, stated
         with pytest.raises(RuntimeError, match="did not converge"):
             cn.tatonnement(A, B, np.full(n, 10.0), damping=1.0, max_iter=5000)
         # damping rescues it, and it lands on the analytic point
         damped = cn.tatonnement(A, B, np.full(n, 10.0), damping=0.4)
         assert np.allclose(damped["q"], cn.closed_form(A, B, np.full(n, 10.0))["q"], atol=1e-6)
+
+
+def test_the_damping_that_rescues_tatonnement_shrinks_like_4_over_n():
+    """The rescue is n-dependent, and that is the paper's point rather than a footnote.
+
+    The best-response map has linearised gain (n-1)/2. Damped, q <- q + d(BR(q) - q), the
+    gain becomes |1 - d(n+1)/2|, so the process is stable iff
+
+        d < 4/(n+1)
+
+    The threshold is therefore not a constant to be chosen once: it vanishes like 4/n.
+    Each firm must slow its own adjustment in proportion to the number of rivals it has,
+    which means rescuing Cournot's adjustment process requires every firm to know n and
+    condition on it -- more information than the static expectation the process is built
+    on grants them. The repair needs precisely what the model denies.
+
+    This is asserted as a bracket rather than an equality because convergence is measured
+    on a grid; the point is that the measured boundary tracks 4/(n+1) as n grows, not that
+    it is located to arbitrary precision.
+    """
+    step = 0.02
+    for n in [2, 3, 4, 6, 10, 20]:
+        c = np.full(n, 10.0)
+        converged, failed = [], []
+        for d in np.round(np.arange(step, 1.41, step), 3):
+            try:
+                cn.tatonnement(A, B, c, damping=float(d), max_iter=20000)
+                converged.append(float(d))
+            except RuntimeError:
+                failed.append(float(d))
+        threshold = 4.0 / (n + 1)
+        assert converged, f"nothing converged at n={n}"
+        assert max(converged) <= threshold, f"n={n}: converged above the predicted bound"
+        if failed:
+            assert min(failed) >= threshold - step, f"n={n}: failed below the bound"
+        # and the damped solution is the analytic one, not merely a fixed point
+        damped = cn.tatonnement(A, B, c, damping=float(max(converged)))
+        assert np.allclose(damped["q"], cn.closed_form(A, B, c)["q"], atol=1e-6)
+
+    # the standing overclaim guard: the threshold really does fall, it is not flat
+    assert 4.0 / 21 < 4.0 / 11 < 4.0 / 7 < 4.0 / 3
 
 
 def test_lower_cost_firm_takes_larger_share():

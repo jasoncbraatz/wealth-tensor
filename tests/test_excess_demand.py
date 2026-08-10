@@ -41,6 +41,44 @@ def test_but_the_curves_themselves_are_not_invariant():
     assert len(curves) == 25
 
 
+def test_excess_demand_is_identically_invariant_to_the_allocation():
+    """The sharper form of the claim, and the one the paper leads with.
+
+    `test_but_the_curves_themselves_are_not_invariant` shows the schedules move and
+    `test_clearing_interval_is_invariant_to_allocation` shows the crossing does not. Those
+    two together license an *inference* that the schedules are not independent equations.
+    The identity is stronger and needs no inference: for any price that is not itself a
+    reservation price,
+
+        z(p) = D(p) - S(p) = #{i : m_i > p} - S
+
+    because the holders with m_i > p and the holders with m_i < p partition the S holders.
+    The allocation cancels from the difference at EVERY price, not only at the zero. So D
+    and S are two decompositions of one function of c(m) and S, and the decomposition
+    carries no economic content -- which is exactly why they cannot be perturbed
+    independently.
+
+    Grid endpoints are excluded because M.min() and M.max() are themselves data points,
+    and the strict inequalities in demand_at/supply_at then disagree about a single agent.
+    That is a tie convention, not an economic effect, and a coarse grid that includes the
+    endpoints reports it as extra distinct schedules.
+    """
+    grid = np.linspace(M.min(), M.max(), 401)[1:-1]
+    grid = np.array([p for p in grid if np.min(np.abs(M - p)) > 1e-9])
+    assert grid.size > 300
+
+    demand = {tuple(mk.demand_at(float(p)) for p in grid) for mk in allocations()}
+    supply = {tuple(mk.supply_at(float(p)) for p in grid) for mk in allocations()}
+    excess = {tuple(mk.excess_demand(float(p)) for p in grid) for mk in allocations()}
+
+    assert len(demand) == 25          # every allocation gives a different demand curve
+    assert len(supply) == 25          # and a different supply curve
+    assert len(excess) == 1           # and they all give the SAME difference
+
+    identity = tuple(int(np.sum(M > p)) - S for p in grid)
+    assert excess.pop() == identity
+
+
 def test_excess_demand_crosses_zero_exactly_on_the_marginal_pair():
     for mk in allocations(10):
         lo, hi = mk.marginal_pair()
