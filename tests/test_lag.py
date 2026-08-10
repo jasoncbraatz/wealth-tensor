@@ -103,3 +103,43 @@ def test_parameter_validation():
         LayeredFirm(observable_share=1.5)
     with pytest.raises(ValueError, match="recognition_rate"):
         LayeredFirm(recognition_rate=0.0)
+
+
+def test_deferred_information_is_exactly_linear_in_unobservability():
+    """D(phi) = (1 - phi) * D(0), exactly -- a closed form, not a simulation regularity.
+
+    With the correction mechanism disabled, substituting E(t+1) - C(t) = gap(t) + dE into the
+    two recursions gives gap(t+1) = (1 - alpha)*gap(t) + (1 - phi)*dE, so with gap(0) = 0 every
+    gap is (1 - phi) times its value on the phi = 0 path. dE < 0 throughout, so all terms share
+    a sign and the absolute integral inherits the factor exactly.
+
+    Paper III (S4) reports this as a closed form. If a future change to `lag.py` makes the gap
+    recursion non-linear in phi, this test is the thing that screams -- the paper's claim is
+    exactness, and "approximately linear" would be a different and much weaker sentence.
+    """
+    base = deferred_information(
+        LayeredFirm(observable_share=0.0, crisis_threshold=np.inf).run(400))
+    assert base > 0
+    for phi in [0.0, 0.1, 0.2, 0.3, 0.5, 0.8, 0.9, 1.0]:
+        got = deferred_information(
+            LayeredFirm(observable_share=phi, crisis_threshold=np.inf).run(400))
+        assert np.isclose(got, (1.0 - phi) * base, rtol=1e-12, atol=1e-9), phi
+
+
+def test_recognition_lag_is_not_linear_in_unobservability():
+    """The delay and the quantity deferred do NOT move together, and the paper says so.
+
+    Deferred information is exactly linear in (1 - phi); the lag is sigmoidal. Guarding the
+    negative claim matters as much as the positive one -- if both were linear the paper would
+    be entitled to a much simpler story than the one it tells.
+    """
+    lags = {phi: recognition_lag(
+        LayeredFirm(observable_share=phi, crisis_threshold=np.inf).run(400))
+        for phi in [1.0, 0.9, 0.5, 0.1, 0.0]}
+    assert lags[1.0] == 0
+    assert all(a <= b for a, b in zip(
+        [lags[p] for p in [1.0, 0.9, 0.5, 0.1, 0.0]],
+        [lags[p] for p in [0.9, 0.5, 0.1, 0.0]]))          # monotone in unobservability
+    # Slow at the disclosed end, steep through the middle, saturating at the undisclosed end.
+    assert (lags[0.9] - lags[1.0]) < (lags[0.5] - lags[0.9])   # convex early
+    assert (lags[0.0] - lags[0.1]) < (lags[0.5] - lags[0.9])   # saturating late

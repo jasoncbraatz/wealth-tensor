@@ -30,6 +30,14 @@ and none is optional in 2026.
       limitations section containing only limitations that do not matter is an advertisement.
 - [ ] **Data and code availability** — repository URL, module path, the exact regeneration
       command, the test command, and **the commit SHA pinned at submission**.
+- [ ] **The regeneration command must be a COMMITTED SCRIPT that reproduces every number in the
+      paper, and it must have been RUN against the current code.** Added 2026-08-10
+      (wealthTensor-04) after a measured near-miss: WT-027's results table — Paper III's headline
+      numbers — had been hand-transcribed into the ledger from an exploratory run whose
+      configuration no longer exists, and did not regenerate from the committed module (deferred
+      information uniformly ~0.3% low, recognition lags 1-2 periods short). WT-028's numbers, from
+      the same module, reproduced bit-for-bit — because they had a script. A number without a
+      script is a number nobody has checked since the day it was typed.
 - [ ] **Related work as positioning, not survey.** State what is established, then what is new.
 - [ ] **No live placeholders.** WT-047 found *"Further entries to be migrated from the project
       findings ledger as they accumulate"* sitting in the deliverable. The handoff gate refuses
@@ -77,7 +85,16 @@ Papers III and IV carry empirical predictions; I and II do not. Where one does:
       exists**, so the git history is the timestamp.
 - [ ] The paper cites the pre-registration file *and the commit SHA of its registering commit*.
 - [ ] The result reports the drop accounting, not only the survivors.
-- [ ] Where the prediction failed, the failure is in **Abandoned Approaches** at full strength.
+- [ ] **Where the prediction FAILED, the failure goes in the BODY and the ABSTRACT — NOT in
+      *Abandoned Approaches*.** Corrected 2026-08-10 (wealthTensor-04): this line previously said
+      the opposite, and it was written on 2026-08-05, hours before RESULT-002 existed. A
+      pre-registered prediction that was tested and lost is a **result**; filing it under
+      abandonments is the softest available way to hide it, and a paper whose claim to
+      seriousness rests on having reported its own loss cannot then bury it. Canonical:
+      `docs/preregistration/RESULT-002-wt026.md` §5.1.
+- [ ] *Abandoned Approaches* carries the **instrument** dead ends — a rejected onset rule, a
+      discarded proxy, a metric that measured the wrong object. Those are genuine methodological
+      abandonments. The failed prediction is not one of them.
 
 ---
 

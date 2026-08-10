@@ -182,3 +182,50 @@ be second-guessed:
   tissue, the ledger stories, the lost bet honoured, Abandoned Approaches in full. The
   preprints are the scholarly deliverable; the monograph is the stewardship one. Guernica had
   dozens of standalone studies; the mural came after. Do not start it before IV exists.
+
+### Addendum · 2026-08-10 · wealthTensor-04 · the ORDER question, answered separately from the split
+
+Jason reopened **order** (not the split) the same day: *"do you think we should start at paper I
+instead? … if we don't do them in order, will we lose fidelity? Or will it allow us to 'work
+backwards' by doing III first?"* — and notably he was arguing **against** his own preference,
+suspicious of himself for favouring III. Answered and accepted; recorded so this is the last time
+it is rebuilt from scratch.
+
+1. **The numbering is not a dependency order.** Draw the graph from §Decision's evidence
+   allocation and there is exactly one edge set in the whole project: **IV needs I, II and III.**
+   I, II and III have no edges among them. The I/II/III/IV numbering is a *reading* order for the
+   monograph, not a construction order, and conflating the two is what makes the question feel
+   hard.
+2. **III is the root, not the middle — because the axioms live in it.** Starting at I means
+   drafting a paper whose foundation is stated nowhere on paper, only in Jason's head and in a
+   ledger entry. That is precisely the condition WT-038 diagnosed as the original defect
+   (*"absent from the page, carried in his head"*); doing I first would recreate it on purpose.
+   **III-first IS topological order.** Nothing is being worked backwards.
+3. **THE WRINKLE, and it is a genuine gap in this ADR that cuts TOWARD III-first.** §Decision
+   allocated **code and ledger entries** exhaustively and without overlap — correctly — but it
+   never allocated **propositions**, so one conceptual edge is invisible in the table: **Paper I's
+   central claim is an instance of P3.** Schedules read off a single distribution of reservation
+   prices *are* folds over units. Write I first and that thought gets stated ad hoc in I's own
+   register and then again as P3 in III — the same idea twice, in two vocabularies, with no stated
+   relation. Write III first and I opens with "this is P3 [III §2], instantiated in a price
+   system": one statement, one citation, zero duplication.
+4. **The force-fit guard, named with Jason's own phrase (WT-042).** The real risk in III-first is
+   that I later gets *bent* to satisfy P1–P3 — force-fit, not form-fit. The guard is already in
+   place: I's results are properties of a reservation-price distribution and never invoke P1 or
+   P2. **The alarm to listen for while drafting III is the urge to reach into I's or II's
+   evidence.** It did not fire in S3 or in wealthTensor-04.
+5. **Already tested once, empirically.** Paper II was drafted *ahead* of III and made a clean
+   forward gesture without needing III to exist — §3.2's *"a levy that cannot see an accrual and a
+   financial statement that does not record a degradation are the same structure."* The
+   out-of-numbering-order fidelity test has been run and passed.
+6. **The best argument for I-first, recorded so it is not re-derived either:** I is complete and is
+   the most conventionally-economics artifact in the set, which makes it the easiest arXiv
+   endorsement ask (the endorser is asked only whether the paper belongs in the category).
+   §Order-of-publication already answered it — territorial referees, and I is strongest when the
+   author is not an unknown — and that answer stands. It is the real cost of choosing III, and it
+   is a cost, not a wash.
+
+**Outcome: order II → III → I → IV unchanged. Jason accepted the same day** ("your recommendation
+definitely wins here — I see the picture now"). The clarification is that the order was never in
+tension with the argument's logic; it only looked that way because the numbering reads like a
+chain.

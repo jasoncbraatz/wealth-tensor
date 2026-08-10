@@ -450,8 +450,15 @@ standards decline to capitalise.
 
 ---
 
-## WT-027 · RESULT · 2026-08-05
+## WT-027 · RESULT · 2026-08-05 · **TABLE SUPERSEDED 2026-08-10 — see WT-053**
 **Lag and crisis severity scale with unobservability. Verified.**
+
+> **The table below does NOT regenerate from the committed code.** It was hand-transcribed
+> from an exploratory run whose configuration no longer exists. The qualitative finding
+> stands and is if anything stronger; the numbers are superseded by
+> `scripts/wt027_report.py`, which is now the source of truth and is what Paper III quotes.
+> Left in place rather than edited, because a ledger that silently corrects itself teaches
+> nothing. See WT-053.
 
 `lag.py`. Real layer decays at an entropy rate net of maintenance. A share phi of each
 change is observable and passes to the reported layer immediately; the remainder accrues
@@ -1244,3 +1251,118 @@ firmer than "SSRN is easier."
 Captured in `docs/papers/PREPRINT-CHECKLIST.md` with sources, so the next session re-verifies
 rather than re-researches.
 
+
+---
+
+## WT-052 · METHOD · 2026-08-10 · **the registration discipline had a hole and the reported result is in it**
+**A pre-registration must precede the INSTRUMENT's code, not merely the result.**
+
+L21 and the project's own practice held that what makes a prediction a prediction is the commit
+ordering: register alone, push, then write the analysis code, then compute. **PRE-001 honoured that
+exactly** — `9722342` is a single-file commit containing the registration and nothing else.
+
+**PRE-002 did not, and PRE-002 is where the reported result comes from.** Commit `d655501`
+registers `PRE-002-wt026-peak-to-charge.md` *and ships the peak-onset implementation in
+`edgar.py`* — verifiable with `git log -S"peak" -- src/wealth_tensor/edgar.py`. RESULT-002 landed
+later at `c43c484`, so the registration still precedes the outcome. What is **not** demonstrable is
+that the instrument's details — onset window, tie-break direction, materiality floor — were fixed
+before anyone saw what they produced. On a second look that is precisely where the surviving
+researcher degrees of freedom live.
+
+*Found by:* an adversarial referee agent run against Paper III v0.1 (`REVIEW-001`, finding F3). Not
+found by three sessions of humans and Claudes reading the same commits, including one earlier the
+same session that noticed `d655501` was both the PRE-002 commit and the last `src/` commit and did
+not follow the thought through.
+
+**The amended rule, effective now:** a registration commit contains the registration and nothing
+else, *and* no code implementing the registered instrument may exist in the repository before it.
+Where an instrument must be prototyped first, the prototype is committed and the registration then
+declares which committed SHA it is registering — the ordering has to be visible either way.
+
+**Not repairable retroactively. Disclosed instead**, in Paper III §5.1 and §10, at full strength.
+A methodological gap that is disclosed costs a reader a discount; one that is discovered costs the
+paper.
+
+---
+
+## WT-053 · METHOD · 2026-08-10 · **a number without a script is a number nobody has checked since the day it was typed**
+**WT-027's results table did not regenerate from the committed code, and it was four hours from being published.**
+
+Paper III's headline table came from WT-027. Regenerating it from `lag.py` at the committed
+defaults gives **different numbers**: deferred information uniformly ~0.33 % low, recognition lags
+1–2 periods short (φ=0.8 → 3 not 2; φ=0.5 → 14 not 12; φ=0.0 → 26 not 25). `lag.py` has exactly one
+commit in its history, so the module never changed — the table was hand-transcribed from an
+exploratory run whose configuration no longer exists anywhere.
+
+**The control that distinguishes the two cases already existed and had simply not been applied
+here.** WT-028's numbers, from the *same module*, reproduce bit-for-bit — because Paper II had
+`wt030_report.py` and Paper III had no equivalent.
+
+*Fixes, all shipped:* `scripts/wt027_report.py` written (tables A–D, incl. the §3.4 sawtooth);
+`scripts/wt002_lambda_report.py` extended with the Buckingham-pi scaling collapse, which had been
+living only inside `tests/test_lambda_sensitivity.py` and was therefore quoted by the paper with no
+regeneration path; and **PREPRINT-CHECKLIST §A amended** — the regeneration command must be a
+committed script that reproduces *every* number and has been run against current code.
+
+**Bonus finding from the same exercise, and it upgrades a result rather than correcting one.**
+Deferred information is not "approximately linear" in (1 − φ). It is **exactly** proportional:
+substituting E(t+1) − C(t) = gap(t) + ΔE gives gap(t+1) = (1−α)·gap(t) + (1−φ)·ΔE, so with
+gap(0) = 0 every gap carries the factor and — since ΔE < 0 throughout — the absolute integral
+inherits it exactly. **D(φ) = (1 − φ)·D(0)**, confirmed to relative error 10⁻¹⁵. Two guard tests
+added. The prose had *underclaimed* a closed form because nobody had run the sweep.
+
+---
+
+## WT-054 · METHOD · 2026-08-10 · **two adversarial agents, two disjoint classes of defect** · `REVIEW-001`
+**Run the numbers agent and the reject-it agent. Neither finds the other's bugs.**
+
+Paper III v0.1 was reviewed by two agents before any commit: one instructed to check every numeric
+claim against the code that produced it, one instructed to find reasons to **reject** the paper,
+given the ADR, the checklist, the registrations, the ledger and the sibling paper.
+
+- **The numbers agent found 4 errors**, the worst being a conflation of PRE-001's two universes
+  (z = −0.177 was the *pilot*, 120 events; the replication was z = **+0.634**, opposite sign) —
+  **inside the section about honesty.**
+- **The reject agent found 16**, including two rated FATAL that no amount of re-reading would have
+  surfaced, because they were about what the paper *did to the reader* rather than what it said:
+  (1) §6.1 certified that losing the bet cost the framework nothing, which puts it back in the
+  Odum trap §6.3 claimed to escape; (2) §6.3 converted the loss into a virtue claim and then denied
+  doing so in the same sentence.
+
+**The sharpest single observation it made** was to turn the paper's own §3 rule against it: *a
+defence that recurs is a tell.* The draft announced its own integrity in the abstract, §1, §5.2,
+§7, §9 and §10. Five instances cut.
+
+**It also caught the ADR alarm firing unheard.** The ADR-001 addendum written *earlier the same
+session* said: "the alarm to listen for while drafting III is the urge to reach into I's or II's
+evidence." §2.3 then used Paper II's headline empirical result as evidence inside Paper III's
+argument. Writing a guard does not install it.
+
+*Standing recommendation:* every preprint in this project gets both passes before it is committed,
+and the report is kept in the repo beside the paper. `docs/` is a lab notebook; a paper that
+publishes its own hostile review is the strongest single artifact this project can produce for its
+stated audience.
+
+---
+
+## WT-055 · HYGIENE · 2026-08-10 · **one symbol, two objects, in the most-attacked section**
+**Λ (dimensional) and λ (dimensionless) had been sharing a name since S1.**
+
+`lambda_sensitivity.py` has always distinguished `Lambda_T = eta·C/E` (currency per joule) from the
+coupling ratio `C/E` (dimensionless, mean 1.136838 at φ=0.3). The prose did not. So the three-legged
+defence — entailment, numeraire cancellation, SDG 7.3.1 — attaches to the **dimensional** object,
+while the sawtooth result and "its instability is the phenomenon" are about the **dimensionless**
+one. Defending one quantity for a full section and reporting results about another under the same
+symbol is a rejection-grade presentation defect, and it survived three sessions because both were
+called "Lambda" in every document.
+
+*Fixed in Paper III §3.1:* **Λ** dimensional, **λ** dimensionless, stated before the argument. The
+manuscript and any future paper touching the coupling inherit the convention.
+
+**Two related retreats, both accepted rather than argued down.** (a) The entailment argument
+proves that *some relation* between the components must exist; it does not prove the relation is a
+**scalar**, and the standing objection is to the scalar. WT-038's "prize" is therefore narrower
+than recorded: the coupling is entailed, its representability as a scalar is an additional
+modelling assumption. (b) SDG 7.3.1 is a **flow/flow** ratio and Λ is **stock/stock** — the same
+type error WT-049 diagnosed, committed one more time in the defence against it. The dimensional
+availability claim survives; the identity claim does not.
