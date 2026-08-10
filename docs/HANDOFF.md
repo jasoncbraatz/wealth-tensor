@@ -190,15 +190,30 @@ three are fixed and pushed:
    Seuil 2013. The References preamble now **states the citation rule** rather than assuming it.
    **WT-059.**
 
-**OPEN, and it is Jason's, not a session's.** Four cited books are in neither store — **Mises
-(*Human Action*), Godley & Lavoie, Mayo, Odum** — so their editions cannot be named on the same
-evidence as the other five. Two carry weight: §9 cites Mises specifically for *malinvestment*, which
-predates *Human Action* by decades, and §7 rests a withdrawn comparison on Odum. Filed in
-`REVIEW-001` under *Open, added wealthTensor-05*. **Do not guess an edition to close it.**
+4. **The provenance gap is CLOSED.** Jason downloaded his Kindle and Open Library holdings to the
+   everything folder mid-session. **Mises** resolved to the Scholar's Edition whose front matter says
+   it reissues *the first edition* — now `1949/1998`, and load-bearing because the 1963 and 1966
+   editions differ. **Godley & Lavoie** confirmed. **Mayo was REMOVED**: the library match was *John
+   W. Mayo*, an antitrust economist, not *Deborah G. Mayo* — and the citation being removed had been
+   **added earlier in the same session** while repairing the uncited-reference defect. **Odum was
+   RE-POINTED** to *Environment, Power, and Society* (Columbia, 2007), which he owns and which uses
+   *emergy* 512 times; *Environmental Accounting* (Wiley 1996) is not in the library.
+5. **The vocabulary question was NOT a vocabulary question — WT-060.** *Correction* collides twice:
+   in finance it is a ≥10% decline from a peak, and **ASC 250 is titled *Accounting Changes and Error
+   Corrections***, so the word asserted that prior statements required retrospective restatement — a
+   misstatement of the standard §5 is built on. The body now says **recognition event**; the title
+   keeps **crisis** and §4.1 defines it.
+6. **The biggest open flank is now positioned, not closed.** The **stock price crash risk**
+   literature — Jin & Myers (2006), Hutton, Marcus & Tehranian (2009), unbroken through 2026 — models
+   firms hoarding bad news until it releases at once and the price jumps. **That is Paper III's
+   thesis, twenty years earlier.** §9 now has a subsection saying so, including that this paper is the
+   weaker of the two on evidence. **A future session should read that literature properly** — the
+   subsection is positioning written from a search, not from having read the papers.
 
-**ALSO LEFT FOR JASON, deliberately not decided:** Paper III uses *correction* 29 times and *crisis*
-12 times **for the same event**, and the title is built on *crisis*. That is vocabulary, and
-vocabulary is his (§8 of the standing brief). Noted in `REVIEW-001` F14.
+**TEED UP, deliberately not done.** The module identifiers `crisis_threshold` and `n_crises` still
+carry the old vocabulary. The paper discloses them explicitly so nothing is wrong, and an API rename
+touching `src/`, `tests/` and both report scripts was judged churn for a late session. Rename them
+when something else is already open in `lag.py`.
 
 ### THE OLD START-HERE, kept only for the Limitation 4 notation table below — F11 is CLOSED.
 
