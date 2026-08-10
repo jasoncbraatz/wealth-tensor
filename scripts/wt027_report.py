@@ -8,11 +8,11 @@ This is that command.
 
 Three tables, matching the three claims:
 
-  A · WT-027 · the filter in isolation (crisis mechanism disabled). Recognition lag,
+  A · WT-027 · the filter in isolation (recognition mechanism disabled). Recognition lag,
       inter-period smoothing and deferred information against observability phi.
-  B · WT-028 · volatility is relocated, not suppressed. Inter-correction smoothing against
+  B · WT-028 · volatility is relocated, not suppressed. Inter-event smoothing against
       the share of reported movement occurring inside corrections.
-  C · WT-027 · crisis frequency by entropy rate, at fixed observability.
+  C · WT-027 · recognition-event frequency by entropy rate, at fixed observability.
 """
 
 from __future__ import annotations
@@ -37,7 +37,7 @@ PHIS = (1.0, 0.8, 0.5, 0.2, 0.0)
 
 
 def table_a() -> None:
-    print("A · THE FILTER IN ISOLATION (crisis mechanism disabled, %d periods)" % PERIODS)
+    print("A · THE FILTER IN ISOLATION (recognition mechanism disabled, %d periods)" % PERIODS)
     print("   phi   recognition lag   smoothing   deferred information")
     for phi in PHIS:
         firm = LayeredFirm(observable_share=phi, crisis_threshold=np.inf)
@@ -49,8 +49,8 @@ def table_a() -> None:
 
 
 def table_b() -> None:
-    print("B · VOLATILITY IS RELOCATED, NOT SUPPRESSED (crisis mechanism live)")
-    print("   phi   inter-correction smoothing   share of reported movement inside corrections   crises")
+    print("B · VOLATILITY IS RELOCATED, NOT SUPPRESSED (recognition mechanism live)")
+    print("   phi   inter-event smoothing   share of reported movement inside recognition events   events")
     for phi in PHIS:
         res = LayeredFirm(observable_share=phi).run(PERIODS)
         vs = variance_suppression(res)
@@ -61,8 +61,8 @@ def table_b() -> None:
 
 
 def table_c() -> None:
-    print("C · CRISIS FREQUENCY BY ENTROPY RATE (phi = 0.3, %d periods)" % PERIODS)
-    print("   entropy rate   sector sketch                 crises")
+    print("C · RECOGNITION-EVENT FREQUENCY BY ENTROPY RATE (phi = 0.3, %d periods)" % PERIODS)
+    print("   entropy rate   sector sketch                 events")
     sectors = ((0.01, "warehouse retail"), (0.05, "industrial"), (0.20, "software"))
     for d, name in sectors:
         res = LayeredFirm(entropy_rate=d, observable_share=0.3).run(PERIODS)

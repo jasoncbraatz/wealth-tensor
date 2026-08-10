@@ -22,10 +22,10 @@ aggregates are folds over units. Under P2 the claim component is a low-pass filt
 one, with one parameter — the share φ of degradation that is observable. Recognition lag rises
 **0 → 26 periods** as φ falls to zero; the integral of undelivered information is **exactly
 proportional to (1 − φ)**, in closed form; and volatility is not suppressed but *relocated*, with
-inter-correction smoothing falling to 0.35 while the share of reported movement inside corrections
+inter-event smoothing falling to 0.35 while the share of reported movement inside recognition events
 rises to **0.99**. On this reading a crisis is the filter delivering its accumulated error at once.
 P1 obliges a coupling between the components; its dimensionless form is a sawtooth touching unity
-only at corrections (mean 1.137), and every dimensionless result here is invariant — spread
+only at recognition events (mean 1.137), and every dimensionless result here is invariant — spread
 **exactly 0.0** — across twelve orders of magnitude of the dimensional coupling. **The framework's
 sharpest empirical prediction — that recognition lag scales with the unobservability of
 degradation, with GAAP asset class supplying the observability ranking — was pre-registered, tested
@@ -178,7 +178,7 @@ committed, tested code rather than thought experiments:
   parameter.
 - **The framework's own central mechanism switches off at φ = 1**, which is a separate and equally
   important point. Perfect observability annihilates the entire phenomenon: recognition lag 0,
-  deferred information 0.0, coupling identically 1, zero corrections. Note carefully what this does
+  deferred information 0.0, coupling identically 1, zero recognition events. Note carefully what this does
   *not* say — P2 still holds at φ = 1, and the physical layer still decays (from E₀ = 100 to 0.031
   over 400 periods). What vanishes is the *gap*, and therefore everything this paper is about.
   A framework whose subject matter can be dialled to zero by an observability parameter is a
@@ -286,17 +286,17 @@ physical layer in joules at scale E₀, the claim layer in currency, the couplin
 and the invariance is measured on the dressed system.
 
 Sweeping η across twelve orders of magnitude, from 10⁻⁶ to 10⁺⁶ currency units per joule, at
-**φ = 0.3, correction mechanism live, 400 periods** (the diagnostics below are the same statistics
+**φ = 0.3, recognition mechanism live, 400 periods** (the diagnostics below are the same statistics
 §4.4 reports, under **this paper's names**; the module and `scripts/wt002_lambda_report.py` call them
 `variance_suppression`, `variance_concentration` and `n_crises`):
 
 | diagnostic | value at every η | spread across the sweep |
 |---|---|---|
 | recognition lag | 22 | **0.0** |
-| inter-correction smoothing | 0.6097 | **0.0** |
-| share of reported movement inside corrections | 0.9199 | **0.0** |
-| crisis count | 16 | **0.0** |
-| relative crisis magnitude | 0.20138 | **0.0** |
+| inter-event smoothing | 0.6097 | **0.0** |
+| share of reported movement inside recognition events | 0.9199 | **0.0** |
+| recognition events | 16 | **0.0** |
+| relative event magnitude | 0.20138 | **0.0** |
 | mean / min / terminal coupling ratio | — | **0.0** |
 
 Not "within tolerance." **Bit-identical**, because the coupling never enters the recursion; it is
@@ -320,7 +320,7 @@ removing the scaling fails two.
 coupling (10⁻⁶ against 42) lie on a single dimensionless curve — every diagnostic identical, pairwise
 difference **exactly 0**, at φ = 0.3 over 300 periods. (The shorter horizon is inherited from the
 verifier this figure comes from and is stated because it changes the values: at 300 periods the
-system has had 12 corrections rather than 16, and inter-correction smoothing reads 0.6100 rather than
+system has had 12 recognition events rather than 16, and inter-event smoothing reads 0.6100 rather than
 0.6097. The *collapse* is horizon-independent; the numbers collapsed onto are not.)
 
 The sentence this licenses, and the paper will not need to say it twice: *the conversion
@@ -334,19 +334,19 @@ is the free parameter this programme has refused five times in other costumes. S
 that Λ *varies*. It is that Λ varies **in a specific parameterised shape**, and the shape is a
 prediction.
 
-At φ = 0.3 over 400 periods, with the correction mechanism live:
+At φ = 0.3 over 400 periods, with the recognition mechanism live:
 
 | | value |
 |---|---|
 | mean Λ | 1.136838 |
 | minimum Λ | 1.000000 |
 | maximum Λ | 1.245384 |
-| corrections | 16 |
-| Λ = 1 exactly at every correction | **yes, all 16** |
+| recognition events | 16 |
+| Λ = 1 exactly at every recognition event | **yes, all 16** |
 
 **Λ equals its physical value only at the instants the claim layer snaps to the physical one, and
 overstates it by ~14% on average in between.** Floor pinned at unity by construction of the
-correction; ceiling set by observability; mean determined by φ. That is a shaped variable, not a
+recognition event; ceiling set by observability; mean determined by φ. That is a shaped variable, not a
 free one — and it is the picture of the assertion that Λ's drift *is* the accumulated deferred
 information.
 
@@ -373,10 +373,21 @@ When the unrecognised gap exceeds a threshold share θ of physical wealth, the d
 unsustainable and the claim layer snaps to the physical one. **That discontinuity is the crisis,
 and its magnitude is exactly the information that had been withheld.**
 
+*Terminology, fixed here and used consistently from this point.* The discrete event is called a
+**recognition event** throughout, and where the referent is literally ASC 350 it is called an
+**impairment loss**. It is deliberately **not** called a *correction*: in finance a correction is a
+price decline of a specified magnitude from a peak, and in accounting ASC 250 — *Accounting Changes
+and Error Corrections* — reserves the word for the repair of an **error**, which a change in
+estimate driven by later information is not. An earlier draft of this paper used *correction* for
+the event thirty times and would have asserted, in the technical register of the standard §5 is
+built on, that the prior statements required retrospective restatement. The word **crisis** is kept
+in the title and for the phenomenon the paper is *about*; the systemic, country-level sense used in
+the banking-crisis literature is not intended anywhere here.
+
 Throughout: E₀ = 100, d = 0.05, m = 0.6 (effective decay 0.02 per period), α = 0.05, θ = 0.25, 400
-periods. Where the filter is examined in isolation the correction mechanism is disabled (θ = ∞),
+periods. Where the filter is examined in isolation the recognition mechanism is disabled (θ = ∞),
 because otherwise the snap timing truncates the measurement window and the lag statistic reports
-the correction schedule rather than the filter.
+the recognition schedule rather than the filter.
 
 **φ is not a fudge factor**, and the distinction is load-bearing enough to state before any
 result. φ is the *observability of the degradation*, and it is what makes this model survive the
@@ -395,7 +406,7 @@ Filter isolated, θ = ∞:
 | 0.0 | 26 | 0.791 | 1999.0 |
 
 **Deferred information is exactly proportional to (1 − φ), and this is a closed form rather than a
-simulation regularity.** With the correction mechanism disabled, substituting
+simulation regularity.** With the recognition mechanism disabled, substituting
 E(t+1) − C(t) = gap(t) + ΔE into the two recursions gives
 
 > **gap(t+1) = (1 − α)·gap(t) + (1 − φ)·ΔE(t)**
@@ -414,10 +425,11 @@ saturating (φ = 0.1 → 24, φ = 0.0 → 26). So the *quantity* of undelivered 
 unobservability while the *delay* in delivering it is not, and the two should not be expected to
 move together.
 
-With the correction mechanism live, crisis frequency at fixed observability (φ = 0.3) sorts by
+With the recognition mechanism live, recognition-event frequency at fixed observability (φ = 0.3)
+sorts by
 entropy rate:
 
-| entropy rate d | sketch | crises in 400 periods |
+| entropy rate d | sketch | recognition events in 400 periods |
 |---|---|---|
 | 0.01 | warehouse retail: re-provisions on a decade | **0** |
 | 0.05 | industrial | **16** |
@@ -437,7 +449,7 @@ a single unit of capital is built, and such cases obviously exist.
 
 This model is not a pure-delay model, and the asymmetry is the whole mechanism. **The claim layer
 leads on what is disclosed and lags on what is deferred.** At φ = 1 the filter is a perfect window:
-zero lag, zero deferred information, coupling identically 1, no crises. So the objection holds
+zero lag, zero deferred information, coupling identically 1, no recognition events. So the objection holds
 *exactly* where the model predicts no lag, and has nothing to act on where degradation is
 undisclosed. The two are not in competition; they partition the space by φ.
 
@@ -466,17 +478,17 @@ assertion is a statement of intent about how φ is to be treated, and it should 
 This programme previously predicted that the claim layer would be *smoother* than the physical one.
 Measured across a whole path, **that prediction is false wherever the mechanism is actually
 active**: at φ = 0.5, 0.2 and 0.0 the full-path ratio of reported to physical volatility is 1.56,
-2.71 and 3.27 — the claim layer is *more* volatile, because the corrections dominate the variance.
-The prediction survives only at φ ≥ 0.8, where the gap never reaches the correction threshold and
-there are no corrections to dominate anything; there the ratio is 1.00 and 0.93. **So the original
+2.71 and 3.27 — the claim layer is *more* volatile, because the recognition events dominate the variance.
+The prediction survives only at φ ≥ 0.8, where the gap never reaches the recognition threshold and
+there are no recognition events to dominate anything; there the ratio is 1.00 and 0.93. **So the original
 claim was not merely wrong, it was right only in the regime where the model has nothing to say.**
 
 The true behaviour is more interesting than the prediction it replaced. Measured with the
-correction mechanism live, the claim layer is far smoother than the underlying **between**
-corrections, while the share of all reported movement occurring **inside** corrections rises
+recognition mechanism live, the claim layer is far smoother than the underlying **between**
+recognition events, while the share of all reported movement occurring **inside** recognition events rises
 toward one:
 
-| φ | inter-correction smoothing | share of reported movement inside corrections | crises |
+| φ | inter-event smoothing | share of reported movement inside recognition events | events |
 |---|---|---|---|
 | 1.0 | 1.00 | 0.00 | 0 |
 | 0.8 | 0.93 | 0.00 | 0 |
@@ -484,7 +496,7 @@ toward one:
 | 0.2 | 0.52 | 0.96 | 19 |
 | 0.0 | 0.35 | **0.99** | 25 |
 
-At zero observability, **essentially every reported movement is a correction.** The signature is
+At zero observability, **essentially every reported movement is a recognition event.** The signature is
 therefore not a quiet system but one that is quiet for long intervals and then abruptly is not —
 which is a more recognisable description of the historical record than uniform smoothing.
 
@@ -500,7 +512,7 @@ does not currently have one.
 
 *Method note, because the fix mattered more than the result.* The original metric measured the
 wrong object: one number was being asked to carry two claims. Two now exist — smoothing measured
-on inter-correction periods, concentration measured on the corrections — because a statistic that
+on the periods between recognition events, concentration measured on the recognition events — because a statistic that
 answers two questions answers neither.
 
 ---
@@ -787,7 +799,7 @@ predicts *where* the lead-versus-lag boundary falls rather than denying that lea
 volatile than the physical layer. Measured over a whole path this is **false**, and the probe
 caught it. Retained here in full rather than quietly replaced, because the shape of the failure is
 informative: the direction was wrong, the mechanism was right, and the corrected claim
-(relocation, with 99% of reported movement occurring inside corrections at φ = 0) is stronger than
+(relocation, with 99% of reported movement occurring inside recognition events at φ = 0) is stronger than
 the one it replaced.
 
 **The streak-onset instrument (PRE-001).** §5.2. A genuine methodological dead end and the one part
@@ -933,7 +945,7 @@ cause, and that is worth more than agreement would be.** Hayek's knowledge probl
 prices transmit dispersed information and that the characteristic failure is *informational* rather
 than moral; §4 is a formalisation of exactly that concern. Mises's malinvestment — misallocated
 capital accumulating unrecognised through a boom, revealed and liquidated in the bust — is
-structurally identical to §4.4: unrecognised accumulation followed by discontinuous correction.
+structurally identical to §4.4: unrecognised accumulation followed by discontinuous recognition event.
 The causes assigned differ (credit expansion there, undisclosed physical degradation here) and the
 claim made here is a structural analogy, not an identity. Its value is that a single mechanism
 reproducing a phenomenon which mutually hostile traditions each describe in their own vocabulary is
@@ -949,11 +961,31 @@ answers — and, as §4.3 now concedes, does not yet receive an answer. What the
 partition rather than a refutation: the model concedes disclosed information entirely and retains
 only the undisclosed residue.
 
+**The stock price crash risk literature is this paper's nearest neighbour, and it arrived twenty
+years earlier.** Jin and Myers, and then Hutton, Marcus and Tehranian, model firms that withhold bad
+news until they can withhold it no longer, at which point the accumulated stock is released at once
+and the price moves discontinuously; opacity is the measured driver and crash risk the measured
+outcome. That is §4.4 in a different vocabulary, and an active literature has extended it
+continuously since. The honest statement of the relationship is uncomfortable and is given here
+rather than left for a referee: **those results and this paper are not rivals, and on evidence this
+paper is much the weaker.** Crash risk is measured on prices, tested on large panels, and supported;
+§4 is a property of a simulation whose one registered prediction failed.
+
+What §4 adds is a *layer*, not a result. Crash risk models a managerial **choice** to withhold;
+§4 models a structural limit on what the reporting layer is *able* to observe, chosen by an
+accounting standard rather than by a manager. The two are compatible and probably complementary — a
+firm may withhold what it knows while the standard prevents anyone from recognising what nobody
+knows — and if this framework has a future in this direction it is as an accounting-layer
+microfoundation for which the price crash is the observable consequence. The ordering is the whole
+claim: the recognition event is the cause and the crash is the effect. That is a research programme
+and not a finding, and it is stated at this length because the alternative was letting a reader
+discover on their own that the literature nearest this paper's thesis was missing from it.
+
 **On pre-registration and severe testing**, this paper is a straightforward application of the
 standard argument — that a prediction's evidential weight depends on the test having had a real
 chance to fail — to a domain where the practice remains uncommon. The lineage is Popper's
-demarcation, Mayo's severity requirement — that a passing result counts only in proportion to the
-chance the test had of failing — and the preregistration case made by Nosek and colleagues. The
+demarcation — that a claim earns its standing from the risk it ran — and the preregistration case
+made by Nosek and colleagues. The
 registration, the negative control, the power analysis and the stopping rule are all conventional,
 and are claimed as nothing more than that.
 
@@ -1038,7 +1070,14 @@ Georgescu-Roegen, N. (1971). *The Entropy Law and the Economic Process*. Harvard
 not an edition, so no dual date.)*
 
 Godley, W., & Lavoie, M. (2007). *Monetary Economics: An Integrated Approach to Credit, Money, Income,
-Production and Wealth*. Palgrave Macmillan. ✓
+Production and Wealth*. Palgrave Macmillan. ✓✎ *(Copy consulted confirms first published 2007, ISBN
+978-0-230-50055-6.)*
+
+Hutton, A. P., Marcus, A. J., & Tehranian, H. (2009). Opaque financial reports, R², and crash risk.
+*Journal of Financial Economics*, 94(1), 67–86. ✓
+
+Jin, L., & Myers, S. C. (2006). R² around the world: New theory and new tests. *Journal of Financial
+Economics*, 79(2), 257–292. ✓
 
 Hayek, F. A. (1945). The use of knowledge in society. *American Economic Review*, 35(4), 519–530. ✓
 
@@ -1053,16 +1092,19 @@ Jonckheere, A. R. (1954). A distribution-free k-sample test against ordered alte
 Mann, H. B., & Whitney, D. R. (1947). On a test of whether one of two random variables is stochastically
 larger than the other. *Annals of Mathematical Statistics*, 18(1), 50–60. ✓
 
-Mayo, D. G. (2018). *Statistical Inference as Severe Testing: How to Get Beyond the Statistics Wars*.
-Cambridge University Press. ✓
-
-Mises, L. von (1949). *Human Action: A Treatise on Economics*. Yale University Press. ✓
+Mises, L. von (1949/1998). *Human Action: A Treatise on Economics* (Scholar's ed.). Ludwig von Mises
+Institute. ✓✎ *(The copy consulted is the Scholar's Edition, ISBN 0-945466-24-2, whose own front matter
+states that it reissues* the first edition *— load-bearing, because the 1963 and 1966 editions differ
+from 1949. Original work published by Yale University Press, 1949.)*
 
 Nosek, B. A., Ebersole, C. R., DeHaven, A. C., & Mellor, D. T. (2018). The preregistration revolution.
 *Proceedings of the National Academy of Sciences*, 115(11), 2600–2606. ✓
 
-Odum, H. T. (1996). *Environmental Accounting: Emergy and Environmental Decision Making*. John Wiley &
-Sons. ✓
+Odum, H. T. (2007). *Environment, Power, and Society for the Twenty-First Century: The Hierarchy of
+Energy*. Columbia University Press. ✓✎ *(Re-pointed from* Environmental Accounting: Emergy and
+Environmental Decision Making *(Wiley, 1996), which is not in the author's library. The copy consulted
+uses* emergy *512 times and* transformity *218 times and carries the emergy-accounting argument §3.2
+and §6.3 attribute to it. Cite what was read.)*
 
 Piketty, T. (2013/2014). *Capital in the Twenty-First Century* (A. Goldhammer, Trans.). Belknap Press of
 Harvard University Press. ✓ *(Original work published as* Le Capital au XXIe siècle*, Éditions du Seuil,
@@ -1090,17 +1132,32 @@ not in the author's library. No claim of priority is made in the text, so none i
 Terpstra, T. J. (1952). The asymptotic normality and consistency of Kendall's test against trend, when
 ties are present in one ranking. *Indagationes Mathematicae*, 14, 327–333. ✓
 
-*Two notes on what changed at verification, since a reference list that silently improves teaches
-nothing.* **Seven of these entries were listed but never cited anywhere in the body** — Fama, the FASB
-topics, Mann & Whitney, Mayo, Nosek, Popper, and Chakrabarti et al. (2013). Six now do work in the text
-(§5.1, §5.2 and §9). The seventh, **Chakrabarti et al., was removed rather than retro-fitted**: it is
-Paper II's literature, it is cited there, and importing it here to justify a keyword is the scope
-error `REVIEW-001` F9 was raised about. Separately, four entries were **imprecise rather than wrong**
-against their publishers and have been tightened to what the source says: Odum is John Wiley & Sons;
-SDG 7.3.1's custodians are the IEA and the **United Nations Statistics Division**, not “the United
-Nations”; and Piketty and Popper were both corrected twice — first to the right publisher, then again
-to the right *object*, once the author's own copies were read. Those two and Soddy carry the ✓✎ mark
-and their notes above give the chain.
+*What this list looked like before it was checked, recorded because a reference section that silently
+improves teaches a reader nothing.*
+
+**Seven entries were listed and never cited anywhere in the body** — Fama, the FASB topics, Mann &
+Whitney, Mayo, Nosek, Popper and Chakrabarti et al. **Five now do work in the text** (§5.1, §5.2 and
+§9). **Two were removed rather than retro-fitted.** *Chakrabarti et al.* is Paper II's literature and
+is cited there; importing it here to justify a keyword is the scope error `REVIEW-001` F9 was raised
+about. *Mayo* was removed for a better reason: a citation to Deborah G. Mayo's severity requirement
+was added during this very pass and then withdrawn an hour later, when a search of the author's
+library returned **John W. Mayo, an antitrust economist** — a different person. The severity argument
+§9 needed is carried by Popper and by Nosek and colleagues, both of which the author has read. **A
+citation added to repair an uncited reference, and removed because the author had not read it, is
+worth more in the record than a clean list would have been.**
+
+**Two entries were imprecise against their publishers** and are tightened to what the source says:
+SDG 7.3.1's custodians are the IEA and the **United Nations Statistics Division**, not "the United
+Nations"; Godley & Lavoie's first-published year is confirmed from the copy itself.
+
+**One entry was re-pointed to a different book.** §3.2 and §6.3 argue against Odum's emergy
+programme, and the citation named *Environmental Accounting* (Wiley, 1996), which is **not in the
+author's library**. The Odum he has read is *Environment, Power, and Society for the Twenty-First
+Century* (Columbia, 2007), which uses *emergy* 512 times and *transformity* 218 times and carries the
+argument being attributed. The citation now names the book that was read.
+
+**And three entries were cited as the wrong object**, which no publisher check could have caught —
+Popper, Soddy and Piketty. Their ✓✎ notes above give each chain.
 
 *A third note, on the order these were found in, because it is the reusable part.* The bibliographic
 pass came back clean — every work exists, with those details, from a publisher or a catalogue. The

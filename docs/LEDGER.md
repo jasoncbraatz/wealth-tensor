@@ -1544,3 +1544,85 @@ decision. Grep finds stale *tokens*; only reading finds stale *claims*. Both pas
 they catch disjoint things — which is the same shape as WT-054's two adversarial agents, and by now
 the third time this project has learned that two cheap different checks beat one thorough identical
 one.
+
+---
+
+## WT-060 · METHOD · 2026-08-10 · **an inconsistent word is worth checking, because it may not be an inconsistency** · session wealthTensor-05
+
+**Before standardising on one of two words, check whether either is already a term of art in the
+field you are writing for. Ours was — both of them, and the one we were leaning toward was wrong in
+the exact standard the paper is built on.**
+
+Paper III used *correction* 29 times and *crisis* 12 times for the same event. Jason read it as a
+vernacular tic from eleven years of notes taken at different times, and asked which word current
+academia prefers — a reasonable question with a reasonable premise. The premise was wrong twice:
+
+1. **Finance.** A *correction* is a defined magnitude: a decline of at least 10% from a recent peak
+   (FINRA; Schwab). A finance referee reads that on first encounter, 29 times.
+2. **Accounting, and this is the one that would have cost something.** **ASC 250 is titled
+   *Accounting Changes and Error Corrections*.** An impairment is a change in **estimate**, driven
+   by information that arrives later; an error is a mistake about facts that existed at the time.
+   Calling the event a *correction* asserts, in the technical register of the codification §5 is
+   built on, that the prior financial statements were wrong and require **retrospective
+   restatement**. That is a substantive misstatement of the accounting, not a style problem.
+
+**Resolution.** The body uses **recognition event** — the verb ASC 350 itself uses ("shall recognize
+an impairment loss"), so it names the mechanism rather than a consequence, and it collides with
+nothing. *Impairment loss* where the referent is literally ASC 350. **Crisis** is kept in the title
+and for the phenomenon, with a definitional sentence in §4.1 disclaiming the systemic country-level
+sense. Rejected on evidence: *shock* (inverts the endogenous/exogenous distinction the whole
+mechanism rests on), *impairment event* (ASC 350's "triggering event" already means the thing that
+prompts a test), *adjustment* (the crash-risk literature uses it for the gradual counterfactual),
+*critical transition* (invites a demand for critical slowing down the model cannot supply).
+
+**And the question found something bigger than itself.** Searching for the field's preferred word
+surfaced the **stock price crash risk** literature — Jin & Myers (2006), Hutton, Marcus & Tehranian
+(2009), and an unbroken stream through 2026 — which models firms hoarding bad news until it releases
+all at once and the price moves discontinuously. **That is Paper III's thesis, published twenty years
+earlier, and the paper cited none of it.** Now positioned in §9, including the sentence that this
+paper is the weaker of the two on evidence. It was the single most likely reject-reason in the draft
+and it was invisible from inside the project's own vocabulary.
+
+*The transferable rule:* **a word you use inconsistently is a word you have not checked.** The
+inconsistency is not the defect — it is the *symptom*, and the useful move is to look up what the
+word already means to your readers rather than to pick the more frequent one and move on. Jason's
+instinct to fix the tic was right; the fix was not the one either of us expected.
+
+---
+
+## WT-061 · HYGIENE · 2026-08-10 · **a hand-maintained summary sitting next to the thing it summarises will go stale on every edit** · session wealthTensor-05
+
+**Three strikes in one session, all in the same paragraph. That is not bad luck, it is structure.**
+
+Paper III's References section ended with a prose note summarising what the verification pass had
+changed — how many entries were uncited, which publishers were wrong, which entries carried which
+mark. Every subsequent correction to an *entry* silently invalidated the *note*:
+
+| pass | what changed in the list | what the note still said |
+|---|---|---|
+| provenance | Popper → Routledge Classics 2002 | "Popper is Hutchinson & Co." |
+| library match | Mayo removed entirely | "Six now do work in the text" (five) |
+| library match | Odum → Columbia UP 2007 | "Odum is John Wiley & Sons" |
+
+Each time it was caught by **reading the rendered section**, and each time the WT-057 grep would
+have missed it — the stale text contained no wrong symbol and no wrong figure, only a right fact
+about a superseded decision.
+
+**The structural diagnosis, which is the transferable part.** A summary adjacent to its subject has
+no mechanism forcing the two to agree. It is a *derived value cached by hand*, and a hand-cached
+derived value goes stale on every write to its source — the same failure as a hard-transcribed table
+(WT-053), one level up in abstraction, and with no test that can fail. WT-053's answer was *make the
+number come from a script that has been run*. The same answer applies here and this project is not
+yet paying it: the note should either be **generated** from the list, or be written so it says
+nothing that a later edit can falsify — history and reasoning, which do not change, rather than
+counts and publishers, which do.
+
+**The rule adopted.** *Prose that counts or names items in an adjacent list is a cache. Either
+generate it, or write only the parts an edit cannot invalidate.* The rewritten note keeps the
+narrative — which citation was added and withdrawn and why — and drops the running tallies, except
+where the number IS the finding.
+
+*Worth saying plainly, because it is the third distinct class of staleness this project has found in
+two days:* WT-057 was a fix that did not reach every file; WT-059 was a check that answered the wrong
+question; this one is a claim that was true when written and was never re-derived. Grep catches the
+first, a different pass catches the second, and **only regeneration catches the third.**

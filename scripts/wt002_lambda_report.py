@@ -5,7 +5,7 @@ from wealth_tensor.lambda_sensitivity import (sweep_coupling, invariance_report,
 rows = sweep_coupling(observable_share=0.3)
 print("LAMBDA SENSITIVITY SWEEP (phi=0.3, 400 periods, coupling 1e-6 .. 1e+6 currency/J)\n")
 print(f"{'eta':>10s} {'deferred [cur]':>16s} {'Lambda_T':>12s} {'L/eta':>10s} "
-      f"{'lag':>4s} {'vsupp':>7s} {'vconc':>7s} {'crises':>7s} {'relmag':>8s}")
+      f"{'lag':>4s} {'vsupp':>7s} {'vconc':>7s} {'events':>7s} {'relmag':>8s}")
 for r in rows:
     print(f"{r['coupling']:10.0e} {r['deferred_currency']:16.6e} {r['terminal_lambda']:12.6e} "
           f"{r['lambda_over_eta']:10.6f} {r['recognition_lag']:4d} "

@@ -98,8 +98,9 @@ repaired retroactively — only disclosed.
   the caption so the report script stays traceable. Closing it turned up a fourth slip of the same
   family: §4.4's own table said *inter-crisis smoothing* where the abstract, §3.3 and §4.4's method
   note all say *inter-correction*. Fixed. **Left for Jason, not decided here:** the paper uses
-  *correction* 29 times and *crisis* 12 times for the same event, and the title is built on *crisis*
-  — that is a vocabulary choice, and vocabulary is his.
+  *correction* 29 times and *crisis* 12 times for the same event. **Resolved by Jason, same session,
+  and it was not a vocabulary choice — it was a term-of-art error.** The body now says *recognition
+  event*; the title keeps *crisis* and §4.1 defines it. See WT-060.
 - **Piketty relocation (§9)** performs a move ADR-001 allocates to Paper IV. Referee rated MINOR;
   positioning is required by the checklist. Left as is, flagged for the Paper IV session.
 - **References — CLOSED for bibliography, ONE ITEM OPEN for provenance, wealthTensor-05.** All seventeen verified against publisher pages, library
