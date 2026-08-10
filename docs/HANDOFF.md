@@ -94,7 +94,7 @@ Corroborate what you use: `lessons.py use <id> --task <tag>` at orient,
 
 ## 3 · STATE
 
-- **Code — 102 tests passing**, tree clean and pushed. Six modules: `cournot.py`,
+- **Code — 103 tests passing**, tree clean and pushed. Six modules: `cournot.py`,
   `excess_demand.py`, `lag.py`, `redistribution.py`, `lambda_sensitivity.py`, `edgar.py`.
   Two tests new in wealthTensor-04, both guarding Paper III's closed form.
 - **Paper II — COMPLETE.** `docs/papers/paper-II-redistribution/paper-II.md`. References written
@@ -247,7 +247,7 @@ had dozens of standalone studies; the mural came after. Park it; don't lose it.
 ## 6 · VERIFY GATE
 
 ```
-cd ~/repos/wealth-tensor && ./.venv/bin/python -m pytest tests/ -q   # expect 102 passed
+cd ~/repos/wealth-tensor && ./.venv/bin/python -m pytest tests/ -q   # expect 103 passed
 ./.venv/bin/python scripts/wt027_report.py                          # Paper III §3.4 + §4
 ./.venv/bin/python scripts/wt002_lambda_report.py                   # Paper III §3.3
 git commit ...                                                      # the LAST content commit
