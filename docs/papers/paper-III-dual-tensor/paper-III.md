@@ -984,8 +984,12 @@ discover on their own that the literature nearest this paper's thesis was missin
 **On pre-registration and severe testing**, this paper is a straightforward application of the
 standard argument — that a prediction's evidential weight depends on the test having had a real
 chance to fail — to a domain where the practice remains uncommon. The lineage is Popper's
-demarcation — that a claim earns its standing from the risk it ran — and the preregistration case
-made by Nosek and colleagues. The
+demarcation — that a claim earns its standing from the risk it ran — Mayo's severity requirement,
+which makes that standing quantitative by asking how probable it was that the test would have
+detected the error had it been present, and the preregistration case made by Nosek and colleagues.
+Mayo's account is cited here at its origin rather than at its restatement, and the volume in which
+she and her critics argue it out directly is listed beside it, for the same reason this paper ships
+with `REVIEW-001`: an argument is easier to judge when its objections are in the room. The
 registration, the negative control, the power analysis and the stopping rule are all conventional,
 and are claimed as nothing more than that.
 
@@ -1073,24 +1077,35 @@ Godley, W., & Lavoie, M. (2007). *Monetary Economics: An Integrated Approach to 
 Production and Wealth*. Palgrave Macmillan. ✓✎ *(Copy consulted confirms first published 2007, ISBN
 978-0-230-50055-6.)*
 
+Hayek, F. A. (1945). The use of knowledge in society. *American Economic Review*, 35(4), 519–530. ✓
+
 Hutton, A. P., Marcus, A. J., & Tehranian, H. (2009). Opaque financial reports, R², and crash risk.
 *Journal of Financial Economics*, 94(1), 67–86. ✓
-
-Jin, L., & Myers, S. C. (2006). R² around the world: New theory and new tests. *Journal of Financial
-Economics*, 79(2), 257–292. ✓
-
-Hayek, F. A. (1945). The use of knowledge in society. *American Economic Review*, 35(4), 519–530. ✓
 
 International Energy Agency & United Nations Statistics Division. *SDG Indicator 7.3.1 — Energy
 intensity measured in terms of primary energy and GDP.* Reported as World Bank series
 `EG.EGY.PRIM.PP.KD`, *Energy intensity level of primary energy*, compiled for *Tracking SDG 7: The
 Energy Progress Report* by the IEA, IRENA, UNSD, the World Bank and the WHO. ✓
 
+Jin, L., & Myers, S. C. (2006). R² around the world: New theory and new tests. *Journal of Financial
+Economics*, 79(2), 257–292. ✓
+
 Jonckheere, A. R. (1954). A distribution-free k-sample test against ordered alternatives. *Biometrika*,
 41(1–2), 133–145. ✓
 
 Mann, H. B., & Whitney, D. R. (1947). On a test of whether one of two random variables is stochastically
 larger than the other. *Annals of Mathematical Statistics*, 18(1), 50–60. ✓
+
+Mayo, D. G. (1996). *Error and the Growth of Experimental Knowledge*. University of Chicago Press. ✓✎
+*(The copy consulted is the University of Chicago Press edition of 1996, which uses* severity *374 times
+and* severe test *232 times and is where the severity requirement is introduced. An earlier draft of
+this list cited Mayo (2018),* Statistical Inference as Severe Testing *— a later restatement the author
+has not read. Both the edition-consulted rule and the first-appearance rule select 1996, and they agree
+here because the book he read is also the origin.)*
+
+Mayo, D. G., & Spanos, A. (Eds.). (2010). *Error and Inference: Recent Exchanges on Experimental
+Reasoning, Reliability, and the Objectivity and Rationality of Science*. Cambridge University Press. ✓✎
+*(Copy consulted gives © Cambridge University Press 2010, first published in print 2009.)*
 
 Mises, L. von (1949/1998). *Human Action: A Treatise on Economics* (Scholar's ed.). Ludwig von Mises
 Institute. ✓✎ *(The copy consulted is the Scholar's Edition, ISBN 0-945466-24-2, whose own front matter
@@ -1100,11 +1115,11 @@ from 1949. Original work published by Yale University Press, 1949.)*
 Nosek, B. A., Ebersole, C. R., DeHaven, A. C., & Mellor, D. T. (2018). The preregistration revolution.
 *Proceedings of the National Academy of Sciences*, 115(11), 2600–2606. ✓
 
-Odum, H. T. (2007). *Environment, Power, and Society for the Twenty-First Century: The Hierarchy of
-Energy*. Columbia University Press. ✓✎ *(Re-pointed from* Environmental Accounting: Emergy and
-Environmental Decision Making *(Wiley, 1996), which is not in the author's library. The copy consulted
-uses* emergy *512 times and* transformity *218 times and carries the emergy-accounting argument §3.2
-and §6.3 attribute to it. Cite what was read.)*
+Odum, H. T. (1996). *Environmental Accounting: Emergy and Environmental Decision Making*. John Wiley &
+Sons. ✓✎ *(Copy consulted gives © 1996 John Wiley & Sons, Inc., New York, ISBN 0-471-11442-1. This entry
+was re-pointed away to* Environment, Power, and Society *(Columbia, 2007) when the first library sweep
+did not find the 1996 book, then restored when it did. The sweep, not the citation, was wrong — see
+WT-062.)*
 
 Piketty, T. (2013/2014). *Capital in the Twenty-First Century* (A. Goldhammer, Trans.). Belknap Press of
 Harvard University Press. ✓ *(Original work published as* Le Capital au XXIe siècle*, Éditions du Seuil,
@@ -1132,32 +1147,28 @@ not in the author's library. No claim of priority is made in the text, so none i
 Terpstra, T. J. (1952). The asymptotic normality and consistency of Kendall's test against trend, when
 ties are present in one ranking. *Indagationes Mathematicae*, 14, 327–333. ✓
 
-*What this list looked like before it was checked, recorded because a reference section that silently
-improves teaches a reader nothing.*
+*How this list was checked, recorded because a reference section that silently improves teaches a
+reader nothing. The per-entry findings live in the ✓ and ✓✎ notes above, attached to the entries they
+describe, so that correcting an entry cannot leave a summary of it behind.*
 
-**Seven entries were listed and never cited anywhere in the body** — Fama, the FASB topics, Mann &
-Whitney, Mayo, Nosek, Popper and Chakrabarti et al. **Five now do work in the text** (§5.1, §5.2 and
-§9). **Two were removed rather than retro-fitted.** *Chakrabarti et al.* is Paper II's literature and
-is cited there; importing it here to justify a keyword is the scope error `REVIEW-001` F9 was raised
-about. *Mayo* was removed for a better reason: a citation to Deborah G. Mayo's severity requirement
-was added during this very pass and then withdrawn an hour later, when a search of the author's
-library returned **John W. Mayo, an antitrust economist** — a different person. The severity argument
-§9 needed is carried by Popper and by Nosek and colleagues, both of which the author has read. **A
-citation added to repair an uncited reference, and removed because the author had not read it, is
-worth more in the record than a clean list would have been.**
+**Three passes ran, in this order, and each one found what the previous one structurally could not.**
 
-**Two entries were imprecise against their publishers** and are tightened to what the source says:
-SDG 7.3.1's custodians are the IEA and the **United Nations Statistics Division**, not "the United
-Nations"; Godley & Lavoie's first-published year is confirmed from the copy itself.
+1. **Bibliographic.** Every entry checked against a publisher page, a library catalogue, a Crossref
+   record or the issuing body's own documentation. It asks *does this work exist with these details?*
+   and it came back clean.
+2. **Cited-in-text.** Every entry checked against the body. It asks *does this reference do any work?*
+   — and found several that did not. Some were given the work they had been listed for; the rest were
+   removed rather than retro-fitted, because a reference kept for the look of the list is exactly the
+   padding the list is supposed to be evidence against.
+3. **Provenance.** Every entry checked against the author's own copy. It asks *is this the object the
+   claim is about, and is it the one that was read?* Several entries survived passes 1 and 2 and
+   failed this one: right work, wrong edition; right argument, wrong book; and in one case an author's
+   surname matched a different scholar entirely. Two entries were corrected, reverted, and corrected
+   again as the library search improved — the citations were not wrong, the *search* was, and the
+   record of that is in `LEDGER.md` WT-059 and WT-062.
 
-**One entry was re-pointed to a different book.** §3.2 and §6.3 argue against Odum's emergy
-programme, and the citation named *Environmental Accounting* (Wiley, 1996), which is **not in the
-author's library**. The Odum he has read is *Environment, Power, and Society for the Twenty-First
-Century* (Columbia, 2007), which uses *emergy* 512 times and *transformity* 218 times and carries the
-argument being attributed. The citation now names the book that was read.
-
-**And three entries were cited as the wrong object**, which no publisher check could have caught —
-Popper, Soddy and Piketty. Their ✓✎ notes above give each chain.
+**The order is the lesson.** A clean bibliographic pass is not evidence of a correct citation; it is
+evidence of a correct *bibliography*. The two are different documents that happen to share a page.
 
 *A third note, on the order these were found in, because it is the reusable part.* The bibliographic
 pass came back clean — every work exists, with those details, from a publisher or a catalogue. The

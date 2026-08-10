@@ -1626,3 +1626,48 @@ where the number IS the finding.
 two days:* WT-057 was a fix that did not reach every file; WT-059 was a check that answered the wrong
 question; this one is a claim that was true when written and was never re-derived. Grep catches the
 first, a different pass catches the second, and **only regeneration catches the third.**
+
+---
+
+## WT-062 · HYGIENE · 2026-08-10 · **search a personal library by TITLE, not by author — and a null result from a sprawl is not evidence of absence** · session wealthTensor-05
+
+**Two false conclusions in one session, both from searching an eleven-year reading library the wrong
+way, and both in the flattering direction of "the citation is unsupported, remove it."**
+
+The provenance sweep (WT-059) searched `~/Desktop/downloads` and the `BOOK MASTERS` archive **by
+author surname**. It returned:
+
+- **A false positive.** `Mayo` matched *Government and Business: The Economics of Antitrust*, by
+  Kaserman and **John W. Mayo**, an antitrust economist. The paper cites **Deborah G. Mayo**, a
+  philosopher of statistics. The sweep reported a match and the match was a different person.
+- **A false negative.** `odum|emergy|environmental account` returned two Odum books but not
+  *Environmental Accounting*, so the entry was re-pointed to a book he owns but which was not the one
+  the argument came from. It was on a different Kindle. **He has seven.**
+
+**The mechanical cause, in his words:** Kindle exports usually do **not** put the author in the
+filename — it lives in the AZW metadata, and older devices do not index those fields. **Title is the
+searchable field, and it is also the more distinctive one.** Search `"environmental accounting"`, not
+`odum`. Search `"error and the growth"`, not `mayo`.
+
+**The judgement error underneath it, which is the part worth keeping.** A sweep over a *sprawl*
+returns absence-of-evidence, and it was reported as evidence-of-absence — as "four cited books are
+not in the author's library." The honest form was available and was not used: *a search of the
+indexed subset, by a field that subset does not reliably carry, did not find them.* Note the
+direction: **both errors pushed toward deleting a citation**, which felt like the rigorous move and
+was the careless one. Rigour that only ever subtracts is not rigour, it is a bias with good manners.
+
+**And the outcome inverted.** Searching properly did not merely restore what had been removed:
+
+| | before | after |
+|---|---|---|
+| Mayo | (2018) *Statistical Inference as Severe Testing*, unread | **(1996) *Error and the Growth of Experimental Knowledge*** — 374 uses of *severity*, where the requirement is **introduced**, and read. Plus *Error and Inference* (Mayo & Spanos, CUP 2010), the volume of exchanges with her critics. |
+| Odum | (1996) Wiley, unverified | (1996) Wiley, **✓✎ against the copy** |
+
+The Mayo citation is now correct on **both** rules at once — it is the edition consulted *and* the
+first appearance — where before it was neither. **An hour spent believing a citation was unsupported
+produced a better citation than the one that was there.** File that next to WT-054: the value was in
+the attack, not in its verdict.
+
+*Standing amendment to the library-search procedure (HANDOFF L24):* search by **title**, treat a null
+as "not found in the indexed subset", and **ask Jason before removing a citation on the strength of
+one.**

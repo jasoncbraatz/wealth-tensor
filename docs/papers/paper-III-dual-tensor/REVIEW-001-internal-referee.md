@@ -131,6 +131,15 @@ would have been the paper.*
   All four are cited in §7 or §9. Journal articles are excluded from this finding — a book archive is
   not expected to hold them.
 
+  **RESOLVED, same session, and the resolution is the interesting part.** Jason searched seven Kindles
+  and produced all four. Mises and Godley & Lavoie confirmed the existing citations. **Odum's
+  *Environmental Accounting* (Wiley, 1996) was there after all** — the first sweep missed it, so the
+  entry was re-pointed to a different Odum and then restored. **And the Mayo he has read is *Error
+  and the Growth of Experimental Knowledge* (Chicago, 1996), not the 2018 book that was cited** —
+  which is the origin of the severity requirement rather than its restatement, so the citation is
+  now both better sourced and better placed than before this item was raised. *Error and Inference*
+  (Mayo & Spanos, CUP 2010) is cited beside it. **Nothing in this item ended where it started.**
+
   This is **not** an accusation that the works were not read; it is the observation that the citation
   cannot presently name an edition on the same evidence the other five can. Two of those four carry
   more weight than the other two: §9 cites **Mises** specifically for *malinvestment*, which predates
