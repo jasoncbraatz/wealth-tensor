@@ -422,7 +422,7 @@ The contrast between a warehouse retailer and a firm exposed to continuous obsol
 therefore a **position in a parameter space**, not a rhetorical flourish. Two firms with identical
 observability and different entropy rates live in different worlds, and the model says by how much.
 
-### 4.3 · The forward-looking-markets objection, and why φ = 1 answers it
+### 4.3 · The forward-looking-markets objection, and why the φ = 1 reply does not survive
 
 The strongest standing objection to any lag thesis is efficient-markets in its plainest form:
 prices already discount deferred maintenance, so a systematic lag should not survive. Note that a
@@ -794,6 +794,19 @@ rather than defended. It is listed here as well because the failure mode is the 
 programme keeps meeting: an unmeasured parameter partitioning a space so that the objection lands
 only where nothing can be checked.
 
+**Estimating φ from the reported series alone.** The obvious route to closing §4.3's gap — fit the
+model's parameters to an observed reporting layer and read φ off the fit. Abandoned because the
+recovery is ill-conditioned by construction rather than by bad luck: φ reaches the observable only
+through the product φδ, so estimating it means dividing by an effective decay rate that is itself
+being estimated, and the variance grows like 1/δ². Limitation 4 gives the algebra and the measured
+degradation. The route is recorded because its failure identifies its own successor, and the
+successor has two handles rather than one: **φ becomes tractable as δ grows, and — at any δ — as δ
+is known more precisely from outside the reported series.** Fast-decaying assets are therefore
+partly self-rescuing, since at the top of the range tested φ recovers usably even with δ estimated
+jointly; slow-decaying assets are not, and for those an independent δ is the only handle available.
+What that independent determination should be is deliberately *not* specified here — an instrument
+named in a paper before it is registered is an instrument that has escaped its registration.
+
 **Adding a free parameter to absorb an objection.** Refused five times across this programme and
 worth recording as a class, since each instance looked locally reasonable: introducing a scaling
 constant to rescue the dimensional argument; defining a levy's base so a companion paper's claim
@@ -816,9 +829,51 @@ leaning on an unmeasured φ. A quantity that can accommodate any observation for
 3. **The filter model is deterministic and single-firm.** No stochastic degradation, no
    heterogeneity, no interaction between firms, no market. Every empirical signature it suggests is
    therefore a qualitative target, not a fitted one.
-4. **φ, α and θ are not measured.** They are swept. The paper reports how outcomes vary across the
-   sweep and does not claim any firm's φ is known — which is precisely the gap the severe test was
-   built to close and did not.
+4. **φ, α and θ are not measured. They are swept — and for φ there is a specific reason why, worse
+   than the bare concession it replaces.** The paper reports how outcomes vary across the sweep and
+   does not claim any firm's φ is known. An attempt to close that gap directly — estimating the
+   parameters by fitting the model to a reported series — establishes that **φ is severely
+   ill-conditioned when estimated jointly with the effective decay rate.**
+
+   Write **δ = d(1 − m)** for the effective decay of §4.1 (entropy rate net of maintenance;
+   δ = 0.02 at the parameters used throughout). Substituting ΔE = −δ·E(t) collapses the two
+   recursions to a single line:
+
+   > C(t+1) = C(t)·(1 − α) + E(t)·(α − φδ),  E(t) = E₀(1 − δ)ᵗ
+
+   **φ reaches the observable only through the product φδ.** The series identifies α, δ and the
+   composite k = (α − φδ), so recovering the parameter of interest requires **φ = (α − k)/δ** — a
+   division by δ, giving an estimator whose variance grows like 1/δ² as δ → 0.
+
+   On synthetic data (φ ∈ [0.1, 0.9], δ ∈ [0.005, 0.035], identical batch and iteration budget for
+   both arms) the effect is large: with δ estimated jointly, φ recovers with a **median absolute
+   error of 0.211** (p90 0.644); with δ **pinned at its true value**, **0.00073** (p90 0.017) — a
+   291-fold improvement in the median. A noise-free series gives 0.211 as well, so noise is not the
+   explanation.
+
+   **Two qualifications, both of which cut against the strong reading.** First, this is a
+   *conditioning* result and not a non-identifiability one: φ remains identifiable in principle at
+   every δ > 0, and recovery degrades continuously rather than at a cliff. Bucketing the δ-free
+   fits by true δ across [0.005, 0.010), [0.010, 0.017), [0.017, 0.025) and [0.025, 0.035) gives
+   medians of 0.468, 0.468, 0.164 and **0.017** — but p90s of 0.773, 0.727, 0.462 and **0.212**.
+   So at the top of the range the *typical* firm's φ is recovered to about 2% of its span while one
+   firm in ten is still off by more than a quarter of it, and the median alone would overstate the
+   case. Second, the quoted range of δ sits mostly in the poorly conditioned region, so the headline
+   0.211 should be read as characteristic of slow-decaying assets and not of the model generally.
+
+   **Pinning δ helps most where it is needed least.** At the sector sketches of §4.2, converted to
+   effective decays and with δ pinned: software (δ = 0.080) recovers φ to a median 0.00026 and p90
+   0.00078; industrial (δ = 0.020) to 0.00054 and 0.00367; **warehouse retail (δ = 0.004) to a
+   median 0.00433 but a p90 of 0.191** — so even in the best case the slowest-decaying assets
+   retain a bad tail.
+
+   The consequence for this paper's construction is stated rather than softened: **a usable
+   estimate of φ requires an independent determination of the physical decay rate, obtained outside
+   the reported series — and for the slowest-decaying assets, φ may not be usefully recoverable
+   even then.** Until such an estimate exists, φ is a swept parameter and every result depending on
+   its value is a conditional statement. (Method, scripts and full figures:
+   `docs/notes/NOTE-001-phi-identifiability.md`. Synthetic data only. It is **not** evidence about
+   §5's null, which used an entirely different, non-parametric estimator.)
 5. **Λ⁻¹ and SDG 7.3.1 are the same quantity dimensionally, not empirically.** The SDG series is a
    national aggregate over primary energy and PPP output; the model's coupling is a firm-level
    ratio between a physical capacity measure and a claim measure. The correspondence licenses "this
@@ -903,7 +958,17 @@ public data.
 - **Regenerate §5:**
   `python3 scripts/wt026_severe_test.py --universe pilot --onset peak` and
   `--universe replication --onset peak`
-- **Test suite:** `python3 -m pytest tests/ -q` (102 tests, all passing at the pinned commit)
+- **Test suite:** `python3 -m pytest tests/ -q` — **100 tests at the pinned commit d655501**, which
+  is the state that produced every result in §3 and §4. The head of the repository carries 103.
+  The three later additions guard claims this paper makes and change no model code: two for §4.2's
+  closed form D(φ) = (1 − φ)·D(0) and its accompanying negative claim that the lag is *not* linear,
+  and one asserting the algebraic collapse Limitation 4 publishes — which had no test until an
+  audit found the published form using the entropy rate where it meant the effective decay.
+- **Hardware:** none required. Every figure in §3 and §4 regenerates on a commodity CPU in seconds.
+  The fits reported in Limitation 4 use two thousand synthetic firms at four hundred gradient steps
+  in double precision; a larger reference fit of ten thousand firms at three hundred steps
+  completed in **76 seconds on two 2.8 GHz cores**, a machine chosen deliberately so the figure is
+  an upper bound. No accelerator is used and none is needed.
 - **Empirical data source:** SEC EDGAR `companyfacts` (XBRL), and the SEC Financial Statement Data
   Sets for the CIK→SIC mapping including dead registrants. No proprietary or restricted data is
   used.

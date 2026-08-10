@@ -1,20 +1,29 @@
-# NOTE-001 · φ is confounded with d, and that — not compute — is what blocks measuring it
+# NOTE-001 · φ is ill-conditioned when estimated jointly with the decay rate — and that, not compute, is what blocks measuring it
 
 - **Status:** exploratory finding on **synthetic data**. Not a result. Not citable as support for
-  anything. Produced 2026-08-10, session wealthTensor-04.
+  anything. Produced 2026-08-10, session wealthTensor-04. **Revised the same day** after an
+  adversarial audit — see §5, which is the most instructive part of this file.
 - **Provenance:** `scripts/prototypes/bench_lag_torch.py` and `bench_identify.py`. Read
-  `scripts/prototypes/README.md` first — it carries the **WT-052 declaration** that governs how
-  this material may be used by a future pre-registration.
+  `scripts/prototypes/README.md` first — it carries the **WT-052 declaration** governing how this
+  material may be used by a future pre-registration.
 - **Why it exists:** Jason asked a hardware question — *will a 3090 do the lift, or should we rent
-  GPU time?* The honest answer required characterising the workload, and characterising the
-  workload turned up something considerably more useful than the answer to the question.
+  GPU time?* Characterising the workload answered it and turned up something more useful.
 
----
+## 0 · Notation, stated first because getting it wrong is what this note's first draft did
+
+| symbol | meaning | `lag.py` |
+|---|---|---|
+| **d** | entropy rate | `entropy_rate` (0.05) |
+| **m** | maintenance ratio | `maintenance_ratio` (0.6) |
+| **δ** | **effective decay, δ = d(1 − m)** — what actually drives the recursion | 0.02 |
+
+E(t+1) = E(t)·(1 − **δ**). The first draft of this note called δ "d", which understated a divisor
+by a factor (1 − m) = 0.4 — in the *flattering* direction. See §5.
 
 ## 1 · The question that was asked, answered
 
-**No GPU is needed, and for this workload a CPU is the *better* device.** Measured on a 2-core
-2.8 GHz Xeon — deliberately the weakest machine available, so these are upper bounds:
+**No GPU is needed, and for this workload a CPU is the better device.** Measured on a 2-core
+2.8 GHz Xeon, deliberately weak so these are upper bounds:
 
 | firms (batched) | forward | forward + backward |
 |---|---|---|
@@ -23,87 +32,113 @@
 | 10,000 | 80 ms | 323 ms |
 | 100,000 | 669 ms | 3.5 s |
 
-Two things to read off it.
+**The batch dimension is free until it is wide** — one firm and one hundred cost identical wall
+clock, because the cost is 400 *sequential* steps. The recursion is latency-bound, the regime where
+a GPU helps least. **And float64 is free on CPU** (6.7 ms fp64 vs 7.5 ms fp32), where a consumer
+Ampere card runs fp64 at roughly 1/64 of fp32. Since this programme verifies closed forms to
+10⁻¹⁵, double precision is the working default, which disqualifies the consumer GPU on *precision*,
+not size.
 
-**The batch dimension is free until it is wide.** One firm and one hundred firms cost identical
-wall clock, because the cost is 400 *sequential* steps, not arithmetic. The recursion is
-latency-bound, which is the regime in which a GPU helps least: kernel-launch overhead would
-dominate, and a port could plausibly come out slower.
+A full fit — 10,000 firms, 300 Adam steps, float64 — took **76 s** on that box, and **12.4 s** on
+darwin. **Trigger for revisiting:** rent when one fit exceeds ~30 min *and* more than ~20 are
+needed. Nothing is close. Of the accounts already held, **HF Jobs** is the right shape and gives
+real fp64; HF **ZeroGPU** is not (60 s/call, Gradio-only); **DeepInfra GPU instances** work but the
+B200 class is wildly oversized.
 
-**float64 is free on CPU.** 6.7 ms fp64 against 7.5 ms fp32 — no penalty, within noise. A consumer
-Ampere card (RTX 3090) runs fp64 at roughly 1/64 of its fp32 rate. Since this programme checks
-closed forms to 10⁻¹⁵ (see WT-053's D(φ) = (1−φ)·D(0) result), double precision is the working
-default, and that alone rules out the consumer GPU as an upgrade path. A full fit — 10,000 firms
-simultaneously, 300 Adam steps, float64 — completed in **76 seconds** on the weak box.
+## 2 · The finding
 
-**Trigger condition for revisiting this**, so it is not re-decided from scratch: rent compute when
-a single fit exceeds ~30 minutes *and* more than ~20 of them are needed, or when a batch genuinely
-will not fit in memory. Neither is close. Of the accounts already held, **HF Jobs** (`hf jobs uv
-run --flavor a100-large --timeout 6h`) is the right shape and gives real fp64; HF **ZeroGPU** is
-the wrong shape (60 s per call, Gradio-only); **DeepInfra GPU instances** work (SSH, own Docker,
-hourly) but the B200 class is wildly oversized for this.
+The fit ran fast and recovered φ **badly**. Substituting ΔE = −δ·E(t) collapses the two recursions:
 
-## 2 · The finding that matters
+> **C(t+1) = C(t)·(1 − α) + E(t)·(α − φδ)**,  E(t) = E₀(1 − δ)ᵗ
 
-The fit in §1 ran fast **and recovered φ badly** — median absolute error **0.20** against a true
-range of 0.1–0.9. Three checks isolate the cause.
+**φ reaches the observable only through the product φδ.** The series identifies α (from the
+(1 − α) coefficient), δ (from the geometric rate of the driving term) and the composite
+k = (α − φδ). So **φ = (α − k)/δ** — a division by δ, and the estimator's variance grows like 1/δ².
 
-| check | result | reading |
+**Like-for-like** (identical batch B = 2000 and 400 Adam steps in both arms; φ ∈ [0.1, 0.9],
+δ ∈ [0.005, 0.035]):
+
+| arm | median abs err | p90 |
 |---|---|---|
-| Fit the **noise-free** series | error **0.211** | It is **not** the noise. |
-| **Pin d** at its true value, fit φ and α only | error **0.00073** | It is **entirely** the confound with d. A 280× improvement. |
-| Bucket the error by the firm's true d (d free) | 0.468 at d ∈ [0.005, 0.017] → **0.017** at d ∈ [0.025, 0.035] | Conditioning scales hard with d — 27× across a 3× change. |
+| δ estimated jointly (the reported layer alone) | **0.21140** | 0.64436 |
+| δ pinned at its true value | **0.00073** | 0.01727 |
+| noise-free, δ free | 0.21138 | 0.64434 |
 
-**The algebra says exactly why.** Substituting ΔE = −d·E(t) into the two recursions collapses them
-to a single line:
+**291× improvement in the median**, and the noise-free arm rules noise out as the explanation.
 
-> **C(t+1) = C(t)·(1 − α) + E(t)·(α − φd)**,  E(t) = E₀(1 − d)ᵗ
+**This is a conditioning result, NOT non-identifiability.** φ stays identifiable in principle at
+every δ > 0 and degrades continuously — no cliff:
 
-**φ enters the observed series only through the product φd.** What the data can identify is α, d,
-and the composite k = (α − φd). Recovering the parameter of interest therefore means
+| true δ | n | median | p90 |
+|---|---|---|---|
+| 0.005–0.010 | 324 | 0.468 | 0.773 |
+| 0.010–0.017 | 502 | 0.468 | 0.727 |
+| 0.017–0.025 | 522 | 0.164 | 0.462 |
+| 0.025–0.035 | 652 | **0.017** | 0.212 |
 
-> **φ = (α − k) / d**
+At the top bucket the reported layer alone recovers φ to ~2% of its span. The headline 0.211 is
+therefore characteristic of **slow-decaying assets**, not of the model generally — the swept δ
+range sits mostly in the badly conditioned region.
 
-— a division by d. The estimator's variance grows as d → 0, and for the warehouse-retail sketch
-(d = 0.01) the divisor is a hundredth.
+**Pinning δ helps most where it is needed least.** At §4.2's sector sketches, converted to
+effective decay (δ = d(1 − m), m = 0.6), δ pinned:
 
-**But the confound, not the decay rate, is the binding constraint.** With d pinned externally, φ
-recovers to ~10⁻³ *even at d = 0.01*:
+| sector | entropy rate d | δ | median | p90 |
+|---|---|---|---|---|
+| warehouse retail | 0.01 | 0.004 | 0.00433 | **0.191** |
+| industrial | 0.05 | 0.020 | 0.00054 | 0.00367 |
+| software | 0.20 | 0.080 | 0.00026 | 0.00078 |
 
-| d, pinned at truth | φ median abs err | p90 |
-|---|---|---|
-| 0.01 (warehouse retail) | 0.00122 | 0.12262 |
-| 0.05 (industrial) | 0.00031 | 0.00105 |
-| 0.20 (software) | 0.00020 | 0.00053 |
+Even in the best case, the slowest-decaying assets keep a bad tail.
 
 ## 3 · What this implies for REVIEW-001 F11
 
-F11 is the open item asking whether λ's shape prediction can be made to forbid anything while φ, α
-and θ are swept rather than measured. This note narrows it sharply:
+**A usable φ requires an independent determination of δ — and for the slowest-decaying assets, φ
+may not be usefully recoverable even then.** Candidate sources for δ, none requiring a GPU:
+depreciation schedules and useful-life assumptions in the filings; asset-life tables; capex
+replacement cycles; engineering data on physical degradation. A **data-acquisition** problem in a
+compute problem's costume.
 
-**To measure φ, acquire an independent estimate of d. Nothing else is blocking.**
-
-Candidate sources for d, none of them requiring a GPU: depreciation schedules and useful-life
-assumptions in the filings themselves; asset-life tables; capex replacement cycles; industry
-engineering data on physical asset degradation. That is a **data-acquisition** problem in the
-costume of a compute problem, and it is a far cheaper one.
-
-There is also a pleasing self-reference in it, and the paper may eventually want to say so: **to
-measure the observability of degradation, one must observe the degradation from somewhere the
-reporting layer is not.** φ cannot be recovered from the reported series alone without the physical
-series it is defined against.
+There is a self-reference the paper may eventually want: **to measure the observability of
+degradation, one must observe the degradation from somewhere the reporting layer is not.**
 
 ## 4 · What this is NOT — read before citing it anywhere
 
-- **It is synthetic.** No real firm data was used, by design (see the WT-052 declaration).
-- **It uses a different estimator from PRE-001/PRE-002.** Those tested a *rank ordering of lags by
-  tier*, non-parametrically. This fits a parametric model. **It therefore explains nothing about
-  their null and may not be offered as an account of it.** RESULT-002 §4's discipline applies in
-  full: everything here arrived after that number.
-- **One tempting conjecture is deliberately left undeveloped.** The PRE-001/002 pilot universe was
-  retail — the lowest-d sketch in the model, and hence the worst-conditioned sector for identifying
-  φ. That observation is *post-hoc, about a different estimator, and on synthetic data*. It is
-  written down so the next person has the map, **not** because it rescues anything. Any test of it
-  registers from scratch, states its bridge proposition (WT-049), and obeys WT-052.
-- **No free parameter has been added.** d was always in the model (`entropy_rate` net of
-  `maintenance_ratio`). This note proposes *measuring* it, not introducing it.
+- **Synthetic.** No real firm data, by design (see the WT-052 declaration).
+- **A different estimator from PRE-001/PRE-002**, which tested a *rank ordering of lags by tier*
+  non-parametrically. This fits a parametric model. **It explains nothing about their null and may
+  not be offered as an account of it.** RESULT-002 §4 applies in full.
+- **One conjecture is deliberately left undeveloped.** The PRE-001/002 pilot universe was retail —
+  the lowest-δ sketch, hence worst-conditioned for φ. Post-hoc, different estimator, synthetic.
+  Written down for the map, not as a rescue. Any test registers from scratch, states its bridge
+  proposition (WT-049), obeys WT-052.
+- **No free parameter added.** δ was always in the model. This proposes *measuring* it.
+
+## 5 · The audit that corrected this note, recorded because it is the useful part
+
+The first draft made four errors, all caught by an adversarial agent re-checking the numbers
+against the code, and **three of the four erred in the direction that flattered the finding**:
+
+1. **The symbol collision.** It wrote the collapse as `α − φd` using `d`, while §4.1 uses `d` for
+   the entropy rate — so the printed divisor was 2.5× too large and the conditioning looked
+   *better* than it is. **This is the third instance of one symbol carrying two meanings in this
+   project** — WT-049 (a model parameter and a measurable sharing a name), WT-055 (Λ vs λ), now
+   this. The recurrence is the finding; the fix is cheap and the pattern is not.
+2. **Cherry-picked best case.** "recovers to 0.0007 even at d = 0.01" spliced a mixed-δ median onto
+   a low-δ claim. At δ = 0.004 the median is 0.00433 and the p90 is 0.191.
+3. **Overclaimed "cannot be recovered."** It is conditioning, not non-identifiability, and the
+   top δ bucket recovers φ perfectly usably from the reported layer alone.
+4. **"The same fit"** compared two different scripts at different batch sizes and iteration
+   budgets. The like-for-like pair is in §2 and gives 291×, not 277×.
+
+**A second audit pass caught four more**, including that the paper credited two existing guard
+tests to Limitation 4 when they guard section 4.2s closed form, and that Limitation 4s own
+collapse had **no test at all**. It has one now:
+`test_the_two_layer_recursion_collapses_to_the_form_limitation_4_publishes` (103 tests at head).
+The others: a hardware timing attached to the wrong experiment after the like-for-like fix; p90s
+dropped from the one sentence they undercut; and section 7 attributing tractability solely to
+knowing delta, when magnitude of delta is an independent handle.
+
+*A note on method.* The audit was run because the material was new, not because anything looked
+wrong. Three of these four would have survived any amount of re-reading, because each was a
+plausible sentence about a real number — the errors were in the *mapping* between them.

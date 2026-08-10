@@ -143,3 +143,40 @@ def test_recognition_lag_is_not_linear_in_unobservability():
     # Slow at the disclosed end, steep through the middle, saturating at the undisclosed end.
     assert (lags[0.9] - lags[1.0]) < (lags[0.5] - lags[0.9])   # convex early
     assert (lags[0.0] - lags[0.1]) < (lags[0.5] - lags[0.9])   # saturating late
+
+
+def test_the_two_layer_recursion_collapses_to_the_form_limitation_4_publishes():
+    """C(t+1) = C(t)*(1-alpha) + E(t)*(alpha - phi*delta), with delta = d*(1-m).
+
+    Paper III's Limitation 4 publishes this collapse and derives phi = (alpha - k)/delta from
+    it, where k = alpha - phi*delta. That algebra is the entire basis of the identifiability
+    argument, and until 2026-08-10 it had no test -- an audit caught the published form using
+    `d` (the ENTROPY RATE) where it meant `d*(1-m)` (the EFFECTIVE decay), a factor-0.4 error
+    in the flattering direction. This test exists so that cannot recur silently.
+
+    Correction mechanism disabled: the snap is a separate, non-differentiable branch and
+    Limitation 4's claim is explicitly about the filter in isolation.
+    """
+    for phi, d, m, alpha in [(0.3, 0.05, 0.6, 0.05),
+                             (0.77, 0.11, 0.25, 0.09),
+                             (0.0, 0.20, 0.0, 0.5),
+                             (1.0, 0.01, 0.9, 0.01)]:
+        firm = LayeredFirm(observable_share=phi, entropy_rate=d, maintenance_ratio=m,
+                           recognition_rate=alpha, crisis_threshold=np.inf)
+        res = firm.run(60)
+        delta = d * (1.0 - m)
+        assert np.isclose(delta, firm.effective_decay(), rtol=0, atol=1e-15)
+
+        E, C = res["real"], res["reported"]
+        predicted = C[:-1] * (1.0 - alpha) + E[:-1] * (alpha - phi * delta)
+        assert np.allclose(C[1:], predicted, rtol=1e-12, atol=1e-10), (phi, d, m, alpha)
+
+        # E(t) = E0 * (1 - delta)^t, the geometric driving term the composite is read against.
+        t = np.arange(E.size)
+        assert np.allclose(E, 100.0 * (1.0 - delta) ** t, rtol=1e-12, atol=1e-10)
+
+        # phi = (alpha - k)/delta inverts exactly, which is what makes the 1/delta
+        # conditioning claim a statement about this model rather than about an optimiser.
+        if delta > 0:
+            k = alpha - phi * delta
+            assert np.isclose((alpha - k) / delta, phi, rtol=1e-12, atol=1e-12)

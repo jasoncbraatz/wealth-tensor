@@ -39,6 +39,23 @@ and none is optional in 2026.
       the same module, reproduced bit-for-bit — because they had a script. A number without a
       script is a number nobody has checked since the day it was typed.
 - [ ] **Related work as positioning, not survey.** State what is established, then what is new.
+- [ ] **Prefer the STRUCTURAL fact to the CONTINGENT one — a claim about hardware, vendors, prices
+      or tooling dates the paper; a claim about what the model identifies does not.** Added
+      2026-08-10 (wealthTensor-04), **and it is Jason's framing, recorded in his words:** *"ten
+      years from now when an Nvidia-Mellanox controller for 6 GPUs is $50, this document will show
+      its age."* Concrete case that produced the rule: an episode that could have been written up
+      as *"we scoped a GPU implementation and measured that a CPU performs better"* — true,
+      measured, and worthless by 2036. Underneath it was a structural finding with no expiry date
+      (a model parameter confounded with another, recoverable only from outside the observable),
+      and **that** is what went into the paper. When an episode offers both, publish the invariant
+      and let the benchmark live in the repo.
+- [ ] **An abandonment that could not have cost you anything is an ADVERTISEMENT** — the same test
+      the limitations line below applies, applied to *Abandoned Approaches*. The question to ask of
+      every entry: *had this route worked, which sentence in the paper would be different?* If the
+      answer is none, it is a tooling note and belongs in the repository, not in the section whose
+      whole purpose is to let a reader calibrate what was at risk. A section that fills up with
+      costless abandonments buys the appearance of rigour without exercising any — and by this
+      programme's own rule, **a defence that recurs is a tell.**
 - [ ] **No live placeholders.** WT-047 found *"Further entries to be migrated from the project
       findings ledger as they accumulate"* sitting in the deliverable. The handoff gate refuses
       placeholders; the manuscript has no such guard, so this checkbox is the guard.
