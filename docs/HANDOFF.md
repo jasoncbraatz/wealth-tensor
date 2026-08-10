@@ -165,37 +165,55 @@ is unstarted.** Two of four artifacts substantially exist. Drive at finishing.
 
 ## 5 · MISSION — ranked, every item re-verified live
 
-### START HERE — **Paper III v0.3: close REVIEW-001's open items.** Cheapest high-value work available.
+### START HERE — **Paper III references, then the last of REVIEW-001.** F11 is now CLOSED.
 
-`verify: grep -n "Open, with disposition" -A 14 docs/papers/paper-III-dual-tensor/REVIEW-001-internal-referee.md`
+`verify: grep -n "Open, with disposition" -A 12 docs/papers/paper-III-dual-tensor/REVIEW-001-internal-referee.md`
 
-Four items, all named there with their current state. The substantial one is **F11**: λ's "shape
-prediction" forbids nothing while φ, α and θ are all swept rather than measured, and
-`lambda_sensitivity.py`'s own docstring declines to claim measurability.
+**What changed at the very end of wealthTensor-04, after the first handoff was emitted.** F11 —
+the open item that said λ's shape prediction forbids nothing while φ is swept — has been **written
+into the paper** as §8 Limitation 4, which is now the paper's sharpest limitation rather than its
+weakest concession. Do not re-open it. What remains of REVIEW-001 is F14's metric naming, the
+Piketty/§9 note flagged for the Paper IV session, and the references.
 
-**F11 was narrowed at the end of wealthTensor-04 and you should read the narrowing before you plan
-anything — `docs/notes/NOTE-001-phi-identifiability.md` (and WT-056).** Measured, on synthetic
-data: **φ is confounded with d.** It enters the observed series only through the product φd, so
-φ = (α − k)/d — a division by a small number. Leave d free and φ is unrecoverable below d ≈ 0.02
-(median abs error 0.20). **Pin d at truth and φ recovers to 0.0007 — a 280× improvement — even at
-d = 0.01.**
+**So the top at-bat is now the cheapest one: verify Paper III's references.** Paper II's eight were
+verified against live sources and marked ✓ on 2026-08-10; Paper III's are drafted and unverified,
+and the asymmetry is visible in the repo. A referee would notice. Budget ~20 minutes.
 
-So the route to measuring φ exists, and it is **not** a modelling or compute problem:
+**THE FINDING BEHIND LIMITATION 4 — get the notation right, because the first draft did not.**
 
-> **Acquire an independent estimate of d.** Depreciation schedules and useful-life assumptions in
-> the filings themselves, asset-life tables, capex replacement cycles, industry engineering data.
+| symbol | meaning |
+|---|---|
+| **d** | entropy rate (`entropy_rate`, 0.05) |
+| **m** | maintenance ratio (`maintenance_ratio`, 0.6) |
+| **δ** | **effective decay, δ = d(1 − m)** — what drives the recursion (0.02) |
 
-That is data acquisition, and it is cheap. **No GPU is on the critical path** — the recursion is
-latency-bound and float64 is free on CPU while a consumer 3090 runs fp64 at ~1/64 rate, so the CPU
-is the *better* device here. A 10,000-firm, 300-step, float64 fit takes 76 s on a 2-core Xeon.
+> **C(t+1) = C(t)·(1 − α) + E(t)·(α − φδ)**,  E(t) = E₀(1 − δ)ᵗ
 
-**Before you write any fitting code that touches EDGAR, read `scripts/prototypes/README.md`.** It
-carries the WT-052 declaration. The prototypes are synthetic-only by design; the moment fitting
-code that has seen real data exists unregistered, WT-052 fires against us. A future PRE-003 names
-the SHA it registers against.
+φ reaches the observable **only** through the product **φδ**, so φ = (α − k)/δ with
+k = (α − φδ) — a division by δ, variance growing like 1/δ². Measured like-for-like on synthetic
+data (B = 2000, 400 Adam steps): δ free → median 0.211 (p90 0.644); **δ pinned → 0.00073 (p90
+0.017), a 291× improvement.** Noise-free gives 0.211 too, so noise is not the explanation.
 
-Also: Paper III's references are drafted but **unverified** — Paper II's were verified and marked ✓
-the same day, so the asymmetry is visible and a referee would notice.
+**Do not overstate it — the first draft did, four times, and an audit caught all four.** This is a
+**conditioning** result, not non-identifiability: recovery degrades continuously, and at δ ∈ [0.025,
+0.035] the reported layer *alone* recovers φ to a median 0.017. At §4.2's sector sketches converted
+to effective decay with δ pinned: software (δ=0.080) 0.00026 / p90 0.00078; industrial (δ=0.020)
+0.00054 / 0.00367; **warehouse retail (δ=0.004) 0.00433 but p90 0.191** — the slow-decay tail stays
+bad even in the best case.
+
+**The route forward, stated as the obstacle and NOT as an instrument:** a usable φ needs an
+independent determination of δ, obtained outside the reported series. **Before you write any fitting
+code that touches EDGAR, read `scripts/prototypes/README.md`** — it carries the WT-052 declaration,
+the prototypes are synthetic-only by design, and a future PRE-003 must name the SHA it registers
+against. No GPU is on the critical path and NOTE-001 §1 records why, with the trigger condition for
+revisiting.
+
+**STANDING GUARD, new and earned three times over — AUDIT YOUR NOTATION.** One symbol carrying two
+meanings has now bitten this project three times: **WT-049** (a model parameter and a measurable
+sharing a name — the leading suspect for why PRE-001 failed), **WT-055** (Λ dimensional vs λ
+dimensionless, in the section the paper calls its most-attacked), and **WT-056's first draft**
+(δ written as d, understating a divisor by 0.4× in the flattering direction). Before publishing any
+new symbol, grep the repo for it and check nothing else already owns it.
 
 ### 2 — **Submit Paper II.** It is done and it has been done for a session.
 
@@ -329,7 +347,26 @@ WT-053. The same exercise *upgraded* a result: deferred information is exactly p
 **ordering** question in the ADR so it stops recurring, and banked four global lessons and one
 running joke.
 
-*A note for whoever reads this next.* The most valuable half-hour of this session was spent
-attacking work that was already finished. The draft that went into review was good and the draft
-that came out is honest, and those are different properties. Budget for the second pass; it is not
-optional and it is not expensive.
+**Late additions, after the first handoff of this session was already emitted.** A hardware
+question from Jason ("will a 3090 do the lift?") turned out to be a data question in a costume:
+characterising the workload produced **WT-056**, phi's confounding with delta, which then became
+Paper III's Limitation 4 and closed REVIEW-001's F11. The GPU itself appears **nowhere** in the
+paper - Jason's rule, in his words: *"ten years from now when an Nvidia-Mellanox controller for 6
+GPUs is $50, this document will show its age."* Now a checklist item: **prefer the structural fact
+to the contingent one**, and its companion, **an abandonment that could not have cost you anything
+is an advertisement.**
+
+*A note for whoever reads this next, and it is the whole lesson of the session.* The most valuable
+time was spent attacking work that was already finished. Across three audit passes, **fourteen
+errors were found in material that had already been written, reviewed and committed - and roughly
+three quarters of them erred in the direction that flattered the finding.** Almost none would have
+survived an audit; almost none would have been caught by re-reading, because each was a plausible
+sentence about a real number and the error lived in the *mapping* between them. Budget for the
+second pass. It is not optional and it is not expensive.
+
+**And one that nearly escaped.** This very handoff was emitted BEFORE those corrections and carried
+the uncorrected algebra for half an hour - it would have handed a fresh session the exact errors
+the audit had just removed from the paper. **A fix applied to the artifact but not to the handoff
+is a fix the next session does not inherit. Re-read your own handoff after any late correction:**
+it is the last thing written and the first thing read, which is precisely the combination that lets
+expired truth through.

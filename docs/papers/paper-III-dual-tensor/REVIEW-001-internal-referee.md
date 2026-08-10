@@ -74,11 +74,24 @@ repaired retroactively — only disclosed.
 
 ## Open, with disposition
 
-- **F11 · λ's "shape prediction" forbids nothing.** Floor imposed by the correction rule, ceiling by
-  θ, mean by φ — and all three are swept, not measured. `lambda_sensitivity.py`'s own docstring
-  declines to claim measurability. **Partially addressed** (§3.1 no longer calls λ's instability
-  "the paper's primary observable"), but the deeper point stands: until φ is independently
-  measurable, the sawtooth is a model property and not a test. Carried to the next revision.
+- **F11 · λ's "shape prediction" forbids nothing. — CLOSED, same session.** §3.1 stopped calling
+  λ's instability "the paper's primary observable", and **§8 Limitation 4 was rewritten from a bare
+  concession into the paper's sharpest limitation**: φ is ill-conditioned when estimated jointly
+  with the effective decay δ, because it reaches the observable only through the product φδ, so
+  φ = (α − k)/δ and the variance grows like 1/δ². Measured like-for-like: δ free → median 0.211,
+  δ pinned → 0.00073, a 291× improvement. §7 gains a matching abandonment ("Estimating φ from the
+  reported series alone") that states the obstacle and deliberately **not** the instrument, so a
+  future PRE-003 is not pre-announced. Method and figures:
+  `docs/notes/NOTE-001-phi-identifiability.md`; WT-056.
+
+  **Two audit passes on that addition found ten further errors, seven of them flattering** — a
+  symbol collision (δ written as d, understating the divisor 2.5×), a cherry-picked best case, an
+  overclaim of "cannot be recovered" where the result is conditioning, a cross-script comparison
+  described as "the same fit", a hardware figure attached to the wrong experiment, dropped p90s in
+  the one sentence they undercut, and a claim that two existing tests guarded Limitation 4's
+  collapse when **it had no test at all**. It has one now:
+  `test_the_two_layer_recursion_collapses_to_the_form_limitation_4_publishes`. NOTE-001 §5 records
+  the full list, because that section teaches more than the finding does.
 - **F14 · §3.3's tables need their parameters in the caption.** *Fixed*, but the metric names are
   still the module's rather than the paper's in one place.
 - **Piketty relocation (§9)** performs a move ADR-001 allocates to Paper IV. Referee rated MINOR;
