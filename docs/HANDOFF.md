@@ -1,8 +1,8 @@
 ---
 project: wealth-tensor
-gh_sha: 7a4e04f725a88a77f4bcab5600abeb3514f3bd13
+gh_sha: PENDING_STAMP
 updated: 2026-08-10
-session: wealthTensor-04
+session: wealthTensor-05
 gate_passed: true
 gate_version: "2.50"
 ---
@@ -12,31 +12,32 @@ gate_version: "2.50"
 *Overwritten every session. `git log -p docs/HANDOFF.md` is the archive. Run
 `python3 scripts/handoff_gate.py --check` before trusting this file.*
 
-## 0 · TRANSPORT — darlish, zero-bridge. Do not run bridge theatrics.
+## 0 · TRANSPORT — darlish, zero-bridge. No bridge theatrics; darlish does not use it.
 
-The old one-bridge-call bootstrap **died 2026-08-09**. Step 0, cold container, no pre-staged
-secret:
+Step 0 in a cold container, no pre-staged secret:
 
 ```
 curl -s https://system.europeanflorist.com/dsh/darlish-up -o /tmp/darlish-up && chmod +x /tmp/darlish-up && /tmp/darlish-up
 ```
 
 It prints a `DARLISH-ENROLL v1 id=… fp=…` line. Post it **exactly** as a comment on Asana task
-`1217316841710435` via the session's Asana MCP, run `/tmp/darlish-up` again to collect, then:
+`1217316841710435` via the session's Asana MCP, then run `/tmp/darlish-up` again to collect.
+
+> **The collect may legitimately need TWO runs.** `dwait` times out at 150 s and prints a loud
+> FAILED with three candidate causes. In wealthTensor-05 the attestation was posted correctly and
+> the *first* collect still timed out; the second succeeded immediately. If you posted the comment
+> and got a 404-tail timeout, **re-run before diagnosing**. Whole cycle: ~4 minutes, zero bridge
+> calls, zero rotations noticed.
 
 ```
 curl -s https://system.europeanflorist.com/dsh/dx -o /tmp/dx && chmod +x /tmp/dx && /tmp/dx --selftest
-/tmp/dx '~/Scripts/roster join --who big-wealthTensor-05 --task "<what you are doing>"'
-/tmp/dx '~/Scripts/roster claim --who big-wealthTensor-05 --resource wealth-tensor'
+/tmp/dx '~/Scripts/roster join --who big-wealthTensor-06 --task "<what you are doing>"'
+/tmp/dx '~/Scripts/roster claim --who big-wealthTensor-06 --resource wealth-tensor'
 ```
 
-**`roster claim` needs `--who` AND `--resource`** — the standing brief's shorthand
-(`roster claim wealth-tensor`) is wrong and will error. Whole cycle took ~4 minutes in
-wealthTensor-04 with zero bridge calls and zero rotations noticed. dx exit 3 = never ran (safe
-retry); exit 4 = check state first.
-
-**Do NOT route EDGAR or bulk web work through darwin** — the cloud container reaches
-`data.sec.gov` and `www.sec.gov` directly at full speed (L18).
+`roster claim` needs **`--who` AND `--resource`** (L23). dx exit 3 = never ran, safe retry; exit 4 =
+check state first. **Do NOT route EDGAR or bulk web work through darwin** — the cloud container
+reaches `data.sec.gov` and `www.sec.gov` directly (L18).
 
 ## 1 · IDENTITY + MISSION
 
@@ -46,73 +47,61 @@ pre-prints** (ADR-001).
 **Two intentions, equally weighted.** (1) Ship them. (2) **Have fun.** Hobby, no tenure, he is not
 trying to be safe and says so. If it stops being enjoyable that is a defect, not a mood.
 
-**He invites criticism and means it, and the evidence is now three sessions deep.** S3's best move
-was reporting that his framework's sharpest prediction lost. wealthTensor-04's best move was
-running an agent instructed to *reject* his flagship paper, and then accepting both of its FATAL
-findings. Agreeing with him is not the job.
+**He invites criticism and means it, and the evidence is now four sessions deep.** S3 reported that
+his framework's sharpest prediction lost. wealthTensor-04 ran an agent instructed to *reject* the
+flagship and accepted both FATAL findings. wealthTensor-05 found three defects in work that had
+been marked complete forty minutes earlier. **Agreeing with him is not the job.**
 
 **The prose is disposable; the structure is precious.** He remasters every sentence in his own
-voice, so LLM-register drafting is fine. What must NOT happen is laundering *his* insight into
-your paraphrase. When he coins something — *"force-fit, not form-fit"* (WT-042) — it goes in
-**verbatim** and is credited to him.
+voice, so LLM-register drafting is fine. What must NOT happen is laundering *his* insight into your
+paraphrase. When he coins something — *"force-fit, not form-fit"* (WT-042) — it goes in **verbatim**
+and is credited.
 
-**How he works on content:** his research notes are **on paper**. He reads one at a time and wants
-to digest and discuss, not receive a report. Read the note back to him before building on it.
+**How he works on content:** his research notes are **on paper**. Read the note back to him before
+building on it.
 
-**Ask whether he has had his coffee.** New, offered by Jason himself and banked in
-`claude-blackbook/RUNNING-JOKES.md`: pre-coffee Jason and post-coffee Jason are different readers.
-It is a **register check, not a HITL gate** — pre-coffee, lead with the recommendation and one line
-of why; hold the four-legged argument until asked. Measured the same session: the paper-ordering
-question went from *"hard to wrap my head around"* to *"I see it beautifully"* with no change to
-the argument. A proposal rejected at 05:30 may be worth re-offering at 07:00 — **shorter, not
-louder.**
+**Ask whether he has had his coffee.** A **register check, not a HITL gate** — pre-coffee, lead with
+the recommendation and one line of why; hold the long argument until asked. A proposal that lands
+badly at 05:30 is worth re-offering at 07:00 **shorter, not louder**.
 
-**Audience: his three children, 18, 11 and 8.** Load-bearing, not decoration. It decided that
-`docs/` stays public, that *Abandoned Approaches* is load-bearing in every paper, and — after S3 —
-that the failed pre-registration is part of the deliverable. wealthTensor-04 adds one more:
-**the papers ship with their own hostile referee reports** (`REVIEW-001`). For a reader learning
-how to think, watching an author be told his honesty section was still grading its own homework —
-and then fix it — is worth more than any conclusion the papers reach.
+**Audience: his three children, 18, 11 and 8.** Load-bearing. It decided that `docs/` stays public,
+that *Abandoned Approaches* is in every paper, that the failed pre-registration is part of the
+deliverable, and that the papers ship **with their own hostile referee reports**.
 
 ## 2 · ORIENT — run these, do not skim
 
 ```
 git -C ~/repos/wealth-tensor pull --ff-only
 python3 ~/repos/wealth-tensor/scripts/handoff_gate.py --check   # 0 pass · 1 blocker · 2 CANNOT VERIFY
-cat  ~/repos/wealth-tensor/docs/adr/ADR-001-paper-decomposition.md     # incl. BOTH addenda
+cat  ~/repos/wealth-tensor/docs/adr/ADR-001-paper-decomposition.md      # incl. BOTH addenda
 cat  ~/repos/wealth-tensor/docs/papers/paper-III-dual-tensor/REVIEW-001-internal-referee.md
-cat  ~/repos/wealth-tensor/docs/LEDGER.md                        # 55 entries — the project's brain
-python3 ~/repos/claude-blackbook/lessons.py search "pre-registration" --scope global
+cat  ~/repos/wealth-tensor/docs/LEDGER.md                        # 62 entries — the project's brain
 python3 ~/repos/claude-blackbook/lessons.py doctrine
+python3 ~/repos/claude-blackbook/lessons.py search "<your task>" --scope global,wealth-tensor
 ```
 
-**Read REVIEW-001 before you touch Paper III.** It is the shortest path to understanding what the
-paper is now trying to be, and its open items are your work list.
+> **wealthTensor-05 skipped `lessons.py doctrine` at orient and paid for it twice** — it re-derived
+> the "grep the wrong form" rule that was already banked, and it heredoc'd a script through `dx`
+> ninety minutes after reading **L13**, which says in bold that multi-line will not survive dx
+> quoting. **Run the doctrine command. It is four seconds.**
 
 Corroborate what you use: `lessons.py use <id> --task <tag>` at orient,
 `lessons.py record-outcome <tag> pass` at wrap.
 
 ## 3 · STATE
 
-- **Code — 103 tests passing**, tree clean and pushed. Six modules: `cournot.py`,
-  `excess_demand.py`, `lag.py`, `redistribution.py`, `lambda_sensitivity.py`, `edgar.py`.
-  Two tests new in wealthTensor-04, both guarding Paper III's closed form.
-- **Paper II — COMPLETE.** `docs/papers/paper-II-redistribution/paper-II.md`. References written
-  (8 verified against live sources 2026-08-10, marked ✓). SHA pinned to **d655501**. **Zero live
-  placeholders.** It is ready to submit when Jason says so.
-- **Paper III — DRAFTED, v0.3, post-referee, references VERIFIED.**
-  `docs/papers/paper-III-dual-tensor/paper-III.md`, ~10.6k words. Ships with
-  `REVIEW-001-internal-referee.md` beside it. All seventeen references ✓; five ✓✎ against
-  Jason's own copies. F14 closed; one provenance item open and it needs him.
-- **Two report scripts now exist** where one did: `wt027_report.py` (new) and
-  `wt002_lambda_report.py` (extended with the scaling collapse). Every number in Paper III except
-  the §5 empirics regenerates from one of them.
-- **`scripts/prototypes/` — DECLARED SCRATCH, synthetic data only, WT-052 declaration inside.**
-  A differentiable torch port of `lag.py` plus the identifiability diagnosis behind
-  `docs/notes/NOTE-001-phi-identifiability.md`. Needs `torch` (deliberately NOT in the project
-  venv — the suite stays a 2-second numpy affair). Produces no published number.
-- **WT-026 remains CLOSED and it closed by failing.** PRE-002's stopping rule fired and stays
-  fired.
+- **Code — 107 tests passing**, tree clean and pushed. Six model modules plus, new,
+  `scripts/patchkit.py` (see L25) with four guard tests.
+- **Paper II — COMPLETE.** References verified 2026-08-10, SHA pinned to **d655501**, zero live
+  placeholders. Ready to submit when Jason says so.
+- **Paper III — v0.3, post-referee, REFERENCES VERIFIED.** ~11k words. Ships with
+  `REVIEW-001-internal-referee.md`. All 20 references ✓; **nine ✓✎ = verified against Jason's own
+  copy**. F14 closed. The references preamble now **states the citation rule** the paper follows.
+- **Paper I — written in evidence, unassembled as a document.** It is the fastest paper left.
+- **Paper IV — unstarted.**
+- **`scripts/prototypes/` — DECLARED SCRATCH**, synthetic only, WT-052 declaration inside. Needs
+  `torch`, deliberately NOT in the project venv.
+- **WT-026 remains CLOSED and it closed by failing.** PRE-002's stopping rule fired and stays fired.
 - **Manuscript** (Google Doc `1RjAHJ7jHCX_N3ToHtstQvjlMb-BQz-iejBZ9Y4f58V8`) — untouched since S2.
   Restore points: S1 `1fszgf295NGfvfQlT3VaCrRXrXA4K589tlS-bVsUIok4` ·
   S2a `1FeXUSbrFQQXDOaSxCoul13lE6LWicxMuJGL8xJKSLjs` ·
@@ -121,312 +110,221 @@ Corroborate what you use: `lessons.py use <id> --task <tag>` at orient,
 ## 4 · DOCTRINE / GUARDRAILS
 
 - **Blanket edit permission on the manuscript.** "A construction zone to build a mock-up."
-- **Fresh restore point before every edit session, and VERIFY it.** A restore point you never read
-  is not a restore point.
-- **Never add a free parameter to absorb an objection.** Now refused **six** times: WT-002,
-  WT-016, the WT-033 temptation to define "flow" so the claim came out right, WT-043's free Λ,
-  S3's refusal to re-spec the onset rule — and, new, **φ absorbing the efficient-markets
-  objection**, which the referee caught and Paper III §4.3 now concedes.
-- **Every pre-registration states its BRIDGE assumption** as a numbered proposition a competent
-  critic could deny (WT-049).
-- **NEW, WT-052 — a registration must precede the INSTRUMENT'S CODE, not merely the result.**
-  Registering alone before the *result* is necessary and not sufficient. Where an instrument must
-  be prototyped first, commit the prototype and have the registration name the SHA it registers.
-- **NEW, WT-053 — every published number comes from a committed script that has been run.** Not a
-  command in prose. A script. This rule exists because the flagship's headline table did not
-  regenerate and was hours from print.
-- **NEW, WT-054 — two adversarial agents before any preprint is committed:** one checking every
-  number against the code that produced it, one instructed to **reject** the paper given the ADR,
-  the checklist, the registrations and the ledger. They find disjoint defects. Keep the report in
-  the repo beside the paper.
+- **Fresh restore point before every edit session, and VERIFY it.**
+- **Never add a free parameter to absorb an objection.** Refused **six** times.
+- **Every pre-registration states its BRIDGE assumption** as a numbered proposition (WT-049).
+- **WT-052 — a registration must precede the INSTRUMENT'S CODE**, not merely the result.
+- **WT-053 — every published number comes from a committed script that has been run.**
+- **WT-054 — two adversarial agents before any preprint commits**, one checking numbers, one
+  instructed to reject. They find disjoint defects. Keep the report in the repo.
+- **WT-056 — prefer the STRUCTURAL fact to the CONTINGENT one.** Jason's rule, his words: *"ten
+  years from now when an Nvidia-Mellanox controller for 6 GPUs is $50, this document will show its
+  age."* Companion: *an abandonment that could not have cost you anything is an advertisement.*
+- **WT-057 — grep the WRONG form across every file after a correction.** Never verify by re-reading
+  the file you just fixed; that is the one place the fix is guaranteed.
+- **WT-058 — a multi-anchor edit validates ALL anchors before writing.** Now enforced by
+  `scripts/patchkit.py`, so do not hand-roll it (L25).
+- **WT-059 — verifying a REFERENCE and verifying a CITATION are different acts.** Bibliographic:
+  *does this work exist with these details?* Provenance: *is this the object the claim is about, and
+  is it the one that was read?* The first passes while the second fails.
+- **WT-060 — a word you use inconsistently is a word you have not checked.** Look up what it already
+  means to your readers before standardising on the more frequent variant.
+- **WT-061 — prose that counts or names items in an adjacent list is a hand-cached derived value.**
+  Generate it, or write only what a later edit cannot falsify.
+- **WT-062 — search Jason's library by TITLE, not author; a null is not absence; ASK before deleting
+  a citation on the strength of one.**
 - **A pre-registration is append-only after its first result commit.**
-- **Do not oversell.** Standing guard-tests: `test_excess_demand_is_monotone_here_so_this_is_not_
-  an_SMD_result`, `test_a_flat_gini_does_not_mean_a_bounded_one`,
-  `test_pre001_constants_are_what_was_registered`, and now
-  `test_deferred_information_is_exactly_linear_in_unobservability`.
+- **Do not oversell.** Standing guard-tests, including
+  `test_a_flat_gini_does_not_mean_a_bounded_one` and
+  `test_the_two_layer_recursion_collapses_to_the_form_limitation_4_publishes`.
 - **The tone is load-bearing.** No grumpiness; humour lands the news.
 
 ## 4b · THE DECISION THAT FRAMES EVERYTHING · and the DEFINITION OF DONE
 
 **`docs/adr/ADR-001-paper-decomposition.md` — read it, including BOTH addenda, before planning.**
-The split was relitigated and reaffirmed 2026-08-10; the **order** was reopened separately the same
-day and also reaffirmed. Do not reopen either without a reason neither addendum answers.
+The split and the order were both relitigated and reaffirmed 2026-08-10. Do not reopen either
+without a reason neither addendum answers.
 
-**I** price formation · **II** redistribution *(complete)* · **III** the dual tensor *(drafted)* ·
+**I** price formation · **II** redistribution *(complete)* · **III** the dual tensor *(v0.3)* ·
 **IV** the atomic theory. Order: **II → III → I → IV**.
 
 > **DEFINITION OF DONE.** Four preprints publicly posted, each carrying: abstract, keywords, JEL
 > codes, a numbered contributions list, an Abandoned Approaches section, a limitations section, a
 > data/code availability statement naming the repo and a pinned commit SHA, and *Independent
-> researcher* as the affiliation. Paper III additionally cites PRE-001/PRE-002 and their
-> registering commit SHAs. When the fourth is posted, this project is done and the repo becomes
-> an archive.
+> researcher* as the affiliation. Paper III additionally cites PRE-001/PRE-002 and their registering
+> commit SHAs. When the fourth is posted, this project is done and the repo becomes an archive.
 
-**Progress against it: II is done. III is drafted and reviewed. I is written but unassembled. IV
-is unstarted.** Two of four artifacts substantially exist. Drive at finishing.
+**Progress: II done. III drafted, reviewed and reference-complete. I written but unassembled. IV
+unstarted.** Drive at finishing.
 
-## 5 · MISSION — ranked, every item re-verified live
+## 5 · MISSION — ranked
 
-### START HERE — **Paper I, or Paper II's submission if Jason triggers it.**
-### *(Paper III's references and F14 are DONE — wealthTensor-05, commits `eb3e794` and `062b4c8`.)*
+### START HERE — **Paper I.** It is the fastest artifact left and the only one blocking IV.
 
-**What wealthTensor-05 closed, so you do not redo it.** Paper III's seventeen references are
-**verified and marked ✓**, five of them **✓✎ = verified against Jason's own copy**. F14 is closed.
-The paper is **v0.3** and carries a revision history. Three defects were found in the process and all
-three are fixed and pushed:
+Complete in evidence, unassembled as a document. Per the ADR addendum it opens by **citing P3 from
+Paper III** rather than restating it — that is the whole reason III went first. `excess_demand.py` +
+`cournot.py`, 20 tests, headline numbers in ADR-001 §Decision. Model the reference discipline on
+Paper III's: cite the edition consulted, mark ✓/✓✎, and check *cited-in-text* as a separate pass
+from *bibliographically correct* (WT-059).
 
-1. **Seven references were listed and never cited in the body** (Fama, the FASB topics, Mann &
-   Whitney, Mayo, Nosek, Popper, Chakrabarti). Six now do work in §5.1, §5.2 and §9; Chakrabarti was
-   **removed** as Paper II's literature rather than retro-fitted.
-2. **`docs/LEDGER.md`'s WT-056 entry still carried the PRE-AUDIT algebra** — `d` where δ belongs,
-   280× for the like-for-like 291×, "unrecoverable" for "ill-conditioned", and the cherry-picked
-   δ = 0.01 best case that `NOTE-001` §5 lists **by name** as its own error #2. wealthTensor-04 swept
-   its handoff for expired truth and did not sweep the file its handoff calls *the project's brain*.
-   **WT-057.**
-3. **A provenance pass against Jason's own library** (`~/Desktop/downloads` and
-   `/Volumes/Jason2/BOOK MASTERS`, copy-matched to prints he owned) found **three of the five books
-   present there cited as the wrong object** — Popper is Routledge Classics 2002 not Hutchinson 1959,
-   Soddy is the 1961 Omni third edition not the 1926 Allen & Unwin first, Piketty's French original is
-   Seuil 2013. The References preamble now **states the citation rule** rather than assuming it.
-   **WT-059.**
+### 2 — **Read the crash-risk literature properly. This is Paper III's biggest remaining exposure.**
 
-4. **The provenance gap is CLOSED, and it inverted twice — WT-062.** All four missing books were
-   found once Jason searched his **seven** Kindles **by title rather than author**. **Mises** is the
-   Scholar's Edition whose front matter says it reissues *the first edition* — `1949/1998`, load-bearing
-   because the 1963 and 1966 editions differ. **Godley & Lavoie** confirmed. **Odum's *Environmental
-   Accounting* (Wiley, 1996) was there all along** — the first sweep's null was reported as absence and
-   the entry was wrongly re-pointed to a different Odum, then restored. **Mayo ended up better than it
-   started**: the book he read is *Error and the Growth of Experimental Knowledge* (Chicago, **1996**),
-   which *introduces* the severity requirement, rather than the 2018 restatement that had been cited —
-   so that entry is now correct on the edition-consulted rule and the first-appearance rule at the same
-   time, where before it was correct on neither. *Error and Inference* (Mayo & Spanos, CUP 2010) is
-   cited beside it.
+wealthTensor-05 discovered that **stock price crash risk** — Jin & Myers (2006), Hutton, Marcus &
+Tehranian (2009), unbroken through 2026 — models firms hoarding bad news until it releases all at
+once and the price moves discontinuously. **That is Paper III's thesis, twenty years earlier.** §9
+now has a subsection positioning against it, *written from a search, not from having read the
+papers.* A referee will know the difference. Read Jin & Myers and Hutton et al. properly and
+strengthen or correct that subsection. The framing already in the paper — that the recognition event
+is the accounting-layer cause of which the price crash is the effect — is the one to test.
 
-   **Procedure, and treat this as binding.** Search that library **by title**; Kindle exports keep the
-   author in AZW metadata, not the filename, and older devices do not index it. Treat a null as *"not
-   found in the indexed subset"*, never as *"he does not own it"*. **Ask before deleting a citation on
-   the strength of one** — both of this session's wrong provenance calls erred toward removal, which
-   felt rigorous and was careless.
-5. **The vocabulary question was NOT a vocabulary question — WT-060.** *Correction* collides twice:
-   in finance it is a ≥10% decline from a peak, and **ASC 250 is titled *Accounting Changes and Error
-   Corrections***, so the word asserted that prior statements required retrospective restatement — a
-   misstatement of the standard §5 is built on. The body now says **recognition event**; the title
-   keeps **crisis** and §4.1 defines it.
-6. **The biggest open flank is now positioned, not closed.** The **stock price crash risk**
-   literature — Jin & Myers (2006), Hutton, Marcus & Tehranian (2009), unbroken through 2026 — models
-   firms hoarding bad news until it releases at once and the price jumps. **That is Paper III's
-   thesis, twenty years earlier.** §9 now has a subsection saying so, including that this paper is the
-   weaker of the two on evidence. **A future session should read that literature properly** — the
-   subsection is positioning written from a search, not from having read the papers.
+### 3 — **Submit Paper II.** Done, and has been for two sessions.
 
-**TEED UP, deliberately not done.** The module identifiers `crisis_threshold` and `n_crises` still
-carry the old vocabulary. The paper discloses them explicitly so nothing is wrong, and an API rename
-touching `src/`, `tests/` and both report scripts was judged churn for a late session. Rename them
-when something else is already open in `lag.py`.
+Read `docs/papers/PREPRINT-CHECKLIST.md` §C and **re-verify the venue rules live** — checked
+2026-08-05, venue rules rot. **SSRN has no gate in and NO APPEAL out** (WT-051). **This is a Jason
+decision to trigger, not a Claude decision.** Ask.
 
-### THE OLD START-HERE, kept only for the Limitation 4 notation table below — F11 is CLOSED.
+### 4 — **Attribution pass (WT-044).** Still the best fix-to-value ratio.
 
-`verify: grep -n "Open, with disposition" -A 12 docs/papers/paper-III-dual-tensor/REVIEW-001-internal-referee.md`
+Still absent from the papers: **Sraffa**, **Robinson**, **Samuelson**, **Godley/Lavoie in Paper I**,
+**Farmer**, **Lillo**. Citations, not rewrites. Sraffa/Robinson/Samuelson matter most now that
+scalar capital is the live target (WT-041). **Check his library first (L24) — the sweep is cheap and
+it changed three citations in wealthTensor-05.**
 
-**What changed at the very end of wealthTensor-04, after the first handoff was emitted.** F11 —
-the open item that said λ's shape prediction forbids nothing while φ is swept — has been **written
-into the paper** as §8 Limitation 4, which is now the paper's sharpest limitation rather than its
-weakest concession. Do not re-open it. What remains of REVIEW-001 is F14's metric naming, the
-Piketty/§9 note flagged for the Paper IV session, and the references.
-
-**So the top at-bat is now the cheapest one: verify Paper III's references.** Paper II's eight were
-verified against live sources and marked ✓ on 2026-08-10; Paper III's are drafted and unverified,
-and the asymmetry is visible in the repo. A referee would notice. Budget ~20 minutes.
-
-**THE FINDING BEHIND LIMITATION 4 — get the notation right, because the first draft did not.**
-
-| symbol | meaning |
-|---|---|
-| **d** | entropy rate (`entropy_rate`, 0.05) |
-| **m** | maintenance ratio (`maintenance_ratio`, 0.6) |
-| **δ** | **effective decay, δ = d(1 − m)** — what drives the recursion (0.02) |
-
-> **C(t+1) = C(t)·(1 − α) + E(t)·(α − φδ)**,  E(t) = E₀(1 − δ)ᵗ
-
-φ reaches the observable **only** through the product **φδ**, so φ = (α − k)/δ with
-k = (α − φδ) — a division by δ, variance growing like 1/δ². Measured like-for-like on synthetic
-data (B = 2000, 400 Adam steps): δ free → median 0.211 (p90 0.644); **δ pinned → 0.00073 (p90
-0.017), a 291× improvement.** Noise-free gives 0.211 too, so noise is not the explanation.
-
-**Do not overstate it — the first draft did, four times, and an audit caught all four.** This is a
-**conditioning** result, not non-identifiability: recovery degrades continuously, and at δ ∈ [0.025,
-0.035] the reported layer *alone* recovers φ to a median 0.017. At §4.2's sector sketches converted
-to effective decay with δ pinned: software (δ=0.080) 0.00026 / p90 0.00078; industrial (δ=0.020)
-0.00054 / 0.00367; **warehouse retail (δ=0.004) 0.00433 but p90 0.191** — the slow-decay tail stays
-bad even in the best case.
-
-**The route forward, stated as the obstacle and NOT as an instrument:** a usable φ needs an
-independent determination of δ, obtained outside the reported series. **Before you write any fitting
-code that touches EDGAR, read `scripts/prototypes/README.md`** — it carries the WT-052 declaration,
-the prototypes are synthetic-only by design, and a future PRE-003 must name the SHA it registers
-against. No GPU is on the critical path and NOTE-001 §1 records why, with the trigger condition for
-revisiting.
-
-**STANDING GUARD, new and earned three times over — AUDIT YOUR NOTATION.** One symbol carrying two
-meanings has now bitten this project three times: **WT-049** (a model parameter and a measurable
-sharing a name — the leading suspect for why PRE-001 failed), **WT-055** (Λ dimensional vs λ
-dimensionless, in the section the paper calls its most-attacked), and **WT-056's first draft**
-(δ written as d, understating a divisor by 0.4× in the flattering direction). Before publishing any
-new symbol, grep the repo for it and check nothing else already owns it.
-
-### 2 — **Submit Paper II.** It is done and it has been done for a session.
-
-Read `docs/papers/PREPRINT-CHECKLIST.md` §C first, and re-verify the venue rules live — they were
-checked 2026-08-05 and venue rules rot. **SSRN has no gate on the way in and NO APPEAL on the way
-out** (WT-051): rejections are final, unexplained, unappealable. Submit II when it is right, not as
-a cheap draw. **This is a Jason decision to trigger, not a Claude decision** — it is irreversible
-and external. Ask.
-
-### 3 — **Attribution pass (WT-044).** Still the best fix-to-value ratio.
-
-`verify: grep -ril "Sraffa\|Robinson\|malinvestment" docs/papers/` — Paper III now cites Mises and
-Hayek, so the hit count is no longer zero. Still absent from the papers: **Sraffa**, **Robinson**,
-**Samuelson**, **Godley/Lavoie in Paper I**, **Farmer**, **Lillo**. Citations, not rewrites.
-Sraffa/Robinson/Samuelson matter most now that scalar capital is the live target (WT-041).
-
-### 4 — **Paper I.** Complete in evidence, unassembled as a document.
-
-Per the ADR addendum, it opens by citing **P3 from Paper III** rather than restating it — that is
-the whole reason III went first. `excess_demand.py` + `cournot.py`, 20 tests, headline numbers in
-ADR-001 §Decision. It should be the fastest paper to draft in the project.
-
-### 5 — **Citation-graph whitespace test (WT-006).** Defends novelty; `shellac` is idle and sized for it.
-
-`verify: grep -ril openalex src/ scripts/` — no hits means still live.
+### 5 — **Citation-graph whitespace test (WT-006).** `verify: grep -ril openalex src/ scripts/`
 
 ### 6 — **ASK Jason, both cheap, both genuinely his.**
 
-- **Checkbox lists (WT-008).** All 57 manuscript references render as `- [ ]` to-do boxes.
-  *Recommendation:* convert to plain bullets.
+- **Checkbox lists (WT-008).** All 57 manuscript references render as `- [ ]`. *Recommend:* plain
+  bullets.
 - **The twin document (WT-009).** `2The Axiomatic Reconstruction of`, 19 KB, never diffed. *Ask:*
-  may a session spend one call diffing it? *Recommendation:* yes, and before the manuscript is
-  decomposed — after that a lost paragraph has four possible homes and no obvious one.
+  may a session spend one call diffing it? *Recommend:* yes, and before the manuscript is decomposed.
 
 ### 7 — **PRE-003: the segment-level test.** Teed up deliberately, NOT started.
 
-The defect neither registration could fix: the charge is asset-level, the deterioration signal
-firm-level. **A different project with a different registration.** It registers from scratch,
-states its bridge proposition (WT-049), obeys WT-052, and **may not cite PRE-001/002's failure as
-support for anything.**
+A different project with a different registration. It registers from scratch, states its bridge
+proposition (WT-049), obeys WT-052, and **may not cite PRE-001/002's failure as support for
+anything.**
 
 ### 8 — **Language remaster.** His job, explicitly. Do not do it for him.
 
-### PARKED, do not start — **THE MONOGRAPH.** After Paper IV ships, the four preprints stitched
-into one narrative volume for the children: connective tissue, the ledger stories, the lost bet
-honoured, the referee reports, Abandoned Approaches in full. ADR-001 §Relitigation record. Guernica
-had dozens of standalone studies; the mural came after. Park it; don't lose it.
+> **But note the distinction wealthTensor-05 drew and he accepted:** *correction* vs *crisis* looked
+> like vocabulary and was a **term-of-art error** (WT-060). A word that is wrong *in the field's
+> technical register* is yours to fix. A word that is merely his is not.
+
+### TEED UP, small: the module identifiers `crisis_threshold` and `n_crises` still carry the old
+vocabulary. The paper discloses them explicitly so nothing is wrong. Rename when something else is
+already open in `lag.py`.
+
+### PARKED, do not start — **THE MONOGRAPH.** After Paper IV. ADR-001 §Relitigation record.
 
 ## 6 · VERIFY GATE
 
 ```
-cd ~/repos/wealth-tensor && ./.venv/bin/python -m pytest tests/ -q   # expect 103 passed
+cd ~/repos/wealth-tensor && ./.venv/bin/python -m pytest tests/ -q   # expect 107 passed
 ./.venv/bin/python scripts/wt027_report.py                          # Paper III §3.4 + §4
 ./.venv/bin/python scripts/wt002_lambda_report.py                   # Paper III §3.3
 git commit ...                                                      # the LAST content commit
-python3 scripts/handoff_gate.py --stamp                             # writes gh_sha = HEAD
+python3 scripts/handoff_gate.py --stamp
 git commit -am "docs: stamp handoff gh_sha to HEAD"
-python3 scripts/handoff_gate.py --emit                              # blesses it
+python3 scripts/handoff_gate.py --emit
 bash ~/Scripts/gate-selfcheck.sh                                    # expect PASS
+/tmp/dx '~/Scripts/roster leave --who big-wealthTensor-06'
 ```
 
-**`--emit` does not stamp**, and it refuses on `gate_passed: false`. Walk
+**`--emit` does not stamp**, and refuses on `gate_passed: false`. Walk
 `~/Desktop/downloads/HANDOFF-GATE.md` — trust the file header for the version.
 
 ## 7 · ORIENT-THEN-GO
 
-Emit ONE orientation line — `Oriented: <state> · next at-bat: <X> · opening with <first action>.`
-— then proceed. Do not wait for Jason's go.
+Emit ONE orientation line — `Oriented: <state> · next at-bat: <X> · opening with <first action>.` —
+then proceed. Do not wait for Jason's go.
 
 ---
 
 ## LUT — hard-won facts. Read before touching anything.
 
-**Repo, method and publishing**
-
 | # | Fact |
 |---|---|
-| **L22** | **NEW — a mutation harness that edits a Python source in place must clear `__pycache__` between mutants AND print a mutation-specific fingerprint.** Without both, a stale `.pyc` makes mutant N report mutant N−1's numbers and the harness reports "all caught" when the later ones never ran. **The tell is two different mutants producing byte-identical failure output.** Also assert the *specificity*: a mutant that preserves the property under test should leave the guard test silent — otherwise you know the test is loud, not that it is right. |
-| **L24** | **Jason's library is searchable from darwin and it settles citation questions the web cannot.** Copy-matched digitisations of every print he owned live in `~/Desktop/downloads` (flat, filenames carry publisher + year + ISBN) and `/Volumes/Jason2/BOOK MASTERS` (topic folders, flat inside). **`find` on the NAS at full depth TIMES OUT** — use `-maxdepth 2`, or `ls` a topic folder. `pdftotext` is at `/opt/homebrew/bin/pdftotext`; a book's colophon is in its first 8 pages and answers the edition question outright. |
-| **L23** | **NEW — `roster claim` requires `--who` AND `--resource`.** The standing brief's `roster claim <repo>` shorthand errors out. Costs one round trip. |
-| **L15** | Mutation-test any result you intend to publish, and confirm the *right* test screams. Assert the anchor exists before replacing; always run an unmutated control. See L22 for the harness bug that makes this silently useless. |
-| L9 | venv at `.venv`. Tests: `./.venv/bin/python -m pytest tests/ -q`. Root `conftest.py` inserts `src/`. |
-| L10 | Every model checked against a closed form, a published result, or a hand-verified case. |
-| **L13** | **A multi-line commit message will not survive `dx`'s quoting** — exit 2 is dx's refusal, so nothing ran and retry is safe. `dx --put` it to **`.git/COMMIT_DRAFT`**, then `git commit -F`. Inside `.git/` specifically: a draft in the working tree gets swept up by `git add -A`. Also: `$HOME` in the cloud shell is `/root` — use literal `~` in dx paths. |
-| **L14** | `conftest.py` only fires under pytest; `scripts/` needs its own shim: `sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent / "src"))`. |
-| **L16** | Measure the manuscript, don't opine about it. Parsing it in python is three lines and has been right every time. |
+| **L25** | **NEW — `scripts/patchkit.py` exists; use it for any multi-anchor documentation edit.** `from patchkit import apply_edits; apply_edits([(path, old, new, "label"), ...])`. It validates **every** anchor against in-memory text and raises `AnchorError` having written **nothing**. Four guard tests in `tests/test_patchkit.py`, and the one that matters asserts that an earlier *valid* edit does not leak to disk when a later anchor misses. **Anchor on a span with no internal newline** — in a file hard-wrapped at 100 columns, every anchor that has ever missed in this project missed on a line break, never on a word. |
+| **L24** | **NEW — Jason's library is searchable from darwin and it settles citation questions the web cannot.** Copy-matched digitisations live in `~/Desktop/downloads` (flat; filenames usually carry publisher + year + ISBN) and `/Volumes/Jason2/BOOK MASTERS` (topic folders, flat inside). **Search by TITLE, not author** — Kindle exports keep the author in AZW metadata, not the filename, and his older devices do not index it; searching `mayo` returned an antitrust economist and missed the philosopher. **`find` on the NAS at full depth TIMES OUT** — use `-maxdepth 2`, or `ls` a topic folder. `pdftotext` is at `/opt/homebrew/bin/pdftotext`; a book's colophon is in its first 8–10 pages and answers the edition question outright. **A null result is "not in the indexed subset", NOT "he does not own it"** — he has seven Kindles and the collection is mid-reorganisation. **Ask before removing a citation on the strength of a null.** |
+| **L23** | `roster claim` requires `--who` AND `--resource`. The standing brief's `roster claim <repo>` shorthand errors out. |
+| **L22** | A mutation harness editing a Python source in place must clear `__pycache__` between mutants AND print a mutation-specific fingerprint. **The tell is two different mutants producing byte-identical failure output.** |
+| **L21** | **The pre-registration workflow:** commit the registration **alone**, push, *then* write the analysis code, *then* compute. AMENDED by WT-052. |
 | **L20** | `dx --put` fails if the parent directory does not exist on darwin. `dx 'mkdir -p …'` first. |
-| **L21** | **The pre-registration workflow:** commit the registration **alone**, push, *then* write the analysis code, *then* compute. **AMENDED by WT-052 — "then write the analysis code" is load-bearing and was violated by PRE-002.** The registration must precede the instrument's code, not merely the result. |
-| **L17** | **EDGAR `companyfacts`: Q4 is almost never tagged as a quarter.** Recover quarters by differencing cumulatives sharing a fiscal-year start date, and include the ~90-day facts in that chain. Load-bearing: ASC 350 puts annual impairment tests in Q4, so a naive parser deletes most goodwill events. |
+| **L19** | The CIK→SIC map including dead registrants is `sub.txt` inside the SEC Financial Statement Data Set quarterly ZIPs. Building a universe from a current registrant list is a **survivorship trap**. |
 | **L18** | **The cloud container reaches `data.sec.gov` and `www.sec.gov` directly.** Do not route bulk web data through darwin. Work in the container, `dx --put` results to darwin, commit there where `gh` is authed. ≤10 req/s, descriptive User-Agent. |
-| **L19** | **The CIK→SIC map including dead registrants is `sub.txt` inside the SEC Financial Statement Data Set quarterly ZIPs.** Building a universe from a current registrant list is a **survivorship trap**. |
+| **L17** | **EDGAR `companyfacts`: Q4 is almost never tagged as a quarter.** Recover quarters by differencing cumulatives sharing a fiscal-year start date. ASC 350 puts annual impairment tests in Q4, so a naive parser deletes most goodwill events. |
+| **L16** | Measure the manuscript, don't opine about it. Parsing it in python is three lines and has been right every time. |
+| **L15** | Mutation-test any result you intend to publish, and confirm the *right* test screams. See L22. |
+| **L14** | `conftest.py` only fires under pytest; `scripts/` needs its own shim: `sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent / "src"))`. |
+| **L13** | **A multi-line commit message or script will not survive `dx`'s quoting** — and a heredoc will not either; wealthTensor-05 proved it a second time, ninety minutes after reading this line. `dx --put` it to a file (for commits, **`.git/COMMIT_DRAFT`**, then `git commit -F`). Inside `.git/` specifically: a draft in the working tree gets swept up by `git add -A`. Also: `$HOME` in the cloud shell is `/root` — use literal `~` in dx paths. |
+| **L10** | Every model checked against a closed form, a published result, or a hand-verified case. |
+| **L9**  | venv at `.venv`. Tests: `./.venv/bin/python -m pytest tests/ -q`. Root `conftest.py` inserts `src/`. |
 
-**Google Docs API** *(unchanged; only needed if the manuscript is reopened)*
-
-| # | Fact |
-|---|---|
-| **L11** | To CHANGE existing text use `find_and_replace_doc` — it needs no indices, so the index minefield cannot bite. Anchor on a long verbatim span; the reported occurrence count is itself a check. Indices remain unavoidable for inserting or relocating structure. |
-| **L12** | **Verify a doc edit structurally.** Export via the *cloud* `Google_Drive__read_file_content`, then compare the array of `#`-prefixed lines and list-item lines against the pre-edit export. |
-| L1 | `insert_text` at a heading's first character inherits that heading's style. Insert at `end_index - 1` of the preceding body paragraph. |
-| L2 | `named_style_type: NORMAL_TEXT` wipes character formatting spanning a whole paragraph. Paragraph styles BEFORE character styles. |
-| L3 | **Never infer indices by arithmetic.** |
-| L4 | `inspect_doc_structure` detailed exceeds the token limit and auto-saves to a file. Parse with python. |
-| L5 | For *semantic* whole-document verification use a subagent. For *structural*, use L12. |
-| L6 | Comments and body edits are attributed to **Jason**, not Claude. |
-| L7 | Cloud `Google_Drive` is create/read only — but `copy_file` **is** a create, so **restore points need no bridge**. |
-| L8 | `google_workspace` runs on GCP project **1054330720958**. A `SERVICE_DISABLED` 403 is an API-not-enabled error in an auth-error costume. |
+**Google Docs API** *(unchanged; only needed if the manuscript is reopened)* — L1–L8, L11, L12 are
+in `git log -p docs/HANDOFF.md`. The load-bearing four: **L11** use `find_and_replace_doc` to change
+existing text (no indices, so the index minefield cannot bite). **L12** verify a doc edit
+*structurally* by exporting via the cloud `Google_Drive__read_file_content` and diffing the array of
+`#`-prefixed and list-item lines. **L3** never infer indices by arithmetic. **L7** cloud
+`Google_Drive` is create/read only — but `copy_file` **is** a create, so **restore points need no
+bridge**.
 
 ---
 
-## WHAT wealthTensor-04 DID
+## WHAT wealthTensor-05 DID
 
-**Drafted Paper III, then had it rejected on purpose.** The draft came first — axioms as
-propositions, the coupling defended once, the failed prediction in the body and the abstract. Then
-two adversarial agents were run before anything was committed. The numbers agent found four errors,
-including two universes' statistics conflated **inside the section about honesty**. The reject
-agent found sixteen, two rated FATAL, and both FATAL ones were about what the draft *did to the
-reader*: it certified that losing the bet had cost the framework nothing (which puts it back in the
-Odum trap it claimed to escape), and it converted the loss into a virtue claim while denying it in
-the same sentence. Both accepted. The Odum comparison is now **withdrawn**, and the paper states
-plainly that **the framework has no confirmed empirical claim.**
+**The assigned at-bat was ~20 minutes of reference checking. It took the session, and every
+extension came from a defect in work that was already marked done.**
 
-**Found a hole in the registration discipline, in work already published to the repo.** PRE-002 —
-which produced the reported result — shipped in the same commit as its own instrument. Disclosed,
-not repaired. WT-052.
+**Verified Paper III's references — and found seven that were never cited.** All twenty now check
+against publishers, catalogues, Crossref and issuing-body documentation. But the *cited-in-text*
+pass is a different pass, and it found Fama, the FASB topics, Mann & Whitney, Mayo, Nosek, Popper
+and Chakrabarti listed and doing no work. Five were given the work they were listed for;
+Chakrabarti was removed as Paper II's literature.
 
-**Found that the flagship's headline table did not regenerate.** Hand-transcribed, ~0.33% off,
-never checked since it was typed. Two report scripts now exist and the checklist demands them.
-WT-053. The same exercise *upgraded* a result: deferred information is exactly proportional to
-(1 − φ), in closed form, where the prose had said "very nearly."
+**Found the LEDGER carrying algebra the paper had already corrected.** WT-056's entry still had `d`
+where δ belongs, 280× for the like-for-like 291×, "unrecoverable" where the result is conditioning,
+and the cherry-picked δ = 0.01 case that `NOTE-001` §5 lists **by name** as its own error. The
+previous session swept its handoff for expired truth and did not sweep the file its handoff calls
+*the project's brain*. **An error there is not stale, it is authoritative and stale.** WT-057.
 
-**Finished Paper II**, corrected a checklist rule that contradicted RESULT-002, answered the paper
-**ordering** question in the ADR so it stops recurring, and banked four global lessons and one
-running joke.
+**Ran a provenance pass against Jason's own library, and it found what no publisher check could.**
+Three of the books present there were cited as the wrong *object*: Popper is Routledge Classics 2002
+whose colophon dates *Logik der Forschung* to 1935; Soddy is the 1961 Omni third edition, not the
+1926 Allen & Unwin first; Piketty's French original is Seuil 2013. The references preamble now
+states the rule — **cite the edition consulted, dual-date where the original does argumentative
+work, and a printing is not an edition** — instead of leaving it implicit. WT-059.
 
-**Late additions, after the first handoff of this session was already emitted.** A hardware
-question from Jason ("will a 3090 do the lift?") turned out to be a data question in a costume:
-characterising the workload produced **WT-056**, phi's confounding with delta, which then became
-Paper III's Limitation 4 and closed REVIEW-001's F11. The GPU itself appears **nowhere** in the
-paper - Jason's rule, in his words: *"ten years from now when an Nvidia-Mellanox controller for 6
-GPUs is $50, this document will show its age."* Now a checklist item: **prefer the structural fact
-to the contingent one**, and its companion, **an abandonment that could not have cost you anything
-is an advertisement.**
+**Discovered that "correction" was not a vocabulary tic but a term-of-art error, twice.** In finance
+a correction is a ≥10% decline from a peak. And **ASC 250 is titled *Accounting Changes and Error
+Corrections***, so the word asserted that prior statements required retrospective restatement — in
+the technical register of the standard §5 is built on. The body now says **recognition event**; the
+title keeps **crisis** and §4.1 defines it. WT-060.
 
-*A note for whoever reads this next, and it is the whole lesson of the session.* The most valuable
-time was spent attacking work that was already finished. Across three audit passes, **fourteen
-errors were found in material that had already been written, reviewed and committed - and roughly
-three quarters of them erred in the direction that flattered the finding.** Almost none would have
-survived an audit; almost none would have been caught by re-reading, because each was a plausible
-sentence about a real number and the error lived in the *mapping* between them. Budget for the
-second pass. It is not optional and it is not expensive.
+**And that question found the paper's biggest exposure.** Searching for the field's preferred word
+surfaced the **stock price crash risk** literature, which has been modelling this paper's thesis
+since 2006 and was uncited. Now positioned in §9 — see mission item 2, and note that the positioning
+was written from a search rather than from reading.
 
-**And one that nearly escaped.** This very handoff was emitted BEFORE those corrections and carried
-the uncorrected algebra for half an hour - it would have handed a fresh session the exact errors
-the audit had just removed from the paper. **A fix applied to the artifact but not to the handoff
-is a fix the next session does not inherit. Re-read your own handoff after any late correction:**
-it is the last thing written and the first thing read, which is precisely the combination that lets
-expired truth through.
+*The lesson of the session, and it is not the same as wealthTensor-04's.* That session learned to
+**budget for the second pass**. This one learned that **the second pass must ask a different
+question**. Three passes ran over the same seventeen references: bibliographic (clean), cited-in-text
+(seven failures), provenance (three failures). Each found what the previous one *structurally could
+not*, and repeating the first pass more carefully would have found none of it.
+
+*And the failure worth copying.* Two provenance calls were **wrong**, and both erred toward
+*deleting* a citation — a false positive on John W. Mayo, a false negative on an Odum sitting on a
+different Kindle. When Jason searched by title he produced all four books, and the Mayo he had
+actually read turned out to be the **1996** book that *introduces* the severity requirement rather
+than the 2018 restatement that had been cited. **The citation ended up correct on both the
+edition-consulted rule and the first-appearance rule, where before it was correct on neither.** An
+hour spent believing a citation was unsupported produced a better citation than the one that was
+there. **Note the direction of those errors: rigour that only ever subtracts is a bias with good
+manners.**
+
+*One more, filed under things a future session should find funny rather than repeat.* The References
+closing note went stale **four separate times in one session** — once per correction to an entry
+above it — because it hand-maintained counts and per-entry facts next to the entries themselves.
+WT-061 diagnosed it as a hand-cached derived value, and it was still hand-maintained twice after
+that. It is now narrative-only. **Grep catches WT-057's staleness; a differently-framed second pass
+catches WT-059's; only regeneration catches this one.**
