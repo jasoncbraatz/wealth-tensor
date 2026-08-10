@@ -100,8 +100,10 @@ Corroborate what you use: `lessons.py use <id> --task <tag>` at orient,
 - **Paper II — COMPLETE.** `docs/papers/paper-II-redistribution/paper-II.md`. References written
   (8 verified against live sources 2026-08-10, marked ✓). SHA pinned to **d655501**. **Zero live
   placeholders.** It is ready to submit when Jason says so.
-- **Paper III — DRAFTED, v0.2, post-referee.** `docs/papers/paper-III-dual-tensor/paper-III.md`,
-  ~9.8k words. Ships with `REVIEW-001-internal-referee.md` beside it.
+- **Paper III — DRAFTED, v0.3, post-referee, references VERIFIED.**
+  `docs/papers/paper-III-dual-tensor/paper-III.md`, ~10.6k words. Ships with
+  `REVIEW-001-internal-referee.md` beside it. All seventeen references ✓; five ✓✎ against
+  Jason's own copies. F14 closed; one provenance item open and it needs him.
 - **Two report scripts now exist** where one did: `wt027_report.py` (new) and
   `wt002_lambda_report.py` (extended with the scaling collapse). Every number in Paper III except
   the §5 empirics regenerates from one of them.
@@ -165,7 +167,40 @@ is unstarted.** Two of four artifacts substantially exist. Drive at finishing.
 
 ## 5 · MISSION — ranked, every item re-verified live
 
-### START HERE — **Paper III references, then the last of REVIEW-001.** F11 is now CLOSED.
+### START HERE — **Paper I, or Paper II's submission if Jason triggers it.**
+### *(Paper III's references and F14 are DONE — wealthTensor-05, commits `eb3e794` and `062b4c8`.)*
+
+**What wealthTensor-05 closed, so you do not redo it.** Paper III's seventeen references are
+**verified and marked ✓**, five of them **✓✎ = verified against Jason's own copy**. F14 is closed.
+The paper is **v0.3** and carries a revision history. Three defects were found in the process and all
+three are fixed and pushed:
+
+1. **Seven references were listed and never cited in the body** (Fama, the FASB topics, Mann &
+   Whitney, Mayo, Nosek, Popper, Chakrabarti). Six now do work in §5.1, §5.2 and §9; Chakrabarti was
+   **removed** as Paper II's literature rather than retro-fitted.
+2. **`docs/LEDGER.md`'s WT-056 entry still carried the PRE-AUDIT algebra** — `d` where δ belongs,
+   280× for the like-for-like 291×, "unrecoverable" for "ill-conditioned", and the cherry-picked
+   δ = 0.01 best case that `NOTE-001` §5 lists **by name** as its own error #2. wealthTensor-04 swept
+   its handoff for expired truth and did not sweep the file its handoff calls *the project's brain*.
+   **WT-057.**
+3. **A provenance pass against Jason's own library** (`~/Desktop/downloads` and
+   `/Volumes/Jason2/BOOK MASTERS`, copy-matched to prints he owned) found **three of the five books
+   present there cited as the wrong object** — Popper is Routledge Classics 2002 not Hutchinson 1959,
+   Soddy is the 1961 Omni third edition not the 1926 Allen & Unwin first, Piketty's French original is
+   Seuil 2013. The References preamble now **states the citation rule** rather than assuming it.
+   **WT-059.**
+
+**OPEN, and it is Jason's, not a session's.** Four cited books are in neither store — **Mises
+(*Human Action*), Godley & Lavoie, Mayo, Odum** — so their editions cannot be named on the same
+evidence as the other five. Two carry weight: §9 cites Mises specifically for *malinvestment*, which
+predates *Human Action* by decades, and §7 rests a withdrawn comparison on Odum. Filed in
+`REVIEW-001` under *Open, added wealthTensor-05*. **Do not guess an edition to close it.**
+
+**ALSO LEFT FOR JASON, deliberately not decided:** Paper III uses *correction* 29 times and *crisis*
+12 times **for the same event**, and the title is built on *crisis*. That is vocabulary, and
+vocabulary is his (§8 of the standing brief). Noted in `REVIEW-001` F14.
+
+### THE OLD START-HERE, kept only for the Limitation 4 notation table below — F11 is CLOSED.
 
 `verify: grep -n "Open, with disposition" -A 12 docs/papers/paper-III-dual-tensor/REVIEW-001-internal-referee.md`
 
@@ -292,6 +327,7 @@ Emit ONE orientation line — `Oriented: <state> · next at-bat: <X> · opening 
 | # | Fact |
 |---|---|
 | **L22** | **NEW — a mutation harness that edits a Python source in place must clear `__pycache__` between mutants AND print a mutation-specific fingerprint.** Without both, a stale `.pyc` makes mutant N report mutant N−1's numbers and the harness reports "all caught" when the later ones never ran. **The tell is two different mutants producing byte-identical failure output.** Also assert the *specificity*: a mutant that preserves the property under test should leave the guard test silent — otherwise you know the test is loud, not that it is right. |
+| **L24** | **Jason's library is searchable from darwin and it settles citation questions the web cannot.** Copy-matched digitisations of every print he owned live in `~/Desktop/downloads` (flat, filenames carry publisher + year + ISBN) and `/Volumes/Jason2/BOOK MASTERS` (topic folders, flat inside). **`find` on the NAS at full depth TIMES OUT** — use `-maxdepth 2`, or `ls` a topic folder. `pdftotext` is at `/opt/homebrew/bin/pdftotext`; a book's colophon is in its first 8 pages and answers the edition question outright. |
 | **L23** | **NEW — `roster claim` requires `--who` AND `--resource`.** The standing brief's `roster claim <repo>` shorthand errors out. Costs one round trip. |
 | **L15** | Mutation-test any result you intend to publish, and confirm the *right* test screams. Assert the anchor exists before replacing; always run an unmutated control. See L22 for the harness bug that makes this silently useless. |
 | L9 | venv at `.venv`. Tests: `./.venv/bin/python -m pytest tests/ -q`. Root `conftest.py` inserts `src/`. |
