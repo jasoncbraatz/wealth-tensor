@@ -190,14 +190,23 @@ three are fixed and pushed:
    Seuil 2013. The References preamble now **states the citation rule** rather than assuming it.
    **WT-059.**
 
-4. **The provenance gap is CLOSED.** Jason downloaded his Kindle and Open Library holdings to the
-   everything folder mid-session. **Mises** resolved to the Scholar's Edition whose front matter says
-   it reissues *the first edition* — now `1949/1998`, and load-bearing because the 1963 and 1966
-   editions differ. **Godley & Lavoie** confirmed. **Mayo was REMOVED**: the library match was *John
-   W. Mayo*, an antitrust economist, not *Deborah G. Mayo* — and the citation being removed had been
-   **added earlier in the same session** while repairing the uncited-reference defect. **Odum was
-   RE-POINTED** to *Environment, Power, and Society* (Columbia, 2007), which he owns and which uses
-   *emergy* 512 times; *Environmental Accounting* (Wiley 1996) is not in the library.
+4. **The provenance gap is CLOSED, and it inverted twice — WT-062.** All four missing books were
+   found once Jason searched his **seven** Kindles **by title rather than author**. **Mises** is the
+   Scholar's Edition whose front matter says it reissues *the first edition* — `1949/1998`, load-bearing
+   because the 1963 and 1966 editions differ. **Godley & Lavoie** confirmed. **Odum's *Environmental
+   Accounting* (Wiley, 1996) was there all along** — the first sweep's null was reported as absence and
+   the entry was wrongly re-pointed to a different Odum, then restored. **Mayo ended up better than it
+   started**: the book he read is *Error and the Growth of Experimental Knowledge* (Chicago, **1996**),
+   which *introduces* the severity requirement, rather than the 2018 restatement that had been cited —
+   so that entry is now correct on the edition-consulted rule and the first-appearance rule at the same
+   time, where before it was correct on neither. *Error and Inference* (Mayo & Spanos, CUP 2010) is
+   cited beside it.
+
+   **Procedure, and treat this as binding.** Search that library **by title**; Kindle exports keep the
+   author in AZW metadata, not the filename, and older devices do not index it. Treat a null as *"not
+   found in the indexed subset"*, never as *"he does not own it"*. **Ask before deleting a citation on
+   the strength of one** — both of this session's wrong provenance calls erred toward removal, which
+   felt rigorous and was careless.
 5. **The vocabulary question was NOT a vocabulary question — WT-060.** *Correction* collides twice:
    in finance it is a ≥10% decline from a peak, and **ASC 250 is titled *Accounting Changes and Error
    Corrections***, so the word asserted that prior statements required retrospective restatement — a
