@@ -151,3 +151,34 @@ be second-guessed:
   *Independent researcher* as the affiliation. All are absent today; all are cheap.
 - **One live placeholder to clear:** *"Further entries to be migrated from the project findings
   ledger as they accumulate"* is a TODO sitting in the deliverable.
+
+## Relitigation record
+
+- **2026-08-10 · wealthTensor (Fable session, with Jason) · REAFFIRMED.** Jason invoked the
+  §Status clause deliberately — "I'm not convinced it needs to be split" — and brought the
+  strongest available reason: the thesis IS the conjunction (three literatures each describing
+  a different layer of one abstraction stack), so splitting risks losing the whole Picasso.
+  Answered on four legs, recorded here so no future session rebuilds the argument:
+  1. **The objection names Paper IV, not a merger.** "The three fields are layers of one
+     stack" is itself the fourth claim, and it is stronger citing I–III as established results
+     than asserting all three legs inside one document. The decomposition *promotes* the
+     conjunction; it does not discard it.
+  2. **The stack analogy cuts toward the split.** TCP/IP was not one RFC — IP got 791, TCP got
+     793, and the architecture claim got its own literature. A layered-stack claim is credible
+     precisely because each layer's spec stands alone. "Lego-by-lego" (Jason, accepting,
+     2026-08-10).
+  3. **Containment is no longer a design argument — it is an observed outcome.** §Consequences
+     promised "failure is contained" on 2026-08-05; RESULT-002 (the severe test failing twice,
+     with power) landed the same week and touched Paper III alone, exactly as promised. The
+     insurance policy was bought Tuesday and the house caught fire Thursday.
+  4. **A monolith invites the 1993 failure mode, three times at once.** Each field's referee
+     hits ~950 words of "their" layer, rejects out of frame, and the conjunction never gets a
+     hearing. Split, only Paper IV asks a reader to cross a boundary, and its readers
+     self-select for it.
+- **Order II → III → I → IV reconfirmed by Jason same date** ("I'd probably like to just stick
+  to it in order").
+- **New post-IV artifact, TEED UP, not scheduled — THE MONOGRAPH.** After I–IV ship, compile
+  the four preprints back into a single narrative volume for the stated audience: connective
+  tissue, the ledger stories, the lost bet honoured, Abandoned Approaches in full. The
+  preprints are the scholarly deliverable; the monograph is the stewardship one. Guernica had
+  dozens of standalone studies; the mural came after. Do not start it before IV exists.
