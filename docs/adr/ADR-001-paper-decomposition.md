@@ -33,12 +33,15 @@ Split into four papers. One claim each. Evidence allocated without overlap.
 
 ### Paper I — Price formation without independent curves
 
-**Claim.** Supply and demand schedules are not independent equations. They are two readings of a
+**Claim.** *(Sharpened 2026-08-10 — see the Addendum at the foot of this file. The statement below
+is the one this ADR was written with; it is true, and it is one step weaker than the code
+supports.)* Supply and demand schedules are not independent equations. They are two readings of a
 single distribution of reservation prices, so the clearing interval is invariant to the
 allocation while the schedules are not — and the textbook cross is therefore a valid *snapshot*
 and an invalid *comparative static*.
 
-- **Code:** `excess_demand.py` (9 tests) + `cournot.py` (11 tests) = 20 tests.
+- **Code:** `excess_demand.py` (10 tests) + `cournot.py` (12 tests) = 22 tests, plus the
+  regeneration script `scripts/wt018_report.py` (wealthTensor-06).
 - **Ledger:** WT-001, 005, 012, 013, 014, 015, 017, 018, 019, 020, 021.
 - **Why these two modules together:** WT-001 established that the Cournot corner solution *is*
   the marginal pair — the same object from two directions — and WT-013 that Cournot's tatonnement
@@ -48,7 +51,8 @@ and an invalid *comparative static*.
   reduction to the Marshallian cross for any fixed allocation; endowment-effect volume decline
   93→49 units, reproducing Kahneman-Knetsch-Thaler as a consequence rather than a fit.
 - **SMD is the shield here and only here** (WT-041) — this is the paper where it is on-topic.
-- **Needs:** nothing new. Complete.
+- **Needs:** nothing new. Complete in evidence; **drafted as `docs/papers/paper-I-price-
+  formation/paper-I.md` in wealthTensor-06**, ~7.1k words, references verified.
 
 ### Paper II — Redistribution as a parameter space
 
@@ -229,3 +233,35 @@ it is rebuilt from scratch.
 definitely wins here — I see the picture now"). The clarification is that the order was never in
 tension with the argument's logic; it only looked that way because the numbering reads like a
 chain.
+
+### Addendum · 2026-08-10 · wealthTensor-06 · Paper I's claim was one step weaker than its own code
+
+Recorded here because §Decision's claim statement is what a future session reads first, and it
+understates what `excess_demand.py` demonstrates. Nothing about the split or the order changes.
+
+§Decision says *"the clearing interval is invariant to the allocation while the schedules are not."*
+True, and it is an **inference**: two objects that both move under a perturbation leaving the
+equilibrium fixed cannot be independent equations. Writing Paper I's regeneration script found the
+**identity** underneath it. Measured over 25 allocations at 399 interior grid points: 25 distinct
+demand schedules, 25 distinct supply schedules, and **one** distinct excess-demand schedule, equal
+to `#{i : m_i > p} − S` at every point. The *S* holders partition at any price into those above it
+and those below it, so the allocation enters the two counts with opposite signs and cancels — at
+every price, not merely at the zero.
+
+The upgrade is not rhetorical. The inference licenses *"the schedules are not independent"*; the
+identity licenses *"the decomposition of excess demand into a supply half and a demand half carries
+no economic content"*, which is a strictly stronger statement and needs no inferential step a
+referee can contest. It also gives the reduction result its proper shape: the Marshallian cross is a
+valid snapshot **because** it reads the zero of *z* correctly, and an invalid comparative static
+**because** it treats a bookkeeping split as two perturbable objects. Same theorem, both directions.
+
+A second result arrived the same way. WT-005's gloss — *damping rescues convergence but is an extra
+assumption* — is now sharpened: the stabilising damping is `d < 4/(n+1)` and therefore **vanishes
+like 4/n**, so the repair requires each firm to know how many rivals it has and slow itself in
+proportion. The fix needs precisely the information Cournot's static expectation denies.
+
+Ledger: **WT-063**, **WT-064**. Both pinned by tests. Neither was visible from the ledger, the ADR
+or the paper drafts — **only from writing the script that regenerates the numbers**, which is worth
+noting for its own sake: `scripts/wt018_report.py` was built to guard against WT-027's failure mode
+(hand-transcribed figures that stop regenerating), the figures all regenerated, and the script
+earned its keep anyway by making the modules state what they actually prove.
