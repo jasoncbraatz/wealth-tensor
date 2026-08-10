@@ -10,7 +10,7 @@ Three tables, matching the three claims:
 
   A · WT-027 · the filter in isolation (crisis mechanism disabled). Recognition lag,
       inter-period smoothing and deferred information against observability phi.
-  B · WT-028 · volatility is relocated, not suppressed. Inter-crisis smoothing against
+  B · WT-028 · volatility is relocated, not suppressed. Inter-correction smoothing against
       the share of reported movement occurring inside corrections.
   C · WT-027 · crisis frequency by entropy rate, at fixed observability.
 """
@@ -50,7 +50,7 @@ def table_a() -> None:
 
 def table_b() -> None:
     print("B · VOLATILITY IS RELOCATED, NOT SUPPRESSED (crisis mechanism live)")
-    print("   phi   inter-crisis smoothing   share of movement in corrections   crises")
+    print("   phi   inter-correction smoothing   share of reported movement inside corrections   crises")
     for phi in PHIS:
         res = LayeredFirm(observable_share=phi).run(PERIODS)
         vs = variance_suppression(res)

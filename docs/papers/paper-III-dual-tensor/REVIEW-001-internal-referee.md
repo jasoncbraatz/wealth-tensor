@@ -92,12 +92,22 @@ repaired retroactively — only disclosed.
   collapse when **it had no test at all**. It has one now:
   `test_the_two_layer_recursion_collapses_to_the_form_limitation_4_publishes`. NOTE-001 §5 records
   the full list, because that section teaches more than the finding does.
-- **F14 · §3.3's tables need their parameters in the caption.** *Fixed*, but the metric names are
-  still the module's rather than the paper's in one place.
+- **F14 · §3.3's tables need their parameters in the caption. — CLOSED, wealthTensor-05.** The two
+  diagnostics now carry the paper's names in §3.3's table and in the scaling-collapse prose, with the
+  module identifiers (`variance_suppression`, `variance_concentration`, `n_crises`) disclosed once in
+  the caption so the report script stays traceable. Closing it turned up a fourth slip of the same
+  family: §4.4's own table said *inter-crisis smoothing* where the abstract, §3.3 and §4.4's method
+  note all say *inter-correction*. Fixed. **Left for Jason, not decided here:** the paper uses
+  *correction* 29 times and *crisis* 12 times for the same event, and the title is built on *crisis*
+  — that is a vocabulary choice, and vocabulary is his.
 - **Piketty relocation (§9)** performs a move ADR-001 allocates to Paper IV. Referee rated MINOR;
   positioning is required by the checklist. Left as is, flagged for the Paper IV session.
-- **References** are drafted but only Paper II's have been verified against live sources. Paper
-  III's remain to be checked at submission.
+- **References — CLOSED, wealthTensor-05.** All seventeen verified against publisher pages, library
+  catalogues, Crossref and issuing-body documentation, and marked ✓. The check found more than
+  bibliography: **seven entries were listed and never cited in the body.** Six were given the work
+  they were listed for (§5.1 the FASB topics, §5.2 Mann & Whitney, §9 Fama, Popper, Mayo and Nosek);
+  Chakrabarti et al. was removed as Paper II's literature rather than retro-fitted. A referee reading
+  the list against the text would have found this before reading a single equation.
 
 ---
 

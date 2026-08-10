@@ -4,7 +4,12 @@
 *Independent researcher*
 jasoncbraatz@gmail.com
 
-**Draft — not yet submitted.** Version 0.1, 2026-08-10.
+**Draft — not yet submitted.** Version 0.3, 2026-08-10.
+
+*Revision history — recorded because the version string had not moved since v0.1 while three rounds of
+revision had: **v0.1** first draft; **v0.2** the responses to `REVIEW-001`, the internal adversarial
+referee report that ships beside this paper; **v0.3** §8 Limitation 4 (φ's conditioning on the effective
+decay δ), the notation audit, and references verified against live sources.*
 
 ---
 
@@ -282,14 +287,14 @@ and the invariance is measured on the dressed system.
 
 Sweeping η across twelve orders of magnitude, from 10⁻⁶ to 10⁺⁶ currency units per joule, at
 **φ = 0.3, correction mechanism live, 400 periods** (the diagnostics below are the same statistics
-§4.4 reports, under the names the module gives them: *variance suppression* is §4.4's
-inter-correction smoothing, *variance concentration* its share of movement inside corrections):
+§4.4 reports, under **this paper's names**; the module and `scripts/wt002_lambda_report.py` call them
+`variance_suppression`, `variance_concentration` and `n_crises`):
 
 | diagnostic | value at every η | spread across the sweep |
 |---|---|---|
 | recognition lag | 22 | **0.0** |
-| variance suppression | 0.6097 | **0.0** |
-| variance concentration | 0.9199 | **0.0** |
+| inter-correction smoothing | 0.6097 | **0.0** |
+| share of reported movement inside corrections | 0.9199 | **0.0** |
 | crisis count | 16 | **0.0** |
 | relative crisis magnitude | 0.20138 | **0.0** |
 | mean / min / terminal coupling ratio | — | **0.0** |
@@ -315,7 +320,7 @@ removing the scaling fails two.
 coupling (10⁻⁶ against 42) lie on a single dimensionless curve — every diagnostic identical, pairwise
 difference **exactly 0**, at φ = 0.3 over 300 periods. (The shorter horizon is inherited from the
 verifier this figure comes from and is stated because it changes the values: at 300 periods the
-system has had 12 corrections rather than 16, and variance suppression reads 0.6100 rather than
+system has had 12 corrections rather than 16, and inter-correction smoothing reads 0.6100 rather than
 0.6097. The *collapse* is horizon-independent; the numbers collapsed onto are not.)
 
 The sentence this licenses, and the paper will not need to say it twice: *the conversion
@@ -471,7 +476,7 @@ correction mechanism live, the claim layer is far smoother than the underlying *
 corrections, while the share of all reported movement occurring **inside** corrections rises
 toward one:
 
-| φ | inter-crisis smoothing | share of reported movement inside corrections | crises |
+| φ | inter-correction smoothing | share of reported movement inside corrections | crises |
 |---|---|---|---|
 | 1.0 | 1.00 | 0.00 | 0 |
 | 0.8 | 0.93 | 0.00 | 0 |
@@ -514,7 +519,11 @@ follows directly from §4.2:
 To test it, unobservability must be identified with something measurable. The identification
 chosen was **GAAP asset class**, on the reasoning that the categories accounting standards decline
 to place on an amortisation schedule are precisely the categories whose degradation is hardest to
-observe. That yields a four-tier ordering, predicted in advance to be monotone in lag:
+observe. The classes and their schedules are those of the FASB *Accounting Standards Codification*:
+Topic 360 for property, plant and equipment, Topic 350 for intangibles and goodwill — where the
+indefinite-lived classes are tested for impairment rather than amortised, which is what makes the
+recognition moment discretionary — and Topic 280 for the segment disclosures §8 identifies as the
+unit of observation this test did not have. That yields a four-tier ordering, predicted in advance to be monotone in lag:
 
 | tier | asset class | predicted |
 |---|---|---|
@@ -547,7 +556,9 @@ have when PRE-002 was written.
 ### 5.2 · The first instrument failed, and so did its diagnosis
 
 The first test (PRE-001) returned a null in both universes, and the two nulls did not even agree
-with each other. The pilot retained 120 events across 72 firms and gave Jonckheere–Terpstra
+with each other. The Jonckheere–Terpstra statistic sums the pairwise Mann–Whitney counts across the ordered tiers, so a
+tier ordering carrying no information returns z near zero from either direction — which is what happened,
+twice, in opposite directions. The pilot retained 120 events across 72 firms and gave Jonckheere–Terpstra
 **z = −0.177** (one-sided p = 0.570), with goodwill's median lag sitting *below* PP&E's — 4.0
 quarters against 5.0, the reverse of the predicted ordering. The replication universe, declared in
 the registration before the pilot was run, retained 202 events across 106 firms and gave
@@ -933,15 +944,18 @@ identities constrain dynamics. The difference is what the accounts are taken to 
 and complete there, consistent and **systematically incomplete** here, with the incompleteness
 being the object of study.
 
-**The efficient-markets literature** supplies the objection §4.3 answers, and the answer is a
+**The efficient-markets literature**, in Fama's canonical statement of it, supplies the objection §4.3
+answers — and, as §4.3 now concedes, does not yet receive an answer. What the model offers is a
 partition rather than a refutation: the model concedes disclosed information entirely and retains
 only the undisclosed residue.
 
 **On pre-registration and severe testing**, this paper is a straightforward application of the
 standard argument — that a prediction's evidential weight depends on the test having had a real
-chance to fail — to a domain where the practice remains uncommon. The registration, the negative
-control, the power analysis and the stopping rule are all conventional, and are claimed as nothing
-more than that.
+chance to fail — to a domain where the practice remains uncommon. The lineage is Popper's
+demarcation, Mayo's severity requirement — that a passing result counts only in proportion to the
+chance the test had of failing — and the preregistration case made by Nosek and colleagues. The
+registration, the negative control, the power analysis and the stopping rule are all conventional,
+and are claimed as nothing more than that.
 
 ---
 
@@ -1001,52 +1015,65 @@ this draft with the author's responses.
 
 ## References
 
-*Bibliographic details to be verified against live sources at submission (see
-`docs/papers/PREPRINT-CHECKLIST.md`); the citation set itself is settled.*
-
-Chakrabarti, B. K., Chakraborti, A., Chakravarty, S. R., & Chatterjee, A. (2013). *Econophysics of
-Income and Wealth Distributions*. Cambridge University Press.
+*Every entry marked ✓ was verified on 2026-08-10 (session wealthTensor-05) against a publisher page,
+a library-catalogue record, a Crossref record or the issuing body's own documentation — checked, not
+recalled. Paper II's references were verified the same way on the same date; the asymmetry between the
+two papers is closed.*
 
 Fama, E. F. (1970). Efficient capital markets: a review of theory and empirical work. *Journal of
-Finance*, 25(2), 383–417.
+Finance*, 25(2), 383–417. ✓
 
-Financial Accounting Standards Board. *ASC 350 — Intangibles: Goodwill and Other*; *ASC 360 —
-Property, Plant, and Equipment*; *ASC 280 — Segment Reporting*.
+Financial Accounting Standards Board. *Accounting Standards Codification*, Topic 350 — *Intangibles —
+Goodwill and Other*; Topic 360 — *Property, Plant, and Equipment*; Topic 280 — *Segment Reporting*. ✓
 
-Georgescu-Roegen, N. (1971). *The Entropy Law and the Economic Process*. Harvard University Press.
+Georgescu-Roegen, N. (1971). *The Entropy Law and the Economic Process*. Harvard University Press. ✓
 
-Godley, W., & Lavoie, M. (2007). *Monetary Economics: An Integrated Approach to Credit, Money,
-Income, Production and Wealth*. Palgrave Macmillan.
+Godley, W., & Lavoie, M. (2007). *Monetary Economics: An Integrated Approach to Credit, Money, Income,
+Production and Wealth*. Palgrave Macmillan. ✓
 
-Hayek, F. A. (1945). The use of knowledge in society. *American Economic Review*, 35(4), 519–530.
+Hayek, F. A. (1945). The use of knowledge in society. *American Economic Review*, 35(4), 519–530. ✓
 
-International Energy Agency & United Nations. *SDG Indicator 7.3.1 — Energy intensity measured in
-terms of primary energy and GDP.* (World Bank series `EG.EGY.PRIM.PP.KD`.)
+International Energy Agency & United Nations Statistics Division. *SDG Indicator 7.3.1 — Energy
+intensity measured in terms of primary energy and GDP.* Reported as World Bank series
+`EG.EGY.PRIM.PP.KD`, *Energy intensity level of primary energy*, compiled for *Tracking SDG 7: The
+Energy Progress Report* by the IEA, IRENA, UNSD, the World Bank and the WHO. ✓
 
-Jonckheere, A. R. (1954). A distribution-free k-sample test against ordered alternatives.
-*Biometrika*, 41(1–2), 133–145.
+Jonckheere, A. R. (1954). A distribution-free k-sample test against ordered alternatives. *Biometrika*,
+41(1–2), 133–145. ✓
 
-Mann, H. B., & Whitney, D. R. (1947). On a test of whether one of two random variables is
-stochastically larger than the other. *Annals of Mathematical Statistics*, 18(1), 50–60.
+Mann, H. B., & Whitney, D. R. (1947). On a test of whether one of two random variables is stochastically
+larger than the other. *Annals of Mathematical Statistics*, 18(1), 50–60. ✓
 
-Mayo, D. G. (2018). *Statistical Inference as Severe Testing: How to Get Beyond the Statistics
-Wars*. Cambridge University Press.
+Mayo, D. G. (2018). *Statistical Inference as Severe Testing: How to Get Beyond the Statistics Wars*.
+Cambridge University Press. ✓
 
-Mises, L. von (1949). *Human Action: A Treatise on Economics*. Yale University Press.
+Mises, L. von (1949). *Human Action: A Treatise on Economics*. Yale University Press. ✓
 
-Nosek, B. A., Ebersole, C. R., DeHaven, A. C., & Mellor, D. T. (2018). The preregistration
-revolution. *Proceedings of the National Academy of Sciences*, 115(11), 2600–2606.
+Nosek, B. A., Ebersole, C. R., DeHaven, A. C., & Mellor, D. T. (2018). The preregistration revolution.
+*Proceedings of the National Academy of Sciences*, 115(11), 2600–2606. ✓
 
-Odum, H. T. (1996). *Environmental Accounting: Emergy and Environmental Decision Making*. Wiley.
+Odum, H. T. (1996). *Environmental Accounting: Emergy and Environmental Decision Making*. John Wiley &
+Sons. ✓
 
-Piketty, T. (2014). *Capital in the Twenty-First Century*. Harvard University Press.
+Piketty, T. (2014). *Capital in the Twenty-First Century* (A. Goldhammer, Trans.). Belknap Press of
+Harvard University Press. ✓
 
-Popper, K. R. (1959). *The Logic of Scientific Discovery*. Hutchinson.
+Popper, K. R. (1959). *The Logic of Scientific Discovery*. Hutchinson & Co. ✓
 
-Quine, W. V. O. (1951). Two dogmas of empiricism. *Philosophical Review*, 60(1), 20–43.
+Quine, W. V. O. (1951). Two dogmas of empiricism. *Philosophical Review*, 60(1), 20–43. ✓
 
-Soddy, F. (1926). *Wealth, Virtual Wealth and Debt: The Solution of the Economic Paradox*. George
-Allen & Unwin.
+Soddy, F. (1926). *Wealth, Virtual Wealth and Debt: The Solution of the Economic Paradox*. George Allen
+& Unwin. ✓
 
-Terpstra, T. J. (1952). The asymptotic normality and consistency of Kendall's test against trend
-when ties are present in one ranking. *Indagationes Mathematicae*, 14, 327–333.
+Terpstra, T. J. (1952). The asymptotic normality and consistency of Kendall's test against trend, when
+ties are present in one ranking. *Indagationes Mathematicae*, 14, 327–333. ✓
+
+*Two notes on what changed at verification, since a reference list that silently improves teaches
+nothing.* **Seven of these entries were listed but never cited anywhere in the body** — Fama, the FASB
+topics, Mann & Whitney, Mayo, Nosek, Popper, and Chakrabarti et al. (2013). Six now do work in the text
+(§5.1, §5.2 and §9). The seventh, **Chakrabarti et al., was removed rather than retro-fitted**: it is
+Paper II's literature, it is cited there, and importing it here to justify a keyword is the scope
+error `REVIEW-001` F9 was raised about. And four entries were **imprecise rather than wrong** and have
+been tightened to what the source says: Piketty is the Belknap Press imprint in Goldhammer's
+translation; Popper is Hutchinson & Co.; Odum is John Wiley & Sons; and SDG 7.3.1's custodians are the
+IEA and the **United Nations Statistics Division**, not “the United Nations”.

@@ -1370,7 +1370,9 @@ availability claim survives; the identity claim does not.
 ---
 
 ## WT-056 · METHOD · 2026-08-10 · **the compute question was a data question wearing a hardware costume** · `docs/notes/NOTE-001`
-**φ is confounded with d. Pin d externally and φ recovers to ~10⁻³; leave it free and φ is unrecoverable below d ≈ 0.02.**
+**φ is confounded with the EFFECTIVE DECAY δ = d(1 − m). Pin δ externally and φ recovers to ~10⁻³; leave it free and φ is badly conditioned across most of the swept δ range — a CONDITIONING result, not non-identifiability.**
+
+> **Corrected 2026-08-10 (wealthTensor-05).** This entry was written before the adversarial audit recorded in `NOTE-001` §5 and kept the pre-audit algebra for a day after the paper and the note had been fixed — `d` where δ belongs (understating the divisor by (1 − m) = 0.4 in the flattering direction), 280× for the like-for-like 291×, “unrecoverable” for “ill-conditioned”, and the cherry-picked δ = 0.01 best case. See WT-057.
 
 Jason asked whether a 3090 would carry a PyTorch port of the dual tensor, or whether HF/DeepInfra
 GPU time would be needed. Characterising the workload answered the question and then produced
@@ -1385,20 +1387,25 @@ working default and the 3090 is *disqualified by precision, not by size*. A full
 300-step, float64 fit ran in **76 seconds**.
 
 **The finding.** That fit recovered φ badly — median abs error **0.20** on a true range of 0.1–0.9.
-Three checks: the noise-free series fits *equally badly* (0.211, so not noise); **pinning d at truth
-drops the error to 0.00073** (a 280× improvement, so entirely the confound); and with d free the
-error scales 27× across a 3× change in d.
+Three checks, all like-for-like at B = 2000 and 400 Adam steps: the noise-free series fits *equally badly*
+(0.21138, so not noise); **pinning δ at truth drops the median error to 0.00073** (p90 0.01727 — a **291×**
+improvement in the median, so the confound is the whole story); and recovery degrades **continuously** as δ
+falls, with no cliff: median 0.017 at δ ∈ [0.025, 0.035] against 0.468 at δ ∈ [0.005, 0.010].
 
-**The algebra, which makes it structural rather than numerical.** Substituting ΔE = −d·E(t):
+**The algebra, which makes it structural rather than numerical.** The recursion is driven by the *effective*
+decay δ = d(1 − m) — entropy rate d = 0.05 net of maintenance ratio m = 0.6, so δ = 0.02. Substituting
+ΔE = −δ·E(t):
 
-> **C(t+1) = C(t)(1 − α) + E(t)(α − φd)**
+> **C(t+1) = C(t)(1 − α) + E(t)(α − φδ)**,  E(t) = E₀(1 − δ)ᵗ
 
-**φ enters the observable only through the product φd.** The data identify α, d and k = (α − φd);
-φ = (α − k)/d, a division by a small number. Yet with d pinned, φ recovers to 0.00122 *even at
-d = 0.01* — so the binding constraint is the **confound**, not the decay rate itself.
+**φ enters the observable only through the product φδ.** The data identify α, δ and k = (α − φδ);
+φ = (α − k)/δ, a division by δ, so the estimator's variance grows like 1/δ². Pinning δ helps most where it
+is needed least: at the §4.2 sector sketches converted to effective decay, δ pinned gives median 0.00026 for
+software (δ = 0.080) and 0.00054 for industrial (δ = 0.020), but **0.00433 with a p90 of 0.191 for warehouse
+retail (δ = 0.004)** — the slow-decay tail stays bad even in the best case.
 
 **Consequence for REVIEW-001 F11, which this narrows sharply: to measure φ, acquire an independent
-estimate of d.** Depreciation schedules, useful-life assumptions in the filings, asset-life tables,
+estimate of δ.** Depreciation schedules, useful-life assumptions in the filings, asset-life tables,
 capex replacement cycles. No GPU is on the critical path and never was.
 
 *Worth saying in Paper III eventually:* **to measure the observability of degradation you must
@@ -1408,11 +1415,71 @@ reported series alone without the physical series it is defined against.
 **Disciplines observed, and they are the reason this entry is safe to keep.** Synthetic data only.
 Different estimator from PRE-001/002 (parametric fit vs non-parametric rank test), so it **explains
 nothing about their null and may not be cited as an account of it** — RESULT-002 §4 applies. The
-tempting conjecture that the pilot universe (retail, lowest d) was the worst-conditioned sector for
+tempting conjecture that the pilot universe (retail, lowest δ) was the worst-conditioned sector for
 this parameter is **written down and left undeveloped**; any test of it registers from scratch. And
 per **WT-052** the prototypes are committed as *declared scratch* with a written declaration
 (`scripts/prototypes/README.md`) so a future PRE-003 can name the SHA it registers against — the
 escape hatch WT-052 specified, used one day after it was written.
 
-**No free parameter was added.** d was always in the model (`entropy_rate` net of
-`maintenance_ratio`). This proposes *measuring* it.
+**No free parameter was added.** δ was always in the model — it *is* `entropy_rate` net of
+`maintenance_ratio`. This proposes *measuring* it.
+
+---
+
+## WT-057 · HYGIENE · 2026-08-10 · **the fix reached the paper, the note and the handoff — and stopped one file short** · session wealthTensor-05
+
+**A correction is not applied until it has been applied to every file that repeats the thing being
+corrected. Grep for the corrected symbol, do not re-read the file you just fixed.**
+
+wealthTensor-04 caught its own near-miss — the handoff was emitted before the last four fixes and
+carried expired algebra for half an hour — and fixed it, and wrote the lesson down. The **LEDGER**
+was not in the sweep. WT-056 sat at head for a day carrying **all four** of the errors the audit had
+removed from `NOTE-001` and Paper III §8: `d` where δ belongs, 280× where the like-for-like pair
+gives 291×, “unrecoverable below d ≈ 0.02” where the result is conditioning, and the cherry-picked
+δ = 0.01 best case that `NOTE-001` §5 lists **by name** as error #2.
+
+**Why this one is worse than the handoff near-miss it rhymes with.** A handoff is read once by one
+session. `LEDGER.md` is named in the orientation block of every handoff as *the project's brain*, and
+the standing instruction is to read it before touching anything. An error there is not stale — it is
+**authoritative and stale**, which is the combination that gets copied forward. A future session
+would have read the corrected paper and the corrected note *and then* read the uncorrected ledger,
+and had no way to tell which was current.
+
+**The mechanical rule, which costs one command.** After correcting a symbol or a figure anywhere,
+`grep -rn` the **wrong** form across `docs/` and `src/` and confirm zero hits before committing. Do
+not verify by re-reading the file you just fixed; that file is the one place the fix is guaranteed
+to be. This is the fourth instance of the notation family (WT-049, WT-055, WT-056's draft, now the
+ledger copy of WT-056) and the first where the correct text and the incorrect text were **both at
+head, in the same repository, at the same time**.
+
+*Found by:* reading `docs/LEDGER.md` at orientation exactly as the handoff instructs, and noticing
+that its algebra disagreed with the paper's.
+
+---
+
+## WT-058 · HYGIENE · 2026-08-10 · **a patch script that applies as it goes leaves a half-patched tree** · session wealthTensor-05
+
+**A multi-anchor edit script must validate every anchor BEFORE it writes the first byte.**
+
+wealthTensor-05's first patch script did sixteen exact-match replacements in a loop, each one
+asserting its anchor and writing immediately. Anchor twelve missed — a hard-wrapped sentence broke
+after *negative* rather than after *conventional*, so the literal did not match — and the script
+exited with eleven edits already on disk and five not. The tree was in a state no commit and no
+`git checkout` described: not the old version, not the new one, and not obviously either from
+`git status`.
+
+The fix is four lines and it is the difference between a failed run and a *recoverable* failed run:
+build the replacements into a dict of in-memory texts, assert every anchor against those texts, and
+only then write. A miss now prints `ANCHOR FAIL, NOTHING WRITTEN` and the tree is exactly as it was.
+
+**Two companions, both cheap.**
+- **Anchor on a span with no internal line break** where the file is hard-wrapped at 100 columns.
+  Wrapping is invisible in a rendered view and load-bearing in a literal match. Every anchor that
+  missed in this session missed on a newline, never on a word.
+- **This generalises the `.bak`-first rule to scripted edits.** "Create the undo path first" is
+  satisfied by git for a *clean* tree; it is not satisfied for a tree the script itself dirtied
+  halfway. Validate-then-write is what makes the undo path exist at the moment it is needed.
+
+*Cost this session:* one round trip and a hand-written continuation patch. *Cost if the miss had
+been at anchor two instead of anchor twelve:* the same. That is the point — the failure is silent
+about its own size.
