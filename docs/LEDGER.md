@@ -1366,3 +1366,53 @@ than recorded: the coupling is entailed, its representability as a scalar is an 
 modelling assumption. (b) SDG 7.3.1 is a **flow/flow** ratio and Λ is **stock/stock** — the same
 type error WT-049 diagnosed, committed one more time in the defence against it. The dimensional
 availability claim survives; the identity claim does not.
+
+---
+
+## WT-056 · METHOD · 2026-08-10 · **the compute question was a data question wearing a hardware costume** · `docs/notes/NOTE-001`
+**φ is confounded with d. Pin d externally and φ recovers to ~10⁻³; leave it free and φ is unrecoverable below d ≈ 0.02.**
+
+Jason asked whether a 3090 would carry a PyTorch port of the dual tensor, or whether HF/DeepInfra
+GPU time would be needed. Characterising the workload answered the question and then produced
+something better.
+
+**The hardware answer, measured on a deliberately weak 2-core 2.8 GHz Xeon** (upper bounds, not
+best case): forward+backward over the 400-step recursion costs 30 ms at *both* 1 firm and 100 firms
+— the recursion is **latency-bound**, so the batch dimension is free until it is wide and a GPU
+helps least. And **float64 is free on CPU** (6.7 ms fp64 vs 7.5 ms fp32) where a consumer Ampere
+card runs fp64 at ~1/64 of fp32. Since this programme checks closed forms to 10⁻¹⁵, fp64 is the
+working default and the 3090 is *disqualified by precision, not by size*. A full 10,000-firm,
+300-step, float64 fit ran in **76 seconds**.
+
+**The finding.** That fit recovered φ badly — median abs error **0.20** on a true range of 0.1–0.9.
+Three checks: the noise-free series fits *equally badly* (0.211, so not noise); **pinning d at truth
+drops the error to 0.00073** (a 280× improvement, so entirely the confound); and with d free the
+error scales 27× across a 3× change in d.
+
+**The algebra, which makes it structural rather than numerical.** Substituting ΔE = −d·E(t):
+
+> **C(t+1) = C(t)(1 − α) + E(t)(α − φd)**
+
+**φ enters the observable only through the product φd.** The data identify α, d and k = (α − φd);
+φ = (α − k)/d, a division by a small number. Yet with d pinned, φ recovers to 0.00122 *even at
+d = 0.01* — so the binding constraint is the **confound**, not the decay rate itself.
+
+**Consequence for REVIEW-001 F11, which this narrows sharply: to measure φ, acquire an independent
+estimate of d.** Depreciation schedules, useful-life assumptions in the filings, asset-life tables,
+capex replacement cycles. No GPU is on the critical path and never was.
+
+*Worth saying in Paper III eventually:* **to measure the observability of degradation you must
+observe the degradation from somewhere the reporting layer is not.** φ is not recoverable from the
+reported series alone without the physical series it is defined against.
+
+**Disciplines observed, and they are the reason this entry is safe to keep.** Synthetic data only.
+Different estimator from PRE-001/002 (parametric fit vs non-parametric rank test), so it **explains
+nothing about their null and may not be cited as an account of it** — RESULT-002 §4 applies. The
+tempting conjecture that the pilot universe (retail, lowest d) was the worst-conditioned sector for
+this parameter is **written down and left undeveloped**; any test of it registers from scratch. And
+per **WT-052** the prototypes are committed as *declared scratch* with a written declaration
+(`scripts/prototypes/README.md`) so a future PRE-003 can name the SHA it registers against — the
+escape hatch WT-052 specified, used one day after it was written.
+
+**No free parameter was added.** d was always in the model (`entropy_rate` net of
+`maintenance_ratio`). This proposes *measuring* it.

@@ -105,6 +105,10 @@ Corroborate what you use: `lessons.py use <id> --task <tag>` at orient,
 - **Two report scripts now exist** where one did: `wt027_report.py` (new) and
   `wt002_lambda_report.py` (extended with the scaling collapse). Every number in Paper III except
   the §5 empirics regenerates from one of them.
+- **`scripts/prototypes/` — DECLARED SCRATCH, synthetic data only, WT-052 declaration inside.**
+  A differentiable torch port of `lag.py` plus the identifiability diagnosis behind
+  `docs/notes/NOTE-001-phi-identifiability.md`. Needs `torch` (deliberately NOT in the project
+  venv — the suite stays a 2-second numpy affair). Produces no published number.
 - **WT-026 remains CLOSED and it closed by failing.** PRE-002's stopping rule fired and stays
   fired.
 - **Manuscript** (Google Doc `1RjAHJ7jHCX_N3ToHtstQvjlMb-BQz-iejBZ9Y4f58V8`) — untouched since S2.
@@ -167,10 +171,28 @@ is unstarted.** Two of four artifacts substantially exist. Drive at finishing.
 
 Four items, all named there with their current state. The substantial one is **F11**: λ's "shape
 prediction" forbids nothing while φ, α and θ are all swept rather than measured, and
-`lambda_sensitivity.py`'s own docstring declines to claim measurability. Paper III has retreated
-part-way; decide whether the sawtooth is presented as a model property (honest, modest) or whether
-a route to measuring φ exists (ambitious, and it would give the framework the severe test it
-currently lacks). **That decision is the most interesting open question in the project.**
+`lambda_sensitivity.py`'s own docstring declines to claim measurability.
+
+**F11 was narrowed at the end of wealthTensor-04 and you should read the narrowing before you plan
+anything — `docs/notes/NOTE-001-phi-identifiability.md` (and WT-056).** Measured, on synthetic
+data: **φ is confounded with d.** It enters the observed series only through the product φd, so
+φ = (α − k)/d — a division by a small number. Leave d free and φ is unrecoverable below d ≈ 0.02
+(median abs error 0.20). **Pin d at truth and φ recovers to 0.0007 — a 280× improvement — even at
+d = 0.01.**
+
+So the route to measuring φ exists, and it is **not** a modelling or compute problem:
+
+> **Acquire an independent estimate of d.** Depreciation schedules and useful-life assumptions in
+> the filings themselves, asset-life tables, capex replacement cycles, industry engineering data.
+
+That is data acquisition, and it is cheap. **No GPU is on the critical path** — the recursion is
+latency-bound and float64 is free on CPU while a consumer 3090 runs fp64 at ~1/64 rate, so the CPU
+is the *better* device here. A 10,000-firm, 300-step, float64 fit takes 76 s on a 2-core Xeon.
+
+**Before you write any fitting code that touches EDGAR, read `scripts/prototypes/README.md`.** It
+carries the WT-052 declaration. The prototypes are synthetic-only by design; the moment fitting
+code that has seen real data exists unregistered, WT-052 fires against us. A future PRE-003 names
+the SHA it registers against.
 
 Also: Paper III's references are drafted but **unverified** — Paper II's were verified and marked ✓
 the same day, so the asymmetry is visible and a referee would notice.
