@@ -102,7 +102,7 @@ repaired retroactively — only disclosed.
   — that is a vocabulary choice, and vocabulary is his.
 - **Piketty relocation (§9)** performs a move ADR-001 allocates to Paper IV. Referee rated MINOR;
   positioning is required by the checklist. Left as is, flagged for the Paper IV session.
-- **References — CLOSED, wealthTensor-05.** All seventeen verified against publisher pages, library
+- **References — CLOSED for bibliography, ONE ITEM OPEN for provenance, wealthTensor-05.** All seventeen verified against publisher pages, library
   catalogues, Crossref and issuing-body documentation, and marked ✓. The check found more than
   bibliography: **seven entries were listed and never cited in the body.** Six were given the work
   they were listed for (§5.1 the FASB topics, §5.2 Mann & Whitney, §9 Fama, Popper, Mayo and Nosek);
@@ -118,3 +118,20 @@ two universes' statistics **inside the section about honesty**. The second found
 section was still, in three separate places, grading its own homework. Neither would have been
 caught by re-reading. The cost of both was a few minutes; the cost of a referee finding F1 instead
 would have been the paper.*
+
+## Open, added wealthTensor-05
+
+- **Four cited books are not in the author's library, and he cannot say which edition he read.**
+  A provenance pass against his own digitised collection (`~/Desktop/downloads` and the `BOOK MASTERS`
+  archive, both copy-matched to prints he owned before donating them) located **Popper, Soddy,
+  Georgescu-Roegen, Piketty and Chakrabarti** and corrected three of those citations to the edition
+  actually consulted. It did **not** locate **Mises (*Human Action*), Godley & Lavoie (*Monetary
+  Economics*), Mayo (*Statistical Inference as Severe Testing*) or Odum (*Environmental Accounting*)**.
+  All four are cited in §7 or §9. Journal articles are excluded from this finding — a book archive is
+  not expected to hold them.
+
+  This is **not** an accusation that the works were not read; it is the observation that the citation
+  cannot presently name an edition on the same evidence the other five can. Two of those four carry
+  more weight than the other two: §9 cites **Mises** specifically for *malinvestment*, which predates
+  *Human Action* (1949) by decades, and §7 rests an entire withdrawn comparison on **Odum**. Resolving
+  it needs the author, not a session.

@@ -1015,10 +1015,17 @@ this draft with the author's responses.
 
 ## References
 
-*Every entry marked ✓ was verified on 2026-08-10 (session wealthTensor-05) against a publisher page,
-a library-catalogue record, a Crossref record or the issuing body's own documentation — checked, not
-recalled. Paper II's references were verified the same way on the same date; the asymmetry between the
-two papers is closed.*
+***The citation rule this list follows, stated because the author was inconsistent about it before this
+pass and the correction is method rather than tidiness.* The edition cited is the edition *consulted* —
+the copy in the author's possession — not the earliest printing a catalogue happens to list. Where the
+original's date does argumentative work, because the entry is a translation or because a claim about
+priority rests on it, the entry is **dual-dated** `original/consulted`. A reprint that changes no
+pagination is a *printing*, not an edition, and is not dual-dated.**
+
+*Verified on 2026-08-10 (session wealthTensor-05).* **✓** — checked against a publisher page, a
+library-catalogue record, a Crossref record or the issuing body's own documentation, not recalled.
+**✓✎** — additionally checked against **the author's own copy**, by reading that copy's title page and
+colophon. The ✓✎ entries are the ones where doing so changed the citation.
 
 Fama, E. F. (1970). Efficient capital markets: a review of theory and empirical work. *Journal of
 Finance*, 25(2), 383–417. ✓
@@ -1026,7 +1033,9 @@ Finance*, 25(2), 383–417. ✓
 Financial Accounting Standards Board. *Accounting Standards Codification*, Topic 350 — *Intangibles —
 Goodwill and Other*; Topic 360 — *Property, Plant, and Equipment*; Topic 280 — *Segment Reporting*. ✓
 
-Georgescu-Roegen, N. (1971). *The Entropy Law and the Economic Process*. Harvard University Press. ✓
+Georgescu-Roegen, N. (1971). *The Entropy Law and the Economic Process*. Harvard University Press. ✓✎
+*(The copy consulted is the Harvard Paperback second printing, 1974, ISBN 0-674-25781-2; a printing is
+not an edition, so no dual date.)*
 
 Godley, W., & Lavoie, M. (2007). *Monetary Economics: An Integrated Approach to Credit, Money, Income,
 Production and Wealth*. Palgrave Macmillan. ✓
@@ -1055,15 +1064,28 @@ Nosek, B. A., Ebersole, C. R., DeHaven, A. C., & Mellor, D. T. (2018). The prere
 Odum, H. T. (1996). *Environmental Accounting: Emergy and Environmental Decision Making*. John Wiley &
 Sons. ✓
 
-Piketty, T. (2014). *Capital in the Twenty-First Century* (A. Goldhammer, Trans.). Belknap Press of
-Harvard University Press. ✓
+Piketty, T. (2013/2014). *Capital in the Twenty-First Century* (A. Goldhammer, Trans.). Belknap Press of
+Harvard University Press. ✓ *(Original work published as* Le Capital au XXIe siècle*, Éditions du Seuil,
+2013. §9's relocation argument is about work that existed a year before the English text cited here.)*
 
-Popper, K. R. (1959). *The Logic of Scientific Discovery*. Hutchinson & Co. ✓
+Popper, K. R. (1935/2002). *The Logic of Scientific Discovery*. Routledge Classics. ✓✎ *(The copy
+consulted is the Routledge Classics edition of 2002. Its own colophon gives the chain:* Logik der
+Forschung *first published 1935, Vienna — its preface dated 1934 — first English edition Hutchinson &
+Co., 1959, Routledge from 1992. §9 cites Popper for the demarcation criterion, which is 1935's, not
+1959's, so the original date is load-bearing and the entry is dual-dated.)*
 
 Quine, W. V. O. (1951). Two dogmas of empiricism. *Philosophical Review*, 60(1), 20–43. ✓
 
-Soddy, F. (1926). *Wealth, Virtual Wealth and Debt: The Solution of the Economic Paradox*. George Allen
-& Unwin. ✓
+Soddy, F. (1926/1961). *Wealth, Virtual Wealth and Debt: The Solution of the Economic Paradox* (3rd ed.).
+Omni Publications. ✓✎ *(The copy consulted is the third edition, LCCN 60-53331, printed in the United
+States under a Britons Publishing Company, London, title page, and described on that page as a reprint
+of the second edition of 1933 “containing new material and Foreword to the American Nation”. The first
+edition is George Allen & Unwin, London, 1926; the copy's own* Preface to the First Edition *is dated
+January 1926 and its Addition to the Second Edition refers to “the book, which first appeared in 1926”.
+The term* virtual wealth *is in the 1926 title, so 1926 is the earliest appearance this paper can
+support; Soddy's own footnote points back to* Cartesian Economics *(Hendersons, 1922) as prior work on
+the subject, and whether the term itself originates there has NOT been checked — the 1922 pamphlet is
+not in the author's library. No claim of priority is made in the text, so none is made here.)*
 
 Terpstra, T. J. (1952). The asymptotic normality and consistency of Kendall's test against trend, when
 ties are present in one ranking. *Indagationes Mathematicae*, 14, 327–333. ✓
@@ -1073,7 +1095,16 @@ nothing.* **Seven of these entries were listed but never cited anywhere in the b
 topics, Mann & Whitney, Mayo, Nosek, Popper, and Chakrabarti et al. (2013). Six now do work in the text
 (§5.1, §5.2 and §9). The seventh, **Chakrabarti et al., was removed rather than retro-fitted**: it is
 Paper II's literature, it is cited there, and importing it here to justify a keyword is the scope
-error `REVIEW-001` F9 was raised about. And four entries were **imprecise rather than wrong** and have
-been tightened to what the source says: Piketty is the Belknap Press imprint in Goldhammer's
-translation; Popper is Hutchinson & Co.; Odum is John Wiley & Sons; and SDG 7.3.1's custodians are the
-IEA and the **United Nations Statistics Division**, not “the United Nations”.
+error `REVIEW-001` F9 was raised about. Separately, four entries were **imprecise rather than wrong**
+against their publishers and have been tightened to what the source says: Odum is John Wiley & Sons;
+SDG 7.3.1's custodians are the IEA and the **United Nations Statistics Division**, not “the United
+Nations”; and Piketty and Popper were both corrected twice — first to the right publisher, then again
+to the right *object*, once the author's own copies were read. Those two and Soddy carry the ✓✎ mark
+and their notes above give the chain.
+
+*A third note, on the order these were found in, because it is the reusable part.* The bibliographic
+pass came back clean — every work exists, with those details, from a publisher or a catalogue. The
+provenance pass an hour later found that **three of the five books present in the author's library
+were being cited as the wrong object**. Both passes were correct; they answer different questions, and
+only the second one asks whether the citation points at the thing that was read. See `LEDGER.md`
+WT-059.

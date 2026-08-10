@@ -1483,3 +1483,64 @@ only then write. A miss now prints `ANCHOR FAIL, NOTHING WRITTEN` and the tree i
 *Cost this session:* one round trip and a hand-written continuation patch. *Cost if the miss had
 been at anchor two instead of anchor twelve:* the same. That is the point — the failure is silent
 about its own size.
+
+---
+
+## WT-059 · METHOD · 2026-08-10 · **verifying a reference is not the same act as verifying a citation** · session wealthTensor-05
+
+**A bibliographic check asks “does this work exist with these details?”. A provenance check asks
+“is this the object the claim is about, and is it the one I read?”. They are different questions
+and the first one passes while the second fails.**
+
+Paper III's seventeen references were verified against publishers, library catalogues, Crossref and
+issuing-body documentation and every one came back correct. Then the same list was checked against
+**Jason's own digitised library** — copy-matched scans of the prints he owned — and three of the
+five books present there were being cited as the wrong object:
+
+| entry | what the catalogue said | what his copy says |
+|---|---|---|
+| Popper | *The Logic of Scientific Discovery*, Hutchinson & Co., 1959 | Routledge Classics **2002**; colophon gives *Logik der Forschung* 1935, preface dated 1934 |
+| Soddy | George Allen & Unwin, 1926 | **third edition, Omni Publications, 1961**, LCCN 60-53331, reprinting the 1933 second edition |
+| Piketty | Belknap Press, 2014 | 2014 Belknap **and** a 2017 HUP printing, both Goldhammer; French original Seuil **2013** |
+
+Both were right. They were answering different questions.
+
+**The rule adopted, and it is two rules that had been welded into one.**
+1. **Cite the edition consulted.** This is the near-universal modern norm (APA 7, Chicago) and it is
+   an *honesty* rule, not a scholarship one: pagination, wording and — for translations — the actual
+   sentences are edition-specific, so pointing at an edition never opened is a small false statement
+   about one's own evidence.
+2. **Cite the first appearance only when making a claim about firstness.** Jason remembered this as a
+   general obligation from 1993. It is not, and never quite was — it fires on priority claims and
+   nowhere else. Dual dating (`1926/1961`) discharges both at once.
+
+**The corollary that matters more than either.** *Reading order is irrelevant to citation.* No style
+guide has ever asked what sequence a bibliography was consumed in. It asks what is on the shelf, and
+separately what came first. A researcher who picks the next book by its title is running a
+high-variance sample of a literature, which is how a Nobel chemist's monetary theory ends up in an
+econophysics paper at all.
+
+**Where it did NOT fire, which is the discipline half.** Georgescu-Roegen's copy is the Harvard
+Paperback *second printing* of 1974. A printing does not change the edition and is **not** dual-dated;
+the entry stays 1971. Adding provenance noise where provenance did not change is the failure mode on
+the other side of this rule.
+
+**Open, and it needs Jason.** Four cited books — Mises, Godley & Lavoie, Mayo, Odum — are in neither
+store, so their editions cannot be named on the same evidence as the other five. Filed against
+`REVIEW-001`, not the Batter's Box: a Claude with darwin can check a library, but only he knows which
+copy he read.
+
+*Found by:* Jason asking whether the first-appearance rule he learned in 1993 was still practice. It
+half is, and asking the question found three wrong citations in a list that had passed verification
+forty minutes earlier.
+
+**Postscript, same session, ten minutes later — WT-057 fired inside the file that documents it.** The
+References section's closing summary still read “Popper is Hutchinson & Co.” after the Popper *entry*
+directly above it had been changed to Routledge Classics 2002. The entry was corrected; the sentence
+*about* the entry was not. It was caught by reading the rendered section end to end rather than by
+grepping, which is worth noting because **the WT-057 grep would not have caught it either** — the
+stale text contained no wrong symbol and no wrong number, only a right fact about a superseded
+decision. Grep finds stale *tokens*; only reading finds stale *claims*. Both passes are needed and
+they catch disjoint things — which is the same shape as WT-054's two adversarial agents, and by now
+the third time this project has learned that two cheap different checks beat one thorough identical
+one.
