@@ -778,7 +778,7 @@ An earlier draft of this section argued that the framework had escaped the trap 
 Odum's emergy programme — that emergy's fatal defect was making no risky predictions, and that
 losing a registered bet therefore counted as a kind of methodological success.
 
-That argument is withdrawn, and the reason it is withdrawn is worth more than the argument was.
+That argument is withdrawn, on three counts a sceptical reader would have reached first.
 It selects its own reference class: introduce a comparator that made no predictions and any loss
 becomes a comparative victory. It is an assessment of the author's conduct rather than of the
 world, and it arrives at the end of the section reporting the failure, so it would be the last

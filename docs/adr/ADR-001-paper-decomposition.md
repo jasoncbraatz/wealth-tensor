@@ -2,6 +2,9 @@
 
 - **Status:** ACCEPTED · 2026-08-05 (S2) · decided with Jason, in session
 - **Supersedes:** the implicit single-artifact plan carried from S1
+- **AMENDED 2026-08-11 (wealthTensor-10): the corpus is THREE preprints.** Paper I folds into
+  Paper IV by Jason's ruling — see the final addendum. The title and §Decision below record the
+  decision **as it was made** and are deliberately not rewritten; the addenda amend it.
 - **Relitigation:** none required. If a future session wants to reopen this, read §Consequences
   first and bring a reason not already answered there.
 
@@ -397,3 +400,62 @@ not been designed. **What would it mean for the four papers to fail as a system,
 them failing?** That question has no written answer anywhere in this repository. It should have one
 before the fourth paper is finished, not after — a test designed once the result is known is not a
 severe test, which is the whole point of the position being recorded here.
+
+---
+
+### Addendum · 2026-08-11 · wealthTensor-10 · **Paper I folds into Paper IV. The corpus is three preprints.** — Jason's ruling
+
+**Asked in -09 and not answered; asked again in -10 and answered immediately.** Jason's ruling:
+**fold into IV.** The recommendation on the table was the same, so this addendum records a decision
+rather than a change of course — but it changes the shape of the corpus and the Definition of Done,
+so it is recorded at full length.
+
+**What died, and it died twice.** Paper I was briefed as *Price formation without independent
+curves*, re-scoped around P3 in -07 when the original claim proved one step weaker than its own code,
+and the re-scope was killed in -08 along with its replacement. `RESULT-WT070-p3-is-dead.md` and
+addenda 3 and 4 above carry the argument. **The paper was never written**, which is the one mercy in
+the sequence: nothing is being retracted, only not-written.
+
+**What survives is subsection-sized and it is real.** The identity
+
+> **the crossing height IS the volume** — *D*(*p*\*) = *S*(*p*\*) = |*H* \ *T*|
+
+survives every attack made on it, in -06, -07 and -08. It is a true statement about the object and it
+is worth publishing. It is not worth a preprint.
+
+**Why IV and not III.** Paper IV's charter — *composition across scales* — already covers the thing
+the identity is about: a quantity defined at one level of aggregation turning out to be the same
+object as a quantity defined at another. The identity is an instance of the charter rather than an
+addition to it. **Paper III was considered and rejected as a force-fit**, and the WT-042 alarm was
+audible when the option was raised: III is the reporting-layer paper and the identity has no
+reporting layer in it. Grafting it there would have been placement by convenience.
+
+**The Abandoned Approaches entry travels with it, and it is large.** Two dead framings, a re-scope,
+the re-scope's replacement, and a registered prediction that failed. It will be the longest such
+entry in the corpus and it is the part of Paper I with the highest teaching value — which is the
+audience test that governs `docs/` (§Consequences), applied to a paper rather than a directory.
+
+## What changes
+
+| | before | after |
+|---|---|---|
+| **corpus size** | four preprints | **three preprints** |
+| **submission batch order** | II → III → I → IV | **II → III → IV** |
+| **Definition of Done** | "Four preprints publicly posted…" | **"Three preprints publicly posted…"** — every other clause unchanged |
+| **Paper I's charter** | its own preprint | a subsection of IV, plus IV's Abandoned Approaches |
+
+**What does NOT change.** The split itself, the per-paper Definition of Done clauses, `ADR-001`
+§Order of publication's *reasoning*, and the -08 ruling that nothing ships until the corpus is done.
+Paper I's existing documents — `paper-I.md`, `RESULT-WT070-p3-is-dead.md`, `REVIEW-002`, `REVIEW-003`
+— **stay exactly where they are.** They are the record of how the decision was reached, and deleting
+them would be the tidiness that manufactures a false history.
+
+**And it sharpens the open question rather than shrinking it.** The end-to-end test (addendum 6,
+still unclaimed) asks *what would it mean for the papers to fail as a system?* That question is
+**easier to answer for three papers than four, and harder to dodge** — with I folded in, the corpus
+is redistribution, the reporting layer, and composition across scales, which is a conjunction with a
+shape rather than a list with four items. Whoever designs the test now has a smaller and better-posed
+object to design it against.
+
+*Recorded because a corpus that quietly becomes three papers, in a repository whose central document
+says four, is a contradiction a future session would find the hard way.* (L35.)

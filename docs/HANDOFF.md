@@ -201,11 +201,14 @@ the corpus's one chance at an end-to-end severe test to bank an early win.
 
 ## 4c · DEFINITION OF DONE
 
-> Four preprints publicly posted, each carrying: abstract, keywords, JEL codes, a numbered
+> **Three** preprints publicly posted — **II, III and IV** (Paper I folds into IV, ADR-001
+> addendum 7, Jason's ruling 2026-08-11) — each carrying: abstract, keywords, JEL codes, a numbered
 > contributions list, an Abandoned Approaches section, a limitations section, a data/code availability
 > statement naming the repo and a pinned commit SHA, and *Independent researcher* as the affiliation.
-> Paper III additionally cites PRE-001/002 and their registering commit SHAs. When the fourth is
-> posted, this project is done and the repo becomes an archive.
+> Paper III additionally cites PRE-001/002 and their registering commit SHAs. **Paper IV
+> additionally carries Paper I's surviving identity — the crossing height IS the volume — and
+> Paper I's Abandoned Approaches, which will be the longest such entry in the corpus.** When the
+> third is posted, this project is done and the repo becomes an archive.
 
 **Progress: II done and unshipped. III at v0.4 with §9 provisional. I dead. IV unstarted.** Drive at
 finishing.
