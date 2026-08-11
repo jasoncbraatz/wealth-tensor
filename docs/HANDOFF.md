@@ -1,6 +1,6 @@
 ---
 project: wealth-tensor
-gh_sha: 2b7afa02e46d8cd22f4f99fa804df164937bdd6e
+gh_sha: PENDING
 updated: 2026-08-11
 session: wealthTensor-09
 gate_passed: true
@@ -188,8 +188,9 @@ does not."* **Register is his. Do not cut it unilaterally.**
 **A methodological position, not a scheduling preference, and it is his.** Shipping II now would spend
 the corpus's one chance at an end-to-end severe test to bank an early win.
 
-- **Do not ask him to submit Paper II, or III, or I.** The question is closed. **Six handoffs have now
-  been written since it was settled; five of them asked.**
+- **Do not ask him to submit Paper II, or III, or I.** The question is closed. **Five consecutive
+  handoffs treated it as an unmade decision before -08 surfaced it. It was a made decision, and he
+  had simply never been asked in a way that surfaced the reason.**
 - Publication ORDER in ADR-001 unchanged — II → III → I → IV is the order of the *submission batch*.
 - **A session's job is to get papers to DONE, not out the door.**
 - **The end-to-end test is a deliverable and is still undesigned.** *What would it mean for the four
@@ -409,8 +410,8 @@ lead with the bare 27%.
 witnesses corrected `wt071`'s own prose**: the 26× ratio's denominator swings 12.9× across *N* and its
 numerator swings 4.6×, so "dominated by the denominator" was two claims in one assertion and is now
 two checks. The house-style ruling applied to both papers, with one sentence flagged and left for
-Jason. Four global lessons banked. Reference apparatus extended. **121 tests, three commits, all
-pushed.**
+Jason. Four global lessons banked. Reference apparatus extended. **121 tests, three content commits
+plus the handoff, all pushed, tree clean, gate PASS.**
 
 *The lesson of the session, and it is not -08's.* That one learned that a control which resamples is
 not a control. **This one learned that a completed reading is not a completed search.** The reading
