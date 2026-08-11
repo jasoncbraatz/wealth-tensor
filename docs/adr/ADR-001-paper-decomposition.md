@@ -367,3 +367,33 @@ audible and is recorded here rather than acted on.
 **Open, and Jason's:** whether Paper I survives as a paper at all, or becomes a section of IV. The
 publication order II → III → I → IV is not reopened by this; what is in question is only whether the
 third slot still contains a paper.
+
+### Addendum · 2026-08-11 · wealthTensor-08 · **nothing ships until the corpus is done** — Jason's ruling
+
+Recorded here because §Order of publication reads as a sequence of separate submission events, and it
+is not one. **Five consecutive handoffs recorded Paper II as "ready to submit, awaiting Jason's word"
+and instructed the next session to go and get that word.** The word was not missing. The decision had
+been made and no session had asked in a way that surfaced the reason.
+
+> **Jason, 2026-08-11:** *"I want to wait until we have the corpus done (so we can test it end to
+> end; right now we're testing the individual parts like those who use error-statistical philosophy;
+> correct approach here — when we're done with the papers, I want to re-test the entire system at
+> once)."*
+
+**This is a methodological position and it is his.** Every paper so far has been given a severe test
+of its own parts — a hostile referee, a priority audit, a pre-registration with a stated falsifier, a
+mutation-tested guard. **What has never been tested is the conjunction.** ADR-001 §Relitigation
+record already establishes that the conjunction *is* the fourth claim; it follows that the conjunction
+needs its own test, and that a corpus gets exactly one first end-to-end pass. Shipping II early spends
+that pass to bank a partial win.
+
+**What changes.** Nothing about the split, the order, or the per-paper Definition of Done. **II → III
+→ I → IV is now the order of a submission *batch*, not a schedule of separate events.** A session's
+job is to bring papers to DONE; "ready to submit" is the terminal state for an individual paper, and
+no session should ask Jason to trigger a submission before all four reach it.
+
+**What this opens, and nobody has claimed it.** The end-to-end test is itself a deliverable and has
+not been designed. **What would it mean for the four papers to fail as a system, as opposed to one of
+them failing?** That question has no written answer anywhere in this repository. It should have one
+before the fourth paper is finished, not after — a test designed once the result is known is not a
+severe test, which is the whole point of the position being recorded here.

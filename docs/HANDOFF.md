@@ -1,6 +1,6 @@
 ---
 project: wealth-tensor
-gh_sha: ff887c96a952d16ea338d6b6b14530915a94514e
+gh_sha: PENDING
 updated: 2026-08-11
 session: wealthTensor-08
 gate_passed: true
@@ -93,9 +93,9 @@ Corroborate what you use: `lessons.py use <id> --task <tag>` at orient,
   `wt071_refuter.py` (the three adversarial checks, all of which the paper lost),
   `wt072_coupling.py` (structured couplings, and the frictional identification result).
   **Every guard mutation-tested; every mutant died as required (WT-069).**
-- **Paper II — COMPLETE.** SHA `d655501`, zero live placeholders. **Ready to submit when Jason says
-  so. He has not said so. FIVE sessions now.** This is the longest-standing open item in the project
-  and it is one word from being closed.
+- **Paper II — COMPLETE and DELIBERATELY UNSHIPPED. Do not ask him to submit it.** SHA `d655501`,
+  zero live placeholders. **Jason's ruling, 2026-08-11 — see §4d. Nothing ships until all four are
+  done.** Five sessions of handoffs read his silence as an unmade decision. It was a made one.
 - **Paper III — v0.3, and better than it was this morning.** All 20 refs ✓. **Its §9 crash-risk
   positioning is no longer written from a search** — `POSITIONING-001-crash-risk.md` is the reading,
   done at last after two deferrals. §9 **does not survive as written** and the file says exactly what
@@ -168,6 +168,36 @@ demonstrating something other than the concession.
 **Not yet applied to any paper.** Applying it to II and III is teed up and is cheap. **Register is
 his — do not extend the ruling past what it says.**
 
+## 4d · **NOTHING SHIPS UNTIL THE CORPUS IS DONE** — Jason's ruling, 2026-08-11. **Binding.**
+
+Recorded because **five consecutive handoffs treated Paper II's non-submission as an unmade decision
+and told the next session to go and get it.** It was a made decision. He had not been asked in a way
+that surfaced the reason.
+
+> **Jason, 2026-08-11:** *"I want to wait until we have the corpus done (so we can test it end to
+> end; right now we're testing the individual parts like those who use error-statistical philosophy;
+> correct approach here — when we're done with the papers, I want to re-test the entire system at
+> once)."*
+
+**This is a methodological position, not a scheduling preference, and it is his.** Each paper has so
+far been subjected to a severe test of its own parts — a hostile referee, a priority audit, a
+pre-registration, a mutation-tested guard. What has never been tested is **the conjunction**: whether
+the four papers, taken together, survive as one system. Shipping II now would spend the corpus's one
+chance at an end-to-end severe test in order to bank an early win. *(He owns Mayo's* Error and the
+Growth of Experimental Knowledge *and* Error and Inference*; the vocabulary is deliberate.)*
+
+**Consequences for any session:**
+
+- **Do not ask him to submit Paper II, or III, or I.** The question is closed. Asking again spends
+  his attention on a decision he has already made and explained.
+- **The publication ORDER in ADR-001 is unchanged** — II → III → I → IV is still the order of the
+  *submission batch*, not a sequence of separate events.
+- **A session's job is to get papers to DONE, not to get them out the door.** "Ready to submit" is
+  the terminal state for an individual paper.
+- **The end-to-end test is itself a deliverable and has not been designed.** What would it mean for
+  the four papers to fail as a system? Nobody has written that down. **Writing it down is available
+  work and nobody has claimed it.**
+
 ## 4c · DEFINITION OF DONE
 
 > Four preprints publicly posted, each carrying: abstract, keywords, JEL codes, a numbered
@@ -215,11 +245,11 @@ subsection-sized expository observation — **the crossing height IS the volume*
 *S*(*p*\*) = |*H* \ *T*|, so the cross reads the population on one axis and the coupling on the other
 — plus a large Abandoned Approaches entry.
 
-### 3 — **SUBMIT PAPER II.** Done, and has been for five sessions. **ASK HIM AGAIN.**
+### 3 — ~~Submit Paper II~~ **CLOSED BY JASON'S RULING, 2026-08-11. DO NOT REOPEN. See §4d.**
 
-`docs/papers/PREPRINT-CHECKLIST.md` §C and **re-verify the venue rules live** — last checked
-2026-08-05, venue rules rot. **SSRN has no gate in and NO APPEAL out** (WT-051). **Jason's decision
-to trigger.** *If a session gets one thing from him, get this.*
+Nothing ships until the corpus is complete. When it does ship, `docs/papers/PREPRINT-CHECKLIST.md`
+§C applies and **the venue rules must be re-verified live** — last checked 2026-08-05, venue rules
+rot. **SSRN has no gate in and NO APPEAL out** (WT-051).
 
 ### 4 — **Apply the house-style ruling to Papers II and III.** Cheap, decided, unapplied. §4b.
 
