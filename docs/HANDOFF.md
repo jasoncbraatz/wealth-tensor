@@ -1,6 +1,6 @@
 ---
 project: wealth-tensor
-gh_sha: 22d6435a9b16aa89b41d9f49b0a92a430c984667
+gh_sha: PENDING
 updated: 2026-08-11
 session: wealthTensor-08
 gate_passed: true
@@ -82,14 +82,14 @@ python3 ~/repos/claude-blackbook/lessons.py doctrine
 ```
 
 > **`RESULT-WT070` first.** It is the shortest path to why Paper I is not a paper, and it contains
-> three method rules that generalise beyond this project.
+> four method rules that generalise beyond this project (WT-070/071/072/073).
 
 Corroborate what you use: `lessons.py use <id> --task <tag>` at orient,
 `lessons.py record-outcome <tag> pass` at wrap.
 
 ## 3 · STATE
 
-- **Code — 121 tests passing**, tree clean and pushed. Three new scripts this session:
+- **Code — 121 tests passing**, tree clean and pushed. Four new scripts this session:
   `wt070_p3_fold.py` (the fold identity, the volume theorem, the comparative static),
   `wt071_refuter.py` (the three adversarial checks, all of which the paper lost),
   `wt072_coupling.py` (structured couplings, and the frictional identification result) — plus
@@ -315,7 +315,7 @@ python3 scripts/handoff_gate.py --stamp
 git commit -am "docs: stamp handoff gh_sha to HEAD"
 python3 scripts/handoff_gate.py --emit
 bash ~/Scripts/gate-selfcheck.sh                                    # expect PASS
-/tmp/dx '~/Scripts/roster leave --who big-wealthTensor-08'
+/tmp/dx '~/Scripts/roster leave --who big-wealthTensor-09'   # YOUR id, not -08
 ```
 
 **`--emit` does not stamp**, and refuses on `gate_passed: false`. Walk
@@ -413,5 +413,25 @@ and is now doctrine rather than a tip. And **the moved trigger paid for itself t
 the gap between building an instrument and disbelieving its interpretation was three tool calls, and
 nothing false reached the ledger, the papers or Jason.
 
+**And then Jason asked the question that produced the session's most durable artifact.** Handed the
+finished handoff, he asked whether there was *a creative way to approach the `4/21 < 4/11`
+recurrence.* There was, and it was not another lesson entry. **The defect had been written down five
+times and mechanised zero times — a sixth writing-down would itself have been an instance of it.**
+
+It was renamed after its behaviour rather than its first costume — **the phantom tag**, the fielder
+credited with an out he never made because his foot never touched the bag — and mechanised as
+`scripts/severity.py`: **every check ships a witness, the condition evaluated in a world where the
+claim is false, executed at check time.** A guard whose witness also passes kills the run. `wt070`
+was retrofitted (18 severe · 1 definitional · 0 vacuous) with the -08 instance **preserved in place**
+as `HISTORICAL PHANTOM TAG` and the witness that kills it attached, so the repository holds the defect
+and its refutation in one executable file. `tests/test_severity.py` runs the original `4/21` assertion
+through the harness and requires it to die.
+
+`docs/METHOD-001-the-phantom-tag.md` is the public record, written at Jason's request for a later
+reader doing an epistemological dig — six instances tabulated, why writing the lesson down kept
+failing, and a standing commitment that **if a reader cannot tell whether a document here is current,
+that is a defect in this repository and not in their reading.**
+
 Wicksteed's chapter needed 116 years to catch up with Paper I v0.1. **P3 · Atomism did not survive
-the morning it was born, and its successor had been proved in 1926.** 🪃
+the morning it was born, its successor had been proved in 1926, and the session's most useful output
+turned out to be the thing Jason asked for after the handoff was already written.** 🪃⚾
