@@ -265,3 +265,55 @@ or the paper drafts — **only from writing the script that regenerates the numb
 noting for its own sake: `scripts/wt018_report.py` was built to guard against WT-027's failure mode
 (hand-transcribed figures that stop regenerating), the figures all regenerated, and the script
 earned its keep anyway by making the modules state what they actually prove.
+
+### Addendum · 2026-08-11 · wealthTensor-07 · Paper I is re-scoped around P3, and the re-scope is currently unsupported
+
+Recorded here because §Decision's statement of Paper I's claim is what a future session reads first,
+and that claim is now **displaced prior art**.
+
+**What happened.** `REVIEW-002` (wealthTensor-06) rejected Paper I v0.1 and left one claim standing:
+the allocation cancels from excess demand identically, at every non-reservation price. It made a
+literature search a **precondition** of any redraft. The search found the claim in **Wicksteed
+(1910), Bk II Ch. IV** — same horse market, same reallocation exercise, and the §5 thesis about the
+Marshallian cross as well. `REVIEW-003` carries the audit; `WT-066` carries the ledger entry.
+
+**Nothing about the split or the order changes.** What changes is the level at which Paper I states
+its claim.
+
+**The decision (Jason, 2026-08-11), and the argument that survived testing.** Jason's reading was
+that *our* case is the general one and theirs the special case. Tested on three axes, it came back
+split, and the split is the useful part:
+
+1. **Böhm-Bawerk — he is right.** *Marginal pairs* needs four parties in two pairs; pooling the
+   eighteen valuations at *S* = 8 collapses them to two order statistics. The distinction his
+   statement requires is dissolved, not specialised.
+2. **Wicksteed, within the market — he is wrong, and this must be conceded in print.** Wicksteed
+   covers divisible goods and multi-unit holdings. Our unit-demand identity is a strict special
+   case of his.
+3. **Wicksteed, on the axis that matters — he is right, and this ADR already said so.** The third
+   addendum records that Paper I's claim is an instance of **P3 · Atomism**. Read through P3 the
+   claim is not Wicksteed's: excess demand is a fold over units; the two schedules are folds over
+   units **and the allocation**, which is not a property of the population. Wicksteed's apparatus is
+   subjective scales of preference and is domain-bound by construction — he has no P3, and complains
+   that the diagram is *misleading* rather than that its halves are not the kind of object they
+   present themselves as.
+
+**So Paper I was not scooped. It was written one level too low** — it went out as a market result
+and met the man who owns markets. The third addendum had the right reading and the draft did not use
+it.
+
+**The condition attached to this decision, and it is not yet met.** The P3 framing is only worth
+anything if the identity does work somewhere Wicksteed's apparatus cannot follow. `REG-001` was
+registered to test exactly that and **returned no verdict** — the instrument was mis-specified in
+four ways, and its priority audit put the general proposition in four established literatures, the
+earliest being Markov-chain lumpability (Kemeny & Snell, 1960). See `RESULT-REG-001.md` and `WT-067`.
+
+**Therefore:** Paper I is re-scoped around P3, and **its limitations section must state that the
+generality is unexercised, in those words**, until a second instantiation exists that survives an
+adversarial pass. A re-scope whose justifying condition is unmet is an honest draft with a stated
+exposure; a re-scope that hides the gap is the thing this programme exists not to do.
+
+**Citations now mandatory whatever Paper I becomes:** Wicksteed (1910) Bk II Ch. IV **in front**;
+Böhm-Bawerk (1889, Smart trans.) for *marginal pairs*; Shapley & Shubik (1971), whose §4 is titled
+*"The Horse Market of Böhm-Bawerk"*; Theocharis (1960), Fisher (1961), Bischi et al. (2010) eq. 2.26
+for §4.2; Coase (1960) and Gorman (1953) as adjacent-not-displacing.
