@@ -1288,10 +1288,10 @@ Terpstra, T. J. (1952). The asymptotic normality and consistency of Kendall's te
 ties are present in one ranking. *Indagationes Mathematicae*, 14, 327–333. ✓
 
 *How this list was checked, recorded because a reference section that silently improves teaches a
-reader nothing. The per-entry findings live in the ✓ and ✓✎ notes above, attached to the entries they
+reader nothing. The per-entry findings live in the ✓, ✓✎ and ✓⧗ notes above, attached to the entries they
 describe, so that correcting an entry cannot leave a summary of it behind.*
 
-**Three passes ran, in this order, and each one found what the previous one structurally could not.**
+**Four passes ran, in this order, and each one found what the previous ones structurally could not.**
 
 1. **Bibliographic.** Every entry checked against a publisher page, a library catalogue, a Crossref
    record or the issuing body's own documentation. It asks *does this work exist with these details?*

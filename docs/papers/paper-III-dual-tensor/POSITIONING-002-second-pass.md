@@ -9,6 +9,10 @@
   by its own adversarial pass within the hour. The rewrite's *facts* survive; its *positioning claim*
   does not. §9 is provisional pending §6 below.
 - **Read this before touching Paper III §9 or §4.4.**
+- **AMENDED 2026-08-11, session `wealthTensor-10`.** §6's table is rewritten with verified
+  read-statuses — **three of the four unread items are now discharged.** The discharge found a
+  fourth death for the paper's positioning claim and, in the same pass, a better one to replace it.
+  **See §9, appended below.** §7 is CLOSED — Jason ruled 2026-08-11.
 
 ---
 
@@ -193,10 +197,10 @@ pipeline wearing a better suit.
 | Hutton, Marcus & Tehranian (2009), *JFE* 94(1) | OPAQUE; post-SOX dissipation | **ABSTRACT verified at source.** Body not read as typeset |
 | Basu (1997), *JAE* 24(1) | supplies the one-way ratchet | **ABSTRACT ONLY** (author's own SSRN posting) |
 | Beaver & Ryan (2000), *JAR* 38(1) | bias/lag decomposition | **ABSTRACT ONLY** |
-| **Ryan (1995), *JAR* 33** — *A model of accrual measurement with implications for the evolution of the book-to-market ratio* | may be **closer prior art than Beaver & Ryan (2000)** — a *model* where B&R (2000) is an empirical decomposition | **NOT READ. TITLE ONLY.** Highest-priority unread item |
-| Kim & Zhang (2016), *CAR* | conditional conservatism **lowers** crash risk, 1964–2007 — §4.2's comparative static, empirically supported | **NOT READ.** Agent-reported abstract |
-| Kim, Wang & Zhang (2016), *CAR* | CEO overconfidence: a manager who genuinely misperceives — blocks loose use of "non-agency" | **NOT READ.** Agent-reported abstract |
-| Zhu (2016), *RAST* | accruals accumulate to a tipping point, release at once; agency-based | **NOT READ.** Agent-reported abstract |
+| **Ryan (1995), *JAR* 33(1), 95–112** — *A model of accrual measurement with implications for the evolution of the book-to-market ratio* | may be **closer prior art than Beaver & Ryan (2000)** — a *model* where B&R (2000) is an empirical decomposition | **STILL NOT READ — and no legitimate open copy exists.** Bibliographic record verified four ways (JSTOR `10.2307/2491294`, RePEc, Crossref, Ryan's own NYU Stern CV). Unpaywall `closed`, zero repository copies, no working-paper predecessor — it **predates the accounting preprint era.** JSTOR read-online is the only route and it is Jason's; card issued 2026-08-11 (`~/Desktop/downloads/READING-CARD-ryan-1995.md`). **⚠ An ERRATUM exists that this project did not know about: *JAR* 33(2), p. 417, `10.2307/2491496`. Contents unknown.** ⚠ The "abstract" circulating for this paper is **indexer-manufactured** — *JAR* printed no abstracts in 1995. See §9.4. |
+| Kim & Zhang (2016), *CAR* 33(1), 412–441 | conditional conservatism **lowers** crash risk — §4.2's comparative static, empirically supported | **FULL TEXT, verified by `pdftotext`+`grep`, own eyes.** Accepted manuscript, CORE `200253419`, md5 `6f5fc5f96ef554e59e135352bba10267`, 65 pp, ms-paginated 1–63 — **not** the 412–441 typesetting, so **✓⧗**. Deposited by SMU InK. Sample **1964–2007, 114,548 firm-years — confirmed.** See §9.2. |
+| Kim, Wang & Zhang (2016), *CAR* 33(4), 1720–1749 | CEO overconfidence: a manager who genuinely misperceives — blocks loose use of "non-agency" | **FULL TEXT, verified by `pdftotext`+`grep`, own eyes.** Submitted version, CORE `200253418`, 49 pp, ms-paginated — **✓⧗**. **This is the paper that killed the positioning claim. See §9.1.** |
+| Zhu (2016), *RAST* 21(2), 349–399 | accruals accumulate to a tipping point, release at once; agency-based | **ABSTRACT ONLY — and by necessity, not by laziness. ✓◐.** No legitimate open copy exists: Unpaywall `closed`, SSRN 2758880 states "Not Available for Download", no IDEALS deposit, not among the five working papers the author self-hosts. Abstract verified **verbatim and identical across three sources.** The agent-reported characterisation **held on the check**: "tipping point" is **Zhu's own phrase**, and the mechanism is explicitly *"managers' use of income-increasing accrual estimates to hoard bad news."* Distinguishes cheaply; string cite only; **no absence claim may rest on it.** |
 | Bushman & Williams (2015), *JAR* 53(3) | delayed expected-loss recognition | **BIBLIOGRAPHIC ONLY** |
 | Gorton & Ordoñez (2014), *AER* | symmetric ignorance, wedge grows with time, threshold, discontinuous collapse | agent-verified as **two-sided** (collateral reverts up as well as down) — a structural rhyme, **not prior art**. Not read by the author |
 | Zeira (1999), *JME* | informational overshooting | has a **boom phase** §4 does not have. Judged padding. Not read by the author |
@@ -207,9 +211,21 @@ comparative static and found it.
 
 ---
 
-## 7 · **OPEN, and Jason's — should §9's home literature move?**
+## 7 · ~~OPEN~~ **CLOSED 2026-08-11 — Jason ruled: BOTH, conservatism primary, crash risk secondary**
 
-**Recommendation: move it from crash risk to conservatism and measurement.**
+> **The ruling.** §9 leads with conservatism-as-a-dynamic-system and retains a shorter crash-risk
+> subsection positioning against Jin & Myers, Bleck & Liu, Kim & Zhang and Kim/Wang/Zhang.
+> Longer §9, but it does not abandon the readers who arrive by the crash-risk keyword.
+>
+> **§9.1 below makes this ruling look better than it did when it was made.** The crash-risk
+> subsection is no longer a priority fight the paper loses; it is a three-way disambiguation the
+> paper wins, because the crash-risk literature turns out to have carved the space and left exactly
+> one cell empty. See the grid.
+
+*The original recommendation is retained below, unedited, because the reasoning is still the
+reasoning even though the verdict went one step further than it asked for.*
+
+**Recommendation was: move it from crash risk to conservatism and measurement.**
 
 The crash-risk literature is crowded, empirical, and agency-dominated. Paper III is theory-only, with
 two failed registrations, and §9 concedes it is "much the weaker of the two accounts" on evidence.
@@ -240,3 +256,154 @@ verified and are marked as such in §6, and none of them appears in the paper.
 text and said so, then landed the session's fatal hit from the summary alone. The defect is recorded
 because the lesson is not "check your prompts": it is that a hit available from a two-line summary was
 a hit available to any referee who had read the source at all.*
+
+---
+---
+
+# 9 · **ADDENDUM, session `wealthTensor-10`, 2026-08-11 — what the §6 discharge found**
+
+*Three of the four unread items are now read at source. Everything below was verified by
+`pdftotext` + `grep` on PDFs downloaded and hashed by this session — no agent, no summariser, no
+retrieval layer in the loop for any quoted sentence. Four adversarial research agents located the
+sources; **not one of their content claims entered this document without being re-run by hand.***
+
+## 9.1 · The positioning claim died a fourth time, and its killer is the paper that saves it
+
+**Kim, J.-B., Wang, Z., & Zhang, L. (2016). CEO overconfidence and stock price crash risk.
+*Contemporary Accounting Research* 33(4), 1720–1749.** Read in the SMU InK submitted version
+(CORE `200253418`, 49 pp, ms-paginated — hence **✓⧗**). Manuscript p. 9, verbatim:
+
+> "It is important to first stress that our hypothesis **does not depend on the existence of any
+> rational moral hazard behavior**, such as empire building, stealing, or other types of private
+> interest seeking. Instead, we are concerned with situations where **the interests of the manager
+> and outside investors are perfectly aligned.**"
+
+and, from their conclusion:
+
+> "The poor performance of these bad projects will **accumulate and eventually materialize** at their
+> final maturity, leading to a market crash of the stock price."
+
+**A published crash mechanism that explicitly disclaims agency, with accumulation and release.**
+Any §9 that calls this paper "the non-agency generator of the same asymmetry" is dead on arrival.
+*That is the third framing this programme has lost to prior art in five sessions, and the second
+found by us before it was written down.*
+
+## 9.2 · What replaces it, and the axis was never the one we were arguing about
+
+Read together, the five crash-risk papers carve a grid and leave **exactly one cell empty.**
+
+| | manager's beliefs | manager's incentives | **where the wedge lives** |
+|---|---|---|---|
+| Jin & Myers (2004/06) | correct | capture | in the **incentive** |
+| Bleck & Liu (2007) | correct — *"unbiased estimates of the projects' intrinsic value"* | private benefit | in the **incentive** (+ regime) |
+| Zhu (2016) | correct | hoarding via accrual estimates | in the **incentive** |
+| Kim & Zhang (2016) | correct | hoarding | in the **incentive** |
+| Kim, Wang & Zhang (2016) | **wrong** | **aligned** | in the **manager's head** |
+| **§4** | **correct** | **aligned** | **in the measurement rule** |
+
+**The axis was never *agency vs. non-agency*.** Kim/Wang/Zhang own non-agency and say so in terms.
+The axis is **where the wedge lives**, and there are three places, not two: an incentive, a belief,
+or the rule that computes the number. Everyone else takes the first two. §4 takes the third —
+nobody is mistaken, nobody is concealing, and the gap opens anyway because of how the reported value
+is *required* to be computed.
+
+**This is a claim about form, it is narrower than what died, and unlike the last three attempts it
+is verified rather than asserted.**
+
+*Kim, Wang & Zhang hand us the template for making the move.* They distinguish themselves from
+Bleck & Liu on precisely this axis, at manuscript p. 9: *"in the Bleck–Liu model, managers are
+rational, in the sense that they have unbiased estimates of the projects' intrinsic value and keep
+the bad projects to derive more private benefits."* §9 performs the same operation one column
+further along, and cites them while doing it.
+
+**⚠ The honest weakness, stated here so §9 must deal with it.** KWZ's overconfident CEO *does*
+privately observe negative feedback and *is* "reluctant to release" it — the authors write that
+overconfidence "can lead to bad news hoarding." So their channel routes through concealment even
+though it does not originate there. §4 must therefore distinguish on **origin**, not on outcome:
+in KWZ, fix the CEO's beliefs and the wedge vanishes; in §4, give everyone correct beliefs and the
+wedge remains, because it is in the reported number rather than in anyone's head.
+
+## 9.3 · Kim & Zhang (2016) — the corroboration and the ceiling, both confirmed against the text
+
+Read in the SMU InK accepted manuscript (CORE `200253419`, md5
+`6f5fc5f96ef554e59e135352bba10267`, 65 pp, ms-paginated 1–63 — **✓⧗**).
+
+**The accumulate-to-threshold-then-release story is in their introduction, in prose, and nowhere in
+their measurement.** Manuscript p. 1: *"Once the amount of accumulated bad news reaches a certain
+threshold, it will be released all at once, leading to stock price crashes."* Manuscript p. 5:
+*"When the accumulated bad news reaches a certain tipping point…"*
+
+Severity witness — full-text counts over the extracted manuscript, run by this session:
+
+| term | count | | term | count |
+|---|---|---|---|---|
+| `threshold` | **1** | | `goodwill` | 0 |
+| `tipping point` | **1** | | `impair` | 0 |
+| `unrecognized` | 0 | | `intangible` | 0 |
+| `recognition lag` | 0 | | `useful life` | 0 |
+| `asset class` | 0 | | `historical cost` | 0 |
+| `write-down` / `write-off` | 0 | | `fair value` | 0 |
+
+Controls fire correctly: `conservatism` 185, `crash` 252, `Basu` 45, `accrual` 21, `hoard` 5.
+And `unconditional` appears **exactly twice in 63 pages** — once in footnote 1 as a definitional
+contrast, once as the label "Unconditional Crash Probability = 12%", which is a base rate and not a
+construct. **Only conditional conservatism is measured; the paper cannot and does not speak to
+unconditional.**
+
+**So the gap §4 claims is real and now demonstrated rather than asserted:** they model conservatism
+as a contemporaneous asymmetric response coefficient — Basu, Ball–Shivakumar, Khan–Watts `CSCORE` —
+and assert accumulation in the prose. There is no stock variable, no accumulated-unrecognised-loss
+reserve, and no threshold parameter anywhere in the paper.
+
+**And the direction is corroboration, which this framework has never had before.** Conditional
+conservatism is significantly and negatively associated with future crash risk, 114,548 firm-years,
+1964–2007. That is §4.2's comparative static, empirically supported by somebody else. **Handle both
+halves: it is simultaneously the best external support the programme has ever received and a ceiling
+on how novel §4.2 may claim to be.**
+
+*One item §9 must not round off:* their Table 10 extends the forecast window to 2 and 3 years and
+finds predictive power **increases** with window length, which they read as *"the hidden bad news of
+less conservative firms is more likely to materialize in longer terms."* That is the closest their
+**empirics** come to an accumulation story, it is offered as a tentative "may suggest", and it is the
+single most useful sentence in the paper for us.
+
+## 9.4 · Ryan (1995) — still undischarged, and it came with two surprises
+
+**No legitimate open copy exists.** Unpaywall `closed`; zero repository copies; no working-paper
+predecessor — the article **predates the accounting preprint era.** JSTOR is the only route and it is
+the author's to walk. Bibliographic record verified four ways.
+
+1. **⚠ An erratum exists that this project did not know about.** *JAR* 33(2), Autumn 1995, p. 417,
+   `10.2307/2491496`. Contents unknown. **If Ryan (1995) is ever cited here, the erratum is cited
+   with it.**
+2. **⚠ The "abstract" circulating for Ryan (1995) is manufactured by an indexer.** *JAR* printed no
+   abstracts in 1995. What OpenAlex serves is assembled from Microsoft Academic Graph metadata and
+   visibly restarts its own framing mid-way — abstract text welded to opening-paragraph text.
+   Semantic Scholar declines to serve one at all. **Nothing in this document rests on it.**
+
+   *This is the phantom tag in a fourth medium: an abstract credited to a paper that never had one.
+   See `METHOD-001` §5 and `REFERENCE-POLICY` §6.*
+
+## 9.5 · Zhu (2016) — the check came back agreeing, and that is recorded too
+
+The agent was instructed that *a confirmation of what I told you is more suspicious than a
+contradiction.* It confirmed anyway, and it was right to. "Tipping point" is **Zhu's own phrase**,
+from his own published abstract, and the mechanism is explicitly *"managers' use of income-increasing
+accrual estimates to hoard bad news"* — which cannot operate with nobody informed. Agency, cheap to
+distinguish, string cite. **✓◐** — abstract only, by necessity: no legitimate open copy exists.
+
+*Recorded because §5 of this document records an adversary struck for over-reaching, and a file that
+only ever records the adversary being wrong is not a record, it is a defence.*
+
+## 9.6 · What remains before §9 can be called final
+
+1. **Ryan (1995) + its erratum** — Jason's read; card issued; seven questions, of which
+   **Q2 (is the measurement error one-signed or two-signed?) decides whether §4's ratchet is a
+   distinct object.**
+2. **Beaver & Ryan (2000)** — §9 names it closest prior art **on an abstract.** If Ryan (1995)
+   displaces it, we will have displaced something we never read.
+3. **Basu (1997)** — §4's ratchet *is* his object, and this project has never read him. Closed
+   everywhere; the author route is the play.
+
+*Nothing in §9.1–§9.3 is contingent on those three. Nothing in §9.1–§9.3 may be written as final
+until they are resolved.*
