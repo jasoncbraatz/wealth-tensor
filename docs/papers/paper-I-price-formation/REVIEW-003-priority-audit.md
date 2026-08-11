@@ -149,10 +149,49 @@ mid-reorganisation and remembers reading Vol. II. **L24 exists to prevent exactl
 was invoked, correctly, about his NAS four messages earlier.** What is established is only that the
 chapter is not in the two files supplied.
 
-**Outstanding:** everything here is verified against the **1910 Macmillan first edition**. The
-standard modern copy is the **1933 Robbins "Revised and Enlarged"**, and whether Book II Ch. IV
-changed between them is **unchecked**. Page numbers are also outstanding — the Econlib text has
-none, and *"Book II Ch. IV"* with no page is the thin end of WT-059.
+## 7b · RESOLVED — Vol. II located, pages pinned, and one live question
+
+Jason produced **Vol. II** of the Robbins 1933 edition the same day (it was on a different Kindle;
+most of them had not been charged in years). Book II Ch. IV, *"Buyer and Seller. Demand and
+Supply,"* runs **pp. 493–526**. Every quote in this file survives into that edition **verbatim**,
+and each now has a page:
+
+| passage | p. (1933 Robbins, Vol. II) |
+|---|---|
+| initial distribution *"affects the amount of business done … but it does not affect the price or the ultimate distribution"* | **498** |
+| *"We could of course have started at any other point of (b) lower than 40 … with the same result"* | **505** |
+| *"The connection between these two pieces of information is **arbitrary** …"* — the strongest sentence | **506** |
+| Hobson's horse market set up; Figs. 26–29 | **507** |
+| *"The **irrelevant facts** are that the eight horses are at present in the possession of A-H"* and *"you may distribute the items between the groups just as you like"* | **509** |
+| *"The method of intersection is, in fact, a **mere disguise of the method of addition**"* | **516** |
+
+**Cite the 1933 Robbins edition with these pages, and note the 1910 Macmillan first edition as the
+original.** That closes the WT-059 exposure §7 opened.
+
+**And a footnote in the 1933 text that is NOT in the Econlib 1910 text.** Attached to p. 512, at
+exactly the reallocation passage (Figs. 28–29):
+
+> "**I have preserved the convention by which the "demand" curve is made to run down and the
+> "supply" curve to run up, from left to right. Of course it has no significance and might just as
+> well be neglected or reversed.**"
+
+That is the corollary stated more baldly than anywhere in the 1910 chapter: the up/down orientation
+— the visual signature of the whole diagram — is asserted to carry no significance at all.
+
+**Two things are NOT established and must not be written as though they were.** *(a)* Whether the
+footnote is Wicksteed's or Robbins'. The first person reads as the author's voice, and an editor
+would more likely bracket it or write in the third person, but that is inference. *(b)* Whether it
+is genuinely new in 1933 or **was dropped by Econlib** — a figure-adjacent note is exactly what a
+web edition loses. The string is absent from the *entire* 1.5 M-character Econlib file including its
+footnote apparatus, which is suggestive and not decisive. **Settle it against an archive.org scan of
+the 1910 Macmillan printing before quoting it.**
+
+**On "Enlarged".** The likely reading, and it is only a reading: the 1933 title is *Common Sense
+**and Selected Papers and Reviews on Economic Theory***, and Vol. II carries those papers — the
+Marxian value essays, the Jevons pieces, the 1913 *Scope and Method* address. **Enlarged** probably
+means the papers were added, not that the *Common Sense* text was revised. A token-level diff of
+Ch. IV against 1910 found no substantive prose divergence — every large block was running heads,
+page numbers, figure fragments or footnote markers — with the single exception above.
 
 ## 8 · One thing worth a smile
 

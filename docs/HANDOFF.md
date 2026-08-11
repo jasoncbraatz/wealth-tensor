@@ -219,7 +219,25 @@ Ask.**
 
 ### 4 — **OUTSTANDING FROM -07, cheap, and Jason may already have done it.**
 
-He went to look for **Vol. II** of the Robbins 1933 *Common Sense*. Everything in `REVIEW-003` is
+**RESOLVED IN -07 — he found it (different Kindle, years uncharged) and it is verified.**
+**Bk II Ch. IV is pp. 493–526** in the 1933 Robbins Vol. II; every quote survives **verbatim**; the
+six load-bearing passages carry pages **498, 505, 506, 507, 509, 516** (`REVIEW-003` §7b). **Cite
+the 1933 edition with those pages** — the WT-059 exposure is closed. **ONE OPEN ITEM:** a footnote
+at **p. 512** — *"I have preserved the convention by which the 'demand' curve is made to run down
+and the 'supply' curve to run up … Of course it has no significance and might just as well be
+neglected or reversed"* — is absent from the entire Econlib 1910 text. **Do not quote it** until
+you have checked an archive.org scan of the 1910 Macmillan printing: a figure-adjacent note is
+exactly what a web edition drops, and authorship (Wicksteed or Robbins) is unsettled too.
+*Superseded reasoning, kept because it is why this mattered:* DONE in -07 — he found it and it is verified. See `REVIEW-003` §7b:**
+   Bk II Ch. IV is **pp. 493–526** (1933 Robbins, Vol. II), every quote survives **verbatim**, and
+   the six load-bearing passages now carry pages (498, 505, 506, 507, 509, 516). **Cite the 1933
+   edition with those pages.** ONE OPEN ITEM: a footnote at **p. 512** — *"I have preserved the
+   convention by which the 'demand' curve is made to run down and the 'supply' curve to run up …
+   Of course it has no significance and might just as well be neglected or reversed"* — is absent
+   from the entire Econlib 1910 text. **Do not quote it until you have checked an archive.org scan
+   of the 1910 Macmillan printing**, because a figure-adjacent note is exactly what a web edition
+   drops, and authorship (Wicksteed or Robbins) is also unsettled.
+ • ~~superseded text follows, kept for the reasoning~~ Everything in `REVIEW-003` is Everything in `REVIEW-003` is
 verified against the **1910 Macmillan first edition** (Econlib; edition confirmed in its front
 matter). Three things his Vol. II buys, in order of value: **(a)** whether the 1933 "Revised and
 **Enlarged**" edition changed Bk II Ch. IV at all, and whether Robbins added an editorial note on

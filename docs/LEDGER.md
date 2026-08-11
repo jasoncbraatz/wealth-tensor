@@ -1934,6 +1934,23 @@ P3 · Atomism**, one level up, where Wicksteed's subjective-value apparatus cann
 scooped — **written one level too low.** It went out as a market result and met the man who owns
 markets.
 
+**Pages, and the L24 lesson landing the right way up.** The audit's first draft inferred from two
+PDFs — both Vol. I — that Jason had never read the displacing chapter. He said his memory was of
+reading Vol. II, went and charged a Kindle that had been flat for years, and **produced it the same
+day.** Bk II Ch. IV is **pp. 493–526** in the 1933 Robbins edition; every quote survives **verbatim**;
+the six load-bearing passages are at **498, 505, 506, 507, 509, 516**. The citation is now a page
+citation and the WT-059 exposure is closed. *A null was not an absence, exactly as L24 says, and the
+person who invoked L24 about his NAS broke it about his Kindles four messages later.*
+
+**One open item, deliberately not resolved.** The 1933 text carries a footnote at p. 512, on the
+reallocation passage, absent from the entire Econlib 1910 file: *"I have preserved the convention by
+which the 'demand' curve is made to run down and the 'supply' curve to run up … **Of course it has
+no significance and might just as well be neglected or reversed.**"* That is the corollary stated
+more baldly than anywhere in 1910 — and it is **not quotable yet**, because a figure-adjacent note is
+exactly what a web edition drops, and whether it is Wicksteed's or Robbins' is unsettled. Settle it
+against an archive.org scan of the 1910 Macmillan printing. **A quote that would help us this much
+is the one to check hardest.**
+
 **The method note worth keeping.** Three agents: one hunting priority, one told an over-eager
 priority claim is as damaging as a missed one (L28), one told to **REFUTE the displacement** — to
 defend this paper. *The defence attorney returned the displacement stronger than the prosecution
