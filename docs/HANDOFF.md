@@ -217,36 +217,38 @@ actually read the literature.** If you defer this a third time, say why in the h
 venue rules rot. **SSRN has no gate in and NO APPEAL out** (WT-051). **Jason's decision to trigger.
 Ask.**
 
-### 4 — **OUTSTANDING FROM -07, cheap, and Jason may already have done it.**
+### 4 — **CLOSED IN -07. Wicksteed is fully cited and one quote is a gift. Do not redo this.**
 
-**RESOLVED IN -07 — he found it (different Kindle, years uncharged) and it is verified.**
-**Bk II Ch. IV is pp. 493–526** in the 1933 Robbins Vol. II; every quote survives **verbatim**; the
-six load-bearing passages carry pages **498, 505, 506, 507, 509, 516** (`REVIEW-003` §7b). **Cite
-the 1933 edition with those pages** — the WT-059 exposure is closed. **AND THE FOOTNOTE IS RESOLVED AND USABLE.**
-Wicksteed (1910) Bk II Ch. IV **p. 512 n. 1**: *"I have preserved the convention by which the
-'demand' curve is made to run down and the 'supply' curve to run up, from left to right. **Of
-course it has no significance and might just as well be neglected or reversed.**"* Verified against
-the 1910 Macmillan printing (Cornell scan, archive.org `cu31924030395606`, **leaf 538**) by two
-independent phrase searches returning one match each at the same leaf. **It is 1910 and it is
-Wicksteed's, not Robbins'.** Econlib had dropped it because it hangs off Fig. 29 — see **L33**, and
-use the quote.
-*Superseded reasoning, kept because it is why this mattered:* DONE in -07 — he found it and it is verified. See `REVIEW-003` §7b:**
-   Bk II Ch. IV is **pp. 493–526** (1933 Robbins, Vol. II), every quote survives **verbatim**, and
-   the six load-bearing passages now carry pages (498, 505, 506, 507, 509, 516). **Cite the 1933
-   edition with those pages.** ONE OPEN ITEM: a footnote at **p. 512** — *"I have preserved the
-   convention by which the 'demand' curve is made to run down and the 'supply' curve to run up …
-   Of course it has no significance and might just as well be neglected or reversed"* — is absent
-   from the entire Econlib 1910 text. **Do not quote it until you have checked an archive.org scan
-   of the 1910 Macmillan printing**, because a figure-adjacent note is exactly what a web edition
-   drops, and authorship (Wicksteed or Robbins) is also unsettled.
- • ~~superseded text follows, kept for the reasoning~~ Everything in `REVIEW-003` is Everything in `REVIEW-003` is
-verified against the **1910 Macmillan first edition** (Econlib; edition confirmed in its front
-matter). Three things his Vol. II buys, in order of value: **(a)** whether the 1933 "Revised and
-**Enlarged**" edition changed Bk II Ch. IV at all, and whether Robbins added an editorial note on
-the horse market; **(b)** page numbers — the Econlib text has none, and "Bk II Ch. IV" with no page
-is the thin end of WT-059; **(c)** that the passages survive verbatim into the edition a modern
-reader would pick up. **Ask him. If he has it, this is 10 minutes.** Failing that, archive.org has
-1910 scans with pagination.
+Jason found **Vol. II** of the 1933 Robbins edition on a different Kindle (most of them had been
+flat for years) and it settled everything §4 was opened to ask.
+
+**Pages.** Bk II Ch. IV, *"Buyer and Seller. Demand and Supply,"* is **pp. 493–526**. Every quote in
+`REVIEW-003` survives into that edition **verbatim** — a token-level diff against the 1910 text found
+no substantive prose divergence. The six load-bearing passages are at **498** (initial distribution
+affects the amount of business done, not the price), **505** (*"any other point of (b) lower than
+40 … the same result"*), **506** (*"the connection … is arbitrary"*), **507** (Hobson's horse market,
+Figs. 26–29), **509** (*"the irrelevant facts"* / *"distribute the items … just as you like"*), and
+**516** (*"a mere disguise of the method of addition"*). **Cite the 1933 Robbins edition with these
+pages and note the 1910 Macmillan printing as the original. The WT-059 exposure is closed.**
+
+**And use this footnote — it is the best single sentence in the source.** Wicksteed (1910),
+Bk II Ch. IV, **p. 512 n. 1**, hanging off Fig. 29:
+
+> "I have preserved the convention by which the "demand" curve is made to run down and the "supply"
+> curve to run up, from left to right. **Of course it has no significance and might just as well be
+> neglected or reversed.**"
+
+The up-and-down orientation of the two curves *is* the visual signature of the whole construction,
+and he disowns it in a footnote while drawing it. **Verified against the 1910 Macmillan printing**
+(Cornell scan, archive.org `cu31924030395606`, **leaf 538**) by two independent phrase searches each
+returning exactly one match at the same leaf — so it is **1910 and Wicksteed's, not a 1933 Robbins
+addition**, which is the distinction the citation turns on. Pagination cross-checks: the 1933 set
+preserves the 1910 pagination (Vol. II opens Book II at p. 401).
+
+**Why it was nearly lost, and why L33 exists.** The note is absent from the entire 1.5 M-character
+Econlib file, because Econlib renders figures as images and drops the apparatus around them. That
+absence was worth nothing. **Never conclude a passage is absent from a work on the strength of a web
+edition** — and see **L34** for the two-call archive.org recipe that settled it.
 
 ### 5 — **Attribution pass (WT-044).** Still absent: **Sraffa, Robinson, Samuelson, Godley/Lavoie,
 Farmer, Lillo** in Papers II–IV. **And now Wicksteed, whose relevance is not confined to Paper I.**
@@ -310,7 +312,8 @@ then proceed. Do not wait for Jason's go.
 
 | # | Fact |
 |---|---|
-| **L34** | **NEW — archive.org will search inside a scan for you, and it settles print-vs-transcription questions in two calls.** `GET https://archive.org/metadata/<id>` returns `d1`/`dir`; then `GET https://<d1>/fulltext/inside.php?item_id=<id>&doc=<id>&path=<dir>&q=%22exact+phrase%22` returns match count, **leaf number** and surrounding OCR. **Run TWO different phrases from the same sentence** — agreeing leaf numbers is the check that the answer is read and not confabulated. Settled the Wicksteed footnote in -07 after a whole-file grep had said "absent." |
+| **L35** | **NEW — "keep the superseded reasoning" is how a handoff grows a contradiction.** -07 marked §4 resolved by prepending the new answer and keeping the old text below it as *"superseded reasoning."* The result was one section saying *use this quote* and, nine lines later, *do not quote it until you have checked* — plus a duplicated clause where the splice landed. **The `--emit` gate passed it**: frontmatter complete, SHA matched, tree clean, no placeholders. A gate checks that a document is well-formed, not that it is consistent with itself. **When an item closes, REWRITE THE SECTION; put the reasoning in the ledger, which is append-only by design, and leave the handoff a single current answer.** Caught only by obeying *re-read your own handoff after any late correction* — which is the one gate step no script performs. |
+| **L34** | **archive.org will search inside a scan for you, and it settles print-vs-transcription questions in two calls.** `GET https://archive.org/metadata/<id>` returns `d1`/`dir`; then `GET https://<d1>/fulltext/inside.php?item_id=<id>&doc=<id>&path=<dir>&q=%22exact+phrase%22` returns match count, **leaf number** and surrounding OCR. **Run TWO different phrases from the same sentence** — agreeing leaf numbers is the check that the answer is read and not confabulated. Settled the Wicksteed footnote in -07 after a whole-file grep had said "absent." |
 | **L33** | **NEW — a web transcription's silence is not the print original's silence, and figure-adjacent apparatus is what it drops.** Econlib/OLL render figures as images and lose the footnotes hanging off them: Wicksteed's *"of course it has no significance and might just as well be neglected or reversed"* is absent from the entire 1.5 M-character Econlib file and **present in the 1910 Macmillan printing at leaf 538**. **Never conclude a passage is absent from a work on the strength of a web edition** — and if the passage is one you *want*, that is the reason to check harder, not less. L24's rule in a third costume: a NAS that was not indexed, a Kindle that was not charged, and a transcription that was read too trustingly. |
 | **L32** | **an "aggregate" and a "half" look identical in code and are not the same object.** WT-066's `pressure_trace` **is** the fold, invariant by construction; a test comparing two of them with `!=` compares two invariants and asserts nothing. It survived every mutant. *Before asserting that two quantities differ, ask whether the quantity you are reading is the one that is supposed to vary.* |
 | **L31** | **NEW — an order-reversing bijection makes two "layers" the same model.** Setting *m* = −*τ*, *p* = −*s* turned the recognition port into `excess_demand.py` exactly. **The tell is a module that touches only its own arrays and contains no operation specific to its claimed domain.** Grep your new module for a single line that would be *wrong* in the other layer; if there is none, you have renamed, not ported. |
