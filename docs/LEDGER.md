@@ -2034,3 +2034,111 @@ finding and disbelieving was **one tool call**. Nothing false reached the ledger
 Jason. Under the old WT-054 rule this would have been caught at preprint time, four artifacts and one
 conversation too late — which is precisely what happened in wealthTensor-06. **The rule that session
 paid for has now earned its keep in the very next one.**
+
+---
+
+## WT-070 · Paper I's P3 re-scope died to its own referees, and so did its replacement · wealthTensor-08
+
+**The at-bat was "write Paper I at the P3 level." No paper was written, and that is the result.**
+
+**What was going to be claimed.** Excess demand is a fold over units; the two schedules are folds over
+units *and the allocation H*, which is not a property of the population; so the Marshallian
+decomposition manufactures two objects carrying information no fold contains. **P3 caught in the act
+on the most canonical diagram in economics.**
+
+**Three instruments, all committed and run, every guard mutation-tested (WT-069):**
+`scripts/wt070_p3_fold.py` · `scripts/wt071_refuter.py` · `scripts/wt072_coupling.py`.
+Full report: `docs/papers/paper-I-price-formation/RESULT-WT070-p3-is-dead.md`.
+
+### The framing died three ways, each settled by running it
+
+**1 · The crossing height IS the volume.** At a clearing price interior to the interval,
+{*i* : *mᵢ* > *p*\*} is exactly *T*, so *D*(*p*\*) = |*T* \ *H*| and *S*(*p*\*) = |*H* \ *T*| = *V*,
+and they are equal. Verified across 25 allocations. **The quantity coordinate of the Marshallian
+cross is the allocation mismatch** — the one thing *z* cannot deliver. The diagram is not displaying
+irrelevant information; it reads the population on one axis and the coupling on the other. *The
+conclusion was upside down.*
+
+**2 · The headline number was noise and the control was misspecified.** "26× the interval width" is
+26.1× / 8.3× / 113.5× / 47.2× at *N* = 400 / 1,000 / 4,000 / 10,000 — a 13.6-fold non-monotone swing,
+because the denominator is a single random order-statistic gap. And the honest control — raise a
+RANDOM 250 agents by 20%, never naming *H* — gives spread 0.8934 / 21 intervals against the
+*H*-indexed 0.9576 / 23. **The contrast was rank-scrambling versus rank-preserving. The allocation
+contributed nothing.**
+
+**3 · The load-bearing sentence is false in the formalism we were about to cite.** With the unit
+(*mᵢ*, *hᵢ*), *D* and *S* are additive folds over units in exactly the sense *z* is. This is
+Arrow–Debreu, Aumann (1964), Hildenbrand (1974) — and **Hildenbrand (1994) p. 36**, established the
+same morning: the household characteristic is (income, demand function). *We would have cited the
+source that refutes us.* Four rescue routes fail; the fifth — the Fréchet-class rearrangement group —
+is natural rather than gerrymandered and **ratifies the prosecution**, its invariants being exactly
+the marginals.
+
+### And the exhibit was measuring a hypergeometric
+
+The reported crossing-height range 85–103 across 25 uniform allocations sits inside the ±2 sd band
+[84.4, 103.1] of a hypergeometric with mean *S*(*N*−*S*)/*N* = **93.75** and sd 4.69. **The quantity
+the paper was about had never been varied.** *v0.1's "93 → 49" volume table inherits this: its
+baseline 93 is S(N−S)/N to two significant figures and nobody noticed for two sessions.* Vary the
+COUPLING instead — comonotone, antitone, block, alternating — and volume traverses **0 to 150** while
+the clearing interval is bit-identical in every row.
+
+### The replacement was checked and it died too
+
+With a per-unit wedge *t*, the allocation stops cancelling and the residual is a sliding-window count
+*W*(*p*) of locked-in holders. Across 25 couplings with identical population marginal: **1 distinct
+*W* at *t* = 0, 25 at *t* = 0.01**, including two holder sets differing in one agent. *Identification
+discontinuous at zero.* Verified. **And displaced twice over:**
+
+- **the *t* = 0 invariance is stated in print, three times, in the indivisible setting, as an aside** —
+  Azevedo, Weyl & White (2013, *TE*): *"We do not specify which agents initially own the endowment
+  because, with quasilinear preferences and financially unconstrained agents, the initial allocation
+  is moot"*; Gul, Pesendorfer & Zhang (2019); Baldwin, Jagadeesan, Klemperer & Teytelboym (*JPE*).
+  Each uses it as a reason to omit endowments from the model primitives.
+- **the identification lemma is the Titchmarsh convolution theorem (1926)**, and the finite-support
+  restriction is unnecessary; the *shape* of the claim is **Bertanha, McCallum & Seegert (2023,
+  *J. Econometrics*)** — *"a notch identifies the elasticity but a kink does not."* And it requires
+  the entire excess-demand schedule over a continuum, which nobody observes: **it trades an
+  observable for an unobservable.**
+
+### Disposition
+
+**Paper I is not written and is not re-scoped.** What survives is a subsection-sized expository
+observation (the crossing height is the volume) and a large Abandoned Approaches entry. Folding into
+**Paper IV** is recommended and is Jason's call under ADR-001; Paper III would be force-fit and the
+WT-042 alarm was audible.
+
+**Paper III is CLEAN, checked rather than assumed (WT-057).** Its P3 — *"measured aggregates are
+folds over units; no aggregate is more fundamental than its constituents"*, domain *"any measurement
+presented as a property of an economy rather than of a population"* — is a weaker claim aimed at the
+aggregate production function and survives untouched. **Papers II and III cite Paper I zero times.**
+ADR-001's containment firewall, designed 2026-08-05, held completely. **Third time "failure is
+contained" has been cashed, and the first time the fire was in the room the policy named.**
+
+### The rules this produced
+
+**WT-070 — the defence attorney has now done the most damage twice, and it is doctrine, not a tip.**
+Three agents ran. The prosecution found the framing false. **The defender found it false, supplied
+the replacement, found that the prosecution's own best hit had the wrong mechanism, and found the
+same hypergeometric defect in the one exhibit the prosecution left standing.** L28's second half is
+promoted: *an adversary told to attack finds what it expects; an adversary told to defend has to
+actually read.*
+
+**WT-071 — a ratio whose denominator is a single order statistic is not a statistic.** The 26× was
+reported because the number was large, and the number was large because a random gap happened to be
+small. **Before quoting a ratio, vary N and check the denominator is not the thing doing the moving.**
+Same family as L32, one level up: L32 says check the quantity you are reading is supposed to vary;
+WT-071 says check the quantity you are *dividing by* is not.
+
+**WT-072 — resampling is not varying.** Twenty-five uniform allocations look like twenty-five
+experiments and are twenty-five draws from one distribution the population already fixes. **If the
+object of study is a coupling, vary the coupling — comonotone, antitone, block — and never infer
+range from a sample whose spread is its own sampling error.** *This is the `4/21 < 4/11` defect in
+its fourth costume across three sessions. It recurs because it wears whatever the session is wearing.
+The only thing that has ever caught it is running the control nobody asked for.*
+
+**The pleasing part.** Briefed to write a paper, the session wrote three scripts, killed its own
+thesis, killed the replacement, and wrote no paper — in one morning, for a few minutes of agent time,
+with nothing false reaching the ledger, the papers or Jason. Wicksteed's chapter needed 116 years to
+catch up with Paper I v0.1. **P3 · Atomism did not survive the morning it was born, and its
+successor turned out to have been proved in 1926.** 🪃

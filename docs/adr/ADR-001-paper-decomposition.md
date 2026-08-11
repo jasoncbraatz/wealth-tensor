@@ -317,3 +317,53 @@ exposure; a re-scope that hides the gap is the thing this programme exists not t
 Böhm-Bawerk (1889, Smart trans.) for *marginal pairs*; Shapley & Shubik (1971), whose §4 is titled
 *"The Horse Market of Böhm-Bawerk"*; Theocharis (1960), Fisher (1961), Bischi et al. (2010) eq. 2.26
 for §4.2; Coase (1960) and Gorman (1953) as adjacent-not-displacing.
+
+### Addendum · 2026-08-11 · wealthTensor-08 · the P3 re-scope is dead, and so is its replacement
+
+Recorded here because addendum 4 recorded the re-scope, and a decision record that logs a re-scope
+without logging its death is a document that lies by omission.
+
+**What happened.** The session was briefed to write Paper I at the P3 level. It built three
+instruments, fired WT-065 before calling anything a result, and the framing did not survive. **No
+paper was written.** Full report: `docs/papers/paper-I-price-formation/RESULT-WT070-p3-is-dead.md`;
+ledger `WT-070`.
+
+**Why the P3 framing fails, in one line each.**
+
+1. **The diagram is not caught in the act.** At an interior clearing price, *D*(*p*\*) = *S*(*p*\*) =
+   |*H* \ *T*| = volume. The crossing *height* is the allocation mismatch — the one quantity *z*
+   cannot deliver. The two curves read the population on one axis and the coupling on the other. The
+   conclusion was inverted.
+2. **"H is not a property of the population" is false** under the standard unit (*mᵢ*, *hᵢ*), which
+   makes *D* and *S* additive folds in exactly the sense *z* is. This is Arrow–Debreu, Aumann (1964),
+   Hildenbrand (1974), and **Hildenbrand (1994) p. 36** — a source this same session established and
+   was preparing to cite.
+3. **The supporting exhibit measured a hypergeometric.** The reported crossing-height range was ±2 sd
+   of *S*(*N*−*S*)/*N*. The quantity at issue had never been varied.
+
+**Why the replacement also fails.** The frictional identification result — the coupling is
+unidentified at *t* = 0 and exactly identified at every *t* > 0 — is verified and is displaced twice:
+the *t* = 0 invariance is asserted in print by Azevedo–Weyl–White (2013), Gul–Pesendorfer–Zhang
+(2019) and Baldwin–Jagadeesan–Klemperer–Teytelboym (*JPE*), each as an aside justifying the omission
+of endowments; and the uniqueness lemma is the **Titchmarsh convolution theorem (1926)**, with the
+claim's shape already published as Bertanha–McCallum–Seegert (2023). It also requires an observable
+nobody has: the entire excess-demand schedule over a continuum of prices.
+
+**What this does NOT change.** Nothing about the split, the order, or Papers II–IV. Checked rather
+than assumed (WT-057): **Paper III's P3 survives untouched** — it is the weaker claim that measured
+aggregates are folds over units and no aggregate is more fundamental than its constituents, aimed at
+the aggregate production function, and it never depended on Paper I. **Papers II and III cite Paper I
+zero times.** §Consequences' promise that failure is contained has now been cashed three times, and
+this is the first time the fire was in the room the policy named.
+
+**What Paper I is now, pending Jason's decision.** Not written, not re-scoped, and no longer
+obviously a paper. What survives is a subsection-sized expository observation — *the crossing height
+is the volume, so here is what the two curves are for* — and a large Abandoned Approaches entry.
+**Recommendation: fold into Paper IV**, whose charter already covers composition across scales and
+the tensor-composes-behaviour-does-not tension. **Not Paper III** — that would be force-fit, and per
+addendum 2 §4 the alarm to listen for is the urge to reach into another paper's evidence. It was
+audible and is recorded here rather than acted on.
+
+**Open, and Jason's:** whether Paper I survives as a paper at all, or becomes a section of IV. The
+publication order II → III → I → IV is not reopened by this; what is in question is only whether the
+third slot still contains a paper.
