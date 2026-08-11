@@ -1,8 +1,8 @@
 ---
 project: wealth-tensor
-gh_sha: 0085d739bdecd28bd17d349c786649b610a20fa9
+gh_sha: PENDING
 updated: 2026-08-11
-session: wealthTensor-08
+session: wealthTensor-09
 gate_passed: true
 gate_version: "2.50"
 ---
@@ -12,7 +12,7 @@ gate_version: "2.50"
 *Overwritten every session. `git log -p docs/HANDOFF.md` is the archive. Run
 `python3 scripts/handoff_gate.py --check` before trusting this file.*
 
-## 0 · TRANSPORT — darlish, zero-bridge. The desktop bridge dropped mid-session and nothing noticed.
+## 0 · TRANSPORT — darlish, zero-bridge
 
 ```
 curl -s https://system.europeanflorist.com/dsh/darlish-up -o /tmp/darlish-up && chmod +x /tmp/darlish-up && /tmp/darlish-up
@@ -20,18 +20,19 @@ curl -s https://system.europeanflorist.com/dsh/darlish-up -o /tmp/darlish-up && 
 
 Post the printed `DARLISH-ENROLL v1 id=… fp=…` line **exactly** as a comment on Asana task
 `1217316841710435` via the session's Asana MCP, then run `/tmp/darlish-up` again to collect.
-**Re-run before diagnosing.** *First collect has now worked in -06, -07 and -08.* Whole cycle ~4 min.
+**Re-run before diagnosing.** *First collect has now worked in -06, -07, -08 and -09.* Cycle ~4 min.
 
 ```
 curl -s https://system.europeanflorist.com/dsh/dx -o /tmp/dx && chmod +x /tmp/dx
-/tmp/dx '~/Scripts/roster join --who big-wealthTensor-09 --task "<what you are doing>"'
-/tmp/dx '~/Scripts/roster claim --who big-wealthTensor-09 --resource wealth-tensor'
+/tmp/dx '~/Scripts/roster join --who big-wealthTensor-10 --task "<what you are doing>"'
+/tmp/dx '~/Scripts/roster claim --who big-wealthTensor-10 --resource wealth-tensor'
 ```
 
 `roster claim` needs **`--who` AND `--resource`** (L23); both silent on success — confirm with
 `roster who`. dx exit 3 = never ran, safe retry; exit 4 = check state first. **Do NOT route EDGAR or
-bulk web work through darwin** (L18). **NEW · L36 — quote the remote path in `dx --get`**: an
-unquoted `~` is expanded by the *cloud* shell to `/root` and the fetch fails confusingly.
+bulk web work through darwin** (L18). **L36 — quote the remote path in `dx --get`.** **L20 — `dx --put`
+fails if the parent directory does not exist; `dx 'mkdir -p …'` first.** *Both were hit again in -09,
+so they are load-bearing, not folklore.*
 
 ## 1 · IDENTITY + MISSION
 
@@ -41,18 +42,22 @@ pre-prints** (ADR-001).
 **Two intentions, equally weighted.** (1) Ship them. (2) **Have fun.** Hobby, no tenure, he is not
 trying to be safe and says so.
 
-**He invites criticism and means it, seven sessions deep.** -06 had its paper rejected the day it was
-written. -07 found its one surviving claim was 116 years old. **-08 killed the replacement framing
-*and* the replacement's replacement, and wrote no paper at all.** His reaction to losing Paper I to a
+**He invites criticism and means it, eight sessions deep.** -06 had its paper rejected the day it was
+written. -07 found its one surviving claim was 116 years old. -08 killed the replacement framing
+*and* the replacement's replacement. **-09 rewrote Paper III §9 from the completed reading, and then
+its own adversarial pass killed the rewrite inside the hour.** His reaction to losing Paper I to a
 1910 book was *"cheers to the lemonade — we should always celebrate when we can kill our darlings."*
-**Agreeing with him is not the job. Agreeing with yourself is not the job either.**
+**Agreeing with him is not the job. Agreeing with yourself is not the job. And -09 adds the third:
+agreeing with your ADVERSARY is not the job either** — one prosecution hit was struck on an
+eight-term grep the prosecution had not run.
 
-**But do not agree with him reflexively.** -07: he was right about Böhm-Bawerk, wrong about Wicksteed
-within the market, right about Wicksteed on the axis that matters. **-08: he read Hildenbrand as
-narrower than the audit claimed — he was RIGHT that it is narrow and WRONG about what narrows it**
-(SMD is named once, on p. ix, autobiographically, and never again in 205 pages). Test his challenges;
-do not rubber-stamp them and do not brush them off. **He is right often enough that checking is worth
-it and wrong often enough that checking is necessary.**
+**But do not agree with him reflexively.** -07: right about Böhm-Bawerk, wrong about Wicksteed within
+the market, right about Wicksteed on the axis that matters. -08: he read Hildenbrand as narrower than
+the audit claimed — RIGHT that it is narrow, WRONG about what narrows it. **-09: he diagnosed his own
+citation habit unprompted and correctly** ("the JFE were items I had read working copies on… 1993-era
+mistake, I didn't distinguish them"), and that diagnosis produced the reference apparatus's fourth
+pass. **He is right often enough that checking is worth it and wrong often enough that checking is
+necessary.**
 
 **The prose is disposable; the structure is precious.** He remasters every sentence. What must NOT
 happen is laundering *his* insight into your paraphrase. When he coins something it goes in
@@ -61,8 +66,9 @@ happen is laundering *his* insight into your paraphrase. When he coins something
 **His research notes are on paper.** Read the note back before building on it.
 
 **Ask whether he has had his coffee.** A **register check, not a HITL gate.** *-08: "coffee locked and
-loaded — switched to Folger's today, we'll have to test my mental agility against Maxwell House,
-which was my baseline output."* Answer in kind and keep moving.
+loaded — switched to Folger's today, we'll have to test my mental agility against Maxwell House."*
+*-09: asked, not answered — he was mid-flight on the citation question instead, which is a better
+answer.* Answer in kind and keep moving.
 
 **Audience: his three children, 18, 11 and 8.** It decided `docs/` stays public, that *Abandoned
 Approaches* is in every paper, that failed pre-registrations are part of the deliverable, and that the
@@ -73,43 +79,42 @@ papers ship **with their own hostile referee reports.**
 ```
 git -C ~/repos/wealth-tensor pull --ff-only
 python3 ~/repos/wealth-tensor/scripts/handoff_gate.py --check
+cat  ~/repos/wealth-tensor/docs/papers/paper-III-dual-tensor/POSITIONING-002-second-pass.md   # ← START HERE
+cat  ~/repos/wealth-tensor/docs/METHOD-001-the-phantom-tag.md               # READ BEFORE WRITING A CHECK
 cat  ~/repos/wealth-tensor/docs/adr/ADR-001-paper-decomposition.md          # ALL SIX addenda
 cat  ~/repos/wealth-tensor/docs/papers/paper-I-price-formation/RESULT-WT070-p3-is-dead.md
-cat  ~/repos/wealth-tensor/docs/papers/paper-III-dual-tensor/POSITIONING-001-crash-risk.md
-cat  ~/repos/wealth-tensor/docs/METHOD-001-the-phantom-tag.md               # READ BEFORE WRITING A CHECK
-cat  ~/repos/wealth-tensor/docs/LEDGER.md                                   # 71 entries
+cat  ~/repos/wealth-tensor/docs/LEDGER.md                                   # 74 entries
 python3 ~/repos/claude-blackbook/lessons.py doctrine
+python3 ~/repos/claude-blackbook/lessons.py search "citations verification adversarial" --scope global
 ```
 
-> **`RESULT-WT070` first.** It is the shortest path to why Paper I is not a paper, and it contains
-> four method rules that generalise beyond this project (WT-070/071/072/073).
+> **`POSITIONING-002` first, and read §6 before you cite anything.** §6 is a read-status table for
+> every work in the crash-risk positioning. **Four of them have never been read at source and are
+> deliberately absent from the paper.** That table is the single most useful thing in the repo right
+> now, and it exists so you do not have to re-derive who has actually read what.
+>
+> `POSITIONING-001` is superseded but retained, with its three errors marked **in place**.
 
 Corroborate what you use: `lessons.py use <id> --task <tag>` at orient,
-`lessons.py record-outcome <tag> pass` at wrap.
+`lessons.py record-outcome <tag> pass` at wrap. *-09 corroborated
+`2026-08-10-reproducing-finding-from-code-proves-only` (it fired again, and paid again).*
 
 ## 3 · STATE
 
-- **Code — 121 tests passing**, tree clean and pushed. Four new scripts this session:
-  `wt070_p3_fold.py` (the fold identity, the volume theorem, the comparative static),
-  `wt071_refuter.py` (the three adversarial checks, all of which the paper lost),
-  `wt072_coupling.py` (structured couplings, and the frictional identification result) — plus
-  **`scripts/severity.py`**, the phantom-tag harness (WT-073, §4), and `tests/test_severity.py`,
-  which runs the original `4/21 < 4/11` assertion through it and requires it to die.
-  **Every guard mutation-tested; every mutant died as required (WT-069). `wt070` is retrofitted to
-  the witness discipline; `wt071` and `wt072` are NOT — that is mission item 4.**
-- **Paper II — COMPLETE and DELIBERATELY UNSHIPPED. Do not ask him to submit it.** SHA `d655501`,
-  zero live placeholders. **Jason's ruling, 2026-08-11 — see §4d. Nothing ships until all four are
-  done.** Five sessions of handoffs read his silence as an unmade decision. It was a made one.
-- **Paper III — v0.3, and better than it was this morning.** All 20 refs ✓. **Its §9 crash-risk
-  positioning is no longer written from a search** — `POSITIONING-001-crash-risk.md` is the reading,
-  done at last after two deferrals. §9 **does not survive as written** and the file says exactly what
-  replaces it. **Rewriting §9 is the highest-value drafting work available.**
-- **Paper I — DEAD as briefed, twice over, and not written.** v0.1 rejected (`REVIEW-002`),
-  displaced (`REVIEW-003`), re-scoped around P3 by Jason, and the re-scope killed by its own
-  adversarial pass (`RESULT-WT070`). The frictional replacement was verified and then displaced by
-  Titchmarsh (1926) and Bertanha–McCallum–Seegert (2023). **Jason's decision is open:** does Paper I
-  survive as a paper, or fold into IV? Recommendation on the table is **fold into IV**.
-- **Paper IV — unstarted**, and now the likely home for what survives of I.
+- **Code — 121 tests passing**, tree clean and pushed. **All three WT-07x scripts now carry the
+  severity witness discipline**: `wt070` 18 severe · 1 definitional · 0 vacuous, **`wt071` 9 · 0 · 0**,
+  **`wt072` 10 · 0 · 0**. All mutation-tested (WT-069); every substituted vacuous witness killed its
+  run as required. §5 mission item 4 from -08 is **CLOSED**.
+- **Paper II — v0.2, COMPLETE and DELIBERATELY UNSHIPPED. Do not ask him to submit it.** §4d. The
+  house-style ruling is applied; nothing else moved. Zero live placeholders.
+- **Paper III — v0.4, and §9 is *provisional*.** It was rewritten from `POSITIONING-001`, then
+  demolished by its own adversarial pass, then rewritten again to what currently survives. **§4.4 now
+  attributes its headline result to Bleck & Liu (2007).** All refs verified; the reference apparatus
+  gained a **fourth pass (Version)** and a **third mark (✓⧗)**. §9 is not final — see §5 item 1.
+- **Paper I — DEAD as briefed, twice over, and not written.** Jason's decision is **still open**:
+  survive as a paper, or fold into IV? **Recommendation on the table is fold into IV.** Asked in -09,
+  not answered.
+- **Paper IV — unstarted**, and the likely home for what survives of I.
 - **WT-026 CLOSED and it closed by failing. REG-001 stopping rule fired. No second port.**
 - **Manuscript** (Google Doc `1RjAHJ7jHCX_N3ToHtstQvjlMb-BQz-iejBZ9Y4f58V8`) — untouched since S2.
   Restore points: S1 `1fszgf295NGfvfQlT3VaCrRXrXA4K589tlS-bVsUIok4` ·
@@ -122,101 +127,76 @@ Corroborate what you use: `lessons.py use <id> --task <tag>` at orient,
   **VERIFY it**.
 - **Never add a free parameter to absorb an objection.** Refused **six** times.
 - **WT-049** every pre-registration states its BRIDGE assumption as a numbered proposition.
-- **WT-052 — a registration precedes the INSTRUMENT'S CODE.**
-- **WT-053 — every published number comes from a committed script that has been run.**
+  **WT-052** a registration precedes the INSTRUMENT'S CODE. **WT-053** every published number comes
+  from a committed script that has been run.
 - **WT-065 — adversarial review fires when a finding is about to be CALLED a result** — ledger, paper
-  text, or telling Jason, whichever is **first**. **-08 is the second consecutive proof it works**:
-  three claims died between building the instrument and reporting it, at a cost of three tool calls,
-  and nothing false reached the ledger, the papers or Jason.
-- **WT-057 — grep the WRONG form across every file after a correction.** *-08's instance was the one
-  that mattered most:* P3 is an axiom in **Paper III**, so when Paper I's P3 framing died, III was
-  checked rather than assumed. **It survives** — III's P3 is the weaker aggregate-production-function
-  claim — and II and III cite Paper I **zero times**.
+  text, or telling Jason, whichever is **first**. **Three consecutive sessions of proof.** In -09 it
+  killed a section that had been written from a completed reading, one hour after it was written.
+- **WT-057 — grep the WRONG form across every file after a correction.** -09's instance: two quote
+  defects in `POSITIONING-001` were corrected in place, and the sweep confirmed the wrong forms
+  existed nowhere else.
 - **WT-058** a multi-anchor edit validates ALL anchors before writing (`scripts/patchkit.py`, L25).
   *Exception:* whole-file replaces — edit a local copy and `dx --put`.
-- **WT-059** verifying a REFERENCE and verifying a CITATION are different acts. **Undischarged in
-  `POSITIONING-001`, deliberately and in writing.**
-- **WT-068** a registration must state how to tell REPAIRING a mis-specified instrument from FITTING
-  a hypothesis. **WT-069** a guard is not verified until a mutation that should kill it has been run
-  and did; an incomplete mutant is worse than none.
-- **NEW · WT-070 — the defence attorney does the most damage, and it is now doctrine.** Three agents
-  ran in -08. The prosecution found the framing false. **The defender found it false, supplied the
-  replacement, caught that the prosecution's own best hit had the wrong mechanism, and found the same
-  defect in the one exhibit the prosecution left standing.** Twice consecutively. *An adversary told
-  to attack finds what it expects; an adversary told to defend has to actually read.*
-- **NEW · WT-071 — a ratio whose denominator is a single order statistic is not a statistic.** The
-  "26× the interval width" headline is 26.1× / 8.3× / 113.5× / 47.2× at *N* = 400/1,000/4,000/10,000.
-  **Vary N and check the denominator is not the thing doing the moving.** L32 one level up.
-- **NEW · WT-073 — EVERY CHECK SHIPS A WITNESS. `scripts/severity.py`. Mechanised, not
-  remembered.** The `4/21 < 4/11` defect has now been shipped **six times across three sessions**,
-  each time after the lesson was written down — because it was named after its **first costume**.
-  **Renamed THE PHANTOM TAG**: the fielder credited with an out he never made, because his foot
-  never touched the bag. *Did the assertion touch a value that could have been otherwise?*
-  **WT-069 mutates the CODE and all six survive every code mutant**, because the code was correct
-  and the WORLD could not produce a falsifying observation. A witness is the condition evaluated in
-  a world where the claim is FALSE, **executed at check time**; if it passes too, the run dies.
-  Escape hatch `DEFINITIONAL(reason)` rejects reasons under 30 chars and reprints every use.
-  **This is Mayo severity one level below where this project had been applying it** — see ADR-001
-  addendum 6, where Jason invokes the same philosophy for the corpus. `tests/test_severity.py` runs
-  the original `4/21` assertion through the harness and requires it to die. **Full record:
-  `docs/METHOD-001-the-phantom-tag.md`.** *And the unification worth keeping: the phantom tag and
-  §4b's house style are the same pathology in two media — prose that announces its rigour, and
-  assertions that announce their severity. A guard that needs a paragraph explaining why it is a good
-  guard probably is not one.*
-- **NEW · WT-072 — resampling is not varying.** Twenty-five uniform allocations look like twenty-five
-  experiments and are twenty-five draws from one distribution the population fixes. **If the object of
-  study is a coupling, vary the coupling.** *This is the `4/21 < 4/11` defect in its **fourth**
-  costume across three sessions. The only thing that has ever caught it is running the control nobody
-  asked for.*
+- **WT-059 — verifying a REFERENCE and verifying a CITATION are different acts.** *Discharged for
+  Jin & Myers, Bleck & Liu and Andreou et al.; **UNDISCHARGED for four works listed in
+  `POSITIONING-002` §6.***
+- **WT-068 / WT-069 / WT-070 / WT-071 / WT-072 / WT-073** — unchanged from -08. WT-070 (**run a third
+  agent instructed to DEFEND your paper**) is now **three for three**: in -09 the defender supplied
+  the assumed-not-derived correction of §4, found Bleck & Liu where the prosecution had buried it in a
+  list, and caught the prosecution's over-reach.
+- **NEW · WT-074 — a completed reading is not a completed search.** §9 was rewritten *from* the
+  reading and still died, because `POSITIONING-001` reached its source by **string search**. Grep
+  answers *is my quote real*; it does not answer *what else is in here*. **Read the introduction of
+  your nearest neighbour** — that is where authors park the cases they considered and set aside.
+- **NEW · WT-075 — a working copy cited as the article of record is the phantom tag in a third
+  medium.** Bibliographic can't catch it (the article exists); provenance can't catch it (a working
+  copy on your own disk *is* your own copy). Hence the fourth pass, **Version**, and the **✓⧗** mark:
+  cite the published article for the RESULT, attribute the QUOTATION to the version you read,
+  dual-date `consulted/published`, and say the sentence may not appear in the article of record.
+- **NEW · WT-076 — a claim with a sharp boundary writes its own severity witness.** When the claim is
+  a discontinuity, each side is the other's falsifying world. Corollary, and the useful half:
+  **a claim for which no witness suggests itself may be a claim with no edge.**
+- **An adversarial agent is a retrieval pipeline in a better suit.** Verify its most damaging claim
+  yourself, mechanically, before it enters a document. In -09 three agent claims were checked that way
+  and all three held; four others were tabled and kept out of the paper.
 - **The tone is load-bearing.** No grumpiness; humour lands the news, especially bad news.
 
-## 4b · THE HOUSE STYLE — **RULED, 2026-08-11, and it is now binding**
-
-Pending since -07. Extraction delivered (`docs/` has no copy; the artifact went to Jason in chat).
-Densities: **4.9 / 5.3 / 5.1 instances per 1,000 words** across Papers I / II / III — flat to within
-8% across three papers written months apart. Three habits would drift; this did not.
+## 4b · THE HOUSE STYLE — **RULED 2026-08-11, and APPLIED 2026-08-11**
 
 > **Jason's ruling: KEEP THE METHOD DISCLOSURES, CUT THE SELF-GRADING.**
 
 Method disclosures — pre-registration, commit-pinning, Abandoned Approaches placement, the public
 `docs/` coda — **stay at full strength.** They are the only certification an unaffiliated preprint
-has. What goes is the paper **grading its own conduct**: *"and the paper is stronger for saying so"*,
-*"when a sharp claim half-survives, the refinement is the prize"*, *"it is — that is the point of
-writing it down"*. **The line is the programme's own:** a concession that pauses to be admired is
-demonstrating something other than the concession.
+has. What goes is the paper **grading its own conduct**.
 
-**Not yet applied to any paper.** Applying it to II and III is teed up and is cheap. **Register is
-his — do not extend the ruling past what it says.**
+**APPLIED in -09** (commit `cabbebb`): Paper II → v0.2, one instance, the one Jason named verbatim
+(*"the refinement is the prize"*). Paper III, five, inside v0.4. **No result, number, claim or
+citation changed in either paper.**
+
+**ONE LEFT IN PLACE AND FLAGGED, AWAITING JASON.** Paper III §7: *"That argument is withdrawn, and the
+reason it is withdrawn is worth more than the argument was."* By the letter it is self-grading; it
+grades a piece of *reasoning* rather than the author's conduct, and it opens the passage stating the
+ruling's own principle — *"A paper does not get to grade its own integrity; a reader grades it, or
+does not."* **Register is his. Do not cut it unilaterally.**
 
 ## 4d · **NOTHING SHIPS UNTIL THE CORPUS IS DONE** — Jason's ruling, 2026-08-11. **Binding.**
 
-Recorded because **five consecutive handoffs treated Paper II's non-submission as an unmade decision
-and told the next session to go and get it.** It was a made decision. He had not been asked in a way
-that surfaced the reason.
+> **Jason:** *"I want to wait until we have the corpus done (so we can test it end to end; right now
+> we're testing the individual parts like those who use error-statistical philosophy; correct approach
+> here — when we're done with the papers, I want to re-test the entire system at once)."*
 
-> **Jason, 2026-08-11:** *"I want to wait until we have the corpus done (so we can test it end to
-> end; right now we're testing the individual parts like those who use error-statistical philosophy;
-> correct approach here — when we're done with the papers, I want to re-test the entire system at
-> once)."*
+**A methodological position, not a scheduling preference, and it is his.** Shipping II now would spend
+the corpus's one chance at an end-to-end severe test to bank an early win.
 
-**This is a methodological position, not a scheduling preference, and it is his.** Each paper has so
-far been subjected to a severe test of its own parts — a hostile referee, a priority audit, a
-pre-registration, a mutation-tested guard. What has never been tested is **the conjunction**: whether
-the four papers, taken together, survive as one system. Shipping II now would spend the corpus's one
-chance at an end-to-end severe test in order to bank an early win. *(He owns Mayo's* Error and the
-Growth of Experimental Knowledge *and* Error and Inference*; the vocabulary is deliberate.)*
-
-**Consequences for any session:**
-
-- **Do not ask him to submit Paper II, or III, or I.** The question is closed. Asking again spends
-  his attention on a decision he has already made and explained.
-- **The publication ORDER in ADR-001 is unchanged** — II → III → I → IV is still the order of the
-  *submission batch*, not a sequence of separate events.
-- **A session's job is to get papers to DONE, not to get them out the door.** "Ready to submit" is
-  the terminal state for an individual paper.
-- **The end-to-end test is itself a deliverable and has not been designed.** What would it mean for
-  the four papers to fail as a system? Nobody has written that down. **Writing it down is available
-  work and nobody has claimed it.**
+- **Do not ask him to submit Paper II, or III, or I.** The question is closed. **Six handoffs have now
+  been written since it was settled; five of them asked.**
+- Publication ORDER in ADR-001 unchanged — II → III → I → IV is the order of the *submission batch*.
+- **A session's job is to get papers to DONE, not out the door.**
+- **The end-to-end test is a deliverable and is still undesigned.** *What would it mean for the four
+  papers to fail as a SYSTEM, as opposed to one of them failing?* Nothing in the repo answers it, and
+  it must be answered **before the fourth paper is finished** — a test designed once the result is
+  known is not a severe test, which is the whole point of his ruling. **Still unclaimed after two
+  sessions of it being available.**
 
 ## 4c · DEFINITION OF DONE
 
@@ -226,74 +206,66 @@ Growth of Experimental Knowledge *and* Error and Inference*; the vocabulary is d
 > Paper III additionally cites PRE-001/002 and their registering commit SHAs. When the fourth is
 > posted, this project is done and the repo becomes an archive.
 
-**Progress: II done and unshipped. III drafted, reviewed, reference-complete, and its largest known
-exposure now read rather than guessed. I dead. IV unstarted.** Drive at finishing.
+**Progress: II done and unshipped. III at v0.4 with §9 provisional. I dead. IV unstarted.** Drive at
+finishing.
 
 ## 5 · MISSION — ranked
 
-### 1 — **REWRITE PAPER III §9 FROM `POSITIONING-001`.** The highest-value drafting work in the project.
+### 1 — **DISCHARGE `POSITIONING-002` §6, THEN FINALISE §9.** The highest-value work available.
 
-The reading is done. §9 as written does not survive: Jin & Myers' accumulate-buffer-then-release-with-
-severity-scaling-in-opacity structure **is our thesis, sentence for sentence**, and their COUNT and
-COLLAR measures already net out the up-tail, so even the crash-not-jump asymmetry is theirs. What
-survives is narrower and better, and `POSITIONING-001` states it: **neither paper has a physical
-layer** (*"For simplicity, we ignore depreciation and reinvestment"*); **neither gives the accounting
-layer any dynamics**; **both papers' managers know everything**, so unobservable-in-principle
-degradation is genuinely different from deliberately-withheld known news; and the empirical gift —
-**crash incidence rose 5.5% → 27% (1950–2019) while the opacity/agency explanation went statistically
-dead post-SOX.** Position as the **non-agency generator of the same asymmetry**, complementing Jin &
-Myers rather than beating them.
+**Four works reached the repo through adversarial agents and none is in the paper.** Read them at
+source — the way -09 read Jin & Myers and Bleck & Liu: fetch the PDF, `pdftotext`, grep, eyes on the
+extracted text. **In priority order:**
 
-**Two threats to pre-empt in the same pass**, both named in the file: **Basu (1997) conditional
-conservatism** says GAAP recognises bad news *faster* — our claim survives only if scoped to
-degradation with no estimable impairment trigger, and that scoping must be explicit; and the
-**delayed-recognition accounting literature** (Beaver & Ryan 2000's bias/lag decomposition —
-**the closest prior art to our low-pass-filter claim, 26 years old**; Bushman & Williams 2015;
-Ramanna & Watts; Granja 2023) has already made the accounting-layer-as-its-own-object move.
+1. **Ryan (1995, *JAR* 33)** — *A model of accrual measurement with implications for the evolution of
+   the book-to-market ratio.* **May displace Beaver & Ryan (2000) as the closest prior art to §4's
+   filter**, because B&R (2000) is an empirical decomposition and this is a *model*. §9 currently
+   names B&R (2000) as closest; if that is wrong, §9 is wrong. **Ask Jason first** (L30/L24).
+2. **Kim & Zhang (2016, *CAR*)** — conditional conservatism **lowers** crash risk, 1964–2007. **This
+   may already be §4.2's comparative static, empirically supported.** Simultaneously a ceiling on
+   novelty and the closest thing to corroboration this framework has ever had. Handle both halves.
+3. **Kim, Wang & Zhang (2016, *CAR*)** — CEO overconfidence; a manager who genuinely misperceives.
+   Blocks any loose use of "non-agency." One sentence in §9, but it must be there.
+4. **Zhu (2016, *RAST*)** — accruals accumulate to a tipping point and release at once. Agency-based,
+   so cheap to distinguish; a string cite.
 
-**WT-059 IS UNDISCHARGED AND SAYS SO IN THE FILE.** Every quotation in `POSITIONING-001` reached it
-through a retrieval pipeline, not eyes on a typeset page. **Re-check each one character-by-character
-against the published PDF before it enters Paper III.** The programme has been demolished twice for
-positioning written from summaries; do not make the third one a quotation error.
+**Do not cite any of them from a summary.** The programme has now been demolished three times for
+positioning written from something other than the source.
 
-### 2 — **ASK JASON: does Paper I survive, or fold into IV?** Open, and his.
+### 2 — **ASK JASON: does Paper I survive, or fold into IV?** Open, asked in -09, unanswered.
 
-`RESULT-WT070` and ADR-001 addendum 5 carry the argument. **Recommendation on the table: fold into
-IV**, whose charter already covers composition across scales. **Not Paper III** — that would be
-force-fit and the WT-042 alarm was audible when the thought arrived. What survives is a
-subsection-sized expository observation — **the crossing height IS the volume**, *D*(*p*\*) =
-*S*(*p*\*) = |*H* \ *T*|, so the cross reads the population on one axis and the coupling on the other
-— plus a large Abandoned Approaches entry.
+`RESULT-WT070` and ADR-001 addendum 5 carry the argument. **Recommendation: fold into IV**, whose
+charter already covers composition across scales. **Not Paper III** — force-fit, and the WT-042 alarm
+was audible. What survives is subsection-sized: **the crossing height IS the volume**, *D*(*p*\*) =
+*S*(*p*\*) = |*H* \ *T*| — plus a large Abandoned Approaches entry.
 
-### 3 — ~~Submit Paper II~~ **CLOSED BY JASON'S RULING, 2026-08-11. DO NOT REOPEN. See §4d.**
+### 3 — **ASK JASON: should §9's HOME LITERATURE move?** New in -09, and it is the bigger question.
 
-Nothing ships until the corpus is complete. When it does ship, `docs/papers/PREPRINT-CHECKLIST.md`
-§C applies and **the venue rules must be re-verified live** — last checked 2026-08-05, venue rules
-rot. **SSRN has no gate in and NO APPEAL out** (WT-051).
+**Recommendation: move it from crash risk to conservatism and measurement.** Crash risk is crowded,
+empirical and agency-dominated; Paper III is theory-only with two failed registrations and concedes it
+is "much the weaker of the two accounts" on evidence. It loses there on the axis of competition and
+always will. **Conservatism-as-a-dynamic-system is a modelling gap rather than a priority contest** —
+that literature models conditional conservatism as a contemporaneous asymmetric response coefficient
+(the Basu regression), and §4 models it as threshold-crossing accumulation under a continuous
+observability parameter. A failed asset-class prediction is a normal open question there, not a
+refutation. **This is a repositioning of the paper, not an edit to §9, so it is his.**
 
-### 4 — **RETROFIT `wt071_refuter.py` AND `wt072_coupling.py` TO `severity.py`.** ~15 minutes.
+### 4 — **§7's flagged sentence.** One word from Jason and it goes. §4b.
 
-**The mechanism exists and `wt070_p3_fold.py` is the worked example** — 18 severe, 1 definitional,
-0 vacuous. The other two still use a bare `check(label, condition)` and are therefore capable of the
-exact defect the harness was built for. **Copy wt070's pattern.** Recorded here rather than quietly
-finished later, which is the whole point of `METHOD-001` §5.
-
-### 5 — **Apply the house-style ruling to Papers II and III.** Cheap, decided, unapplied. §4b.
-
-### 6 — **Attribution pass (WT-044).** Still absent: **Sraffa, Robinson, Samuelson, Godley/Lavoie,
+### 5 — **Attribution pass (WT-044).** Still absent: **Sraffa, Robinson, Samuelson, Godley/Lavoie,
 Farmer, Lillo** in II–IV. **And Wicksteed.** Check his library first (L24/L30).
 
-### 7 — **Citation-graph whitespace test (WT-006).** `verify: grep -ril openalex src/ scripts/`
+### 6 — **Citation-graph whitespace test (WT-006).** `verify: grep -ril openalex src/ scripts/`
 
-### 8 — **ASK Jason, cheap, genuinely his.** Checkbox lists (WT-008) — all 57 manuscript references
+### 7 — **ASK Jason, cheap, genuinely his.** Checkbox lists (WT-008) — all 57 manuscript references
 render as `- [ ]`; *recommend* plain bullets. The twin document (WT-009) — `2The Axiomatic
 Reconstruction of`, 19 KB, never diffed; *recommend* spending one call on it.
 
-### 9 — **PRE-003: the segment-level test.** Teed up deliberately, NOT started. Registers from
+### 8 — **PRE-003: the segment-level test.** Teed up deliberately, NOT started. Registers from
 scratch, states its bridge proposition (WT-049), obeys WT-052 and WT-068, and **may not cite
 PRE-001/002's failure as support for anything.**
 
-### 10 — **Language remaster.** His job, explicitly. A word wrong in the FIELD'S TECHNICAL REGISTER is
+### 9 — **Language remaster.** His job, explicitly. A word wrong in the FIELD'S TECHNICAL REGISTER is
 yours (WT-060); a word that is merely his is not.
 
 ### TEED UP, small: `crisis_threshold` and `n_crises` in `lag.py` still carry the old vocabulary.
@@ -304,18 +276,19 @@ yours (WT-060); a word that is merely his is not.
 
 ```
 cd ~/repos/wealth-tensor && ./.venv/bin/python -m pytest tests/ -q   # expect 121 passed
-./.venv/bin/python scripts/wt070_p3_fold.py                         # 18 severe/1 defn/0 vacuous
-./.venv/bin/python scripts/wt071_refuter.py                         # expect all three verdicts
-./.venv/bin/python scripts/wt072_coupling.py                        # expect BOTH CLAIMS CHECKED
-./.venv/bin/python scripts/wt018_report.py                          # Paper I v0.1, §3 + §4
-./.venv/bin/python scripts/wt066_p3_port.py                         # REG-001 - expect NO VERDICT
-./.venv/bin/python scripts/wt027_report.py · wt002_lambda_report.py · wt030_report.py
-git commit ...                                                      # the LAST content commit
+./.venv/bin/python scripts/wt070_p3_fold.py     # 18 severe · 1 definitional · 0 vacuous
+./.venv/bin/python scripts/wt071_refuter.py     #  9 severe · 0 definitional · 0 vacuous
+./.venv/bin/python scripts/wt072_coupling.py    # 10 severe · 0 definitional · 0 vacuous
+./.venv/bin/python scripts/wt018_report.py · wt027_report.py · wt002_lambda_report.py · wt030_report.py
+./.venv/bin/python scripts/wt066_p3_port.py     # exits 0; ends on the REG-001 §7 stopping-rule note
+                                                # and NO verdict line. See L37 — do NOT grep for the
+                                                # literal string "NO VERDICT"; it is not in the output.
+git commit ...                                  # the LAST content commit
 python3 scripts/handoff_gate.py --stamp
 git commit -am "docs: stamp handoff gh_sha to HEAD"
 python3 scripts/handoff_gate.py --emit
-bash ~/Scripts/gate-selfcheck.sh                                    # expect PASS
-/tmp/dx '~/Scripts/roster leave --who big-wealthTensor-09'   # YOUR id, not -08
+bash ~/Scripts/gate-selfcheck.sh                # expect PASS
+/tmp/dx '~/Scripts/roster leave --who big-wealthTensor-10'   # ← YOUR id, not -09
 ```
 
 **`--emit` does not stamp**, and refuses on `gate_passed: false`. Walk
@@ -332,25 +305,30 @@ then proceed. Do not wait for Jason's go.
 
 | # | Fact |
 |---|---|
-| **L36** | **NEW — quote the remote path in `dx --get`.** `/tmp/dx --get ~/repos/x /tmp/x` fails: the **cloud** shell expands `~` to `/root` before dx sees it, and the error names a path that does not exist on darwin. Single-quote it: `/tmp/dx --get '~/repos/x' /tmp/x`. Same family as L13's `$HOME` note, different symptom. |
-| **L35** | **"Keep the superseded reasoning" is how a handoff grows a contradiction.** When an item closes, **REWRITE THE SECTION**; the reasoning belongs in the ledger, which is append-only by design. The `--emit` gate passed a self-contradicting handoff — a gate checks well-formedness, not self-consistency. **RE-READ YOUR OWN HANDOFF AFTER ANY LATE CORRECTION.** No script does it. |
-| **L34** | **archive.org search-inside settles print-vs-transcription in two calls.** `GET https://archive.org/metadata/<id>` → `d1`/`dir`; then `GET https://<d1>/fulltext/inside.php?item_id=<id>&doc=<id>&path=<dir>&q=%22exact+phrase%22` → match count, **leaf number**, OCR. **Run TWO phrases from the same sentence**; agreeing leaves are the check against confabulation. |
-| **L33** | **A web transcription's silence is not the print original's**, and figure-adjacent apparatus is what it drops. Econlib/OLL render figures as images and lose the footnotes hanging off them. **If the passage is one you WANT, that is a reason to check harder, not less.** |
-| **L32** | **An "aggregate" and a "half" look identical in code and are not the same object.** *Before asserting two quantities differ, ask whether the quantity you are reading is the one that is supposed to vary.* **See WT-071 for the denominator version.** |
-| **L31** | **An order-reversing bijection makes two "layers" the same model.** The tell is a module that touches only its own arrays and contains no operation specific to its claimed domain. **Grep your new module for one line that would be WRONG in the other layer; if there is none, you renamed.** |
-| **L30** | **Jason's library is much larger than the indexed subset and he will go get books.** -07: seven Wicksteed/Böhm-Bawerk volumes in one morning after a null. **-08: he produced Forni & Lippi (1997) AND Hildenbrand's *Market Demand* (1994) within an hour of each being named — both of which then decided a verdict.** **ASK HIM. Every single time.** |
-| **L29** | **Verify the EDITION before quoting a classic.** Econlib/OLL's *Common Sense* is the 1910 Macmillan first edition; the standard modern copy is the 1933 Robbins *"Revised and Enlarged."* OLL texts carry **no pagination**, so a citation from one is a chapter reference, not a page reference (WT-059). |
-| **L28** | **An agent asked to check a priority claim will AGREE with it unless you tell it not to.** Prompt with *"an over-eager priority claim is as damaging as a missed one"* and demand it state what it **could not access**. **AND RUN A THIRD AGENT INSTRUCTED TO DEFEND YOUR PAPER — now promoted to WT-070 after doing the most damage twice running.** |
-| **L27** | **Measure a constrained quantity AFTER the last edit that touches it, not after the first.** Never verify by re-reading the thing you just fixed. |
-| **L26** | **`scripts/prototypes/` is one level deeper than `scripts/`.** A prototype importing `src/` needs `parent.parent.parent / "src"`. An f-string containing a set-builder like `#{m_i > p}` silently becomes a format expression and raises `NameError`. |
-| **L25** | **`scripts/patchkit.py` for any multi-anchor documentation edit.** Validates every anchor, raises `AnchorError` having written nothing. **Anchor on a span with no internal newline.** *Whole-file replaces: don't use it — edit locally and `dx --put`.* |
-| **L24** | **Jason's library settles citation questions the web cannot.** `~/Desktop/downloads` (flat) and `/Volumes/Jason2/BOOK MASTERS`. **Search by TITLE.** **`find` at full depth TIMES OUT — use `-maxdepth 2`.** `pdftotext` at `/opt/homebrew/bin/pdftotext`. **A null is "not in the indexed subset", NOT "he does not own it."** *And beware the stem: `-iname "*forni*"` matches every book with "California" in the title. Use `lippi`, `microfoundation`.* |
-| **L23** | `roster claim` requires `--who` AND `--resource`. Both `join` and `claim` **print nothing on success**; confirm with `roster who`. |
-| **L22** | A mutation harness editing a Python source in place must clear `__pycache__` between mutants AND print a mutation-specific fingerprint. **An INCOMPLETE mutant is worse than none.** Assert your mutant applied, and mutate every branch the behaviour flows through. |
+| **L41** | **NEW — an agent prompt ending in a paste marker with nothing pasted ships an EMPTY context, silently.** -09's prosecution prompt ended `=== THE SECTION ===` with no section. The agent said so and landed the session's fatal hit anyway, from the two-line summary. **Two lessons, and the second is the one that matters:** check the tail of a long prompt before sending; and *a hit available from a summary was available to any referee who had opened the source at all.* |
+| **L40** | **NEW — `pdftotext -layout` on a TWO-COLUMN paper interleaves the columns and manufactures false adjacency.** -09's first read of Andreou et al. produced a sentence that looked self-contradicting because two columns had been zipped together. **Run `pdftotext` WITHOUT `-layout` for reading order** and reserve `-layout` for tables. Cheap, and it cost a wrong belief for several minutes. |
+| **L39** | **NEW — `api.crossref.org` rate-limits to HTTP 429 within a few calls.** Space them, or go to the publisher / institutional-repository / RePEc page instead — **RePEc mirrors publisher abstracts verbatim** and answered three bibliographic questions in -09 that Crossref and Wiley (403) would not. An author's institutional repository is also where the FINAL volume/issue/pages live when the copy you have is EarlyView-paginated. |
+| **L38** | **NEW — a green-OA PDF may be the publisher's own typesetting AND still have the wrong pagination.** Andreou et al.'s deposited copy carries the Wiley title page but is EarlyView-paginated 1–28, while the issue is 34(4), 2158–2185. **It is the text of record and NOT the pagination of record.** Cite the issue, quote without page numbers, and say why. |
+| **L37** | **NEW — `wt066_p3_port.py` does not print the string "NO VERDICT".** The -08 handoff's gate line said "expect NO VERDICT", which reads as a literal. It exits 0 and ends on the REG-001 §7 stopping-rule note with no verdict line — *the absence is the expectation.* **Write gate expectations as what to LOOK FOR, not as prose a future session will grep.** |
+| **L36** | **Quote the remote path in `dx --get`.** `/tmp/dx --get ~/repos/x /tmp/x` fails: the **cloud** shell expands `~` to `/root` before dx sees it. Single-quote it. *Confirmed again in -09.* |
+| **L35** | **"Keep the superseded reasoning" is how a handoff grows a contradiction.** When an item closes, **REWRITE THE SECTION**; the reasoning belongs in the ledger, which is append-only by design. **RE-READ YOUR OWN HANDOFF AFTER ANY LATE CORRECTION.** No script does it. |
+| **L34** | **archive.org search-inside settles print-vs-transcription in two calls.** `GET https://archive.org/metadata/<id>` → `d1`/`dir`; then `GET https://<d1>/fulltext/inside.php?item_id=<id>&doc=<id>&path=<dir>&q=%22exact+phrase%22`. **Run TWO phrases from the same sentence**; agreeing leaves are the check against confabulation. |
+| **L33** | **A web transcription's silence is not the print original's**, and figure-adjacent apparatus is what it drops. **If the passage is one you WANT, that is a reason to check harder, not less.** |
+| **L32** | **An "aggregate" and a "half" look identical in code and are not the same object.** *Before asserting two quantities differ, ask whether the quantity you are reading is the one that is supposed to vary.* See WT-071 for the denominator version. |
+| **L31** | **An order-reversing bijection makes two "layers" the same model.** **Grep your new module for one line that would be WRONG in the other layer; if there is none, you renamed.** |
+| **L30** | **Jason's library is much larger than the indexed subset and he will go get books.** -07: seven volumes in one morning after a null. -08: Forni & Lippi AND Hildenbrand within an hour of each being named, both of which then DECIDED a verdict. **-09: he identified the version defect in his own library unprompted, which is the same asset pointed inward.** **ASK HIM. Every single time.** |
+| **L29** | **Verify the EDITION before quoting a classic.** OLL texts carry **no pagination**, so a citation from one is a chapter reference, not a page reference (WT-059). |
+| **L28** | **An agent asked to check a priority claim will AGREE with it unless you tell it not to.** Prompt with *"an over-eager priority claim is as damaging as a missed one"* and demand it state what it **could not access**. **AND RUN A THIRD AGENT INSTRUCTED TO DEFEND YOUR PAPER** (WT-070, now three for three). *-09 adds: the priority auditor's "WHAT I COULD NOT ACCESS" section listed eleven items and was the most honest part of its report.* |
+| **L27** | **Measure a constrained quantity AFTER the last edit that touches it.** Never verify by re-reading the thing you just fixed. |
+| **L26** | **`scripts/prototypes/` is one level deeper than `scripts/`.** A prototype importing `src/` needs `parent.parent.parent / "src"`. |
+| **L25** | **`scripts/patchkit.py` for any multi-anchor documentation edit.** Anchor on a span with no internal newline. *Whole-file replaces: edit locally and `dx --put`.* **And a markdown file re-wrapped at 100 columns will defeat a multi-line anchor — read the exact lines before matching.** *(-09 hit this on the first §9 edit.)* |
+| **L24** | **Jason's library settles citation questions the web cannot.** `~/Desktop/downloads` (flat) and `/Volumes/Jason2/BOOK MASTERS`. **Search by TITLE.** **`find` at full depth TIMES OUT — use `-maxdepth 2`.** `pdftotext` at `/opt/homebrew/bin/pdftotext`. **A null is "not in the indexed subset", NOT "he does not own it."** *Beware the stem: `-iname "*forni*"` matches every book with "California" in the title.* |
+| **L23** | `roster claim` requires `--who` AND `--resource`. Both print nothing on success; confirm with `roster who`. |
+| **L22** | A mutation harness editing a Python source in place must clear `__pycache__` between mutants AND print a mutation-specific fingerprint. **An INCOMPLETE mutant is worse than none.** |
 | **L21** | **The pre-registration workflow:** commit the registration **alone**, push, *then* write the analysis code, *then* compute. AMENDED by WT-052. |
-| **L20** | `dx --put` fails if the parent directory does not exist on darwin. `dx 'mkdir -p …'` first. |
+| **L20** | `dx --put` fails if the parent directory does not exist on darwin. `dx 'mkdir -p …'` first. *Hit again in -09 — the error names the path and still reads like a transport failure.* |
 | **L19** | The CIK→SIC map including dead registrants is `sub.txt` inside the SEC Financial Statement Data Set quarterly ZIPs. A universe from a current registrant list is a **survivorship trap**. |
-| **L18** | **The cloud container reaches `data.sec.gov` and `www.sec.gov` directly.** Do not route bulk web data through darwin. |
+| **L18** | **The cloud container reaches `data.sec.gov` and `www.sec.gov` directly.** Do not route bulk web data through darwin. *But DO route single-PDF fetch-and-`pdftotext` through darwin — that is how -09 verified four sources mechanically, and it is the project's answer to WT-059.* |
 | **L17** | **EDGAR `companyfacts`: Q4 is almost never tagged as a quarter.** Recover quarters by differencing cumulatives sharing a fiscal-year start date. |
 | **L16** | Measure the manuscript, don't opine about it. |
 | **L15** | Mutation-test any result you intend to publish, and confirm the *right* test screams. See L22, WT-069. |
@@ -368,70 +346,78 @@ create, so **restore points need no bridge**.
 
 ---
 
-## WHAT wealthTensor-08 DID
+## WHAT wealthTensor-09 DID
 
-**The at-bat was "write Paper I at the P3 level." No paper was written, and that is the result.**
+**The at-bat was "rewrite Paper III §9 from `POSITIONING-001`." It was rewritten, and then it lost —
+to its own adversarial pass, inside the hour, to a paragraph one page before the sentence it quotes.**
 
-**Three things went into the repo and none of them is the paper.** Three instruments
-(`wt070`/`wt071`/`wt072`), a result document recording the death of the framing they were built to
-support, and — the one thing that advances a live paper — `POSITIONING-001-crash-risk.md`, the
-crash-risk reading that had been deferred in **-06 and -07** and is now done.
+**The fact.** Jin & Myers, NBER WP 10453, pp. 4–5, *before their model begins*, consider "an opaque
+firm run by a **saintly manager** who always acts in shareholders' interest" and give three
+possibilities for how hidden news comes out. The third: *"think of good or bad news accumulating
+within the firm until the difference between intrinsic value and share price reaches a critical value.
+The news would then be released all at once, like a pressure vessel letting off steam."* **Non-agency
+accumulate-to-threshold-then-release-at-once was published in 2004.** §9 had just positioned the paper
+as *the non-agency generator of the same asymmetry.*
 
-**The P3 framing died three ways, all confirmed by running them.** The crossing height *is* the
-volume, so the diagram reads the population on one axis and the coupling on the other and our
-conclusion was **inverted**. The 26× headline was a ratio over a single random order-statistic gap and
-the honest control — raise a random 250, never naming *H* — reproduced it almost exactly. And *"H is
-not a property of the population"* is false under the standard unit (*mᵢ*, *hᵢ*): **we were about to
-cite Hildenbrand, whose p. 36 refutes us, having established that page ourselves the same morning.**
+**What survives, read forensically rather than defensively.** *Saintly ≠ ignorant* — "saintly"
+qualifies capture, not information, and it is **investors** who "cannot see the news as it happens";
+an informed party still holds the wedge and §4 has none. Their case is **two-sided** and they assign
+it **kurtosis, not skew** — then enter kurtosis as a **control** against which their agency crash
+results are identified. **Their non-agency channel is the nuisance term they partial out.** And their
+paper contains **zero** occurrences of `goodwill`, `intangible`, `impair`, `GAAP`, `asset class`,
+`book value`, `historical cost`, `historic cost` — all eight counted.
 
-**Then the replacement died too, and better.** The frictional identification result — coupling
-unidentified at *t* = 0, exactly identified at every *t* > 0 — verified cleanly and turned out to be
-the **Titchmarsh convolution theorem of 1926**, with its shape already published as
-Bertanha–McCallum–Seegert (2023), and requiring an observable nobody has.
+**The larger casualty was not Jin & Myers.** **Bleck & Liu (2007, *JAR* 45(2))**, verified in full
+text, state §4.4's result nineteen years earlier and in prose: historic cost *"stabilizes asset prices
+in the short term. Under the veil of this apparent stability, volatility actually accumulates only to
+hit the market at a later date."* §4.4 now says so **in place**, at the table, rather than making a
+reader travel to §9 for it.
 
-**Jason was tested and came back split, for the second session running.** He read Hildenbrand as
-narrower than the audit had it. **Right that it is narrow; wrong about what narrows it** — SMD appears
-once, on p. ix, autobiographically, and never again in 205 pages. And the audit he prompted returned
-the best sentence of the session: because Hildenbrand's household characteristic is (income, demand
-function), our claim had **no home in the one book that owns our object** — which is a stronger fact
-than anything Paper I v0.1 contained, and which is *also* the fact that killed us.
+**And the correction worth keeping, which came from the defence attorney.** *§4's asymmetry is
+ASSUMED, not DERIVED.* Jin & Myers obtain one-sidedness from symmetric primitives. §4 assumes a
+one-signed physical layer — which is **not sufficient**, because stochastic degradation around a
+booked rate gives a two-signed error, which is their case again. The wedge is one-signed only if
+reported value may fall and may not rise, and **that is conditional conservatism — Basu's object.**
+`POSITIONING-001` had listed Basu as **Threat 1, to be scoped around.** He is not the threat; he is
+the machinery the programme had not noticed it was standing on.
 
-*The lesson of the session, and it is not -07's.* That session learned what a passing guard is worth.
-**This one learned that a control which resamples is not a control at all.** The `4/21 < 4/11` defect
-recurred a **fourth** time across three sessions — this time as twenty-five uniform allocations
-reported as twenty-five experiments, when the reported range 85–103 sits inside the ±2 sd band of a
-hypergeometric mean the population fixes. *v0.1's "93 → 49" volume table inherits it: the 93 is
-S(N−S)/N to two significant figures and it sat unnoticed for two sessions.* **It recurs because it
-wears whatever costume the session is wearing. The only thing that has ever caught it is running the
-control nobody asked for.**
+**Jason's own contribution was the session's most reusable artifact, and he made it unprompted.**
+Shown that the Jin & Myers quotes came from the working paper, he said: *"the Journal of Financial
+Economics were items I had read working copies on and I (wrongly) assumed them to be the useful
+versions; 1993-era mistake, I didn't distinguish them."* That produced the reference apparatus's
+**fourth pass — Version** — and the **✓⧗** mark, because the three existing passes structurally cannot
+catch it: bibliographic asks whether the article exists (it does), provenance asks whether it is your
+copy (a working copy on your disk *is* your copy). **Neither asks whether the journal printed the
+words.** *The unification: the phantom tag is a fielder credited with an out he never made; a working
+copy cited as the article of record is a journal credited with words it never printed; the house style
+is prose credited with a rigour it never performed. Three media, one animal.*
 
-*And the things worth being pleased about, of which there are three.* **The containment firewall
-held** — ADR-001 promised on 2026-08-05 that failure would be contained, and this is the third time
-it has been cashed and the first time the fire was in the room the policy named: Paper III's P3
-survives, and II and III cite Paper I zero times. **The defence attorney did the most damage again**,
-and is now doctrine rather than a tip. And **the moved trigger paid for itself twice in one morning**:
-the gap between building an instrument and disbelieving its interpretation was three tool calls, and
-nothing false reached the ledger, the papers or Jason.
+**One over-reach struck, in the other direction.** The prosecution held that Jin & Myers "predicted
+the failure of the registered prediction in 2004." PRE-001 registered an ordering of recognition lags
+across GAAP asset classes; see the eight-way zero-hit count. **Category error, struck on evidence run
+by hand.** *This programme was wrong in both directions inside one session, which is the argument for
+checking the adversary as hard as the author.*
 
-**And then Jason asked the question that produced the session's most durable artifact.** Handed the
-finished handoff, he asked whether there was *a creative way to approach the `4/21 < 4/11`
-recurrence.* There was, and it was not another lesson entry. **The defect had been written down five
-times and mechanised zero times — a sixth writing-down would itself have been an instance of it.**
+**Two quotation defects found and corrected in `POSITIONING-001` by the same mechanical method.** The
+Andreou et al. quote read "nonsignificant"; the abstract reads **"non-significant"** — and uses both
+spellings in consecutive sentences, which is presumably how the pipeline blended them. Far worse: the
+**27% crash incidence is the CRSP–Compustat–Execucomp universe; CRSP-wide is 23%.** §9 was about to
+lead with the bare 27%.
 
-It was renamed after its behaviour rather than its first costume — **the phantom tag**, the fielder
-credited with an out he never made because his foot never touched the bag — and mechanised as
-`scripts/severity.py`: **every check ships a witness, the condition evaluated in a world where the
-claim is false, executed at check time.** A guard whose witness also passes kills the run. `wt070`
-was retrofitted (18 severe · 1 definitional · 0 vacuous) with the -08 instance **preserved in place**
-as `HISTORICAL PHANTOM TAG` and the witness that kills it attached, so the repository holds the defect
-and its refutation in one executable file. `tests/test_severity.py` runs the original `4/21` assertion
-through the harness and requires it to die.
+**And the work that simply got done.** `wt071` and `wt072` retrofitted to the witness discipline
+(9 · 0 · 0 and 10 · 0 · 0), both mutation-tested, closing -08's mission item 4 — and **building the
+witnesses corrected `wt071`'s own prose**: the 26× ratio's denominator swings 12.9× across *N* and its
+numerator swings 4.6×, so "dominated by the denominator" was two claims in one assertion and is now
+two checks. The house-style ruling applied to both papers, with one sentence flagged and left for
+Jason. Four global lessons banked. Reference apparatus extended. **121 tests, three commits, all
+pushed.**
 
-`docs/METHOD-001-the-phantom-tag.md` is the public record, written at Jason's request for a later
-reader doing an epistemological dig — six instances tabulated, why writing the lesson down kept
-failing, and a standing commitment that **if a reader cannot tell whether a document here is current,
-that is a defect in this repository and not in their reading.**
+*The lesson of the session, and it is not -08's.* That one learned that a control which resamples is
+not a control. **This one learned that a completed reading is not a completed search.** The reading
+was done — POSITIONING-001 was two sessions overdue and it was finally done properly — and the
+programme still lost the section, because the source had been reached by **string search**. Grep
+answers *is my quote real.* It does not answer *what else is in here.*
 
-Wicksteed's chapter needed 116 years to catch up with Paper I v0.1. **P3 · Atomism did not survive
-the morning it was born, its successor had been proved in 1926, and the session's most useful output
-turned out to be the thing Jason asked for after the handoff was already written.** 🪃⚾
+**Three sessions, three framings, three deaths, and each one found by us before it found a referee.**
+The saintly manager had been sitting on page four since 2004, one page from the sentence we quoted,
+waiting for someone to read the paragraph instead of the line. 🪃⚾
