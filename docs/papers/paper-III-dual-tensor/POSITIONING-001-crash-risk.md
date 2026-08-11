@@ -1,5 +1,26 @@
 # POSITIONING-001 · Paper III §9 versus the crash-risk literature · **READ, at last**
 
+> ## ⚠ SUPERSEDED 2026-08-11 (wealthTensor-09) by `POSITIONING-002-second-pass.md`. **READ THAT FIRST.**
+>
+> This file is kept because its four differentiating axes are still the right axes and two of them
+> survive. Three things in it are now known to be wrong or incomplete, and each is marked in place
+> below rather than silently edited away:
+>
+> 1. **The central positioning claim it recommends — "the non-agency generator of the same
+>    asymmetry" — is dead.** Jin & Myers' own working paper, pp. 4–5, contains a *saintly manager*
+>    case in which news accumulates to a critical threshold and is "released all at once, like a
+>    pressure vessel letting off steam." Non-agency accumulate-and-release was published in 2004,
+>    one page before the sentence this file quotes. **This file reached that PDF by string search.**
+> 2. **Basu is inverted.** §3 below calls conditional conservatism *Threat 1*. It is not a threat;
+>    it is the one-way ratchet §4's asymmetry silently depends on. See POSITIONING-002 §4.
+> 3. **The §4.4 volatility-relocation result was already published** — Bleck & Liu (2007, *JAR*).
+>    This file did not look for it, because it searched the crash-risk literature and not the
+>    accounting-measurement one.
+>
+> *Two quotation defects were also found and are corrected in place below. Both were introduced by
+> the retrieval pipeline this file's own §5 warned about, which is the entire argument for WT-059
+> arriving as a receipt rather than as a resolution.*
+
 - **Status of the item before this session:** deferred in wealthTensor-06 AND -07. §9 positioned
   against Jin & Myers and Hutton–Marcus–Tehranian **from a search, not from reading them.**
 - **Status now:** both read in full text (see §5 for exactly which versions). **§9 does not survive
@@ -96,9 +117,16 @@ against accounting.**
 The opacity/agency explanation of crashes is **weakening while the phenomenon grows**:
 
 - **Andreou, Lambertides & Magidou (2023, *British Journal of Management*):** crash incidence rose
-  from **5.5% to 27%** of firm-years between 1950 and 2019, while *"the opacity- and
-  overinvestment-crash relations are nonsignificant, especially in the period following the
+  from **5.5% to 27%** of firm-years between 1950 and 2019, while *"the opacity– and
+  overinvestment–crash relations are non-significant, especially in the period following the
   enforcement of the Sarbanes–Oxley Act."*
+  > **CORRECTED 2026-08-11 against the publisher's own PDF, two defects.** *(i)* The quotation read
+  > "nonsignificant"; the abstract reads **"non-significant"**, hyphenated, and uses en-dashes in
+  > "opacity– and overinvestment–crash". The abstract uses *both* spellings in consecutive sentences,
+  > which is presumably how the retrieval pipeline blended them. *(ii)* Far more consequentially, the
+  > **27% is the CRSP–Compustat–Execucomp universe.** The body, p. 2: *"grown steadily from 5.5% in
+  > 1950 to 23% in 2019 in the CRSP universe, and to 27% in the CRSP–Compustat–Execucomp universe."*
+  > Quoting 27% bare as "crash incidence" is a one-line kill, and §9 was about to lead with it.
 - **Datta, Iskandar-Datta & Singh (2014, *RFE*)** fail to confirm the opacity–R² relation; not robust
   to Petersen clustering.
 - **HMT concede the post-SOX dissipation in their own abstract.**

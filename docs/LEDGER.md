@@ -2191,3 +2191,131 @@ paragraph explaining why it is a good guard probably is not one.**
 with instance 5 preserved in place as `HISTORICAL PHANTOM TAG` and the witness that kills it attached,
 so the repo holds the defect and its refutation in one executable file. **`wt071` and `wt072` are NOT
 yet retrofitted** and that is recorded rather than quietly finished later. ⚾
+
+---
+
+## WT-074 · Paper III §9 was rewritten from the reading and died anyway, one page from the sentence it quotes · wealthTensor-09
+
+**The at-bat was "rewrite §9 from `POSITIONING-001`." It was rewritten, and then it lost, inside the
+hour, to its own adversarial pass.** Both drafts are in `git log -p`; the record of the second death
+is `docs/papers/paper-III-dual-tensor/POSITIONING-002-second-pass.md`.
+
+**The fact.** Jin & Myers, NBER WP 10453, pp. 4–5 — *before the model starts* — consider "an opaque
+firm run by a **saintly manager** who always acts in shareholders' interest," and give three
+possibilities for how the hidden news comes out. The third: *"think of good or bad news accumulating
+within the firm until the difference between intrinsic value and share price reaches a critical value.
+The news would then be released all at once, like a pressure vessel letting off steam."*
+
+**Non-agency accumulate-to-threshold-then-release-at-once was published in 2004.** §9 had just
+positioned this paper as *the non-agency generator of the same asymmetry*. Verified by the author
+character-by-character with `pdftotext` and `grep` — **no model in the loop** — which is also how the
+programme learned that the sentence it *does* quote sits one page later in the same PDF.
+`POSITIONING-001` reached that paper by string search and asked it the wrong question.
+
+**What survives, read forensically instead of defensively.** *Saintly ≠ ignorant*: "saintly"
+qualifies capture, not information, and the next sentence says it is **investors** who "cannot see the
+news as it happens." An informed party still holds the wedge; §4 has none. Their case is **two-sided**
+("good or bad news," a threshold on a signed difference) and they assign it **kurtosis, not skew** —
+then enter kurtosis as a **control variable** against which their agency crash results are identified.
+**Jin & Myers' non-agency channel is the nuisance term they partial out.** And the working paper
+contains zero occurrences of `goodwill`, `intangible`, `impair`, `GAAP`, `asset class`, `book value`,
+`historical cost` or `historic cost` — all eight counted by the author.
+
+**The larger casualty was not Jin & Myers.** **Bleck & Liu (2007, *JAR* 45(2))**, verified in full
+text: historic cost *"stabilizes asset prices in the short term. Under the veil of this apparent
+stability, volatility actually accumulates only to hit the market at a later date"* — transferring
+volatility across time and raising it overall. **That is §4.4, nineteen years earlier, in prose.**
+§4.4 now says so in place rather than at §9, because a reader meeting the table first should not have
+to travel to learn that its headline is old. Their manager is strategic and fully informed; that is
+the whole separation, and it is the same axis that survives Jin & Myers.
+
+**The correction worth keeping, and it came from the defence attorney.** *§4's asymmetry is ASSUMED,
+not DERIVED.* Jin & Myers obtain one-sidedness from symmetric primitives — absorption is bounded below
+because capture is unbounded above. §4 assumes a one-signed physical layer, which is **not sufficient**:
+degradation at a stochastic rate around a booked rate gives a two-signed reporting error, which is Jin
+& Myers' case again. The wedge is one-signed only under a second condition — reported value may fall
+and may not rise — and **that condition is conditional conservatism, i.e. Basu's object.**
+`POSITIONING-001` had listed Basu as **Threat 1, to be scoped around.** He is not the threat. He is
+the machinery the programme had not noticed it was standing on.
+
+**One adversarial over-reach, struck on evidence the author ran himself.** The prosecution held that
+Jin & Myers "predicted the failure of the registered prediction in 2004." PRE-001 registered an
+ordering of **recognition lags across GAAP asset classes**; see the eight-way zero-hit count above.
+Category error. *Agreeing with an adversary is as much a failure as agreeing with oneself, and this
+programme was wrong in both directions inside one session.*
+
+**Two quotation defects found in `POSITIONING-001` by the same mechanical method, corrected in place.**
+The Andreou et al. quote read "nonsignificant" where the abstract reads **"non-significant"** — the
+abstract uses both spellings in consecutive sentences, so the pipeline blended them. And the **27% is
+the CRSP–Compustat–Execucomp universe; CRSP-wide is 23%** — a distinction the abstract does not make
+and the body does. §9 was about to lead with the bare 27%.
+
+**WT-070 held for the third consecutive session, and the defence attorney did the most damage again.**
+It supplied the assumed-not-derived correction, identified Bleck & Liu where the prosecution had
+buried it in a list, and caught the prosecution's over-reach. *The prosecution's prompt ended with a
+paste marker and no pasted section — it never received §9's text, said so, and landed the fatal hit
+from the two-line summary anyway. The lesson is not "check your prompts": it is that a hit available
+from a summary was available to any referee who had opened the source at all.*
+
+**Undischarged and recorded as such.** Four works reached this entry through agents and **not one is
+in the paper**: Ryan (1995, *JAR*) — possibly closer prior art than Beaver & Ryan (2000); Kim & Zhang
+(2016, *CAR*) — conditional conservatism *lowers* crash risk, which may already be §4.2's comparative
+static, empirically supported; Kim, Wang & Zhang (2016, *CAR*); Zhu (2016, *RAST*).
+`POSITIONING-002` §6 is the read-status table. **An adversarial agent is a retrieval pipeline in a
+better suit.**
+
+---
+
+## WT-075 · A working copy cited as the article of record is the phantom tag in a third medium · wealthTensor-09
+
+**Jason, unprompted, on being shown that the Jin & Myers quotations came from the NBER working paper:**
+*"the Journal of Financial Economics were items I had read working copies on and I (wrongly) assumed
+them to be the useful versions; 1993-era mistake, I didn't distinguish them."*
+
+**The reference apparatus already had three passes and none of them catches this.** Bibliographic asks
+*does this work exist with these details?* — and the article does. Provenance asks *is this the copy
+that was read?* — and a working copy on the author's own disk **is** his own copy. Neither asks the
+question that matters: **is the text I quoted the text of record?**
+
+**Added: a fourth pass, `Version`, and a third mark, `✓⧗`.** Bibliographically verified, but the
+*text* consulted is a pre-publication version; any quotation is attributed to the version read and may
+not appear in the article of record. The entry is dual-dated in the opposite direction to the existing
+rule — `consulted/published` rather than `original/consulted` — and the reference section states that
+this is an extension rather than an instance. **Jin & Myers is now `(2004/2006)` with ✓⧗**, and §9
+carries exactly one verbatim quotation from them because every verification obligation is paid per
+quote.
+
+**And the unification, which is the reason this is a ledger entry and not a style note.** The phantom
+tag is a fielder credited with an out he never made, because his foot never touched the bag. A working
+copy cited as the article of record is **a journal credited with words it never printed.** The house
+style is prose credited with a rigour it never performed. *Three media, one animal: a claim collecting
+credit for a contact it never made.* The 1993 habit and `4/21 < 4/11` are the same error in different
+clothes, which is precisely why neither was recognised in the other's costume — see `METHOD-001` on
+naming a defect after its behaviour rather than its first appearance.
+
+---
+
+## WT-076 · wt071 and wt072 retrofitted to the witness discipline, and building the witnesses corrected the script · wealthTensor-09
+
+**`wt071_refuter.py` — 9 severe · 0 definitional · 0 vacuous. `wt072_coupling.py` — 10 severe ·
+0 definitional · 0 vacuous.** Both mutation-tested per WT-069: one vacuous witness substituted into
+each, both runs died with `PHANTOM TAG` as required, both reverted. Commit `fcb27a0`.
+
+**`wt072` is the script that DIAGNOSED the phantom tag in D1**, and it was doing so while asserting
+with a bare `check(label, condition)`. The fielder wrote the rulebook on touching the bag from several
+feet off it.
+
+**Building the witnesses corrected `wt071`'s own prose, which is the payoff WT-073 predicted.** The
+C2(a) comment claimed the 26× ratio was *"dominated by the noise in its own denominator."* Measured
+across N = 400/1,000/4,000/10,000: the **order-statistic gap swings 12.9×** and the **spread swings
+4.6×**. The denominator moves more; it does not move alone. That was two claims wearing one assertion,
+so it is now two checks — and the second one's witness is the **population standard deviation, which
+swings 1.24×**, which is what makes the gap the culprit rather than the sweep. The conclusion — not an
+effect size — survives both.
+
+**A generalisation worth keeping, because the witnesses here were nearly free.** Both scripts' hardest
+claims are **discontinuities**: unidentified at *t* = 0, exactly identified at every *t* > 0. **When a
+claim has a sharp boundary, each side is the other's falsifying world and the witness writes itself.**
+A claim that tells you where its edge is has already told you where to stand to watch it fail. The
+corollary is the useful half: *a claim for which no witness suggests itself may be a claim with no
+edge.*

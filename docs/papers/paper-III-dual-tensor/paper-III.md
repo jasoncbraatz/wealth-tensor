@@ -4,12 +4,18 @@
 *Independent researcher*
 jasoncbraatz@gmail.com
 
-**Draft — not yet submitted.** Version 0.3, 2026-08-10.
+**Draft — not yet submitted.** Version 0.4, 2026-08-11.
 
 *Revision history — recorded because the version string had not moved since v0.1 while three rounds of
 revision had: **v0.1** first draft; **v0.2** the responses to `REVIEW-001`, the internal adversarial
 referee report that ships beside this paper; **v0.3** §8 Limitation 4 (φ's conditioning on the effective
-decay δ), the notation audit, and references verified against live sources.*
+decay δ), the notation audit, and references verified against live sources; **v0.4** §9 rewritten twice
+in one day — once from `POSITIONING-001`, then again after that rewrite's own adversarial pass found
+Jin & Myers' saintly-manager case and Bleck & Liu (2007), which between them retire this paper's claim
+to a non-agency accumulate-and-release mechanism and to §4.4's volatility result. §4.4 now attributes
+its qualitative finding, Basu is reclassified from threat to ingredient, and the reference list gains a
+version pass and the **✓⧗** mark. **§9 is provisional: `POSITIONING-002-second-pass.md` §6 lists four
+works that must be read at source before it is final.***
 
 ---
 
@@ -500,6 +506,15 @@ At zero observability, **essentially every reported movement is a recognition ev
 therefore not a quiet system but one that is quiet for long intervals and then abruptly is not —
 which is a more recognisable description of the historical record than uniform smoothing.
 
+**The qualitative result is not new and is not claimed here.** Bleck and Liu stated it in 2007:
+historic cost accounting "stabilizes asset prices in the short term. Under the veil of this apparent
+stability, volatility actually accumulates only to hit the market at a later date," transferring
+volatility across time and raising it overall. **What the table above adds is the parameterisation** —
+the same claim indexed by a continuous observability parameter, with the smoothing and concentration
+measured separately rather than argued. The provenance and the difference in mechanism are set out in
+§9; this note is here because a reader meeting the table first should not have to reach §9 to learn
+that its headline is nineteen years old.
+
 **It is not, however, a usable empirical target, and this must be said here rather than left for a
 reader to discover.** Against the accounting data available to this programme the concentration
 statistic is unfalsifiable by construction: the asset class with no amortisation schedule has
@@ -961,25 +976,104 @@ answers — and, as §4.3 now concedes, does not yet receive an answer. What the
 partition rather than a refutation: the model concedes disclosed information entirely and retains
 only the undisclosed residue.
 
-**The stock price crash risk literature is this paper's nearest neighbour, and it arrived twenty
-years earlier.** Jin and Myers, and then Hutton, Marcus and Tehranian, model firms that withhold bad
-news until they can withhold it no longer, at which point the accumulated stock is released at once
-and the price moves discontinuously; opacity is the measured driver and crash risk the measured
-outcome. That is §4.4 in a different vocabulary, and an active literature has extended it
-continuously since. The honest statement of the relationship is uncomfortable and is given here
-rather than left for a referee: **those results and this paper are not rivals, and on evidence this
-paper is much the weaker.** Crash risk is measured on prices, tested on large panels, and supported;
-§4 is a property of a simulation whose one registered prediction failed.
+**The stock price crash risk literature is this paper's nearest neighbour, it arrived twenty years
+earlier, and the concession owed to it is larger than the contribution claimed against it.** Jin and
+Myers model a firm whose insiders absorb firm-specific bad news up to a limit and then, when a long
+enough run of it arrives, give up and release the accumulated stock at once; the frequency of large
+negative firm-specific return outliers rises with how opaque the firm is to outsiders. Hutton, Marcus
+and Tehranian supplied the firm-level opacity measure and the panel, and an active literature has
+extended both continuously since. **That is §4.4 in a different vocabulary, and on evidence this
+paper is much the weaker of the two accounts**: crash risk is measured on prices, tested on large
+panels and supported, while §4 is a property of a simulation whose one registered prediction failed.
+The asymmetry is theirs before it is this paper's, too — their COUNT measure nets downside outlier
+frequencies against upside ones and their COLLAR trade shorts a call against a put, so the
+crash-not-jump direction is already inside the quantity they measure.
 
-What §4 adds is a *layer*, not a result. Crash risk models a managerial **choice** to withhold;
-§4 models a structural limit on what the reporting layer is *able* to observe, chosen by an
-accounting standard rather than by a manager. The two are compatible and probably complementary — a
-firm may withhold what it knows while the standard prevents anyone from recognising what nobody
-knows — and if this framework has a future in this direction it is as an accounting-layer
-microfoundation for which the price crash is the observable consequence. The ordering is the whole
-claim: the recognition event is the cause and the crash is the effect. That is a research programme
-and not a finding, and it is stated at this length because the alternative was letting a reader
-discover on their own that the literature nearest this paper's thesis was missing from it.
+**And the concession runs one step further than the paragraph above, into a case Jin and Myers
+themselves set out and this paper claims no priority over.** Before their model begins, they consider
+an opaque firm run by "a saintly manager who always acts in shareholders' interest, never taking a
+dollar more or less than deserved," and ask what such a firm's returns look like. Their third
+possibility is this paper's mechanism:
+
+> "If a stable lag is implausible, think of good or bad news accumulating within the firm until the
+> difference between intrinsic value and share price reaches a critical value. The news would then be
+> released all at once, like a pressure vessel letting off steam."
+
+**Accumulation to a threshold and release all at once, with the agency conflict switched off, was
+written down in 2004.** No claim of priority over it is made here, and an earlier draft of this
+section made one.
+
+**What that case retains, and §4 removes, is an informed party.** "Saintly" qualifies capture and not
+information: the manager still observes the hidden component, and it is *investors* who "cannot see
+the news as it happens." Their friction is verifiability toward outsiders; §4's manager knows no more
+than the market does. **Deliberately withheld known news, honestly held unverifiable news, and
+unrecognised unknown degradation are three objects, and only the third is §4's.** Two further
+differences follow from the same page rather than from a defence of it. Their case is **two-sided** —
+"good or bad news accumulating," against a threshold on a signed difference — and they assign it long
+tails rather than crashes, entering kurtosis as a control variable against which their agency-driven
+crash results are then identified. And it has no accounting layer of any kind; the working paper
+contains no occurrence of *goodwill*, *intangible*, *impair*, *GAAP*, *book value* or *historic
+cost*. The operating asset neither depreciates nor is reinvested in by declared assumption, and the
+footnote attached to that assumption concedes only depreciation "according to a pre-defined
+schedule" — which, being common knowledge, enters value and price identically and opens no wedge at
+all.
+
+That epistemic difference is observationally fragile. From the price's point of view a wedge that
+widens because someone will not speak and a wedge that widens because nobody yet knows resolve
+identically, and the obvious discriminating tests cut against §4 rather than for it: deliberate
+withholding predicts correlation with insider incentives, insider selling, litigation exposure and
+regulatory regime, and the post-SOX dissipation Hutton, Marcus and Tehranian report is exactly that
+pattern.
+
+**The trend the agency account is losing its grip on is nonetheless real, and it is where a mechanism
+without a lying manager would matter if one were established.** Andreou, Lambertides and Magidou
+document that idiosyncratic crash occurrences among US-listed firms rose from 5.5% of firm-years in
+1950 to 27% in 2019 — 23% across the CRSP universe and 27% once the sample is narrowed to
+CRSP–Compustat–Execucomp — while the opacity– and overinvestment–crash relations they test come back
+non-significant, particularly in the period after Sarbanes–Oxley. Hutton, Marcus and Tehranian report
+the same dissipation in their own abstract. Those authors read their own nulls as the *conduct*
+declining rather than the explanation failing, and this paper does not recruit them against that
+reading. **What the trend establishes is that the space is open, not that §4 occupies it.**
+
+**Two things must be conceded here, or §4's claim is not narrow but wrong.**
+
+**The first is that §4's asymmetry is assumed and not derived, and that the thing which would derive
+it belongs to someone else.** Jin and Myers obtain one-sidedness from symmetric primitives: the
+quantity of good news insiders can absorb is unbounded because they can capture it, and the quantity
+of bad news is not, so the bound is one-sided for a reason internal to the model. §4 assumes a
+physical layer that only degrades. That assumption is not by itself sufficient — degradation at a
+stochastic rate around a booked rate produces a two-signed reporting error, which is Jin and Myers'
+case again, long tails and no skew. What makes the wedge one-signed is a second condition, that
+reported value may fall and may not rise: no upward revaluation of property, plant and equipment, no
+impairment reversal for goodwill or indefinite-lived intangibles. **That condition is conditional
+conservatism, it is Basu's object, and §4 uses it as machinery rather than contributing it.** An
+earlier draft of this section cited Basu as an obstacle to be scoped around. He is not the obstacle;
+he is the part of the mechanism this programme had not noticed it was standing on. §4's claim is
+correspondingly restricted to degradation on which conservatism has nothing further to bite —
+carrying no impairment trigger, no estimable expected loss and no observable event to key recognition
+to. Where a loss is estimable, recognition is faster than the market and §4 predicts nothing.
+
+**The second is that the reported layer accumulating hidden deterioration and releasing it as a price
+crash is a published result, and §4.4 quantifies it rather than discovering it.** Bleck and Liu model
+the accounting regime itself: historical cost gives management a "veil," poor performance
+"accumulate[s] and only eventually materialize[s]," and greater opacity produces more frequent and
+more severe crashes. Their statement of the volatility result is §4.4's, nineteen years earlier and
+in prose — historic cost "stabilizes asset prices in the short term. Under the veil of this apparent
+stability, volatility actually accumulates only to hit the market at a later date," transferring
+volatility across time and raising it overall. **§4.4's contribution is the parameterisation, not the
+finding.** Their manager, however, is strategic and fully informed, keeping a project alive for a
+private benefit while knowing it will not recover, and their regimes are two discrete alternatives
+rather than a continuum. The separation from §4 is the same one that survives Jin and Myers, which is
+either reassuring or the last plank.
+
+**What is left is a claim about form.** Beaver and Ryan decomposed the divergence between book value
+and economic value into a **bias** component and a **lag** component twenty-six years ago, and
+Bushman and Williams connect delayed expected-loss recognition to the risk profile of banks. That
+literature models conditional conservatism as a contemporaneous asymmetric response; §4 models it as
+threshold-crossing accumulation under a continuous observability parameter, which is a form that can
+carry a recognition lag, a jump magnitude and a location for the variance where a response
+coefficient cannot. **The ordering remains the whole of the claim — the recognition event is the
+cause and the price crash is the effect — and it remains a research programme and not a finding.**
 
 **On pre-registration and severe testing**, this paper is a straightforward application of the
 standard argument — that a prediction's evidential weight depends on the test having had a real
@@ -1058,10 +1152,49 @@ original's date does argumentative work, because the entry is a translation or b
 priority rests on it, the entry is **dual-dated** `original/consulted`. A reprint that changes no
 pagination is a *printing*, not an edition, and is not dual-dated.**
 
-*Verified on 2026-08-10 (session wealthTensor-05).* **✓** — checked against a publisher page, a
-library-catalogue record, a Crossref record or the issuing body's own documentation, not recalled.
-**✓✎** — additionally checked against **the author's own copy**, by reading that copy's title page and
-colophon. The ✓✎ entries are the ones where doing so changed the citation.
+***Extended on 2026-08-11 to cover the case the rule above does not reach: a text consulted in a
+pre-publication version.** Where the copy read was a working paper or accepted manuscript rather than
+the typeset article of record, the entry is dual-dated in the other direction —
+`consulted/published` — and carries **✓⧗**. The extension exists because the author had for years
+treated a downloaded working copy and the published article as the same object, which is a habit that
+survives a bibliographic check intact: the article exists, with those details, and none of that is
+evidence that the sentence quoted from it was ever printed there.*
+
+*Verified on 2026-08-10 (session wealthTensor-05); crash-risk entries added 2026-08-11.* **✓** —
+checked against a publisher page, a library-catalogue record, a Crossref record or the issuing body's
+own documentation, not recalled. **✓✎** — additionally checked against **the author's own copy**, by
+reading that copy's title page and colophon. The ✓✎ entries are the ones where doing so changed the
+citation. **✓⧗** — bibliographically verified, but the **text** consulted is a pre-publication
+version; any quotation is attributed to the version read and may not appear in the article of record.
+
+Andreou, P. C., Lambertides, N., & Magidou, M. (2023). A critique of the agency theory viewpoint of
+stock price crash risk: the opacity and overinvestment channels. *British Journal of Management*,
+34(4), 2158–2185. ✓ *(Open access. The copy consulted is the publisher's own typesetting, deposited
+by the authors' institution, whose EarlyView pagination runs 1–28 and therefore does not match the
+issue pagination given here; quotations from it are cited without page numbers for that reason. §9
+takes both the 5.5%→27% figure and the universe split from it directly: the 27% is the
+CRSP–Compustat–Execucomp sample and the CRSP-wide figure is 23%, a distinction the abstract does not
+make and the body does.)*
+
+Basu, S. (1997). The conservatism principle and the asymmetric timeliness of earnings. *Journal of
+Accounting and Economics*, 24(1), 3–37. ✓ *(Cited for the asymmetric-timeliness result named in its
+own title, and characterised from the author's own posted abstract rather than from the article,
+which was not available to the author. Nothing is quoted from it.)*
+
+Beaver, W. H., & Ryan, S. G. (2000). Biases and lags in book value and their effects on the ability
+of the book-to-market ratio to predict book return on equity. *Journal of Accounting Research*,
+38(1), 127–148. ✓ *(Cited for the bias/lag decomposition named in its own title. §9 identifies this
+as the closest prior art to §4's filter, so the entry is load-bearing against this paper rather than
+for it.)*
+
+Bleck, A., & Liu, X. (2007). Market transparency and the accounting regime. *Journal of Accounting
+Research*, 45(2), 229–256. ✓ *(Read in full text; the copy consulted carries the journal's own title
+page — vol. 45 no. 2, May 2007, DOI 10.1111/j.1475-679X.2007.00231.x — so it is the typeset article
+and not a pre-publication version. §4.4 and §9 both cite it against this paper: it states §4.4's
+volatility result nineteen years earlier.)*
+
+Bushman, R. M., & Williams, C. D. (2015). Delayed expected loss recognition and the risk profile of
+banks. *Journal of Accounting Research*, 53(3), 511–553. ✓
 
 Fama, E. F. (1970). Efficient capital markets: a review of theory and empirical work. *Journal of
 Finance*, 25(2), 383–417. ✓
@@ -1080,15 +1213,26 @@ Production and Wealth*. Palgrave Macmillan. ✓✎ *(Copy consulted confirms fir
 Hayek, F. A. (1945). The use of knowledge in society. *American Economic Review*, 35(4), 519–530. ✓
 
 Hutton, A. P., Marcus, A. J., & Tehranian, H. (2009). Opaque financial reports, R², and crash risk.
-*Journal of Financial Economics*, 94(1), 67–86. ✓
+*Journal of Financial Economics*, 94(1), 67–86. ✓ *(Nothing is quoted from the body, which was read
+as full text rather than as the typeset article. The post-SOX dissipation §9 attributes to them is
+from the published abstract, checked at source.)*
 
 International Energy Agency & United Nations Statistics Division. *SDG Indicator 7.3.1 — Energy
 intensity measured in terms of primary energy and GDP.* Reported as World Bank series
 `EG.EGY.PRIM.PP.KD`, *Energy intensity level of primary energy*, compiled for *Tracking SDG 7: The
 Energy Progress Report* by the IEA, IRENA, UNSD, the World Bank and the WHO. ✓
 
-Jin, L., & Myers, S. C. (2006). R² around the world: New theory and new tests. *Journal of Financial
-Economics*, 79(2), 257–292. ✓
+Jin, L., & Myers, S. C. (2004/2006). R² around the world: New theory and new tests. *Journal of
+Financial Economics*, 79(2), 257–292. ✓⧗ *(The published article is verified bibliographically and is
+what §9 cites for the model and its results. The **text** consulted is the earlier NBER Working Paper
+10453, April 2004, whose proposition numbering differs from the published version; §9's one
+quotation — "For simplicity, we ignore depreciation and reinvestment" — is from that working paper,
+was checked character-by-character against its PDF, and has **not** been checked against the typeset
+article. Two years and a referee process separate the two texts, so the sentence may not appear in
+the article of record in this form. §9 quotes it because it is the sentence that establishes the
+model has no physical layer, and a reader entitled to doubt that on a paraphrase should be able to
+see the words; every other characterisation of this paper in §9 is a paraphrase for the same reason
+in reverse.)*
 
 Jonckheere, A. R. (1954). A distribution-free k-sample test against ordered alternatives. *Biometrika*,
 41(1–2), 133–145. ✓
@@ -1166,9 +1310,17 @@ describe, so that correcting an entry cannot leave a summary of it behind.*
    surname matched a different scholar entirely. Two entries were corrected, reverted, and corrected
    again as the library search improved — the citations were not wrong, the *search* was, and the
    record of that is in `LEDGER.md` WT-059 and WT-062.
+4. **Version**, added 2026-08-11 with the crash-risk entries. It asks *is the text I quoted the text
+   of record?* — which passes 1 and 3 both leave open, the first because the article exists either
+   way and the second because a working copy on the author's own disk **is** his own copy. It found
+   that the crash-risk papers had been read in pre-publication and untypeset versions and cited as
+   though they were the published articles. Hence **✓⧗**, and hence the single surviving quotation in
+   §9 being attributed to the working paper it was actually read in rather than to the journal.
 
 **The order is the lesson.** A clean bibliographic pass is not evidence of a correct citation; it is
 evidence of a correct *bibliography*. The two are different documents that happen to share a page.
+The fourth pass is the same observation one step further in: a correct citation of a work is not
+evidence that the work said the words attributed to it.
 
 *A third note, on the order these were found in, because it is the reusable part.* The bibliographic
 pass came back clean — every work exists, with those details, from a publisher or a catalogue. The
