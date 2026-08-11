@@ -1942,14 +1942,24 @@ the six load-bearing passages are at **498, 505, 506, 507, 509, 516**. The citat
 citation and the WT-059 exposure is closed. *A null was not an absence, exactly as L24 says, and the
 person who invoked L24 about his NAS broke it about his Kindles four messages later.*
 
-**One open item, deliberately not resolved.** The 1933 text carries a footnote at p. 512, on the
-reallocation passage, absent from the entire Econlib 1910 file: *"I have preserved the convention by
-which the 'demand' curve is made to run down and the 'supply' curve to run up … **Of course it has
-no significance and might just as well be neglected or reversed.**"* That is the corollary stated
-more baldly than anywhere in 1910 — and it is **not quotable yet**, because a figure-adjacent note is
-exactly what a web edition drops, and whether it is Wicksteed's or Robbins' is unsettled. Settle it
-against an archive.org scan of the 1910 Macmillan printing. **A quote that would help us this much
-is the one to check hardest.**
+**And a footnote that was nearly lost, chased down, and is Wicksteed's.** The 1933 text carries a
+note at p. 512, hanging off Fig. 29, absent from the entire Econlib 1910 file: *"I have preserved
+the convention by which the 'demand' curve is made to run down and the 'supply' curve to run up …
+**Of course it has no significance and might just as well be neglected or reversed.**"* The
+corollary at its most naked — the visual signature of the whole construction, disowned in a
+footnote while drawing it.
+
+It was quarantined on the reasoning that *a quote that would help us this much is the one to check
+hardest*, and the check ran: the 1910 Macmillan printing (Cornell scan, archive.org
+`cu31924030395606`) carries it at **leaf 538**, confirmed by two independent phrase searches each
+returning exactly one match at the same leaf. **1910, and Wicksteed's, not Robbins'.** Cite as
+**Bk II Ch. IV p. 512 n. 1**; the 1933 set preserves the 1910 pagination (Vol. II opens at p. 401).
+
+**The transferable lesson is L24 in a costume nobody had seen.** The Econlib absence was worth
+nothing, because Econlib renders figures as images and drops the apparatus around them — at that
+exact point its text has a bare figure placeholder and runs on. *A null is not an absence* has now
+bitten this project three ways in one session: a NAS that was not indexed, a Kindle that was not
+charged, and **a transcription that was read too trustingly.** See L33.
 
 **The method note worth keeping.** Three agents: one hunting priority, one told an over-eager
 priority claim is as damaging as a missed one (L28), one told to **REFUTE the displacement** — to

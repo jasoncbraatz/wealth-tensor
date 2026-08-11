@@ -222,12 +222,14 @@ Ask.**
 **RESOLVED IN -07 — he found it (different Kindle, years uncharged) and it is verified.**
 **Bk II Ch. IV is pp. 493–526** in the 1933 Robbins Vol. II; every quote survives **verbatim**; the
 six load-bearing passages carry pages **498, 505, 506, 507, 509, 516** (`REVIEW-003` §7b). **Cite
-the 1933 edition with those pages** — the WT-059 exposure is closed. **ONE OPEN ITEM:** a footnote
-at **p. 512** — *"I have preserved the convention by which the 'demand' curve is made to run down
-and the 'supply' curve to run up … Of course it has no significance and might just as well be
-neglected or reversed"* — is absent from the entire Econlib 1910 text. **Do not quote it** until
-you have checked an archive.org scan of the 1910 Macmillan printing: a figure-adjacent note is
-exactly what a web edition drops, and authorship (Wicksteed or Robbins) is unsettled too.
+the 1933 edition with those pages** — the WT-059 exposure is closed. **AND THE FOOTNOTE IS RESOLVED AND USABLE.**
+Wicksteed (1910) Bk II Ch. IV **p. 512 n. 1**: *"I have preserved the convention by which the
+'demand' curve is made to run down and the 'supply' curve to run up, from left to right. **Of
+course it has no significance and might just as well be neglected or reversed.**"* Verified against
+the 1910 Macmillan printing (Cornell scan, archive.org `cu31924030395606`, **leaf 538**) by two
+independent phrase searches returning one match each at the same leaf. **It is 1910 and it is
+Wicksteed's, not Robbins'.** Econlib had dropped it because it hangs off Fig. 29 — see **L33**, and
+use the quote.
 *Superseded reasoning, kept because it is why this mattered:* DONE in -07 — he found it and it is verified. See `REVIEW-003` §7b:**
    Bk II Ch. IV is **pp. 493–526** (1933 Robbins, Vol. II), every quote survives **verbatim**, and
    the six load-bearing passages now carry pages (498, 505, 506, 507, 509, 516). **Cite the 1933
@@ -308,7 +310,9 @@ then proceed. Do not wait for Jason's go.
 
 | # | Fact |
 |---|---|
-| **L32** | **NEW — an "aggregate" and a "half" look identical in code and are not the same object.** WT-066's `pressure_trace` **is** the fold, invariant by construction; a test comparing two of them with `!=` compares two invariants and asserts nothing. It survived every mutant. *Before asserting that two quantities differ, ask whether the quantity you are reading is the one that is supposed to vary.* |
+| **L34** | **NEW — archive.org will search inside a scan for you, and it settles print-vs-transcription questions in two calls.** `GET https://archive.org/metadata/<id>` returns `d1`/`dir`; then `GET https://<d1>/fulltext/inside.php?item_id=<id>&doc=<id>&path=<dir>&q=%22exact+phrase%22` returns match count, **leaf number** and surrounding OCR. **Run TWO different phrases from the same sentence** — agreeing leaf numbers is the check that the answer is read and not confabulated. Settled the Wicksteed footnote in -07 after a whole-file grep had said "absent." |
+| **L33** | **NEW — a web transcription's silence is not the print original's silence, and figure-adjacent apparatus is what it drops.** Econlib/OLL render figures as images and lose the footnotes hanging off them: Wicksteed's *"of course it has no significance and might just as well be neglected or reversed"* is absent from the entire 1.5 M-character Econlib file and **present in the 1910 Macmillan printing at leaf 538**. **Never conclude a passage is absent from a work on the strength of a web edition** — and if the passage is one you *want*, that is the reason to check harder, not less. L24's rule in a third costume: a NAS that was not indexed, a Kindle that was not charged, and a transcription that was read too trustingly. |
+| **L32** | **an "aggregate" and a "half" look identical in code and are not the same object.** WT-066's `pressure_trace` **is** the fold, invariant by construction; a test comparing two of them with `!=` compares two invariants and asserts nothing. It survived every mutant. *Before asserting that two quantities differ, ask whether the quantity you are reading is the one that is supposed to vary.* |
 | **L31** | **NEW — an order-reversing bijection makes two "layers" the same model.** Setting *m* = −*τ*, *p* = −*s* turned the recognition port into `excess_demand.py` exactly. **The tell is a module that touches only its own arrays and contains no operation specific to its claimed domain.** Grep your new module for a single line that would be *wrong* in the other layer; if there is none, you have renamed, not ported. |
 | **L30** | **NEW — Jason's Kindle library is much larger than the indexed subset, and he will go get books.** In -07 he produced **seven** Wicksteed/Böhm-Bawerk volumes in one morning after a null. **Ask him before concluding anything from an absence.** Also: *two of them were Vol. I of the same two-volume work, and one was his subject's father's Unitarian sermons* — check what an edition actually contains before reasoning from it. |
 | **L29** | **NEW — verify the EDITION before quoting a classic.** Econlib/OLL's *Common Sense* is the **1910 Macmillan first edition** (stated in its front matter); the standard modern copy is the **1933 Robbins "Revised and Enlarged."** Different editions, and Robbins' word is *Enlarged*. Also: OLL texts carry **no pagination**, so a citation from one is a chapter reference and not a page reference — WT-059. |

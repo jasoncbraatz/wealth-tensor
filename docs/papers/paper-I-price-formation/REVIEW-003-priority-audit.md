@@ -178,13 +178,37 @@ exactly the reallocation passage (Figs. 28–29):
 That is the corollary stated more baldly than anywhere in the 1910 chapter: the up/down orientation
 — the visual signature of the whole diagram — is asserted to carry no significance at all.
 
-**Two things are NOT established and must not be written as though they were.** *(a)* Whether the
-footnote is Wicksteed's or Robbins'. The first person reads as the author's voice, and an editor
-would more likely bracket it or write in the third person, but that is inference. *(b)* Whether it
-is genuinely new in 1933 or **was dropped by Econlib** — a figure-adjacent note is exactly what a
-web edition loses. The string is absent from the *entire* 1.5 M-character Econlib file including its
-footnote apparatus, which is suggestive and not decisive. **Settle it against an archive.org scan of
-the 1910 Macmillan printing before quoting it.**
+**RESOLVED, against the 1910 Macmillan printing, and it is Wicksteed's.** The Cornell scan
+(archive.org `cu31924030395606`) carries the footnote at **leaf 538**. Two independent phrase
+searches — *"preserved the convention"* and *"neglected or reversed"* — each return exactly one
+match, at the same leaf, and the second returns the OCR verbatim:
+
+> "I have preserved the convention by which the "demand" curve is made to run down and the "supply"
+> curve to run up, from left to right. Of course it has no significance and might just as well be
+> neglected or reversed."
+
+**So the note is 1910, not a 1933 addition, and it is the author's, not the editor's. The quote is
+usable and should be used.** It is the corollary at its most naked: the up-and-down orientation of
+the two curves — the visual signature of the entire construction — carries nothing, and Wicksteed
+says so in a footnote while drawing it.
+
+**Cite it as:** Wicksteed (1910), Bk II Ch. IV, **p. 512 n. 1** (1933 Robbins, Vol. II). The
+pagination cross-checks: the 1933 two-volume set **preserves the 1910 pagination** — Vol. II opens
+Book II at p. 401 — and leaf 538 minus ~26 leaves of front matter lands on 512. Consistent, and
+stated as consistency rather than proof.
+
+**And the reason it was nearly lost, which is the transferable part.** The note is **attached to
+Fig. 29**. Econlib renders figures as images and drops the apparatus around them — at exactly that
+point its text has a bare figure placeholder and runs straight on to the next paragraph. **A web
+transcription's silence is not the print original's silence.** The string is absent from the entire
+1.5 M-character Econlib file, and that absence was worth nothing. This is L24's rule — *a null is
+not an absence* — arriving in a costume nobody had seen: not a library that had not been indexed,
+but a **transcription that had been read too trustingly.** See L33.
+
+*Jason called it before the check ran:* "it sounds like era-speak; it wouldn't be modern from my gut
+sense, but better safe than sorry." Both halves earned their keep — the instinct was right and the
+verification was still the right call, because the instinct could not have distinguished Wicksteed
+1910 from Robbins 1933 and the citation turns on exactly that.
 
 **On "Enlarged".** The likely reading, and it is only a reading: the 1933 title is *Common Sense
 **and Selected Papers and Reviews on Economic Theory***, and Vol. II carries those papers — the
