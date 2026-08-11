@@ -1771,3 +1771,122 @@ branch, one line before its own `isfinite` guard caught it and raised — puttin
 `RuntimeWarning` into a fully passing test suite. Divergence is a documented outcome of that function,
 not a surprise, so the loop is now wrapped in `np.errstate(over="ignore", invalid="ignore")` with the
 `isfinite` check left in place as the real guard, and the reason written above it. Suite is clean.
+
+---
+
+## WT-063 · **CORRECTION** appended 2026-08-10, same session · two errors in the entry above
+
+**1 · The tie-convention story misdescribes its own fix, in the entry that exists to record it.**
+The paragraph above says the grid "now excludes any point within 1e-9 of an m_i". Measured: that
+filter removes **zero** points from the actual grid — 399 interior points before it, 399 after. The
+entire 4 → 1 correction came from dropping the two **endpoints**, which are `M.min()` and `M.max()`
+and are therefore data points. The filter is a correct guard against a case that does not arise
+here; it is not what fixed this. *An entry whose subject is a near-miss in self-reporting, getting
+its own self-report wrong.* Both the script and the test are correct — only the description was
+wrong.
+
+**2 · The identity's caveat is dropped in the entry's own headline.** "at every price, not merely at
+the crossing" is false at ties. At *p* = *m_j* the tied agent falls in neither part of the partition
+and *z* **is** allocation-dependent: at the clearing interval's own endpoints, *z* = −1 for 16 of the
+25 allocations and 0 for the other 9. The correct statement is the one the derivation actually
+supports — **at every price that is not itself a reservation price** — and both endpoints of the
+marginal pair are tie prices, so the caveat is not a technicality.
+
+**3 · And the claim the entry drew from it does not follow.** WT-063 concluded that the identity
+licenses *"the decomposition carries no economic content"* and, in the paper, that the schedules
+"cannot be perturbed independently". **The second does not follow from the first.** The invariance is
+to *reallocating units with reservation prices held fixed*, which is not an operation comparative
+statics performs. Change only non-holders' valuations and the supply schedule is unchanged at every
+grid point while demand moves and the price moves with it. See REVIEW-002 §F1. **The surviving claim
+is narrower: the schedules are not independent *as functions of the allocation*.** Whether even that
+is new is open — see the priority audit.
+
+---
+
+## WT-064 · **CORRECTION** appended 2026-08-10, same session · this is not a new result, and its gloss was wrong
+
+**The entry above should not have been filed as a RESULT. It is a recapitulation.** Filed here as a
+correction rather than deleted, because how it happened is the useful part.
+
+**Prior art, complete.** The undamped gain (*n*−1)/2 and the loss of asymptotic stability at *n* ≥ 3
+are **Theocharis (1960)**, *Rev. Econ. Stud.* 27(2), 133–134 — argued twenty years earlier still by
+**Palander (1939)**. That the required adjustment speed *falls* as *n* rises is **Fisher (1961)**,
+*Rev. Econ. Stud.* 28(2), 125–135, on his own p. 125: *"the tendency to instability does rise with
+the number of sellers for most of the processes considered."* And the bound itself, *d* < 4/(*N*+1),
+is **eq. (2.26)** of Bischi, Chiarella, Kopel & Szidarovszky, *Nonlinear Oligopolies* (Springer,
+2010), where it appears as a routine worked example.
+
+**A second correction, independent of priority: the gain expression above is wrong.** The damped
+Jacobian is (1−*d*)*I* + *dF* with *F* = −½(**11**ᵀ − *I*), so the eigenvalues are 1 − *d*(*n*+1)/2
+with multiplicity 1 **and 1 − *d*/2 with multiplicity *n*−1**. The gain is the spectral radius of
+those, not the first term alone — which vanishes at *d* = 2/(*n*+1) where the true gain is still
+1 − *d*/2. The **stability condition survives** only because 4/(*n*+1) ≤ 4/3 < 4, so the symmetric
+mode always binds first. *The condition was right for a reason the wrong expression happened not to
+disturb*, which is the least reassuring way for a claim to be correct.
+
+**Third, the epistemic gloss is withdrawn entirely, and it was the part that felt like the
+discovery.** The entry claimed that the repair "requires each firm to know *n*, which the model
+denies". It does not:
+
+- Cournot's *static equilibrium* q_i = (a + Σc − (*n*+1)c_i)/(b(*n*+1)) **is not definable without
+  *n***, so *n* is not denied by the model — it is presupposed by it.
+- **Sequential (Gauss–Seidel) best response converges undamped** at *n* = 2, 3, 4, 6, 10, 20 and 50.
+  The instability is an artefact of *simultaneous* updating, a modelling choice, not of Cournot's
+  expectation.
+- **One fixed damping chosen once** (*d* = 0.10, or 0.05) converges at every *n* in the table. At
+  most a modeller needs an upper bound on *n*; no firm needs to know it.
+- A **diminishing gain** d_t = t^−0.6, with no knowledge of *n* at all, converges at *n* = 3, 10, 20.
+
+Three counterexamples, produced by an adversarial referee in minutes, against a claim that had by
+then been written into a paper, an ADR addendum, and a message to Jason. **An *n*-dependent
+parameter was dressed as an epistemic scandal.** The measured 4/(*n*+1) table is fine and stays; the
+story told about it does not.
+
+---
+
+## WT-065 · METHOD · 2026-08-10 · **WT-054 fires too late: adversarial review belongs at the moment a finding is CALLED a result, not at the preprint** · session wealthTensor-06
+
+**The rule as written was *two adversarial agents before any preprint commits*. This session
+demonstrated that the damage is done well before that.**
+
+The sequence, which is the evidence:
+
+1. Wrote `wt018_report.py` to guard against WT-027's failure mode. The guarded-against thing did not
+   happen — every hand-transcribed figure regenerated bit for bit.
+2. The script surfaced two things the modules supported and nobody had stated. Both were checked
+   against the code, found to reproduce, and **that check was mistaken for verification.**
+3. Both were banked as ledger entries (WT-063 RESULT, WT-064 RESULT), pinned with new tests, written
+   into a paper, recorded in an ADR addendum, committed, pushed, and **reported to Jason as
+   discoveries.**
+4. Later the same session, the adversarial pass found that one was in a 2010 textbook as a routine
+   exercise with a 1960 and a 1961 ancestor, and that the other's headline gloss was refuted by
+   three counterexamples the referee wrote in minutes.
+
+**Nothing in step 2 was wrong.** The numbers were right, the algebra was right, the tests pin real
+behaviour. What was missing is that *reproducing from the code* answers "is this true of the model?"
+and says **nothing** about "is this new?" or "does the interpretation follow?" — and those are
+different questions, in exactly the way WT-059 established that verifying a reference and verifying a
+citation are different acts. **This is the same lesson arriving in a new place: the pass that comes
+back clean is the one whose cleanliness is most misleading.**
+
+**The rule adopted, amending WT-054.** *The trigger for adversarial review is the moment a finding is
+about to be called a **result** — banked in the ledger, written into a paper, or told to Jason —
+whichever comes first. Not the preprint.* Concretely, before a finding earns the word:
+
+- **a priority check**, run by an agent told that an over-eager priority claim is as damaging as a
+  missed one, so it does not simply agree;
+- **an attempt to refute the interpretation**, separately from checking the arithmetic — the
+  arithmetic was never in doubt here;
+- and for anything with a *rhetorical* payload — "the repair needs what the model denies" — the
+  **specific** question *what would have to be true for this to be false, and is it?*
+
+**Cheap, and it would have worked.** The priority audit cost one agent and a few minutes, and it
+would have prevented four artifacts from carrying a false claim. Running it before the ledger entry
+rather than after the push is a scheduling change, not extra work.
+
+*The companion observation, which is Jason's standing doctrine arriving on schedule.* The failure was
+worth more than the result would have been. **A false "we found something new" that survives to a
+referee costs the paper; the same claim caught in-session costs one commit and produces a better
+paper, a corrected ledger, five citations the paper needed anyway, and this rule.** Failures are
+gold — but only if the machinery that catches them runs before the belief hardens, and the whole
+content of this entry is *when* that machinery should fire.

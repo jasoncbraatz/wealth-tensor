@@ -7,7 +7,7 @@ exists because Paper I's headline figures were hand-transcribed into the ledger 
 2026-08-04 and pinned by no test since. WT-027 is the precedent: hand-transcribed numbers
 from an exploratory run did not regenerate from the committed module.
 
-Ledger entries covered: WT-001, WT-005, WT-018, WT-019, WT-020, WT-021.
+Ledger entries covered: WT-001, WT-005, WT-018, WT-019, WT-020, WT-021, WT-063, WT-064.
 
 Run:  ./.venv/bin/python scripts/wt018_report.py
 """
@@ -118,8 +118,10 @@ print(f"  grid points                                     500")
 print(f"  monotonicity violations                         {violations}")
 print(f"  z at grid min / max                             {zs[0]} / {zs[-1]}")
 print(f"  sign changes                                    {sum(1 for a, b in zip(zs, zs[1:]) if (a > 0) != (b > 0))}")
-print("  NOTE: single-crossing and monotone. SMD arbitrary-shape needs >=2 goods and")
-print("        income effects. This module does NOT demonstrate SMD pathology.")
+print("  NOTE: single-crossing and monotone, so this is NOT an SMD result. The reason is")
+print("        unit demand plus the absence of income effects -- NOT the number of goods:")
+print("        one traded good priced against money is already a two-commodity partial")
+print("        equilibrium. This module does NOT demonstrate SMD pathology.")
 
 # ------------------------------------------------------------- §F  the endowment effect
 rule("F · ENDOWMENT EFFECT: VOLUME FALLS AS A CONSEQUENCE, NOT A FIT  (WT-021)")
@@ -176,9 +178,13 @@ print("  The gain crosses 1 between n=2 and n=3, which is exactly where undamped
 print("  simultaneous adjustment stops converging. Output is floored at zero, so the")
 print("  failure is bounded oscillation rather than divergence.")
 
-rule("H2 · THE DAMPING THAT RESCUES IT SHRINKS LIKE 4/n  (WT-005, extended)")
-print("  Damped map q <- q + d(BR(q) - q) has linearised gain |1 - d(n+1)/2|,")
-print("  so it is stable iff  d < 4/(n+1).  Measured on a 0.02 grid:")
+rule("H2 · THE DAMPING THAT RESCUES IT SHRINKS LIKE 4/n  (WT-005; NOT NEW -- see WT-064)")
+print("  Damped map q <- q + d(BR(q) - q) has Jacobian (1-d)I + dF, F = -(1/2)(11^T - I),")
+print("  eigenvalues 1 - d(n+1)/2 (mult 1) and 1 - d/2 (mult n-1). The gain is the SPECTRAL")
+print("  RADIUS of those, not the first alone. Both below 1 iff d < 4/(n+1) (which binds,")
+print("  since 4/(n+1) <= 4/3 < 4).  NOT A NEW RESULT: Theocharis (1960) for the undamped")
+print("  gain, Fisher (1961) for the n-dependence, Bischi et al. (2010) eq. (2.26) for the")
+print("  bound itself.  Measured on a 0.02 grid:")
 print(f"  {'n':>4s}  {'4/(n+1)':>9s}  {'largest d converging':>21s}  "
       f"{'smallest d failing':>19s}  {'bracket':>8s}")
 STEP = 0.02
@@ -196,12 +202,16 @@ for n in [2, 3, 4, 6, 10, 20]:
     print(f"  {n:4d}  {thr:9.4f}  {lo_d:21.2f}  {hi_d:19.2f}  "
           f"{'yes' if lo_d <= thr <= hi_d else 'NO':>8s}")
 print()
-print("  The threshold is not a constant. The inertia required to rescue Cournot's own")
-print("  adjustment process VANISHES like 4/n, so each firm must slow down in proportion")
-print("  to the number of rivals it has. Rescuing the dynamic therefore requires every")
-print("  firm to know n and to condition its own sluggishness on it -- which is more")
-print("  information than the static expectation the dynamic is built on grants them.")
-print("  The repair needs precisely what the model denies.")
+print("  The threshold is not a constant: it vanishes like 4/n. The bracket is CLOSED at")
+print("  n = 3 and n = 4, where 4/(n+1) lands exactly on a grid point and that d fails --")
+print("  correctly, since the gain is exactly 1 there.")
+print()
+print("  NOTE the epistemic gloss this project briefly attached to the result and has")
+print("  WITHDRAWN: that the repair 'requires each firm to know n, which the model denies'.")
+print("  It does not. Cournot's static equilibrium q_i = (a + sum(c) - (n+1)c_i)/(b(n+1))")
+print("  is not definable without n, so n is not denied; sequential (Gauss-Seidel) best")
+print("  response converges undamped at every n tested; and one fixed small d works for")
+print("  every n in the table. See REVIEW-002 and LEDGER WT-064.")
 
 # ------------------------------------------------------------ §I  Cournot: the identities
 rule("I · IDENTITIES AND LIMITS, CHECKED NOT ASSUMED  (WT-001)")

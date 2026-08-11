@@ -102,10 +102,14 @@ def test_marshallian_cross_is_recovered_exactly():
 def test_excess_demand_is_monotone_here_so_this_is_not_an_SMD_result():
     """Deliberate limit on the claim.
 
-    One good, unit demand, no income effects: excess demand is a well-behaved monotone
-    step function. Sonnenschein-Mantel-Debreu pathology needs at least two goods. This
-    module shows non-independence of the curves; it does NOT show arbitrary shape, and
-    the two must not be conflated in the manuscript.
+    Unit demand and no income effects: excess demand is a well-behaved monotone step
+    function. Note the reason carefully -- it is NOT that "SMD needs at least two goods
+    and this has one", which an earlier version of this docstring said. One traded good
+    priced against money is already a two-commodity partial equilibrium. What does the
+    work is unit demand plus the absence of income effects, which makes aggregate demand
+    a non-increasing step function by construction. This module shows invariance of the
+    curves' difference to the allocation; it does NOT show arbitrary shape, and the two
+    must not be conflated in the manuscript.
     """
     mk = Market(M, S, rng=np.random.default_rng(3))
     zs = [mk.excess_demand(float(p)) for p in np.linspace(M.min(), M.max(), 500)]

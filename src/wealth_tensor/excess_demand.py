@@ -39,11 +39,18 @@ What this module demonstrates
 
 What this module does NOT demonstrate
 -------------------------------------
-It does **not** produce Sonnenschein-Mantel-Debreu pathology. With one good and unit
-demand, aggregate excess demand here is a monotone decreasing step function: well behaved,
-single crossing. SMD's arbitrary-shape result requires at least two goods and income
-effects. Conflating the two claims would be a real error, so the monotonicity is asserted
-in the tests deliberately, as a limit on what this construction shows.
+It does **not** produce Sonnenschein-Mantel-Debreu pathology. Aggregate excess demand here
+is a monotone decreasing step function: well behaved, single crossing.
+
+Say WHY carefully, because the tempting version is wrong. It is NOT that "SMD requires at
+least two goods and this has one" -- a single traded good priced against money is already
+a two-commodity partial equilibrium, so counting goods is not what does the work. What
+does the work is **unit demand together with the absence of income effects**: each agent
+demands at most one unit and no wealth channel runs from the endowment back into demand,
+so aggregate demand is a non-increasing step function of price by construction and the SMD
+construction has nothing to get purchase on. Conflating the two claims would be a real
+error, so the monotonicity is asserted in the tests deliberately, as a limit on what this
+construction shows.
 """
 
 from __future__ import annotations

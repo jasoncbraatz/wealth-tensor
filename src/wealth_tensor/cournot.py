@@ -70,10 +70,21 @@ def tatonnement(a: float, b: float, c, damping: float = 1.0,
     Best response of firm i to rivals' aggregate output Q_minus_i:
         q_i = max(0, (a - c_i - b * Q_minus_i) / (2b))
 
-    The linearised undamped map has gain (n-1)/2, so simultaneous adjustment is
-    stable only for n = 2, marginal at n = 3, and unstable beyond. Because output is
-    floored at zero it does not run off to infinity; it settles into a bounded
-    oscillation and never converges. Verified numerically in tests, not assumed.
+    The Jacobian of the damped map q <- q + d(BR(q) - q) is (1-d)I + dF with
+    F = -(1/2)(11^T - I), whose eigenvalues are 1 - d(n+1)/2 (multiplicity 1, the
+    symmetric mode) and 1 - d/2 (multiplicity n-1). The gain is the spectral radius,
+    max(|1 - d(n+1)/2|, |1 - d/2|) -- NOT the first term alone, which vanishes at
+    d = 2/(n+1) while the map is still only marginally contracting. Undamped (d = 1)
+    the symmetric mode gives (n-1)/2, so simultaneous adjustment is stable at n = 2,
+    marginally stable at n = 3 (eigenvalue -1: undamped oscillation, no asymptotic
+    convergence) and unstable for n >= 4. Because output is floored at zero it does
+    not run off to infinity; it settles into a bounded oscillation and never
+    converges. Verified numerically in tests, not assumed.
+
+    This is Theocharis (1960), Rev. Econ. Stud. 27(2), 133-134 -- and the argument is
+    older still, Palander (1939). The stabilising bound below is standard too; see the
+    test for the attribution. Nothing here is new and the module should not pretend
+    otherwise.
 
     This is the manuscript's point made executable: Cournot's own adjustment process
     fails precisely where his static expectation is least defensible -- every firm

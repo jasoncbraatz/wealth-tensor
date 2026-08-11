@@ -8,6 +8,42 @@ jasoncbraatz@gmail.com
 
 ---
 
+> ## ⚠ SUPERSEDED — read `REVIEW-002-internal-referee.md` before this file
+>
+> **This draft was rejected by its own internal referee on the day it was written, and the
+> rejection was substantially correct.** It is retained as written, rather than revised or deleted,
+> because `docs/` is a working lab notebook (ADR-001 §Consequences) and a paper that was wrong in
+> instructive ways teaches more than its own corrected successor.
+>
+> **What is wrong with it, in short:**
+>
+> 1. **Contribution 2 is Böhm-Bawerk (1889).** The term *marginal pairs* is his, for this exact
+>    object; his horse-market numbers reproduce this paper's formula to the shilling. The modern
+>    formalisation is Shapley & Shubik (1971), whose §4 is titled *"The Horse Market of
+>    Böhm-Bawerk"*. Neither is cited below.
+> 2. **Contribution 5 is Theocharis (1960) and Fisher (1961)**, and the bound *d* < 4/(*n*+1) is
+>    eq. (2.26) of a 2010 Springer monograph, presented there as routine. Not new.
+> 3. **The central negative claim is false in this paper's own model.** *"The schedules cannot be
+>    perturbed independently"* does not follow from the invariance, and the referee shifted one
+>    schedule while holding the other pointwise fixed, using this repository's unmodified code.
+> 4. **§3.4 breaks §3.1**, because its behavioural transform makes *c*(*m*) a function of the
+>    allocation. At λ = 1.3 the invariance gives 25 distinct excess-demand schedules, not 1.
+> 5. **§3.3 is circular**: `marshallian_cross` is computed *from* excess demand, so the reduction
+>    result substitutes §3.1 into itself. And "exactly recovered" is a coincidence of two
+>    resolutions — at *N* = 4000 it is 0/25.
+> 6. **§4.2's gain expression was wrong** (the Jacobian has a second eigenvalue, 1 − *d*/2). The
+>    stability condition happens to survive it. Fixed in the code and the tests; **left standing
+>    below** so the review has something to point at.
+>
+> **What may survive**, and it is stated at the strength the audit supports and no further: no
+> source checked states the *invariance* of *z*(*p*) to which agents hold the units — but the
+> auditor's own warning stands, that this is one short step from Coase, Gorman, Böhm-Bawerk and
+> Shapley–Shubik, and is plausibly folklore in a literature not yet searched. **Searching
+> Gul–Stacchetti, Demange–Gale–Sotomayor and the law-and-economics treatment of Coase in
+> indivisible-goods markets is a precondition of any successor draft, not an optional extra.**
+
+---
+
 ## Abstract
 
 With indivisible units and no income effects, the supply and demand schedules are not two equations.

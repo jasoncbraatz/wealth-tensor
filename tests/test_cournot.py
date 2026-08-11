@@ -79,22 +79,33 @@ def test_tatonnement_stability_boundary():
 
 
 def test_the_damping_that_rescues_tatonnement_shrinks_like_4_over_n():
-    """The rescue is n-dependent, and that is the paper's point rather than a footnote.
+    """The stabilising damping shrinks like 4/n. THIS IS NOT A NEW RESULT -- see below.
 
-    The best-response map has linearised gain (n-1)/2. Damped, q <- q + d(BR(q) - q), the
-    gain becomes |1 - d(n+1)/2|, so the process is stable iff
+    The damped map q <- q + d(BR(q) - q) has Jacobian (1-d)I + dF with F = -(1/2)(11^T - I),
+    whose eigenvalues are 1 - d(n+1)/2 (multiplicity 1) and 1 - d/2 (multiplicity n-1). The
+    gain is the SPECTRAL RADIUS, max(|1 - d(n+1)/2|, |1 - d/2|). An earlier version of this
+    docstring, and of the paper, gave only the first term; that expression vanishes at
+    d = 2/(n+1) where the true gain is still 1 - d/2, so it is wrong wherever it is not
+    binding. Stability needs both below 1: |1 - d/2| < 1 iff d < 4, and |1 - d(n+1)/2| < 1
+    iff d < 4/(n+1). Since 4/(n+1) <= 4/3 < 4 the symmetric mode always binds first, so
 
         d < 4/(n+1)
 
-    The threshold is therefore not a constant to be chosen once: it vanishes like 4/n.
-    Each firm must slow its own adjustment in proportion to the number of rivals it has,
-    which means rescuing Cournot's adjustment process requires every firm to know n and
-    condition on it -- more information than the static expectation the process is built
-    on grants them. The repair needs precisely what the model denies.
+    is the condition -- correct as stated, for a reason the wrong gain expression happened
+    not to disturb.
 
-    This is asserted as a bracket rather than an equality because convergence is measured
-    on a grid; the point is that the measured boundary tracks 4/(n+1) as n grows, not that
-    it is located to arbitrary precision.
+    ATTRIBUTION, recorded here because this project briefly believed this was its own.
+    The undamped (n-1)/2 gain and the loss of asymptotic stability at n >= 3 are Theocharis
+    (1960), Rev. Econ. Stud. 27(2), 133-134, anticipated by Palander (1939). That the
+    required adjustment speed FALLS as n rises is Fisher (1961), Rev. Econ. Stud. 28(2),
+    125-135 -- his own p. 125: "the tendency to instability does rise with the number of
+    sellers for most of the processes considered." The bound d < 4/(n+1) is eq. (2.26) of
+    Bischi, Chiarella, Kopel & Szidarovszky, *Nonlinear Oligopolies* (Springer, 2010), where
+    it is presented as routine. See REVIEW-002 and LEDGER WT-064.
+
+    Asserted as a bracket rather than an equality because convergence is measured on a grid,
+    and the bracket is CLOSED at n = 3 and n = 4, where 4/(n+1) lands exactly on a grid
+    point (1.00 and 0.80) and that d fails -- correctly, since the gain is exactly 1 there.
     """
     step = 0.02
     for n in [2, 3, 4, 6, 10, 20]:
@@ -115,8 +126,23 @@ def test_the_damping_that_rescues_tatonnement_shrinks_like_4_over_n():
         damped = cn.tatonnement(A, B, c, damping=float(max(converged)))
         assert np.allclose(damped["q"], cn.closed_form(A, B, c)["q"], atol=1e-6)
 
-    # the standing overclaim guard: the threshold really does fall, it is not flat
-    assert 4.0 / 21 < 4.0 / 11 < 4.0 / 7 < 4.0 / 3
+    # The standing guard. An earlier version asserted 4/21 < 4/11 < 4/7 < 4/3, which is a
+    # statement about four rational constants: it cannot fail and constrains nothing. What
+    # must actually be guarded is that the MEASURED boundary falls with n -- so measure it.
+    def largest_converging(n, step=0.05):
+        c = np.full(n, 10.0)
+        best = 0.0
+        for d in np.round(np.arange(step, 1.41, step), 3):
+            try:
+                cn.tatonnement(A, B, c, damping=float(d), max_iter=20000)
+                best = float(d)
+            except RuntimeError:
+                pass
+        return best
+
+    measured = [largest_converging(n) for n in (3, 6, 12, 24)]
+    assert all(a > b for a, b in zip(measured, measured[1:])), measured
+    assert measured[0] > 4 * measured[-1], measured
 
 
 def test_lower_cost_firm_takes_larger_share():
