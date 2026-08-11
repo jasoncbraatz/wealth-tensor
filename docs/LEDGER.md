@@ -1890,3 +1890,120 @@ referee costs the paper; the same claim caught in-session costs one commit and p
 paper, a corrected ledger, five citations the paper needed anyway, and this rule.** Failures are
 gold — but only if the machinery that catches them runs before the belief hardens, and the whole
 content of this entry is *when* that machinery should fire.
+
+---
+
+## WT-066 · Paper I's last surviving claim is Wicksteed (1910). DISPLACED.
+
+*wealthTensor-07, 2026-08-11. Full audit: `docs/papers/paper-I-price-formation/REVIEW-003-priority-audit.md`.*
+
+`REVIEW-002` rejected Paper I on four FATAL findings and left exactly one claim standing — that the
+allocation cancels from excess demand identically, *z*(*p*) = #{*mᵢ* > *p*} − *S*, at every
+non-reservation price — and made a literature search a **precondition** of any redraft. The search
+was run. **The claim is Philip H. Wicksteed, *The Common Sense of Political Economy* (Macmillan,
+1910), Book II Ch. IV**, on the same Böhm-Bawerk/Hobson horse market, with the same reallocation
+exercise. Every quote verified first-hand against the 1910 first edition, not accepted from an agent.
+
+> "**The irrelevant facts are that the eight horses are at present in the possession of A-H**, and
+> that I-R are all without horses."
+
+> "**The method of intersection is, in fact, a mere disguise of the method of addition** … if adopted
+> to shew the ultimate considerations that determine the market price, it is, to say the least of it,
+> **seriously misleading and mischievous**."
+
+The second quote is Paper I §5's thesis, 1910, better argued.
+
+**Three consequences, each of which costs us something.**
+
+1. **Within the market, our version is the SPECIAL case.** Wicksteed's damson stall-keeper and
+   Marshall corn market are divisible goods with multi-unit holdings; our identity requires each
+   holder to hold exactly one unit. He does not need our restriction. This must be conceded in print.
+2. **Our corollary was overclaimed.** We wrote that the supply/demand split *"carries no economic
+   content."* Wicksteed: it has content for exactly one thing — *"the initial distribution of the
+   stock affects the amount of business done"* — and none for price and final allocation. **Volume is
+   allocation-dependent; excess demand is not.** He is right and we were sloppy.
+3. **Böhm-Bawerk runs the other way, and Jason called it before the audit did.** *Positive Theory of
+   Capital* p. 203 — ten buyers, eight sellers — and p. 209's **"Marginal Pairs"** needs *four*
+   parties in two pairs. Pool the eighteen at *S* = 8 and the bracket is two order statistics. That
+   is not us being his special case; it is the distinction his statement requires being dissolved.
+   Arithmetic re-verified against Jason's own copy.
+
+**Lineage: Böhm-Bawerk (1889) states the two-sided form → Wicksteed (1910) shows the two-sidedness is
+irrelevant → Paper I restated Wicksteed.** Disposition (Jason, same day): **re-scope Paper I around
+P3 · Atomism**, one level up, where Wicksteed's subjective-value apparatus cannot follow. Not
+scooped — **written one level too low.** It went out as a market result and met the man who owns
+markets.
+
+**The method note worth keeping.** Three agents: one hunting priority, one told an over-eager
+priority claim is as damaging as a missed one (L28), one told to **REFUTE the displacement** — to
+defend this paper. *The defence attorney returned the displacement stronger than the prosecution
+had*, and caught that the prosecution's own quotation had ellipsis-ed out the single most damaging
+sentence in the book. **An adversary told to attack finds what it expects; an adversary told to
+defend has to actually read.**
+
+---
+
+## WT-067 · The instrument built to rescue the re-scope returned NO VERDICT, and its guards could not fire
+
+*wealthTensor-07. Registration `REG-001`; result `docs/preregistration/RESULT-REG-001.md`.*
+
+The P3 re-scope is only worth anything if the identity does work somewhere Wicksteed cannot follow.
+`REG-001` registered a port to an accounting-recognition layer to test exactly that — **committed and
+pushed alone before a line of the instrument existed** (WT-052), with the falsifier stated in advance
+and H1 declared insufficient in advance. `WT-066`/`wt066_p3_port.py` was then built and run.
+
+**It returned no verdict, and the reason is four defects in the instrument, not a fact about layers.**
+
+- **D1 · The port is layer-free.** Under *m* = −*τ*, *p* = −*s*, *H* = *B* it **is**
+  `excess_demand.py` — verified pointwise on 399 grid points. Not one operation in it is
+  recognition-specific. **Force-fit, not form-fit** (WT-042); ADR-001 §4 names the exact alarm, and
+  it did not fire because the person who should have heard it wrote the thing.
+- **D2 · The negative control is not a control.** `tie_break="index"` reads array position — a fixed
+  per-item attribute identical across every labelling — not the labelling. Measured, it is
+  indistinguishable from the treatment and in one regime *more* invariant than it.
+- **D3 · H3 and H2b have empty failure sets.** H1 is an algebraic identity from a two-set partition;
+  it has no failure mode, so its falsifier cannot falsify. "Magnitude varies" is probability 1 for
+  continuous i.i.d. values under any mechanism.
+- **D4 · Refuted by construction — and our own data already said so.** Conserve the label count (a
+  market reallocation is a *permutation*; the port created and destroyed membership at unequal
+  rates) and drive the trigger off the fold rather than off one half, and the registered expectation
+  is met exactly. Our isolation run took H2a from 0/5 to 3/5 live regimes in exactly the predicted
+  direction and **was written down as "REFUTED."**
+
+**Priority, audited separately, is worse than the defects.** The general proposition is standard
+equipment in four literatures: **Markov-chain lumpability (Kemeny & Snell 1960)** — state aggregation
+exact for the measurement needs an extra rate condition for the dynamics, i.e. the claim as a theorem
+sixty-six years ago; **Mori–Zwanzig** coarse-graining; **Granovetter (1978)** on threshold
+populations, read in full; **Pesaran & Chudik (2014)**. Estimated ~0.85 an economic theorist and
+~0.90 a physicist recognise it instantly. *"Expect a one-line referee report: 'this is
+coarse-graining; see Zwanzig.'"* **Forni & Lippi (1997) remains unread and is named as the largest
+live risk.**
+
+**Disposition.** `REG-001`'s stopping rule stays fired; no second port. The repair is *known* to
+succeed, which makes rebuilding worse, not better. **Paper I's P3 re-scope is neither supported nor
+refuted, and its limitations section must say the generality is unexercised, in those words.**
+
+### The two rules this produced
+
+**WT-068 — a registration must state how to tell REPAIRING a mis-specified instrument from FITTING a
+hypothesis.** `REG-001` §5 said "one instrument, no second port" to prevent fitting, and now locks in
+a no-verdict from an instrument whose guards demonstrably cannot fire. Those are different acts and
+the registration provides no test to separate them. Until a future registration carries one, the
+conservative reading holds.
+
+**WT-069 — a guard is not verified until a mutation that SHOULD kill it has been run and did.** The
+`4/21 < 4/11` defect recurred **three times in this session**, twice inside artifacts written
+specifically to prevent it: the first `wt066` run scored `H2a PASS` from a regime with zero events;
+the negative control was built to catch label-smuggling and was label-blind; and the test written to
+pin that defect was itself wrong twice — v1 asserted determinism, v2 compared `pressure_trace`, which
+*is* the fold and therefore invariant by construction, so it compared two invariants with `!=`. Both
+survived mutation. v3 reads event magnitudes and **is mutation-verified**: the mutant collapsing the
+control into the treatment kills it. *An incomplete mutant is worse than none — the first mutation
+attempt touched the booking branch and not the reversal branch, and the false green nearly shipped.*
+
+**The one thing worth being pleased about.** WT-065 moved adversarial review to the moment a finding
+is about to be **called** a result — ledger, paper, or Jason, whichever is first. Here the gap between
+finding and disbelieving was **one tool call**. Nothing false reached the ledger, the papers, or
+Jason. Under the old WT-054 rule this would have been caught at preprint time, four artifacts and one
+conversation too late — which is precisely what happened in wealthTensor-06. **The rule that session
+paid for has now earned its keep in the very next one.**

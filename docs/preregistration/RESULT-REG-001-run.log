@@ -1,0 +1,55 @@
+===============================================================================
+WT-066 - P3 SECOND-LAYER PORT - instrument for REG-001
+===============================================================================
+items 400 - recognised 150 - labellings 25 - grid 399 interior points - seed 20260811
+grid points coinciding with a threshold: 0  (must be 0)
+
+--- H1  static net pressure  (REGISTERED AS INSUFFICIENT ON ITS OWN) ---
+distinct PENDING schedules      : 25
+distinct REVERSIBLE schedules   : 25
+distinct NET PRESSURE schedules : 1
+points where net != #(tau<s) - R: 0
+H1: PASS
+
+--- NEGATIVE CONTROL  (recognition order reads INDICES, not thresholds) ---
+     If the invariance survives this, the instrument cannot detect failure.
+ steps  alpha  peak share     events  timings  magnitudes
+   120   0.25       0.135        [0]        1           1  (vacuous - no events)
+   120   0.05       0.283        [1]        1          25
+    60   0.10       0.286        [1]        2          25
+    40   0.25       0.295        [1]        1          25
+    20   0.10       0.393        [2]        3          25
+    12   0.05       0.309        [2]        2          25
+negative control breaks the invariance: True
+
+--- H2  endogenous + aggregate-coupled, magnitude-triggered as lag.py ---
+ steps  alpha  peak share     events  timings  magnitudes  verdict
+   120   0.25       0.140        [0]        1           1  VACUOUS (switch-off regime, no events)
+   120   0.05       0.268        [1]        3          25  H2a FAIL
+    60   0.10       0.286        [1]        2          25  H2a FAIL
+    40   0.25       0.270        [1]        2          18  H2a FAIL
+    20   0.10       0.342        [2]        3          25  H2a FAIL
+    12   0.05       0.425     [1, 2]        3          25  H2a FAIL
+
+live (non-vacuous) regimes: 5 of 6
+H2a  event timing invariant to the booked set      : FAIL
+H2b  event magnitude varies with the booked set    : PASS
+
+--- ISOLATION  same dynamics, COUNT-triggered instead of magnitude-triggered ---
+     The count is a fold over units; the magnitude is a fold over units AND
+     labels. If timing is invariant here and not above, the trigger is the
+     channel through which the labelling re-enters. That is the whole finding.
+ steps  alpha     events  timings  magnitudes
+   120   0.25        [0]        1           1  (vacuous)
+   120   0.05        [1]        1          25
+    60   0.10        [1]        1          25
+    40   0.25        [1]        1          12
+    20   0.10     [1, 2]        4          25
+    12   0.05        [2]        2          25
+count-triggered timing invariant across 5 live regimes: NO
+
+===============================================================================
+REG-001 §7: a pass licenses exactly one sentence -- the fold-invariance
+survives a change of layer. It licenses no claim about the world, and no
+claim of novelty in the price layer, which is Wicksteed's.
+===============================================================================
