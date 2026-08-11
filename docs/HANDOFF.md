@@ -1,6 +1,6 @@
 ---
 project: wealth-tensor
-gh_sha: 4b88233421a87aa9604db1e45490f8b0526eb36e
+gh_sha: PENDING
 updated: 2026-08-11
 session: wealthTensor-08
 gate_passed: true
@@ -73,10 +73,11 @@ papers ship **with their own hostile referee reports.**
 ```
 git -C ~/repos/wealth-tensor pull --ff-only
 python3 ~/repos/wealth-tensor/scripts/handoff_gate.py --check
-cat  ~/repos/wealth-tensor/docs/adr/ADR-001-paper-decomposition.md          # ALL FIVE addenda
+cat  ~/repos/wealth-tensor/docs/adr/ADR-001-paper-decomposition.md          # ALL SIX addenda
 cat  ~/repos/wealth-tensor/docs/papers/paper-I-price-formation/RESULT-WT070-p3-is-dead.md
 cat  ~/repos/wealth-tensor/docs/papers/paper-III-dual-tensor/POSITIONING-001-crash-risk.md
-cat  ~/repos/wealth-tensor/docs/LEDGER.md                                   # 70 entries
+cat  ~/repos/wealth-tensor/docs/METHOD-001-the-phantom-tag.md               # READ BEFORE WRITING A CHECK
+cat  ~/repos/wealth-tensor/docs/LEDGER.md                                   # 71 entries
 python3 ~/repos/claude-blackbook/lessons.py doctrine
 ```
 
@@ -88,11 +89,14 @@ Corroborate what you use: `lessons.py use <id> --task <tag>` at orient,
 
 ## 3 · STATE
 
-- **Code — 115 tests passing**, tree clean and pushed. Three new scripts this session:
+- **Code — 121 tests passing**, tree clean and pushed. Three new scripts this session:
   `wt070_p3_fold.py` (the fold identity, the volume theorem, the comparative static),
   `wt071_refuter.py` (the three adversarial checks, all of which the paper lost),
-  `wt072_coupling.py` (structured couplings, and the frictional identification result).
-  **Every guard mutation-tested; every mutant died as required (WT-069).**
+  `wt072_coupling.py` (structured couplings, and the frictional identification result) — plus
+  **`scripts/severity.py`**, the phantom-tag harness (WT-073, §4), and `tests/test_severity.py`,
+  which runs the original `4/21 < 4/11` assertion through it and requires it to die.
+  **Every guard mutation-tested; every mutant died as required (WT-069). `wt070` is retrofitted to
+  the witness discipline; `wt071` and `wt072` are NOT — that is mission item 4.**
 - **Paper II — COMPLETE and DELIBERATELY UNSHIPPED. Do not ask him to submit it.** SHA `d655501`,
   zero live placeholders. **Jason's ruling, 2026-08-11 — see §4d. Nothing ships until all four are
   done.** Five sessions of handoffs read his silence as an unmade decision. It was a made one.
@@ -143,6 +147,22 @@ Corroborate what you use: `lessons.py use <id> --task <tag>` at orient,
 - **NEW · WT-071 — a ratio whose denominator is a single order statistic is not a statistic.** The
   "26× the interval width" headline is 26.1× / 8.3× / 113.5× / 47.2× at *N* = 400/1,000/4,000/10,000.
   **Vary N and check the denominator is not the thing doing the moving.** L32 one level up.
+- **NEW · WT-073 — EVERY CHECK SHIPS A WITNESS. `scripts/severity.py`. Mechanised, not
+  remembered.** The `4/21 < 4/11` defect has now been shipped **six times across three sessions**,
+  each time after the lesson was written down — because it was named after its **first costume**.
+  **Renamed THE PHANTOM TAG**: the fielder credited with an out he never made, because his foot
+  never touched the bag. *Did the assertion touch a value that could have been otherwise?*
+  **WT-069 mutates the CODE and all six survive every code mutant**, because the code was correct
+  and the WORLD could not produce a falsifying observation. A witness is the condition evaluated in
+  a world where the claim is FALSE, **executed at check time**; if it passes too, the run dies.
+  Escape hatch `DEFINITIONAL(reason)` rejects reasons under 30 chars and reprints every use.
+  **This is Mayo severity one level below where this project had been applying it** — see ADR-001
+  addendum 6, where Jason invokes the same philosophy for the corpus. `tests/test_severity.py` runs
+  the original `4/21` assertion through the harness and requires it to die. **Full record:
+  `docs/METHOD-001-the-phantom-tag.md`.** *And the unification worth keeping: the phantom tag and
+  §4b's house style are the same pathology in two media — prose that announces its rigour, and
+  assertions that announce their severity. A guard that needs a paragraph explaining why it is a good
+  guard probably is not one.*
 - **NEW · WT-072 — resampling is not varying.** Twenty-five uniform allocations look like twenty-five
   experiments and are twenty-five draws from one distribution the population fixes. **If the object of
   study is a coupling, vary the coupling.** *This is the `4/21 < 4/11` defect in its **fourth**
@@ -251,22 +271,29 @@ Nothing ships until the corpus is complete. When it does ship, `docs/papers/PREP
 §C applies and **the venue rules must be re-verified live** — last checked 2026-08-05, venue rules
 rot. **SSRN has no gate in and NO APPEAL out** (WT-051).
 
-### 4 — **Apply the house-style ruling to Papers II and III.** Cheap, decided, unapplied. §4b.
+### 4 — **RETROFIT `wt071_refuter.py` AND `wt072_coupling.py` TO `severity.py`.** ~15 minutes.
 
-### 5 — **Attribution pass (WT-044).** Still absent: **Sraffa, Robinson, Samuelson, Godley/Lavoie,
+**The mechanism exists and `wt070_p3_fold.py` is the worked example** — 18 severe, 1 definitional,
+0 vacuous. The other two still use a bare `check(label, condition)` and are therefore capable of the
+exact defect the harness was built for. **Copy wt070's pattern.** Recorded here rather than quietly
+finished later, which is the whole point of `METHOD-001` §5.
+
+### 5 — **Apply the house-style ruling to Papers II and III.** Cheap, decided, unapplied. §4b.
+
+### 6 — **Attribution pass (WT-044).** Still absent: **Sraffa, Robinson, Samuelson, Godley/Lavoie,
 Farmer, Lillo** in II–IV. **And Wicksteed.** Check his library first (L24/L30).
 
-### 6 — **Citation-graph whitespace test (WT-006).** `verify: grep -ril openalex src/ scripts/`
+### 7 — **Citation-graph whitespace test (WT-006).** `verify: grep -ril openalex src/ scripts/`
 
-### 7 — **ASK Jason, cheap, genuinely his.** Checkbox lists (WT-008) — all 57 manuscript references
+### 8 — **ASK Jason, cheap, genuinely his.** Checkbox lists (WT-008) — all 57 manuscript references
 render as `- [ ]`; *recommend* plain bullets. The twin document (WT-009) — `2The Axiomatic
 Reconstruction of`, 19 KB, never diffed; *recommend* spending one call on it.
 
-### 8 — **PRE-003: the segment-level test.** Teed up deliberately, NOT started. Registers from
+### 9 — **PRE-003: the segment-level test.** Teed up deliberately, NOT started. Registers from
 scratch, states its bridge proposition (WT-049), obeys WT-052 and WT-068, and **may not cite
 PRE-001/002's failure as support for anything.**
 
-### 9 — **Language remaster.** His job, explicitly. A word wrong in the FIELD'S TECHNICAL REGISTER is
+### 10 — **Language remaster.** His job, explicitly. A word wrong in the FIELD'S TECHNICAL REGISTER is
 yours (WT-060); a word that is merely his is not.
 
 ### TEED UP, small: `crisis_threshold` and `n_crises` in `lag.py` still carry the old vocabulary.
@@ -276,8 +303,8 @@ yours (WT-060); a word that is merely his is not.
 ## 6 · VERIFY GATE
 
 ```
-cd ~/repos/wealth-tensor && ./.venv/bin/python -m pytest tests/ -q   # expect 115 passed
-./.venv/bin/python scripts/wt070_p3_fold.py                         # expect ALL CHECKS PASSED
+cd ~/repos/wealth-tensor && ./.venv/bin/python -m pytest tests/ -q   # expect 121 passed
+./.venv/bin/python scripts/wt070_p3_fold.py                         # 18 severe/1 defn/0 vacuous
 ./.venv/bin/python scripts/wt071_refuter.py                         # expect all three verdicts
 ./.venv/bin/python scripts/wt072_coupling.py                        # expect BOTH CLAIMS CHECKED
 ./.venv/bin/python scripts/wt018_report.py                          # Paper I v0.1, §3 + §4
