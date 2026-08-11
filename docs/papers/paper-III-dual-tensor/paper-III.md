@@ -512,11 +512,9 @@ stability, volatility actually accumulates only to hit the market at a later dat
 volatility across time and raising it overall. **What the table above adds is the parameterisation** —
 the same claim indexed by a continuous observability parameter, with the smoothing and concentration
 measured separately rather than argued. The provenance and the difference in mechanism are set out in
-§9; this note is here because a reader meeting the table first should not have to reach §9 to learn
-that its headline is nineteen years old.
+§9; it is noted here because the table's headline result is nineteen years old.
 
-**It is not, however, a usable empirical target, and this must be said here rather than left for a
-reader to discover.** Against the accounting data available to this programme the concentration
+**It is not, however, a usable empirical target.** Against the accounting data available to this programme the concentration
 statistic is unfalsifiable by construction: the asset class with no amortisation schedule has
 essentially all of its recognised change arrive discretely *as a matter of accounting definition*,
 not of firm behaviour. A test of that is a test that cannot fail, and a test that cannot fail is
@@ -724,8 +722,7 @@ an empirical identification, and it is not made true by one either.
 
 **And that sentence is a problem, not a reassurance.** If nothing in §3 or §4 was at risk, then
 nothing in §3 or §4 was on test — and a framework that retains every claim after losing its only
-public bet is in exactly the position §6.3 accuses Odum's of occupying. The honest accounting is
-therefore uncomfortable and is given here rather than left for a referee to construct:
+public bet is in exactly the position §6.3 accuses Odum's of occupying. The accounting is therefore:
 
 - **What was at risk and lost:** the conjunction of the model, the bridge, and the firm-level unit
   of observation. That conjunction was the framework's *entire empirical content* as of this
@@ -939,7 +936,7 @@ present contribution is not the distinction between physical wealth and claims o
 characteristic release.
 
 **Georgescu-Roegen is a hostile witness inside this framework's own bibliography, and the paper
-states so rather than hoping no one notices.** He is the most-cited authority in the biophysical
+states so.** He is the most-cited authority in the biophysical
 tradition this work draws on, and he explicitly refused the physical-to-monetary reduction that a
 naive reading of Λ proposes: for him the source of economic value is the subjective enjoyment of
 life. That refusal is not answered here — it is *adopted*. Measuring the wedge between physical
@@ -952,8 +949,8 @@ proposing a conversion.
 The disagreement is about *layer*: those measurements are taken on the claim component — the
 financial abstraction — and are, on this framework's reading, silent about the physical component
 beneath. *r > g* may hold exactly as described at the abstraction layer while saying nothing about
-the atomic one. This converts the relationship from refutation into a **scope statement**, which is
-both more honest and more useful, and it makes the two accounts complementary rather than rival.
+the atomic one. This converts the relationship from refutation into a **scope statement**, which
+makes the two accounts complementary rather than rival.
 
 **Austrian business cycle theory shares this framework's architecture while disagreeing about its
 cause, and that is worth more than agreement would be.** Hayek's knowledge problem holds that
@@ -962,9 +959,8 @@ than moral; §4 is a formalisation of exactly that concern. Mises's malinvestmen
 capital accumulating unrecognised through a boom, revealed and liquidated in the bust — is
 structurally identical to §4.4: unrecognised accumulation followed by discontinuous recognition event.
 The causes assigned differ (credit expansion there, undisclosed physical degradation here) and the
-claim made here is a structural analogy, not an identity. Its value is that a single mechanism
-reproducing a phenomenon which mutually hostile traditions each describe in their own vocabulary is
-non-tribal, and non-tribal is rare.
+claim made here is a structural analogy, not an identity. What it offers is a single mechanism
+reproducing a phenomenon that mutually hostile traditions each describe in their own vocabulary.
 
 **Stock-flow consistent macroeconomics** (Godley and Lavoie) shares the insistence that accounting
 identities constrain dynamics. The difference is what the accounts are taken to *be*: consistent

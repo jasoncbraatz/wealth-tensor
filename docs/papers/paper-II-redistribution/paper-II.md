@@ -4,7 +4,12 @@
 *Independent researcher*
 jasoncbraatz@gmail.com
 
-**Draft — not yet submitted.** Version 0.1, 2026-08-05.
+**Draft — not yet submitted.** Version 0.2, 2026-08-11.
+
+*Revision history: **v0.1** first draft, complete and reference-verified; **v0.2** the house-style
+pass — the method disclosures (pre-registration, commit-pinning, the Abandoned Approaches section,
+the public `docs/` coda) are unchanged, and the passages in which the paper graded its own conduct
+are removed. No result, number, claim or citation changed.*
 
 ---
 
@@ -253,10 +258,8 @@ actual institution, and it does not.
 
 **"Regardless of rate."** §3.1. The original claim was sharper and false. It is retained here in
 full rather than quietly replaced by its successor, because the shape of the failure is
-informative: the direction was right, the mechanism was misidentified, and the corrected claim
-(realisation) is stronger than the one it replaced. **When a sharp claim half-survives, the
-refinement is the prize.** Weakening it to something unfalsifiable would have been the easier
-move and would have destroyed the result.
+informative: the direction was right, the mechanism was misidentified, and the surviving claim is
+the narrower one about realisation.
 
 **Defining "flow" so that the claim came out right.** Once "regardless of rate" failed, an
 obvious repair was available: redefine the flow base so that it excludes the components that
