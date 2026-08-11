@@ -2142,3 +2142,52 @@ thesis, killed the replacement, and wrote no paper — in one morning, for a few
 with nothing false reaching the ledger, the papers or Jason. Wicksteed's chapter needed 116 years to
 catch up with Paper I v0.1. **P3 · Atomism did not survive the morning it was born, and its
 successor turned out to have been proved in 1926.** 🪃
+
+---
+
+## WT-073 · The phantom tag: the defect is renamed, mechanised and tested · wealthTensor-08
+
+**Six instances across three sessions, and the lesson had been written down after every one.**
+See `docs/METHOD-001-the-phantom-tag.md` for the full record; the six are tabulated there.
+
+**Why writing it down kept failing.** It was named `the 4/21 < 4/11 defect` — **after its first
+costume** — which is exactly why it was not recognised in its sixth. Renamed after its behaviour:
+**THE PHANTOM TAG**, the fielder credited with an out he never made because his foot never touched
+the bag. The umpire question translates without loss: *did the assertion touch a value that could
+have been otherwise?*
+
+**Why WT-069 was not enough.** WT-069 mutates the CODE. **All six instances survive every code
+mutant**, because in every case the code was correct and the WORLD could not produce a falsifying
+observation. The defect is upstream of the code.
+
+**WT-073 — EVERY CHECK SHIPS A WITNESS.** `scripts/severity.py`. A witness is a callable returning
+the condition evaluated in a world where the claim is FALSE, executed at check time. If the witness
+also passes, the guard is a phantom tag and the run dies. One escape hatch, `DEFINITIONAL(reason)`,
+which rejects reasons under 30 characters and reprints every use in the summary.
+
+**This is Mayo severity applied one level below where this project had been applying it.** The
+programme has used severity language for pre-registrations and never once for an assertion. All six
+instances have severity zero. *(Jason invoked error-statistical philosophy for the corpus-level test
+the same day — see ADR-001 addendum 6. The vocabulary was already in the building.)*
+
+**THE PAYOFF THAT WAS NOT OBVIOUS.** For instances 5 and 6, constructing the witness does not merely
+DETECT the defect — **it hands you the correct experiment.** *Show me a population-defined
+perturbation giving more than one interval* IS the random-subset control. *Show me an allocation with
+volume outside 85-103* IS the comonotone coupling. Both cost an adversarial agent and two hours in
+-08; the witness rule produces them in ten minutes as a side effect of being unable to write the check.
+
+**The harness is tested with the original defect.** `tests/test_severity.py` runs
+`4/21 < 4/11 < 4/7 < 4/3` through it and requires it to die. **A harness against unverified guards
+that had never been shown to catch one would be the defect wearing the costume of the cure.** Six
+tests; suite now **121 passing**.
+
+**And the unification worth keeping.** The phantom tag and the house style Jason ruled on the same
+day are **the same pathology in two media** — prose that announces its rigour instead of
+demonstrating it, and assertions that announce their severity instead of having it. Instance 3 shipped
+with a docstring explaining why it was a good control, and it was not one. **A guard that needs a
+paragraph explaining why it is a good guard probably is not one.**
+
+**Status, honestly.** `wt070_p3_fold.py` fully retrofitted — 18 severe, 1 definitional, 0 vacuous,
+with instance 5 preserved in place as `HISTORICAL PHANTOM TAG` and the witness that kills it attached,
+so the repo holds the defect and its refutation in one executable file. **`wt071` and `wt072` are NOT
+yet retrofitted** and that is recorded rather than quietly finished later. ⚾
