@@ -1,6 +1,17 @@
 #!/usr/bin/env python3
 """WT-071 - the three checks the WT-065 refuter demanded, run before anything is claimed.
 
+RETROFITTED 2026-08-11 (wealthTensor-09) to the severity discipline, scripts/severity.py.
+Every check below now ships a WITNESS: a world in which the check goes red, executed at
+check time. A guard whose witness also passes is a PHANTOM TAG and kills the run. Before
+this retrofit the script used a bare check(label, condition) and was therefore capable of
+the exact defect it was written to expose - which is the joke, and it is on us.
+
+Building the witnesses also CORRECTED this script. See C2(a): the claim that the ratio is
+"dominated by the noise in its own denominator" was too strong. Across N the denominator
+swings 12.9x and the numerator swings 4.6x. The denominator moves more, and the numerator
+moves too, and the conclusion - that the ratio is not an effect size - survives both.
+
 The adversarial pass on WT-070 landed three hits. Each is a computation, so each is
 settled by running it rather than by arguing about it.
 
@@ -38,8 +49,10 @@ from pathlib import Path
 import numpy as np
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "src"))
+sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-from wealth_tensor.excess_demand import Market  # noqa: E402
+from wealth_tensor.excess_demand import Market      # noqa: E402
+from severity import check, summary                 # noqa: E402
 
 N, STOCK, N_ALLOC = 400, 150, 25
 RESERVATION_PRICES = np.random.default_rng(7).lognormal(3.0, 0.6, N)
@@ -55,20 +68,20 @@ def allocations(m, stock, k=N_ALLOC, offset=0):
     return out
 
 
-def top_set(m, stock):
+def top_set(m, stock, size=None):
     t = np.zeros(m.size, dtype=bool)
-    t[np.argsort(m)[::-1][:stock]] = True
+    t[np.argsort(m)[::-1][:(stock if size is None else size)]] = True
+    return t
+
+
+def bottom_set(m, stock):
+    t = np.zeros(m.size, dtype=bool)
+    t[np.argsort(m)[:stock]] = True
     return t
 
 
 def hr(t):
     print("\n" + "=" * 78 + f"\n{t}\n" + "=" * 78)
-
-
-def check(label, ok):
-    print(f"  {'PASS' if ok else 'FAIL':4}  {label}")
-    if not ok:
-        raise SystemExit(f"ASSERTION FAILED: {label}")
 
 
 # ===========================================================================
@@ -79,19 +92,36 @@ def c1_crossing_is_volume(m, stock, allocs):
     hr("C1 - IS THE CROSSING HEIGHT THE VOLUME?   D(p*) = S(p*) = |H \\ T| ?")
 
     T = top_set(m, stock)
+    # WITNESS MATERIAL. Two worlds in which the identities below are FALSE:
+    #   T_bad  - the bottom-S valuers, a same-size set that is not the efficient one,
+    #            so |T_bad \ H| is not the crossing height;
+    #   T_big  - a set of a DIFFERENT size, which breaks the two-sided cardinality
+    #            balance that makes |H \ T| = |T \ H| hold.
+    T_bad = bottom_set(m, stock)
+    T_big = top_set(m, stock, size=stock + 10)
+    p_lo = float(m.min())          # far below the interval: D = N-S, S = 0
+
+    markets = [Market(m, stock, holders=h) for h in allocs]
     rows = []
-    for h in allocs:
-        mk = Market(m, stock, holders=h)
+    for mk, h in zip(markets, allocs):
         p = mk.clearing_price()
         rows.append((mk.demand_at(p), mk.supply_at(p),
                      int(np.sum(h & ~T)), int(np.sum(T & ~h)), mk.volume()))
 
     check("D(p*) = S(p*) at the clearing price, every allocation",
-          all(r[0] == r[1] for r in rows))
-    check("D(p*) = |T \\ H|, every allocation", all(r[0] == r[3] for r in rows))
+          all(r[0] == r[1] for r in rows),
+          witness=lambda: all(mk.demand_at(p_lo) == mk.supply_at(p_lo)
+                              for mk in markets))
+    check("D(p*) = |T \\ H|, every allocation", all(r[0] == r[3] for r in rows),
+          witness=lambda: all(r[0] == int(np.sum(T_bad & ~h))
+                              for r, h in zip(rows, allocs)))
     check("S(p*) = |H \\ T| = V, every allocation",
-          all(r[1] == r[2] == r[4] for r in rows))
-    check("|H \\ T| = |T \\ H|, every allocation", all(r[2] == r[3] for r in rows))
+          all(r[1] == r[2] == r[4] for r in rows),
+          witness=lambda: all(r[1] == int(np.sum(h & ~T_bad)) == r[4]
+                              for r, h in zip(rows, allocs)))
+    check("|H \\ T| = |T \\ H|, every allocation", all(r[2] == r[3] for r in rows),
+          witness=lambda: all(int(np.sum(h & ~T_big)) == int(np.sum(T_big & ~h))
+                              for h in allocs))
 
     print(f"  crossing height across 25 allocations        "
           f"min {min(r[0] for r in rows)}  max {max(r[0] for r in rows)}")
@@ -110,8 +140,8 @@ def c2_spread_and_control():
     hr("C2 - IS THE 26x AN ARTEFACT OF N, AND WAS THE CONTROL MISSPECIFIED?")
 
     print("  (a) N-dependence of the ratio")
-    print("      N      interval width   spread    ratio")
-    ratios = []
+    print("      N      interval width   spread    ratio     pop sd   distinct p*")
+    ratios, gaps, spreads, sds, distincts = [], [], [], [], []
     for n in (400, 1000, 4000, 10000):
         s = int(round(n * 150 / 400))
         mm = np.random.default_rng(7).lognormal(3.0, 0.6, n)
@@ -126,19 +156,46 @@ def c2_spread_and_control():
             prices.append((float(d[s]) + float(d[s - 1])) / 2.0)
         spread = max(prices) - min(prices)
         ratios.append(spread / width)
-        print(f"      {n:6d}   {width:.6f}        {spread:.4f}    {spread / width:8.1f}x")
+        gaps.append(width)
+        spreads.append(spread)
+        sds.append(float(np.std(mm)))
+        distincts.append(len(set(prices)))
+        print(f"      {n:6d}   {width:.6f}        {spread:.4f}    "
+              f"{spread / width:8.1f}x  {sds[-1]:7.2f}   {distincts[-1]:6d}")
+
+    def swing(v):
+        return max(v) / min(v)
 
     # The refuter predicted the ratio would grow like Theta(N). It does not: it is
     # 26x, 8x, 113x, 47x. He was RIGHT that the ratio is not an effect size and WRONG
     # about why. The denominator is the gap between two consecutive order statistics -
-    # a single draw with enormous relative variance - so the ratio is dominated by the
-    # noise in its own denominator and is not a statistic at all. That is a worse
-    # indictment than the one raised, and it is the one that goes in the paper.
+    # a single draw with enormous relative variance.
+    #
+    # CORRECTED 2026-08-11 while building the witnesses. The earlier note here said the
+    # ratio was "dominated by the noise in its own denominator." Measured: the gap swings
+    # 12.9x across N and the spread swings 4.6x. The denominator moves MORE; it does not
+    # move alone. Both statements below are now checked separately, because bundling them
+    # into one assertion is how a check ends up untestable.
     print(f"\n      ratio across N: min {min(ratios):.1f}x  max {max(ratios):.1f}x  "
-          f"({max(ratios) / min(ratios):.1f}-fold swing, non-monotone in N)")
+          f"({swing(ratios):.1f}-fold swing, non-monotone in N)")
+    print(f"      component swings across N:  gap {swing(gaps):.1f}x   "
+          f"spread {swing(spreads):.1f}x   population sd {swing(sds):.2f}x   "
+          f"distinct p* {swing(distincts):.2f}x")
+
+    # WITNESS: a quantity measured in the SAME experiment that is N-stable - the number
+    # of distinct clearing prices across the 25 allocations. If even that swung fourfold,
+    # the check would be detecting the sweep and not the statistic.
     check("the ratio is unstable across N by more than fourfold, so it is not an "
-          "effect size - the denominator is a single random order-statistic gap",
-          max(ratios) / min(ratios) > 4.0)
+          "effect size", swing(ratios) > 4.0,
+          witness=lambda: swing(distincts) > 4.0)
+
+    # WITNESS: the population standard deviation - a denominator the population fixes -
+    # is N-stable. That is what makes the order-statistic gap the culprit rather than
+    # the sweep.
+    check("and the denominator is the unstable part: a single order-statistic gap "
+          "swings fourfold-plus across N where a population-scale denominator does not",
+          swing(gaps) > 4.0,
+          witness=lambda: swing(sds) > 4.0)
 
     print("\n  (b) the honest control - a random subset of the SAME SIZE, never naming H")
     m, stock = RESERVATION_PRICES, STOCK
@@ -172,9 +229,14 @@ def c2_spread_and_control():
     comparable = abs(rng_of(indexed) - rng_of(random_subset)) < 0.5 * rng_of(indexed)
     print("\n  VERDICT: the refuter is RIGHT on both counts."
           if comparable else "\n  VERDICT: the control DOES separate them.")
+    # WITNESS: the rank-preserving perturbation. "Raise EVERYONE 20%" cannot fan out,
+    # by monotonicity, so it is the world in which a fanning-out check goes red. This is
+    # the -08 phantom tag pointed the other way: the control that could not vary is the
+    # proof that the control which did vary was measuring something.
     check("the random-subset control fans out too, so the 23-vs-1 contrast was "
           "rank-scrambling vs rank-preserving and NOT H vs population",
-          len(set(random_subset)) > 1)
+          len(set(random_subset)) > 1,
+          witness=lambda: len(set(everyone)) > 1)
     return ratios, rng_of(indexed), rng_of(random_subset), rng_of(everyone)
 
 
@@ -203,9 +265,15 @@ def c3_wedge(m, stock, allocs):
         out.append((t, len(zs), len(ps)))
         print(f"      {t:5.2f}    {len(zs):10d}           {len(ps):10d}")
 
-    check("at t = 0 the allocation cancels", out[0][1] == 1)
+    # The two checks are each other's witness, which is the cleanest form the discipline
+    # takes: the claim is a DISCONTINUITY, so each side is the falsifying world for the
+    # other. If the wedge made no difference, both witnesses would pass and both checks
+    # would die together.
+    check("at t = 0 the allocation cancels", out[0][1] == 1,
+          witness=lambda: out[1][1] == 1)
     check("at every t > 0 the allocation does NOT cancel",
-          all(r[1] > 1 for r in out[1:]))
+          all(r[1] > 1 for r in out[1:]),
+          witness=lambda: out[0][1] > 1)
 
     # the residual term, measured: locked-in holders at the frictionless clearing price
     T = top_set(m, stock)
@@ -231,6 +299,7 @@ def main():
     c2_spread_and_control()
     c3_wedge(m, stock, allocs)
     hr("ALL THREE REFUTER CHECKS RAN. See verdicts above.")
+    summary("WT-071 SEVERITY")
 
 
 if __name__ == "__main__":
