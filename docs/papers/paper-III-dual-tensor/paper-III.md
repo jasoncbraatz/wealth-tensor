@@ -617,6 +617,17 @@ correctly. Under §4.4 those are the readings a δ channel would produce whether
 recognition practice differed at all. The data cannot separate the two accounts, which is the whole
 of the present claim; it may well be both.
 
+**One paper has the mechanism itself, in signed form, and it is the nearest accounting-native
+ancestor this result has.** Beaver and Ryan (2005) model unconditional conservatism *preempting*
+conditional conservatism, and name the channel exactly: "the unconditionally conservative nature of
+accelerated depreciation creates unrecorded goodwill for tangible assets that preempts conditional
+conservatism as long as shocks to the market value of those assets are not negative enough to use up
+that goodwill." A depreciation schedule suppressing measured timeliness — in accounting, in print,
+in 2005. What it is not is an identification claim. Preemption is a signed comparative static with a
+stated mechanism, and it leaves the two parameters separately meaningful; the claim here is that the
+reported series does not contain the difference between them. The lineage is closer than the
+pharmacokinetics of §4.2 and is owed the same acknowledgement.
+
 The distinction from the standing critiques is what makes this worth stating. The econometric
 objections to the asymmetric-timeliness coefficient — truncation from conditioning on the sign of
 returns, scale effects, return-variance dependence — are **estimator** problems, and their remedies
@@ -728,6 +739,17 @@ because a slow asset stays alive to be observed. §4.8 separates the two and giv
 What holds of both terms is that a design cannot buy its way out of either — the panel saturates
 within a few half-lives whatever the volatility, and the response to news flattens and then reverses
 as decay slows, so more years and more news fail together rather than in sequence.
+
+**And the design this licenses already exists.** Beaver and Ryan (2000) decompose the
+book-to-market ratio into a persistent **bias** component and a **lag** component by regressing it
+"on the current and six lagged security returns with fixed firm and time effects," taking the firm
+effect as bias and the returns-associated portion as lag — a method they take from Ryan (1995). That
+is this section's repair, run empirically a quarter of a century ago: a second series used to
+separate a persistent understatement from a delay, which is exactly the separation §4.2 shows a
+reported series alone cannot make. The theorem supplies a warrant the design did not have. The
+measurements above supply its boundary — the strength of the separation belongs to the asset, and is
+weakest where the amortisation rate sits near the asset's true rate of decline, a condition a firm
+effect cannot report.
 
 **The second repair does not require the asset to be noisy, and for most classes it is already
 published.** This is the accounting form of a move the pharmacokinetic literature has long
@@ -1802,8 +1824,8 @@ make and the body does.)*
 
 Basu, S. (1997). The conservatism principle and the asymmetric timeliness of earnings. *Journal of
 Accounting and Economics*, 24(1), 3–37. ✓ *(Cited for the asymmetric-timeliness result named in its
-own title, and characterised from the author's own posted abstract rather than from the article,
-which was not available to the author. Nothing is quoted from it.)*
+own title. **Read at source**; the volume, year and page range are confirmed against the typeset
+article, which earlier revisions of this entry could not obtain. Nothing is quoted from it.)*
 
 Ball, R., Kothari, S. P., & Nikolaev, V. V. (2013). Econometrics of the Basu asymmetric timeliness
 coefficient and accounting conservatism. *Journal of Accounting Research*, 51(5), 1071–1097. ✓
@@ -1831,7 +1853,16 @@ Beaver, W. H., & Ryan, S. G. (2000). Biases and lags in book value and their eff
 of the book-to-market ratio to predict book return on equity. *Journal of Accounting Research*,
 38(1), 127–148. ✓ *(Cited for the bias/lag decomposition named in its own title. §9 identifies this
 as the closest prior art to §4's filter, so the entry is load-bearing against this paper rather than
-for it.)*
+for it. **Read at source**; §4.7 quotes their method — regressing the ratio "on the current and six
+lagged security returns with fixed firm and time effects" — from **p. 135**, because that design is
+this paper's returns repair carried out twenty-five years earlier.)*
+
+Beaver, W. H., & Ryan, S. G. (2005). Conditional and unconditional conservatism: concepts and
+modeling. *Review of Accounting Studies*, 10(2–3), 269–309. ✓ *(**Read at source.** Cited in §4.6 as
+the nearest accounting-native ancestor of the present confound: their preemption mechanism runs a
+depreciation schedule against measured conditional conservatism explicitly. One sentence is quoted,
+from their development of the tangible-asset case. Theirs is a signed comparative static and not an
+identification claim, and §4.6 says so rather than recruiting it.)*
 
 Bellman, R., & Åström, K. J. (1970). On structural identifiability. *Mathematical Biosciences*,
 7(3–4), 329–339. ✓ *(Cited in §4.2 for the founding statement that a compartmental system's rate
@@ -1846,11 +1877,6 @@ volatility result nineteen years earlier.)*
 
 Bushman, R. M., & Williams, C. D. (2015). Delayed expected loss recognition and the risk profile of
 banks. *Journal of Accounting Research*, 53(3), 511–553. ✓
-
-Dutta, S., & Patatoukas, P. N. (2016). Identifying conditional conservatism in financial accounting
-data: theory and evidence. *The Accounting Review*, 91(5), 1407–1436. ✓ *(§4.6 groups it with the
-estimator-level repairs. Characterised at abstract-and-working-paper level; the copy consulted is
-the working paper rather than the article of record.)*
 
 Fama, E. F. (1970). Efficient capital markets: a review of theory and empirical work. *Journal of
 Finance*, 25(2), 383–417. ✓
@@ -1917,11 +1943,10 @@ consulted is the open FTC Bureau of Economics Working Paper No. 94, June 1983, r
 published comment is verified bibliographically and has not been read. Nothing is quoted.)*
 
 Ryan, S. G. (2006). Identifying conditional conservatism. *European Accounting Review*, 15(4),
-511–525. ⧗ *(Cited in §4.6 solely to distinguish a near-identical title. Characterised from the
-publisher's abstract, which is the only text obtained; the full article is paywalled and **not
-read**. The characterisation claimed — that "identifying" is used in the empirical sense of
-detecting conservatism in practice — is supported by the abstract's own wording and by nothing
-stronger.)*
+511–525. ✓ *(Cited in §4.6 solely to distinguish a near-identical title. **Read at source.** The
+characterisation holds and is now supported by the body rather than the abstract: the word
+"econometric" does not occur in the article, and "identify" and its cognates are used throughout in
+the empirical sense of detecting conservatism in data. Nothing is quoted.)*
 
 Nerlove, M. (1958). *The Dynamics of Supply: Estimation of Farmers' Response to Price.* Baltimore:
 Johns Hopkins Press. ⧗ *(Cited in §4.2 for the combined adaptive-expectations/partial-adjustment
@@ -1943,17 +1968,16 @@ intensity measured in terms of primary energy and GDP.* Reported as World Bank s
 `EG.EGY.PRIM.PP.KD`, *Energy intensity level of primary energy*, compiled for *Tracking SDG 7: The
 Energy Progress Report* by the IEA, IRENA, UNSD, the World Bank and the WHO. ✓
 
-Jin, L., & Myers, S. C. (2004/2006). R² around the world: New theory and new tests. *Journal of
-Financial Economics*, 79(2), 257–292. ✓⧗ *(The published article is verified bibliographically and is
-what §9 cites for the model and its results. The **text** consulted is the earlier NBER Working Paper
-10453, April 2004, whose proposition numbering differs from the published version; §9's one
-quotation — "For simplicity, we ignore depreciation and reinvestment" — is from that working paper,
-was checked character-by-character against its PDF, and has **not** been checked against the typeset
-article. Two years and a referee process separate the two texts, so the sentence may not appear in
-the article of record in this form. §9 quotes it because it is the sentence that establishes the
-model has no physical layer, and a reader entitled to doubt that on a paraphrase should be able to
-see the words; every other characterisation of this paper in §9 is a paraphrase for the same reason
-in reverse.)*
+Jin, L., & Myers, S. C. (2006). R² around the world: New theory and new tests. *Journal of
+Financial Economics*, 79(2), 257–292. ✓ *(**Read at source**, typeset article. §9's one quotation —
+"For simplicity, we ignore depreciation and reinvestment" — is verified in the published text at
+**p. 262**, character for character; an earlier revision of this entry recorded it as checked only
+against NBER Working Paper 10453 and flagged the risk that the referee process had altered it. It
+had not. §9 quotes the sentence because it is what establishes that the model has no physical layer,
+and a reader entitled to doubt that on a paraphrase should be able to see the words. Its footnote 3
+is worth reading beside §4: the authors set aside depreciation "according to a pre-defined schedule"
+as an easy extension, and it is the interaction of exactly that schedule with recognition timeliness
+that §4.2 shows a reported series cannot resolve.)*
 
 Jonckheere, A. R. (1954). A distribution-free k-sample test against ordered alternatives. *Biometrika*,
 41(1–2), 133–145. ✓
