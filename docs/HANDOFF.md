@@ -88,11 +88,11 @@ series on its own lag, the return-implied path and that path's first difference 
 to 10⁻¹⁶ at σ = 0.15, against a design matrix that is **exactly singular at σ = 0**. Returns matter
 because they are how the analyst *learns* the news.
 
-**And the price is a rate, not a proof.** On the quiet branch, collinearity degrades as σ^−0.98 — a
-clean reciprocal — and se(φ̂) as σ^−0.52, its square root, with weak-identification bias visible in
-the mean by σ = 0.025. The exponents differ by a factor of two because the lagged reported value is
-*itself* a near-constant perturbed by the same innovations, so the three regressors lose their
-independence together and part of the loss cancels.
+**And the price is a rate, not a proof.** On the quiet branch both collinearity and se(φ̂) degrade as
+power laws in σ, with weak-identification bias visible in the mean by σ = 0.025. `wt086` then showed
+that **neither exponent is a model constant** — across nine (α, δ) settings collinearity spans −1.07
+to −0.38 and se(φ̂) spans −0.78 to −0.09 — so the manuscript quotes ranges. What holds everywhere is
+the sign.
 
 **The sample cannot compensate, and this is the best thing in the script.** The root-T rate is
 **never attained at any horizon**: T 50 → 200 buys 1.22× where root-T buys 2.00×, and T 400 → 1600
@@ -120,8 +120,14 @@ is large and overwhelming when it is small, which manufactures a U-shaped standa
 nothing and reads exactly like a substantive finding. The second refusal exposed that the envelope
 had ignored the first regressor. The exponents are now **fitted and reported**, not asserted.
 
-**E6 was written asserting root-T** and found the saturation instead — the best result in the
-script, and it exists only because the check was severe enough to fail.
+**E6 was written asserting root-T** and found the saturation instead — the best result in `wt085`,
+and it exists only because the check was severe enough to fail.
+
+**`wt086` E2 made it three.** It was written expecting the collinearity exponent to be a constant of
+the problem, on the argument that the third regressor's departure from proportionality with the
+second *is* the innovation, so conditioning should be reciprocal in σ wherever the roots sit. It is
+not: the exponent collapses toward −0.4 when α and δ are close, a case the argument had no term for.
+Three for three. **When a scaling argument feels too clean to need checking, that is the tell.**
 
 **The rule, banked globally: FIT THE EXPONENT, DO NOT ASSERT IT.** A scaling argument for a
 simulated quantity is a hypothesis. Write the check as a fitted log-log slope with a reported value.
@@ -132,7 +138,7 @@ almost always your noise specification, not the world.
 
 ## 3 · THE PAPERS
 
-**Paper III** — `docs/papers/paper-III-dual-tensor/paper-III.md`, **1,983 lines**. Prior version at
+**Paper III** — `docs/papers/paper-III-dual-tensor/paper-III.md`, **2,005 lines**. Prior version at
 `paper-III.md.bak-pre-wt085`. §4.1–4.8 numbering preserved again; nothing renumbered.
 
 | § | what changed |
@@ -140,7 +146,8 @@ almost always your noise specification, not the world.
 | 4.2 | **Nerlove (1958) lineage added alongside Bateman** — the economics-native instance. Kuan citation **corrected** (see §4) |
 | 4.4 | **Fisher & McGowan (1983) adopted as the rhetorical ancestor**, with its fate attached |
 | 4.6 | third qualification **narrowed** from open question to pointer; **Dutta & Patatoukas (2017) separated explicitly**; Ryan (2006) title collision closed; δ-notation collision named |
-| 4.7 | **the returns repair, with its price**, ahead of the disclosed-useful-lives repair. IV-reference-dose claim **re-sourced** |
+| 4.7 | **the returns repair, with its price**, ahead of the disclosed-useful-lives repair. IV-reference-dose claim **re-sourced**. Exponents **ranged, not quoted**, after `wt086` |
+| 4.8 | tied to `wt086`'s gradient — the δ = 0 limit is the end of a slope, not a cliff edge |
 | 7 | four survivals rows |
 | — | abstract and contribution 3 updated; five references added, three marked NOT READ |
 
@@ -203,13 +210,13 @@ symmetric in β ↔ γ while the disturbance γ[u(t) − (1 − β)u(t−1)] is 
    GAAP classes by realised return volatility and asset life, and the theory predicts where a
    conservatism estimate is worth reading and where it is not. Nobody has run this. It is the natural
    empirical sequel and it needs no new data.
-3. **Check the exponents survive a second parameter regime — this is the one real exposure `-13`
-   left.** §4.7 now states σ^−0.98 for collinearity and σ^−0.52 for se(φ̂) **in print**, and both were
-   measured at a single setting: α = 0.05, δ = 0.02, T = 400, one accrual-noise level. The *sign* and
-   the *saturation* are structural and will hold. The *exponents* are not yet known to be. Sweep
-   (α, δ) over the four GAAP-implied rates and re-fit; if either exponent moves materially the paper
-   should quote a regime rather than a number. Cheap — `wt085` E5/E6 already parameterise everything
-   but the loop. Do this before anyone cites the number back at us.
+3. **Take `wt086`'s gradient to §4.8 properly.** The exponent sweep found that the response to news
+   flattens as decay slows, so for a goodwill-rate asset neither more news nor more years buys
+   identification — the two levers fail *together*. §4.7 and §4.8 now say so in a sentence each.
+   What is NOT done: §4.8 still argues the goodwill limit from φ being **absent from the dynamics at
+   δ = 0**, a limit-point argument, while `wt086` shows the approach to it is a measured gradient.
+   Those are two accounts of one wall and the section should be rewritten around the stronger one.
+   This is a §4.8 rewrite, not a patch, and it is the last structural work §4 needs.
 4. **Read the remaining abstract-level references at source.** Garrett (1994) and Bellman & Åström
    (1970) are the two still load-bearing in §4.2 and unread. Khan & Watts (2009) is load-bearing in
    §4.6. Kuan taught the lesson: **the one you do not check is the one with the inverted adjective.**
@@ -256,9 +263,10 @@ symmetric in β ↔ γ while the disturbance γ[u(t) − (1 − β)u(t−1)] is 
 ## 8 · DEFINITION OF DONE
 
 Three pre-prints posted. Paper III is the closest and is not blocked on argument: **§4 is finished
-work** — theorem, proof, ancestry, both degeneracies, both repairs and the price of each. What
-remains for Paper III is empirical (item 1) and bibliographic (items 3–4), not structural. **Resist
-polishing §4.** It has been rewritten whole once and materially extended once; the next session that
+work** — theorem, proof, ancestry, both degeneracies, both repairs and the price of each. One structural
+task remains and it is named as item 3: §4.8 argues the goodwill limit from a limit point while
+`wt086` shows a gradient, and the section should be rewritten around the gradient. Everything else
+left for Paper III is empirical (item 1) or bibliographic (items 4–5). **Resist polishing §4.** It has been rewritten whole once and materially extended once; the next session that
 touches it should be adding a result or reading a reference, not improving prose.
 
 ## 9 · ORIENT-THEN-GO
