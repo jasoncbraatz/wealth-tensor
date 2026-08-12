@@ -31,10 +31,11 @@ one. **Where the asset's physical scale is not observed — every firm-level ser
 vintages — the identified set is not two points but a continuum, and a factor of 1.67 in that
 unobserved scale spans the whole unit interval of timeliness.** A second series drawn from the
 asset repairs this — the returns the field's instruments already condition on suffice — but the
-repair is a rate and not a proof: its strength falls away as the asset's return volatility does,
-never attains the root-T rate in sample length because every term in the estimating equation decays
-with the asset itself, and — measured across the four decay rates the standards imply — responds
-least to news exactly where decay is slowest.
+repair is a rate and not a proof. Its strength belongs to the asset rather than to the design: the
+level is set by how far the book's amortisation rate sits from the asset's true decline, the
+response to news is set by the decay rate and reverses sign as that rate approaches zero, and no
+horizon attains the root-T rate, because every term in the estimating equation decays with the asset
+itself.
 
 Indexing asset classes and writing the recursion with a Hadamard product, the corollary is
 cross-sectional: **classes are ordered by (1 − φ) ⊙ δ ⊘ (α − δ), not by φ** — decay reaching the
@@ -126,10 +127,10 @@ one intended.
 3. **A constraint on the conditional-conservatism measures** (§4.6), stated with its three
    qualifications, together with the specific circumstance under which those measures remain sound.
    The returns those measures condition on do break the equivalence (§4.7) — and the strength with
-   which they break it is a property of the asset rather than of the design, falling away with the
-   asset's return volatility, never attaining the root-T rate in sample length, and responding least
-   to news where decay is slowest. The corner where the repair is weakest is the quiet, long-lived
-   corner where the question is usually asked.
+   which they break it is a property of the asset rather than of the design: its level is set by the
+   gap between the book's amortisation rate and the asset's true decline, its response to news is set
+   by the decay rate and reverses sign as that rate nears zero, and no horizon attains the root-T
+   rate. The corner where the repair is weakest is the one the standards decline to schedule.
 4. **A repair that needs no new data** (§4.7). Disclosed useful lives supply δ from outside the
    series, which is what the theorem requires; comparing timeliness within a life band reads φ.
 5. **A pre-registered severe test and its failure** (§5) — registered before the data were touched,
@@ -532,6 +533,17 @@ with a mean Kendall τ against the registered rank of **−0.41**. Hold δ commo
 classes and redraw: the ordering is recovered in **100.0%**. The difference between those two
 numbers is the entire content of this section.
 
+**The ladder is an assumption, and it is worth naming exactly which one.** The decay rates above
+are inferred from the standards' willingness to put a class on a schedule — and that willingness
+tracks how *predictable* a decline is, not how *fast*. The two come apart precisely at the top of the
+ladder: goodwill is not scheduled because its decline is lumpy, not because it is slow, and a lumpy
+decline is a δ with large variance rather than a δ near zero. The inference therefore does real work
+in the direction of the result. Were goodwill's true decay materially faster than the ladder assumes,
+its deferral measure would rise and the inversion would weaken. Two rungs need not be assumed at all
+— property and finite-lived intangibles carry disclosed useful lives, and δ can be read from them.
+The other two require the outside determination of §4.7, and until they have one **the inversion is
+a conditional result and is reported as one.**
+
 **The shape of this argument is not new, and its best-known instance is one field over.** Fisher and
 McGowan (1983) argued that an accounting rate of return cannot be used to infer economic
 profitability, because the reported ratio depends on the depreciation schedule and the firm's growth
@@ -685,14 +697,15 @@ rates §4.4 attributes to the standards, the collinearity exponent runs from −
 standard error's from −0.78 to −0.09. What holds in all nine is the sign: identification always
 degrades as the asset quietens.
 
-**What the exponent tracks is more useful than its value, and it points where §4.8 already points.**
-The magnitude of the standard error's exponent moves with the product δ(α − δ) — Spearman rank
-correlation 0.92 across the nine settings — so the response to news is flattest exactly where the
-decay is slowest, and where the book amortises at close to the rate the asset declines. At a
-goodwill-rate δ of 0.002 the exponent is **−0.09**: the standard error is very nearly *insensitive*
-to return volatility, and doubling the news buys almost nothing. The level of the standard error
-moves too, and by more — a factor of 4.7 at matched volatility, worst in the same slow corner, where
-α and δ are nearest to being the same number.
+**What the exponents track is more useful than their values, and the two rates do different jobs.**
+The decay rate governs how strongly identification *responds* to volatility; the gap between the two
+rates governs its *level*. Holding the gap fixed and sweeping δ, the volatility exponent runs from
+−0.39 at a property-like δ of 0.030 to **+0.16** at a goodwill-like δ of 0.002 — a change of sign
+rather than a flattening, so below roughly δ = 0.01 further news stops helping and begins to hurt.
+Holding δ fixed and sweeping the gap moves the *level* instead, by a factor of 6.8, as
+(α − δ)^−0.70. The two must be kept apart or they read as a contradiction: a sweep at one volatility
+says the decay rate hardly matters, a sweep across volatilities says it decides everything, and they
+are statements about different quantities. §4.8 gives the arithmetic.
 
 The sample cannot compensate either. The standard error **never attains the root-T rate at any
 horizon**: quadrupling the panel from 50 to 200 periods buys a factor of 1.22 where root-T would buy
@@ -708,13 +721,13 @@ which is the same variation Basu's regression requires in order to run at all; a
 conditioning on returns is drawing on exactly the right information, and the return-variance
 corrections the literature reached for empirically are operating on the identification-strength
 parameter rather than on a nuisance. The second is where that leaves the assets anyone argues about.
-Goodwill, brands and long-lived plant are quiet and long-lived — small σ and small δ — which is the
-corner in which every term above is worst, and §4.8 shows that for one of them the design is not
-weakened but emptied. **Neither lever reaches that corner.** The panel saturates within a few
-half-lives whatever the volatility, and the news lever flattens as δ falls, so more years and more
-news fail together rather than in sequence. §4.8's limit at δ = 0 is therefore the end of a gradient
-rather than a cliff edge, which is the more useful thing to know: a design does not become
-unreadable at some threshold a researcher could hope to sit above.
+The corner in which every term above is worst is a quiet asset whose book amortisation rate sits
+close to its true rate of decline — small σ **together with a small gap between the two rates**.
+Slow decay on its own is not the hazard it looks like: at a fixed rate gap it is mildly *helpful*,
+because a slow asset stays alive to be observed. §4.8 separates the two and gives the arithmetic.
+What holds of both terms is that a design cannot buy its way out of either — the panel saturates
+within a few half-lives whatever the volatility, and the response to news flattens and then reverses
+as decay slows, so more years and more news fail together rather than in sequence.
 
 **The second repair does not require the asset to be noisy, and for most classes it is already
 published.** This is the accounting form of a move the pharmacokinetic literature has long
@@ -753,24 +766,50 @@ more.
 **The class the repair cannot rescue is goodwill**, and the reason is not a difficulty of
 measurement.
 
-### 4.8 · The goodwill limit
+### 4.8 · The goodwill limit, and what it is a limit on
 
 At δ = 0 the physical layer does not move; ΔE = 0; the term φ ⊙ ΔE vanishes identically; the gap is
-identically zero at every φ, to 10⁻¹²; and no recognition event occurs at any φ in 400 periods. **At
-zero decay, φ is not ill-conditioned. It is absent from the dynamics.** The parameter has no
-referent in a class with no degradation schedule, which is exactly the class the standards decline
-to amortise.
+**exactly** zero at every φ — not small, zero, at all eleven values swept — and no recognition event
+occurs at any φ in 400 periods. **At zero decay, φ is not ill-conditioned. It is absent from the
+dynamics.**
 
-This bites twice, and the second bite is worse than the first. Goodwill supplied the largest single
-share of the registered sample. On the standards' ladder, the two least-observable tiers — the two
-the registration leaned on hardest — produce **no recognition events at all** in this model, while
-the two most observable produce all of them. Under the common-δ ladder the silence falls on the
-*opposite* two tiers. Which classes the model can even speak about is therefore decided by the δ
-ladder, before any hypothesis about φ is entertained.
+**That limit is narrower than it looks, and saying what it rests on is worth more than the limit
+is.** The run requires two conditions, not one: δ = 0 *and* an asset whose value does not otherwise
+move. Set δ = 0 and let the value receive news, and the gap reopens and φ is recovered exactly — to
+3 × 10⁻¹⁵ — from the reported series and returns together. **The limit belongs to a motionless asset,
+not to a slowly-decaying one.** An asset whose value never changes for any reason is not goodwill.
+Impairment testing exists because goodwill's value does change; the standards decline to *schedule*
+that change, which is not the same as denying it.
 
-The honest statement is that this model, at goodwill's decay rate, has nothing to say about
-goodwill. A test built substantially on goodwill impairments was asking the framework a question
-outside its domain, and the framework's own §2 says where that domain ends.
+**What decides whether a class is readable is the gap between the two rates, not either rate alone.**
+Hold α − δ fixed and sweep δ over a fifteenfold range: the standard error on φ̂ moves by a factor of
+1.24, and in the direction that favours *slow* decay, since a slow asset stays alive to be observed.
+Hold δ fixed and sweep α − δ over a sixteenfold range: it moves by 6.8, as (α − δ)^−0.70. At a
+realistic amortisation rate the goodwill decay rate is no harder to read than property's — 0.021
+against 0.023. **The unreadable case is the firm whose book amortisation rate sits close to its
+asset's true rate of decline**, which is hard for the plainest reason in econometrics: the two
+numbers being told apart are nearly the same number. At a gap of 0.002 the standard error is 0.13,
+so φ is readable to ±0.26 — the whole interval.
+
+The two rates do different jobs and both are needed. The gap sets the level; the decay rate sets how
+strongly that level responds to volatility, and the response **changes sign**. At the fixed gap
+above, the volatility exponent runs from −0.39 at a property-like δ of 0.030 to +0.16 at a
+goodwill-like δ of 0.002. Below roughly δ = 0.01, a noisier asset is read *less* accurately, not
+more — which is the one place in this paper where the repair of §4.7 runs backwards, and it is the
+corner the standards decline to schedule.
+
+That claim has two properties the goodwill version lacks. It is checkable by a reader against a
+disclosed useful life, which §4.7 argues the standards already publish. And it does not require
+inferring a physical decay rate from a reporting rule.
+
+**What survives about goodwill specifically is a fact about this model rather than about goodwill.**
+Within the deterministic filter, the class the standards decline to amortise produces no recognition
+events, so the model has nothing to say about it — and the registered test drew its largest single
+share from that class. That much stands and §5 pays for it. But the cause is the model's determinism
+(Limitation 3), not goodwill's nature: a filter admitting stochastic degradation would speak about
+goodwill as readily as about anything else, and would find it neither the hardest class nor the
+easiest. **Which classes this model can speak about is decided by the δ ladder before any hypothesis
+about φ is entertained** — and §4.4 now states what that ladder rests on.
 
 **None of this was known when the registration was written, and all of it was derivable.** §5 reports
 what was registered and what happened; §6 states what may now be claimed.
@@ -1065,6 +1104,9 @@ with what would have killed each.
 | **The repair's strength is the asset's, not the analyst's** | σ swept 12×, T swept 32×, at nine (α, δ) settings | the panel buying the root-T rate, or the σ and T channels agreeing | T: 50→200 buys **1.22×** where root-T buys 2.00×, 400→1600 buys **1.00×** — regime-independent; the σ exponents are not, and are given in the two rows above |
 | **Neither degradation exponent is a model constant** | both re-fitted over nine (α, δ) settings on the GAAP ladder | the nine agreeing to within fitting error, which would license quoting a number | collinearity spans **−1.07 to −0.38**, se(φ̂) **−0.78 to −0.09** — *the check that removed two numbers from §4.7* |
 | **The response to news flattens as decay slows** | |exponent| ranked against δ(α − δ) | no rank relationship, which would make the spread noise | Spearman **+0.92**; at δ = 0.002 the exponent is **−0.09**, and the level is **4.7×** worse than the best regime at matched σ |
+| **The goodwill limit needs a motionless asset, not a slow one** | δ = 0 rerun with the asset's value allowed to move | the gap staying zero once news is on, which would make the limit about δ | gap **0.204** against an exact 0.0, and φ recovered to **3 × 10⁻¹⁵** — *the check that rewrote §4.8* |
+| **The rate gap governs readability; the decay rate does not** | each held fixed while the other is swept, 15× and 16× | the decay rate dominating, which is what §4.7 had asserted that morning | δ at fixed gap: **1.24×**, favouring slow decay. Gap at fixed δ: **6.8×**, as (α − δ)^−0.70 |
+| **The two rates do different jobs** | volatility exponent re-fitted across δ at a fixed rate gap | the exponent being flat across δ, which would collapse the two findings into one | exponent spans **−0.39 to +0.16** — *a change of sign*; level spread 1.24× at σ = 0.15 against 2.16× at σ = 0.025 |
 | **R = (1 − φ)δ/(α − δ)** | closed form against simulation | departure beyond the transient bound | held to **2 × 10⁻⁴**, the bound the geometric transient predicts; **1.0** when φ is misstated by 0.1 |
 | **The ranking inverts, not just blurs** | 4,000 ladders drawn on the two qualitative facts alone | the intended ordering surviving often enough to be a design | recovered in **1.9%**; **100.0%** when δ is held common — the witness that the construction is not vacuous |
 | **The inversion spares the lag statistic** | 400 admissible ladders, lag ordering checked | lag inverting like the magnitude measure, which would have made the story tidier | lag ordering held in **100%** — *the check that overturned this paper's own draft claim* |
@@ -1216,7 +1258,11 @@ theorem is a framing that will be argued about instead of the theorem.**
    failure as support for anything.**
 3. **The filter model is deterministic and single-firm.** No stochastic degradation, no
    heterogeneity, no interaction between firms, no market. Every empirical signature it suggests is
-   therefore a qualitative target, not a fitted one.
+   therefore a qualitative target, not a fitted one. **The determinism is not innocuous, and §4.8 is
+   where it bites**: the goodwill limit reported there is a consequence of the physical layer being
+   noiseless, and it dissolves once that layer is allowed to move for reasons other than a schedule.
+   Admitting stochastic degradation is the single change to this model most likely to alter what it
+   says, which is why it is named here rather than in a list of extensions.
 4. **φ, α and θ are not measured; they are swept — and for φ the reason is §4.** The paper
    reports how outcomes vary across the sweep and does not claim any firm's φ is known. That is
    no longer a concession about this construction: §4.2 establishes that **no** estimator
