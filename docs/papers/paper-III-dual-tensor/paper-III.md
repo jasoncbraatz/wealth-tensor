@@ -378,9 +378,13 @@ under exchanging the roots. S is the Bateman function, written down in 1910 for 
 activity of a radioactive decay chain (Bateman, 1910), and its exchange symmetry is the reason
 pharmacokinetics has a name for this: **flip-flop**, the interchange of an absorption rate constant
 with an elimination rate constant in a one-compartment model, which leaves the concentration–time
-profile unmoved (Garrett, 1994). Kuan, Wright and Duffull (2023) classify it as a failure of
-*global* rather than local identifiability — a finite set of parameter vectors solving the problem
-rather than one — which is precisely the two-point structure above. The general statement that the
+profile unmoved (Garrett, 1994). Kuan, Wright and Duffull (2023) place it as an issue of
+*local* identifiability, "in that there exists a finite set of parameter values (rather than a single
+set) that solves the problem" — which is precisely the two-point structure above. Their own caution
+should be carried across with the result: they hold that the competing solutions are "not simply a
+function of swapping the rate constants" but a partial permutation of the parameter set, with n + 1
+of them for an n-compartment model. The accounting case here, where the exchange **is** a clean swap
+of two roots, is therefore the simplest member of that family rather than the general one. The general statement that the
 rate constants of a linear compartmental system are recovered from the input–output map only as an
 unordered pair goes back to Bellman and Åström (1970).
 
@@ -693,12 +697,14 @@ corner in which both terms are worst, and §4.8 shows that for one of them the d
 but emptied.
 
 **The second repair does not require the asset to be noisy, and for most classes it is already
-published.** This is the accounting form of a move the pharmacokinetic literature has made for fifty
-years — flip-flop is resolved by an intravenous
-reference dose, a second administration that fixes the elimination root from outside the oral
-profile, after which the absorption rate and the scale parameter both follow.
+published.** This is the accounting form of a move the pharmacokinetic literature has long
+made: the tie is broken by information the profile itself does not contain. Kuan, Wright and Duffull
+(2023) observe that it is precisely "in the absence of intravenous data" that covariates describing
+elimination can load onto absorption parameters, and their own proposals — a mechanistic model of
+the two processes, or an estimated cutoff at which the rate constants exchange — share that shape.
+An outside determination of one root releases the other, and the scale with it.
 
-For three of the four classes, the standards already supply the reference dose. Finite-lived
+For three of the four classes, the standards already supply that outside determination. Finite-lived
 intangibles and depreciable property carry **disclosed useful lives and amortisation schedules** —
 an estimate of the physical decay rate, made by the firm, audited, published, and *not* derived from
 the series whose timeliness is in question. Pinning δ rather than estimating it jointly is precisely
@@ -1734,9 +1740,18 @@ which was not available to the author. Nothing is quoted from it.)*
 Ball, R., Kothari, S. P., & Nikolaev, V. V. (2013). Econometrics of the Basu asymmetric timeliness
 coefficient and accounting conservatism. *Journal of Accounting Research*, 51(5), 1071–1097. ✓
 *(§4.6 cites it for its stated expectation that firms with shorter asset maturity exhibit lower
-timely loss recognition, and for reading that dependence as the measure behaving correctly. The
-characterisation is abstract-and-repository level; the deposited manuscript has not been read against
-the article of record, so nothing is quoted and no absence is claimed of it.)*
+timely loss recognition, and for reading that dependence as the measure behaving correctly. **Read at
+source** in this revision and the characterisation held: the passage sits in their §4.4, headed
+"Other Determinants of Conditional Conservatism," and the expectation is stated of "companies with
+short operating cycles, short investment cycles, or short asset maturity." The determinant reading is
+theirs and is explicit — they conclude that the measure "is unbiased under the null hypothesis of
+zero asymmetry, and that under the alternative hypothesis it captures conditional conservatism," in
+direct rebuttal of the invalidity critiques. Asset maturity is one of several examples they give of a
+comparative static, not their headline; §4.6 is worded accordingly. **No page is cited**: the text
+consulted was a full-text copy reporting itself as the published article, not the typeset original,
+and the MIT deposit (handle 1721.1/87767 — *not* 87766, which is the different 2013 paper in *The
+Accounting Review*) refused every retrieval route attempted, so nothing is quoted beyond the two
+phrases above and no absence is claimed of the typeset article.)*
 
 Bateman, H. (1910). The solution of a system of differential equations occurring in the theory of
 radioactive transformations. *Proceedings of the Cambridge Philosophical Society*, 15(V), 423–427. ✓
@@ -1800,7 +1815,12 @@ measured conservatism. Characterised at abstract level.)*
 Kuan, I. H. S., Wright, D. F. B., & Duffull, S. B. (2023). The influence of flip-flop in population
 pharmacokinetic analyses. *CPT: Pharmacometrics & Systems Pharmacology*, 12(3), 285–287. ✓ *(Cited
 in §4.2 for the classification of flip-flop as a failure of global rather than local
-identifiability. Open access; characterised at abstract level and not quoted.)*
+identifiability. **Read at source** (PubMed Central PMC10014047). They write of *local*
+identifiability rather than of a failure of global identifiability, and §4.2 uses their adjective.
+Their concluding sentence qualifies the "finite set" formulation as "not just a finite set of
+parameter values but a partial permutation of the set"; §4.2 carries that qualification too. Two
+short phrases are quoted; no page is cited, the article running to three pages without internal
+pagination in the deposit consulted.)*
 
 Dutta, S., & Patatoukas, P. N. (2017). Identifying conditional conservatism in financial accounting
 data: Theory and evidence. *The Accounting Review*, 92(4), 191–216. ✓⧗ *(Cited in §4.6 as the
