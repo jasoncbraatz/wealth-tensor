@@ -526,6 +526,21 @@ with a mean Kendall τ against the registered rank of **−0.41**. Hold δ commo
 classes and redraw: the ordering is recovered in **100.0%**. The difference between those two
 numbers is the entire content of this section.
 
+**The shape of this argument is not new, and its best-known instance is one field over.** Fisher and
+McGowan (1983) argued that an accounting rate of return cannot be used to infer economic
+profitability, because the reported ratio depends on the depreciation schedule and the firm's growth
+rate as well as on the economic return it is supposed to measure — a reporting-rule parameter and an
+asset-life parameter confounded inside a published number, forty years before this paper, and it
+detonated an industrial-organisation literature. Two things about its reception instruct the present
+one. Their demonstration was numerical rather than a theorem, and the analytical core of it belongs
+to earlier work (Kay, 1976). And the sweeping inference they drew — that accounting returns carry
+almost no information about economic ones — did not survive: it was rebutted on the arithmetic and
+on the representativeness of the chosen examples (Long and Ravenscraft, 1984), and superseded by a
+literature that recovers conditional usefulness once growth and capitalisation policy are corrected
+for. **The claim here is deliberately the narrower kind** — an exact equivalence with a stated
+domain and a repair in §4.7, rather than a verdict of futility. The ancestor is cited for the shape
+of its confound, and its fate is cited as the reason not to overreach with one.
+
 ### 4.5 · One statistic survives, and it is the one nobody can compute
 
 Everything above concerns a *magnitude* — how much a class defers. The registration did not order
@@ -591,6 +606,26 @@ are the estimator's: controls, fixed effects, interactive corrections, a debiase
 A degeneracy is not a bias. When two parameter vectors generate the identical series, no control
 recovers the difference between them, because there is nothing in the series to recover it from.
 The existing repairs are aimed one level up from where the problem is.
+
+**The sharpest of those critiques deserves separating from this one precisely, because it shares
+a title-word with it and almost nothing else.** Dutta and Patatoukas (2017) decompose the
+asymmetric-timeliness coefficient into a component that survives when recognition is symmetric and a
+component attributable to conservatism, and show that the first is positive whenever the return
+distribution is skewed, while the second moves with three properties of the news process — expected
+returns, cash-flow persistence, and the skewness itself — at a fixed degree of conservatism. Two
+things make that a different claim from this one. Their confounders are properties of the **news
+process**; the confounder here is a property of the **asset**, its decay rate, set against a
+reporting rule — and their firm is a cash-flow stream with no capitalised asset in it to carry one.
+And their recognition parameter stays recoverable in their own setting, from the spread between
+bad-news and good-news accrual variances, which is the repair they propose. **A claim that a better
+statistic can repair is a claim about a statistic.** The claim here is that the reported series is
+itself invariant, so no statistic computed from it separates the two worlds. Ryan (2006), whose
+title is nearly the same as theirs, uses *identifying* in the empirical sense of detecting
+conservatism in practice and makes no claim of the econometric kind.
+
+*The notation overlap is unlucky and worth naming once:* in Dutta and Patatoukas, δ is the fraction
+of bad news recognised — this paper's φ. Here δ is the physical decay rate, and has no counterpart
+in their model.
 
 Three qualifications. First, the mapping from this filter to each of those estimators is not
 established here: they are not fitting this model, and the composite they read need not be φδ
@@ -1766,6 +1801,39 @@ Kuan, I. H. S., Wright, D. F. B., & Duffull, S. B. (2023). The influence of flip
 pharmacokinetic analyses. *CPT: Pharmacometrics & Systems Pharmacology*, 12(3), 285–287. ✓ *(Cited
 in §4.2 for the classification of flip-flop as a failure of global rather than local
 identifiability. Open access; characterised at abstract level and not quoted.)*
+
+Dutta, S., & Patatoukas, P. N. (2017). Identifying conditional conservatism in financial accounting
+data: Theory and evidence. *The Accounting Review*, 92(4), 191–216. ✓⧗ *(Cited in §4.6 as the
+nearest existing claim and the one most needing separation. The **text** consulted is the open UCLA
+Anderson working-paper version, read in full for the decomposition, the three named confounders and
+the accrual-variance-spread repair; the displayed algebra rendered unreliably in that copy, so
+nothing interior to their coefficient B is asserted here and no page is cited. Pagination of the
+published article is verified bibliographically and has **not** been checked against the working
+paper's.)*
+
+Fisher, F. M., & McGowan, J. J. (1983). On the misuse of accounting rates of return to infer
+monopoly profits. *American Economic Review*, 73(1), 82–97. ⧗ *(Cited in §4.4 for the shape of its
+confound — a reporting-rule parameter against an asset-life parameter inside a published ratio — and
+for the fate of the inference drawn from it. **Not read**; the record is verified and the
+characterisation rests on the Long and Ravenscraft comment below, whose working-paper version was
+read in full, and on secondary accounts. No quotation is taken from it.)*
+
+Kay, J. A. (1976). Accountants, too, could be happy in a golden age: The accountant's rate of profit
+and the internal rate of return. *Oxford Economic Papers*, 28(3), 447–460. ⧗ *(Cited in §4.4 for the
+analytical result that precedes Fisher and McGowan's numerical demonstration. **Not read**; record
+verified, characterisation from secondary sources.)*
+
+Long, W. F., & Ravenscraft, D. J. (1984). The misuse of accounting rates of return: Comment.
+*American Economic Review*, 74(3), 494–500. ✓⧗ *(Cited in §4.4 for the rebuttal. The **text**
+consulted is the open FTC Bureau of Economics Working Paper No. 94, June 1983, read in full; the
+published comment is verified bibliographically and has not been read. Nothing is quoted.)*
+
+Ryan, S. G. (2006). Identifying conditional conservatism. *European Accounting Review*, 15(4),
+511–525. ⧗ *(Cited in §4.6 solely to distinguish a near-identical title. Characterised from the
+publisher's abstract, which is the only text obtained; the full article is paywalled and **not
+read**. The characterisation claimed — that "identifying" is used in the empirical sense of
+detecting conservatism in practice — is supported by the abstract's own wording and by nothing
+stronger.)*
 
 Nerlove, M. (1958). *The Dynamics of Supply: Estimation of Farmers' Response to Price.* Baltimore:
 Johns Hopkins Press. ⧗ *(Cited in §4.2 for the combined adaptive-expectations/partial-adjustment
