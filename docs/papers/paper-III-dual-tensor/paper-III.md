@@ -1,54 +1,56 @@
-# A crisis is deferred information arriving at once: the dual tensor of wealth, and a pre-registered prediction it lost
+# Timeliness and durability are not separately identified from a reported series
 
 **Jason C. Braatz**
 *Independent researcher*
 jason@braatzresearch.com
 
-**Draft — not yet submitted.** Version 0.4, 2026-08-11.
+**Draft — not yet submitted.** Version 0.5, 2026-08-12.
 
 **Declaration of interest.** The author is employed by a company building accounting software for very small businesses. This work was conducted independently, on personal time, and without company funding, data or direction.
 
 **Use of AI assistance.** Anthropic Claude Opus 5, at high reasoning effort, was used throughout as a research and drafting assistant: literature retrieval, adversarial review, code review and prose drafting. All claims, results and final text are the author's, and every computational result is produced by committed code in the repository named in the data-availability statement.
 
-
-*Revision history — recorded because the version string had not moved since v0.1 while three rounds of
-revision had: **v0.1** first draft; **v0.2** the responses to `REVIEW-001`, the internal adversarial
-referee report that ships beside this paper; **v0.3** §8 Limitation 4 (φ's conditioning on the effective
-decay δ), the notation audit, and references verified against live sources; **v0.4** §9 rewritten twice
-in one day — once from `POSITIONING-001`, then again after that rewrite's own adversarial pass found
-Jin & Myers' saintly-manager case and Bleck & Liu (2007), which between them retire this paper's claim
-to a non-agency accumulate-and-release mechanism and to §4.4's volatility result. §4.4 now attributes
-its qualitative finding, Basu is reclassified from threat to ingredient, and the reference list gains a
-version pass and the **✓⧗** mark. **§9 is provisional: `POSITIONING-002-second-pass.md` §6 lists four
-works that must be read at source before it is final.***
-
 ---
 
 ## Abstract
 
-Three propositions about wealth, followed to a measurable consequence.
-**P1**: every unit of wealth is a compound of a physical component and a claim component obeying
-different laws. **P2**: the physical component degrades absent maintenance. **P3**: measured
-aggregates are folds over units. Under P2 the claim component is a low-pass filter on the physical
-one, with one parameter — the share φ of degradation that is observable. Recognition lag rises
-**0 → 26 periods** as φ falls to zero; the integral of undelivered information is **exactly
-proportional to (1 − φ)**, in closed form; and volatility is not suppressed but *relocated*, with
-inter-event smoothing falling to 0.35 while the share of reported movement inside recognition events
-rises to **0.99**. On this reading a crisis is the filter delivering its accumulated error at once.
-P1 obliges a coupling between the components; its dimensionless form is a sawtooth touching unity
-only at recognition events (mean 1.137), and every dimensionless result here is invariant — spread
-**exactly 0.0** — across twelve orders of magnitude of the dimensional coupling. **The framework's
-sharpest empirical prediction — that recognition lag scales with the unobservability of
-degradation, with GAAP asset class supplying the observability ranking — was pre-registered, tested
-on 688 EDGAR-derived events across two sectors declared in advance, and it failed.**
-Jonckheere–Terpstra z = −0.290 and −0.095 (permutation p = 0.590, 0.520) against power 0.95–1.00.
-The registered stopping rule fired. **The framework therefore has no confirmed
-empirical claim**, and §6 states which of its results were never at risk.
+A balance sheet is an instrument, and instruments have transfer functions. Model the reporting
+layer as a low-pass filter on a physical layer that degrades whether or not anyone records the
+degradation: a share **φ** of each true change is observable and passes through at once, the
+remainder accrues in an unrecognised gap and is released at rate **α**, and the integral of what the
+statements owe is exactly **(1 − φ)** times its value at φ = 0, in closed form.
 
-**Keywords:** dual tensor · deferred information · reporting lag · financial abstraction ·
-thermodynamics of capital · pre-registration · impairment · econophysics
+The parameter of interest is not recoverable from what the instrument emits. **The triples (α, δ, φ)
+and (δ, α, φδ/α) generate the identical reported series**, where δ is the physical decay rate: the
+filter's two roots are exchangeable and the exchange preserves φδ exactly, to 7 × 10⁻¹⁴. Timeliness
+and durability are therefore not separately identified from a reported series — not
+ill-conditioned, exchangeable — and a series cannot distinguish a prompt reporter of a durable asset
+from a slow reporter of a perishable one.
 
-**JEL classification:** E01, M41, D80, Q57, C63, G14
+Indexing asset classes and writing the recursion with a Hadamard product, the corollary is
+cross-sectional: **classes are ordered by (1 − φ) ⊙ δ, not by φ.** Across the four GAAP classes,
+with the decay rates the standards themselves imply, that composite does not blur the intended
+ranking but **inverts** it — Kendall τ = −1 against τ = +1 in the constant-durability world such a
+design assumes; over 4,000 admissible ladders the intended ordering survives in 1.9% of them. This
+constrains any cross-sectional use of the conditional-conservatism measures, which read a
+recognition property off a reported series.
+
+The framework's own sharpest prediction — recognition lag ordered by GAAP asset class — was
+pre-registered, tested on 688 EDGAR-derived events across two sectors declared in advance, and
+**failed** (Jonckheere–Terpstra z = −0.290 and −0.095 against power 0.95–1.00; the stopping rule
+fired). The identification result does not explain that failure, and this paper reports the check
+that refused to: **the lag statistic is the one observable the composite does not invert**, holding
+its ordering in 100% of the same admissible ladders. What it cannot do is exist in public data — the
+model's lag is a cross-correlation against a physical series no filing reports — so the registered
+instrument necessarily measured a substitute, and the bridge to it was never written down. The
+repair follows from the theorem: **disclosed useful lives supply δ from outside the series**,
+restoring φ for every class that has one, and none for goodwill, where at δ = 0 the parameter is not
+ill-conditioned but absent.
+
+**Keywords:** identification · conditional conservatism · reporting lag · impairment ·
+pre-registration · asset life · deferred information
+
+**JEL classification:** M41, D80, C18, G14, E01
 
 ---
 
@@ -57,315 +59,83 @@ thermodynamics of capital · pre-registration · impairment · econophysics
 A balance sheet is not a window. It is an instrument, and instruments have transfer functions.
 
 That sentence is the whole paper, and the rest of it is an attempt to make the sentence cost
-something — to state it precisely enough that it forbids outcomes, to derive consequences that can
-be checked, and then to check the sharpest one against public data and report what happened.
+something — to state the transfer function precisely enough that it forbids outcomes, to derive a
+consequence that can be checked, and then to check the sharpest one against public data and report
+what happened.
 
-The starting observation is old and belongs to Soddy: a physical asset and a financial claim on
-that asset are different kinds of object, and confusing them is how societies come to believe they
-are wealthier than they are. What this paper adds is that the confusion has a *dynamics*. If the
+The starting observation is old and belongs to Soddy: a physical asset and a financial claim on that
+asset are different kinds of object, and confusing them is how societies come to believe they are
+wealthier than they are. What this paper adds is that the confusion has a *dynamics*. If the
 physical component degrades whether or not anyone records the degradation, and the claim component
-changes only when someone records something, then the gap between them is an accumulating
-quantity, and it is an accumulating quantity of a specific kind: **information the reporting layer
-owes and has not delivered.**
+changes only when someone records something, then the gap between them is an accumulating quantity
+of a specific kind: **information the reporting layer owes and has not delivered.**
 
 Read that way, several things stop being metaphors. Technical debt becomes off-balance-sheet
-entropy. Deferred maintenance becomes an unrecognised liability with a measurable integral. And a
-crisis stops being *necessarily* exogenous. Within this model a deferral has one available ending —
-arrival — so the crisis is not a bolt from outside the system but the system's own accumulated
-error, delivered at once because it can no longer be carried. In the world a deferral can also be
-amortised, refinanced, forgiven or recognised gradually; the claim is about the ending this
-structure forces, not about the only ending there is.
+entropy, and deferred maintenance becomes an unrecognised liability with a measurable integral —
+exactly proportional to (1 − φ), where φ is the share of degradation the reporting layer can see.
 
-The claim that this reading is *useful* rather than merely evocative rests on it making
-predictions, and the paper's structure follows from taking that obligation seriously:
+The paper's substance, however, is not that model. It is what the model implies about the *readers*
+of reported numbers, including this paper's own attempt to be one.
 
-- **§2** states the three propositions as propositions — truth-apt, deniable, with stated domains
-  — rather than as a formalism asserted to be self-evident.
-- **§3** treats the coupling Λ once, at full strength, and then stops. Λ has been this
-  programme's most-attacked quantity; the defence is three legs long, it is deployed here, and it
-  does not recur. An argument that keeps returning to one quantity tells a reader where the soft
-  ground is.
-- **§4** builds the filter and reports what it does.
-- **§5** reports the severe test, which **failed**.
-- **§6** states, plainly, what the framework may and may not now claim.
+The filter has two roots: the rate at which the reporting layer releases what it has withheld, and
+the rate at which the physical layer decays. **Those two roots are exchangeable, and the exchange
+preserves the product of timeliness and decay.** A reported series therefore contains φδ and nothing
+further about φ — a prompt reporter of a durable asset and a slow reporter of a perishable one emit
+the *same series*, to fourteen decimal places. Timeliness and durability are not separately
+identified from reported numbers.
+
+That constraint is not a property of this framework. It is a property of the object every
+conditional-conservatism measure takes as input, and its cross-sectional form is sharp enough to
+be uncomfortable: indexing asset classes, the ranking a reader can compute is the ranking of
+**(1 − φ) ⊙ δ**, so a comparison across classes with different asset lives is not a comparison of
+timeliness. Across the four GAAP classes, with the decay rates the standards themselves imply, the
+composite does not blur the intended ranking — it **inverts** it.
+
+This programme learned that the hard way, which is the second reason the paper exists. The
+framework's sharpest empirical prediction was pre-registered, tested twice on EDGAR-derived
+impairment data with a stopping rule declared in advance, and it failed. §5 reports the failure at
+full length. §4 reports something this paper's earlier draft got wrong about it: the identification
+result is **not** the explanation. The one observable the composite spares is precisely the one the
+registration ordered — and it is not computable from public filings, so the instrument measured a
+substitute whose relation to the model was never written down. A theorem about identification, a
+registered null, and the discovery that the two are less connected than they look, are three
+different results, and this paper reports them as three.
 
 **Contributions.** Numbered, so that a reader is not obliged to construct a smaller list than the
 one intended.
 
-1. **An axiom set stated as propositions with domains** (§2), replacing an appeal to
-   "first principles" that the earlier drafts of this programme made four times and never defined.
-   Includes the test that separates a first principle from a result, and a demonstration —
-   in committed code — that all three propositions are *deniable*.
-2. **Λ relocated from posit to entailment** (§3). If P1 holds, a relation between the two
-   components must exist; naming it invents nothing. This dissolves the standing objection at the
-   root rather than at the perimeter.
-3. **A measured invariance rather than an asserted one** (§3.3): every dimensionless diagnostic is
-   bit-identical across twelve orders of magnitude of the coupling, and every dimensional one
-   scales exactly linearly. The coupling is used in the code, and no conclusion depends on it.
-4. **The filter model and its results** (§4): recognition lag scales with unobservability;
-   deferred information is **exactly proportional to (1 − φ)**, derived in closed form and
-   confirmed by simulation to a relative error of 10⁻¹⁵; and volatility is *relocated rather than
-   suppressed* — the last of which corrects a prediction this programme previously made in the
-   opposite direction.
-5. **A pre-registered severe test of the framework's sharpest prediction, and its failure**
-   (§5) — registered before the data were touched, replicated in a second sector declared in
-   advance, controlled against a label-permutation null, powered at 0.95–1.00 against the effect
-   size of interest, and lost. With the stopping rule honoured.
-6. **A stated bridge discipline** (§6.2) arising from that loss: any identification of a model
-   parameter with a measurable must itself be written as a numbered proposition a competent critic
-   could deny. The failed registration did not have one, and that is the leading suspect.
+1. **An exact observational equivalence** (§4.2). The filter's two roots exchange, preserving φδ, so
+   timeliness is not recoverable from a reported series by any estimator. This replaces the earlier
+   claim that φ is merely ill-conditioned, which understated the result.
+2. **The cross-class corollary, in Hadamard form** (§4.3–4.4). With classes indexed the reporting
+   layer is diagonal, the observable ranking is the ranking of (1 − φ) ⊙ δ, and on the ladder GAAP
+   supplies that ranking is the reverse of the ranking of φ. The validity condition for a
+   timeliness-ordered design is itself a statement about decay rates.
+3. **A constraint on the conditional-conservatism measures** (§4.6), stated with its three
+   qualifications, together with the specific circumstance under which those measures remain sound.
+4. **A repair that needs no new data** (§4.7). Disclosed useful lives supply δ from outside the
+   series, which is what the theorem requires; comparing timeliness within a life band reads φ.
+5. **A pre-registered severe test and its failure** (§5) — registered before the data were touched,
+   replicated in a second sector declared in advance, controlled against a label-permutation null,
+   powered at 0.95–1.00, and lost, with the stopping rule honoured.
+6. **A bridge discipline** (§6.2) arising from that loss, and now with an argument behind it: any
+   identification of a model parameter with a measurable must be written as a proposition a
+   competent critic could deny.
+7. **A survivals ledger** (§7), including the row that overturned this paper's own preferred reading
+   of its null.
 
-**A word about §5, since its placement is deliberate.** The failed prediction is in the body and
-in the abstract. It is not in *Abandoned Approaches*. A pre-registered prediction that was tested
-and lost is a **result**; filing it under abandonments would be the softest available way to hide
-it, and this paper has no claim on a reader's seriousness if it takes that route.
+**A word about §5, since its placement is deliberate.** The failed prediction is in the body and in
+the abstract. It is not in *Abandoned Approaches*. A pre-registered prediction that was tested and
+lost is a **result**; filing it under abandonments would be the softest available way to hide it, and
+this paper has no claim on a reader's seriousness if it takes that route.
 
----
-
-## 2 · Three propositions
-
-### 2.1 · What a first principle is, and what it is not
-
-The earlier drafts of this work appealed to "first principles" repeatedly and defined the term
-zero times. The gap was not a wording problem, and several attempts to fix it by rewording failed
-for a reason worth stating, because it is a type error and type errors do not respond to prose:
-
-**An axiom is a proposition** — truth-apt, deniable, the kind of thing that can be false. **A
-model is a structure** — it has interpretations, not a truth value. A structure cannot be promoted
-to a proposition by describing it more emphatically. The tensor is not the axiom. **The axiom is
-the proposition that wealth has the structure the tensor formalises.**
-
-The second correction is that **"undeniable" must go.** An axiom nobody can deny is a definition,
-and definitions generate no empirical content. The useful notion is the one from computing: a
-**invariant** — never proved undeniable, proved *preserved*, within a **stated domain**. "Sound
-within a stated domain" is a defensible claim. "Undeniable" is a self-defeating one.
-
-The test that separates a first principle from a result: **denying a first principle produces a
-different science; denying a result produces a wrong number.** Deny *r > g* and you have a
-different empirical claim within the same science.
-
-The example on the other side needs stating carefully, because the obvious version of it is a
-strawman and an economist referee would stop on it. **Neoclassical economics does not deny physical
-depreciation** — δK appears in every growth model from Solow forward, and claiming otherwise would
-be an error of exactly the kind §6.2 is about. What P3 puts at issue is different and narrower:
-whether an aggregate can be treated as a primitive carrying its own laws. Deny P3 — assert that an
-aggregate production function is a fundamental object rather than a fold over units whose validity
-requires conditions on the units — and the disagreement is not about a coefficient. It is about
-what kind of thing the object of study is, and it changes which questions are well-formed. That is
-what "a different science" is meant to pick out, and P3 rather than P2 is where this framework's
-commitment actually bites. The three propositions below are offered as principles on that test.
-
-### 2.2 · The propositions
-
-> **P1 · Composition.** Every unit of wealth is a compound of a physical component and a claim
-> component, obeying different laws — thermodynamic and arithmetic respectively.
->
-> *Domain:* units of wealth having any physical referent. Silent on purely contractual objects
-> whose referent is another claim.
-
-> **P2 · Decay.** The physical component degrades absent maintenance. No store is inert.
->
-> *Domain:* physical referents over horizons long relative to their maintenance cycle. Silent on
-> the short run, where degradation is negligible against measurement noise.
-
-> **P3 · Atomism.** Measured aggregates are folds over units. No aggregate is more fundamental
-> than its constituents.
->
-> *Domain:* any measurement presented as a property of an economy rather than of a population.
-> This is the proposition an aggregate-production-function economist denies, and denies knowingly.
-
-Three, not ten. Each is stated so that a competent economist can say *no* to it and mean something
-specific by the refusal.
-
-### 2.3 · The propositions are deniable, and this repository proves it
-
-The claim that these are empirical rather than definitional is cheap to make and is usually made
-by assertion. Here it is demonstrated, because the regimes in which each proposition fails are
-committed, tested code rather than thought experiments:
-
-- **P2 fails at complete maintenance.** Effective decay is the entropy rate *net of maintenance*,
-  so a fully maintained asset has no dynamics at all and the model collapses to an identity. This
-  is the regime in which "no store is inert" is simply not true, and it is reachable by setting one
-  parameter.
-- **The framework's own central mechanism switches off at φ = 1**, which is a separate and equally
-  important point. Perfect observability annihilates the entire phenomenon: recognition lag 0,
-  deferred information 0.0, coupling identically 1, zero recognition events. Note carefully what this does
-  *not* say — P2 still holds at φ = 1, and the physical layer still decays (from E₀ = 100 to 0.031
-  over 400 periods). What vanishes is the *gap*, and therefore everything this paper is about.
-  A framework whose subject matter can be dialled to zero by an observability parameter is a
-  framework making a claim about the world rather than a definition of it.
-These regimes are not embarrassments to be hidden behind a stronger word. **They are the evidence
-that the model has degenerate limits reachable by setting a parameter** — which is weaker than
-proving a proposition about the world false, and is stated at that strength deliberately. What a
-switch-off regime demonstrates is that the framework's subject matter is contingent on a quantity
-that could take another value, which is the minimum a claim must satisfy to be empirical rather
-than definitional. It is not itself a refutation, and no refutation is offered here.
-
-*A companion result on the same theme, in a sibling paper of this programme, is cited rather than
-reproduced: a levy whose base cannot observe an accrual is inert regardless of its rate. The
-mechanism is the same — observability binds before intensity — and the evidence for it belongs to
-that paper.*
-
-### 2.4 · Independence
-
-P1 concerns composition and is silent about time. P2 concerns time and presupposes only that a
-physical component exists — it is not derivable from P1, since a compound whose physical component
-were inert would satisfy P1 and violate P2. P3 concerns the relation between measurements at
-different scales and is independent of both: an economy of inert single-component units would
-satisfy P3 while violating P1 and P2. No proposition is derivable from the others, and each is
-denied by an identifiable school.
+The framework the filter was built inside — three propositions about the composition of wealth, and
+the coupling they oblige — is set out in **Appendix A**. Nothing in §§2–7 depends on it, which is
+the point of putting it there.
 
 ---
 
-## 3 · The coupling
-
-*This section is where Λ is defended. It is defended here, at full strength, on three independent
-legs, and then it is used for the rest of the paper without further apology. That is a deliberate
-posture and it is worth naming: a defence that recurs is a tell. Five defences of one quantity
-inform a referee that there are five soft places, and recruit attention to precisely the ground an
-author would rather they walked over.*
-
-### 3.1 · Λ is obliged by P1, not introduced
-
-**Notation, stated before the argument because two different objects have been sharing one symbol
-in this programme's working notes.** Write **C** for the claim component and **E** for the physical
-component. Then:
-
-- **λ = C/E** is **dimensionless** — a ratio of the claim measure to the physical measure once both
-  are expressed in the same numeraire. This is the object §3.4 reports as a sawtooth, and it is the
-  one with dynamics.
-- **Λ = η·C/E** is **dimensional**, carrying units of currency per joule, where η is the numeraire
-  conversion. This is the object the standing dimensional objection is aimed at, and the object
-  §3.3 sweeps.
-
-Conflating them is easy and this paper has done it before. Everything below is explicit about which
-is meant.
-
-**The entailment argument, and its actual reach.** If P1 holds, wealth is a compound of two
-components measured in different units, so *some* relation between them exists in any unit of
-wealth. That much is entailed and it does useful work: it establishes that the framework is not
-smuggling in an extra object, and that asking "why did you introduce a coupling?" mistakes a
-consequence for a choice.
-
-**It does not, however, entail that the relation is a scalar**, and the standing objection is aimed
-at the scalar. The relation could be state-dependent, non-stationary, set-valued, or not a function
-at all — and P1's own wording, *obeying different laws*, is if anything a reason to expect that no
-single constant suffices. So the honest version of this leg is narrower than the version this
-programme has previously stated: **the existence of a coupling is entailed; its representability as
-a scalar is an additional modelling assumption, and it is one this paper makes and does not
-prove.** What follows in §3.3 is a demonstration that no conclusion here depends on the scalar's
-*value*, which is a different and weaker guarantee than showing the scalar is the right object —
-and the difference is exactly the kind of thing §6.2 will show this programme has previously
-glossed over at its cost.
-
-λ is not stable, and §3.4 shows what shape its instability takes.
-
-### 3.2 · Λ⁻¹ is an indicator the United Nations already publishes
-
-Energy intensity of output — the World Bank series *Energy intensity level of primary energy*
-(`EG.EGY.PRIM.PP.KD`, MJ per unit of PPP GDP) — is formally **SDG indicator 7.3.1**, co-tracked by
-the International Energy Agency, with global coverage and a long time series.
-
-That series has **the dimensions of Λ⁻¹**, and the claim made here is exactly that and nothing
-more. It is emphatically **not** that SDG 7.3.1 measures Λ⁻¹. The two differ in a way this paper is
-obliged to name, since naming it is the discipline §6.2 arrives at the hard way: **Λ is a ratio of
-two stocks** (a claim stock in currency over a physical stock in joules), while **SDG 7.3.1 is a
-ratio of two flows** (annual primary energy over annual PPP output). Two quantities can share
-dimensions and remain different quantities, and a paper that lost a pre-registered test to precisely
-that error is in no position to commit it a second time in its own defence.
-
-What survives the qualification is narrow and is still worth stating: **currency-per-energy is not
-an exotic dimension and not this author's coinage.** An institution with no stake in this framework
-tracks a quantity of that dimension against a global target, which places the construction outside
-the position that proved fatal to Odum's emergy programme — transformity coefficients derived from
-the accounting system that consumed them, and therefore unmeasurable from outside it. That is a
-claim about *availability in principle*, not about measurement in fact.
-
-**And it is a weaker leg than §3.3, which should be said plainly rather than left to a referee.**
-If, as §3.3 demonstrates, no conclusion in this paper depends on the coupling's value, then
-anchoring that value to a published statistic cannot be load-bearing for any result here. The two
-legs answer different objections — §3.3 answers *"your findings are an artefact of a number you
-made up"*, and this section answers *"the dimension you are working in is invented"* — and only the
-first is doing work for the results. A reader who finds this section unconvincing loses nothing
-downstream.
-
-### 3.3 · The numeraire cancels — measured, not argued
-
-The dimensional objection can be answered by algebra, and algebra is exactly what a sceptical
-reviewer declines to take on trust. So the two-layer system of §4 is **dressed in units** — the
-physical layer in joules at scale E₀, the claim layer in currency, the coupling η between them —
-and the invariance is measured on the dressed system.
-
-Sweeping η across twelve orders of magnitude, from 10⁻⁶ to 10⁺⁶ currency units per joule, at
-**φ = 0.3, recognition mechanism live, 400 periods** (the diagnostics below are the same statistics
-§4.4 reports, under **this paper's names**; the module and `scripts/wt002_lambda_report.py` call them
-`variance_suppression`, `variance_concentration` and `n_crises`):
-
-| diagnostic | value at every η | spread across the sweep |
-|---|---|---|
-| recognition lag | 22 | **0.0** |
-| inter-event smoothing | 0.6097 | **0.0** |
-| share of reported movement inside recognition events | 0.9199 | **0.0** |
-| recognition events | 16 | **0.0** |
-| relative event magnitude | 0.20138 | **0.0** |
-| mean / min / terminal coupling ratio | — | **0.0** |
-
-Not "within tolerance." **Bit-identical**, because the coupling never enters the recursion; it is
-dressing applied afterwards.
-
-That result alone would be worthless, and it is important to say why: it is trivially easy to
-build a module in which nothing depends on a parameter *because the parameter is never used*. So
-the positive half is what makes this a test rather than a tautology. The dimensional quantities
-**do** move, and they move exactly as a unit conversion must:
-
-| quantity | at η = 10⁻⁶ | at η = 10⁺⁶ | log-log slope |
-|---|---|---|---|
-| deferred information (currency) | 6.323144 × 10⁶ | 6.323144 × 10¹⁸ | **1.000000000000** |
-| terminal Λ | 1.0 × 10⁻⁶ | 1.0 × 10⁺⁶ | **1.000000000000** |
-
-η is used, the currency figures track it linearly to twelve decimal places, and no conclusion moves
-at all. Both directions are mutation-tested: leaking η into the dynamics fails four tests, and
-removing the scaling fails two.
-
-**Scaling collapse.** Two systems differing in energy scale (1 J against 6.02 × 10²³ J) *and* in
-coupling (10⁻⁶ against 42) lie on a single dimensionless curve — every diagnostic identical, pairwise
-difference **exactly 0**, at φ = 0.3 over 300 periods. (The shorter horizon is inherited from the
-verifier this figure comes from and is stated because it changes the values: at 300 periods the
-system has had 12 recognition events rather than 16, and inter-event smoothing reads 0.6100 rather than
-0.6097. The *collapse* is horizon-independent; the numbers collapsed onto are not.)
-
-The sentence this licenses, and the paper will not need to say it twice: *the conversion
-coefficient is a numeraire; every result reported here is invariant to it across twelve orders of
-magnitude, while every currency-denominated quantity scales with it exactly linearly.*
-
-### 3.4 · Λ is not a constant that wobbles; it is a sawtooth
-
-A freely-varying Λ that is never pinned would forbid nothing, and a quantity that forbids nothing
-is the free parameter this programme has refused five times in other costumes. So the claim is not
-that Λ *varies*. It is that Λ varies **in a specific parameterised shape**, and the shape is a
-prediction.
-
-At φ = 0.3 over 400 periods, with the recognition mechanism live:
-
-| | value |
-|---|---|
-| mean Λ | 1.136838 |
-| minimum Λ | 1.000000 |
-| maximum Λ | 1.245384 |
-| recognition events | 16 |
-| Λ = 1 exactly at every recognition event | **yes, all 16** |
-
-**Λ equals its physical value only at the instants the claim layer snaps to the physical one, and
-overstates it by ~14% on average in between.** Floor pinned at unity by construction of the
-recognition event; ceiling set by observability; mean determined by φ. That is a shaped variable, not a
-free one — and it is the picture of the assertion that Λ's drift *is* the accumulated deferred
-information.
-
----
-
-## 4 · The reporting layer as a filter
-
-### 4.1 · The model
+## 2 · The filter
 
 Two layers and one parameter that matters.
 
@@ -402,9 +172,13 @@ the recognition schedule rather than the filter.
 
 **φ is not a fudge factor**, and the distinction is load-bearing enough to state before any
 result. φ is the *observability of the degradation*, and it is what makes this model survive the
-objection that would otherwise kill it outright — see §4.3.
+objection that would otherwise kill it outright — see §8.1.
 
-### 4.2 · Result: lag and deferred information scale with unobservability
+---
+
+## 3 · What the filter does
+
+### 3.1 · Lag and deferred information scale with unobservability
 
 Filter isolated, θ = ∞:
 
@@ -450,41 +224,7 @@ The contrast between a warehouse retailer and a firm exposed to continuous obsol
 therefore a **position in a parameter space**, not a rhetorical flourish. Two firms with identical
 observability and different entropy rates live in different worlds, and the model says by how much.
 
-### 4.3 · The forward-looking-markets objection, and why the φ = 1 reply does not survive
-
-The strongest standing objection to any lag thesis is efficient-markets in its plainest form:
-prices already discount deferred maintenance, so a systematic lag should not survive. Note that a
-**pure-delay** model has no answer to this and is straightforwardly falsified by cases where
-financial signals *lead* physical change — markets price an announced technology transition before
-a single unit of capital is built, and such cases obviously exist.
-
-This model is not a pure-delay model, and the asymmetry is the whole mechanism. **The claim layer
-leads on what is disclosed and lags on what is deferred.** At φ = 1 the filter is a perfect window:
-zero lag, zero deferred information, coupling identically 1, no recognition events. So the objection holds
-*exactly* where the model predicts no lag, and has nothing to act on where degradation is
-undisclosed. The two are not in competition; they partition the space by φ.
-
-**That reply is not available to this paper, and the rest of this section retracts it.**
-
-The partition is drawn along φ, and φ is not measured anywhere in this work — Limitation 4 concedes
-it is swept, not estimated. So "the objection holds where φ is high and the model holds where φ is
-low" concedes every case an efficient-markets reader could check and claims every case nobody can,
-along a coordinate no one has observed. That is a free parameter absorbing an objection, which is
-the move this programme has refused five times in other costumes (§7) and should have refused here.
-
-The requirement was recognised before the severe test was run and was written down: a framework
-conceding everything the efficient-markets reading claims and retaining only the unobserved residue
-**must be able to identify that residue in the world**, with evidence rather than assertion. §5 is
-the attempt to supply that evidence. It failed.
-
-**So §4.3 is an open problem, not a reply.** The asymmetry remains a coherent structure and a
-genuine improvement on pure delay — a pure-delay model is refuted outright by observed leads, and
-this one is not. But until φ is independently measurable the asymmetry cannot be used to answer
-the efficient-markets objection, and this paper does not use it that way. §4.1's assertion that φ
-is not a fudge factor rests on the argument in this section; with that argument withdrawn, the
-assertion is a statement of intent about how φ is to be treated, and it should be read as one.
-
-### 4.4 · Result: volatility is not suppressed, it is relocated
+### 3.2 · Volatility is not suppressed, it is relocated
 
 This programme previously predicted that the claim layer would be *smoother* than the physical one.
 Measured across a whole path, **that prediction is false wherever the mechanism is actually
@@ -517,7 +257,7 @@ stability, volatility actually accumulates only to hit the market at a later dat
 volatility across time and raising it overall. **What the table above adds is the parameterisation** —
 the same claim indexed by a continuous observability parameter, with the smoothing and concentration
 measured separately rather than argued. The provenance and the difference in mechanism are set out in
-§9; it is noted here because the table's headline result is nineteen years old.
+§10; it is noted here because the table's headline result is nineteen years old.
 
 **It is not, however, a usable empirical target.** Against the accounting data available to this programme the concentration
 statistic is unfalsifiable by construction: the asset class with no amortisation schedule has
@@ -535,14 +275,291 @@ answers two questions answers neither.
 
 ---
 
+## 4 · Timeliness and durability are not separately identified
+
+§3 established what the filter does to one asset. This section establishes what a reader of the
+filter's output can and cannot learn from it, and the answer is sharper than a caution about
+estimation. It is a constraint on the instrument, it holds for any estimator, and it applies to
+measures in the conservatism literature that were built without reference to this model or any
+other like it.
+
+The weak form of the result is a conditioning statement: φ is recoverable, but the estimator's
+variance grows like 1/δ². That form is true and it is too kind. In the filter regime the degeneracy
+is not a matter of conditioning at all — it is exact, and it is exact for a reason with a one-line
+proof.
+
+### 4.1 · The class index, and why the product is elementwise
+
+A firm holds several classes of asset, and the accounting standards treat them differently on
+purpose. Index the classes *i*. Each carries its own physical decay rate δᵢ, its own observable
+share φᵢ, its own recognition rate αᵢ and its own threshold θᵢ, and §2's two recursions become one
+line in vectors:
+
+> **C**(t+1) = **C**(t) + **φ** ⊙ Δ**E** + **α** ⊙ **gap**(t),  **gap**(t) = **E**(t) − **C**(t)
+
+with ⊙ the Hadamard product. The elementwise form is not a notational economy. It is a
+substantive claim about the reporting layer: **the layer is diagonal in class space.** A dollar of
+unrecognised deterioration in a distribution centre does not force recognition against a trademark.
+Each class's filter reads its own gap and nothing else.
+
+That claim is an assumption, it is false in detail, and §9 says so and proposes the test. What
+matters here is that writing it down makes the next result expressible. Without the class index,
+the identification result below is a remark about a single parameter. With it, the remark acquires a
+corollary about *rankings*, and rankings are what the empirical literature on this subject actually
+estimates.
+
+### 4.2 · The theorem
+
+Take one class and disable the recognition mechanism, so the filter is examined in isolation.
+Write δ for the effective decay rate d(1 − m) of §2. Substituting ΔE = −δE(t) collapses the pair of
+recursions to a single line:
+
+> C(t+1) = C(t)(1 − α) + E(t)(α − φδ),  E(t) = E₀(1 − δ)ᵗ
+
+φ appears once, in the product φδ, and nowhere else. The reported series is a two-root linear
+system whose roots are α and δ and whose forcing coefficient is (α − φδ). Nothing else about φ
+enters. This has a consequence that is stronger than ill-conditioning, and it is exact:
+
+> **Observational equivalence.** The parameter triples **(α, δ, φ)** and **(δ, α, φδ/α)** generate
+> the *identical* reported series. The two roots of the filter — the reporting rate and the physical
+> decay rate — are exchangeable, and the quantity preserved by the exchange is exactly **φδ**.
+
+Verified to machine precision across the parameter grid: the largest deviation between a series and
+its mirror is 7 × 10⁻¹⁴ in absolute terms, 7 × 10⁻¹⁶ normalised — the arithmetic, not the model.
+Perturbing the mirror's φ by 0.05 moves the series by 4 × 10⁻², five orders larger, which is the
+witness that the check is touching something. Admissibility requires φδ ≤ α, which holds at every
+parameter setting used anywhere in this paper.
+
+So a reported series does not merely make φ hard to recover. **It does not contain φ.** It contains
+φδ, and it cannot distinguish a timely reporter of a durable asset from a laggard reporter of a
+perishable one. The two are the same series.
+
+The practical form of this, and the one worth carrying: **a reported series determines φδ, and any
+further statement about φ is imported from outside the series.** Estimating δ from the same series
+does not help, because the series cannot tell δ from α either — that is what the exchange says.
+
+Two facts about the boundary of the result, because a theorem with unstated edges is a slogan.
+First, the equivalence is broken by the recognition events: their trigger reads gap/E, and across
+five mirror pairs the event counts differ sharply enough to separate them (16 against 66, 25 against
+80, 36 against 133, and two pairs where one side is silent entirely). Second — and this is why the
+break is not a rescue — **the trigger reads E, which no filing reports.** The information that
+breaks the degeneracy arrives through a channel the reported series does not have. §4.6 returns to
+what that costs.
+
+The earlier conditioning result stands underneath all of this and is worth keeping for its size:
+fitting the model to a synthetic series recovers φ with a median absolute error of 0.211 when δ is
+estimated jointly and 0.00073 when δ is pinned at its true value, a **291-fold** difference, with a
+noise-free series giving 0.211 as well. That is what an exact degeneracy looks like from inside a
+numerical optimiser: not a cliff, a canyon.
+
+### 4.3 · What a cross-class ranking reads
+
+Now the class index earns its keep. The steady-state ratio of unrecognised gap to physical value —
+the model's natural measure of how much a class defers — has a closed form:
+
+> **R**ᵢ = (1 − φᵢ) δᵢ / (αᵢ − δᵢ)
+
+which simulation reproduces to the transient bound, 2 × 10⁻⁴ after 400 periods, against a witness
+of 1.0 when φ is misstated by 0.1. Written across classes with a common α this is a Hadamard
+product again, **(1 − φ) ⊙ δ**, divided elementwise by (α − δ).
+
+**Two classes are therefore ordered, in anything a reader can compute from filings, by (1 − φ) ⊙ δ
+and not by φ.** Timeliness sets the ranking only when durability is constant across the classes
+being ranked — and the classes accounting standards distinguish are, almost by construction, the
+classes whose durability differs. That is why the standards distinguish them.
+
+This is not a defect of the present model. Any model in which reporting lag attenuates a physical
+signal will multiply a timeliness parameter by an asset-life parameter somewhere, because the
+observable is a rate times a duration. The model's contribution is to make the product explicit
+enough to be checked.
+
+### 4.4 · The ranking does not merely blur. It inverts.
+
+The natural expectation is that a confound of this kind adds noise to a ranking. Here it does
+something worse, and the case is the one this paper's own registration used.
+
+Order the four GAAP classes as the registration did — property, plant and equipment; finite-lived
+intangibles; indefinite-lived intangibles; goodwill — and assign the observability shares the
+registration assumed, falling up the ladder as the standards' willingness to put a class on an
+amortisation schedule falls. Then assign the decay rates the same standards imply, which fall up the
+same ladder, because a class is placed on a schedule precisely when its decline is predictable
+enough to schedule. Goodwill sits at the end of both: least observable, and with no degradation
+schedule at all.
+
+| tier | φ | 1 − φ | δ | (1 − φ)δ | **R** | R at a common δ |
+|---|---|---|---|---|---|---|
+| 0 · property, plant and equipment | 0.80 | 0.20 | 0.030 | 0.00600 | **0.2999** | 0.1333 |
+| 1 · finite-lived intangibles | 0.60 | 0.40 | 0.020 | 0.00800 | **0.2667** | 0.2667 |
+| 2 · indefinite-lived intangibles | 0.40 | 0.60 | 0.010 | 0.00600 | **0.1500** | 0.4000 |
+| 3 · goodwill | 0.20 | 0.80 | 0.002 | 0.00160 | **0.0333** | 0.5333 |
+
+The right-hand column is the world the design assumed: classes differing in observability and in
+nothing else. There the deferral measure rises monotonically up the ladder exactly as predicted,
+Kendall τ = +1. The column beside it is the world the standards describe. There the deferral measure
+is monotone too — **running the other way.** Kendall τ = **−1**.
+
+**The design and its own observable are anti-aligned across the ladder.** A confounded design
+returns noise; this one returns the reverse of what it ordered. On the model's own arithmetic, the
+class predicted to defer most defers least, because it barely deteriorates, and there is little to
+defer.
+
+The condition deciding the direction is worth writing out, because of what it contains. Taking logs
+of R,
+
+> log R = log(1 − φ) + log δ − log(α − δ)
+
+so the deferral measure rises from one tier to the next exactly when
+
+> Δlog(1 − φ) + Δlog δ − Δlog(α − δ) > 0
+
+The first term is the design. **The other two are facts about δ**, and on a falling ladder they
+carry the same sign, so they add. At every rung of the ladder above, the combined δ contribution
+(−0.81, −0.98, −1.79) outweighs the design term (+0.69, +0.41, +0.29), and the decomposition
+predicts the direction of every step. Checking only the log δ term would have got the first rung
+right for the wrong reason: there the design term is the larger of the two, and the step still falls,
+because δ enters twice.
+
+**So the validity condition for a φ-ordered cross-sectional design is a statement about δ** — the
+quantity §4.2 says the reported series does not contain. A researcher cannot establish that the
+design is sound without already possessing what the design was built to avoid needing.
+
+Nor is the inversion an artefact of the particular numbers. Drawing 4,000 four-class ladders subject
+to nothing but the two qualitative facts the registration relied on — observability falls up the
+ladder, durability rises up the ladder — the deferral measure recovers the registered ordering in
+**1.9%** of them, exactly reverses it in **23.8%**, and is non-monotone in the remaining **74.2%**,
+with a mean Kendall τ against the registered rank of **−0.41**. Hold δ common across the four
+classes and redraw: the ordering is recovered in **100.0%**. The difference between those two
+numbers is the entire content of this section.
+
+### 4.5 · One statistic survives, and it is the one nobody can compute
+
+Here the result stops where honesty requires, and the stopping point is more interesting than an
+extension would have been.
+
+Everything above concerns a *magnitude* — how much a class defers. The registration did not order
+magnitudes. It ordered **lag**: how long a class takes. And the lag statistic does not invert.
+
+| tier | lag, standards' ladder | lag, common δ |
+|---|---|---|
+| 0 · property, plant and equipment | 2 | 3 |
+| 1 · finite-lived intangibles | 10 | 10 |
+| 2 · indefinite-lived intangibles | 18 | 17 |
+| 3 · goodwill | **36** | 22 |
+
+Monotone under both, and the falling-δ ladder makes the ordering *steeper* rather than flattening
+it. The reason is visible in the parameter sweep: lag falls in φ at every δ, and rises as δ falls at
+every φ, so on a ladder where both move the way the standards say they do, **the two effects add.**
+Across 400 randomly drawn admissible ladders the lag ordering holds in **100%** of them, against
+1.9% for the magnitude measure.
+
+**The identification result does not, by itself, wreck a design ordered on lag.** Any claim that the
+registered prediction was doomed by the φδ confound is claiming more than the arithmetic gives, and
+this paper made a version of that claim in draft and withdraws it here.
+
+What wrecks it is the next line. **The model's lag statistic is a cross-correlation between ΔE and
+ΔC, and ΔE is the change in physical value, which no filing reports.** The one statistic the
+confound spares is the one that cannot be computed from public data. Any empirical instrument must
+substitute something else — §5's substituted the interval from the onset of a decline in a
+firm-level signal to the recognition of a charge — and the relation between that substitute and the
+model's lag has never been written down.
+
+That is a second identification gap, upstream of the first, and it is the one that bit. The
+framework's response to it is §6.2's bridge discipline, which was written from the failure and now
+has a theorem behind it rather than a bruise.
+
+### 4.6 · The field's instruments read the same product
+
+The reason to state all of this carefully is that the constraint is not local to this model.
+
+Conditional-conservatism measurement estimates how promptly accounting recognises economic losses.
+The standard instruments — Basu's asymmetric-timeliness coefficient (1997), Khan and Watts's C_Score
+(2009), Ball and Shivakumar's accrual–cash-flow piecewise measure (2006), Givoly and Hayn's
+accumulated negative accruals (2000), Bushman and Williams's DELR (2015) — differ in construction
+and share an input: a reported series, and the requirement to infer a recognition property from it.
+
+If a timeliness parameter reaches a reported series only in product with an asset-life parameter,
+then a cross-sectional comparison of any of these measures is a comparison of the product. **Two
+industries with identical recognition practice and different asset lives will score differently, and
+two industries with identical scores may differ arbitrarily in practice.** The sign of the induced
+difference is not fixed by the measure; §4.4 shows it can invert a ranking rather than attenuate it.
+
+Three qualifications, because the claim is aimed at other people's work and should be stated at the
+strength the evidence supports. First, the mapping from this filter to each of those estimators is
+not established here: they are not fitting this model, and the composite they read need not be φδ
+exactly. Second, the magnitude-versus-timing distinction of §4.5 matters, and these measures sit on
+both sides of it — Basu's coefficient is a slope on returns rather than a delay, and is closer to
+this paper's magnitude case than its timing one. Third, the industry fixed effects standard in this
+literature absorb the confound wherever asset life is constant within an industry, which is a
+different claim from absorbing it altogether.
+
+What the paper does claim is that the burden has moved. **A cross-sectional conservatism ranking now
+requires an argument that asset life is constant across the compared groups, or a correction for
+it** — and the ranking most often compared, across GAAP asset classes, is the one where that
+assumption is least defensible.
+
+### 4.7 · The repair
+
+An identification result that ends in "so the measurement is impossible" would be a poor return on
+five sections. It does not end there, and the way out is visible in the theorem's own statement: the
+series determines φδ, so **anything that supplies δ from outside the series restores φ.**
+
+For three of the four classes, the standards already supply it. Finite-lived intangibles and
+depreciable property carry **disclosed useful lives and amortisation schedules** — an estimate of
+the physical decay rate, made by the firm, audited, published, and *not* derived from the series
+whose timeliness is in question. Pinning δ rather than estimating it jointly is precisely the
+291-fold improvement quoted in §4.2. A design that uses disclosed useful lives as an independent δ,
+and compares timeliness only within a life band, is reading φ rather than φδ, and it needs no data
+this programme does not already have.
+
+Three properties recommend that design over the one this paper registered. It is diagonal-safe: no
+comparison crosses a class boundary, so the diagonality assumption of §4.1 is not load-bearing. It
+holds δ approximately constant by construction, which is the condition §4.4 identifies. And it has a
+built-in negative control — the same comparison across life bands, where the theorem says the
+ranking should degrade — which is the kind of prediction that can embarrass the framework rather
+than decorate it.
+
+**The class it cannot rescue is goodwill**, and the reason is not a difficulty of measurement.
+
+### 4.8 · The goodwill limit
+
+At δ = 0 the physical layer does not move; ΔE = 0; the term φ ⊙ ΔE vanishes identically; the gap is
+identically zero at every φ, to 10⁻¹²; and no recognition event occurs at any φ in 400 periods. **At
+zero decay, φ is not ill-conditioned. It is absent from the dynamics.** The parameter has no
+referent in a class with no degradation schedule, which is exactly the class the standards decline
+to amortise.
+
+This bites twice, and the second bite is worse than the first. Goodwill supplied the largest single
+share of the registered sample. On the standards' ladder, the two least-observable tiers — the two
+the registration leaned on hardest — produce **no recognition events at all** in this model, while
+the two most observable produce all of them. Under the common-δ ladder the silence falls on the
+*opposite* two tiers. Which classes the model can even speak about is therefore decided by the δ
+ladder, before any hypothesis about φ is entertained.
+
+The honest statement is that this model, at goodwill's decay rate, has nothing to say about
+goodwill. A test built substantially on goodwill impairments was asking the framework a question
+outside its domain, and the framework's own §2 says where that domain ends.
+
+**None of this was known when the registration was written, and all of it was derivable.** §5 reports
+what was registered and what happened; §6 states what may now be claimed.
+
+---
+
 ## 5 · The severe test: registered, run twice, and lost
+
+**What §4 does and does not say about what follows.** The test reported here ordered asset classes
+by expected timeliness. §4.4 shows that a *magnitude* reading of such a ladder is inverted by the
+composite; §4.5 shows that the *timing* reading — the one this registration used — is not. So the
+identification result is not an excuse for the null, and it is not offered as one. It bears on this
+section at one point only, and that point is §4.5's second half: the model's lag is defined against a
+physical series that no filing reports, so the instrument below measures a substitute. Read §5 as the
+record of what was predicted and what happened; §6 states what may be concluded from it.
 
 ### 5.1 · What was predicted, and when
 
-§4 establishes a property of a model. Whether the property holds of the world is a separate
+§3 establishes a property of a model. Whether the property holds of the world is a separate
 question, and this programme's assessment was — and remains — that no amount of prose does the
 work of one empirical result. The framework's sharpest available prediction is the one that
-follows directly from §4.2:
+follows directly from §3.1:
 
 > **Recognition lag scales with the unobservability of degradation.**
 
@@ -552,7 +569,7 @@ to place on an amortisation schedule are precisely the categories whose degradat
 observe. The classes and their schedules are those of the FASB *Accounting Standards Codification*:
 Topic 360 for property, plant and equipment, Topic 350 for intangibles and goodwill — where the
 indefinite-lived classes are tested for impairment rather than amortised, which is what makes the
-recognition moment discretionary — and Topic 280 for the segment disclosures §8 identifies as the
+recognition moment discretionary — and Topic 280 for the segment disclosures §9 identifies as the
 unit of observation this test did not have. That yields a four-tier ordering, predicted in advance to be monotone in lag:
 
 | tier | asset class | predicted |
@@ -721,18 +738,18 @@ unobservability is identified with GAAP asset class, in US-listed retail trade o
 data processing services over 2013–2024, at the firm level, at effect sizes of one quarter per
 tier or larger.
 
-**Unaffected:** every result in §3 and §4. Those are properties of a stated model, established by
+**Unaffected:** every result in §A.2 and §§2–3. Those are properties of a stated model, established by
 simulation and held in place by a test suite. A model result is not made false by the failure of
 an empirical identification, and it is not made true by one either.
 
-**And that sentence is a problem, not a reassurance.** If nothing in §3 or §4 was at risk, then
-nothing in §3 or §4 was on test — and a framework that retains every claim after losing its only
+**And that sentence is a problem, not a reassurance.** If nothing in §A.2 or §§2–3 was at risk, then
+nothing in §A.2 or §§2–3 was on test — and a framework that retains every claim after losing its only
 public bet is in exactly the position §6.3 accuses Odum's of occupying. The accounting is therefore:
 
 - **What was at risk and lost:** the conjunction of the model, the bridge, and the firm-level unit
   of observation. That conjunction was the framework's *entire empirical content* as of this
   writing. It is gone.
-- **What was never at risk:** everything in §3 and §4, because those are theorems about a
+- **What was never at risk:** everything in §A.2 and §§2–3, because those are theorems about a
   simulation. They were never capable of losing and no result of the severe test could have
   retracted one of them. Calling them "unaffected" states a fact about their logical type, not a
   survival.
@@ -770,7 +787,7 @@ impairment is triggered by conspicuously public signals — a share-price fall, 
 lost contract. The physical condition of a distribution centre carries a schedule and is visible to
 essentially nobody outside the firm.
 
-**The general form of the error is a type error in a second costume.** §2.1 recorded one: a
+**The general form of the error is a type error in a second costume.** §A.1.1 recorded one: a
 structure cannot be promoted to a proposition by rewording. This is its empirical twin — **a
 quantity in the model was matched to a quantity in the world that shares its name and not its
 meaning.** The lesson is not about accounting. It is that a bridge from a parameter to a measurable
@@ -796,23 +813,58 @@ judgement this paper leaves to whoever is reading it.
 
 ---
 
-## 7 · Abandoned approaches
+## 7 · What was tested and survived
+
+A paper that reports only its failures gives a reader no way to weigh them. This programme's public
+record has been unbalanced in that direction: every test run is reported, and until this section
+existed, none of the ones that held were collected anywhere a reader could find them. Here they are,
+with what would have killed each.
+
+| claim | test | what would have killed it | outcome |
+|---|---|---|---|
+| **D(φ) = (1 − φ)·D(0)** | closed form against simulation, φ swept | any φ at which the ratio departs from (1 − φ) | held to **10⁻¹⁵** |
+| **(α, δ, φ) ~ (δ, α, φδ/α)** | mirrored simulation, five parameter settings | any visible separation between a series and its mirror | **7 × 10⁻¹⁴**, against 4 × 10⁻² when the mirror's φ is perturbed by 0.05 |
+| **R = (1 − φ)δ/(α − δ)** | closed form against simulation | departure beyond the transient bound | held to **2 × 10⁻⁴**, the bound the geometric transient predicts; **1.0** when φ is misstated by 0.1 |
+| **The ranking inverts, not just blurs** | 4,000 ladders drawn on the two qualitative facts alone | the intended ordering surviving often enough to be a design | recovered in **1.9%**; **100.0%** when δ is held common — the witness that the construction is not vacuous |
+| **The inversion spares the lag statistic** | 400 admissible ladders, lag ordering checked | lag inverting like the magnitude measure, which would have made the story tidier | lag ordering held in **100%** — *the check that overturned this paper's own draft claim* |
+| **Results are dimensionless** | η swept over **twelve orders of magnitude** | any dimensionless output moving with η | spread **exactly 0.0** |
+| …and not because η is unused | mutation testing | a mutant that leaves results unchanged | **every substituted vacuous witness killed its run** |
+| **Recognition frequency is driven by δ** | sweep at fixed φ | δ having no effect on event counts | 0 → 16 → 100 events |
+| **The tier instrument has no baked-in ordering** | label permutation | a non-null under randomised labels | z-mean **+0.007**, sd 1.025 |
+| **The registered design had power** | power analysis, to be reported whatever the outcome | power too low to interpret a null | **0.95–1.00**, with three stated qualifications making it an upper bound |
+| **The framework's guards can fail** | audit of the guards themselves | a guard that could not fail passing silently | **six found and retired**, before publication, recorded in `METHOD-001` |
+
+Two rows deserve a comment.
+
+The fifth is the reason this section is not decoration. The draft that preceded this one asserted
+that the identification result explained the registered null. The check in that row was written to
+confirm it and refused, in every one of 400 draws, and the claim came out of the paper. A survivals
+ledger that contains only survivals is an advertisement; this one contains the row that cost the
+paper its neatest sentence.
+
+The last row is the one this programme would defend hardest. The claim is not that the work was
+careful. It is that the guards were audited against the possibility of being unfalsifiable, that the
+audit found six that could not have failed, and that they are named.
+
+---
+
+## 8 · Abandoned approaches
 
 *Every route below was actually taken and then abandoned. The section is placed in the body, not an
 appendix, for the reason given in the companion papers of this programme.*
 
 **"First principles" as undeniable truths.** The original formulation asserted the framework's
-foundations were undeniable. Abandoned on the argument of §2.1: an undeniable axiom is a
+foundations were undeniable. Abandoned on the argument of §A.1.1: an undeniable axiom is a
 definition, and definitions forbid nothing. Several attempts to repair it by rewording failed
 before the type error was identified, and that failure is instructive — a wording problem responds
 to wording, and this one did not.
 
 **The pure-delay reading of the reporting layer.** The claim layer as a simple lag on the physical
 one. Abandoned because it is falsified by any case where financial signals *lead* physical change,
-and those cases plainly exist. Replaced by the asymmetry of §4.3, which is strictly sharper: it
+and those cases plainly exist. Replaced by the asymmetry of §8.1, which is strictly sharper: it
 predicts *where* the lead-versus-lag boundary falls rather than denying that leads occur.
 
-**The over-smoothing prediction.** §4.4. The framework predicted the claim layer would be less
+**The over-smoothing prediction.** §3.2. The framework predicted the claim layer would be less
 volatile than the physical layer. Measured over a whole path this is **false**, and the probe
 caught it. Retained here in full rather than quietly replaced, because the shape of the failure is
 informative: the direction was wrong, the mechanism was right, and the corrected claim
@@ -828,17 +880,17 @@ here — it is in §5, in the body, and in the abstract, because it is a result.
 **Re-specifying the onset rule until it worked.** After PRE-002 also failed, a third instrument was
 available and was not built, because PRE-002's stopping rule had been registered in advance.
 
-**Answering the efficient-markets objection with φ.** §4.3. This was the paper's reply to its most
-serious standing objection until the severe test removed its support, and it is abandoned in §4.3
+**Answering the efficient-markets objection with φ.** §8.1. This was the paper's reply to its most
+serious standing objection until the severe test removed its support, and it is abandoned in §8.1
 rather than defended. It is listed here as well because the failure mode is the general one this
 programme keeps meeting: an unmeasured parameter partitioning a space so that the objection lands
 only where nothing can be checked.
 
-**Estimating φ from the reported series alone.** The obvious route to closing §4.3's gap — fit the
+**Estimating φ from the reported series alone.** The obvious route to closing §8.1's gap — fit the
 model's parameters to an observed reporting layer and read φ off the fit. Abandoned because the
 recovery is ill-conditioned by construction rather than by bad luck: φ reaches the observable only
 through the product φδ, so estimating it means dividing by an effective decay rate that is itself
-being estimated, and the variance grows like 1/δ². Limitation 4 gives the algebra and the measured
+being estimated, and the variance grows like 1/δ². §4 gives the algebra and the measured
 degradation. The route is recorded because its failure identifies its own successor, and the
 successor has two handles rather than one: **φ becomes tractable as δ grows, and — at any δ — as δ
 is known more precisely from outside the reported series.** Fast-decaying assets are therefore
@@ -850,12 +902,67 @@ named in a paper before it is registered is an instrument that has escaped its r
 **Adding a free parameter to absorb an objection.** Refused five times across this programme and
 worth recording as a class, since each instance looked locally reasonable: introducing a scaling
 constant to rescue the dimensional argument; defining a levy's base so a companion paper's claim
-came out right; letting λ vary freely rather than in a shaped way; and, as §4.3 now concedes,
+came out right; letting λ vary freely rather than in a shaped way; and, as §8.1 now concedes,
 leaning on an unmeasured φ. A quantity that can accommodate any observation forbids nothing.
 
 ---
 
-## 8 · Limitations
+### 8.1 · The efficient-markets reply, withdrawn — in full
+
+The strongest standing objection to any lag thesis is efficient-markets in its plainest form:
+prices already discount deferred maintenance, so a systematic lag should not survive. Note that a
+**pure-delay** model has no answer to this and is straightforwardly falsified by cases where
+financial signals *lead* physical change — markets price an announced technology transition before
+a single unit of capital is built, and such cases obviously exist.
+
+This model is not a pure-delay model, and the asymmetry is the whole mechanism. **The claim layer
+leads on what is disclosed and lags on what is deferred.** At φ = 1 the filter is a perfect window:
+zero lag, zero deferred information, coupling identically 1, no recognition events. So the objection holds
+*exactly* where the model predicts no lag, and has nothing to act on where degradation is
+undisclosed. The two are not in competition; they partition the space by φ.
+
+**That reply is not available to this paper, and the rest of this section retracts it.**
+
+The partition is drawn along φ, and φ is not measured anywhere in this work — §4 concedes
+it is swept, not estimated. So "the objection holds where φ is high and the model holds where φ is
+low" concedes every case an efficient-markets reader could check and claims every case nobody can,
+along a coordinate no one has observed. That is a free parameter absorbing an objection, which is
+the move this programme has refused five times in other costumes (§8) and should have refused here.
+
+The requirement was recognised before the severe test was run and was written down: a framework
+conceding everything the efficient-markets reading claims and retaining only the unobserved residue
+**must be able to identify that residue in the world**, with evidence rather than assertion. §5 is
+the attempt to supply that evidence. It failed.
+
+**So §8.1 is an open problem, not a reply.** The asymmetry remains a coherent structure and a
+genuine improvement on pure delay — a pure-delay model is refuted outright by observed leads, and
+this one is not. But until φ is independently measurable the asymmetry cannot be used to answer
+the efficient-markets objection, and this paper does not use it that way. §2's assertion that φ
+is not a fudge factor rests on the argument in this section; with that argument withdrawn, the
+assertion is a statement of intent about how φ is to be treated, and it should be read as one.
+
+### 8.2 · The crisis framing, and the paper it belongs to
+
+The model in §2 was built to say something about crises: a deferral has one available ending —
+arrival — so within the model a crisis is the reporting layer delivering its accumulated error at
+once, and the magnitude of the discontinuity is exactly the information that had been withheld. That
+reading survives everything in this paper. What it does not yet have is a price, an agent, an
+equilibrium, or an asymmetry that a crash-risk reader would recognise as one, and the adversarial
+review shipped beside this paper is unanimous and correct on the point.
+
+So the framing is not defended here and not deleted either. The material that supported it — the
+volatility-relocation result and its 2007 antecedent, the three-cell taxonomy locating the wedge in
+an incentive, a belief or the measurement rule, and the priority concessions to Jin and Myers and to
+Bleck and Liu — is retained in §§3.2 and 10, where it does honest work as description and
+attribution rather than as a claim this paper can support.
+
+The crash paper is a later paper in this corpus, written with a price line and after the reading
+queue in §10 is discharged. **A framing that has to be argued for in the paper that introduces a
+theorem is a framing that will be argued about instead of the theorem.**
+
+---
+
+## 9 · Limitations
 
 1. **The severe test failed and this paper does not know why.** Three post-hoc explanations exist —
    the theory is wrong; the bridge was wrong; the unit of observation was wrong — and **the data do
@@ -869,51 +976,17 @@ leaning on an unmeasured φ. A quantity that can accommodate any observation for
 3. **The filter model is deterministic and single-firm.** No stochastic degradation, no
    heterogeneity, no interaction between firms, no market. Every empirical signature it suggests is
    therefore a qualitative target, not a fitted one.
-4. **φ, α and θ are not measured. They are swept — and for φ there is a specific reason why, worse
-   than the bare concession it replaces.** The paper reports how outcomes vary across the sweep and
-   does not claim any firm's φ is known. An attempt to close that gap directly — estimating the
-   parameters by fitting the model to a reported series — establishes that **φ is severely
-   ill-conditioned when estimated jointly with the effective decay rate.**
+4. **φ, α and θ are not measured; they are swept — and for φ the reason is §4.** The paper
+   reports how outcomes vary across the sweep and does not claim any firm's φ is known. That is
+   no longer a concession about this construction: §4.2 establishes that **no** estimator
+   recovers φ from a reported series, because the series does not contain it. The consequence
+   is stated there rather than softened here, together with the one repair available — an
+   independent determination of δ, for which disclosed useful lives are a candidate this
+   programme has not yet used. (Method, scripts and full figures for the conditioning result
+   that preceded the theorem: `docs/notes/NOTE-001-phi-identifiability.md`. Synthetic data only.
+   It is **not** evidence about §5's null, which used an entirely different, non-parametric
+   estimator.)
 
-   Write **δ = d(1 − m)** for the effective decay of §4.1 (entropy rate net of maintenance;
-   δ = 0.02 at the parameters used throughout). Substituting ΔE = −δ·E(t) collapses the two
-   recursions to a single line:
-
-   > C(t+1) = C(t)·(1 − α) + E(t)·(α − φδ),  E(t) = E₀(1 − δ)ᵗ
-
-   **φ reaches the observable only through the product φδ.** The series identifies α, δ and the
-   composite k = (α − φδ), so recovering the parameter of interest requires **φ = (α − k)/δ** — a
-   division by δ, giving an estimator whose variance grows like 1/δ² as δ → 0.
-
-   On synthetic data (φ ∈ [0.1, 0.9], δ ∈ [0.005, 0.035], identical batch and iteration budget for
-   both arms) the effect is large: with δ estimated jointly, φ recovers with a **median absolute
-   error of 0.211** (p90 0.644); with δ **pinned at its true value**, **0.00073** (p90 0.017) — a
-   291-fold improvement in the median. A noise-free series gives 0.211 as well, so noise is not the
-   explanation.
-
-   **Two qualifications, both of which cut against the strong reading.** First, this is a
-   *conditioning* result and not a non-identifiability one: φ remains identifiable in principle at
-   every δ > 0, and recovery degrades continuously rather than at a cliff. Bucketing the δ-free
-   fits by true δ across [0.005, 0.010), [0.010, 0.017), [0.017, 0.025) and [0.025, 0.035) gives
-   medians of 0.468, 0.468, 0.164 and **0.017** — but p90s of 0.773, 0.727, 0.462 and **0.212**.
-   So at the top of the range the *typical* firm's φ is recovered to about 2% of its span while one
-   firm in ten is still off by more than a quarter of it, and the median alone would overstate the
-   case. Second, the quoted range of δ sits mostly in the poorly conditioned region, so the headline
-   0.211 should be read as characteristic of slow-decaying assets and not of the model generally.
-
-   **Pinning δ helps most where it is needed least.** At the sector sketches of §4.2, converted to
-   effective decays and with δ pinned: software (δ = 0.080) recovers φ to a median 0.00026 and p90
-   0.00078; industrial (δ = 0.020) to 0.00054 and 0.00367; **warehouse retail (δ = 0.004) to a
-   median 0.00433 but a p90 of 0.191** — so even in the best case the slowest-decaying assets
-   retain a bad tail.
-
-   The consequence for this paper's construction is stated rather than softened: **a usable
-   estimate of φ requires an independent determination of the physical decay rate, obtained outside
-   the reported series — and for the slowest-decaying assets, φ may not be usefully recoverable
-   even then.** Until such an estimate exists, φ is a swept parameter and every result depending on
-   its value is a conditional statement. (Method, scripts and full figures:
-   `docs/notes/NOTE-001-phi-identifiability.md`. Synthetic data only. It is **not** evidence about
-   §5's null, which used an entirely different, non-parametric estimator.)
 5. **Λ⁻¹ and SDG 7.3.1 are the same quantity dimensionally, not empirically.** The SDG series is a
    national aggregate over primary energy and PPP output; the model's coupling is a firm-level
    ratio between a physical capacity measure and a claim measure. The correspondence licenses "this
@@ -933,7 +1006,20 @@ leaning on an unmeasured φ. A quantity that can accommodate any observation for
 
 ---
 
-## 9 · Relation to existing work
+9. **The diagonality of the reporting layer is an assumption, and it is testable.** §4.1
+   writes the reporting layer as a Hadamard product, which asserts that recognition in one
+   asset class does not force recognition in another. Real practice couples them: a goodwill
+   test under ASC 350-20 runs at the reporting-unit level, and the triggering event that forces
+   an ASC 360 recoverability screen on property is frequently the same event. The diagonal model
+   predicts recognition events are independent across classes within a firm; a coupled model
+   predicts they cluster in firm-quarters. Co-occurrence against an independence null needs no
+   observability proxy, no bridge from φ to a GAAP category and no new data — the 688 events
+   already collected are enough to look. It is registered before its instrument is coded, or it
+   is not run.
+
+---
+
+## 10 · Relation to existing work
 
 **Soddy** is the origin of the composition claim and P1 is his observation made axiomatic. The
 present contribution is not the distinction between physical wealth and claims on it but its
@@ -960,9 +1046,9 @@ makes the two accounts complementary rather than rival.
 **Austrian business cycle theory shares this framework's architecture while disagreeing about its
 cause, and that is worth more than agreement would be.** Hayek's knowledge problem holds that
 prices transmit dispersed information and that the characteristic failure is *informational* rather
-than moral; §4 is a formalisation of exactly that concern. Mises's malinvestment — misallocated
+than moral; §2 is a formalisation of exactly that concern. Mises's malinvestment — misallocated
 capital accumulating unrecognised through a boom, revealed and liquidated in the bust — is
-structurally identical to §4.4: unrecognised accumulation followed by discontinuous recognition event.
+structurally identical to §3.2: unrecognised accumulation followed by discontinuous recognition event.
 The causes assigned differ (credit expansion there, undisclosed physical degradation here) and the
 claim made here is a structural analogy, not an identity. What it offers is a single mechanism
 reproducing a phenomenon that mutually hostile traditions each describe in their own vocabulary.
@@ -972,8 +1058,8 @@ identities constrain dynamics. The difference is what the accounts are taken to 
 and complete there, consistent and **systematically incomplete** here, with the incompleteness
 being the object of study.
 
-**The efficient-markets literature**, in Fama's canonical statement of it, supplies the objection §4.3
-answers — and, as §4.3 now concedes, does not yet receive an answer. What the model offers is a
+**The efficient-markets literature**, in Fama's canonical statement of it, supplies the objection §8.1
+answers — and, as §8.1 now concedes, does not yet receive an answer. What the model offers is a
 partition rather than a refutation: the model concedes disclosed information entirely and retains
 only the undisclosed residue.
 
@@ -983,9 +1069,9 @@ Myers model a firm whose insiders absorb firm-specific bad news up to a limit an
 enough run of it arrives, give up and release the accumulated stock at once; the frequency of large
 negative firm-specific return outliers rises with how opaque the firm is to outsiders. Hutton, Marcus
 and Tehranian supplied the firm-level opacity measure and the panel, and an active literature has
-extended both continuously since. **That is §4.4 in a different vocabulary, and on evidence this
+extended both continuously since. **That is §3.2 in a different vocabulary, and on evidence this
 paper is much the weaker of the two accounts**: crash risk is measured on prices, tested on large
-panels and supported, while §4 is a property of a simulation whose one registered prediction failed.
+panels and supported, while §2 is a property of a simulation whose one registered prediction failed.
 The asymmetry is theirs before it is this paper's, too — their COUNT measure nets downside outlier
 frequencies against upside ones and their COLLAR trade shorts a call against a put, so the
 crash-not-jump direction is already inside the quantity they measure.
@@ -1004,11 +1090,11 @@ possibility is this paper's mechanism:
 written down in 2004.** No claim of priority over it is made here, and an earlier draft of this
 section made one.
 
-**What that case retains, and §4 removes, is an informed party.** "Saintly" qualifies capture and not
+**What that case retains, and §2 removes, is an informed party.** "Saintly" qualifies capture and not
 information: the manager still observes the hidden component, and it is *investors* who "cannot see
-the news as it happens." Their friction is verifiability toward outsiders; §4's manager knows no more
+the news as it happens." Their friction is verifiability toward outsiders; §2's manager knows no more
 than the market does. **Deliberately withheld known news, honestly held unverifiable news, and
-unrecognised unknown degradation are three objects, and only the third is §4's.** Two further
+unrecognised unknown degradation are three objects, and only the third is §2's.** Two further
 differences follow from the same page rather than from a defence of it. Their case is **two-sided** —
 "good or bad news accumulating," against a threshold on a signed difference — and they assign it long
 tails rather than crashes, entering kurtosis as a control variable against which their agency-driven
@@ -1021,7 +1107,7 @@ all.
 
 That epistemic difference is observationally fragile. From the price's point of view a wedge that
 widens because someone will not speak and a wedge that widens because nobody yet knows resolve
-identically, and the obvious discriminating tests cut against §4 rather than for it: deliberate
+identically, and the obvious discriminating tests cut against §2 rather than for it: deliberate
 withholding predicts correlation with insider incentives, insider selling, litigation exposure and
 regulatory regime, and the post-SOX dissipation Hutton, Marcus and Tehranian report is exactly that
 pattern.
@@ -1034,43 +1120,43 @@ CRSP–Compustat–Execucomp — while the opacity– and overinvestment–crash
 non-significant, particularly in the period after Sarbanes–Oxley. Hutton, Marcus and Tehranian report
 the same dissipation in their own abstract. Those authors read their own nulls as the *conduct*
 declining rather than the explanation failing, and this paper does not recruit them against that
-reading. **What the trend establishes is that the space is open, not that §4 occupies it.**
+reading. **What the trend establishes is that the space is open, not that §2 occupies it.**
 
-**Two things must be conceded here, or §4's claim is not narrow but wrong.**
+**Two things must be conceded here, or §2's claim is not narrow but wrong.**
 
-**The first is that §4's asymmetry is assumed and not derived, and that the thing which would derive
+**The first is that §2's asymmetry is assumed and not derived, and that the thing which would derive
 it belongs to someone else.** Jin and Myers obtain one-sidedness from symmetric primitives: the
 quantity of good news insiders can absorb is unbounded because they can capture it, and the quantity
-of bad news is not, so the bound is one-sided for a reason internal to the model. §4 assumes a
+of bad news is not, so the bound is one-sided for a reason internal to the model. §2 assumes a
 physical layer that only degrades. That assumption is not by itself sufficient — degradation at a
 stochastic rate around a booked rate produces a two-signed reporting error, which is Jin and Myers'
 case again, long tails and no skew. What makes the wedge one-signed is a second condition, that
 reported value may fall and may not rise: no upward revaluation of property, plant and equipment, no
 impairment reversal for goodwill or indefinite-lived intangibles. **That condition is conditional
-conservatism, it is Basu's object, and §4 uses it as machinery rather than contributing it.** An
+conservatism, it is Basu's object, and §2 uses it as machinery rather than contributing it.** An
 earlier draft of this section cited Basu as an obstacle to be scoped around. He is not the obstacle;
-he is the part of the mechanism this programme had not noticed it was standing on. §4's claim is
+he is the part of the mechanism this programme had not noticed it was standing on. §2's claim is
 correspondingly restricted to degradation on which conservatism has nothing further to bite —
 carrying no impairment trigger, no estimable expected loss and no observable event to key recognition
-to. Where a loss is estimable, recognition is faster than the market and §4 predicts nothing.
+to. Where a loss is estimable, recognition is faster than the market and §2 predicts nothing.
 
 **The second is that the reported layer accumulating hidden deterioration and releasing it as a price
-crash is a published result, and §4.4 quantifies it rather than discovering it.** Bleck and Liu model
+crash is a published result, and §3.2 quantifies it rather than discovering it.** Bleck and Liu model
 the accounting regime itself: historical cost gives management a "veil," poor performance
 "accumulate[s] and only eventually materialize[s]," and greater opacity produces more frequent and
-more severe crashes. Their statement of the volatility result is §4.4's, nineteen years earlier and
+more severe crashes. Their statement of the volatility result is §3.2's, nineteen years earlier and
 in prose — historic cost "stabilizes asset prices in the short term. Under the veil of this apparent
 stability, volatility actually accumulates only to hit the market at a later date," transferring
-volatility across time and raising it overall. **§4.4's contribution is the parameterisation, not the
+volatility across time and raising it overall. **§3.2's contribution is the parameterisation, not the
 finding.** Their manager, however, is strategic and fully informed, keeping a project alive for a
 private benefit while knowing it will not recover, and their regimes are two discrete alternatives
-rather than a continuum. The separation from §4 is the same one that survives Jin and Myers, which is
+rather than a continuum. The separation from §2 is the same one that survives Jin and Myers, which is
 either reassuring or the last plank.
 
 **What is left is a claim about form.** Beaver and Ryan decomposed the divergence between book value
 and economic value into a **bias** component and a **lag** component twenty-six years ago, and
 Bushman and Williams connect delayed expected-loss recognition to the risk profile of banks. That
-literature models conditional conservatism as a contemporaneous asymmetric response; §4 models it as
+literature models conditional conservatism as a contemporaneous asymmetric response; §2 models it as
 threshold-crossing accumulation under a continuous observability parameter, which is a form that can
 carry a recognition lag, a jump magnitude and a location for the variance where a response
 coefficient cannot. **The ordering remains the whole of the claim — the recognition event is the
@@ -1090,27 +1176,27 @@ and are claimed as nothing more than that.
 
 ---
 
-## 10 · Data and code availability
+## 11 · Data and code availability
 
-Every simulation result in §3 and §4 is produced by open code. The severe test in §5 uses only
+Every simulation result in §A.2 and §2 is produced by open code. The severe test in §5 uses only
 public data.
 
 - **Repository:** `https://github.com/jasoncbraatz/wealth-tensor` (public)
 - **Modules:** `src/wealth_tensor/lag.py` · `src/wealth_tensor/lambda_sensitivity.py` ·
   `src/wealth_tensor/edgar.py`
-- **Regenerate §4 (and §3.4):** `python3 scripts/wt027_report.py`
-- **Regenerate §3.3:** `python3 scripts/wt002_lambda_report.py`
+- **Regenerate §2 (and §A.2.4):** `python3 scripts/wt027_report.py`
+- **Regenerate §A.2.3:** `python3 scripts/wt002_lambda_report.py`
 - **Regenerate §5:**
   `python3 scripts/wt026_severe_test.py --universe pilot --onset peak` and
   `--universe replication --onset peak`
 - **Test suite:** `python3 -m pytest tests/ -q` — **100 tests at the pinned commit d655501**, which
-  is the state that produced every result in §3 and §4. The head of the repository carries 103.
-  The three later additions guard claims this paper makes and change no model code: two for §4.2's
+  is the state that produced every result in §A.2 and §2. The head of the repository carries 103.
+  The three later additions guard claims this paper makes and change no model code: two for §3.1's
   closed form D(φ) = (1 − φ)·D(0) and its accompanying negative claim that the lag is *not* linear,
-  and one asserting the algebraic collapse Limitation 4 publishes — which had no test until an
+  and one asserting the algebraic collapse §4 publishes — which had no test until an
   audit found the published form using the entropy rate where it meant the effective decay.
-- **Hardware:** none required. Every figure in §3 and §4 regenerates on a commodity CPU in seconds.
-  The fits reported in Limitation 4 use two thousand synthetic firms at four hundred gradient steps
+- **Hardware:** none required. Every figure in §A.2 and §2 regenerates on a commodity CPU in seconds.
+  The fits reported in §4 use two thousand synthetic firms at four hundred gradient steps
   in double precision; a larger reference fit of ten thousand firms at three hundred steps
   completed in **76 seconds on two 2.8 GHz cores**, a machine chosen deliberately so the figure is
   an upper bound. No accelerator is used and none is needed.
@@ -1141,6 +1227,256 @@ fail loudly.
 The repository's `docs/` directory is public and holds the registrations, the run logs, the failed
 result, the reasoning that led to the stopping rule, and an internal adversarial referee report on
 this draft with the author's responses.
+
+---
+
+# Appendix A · The framework the filter was built inside
+
+*Three propositions about the composition of wealth, and the coupling they oblige. This material
+motivated the filter and is retained in full: it states the domain within which §2's two layers are
+the right two layers, and it carries the invariance evidence the ledger in §7 cites. It is an
+appendix rather than a section because **nothing in §§2–7 depends on it.** The identification
+result holds for any two-layer filter of the stated form, whatever one believes about the
+composition of wealth — and a result that needs a metaphysics is weaker than one that does not.*
+
+## A.1 · Three propositions
+
+### A.1.1 · What a first principle is, and what it is not
+
+The earlier drafts of this work appealed to "first principles" repeatedly and defined the term
+zero times. The gap was not a wording problem, and several attempts to fix it by rewording failed
+for a reason worth stating, because it is a type error and type errors do not respond to prose:
+
+**An axiom is a proposition** — truth-apt, deniable, the kind of thing that can be false. **A
+model is a structure** — it has interpretations, not a truth value. A structure cannot be promoted
+to a proposition by describing it more emphatically. The tensor is not the axiom. **The axiom is
+the proposition that wealth has the structure the tensor formalises.**
+
+The second correction is that **"undeniable" must go.** An axiom nobody can deny is a definition,
+and definitions generate no empirical content. The useful notion is the one from computing: a
+**invariant** — never proved undeniable, proved *preserved*, within a **stated domain**. "Sound
+within a stated domain" is a defensible claim. "Undeniable" is a self-defeating one.
+
+The test that separates a first principle from a result: **denying a first principle produces a
+different science; denying a result produces a wrong number.** Deny *r > g* and you have a
+different empirical claim within the same science.
+
+The example on the other side needs stating carefully, because the obvious version of it is a
+strawman and an economist referee would stop on it. **Neoclassical economics does not deny physical
+depreciation** — δK appears in every growth model from Solow forward, and claiming otherwise would
+be an error of exactly the kind §6.2 is about. What P3 puts at issue is different and narrower:
+whether an aggregate can be treated as a primitive carrying its own laws. Deny P3 — assert that an
+aggregate production function is a fundamental object rather than a fold over units whose validity
+requires conditions on the units — and the disagreement is not about a coefficient. It is about
+what kind of thing the object of study is, and it changes which questions are well-formed. That is
+what "a different science" is meant to pick out, and P3 rather than P2 is where this framework's
+commitment actually bites. The three propositions below are offered as principles on that test.
+
+### A.1.2 · The propositions
+
+> **P1 · Composition.** Every unit of wealth is a compound of a physical component and a claim
+> component, obeying different laws — thermodynamic and arithmetic respectively.
+>
+> *Domain:* units of wealth having any physical referent. Silent on purely contractual objects
+> whose referent is another claim.
+
+> **P2 · Decay.** The physical component degrades absent maintenance. No store is inert.
+>
+> *Domain:* physical referents over horizons long relative to their maintenance cycle. Silent on
+> the short run, where degradation is negligible against measurement noise.
+
+> **P3 · Atomism.** Measured aggregates are folds over units. No aggregate is more fundamental
+> than its constituents.
+>
+> *Domain:* any measurement presented as a property of an economy rather than of a population.
+> This is the proposition an aggregate-production-function economist denies, and denies knowingly.
+
+Three, not ten. Each is stated so that a competent economist can say *no* to it and mean something
+specific by the refusal.
+
+### A.1.3 · The propositions are deniable, and this repository proves it
+
+The claim that these are empirical rather than definitional is cheap to make and is usually made
+by assertion. Here it is demonstrated, because the regimes in which each proposition fails are
+committed, tested code rather than thought experiments:
+
+- **P2 fails at complete maintenance.** Effective decay is the entropy rate *net of maintenance*,
+  so a fully maintained asset has no dynamics at all and the model collapses to an identity. This
+  is the regime in which "no store is inert" is simply not true, and it is reachable by setting one
+  parameter.
+- **The framework's own central mechanism switches off at φ = 1**, which is a separate and equally
+  important point. Perfect observability annihilates the entire phenomenon: recognition lag 0,
+  deferred information 0.0, coupling identically 1, zero recognition events. Note carefully what this does
+  *not* say — P2 still holds at φ = 1, and the physical layer still decays (from E₀ = 100 to 0.031
+  over 400 periods). What vanishes is the *gap*, and therefore everything this paper is about.
+  A framework whose subject matter can be dialled to zero by an observability parameter is a
+  framework making a claim about the world rather than a definition of it.
+These regimes are not embarrassments to be hidden behind a stronger word. **They are the evidence
+that the model has degenerate limits reachable by setting a parameter** — which is weaker than
+proving a proposition about the world false, and is stated at that strength deliberately. What a
+switch-off regime demonstrates is that the framework's subject matter is contingent on a quantity
+that could take another value, which is the minimum a claim must satisfy to be empirical rather
+than definitional. It is not itself a refutation, and no refutation is offered here.
+
+*A companion result on the same theme, in a sibling paper of this programme, is cited rather than
+reproduced: a levy whose base cannot observe an accrual is inert regardless of its rate. The
+mechanism is the same — observability binds before intensity — and the evidence for it belongs to
+that paper.*
+
+### A.1.4 · Independence
+
+P1 concerns composition and is silent about time. P2 concerns time and presupposes only that a
+physical component exists — it is not derivable from P1, since a compound whose physical component
+were inert would satisfy P1 and violate P2. P3 concerns the relation between measurements at
+different scales and is independent of both: an economy of inert single-component units would
+satisfy P3 while violating P1 and P2. No proposition is derivable from the others, and each is
+denied by an identifiable school.
+
+---
+
+## A.2 · The coupling
+
+*This section is where Λ is defended. It is defended here, at full strength, on three independent
+legs, and then it is used for the rest of the paper without further apology. That is a deliberate
+posture and it is worth naming: a defence that recurs is a tell. Five defences of one quantity
+inform a referee that there are five soft places, and recruit attention to precisely the ground an
+author would rather they walked over.*
+
+### A.2.1 · Λ is obliged by P1, not introduced
+
+**Notation, stated before the argument because two different objects have been sharing one symbol
+in this programme's working notes.** Write **C** for the claim component and **E** for the physical
+component. Then:
+
+- **λ = C/E** is **dimensionless** — a ratio of the claim measure to the physical measure once both
+  are expressed in the same numeraire. This is the object §A.2.4 reports as a sawtooth, and it is the
+  one with dynamics.
+- **Λ = η·C/E** is **dimensional**, carrying units of currency per joule, where η is the numeraire
+  conversion. This is the object the standing dimensional objection is aimed at, and the object
+  §A.2.3 sweeps.
+
+Conflating them is easy and this paper has done it before. Everything below is explicit about which
+is meant.
+
+**The entailment argument, and its actual reach.** If P1 holds, wealth is a compound of two
+components measured in different units, so *some* relation between them exists in any unit of
+wealth. That much is entailed and it does useful work: it establishes that the framework is not
+smuggling in an extra object, and that asking "why did you introduce a coupling?" mistakes a
+consequence for a choice.
+
+**It does not, however, entail that the relation is a scalar**, and the standing objection is aimed
+at the scalar. The relation could be state-dependent, non-stationary, set-valued, or not a function
+at all — and P1's own wording, *obeying different laws*, is if anything a reason to expect that no
+single constant suffices. So the honest version of this leg is narrower than the version this
+programme has previously stated: **the existence of a coupling is entailed; its representability as
+a scalar is an additional modelling assumption, and it is one this paper makes and does not
+prove.** What follows in §A.2.3 is a demonstration that no conclusion here depends on the scalar's
+*value*, which is a different and weaker guarantee than showing the scalar is the right object —
+and the difference is exactly the kind of thing §6.2 will show this programme has previously
+glossed over at its cost.
+
+λ is not stable, and §A.2.4 shows what shape its instability takes.
+
+### A.2.2 · Λ⁻¹ is an indicator the United Nations already publishes
+
+Energy intensity of output — the World Bank series *Energy intensity level of primary energy*
+(`EG.EGY.PRIM.PP.KD`, MJ per unit of PPP GDP) — is formally **SDG indicator 7.3.1**, co-tracked by
+the International Energy Agency, with global coverage and a long time series.
+
+That series has **the dimensions of Λ⁻¹**, and the claim made here is exactly that and nothing
+more. It is emphatically **not** that SDG 7.3.1 measures Λ⁻¹. The two differ in a way this paper is
+obliged to name, since naming it is the discipline §6.2 arrives at the hard way: **Λ is a ratio of
+two stocks** (a claim stock in currency over a physical stock in joules), while **SDG 7.3.1 is a
+ratio of two flows** (annual primary energy over annual PPP output). Two quantities can share
+dimensions and remain different quantities, and a paper that lost a pre-registered test to precisely
+that error is in no position to commit it a second time in its own defence.
+
+What survives the qualification is narrow and is still worth stating: **currency-per-energy is not
+an exotic dimension and not this author's coinage.** An institution with no stake in this framework
+tracks a quantity of that dimension against a global target, which places the construction outside
+the position that proved fatal to Odum's emergy programme — transformity coefficients derived from
+the accounting system that consumed them, and therefore unmeasurable from outside it. That is a
+claim about *availability in principle*, not about measurement in fact.
+
+**And it is a weaker leg than §A.2.3, which should be said plainly rather than left to a referee.**
+If, as §A.2.3 demonstrates, no conclusion in this paper depends on the coupling's value, then
+anchoring that value to a published statistic cannot be load-bearing for any result here. The two
+legs answer different objections — §A.2.3 answers *"your findings are an artefact of a number you
+made up"*, and this section answers *"the dimension you are working in is invented"* — and only the
+first is doing work for the results. A reader who finds this section unconvincing loses nothing
+downstream.
+
+### A.2.3 · The numeraire cancels — measured, not argued
+
+The dimensional objection can be answered by algebra, and algebra is exactly what a sceptical
+reviewer declines to take on trust. So the two-layer system of §2 is **dressed in units** — the
+physical layer in joules at scale E₀, the claim layer in currency, the coupling η between them —
+and the invariance is measured on the dressed system.
+
+Sweeping η across twelve orders of magnitude, from 10⁻⁶ to 10⁺⁶ currency units per joule, at
+**φ = 0.3, recognition mechanism live, 400 periods** (the diagnostics below are the same statistics
+§3.2 reports, under **this paper's names**; the module and `scripts/wt002_lambda_report.py` call them
+`variance_suppression`, `variance_concentration` and `n_crises`):
+
+| diagnostic | value at every η | spread across the sweep |
+|---|---|---|
+| recognition lag | 22 | **0.0** |
+| inter-event smoothing | 0.6097 | **0.0** |
+| share of reported movement inside recognition events | 0.9199 | **0.0** |
+| recognition events | 16 | **0.0** |
+| relative event magnitude | 0.20138 | **0.0** |
+| mean / min / terminal coupling ratio | — | **0.0** |
+
+Not "within tolerance." **Bit-identical**, because the coupling never enters the recursion; it is
+dressing applied afterwards.
+
+That result alone would be worthless, and it is important to say why: it is trivially easy to
+build a module in which nothing depends on a parameter *because the parameter is never used*. So
+the positive half is what makes this a test rather than a tautology. The dimensional quantities
+**do** move, and they move exactly as a unit conversion must:
+
+| quantity | at η = 10⁻⁶ | at η = 10⁺⁶ | log-log slope |
+|---|---|---|---|
+| deferred information (currency) | 6.323144 × 10⁶ | 6.323144 × 10¹⁸ | **1.000000000000** |
+| terminal Λ | 1.0 × 10⁻⁶ | 1.0 × 10⁺⁶ | **1.000000000000** |
+
+η is used, the currency figures track it linearly to twelve decimal places, and no conclusion moves
+at all. Both directions are mutation-tested: leaking η into the dynamics fails four tests, and
+removing the scaling fails two.
+
+**Scaling collapse.** Two systems differing in energy scale (1 J against 6.02 × 10²³ J) *and* in
+coupling (10⁻⁶ against 42) lie on a single dimensionless curve — every diagnostic identical, pairwise
+difference **exactly 0**, at φ = 0.3 over 300 periods. (The shorter horizon is inherited from the
+verifier this figure comes from and is stated because it changes the values: at 300 periods the
+system has had 12 recognition events rather than 16, and inter-event smoothing reads 0.6100 rather than
+0.6097. The *collapse* is horizon-independent; the numbers collapsed onto are not.)
+
+The sentence this licenses, and the paper will not need to say it twice: *the conversion
+coefficient is a numeraire; every result reported here is invariant to it across twelve orders of
+magnitude, while every currency-denominated quantity scales with it exactly linearly.*
+
+### A.2.4 · Λ is not a constant that wobbles; it is a sawtooth
+
+A freely-varying Λ that is never pinned would forbid nothing, and a quantity that forbids nothing
+is the free parameter this programme has refused five times in other costumes. So the claim is not
+that Λ *varies*. It is that Λ varies **in a specific parameterised shape**, and the shape is a
+prediction.
+
+At φ = 0.3 over 400 periods, with the recognition mechanism live:
+
+| | value |
+|---|---|
+| mean Λ | 1.136838 |
+| minimum Λ | 1.000000 |
+| maximum Λ | 1.245384 |
+| recognition events | 16 |
+| Λ = 1 exactly at every recognition event | **yes, all 16** |
+
+**Λ equals its physical value only at the instants the claim layer snaps to the physical one, and
+overstates it by ~14% on average in between.** Floor pinned at unity by construction of the
+recognition event; ceiling set by observability; mean determined by φ. That is a shaped variable, not a
+free one — and it is the picture of the assertion that Λ's drift *is* the accumulated deferred
+information.
 
 ---
 
