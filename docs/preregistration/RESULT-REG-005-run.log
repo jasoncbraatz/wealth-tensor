@@ -1,0 +1,126 @@
+======================================================================================
+WT-091 · REG-005 · is the recognition lag's SHAPE identified from a reported series?
+======================================================================================
+  k_hat = 1.21  q_hat = 0.921342409  alpha_hat = 0.4077/yr (event dates)
+  metric: relative-per-point RMS (REG-005 §4).  N = 40 quarters.
+  64 deterministic starts per mimic fit (REG-005 §3 Q4.1).
+
+§2 · FALSIFIERS ON THE CONSTRUCTION
+--------------------------------------------------------------------------------------
+  F1 · convolution vs §4.2's closed form at k = 1: worst relative deviation 1.897e-15
+       (at (10.0, 0.2, 0.02))
+  SEVERE     F1 · the general convolution nests §4.2's published closed form at k = 1
+  F4 · the T >= 1 conditioning absorbed into phi: worst deviation 4.796e-16
+       -> REG-003's T = 0 erratum, which bit REG-004 twice, CANNOT bite here
+  SEVERE     F4 · conditioning on T >= 1 is exactly a phi reparameterisation
+  F2 · generated (a=0.120, d=0.0260, p=0.60) -> eps 5.72e-08, nearest-of-mirror-pair param distance 1.32e-06
+  F2 · generated (a=0.300, d=0.0127, p=0.30) -> eps 2.00e-08, nearest-of-mirror-pair param distance 6.85e-07
+  F2 · generated (a=0.060, d=0.0543, p=0.80) -> eps 6.64e-07, nearest-of-mirror-pair param distance 5.15e-04
+  SEVERE     F2 · the mimic search finds the answer when a constant-hazard answer exists
+
+§5 · LADDER I · is the shape visible in a NOISELESS series?
+--------------------------------------------------------------------------------------
+    life  delta/yr   phi |  eps admissible  eps free-phi | alpha_ser/yr  phi_mimic    canyon
+      3y    0.3333  0.20 |       4.085e-03     4.085e-03 |       0.3870     0.1666  1.48e-05
+      3y    0.3333  0.40 |       3.390e-03     3.390e-03 |       0.3982     0.3494  2.66e-02
+      3y    0.3333  0.60 |       2.553e-03     2.553e-03 |       0.4101     0.4665  8.03e-02
+      3y    0.3333  0.80 |       1.476e-03     1.476e-03 |       0.4197     0.6048  8.45e-05
+      5y    0.2000  0.20 |       1.831e-03     1.831e-03 |       0.4355     0.0851  1.18e-01
+      5y    0.2000  0.40 |       1.451e-03     1.451e-03 |       0.4364     0.1649  2.32e-01
+      5y    0.2000  0.60 |       1.026e-03     1.026e-03 |       0.4374     0.5940  3.50e-01
+      5y    0.2000  0.80 |       5.472e-04     5.472e-04 |       0.4385     0.3236  4.71e-01
+     10y    0.1000  0.20 |       7.356e-04     7.356e-04 |       0.4383     0.2115  1.70e-01
+     10y    0.1000  0.40 |       5.657e-04     5.657e-04 |       0.4386     0.4060  3.27e-01
+     10y    0.1000  0.60 |       3.870e-04     3.870e-04 |       0.4390     0.1173  4.85e-01
+     10y    0.1000  0.80 |       1.987e-04     1.987e-04 |       0.4393     0.1551  7.41e-06
+     20y    0.0500  0.20 |       3.308e-04     3.308e-04 |       0.4383     0.0206  1.94e-01
+     20y    0.0500  0.40 |       2.511e-04     2.511e-04 |       0.4385     0.4092  3.70e-01
+     20y    0.0500  0.60 |       1.694e-04     1.694e-04 |       0.4386     0.6048  7.54e-06
+     20y    0.0500  0.80 |       8.576e-05     8.576e-05 |       0.4388     0.0762  0.00e+00
+     40y    0.0250  0.20 |       1.570e-04     1.570e-04 |       0.4381     0.2161  2.06e-01
+     40y    0.0250  0.40 |       1.184e-04     1.184e-04 |       0.4382     0.4105  0.00e+00
+     40y    0.0250  0.60 |       7.943e-05     7.943e-05 |       0.4383     0.6060  5.77e-01
+     40y    0.0250  0.80 |       3.995e-05     3.995e-05 |       0.4384     0.8024  0.00e+00
+
+  worst eps over the disclosed rectangle: 4.085e-03 at 3-year life, phi = 0.2
+  -> LADDER I = I3   (predicted I2)
+  SEVERE     Q4.4 · no mimic fit is an underflowed optimiser (best == worst start)
+  the admissible box binds at 0 of 20 settings (worst free-phi eps 4.085e-03)
+  SEVERE     Q3.1 · the admissible and free-phi optima are both reported and compared
+  REG-005 §3 Q2 · visible cells 0, invisible 20 -> share WITHHELD (one side empty)
+  DEFN       Q2 · a share over the rectangle is reported only if BOTH sides are non-empty
+
+§5 · LADDER P · where does the best-fitting constant hazard SIT?
+--------------------------------------------------------------------------------------
+  alpha_eff reproduces RESULT-REG-004 §5's published curve to 4.4e-05 at all five lives
+  (the AS-FITTED curve, which drops the T >= 1 conditioning, would sit 6.4% high -- the erratum's third visit)
+  SEVERE     P · alpha_eff is the T >= 1 curve the manuscript prints, not the as-fitted one
+    life alpha_ser/yr alpha_eff/yr  as-fitted alpha_hat/yr |  ser vs hat  ser vs eff
+      3y       0.4037       0.4758     0.4868       0.4077 |      0.97%     15.14%
+      5y       0.4370       0.4538     0.4723       0.4077 |      7.18%      3.72%
+     10y       0.4388       0.4431     0.4669       0.4077 |      7.63%      0.96%
+     20y       0.4385       0.4388     0.4652       0.4077 |      7.57%      0.05%
+     40y       0.4383       0.4368     0.4646       0.4077 |      7.50%      0.33%
+
+  worst departure from alpha_hat 7.63%, from alpha_eff 15.14%
+  -> LADDER P = P3   (predicted P3)
+  SEVERE     P · alpha_eff is a curve and not a constant, so 'ser vs eff' is per-delta
+
+§5 · LADDER W · how wide is the k-interval a series cannot resolve?
+--------------------------------------------------------------------------------------
+  sigma =   1e-06 -> k in [1.21, 1.21]  width 0.0000  =     0.00 x REG-003's 0.150
+  sigma =   1e-04 -> k in [1.1600000000000001, 1.26]  width 0.1000  =     0.67 x REG-003's 0.150
+  sigma =   1e-03 -> k in [0.6, 1.87]  width 1.2700  =     8.47 x REG-003's 0.150
+  sigma =   1e-02 -> k in [0.6, 2.0]  width 1.4000  =     9.33 x REG-003's 0.150
+
+  -> LADDER W = W2   W = 8.47   (predicted W4)
+  the search's own floor, at k = 1.21 (the truth): 2.691e-08 -- 37x below the finest sigma reported
+  the profile at k = 1.00 (the constant hazard): 3.870e-04 = the precision a series must carry to reject a constant hazard at all
+  SEVERE     W · the search floor at k_hat is far below every sigma reported, so I(sigma) is non-empty at each and its WIDTH is the content, not its emptiness
+  CENSORED at the registered sweep boundary for sigma in [0.001, 0.01]: the reported width is a LOWER bound there.
+  ROBUSTNESS (unregistered, cannot change a verdict): on k in [0.20, 3.00] the sigma = 1e-3 interval is [0.50, 1.86], width 1.360 = 9.07 x -- ladder W is unchanged.
+  I(1e-3) reaches k = 0.60 < 1 — a DECREASING hazard, which by §4.9 admits
+     no steady-state deferral measure at any positive decay rate. A series good to one part
+     in a thousand cannot separate the well-posed model from one with no steady state.
+  SEVERE     W · the sub-unit shapes inside I(1e-3) are genuinely fitted, not grid edge
+
+§5 · LADDER S · a sample-size problem, or an identification problem?
+--------------------------------------------------------------------------------------
+  N =   20 quarters -> k in [0.6, 2.0]  width 1.4000
+  N =   40 quarters -> k in [0.6, 1.8599999999999999]  width 1.2600
+  N =   80 quarters -> k in [0.84, 1.8199999999999998]  width 0.9800
+  N =  400 quarters -> k in [0.6799999999999999, 2.0]  width 1.3200
+
+  width at N=20 / width at N=400 = 1.061, against sqrt(20) = 4.472 for the N^-1/2 rate
+  NOT monotone in N. The narrowest interval is at N = 80 quarters (0.980); a longer
+     window is WORSE. The shape lives in the transient, and once the gap reaches its steady
+     state every further quarter repeats one number, which an average over t dilutes.
+  -> LADDER S = S3   (predicted S3)
+  SEVERE     S · the metric admits improvement with N (the norm-relative one would not)
+
+§5 · LADDER N · what noise buries it?
+--------------------------------------------------------------------------------------
+  sigma =   1e-04 -> median k_hat 1.210  IQR 0.0122  boundary pile-up 0.0%
+  sigma =   1e-03 -> median k_hat 1.211  IQR 0.1251  boundary pile-up 0.0%
+  sigma =   1e-02 -> median k_hat 1.153  IQR 1.1887  boundary pile-up 34.0%
+
+  -> LADDER N = N1   (read at sigma = 1e-3)
+
+§2 · F3 · THE WITNESS — a world the geometric must NOT be able to fit
+--------------------------------------------------------------------------------------
+  k = 0.5 (decreasing hazard, no steady state at any positive delta per §4.9)
+  best admissible constant-hazard mimic: eps = 5.431e-03
+  at the SAME life and phi, the measured shape gives 3.870e-04 -- a separation of 14.0 x
+  (against ladder I's worst cell, 4.085e-03, the ratio is 1.3x -- a different life and a different phi, so that comparison is reported and not read)
+  SEVERE     F3 · the metric is not blind: a k = 0.5 world is NOT mimicked below I2
+
+======================================================================================
+  LADDERS · I = I3 · P = P3 · W = W2 · S = S3 · N = N1
+======================================================================================
+
+
+------------------------------------------------------------------------------
+SEVERITY: 11 severe · 1 definitional · 0 failed/vacuous
+  definitional — Q2 · a share over the rectangle is reported only if BOTH sides are non-empty
+      because: this check pins the guard's own wiring rather than a quantity: it asserts that the reporting decision equals the non-emptiness test, and there is no admissible world in which the guard may report on an empty side
+------------------------------------------------------------------------------

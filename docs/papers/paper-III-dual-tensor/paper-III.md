@@ -1012,7 +1012,7 @@ from its own constant-hazard match in the reported series — four orders of mag
 exactly as far from that match's mirror, which is forced rather than discovered, since the two
 constant-hazard worlds are an exact mirror pair to begin with. **§4.2's degeneracy is not repaired
 by age-dependence.** Whether the shape parameter itself is recoverable from a reported series is a
-different question and is open.
+different question, and §4.10 measures it.
 
 **The mathematics is old here too, and the accounting instance is what is new.** That a stationary
 stock equals arrival rate times *mean* delay, whatever the delay's shape, is Little's law
@@ -1029,6 +1029,126 @@ coefficient. In none of it is the recognition lag's **shape** estimated rather t
 estimates it, and this section is what the estimate costs the model that motivated it: less than
 one per cent where the paper's own ladder sits, forty-four per cent at a disclosed three-year life,
 and one domain restriction that was never a fact about disclosure.
+
+### 4.10 · The shape is identified, and the price of admission is four significant figures
+
+§4.2 proves an impossibility by counting. A reported series is a sum of two geometrics, so it holds
+four numbers — two roots and two amplitudes — against five parameters, and the shortfall lands on φ.
+That count was taken under a constant recognition hazard. §4.9 replaced the constant hazard with an
+arbitrary lag distribution, which is not one more parameter but an **infinite-dimensional** object,
+so the count has to be taken again: does the extra structure leave a trace in the series, or does a
+constant-hazard world reproduce an age-dependent one exactly?
+
+**It leaves a trace, and the trace has a size.** REG-005 registered the question, four falsifiers and
+five ladders before `wt091` existed. The measurement is made in §4.2's *favourable* setting — the
+books open square and the physical scale is granted, which is precisely what §4.2 says a firm-level
+series does not supply — so a null result would have held a fortiori and a positive one carries the
+condition that the asset is followed from acquisition.
+
+**The best constant-hazard world reproduces the measured world's reported series to 3.9 × 10⁻⁴ per
+quarter** over ten years at a ten-year life, rising to **4.1 × 10⁻³** at a three-year one, with the
+best mimic an admissible firm at every rate and every φ swept rather than a fit escaping into
+inadmissible parameters. That number is the whole answer in one figure: **it is the precision a
+reported series must carry to reject the constant hazard at all.** Coarser than that and the two
+worlds are the same series.
+
+The same statement made from the other side is the set of shapes a series of given precision cannot
+separate from the measured one, fitting the remaining three parameters freely at each shape:
+
+| precision of the reported series | shapes it cannot separate from k̂ = 1.21 | width | against §5.4's 0.150 |
+|---|---|---|---|
+| 10⁻⁶ per quarter | 1.21 alone | 0.00 | — |
+| **10⁻⁴** | **[1.16, 1.26]** | **0.100** | **0.67 ×** |
+| 10⁻³ | [0.60, 1.87] | 1.27 | 8.5 × |
+| 10⁻² | the whole range swept | ≥ 1.40 | ≥ 9.3 × |
+
+*(The lower two rows run into the boundary of the pre-registered sweep, so their widths are lower
+bounds; on a sweep extended to [0.2, 3.0] the 10⁻³ interval is [0.50, 1.86] and the reading is
+unchanged. The search's own floor at the true shape is 2.7 × 10⁻⁸, thirty-seven times below the
+finest tolerance reported, so the top row measures the model and not the optimiser.)*
+
+**At one part in ten thousand the reported series is a better instrument for the shape than the event
+dates are** — an interval of 0.100 against §5.4's 0.150 from hand-collected impairment lags. At one
+part in a thousand it is an order of magnitude worse. The identification is real and it is
+expensive.
+
+**And what lies inside the interval matters more than how wide it is.** At one part in a thousand the
+set reaches **k = 0.50**, below one, a *decreasing* hazard — and §4.9's tail condition says a
+decreasing-hazard lag admits no steady-state deferral measure at any positive decay rate, because its
+generating function diverges inside the disc the transform is evaluated on. A series matched to a
+tenth of a per cent per quarter **cannot separate the world in which this model is well-posed from
+one in which it has no steady state at all.** That is a sharper limit than any width, and it is the
+sense in which [1.135, 1.285] was doing structural work rather than rejecting a null.
+
+**The identified set and the estimator answer different questions, and both were registered.** The
+widths above are deterministic and worst-case: every shape that *could* have produced the series.
+Fitting the shape to a series carrying independent noise at the same level — 200 draws, seed
+recorded — recovers k̂ with a median of **1.211** and an interquartile range of **0.125**, narrower
+than the event-date interval. The two are not in tension. Forty observations average independent
+noise down by a factor of six, and the estimator sees the identified set at the resulting effective
+tolerance rather than at the raw one. At one part in a hundred it breaks: the interquartile range is
+1.19 and a third of the draws pile on the boundary of the swept range, which is reported as a
+fraction rather than as the quantiles of a censored distribution.
+
+**A longer series does not help, and the reason is where the information sits.** The interval is not
+monotone in the observation window: 1.40 over five years, 1.26 over ten, **0.98 over twenty**, and
+1.32 over a hundred. The narrowest window is twenty years and a longer one is *worse*. Once the gap
+reaches its steady state each further quarter repeats a single number — the deferral measure itself —
+so extending the window adds redundancy to a mean and dilutes the transient that carries the shape.
+This is an identification property rather than a sample-size one, which is the general result for any
+finite-dimensional approximation to a lag space: the approximating families are meagre in it and
+their approximation error "cannot, in other words, be made asymptotically negligible" (Sims, 1971,
+§5), a statement he makes of exactly the rational lag distributions of which a constant hazard is the
+lowest-order member (Jorgenson, 1966).
+
+**Three recognition rates now live in this paper and they are three different quantities.**
+
+| disclosed life | δ per year | α̂, the event dates | α_ser, the series | α_eff, the deferral measure |
+|---|---|---|---|---|
+| 40 years | 0.025 | 0.408 | 0.4383 | 0.4368 |
+| 20 years | 0.050 | 0.408 | 0.4385 | 0.4388 |
+| 10 years | 0.100 | 0.408 | 0.4388 | 0.4431 |
+| 5 years | 0.200 | 0.408 | 0.4370 | 0.4538 |
+| 3 years | 0.333 | 0.408 | 0.4037 | 0.4758 |
+
+The series-matching constant is nearly flat across the rectangle at 0.438 per year, which is the
+**reciprocal mean lag** 1/**E**[T] = 0.435 to within a per cent; α_eff rises with the decay rate
+because the transform weights the tail; and α̂ is the geometric maximum-likelihood summary of the
+same sample. They agree to **five parts in ten thousand** at a twenty-year life and part company at
+a three-year one, where they differ by **15%** and move in opposite directions from α̂. Least squares
+on the series matches the mean, the transform matches the tail, and the likelihood matches the event
+dates: three functionals of one distribution, with no obligation to coincide. §4.9 says a single
+effective rate misstates one end of the disclosed rectangle; the series adds that a single
+*recognition rate* does not name one quantity.
+
+**§4.2's exchange survives into all of this, and it is forced rather than discovered.** The mimic
+search returns the mirror pair (α, δ, φ) and (δ, α, φδ/α) at an identical objective, which it must,
+since the theorem makes the two worlds one series and any third series is equidistant from both by
+construction. What the mirror costs is the mimic's own parameters: at a forty-year life the set of
+worlds fitting within one part in a million of the best spans **0.128 in each root and 0.577 in φ**.
+**The best-fitting constant hazard is not a world. It is a pair, and φ inside it is as free as §4.2
+says it is.**
+
+**So §4.9's open question closes with a number rather than a verdict.** The shape correction of §4.9
+is recoverable from a reported series, at a precision of one part in ten thousand per quarter that
+audited financial statements do not carry for the relevant quantity — which is why §5.4 dated
+impairments rather than fitting a series, and why the correction travels with the lag distribution
+rather than with the filings. §4.2's count is not made worse by age-dependence. The
+infinite-dimensional lag does not disappear into the four numbers; it leaves a residue, and the
+residue is measurable by anyone who can read a balance sheet to four significant figures.
+
+**Two predictions registered in advance were wrong, in the same direction.** REG-005 predicted the
+shape would be invisible below one part in a thousand and that the shape interval would be a hundred
+times the event-date interval, reasoning from the density of rational lag distributions in lag space
+and from the classical ill-conditioning of exponential sums, where a three-term signal is reproduced
+by two terms to a few parts in ten thousand with rates bearing no relation to the truth (Lanczos,
+1956, as quantified by Varah, 1982). The measured residue is four times larger than that reading
+allows and the interval is nine times, not a hundred. Approximation theory describes what a family
+can do in the limit; this is one distribution over one horizon, and it leaves more behind than the
+general argument suggests. The literature's positive identification results do not close the gap
+either, since recovering hazard shape there is bought with a covariate that varies, a proportionality
+restriction and a moment condition (Elbers and Ridder, 1982) — and a single reported series supplies
+none of the three, which is why the answer here had to be measured rather than cited.
 
 ---
 
@@ -1412,6 +1532,10 @@ with what would have killed each.
 | **Recognition frequency is driven by δ** | sweep at fixed φ | δ having no effect on event counts | 0 → 16 → 100 events |
 | **The tier instrument has no baked-in ordering** | label permutation | a non-null under randomised labels | z-mean **+0.007**, sd 1.025 |
 | **The registered design had power** | power analysis, to be reported whatever the outcome | power too low to interpret a null | **0.95–1.00**, with three stated qualifications making it an upper bound |
+| **The lag's shape leaves a trace in the reported series** | best admissible constant-hazard mimic, five disclosed lives x four φ | a mimic reproducing the measured shape to machine precision — the shape would not be identified at any precision | residue **3.9 × 10⁻⁴** per quarter at a ten-year life, **4.1 × 10⁻³** at a three-year one |
+| **The T = 0 mass is invisible in the reported series** | conditioning on T ≥ 1 against a compensating φ, five lives x three φ | any series moving after the substitution | held to **5 × 10⁻¹⁶** — and the same conditioning moves α_eff by **6%** |
+| **A decreasing-hazard lag is NOT mimicked by a constant one** | k = 0.5 witness at matched δ and φ | the metric fitting a world with no steady state as easily as the measured one | **5.4 × 10⁻³**, a **14×** separation |
+| **Three recognition rates are three quantities** | series match vs. deferral match vs. event-date MLE across the disclosed rectangle | the three agreeing everywhere, making the distinction empty | agree to **7 × 10⁻⁴** at twenty years, **15%** apart at three |
 | **The framework's guards can fail** | audit of the guards themselves | a guard that could not fail passing silently | **six found and retired**, before publication, recorded in `METHOD-001` |
 
 Two rows deserve a comment.
@@ -2178,6 +2302,15 @@ volatility result nineteen years earlier.)*
 Bushman, R. M., & Williams, C. D. (2015). Delayed expected loss recognition and the risk profile of
 banks. *Journal of Accounting Research*, 53(3), 511–553. ✓
 
+Elbers, C., & Ridder, G. (1982). True and spurious duration dependence: the identifiability of the
+proportional hazard model. *The Review of Economic Studies*, 49(3), 403–409. ✓ *(§4.10 cites it
+for what identification of a hazard's shape costs elsewhere in the literature: a regressor with
+variation, a proportionality restriction and a moment condition on the mixing distribution. **The
+text was not consulted.** The bibliographic record is verified; the characterisation is taken from
+two independent secondary sources that state it identically, and the entry claims nothing beyond
+it. The point §4.10 draws is that a single reported series supplies none of the three, which is
+why that section measures rather than cites.)*
+
 Fama, E. F. (1970). Efficient capital markets: a review of theory and empirical work. *Journal of
 Finance*, 25(2), 383–417. ✓
 
@@ -2240,6 +2373,21 @@ existence and length of the delay, which it establishes, and not for its shape, 
 model. The page range is the publisher's landing-page range and was not checked against the typeset
 issue.)*
 
+Jorgenson, D. W. (1966). Rational distributed lag functions. *Econometrica*, 34(1), 135–149. ✓
+*(§4.10 cites it for the density result — that an arbitrary distributed lag may be approximated to
+any desired accuracy by a rational lag function, of which a constant hazard is the lowest-order
+member — which is the reason REG-005 predicted the shape would be invisible. Verified at abstract
+level against the Econometric Society's own record, from which the approximation claim is taken
+verbatim; the body was not read and nothing else is attributed to it.)*
+
+Lanczos, C. (1956). *Applied Analysis*. Englewood Cliffs, NJ: Prentice-Hall. *(§4.10 cites the
+exponential-decomposition example at pp. 272–280 for the classical ill-conditioning of
+exponential-sum fitting. **Not read**, and the entry carries no verification mark for that reason:
+every copy located was lending-restricted and no full text was obtained. The page range is from the
+NIST Statistical Reference Datasets documentation of the same example, and everything §4.10 draws
+from it is drawn through Varah (1982), which quotes it with page citations. Nothing here rests on
+it alone.)*
+
 Little, J. D. C. (1961). A proof for the queuing formula: L = λW. *Operations Research*, 9(3),
 383–387. ✓ *(§4.9 cites it for the distribution-free stationary identity — average number in system
 equals arrival rate times average time in system — and, more to the point, for what that identity
@@ -2297,6 +2445,25 @@ Ryan, S. G. (2006). Identifying conditional conservatism. *European Accounting R
 characterisation holds and is now supported by the body rather than the abstract: the word
 "econometric" does not occur in the article, and "identify" and its cognates are used throughout in
 the empirical sense of detecting conservatism in data. Nothing is quoted.)*
+
+Sims, C. A. (1971). Distributed lag estimation when the parameter space is explicitly
+infinite-dimensional. *The Annals of Mathematical Statistics*, 42(5), 1622–1636. ✓ *(§4.10 cites it
+for the conclusion that finite-dimensional approximations to a lag space are meagre in it and that
+their approximation error "cannot, in other words, be made asymptotically negligible" — quoted
+from §5, p. 1634 — and for his naming of "the finite-dimensional parameter spaces of rational lag
+distributions (see Jorgenson (1966))" as exactly the approximating class the result covers, p. 1628.
+The text consulted is an optically-recognised scan rather than the typeset original; the volume,
+issue and page range are confirmed against the journal's own table of contents. **The journal is the
+*Annals of Mathematical Statistics*, not *Econometrica*, and the title word is "explicitly", not
+"essentially" — this entry is commonly miscited on both counts.**)*
+
+Varah, J. M. (1982). *On fitting exponentials by nonlinear least squares.* Technical Report TR-82-02,
+Department of Computer Science, University of British Columbia. ✓ *(§4.10 cites it for the
+quantified form of Lanczos's example, and it is the route by which Lanczos is cited at all. **Read
+in full.** It attributes the observation to "Lanczos (1956, pg. 279)" and locates the data at p. 273,
+and reports the Hessian's smallest eigenvalue falling by roughly three orders of magnitude per
+additional exponential term. A later journal version is believed to exist and was **not** verified,
+so the technical report is what is cited and what was read.)*
 
 Nerlove, M. (1958). *The Dynamics of Supply: Estimation of Farmers' Response to Price.* Baltimore:
 Johns Hopkins Press. ⧗ *(Cited in §4.2 for the combined adaptive-expectations/partial-adjustment
