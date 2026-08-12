@@ -2,7 +2,7 @@
 project: wealth-tensor
 gh_sha: 9baeb2e0a7d3944d10a67c222161bb087a5fcf1c
 updated: 2026-08-12
-session: wealthTensor-11
+session: wealthTensor-12
 gate_passed: true
 gate_version: "2.50"
 ---
@@ -788,3 +788,215 @@ writing. Don't wait for the go, and ask for a ruling when you need one.
 
 *The pyramids took twenty years each and never once filed a maintenance ticket. This paper found its
 own headline wrong, in public, on a Wednesday, and wrote the row into the ledger.* ⚒️
+
+---
+---
+
+# ⚒️ wealthTensor-13 — READ THIS SECTION FIRST, IT SUPERSEDES EVERYTHING ABOVE
+
+*Written at the end of `wealthTensor-12`. The at-bat was §4 in a co-author's hand plus the priority
+search. Both landed, and the search changed what §4 had to say.*
+
+## 0 · THE CONSTITUTION, AND THE CLAUSE THAT KEEPS IT ONE
+
+```
+/tmp/dx 'cat ~/repos/wealth-tensor/docs/CO-AUTHOR-CHARTER.md'          # ← the constitution
+```
+
+Read it at ORIENT, after `HANDOFF.md`, before touching anything.
+
+> **PRECEDENCE.** The WT rules in this handoff are the session distillation of
+> `CO-AUTHOR-CHARTER.md`. If this handoff and the charter ever disagree, **THE CHARTER WINS** — and
+> fixing the handoff is a blocker, not a footnote.
+
+**Do not rewrite, summarise or "improve" the charter inside a handoff.** Charter changes happen in
+the charter file, as a commit, with Jason's eyes on the diff.
+
+## 1 · WHAT HAPPENED — THE THEOREM GOT ITS PROOF, AND THEN GOT BIGGER
+
+`scripts/wt084_identification_closed_form.py` — **8 severe, 0 vacuous**, and it ran *before* a word
+of prose (WT-080).
+
+**The proof the paper had been promising and never gave.** §4's preamble advertised "a one-line
+proof" and then offered a floating-point comparison. There is a real one, and it is four lines. With
+the books opening square the recursion solves as
+
+> **C(t) = E₀ · [ δ(1−φ)Aᵗ − (α − φδ)Dᵗ ] / (δ − α)**,  A = 1−α, D = 1−δ
+
+Exchange the roots. The Aᵗ coefficient requires δ(1−φ) = δ − φ′α. The Dᵗ coefficient requires
+α − φδ = α(1−φ′). **Both reduce to φ′α = φδ.** Two equations, one unknown, and they agree — the
+system is overdetermined and consistent, which is *why* the equivalence is exact rather than
+approximate. An identification theorem whose only warrant was 7 × 10⁻¹⁴ now has an argument a
+referee can check without a laptop.
+
+**A disagreement worth the session's price.** Two independent readings of the same exchange produced
+two different conserved quantities, φδ and (1−φ)δ. **Both are right.** One holds the *reported*
+series fixed; the other holds the latent *gap* fixed — and only one of those is filed with anybody.
+E3 separates them by a factor of **4 × 10¹⁴**. The paper says φδ and the paper is correct; the near
+miss is banked as a global lesson, because the disagreement is invisible in the algebra and decisive
+on the page.
+
+**E7 IS THE RESULT, AND IT IS BIGGER THAN THE ONE WE WENT LOOKING FOR.** Count the observables. A
+two-root linear system emits four numbers: two roots and two amplitudes. The model has **five**
+parameters — α, δ, φ, the physical scale E₀, and any gap g₀ already open when observation starts.
+Five into four does not go, and the shortfall lands on φ.
+
+> Fix a series generated at φ = 0.60. Assume a physical scale of 0.76 and it implies φ = 0; assume
+> 1.27 and it implies φ = 1; every assumption between implies an intermediate φ, and **every one of
+> them regenerates the observed series to 2 × 10⁻¹⁶.** A factor of **1.67** in the unobserved
+> physical scale spans the entire unit interval of timeliness.
+
+The elegant two-point root swap everyone was admiring was the *small* degeneracy. And the condition
+under which the large one bites is the empirical norm, not an edge case: E₀ is pinned only when an
+asset is followed from acquisition. A firm-level series aggregates vintages, so the scale that would
+pin φ is exactly what a cross-sectional study does not have.
+
+**Also established:** an open initial gap does not rescue identification (shifted map, invariant
+(φ−g₀)δ = (φ′−g₀)α); the mirror worlds agree about the books to 8 × 10⁻¹⁶ and disagree about the
+*firm* by 4 × 10⁻⁶ at t = 400 — same filings, different company; and **R changes sign** under the
+mirror, +0.267 → −1.267, which is fatal to §4.3's old claim that R is "anything a reader can compute
+from filings." R is built from E, and nobody reports E. That sentence is now narrowed.
+
+## 2 · THE SEARCH — THE MATHEMATICS IS OLD, AND CONCEDING IT MADE THE PAPER STRONGER
+
+*Item 2 on `-12`'s ranked list. Nobody had looked. It was the highest-risk unchecked claim in the
+corpus and it was right to be frightened of it.*
+
+**The accounting search came back empty, and correctly so.** No accounting paper states an exact
+non-identification result for a recognition-speed parameter. What exists is a decade of *statistical*
+critique of the Basu coefficient (Dietrich–Muller–Riedl on truncation; Patatoukas–Thomas on scale
+and higher moments; Badia et al. on return variance) — every one an **estimator** problem with an
+estimator's remedy. **A degeneracy is not a bias, and no control recovers a difference the series
+does not contain.** That distinction is now §4.6's spine and it is unoccupied ground.
+
+**The cross-disciplinary search is where the danger was.** The gap function is
+
+> G(t) = E₀ (1−φ) δ · S(t),  S(t) = (Aᵗ − Dᵗ)/(δ − α)
+
+and **S is the Bateman function** — Bateman (1910), radioactive decay chains. Its exchange symmetry
+has been textbook in pharmacokinetics since the 1970s under the name **flip-flop** (Garrett 1994,
+which explicitly calls the PK curve "the Bateman function"; Kuan, Wright & Duffull 2023 classify it
+as a failure of *global* rather than local identifiability — a finite solution set, which is exactly
+the two-point structure). The general unordered-pair result is Bellman & Åström (1970).
+
+**This would have been a one-line referee kill-shot.** It is now in the paper, at full volume, and
+it reads as authority rather than exposure. The novelty relocates honestly to the accounting
+instance, the cross-class corollary, and the consequence for conservatism measurement — which is
+where it was anyway.
+
+**Two free gifts from the concession, both now in §4.2/§4.7.** (i) The ambiguity bites only where a
+**free scale parameter** exists to absorb the rescaling, which is why it is a pharmacokinetics
+result and not a radiochemistry one — a decay chain's parent activity is measured independently. One
+line, and it tells you whether *any* setting is exposed. (ii) PK repairs flip-flop with an
+**intravenous reference dose** that pins the elimination root from outside the oral profile. §4.7's
+disclosed-useful-lives repair is the same move, and saying so gives it a fifty-year pedigree.
+
+**The literature has already met the confound and read it upside down.** Khan & Watts (2009) report
+longer investment cycles → higher measured conservatism, and read it as an economic determinant.
+Ball, Kothari & Nikolaev (2013) state that shorter asset maturity implies lower timely loss
+recognition, and read it as the measure behaving correctly. Under §4.4 those are the readings a δ
+channel produces whether or not any practice differs. §4.6 now says this, and says *it may well be
+both* — the claim is that the data cannot separate them.
+
+## 3 · THE PAPER — §4 IS REWRITTEN, WHOLE, AND STILL A STRAW MAN FOR YOUR HAND
+
+`docs/papers/paper-III-dual-tensor/paper-III.md`, **1,767 lines**. Prior version at
+`paper-III.md.bak-pre-s4rewrite`. **§4.1–4.8 numbering deliberately preserved** so the diff stays a
+two-window job (WT-079) — §4 now runs lines **279–645**.
+
+| § | what changed |
+|---|---|
+| 4.2 | closed form · **the proof** · the two-worlds reading · the Bateman/flip-flop concession · **the continuum** |
+| 4.3 | narrowed — φ⊙δ is what a series identifies; R is the model's measure, not an observable, and it changes sign |
+| 4.4 | unchanged. The two-column table is still the best object in the paper |
+| 4.5 | unchanged. The honesty pivot is still the best move in the paper |
+| 4.6 | **narrowed hardest** — degeneracy-vs-bias; the literature reading it upside down; and the open question named below |
+| 4.7 | the IV-reference-dose lineage, **and the weak joint named and bounded** |
+
+Also: abstract and contribution 1 updated; **four new survivals rows** in §7; **eight new
+references**, each carrying the read-status its evidence actually supports (all abstract-level —
+see item 4). Conduct narration in paper-III **10 → 6** against the committed baseline; the G-COACH-3
+ratchet moved the right way rather than being refreshed. **121 tests pass, gate PASS, tree clean and
+pushed.**
+
+**§4.6 IS WHERE THE PAPER IS STILL EXPOSED, AND IT NOW SAYS SO ITSELF.** The theorem is proved for
+the reported series *alone*. Basu, C_Score, Ball–Shivakumar and DELR all condition on **returns** —
+a second series, and a second series is exactly the kind of outside information §4.7 shows can pin
+a root. Whether returns break the equivalence or merely inherit it is **open**, it is stated in the
+paper as the sharpest question the result raises, and it is item 1 below. Naming it ourselves cost
+one sentence; letting a referee name it would have cost the section.
+
+## 4 · THE AT-BAT, RANKED
+
+1. **Does conditioning on returns break the equivalence?** The single highest-value open question in
+   the corpus, now named in §4.6 in print. Run it before anything else: extend the filter with a
+   market-value series, ask whether (C, R) jointly identify φ. **A negative answer strengthens §4.6
+   enormously; a positive one relocates the claim to §4.7's repair and is still a paper.** Either
+   way it is a result, and WT-080 says run it before writing it.
+2. **The free Road One paragraph, still unwritten.** `wt077`'s clamped `nan` prints unlevied
+   Var[log a] = 0.076542 against the stock levy's 0.076536 at matched budget — the stock levy moves
+   the log-multiplier's variance by 6 × 10⁻⁶, i.e. not at all, while the flow levy cuts it to
+   0.051189. Scale-versus-truncate in a number a `nan` hid for five sessions. **One paragraph in
+   Paper II.** It has now survived two handoffs unclaimed; it is free and it should stop being.
+3. **Read the eight new references at source.** All are marked at the read-status their evidence
+   supports (abstract/repository level), which `REFERENCE-POLICY.md` permits and which §4.2 and §4.6
+   now lean on. Priority order: **Kuan, Wright & Duffull 2023** (open access, PMC10014047 — the
+   global-vs-local identifiability sentence is load-bearing), **Garrett 1994**, **Ball, Kothari &
+   Nikolaev 2013** (MIT DSpace deposit is free), **Bellman & Åström 1970**, **Khan & Watts 2009**.
+4. **Two leads the search flagged and could not close — check before claiming priority.**
+   **Griliches (1967), "Distributed Lags: A Survey," *Econometrica* 35(1)** is the single most likely
+   place an economics precedent hides (adaptive expectations + partial adjustment produce a
+   two-root reduced form whose coefficients are the elementary symmetric functions — our object
+   exactly). And **Fisher & McGowan (1983), *AER* 73(1)** is the best rhetorical ancestor for §4.4:
+   a reported ratio confounding a reporting-rule parameter with asset life, one field over, forty
+   years earlier, and it detonated an IO literature. Cite as lineage, not competition — after
+   reading.
+5. **Ryan (1995) + erratum + Beaver & Ryan (2000)** — JPASS trial, `~/Desktop/downloads/DOWNLOAD-QUEUE.md`.
+   Run `scripts/provenance_check.py` on whatever lands. **Basu (1997) is closed everywhere — the
+   author-email route is the play.**
+6. **The off-diagonal paper**, on the record as Paper III's Limitation 9. Co-occurrence of
+   impairments across classes against an independence null: no observability proxy, no φ-to-GAAP
+   bridge, no new data — the 688 events already collected are enough. **Register before coding the
+   instrument (WT-052).**
+
+## 5 · WHAT NOT TO DO
+
+- **Do not restore the neat sentence.** *"PRE-001 was doomed by the φδ confound"* is false; `wt082`,
+  `wt083` and the survivals ledger all assert its negation. §4.5 survived this rewrite untouched
+  precisely to keep it dead.
+- **Do not re-claim the mathematics.** Bateman/flip-flop is conceded in §4.2 on purpose. A future
+  session that "strengthens" the paper by removing the concession is undoing the most valuable
+  thing `-12` did.
+- **Do not hand Jason a ranked list of problems as a deliverable.** WT-079.
+- **Do not run a pure-teardown pass.** WT-078. The brief includes the whitespace or it does not ship.
+- **Do not invoke Mayo, severity or error-statistical philosophy as a *warrant*.** Pragmatic
+  justification. The paper takes the practice and declines the philosophy, deliberately.
+- **Do not ask him to submit anything.** Nothing ships until the corpus is done.
+- **Never add a free parameter to absorb an objection.** Refused six times.
+
+## 6 · THREE THINGS THAT COST `-12` TIME — FIXED HERE SO THEY COST YOU NONE
+
+1. **Run the search and the writing IN PARALLEL, from minute one.** `-12`'s list ranked the search
+   second and it belonged first *concurrently* — two agents fanned out on prior art while the
+   algebra ran locally, and the search came back in time to change §4 rather than to patch it. If
+   the search had run after the rewrite, §4.2 would have been written twice.
+2. **`export LESSONS_CONTRIBUTOR=opus` before `lessons.py add`.** Without it a leaf can reach
+   `active` but never `trusted` via bless, because independence is unprovable. `-12` banked four
+   leaves before noticing the warning.
+3. **Never inline a multi-line commit message in a `dx '...'` argument.** One apostrophe — a
+   possessive like *§4.3's* — closes the outer quote, and **the corruption is silent in the way that
+   matters: `git commit` succeeds with a truncated message while the shell errors about the
+   leftovers.** Write the message to a file, `--put` it, `git commit -F`. Banked globally.
+
+Also worth knowing: the coach ratchet lives at `docs/.coach-baseline.json`; `handoff_gate.py --coach`
+exits 1 if `paper-III` conduct narration rises above it. **Adding a section means deleting narration
+elsewhere, not refreshing the baseline.** That is the charter's non-increasing rule with teeth, and
+it is a pleasant constraint to write under — it forces every new paragraph to buy its way in.
+
+## 7 · ORIENT-THEN-GO
+
+Emit one line — `Oriented: <state> · at-bat: <X> · opening with <first action>.` — then start
+writing. Don't wait for the go, and ask for a ruling when you need one.
+
+*A theorem that had been true for two sessions acquired a proof, an ancestor from 1910, and a
+larger sibling — all in one afternoon, and the larger sibling was found by counting to five.* ⚒️
