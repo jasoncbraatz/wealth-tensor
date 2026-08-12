@@ -174,6 +174,18 @@ stock**. The base is not a detail of implementation. It sets a ceiling, and the 
 coordinate that receives essentially all public attention — moves an economy only within the
 ceiling its base has already fixed.
 
+**The two bases do not merely differ in budget. They act on different objects.** Matched at
+κ ≈ 0.10, the two levies compress the cross-section unequally — Gini 0.222 against 0.125 — but the
+more telling comparison is what each does to the variance of the log multiplier, Var[log *a*]: the
+generator of the process rather than its outcome. Unlevied, Var[log *a*] = 0.076542. Under the
+**stock** levy at that budget it is **0.076536** — a change of six parts in a million, which is to
+say none at all. Under the **flow** levy it is **0.051189**, a third lower. A levy on stock rescales
+what a holder has and leaves the process that got them there exactly as it found it; a levy on flow
+reaches into the multiplicative term itself. The stock base truncates the outcome, the flow base
+damps the generator — and both register as a smaller Gini, which is why the distinction is invisible
+in the statistic normally reported. An outcome measure records that the distribution was compressed.
+It does not record whether the mechanism producing next period's distribution was touched.
+
 **A prediction that half-failed, reported as such.** The claim this section was built to test was
 stronger: that a levy on flow does not oppose the multiplicative term *regardless of rate*. That
 is **false as stated**, and the sweep is what falsified it. At full mark-to-market realisation a

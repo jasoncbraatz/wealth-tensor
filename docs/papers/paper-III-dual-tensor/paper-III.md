@@ -29,7 +29,11 @@ Timeliness and durability are therefore not separately identified from a reporte
 series cannot distinguish a prompt reporter of a durable asset from a slow reporter of a perishable
 one. **Where the asset's physical scale is not observed — every firm-level series, which aggregates
 vintages — the identified set is not two points but a continuum, and a factor of 1.67 in that
-unobserved scale spans the whole unit interval of timeliness.**
+unobserved scale spans the whole unit interval of timeliness.** A second series drawn from the
+asset repairs this — the returns the field's instruments already condition on suffice — but the
+repair is a rate and not a proof: its strength degrades as 1/σ in the asset's return volatility and
+never attains the root-T rate in sample length, because every term in the estimating equation decays
+with the asset itself.
 
 Indexing asset classes and writing the recursion with a Hadamard product, the corollary is
 cross-sectional: **classes are ordered by (1 − φ) ⊙ δ ⊘ (α − δ), not by φ** — decay reaching the
@@ -120,6 +124,10 @@ one intended.
    timeliness-ordered design is itself a statement about decay rates.
 3. **A constraint on the conditional-conservatism measures** (§4.6), stated with its three
    qualifications, together with the specific circumstance under which those measures remain sound.
+   The returns those measures condition on do break the equivalence (§4.7) — and the strength with
+   which they break it is a property of the asset, degrading as 1/σ in return volatility and never
+   attaining the root-T rate in sample length, so the corner where the repair is weakest is the
+   quiet, long-lived corner where the question is usually asked.
 4. **A repair that needs no new data** (§4.7). Disclosed useful lives supply δ from outside the
    series, which is what the theorem requires; comparing timeliness within a life band reads φ.
 5. **A pre-registered severe test and its failure** (§5) — registered before the data were touched,
@@ -376,6 +384,16 @@ rather than one — which is precisely the two-point structure above. The genera
 rate constants of a linear compartmental system are recovered from the input–output map only as an
 unordered pair goes back to Bellman and Åström (1970).
 
+Economics has its own instance, and it sits closer to this paper than either. Nerlove's
+supply-response model (1958) stacks adaptive expectations at rate β on partial adjustment at rate γ;
+eliminating the two unobservables leaves a reduced form in which **every systematic coefficient is a
+symmetric function of β and γ** — [(1 − β) + (1 − γ)] on the lagged dependent variable, −(1 − β)(1 − γ)
+on its second lag, βγa₁ on the price. The conditional mean is exactly invariant under exchanging the
+two behavioural rates. What distinguishes them is the disturbance, γ[u(t) − (1 − β)u(t−1)], which is
+not symmetric. That the tie is broken by the error process rather than by the systematic part is a
+property of the Nerlovian model which the filter here does not inherit, and §4.7 says what breaks it
+instead.
+
 The ambiguity bites here for the same reason it bites in pharmacokinetics and not in
 radiochemistry: it needs a **free scale parameter** to hide in. A decay chain's parent activity is
 measured independently, so the exchange changes the observed curve by a detectable factor and
@@ -578,11 +596,11 @@ Three qualifications. First, the mapping from this filter to each of those estim
 established here: they are not fitting this model, and the composite they read need not be φδ
 exactly. Second, the magnitude-versus-timing distinction of §4.5 matters, and these measures sit on
 both sides of it — Basu's coefficient is a slope on returns rather than a delay, and is closer to
-this paper's magnitude case than its timing one. Third, and most consequentially, **the theorem is
-proved for the reported series alone.** The returns-based measures condition on a second series,
-and a second series is exactly the kind of outside information §4.7 shows can pin a root. Whether
-returns break the equivalence or merely inherit it is open, and it is the sharpest question this
-result raises about somebody else's instrument.
+this paper's magnitude case than its timing one. Third, **the theorem is proved for the reported series
+alone**, and the returns-based measures condition on a second series. That second series does break
+the equivalence. §4.7 gives the result and its price, and the effect on this section is to narrow
+its claim rather than to qualify it: what is said here is said about a comparison of reported
+series, and a design holding returns is repairing the problem rather than inheriting it.
 
 What the paper claims is that the burden has moved. **A cross-sectional conservatism ranking now
 requires an argument that asset life is constant across the compared groups, a correction for it, or
@@ -592,8 +610,56 @@ classes, is the one where the first of those is least defensible.
 ### 4.7 · The repair
 
 The way out is visible in the theorem's own statement: the series determines φδ, so **anything that
-supplies δ from outside the series restores φ.** This is the accounting form of a move the
-pharmacokinetic literature has made for fifty years — flip-flop is resolved by an intravenous
+supplies δ from outside the series restores φ.** Two things do, and they are priced very
+differently.
+
+**The first is the one the field already holds: returns.** A market series drawn from the same asset
+breaks the two-point equivalence immediately and by a wide margin. Under the exchange the mirror
+firm's asset decays at α rather than δ, so two worlds whose books agree to fourteen decimal places
+differ in return by α − δ in every period — three percentage points a year, indefinitely. The
+ambiguity of §4.2's first half does not survive contact with a second series drawn from the asset.
+
+It survives the continuum, and the reason is one line. **A return is a ratio, and the residual
+degeneracy is a degeneracy in the unobserved physical scale.** Grant an analyst both roots exactly —
+strictly more than returns supply — and the one-parameter family is untouched: φ still sweeps [0, 1]
+with the reported series reproduced to 2 × 10⁻¹⁶, and every member of that family emits the
+*identical* return series, bit for bit. A scale divides out of a ratio, so no quantity of returns
+data bears on the parameter the scale is concealing.
+
+What breaks the continuum is not the returns but the **news** they carry. The degeneracy is a
+property of a noiseless economic path: when the asset's value decays geometrically and does nothing
+else, the reported series has a single geometric driving term and a scale factor absorbs any
+rescaling of φ. Let the value receive innovations and the realised rate of decline varies from
+period to period; matching the driving term then requires cα = α and cφ′ = φ *simultaneously*, which
+forces c = 1. Regressing the reported series on its own lag, the return-implied path and that path's
+first difference recovers α, E₀ and φ to 10⁻¹⁶ at a return volatility of 0.15, against a design
+matrix that is exactly singular at zero volatility.
+
+**So §4.6's question answers yes, and the price is a rate rather than a proof.** Identification does
+not switch on at the first innovation; it fades in. Over a twelvefold range of return volatility the
+design's collinearity degrades as 1/σ — a clean reciprocal, fitted exponent −0.98 — and the standard
+error on φ̂ as its square root, exponent −0.52, with weak-identification bias visible in the mean by
+σ = 0.025. The sample cannot compensate. The standard error **never attains the root-T rate at any
+horizon**: quadrupling the panel from 50 to 200 periods buys a factor of 1.22 where root-T would buy
+2.00, and from 400 to 1,600 periods it buys nothing measurable at all. Every term in the estimating
+equation — signal, regressors and accrual noise alike — is proportional to the asset's remaining
+value, so once the asset has decayed the later periods are not noisy observations but absent ones.
+**The information about recognition speed is a property of the asset: how much its value moves, and
+how long it goes on existing. The analyst chooses neither.**
+
+Two things follow, pointing opposite ways. The first is a defence of the field's specification
+arrived at from outside it. The variation that identifies φ in this filter is return variation,
+which is the same variation Basu's regression requires in order to run at all; an instrument
+conditioning on returns is drawing on exactly the right information, and the return-variance
+corrections the literature reached for empirically are operating on the identification-strength
+parameter rather than on a nuisance. The second is where that leaves the assets anyone argues about.
+Goodwill, brands and long-lived plant are quiet and long-lived — small σ and small δ — which is the
+corner in which both terms are worst, and §4.8 shows that for one of them the design is not weakened
+but emptied.
+
+**The second repair does not require the asset to be noisy, and for most classes it is already
+published.** This is the accounting form of a move the pharmacokinetic literature has made for fifty
+years — flip-flop is resolved by an intravenous
 reference dose, a second administration that fixes the elimination root from outside the oral
 profile, after which the absorption rate and the scale parameter both follow.
 
@@ -932,6 +998,10 @@ with what would have killed each.
 | **φδ is the conserved quantity, not (1 − φ)δ** | both candidate maps run against the reported series | the two maps agreeing, which would make the check vacuous | mirror **8 × 10⁻¹⁶**, rival map **3 × 10⁻¹** — the gap is preserved by one, the filing by the other |
 | **An open initial gap does not restore identification** | mirror rebuilt at g₀ = 0.15 with the shifted map | the shifted map failing, or the g₀ = 0 map still working | shifted map **7 × 10⁻¹⁶**, naive map **5 × 10⁻²**; invariant (φ − g₀)δ held exactly |
 | **Unobserved physical scale ⇒ φ free over [0, 1]** | one-parameter family constructed and regenerated | any member of the family failing to reproduce the series, or the family collapsing to one φ | nine members spanning φ ∈ [0, 1], **all exact to 2 × 10⁻¹⁶** |
+| **Returns kill the two-point exchange** | mirror rebuilt with its own asset, return series compared | the two worlds' returns agreeing, which would leave §4.6's question open the other way | books agree to **7 × 10⁻¹⁶**, returns differ by **α − δ = 0.0300 every period** |
+| **Returns cannot touch the scale continuum** | the nine-member family regenerated, return series compared across it | any member emitting a different return series | **2 × 10⁻¹⁶ — bit for bit identical** across a family spanning φ ∈ [0, 1] |
+| **News, not returns, restores identification** | regression on lag, return-implied path and its first difference, σ = 0.15 | recovery failing, or the σ = 0 design being well conditioned | α, E₀, φ recovered to **10⁻¹⁶**; cond(X) **11.8** at σ = 0.15 against **4 × 10¹⁶** at σ = 0 |
+| **The repair's strength is the asset's, not the analyst's** | σ swept 12×, T swept 32× | the two exponents coinciding, or the panel buying the root-T rate | cond ~ σ^**−0.98**, se(φ̂) ~ σ^**−0.52**; T: 50→200 buys **1.22×** where root-T buys 2.00×, 400→1600 buys **1.00×** |
 | **R = (1 − φ)δ/(α − δ)** | closed form against simulation | departure beyond the transient bound | held to **2 × 10⁻⁴**, the bound the geometric transient predicts; **1.0** when φ is misstated by 0.1 |
 | **The ranking inverts, not just blurs** | 4,000 ladders drawn on the two qualitative facts alone | the intended ordering surviving often enough to be a design | recovered in **1.9%**; **100.0%** when δ is held common — the witness that the construction is not vacuous |
 | **The inversion spares the lag statistic** | 400 admissible ladders, lag ordering checked | lag inverting like the magnitude measure, which would have made the story tidier | lag ordering held in **100%** — *the check that overturned this paper's own draft claim* |
@@ -1696,6 +1766,16 @@ Kuan, I. H. S., Wright, D. F. B., & Duffull, S. B. (2023). The influence of flip
 pharmacokinetic analyses. *CPT: Pharmacometrics & Systems Pharmacology*, 12(3), 285–287. ✓ *(Cited
 in §4.2 for the classification of flip-flop as a failure of global rather than local
 identifiability. Open access; characterised at abstract level and not quoted.)*
+
+Nerlove, M. (1958). *The Dynamics of Supply: Estimation of Farmers' Response to Price.* Baltimore:
+Johns Hopkins Press. ⧗ *(Cited in §4.2 for the combined adaptive-expectations/partial-adjustment
+model, whose reduced form is the closest economics-native analogue of this paper's exchange
+symmetry. **Not read.** The bibliographic record is verified; the reduced-form algebra attributed
+here — symmetry of every systematic coefficient in β ↔ γ, asymmetry of the disturbance — was
+derived and checked in this repository (`scripts/wt085_returns_conditioning.py`, E7) rather than
+taken from Nerlove's text, and the entry claims nothing beyond the model's structure. A session with
+library access should read the monograph, and Askari and Cummings's 1977 survey of the Nerlove
+literature, before this is upgraded.)*
 
 Hutton, A. P., Marcus, A. J., & Tehranian, H. (2009). Opaque financial reports, R², and crash risk.
 *Journal of Financial Economics*, 94(1), 67–86. ✓ *(Nothing is quoted from the body, which was read
