@@ -39,24 +39,32 @@ itself.
 
 Indexing asset classes and writing the recursion with a Hadamard product, the corollary is
 cross-sectional: **classes are ordered by (1 − φ) ⊙ δ ⊘ (α − δ), not by φ** — decay reaching the
-ranking through two channels, neither of them the parameter of interest. Across the four GAAP classes,
-with the decay rates the standards themselves imply, that composite does not blur the intended
-ranking but **inverts** it — Kendall τ = −1 against τ = +1 in the constant-durability world such a
-design assumes; over 4,000 admissible ladders the intended ordering survives in 1.9% of them. This
-constrains any cross-sectional use of the conditional-conservatism measures, which read a
-recognition property off a reported series.
+ranking through two channels, neither of them the parameter of interest. A φ-ordered
+cross-section is therefore valid only inside a region of δ-space, and the region has a closed-form
+boundary in quantities the design already declares: the probability that it recovers its own
+ordering crosses one half when per-rung δ leverage reaches **0.61** of the design budget. Across the
+four GAAP classes with the decay rates the standards imply, that ratio is 2.58 and the composite
+does not blur the intended ranking but **inverts** it, Kendall τ = −1. Draw δ independently instead
+and the ordering survives in **11.5%** of 4,000 ladders — dispersion destroys the ranking, and the
+standards' ladder is what turns the wreck into a reversal. This constrains any cross-sectional use
+of the conditional-conservatism measures, which read a recognition property off a reported series.
 
 The framework's own sharpest prediction — recognition lag ordered by GAAP asset class — was
 pre-registered, tested on 688 EDGAR-derived events across two sectors declared in advance, and
 **failed** (Jonckheere–Terpstra z = −0.290 and −0.095 against power 0.95–1.00; the stopping rule
 fired). The identification result does not explain that failure, and this paper reports the check
 that refused to: **the lag statistic is the one observable the composite does not invert**, holding
-its ordering in 100% of the same admissible ladders. What it cannot do is exist in public data — the
+its ordering in 100% of the same admissible ladders and in 66.2% when δ is drawn independently,
+against 11.5% for the magnitude measure. What it cannot do is exist in public data — the
 model's lag is a cross-correlation against a physical series no filing reports — so the registered
 instrument necessarily measured a substitute, and the bridge to it was never written down. The
 repair follows from the theorem: **disclosed useful lives supply δ from outside the series**,
 restoring φ for every class that has one, and none for goodwill, where at δ = 0 the parameter is not
-ill-conditioned but absent.
+ill-conditioned but absent. The disclosed lives also fix the model's domain, and they fix it
+tightly: the deferral measure exists only where the recognition rate exceeds the decay rate, and at
+the calibration used here **no disclosed useful life short enough to appear in a filing satisfies
+that** — which makes the recognition rate, rather than the ordering, the quantity a cross-sectional
+design has to establish first.
 
 **Keywords:** identification · conditional conservatism · reporting lag · impairment ·
 pre-registration · asset life · deferred information
@@ -100,7 +108,8 @@ conditional-conservatism measure takes as input, and its cross-sectional form is
 be uncomfortable: indexing asset classes, the ranking a reader can compute is the ranking of
 **(1 − φ) ⊙ δ ⊘ (α − δ)**, so a comparison across classes with different asset lives is not a
 comparison of timeliness. Across the four GAAP classes, with the decay rates the standards themselves imply, the
-composite does not blur the intended ranking — it **inverts** it.
+composite does not blur the intended ranking — it **inverts** it — and the ordering the design
+imposed survives in **11.5%** of ladders even when no durability ordering is imposed at all.
 
 This programme learned that the hard way, which is the second reason the paper exists. The
 framework's sharpest empirical prediction was pre-registered, tested twice on EDGAR-derived
@@ -387,9 +396,10 @@ set) that solves the problem" — which is precisely the two-point structure abo
 should be carried across with the result: they hold that the competing solutions are "not simply a
 function of swapping the rate constants" but a partial permutation of the parameter set, with n + 1
 of them for an n-compartment model. The accounting case here, where the exchange **is** a clean swap
-of two roots, is therefore the simplest member of that family rather than the general one. The general statement that the
-rate constants of a linear compartmental system are recovered from the input–output map only as an
-unordered pair goes back to Bellman and Åström (1970).
+of two roots, is therefore the simplest member of that family rather than the general one. The general framework is Bellman
+and Åström's (1970), which defines structural identifiability by what the input–output map
+determines and tests it through the transfer function — and a transfer function fixes its poles as
+a set, which is the exchange above stated once and for all.
 
 Economics has its own instance, and it sits closer to this paper than either. Nerlove's
 supply-response model (1958) stacks adaptive expectations at rate β on partial adjustment at rate γ;
@@ -475,10 +485,13 @@ signal will multiply a timeliness parameter by an asset-life parameter somewhere
 observable is a rate times a duration. The model's contribution is to make the product explicit
 enough to be checked.
 
-### 4.4 · The ranking does not merely blur. It inverts.
+### 4.4 · The design has a validity region, and the disclosed numbers fall outside it
 
-The natural expectation is that a confound of this kind adds noise to a ranking. Here it does
-something worse, and the case is the one this paper's own registration used.
+The natural expectation is that a confound of this kind adds noise to a ranking. It does something
+more specific. There is an exact region of δ-space inside which a φ-ordered cross-section recovers
+the ordering it imposed; the region has a closed-form boundary in quantities the design already
+declares; and it is small. The case this paper's own registration used sits outside it, and so does
+every firm whose asset lives are read off its filings.
 
 Order the four GAAP classes as the registration did — property, plant and equipment; finite-lived
 intangibles; indefinite-lived intangibles; goodwill — and assign the observability shares the
@@ -525,24 +538,63 @@ because δ enters twice.
 quantity §4.2 says the reported series does not contain. A researcher cannot establish that the
 design is sound without already possessing what the design was built to avoid needing.
 
-Nor is the inversion an artefact of the particular numbers. Drawing 4,000 four-class ladders subject
-to nothing but the two qualitative facts the registration relied on — observability falls up the
-ladder, durability rises up the ladder — the deferral measure recovers the registered ordering in
-**1.9%** of them, exactly reverses it in **23.8%**, and is non-monotone in the remaining **74.2%**,
-with a mean Kendall τ against the registered rank of **−0.41**. Hold δ common across the four
-classes and redraw: the ordering is recovered in **100.0%**. The difference between those two
-numbers is the entire content of this section.
+**Dispersion and ordering do different damage, and the two are worth separating.** Draw 4,000
+four-class ladders under the design's own constraint alone — observability falls up the ladder —
+with δ drawn independently across classes. The deferral measure recovers the registered ordering in
+**11.5%** of them and exactly reverses it in **1.1%**, mean Kendall τ **+0.32**. Hold δ common
+across the four classes instead and redraw: recovery is **100.0%**. Now impose the standards'
+falling ladder on the same draw and recovery falls to **1.9%** while exact reversal rises to
+**23.8%**, mean τ **−0.41**. So δ *dispersion* is what destroys the ranking, and the *ordering* is
+what turns the wreckage into a reversal. The table above is what the confound does at one corner of
+the region; losing the ranking is what it does across the region.
 
-**The ladder is an assumption, and it is worth naming exactly which one.** The decay rates above
-are inferred from the standards' willingness to put a class on a schedule — and that willingness
-tracks how *predictable* a decline is, not how *fast*. The two come apart precisely at the top of the
-ladder: goodwill is not scheduled because its decline is lumpy, not because it is slow, and a lumpy
-decline is a δ with large variance rather than a δ near zero. The inference therefore does real work
-in the direction of the result. Were goodwill's true decay materially faster than the ladder assumes,
-its deferral measure would rise and the inversion would weaken. Two rungs need not be assumed at all
-— property and finite-lived intangibles carry disclosed useful lives, and δ can be read from them.
-The other two require the outside determination of §4.7, and until they have one **the inversion is
-a conditional result and is reported as one.**
+**The boundary is exact, and it is drawn in quantities the design already declares.** Write the
+design's *budget* as the mean per-rung Δlog(1 − φ) and the ladder's *δ leverage* as the mean
+per-rung |Δlog δ − Δlog(α − δ)|. Over the same 4,000 draws the probability that the design fails to
+recover its ordering, fitted as a logistic in log(leverage / budget), has slope **+1.58** (se 0.081,
+z = +19.5; the same fit on a permuted outcome returns z = 0.23) and crosses one half at a
+leverage-to-budget ratio of **0.61**. A φ-ordered cross-section is more likely than not to read what
+it ordered only while per-rung δ leverage stays under about three fifths of the design budget. The
+ladder tabulated above sits at **2.58**.
+
+**The tabulated ladder is a knife edge in its own top rung.** Holding the first three tiers fixed,
+the deferral measures of goodwill and indefinite-lived intangibles cross at
+
+> δ₃\* = Kα/(1 + K),  K = R₂/(1 − φ₃)
+
+which is **0.0079**, a half-life of eighty-seven periods. Five per cent above it the ladder is no
+longer monotone and Kendall τ moves from −1 to −0.67. The table assigns goodwill 0.002. The exact
+reversal therefore needs goodwill to lose half its value no faster than in eighty-seven years, and
+the standards do not say that: a class is left off an amortisation schedule when its decline cannot
+be *scheduled*, which is a statement about predictability and not about speed.
+
+**Unpredictable is not slow, and the difference is measurable in the same direction.** Drive a class
+at δ = 0.20 with probability 0.05 and at zero otherwise — an identical mean decay rate of 0.010,
+delivered in rare jumps — and its realised deferral is **1.30 times** the closed form evaluated at
+that mean rate (se 0.002 over 2,000 paths). An unscheduled class defers *more* than a scheduled one
+of the same average durability, and the lumpy path defers as a smooth class at δ = **0.0123**, above
+the crossing rate. Both halves of the inference from an absent schedule therefore push the same way.
+
+**Two rungs need no inference at all, and they are the two that break the table.** ASC 360 and
+ASC 350-30-50 require disclosure of useful lives for property and for finite-lived intangibles, and
+a disclosed life *L* fixes a write-down rate 1/*L*. The first rung falls only when
+
+> δ₁ < αδ₀/(2α − δ₀)
+
+which tends to δ₀/2 as α grows. At the tabulated δ₀ = 0.030 that boundary sits at δ₁ = **0.0214**, a
+life of 46.7 years, and the table assigns 0.020 — inside by a fourteenth. Disclosure, however,
+amortises finite-lived intangibles over materially *shorter* lives than property, so δ₁ > δ₀ is what
+a filing presents; across the rectangle of lives disclosure spans — ten to forty years for property,
+three to twenty for finite-lived intangibles — **the first rung rises in 99.7% of it.**
+
+**And the binding constraint is the model's domain, not the ordering.** R is defined only for
+δ < α. Past that the deferred gap grows without bound relative to the asset — the ratio reaches
+10⁶⁹ by period 400 at δ = 0.20 — and there is no steady-state deferral measure to rank. At the
+α = 0.05 calibrated here **the entire disclosed rectangle lies outside the domain**: every useful
+life short enough to appear in a filing implies a decay rate at or above the recognition rate. Half
+of the rectangle is admissible only at α ≈ 0.19, and all of it above α = 0.33. What §4.4 measures is
+therefore a property of firms whose recognition of deferred loss outpaces their assets' decay, and
+identifying which firms those are is an empirical question this paper leaves open.
 
 **The shape of this argument is not new, and its best-known instance is one field over.** Fisher and
 McGowan (1983) argued that an accounting rate of return cannot be used to infer economic
@@ -575,11 +627,14 @@ Monotone under both, and the falling-δ ladder makes the ordering *steeper* rath
 it. The reason is visible in the parameter sweep: lag falls in φ at every δ, and rises as δ falls at
 every φ, so on a ladder where both move the way the standards say they do, **the two effects add.**
 Across 400 randomly drawn admissible ladders the lag ordering holds in **100%** of them, against
-1.9% for the magnitude measure.
+1.9% for the magnitude measure. **Part of that margin belongs to the ladder rather than to the
+statistic.** Drop the durability ordering and draw δ independently across classes, as §4.4 does, and
+the lag ordering holds in **66.2%** (2,000 ladders, se 0.011) against **11.5%** for the magnitude
+measure. Lag is the more robust of the two by a factor of six, and it is robust in that ratio rather
+than in the way a figure of 100% suggests.
 
 **The identification result does not, by itself, wreck a design ordered on lag.** Any claim that the
-registered prediction was doomed by the φδ confound is claiming more than the arithmetic gives, and
-this paper made a version of that claim in draft and withdraws it here.
+registered prediction was doomed by the φδ confound is claiming more than the arithmetic gives.
 
 What wrecks it is the next line. **The model's lag statistic is a cross-correlation between ΔE and
 ΔC, and ΔE is the change in physical value, which no filing reports.** The one statistic the
@@ -1131,7 +1186,13 @@ with what would have killed each.
 | **The two rates do different jobs** | volatility exponent re-fitted across δ at a fixed rate gap | the exponent being flat across δ, which would collapse the two findings into one | exponent spans **−0.39 to +0.16** — *a change of sign*; level spread 1.24× at σ = 0.15 against 2.16× at σ = 0.025 |
 | **R = (1 − φ)δ/(α − δ)** | closed form against simulation | departure beyond the transient bound | held to **2 × 10⁻⁴**, the bound the geometric transient predicts; **1.0** when φ is misstated by 0.1 |
 | **The ranking inverts, not just blurs** | 4,000 ladders drawn on the two qualitative facts alone | the intended ordering surviving often enough to be a design | recovered in **1.9%**; **100.0%** when δ is held common — the witness that the construction is not vacuous |
-| **The inversion spares the lag statistic** | 400 admissible ladders, lag ordering checked | lag inverting like the magnitude measure, which would have made the story tidier | lag ordering held in **100%** — *the check that overturned this paper's own draft claim* |
+| **The inversion spares the lag statistic** | 400 admissible ladders, lag ordering checked | lag inverting like the magnitude measure, which would have made the story tidier | lag ordering held in **100%** |
+| **The inversion belongs to the ordering; the destruction belongs to the dispersion** | 4,000 ladders with δ drawn independently, no durability ordering imposed | mean τ staying negative, which would have made the inversion the general case | mean τ **+0.32**, recovery **11.5%**, exact reversal **1.1%** — against −0.41 / 1.9% / 23.8% ordered |
+| **τ = −1 is a knife edge in its top rung** | closed form for the crossing rate, verified by bisection to 1 × 10⁻⁹ | a crossing rate far above any defensible goodwill decay | **δ₃\* = 0.0079**, an eighty-seven-year half-life; the table assigns 0.002 |
+| **Lumpy defers more than slow at an identical mean rate** | compound-Poisson decline, 2,000 paths, mean rate matched exactly | the ratio at or below 1, which would license reading "unscheduled" as "slow" | **1.30×** (se 0.002), a δ-equivalent of 0.0123 — above the crossing rate |
+| **The design's validity region has a fitted boundary** | logistic of failure on log(leverage / budget), 4,000 ladders | a slope indistinguishable from zero | slope **+1.58**, z = **+19.5**; the same fit on a permuted outcome gives z = 0.23 |
+| **The disclosed rectangle lies outside the model's domain** | useful lives spanning disclosure practice against α = 0.05 | any part of it admitting a steady-state deferral measure | **0%** admissible; half admissible only at α ≈ 0.19, all of it above α = 0.33 |
+| **Lag's 100% is partly the ladder** | 2,000 ladders, durability ordering dropped | lag holding at 100% regardless, which would have made §4.5 unconditional | **66.2%** (se 0.011) against 11.5% for the magnitude measure |
 | **Results are dimensionless** | η swept over **twelve orders of magnitude** | any dimensionless output moving with η | spread **exactly 0.0** |
 | …and not because η is unused | mutation testing | a mutant that leaves results unchanged | **every substituted vacuous witness killed its run** |
 | **Recognition frequency is driven by δ** | sweep at fixed φ | δ having no effect on event counts | 0 → 16 → 100 events |
@@ -1865,9 +1926,10 @@ from their development of the tangible-asset case. Theirs is a signed comparativ
 identification claim, and §4.6 says so rather than recruiting it.)*
 
 Bellman, R., & Åström, K. J. (1970). On structural identifiability. *Mathematical Biosciences*,
-7(3–4), 329–339. ✓ *(Cited in §4.2 for the founding statement that a compartmental system's rate
-constants are recovered from the input–output map only as an unordered pair. Characterised at
-abstract level.)*
+7(3–4), 329–339. ✓ *(Cited in §4.2 for the definition of structural identifiability and the
+transfer-function criterion, which is what the source is characterised on. Characterised at
+abstract level; the pole-set consequence drawn in §4.2 is this paper's statement of the mechanism,
+not theirs.)*
 
 Bleck, A., & Liu, X. (2007). Market transparency and the accounting regime. *Journal of Accounting
 Research*, 45(2), 229–256. ✓ *(Read in full text; the copy consulted carries the journal's own title
