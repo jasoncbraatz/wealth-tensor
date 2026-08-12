@@ -123,6 +123,30 @@ imply rates that routinely exceed 0.05.**
   that domain restriction is a substantive claim about which firms the section speaks to, and it
   must be stated in §4.4 rather than left implicit in a calibration choice.
 
+### E7 · The statistic that survived — does it survive this too? *(added before coding, same session)*
+
+**Amendment, 2026-08-12, `wealthTensor-14`, registered before `wt088` existed and before any
+statistic in §2 or here was computed.** Recorded as an amendment rather than folded into §2 so the
+sequence is legible: E1–E6 were written first, and E7 was noticed while reading `wt083` and added
+before the instrument was opened. WT-052's hole is exactly the check appended after the numbers
+arrive; this one is appended before them.
+
+§4.5 reports that the **lag** statistic does not invert — monotone under both ladders, and holding
+in **100%** of 400 randomly drawn admissible ladders against 1.9% for the magnitude measure. That
+draw imposes the same two constraints E1 drops, including durability rising up the ladder.
+
+- **To be reported:** the fraction of ladders in which lag is non-decreasing up the ladder when δ
+  is drawn **i.i.d. and unordered**, at the same sample size, alongside the ordered figure.
+- **REGISTERED FALSIFIER.** §4.5's sentence *"the identification result does not, by itself, wreck
+  a design ordered on lag"* is the paper's one concession that the confound has a limit, and §4.5
+  is the section that withdrew an overreaching claim. **If the unordered fraction falls below
+  0.70**, the survival of the lag ordering is itself partly an artefact of the durability
+  assumption, §4.5 must say so in the same breath as it reports the 100%, and the concession is
+  narrowed rather than withdrawn.
+- If the fraction holds at or above 0.90, that is a **strengthening** of §4.5 obtained by trying to
+  break it, and it is reported as one: the timing statistic survives an assumption the magnitude
+  statistic needed.
+
 ## 3 · Declared extensions and bridges, stated before use
 
 Two things below are **not** in the model as `src/wealth_tensor/lag.py` specifies it, and are
