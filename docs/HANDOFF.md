@@ -1,8 +1,8 @@
 ---
 project: wealth-tensor
 gh_sha: fba25601f6dc4087b9fefbccddea3293c7cc13a1
-updated: 2026-08-11
-session: wealthTensor-09
+updated: 2026-08-12
+session: wealthTensor-11
 gate_passed: true
 gate_version: "2.50"
 ---
@@ -654,3 +654,137 @@ registered before its instrument is coded (WT-052).*
   Justify pre-registration and negative controls *pragmatically*. `wealthTensor-10` got this wrong
   and was corrected.
 - **Do not ask him to submit anything.** §4d. Nothing ships until the corpus is done.
+
+---
+
+# ⚒️ wealthTensor-12 — READ THIS SECTION FIRST, IT SUPERSEDES EVERYTHING ABOVE
+
+*Written at the end of `wealthTensor-11`. The at-bat was Road Two, and it is written — in the
+paper, in prose, in the file. What follows is where it stands and what is next.*
+
+## 0 · THE CONSTITUTION, AND THE CLAUSE THAT KEEPS IT ONE
+
+```
+/tmp/dx 'cat ~/repos/wealth-tensor/docs/CO-AUTHOR-CHARTER.md'          # ← the constitution
+```
+
+Read it at ORIENT, after `HANDOFF.md`, before touching anything. It is now in the repo, where a
+handoff can cite it instead of restating it.
+
+> **PRECEDENCE.** The WT rules in this handoff are the session distillation of
+> `CO-AUTHOR-CHARTER.md`. If this handoff and the charter ever disagree, **THE CHARTER WINS** — and
+> fixing the handoff is a blocker, not a footnote.
+
+**Do not rewrite, summarise or "improve" the charter inside a handoff.** Charter changes happen in
+the charter file, as a commit, with Jason's eyes on the diff. `handoff_gate.py --emit` now refuses a
+handoff that drops either the read line or the precedence clause (**G-ANCHOR-1/2**), and counts
+defensive prose per paper against a committed baseline (**G-COACH-2/3**, `--coach`,
+`--coach-refresh`). The ratchet only moves one way without a deliberate refresh.
+
+## 1 · WHAT HAPPENED — THE HEADLINE CHANGED UNDER US, AND THAT IS THE GOOD NEWS
+
+`wealthTensor-10` handed over a beautiful sentence: *PRE-001 could never have succeeded, because
+the Hadamard corollary means the observable ranks φ ⊙ δ, not φ.* **WT-080 says run the math before
+writing the finding. The math was run. The sentence is half right, and the half that is wrong is
+the more interesting half.**
+
+`scripts/wt083_tier_ladder_antialignment.py` — 9 severe, 0 vacuous:
+
+| | established |
+|---|---|
+| **D2** | On the GAAP ladder the deferral measure does not *blur* the registered ordering, it **inverts** it. Kendall τ = **−1**, against **+1** in the constant-δ world the design assumed. |
+| **D3** | The design's validity condition is a statement about δ: R rises iff Δlog(1−φ) + Δlog δ − Δlog(α−δ) > 0. **δ enters twice, and on a falling ladder both terms oppose the design.** A researcher cannot check the design without already knowing what it was built to avoid needing. |
+| **D4** | Not a knife edge. 4,000 ladders drawn on the two qualitative facts alone: the ordering survives in **1.9%**, reverses in **23.8%**, is non-monotone in **74.2%**. With δ common: **100.0%**. |
+| **D5** | **THE ONE THAT OVERTURNED THE HANDOFF.** The *lag* statistic does **not** invert. It orders by φ under both ladders and in **100%** of 400 random admissible ladders, because lag falls in φ at every δ *and* rises as δ falls at every φ — on the GAAP ladder the two effects **add**. PRE-001 ordered lag. **So the φδ confound is not why it failed.** |
+| **D6** | At the real ladder the two least-observable tiers produce **zero** recognition events; under a common δ the silence falls on the *opposite* two. Which classes the model can speak about is decided by δ before any φ hypothesis is entertained. |
+
+**What actually killed PRE-001, then:** the model's lag is a cross-correlation against ΔE, and no
+filing reports ΔE (WT-082 C7). The instrument necessarily substituted onset-of-decline-to-charge,
+and the bridge was never written. **That is §6.2's bridge discipline, which now has a theorem behind
+it instead of a bruise.** The paper says exactly this and claims no more.
+
+*Two false assertions were found and fixed inside `wt082` on the way — the severity harness caught
+both, which is what it is for. The second one mattered: the observable is **not** ordered by the bare
+composite (1−φ)⊙δ but by **(1−φ) ⊙ δ ⊘ (α−δ)**, and on this ladder the two orderings genuinely
+differ (the bare composite is non-monotone: 0.0060, 0.0080, 0.0060, 0.0016). The abstract, the intro
+and §4.3 all said the loose thing before the run. **A sentence claiming classes are ranked by
+(1−φ)⊙δ is a sentence that has not divided.***
+
+## 2 · THE PAPER — WRITTEN, IN THE FILE, AND IT IS A STRAW MAN FOR YOUR HAND
+
+`docs/papers/paper-III-dual-tensor/paper-III.md`, **v0.5**, 1,668 lines. Previous version preserved
+at `paper-III.md.bak-pre-roadtwo`; every surviving sentence is a **slice, not a retype**
+(`assemble.py` logic is recorded in the commit).
+
+**New title:** *Timeliness and durability are not separately identified from a reported series.*
+Tensor is out of the title and load-bearing in §4.1, which is where it was always going to earn it.
+
+| § | what it is |
+|---|---|
+| 1 | new introduction; the best sentence in the corpus still opens it |
+| 2 | the filter (was §4.1) |
+| 3 | what the filter does (was §4.2 + §4.4) |
+| **4** | **NEW, eight subsections — the theorem, the Hadamard corollary, the inversion, the statistic that survives, the constraint on the field's instruments with three qualifications, THE REPAIR, the goodwill limit** |
+| 5 | the registered test, unchanged, with a preamble saying what §4 does and does not excuse |
+| 6 | what may now be claimed, unchanged |
+| **7** | **NEW — the survivals ledger `ROADS-001` drafted and neither paper had** |
+| 8 | abandoned approaches + the withdrawn EMH reply + the crisis framing, moved intact |
+| 9 | limitations; Limitation 4 promoted into §4, replaced by a pointer; **new item 9: diagonality is an assumption and here is its test** |
+| 10–11 | relation to existing work; data and code |
+| **A** | **the three propositions and the coupling, preserved whole** — an appendix because *nothing in §§2–7 depends on it*, which is the strongest thing that can be said about a result |
+
+**§4.7 is the part to read first.** An identification result that ends in "so the measurement is
+impossible" is a poor return on five sections, and this one does not end there: **disclosed useful
+lives supply δ from outside the series** — audited, published, and not derived from the series whose
+timeliness is in question. Compare timeliness *within a life band* and you are reading φ. It is
+diagonal-safe, it holds δ constant by construction, it has a built-in negative control, and **it
+needs no data this programme does not already have.**
+
+## 3 · THE AT-BAT, RANKED
+
+1. **Read §4 and rewrite it in your own hand.** That is the deliverable and it was always going to
+   be. Two windows, not six.
+2. **Search whether the identification result is already published.** *Nobody has looked.* This is
+   now the single highest-risk unchecked claim in the corpus — it was flagged for WT-077 and applies
+   with more force here, because §4.6 aims the result at other people's instruments. Where it would
+   live: the analyst/earnings-timeliness identification literature, Basu-critique papers
+   (Dietrich–Muller–Riedl, Patatoukas–Thomas), and the measurement-error-in-conservatism-proxies
+   line. **Before a word of §4.6 is claimed in print.**
+3. **`wt077`'s clamped nan turned out to be evidence, and Road One should say so.** `unlevied
+   Var[log a] = 0.076542`; the stock levy at matched budget gives **0.076536**. The stock levy moves
+   the log-multiplier's variance by 6 × 10⁻⁶ — *not at all* — while the flow levy cuts it to
+   **0.051189**. That is Road One's scale-versus-truncate thesis appearing in a number that a `nan`
+   had been suppressing for five sessions. One paragraph in Paper II, and it is free.
+4. **Ryan (1995) + erratum + Beaver & Ryan (2000)** — three JSTOR clicks, JPASS trial,
+   `~/Desktop/downloads/DOWNLOAD-QUEUE.md`. Run `scripts/provenance_check.py` on whatever lands.
+   **Basu (1997) is closed everywhere — the author-email route is the play.** §4.6 names five
+   instruments and this programme has read none of them at source; `REFERENCE-POLICY.md` says what
+   that costs.
+5. **The off-diagonal paper, with its test attached.** Now written into Paper III as Limitation 9,
+   so it is on the record as an assumption rather than a silence. Co-occurrence of impairments
+   across classes against an independence null: no observability proxy, no φ-to-GAAP bridge, no new
+   data — the 688 events already collected are enough. **Register before coding the instrument
+   (WT-052).**
+6. **§4.6's three qualifications should be checked by someone hostile to them**, in a pass whose
+   brief includes the corrective (WT-078). The claim aims at other people's work and the burden is
+   correspondingly higher.
+
+## 4 · WHAT NOT TO DO
+
+- **Do not restore the neat sentence.** *"PRE-001 was doomed by the φδ confound"* is false, `wt082`
+  and `wt083` both now assert its negation, and the survivals ledger's fifth row exists to keep it
+  dead. If a future session finds it creeping back, that is a process failure worth a lesson.
+- **Do not hand Jason a ranked list of problems as a deliverable.** WT-079.
+- **Do not run a pure-teardown pass.** WT-078. The brief includes the whitespace or it does not ship.
+- **Do not invoke Mayo, severity or error-statistical philosophy as a *warrant*.** The paper takes
+  the practice and declines the philosophy, deliberately. Justify pre-registration pragmatically.
+- **Do not ask him to submit anything.** §4d. Nothing ships until the corpus is done.
+- **Never add a free parameter to absorb an objection.** Refused six times.
+
+## 5 · ORIENT-THEN-GO
+
+Emit one line — `Oriented: <state> · at-bat: <X> · opening with <first action>.` — then start
+writing. Don't wait for the go, and ask for a ruling when you need one.
+
+*The pyramids took twenty years each and never once filed a maintenance ticket. This paper found its
+own headline wrong, in public, on a Wednesday, and wrote the row into the ledger.* ⚒️
