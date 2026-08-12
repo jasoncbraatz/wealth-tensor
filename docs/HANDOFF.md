@@ -203,13 +203,20 @@ symmetric in β ↔ γ while the disturbance γ[u(t) − (1 − β)u(t−1)] is 
    GAAP classes by realised return volatility and asset life, and the theory predicts where a
    conservatism estimate is worth reading and where it is not. Nobody has run this. It is the natural
    empirical sequel and it needs no new data.
-3. **Read the remaining abstract-level references at source.** Garrett (1994) and Bellman & Åström
+3. **Check the exponents survive a second parameter regime — this is the one real exposure `-13`
+   left.** §4.7 now states σ^−0.98 for collinearity and σ^−0.52 for se(φ̂) **in print**, and both were
+   measured at a single setting: α = 0.05, δ = 0.02, T = 400, one accrual-noise level. The *sign* and
+   the *saturation* are structural and will hold. The *exponents* are not yet known to be. Sweep
+   (α, δ) over the four GAAP-implied rates and re-fit; if either exponent moves materially the paper
+   should quote a regime rather than a number. Cheap — `wt085` E5/E6 already parameterise everything
+   but the loop. Do this before anyone cites the number back at us.
+4. **Read the remaining abstract-level references at source.** Garrett (1994) and Bellman & Åström
    (1970) are the two still load-bearing in §4.2 and unread. Khan & Watts (2009) is load-bearing in
    §4.6. Kuan taught the lesson: **the one you do not check is the one with the inverted adjective.**
-4. **Ryan (1995) + erratum + Beaver & Ryan (2000)** — JPASS trial,
+5. **Ryan (1995) + erratum + Beaver & Ryan (2000)** — JPASS trial,
    `~/Desktop/downloads/DOWNLOAD-QUEUE.md`. Run `scripts/provenance_check.py` on whatever lands.
    Basu (1997) is closed everywhere; the author-email route is the play.
-5. **Two unread items the search flagged as possibly fatal to the Nerlove framing** — if either says
+6. **Two unread items the search flagged as possibly fatal to the Nerlove framing** — if either says
    the ambiguity out loud in print, the lineage claim needs restating, and better to find it
    ourselves: **Askari & Cummings (1977)**, *IER* 18(2), the survey of the Nerlove literature; and
    **McManus, Nankervis & Savin (1994)**, *J. Econometrics* 62(2), "Multiple optima and asymptotic
