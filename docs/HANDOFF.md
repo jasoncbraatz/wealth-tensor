@@ -36,7 +36,7 @@ file, `--put` it, `git commit -F`. Used twice this session, no incidents.
 
 `dx --get` fails on binary — base64 both ways. Quote remote paths. Exit 3 = never reached darwin,
 safe to re-run; exit 4 = started, check state first. **Use `./.venv/bin/python` for everything** —
-`python3 -m pytest` dies at collection because scipy lives only in the venv. 191 tests, ~37s.
+`python3 -m pytest` dies at collection because scipy lives only in the venv. 199 tests, ~37s.
 
 **The roster contention warning naming YOU is still noise.** Carded on State Machine
 `1217420907841952`. Do not spend a turn on it.
@@ -48,12 +48,22 @@ Anchor-counting Python patch scripts, never `sed`. Ten edit sites across two pat
 whitespace-sensitive lambda). `dx --get` the manuscript to the container first and copy every anchor
 out of the real text rather than composing it from memory.
 
-**`-15`'s structural-delimiter trap was live again and was defused by writing the check down.**
+**`-15`'s structural-delimiter trap is now MECHANISED and you no longer have to remember it.**
 §4.9 is inserted before `## 5`, so its anchor necessarily runs through `---` and the `## 5` heading
-to be unique. Both were re-emitted verbatim in `new`, and the patch script diffs
-`[ln for ln in src.splitlines() if ln.startswith("## ")]` before and after and exits non-zero if the
-list changes. **Copy that assertion into every future patch script that touches a heading.** 15 `##`
-before, 15 after; `###` went 27 → 28, which is the one section added.
+to be unique — the exact shape that silently absorbed §6 into §5 last session. `scripts/patchkit.py`
+now compares the document's skeleton before and after and **refuses the write**, having written
+nothing, if any heading or horizontal rule is gained or lost undeclared:
+
+```python
+from patchkit import apply_edits
+apply_edits(edits, expect_structure={"###": +1})    # one subsection added, declared
+```
+
+Undeclared changes raise `StructureError` naming the headings **LOST** and **GAINED**, because a
+checksum cannot tell you which section vanished. Eight tests in `tests/test_patchkit_structure.py`
+pin it, including the `-15` edit itself. **Use `apply_edits` rather than a hand-rolled
+`src.count(old)` loop** — this session hand-rolled and then had to write the guard anyway.
+15 `##` before and after this session; `###` went 27 → 28, the one section added.
 
 ### Run any EDGAR crawl in the CLOUD, not on darwin
 
@@ -67,7 +77,7 @@ and is now narrowed to `data/.universes/`.
 
 `REG-004` registered and pushed (**5160f51**) before a line of the instrument existed;
 `scripts/wt090_age_dependent_alpha.py` — **14 severe · 0 definitional · 0 vacuous**;
-**191 tests green (was 138)**; coach ratchet unchanged at **6**; concessive openers **0**; gate PASS.
+**199 tests green (was 138)**; coach ratchet unchanged at **6**; concessive openers **0**; gate PASS.
 
 `-15` measured α and, in the same fit, rejected the shape: discrete Weibull k̂ = 1.210
 [1.135, 1.285]. **R = (1 − φ)δ/(α − δ) is derived by summing a geometric**, so §4.3's ranking,
