@@ -2319,3 +2319,98 @@ claim has a sharp boundary, each side is the other's falsifying world and the wi
 A claim that tells you where its edge is has already told you where to stand to watch it fail. The
 corollary is the useful half: *a claim for which no witness suggests itself may be a claim with no
 edge.*
+
+
+---
+
+## WT-088 · §4.4's inversion belongs to an assumption, and the registration that found it was wrong twice · wealthTensor-14
+
+**`scripts/wt088_disclosed_ladder.py` — 14 severe · 0 definitional · 0 vacuous. Registered as
+`REG-002` and pushed before a line of the instrument existed.** Three registered falsifiers fired,
+one was **defective**, and one was **vacuous at the paper's own calibration**. All four are recorded
+as found rather than repaired, which is the only version of this discipline worth its cost.
+
+**The result.** §4.4 said *the ranking does not merely blur, it inverts.* Both figures behind that —
+Kendall τ = −1 at the tabulated ladder, and 1.9% recovery over 4,000 random ladders — were computed
+under **two** constraints imposed jointly: observability falls up the ladder (the design), and
+durability rises up it (an inference from the standards' *scheduling* behaviour). Drop the second
+and draw δ independently: **mean τ goes −0.414 → +0.318.** Not weakened. **Reversed.**
+
+**So dispersion and ordering do different damage, and the paper had them fused.** δ dispersion is
+what *destroys* the ranking — recovery falls from 100.0% at a common δ to 11.5% with no ordering at
+all. The ordering is what turns the wreckage into a *reversal* — 23.8% exact reversal against 1.1%.
+The inversion is what the confound does at one corner. Losing the ranking is what it does across the
+region. §4.4 now claims the region and reports the corner.
+
+**And the corner is a knife edge in its own top rung.** The deferral measures of goodwill and
+indefinite-lived intangibles cross in closed form at **δ₃\* = Kα/(1 + K) = 0.00789**, an
+eighty-seven-period half-life, verified against bisection to 1 × 10⁻⁹. The table assigns 0.002. Five
+per cent above the crossing, τ moves from −1 to −0.67.
+
+**Two ways of reading an absent schedule, both pushing the same way.** A class is left off an
+amortisation schedule when its decline cannot be *scheduled* — a statement about predictability, not
+speed. Driving a class at δ = 0.20 with probability 0.05 and zero otherwise — **identical mean rate**
+— the realised deferral is **1.303×** the closed form at that mean (se 0.002, 2,000 paths), a
+δ-equivalent of 0.0123, **above the crossing rate.** Measured, not argued from the convexity of
+δ/(α − δ), because WT-080 exists.
+
+**THE ERRATUM THAT IS THE REUSABLE PART. E1's falsifier was stated on |mean τ|.** An absolute value
+**cannot distinguish an effect that vanished from one that changed sign.** The measured +0.318 sits
+far outside the ±0.10 band, so the registered test *as literally written* returns "the inversion
+survives" — the exact opposite of what the number says. The symmetric band **feels** conservative,
+because it looks like it guards both directions; it is in fact the one shape that is blind to the
+most interesting outcome a directional hypothesis has. **A falsifier on |x| cannot tell a dead
+effect from a reversed one. State the signed quantity, or state two thresholds.** Banked globally.
+
+**THE SECOND ERRATUM, AND IT IS THE BIGGER FINDING. E4's falsifier is a share of an empty set.** It
+asks what fraction of the *admissible* disclosed-useful-life rectangle sees the first rung rise, and
+at α = 0.05 **the admissible rectangle is empty**: R exists only for δ < α, and every useful life
+short enough to appear in a filing implies a decay rate at or above the recognition rate. Not passed
+and not failed — reporting "does not fire" would have been a phantom tag at section scale. **E6 was
+registered as a boundary check on a corner of the parameter space. It is not a corner. It is where
+the disclosed numbers all live.** Half the rectangle is admissible only at α ≈ 0.19, all of it above
+α = 0.33. Re-asked at an α where the question has a domain, the first rung rises in **99.7%** of the
+rectangle — labelled an EXTENSION of E4 everywhere it appears, never as E4.
+
+**The generalisation, because this is the second registration in this project to break in this
+family:** WT-052 was written about a check appended *after* the numbers arrive. This is the mirror
+image — **a check specified so that no number can address it.** A registered falsifier can fail two
+ways before it ever runs: it can be blind to an outcome (E1), or it can name a quantity that has no
+domain (E4). Both are visible *at registration time* to anyone who asks the two questions: *which
+outcomes does this threshold fail to separate?* and *is the set I am taking a share of guaranteed
+non-empty?* Neither was asked. Both take a sentence.
+
+**The statistic that survived does not survive this either.** §4.5's lag ordering holds in 100% of
+400 ladders — drawn under the same two constraints. Unordered it is **66.2%** (M = 2,000, se 0.011),
+3.55 se below the 0.70 threshold registered blind as E7. §4.5's concession is **narrowed, not
+withdrawn**: lag is still the more robust statistic by a factor of six against the magnitude
+measure's 11.5%. The registered figure at WT-083's own M = 400 came out at 69.0%, **0.43 se from the
+threshold** — so the precision check was run on a *registered quantity* before either side was
+preferred, and both figures are reported. A threshold landing within one standard error is not a
+verdict; it is an instruction to buy more sample.
+
+**A fitted design rule, which is the part somebody else can use.** Writing the design's *budget* as
+the mean per-rung Δlog(1 − φ) and the ladder's *δ leverage* as the mean per-rung
+|Δlog δ − Δlog(α − δ)|, the probability the design fails to recover its ordering is logistic in
+log(leverage / budget) with slope **+1.58** (se 0.081, z = +19.5; the same fit on a permuted outcome
+gives z = **0.23**), crossing one half at **0.61**. A φ-ordered cross-section reads what it ordered,
+more likely than not, only while per-rung δ leverage stays under three fifths of the design budget.
+The tabulated ladder sits at **2.58**. That is a number a reader can compute for their own design.
+
+**Three tests that should have existed, and what the third one found.** §4.4 publishes two closed
+forms and a domain restriction and none of them had a test. Writing the domain test surfaced
+something the run had not: **convergence to the closed form slows without bound as δ → α.** At
+δ = 0.045 the 400-period gap ratio is still 11% short of its own limit — which is why §4.3's
+transient bound is quoted for the tabulated ladder and not near the pole. Past the pole the growth
+rate is exactly log((1 − α)/(1 − δ)) per period, pinned at δ = 0.051 and 0.060 only: by δ = 0.100 the
+ratio reaches 10⁹⁴ by period 4,000, and a longer check would be measuring float64's exponent range
+rather than the model. **The test that is hard to write is the one that knows something.**
+
+**And one reference narrowed before a referee could narrow it.** §4.2 attributed to Bellman and
+Åström (1970) the statement that a compartmental system's rate constants are recovered only as an
+unordered pair. Nothing readable in that paper supports putting it in their mouths — the source is
+paywalled, its abstract and every secondary description cover the *definition* of structural
+identifiability and the transfer-function criterion, and no citing source describes them treating
+root exchange. The transfer-function definition **is** theirs; the pole-set consequence is now drawn
+in this paper's own voice, where it can be checked. Same animal as the Kuan adjective (WT-084), one
+costume over: **a source credited with a consequence of its method rather than with its method.**

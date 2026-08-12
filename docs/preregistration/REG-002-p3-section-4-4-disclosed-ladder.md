@@ -178,3 +178,28 @@ declared here so that no result can later be read as though it fell out of the e
 - It registers **no prediction about the world.** Every quantity above is a property of the model.
 - A result that says §4.4's headline stands is as reportable as one that says it does not, and this
   file is pushed before either is known.
+
+---
+
+## 5 · ERRATA · two falsifiers this registration got wrong
+
+*Appended 2026-08-12 after the run, and marked as errata rather than folded into §2, because a
+registration that edits its own falsifiers after seeing the numbers is not a registration. Full
+detail in `RESULT-REG-002.md`.*
+
+**E1's threshold is stated on |mean τ| and is defective.** An absolute value cannot distinguish an
+effect that vanished from one that changed sign. The measured unordered mean is **+0.318**, so the
+registered test as written returns "the inversion survives" — the exact opposite of what the number
+says. The generalisable form: *a falsifier stated on |x| cannot tell a dead effect from a reversed
+one; state it on the signed quantity, or state two thresholds.* The symmetric band feels
+conservative and is in fact the one shape blind to the most interesting outcome a directional
+hypothesis has.
+
+**E4's threshold is a share of a set that turns out to be empty.** At the paper's α the disclosed
+rectangle lies entirely outside the model's domain, so the registered fraction is neither passed nor
+failed. It is reported as vacuous, and the rung question is re-asked at an α where it has a domain —
+labelled an EXTENSION of E4 throughout, never as E4. E6, registered as a boundary check on a corner
+of the parameter space, is not a corner: it is where the disclosed numbers all live.
+
+Both are recorded because the registration discipline is only worth its cost if it also records the
+occasions when it was the thing that was wrong.

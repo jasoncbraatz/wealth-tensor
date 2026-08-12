@@ -180,3 +180,122 @@ def test_the_two_layer_recursion_collapses_to_the_form_limitation_4_publishes():
         if delta > 0:
             k = alpha - phi * delta
             assert np.isclose((alpha - k) / delta, phi, rtol=1e-12, atol=1e-12)
+
+
+# --------------------------------------------------------------------------------------
+# §4.4 publishes two closed-form boundaries and a domain restriction (wt088 / REG-002).
+# Each is load-bearing in print and none of them had a test. Pinned here.
+# --------------------------------------------------------------------------------------
+
+def _R(phi, delta, alpha):
+    """The steady-state deferral measure §4.3 derives."""
+    return (1.0 - phi) * delta / (alpha - delta)
+
+
+def test_the_crossing_rate_closed_form_44_publishes_is_exact():
+    """§4.4: R_3 = R_2 at delta_3* = K*alpha/(1+K), K = R_2/(1-phi_3).
+
+    The manuscript quotes 0.0079 and calls the tau = -1 reversal a knife edge on it.
+    Verified against bisection, which knows nothing about the algebra.
+    """
+    alpha = 0.05
+    phi = [0.80, 0.60, 0.40, 0.20]
+    delta = [0.030, 0.020, 0.010, 0.002]
+
+    r2 = _R(phi[2], delta[2], alpha)
+    k = r2 / (1.0 - phi[3])
+    d3_star = k * alpha / (1.0 + k)
+
+    lo, hi = 1e-6, alpha - 1e-12
+    for _ in range(200):
+        mid = 0.5 * (lo + hi)
+        if _R(phi[3], mid, alpha) < r2:
+            lo = mid
+        else:
+            hi = mid
+    assert np.isclose(d3_star, 0.5 * (lo + hi), rtol=0, atol=1e-12)
+    assert np.isclose(round(d3_star, 4), 0.0079, rtol=0, atol=1e-12)
+
+    # The published consequence: the tabulated ladder is strictly decreasing, and a rate
+    # five per cent above the crossing is not.
+    tabulated = [_R(p, d, alpha) for p, d in zip(phi, delta)]
+    assert all(tabulated[i] > tabulated[i + 1] for i in range(3))
+
+    broken = [_R(p, d, alpha) for p, d in
+              zip(phi, delta[:3] + [d3_star * 1.05])]
+    assert not all(broken[i] > broken[i + 1] for i in range(3))
+
+
+def test_the_first_rung_boundary_44_publishes_is_exact():
+    """§4.4: rung 0->1 falls iff delta_1 < alpha*delta_0/(2*alpha - delta_0).
+
+    The factor of two is (1-phi_1)/(1-phi_0) at the tabulated shares; the test asserts the
+    published special case AND that the general inequality tracks the measure itself.
+    """
+    alpha, phi0, phi1 = 0.05, 0.80, 0.60
+    d0 = 0.030
+    boundary = alpha * d0 / (2.0 * alpha - d0)
+    assert np.isclose(boundary, 0.0214, rtol=0, atol=5e-5)
+    assert np.isclose(1.0 / boundary, 46.7, rtol=0, atol=0.05)
+
+    for d1 in [0.005, 0.015, 0.0200, 0.0214, 0.0250, 0.040]:
+        falls = _R(phi1, d1, alpha) < _R(phi0, d0, alpha)
+        assert falls == (d1 < boundary), (d1, boundary)
+
+    # And the published claim that the tabulated 0.020 sits inside by a hair.
+    assert 0.020 < boundary
+    assert (boundary - 0.020) / 0.020 < 0.08
+
+
+def test_no_steady_state_deferral_ratio_once_decay_outruns_recognition():
+    """§4.4's domain restriction: R exists only for delta < alpha.
+
+    Below the pole the gap ratio settles to the closed form; above it the ratio grows
+    without bound, so there is nothing to rank. The manuscript's domain sentence rests on
+    this and nothing else.
+    """
+    alpha, phi = 0.05, 0.20
+
+    def ratio(d, periods):
+        r = LayeredFirm(entropy_rate=d, maintenance_ratio=0.0, observable_share=phi,
+                        recognition_rate=alpha, crisis_threshold=np.inf).run(periods)
+        return abs(r["gap"][-1]) / r["real"][-1]
+
+    # Below the pole the ratio converges to the closed form -- but the transient decays
+    # like ((1-alpha)/(1-delta))^t, so the approach SLOWS without bound as delta -> alpha.
+    # The horizon each rate needs is pinned here rather than hidden in a loose tolerance:
+    # at delta = 0.045 the 400-period ratio is still 11% short of its own limit, which is
+    # why §4.3's transient bound is quoted for the tabulated ladder and not for the pole.
+    for d, periods in [(0.010, 400), (0.030, 400), (0.045, 3000)]:
+        near, far = ratio(d, periods), ratio(d, 2 * periods)
+        closed = _R(phi, d, alpha)
+        assert abs(far - closed) < abs(near - closed) or np.isclose(far, closed, rtol=1e-9)
+        assert np.isclose(far, closed, rtol=2e-2), (d, far, closed)
+
+    assert abs(ratio(0.045, 400) - _R(phi, 0.045, alpha)) / _R(phi, 0.045, alpha) > 0.10
+
+    # Past the pole the ratio does not settle at ANY horizon: it grows geometrically, at
+    # a rate set by (1-alpha)/(1-delta). Just past the pole that rate is barely above one
+    # -- delta = 0.051 only multiplies by ~2.5 per 400 periods -- so divergence is asserted
+    # as unbounded growth rather than as a fixed factor, which would only be testing how
+    # far past the pole the sample sits.
+    for d in [0.051, 0.060, 0.100]:
+        r1, r2, r3 = ratio(d, 400), ratio(d, 800), ratio(d, 4000)
+        assert r2 > 1.5 * r1 and r3 > 1.5 * r2, (d, r1, r2, r3)
+        # and the closed form is not merely wrong out here, it is the wrong SIGN
+        assert _R(phi, d, alpha) < 0.0
+
+    # The growth is geometric at exactly log((1-alpha)/(1-delta)) per period, which is why
+    # no horizon rescues it. Pinned only just past the pole: by delta = 0.100 the ratio
+    # reaches 10^94 by period 4000, and a check at 8000 would be measuring float64's
+    # exponent range rather than the model.
+    for d in [0.051, 0.060]:
+        measured = (np.log(ratio(d, 8000)) - np.log(ratio(d, 4000))) / 4000.0
+        predicted = np.log((1.0 - alpha) / (1.0 - d))
+        assert measured > 0
+        assert abs(measured - predicted) / predicted < 0.01, (d, measured, predicted)
+
+    # The contrast that makes the domain restriction a restriction: at the same long
+    # horizon the sub-critical rates are AT their closed form, to a part in ten thousand.
+    for d in [0.010, 0.030]:
+        assert np.isclose(ratio(d, 4000), _R(phi, d, alpha), rtol=1e-4)
