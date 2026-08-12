@@ -132,7 +132,7 @@ almost always your noise specification, not the world.
 
 ## 3 · THE PAPERS
 
-**Paper III** — `docs/papers/paper-III-dual-tensor/paper-III.md`, **1,960 lines**. Prior version at
+**Paper III** — `docs/papers/paper-III-dual-tensor/paper-III.md`, **1,983 lines**. Prior version at
 `paper-III.md.bak-pre-wt085`. §4.1–4.8 numbering preserved again; nothing renumbered.
 
 | § | what changed |
