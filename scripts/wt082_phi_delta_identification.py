@@ -43,7 +43,11 @@ C5  THE CROSS-CLASS COROLLARY. Index asset classes i. The recursion becomes
     with (*) the Hadamard product -- elementwise, because each class's filter acts only
     on its own class. On the diagonal the observable ordering of classes is the ordering
     of (1-phi) (*) delta, NOT of phi. A design that ranks classes by expected phi while
-    their delta also vary is reading the composite. PRE-001 was such a design.
+    their delta also vary is reading the composite. PRE-001 was such a design -- and at
+    the GAAP ladder the composite does not blur that design's ordering, it REVERSES it.
+    See scripts/wt083_tier_ladder_antialignment.py, which also establishes the limit of
+    the result: the LAG statistic does not invert, so the composite is not the reason
+    PRE-001 failed.
 
 C6  THE GOODWILL LIMIT. At delta = 0 the gap is identically zero, there are no
     recognition events at any phi, and phi drops out of the model entirely. The class
@@ -243,17 +247,41 @@ print(f"  observable monotone across tiers: {obs_monotone}")
 # which is the condition the registered design silently assumed.
 common = [gap_ratio_terminal(p, 0.020, ALPHA) for p in PHI]
 common_monotone = all(common[i] < common[i + 1] for i in range(3))
-check("with delta varying across classes, the observable does NOT order by phi",
-      phi_monotone and not obs_monotone,
-      witness=lambda: not common_monotone)
+# CORRECTED IN wealthTensor-11. The assertion originally written here was
+# "with delta varying the observable does NOT order by phi", and at this calibration it
+# is FALSE: the observable IS monotone -- it simply runs BACKWARDS. The claim had been
+# written from the shape of the algebra instead of from a number, and the run caught it.
+# The true statement is the sharper one: the composite INVERTS the design. Established at
+# length in scripts/wt083_tier_ladder_antialignment.py, and asserted here so this file
+# cannot drift back to the comfortable version.
+observed_desc = all(observed[i] > observed[i + 1] for i in range(3))
+common_asc = all(common[i] < common[i + 1] for i in range(3))
+check("the observable is monotone across the tiers and runs BACKWARDS to the design",
+      phi_monotone and observed_desc,
+      witness=lambda: all(common[i] > common[i + 1] for i in range(3)))
+print(f"  the same phi ladder at a COMMON delta orders the OTHER way: {common_asc}")
+print("  -- which is the condition the registered design silently assumed.")
 print(f"  witness -- same phi ladder at a COMMON delta = 0.020: "
       f"{[round(c, 5) for c in common]}  monotone: {common_monotone}")
 
+# CORRECTED IN wealthTensor-11, and this one matters for the prose. The observable is
+# NOT ordered by the bare Hadamard composite (1-phi)*delta. It is ordered by
+# (1-phi)*delta / (alpha-delta), and with delta varying across classes the denominator
+# varies too -- so delta reaches the ordering through TWO channels, not one. Here the
+# bare composite is non-monotone (0.0060, 0.0080, 0.0060, 0.0016) while the observable
+# is strictly monotone, so the two orderings genuinely differ. Any sentence claiming
+# classes "are ordered by (1-phi) (*) delta" is a sentence that has not divided.
+scaled = [(1.0 - p) * d / (ALPHA - d) for p, d in zip(PHI, DELTA)]
+order_scaled = np.argsort(scaled)
 order_comp = np.argsort(composite)
 order_obs = np.argsort(observed)
-check("the observable ordering is the ordering of (1-phi)*delta",
-      list(order_comp) == list(order_obs),
-      witness=lambda: list(np.argsort(-PHI)) == list(order_obs))
+check("the observable ordering is the ordering of (1-phi)*delta/(alpha-delta)",
+      list(order_scaled) == list(order_obs),
+      witness=lambda: list(order_comp) == list(order_obs))
+print("  witness -- the BARE composite (1-phi)*delta does NOT reproduce the ordering,")
+"".join([])
+print(f"  which is why the (alpha-delta) divisor is carried in the paper: "
+      f"{list(order_comp)} against {list(order_obs)}")
 print(f"  ordering by (1-phi)*delta: {list(order_comp)}   "
       f"ordering by observable: {list(order_obs)}   "
       f"ordering by phi alone: {list(np.argsort(-PHI))}")

@@ -28,7 +28,8 @@ ill-conditioned, exchangeable — and a series cannot distinguish a prompt repor
 from a slow reporter of a perishable one.
 
 Indexing asset classes and writing the recursion with a Hadamard product, the corollary is
-cross-sectional: **classes are ordered by (1 − φ) ⊙ δ, not by φ.** Across the four GAAP classes,
+cross-sectional: **classes are ordered by (1 − φ) ⊙ δ ⊘ (α − δ), not by φ** — decay reaching the
+ranking through two channels, neither of them the parameter of interest. Across the four GAAP classes,
 with the decay rates the standards themselves imply, that composite does not blur the intended
 ranking but **inverts** it — Kendall τ = −1 against τ = +1 in the constant-durability world such a
 design assumes; over 4,000 admissible ladders the intended ordering survives in 1.9% of them. This
@@ -87,8 +88,8 @@ identified from reported numbers.
 That constraint is not a property of this framework. It is a property of the object every
 conditional-conservatism measure takes as input, and its cross-sectional form is sharp enough to
 be uncomfortable: indexing asset classes, the ranking a reader can compute is the ranking of
-**(1 − φ) ⊙ δ**, so a comparison across classes with different asset lives is not a comparison of
-timeliness. Across the four GAAP classes, with the decay rates the standards themselves imply, the
+**(1 − φ) ⊙ δ ⊘ (α − δ)**, so a comparison across classes with different asset lives is not a
+comparison of timeliness. Across the four GAAP classes, with the decay rates the standards themselves imply, the
 composite does not blur the intended ranking — it **inverts** it.
 
 This programme learned that the hard way, which is the second reason the paper exists. The
@@ -108,8 +109,8 @@ one intended.
    timeliness is not recoverable from a reported series by any estimator. This replaces the earlier
    claim that φ is merely ill-conditioned, which understated the result.
 2. **The cross-class corollary, in Hadamard form** (§4.3–4.4). With classes indexed the reporting
-   layer is diagonal, the observable ranking is the ranking of (1 − φ) ⊙ δ, and on the ladder GAAP
-   supplies that ranking is the reverse of the ranking of φ. The validity condition for a
+   layer is diagonal, the observable ranking is the ranking of (1 − φ) ⊙ δ ⊘ (α − δ), and on the
+   ladder GAAP supplies that ranking is the reverse of the ranking of φ. The validity condition for a
    timeliness-ordered design is itself a statement about decay rates.
 3. **A constraint on the conditional-conservatism measures** (§4.6), stated with its three
    qualifications, together with the specific circumstance under which those measures remain sound.
