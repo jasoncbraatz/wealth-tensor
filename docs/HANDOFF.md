@@ -149,7 +149,7 @@ almost always your noise specification, not the world.
 
 ## 3 · THE PAPERS
 
-**Paper III** — `docs/papers/paper-III-dual-tensor/paper-III.md`, **2,051 lines**. Prior version at
+**Paper III** — `docs/papers/paper-III-dual-tensor/paper-III.md`, **2,075 lines**. Prior version at
 `paper-III.md.bak-pre-wt085`. §4.1–4.8 numbering preserved again; nothing renumbered.
 
 | § | what changed |
@@ -162,7 +162,7 @@ almost always your noise specification, not the world.
 | 4.4 | the δ ladder **named as an assumption** for the first time, and the inversion reported as the conditional result it always was |
 | 9 | Limitation 3 sharpened — the determinism is not innocuous, and §4.8 is where it bites |
 | 7 | four survivals rows |
-| — | abstract and contribution 3 updated; five references added, three marked NOT READ |
+| — | abstract and contribution 3 updated. Bibliography largely closed from Jason's `journals/` folder: five entries **read at source**, one phantom record deleted, two ancestors added |
 
 **Paper II** — **the free Road One paragraph is written.** §3.1. At matched budget the stock levy
 moves Var[log a] by 6 × 10⁻⁶ — 0.076542 → 0.076536, i.e. not at all — while the flow levy cuts it to
@@ -203,6 +203,33 @@ return skewness — and their firm is a cash-flow stream with **no capitalised a
 object of our theorem has no representation in their model. Their δ is **our φ**; the collision is
 named once, in §4.6, at first use.
 
+**Jason's `~/Desktop/downloads/journals/` folder closed most of the bibliography.** Eleven PDFs,
+all clean on `provenance_check.py`. Five references upgraded to **read at source** — Basu (1997),
+which had been closed everywhere; Beaver & Ryan (2000); Jin & Myers (2006); Ryan (2006); and a new
+Beaver & Ryan (2005). Three things came out of the reading and none was expected:
+
+- **A phantom record.** The list carried *two* Dutta & Patatoukas entries with different
+  bibliographic data — a pre-existing TAR 91(5), 1407–1436, 2016 and today's TAR 92(4), 191–216,
+  2017. The 2017 is correct; the 2016 is a phantom and is deleted. Another for METHOD-001's family
+  portrait, and it surfaced only because the duplicate forced a look.
+- **§9's flagged quotation is verified.** Jin & Myers's "For simplicity, we ignore depreciation and
+  reinvestment" is in the typeset article at **p. 262**, character for character. The warning that
+  the referee process might have altered it is retired. Their **footnote 3** is the bonus: they set
+  aside depreciation "according to a pre-defined schedule" as an easy extension, and that schedule's
+  interaction with timeliness is exactly what §4.2 shows a series cannot resolve.
+- **Two ancestors nearer than the pharmacokinetics.** Beaver & Ryan (2000) p. 135 decompose
+  book-to-market into a *bias* component and a *lag* component using "current and six lagged
+  security returns with fixed firm and time effects" — **§4.7's returns repair, run empirically
+  twenty-five years ago.** And Beaver & Ryan (2005) put a depreciation schedule against measured
+  conservatism in print: accelerated depreciation "preempts conditional conservatism." Both are now
+  cited, and §4.6 says plainly that theirs is a signed comparative static rather than an
+  identification claim.
+
+**Still in that folder, unread:** `ryan1995.pdf` + its erratum (at-bat item 5 — now trivial, the
+PDFs are on disk), and `zhu2016.pdf` (Wei Zhu, *Accruals and price crashes*, RAST 2016), which is
+**not cited anywhere** and may belong to §9's crash-risk thread. Also `basu1997 (1).pdf` is a
+byte-identical duplicate of `basu1997.pdf`; left alone, it is Jason's folder.
+
 **Griliches (1967) is CLOSED as a lead. Do not reopen it.** It was `-12`'s likeliest hiding place for
 an economics precedent on root-exchange non-identification. His own *Citation Classic* retrospective
 places his identification point on **error structure**, not roots, and no accessible source puts root
@@ -237,12 +264,13 @@ symmetric in β ↔ γ while the disturbance γ[u(t) − (1 − β)u(t−1)] is 
    large-but-lumpy rather than near zero, does the τ = −1 inversion hold at all? Draw the 4,000
    ladders again without the durability-rises assumption and see. That is a half-hour job and it is
    the honest test of the section's headline.
-4. **Read the remaining abstract-level references at source.** Garrett (1994) and Bellman & Åström
-   (1970) are the two still load-bearing in §4.2 and unread. Khan & Watts (2009) is load-bearing in
-   §4.6. Kuan taught the lesson: **the one you do not check is the one with the inverted adjective.**
-5. **Ryan (1995) + erratum + Beaver & Ryan (2000)** — JPASS trial,
-   `~/Desktop/downloads/DOWNLOAD-QUEUE.md`. Run `scripts/provenance_check.py` on whatever lands.
-   Basu (1997) is closed everywhere; the author-email route is the play.
+4. **Finish the bibliography — it is nearly done and the hard part is over.** Three items:
+   `ryan1995.pdf` and its erratum are **already on disk** in `~/Desktop/downloads/journals/` and
+   just need reading (§4.5 and §9 both lean on Ryan's accrual model); `zhu2016.pdf` is there too and
+   is uncited — decide whether §9 wants it. Then Garrett (1994) and Bellman & Åström (1970), the two
+   still abstract-level and still load-bearing in §4.2, which are **not** in the folder and need
+   finding. Kuan taught the lesson the hard way: **the one you do not check is the one with the
+   inverted adjective.** Run `provenance_check.py` on anything new.
 6. **Two unread items the search flagged as possibly fatal to the Nerlove framing** — if either says
    the ambiguity out loud in print, the lineage claim needs restating, and better to find it
    ourselves: **Askari & Cummings (1977)**, *IER* 18(2), the survey of the Nerlove literature; and
@@ -289,7 +317,8 @@ and — after `wt087` — an honest account of which cases are actually hard and
 task remains and it is **§4.4, not §4.8**: item 3 restates the cross-class result on disclosed
 numbers instead of an inferred δ ladder, and its first half-hour is a test of whether §4.4's headline
 inversion survives without its durability assumption. Everything else is empirical (item 1) or
-bibliographic (items 4–5). **Resist polishing §4** — the next session that touches it should be
+bibliographic (item 4), and item 4 is now mostly a matter of opening files that are already on
+disk. **Resist polishing §4** — the next session that touches it should be
 running item 3's test or reading a reference, not improving prose. It has been rewritten whole once and materially extended once; the next session that
 touches it should be adding a result or reading a reference, not improving prose.
 
