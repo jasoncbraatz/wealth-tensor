@@ -131,7 +131,12 @@ if __name__ == "__main__":
               f"flow r={r_f:.4f} alpha={af_txt}   -> {verdict}")
 
     print("\n--- variance of log a: does the flow levy cut it and the stock levy not? ---")
-    base_v = E(lambda e: (np.log((1+e)/(1+MU)))**2) - E(lambda e: np.log((1+e)/(1+MU)))**2
+    # The eta grid runs left of -1, where 1+e turns negative and log returns nan. The
+    # levied arms already clamp at 1e-300 (see lg below); the unlevied arm did not, and
+    # printed `unlevied Var[log a] = nan` for it. Cosmetic, last block only, and not
+    # load-bearing for any number above -- fixed 2026-08-12 rather than explained again.
+    _lu = lambda e: np.log(np.maximum((1+e)/(1+MU), 1e-300))   # noqa: E731
+    base_v = E(lambda e: _lu(e)**2) - E(_lu)**2
     print(f"unlevied Var[log a] = {base_v:.6f}")
     for label, Afn in (("stock r=0.10", A_stock(0.10)), ("flow  r=0.10", A_flow(0.10)),
                        ("flow  r=1.00", A_flow(1.00))):

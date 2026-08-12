@@ -29,6 +29,7 @@ advisory and return 0, and made --emit print "sha matches HEAD" and bless the fi
 built to catch stale handoffs was blind to the most obvious stale handoff there is. An
 unverifiable claim must never be reported as a verified one.
 """
+import json
 import re
 import subprocess
 import sys
@@ -125,6 +126,105 @@ def check():
     return 0
 
 
+
+# --------------------------------------------------------------------------- charter
+# G-ANCHOR / G-COACH, added wealthTensor-11 from CHARTER-ANCHOR-block.md §5.
+# The charter is the constitution; the handoff is the game plan. These checks exist so
+# that permeation is automatic rather than memorial -- a rule nobody enforces is a wish.
+
+CHARTER = ROOT / "docs" / "CO-AUTHOR-CHARTER.md"
+BASELINE = ROOT / "docs" / ".coach-baseline.json"
+
+ANCHOR_READ = "docs/CO-AUTHOR-CHARTER.md"
+ANCHOR_PRECEDENCE = "THE CHARTER WINS"
+
+PAPERS = sorted((ROOT / "docs" / "papers").glob("*/paper-*.md"))
+
+# Sentences that open by conceding rather than by claiming. Counted, not banned: one is
+# candour, thirty is a paper apologising for existing. The list is deliberately short and
+# literal -- a clever regex here would be a guard that cannot fail.
+CONCESSIVES = (
+    "Admittedly", "Of course", "It must be conceded", "To be fair", "It should be noted",
+    "It is worth noting", "We acknowledge", "It must be admitted", "Needless to say",
+    "In fairness", "It bears repeating", "It is important to note",
+)
+
+# First-person process narration -- the paper talking about its own conduct instead of
+# its subject. Legitimate in the AI-assistance note, in the abandonments and in the
+# survivals ledger; a smell anywhere else.
+CONDUCT = (
+    "this programme", "this paper's earlier draft", "revision history",
+    "an earlier draft", "the draft that preceded",
+)
+CONDUCT_ALLOWED_SECTIONS = ("## 6 ", "## 7 ", "## 8 ", "## 9 ", "## 10 ", "## 11 ",
+                            "# Appendix")
+
+
+def _sections(text):
+    """Split a paper into (heading, body) at level-2 headings."""
+    out, head, buf = [], "(front matter)", []
+    for line in text.split("\n"):
+        if line.startswith("## ") or line.startswith("# Appendix"):
+            out.append((head, "\n".join(buf)))
+            head, buf = line, []
+        else:
+            buf.append(line)
+    out.append((head, "\n".join(buf)))
+    return out
+
+
+def coach(write_baseline=False):
+    """G-COACH-2 and G-COACH-3. Countable, so they cannot be argued with."""
+    problems, counts = [], {}
+    for paper in PAPERS:
+        text = paper.read_text()
+        key = paper.parent.name
+        concessive = sum(text.count(c) for c in CONCESSIVES)
+        stray = 0
+        for head, body in _sections(text):
+            if any(head.startswith(a) for a in CONDUCT_ALLOWED_SECTIONS):
+                continue
+            stray += sum(body.count(c) for c in CONDUCT)
+        counts[key] = {"concessive": concessive, "conduct_outside_allowed": stray}
+        print(f"  {key:<28} concessive openers {concessive:>3}   "
+              f"conduct narration outside §§6-11 {stray:>3}")
+
+    if write_baseline or not BASELINE.exists():
+        BASELINE.write_text(json.dumps(counts, indent=2, sort_keys=True) + "\n")
+        print(f"  baseline written to {BASELINE.relative_to(ROOT)} "
+              f"({'refreshed' if write_baseline else 'first run'})")
+        return 0, problems
+
+    prev = json.loads(BASELINE.read_text())
+    for key, now in counts.items():
+        was = prev.get(key)
+        if was is None:
+            continue
+        for metric in ("concessive", "conduct_outside_allowed"):
+            if now[metric] > was[metric]:
+                problems.append(
+                    f"G-COACH-3: {key} {metric} rose {was[metric]} -> {now[metric]}; "
+                    "defensiveness is non-increasing by charter, or the baseline is "
+                    "refreshed deliberately with --coach-refresh")
+    return (1 if problems else 0), problems
+
+
+def anchors():
+    """G-ANCHOR-1 and G-ANCHOR-2: the handoff must point at the constitution."""
+    problems = []
+    if not CHARTER.exists():
+        problems.append(f"G-ANCHOR: {CHARTER.relative_to(ROOT)} is missing -- the charter "
+                        "is the SSOT and a handoff cannot cite what is not there")
+    text = HANDOFF.read_text()
+    if ANCHOR_READ not in text:
+        problems.append("G-ANCHOR-1: the handoff does not tell the next session to read "
+                        f"{ANCHOR_READ} at ORIENT")
+    if ANCHOR_PRECEDENCE not in text:
+        problems.append("G-ANCHOR-2: the handoff carries no precedence clause "
+                        f"({ANCHOR_PRECEDENCE!r}) -- without it a rewrite silently becomes law")
+    return problems
+
+
 def emit():
     fm, text = frontmatter()
     problems = []
@@ -157,6 +257,10 @@ def emit():
     for placeholder in ("TODO", "TBD", "FIXME", "<fill", "XXX"):
         if placeholder in body:
             problems.append(f"placeholder {placeholder!r} left in the handoff body")
+    problems += anchors()
+    print("\ncoach metrics (G-COACH-2, G-COACH-3):")
+    _, coach_problems = coach()
+    problems += coach_problems
     if problems:
         print("HANDOFF REFUSED:")
         for p in problems:
@@ -178,4 +282,6 @@ def stamp():
 
 if __name__ == "__main__":
     arg = sys.argv[1] if len(sys.argv) > 1 else "--check"
-    sys.exit({"--check": check, "--emit": emit, "--stamp": stamp}.get(arg, check)())
+    sys.exit({"--check": check, "--emit": emit, "--stamp": stamp,
+              "--coach": lambda: coach()[0],
+              "--coach-refresh": lambda: coach(write_baseline=True)[0]}.get(arg, check)())

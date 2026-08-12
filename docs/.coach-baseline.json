@@ -1,0 +1,14 @@
+{
+  "paper-I-price-formation": {
+    "concessive": 0,
+    "conduct_outside_allowed": 1
+  },
+  "paper-II-redistribution": {
+    "concessive": 0,
+    "conduct_outside_allowed": 1
+  },
+  "paper-III-dual-tensor": {
+    "concessive": 0,
+    "conduct_outside_allowed": 10
+  }
+}

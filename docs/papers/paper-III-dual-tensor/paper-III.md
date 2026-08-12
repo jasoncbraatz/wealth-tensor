@@ -95,8 +95,8 @@ composite does not blur the intended ranking — it **inverts** it.
 This programme learned that the hard way, which is the second reason the paper exists. The
 framework's sharpest empirical prediction was pre-registered, tested twice on EDGAR-derived
 impairment data with a stopping rule declared in advance, and it failed. §5 reports the failure at
-full length. §4 reports something this paper's earlier draft got wrong about it: the identification
-result is **not** the explanation. The one observable the composite spares is precisely the one the
+full length. §4 reports what the identification result says about that failure, and the answer is
+that it **does not explain it**. The one observable the composite spares is precisely the one the
 registration ordered — and it is not computable from public filings, so the instrument measured a
 substitute whose relation to the model was never written down. A theorem about identification, a
 registered null, and the discovery that the two are less connected than they look, are three
