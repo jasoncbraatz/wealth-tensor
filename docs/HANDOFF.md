@@ -548,6 +548,56 @@ make. It should be made where it can be defended, not asserted in a title. **He 
 our judgement and would be saddened to lose it — so if a session can construct the operator honestly,
 that is worth more than any edit in this handoff.**
 
+
+### 3b · **THE SYNTHESIS — Jason's Hadamard instinct, and why it means the tensor does NOT get cut**
+
+*Added at the very end of `wealthTensor-10`, from Jason's own reading, and it resolves §3 above.*
+
+His instinct: with multiple asset classes the shortest mathematical path is a **Hadamard product
+across a tensor**, and decomposing to matrices would be inefficient. **He is right, and the reason
+matters more than the efficiency.**
+
+Index the asset classes *i*. Each carries its own **(φᵢ, δᵢ, αᵢ, θᵢ)**, and §4's recursion becomes
+
+> **C**(t+1) = **C**(t) + **φ** ⊙ Δ**E** + **α** ⊙ **gap**(t)
+
+**Elementwise, because each class's filter acts only on its own class.** The Hadamard product is not
+a notational convenience here — it is the *statement that the reporting layer is diagonal in class
+space*. Computationally it is O(n) against a matrix product's O(n²); structurally it is the claim
+that recognition in one class does not force recognition in another.
+
+**And that is exactly why the tensor belongs in ROAD TWO rather than in a later paper.**
+
+The φδ non-identification result, stated for one class, is a scalar remark: *you cannot recover φ
+without knowing δ.* Stated on the diagonal it becomes the corollary that does all the work:
+
+> **The observable ranking of asset classes is the ranking of φ ⊙ δ, not of φ.** Two classes cannot
+> be ordered by observability from reported series unless their degradation rates are known and
+> divided out.
+
+**That is PRE-001's registered hypothesis, and it is why PRE-001 could not have succeeded.** The
+registration ordered classes by φ while δ varied freely across them — and the Hadamard form is the
+one-line proof that the design was reading φ⊙δ the whole time. *The formalism Jason wanted to
+contribute is the formalism in which his own null becomes a theorem's worked example.*
+
+**So the tensor is not cut. It is promoted from an adjective in a title to the notation the result is
+stated in** — and it is load-bearing, because without the class index the theorem's sharpest
+corollary cannot even be written.
+
+**And the off-diagonal is the next paper, with a test attached.** Real GAAP couples the classes: a
+goodwill test under ASC 350-20 runs at the *reporting-unit* level, and the triggering event that
+forces an ASC 360 recoverability screen on PP&E is frequently the same event. So the honest
+statement is that the diagonal model is an **assumption**, not a fact — and it is a *testable* one:
+
+> **The diagonal (Hadamard) model predicts recognition events are independent across asset classes
+> within a firm. A coupled model predicts they cluster in firm-quarters.** Co-occurrence of
+> impairment charges across classes, against an independence null, is a test that needs **no
+> observability proxy, no bridge from φ to a GAAP category, and no new data** — the 688 events
+> already collected are enough to look.
+
+*That is the failure mode that killed PRE-001 and PRE-002 routed around entirely, and it should be
+registered before its instrument is coded (WT-052).*
+
 ## 4 · DONE IN `wealthTensor-10`
 
 - **`docs/REFERENCE-POLICY.md`** — portable. Three acts (cite/characterise/quote); a **fifth pass**
