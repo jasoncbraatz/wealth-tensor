@@ -22,10 +22,14 @@ statements owe is exactly **(1 − φ)** times its value at φ = 0, in closed fo
 
 The parameter of interest is not recoverable from what the instrument emits. **The triples (α, δ, φ)
 and (δ, α, φδ/α) generate the identical reported series**, where δ is the physical decay rate: the
-filter's two roots are exchangeable and the exchange preserves φδ exactly, to 7 × 10⁻¹⁴. Timeliness
-and durability are therefore not separately identified from a reported series — not
-ill-conditioned, exchangeable — and a series cannot distinguish a prompt reporter of a durable asset
-from a slow reporter of a perishable one.
+filter's two roots are exchangeable and the exchange preserves φδ exactly. The proof is four lines —
+the exchange imposes two coefficient conditions and both reduce to φ′α = φδ — and the reported gap is
+a Bateman function, whose exchange symmetry pharmacokinetics has called *flip-flop* since the 1970s.
+Timeliness and durability are therefore not separately identified from a reported series, and a
+series cannot distinguish a prompt reporter of a durable asset from a slow reporter of a perishable
+one. **Where the asset's physical scale is not observed — every firm-level series, which aggregates
+vintages — the identified set is not two points but a continuum, and a factor of 1.67 in that
+unobserved scale spans the whole unit interval of timeliness.**
 
 Indexing asset classes and writing the recursion with a Hadamard product, the corollary is
 cross-sectional: **classes are ordered by (1 − φ) ⊙ δ ⊘ (α − δ), not by φ** — decay reaching the
@@ -105,9 +109,11 @@ different results, and this paper reports them as three.
 **Contributions.** Numbered, so that a reader is not obliged to construct a smaller list than the
 one intended.
 
-1. **An exact observational equivalence** (§4.2). The filter's two roots exchange, preserving φδ, so
-   timeliness is not recoverable from a reported series by any estimator. This replaces the earlier
-   claim that φ is merely ill-conditioned, which understated the result.
+1. **An exact observational equivalence, with its proof and its reach** (§4.2). The filter's two
+   roots exchange, preserving φδ, so timeliness is not recoverable from a reported series by any
+   estimator. The structure is the Bateman function's, and the accounting instance is placed against
+   its known analogues in pharmacokinetics and compartmental identifiability. Where the physical
+   scale is unobserved the degeneracy widens from two points to a continuum spanning all of φ.
 2. **The cross-class corollary, in Hadamard form** (§4.3–4.4). With classes indexed the reporting
    layer is diagonal, the observable ranking is the ranking of (1 − φ) ⊙ δ ⊘ (α − δ), and on the
    ladder GAAP supplies that ranking is the reverse of the ranking of φ. The validity condition for a
@@ -260,12 +266,12 @@ the same claim indexed by a continuous observability parameter, with the smoothi
 measured separately rather than argued. The provenance and the difference in mechanism are set out in
 §10; it is noted here because the table's headline result is nineteen years old.
 
-**It is not, however, a usable empirical target.** Against the accounting data available to this programme the concentration
+**It is not, however, a usable empirical target.** Against filed accounting data the concentration
 statistic is unfalsifiable by construction: the asset class with no amortisation schedule has
 essentially all of its recognised change arrive discretely *as a matter of accounting definition*,
 not of firm behaviour. A test of that is a test that cannot fail, and a test that cannot fail is
-not a test. It was excluded from this programme's pre-registrations on exactly those grounds
-before either was run. The relocation result is therefore a property of the model and a candidate
+not a test. Neither pre-registration included it, on exactly those grounds, before either was
+run. The relocation result is therefore a property of the model and a candidate
 description of the world, and it is **not** offered as the replacement severe test. The framework
 does not currently have one.
 
@@ -279,15 +285,12 @@ answers two questions answers neither.
 ## 4 · Timeliness and durability are not separately identified
 
 §3 established what the filter does to one asset. This section establishes what a reader of the
-filter's output can and cannot learn from it, and the answer is sharper than a caution about
-estimation. It is a constraint on the instrument, it holds for any estimator, and it applies to
-measures in the conservatism literature that were built without reference to this model or any
-other like it.
+filter's output can learn from it. The answer is a constraint on the instrument rather than a
+caution about estimation: it holds for every estimator, it has a four-line proof, and it applies to
+measures built without reference to this model or any like it.
 
-The weak form of the result is a conditioning statement: φ is recoverable, but the estimator's
-variance grows like 1/δ². That form is true and it is too kind. In the filter regime the degeneracy
-is not a matter of conditioning at all — it is exact, and it is exact for a reason with a one-line
-proof.
+The weak form is a conditioning statement — φ is recoverable, but the estimator's variance grows
+like 1/δ². That form is true and too kind. In the filter regime the degeneracy is exact.
 
 ### 4.1 · The class index, and why the product is elementwise
 
@@ -298,54 +301,111 @@ line in vectors:
 
 > **C**(t+1) = **C**(t) + **φ** ⊙ Δ**E** + **α** ⊙ **gap**(t),  **gap**(t) = **E**(t) − **C**(t)
 
-with ⊙ the Hadamard product. The elementwise form is not a notational economy. It is a
-substantive claim about the reporting layer: **the layer is diagonal in class space.** A dollar of
-unrecognised deterioration in a distribution centre does not force recognition against a trademark.
-Each class's filter reads its own gap and nothing else.
+with ⊙ the Hadamard product. The elementwise form is a substantive claim rather than a notational
+economy: **the reporting layer is diagonal in class space.** A dollar of unrecognised deterioration
+in a distribution centre does not force recognition against a trademark. Each class's filter reads
+its own gap and nothing else.
 
-That claim is an assumption, it is false in detail, and §9 says so and proposes the test. What
-matters here is that writing it down makes the next result expressible. Without the class index,
-the identification result below is a remark about a single parameter. With it, the remark acquires a
-corollary about *rankings*, and rankings are what the empirical literature on this subject actually
+That claim is an assumption and it is false in detail; §9 says so and proposes the test. What
+matters here is that writing it down makes the next result expressible. Without the class index the
+identification result below is a remark about a single parameter. With it, the remark acquires a
+corollary about *rankings*, and rankings are what the empirical literature on this subject
 estimates.
 
 ### 4.2 · The theorem
 
-Take one class and disable the recognition mechanism, so the filter is examined in isolation.
-Write δ for the effective decay rate d(1 − m) of §2. Substituting ΔE = −δE(t) collapses the pair of
+Take one class and disable the recognition mechanism, so the filter is examined in isolation. Write
+δ for the effective decay rate d(1 − m) of §2. Substituting ΔE = −δE(t) collapses the pair of
 recursions to a single line:
 
 > C(t+1) = C(t)(1 − α) + E(t)(α − φδ),  E(t) = E₀(1 − δ)ᵗ
 
-φ appears once, in the product φδ, and nowhere else. The reported series is a two-root linear
-system whose roots are α and δ and whose forcing coefficient is (α − φδ). Nothing else about φ
-enters. This has a consequence that is stronger than ill-conditioning, and it is exact:
+φ appears once, in the product φδ, and nowhere else. With the books opening square — C(0) = E(0) =
+E₀, an asset carried at cost on the day it is acquired — this solves in closed form. Writing
+A = 1 − α and D = 1 − δ for the two roots,
+
+> **C(t) = E₀ · [ δ(1 − φ) Aᵗ − (α − φδ) Dᵗ ] / (δ − α)**
+
+and the reported series is a linear combination of two geometrics whose exponents are the
+reporting rate and the physical decay rate.
+
+Now exchange them. Send (α, δ, φ) → (δ, α, φ′), which swaps A and D, and ask what φ′ must be for
+the series to come back unchanged. The Aᵗ coefficient requires δ(1 − φ) = δ − φ′α. The Dᵗ
+coefficient requires α − φδ = α(1 − φ′). Both reduce to
+
+> **φ′α = φδ**
+
+Two equations, one unknown, and they agree. That coincidence is the theorem: the system is
+overdetermined and consistent, so the exchange is not approximate, not local, and not a matter of
+conditioning.
 
 > **Observational equivalence.** The parameter triples **(α, δ, φ)** and **(δ, α, φδ/α)** generate
-> the *identical* reported series. The two roots of the filter — the reporting rate and the physical
+> the *identical* reported series. The filter's two roots — the reporting rate and the physical
 > decay rate — are exchangeable, and the quantity preserved by the exchange is exactly **φδ**.
 
-Verified to machine precision across the parameter grid: the largest deviation between a series and
-its mirror is 7 × 10⁻¹⁴ in absolute terms, 7 × 10⁻¹⁶ normalised — the arithmetic, not the model.
-Perturbing the mirror's φ by 0.05 moves the series by 4 × 10⁻², five orders larger, which is the
-witness that the check is touching something. Admissibility requires φδ ≤ α, which holds at every
+The numerical confirmation runs alongside the proof rather than in place of it: the largest
+deviation between a series and its mirror is 8 × 10⁻¹⁶, the arithmetic and not the model, against
+3 × 10⁻¹ when the mirror's φ′ is replaced by the value that would preserve the *unrecognised gap*
+instead of the reported series — a discrepancy of fourteen orders of magnitude between the right
+conserved quantity and a plausible wrong one. Admissibility requires φδ ≤ α, which holds at every
 parameter setting used anywhere in this paper.
 
 So a reported series does not merely make φ hard to recover. **It does not contain φ.** It contains
 φδ, and it cannot distinguish a timely reporter of a durable asset from a laggard reporter of a
-perishable one. The two are the same series.
+perishable one.
 
-The practical form of this, and the one worth carrying: **a reported series determines φδ, and any
-further statement about φ is imported from outside the series.** Estimating δ from the same series
-does not help, because the series cannot tell δ from α either — that is what the exchange says.
+**What the two worlds disagree about is the firm, not the filing.** The mirror is not a
+mathematical curiosity with no economic content. It is a slow reporter of a fast-decaying asset:
+at t = 400 its physical stock stands at 4 × 10⁻⁶ of the original world's, a book value sitting
+above an asset that has all but evaporated. That is a recognisable kind of company. It files the
+same statements, to fourteen decimal places, as the prompt reporter of the durable asset.
 
-Two facts about the boundary of the result, because a theorem with unstated edges is a slogan.
-First, the equivalence is broken by the recognition events: their trigger reads gap/E, and across
-five mirror pairs the event counts differ sharply enough to separate them (16 against 66, 25 against
-80, 36 against 133, and two pairs where one side is silent entirely). Second — and this is why the
-break is not a rescue — **the trigger reads E, which no filing reports.** The information that
-breaks the degeneracy arrives through a channel the reported series does not have. §4.6 returns to
-what that costs.
+**The mathematics is old, and saying so costs nothing.** Subtract E(t) from the closed form and the
+unrecognised gap is
+
+> G(t) = E₀ · (1 − φ) δ · S(t),  S(t) = (Aᵗ − Dᵗ)/(δ − α)
+
+a scalar amplitude carrying every trace of φ, multiplied by a shape function that is invariant
+under exchanging the roots. S is the Bateman function, written down in 1910 for the daughter
+activity of a radioactive decay chain (Bateman, 1910), and its exchange symmetry is the reason
+pharmacokinetics has a name for this: **flip-flop**, the interchange of an absorption rate constant
+with an elimination rate constant in a one-compartment model, which leaves the concentration–time
+profile unmoved (Garrett, 1994). Kuan, Wright and Duffull (2023) classify it as a failure of
+*global* rather than local identifiability — a finite set of parameter vectors solving the problem
+rather than one — which is precisely the two-point structure above. The general statement that the
+rate constants of a linear compartmental system are recovered from the input–output map only as an
+unordered pair goes back to Bellman and Åström (1970).
+
+The ambiguity bites here for the same reason it bites in pharmacokinetics and not in
+radiochemistry: it needs a **free scale parameter** to hide in. A decay chain's parent activity is
+measured independently, so the exchange changes the observed curve by a detectable factor and
+nothing is lost. A plasma profile has an unknown volume of distribution, and a balance sheet has an
+unknown (1 − φ). Accounting is on the pharmacokinetic side of that line, and the next result is
+what it costs.
+
+**The result is stronger than a two-point ambiguity.** The closed form has two roots and two
+amplitudes: four numbers, and that is everything a reported series contains. The model has five
+parameters — α, δ, φ, the physical scale E₀, and any gap g₀ already open when the observation
+starts. Five into four does not go, and the shortfall lands on φ.
+
+Two consequences, both exact. First, opening the books with a gap already in place does not rescue
+identification: the mirror survives with the same g₀ under the shifted map φ′ = [φδ + g₀(α − δ)]/α,
+and the conserved quantity generalises to (φ − g₀)δ = (φ′ − g₀)α. The obvious escape — *real firms
+are not observed from acquisition* — makes matters worse rather than better.
+
+Second, and this is the sharp form: **when the physical scale is not observed, φ is not two-valued.
+It is free.** Fix a reported series generated at φ = 0.60 and ask what other parameter vectors
+reproduce it exactly. Assuming a physical scale of 0.76 implies φ = 0; assuming 1.27 implies φ = 1;
+every assumption in between implies an intermediate φ, and every one of them regenerates the
+observed series to 2 × 10⁻¹⁶. **A factor of 1.67 in the unobserved physical scale spans the entire
+unit interval of timeliness.** The reported series is consistent with a firm that recognises
+everything at once and with a firm that recognises nothing.
+
+The condition under which this bites is worth naming precisely, because it is the empirical norm
+rather than an edge case. E₀ is observed when an asset is followed from acquisition, where cost
+fixes the physical scale and the gap opens at zero. It is not observed for a firm-level series,
+which aggregates assets of many vintages, so the scale that would pin φ is exactly what a
+cross-sectional study does not have.
 
 The earlier conditioning result stands underneath all of this and is worth keeping for its size:
 fitting the model to a synthetic series recovers φ with a median absolute error of 0.211 when δ is
@@ -353,21 +413,37 @@ estimated jointly and 0.00073 when δ is pinned at its true value, a **291-fold*
 noise-free series giving 0.211 as well. That is what an exact degeneracy looks like from inside a
 numerical optimiser: not a cliff, a canyon.
 
+One channel does break the equivalence, and it is closed. The recognition events' trigger reads
+gap/E, and across five mirror pairs the event counts differ sharply enough to separate them (16
+against 66, 25 against 80, 36 against 133, and two pairs where one side is silent entirely). **The
+trigger reads E, which no filing reports.** The information that breaks the degeneracy arrives
+through a channel the reported series does not have.
+
 ### 4.3 · What a cross-class ranking reads
 
-Now the class index earns its keep. The steady-state ratio of unrecognised gap to physical value —
-the model's natural measure of how much a class defers — has a closed form:
+The class index now earns its keep. What a series identifies is φᵢδᵢ, so a cross-class ranking
+computed from reported numbers is a ranking of the product — and a ranking of φ ⊙ δ is not a
+ranking of φ unless δ is constant across the classes being ranked.
+
+The model's own measure of how much a class defers sharpens this. The steady-state ratio of
+unrecognised gap to physical value has a closed form:
 
 > **R**ᵢ = (1 − φᵢ) δᵢ / (αᵢ − δᵢ)
 
 which simulation reproduces to the transient bound, 2 × 10⁻⁴ after 400 periods, against a witness
-of 1.0 when φ is misstated by 0.1. Written across classes with a common α this is a Hadamard
-product again, **(1 − φ) ⊙ δ**, divided elementwise by (α − δ).
+of 1.0 when φ is misstated by 0.1. Across classes with a common α this is a Hadamard product again,
+**(1 − φ) ⊙ δ**, divided elementwise by (α − δ). Decay reaches the ranking through two channels,
+neither of them the parameter of interest.
 
-**Two classes are therefore ordered, in anything a reader can compute from filings, by (1 − φ) ⊙ δ
-and not by φ.** Timeliness sets the ranking only when durability is constant across the classes
-being ranked — and the classes accounting standards distinguish are, almost by construction, the
-classes whose durability differs. That is why the standards distinguish them.
+R is the model's deferral measure and not an observable — it is a ratio to E, and E is the series
+nobody reports. Under the mirror it does not shrink or stretch: it **changes sign**, from +0.267 to
+−1.267, because the mirror world is one in which the books outrun the asset. A quantity that
+reverses sign under an exchange the data cannot detect is not a quantity a reader recovers. What
+§4.4 uses R for is what it is good for: computing, inside the model, which way a ranking runs.
+
+**Timeliness sets the ranking only when durability is constant across the classes being ranked** —
+and the classes accounting standards distinguish are, almost by construction, the classes whose
+durability differs. That is why the standards distinguish them.
 
 This is not a defect of the present model. Any model in which reporting lag attenuates a physical
 signal will multiply a timeliness parameter by an asset-life parameter somewhere, because the
@@ -434,9 +510,6 @@ numbers is the entire content of this section.
 
 ### 4.5 · One statistic survives, and it is the one nobody can compute
 
-Here the result stops where honesty requires, and the stopping point is more interesting than an
-extension would have been.
-
 Everything above concerns a *magnitude* — how much a class defers. The registration did not order
 magnitudes. It ordered **lag**: how long a class takes. And the lag statistic does not invert.
 
@@ -470,7 +543,7 @@ has a theorem behind it rather than a bruise.
 
 ### 4.6 · The field's instruments read the same product
 
-The reason to state all of this carefully is that the constraint is not local to this model.
+The constraint is not local to this model.
 
 Conditional-conservatism measurement estimates how promptly accounting recognises economic losses.
 The standard instruments — Basu's asymmetric-timeliness coefficient (1997), Khan and Watts's C_Score
@@ -484,33 +557,53 @@ industries with identical recognition practice and different asset lives will sc
 two industries with identical scores may differ arbitrarily in practice.** The sign of the induced
 difference is not fixed by the measure; §4.4 shows it can invert a ranking rather than attenuate it.
 
-Three qualifications, because the claim is aimed at other people's work and should be stated at the
-strength the evidence supports. First, the mapping from this filter to each of those estimators is
-not established here: they are not fitting this model, and the composite they read need not be φδ
+**The literature has already met the confound and read it the other way up.** Khan and Watts (2009)
+report that firms with longer investment cycles score as more conservative, and treat the
+association as an economic determinant — a demand for verification that rises with the horizon.
+Ball, Kothari and Nikolaev (2013) state plainly that firms with shorter asset maturity are expected
+to exhibit lower timely loss recognition, and read that dependence as the measure behaving
+correctly. Under §4.4 those are the readings a δ channel would produce whether or not any
+recognition practice differed at all. The data cannot separate the two accounts, which is the whole
+of the present claim; it may well be both.
+
+The distinction from the standing critiques is what makes this worth stating. The econometric
+objections to the asymmetric-timeliness coefficient — truncation from conditioning on the sign of
+returns, scale effects, return-variance dependence — are **estimator** problems, and their remedies
+are the estimator's: controls, fixed effects, interactive corrections, a debiased functional form.
+A degeneracy is not a bias. When two parameter vectors generate the identical series, no control
+recovers the difference between them, because there is nothing in the series to recover it from.
+The existing repairs are aimed one level up from where the problem is.
+
+Three qualifications. First, the mapping from this filter to each of those estimators is not
+established here: they are not fitting this model, and the composite they read need not be φδ
 exactly. Second, the magnitude-versus-timing distinction of §4.5 matters, and these measures sit on
 both sides of it — Basu's coefficient is a slope on returns rather than a delay, and is closer to
-this paper's magnitude case than its timing one. Third, the industry fixed effects standard in this
-literature absorb the confound wherever asset life is constant within an industry, which is a
-different claim from absorbing it altogether.
+this paper's magnitude case than its timing one. Third, and most consequentially, **the theorem is
+proved for the reported series alone.** The returns-based measures condition on a second series,
+and a second series is exactly the kind of outside information §4.7 shows can pin a root. Whether
+returns break the equivalence or merely inherit it is open, and it is the sharpest question this
+result raises about somebody else's instrument.
 
-What the paper does claim is that the burden has moved. **A cross-sectional conservatism ranking now
-requires an argument that asset life is constant across the compared groups, or a correction for
-it** — and the ranking most often compared, across GAAP asset classes, is the one where that
-assumption is least defensible.
+What the paper claims is that the burden has moved. **A cross-sectional conservatism ranking now
+requires an argument that asset life is constant across the compared groups, a correction for it, or
+an auxiliary series that identifies it** — and the ranking most often compared, across GAAP asset
+classes, is the one where the first of those is least defensible.
 
 ### 4.7 · The repair
 
-An identification result that ends in "so the measurement is impossible" would be a poor return on
-five sections. It does not end there, and the way out is visible in the theorem's own statement: the
-series determines φδ, so **anything that supplies δ from outside the series restores φ.**
+The way out is visible in the theorem's own statement: the series determines φδ, so **anything that
+supplies δ from outside the series restores φ.** This is the accounting form of a move the
+pharmacokinetic literature has made for fifty years — flip-flop is resolved by an intravenous
+reference dose, a second administration that fixes the elimination root from outside the oral
+profile, after which the absorption rate and the scale parameter both follow.
 
-For three of the four classes, the standards already supply it. Finite-lived intangibles and
-depreciable property carry **disclosed useful lives and amortisation schedules** — an estimate of
-the physical decay rate, made by the firm, audited, published, and *not* derived from the series
-whose timeliness is in question. Pinning δ rather than estimating it jointly is precisely the
-291-fold improvement quoted in §4.2. A design that uses disclosed useful lives as an independent δ,
-and compares timeliness only within a life band, is reading φ rather than φδ, and it needs no data
-this programme does not already have.
+For three of the four classes, the standards already supply the reference dose. Finite-lived
+intangibles and depreciable property carry **disclosed useful lives and amortisation schedules** —
+an estimate of the physical decay rate, made by the firm, audited, published, and *not* derived from
+the series whose timeliness is in question. Pinning δ rather than estimating it jointly is precisely
+the 291-fold improvement quoted in §4.2. A design that uses disclosed useful lives as an independent
+δ, and compares timeliness only within a life band, is reading φ rather than φδ, and it runs on
+the sample §5 already collected.
 
 Three properties recommend that design over the one this paper registered. It is diagonal-safe: no
 comparison crosses a class boundary, so the diagonality assumption of §4.1 is not load-bearing. It
@@ -519,7 +612,19 @@ built-in negative control — the same comparison across life bands, where the t
 ranking should degrade — which is the kind of prediction that can embarrass the framework rather
 than decorate it.
 
-**The class it cannot rescue is goodwill**, and the reason is not a difficulty of measurement.
+The analogy also marks its own weak joint, and the joint is real. An intravenous dose is exogenous
+in the strong sense: a different physical administration of the same compound, whose elimination
+rate is set by physiology and not by the analyst's question. **A disclosed useful life is chosen by
+the same management whose timeliness is being measured.** Audited and published is not the same as
+exogenous, and a firm that reports slowly may also amortise slowly. Three things bound the
+consequence — useful lives are anchored by industry convention and by tax and regulatory schedules,
+they are sticky within a firm across the horizon over which timeliness is measured, and the design
+can be run on industry-median lives rather than firm-specific ones, at the cost of resolution. The
+sign of any residual endogeneity is toward finding *less* timeliness variation than exists, not
+more.
+
+**The class the repair cannot rescue is goodwill**, and the reason is not a difficulty of
+measurement.
 
 ### 4.8 · The goodwill limit
 
@@ -558,8 +663,7 @@ record of what was predicted and what happened; §6 states what may be concluded
 ### 5.1 · What was predicted, and when
 
 §3 establishes a property of a model. Whether the property holds of the world is a separate
-question, and this programme's assessment was — and remains — that no amount of prose does the
-work of one empirical result. The framework's sharpest available prediction is the one that
+question, and no amount of prose does the work of one empirical result. The framework's sharpest available prediction is the one that
 follows directly from §3.1:
 
 > **Recognition lag scales with the unobservability of degradation.**
@@ -825,6 +929,9 @@ with what would have killed each.
 |---|---|---|---|
 | **D(φ) = (1 − φ)·D(0)** | closed form against simulation, φ swept | any φ at which the ratio departs from (1 − φ) | held to **10⁻¹⁵** |
 | **(α, δ, φ) ~ (δ, α, φδ/α)** | mirrored simulation, five parameter settings | any visible separation between a series and its mirror | **7 × 10⁻¹⁴**, against 4 × 10⁻² when the mirror's φ is perturbed by 0.05 |
+| **φδ is the conserved quantity, not (1 − φ)δ** | both candidate maps run against the reported series | the two maps agreeing, which would make the check vacuous | mirror **8 × 10⁻¹⁶**, rival map **3 × 10⁻¹** — the gap is preserved by one, the filing by the other |
+| **An open initial gap does not restore identification** | mirror rebuilt at g₀ = 0.15 with the shifted map | the shifted map failing, or the g₀ = 0 map still working | shifted map **7 × 10⁻¹⁶**, naive map **5 × 10⁻²**; invariant (φ − g₀)δ held exactly |
+| **Unobserved physical scale ⇒ φ free over [0, 1]** | one-parameter family constructed and regenerated | any member of the family failing to reproduce the series, or the family collapsing to one φ | nine members spanning φ ∈ [0, 1], **all exact to 2 × 10⁻¹⁶** |
 | **R = (1 − φ)δ/(α − δ)** | closed form against simulation | departure beyond the transient bound | held to **2 × 10⁻⁴**, the bound the geometric transient predicts; **1.0** when φ is misstated by 0.1 |
 | **The ranking inverts, not just blurs** | 4,000 ladders drawn on the two qualitative facts alone | the intended ordering surviving often enough to be a design | recovered in **1.9%**; **100.0%** when δ is held common — the witness that the construction is not vacuous |
 | **The inversion spares the lag statistic** | 400 admissible ladders, lag ordering checked | lag inverting like the magnitude measure, which would have made the story tidier | lag ordering held in **100%** — *the check that overturned this paper's own draft claim* |
@@ -1519,11 +1626,29 @@ Accounting and Economics*, 24(1), 3–37. ✓ *(Cited for the asymmetric-timelin
 own title, and characterised from the author's own posted abstract rather than from the article,
 which was not available to the author. Nothing is quoted from it.)*
 
+Ball, R., Kothari, S. P., & Nikolaev, V. V. (2013). Econometrics of the Basu asymmetric timeliness
+coefficient and accounting conservatism. *Journal of Accounting Research*, 51(5), 1071–1097. ✓
+*(§4.6 cites it for its stated expectation that firms with shorter asset maturity exhibit lower
+timely loss recognition, and for reading that dependence as the measure behaving correctly. The
+characterisation is abstract-and-repository level; the deposited manuscript has not been read against
+the article of record, so nothing is quoted and no absence is claimed of it.)*
+
+Bateman, H. (1910). The solution of a system of differential equations occurring in the theory of
+radioactive transformations. *Proceedings of the Cambridge Philosophical Society*, 15(V), 423–427. ✓
+*(Cited for the function that bears its name and for nothing else; §4.2 characterises only the
+functional form, which is standard. The bibliographic record is from catalogue listings rather than
+the author's own copy, and no text is quoted.)*
+
 Beaver, W. H., & Ryan, S. G. (2000). Biases and lags in book value and their effects on the ability
 of the book-to-market ratio to predict book return on equity. *Journal of Accounting Research*,
 38(1), 127–148. ✓ *(Cited for the bias/lag decomposition named in its own title. §9 identifies this
 as the closest prior art to §4's filter, so the entry is load-bearing against this paper rather than
 for it.)*
+
+Bellman, R., & Åström, K. J. (1970). On structural identifiability. *Mathematical Biosciences*,
+7(3–4), 329–339. ✓ *(Cited in §4.2 for the founding statement that a compartmental system's rate
+constants are recovered from the input–output map only as an unordered pair. Characterised at
+abstract level.)*
 
 Bleck, A., & Liu, X. (2007). Market transparency and the accounting regime. *Journal of Accounting
 Research*, 45(2), 229–256. ✓ *(Read in full text; the copy consulted carries the journal's own title
@@ -1534,11 +1659,23 @@ volatility result nineteen years earlier.)*
 Bushman, R. M., & Williams, C. D. (2015). Delayed expected loss recognition and the risk profile of
 banks. *Journal of Accounting Research*, 53(3), 511–553. ✓
 
+Dutta, S., & Patatoukas, P. N. (2016). Identifying conditional conservatism in financial accounting
+data: theory and evidence. *The Accounting Review*, 91(5), 1407–1436. ✓ *(§4.6 groups it with the
+estimator-level repairs. Characterised at abstract-and-working-paper level; the copy consulted is
+the working paper rather than the article of record.)*
+
 Fama, E. F. (1970). Efficient capital markets: a review of theory and empirical work. *Journal of
 Finance*, 25(2), 383–417. ✓
 
 Financial Accounting Standards Board. *Accounting Standards Codification*, Topic 350 — *Intangibles —
 Goodwill and Other*; Topic 360 — *Property, Plant, and Equipment*; Topic 280 — *Segment Reporting*. ✓
+
+Garrett, E. R. (1994). The Bateman function revisited: a critical reevaluation of the quantitative
+expressions to characterize concentrations in the one compartment body model as a function of time
+with first-order invasion and first-order elimination. *Journal of Pharmacokinetics and
+Biopharmaceutics*, 22(2), 103–128. ✓ *(Cited in §4.2 as the bridge between the Bateman function and
+the flip-flop phenomenon, which its own title and abstract establish. Characterised at abstract
+level; nothing is quoted.)*
 
 Georgescu-Roegen, N. (1971). *The Entropy Law and the Economic Process*. Harvard University Press. ✓✎
 *(The copy consulted is the Harvard Paperback second printing, 1974, ISBN 0-674-25781-2; a printing is
@@ -1549,6 +1686,16 @@ Production and Wealth*. Palgrave Macmillan. ✓✎ *(Copy consulted confirms fir
 978-0-230-50055-6.)*
 
 Hayek, F. A. (1945). The use of knowledge in society. *American Economic Review*, 35(4), 519–530. ✓
+
+Khan, M., & Watts, R. L. (2009). Estimation and empirical properties of a firm-year measure of
+accounting conservatism. *Journal of Accounting and Economics*, 48(2–3), 132–150. ✓ *(§4.6 cites it
+both for C_Score and for its reported association between longer investment cycles and higher
+measured conservatism. Characterised at abstract level.)*
+
+Kuan, I. H. S., Wright, D. F. B., & Duffull, S. B. (2023). The influence of flip-flop in population
+pharmacokinetic analyses. *CPT: Pharmacometrics & Systems Pharmacology*, 12(3), 285–287. ✓ *(Cited
+in §4.2 for the classification of flip-flop as a failure of global rather than local
+identifiability. Open access; characterised at abstract level and not quoted.)*
 
 Hutton, A. P., Marcus, A. J., & Tehranian, H. (2009). Opaque financial reports, R², and crash risk.
 *Journal of Financial Economics*, 94(1), 67–86. ✓ *(Nothing is quoted from the body, which was read
