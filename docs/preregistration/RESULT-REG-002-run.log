@@ -1,0 +1,224 @@
+
+==============================================================================
+E1 - drop the durability ordering entirely (REG-002 E1)
+==============================================================================
+  WT-083 drew delta SORTED DESCENDING: durability rises up the ladder, the
+  inference from the standards' scheduling behaviour. Here delta is drawn i.i.d.
+  and UNORDERED over the same support. phi still falls up the ladder -- that is
+  the design and it is not in question.
+
+                                        ORDERED (WT-083)       UNORDERED
+  recovers the registered ordering                  1.9%           11.5%
+  exactly reverses it                              23.8%            1.1%
+  non-monotone                                     74.2%           87.4%
+  mean Kendall tau                                -0.414          +0.318
+     sd                                            0.515           0.450
+     se of the mean                               0.0081          0.0071
+  share of ladders with tau <= 0                   85.4%           33.9%
+
+  REG-002 E1 falsifier was stated on |mean tau| and is DEFECTIVE -- see the
+  erratum in REG-002. An absolute value cannot tell a vanished effect from a
+  reversed one, and this is the case that separates them.
+  signed mean tau, unordered: +0.318  (se 0.0071) -- POSITIVE.
+  -> the inversion is not weakened by dropping the durability ordering. It is
+     ABSENT. Without that ordering the design's own term is the only systematic
+     force left and the ranking runs, on average, the way it was designed to.
+  SEVERE     dropping the durability ordering moves mean tau materially toward zero
+  Witness is the ordered draw asked the same question of itself, which cannot
+  be materially closer to zero than it is.
+  SEVERE     the reversal RATE is a property of the assumed ordering, not of the confound alone
+
+  WITNESS WORLD -- delta held COMMON across the four tiers: recovery 100.0%
+  SEVERE     delta DISPERSION alone -- with no ordering imposed at all -- destroys the design's recovery of its own ordering
+  Witness is the common-delta world asked to clear its own bar, which it cannot.
+  So the confound and the ordering do DIFFERENT damage: dispersion destroys the
+  ranking (98.1% -> 88.5% of worlds non-recovering), and the ordering is what
+  turns the wreckage into a REVERSAL (23.8% against 1.1%).
+
+==============================================================================
+E2 - the goodwill decay rate at which the strict reversal breaks (REG-002 E2)
+==============================================================================
+  the paper's ladder, R = [0.3, 0.26667, 0.15, 0.03333]
+  strictly decreasing (the tau = -1 claim): True
+
+  closed form: delta_3* = K*alpha/(1+K) with K = R_2/(1-phi_3) = 0.187500
+  delta_3*                      = 0.007895
+  implied half-life             = 87.5 periods
+  the paper assumes delta_3     = 0.002000  (half-life 346.2)
+  margin                        = 0.005895
+  bisection check               = 0.007895   (|closed - bisect| = 0.00e+00)
+  SEVERE     the closed form for the crossing rate agrees with bisection to 1e-9
+
+  at delta_3 = 0.00829 (5% above the crossing):
+    R = [0.3, 0.26667, 0.15, 0.15899]
+    strictly decreasing: False   Kendall tau = -0.67
+  SEVERE     a goodwill decay rate barely above the crossing destroys the tau = -1 reversal
+  Witness is the paper's own calibration, where the ladder IS strictly
+  decreasing -- so the check is reading the goodwill rate and nothing else.
+
+  REG-002 E2 threshold: delta_3* < 0.010 -> knife edge.  delta_3* = 0.007895  -> FIRES
+
+==============================================================================
+E3 - lumpy, not slow (REG-002 E3)
+==============================================================================
+  REG-002 section 3.1 declared this extension BEFORE it was written: LayeredFirm
+  takes a scalar entropy_rate; E3 needs a per-period sequence. The extension is a
+  strict generalisation and its reproduction of LayeredFirm is itself a check.
+
+  constant-sequence reproduction of LayeredFirm: max |gap diff| = 0.000e+00
+  SEVERE     the varying-decay extension reproduces LayeredFirm on a constant sequence
+  Witness is the same comparison at a DIFFERENT constant rate, which must differ.
+
+  smooth class : delta = 0.01 every period
+  lumpy class  : delta = 0.200 with probability 0.05, else 0
+                 -> identical MEAN decay rate 0.0100, phi = 0.2
+
+  R at the mean rate (closed form)      : 0.200000
+  realised deferral ratio, lumpy path   : 0.260659  (se 0.001861, 2000 paths)
+  lumpy / smooth                        : 1.3033
+  in delta-equivalent terms, the lumpy class defers like a smooth class at delta = 0.01229
+  SEVERE     a lumpy decline defers MORE than a smooth one at the same mean rate
+  Witness is the smooth class measured against itself, which is 1.0 by
+  construction and cannot exceed the tolerance.
+
+  So 'unscheduled' proxied as 'slow' is wrong TWICE over: the mean rate need not
+  be small, and at any given mean rate lumpiness RAISES the deferral measure.
+  Goodwill's delta-equivalent under this lumpy path is 0.01229, against the
+  paper's assumed 0.00200 and the crossing rate 0.00789.
+  Above the crossing: True
+
+==============================================================================
+E4 - the disclosed-numbers ladder (REG-002 E4)
+==============================================================================
+  Two rungs need no inference. ASC 360 and ASC 350-30-50 make firms DISCLOSE
+  useful lives for property and for finite-lived intangibles. Under REG-002
+  section 3.2's stated bridge, a disclosed life L gives a write-down rate 1/L.
+  That bridge is an ASSUMPTION -- but a falsifiable one about a published number,
+  which is strictly better located than an inference from an ABSENCE.
+
+  property, plant and equipment : lives 10-40y -> delta_0 in [0.0250, 0.1000]
+  finite-lived intangibles      : lives 3-20y -> delta_1 in [0.0500, 0.3333]
+  the paper's table asserts       delta_0 = 0.030 > delta_1 = 0.020  (lives 33y and 50y)
+
+  fraction of the disclosed rectangle INSIDE the model's domain (delta < alpha): 0.0%
+  of that admissible part, the first rung RISES in : 0.0%
+  as a share of the whole rectangle               : 0.0%
+
+  the boundary is exact: rung 0->1 falls iff  (1-phi_1)*g(delta_1) < (1-phi_0)*g(delta_0),
+  g(d) = d/(alpha-d).  With phi = (0.80, 0.60) that is g(delta_1) < 0.5*g(delta_0),
+  i.e. delta_1 < alpha*delta_0 / (2*alpha - delta_0).
+  At the paper's delta_0 = 0.030 the boundary sits at delta_1 = 0.02143
+  and the paper picks delta_1 = 0.020 -- inside by 0.00143, i.e. a life of 46.7y against the 50y assumed.
+  SEVERE     the paper's first rung sits within a hair of its own boundary
+  Witness is the same margin computed for tier 2's rate, which is not near it.
+
+  REG-002 E4's registered falsifier is a share of the ADMISSIBLE rectangle,
+  and at alpha = 0.05 that rectangle is EMPTY. The registered test is vacuous
+  here -- not passed, not failed. Reported as such, and evaluated below at an
+  alpha where it has a domain. That substitution is an EXTENSION of REG-002 E4,
+  not the registered test, and is labelled so in the manuscript.
+  SEVERE     at the paper's calibration the disclosed rectangle lies entirely outside the model's domain
+  Witness is the same rectangle against a recognition rate of 0.35, which contains
+  it -- so the check is reading alpha and not the rectangle.
+
+  recognition rate needed for HALF the disclosed rectangle to be admissible : 0.1915  (a catch-up half-life of 3.3 periods)
+  recognition rate needed for ALL of it                                     : > 0.3333
+  the paper's alpha                                                         : 0.0500
+
+  EXTENSION, alpha = 0.35: admissible share 100.0%, first rung RISES in 99.7% of it
+  boundary in general form: the rung falls iff delta_1 < alpha*delta_0 / (2*alpha - delta_0),
+  which tends to delta_0/2 as alpha grows. Disclosure amortises finite-lived
+  intangibles over SHORTER lives than property, i.e. delta_1 > delta_0 -- so the
+  rung cannot fall anywhere a filing actually puts a firm.
+  SEVERE     wherever the question has a domain at all, the first rung of the paper's table runs the other way on disclosed useful lives
+  Witness caps delta_1 at the boundary curve, where the rung cannot rise -- so a
+  check that passed for both would not be reading the curve.
+
+==============================================================================
+E5 - what governs the direction, FITTED (REG-002 E5)
+==============================================================================
+  Section 4.4's decomposition: a rung rises iff
+      dlog(1-phi) + dlog(delta) - dlog(alpha-delta) > 0
+  Define, per ladder, the DESIGN BUDGET as the mean design term per rung and the
+  DELTA LEVERAGE as the mean absolute combined delta contribution per rung.
+
+  fitted logit P(design fails) = +0.7801 + +1.5812 * log(leverage/budget)
+     se                        =  0.0684          0.0810
+     z on the slope            =  +19.5
+  crossover (P = 0.5) at leverage/budget = 0.6106
+
+  THE DESIGN RULE, and it is a fitted number, not an asserted one: a phi-ordered
+  cross-section is more likely than not to recover its own ordering only while the
+  ladder's per-rung delta leverage stays below 0.61 times its design
+  budget. The paper's own ladder sits at 2.58.
+  SEVERE     the fitted slope is positive and many standard errors from zero
+  Witness is the identical fit on a PERMUTED outcome: z = 0.23, so the check is reading the ladder and not the design matrix.
+
+==============================================================================
+E6 - the alpha-delta boundary, which the disclosed numbers walk into (REG-002 E6)
+==============================================================================
+  R = (1-phi)*delta/(alpha-delta) has a pole at delta = alpha and is NEGATIVE
+  beyond it. The paper's calibration keeps delta <= 0.030 under alpha =
+  0.05. Disclosed intangible lives of 20 years or shorter cross it.
+
+     delta   d/alpha   log10 ratio t=400       t=800   closed form   settles
+     0.010      0.20              -0.699      -0.699        0.2000      True
+     0.030      0.60               0.079       0.079        1.2000      True
+     0.045      0.90               0.801       0.851        7.2000     False
+     0.049      0.98               1.129       1.348       39.2000     False
+     0.051      1.02               1.330       1.732      -40.8000     False
+     0.060      1.20               2.513       4.358       -4.8000     False
+     0.100      2.00               9.597      18.989       -1.6000     False
+     0.200      4.00              29.881      59.735       -1.0667     False
+  (log10 of the gap ratio, because past the pole it leaves the page: at delta =
+   0.200 it reaches 10^69 by t = 400 and 10^140 by t = 800.)
+
+  delta < alpha : ratio settles     (1.1997 -> 1.2000, change 2.88e-04)
+  delta > alpha : ratio does NOT    (3949647364.0531 -> 9749821445631545344.0000, change 9.75e+18)
+  SEVERE     no steady-state deferral ratio exists once the decay rate exceeds the recognition rate
+  Witness is the sub-critical case asked the same question, which settles.
+
+  So section 4.4's measure is defined only where the recognition rate exceeds the
+  economic decay rate. That is not a calibration detail: it is a statement about
+  WHICH FIRMS the section speaks to, and it belongs in the section.
+
+==============================================================================
+E7 - does the LAG survival survive it too? (REG-002 E7, registered before coding)
+==============================================================================
+  Section 4.5 reports the lag ordering holding in 100% of 400 random admissible
+  ladders -- drawn under the SAME two constraints E1 drops. If the statistic that
+  survived the confound survived it only because of the durability assumption,
+  section 4.5's concession needs narrowing in the same breath it reports the 100%.
+
+  lag non-decreasing up the ladder, ORDERED delta   : 100.0%   (WT-083 reports 100.0%)
+  lag non-decreasing up the ladder, UNORDERED delta : 69.0%
+  compare the MAGNITUDE measure, unordered          : 11.5%
+  binomial se at M = 400 (WT-083's sample size, the registered one) : 0.023
+
+  PRECISION CHECK, same estimator at M = 2000                       : 66.2%  (se 0.011)
+  the registered figure sits 0.43 se from the registered
+  threshold; the precision check sits 3.55 se from it.
+
+  REG-002 E7: below 0.70 -> narrow the concession; at or above 0.90 ->
+  a strengthening obtained by trying to break it.
+  registered M = 400: 0.690   ·   precision M = 2000: 0.662
+  -> NARROW
+  SEVERE     the lag ordering DEGRADES materially once the durability ordering is dropped
+  Witness is the ordered draw asked to fall materially below itself.
+  SEVERE     the timing statistic survives an assumption the magnitude statistic needed
+  Witness is the magnitude measure asked to clear its own bar, which it cannot.
+
+==============================================================================
+SUMMARY
+==============================================================================
+  E1  mean tau, ordered -0.414 -> unordered +0.318
+  E2  the reversal breaks at delta_3 = 0.00789 (half-life 87y); the paper assumes 0.00200
+  E3  lumpy/smooth deferral ratio 1.303 at an identical mean rate
+  E4  first rung rises over 0.0% of the admissible disclosed rectangle
+  E5  P(failure) = 0.5 at leverage/budget = 0.611 (fitted, z = +20)
+  E6  no steady state for delta > alpha; 100.0% of the disclosed rectangle is outside the model's domain
+  E7  lag ordering 100.0% ordered -> 66.2% unordered (M = 2000, se 0.011)
+
+------------------------------------------------------------------------------
+SEVERITY: 14 severe · 0 definitional · 0 failed/vacuous
+------------------------------------------------------------------------------
