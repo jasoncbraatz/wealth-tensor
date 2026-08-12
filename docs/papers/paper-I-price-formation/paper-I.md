@@ -2,7 +2,7 @@
 
 **Jason C. Braatz**
 *Independent researcher*
-jasoncbraatz@gmail.com
+jason@braatzresearch.com
 
 **Draft — not yet submitted.** Version 0.1, 2026-08-10.
 

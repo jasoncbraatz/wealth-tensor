@@ -425,3 +425,182 @@ answers *is my quote real.* It does not answer *what else is in here.*
 **Three sessions, three framings, three deaths, and each one found by us before it found a referee.**
 The saintly manager had been sitting on page four since 2004, one page from the sentence we quoted,
 waiting for someone to read the paragraph instead of the line. 🪃⚾
+
+---
+---
+
+# ⚒️ wealthTensor-11 — READ THIS SECTION FIRST, IT SUPERSEDES §5 ABOVE
+
+*Written at the end of `wealthTensor-10`. The mission list in §5 is stale. This is the brief.*
+
+## 0 · THE DOCTRINE THAT CHANGED, AND IT IS THE MOST IMPORTANT LINE IN THIS FILE
+
+> **WT-078 · COACHES, NOT UMPIRES.** Jason's ruling, 2026-08-12, and it corrects ten sessions of
+> practice including everything `wealthTensor-10` did before he stopped it twice.
+>
+> *"An umpire calls balls and strikes — case closed. A coach notices a problem and offers a
+> corrective. The boards that regulate vehicle safety don't smash cars so manufacturers can sell
+> crashed cars; they smash them and hand back actionable evidence on what to improve."*
+>
+> **Every adversarial agent must cut both ways.** Not *"Bill and Alice scooped you"* but
+> **"Bill and Alice scooped you — and here is what Bill and Alice MISSED."** The recon mission is
+> *"guys, this won't work as-is, but this will."* **Finding the whitespace is the job.** A report
+> that only tears down is a failed report, however correct.
+
+> **WT-079 · THE DELIVERABLE IS THE PAPER, NOT A LIST OF FIXES.** Jason rewrites everything in his
+> own hand at the end — that is his stated method and it is not negotiable. What he needs from a
+> session is a **straw man in the prose**, so he can work with **two windows open, not six**, and
+> decide how much weight each move gets in his own vernacular. **Handing him notes-about-fixes puts
+> him back at square one.** `wealthTensor-10` produced four excellent documents and not one
+> improved sentence *in a paper*, and he said so.
+
+> **WT-080 · RUN THE MATH BEFORE WRITING THE FINDING.** *"No point in wasting ink."* If it comes
+> back negative it goes in Abandoned Approaches — **that is research and it is fine.** WT-077 below
+> is the first instance and it came back positive.
+
+> **WT-081 · THE PAPERS MUST POSITIVELY CONTRIBUTE, AND MAY BE FUN.** No-grumpiness applied to
+> research prose. *"Nobody has time for a paper that affirms how rock-solid its own process was."*
+> Coase is funny. Akerlof won a Nobel writing about used cars. Wit is what confidence sounds like;
+> it is not in tension with rigour. **The register was never missing from these drafts — it was
+> outnumbered by apologies.** Take the apologies off and it returns on its own.
+
+## 1 · WT-077 — THE COMPUTATION RAN, AND ROAD ONE IS TRUE
+
+`scripts/wt077_tail_index.py`, committed and run. Kesten tail index α solving E[a^α] = 1, where
+a(η) = A(η)/(1+μ), on the large-*w* multiplier where wage and rebate are negligible.
+
+| levy | κ | ess-sup *a* | **α** |
+|---|---|---|---|
+| none | 0.00000 | 3.2857 | *unstable — condenses, matching the paper's own `none` row* |
+| stock r=0.025 | 0.02500 | 3.2036 | 2.4430 |
+| stock r=0.100 | 0.10000 | 2.9571 | 8.0456 |
+| flow r=0.250 | 0.02554 | 2.7024 | 2.9696 |
+| **flow r=1.000** | **0.10216** | **0.9524** | **NO POWER LAW — ess-sup a < 1** |
+
+**Matched budget, which is the test:**
+
+| κ | stock α | flow α | verdict |
+|---|---|---|---|
+| 0.0250 | 2.4430 | **2.9107** | flow thinner |
+| 0.0500 | 4.0824 | **7.4821** | flow thinner |
+| 0.1000 | 8.0456 | **∞ (no root)** | flow thinner |
+
+**All three falsifiers survived.** α orders monotonically with *r* within each base; the r=1 flow
+case admits no finite root; and at every matched κ the flow levy yields the larger α.
+And Var[log a] at matched budget: stock 0.076536 (κ=0.100) against flow 0.051189 (κ=0.102) —
+**the flow levy cuts the log-multiplier's variance by a third more for the same money.**
+
+> **The result, stated at the strength the evidence supports:** at equal compressive budget a levy
+> contingent on the realised gain thins the stationary tail more than a proportional levy on the
+> stock, because it truncates the growth multiplier's upper tail where the stock levy merely scales
+> it — and at a confiscatory rate on flow the multiplier is bounded above by 1, so **no power-law
+> tail exists at all.** This explains the paper's own table (Gini 0.222 vs 0.125 at κ ≈ 0.10) and it
+> reverses the standard wealth-tax-is-stronger prior.
+
+**⚠ TWO THINGS BEFORE THIS SHIPS.** (i) **Nobody has searched whether this is already known** —
+the optimal-taxation-with-Pareto-tails literature is where it would live, and it is the one search
+that must happen before the claim is made in print. (ii) `wt077` prints `unlevied Var[log a] = nan`
+— a log of negative values at the far left of the η grid. Cosmetic, in the last block only, and
+**not** load-bearing for any number above. Clamp it.
+
+## 2 · THE PLAN — `docs/ROADS-001-two-reconstructions.md`, READ IT SECOND
+
+Two alternative papers built from verified material, with spines, abstracts and titles.
+
+- **ROAD ONE (Paper II) — "the shape of the bite, not its size."** All five findings, *including the
+  two Jason thought were failures*, become instances of one principle: a levy changes the
+  distribution only insofar as it changes the **shape** of the growth multiplier. ρ, the exemption
+  threshold and periodicity are trim (they cannot change shape, and don't); scaling vs truncation is
+  structure. **WT-077 has now verified the load-bearing claim.** This road is unblocked.
+- **ROAD TWO (Paper III) — "Limitation 4 is the paper."** φ reaches any observable only as **φδ**, so
+  timeliness and durability are not separately identified from a reported series. That is a
+  constraint on *the field's own instruments* — Basu, C_Score, Ball–Shivakumar, Givoly–Hayn, DELR —
+  not on this framework. **And the failed pre-registration becomes the theorem's worked example:**
+  the tier test varied φ across classes whose δ also varies, which is exactly the confounded design
+  the theorem forbids, and §4.2 said so on the page before. *The honest sentence is that the confound
+  was derivable before the registration was written and was not derived.* The whole crash-risk
+  section moves to Abandoned Approaches intact, where it is a real contribution and the trailer for
+  a later paper.
+
+**`wealthTensor-10`'s recommendation was Road Two first.** Jason has not ruled. **Ask, then write
+prose** — do not produce another memo about which to pick.
+
+## 3 · THE TENSOR — OPEN, AND JASON'S, AND `wealthTensor-10` GOT THIS PARTLY WRONG
+
+The reception argument against "tensor" was **word count**, and Jason is right that word count is a
+poor proxy for the depth of an idea. **The strong argument is different and it is not "drop it":**
+
+> The object in the paper is an ordered pair (E, C) and a scalar ratio. No indices, no basis, no
+> transformation law, no rank, no contraction. **The word names an object the paper has not
+> constructed.** That is what reads as crank-adjacent — not the frequency, the *absence of the
+> structure*.
+
+**But there is very likely a real tensor here, and Jason is the person who can build it.** With one
+firm and one asset, (E, C) is a pair. **The tensor structure appears the moment there are multiple
+asset classes with different (φᵢ, δᵢ)** — the reporting layer becomes a linear operator from
+physical states to reported states, and the transfer-function language in §1 is already operator
+language. *Note what that means: PRE-001's tier ordering across GAAP classes was a test of the
+multi-index structure, run before the multi-index object existed.*
+
+**Recommendation, not a ruling: drop it from THIS title and make it a later paper's title, earned.**
+Statistical mechanics is Jason's declared special expertise and the contribution he most wants to
+make. It should be made where it can be defended, not asserted in a title. **He said he will go with
+our judgement and would be saddened to lose it — so if a session can construct the operator honestly,
+that is worth more than any edit in this handoff.**
+
+## 4 · DONE IN `wealthTensor-10`
+
+- **`docs/REFERENCE-POLICY.md`** — portable. Three acts (cite/characterise/quote); a **fifth pass**
+  (read-status), because passes 1–4 are all silently satisfied by a work nobody opened; a **fourth
+  mark ✓◐** for cited-but-not-read; the free-and-legal access playbook; forum-lead-is-not-a-source.
+- **`scripts/provenance_check.py`** — a filename is not a provenance. Caught two PDFs named
+  `JST_10.2307_*.pdf` that were Preview re-exports of shadow-library copies, each carrying its
+  ancestor's md5 in its own Title. **Severity is tiered** because the first legitimate file it saw,
+  it flagged. Exit 1 on flags.
+- **`POSITIONING-002` §6 — three of four discharged at source.** Kim & Zhang and Kim/Wang/Zhang read
+  in full and greped; Zhu abstract-only (**✓◐**, no legitimate open copy exists).
+  **KWZ manuscript p.9 killed the positioning claim for the third time in five sessions:** *"does not
+  depend on the existence of any rational moral hazard behavior… the interests of the manager and
+  outside investors are perfectly aligned."* What replaced it is the three-cell grid in §9.2 — the
+  wedge lives in an **incentive**, a **belief**, or **the measurement rule**, and §4 owns the third.
+- **`docs/REVIEW-004-pre-posting-dossier.md`** and a 62-page reading-draft PDF. *Useful, and exactly
+  the umpire artefact WT-078 now forbids as a final deliverable.*
+- **ADR-001 addendum 7** — Paper I folds into IV; corpus is **three** preprints; DoD amended.
+- **Front matter** — `jason@braatzresearch.com` in all three papers, plus a declaration of interest
+  (accounting-software employment) and an AI-assistance disclosure naming Claude Opus 5 at high
+  effort. **Jason will use the DAISY template for the final version.**
+- **§6.3 rewritten** on his instruction: *"That argument is withdrawn, on three counts a sceptical
+  reader would have reached first."*
+- Two stale lines fixed in Paper III's reference apparatus ("three passes" over a list of four).
+
+## 5 · MISSION, RANKED
+
+1. **ASK which road, then WRITE THE PROSE.** A straw-man revision of the chosen paper, in the file,
+   in the repo. Not a memo. **This is the whole at-bat** (WT-079).
+2. **Search whether WT-077's truncation-vs-scaling result is already published** before it is claimed.
+3. **The survivals ledger.** Both papers report every test run and never report what survived one.
+   A drafted table for Paper III is in `ROADS-001`. *"A paper that reports only its failures gives a
+   reader no way to weigh them."*
+4. **Ryan (1995) + erratum + Beaver & Ryan (2000)** — three JSTOR clicks, Jason's JPASS trial,
+   `~/Desktop/downloads/DOWNLOAD-QUEUE.md`. Run `scripts/provenance_check.py` on whatever lands.
+   **Basu (1997) is closed everywhere; the author route is the play.**
+5. **The tensor** (§3 above).
+6. **Move the methodological inoculation.** The passage at ~line 1074 of `paper-III.md` — Mayo cited
+   at origin with the critics' volume beside it — is thirty pages after §5, which is where the
+   pre-registration apparatus is exposed. **Do not take a side in the use-novelty dispute; the paper
+   deliberately doesn't, and it is right not to.**
+7. **The end-to-end corpus test** — still undesigned after three sessions. `ROADS`/`REVIEW-004` §E3
+   gives five failure modes and a diagnostic for each; mode 1 (*is there one model in which ρ and φ
+   are the same quantity?*) is the live one.
+
+## 6 · WHAT NOT TO DO
+
+- **Do not run a pure-teardown agent pass.** WT-078. If an agent is spawned, its brief includes the
+  corrective and the whitespace, or it does not ship.
+- **Do not hand Jason a ranked list of problems as a deliverable.** WT-079.
+- **Do not invoke Mayo, severity or error-statistical philosophy as a *warrant*.** Jason knows that
+  literature deeply, the dispute is live (use-novelty, double-counting, fallibilism vs
+  foundationalism), and **the paper deliberately takes the practice while declining the philosophy.**
+  Justify pre-registration and negative controls *pragmatically*. `wealthTensor-10` got this wrong
+  and was corrected.
+- **Do not ask him to submit anything.** §4d. Nothing ships until the corpus is done.

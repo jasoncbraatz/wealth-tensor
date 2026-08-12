@@ -2,9 +2,14 @@
 
 **Jason C. Braatz**
 *Independent researcher*
-jasoncbraatz@gmail.com
+jason@braatzresearch.com
 
 **Draft — not yet submitted.** Version 0.2, 2026-08-11.
+
+**Declaration of interest.** The author is employed by a company building accounting software for very small businesses. This work was conducted independently, on personal time, and without company funding, data or direction.
+
+**Use of AI assistance.** Anthropic Claude Opus 5, at high reasoning effort, was used throughout as a research and drafting assistant: literature retrieval, adversarial review, code review and prose drafting. All claims, results and final text are the author's, and every computational result is produced by committed code in the repository named in the data-availability statement.
+
 
 *Revision history: **v0.1** first draft, complete and reference-verified; **v0.2** the house-style
 pass — the method disclosures (pre-registration, commit-pinning, the Abandoned Approaches section,
