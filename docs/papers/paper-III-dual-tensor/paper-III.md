@@ -64,7 +64,11 @@ ill-conditioned but absent. The disclosed lives also fix the model's domain, and
 tightly: the deferral measure exists only where the recognition rate exceeds the decay rate, and at
 the calibration used here **no disclosed useful life short enough to appear in a filing satisfies
 that** — which makes the recognition rate, rather than the ordering, the quantity a cross-sectional
-design has to establish first.
+design has to establish first. The same registered events establish it: **the recognition rate is
+0.41 per year against a calibration of 0.05**, so the disclosed lives lie inside the model's domain,
+and the hazard rises with the age of the gap rather than staying constant as the model assumes. The
+events also reject the reporting layer's diagonality, clustering across asset classes within a
+firm-quarter at two to four times the independence rate in both sectors.
 
 **Keywords:** identification · conditional conservatism · reporting lag · impairment ·
 pre-registration · asset life · deferred information
@@ -592,9 +596,13 @@ three to twenty for finite-lived intangibles — **the first rung rises in 99.7%
 10⁶⁹ by period 400 at δ = 0.20 — and there is no steady-state deferral measure to rank. At the
 α = 0.05 calibrated here **the entire disclosed rectangle lies outside the domain**: every useful
 life short enough to appear in a filing implies a decay rate at or above the recognition rate. Half
-of the rectangle is admissible only at α ≈ 0.19, and all of it above α = 0.33. What §4.4 measures is
-therefore a property of firms whose recognition of deferred loss outpaces their assets' decay, and
-identifying which firms those are is an empirical question this paper leaves open.
+of the rectangle is admissible only at α ≈ 0.19, and all of it above α = 0.33. **That made the
+recognition rate, not the ordering, the quantity to establish first — and §5.4 establishes it.**
+On the registered sample the recognition rate is **α̂ = 0.408 per year**, 95% interval
+[0.383, 0.432]: the calibration used here is low by an order of magnitude, the disclosed rectangle
+lies inside the domain after all, and the first-rung result above therefore holds at a measured rate
+rather than at a hypothetical one. The domain restriction is a property of the calibration and not
+of the disclosure.
 
 **The shape of this argument is not new, and its best-known instance is one field over.** Fisher and
 McGowan (1983) argued that an accounting rate of return cannot be used to infer economic
@@ -1080,6 +1088,71 @@ predicted one survives that pattern.
 **The stopping rule fired.** There is no third instrument. A hypothesis that requires one on the
 same data is a hypothesis being fitted.
 
+### 5.4 · The same sample answers two questions it was not collected for
+
+The stopping rule bars a third instrument for the *lag gradient*. It does not bar asking the sample
+questions it was never asked. Two were registered in `REG-003`, committed and pushed before the
+instrument existed, and both returned. Neither is a re-test of §5.1's prediction and neither may be
+read as one.
+
+**The sample rebuilt to within one per cent, which is itself worth one line.** `companyfacts` serves
+each firm's latest view of its own history, so a re-pull is not the original pull. Rebuilt: **695
+events across 307 firms** against 688 across 311, with three of four tier counts identical and
+censoring at 7.7% against 7.8%. The registered reconciliation rule, fixed before the count was
+known, admits this as the registered sample.
+
+**The recognition rate is 0.41 per year, and the calibration was low by an order of magnitude.**
+Each event carries the interval from the onset of deterioration to the charge, right-censored at
+twenty quarters — which is α's definition, measured once per event, by an instrument built to look
+at something else. The censored geometric maximum likelihood estimate is **α̂ = 0.1227 per quarter
+(se 0.0046), 0.408 per year, 95% interval [0.383, 0.432]**; the median observed gap is five
+quarters. Retail gives 0.433 and computer services 0.394. The three sensitivities registered with PRE-002 give
+0.397, 0.499 and 0.413, and administratively censoring the sample at eight, twelve and sixteen
+quarters instead of twenty gives 0.396, 0.398 and 0.404. **Every cut lands in the same regime,** and
+the calibrated 0.05 is outside the interval of all of them.
+
+**The shape was fitted rather than assumed, and it is not the model's shape.** A discrete Weibull
+gives **k̂ = 1.210, 95% profile interval [1.135, 1.285]**, excluding the constant hazard the model
+assumes. The non-parametric hazard shows why: a quarter of the sample (175 of 695) is recognised one
+quarter after the peak, and the rest faces a hazard rising from 0.09 to about 0.25 over the
+following five years. **The longer a gap has been open, the likelier it is to close** — which is the
+opposite of the memorylessness a single α encodes, and it means α̂ is an average over a window and
+not a constant of the technology.
+
+**Two biases push this estimate up, and one pushes it down; the direction of each was registered
+before the number.** A gap that opened and was never recognised leaves no filing, so conditioning on
+a charge over-represents short intervals. If revenue peaks after economic value has turned — the
+ordinary case for a business whose customers have not yet left — the measured interval is short of
+the true one. Against those, the sample contains no lag of zero, so fitting on a support that
+includes it understates α̂; the unregistered shifted estimate is 0.460. **The one cut that removes
+the mass where the onset bridge is least credible — the 175 events charged one quarter after the
+peak — gives 0.327, still an order of magnitude above the calibration.** The result does not rest on
+its most suspect quarter.
+
+**And the reporting layer is not diagonal.** §9's ninth limitation states the assumption and names
+its test: a diagonal layer predicts that recognition in one class does not force recognition in
+another, so events should be independent across classes within a firm-quarter. Taking each firm's
+per-class impairment frequency as given and redrawing which quarters they land in — 10,000 draws
+within each firm's own eligible-quarter set — firm-quarters carrying two or more classes are
+
+| universe | observed | null mean | central 95% | observed/expected | two-sided *p* |
+|---|---|---|---|---|---|
+| retail | **30** | 7.3 | [3, 12] | **4.12×** | 0.0002 |
+| computer services | **44** | 21.8 | [15, 29] | **2.02×** | 0.0002 |
+
+Both universes, the same direction, at the resolution 10,000 draws can report; the design detects an
+injected excess of five per cent of events with probability 1.00. The pairwise cells put the
+strongest coupling on goodwill with indefinite-lived intangibles in retail (5.83×) and on goodwill
+with finite-lived intangibles in computer services (2.22×), and property with goodwill runs at
+4.35× and 4.03× — the one cell that replicates its magnitude across two sectors.
+
+**The mechanical reading has to be excluded before the economic one is available, and §9 already
+named it:** ASC 360 requires the recoverability screen on long-lived assets *before* the goodwill
+test, so one triggering event can produce two charges in one quarter by the ordering of the
+standards rather than by the coupling of the assets. This design cannot separate those. What it
+establishes is the magnitude of the departure from diagonality, which was previously unmeasured, and
+that §5's treatment of 695 events as independent draws overstates the information they carry.
+
 ---
 
 ## 6 · What may now be claimed, and what may not
@@ -1196,7 +1269,11 @@ with what would have killed each.
 | **τ = −1 is a knife edge in its top rung** | closed form for the crossing rate, verified by bisection to 1 × 10⁻⁹ | a crossing rate far above any defensible goodwill decay | **δ₃\* = 0.0079**, an eighty-seven-year half-life; the table assigns 0.002 |
 | **Lumpy defers more than slow at an identical mean rate** | compound-Poisson decline, 2,000 paths, mean rate matched exactly | the ratio at or below 1, which would license reading "unscheduled" as "slow" | **1.30×** (se 0.002), a δ-equivalent of 0.0123 — above the crossing rate |
 | **The design's validity region has a fitted boundary** | logistic of failure on log(leverage / budget), 4,000 ladders | a slope indistinguishable from zero | slope **+1.58**, z = **+19.5**; the same fit on a permuted outcome gives z = 0.23 |
-| **The disclosed rectangle lies outside the model's domain** | useful lives spanning disclosure practice against α = 0.05 | any part of it admitting a steady-state deferral measure | **0%** admissible; half admissible only at α ≈ 0.19, all of it above α = 0.33 |
+| **The disclosed rectangle lies outside the model's domain *at the calibrated rate*** | useful lives spanning disclosure practice against α = 0.05 | any part of it admitting a steady-state deferral measure | **0%** admissible at α = 0.05; **all** of it admissible at the measured α̂ = 0.408 |
+| **The recognition rate is an order of magnitude above the calibration** | censored geometric MLE on 695 registered events, two universes, three sensitivities, four truncations | any cut returning a rate near the swept 0.05 | **α̂ = 0.408/yr** [0.383, 0.432]; range **0.327–0.499** across every cut, none containing 0.05 |
+| **The constant hazard the model assumes is rejected** | discrete Weibull fitted, not assumed, with a profile interval | k̂ = 1, which would have left α a constant | **k̂ = 1.210** [1.135, 1.285]; the hazard rises with the age of the gap |
+| **The reporting layer is not diagonal** | 10,000 within-firm permutations of which quarters each class's impairments land in | co-occurrence at the independence rate, which the Hadamard form requires | **4.12×** and **2.02×**, both *p* = 0.0002, power 1.00 at a 5% injected excess |
+| **The sample rebuilds from a live endpoint** | full re-pull of both universes a week after the original | drift large enough to make the original unrecoverable | **695 events against 688**; three of four tier counts identical |
 | **Lag's 100% is partly the ladder** | 2,000 ladders, durability ordering dropped | lag holding at 100% regardless, which would have made §4.5 unconditional | **66.2%** (se 0.011) against 11.5% for the magnitude measure |
 | **Results are dimensionless** | η swept over **twelve orders of magnitude** | any dimensionless output moving with η | spread **exactly 0.0** |
 | …and not because η is unused | mutation testing | a mutant that leaves results unchanged | **every substituted vacuous witness killed its run** |
@@ -1351,8 +1428,10 @@ theorem is a framing that will be argued about instead of the theorem.**
    noiseless, and it dissolves once that layer is allowed to move for reasons other than a schedule.
    Admitting stochastic degradation is the single change to this model most likely to alter what it
    says, which is why it is named here rather than in a list of extensions.
-4. **φ, α and θ are not measured; they are swept — and for φ the reason is §4.** The paper
-   reports how outcomes vary across the sweep and does not claim any firm's φ is known. That is
+4. **φ and θ are not measured; they are swept — and for φ the reason is §4.** α is no longer
+   in that list: §5.4 estimates it at 0.408 per year on the registered sample, against the 0.05
+   swept through the body, and finds the constant hazard the model assumes to be rejected. The
+   paper reports how outcomes vary across the sweep and does not claim any firm's φ is known. That is
    no longer a concession about this construction: §4.2 establishes that **no** estimator
    recovers φ from a reported series, because the series does not contain it. The consequence
    is stated there rather than softened here, together with the one repair available — an
@@ -1381,15 +1460,18 @@ theorem is a framing that will be argued about instead of the theorem.**
 
 ---
 
-9. **The diagonality of the reporting layer is an assumption, and it is testable.** §4.1
-   writes the reporting layer as a Hadamard product, which asserts that recognition in one
-   asset class does not force recognition in another. Real practice couples them: a goodwill
-   test under ASC 350-20 runs at the reporting-unit level, and the triggering event that forces
-   an ASC 360 recoverability screen on property is frequently the same event. The diagonal model
-   predicts recognition events are independent across classes within a firm; a coupled model
-   predicts they cluster in firm-quarters. Co-occurrence against an independence null needs no
-   observability proxy, no bridge from φ to a GAAP category and no new data — the 688 events
-   already collected are enough to look. It is registered before its instrument is coded, or it
+9. **The diagonality of the reporting layer is an assumption, it was testable, and it is
+   false.** §4.1 writes the reporting layer as a Hadamard product, which asserts that recognition
+   in one asset class does not force recognition in another. Real practice couples them: a
+   goodwill test under ASC 350-20 runs at the reporting-unit level, and the triggering event that
+   forces an ASC 360 recoverability screen on property is frequently the same event. §5.4 puts
+   the resulting prediction — independence across classes within a firm-quarter — to the
+   registered sample and rejects it in both universes in the same direction, at **4.12×** and
+   **2.02×** the independence expectation. The consequence is bounded rather than open: the
+   Hadamard form is an approximation whose error is now measured, and §5's treatment of the
+   events as independent draws overstates their information content by a factor this paper can
+   state. What the design cannot do is separate an economic coupling from the sequencing the
+   standards impose, and §5.4 says so where the number is. It is registered before its instrument is coded, or it
    is not run.
 
 ---

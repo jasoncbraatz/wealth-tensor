@@ -1,0 +1,133 @@
+WT-089 · REG-003 · the recognition rate and the off-diagonal
+Registration committed and pushed before this file existed (WT-052).
+
+§1 · PROVING THE HELPERS BEFORE THEY CARRY A RESULT
+  SEVERE     the censored geometric MLE recovers a rate it was not told
+  SEVERE     censored observations contribute exposure, so ignoring them raises the rate
+  SEVERE     annualisation strictly raises a positive quarterly hazard
+  SEVERE     the four α-regimes are exhaustive and ordered
+  SEVERE     the discrete Weibull nests the geometric at k = 1
+  SEVERE     N_co counts stacked firm-quarters and not spread ones
+  SEVERE     the null preserves every per-firm, per-tier marginal exactly
+  SEVERE     the power injection MOVES rather than adds, so the null is unchanged by it
+  SEVERE     moving preserves the event count; the adding witness really does differ
+  SEVERE     a fully censored cell returns UNDEFINED rather than a number
+
+======================================================================================
+§2 · RECONCILIATION AGAINST RESULT-002 — the branch, before any statistic
+======================================================================================
+
+  pilot: SIC 5200-5999 · 673 registrants · 672 fetched
+                                        RESULT-002     rebuilt        Δ%
+    events                                     244         247     +1.2%
+    firms                                      121         122     +0.8%
+    tier 0 · PP&E                               21          21     +0.0%
+    tier 1 · finite-lived intangible            34          34     +0.0%
+    tier 2 · indefinite-lived intangible          34          34     +0.0%
+    tier 3 · goodwill                          155         158     +1.9%
+    censored share                                       7.7%
+
+  replication: SIC 7370-7379 · 1223 registrants · 1218 fetched
+                                        RESULT-002     rebuilt        Δ%
+    events                                     444         448     +0.9%
+    firms                                      190         191     +0.5%
+    tier 0 · PP&E                               34          34     +0.0%
+    tier 1 · finite-lived intangible           102         102     +0.0%
+    tier 2 · indefinite-lived intangible          46          47     +2.2%
+    tier 3 · goodwill                          262         265     +1.1%
+    censored share                                      14.1%
+
+  TOTAL  RESULT-002 688 · rebuilt 695 · agreement 99.0% · worst tier drift 2.2%
+  REG-003 §2 BRANCH: REGISTERED SAMPLE
+
+======================================================================================
+§3 · INSTRUMENT A — THE RECOGNITION RATE α
+======================================================================================
+
+  A1 · censored geometric MLE  (REG-003 §3.1)
+  pilot                                           n= 247 d= 228  α̂_q=0.1323±0.0082   α̂_yr=0.4330 [0.3900, 0.4737]   R1
+  replication                                     n= 448 d= 385  α̂_q=0.1177±0.0056   α̂_yr=0.3940 [0.3631, 0.4238]   R1
+  POOLED (both universes)                         n= 695 d= 613  α̂_q=0.1227±0.0046   α̂_yr=0.4077 [0.3827, 0.4319]   R1
+
+  A3 · the sensitivities PRE-002 registered, run again unchanged
+    · annual-attributed charges excluded          n= 415 d= 361  α̂_q=0.1188±0.0059   α̂_yr=0.3970 [0.3649, 0.4279]   R1
+    · right-censored events excluded              n= 613 d= 613  α̂_q=0.1585±0.0059   α̂_yr=0.4986 [0.4706, 0.5255]   R1
+    · one event per firm (largest charge)         n= 307 d= 272  α̂_q=0.1247±0.0071   α̂_yr=0.4129 [0.3748, 0.4492]   R1
+
+  A2 · the SHAPE, fitted and not assumed  (WT-080)
+    discrete Weibull  k̂ = 1.210  95% profile CI [1.135, 1.285]  q̂ = 0.9213
+    constant hazard (k = 1) is REJECTED — α is not a scalar over this window
+
+    non-parametric hazard by quarter (h_t = d_t / n_t):
+      t0=0.000  t1=0.252  t2=0.085  t3=0.103  t4=0.124  t5=0.163  t6=0.105  t7=0.114  t8=0.124  t9=0.149
+      t10=0.127  t11=0.081  t12=0.144  t13=0.165  t14=0.135  t15=0.150  t16=0.213  t17=0.121  t18=0.125  t19=0.278
+
+  REG-003 §3.2 VERDICT: α̂_yr = 0.4077 → R1 — entire disclosed rectangle inside the domain
+  REG-003 §3.3 REQUIRES THIS SENTENCE HERE, NOT IN A LIMITATIONS SECTION:
+    Both known biases — conditioning on a charge occurring, and PRE-002's
+    revenue-peak onset — push α̂ UP. This estimate is exactly what two
+    upward biases would manufacture, and is weak evidence for its regime.
+
+======================================================================================
+§4 · INSTRUMENT B — THE OFF-DIAGONAL
+======================================================================================
+
+  PRECONDITION (REG-003 §4.4): 93 firms record two or more distinct tiers
+    → met (≥ 20). The null has something to reject.
+
+  pilot: 215 firm-quarters · N_co observed = 30
+    null mean 7.3 · central 95% [3, 12] · two-sided p = 0.0002 · ABOVE
+    observed / expected = 4.12×
+    secondary — the six off-diagonal cells (Holm-corrected, DESCRIPTIVE):
+      pair                                                  obs     exp    o/e   p_holm
+      indefinite-lived intangible × goodwill                 16     2.7   5.83   0.0012
+      PP&E × goodwill                                         5     1.1   4.35   0.0030
+      finite-lived intangible × goodwill                      8     2.4   3.33   0.0056
+      finite-lived intangible × indefinite-lived intangible    4     0.7   5.39   0.0150
+      PP&E × indefinite-lived intangible                      1     0.3   3.15   1.0000
+      PP&E × finite-lived intangible                          0     0.0   0.00   1.0000
+    POWER (REG-003 §4.4 — reported whether or not the primary rejects).
+      The injection MOVES quarters within a firm, so marginals and therefore
+      the null distribution are unchanged; one null serves every trial.
+      π = 0.05 → power 1.00
+      π = 0.10 → power 1.00
+      π = 0.20 → power 1.00
+      π = 0.40 → power 1.00
+
+  replication: 399 firm-quarters · N_co observed = 44
+    null mean 21.8 · central 95% [15, 29] · two-sided p = 0.0002 · ABOVE
+    observed / expected = 2.02×
+    secondary — the six off-diagonal cells (Holm-corrected, DESCRIPTIVE):
+      pair                                                  obs     exp    o/e   p_holm
+      finite-lived intangible × goodwill                     23    10.4   2.22   0.0012
+      indefinite-lived intangible × goodwill                 16     6.6   2.41   0.0020
+      finite-lived intangible × indefinite-lived intangible    9     3.7   2.44   0.0056
+      PP&E × goodwill                                         5     1.2   4.03   0.0090
+      PP&E × finite-lived intangible                          1     0.7   1.35   1.0000
+      PP&E × indefinite-lived intangible                      0     0.3   0.00   1.0000
+    POWER (REG-003 §4.4 — reported whether or not the primary rejects).
+      The injection MOVES quarters within a firm, so marginals and therefore
+      the null distribution are unchanged; one null serves every trial.
+      π = 0.05 → power 1.00
+      π = 0.10 → power 1.00
+      π = 0.20 → power 1.00
+      π = 0.40 → power 1.00
+
+======================================================================================
+§5 · COMPANION C — severity dispersion by class  (DESCRIPTIVE; REG-003 §5)
+======================================================================================
+  Registered with no falsifier and no threshold. Nothing here may be cited as
+  support for §4.7. Returns volatility and disclosed lives are NOT in this
+  sample; a proxy sharing σ's name and not its meaning is the WT-038 error.
+
+  class                                 n    median               IQR  sd log s     95% CI (firm-clustered)
+  PP&E                                 55    0.0292     0.0147-0.1089     1.990              [1.023, 2.953]
+  finite-lived intangible             136    0.0606     0.0203-0.2307     1.424              [1.284, 1.556]
+  indefinite-lived intangible          81    0.0473     0.0199-0.1324     1.236              [0.995, 1.486]
+  goodwill                            423    0.0773     0.0289-0.2009     1.513              [1.251, 1.820]
+
+  written: RESULT-REG-003-run.json
+
+------------------------------------------------------------------------------
+WT-089: 10 severe · 0 definitional · 0 failed/vacuous
+------------------------------------------------------------------------------
