@@ -88,11 +88,14 @@ series on its own lag, the return-implied path and that path's first difference 
 to 10⁻¹⁶ at σ = 0.15, against a design matrix that is **exactly singular at σ = 0**. Returns matter
 because they are how the analyst *learns* the news.
 
-**And the price is a rate, not a proof.** On the quiet branch both collinearity and se(φ̂) degrade as
-power laws in σ, with weak-identification bias visible in the mean by σ = 0.025. `wt086` then showed
-that **neither exponent is a model constant** — across nine (α, δ) settings collinearity spans −1.07
-to −0.38 and se(φ̂) spans −0.78 to −0.09 — so the manuscript quotes ranges. What holds everywhere is
-the sign.
+**And the price is a rate, not a proof** — a two-factor one, which took three scripts to get right.
+`wt086` killed the idea that either degradation exponent is a model constant (collinearity spans
+−1.07 to −0.38 across nine (α, δ) settings; se(φ̂) spans −0.78 to −0.09), so the manuscript quotes
+ranges. `wt087` then separated what `wt086` had confounded: **the rate GAP (α − δ) sets the standard
+error's level; the decay rate δ sets how strongly that level responds to volatility, and the response
+CHANGES SIGN** — exponent −0.39 at property's δ, **+0.16** at goodwill's. Below about δ = 0.01 more
+news makes the estimate *worse*. That is the one place in the paper where §4.7's repair runs
+backwards.
 
 **The sample cannot compensate, and this is the best thing in the script.** The root-T rate is
 **never attained at any horizon**: T 50 → 200 buys 1.22× where root-T buys 2.00×, and T 400 → 1600
@@ -129,6 +132,14 @@ second *is* the innovation, so conditioning should be reciprocal in σ wherever 
 not: the exponent collapses toward −0.4 when α and δ are close, a case the argument had no term for.
 Three for three. **When a scaling argument feels too clean to need checking, that is the tell.**
 
+**`wt087` made it five, and the last two were the most expensive.** It was written to measure how
+fast identification fails as δ → 0 and found that it does not fail: the standard error *improved* as
+decay slowed. Chasing that inversion found (i) that §4.8's limit needed a motionless asset rather
+than a slow one, and (ii) that every δ sweep in the corpus, `wt086`'s included, had been moving the
+rate gap at the same time and attributing its effect to δ. **A sweep that moves two parameters at
+once has measured neither**, and the tell is two sweeps that appear to contradict each other — they
+are usually statements about different quantities. Both banked globally.
+
 **The rule, banked globally: FIT THE EXPONENT, DO NOT ASSERT IT.** A scaling argument for a
 simulated quantity is a hypothesis. Write the check as a fitted log-log slope with a reported value.
 A check that encodes the guess cannot discover the guess is wrong.
@@ -138,7 +149,7 @@ almost always your noise specification, not the world.
 
 ## 3 · THE PAPERS
 
-**Paper III** — `docs/papers/paper-III-dual-tensor/paper-III.md`, **2,005 lines**. Prior version at
+**Paper III** — `docs/papers/paper-III-dual-tensor/paper-III.md`, **2,051 lines**. Prior version at
 `paper-III.md.bak-pre-wt085`. §4.1–4.8 numbering preserved again; nothing renumbered.
 
 | § | what changed |
@@ -147,7 +158,9 @@ almost always your noise specification, not the world.
 | 4.4 | **Fisher & McGowan (1983) adopted as the rhetorical ancestor**, with its fate attached |
 | 4.6 | third qualification **narrowed** from open question to pointer; **Dutta & Patatoukas (2017) separated explicitly**; Ryan (2006) title collision closed; δ-notation collision named |
 | 4.7 | **the returns repair, with its price**, ahead of the disclosed-useful-lives repair. IV-reference-dose claim **re-sourced**. Exponents **ranged, not quoted**, after `wt086` |
-| 4.8 | tied to `wt086`'s gradient — the δ = 0 limit is the end of a slope, not a cliff edge |
+| 4.8 | **rewritten and demoted** — the limit belongs to a *motionless* asset, not a slow one, and what survives about goodwill is a fact about the model's determinism |
+| 4.4 | the δ ladder **named as an assumption** for the first time, and the inversion reported as the conditional result it always was |
+| 9 | Limitation 3 sharpened — the determinism is not innocuous, and §4.8 is where it bites |
 | 7 | four survivals rows |
 | — | abstract and contribution 3 updated; five references added, three marked NOT READ |
 
@@ -210,13 +223,20 @@ symmetric in β ↔ γ while the disturbance γ[u(t) − (1 − β)u(t−1)] is 
    GAAP classes by realised return volatility and asset life, and the theory predicts where a
    conservatism estimate is worth reading and where it is not. Nobody has run this. It is the natural
    empirical sequel and it needs no new data.
-3. **Take `wt086`'s gradient to §4.8 properly.** The exponent sweep found that the response to news
-   flattens as decay slows, so for a goodwill-rate asset neither more news nor more years buys
-   identification — the two levers fail *together*. §4.7 and §4.8 now say so in a sentence each.
-   What is NOT done: §4.8 still argues the goodwill limit from φ being **absent from the dynamics at
-   δ = 0**, a limit-point argument, while `wt086` shows the approach to it is a measured gradient.
-   Those are two accounts of one wall and the section should be rewritten around the stronger one.
-   This is a §4.8 rewrite, not a patch, and it is the last structural work §4 needs.
+3. **Restate §4.4 on the observable pair — the one piece of §4 that `wt087` opened rather than
+   closed.** §4.4 now admits its δ ladder is inferred from the standards' *scheduling* behaviour,
+   which tracks how predictable a decline is rather than how fast, and that the inversion is
+   conditional on it. That admission is honest but it is not the repair. The repair is available and
+   is a rewrite: `wt087` shows readability is governed by **α − δ**, and α is the book amortisation
+   rate — *disclosed*. §4.7 already argues the standards publish useful lives, which give δ for two
+   of the four rungs directly. A §4.4 built on (disclosed α, disclosed life) instead of an inferred
+   δ ladder would rest on published numbers rather than on an inference the paper itself forbids,
+   and would let a reader locate their own firm. **Register the reframing before coding it (WT-052)**
+   — it changes what §4.4 claims, not merely how it says it.
+   *One thing to check first, because it decides how much of §4.4 survives:* if goodwill's true δ is
+   large-but-lumpy rather than near zero, does the τ = −1 inversion hold at all? Draw the 4,000
+   ladders again without the durability-rises assumption and see. That is a half-hour job and it is
+   the honest test of the section's headline.
 4. **Read the remaining abstract-level references at source.** Garrett (1994) and Bellman & Åström
    (1970) are the two still load-bearing in §4.2 and unread. Khan & Watts (2009) is load-bearing in
    §4.6. Kuan taught the lesson: **the one you do not check is the one with the inverted adjective.**
@@ -263,10 +283,14 @@ symmetric in β ↔ γ while the disturbance γ[u(t) − (1 − β)u(t−1)] is 
 ## 8 · DEFINITION OF DONE
 
 Three pre-prints posted. Paper III is the closest and is not blocked on argument: **§4 is finished
-work** — theorem, proof, ancestry, both degeneracies, both repairs and the price of each. One structural
-task remains and it is named as item 3: §4.8 argues the goodwill limit from a limit point while
-`wt086` shows a gradient, and the section should be rewritten around the gradient. Everything else
-left for Paper III is empirical (item 1) or bibliographic (items 4–5). **Resist polishing §4.** It has been rewritten whole once and materially extended once; the next session that
+work** — theorem, proof, ancestry, both degeneracies, both repairs and the price of each. §4 is
+closed as an argument: theorem, proof, ancestry, both degeneracies, both repairs, the price of each,
+and — after `wt087` — an honest account of which cases are actually hard and why. One structural
+task remains and it is **§4.4, not §4.8**: item 3 restates the cross-class result on disclosed
+numbers instead of an inferred δ ladder, and its first half-hour is a test of whether §4.4's headline
+inversion survives without its durability assumption. Everything else is empirical (item 1) or
+bibliographic (items 4–5). **Resist polishing §4** — the next session that touches it should be
+running item 3's test or reading a reference, not improving prose. It has been rewritten whole once and materially extended once; the next session that
 touches it should be adding a result or reading a reference, not improving prose.
 
 ## 9 · ORIENT-THEN-GO
