@@ -31,9 +31,10 @@ one. **Where the asset's physical scale is not observed — every firm-level ser
 vintages — the identified set is not two points but a continuum, and a factor of 1.67 in that
 unobserved scale spans the whole unit interval of timeliness.** A second series drawn from the
 asset repairs this — the returns the field's instruments already condition on suffice — but the
-repair is a rate and not a proof: its strength degrades as 1/σ in the asset's return volatility and
-never attains the root-T rate in sample length, because every term in the estimating equation decays
-with the asset itself.
+repair is a rate and not a proof: its strength falls away as the asset's return volatility does,
+never attains the root-T rate in sample length because every term in the estimating equation decays
+with the asset itself, and — measured across the four decay rates the standards imply — responds
+least to news exactly where decay is slowest.
 
 Indexing asset classes and writing the recursion with a Hadamard product, the corollary is
 cross-sectional: **classes are ordered by (1 − φ) ⊙ δ ⊘ (α − δ), not by φ** — decay reaching the
@@ -125,9 +126,10 @@ one intended.
 3. **A constraint on the conditional-conservatism measures** (§4.6), stated with its three
    qualifications, together with the specific circumstance under which those measures remain sound.
    The returns those measures condition on do break the equivalence (§4.7) — and the strength with
-   which they break it is a property of the asset, degrading as 1/σ in return volatility and never
-   attaining the root-T rate in sample length, so the corner where the repair is weakest is the
-   quiet, long-lived corner where the question is usually asked.
+   which they break it is a property of the asset rather than of the design, falling away with the
+   asset's return volatility, never attaining the root-T rate in sample length, and responding least
+   to news where decay is slowest. The corner where the repair is weakest is the quiet, long-lived
+   corner where the question is usually asked.
 4. **A repair that needs no new data** (§4.7). Disclosed useful lives supply δ from outside the
    series, which is what the theorem requires; comparing timeliness within a life band reads φ.
 5. **A pre-registered severe test and its failure** (§5) — registered before the data were touched,
@@ -675,10 +677,24 @@ first difference recovers α, E₀ and φ to 10⁻¹⁶ at a return volatility o
 matrix that is exactly singular at zero volatility.
 
 **So §4.6's question answers yes, and the price is a rate rather than a proof.** Identification does
-not switch on at the first innovation; it fades in. Over a twelvefold range of return volatility the
-design's collinearity degrades as 1/σ — a clean reciprocal, fitted exponent −0.98 — and the standard
-error on φ̂ as its square root, exponent −0.52, with weak-identification bias visible in the mean by
-σ = 0.025. The sample cannot compensate. The standard error **never attains the root-T rate at any
+not switch on at the first innovation; it fades in. Over a twelvefold range of return volatility both
+the design's collinearity and the standard error on φ̂ degrade as power laws in σ, with
+weak-identification bias visible in the mean by σ = 0.025. **Neither exponent is a constant of the
+model, and neither should be read as one.** Across nine (α, δ) settings spanning the four decay
+rates §4.4 attributes to the standards, the collinearity exponent runs from −1.07 to −0.38 and the
+standard error's from −0.78 to −0.09. What holds in all nine is the sign: identification always
+degrades as the asset quietens.
+
+**What the exponent tracks is more useful than its value, and it points where §4.8 already points.**
+The magnitude of the standard error's exponent moves with the product δ(α − δ) — Spearman rank
+correlation 0.92 across the nine settings — so the response to news is flattest exactly where the
+decay is slowest, and where the book amortises at close to the rate the asset declines. At a
+goodwill-rate δ of 0.002 the exponent is **−0.09**: the standard error is very nearly *insensitive*
+to return volatility, and doubling the news buys almost nothing. The level of the standard error
+moves too, and by more — a factor of 4.7 at matched volatility, worst in the same slow corner, where
+α and δ are nearest to being the same number.
+
+The sample cannot compensate either. The standard error **never attains the root-T rate at any
 horizon**: quadrupling the panel from 50 to 200 periods buys a factor of 1.22 where root-T would buy
 2.00, and from 400 to 1,600 periods it buys nothing measurable at all. Every term in the estimating
 equation — signal, regressors and accrual noise alike — is proportional to the asset's remaining
@@ -693,8 +709,12 @@ conditioning on returns is drawing on exactly the right information, and the ret
 corrections the literature reached for empirically are operating on the identification-strength
 parameter rather than on a nuisance. The second is where that leaves the assets anyone argues about.
 Goodwill, brands and long-lived plant are quiet and long-lived — small σ and small δ — which is the
-corner in which both terms are worst, and §4.8 shows that for one of them the design is not weakened
-but emptied.
+corner in which every term above is worst, and §4.8 shows that for one of them the design is not
+weakened but emptied. **Neither lever reaches that corner.** The panel saturates within a few
+half-lives whatever the volatility, and the news lever flattens as δ falls, so more years and more
+news fail together rather than in sequence. §4.8's limit at δ = 0 is therefore the end of a gradient
+rather than a cliff edge, which is the more useful thing to know: a design does not become
+unreadable at some threshold a researcher could hope to sit above.
 
 **The second repair does not require the asset to be noisy, and for most classes it is already
 published.** This is the accounting form of a move the pharmacokinetic literature has long
@@ -1042,7 +1062,9 @@ with what would have killed each.
 | **Returns kill the two-point exchange** | mirror rebuilt with its own asset, return series compared | the two worlds' returns agreeing, which would leave §4.6's question open the other way | books agree to **7 × 10⁻¹⁶**, returns differ by **α − δ = 0.0300 every period** |
 | **Returns cannot touch the scale continuum** | the nine-member family regenerated, return series compared across it | any member emitting a different return series | **2 × 10⁻¹⁶ — bit for bit identical** across a family spanning φ ∈ [0, 1] |
 | **News, not returns, restores identification** | regression on lag, return-implied path and its first difference, σ = 0.15 | recovery failing, or the σ = 0 design being well conditioned | α, E₀, φ recovered to **10⁻¹⁶**; cond(X) **11.8** at σ = 0.15 against **4 × 10¹⁶** at σ = 0 |
-| **The repair's strength is the asset's, not the analyst's** | σ swept 12×, T swept 32× | the two exponents coinciding, or the panel buying the root-T rate | cond ~ σ^**−0.98**, se(φ̂) ~ σ^**−0.52**; T: 50→200 buys **1.22×** where root-T buys 2.00×, 400→1600 buys **1.00×** |
+| **The repair's strength is the asset's, not the analyst's** | σ swept 12×, T swept 32×, at nine (α, δ) settings | the panel buying the root-T rate, or the σ and T channels agreeing | T: 50→200 buys **1.22×** where root-T buys 2.00×, 400→1600 buys **1.00×** — regime-independent; the σ exponents are not, and are given in the two rows above |
+| **Neither degradation exponent is a model constant** | both re-fitted over nine (α, δ) settings on the GAAP ladder | the nine agreeing to within fitting error, which would license quoting a number | collinearity spans **−1.07 to −0.38**, se(φ̂) **−0.78 to −0.09** — *the check that removed two numbers from §4.7* |
+| **The response to news flattens as decay slows** | |exponent| ranked against δ(α − δ) | no rank relationship, which would make the spread noise | Spearman **+0.92**; at δ = 0.002 the exponent is **−0.09**, and the level is **4.7×** worse than the best regime at matched σ |
 | **R = (1 − φ)δ/(α − δ)** | closed form against simulation | departure beyond the transient bound | held to **2 × 10⁻⁴**, the bound the geometric transient predicts; **1.0** when φ is misstated by 0.1 |
 | **The ranking inverts, not just blurs** | 4,000 ladders drawn on the two qualitative facts alone | the intended ordering surviving often enough to be a design | recovered in **1.9%**; **100.0%** when δ is held common — the witness that the construction is not vacuous |
 | **The inversion spares the lag statistic** | 400 admissible ladders, lag ordering checked | lag inverting like the magnitude measure, which would have made the story tidier | lag ordering held in **100%** — *the check that overturned this paper's own draft claim* |
