@@ -798,8 +798,13 @@ as decay slows, so more years and more news fail together rather than in sequenc
 **And the design this licenses already exists.** Beaver and Ryan (2000) decompose the
 book-to-market ratio into a persistent **bias** component and a **lag** component by regressing it
 "on the current and six lagged security returns with fixed firm and time effects," taking the firm
-effect as bias and the returns-associated portion as lag — a method they take from Ryan (1995). That
-is this section's repair, run empirically a quarter of a century ago: a second series used to
+effect as bias and the returns-associated portion as lag. The regression is Ryan's (1995) — the
+book-to-market ratio on current and lagged market-value changes with firm and time effects — and the
+bias reading is not. Ryan's model assumes conservatism away by construction: his assumption (A8)
+"eliminates the possibility of conservative accounting," and his firm effects enter as a control for
+what that assumption leaves unmodelled. Beaver and Ryan supply the reading that turns a lag
+regression into a two-component decomposition. That is this section's repair, run empirically
+twenty-six years ago: a second series used to
 separate a persistent understatement from a delay, which is exactly the separation §4.2 shows a
 reported series alone cannot make. The theorem supplies a warrant the design did not have. The
 measurements above supply its boundary — the strength of the separation belongs to the asset, and is
@@ -1480,7 +1485,12 @@ widens because someone will not speak and a wedge that widens because nobody yet
 identically, and the obvious discriminating tests cut against §2 rather than for it: deliberate
 withholding predicts correlation with insider incentives, insider selling, litigation exposure and
 regulatory regime, and the post-SOX dissipation Hutton, Marcus and Tehranian report is exactly that
-pattern.
+pattern. Zhu (2016) runs those discriminating tests on the accruals of long-lived operating assets —
+the classes §5 measures — and the agency account survives them: the crash relation concentrates in
+the least reliable accrual components, strengthens where CFO option incentives are higher and where
+monitoring is weaker, and is absent in non-current operating *liability* accruals. That is the
+accounting layer §10 notes Jin and Myers lack, supplied for the competing explanation and not for
+this one.
 
 **The trend the agency account is losing its grip on is nonetheless real, and it is where a mechanism
 without a lying manager would matter if one were established.** Andreou, Lambertides and Magidou
@@ -1878,7 +1888,7 @@ Andreou, P. C., Lambertides, N., & Magidou, M. (2023). A critique of the agency 
 stock price crash risk: the opacity and overinvestment channels. *British Journal of Management*,
 34(4), 2158–2185. ✓ *(Open access. The copy consulted is the publisher's own typesetting, deposited
 by the authors' institution, whose EarlyView pagination runs 1–28 and therefore does not match the
-issue pagination given here; quotations from it are cited without page numbers for that reason. §9
+issue pagination given here; quotations from it are cited without page numbers for that reason. §10
 takes both the 5.5%→27% figure and the universe split from it directly: the 27% is the
 CRSP–Compustat–Execucomp sample and the CRSP-wide figure is 23%, a distinction the abstract does not
 make and the body does.)*
@@ -1912,11 +1922,13 @@ the author's own copy, and no text is quoted.)*
 
 Beaver, W. H., & Ryan, S. G. (2000). Biases and lags in book value and their effects on the ability
 of the book-to-market ratio to predict book return on equity. *Journal of Accounting Research*,
-38(1), 127–148. ✓ *(Cited for the bias/lag decomposition named in its own title. §9 identifies this
+38(1), 127–148. ✓ *(Cited for the bias/lag decomposition named in its own title. §10 identifies this
 as the closest prior art to §4's filter, so the entry is load-bearing against this paper rather than
 for it. **Read at source**; §4.7 quotes their method — regressing the ratio "on the current and six
-lagged security returns with fixed firm and time effects" — from **p. 135**, because that design is
-this paper's returns repair carried out twenty-five years earlier.)*
+lagged security returns with fixed firm and time effects" — from **p. 128**. The sentence recurs at
+p. 135 as "six lagged *annual* security returns", which is not the wording quoted. That design is
+this paper's returns repair carried out twenty-six years earlier, and the decomposition is theirs:
+Ryan (1995) supplies the regression and assumes conservatism away.)*
 
 Beaver, W. H., & Ryan, S. G. (2005). Conditional and unconditional conservatism: concepts and
 modeling. *Review of Accounting Studies*, 10(2–3), 269–309. ✓ *(**Read at source.** Cited in §4.6 as
@@ -1934,7 +1946,7 @@ not theirs.)*
 Bleck, A., & Liu, X. (2007). Market transparency and the accounting regime. *Journal of Accounting
 Research*, 45(2), 229–256. ✓ *(Read in full text; the copy consulted carries the journal's own title
 page — vol. 45 no. 2, May 2007, DOI 10.1111/j.1475-679X.2007.00231.x — so it is the typeset article
-and not a pre-publication version. §4.4 and §9 both cite it against this paper: it states §4.4's
+and not a pre-publication version. §4.4 and §10 both cite it against this paper: it states §4.4's
 volatility result nineteen years earlier.)*
 
 Bushman, R. M., & Williams, C. D. (2015). Delayed expected loss recognition and the risk profile of
@@ -2004,6 +2016,16 @@ Long, W. F., & Ravenscraft, D. J. (1984). The misuse of accounting rates of retu
 consulted is the open FTC Bureau of Economics Working Paper No. 94, June 1983, read in full; the
 published comment is verified bibliographically and has not been read. Nothing is quoted.)*
 
+Ryan, S. G. (1995). A model of accrual measurement with implications for the evolution of the
+book-to-market ratio. *Journal of Accounting Research*, 33(1), 95–112. ✓ *(Cited in §4.7 for the
+regression Beaver and Ryan (2000) adopt. **Read at source**, with the Autumn 1995 erratum at 33(2),
+417, which corrects two typesetting errors in equation (5) — a "+" printed for the "=", and
+ΔMV_{i,t−10} printed for BV_{i,t−10} — and changes no coefficient, hypothesis or result. The
+erratum's γ term is absent from the equation §4.7 relies on, which is Beaver and Ryan's (4). Ryan's
+assumption (A8) "eliminates the possibility of conservative accounting," and his firm effects are a
+control for what that leaves unmodelled; the bias/lag reading is Beaver and Ryan's. In 1995 the
+journal carried the name given here.)*
+
 Ryan, S. G. (2006). Identifying conditional conservatism. *European Accounting Review*, 15(4),
 511–525. ✓ *(Cited in §4.6 solely to distinguish a near-identical title. **Read at source.** The
 characterisation holds and is now supported by the body rather than the abstract: the word
@@ -2022,7 +2044,7 @@ literature, before this is upgraded.)*
 
 Hutton, A. P., Marcus, A. J., & Tehranian, H. (2009). Opaque financial reports, R², and crash risk.
 *Journal of Financial Economics*, 94(1), 67–86. ✓ *(Nothing is quoted from the body, which was read
-as full text rather than as the typeset article. The post-SOX dissipation §9 attributes to them is
+as full text rather than as the typeset article. The post-SOX dissipation §10 attributes to them is
 from the published abstract, checked at source.)*
 
 International Energy Agency & United Nations Statistics Division. *SDG Indicator 7.3.1 — Energy
@@ -2031,11 +2053,11 @@ intensity measured in terms of primary energy and GDP.* Reported as World Bank s
 Energy Progress Report* by the IEA, IRENA, UNSD, the World Bank and the WHO. ✓
 
 Jin, L., & Myers, S. C. (2006). R² around the world: New theory and new tests. *Journal of
-Financial Economics*, 79(2), 257–292. ✓ *(**Read at source**, typeset article. §9's one quotation —
+Financial Economics*, 79(2), 257–292. ✓ *(**Read at source**, typeset article. §10's one quotation —
 "For simplicity, we ignore depreciation and reinvestment" — is verified in the published text at
 **p. 262**, character for character; an earlier revision of this entry recorded it as checked only
 against NBER Working Paper 10453 and flagged the risk that the referee process had altered it. It
-had not. §9 quotes the sentence because it is what establishes that the model has no physical layer,
+had not. §10 quotes the sentence because it is what establishes that the model has no physical layer,
 and a reader entitled to doubt that on a paraphrase should be able to see the words. Its footnote 3
 is worth reading beside §4: the authors set aside depreciation "according to a pre-defined schedule"
 as an easy extension, and it is the interaction of exactly that schedule with recognition timeliness
@@ -2074,12 +2096,12 @@ WT-062.)*
 
 Piketty, T. (2013/2014). *Capital in the Twenty-First Century* (A. Goldhammer, Trans.). Belknap Press of
 Harvard University Press. ✓ *(Original work published as* Le Capital au XXIe siècle*, Éditions du Seuil,
-2013. §9's relocation argument is about work that existed a year before the English text cited here.)*
+2013. §10's relocation argument is about work that existed a year before the English text cited here.)*
 
 Popper, K. R. (1935/2002). *The Logic of Scientific Discovery*. Routledge Classics. ✓✎ *(The copy
 consulted is the Routledge Classics edition of 2002. Its own colophon gives the chain:* Logik der
 Forschung *first published 1935, Vienna — its preface dated 1934 — first English edition Hutchinson &
-Co., 1959, Routledge from 1992. §9 cites Popper for the demarcation criterion, which is 1935's, not
+Co., 1959, Routledge from 1992. §10 cites Popper for the demarcation criterion, which is 1935's, not
 1959's, so the original date is load-bearing and the entry is dual-dated.)*
 
 Quine, W. V. O. (1951). Two dogmas of empiricism. *Philosophical Review*, 60(1), 20–43. ✓
@@ -2097,6 +2119,14 @@ not in the author's library. No claim of priority is made in the text, so none i
 
 Terpstra, T. J. (1952). The asymptotic normality and consistency of Kendall's test against trend, when
 ties are present in one ranking. *Indagationes Mathematicae*, 14, 327–333. ✓
+
+Zhu, W. (2016). Accruals and price crashes. *Review of Accounting Studies*, 21(2), 349–399. ✓
+*(Cited in §10 against §2. **Read at source**, typeset article. High accruals predict firm-level
+weekly price crashes; the relation concentrates in the components Richardson, Sloan, Soliman and
+Tuna rank least reliable, including non-current operating asset accruals, and strengthens with CFO
+option incentives and weaker monitoring. The negative loading on current operating liability
+accruals is reported by Zhu as unexplained by his own mechanism, and is noted here for the same
+reason. Nothing is quoted.)*
 
 *How this list was checked, recorded because a reference section that silently improves teaches a
 reader nothing. The per-entry findings live in the ✓, ✓✎ and ✓⧗ notes above, attached to the entries they
@@ -2122,7 +2152,7 @@ describe, so that correcting an entry cannot leave a summary of it behind.*
    way and the second because a working copy on the author's own disk **is** his own copy. It found
    that the crash-risk papers had been read in pre-publication and untypeset versions and cited as
    though they were the published articles. Hence **✓⧗**, and hence the single surviving quotation in
-   §9 being attributed to the working paper it was actually read in rather than to the journal.
+   §10 being attributed to the working paper it was actually read in rather than to the journal.
 
 **The order is the lesson.** A clean bibliographic pass is not evidence of a correct citation; it is
 evidence of a correct *bibliography*. The two are different documents that happen to share a page.
