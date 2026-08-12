@@ -1,0 +1,123 @@
+{
+  "n_events": 695,
+  "mean_lag_dw": 6.9264423041857555,
+  "p_T0_dw": 0.07865759070149725,
+  "min_observed_lag": 1,
+  "discretisation_max_pct": 1.9070090989828192,
+  "F1_worst": 2.1431369771526e-13,
+  "F2_worst": 1.9205490783385022e-13,
+  "F3_naive_worst": 0.0019520570050107452,
+  "F4_worst": 0.0,
+  "ladder_N": "N1",
+  "N_rows": [
+    {
+      "tier": "0 \u00b7 property, plant and equipment",
+      "R_dweibull": 0.011069805052621493,
+      "R_dweibull_T1": 0.012014865419089823,
+      "R_geom_same_mean": 0.011091413943118541,
+      "R_geom_same_mean_T1": 0.012095585986313037,
+      "R_empirical_lower_bound": 0.010872703421253058,
+      "ratio": 0.998051746097669
+    },
+    {
+      "tier": "1 \u00b7 finite-lived intangibles",
+      "R_dweibull": 0.014444900680725415,
+      "R_dweibull_T1": 0.015678102445890473,
+      "R_geom_same_mean": 0.014462686094474632,
+      "R_geom_same_mean_T1": 0.015746011043419817,
+      "R_empirical_lower_bound": 0.01419585288821308,
+      "ratio": 0.9987702551494905
+    },
+    {
+      "tier": "2 \u00b7 indefinite-lived intangibles",
+      "R_dweibull": 0.010607148250951591,
+      "R_dweibull_T1": 0.011512710306071438,
+      "R_geom_same_mean": 0.010613328286273616,
+      "R_geom_same_mean_T1": 0.011536840301260343,
+      "R_empirical_lower_bound": 0.010429638942314367,
+      "ratio": 0.9994177099628571
+    },
+    {
+      "tier": "3 \u00b7 goodwill",
+      "R_dweibull": 0.0027819899872753243,
+      "R_dweibull_T1": 0.003019496290628254,
+      "R_geom_same_mean": 0.0027823002382293184,
+      "R_geom_same_mean_T1": 0.0030207299315899053,
+      "R_empirical_lower_bound": 0.00273645406792955,
+      "ratio": 0.9998884912024478
+    }
+  ],
+  "ladder_M_tabulated": "M1",
+  "M_rows": [
+    {
+      "tier": "0 \u00b7 property, plant and equipment",
+      "registered": 0.012014865419089823,
+      "naive": 0.012095585986312983,
+      "rel": 0.006718391293414515
+    },
+    {
+      "tier": "1 \u00b7 finite-lived intangibles",
+      "registered": 0.015678102445890473,
+      "naive": 0.015746011043419696,
+      "rel": 0.004331429633375218
+    },
+    {
+      "tier": "2 \u00b7 indefinite-lived intangibles",
+      "registered": 0.011512710306071438,
+      "naive": 0.011536840301260558,
+      "rel": 0.0020959439217709164
+    },
+    {
+      "tier": "3 \u00b7 goodwill",
+      "registered": 0.003019496290628254,
+      "naive": 0.0030207299315893645,
+      "rel": 0.0004085585284337897
+    }
+  ],
+  "M_worst_tabulated_pct": 0.6718391293414515,
+  "ladder_M_rectangle": "M3",
+  "M_worst_rect_pct": 43.88967535369877,
+  "M_worst_rect_delta_a": 0.3333333333333333,
+  "naive_pole_delta_a": 0.4350109105468468,
+  "rect_delta_a": [
+    0.025,
+    0.3333333333333333
+  ],
+  "ladder_E": "E2",
+  "E_ratio": 1.1149820530047982,
+  "alpha_eff_yr_range": [
+    0.4368270274773227,
+    0.47575619438403594
+  ],
+  "ladder_D": "D1",
+  "ladder_C": "C2",
+  "C_detail": {
+    "constant hazard (published)": {
+      "R": [
+        0.01317715983559444,
+        0.017123518080010492,
+        0.012524888109460619,
+        0.0032751813344727766
+      ],
+      "tau": -0.6666666666666666,
+      "K": 0.015656110136825774,
+      "delta3_star_a": 0.00754552741288117,
+      "margin_vs_tabulated": 3.772763706440585
+    },
+    "measured shape (DW | T>=1)": {
+      "R": [
+        0.012014865419089823,
+        0.015678102445890473,
+        0.011512710306071438,
+        0.003019496290628254
+      ],
+      "tau": -0.6666666666666666,
+      "K": 0.014390887882589297,
+      "delta3_star_a": 0.007538626779446056,
+      "margin_vs_tabulated": 3.769313389723028
+    }
+  },
+  "ladder_S": "S2",
+  "S_d0": 0.0005085829322124223,
+  "S_d1": 0.0005085829322120611
+}

@@ -66,8 +66,12 @@ the calibration used here **no disclosed useful life short enough to appear in a
 that** — which makes the recognition rate, rather than the ordering, the quantity a cross-sectional
 design has to establish first. The same registered events establish it: **the recognition rate is
 0.41 per year against a calibration of 0.05**, so the disclosed lives lie inside the model's domain,
-and the hazard rises with the age of the gap rather than staying constant as the model assumes. The
-events also reject the reporting layer's diagonality, clustering across asset classes within a
+and the hazard rises with the age of the gap rather than staying constant as the model assumes.
+**The closed form survives that: the deferral measure is the recognition lag's moment generating
+function evaluated at the decay rate, and what the constant hazard supplied was not the result but
+its domain** — under a rising hazard there is no domain restriction, and the correction to the
+measure is under one per cent across the classes ranked here and 44% at a disclosed three-year life.
+The events also reject the reporting layer's diagonality, clustering across asset classes within a
 firm-quarter at two to four times the independence rate in both sectors.
 
 **Keywords:** identification · conditional conservatism · reporting lag · impairment ·
@@ -515,7 +519,8 @@ schedule at all.
 The right-hand column is the world the design assumed: classes differing in observability and in
 nothing else. There the deferral measure rises monotonically up the ladder exactly as predicted,
 Kendall τ = +1. The column beside it is the world the standards describe. There the deferral measure
-is monotone too — **running the other way.** Kendall τ = **−1**.
+is monotone too — **running the other way.** Kendall τ = **−1** at the calibrated rate, and **−0.67**
+at the measured one; the rung that separates them is identified below.
 
 **The design and its own observable are anti-aligned across the ladder.** A confounded design
 returns noise; this one returns the reverse of what it ordered. On the model's own arithmetic, the
@@ -586,7 +591,10 @@ a disclosed life *L* fixes a write-down rate 1/*L*. The first rung falls only wh
 > δ₁ < αδ₀/(2α − δ₀)
 
 which tends to δ₀/2 as α grows. At the tabulated δ₀ = 0.030 that boundary sits at δ₁ = **0.0214**, a
-life of 46.7 years, and the table assigns 0.020 — inside by a fourteenth. Disclosure, however,
+life of 46.7 years, and the table assigns 0.020 — inside by a fourteenth **at α = 0.05, and outside
+it at the measured rate**, where the same boundary is 0.0156. That is the rung the table's τ turns
+on, and it turns on the recognition rate's *level* rather than its shape: the top three rungs are
+unchanged at either rate, and §4.9 puts the shape's contribution to the crossing below it at 0.13%. Disclosure, however,
 amortises finite-lived intangibles over materially *shorter* lives than property, so δ₁ > δ₀ is what
 a filing presents; across the rectangle of lives disclosure spans — ten to forty years for property,
 three to twenty for finite-lived intangibles — **the first rung rises in 99.7% of it.**
@@ -904,6 +912,124 @@ about φ is entertained** — and §4.4 now states what that ladder rests on.
 **None of this was known when the registration was written, and all of it was derivable.** §5 reports
 what was registered and what happened; §6 states what may now be claimed.
 
+### 4.9 · The closed form does not need the constant hazard, and what it does need is a tail
+
+§5.4 measures the recognition rate and, in the same fit, rejects the shape the model assumes:
+discrete Weibull k̂ = 1.210, 95% interval [1.135, 1.285], stable under truncation at eight, twelve
+and sixteen quarters. **R = (1 − φ)δ/(α − δ) is derived by summing a geometric**, and a geometric is
+the one lag distribution whose hazard does not depend on how long the gap has been open. Everything
+§4.3 and §4.4 read off that expression — the cross-class ranking, the top-rung crossing, the
+domain — inherits whatever the assumption was doing. REG-004 asks what it was doing.
+
+**It survives, and it survives as a transform.** Let a gap cohort created at time *s* be recognised
+after a lag *T* ≥ 1 periods, so it sits in the gap over *s*+1 … *s*+*T*. The gap is then the flow
+convolved with the lag's survival function, and with E(t) = E₀(1 − δ)ᵗ and z = 1/(1 − δ),
+
+> **R = (1 − φ) δ Σ_{a ≥ 1} zᵃ P(T ≥ a) = (1 − φ) · ( Π(z) − 1 )**,  Π(z) = **E**[z^T]
+
+because Σ_{a≥1} zᵃP(T ≥ a) = z(Π(z) − 1)/(z − 1) and z − 1 = δ/(1 − δ). The generating function is
+evaluated **outside the unit disc**, so it is a moment generating function and not a Laplace
+transform, and that is precisely why it can fail to exist. With *T* geometric at rate α,
+Π(z) = αz/(1 − (1 − α)z), which at z = 1/(1 − δ) is α/(α − δ) — and the published form returns
+exactly. **The constant hazard was never doing structural work. It was supplying a closed form for
+one transform.**
+
+Three checks, each of which could have ended the section. The general form reproduces the published
+one at a geometric lag to **2 × 10⁻¹³**. An age-structured simulation — the gap carried as cohorts,
+each aged one period and multiplied by its own P(T ≥ a+1)/P(T ≥ a), no closed form anywhere in the
+loop — reproduces it at the fitted lag distribution to **2 × 10⁻¹³** against the 2 × 10⁻⁴ transient
+bound §4.3 already publishes, while **rejecting** the substitution α ← 1/**E**[T] at ten times that
+bound. And R(φ)/R(0) = (1 − φ) to **zero**, at every φ on a tenth-grid: φ is a pure scale under
+age-dependence exactly as it is under memorylessness, so §4.2's proportionality result and every
+ranking statement resting on the (1 − φ) channel alone are untouched.
+
+**What the assumption *was* doing is holding up the domain.** R is finite exactly when
+Π(1/(1 − δ)) is, which is a condition on the **radius of convergence** of the lag's generating
+function and therefore on its **tail** — not on its mean, and not on any single rate. For a
+geometric lag that radius is 1/(1 − α) and the condition reads α > δ, which is §4.4's domain
+verbatim. For a lag whose hazard *rises*, the survival function outruns every geometric and the
+generating function is entire: at k̂ = 1.21 the transform is finite at every decay rate swept, up
+to δ = 0.80 per year where it is 7.5 × 10²⁵ and still a number. **The existence condition has no
+analogue at the measured shape.** The general statement is the classical one for distributions with
+monotone hazard: the transform converges below the limit inferior of the hazard rate and diverges
+above its limit superior (Barlow, Marshall and Proschan, 1963, Theorem 6.3). A constant hazard puts
+both limits at α. An increasing one puts the first at infinity — and a *decreasing* one puts it at
+zero, so a lag distribution with a fattening tail would admit no steady-state deferral measure at
+any positive decay rate at all. **The interval [1.135, 1.285] is therefore doing more than
+rejecting a null.** It is what makes the model well-posed across the disclosed range, and had the
+same fit returned k̂ < 1 the closed form would have had no domain to be restricted to.
+
+**This does not rescue the disclosed rectangle, and the statistic that would look as though it did
+is withdrawn rather than reported.** §4.4 reports the share of the rectangle inside the domain. If
+the domain is everything, that share is one by construction and its complement is empty; a share of
+an empty set is arithmetic, not evidence. What replaces it is the level of R, which is defined
+everywhere and moves in both directions — and does.
+
+**The correction is negligible where this paper's ladder sits and material where the filings sit.**
+Against a geometric with the *same mean* — which is the comparison the constant-hazard form
+implicitly makes — the measured distribution defers **less**, at every decay rate, on the direction
+registered in advance from the standard reliability bound for a distribution that is new-better-
+than-used in expectation (Marshall and Proschan, 1972). The size is a different question from the
+sign:
+
+| disclosed life | δ per year | R at the measured shape | R under a constant hazard | overstatement |
+|---|---|---|---|---|
+| 40 years | 0.025 | 0.0248 | 0.0249 | **0.6%** |
+| 20 years | 0.050 | 0.0523 | 0.0530 | **1.2%** |
+| 10 years | 0.100 | 0.1180 | 0.1215 | **2.9%** |
+| 5 years | 0.200 | 0.3152 | 0.3445 | **9.3%** |
+| 3 years | 0.333 | 0.9145 | 1.3156 | **43.9%** |
+
+*(φ held at 0.5 throughout, since it is a common scale.)* Across §4.4's tabulated four-tier ladder,
+whose fastest rate is 0.030, the worst overstatement is **0.67%**. Across the rates ASC 360 and
+ASC 350-30-50 disclosure actually spans it reaches **43.9%**, at the three-year life the second of
+those routinely carries. The mechanism is visible in the transform: zᵃ with z > 1 weights the tail,
+and the tail is what a constant hazard gets wrong. This is not an artefact of approaching a
+singularity — the constant-hazard form's pole sits at 0.435 per year, a 2.3-year life, outside the
+rectangle whose fastest rate is 0.333, which is §5.4's measured rate arriving from the other
+direction.
+
+**An effective rate exists and it is not a constant.** Writing α_eff(δ) = δ Π(z)/(Π(z) − 1) returns
+the published form verbatim, R = (1 − φ)δ/(α_eff − δ). But α_eff runs from **0.437** per year at a
+forty-year life to **0.476** at a three-year one — a ninth of itself across the disclosed rectangle,
+in the direction that a faster-decaying class behaves as though recognition were faster. Across the
+four-tier ladder it moves by six parts in a thousand, which is why the magnitudes there barely move.
+**A recalibration is therefore available and is not a repair:** any comparative static that holds
+α_eff fixed while moving δ is using the wrong derivative, and a single recognition rate quoted for a
+cross-section of asset lives misstates one end of it.
+
+**The crossing is insensitive to the shape and sensitive to the level, and §4.4 says which.**
+§4.4's δ₃\* = Kα/(1 + K) generalises exactly, to Π(1/(1 − δ₃\*)) = 1 + K. REG-004 named the two
+channels in advance and they oppose: a lower R₂ lowers K and pushes the crossing down, a flatter
+transform pushes it up. They very nearly cancel — the shape moves δ₃\* by **0.13%**, from 0.00755
+to 0.00754, and goodwill's tabulated rate stays a factor of 3.8 inside it. The *level* moves it by
+4.3%, from §4.4's 0.00789 at the calibration to 0.00755 at the measured rate, and moves something
+else besides, which §4.4 now states in the table where it belongs.
+
+**One thing the shape does not do is break the exchange.** An age-dependent world sits 5 × 10⁻⁴
+from its own constant-hazard match in the reported series — four orders of magnitude below the
+3 × 10⁻¹ that separated the right conserved quantity from a plausible wrong one in §4.2 — and
+exactly as far from that match's mirror, which is forced rather than discovered, since the two
+constant-hazard worlds are an exact mirror pair to begin with. **§4.2's degeneracy is not repaired
+by age-dependence.** Whether the shape parameter itself is recoverable from a reported series is a
+different question and is open.
+
+**The mathematics is old here too, and the accounting instance is what is new.** That a stationary
+stock equals arrival rate times *mean* delay, whatever the delay's shape, is Little's law
+(Little, 1961), and its insensitivity to shape is a property of a *constant* flow. This model never
+has one: the flow is (1 − φ)δE(t) against a base decaying at δ, and the moment a base grows or
+shrinks geometrically the stock-to-flow ratio becomes a transform of the delay evaluated at the
+growth rate rather than its mean — the same substitution that turns a stationary population's mean
+age into the Laplace transform that stable population theory carries. **The accounting literature
+has the delay and not the shape.** Goodwill write-offs are known to lag economic impairment by
+three to four years on average, with the delay extending to ten for a third of firms (Hayn and
+Hughes, 2006); impairment timing has been modelled as a first-event hazard with covariates
+(Potepa and Thomas, 2023); and conditional conservatism is measured throughout as a timeliness
+coefficient. In none of it is the recognition lag's **shape** estimated rather than assumed. §5.4
+estimates it, and this section is what the estimate costs the model that motivated it: less than
+one per cent where the paper's own ladder sits, forty-four per cent at a disclosed three-year life,
+and one domain restriction that was never a fact about disclosure.
+
 ---
 
 ## 5 · The severe test: registered, run twice, and lost
@@ -1112,6 +1238,8 @@ quarters instead of twenty gives 0.396, 0.398 and 0.404. **Every cut lands in th
 the calibrated 0.05 is outside the interval of all of them.
 
 **The shape was fitted rather than assumed, and it is not the model's shape.** A discrete Weibull
+in Nakagawa and Osaki's (1975) parameterisation, whose hazard is increasing exactly when its shape
+parameter exceeds one, so that the nesting is a boundary case and not a coincidence of fit,
 gives **k̂ = 1.210, 95% profile interval [1.135, 1.285]**, excluding the constant hazard the model
 assumes. The non-parametric hazard shows why: a quarter of the sample (175 of 695) is recognised one
 quarter after the peak, and the rest faces a hazard rising from 0.09 to about 0.25 over the
@@ -1272,6 +1400,10 @@ with what would have killed each.
 | **The disclosed rectangle lies outside the model's domain *at the calibrated rate*** | useful lives spanning disclosure practice against α = 0.05 | any part of it admitting a steady-state deferral measure | **0%** admissible at α = 0.05; **all** of it admissible at the measured α̂ = 0.408 |
 | **The recognition rate is an order of magnitude above the calibration** | censored geometric MLE on 695 registered events, two universes, three sensitivities, four truncations | any cut returning a rate near the swept 0.05 | **α̂ = 0.408/yr** [0.383, 0.432]; range **0.327–0.499** across every cut, none containing 0.05 |
 | **The constant hazard the model assumes is rejected** | discrete Weibull fitted, not assumed, with a profile interval | k̂ = 1, which would have left α a constant | **k̂ = 1.210** [1.135, 1.285]; the hazard rises with the age of the gap |
+| **The closed form survives an age-dependent hazard** | general form against an age-structured simulation carrying the gap as cohorts, no closed form in the loop | departure beyond §4.3's published transient bound | held to **2 × 10⁻¹³** against a 2 × 10⁻⁴ bound; the same simulation **rejects** α ← 1/E[T] at 2 × 10⁻³ |
+| **φ is a pure scale under age-dependence too** | R(φ)/R(0) against (1 − φ), φ swept on a tenth-grid | any φ at which the ratio departs | held to **exactly 0.0** |
+| **The domain restriction is the constant hazard's, not the disclosure's** | the transform evaluated to a proven remainder bound across the disclosed rates | divergence anywhere the bound admits | finite at every rate to δ = 0.80/yr, where it is 7.5 × 10²⁵; the geometric form is **infinite** at δ = 0.60 |
+| **The shape correction is small on the ranked ladder and large at disclosed lives** | measured lag distribution against a geometric of the same mean | the two agreeing, which would make the fitted shape decorative | **0.67%** across the tabulated ladder, **43.9%** at a disclosed three-year life — and the constant-hazard pole sits outside the rectangle, so this is not a pole artefact |
 | **The reporting layer is not diagonal** | 10,000 within-firm permutations of which quarters each class's impairments land in | co-occurrence at the independence rate, which the Hadamard form requires | **4.12×** and **2.02×**, both *p* = 0.0002, power 1.00 at a 5% injected excess |
 | **The sample rebuilds from a live endpoint** | full re-pull of both universes a week after the original | drift large enough to make the original unrecoverable | **695 events against 688**; three of four tier counts identical |
 | **Lag's 100% is partly the ladder** | 2,000 ladders, durability ordering dropped | lag holding at 100% regardless, which would have made §4.5 unconditional | **66.2%** (se 0.011) against 11.5% for the magnitude measure |
@@ -1430,7 +1562,10 @@ theorem is a framing that will be argued about instead of the theorem.**
    says, which is why it is named here rather than in a list of extensions.
 4. **φ and θ are not measured; they are swept — and for φ the reason is §4.** α is no longer
    in that list: §5.4 estimates it at 0.408 per year on the registered sample, against the 0.05
-   swept through the body, and finds the constant hazard the model assumes to be rejected. The
+   swept through the body, and finds the constant hazard the model assumes to be rejected. §4.9
+   settles what that rejection costs: the closed form is the recognition lag's moment generating
+   function evaluated at the decay rate, so it survives with an effective rate that is a function
+   of δ rather than a constant, and what the constant hazard was supplying was the domain. The
    paper reports how outcomes vary across the sweep and does not claim any firm's φ is known. That is
    no longer a concession about this construction: §4.2 establishes that **no** estimator
    recovers φ from a reported series, because the series does not contain it. The consequence
@@ -2025,6 +2160,15 @@ transfer-function criterion, which is what the source is characterised on. Chara
 abstract level; the pole-set consequence drawn in §4.2 is this paper's statement of the mechanism,
 not theirs.)*
 
+Barlow, R. E., Marshall, A. W., & Proschan, F. (1963). Properties of probability distributions with
+monotone hazard rate. *The Annals of Mathematical Statistics*, 34(2), 375–389. ✓ *(§4.9 cites
+Theorem 6.3, which is quoted in the paper in the form used here: the moment generating function is
+finite below the limit inferior of the hazard rate and infinite above its limit superior. That
+theorem is what turns this model's α > δ into a statement about the recognition lag's tail. The
+paper's equation (6.2) — a hazard bounded between two constants bounds the survival function
+between the corresponding exponentials — is the same result in the form a reader may find more
+familiar.)*
+
 Bleck, A., & Liu, X. (2007). Market transparency and the accounting regime. *Journal of Accounting
 Research*, 45(2), 229–256. ✓ *(Read in full text; the copy consulted carries the journal's own title
 page — vol. 45 no. 2, May 2007, DOI 10.1111/j.1475-679X.2007.00231.x — so it is the typeset article
@@ -2087,6 +2231,46 @@ confound — a reporting-rule parameter against an asset-life parameter inside a
 for the fate of the inference drawn from it. **Not read**; the record is verified and the
 characterisation rests on the Long and Ravenscraft comment below, whose working-paper version was
 read in full, and on secondary accounts. No quotation is taken from it.)*
+
+Hayn, C., & Hughes, P. J. (2006). Leading indicators of goodwill impairment. *Journal of
+Accounting, Auditing & Finance*, 21(3), 223–265. ✓ *(§4.9 cites it for the two figures its abstract
+states: goodwill write-offs lag the economic impairment of goodwill by an average of three to four
+years, and for a third of the companies examined the delay extends up to ten. Cited for the
+existence and length of the delay, which it establishes, and not for its shape, which it does not
+model. The page range is the publisher's landing-page range and was not checked against the typeset
+issue.)*
+
+Little, J. D. C. (1961). A proof for the queuing formula: L = λW. *Operations Research*, 9(3),
+383–387. ✓ *(§4.9 cites it for the distribution-free stationary identity — average number in system
+equals arrival rate times average time in system — and, more to the point, for what that identity
+requires: a constant arrival rate. This model never has one, which is why its deferral measure is a
+transform of the lag rather than its mean. Characterised from the result named in the title;
+nothing is quoted.)*
+
+Marshall, A. W., & Proschan, F. (1972). Classes of distributions applicable in replacement with
+renewal theory implications. In *Proceedings of the Sixth Berkeley Symposium on Mathematical
+Statistics and Probability*, Volume I. Berkeley: University of California Press. *(§4.9 cites it for
+the new-better-than-used-in-expectation bound that signs the correction: an NBUE distribution's
+moment generating function is dominated by that of the exponential with the same mean.
+**Deliberately unmarked.** The Berkeley Symposium volume was not consulted and the page range is
+omitted rather than guessed; the attribution is taken from the reliability literature that rests on
+it. §4.9 does not depend on the citation, since the direction it predicts is also measured
+directly — but the reasoning that produced the prediction is this lemma's and is credited as such.)*
+
+Nakagawa, T., & Osaki, S. (1975). The discrete Weibull distribution. *IEEE Transactions on
+Reliability*, R-24(5), 300–301. ✓ *(§5.4's fitted lag distribution is this one, in the survival
+parameterisation P(T ≥ t) = q^(t^k) the source defines, whose discrete hazard is increasing exactly
+when k ≥ 1 and which nests the geometric at k = 1. Named here because a distribution fitted and
+reported ought to say whose it is.)*
+
+Potepa, J., & Thomas, J. (2023). Goodwill impairment after M&A: acquisition-level evidence.
+*Journal of Financial Reporting*, 8(2), from p. 131. ✓⧗ *(§4.9 cites it as the closest existing
+treatment of impairment *timing*: their design tracks each acquisition to its first impairment
+within a ten-year window and stops, which their own text describes as effectively a hazard model.
+It is cited for what it is and for what it is not — a covariate model with no baseline shape
+estimated — which is the gap §5.4's fit occupies. The text consulted is the authors' working paper
+rather than the typeset article, hence ✓⧗; the end page could not be confirmed from an open source
+and is omitted rather than guessed.)*
 
 Kay, J. A. (1976). Accountants, too, could be happy in a golden age: The accountant's rate of profit
 and the internal rate of return. *Oxford Economic Papers*, 28(3), 447–460. ⧗ *(Cited in §4.4 for the

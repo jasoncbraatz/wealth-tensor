@@ -1,0 +1,108 @@
+
+WT-090 · REG-004 · the deferral measure under an age-dependent hazard
+  events 695  ·  min observed lag 1q  ·  max 20q  ·  censored 82
+  fitted discrete Weibull  q = 0.921342  k = 1.21  E[T] = 6.9264q
+  P(T=0) under the fit = 0.0787  -- mass at a lag the instrument cannot produce (REG-004 §3)
+
+§0 · THE DISCRETISATION, STATED BEFORE ANY CORRECTION IS QUOTED
+  0 · property, plant and equipment    R annual 0.3000   R quarterly 0.2943   gap  1.91%
+  1 · finite-lived intangibles         R annual 0.2667   R quarterly 0.2616   gap  1.90%
+  2 · indefinite-lived intangibles     R annual 0.1500   R quarterly 0.1472   gap  1.90%
+  3 · goodwill                         R annual 0.0333   R quarterly 0.0327   gap  1.90%
+  worst period-change gap 1.91% -- every correction below is computed in quarters ON BOTH SIDES, so it is a shape effect and not this.
+  SEVERE     the geometric benchmark is not rigged: it has the fitted lag's own mean
+  SEVERE     the instrument's own support bound holds: no event has a lag of zero
+
+§1 · FALSIFIER F1 · the registered form must NEST the published one
+  worst relative departure over the ladder x three rates: 2.143e-13
+  SEVERE     F1 · at a geometric lag the registered form reproduces (1-phi)d/(a-d)
+
+§2 · FALSIFIER F2 · an age-structured simulation, no closed form in the loop
+  0 · property, plant and equipment    sim 0.011070  registered 0.011070  err 5.80e-15   |   naive 0.011091  err 1.95e-03
+  1 · finite-lived intangibles         sim 0.014445  registered 0.014445  err 7.21e-15   |   naive 0.014463  err 1.23e-03
+  2 · indefinite-lived intangibles     sim 0.010607  registered 0.010607  err 1.78e-14   |   naive 0.010613  err 5.83e-04
+  3 · goodwill                         sim 0.002782  registered 0.002782  err 1.92e-13   |   naive 0.002782  err 1.12e-04
+  SEVERE     F2 · the simulation reproduces the registered closed form to §4.3's bound
+  SEVERE     F3 · the same simulation REJECTS the naive substitution somewhere
+
+§3 · FALSIFIER F4 · phi is a pure scale under age-dependence
+  worst |R(phi)/R(0) - (1-phi)| over phi in 0.0..1.0 : 0.000e+00
+  SEVERE     F4 · R(phi)/R(0) = (1-phi) exactly, so §4.2's proportionality is untouched
+
+§4 · LADDER N · the SIGN, against a geometric with the SAME MEAN
+  0 · property, plant and equipment    DW 0.01107  DW|T>=1 0.01201  geom(=mean) 0.01109/0.01210  ratio 0.9981/0.9933  emp>= 0.01087
+  1 · finite-lived intangibles         DW 0.01444  DW|T>=1 0.01568  geom(=mean) 0.01446/0.01575  ratio 0.9988/0.9957  emp>= 0.01420
+  2 · indefinite-lived intangibles     DW 0.01061  DW|T>=1 0.01151  geom(=mean) 0.01061/0.01154  ratio 0.9994/0.9979  emp>= 0.01043
+  3 · goodwill                         DW 0.00278  DW|T>=1 0.00302  geom(=mean) 0.00278/0.00302  ratio 0.9999/0.9996  emp>= 0.00274
+  -> LADDER N = N1  (below at every swept delta)
+  SEVERE     the T>=1 conditioning moves R UP, as REG-004 §3 registered in advance
+  SEVERE     the truncated empirical transform is a LOWER bound, as registered
+
+§4b · LADDER M · the MAGNITUDE, on the tabulated ladder §4.3 reports
+  0 · property, plant and equipment    registered 0.01201  naive 0.01210  naive overstates by   0.67%
+  1 · finite-lived intangibles         registered 0.01568  naive 0.01575  naive overstates by   0.43%
+  2 · indefinite-lived intangibles     registered 0.01151  naive 0.01154  naive overstates by   0.21%
+  3 · goodwill                         registered 0.00302  naive 0.00302  naive overstates by   0.04%
+  -> LADDER M (tabulated ladder) = M1, worst 0.67%
+
+§4c · LADDER M on the DISCLOSED RECTANGLE, which is where disclosure lives
+  disclosed decay rates span delta_a in [0.0250, 0.3333] (lives 3.0..40.0 years)
+  the naive form's pole sits at delta_a = 0.4350 (life 2.30y), OUTSIDE the rectangle, so the rectangle-wide
+  maximum is a bounded number and not an artefact of approaching a pole.
+  life  40.0y  delta_a 0.0250   registered 0.02476   naive 0.02490   naive overstates by    0.55%
+  life  20.0y  delta_a 0.0500   registered 0.05234   naive 0.05297   naive overstates by    1.20%
+  life  10.0y  delta_a 0.1000   registered 0.11803   naive 0.12145   naive overstates by    2.90%
+  life   5.0y  delta_a 0.2000   registered 0.31519   naive 0.34446   naive overstates by    9.29%
+  life   3.0y  delta_a 0.3333   registered 0.91447   naive 1.31563   naive overstates by   43.87%
+  -> LADDER M (disclosed rectangle) = M3, worst 43.89% at delta_a = 0.3333 (life 3.0y)
+  SEVERE     the naive pole lies outside the rectangle, so ladder M is not a pole artefact
+
+§4d · LADDER E · is alpha_eff flat enough to be a constant?
+  read over the DISCLOSED RECTANGLE, as REG-004 §4 ladder E registers it:
+    life  40.0y  delta_a 0.0250  alpha_eff 0.133716/q = 0.4368/yr
+    life  20.0y  delta_a 0.0500  alpha_eff 0.134462/q = 0.4388/yr
+    life  10.0y  delta_a 0.1000  alpha_eff 0.136121/q = 0.4431/yr
+    life   5.0y  delta_a 0.2000  alpha_eff 0.140332/q = 0.4538/yr
+    life   3.0y  delta_a 0.3333  alpha_eff 0.149091/q = 0.4758/yr
+  and over §4.4's tabulated ladder, for comparison:
+  0 · property, plant and equipment    alpha_eff 0.133861/q = 0.4372/yr
+  1 · finite-lived intangibles         alpha_eff 0.133572/q = 0.4365/yr
+  2 · indefinite-lived intangibles     alpha_eff 0.133292/q = 0.4357/yr
+  3 · goodwill                         alpha_eff 0.133072/q = 0.4352/yr
+  -> LADDER E = E2, top/bottom ratio 1.1150; alpha_eff runs 0.4368 .. 0.4758 per year against the measured alpha-hat 0.4077
+  SEVERE     alpha_eff is a FUNCTION of delta and not a parameter (REG-004 §3)
+
+§5 · LADDER D · the existence condition
+  delta_a 0.0020  -> Pi = 1.003774   (finite)
+  delta_a 0.0100  -> Pi = 1.019188   (finite)
+  delta_a 0.0300  -> Pi = 1.060074   (finite)
+  delta_a 0.1000  -> Pi = 1.236061   (finite)
+  delta_a 0.2000  -> Pi = 1.630374   (finite)
+  delta_a 0.3333  -> Pi = 2.828935   (finite)
+  delta_a 0.5000  -> Pi = 12.472062   (finite)
+  delta_a 0.8000  -> Pi = 75306382696700655041511424.000000   (finite)
+  -> LADDER D = D1
+  the geometric's radius of convergence is 1/(1-alpha), so it caps delta at alpha; the fitted Weibull's survival q^(a^k) with k>1 beats every z^a, so its generating function is entire and the condition has no analogue.
+  SEVERE     D · the constant-hazard condition alpha>delta genuinely binds the geometric
+  SEVERE     D · and the registered form is finite at the very delta that kills it
+
+§6 · LADDER C · does §4.4's tabulated reversal survive the shape correction?
+  constant hazard (published)  tau -0.67   K 0.01566   delta3* = 0.00755/yr (life 132.5y)   tabulated goodwill 0.00200 sits 3.77x below it
+      R by tier: 0.01318  0.01712  0.01252  0.00328
+  measured shape (DW | T>=1)   tau -0.67   K 0.01439   delta3* = 0.00754/yr (life 132.7y)   tabulated goodwill 0.00200 sits 3.77x below it
+      R by tier: 0.01201  0.01568  0.01151  0.00302
+  published crossing (annual, constant hazard, §4.4) = 0.00789
+  -> LADDER C = C2
+  SEVERE     C · the crossing solver reproduces §4.4's published 0.00789 at alpha=0.05
+
+§7 · LADDER S · was §4.2's two-root exchange leaning on the constant hazard?
+  baseline · age-dependent vs its OWN constant-hazard match at alpha_eff: 5.0858e-04
+  the registered swap (alpha_eff,delta,phi) -> (delta,alpha_eff,phi d/a): 5.0858e-04
+  ratio 1.000  -- the swap adds this much on top of the shape approximation
+  -> LADDER S = S2
+  SEVERE     S · the baseline is not vacuous: a constant-hazard world DOES mirror exactly
+
+
+------------------------------------------------------------------------------
+SEVERITY: 14 severe · 0 definitional · 0 failed/vacuous
+------------------------------------------------------------------------------
