@@ -1415,9 +1415,17 @@ is subtracted from it one for one until zero or the goodwill cap binds. **Under 
 the two charges are substitutes at the margin, and this sample shows them as complements.** Signing
 the net requires the two charges at the reporting-unit level, which US filings do not disclose;
 `REG-006` registered an entity-level test of the suppressing channel and it returned no consistent
-sign in either sector. What this design establishes is the magnitude of the departure from
-diagonality, which was previously unmeasured, and that §5's treatment of the events as independent
-draws overstates the information they carry.
+sign in either sector. The natural fallback is the triggering *disclosure* rather than the
+charge, and `REG-007` measures why that route does not identify either. ASC 350-20-50-2(a) compels
+a description of the facts and circumstances leading to the impairment only *for each goodwill
+impairment loss recognized*; where a test is run and nothing is charged the Codification compels
+nothing, and disclosure falls to MD&A. A triggering-event population assembled without that
+restriction is therefore selected on the outcome under study. Inside the window where the mandate
+does fall — and falls on both arms alike, which is what makes the comparison available — filers
+naming the standard's own internal trigger run at **0.436**, against **0.403** among firm-years
+that took a non-goodwill charge and no goodwill charge, on whom the mandate does not fall at all.
+Three points across 1,833 classified firm-years measures the vocabulary of the disclosure, not the
+mechanism behind it.
 
 ---
 
@@ -1558,6 +1566,7 @@ with what would have killed each.
 | **The departure from diagonality is not an artefact of tier 0's tag list** | §5.4's permutation re-derived with the omitted element restored, both arms on one crawl | the lift moving with the tag list, which would make it a property of the instrument | **4.01× → 4.01×** and **2.01× → 2.10×**; every cell not involving tier 0 identical to two decimals |
 | **Testing another asset first REDUCES the goodwill charge** | the single-step measurement run against a published worked example | the sequenced and goodwill-first branches agreeing, which would make the ordering inert | a \$850 prior charge converts a \$700 goodwill impairment to **\$0**; the offset is one-for-one inside the region |
 | **The suppressing channel is not visible in entity-level filings** | censored slope of the goodwill charge on the other charge, by sector and by ASU 2017-04 regime, with a placebo date | a consistent negative slope, or a regime contrast the placebo could not reproduce | **failed as registered** — no consistent sign, and the placebo moved further than the true date |
+| **The disclosed trigger does not separate the two channels** | rate at which filers name the standard's own internal trigger, joint-charge against goodwill-only, inside the window where ASC 350-20-50-2(a) compels the description — against a placebo arm on whom it does not | a window-versus-placebo gap wide enough to show the measure reads events rather than accounting policy | **0.436 against 0.403** on 1,833 classified firm-years; the difference is **+0.041** (*p* 0.38) or **−0.032** (*p* 0.24) according to a coding choice fixed in advance so that the sign could not be chosen afterwards |
 
 Two rows deserve a comment.
 
@@ -1567,7 +1576,7 @@ confirm it and refused, in every one of 400 draws, and the claim came out of the
 ledger that contains only survivals is an advertisement; this one contains the row that cost the
 paper its neatest sentence.
 
-The last row is the one this programme would defend hardest. The claim is not that the work was
+The row on the guards' own audit is the one this programme would defend hardest. The claim is not that the work was
 careful. It is that the guards were audited against the possibility of being unfalsifiable, that the
 audit found six that could not have failed, and that they are named.
 
@@ -1753,8 +1762,10 @@ theorem is a framing that will be argued about instead of the theorem.**
    state. What the design cannot do is separate an economic coupling from the sequencing the
    standards impose — though that sequencing, imposed by ASC 350-20-35-31 and extended to every
    asset class by 35-32, is itself two channels of opposite sign, one creating joint testing and
-   one suppressing joint recognition, and §5.4 says so where the number is. It is registered
-   before its instrument is coded, or it is not run.
+   one suppressing joint recognition, and §5.4 says so where the number is. The disclosure
+   route that would separate them is closed by a selection argument rather than by sample size,
+   and §5.4 says that where the number is too. It is registered before its instrument is coded,
+   or it is not run.
 
 ---
 
