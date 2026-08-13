@@ -57,9 +57,16 @@ economic value. Equity volatility shares its name and not its meaning. **That is
 The same test applies to lifetime. The model's T is how long the asset goes on existing —
 the horizon over which observations are generated. A **disclosed useful life** is a
 different object: an accounting schedule, anchored by industry convention and by tax and
-regulatory practice. §4.8 already argues the two coincide closely enough for δ to be read
-off a disclosure; that argument is on the record and is not reopened here. It does mean
-that if the useful life is used, the paper is using an *accounting* rate and must say so.
+regulatory practice. §4.7 — **not §4.8, which is where this document sent readers until
+`REG-009` §1.5 corrected it** — argues the two coincide closely enough for δ to be read off a
+disclosure. That argument is on the record and is not reopened here, **but it does not travel
+alone and this sentence used to let it.** §4.7 names its own weak joint in the same breath —
+*a disclosed useful life is chosen by the same management whose timeliness is being
+measured* — and bounds it with three claims (lives are anchored by industry convention, are
+sticky within a firm, and can be run as industry medians) **each of which occurs exactly once
+in this repository, in the sentence that declares it.** `REG-009` §1.3 carries that finding and
+§2's P0 measures two of the three. It does mean that if the useful life is used, the paper is
+using an *accounting* rate and must say so.
 
 ## 3 · The lifetime half: what `companyconcept` says — and why that answer is an artifact
 
