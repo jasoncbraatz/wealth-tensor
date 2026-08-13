@@ -119,7 +119,47 @@ Candidate families, with what each supplies and what each costs:
 - **A single-dominant-asset restriction on the existing panel** — firms where one class is
   overwhelmingly the balance sheet, so the equity series approximates one asset: supplies a
   σ that passes §2 only to the extent the restriction bites, and the extent is measurable
-  rather than assumed.
+  rather than assumed. **Measured in §4a. It bites, and it bites asymmetrically.**
+
+## 4a · The dominant-asset restriction, priced
+
+§6's step 2, run on the same deterministic 80-firm sample as §3 so the numbers compare.
+Each class share is `class / Assets` **on one balance sheet** — see the note below on why
+that qualifier is the whole measurement. 74 of 80 firms have a class and total assets
+reported at a common period end; 6 are unmatchable and dropped.
+
+| one class ≥ this share of total assets | firms | of 74 | which class |
+|---|---|---|---|
+| 0.50 | 11 | 0.149 | PP&E 9, goodwill 2 |
+| 0.60 | 9 | 0.122 | PP&E 7, goodwill 2 |
+| **0.70** | **6** | **0.081** | **PP&E 5, goodwill 1** |
+| 0.80 | 3 | 0.041 | **PP&E 3, goodwill 0** |
+
+**The branch is alive, and it is alive for property only.** A restriction at 0.70 leaves
+roughly eight per cent of the panel — on the full 1,602 firms that extrapolates to order
+130, enough to run something — but the survivors are PP&E-dominant operators (restaurant
+and retail chains: Kona Grill, Frisch's, Buffalo Wild Wings, Crumbs) and the
+goodwill-dominant firms **disappear entirely by 0.80**.
+
+That is §5's argument arriving as a measurement rather than as a prediction. The
+restriction that buys an admissible σ buys it exactly where the asset is tangible, priced
+and long-lived, and it cannot be made to buy one for goodwill at any threshold, because a
+firm that is mostly goodwill is not a firm whose equity series prices a single decaying
+asset — it is a firm whose balance sheet is mostly the residual.
+
+**So REG-009 can state its scope at registration instead of discovering it afterwards: a
+dominant-asset design tests the σ claim on PROPERTY, and says so in its title.** The
+extrapolation to ~130 is a proportion measured on 74 and should be confirmed by running the
+count over the full panel before any power calculation leans on it.
+
+**Why the one-balance-sheet qualifier is the measurement.** The first version of this probe
+divided each concept's most recent 10-K value by the most recent `Assets`, taking each
+independently. For firms that stop reporting different concepts in different years that
+divides one balance sheet by another, and it returned shares of 93.4, 25.8 and 8.26. Those
+announced themselves, being impossible; a share of 0.62 built the same way would not have.
+It is §5.4's defect class — a figure from the wrong period is indistinguishable on the page
+from one from the right period — committed by a throwaway script written the same session
+as the guard against it. Period-matching changed the ≥0.70 count from 13 to 6.
 
 ## 5 · The selection problem, which is the whole difficulty
 
@@ -163,16 +203,20 @@ In order, each cheap and each decisive:
 1. **Close the XBRL question properly.** Check the Financial Statement and **Notes** Data
    Sets for the same concepts. If footnote detail tags are materially better covered there,
    §3's conclusion narrows to "not via `companyconcept`" and the join may be back.
-2. **Measure the single-dominant-asset restriction on the existing panel.** For each firm,
-   the largest asset class as a share of total assets, from data already crawled. This is
-   an offline count and it prices option three in §4 without any new source: if the
-   restriction leaves twenty firms, that option is dead and the registration is simpler.
-3. **Only then, σ.** Whichever of §4's families survives step 2 gets one probe, and the
-   probe reports coverage the way §3 does — a number against a denominator, on this
-   project's own panel.
+2. ~~**Measure the single-dominant-asset restriction on the existing panel.**~~ **DONE —
+   §4a.** The branch survives for property and is dead for goodwill at every threshold.
+   What remains of this step is arithmetic: re-run the count over all 1,602 firms rather
+   than the 74, so a power calculation has a real denominator.
+3. **Only then, σ.** Whichever of §4's families survives §4a gets one probe, and the probe
+   reports coverage the way §3 does — a number against a denominator, on this project's own
+   panel. §4a says which family to probe first: equity-return volatility for
+   **PP&E-dominant firms only**, where the restriction is what makes it admissible under §2
+   rather than a proxy in violation of it. That is a narrower and more defensible claim
+   than the one this document opened with.
 
-**Do not skip to step 3.** Steps 1 and 2 are offline or nearly so, and either can close a
-branch that would otherwise cost a session to open.
+**Do not skip to step 3.** Step 1 is offline-cheap and can still narrow §3, and step 2 was
+worth its half hour: it turned "restrict to dominant-asset firms" from an option into a
+scope statement REG-009 can put in its title.
 
 ---
 
