@@ -1,0 +1,551 @@
+{
+ "seed": 20260813,
+ "n_population": 209,
+ "adjudicated_by": "wealthTensor-22, by hand, 2026-08-13",
+ "registered_criterion": "is the capture a genuine reporting-unit designator? (REG-008 F3)",
+ "verdicts": [
+  {
+   "id": "1502034:2017-12-31:6",
+   "names": [
+    "Lucky Vitamin"
+   ],
+   "genuine_unit": true,
+   "impure_prefix": false,
+   "note": ""
+  },
+  {
+   "id": "1351285:2014-12-31:12",
+   "names": [
+    "ROW Consumer"
+   ],
+   "genuine_unit": true,
+   "impure_prefix": false,
+   "note": ""
+  },
+  {
+   "id": "1168213:2015-01-31:6",
+   "names": [
+    "GoJane"
+   ],
+   "genuine_unit": true,
+   "impure_prefix": false,
+   "note": ""
+  },
+  {
+   "id": "1810019:2023-12-31:17",
+   "names": [
+    "Private Cloud",
+    "Public Cloud"
+   ],
+   "genuine_unit": true,
+   "impure_prefix": false,
+   "note": ""
+  },
+  {
+   "id": "746838:2024-12-31:2",
+   "names": [
+    "Digital Workplace Solutions"
+   ],
+   "genuine_unit": true,
+   "impure_prefix": false,
+   "note": ""
+  },
+  {
+   "id": "1084869:2025-06-29:7",
+   "names": [
+    "Gourmet Foods & Gift Baskets"
+   ],
+   "genuine_unit": true,
+   "impure_prefix": false,
+   "note": ""
+  },
+  {
+   "id": "1095277:2015-12-31:16",
+   "names": [
+    "Personal Information Services"
+   ],
+   "genuine_unit": true,
+   "impure_prefix": false,
+   "note": ""
+  },
+  {
+   "id": "1844971:2022-12-31:3",
+   "names": [
+    "Support.com"
+   ],
+   "genuine_unit": true,
+   "impure_prefix": false,
+   "note": ""
+  },
+  {
+   "id": "1418100:2022-09-30:27",
+   "names": [
+    "Services"
+   ],
+   "genuine_unit": true,
+   "impure_prefix": false,
+   "note": ""
+  },
+  {
+   "id": "1351285:2014-12-31:13",
+   "names": [
+    "North America Consumer Language"
+   ],
+   "genuine_unit": true,
+   "impure_prefix": false,
+   "note": ""
+  },
+  {
+   "id": "18498:2023-01-28:6",
+   "names": [
+    "Schuh Group"
+   ],
+   "genuine_unit": true,
+   "impure_prefix": false,
+   "note": ""
+  },
+  {
+   "id": "832988:2020-02-01:5",
+   "names": [
+    "R2Net"
+   ],
+   "genuine_unit": true,
+   "impure_prefix": false,
+   "note": ""
+  },
+  {
+   "id": "1810019:2024-12-31:15",
+   "names": [
+    "Multicloud Services"
+   ],
+   "genuine_unit": true,
+   "impure_prefix": false,
+   "note": ""
+  },
+  {
+   "id": "1582982:2023-12-31:11",
+   "names": [
+    "Healthcare IT"
+   ],
+   "genuine_unit": true,
+   "impure_prefix": false,
+   "note": ""
+  },
+  {
+   "id": "1102541:2013-12-31:3",
+   "names": [
+    "Business Services"
+   ],
+   "genuine_unit": true,
+   "impure_prefix": false,
+   "note": ""
+  },
+  {
+   "id": "1827090:2023-12-31:9",
+   "names": [
+    "Regulatory Writing"
+   ],
+   "genuine_unit": true,
+   "impure_prefix": false,
+   "note": ""
+  },
+  {
+   "id": "1418100:2022-09-30:1",
+   "names": [
+    "Services"
+   ],
+   "genuine_unit": true,
+   "impure_prefix": false,
+   "note": ""
+  },
+  {
+   "id": "1669600:2018-12-31:1",
+   "names": [
+    "Core OTA"
+   ],
+   "genuine_unit": true,
+   "impure_prefix": false,
+   "note": ""
+  },
+  {
+   "id": "18498:2021-01-30:6",
+   "names": [
+    "Schuh Group"
+   ],
+   "genuine_unit": true,
+   "impure_prefix": false,
+   "note": ""
+  },
+  {
+   "id": "1168213:2015-01-31:9",
+   "names": [
+    "GoJane"
+   ],
+   "genuine_unit": true,
+   "impure_prefix": false,
+   "note": ""
+  },
+  {
+   "id": "1102541:2013-12-31:0",
+   "names": [
+    "Business Services"
+   ],
+   "genuine_unit": true,
+   "impure_prefix": false,
+   "note": ""
+  },
+  {
+   "id": "800240:2018-12-29:3",
+   "names": [
+    "CompuCom"
+   ],
+   "genuine_unit": true,
+   "impure_prefix": false,
+   "note": ""
+  },
+  {
+   "id": "1005414:2014-02-01:7",
+   "names": [
+    "For the Toys-China and Southeast Asia"
+   ],
+   "genuine_unit": true,
+   "impure_prefix": true,
+   "note": "genuine reporting unit, but the capture retains a leading preposition ('For the'); the generic list is frozen and is NOT widened to fix this"
+  },
+  {
+   "id": "1418100:2020-09-30:3",
+   "names": [
+    "Products & Solutions"
+   ],
+   "genuine_unit": true,
+   "impure_prefix": false,
+   "note": ""
+  },
+  {
+   "id": "1494259:2024-12-31:13",
+   "names": [
+    "CarOffer",
+    "CarOffer"
+   ],
+   "genuine_unit": true,
+   "impure_prefix": false,
+   "note": ""
+  },
+  {
+   "id": "1518222:2016-12-31:12",
+   "names": [
+    "Senior Care"
+   ],
+   "genuine_unit": true,
+   "impure_prefix": false,
+   "note": ""
+  },
+  {
+   "id": "746838:2024-12-31:7",
+   "names": [
+    "DWS"
+   ],
+   "genuine_unit": true,
+   "impure_prefix": false,
+   "note": ""
+  },
+  {
+   "id": "1084869:2023-07-02:5",
+   "names": [
+    "Gourmet Foods & Gift Baskets"
+   ],
+   "genuine_unit": true,
+   "impure_prefix": false,
+   "note": ""
+  },
+  {
+   "id": "1351285:2016-12-31:14",
+   "names": [
+    "Consumer Fit Brains"
+   ],
+   "genuine_unit": true,
+   "impure_prefix": false,
+   "note": ""
+  },
+  {
+   "id": "18498:2018-02-03:10",
+   "names": [
+    "Lids Sports Group"
+   ],
+   "genuine_unit": true,
+   "impure_prefix": false,
+   "note": ""
+  },
+  {
+   "id": "1669779:2021-12-31:8",
+   "names": [
+    "RV and Outdoor Retail"
+   ],
+   "genuine_unit": true,
+   "impure_prefix": false,
+   "note": ""
+  },
+  {
+   "id": "1810019:2023-12-31:10",
+   "names": [
+    "Multicloud Services"
+   ],
+   "genuine_unit": true,
+   "impure_prefix": false,
+   "note": ""
+  },
+  {
+   "id": "1351285:2015-12-31:9",
+   "names": [
+    "Enterprise & Education Language"
+   ],
+   "genuine_unit": true,
+   "impure_prefix": false,
+   "note": ""
+  },
+  {
+   "id": "1351285:2015-12-31:18",
+   "names": [
+    "Rest of World Consumer"
+   ],
+   "genuine_unit": true,
+   "impure_prefix": false,
+   "note": ""
+  },
+  {
+   "id": "764478:2025-02-01:7",
+   "names": [
+    "Best Buy Health"
+   ],
+   "genuine_unit": true,
+   "impure_prefix": false,
+   "note": ""
+  },
+  {
+   "id": "1584754:2024-06-30:5",
+   "names": [
+    "Fabrication Services"
+   ],
+   "genuine_unit": true,
+   "impure_prefix": false,
+   "note": ""
+  },
+  {
+   "id": "1502034:2016-12-31:6",
+   "names": [
+    "Discount Supplements"
+   ],
+   "genuine_unit": true,
+   "impure_prefix": false,
+   "note": ""
+  },
+  {
+   "id": "1095277:2016-12-31:6",
+   "names": [
+    "Insurance and Other Consumer Services"
+   ],
+   "genuine_unit": true,
+   "impure_prefix": false,
+   "note": ""
+  },
+  {
+   "id": "1084869:2025-06-29:5",
+   "names": [
+    "Gourmet Foods & Gift Baskets"
+   ],
+   "genuine_unit": true,
+   "impure_prefix": false,
+   "note": ""
+  },
+  {
+   "id": "1528849:2019-02-02:4",
+   "names": [
+    "Waterworks"
+   ],
+   "genuine_unit": true,
+   "impure_prefix": false,
+   "note": ""
+  },
+  {
+   "id": "1084869:2025-06-29:4",
+   "names": [
+    "Gourmet Foods & Gift Baskets"
+   ],
+   "genuine_unit": true,
+   "impure_prefix": false,
+   "note": ""
+  },
+  {
+   "id": "733269:2025-03-31:6",
+   "names": [
+    "APAC"
+   ],
+   "genuine_unit": true,
+   "impure_prefix": false,
+   "note": ""
+  },
+  {
+   "id": "1084869:2023-07-02:3",
+   "names": [
+    "Gourmet Foods & Gift Baskets"
+   ],
+   "genuine_unit": true,
+   "impure_prefix": false,
+   "note": ""
+  },
+  {
+   "id": "1814974:2022-12-31:3",
+   "names": [
+    "Renin"
+   ],
+   "genuine_unit": true,
+   "impure_prefix": false,
+   "note": ""
+  },
+  {
+   "id": "1502034:2017-12-31:7",
+   "names": [
+    "Lucky Vitamin"
+   ],
+   "genuine_unit": true,
+   "impure_prefix": false,
+   "note": ""
+  },
+  {
+   "id": "1095277:2015-12-31:8",
+   "names": [
+    "Insurance and Other Consumer Services"
+   ],
+   "genuine_unit": true,
+   "impure_prefix": false,
+   "note": ""
+  },
+  {
+   "id": "1095277:2016-12-31:8",
+   "names": [
+    "Insurance and Other Consumer Services"
+   ],
+   "genuine_unit": true,
+   "impure_prefix": false,
+   "note": ""
+  },
+  {
+   "id": "1084869:2025-06-29:11",
+   "names": [
+    "Consumer Floral & Gifts"
+   ],
+   "genuine_unit": true,
+   "impure_prefix": false,
+   "note": ""
+  },
+  {
+   "id": "1351285:2014-12-31:4",
+   "names": [
+    "ROW Consumer"
+   ],
+   "genuine_unit": true,
+   "impure_prefix": false,
+   "note": ""
+  },
+  {
+   "id": "1442145:2021-12-31:0",
+   "names": [
+    "Financial Services"
+   ],
+   "genuine_unit": true,
+   "impure_prefix": false,
+   "note": ""
+  },
+  {
+   "id": "1359841:2021-01-02:9",
+   "names": [
+    "U.S. Hosiery"
+   ],
+   "genuine_unit": true,
+   "impure_prefix": false,
+   "note": ""
+  },
+  {
+   "id": "1418100:2022-09-30:16",
+   "names": [
+    "Services"
+   ],
+   "genuine_unit": true,
+   "impure_prefix": false,
+   "note": ""
+  },
+  {
+   "id": "910638:2020-12-31:2",
+   "names": [
+    "EMEA"
+   ],
+   "genuine_unit": true,
+   "impure_prefix": false,
+   "note": ""
+  },
+  {
+   "id": "1351285:2015-12-31:6",
+   "names": [
+    "Consumer Fit Brains"
+   ],
+   "genuine_unit": true,
+   "impure_prefix": false,
+   "note": ""
+  },
+  {
+   "id": "1095277:2016-12-31:18",
+   "names": [
+    "Insurance and Other Consumer Services"
+   ],
+   "genuine_unit": true,
+   "impure_prefix": false,
+   "note": ""
+  },
+  {
+   "id": "1418100:2022-09-30:24",
+   "names": [
+    "Services"
+   ],
+   "genuine_unit": true,
+   "impure_prefix": false,
+   "note": ""
+  },
+  {
+   "id": "1518222:2016-12-31:2",
+   "names": [
+    "Quizzle",
+    "Quizzle"
+   ],
+   "genuine_unit": true,
+   "impure_prefix": false,
+   "note": ""
+  },
+  {
+   "id": "1418100:2022-09-30:23",
+   "names": [
+    "Services"
+   ],
+   "genuine_unit": true,
+   "impure_prefix": false,
+   "note": ""
+  },
+  {
+   "id": "1418100:2020-09-30:5",
+   "names": [
+    "Services"
+   ],
+   "genuine_unit": true,
+   "impure_prefix": false,
+   "note": ""
+  },
+  {
+   "id": "750004:2020-12-31:1",
+   "names": [
+    "U.K. Gaming"
+   ],
+   "genuine_unit": true,
+   "impure_prefix": false,
+   "note": ""
+  }
+ ]
+}

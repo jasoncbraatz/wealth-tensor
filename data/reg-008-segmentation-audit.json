@@ -1,0 +1,549 @@
+{
+ "seed": 20260813,
+ "n_population": 7817,
+ "adjudicated_by": "wealthTensor-22, by hand, 2026-08-13",
+ "registered_criterion": "REG-008 F2: a boundary error THAT CHANGES MARKER MEMBERSHIP - a merged sentence importing a name from its neighbour, or a split severing one. Ceiling 10%.",
+ "loose_criterion": "any boundary imperfection at all, marker-changing or not. NOT the registered criterion; reported beside it because 11/60 is the number a future marker keyed on capitalised text would have to survive, and reporting only the passing figure would hide it.",
+ "verdicts": [
+  {
+   "id": "850209:2016-01-30:5",
+   "loose_boundary": false,
+   "merged_prefix": "",
+   "boundary_error": false,
+   "verdict_reason": "clean single sentence",
+   "polysemy": false,
+   "forward_looking": false
+  },
+  {
+   "id": "940944:2020-05-31:10",
+   "loose_boundary": false,
+   "merged_prefix": "",
+   "boundary_error": false,
+   "verdict_reason": "clean single sentence",
+   "polysemy": false,
+   "forward_looking": false
+  },
+  {
+   "id": "1359841:2013-12-28:3",
+   "loose_boundary": false,
+   "merged_prefix": "",
+   "boundary_error": false,
+   "verdict_reason": "clean single sentence",
+   "polysemy": false,
+   "forward_looking": false
+  },
+  {
+   "id": "1805024:2022-12-31:2",
+   "loose_boundary": true,
+   "merged_prefix": "Goodwill",
+   "boundary_error": false,
+   "verdict_reason": "a section heading or table stub merged into the sentence; read by hand, it carries no M1 name, no M2 date and no M3 amount, so marker membership is unchanged",
+   "polysemy": false,
+   "forward_looking": false
+  },
+  {
+   "id": "1575360:2018-12-31:17",
+   "loose_boundary": false,
+   "merged_prefix": "",
+   "boundary_error": false,
+   "verdict_reason": "clean single sentence",
+   "polysemy": false,
+   "forward_looking": false
+  },
+  {
+   "id": "1171759:2018-12-30:4",
+   "loose_boundary": false,
+   "merged_prefix": "",
+   "boundary_error": false,
+   "verdict_reason": "clean single sentence",
+   "polysemy": false,
+   "forward_looking": false
+  },
+  {
+   "id": "60667:2016-01-29:0",
+   "loose_boundary": false,
+   "merged_prefix": "",
+   "boundary_error": false,
+   "verdict_reason": "clean single sentence",
+   "polysemy": false,
+   "forward_looking": false
+  },
+  {
+   "id": "799288:2021-01-29:4",
+   "loose_boundary": false,
+   "merged_prefix": "",
+   "boundary_error": false,
+   "verdict_reason": "clean single sentence",
+   "polysemy": false,
+   "forward_looking": false
+  },
+  {
+   "id": "850209:2025-02-01:16",
+   "loose_boundary": true,
+   "merged_prefix": "Summary of Significant Accounting Policies (continued)",
+   "boundary_error": false,
+   "verdict_reason": "a section heading or table stub merged into the sentence; read by hand, it carries no M1 name, no M2 date and no M3 amount, so marker membership is unchanged",
+   "polysemy": false,
+   "forward_looking": false
+  },
+  {
+   "id": "750004:2016-12-31:5",
+   "loose_boundary": false,
+   "merged_prefix": "",
+   "boundary_error": false,
+   "verdict_reason": "clean single sentence",
+   "polysemy": false,
+   "forward_looking": false
+  },
+  {
+   "id": "1527613:2022-09-30:5",
+   "loose_boundary": false,
+   "merged_prefix": "",
+   "boundary_error": false,
+   "verdict_reason": "clean single sentence",
+   "polysemy": false,
+   "forward_looking": false
+  },
+  {
+   "id": "1704720:2018-12-31:1",
+   "loose_boundary": false,
+   "merged_prefix": "",
+   "boundary_error": false,
+   "verdict_reason": "clean single sentence",
+   "polysemy": false,
+   "forward_looking": false
+  },
+  {
+   "id": "1462223:2019-12-31:6",
+   "loose_boundary": false,
+   "merged_prefix": "",
+   "boundary_error": false,
+   "verdict_reason": "genuine non-impairment triggering event - Series E Preferred Stock change-of-control trigger",
+   "polysemy": true,
+   "forward_looking": false
+  },
+  {
+   "id": "1124804:2024-12-31:9",
+   "loose_boundary": false,
+   "merged_prefix": "",
+   "boundary_error": false,
+   "verdict_reason": "clean single sentence",
+   "polysemy": false,
+   "forward_looking": false
+  },
+  {
+   "id": "1376321:2018-12-31:3",
+   "loose_boundary": false,
+   "merged_prefix": "",
+   "boundary_error": false,
+   "verdict_reason": "clean single sentence",
+   "polysemy": false,
+   "forward_looking": false
+  },
+  {
+   "id": "1861795:2024-12-31:11",
+   "loose_boundary": true,
+   "merged_prefix": "Customer relationships 14 - 20 years Technology 6 - 8 years Tradenames / trademark 5 - 19 years Data 3 years",
+   "boundary_error": false,
+   "verdict_reason": "a section heading or table stub merged into the sentence; read by hand, it carries no M1 name, no M2 date and no M3 amount, so marker membership is unchanged",
+   "polysemy": false,
+   "forward_looking": false
+  },
+  {
+   "id": "850209:2018-02-03:2",
+   "loose_boundary": false,
+   "merged_prefix": "",
+   "boundary_error": false,
+   "verdict_reason": "clean single sentence",
+   "polysemy": false,
+   "forward_looking": false
+  },
+  {
+   "id": "1502034:2018-12-31:4",
+   "loose_boundary": false,
+   "merged_prefix": "",
+   "boundary_error": false,
+   "verdict_reason": "clean single sentence",
+   "polysemy": false,
+   "forward_looking": false
+  },
+  {
+   "id": "1502034:2017-12-31:7",
+   "loose_boundary": false,
+   "merged_prefix": "",
+   "boundary_error": false,
+   "verdict_reason": "clean single sentence",
+   "polysemy": false,
+   "forward_looking": false
+  },
+  {
+   "id": "1013237:2022-08-31:7",
+   "loose_boundary": false,
+   "merged_prefix": "",
+   "boundary_error": false,
+   "verdict_reason": "genuine non-impairment triggering event - Senior Notes change-of-control triggering event",
+   "polysemy": true,
+   "forward_looking": false
+  },
+  {
+   "id": "768835:2019-02-02:4",
+   "loose_boundary": false,
+   "merged_prefix": "",
+   "boundary_error": false,
+   "verdict_reason": "clean single sentence",
+   "polysemy": false,
+   "forward_looking": false
+  },
+  {
+   "id": "1378590:2015-09-30:1",
+   "loose_boundary": false,
+   "merged_prefix": "",
+   "boundary_error": false,
+   "verdict_reason": "clean single sentence",
+   "polysemy": false,
+   "forward_looking": false
+  },
+  {
+   "id": "850209:2025-02-01:4",
+   "loose_boundary": false,
+   "merged_prefix": "",
+   "boundary_error": false,
+   "verdict_reason": "clean single sentence",
+   "polysemy": false,
+   "forward_looking": false
+  },
+  {
+   "id": "1646972:2021-02-27:3",
+   "loose_boundary": false,
+   "merged_prefix": "",
+   "boundary_error": false,
+   "verdict_reason": "clean single sentence",
+   "polysemy": false,
+   "forward_looking": false
+  },
+  {
+   "id": "746838:2024-12-31:6",
+   "loose_boundary": false,
+   "merged_prefix": "",
+   "boundary_error": false,
+   "verdict_reason": "clean single sentence",
+   "polysemy": false,
+   "forward_looking": false
+  },
+  {
+   "id": "1045742:2022-09-30:1",
+   "loose_boundary": false,
+   "merged_prefix": "",
+   "boundary_error": false,
+   "verdict_reason": "clean single sentence",
+   "polysemy": false,
+   "forward_looking": false
+  },
+  {
+   "id": "1701758:2022-01-30:1",
+   "loose_boundary": false,
+   "merged_prefix": "",
+   "boundary_error": false,
+   "verdict_reason": "clean single sentence",
+   "polysemy": false,
+   "forward_looking": false
+  },
+  {
+   "id": "1575360:2018-12-31:19",
+   "loose_boundary": false,
+   "merged_prefix": "",
+   "boundary_error": false,
+   "verdict_reason": "clean single sentence",
+   "polysemy": false,
+   "forward_looking": false
+  },
+  {
+   "id": "1080319:2020-12-31:3",
+   "loose_boundary": false,
+   "merged_prefix": "",
+   "boundary_error": false,
+   "verdict_reason": "clean single sentence",
+   "polysemy": false,
+   "forward_looking": false
+  },
+  {
+   "id": "909494:2017-12-31:1",
+   "loose_boundary": false,
+   "merged_prefix": "",
+   "boundary_error": false,
+   "verdict_reason": "clean single sentence",
+   "polysemy": false,
+   "forward_looking": false
+  },
+  {
+   "id": "56873:2023-01-28:1",
+   "loose_boundary": false,
+   "merged_prefix": "",
+   "boundary_error": false,
+   "verdict_reason": "clean single sentence",
+   "polysemy": false,
+   "forward_looking": false
+  },
+  {
+   "id": "1801661:2022-12-31:11",
+   "loose_boundary": false,
+   "merged_prefix": "",
+   "boundary_error": false,
+   "verdict_reason": "clean single sentence",
+   "polysemy": false,
+   "forward_looking": false
+  },
+  {
+   "id": "34115:2018-02-03:4",
+   "loose_boundary": false,
+   "merged_prefix": "",
+   "boundary_error": false,
+   "verdict_reason": "clean single sentence",
+   "polysemy": false,
+   "forward_looking": false
+  },
+  {
+   "id": "1011290:2016-01-29:6",
+   "loose_boundary": false,
+   "merged_prefix": "",
+   "boundary_error": false,
+   "verdict_reason": "clean single sentence",
+   "polysemy": false,
+   "forward_looking": false
+  },
+  {
+   "id": "1826889:2021-12-31:0",
+   "loose_boundary": false,
+   "merged_prefix": "",
+   "boundary_error": false,
+   "verdict_reason": "forward-looking-statement boilerplate matching 'events or circumstances'",
+   "polysemy": false,
+   "forward_looking": true
+  },
+  {
+   "id": "896841:2016-12-31:1",
+   "loose_boundary": false,
+   "merged_prefix": "",
+   "boundary_error": false,
+   "verdict_reason": "clean single sentence",
+   "polysemy": false,
+   "forward_looking": false
+  },
+  {
+   "id": "1534992:2016-01-03:4",
+   "loose_boundary": false,
+   "merged_prefix": "",
+   "boundary_error": false,
+   "verdict_reason": "clean single sentence",
+   "polysemy": false,
+   "forward_looking": false
+  },
+  {
+   "id": "1168213:2014-02-01:0",
+   "loose_boundary": false,
+   "merged_prefix": "",
+   "boundary_error": false,
+   "verdict_reason": "forward-looking-statement boilerplate matching 'events or circumstances'",
+   "polysemy": false,
+   "forward_looking": true
+  },
+  {
+   "id": "817720:2025-06-28:0",
+   "loose_boundary": true,
+   "merged_prefix": "42 Table of Contents SYNAPTICS INCORPORATED AND SUBSIDIARIES NOTES TO CONSOLIDATED FINANCIAL STATEMENTS (continued)",
+   "boundary_error": false,
+   "verdict_reason": "a section heading or table stub merged into the sentence; read by hand, it carries no M1 name, no M2 date and no M3 amount, so marker membership is unchanged",
+   "polysemy": false,
+   "forward_looking": false
+  },
+  {
+   "id": "1585583:2020-12-29:15",
+   "loose_boundary": false,
+   "merged_prefix": "",
+   "boundary_error": false,
+   "verdict_reason": "clean single sentence",
+   "polysemy": false,
+   "forward_looking": false
+  },
+  {
+   "id": "1095277:2016-12-31:15",
+   "loose_boundary": false,
+   "merged_prefix": "",
+   "boundary_error": false,
+   "verdict_reason": "clean single sentence",
+   "polysemy": false,
+   "forward_looking": false
+  },
+  {
+   "id": "1011006:2016-12-31:7",
+   "loose_boundary": true,
+   "merged_prefix": "Goodwill Impairment Testing",
+   "boundary_error": false,
+   "verdict_reason": "a section heading or table stub merged into the sentence; read by hand, it carries no M1 name, no M2 date and no M3 amount, so marker membership is unchanged",
+   "polysemy": false,
+   "forward_looking": false
+  },
+  {
+   "id": "1171759:2017-12-31:0",
+   "loose_boundary": false,
+   "merged_prefix": "",
+   "boundary_error": false,
+   "verdict_reason": "forward-looking-statement boilerplate matching 'events or circumstances'",
+   "polysemy": false,
+   "forward_looking": true
+  },
+  {
+   "id": "1041859:2021-01-30:3",
+   "loose_boundary": false,
+   "merged_prefix": "",
+   "boundary_error": false,
+   "verdict_reason": "forward-looking-statement boilerplate matching 'events or circumstances'",
+   "polysemy": false,
+   "forward_looking": true
+  },
+  {
+   "id": "1836981:2024-12-31:4",
+   "loose_boundary": true,
+   "merged_prefix": "86 Table of Contents Impairment of Long-Lived Assets",
+   "boundary_error": false,
+   "verdict_reason": "a section heading or table stub merged into the sentence; read by hand, it carries no M1 name, no M2 date and no M3 amount, so marker membership is unchanged",
+   "polysemy": false,
+   "forward_looking": false
+  },
+  {
+   "id": "1052054:2019-12-31:5",
+   "loose_boundary": false,
+   "merged_prefix": "",
+   "boundary_error": false,
+   "verdict_reason": "clean single sentence",
+   "polysemy": false,
+   "forward_looking": false
+  },
+  {
+   "id": "1625641:2024-12-31:5",
+   "loose_boundary": false,
+   "merged_prefix": "",
+   "boundary_error": false,
+   "verdict_reason": "clean single sentence",
+   "polysemy": false,
+   "forward_looking": false
+  },
+  {
+   "id": "800240:2016-12-31:1",
+   "loose_boundary": true,
+   "merged_prefix": "NOTES TO CONSOLIDATED FINANCIAL STATEMENTS (Continued)",
+   "boundary_error": false,
+   "verdict_reason": "a section heading or table stub merged into the sentence; read by hand, it carries no M1 name, no M2 date and no M3 amount, so marker membership is unchanged",
+   "polysemy": false,
+   "forward_looking": false
+  },
+  {
+   "id": "1043509:2022-12-31:2",
+   "loose_boundary": true,
+   "merged_prefix": "MANAGEMENT'S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND RESULTS OF OPERATIONS",
+   "boundary_error": false,
+   "verdict_reason": "a section heading or table stub merged into the sentence; read by hand, it carries no M1 name, no M2 date and no M3 amount, so marker membership is unchanged",
+   "polysemy": false,
+   "forward_looking": false
+  },
+  {
+   "id": "1817004:2024-12-31:3",
+   "loose_boundary": true,
+   "merged_prefix": "Impairment Assessment Process",
+   "boundary_error": false,
+   "verdict_reason": "a section heading or table stub merged into the sentence; read by hand, it carries no M1 name, no M2 date and no M3 amount, so marker membership is unchanged",
+   "polysemy": false,
+   "forward_looking": false
+  },
+  {
+   "id": "1828108:2022-12-31:4",
+   "loose_boundary": true,
+   "merged_prefix": "Impairment of Goodwill, Acquired Intangible Assets and Long-Lived Assets",
+   "boundary_error": false,
+   "verdict_reason": "a section heading or table stub merged into the sentence; read by hand, it carries no M1 name, no M2 date and no M3 amount, so marker membership is unchanged",
+   "polysemy": false,
+   "forward_looking": false
+  },
+  {
+   "id": "1310067:2013-02-02:4",
+   "loose_boundary": false,
+   "merged_prefix": "",
+   "boundary_error": false,
+   "verdict_reason": "clean single sentence",
+   "polysemy": false,
+   "forward_looking": false
+  },
+  {
+   "id": "803578:2022-12-31:4",
+   "loose_boundary": false,
+   "merged_prefix": "",
+   "boundary_error": false,
+   "verdict_reason": "clean single sentence",
+   "polysemy": false,
+   "forward_looking": false
+  },
+  {
+   "id": "1726173:2024-12-31:3",
+   "loose_boundary": false,
+   "merged_prefix": "",
+   "boundary_error": false,
+   "verdict_reason": "clean single sentence",
+   "polysemy": false,
+   "forward_looking": false
+  },
+  {
+   "id": "1168213:2016-01-30:9",
+   "loose_boundary": false,
+   "merged_prefix": "",
+   "boundary_error": false,
+   "verdict_reason": "clean single sentence",
+   "polysemy": false,
+   "forward_looking": false
+  },
+  {
+   "id": "1585583:2019-12-31:13",
+   "loose_boundary": false,
+   "merged_prefix": "",
+   "boundary_error": false,
+   "verdict_reason": "clean single sentence",
+   "polysemy": false,
+   "forward_looking": false
+  },
+  {
+   "id": "1820302:2024-12-31:10",
+   "loose_boundary": false,
+   "merged_prefix": "",
+   "boundary_error": false,
+   "verdict_reason": "clean single sentence",
+   "polysemy": false,
+   "forward_looking": false
+  },
+  {
+   "id": "56873:2018-02-03:0",
+   "loose_boundary": true,
+   "merged_prefix": "Impairments of Long-Lived Assets",
+   "boundary_error": false,
+   "verdict_reason": "a section heading or table stub merged into the sentence; read by hand, it carries no M1 name, no M2 date and no M3 amount, so marker membership is unchanged",
+   "polysemy": false,
+   "forward_looking": false
+  },
+  {
+   "id": "1830029:2022-12-31:0",
+   "loose_boundary": false,
+   "merged_prefix": "",
+   "boundary_error": false,
+   "verdict_reason": "forward-looking-statement boilerplate matching 'events or circumstances'",
+   "polysemy": false,
+   "forward_looking": true
+  },
+  {
+   "id": "1606366:2020-12-30:6",
+   "loose_boundary": false,
+   "merged_prefix": "",
+   "boundary_error": false,
+   "verdict_reason": "clean single sentence",
+   "polysemy": false,
+   "forward_looking": false
+  }
+ ]
+}

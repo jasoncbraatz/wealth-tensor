@@ -1,0 +1,202 @@
+{
+ "corpus_sha256": "939e7bf5f11aa753e18a6604d53c7f9c09ca80e3f195744ccde6adb09f4ed761",
+ "n_firm_years": 1925,
+ "arm_n": {
+  "JOINT": 309,
+  "GWONLY": 427,
+  "PLACEBO": 1189
+ },
+ "placebo_gate": {
+  "window_k": 66,
+  "window_n": 644,
+  "window_rate": 0.10248447204968944,
+  "placebo_k": 28,
+  "placebo_n": 949,
+  "placebo_rate": 0.029504741833508957,
+  "delta": 0.07297973021618048,
+  "reg007_gap": 0.033
+ },
+ "dead_patterns": [
+  "external:decline in earnings",
+  "external:declining cash flows",
+  "external:labor costs",
+  "external:loss of a customer",
+  "external:raw material",
+  "internal:carrying amount of its net assets",
+  "internal:composition of its net assets",
+  "internal:recognition of a goodwill impairment loss in the financial statements of a subsidiary"
+ ],
+ "pooled": {
+  "m1": {
+   "joint_k": 31,
+   "joint_n": 281,
+   "joint_rate": 0.1103202846975089,
+   "gwonly_k": 35,
+   "gwonly_n": 363,
+   "gwonly_rate": 0.09641873278236915,
+   "lambda": 0.013901551915139754,
+   "p": 0.6013366206471271,
+   "mde_80": 0.06751344734291005,
+   "silent_joint": 28,
+   "silent_gwonly": 64
+  },
+  "m2": {
+   "joint_k": 168,
+   "joint_n": 281,
+   "joint_rate": 0.597864768683274,
+   "gwonly_k": 211,
+   "gwonly_n": 363,
+   "gwonly_rate": 0.581267217630854,
+   "lambda": 0.01659755105242,
+   "p": 0.6870614991842264,
+   "mde_80": 0.10954610469859814,
+   "silent_joint": 28,
+   "silent_gwonly": 64
+  },
+  "m3": {
+   "joint_k": 81,
+   "joint_n": 281,
+   "joint_rate": 0.28825622775800713,
+   "gwonly_k": 100,
+   "gwonly_n": 363,
+   "gwonly_rate": 0.27548209366391185,
+   "lambda": 0.01277413409409528,
+   "p": 0.7245878241444478,
+   "mde_80": 0.10006545634035241,
+   "silent_joint": 28,
+   "silent_gwonly": 64
+  },
+  "m1_f": {
+   "joint_k": 0,
+   "joint_n": 281,
+   "joint_rate": 0.0,
+   "gwonly_k": 1,
+   "gwonly_n": 363,
+   "gwonly_rate": 0.0027548209366391185,
+   "lambda": -0.0027548209366391185,
+   "p": 1.0,
+   "mde_80": 0.008765160719388506,
+   "silent_joint": 28,
+   "silent_gwonly": 64
+  }
+ },
+ "by_universe": {
+  "m1": {
+   "pilot": {
+    "joint_k": 17,
+    "joint_n": 153,
+    "joint_rate": 0.1111111111111111,
+    "gwonly_k": 15,
+    "gwonly_n": 156,
+    "gwonly_rate": 0.09615384615384616,
+    "lambda": 0.014957264957264946,
+    "p": 0.711562446529168,
+    "mde_80": 0.09712508745816244,
+    "silent_joint": 18,
+    "silent_gwonly": 17
+   },
+   "replication": {
+    "joint_k": 14,
+    "joint_n": 128,
+    "joint_rate": 0.109375,
+    "gwonly_k": 20,
+    "gwonly_n": 207,
+    "gwonly_rate": 0.0966183574879227,
+    "lambda": 0.012756642512077296,
+    "p": 0.7130505601265592,
+    "mde_80": 0.09512922282846069,
+    "silent_joint": 10,
+    "silent_gwonly": 47
+   }
+  },
+  "m2": {
+   "pilot": {
+    "joint_k": 86,
+    "joint_n": 153,
+    "joint_rate": 0.5620915032679739,
+    "gwonly_k": 97,
+    "gwonly_n": 156,
+    "gwonly_rate": 0.6217948717948718,
+    "lambda": -0.05970336852689795,
+    "p": 0.2993865994135581,
+    "mde_80": 0.15664890614228766,
+    "silent_joint": 18,
+    "silent_gwonly": 17
+   },
+   "replication": {
+    "joint_k": 82,
+    "joint_n": 128,
+    "joint_rate": 0.640625,
+    "gwonly_k": 114,
+    "gwonly_n": 207,
+    "gwonly_rate": 0.5507246376811594,
+    "lambda": 0.08990036231884058,
+    "p": 0.11139826061447583,
+    "mde_80": 0.1552124943140216,
+    "silent_joint": 10,
+    "silent_gwonly": 47
+   }
+  },
+  "m3": {
+   "pilot": {
+    "joint_k": 40,
+    "joint_n": 153,
+    "joint_rate": 0.26143790849673204,
+    "gwonly_k": 39,
+    "gwonly_n": 156,
+    "gwonly_rate": 0.25,
+    "lambda": 0.011437908496732041,
+    "p": 0.8963482187624026,
+    "mde_80": 0.13905737049596933,
+    "silent_joint": 18,
+    "silent_gwonly": 17
+   },
+   "replication": {
+    "joint_k": 41,
+    "joint_n": 128,
+    "joint_rate": 0.3203125,
+    "gwonly_k": 61,
+    "gwonly_n": 207,
+    "gwonly_rate": 0.2946859903381642,
+    "lambda": 0.025626509661835772,
+    "p": 0.6270862447064564,
+    "mde_80": 0.1449670458156426,
+    "silent_joint": 10,
+    "silent_gwonly": 47
+   }
+  },
+  "m1_f": {
+   "pilot": {
+    "joint_k": 0,
+    "joint_n": 153,
+    "joint_rate": 0.0,
+    "gwonly_k": 0,
+    "gwonly_n": 156,
+    "gwonly_rate": 0.0,
+    "lambda": 0.0,
+    "p": 1.0,
+    "mde_80": 0.0,
+    "silent_joint": 18,
+    "silent_gwonly": 17
+   },
+   "replication": {
+    "joint_k": 0,
+    "joint_n": 128,
+    "joint_rate": 0.0,
+    "gwonly_k": 1,
+    "gwonly_n": 207,
+    "gwonly_rate": 0.004830917874396135,
+    "lambda": -0.004830917874396135,
+    "p": 1.0,
+    "mde_80": 0.017185591158965764,
+    "silent_joint": 10,
+    "silent_gwonly": 47
+   }
+  }
+ },
+ "silent": {
+  "JOINT": 28,
+  "GWONLY": 64,
+  "PLACEBO": 240
+ }
+}
