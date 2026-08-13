@@ -137,6 +137,50 @@ REACH = {
 
 
 # --------------------------------------------------------------------------------------
+# ONE LAYER OUT: restatements of runs §7's ledger does not declare
+# --------------------------------------------------------------------------------------
+# REACH above inherits §7's ledger, so it watches exactly the figures §7 chose to print.
+# REG-004 and REG-005 are not in that ledger, and §4.10's comparison table restates ten
+# of their numbers in a single grid that nothing in this suite reads. A re-run that moved
+# α_ser at a three-year life from 0.4037 to 0.4031 would leave every test green.
+#
+# THE INCLUSION RULE, because a number-scrape of a RESULT doc does not give you one.
+# Scraping RESULT-REG-004 for values that also appear in the manuscript returns 49
+# figures, and the overwhelming majority are section cross-references (`4.2`, `5.4`),
+# publication years (`1972`, `1982`), and fragments of hyphenated identifiers (`002`).
+# Counting those would pin the paper's own table of contents. The filter that separates a
+# reported statistic from a cross-reference is PRECISION: a figure carrying four or more
+# significant digits is not a section label and not a year. It cuts 49 to 6 on REG-004
+# and 62 to 10 on REG-005, and what survives is exactly §4.10's four-significant-figure
+# passage plus REG-005's median k̂.
+#
+# This is the correction to the handoff that proposed this work: the mechanism does NOT
+# "generalise unchanged". REACH could inherit §7's curation; this table has to state its
+# own selection rule, and the rule is the deliverable.
+RESULT_REACH = {
+    # --- §4.10's grid: α_ser and α_eff at each rung of the disclosed rectangle ---------
+    "0.4383": {"4.10": 1},    # α_ser  at a 40-year life
+    "0.4368": {"4.10": 1},    # α_eff  at a 40-year life
+    "0.4385": {"4.10": 1},    # α_ser  at 20 years
+    "0.4388": {"4.10": 2},    # α_eff at 20 years AND α_ser at 10 -- the one repeat
+    "0.4431": {"4.10": 1},    # α_eff  at 10 years
+    "0.4370": {"4.10": 1},    # α_ser  at 5 years
+    "0.4538": {"4.10": 1},    # α_eff  at 5 years
+    "0.4037": {"4.10": 1},    # α_ser  at 3 years -- the cell that parts company
+    "0.4758": {"4.10": 1},    # α_eff  at 3 years
+    # --- REG-005's recovery of the lag shape ------------------------------------------
+    "1.211":  {"4.10": 1},    # median k̂ over the recovery draws
+}
+
+# Same idea as NOT_COUNTED, for this table: a four-significant-figure token the
+# manuscript also spends on something that is not a restatement.
+RESULT_NOT_COUNTED = {
+    "1.000": "a normalised entry in §3.1's worked example and a unit correlation in "
+             "§5.3; four significant digits here are formatting, not precision.",
+}
+
+
+# --------------------------------------------------------------------------------------
 # measurement
 # --------------------------------------------------------------------------------------
 def _section_labels(lines: list[str]) -> list[str]:
@@ -167,7 +211,7 @@ def measured() -> dict[str, dict[str, int]]:
     lines = PAPER.read_text(encoding="utf-8").split("\n")
     labels = _section_labels(lines)
     out: dict[str, dict[str, int]] = {}
-    for figure in REACH:
+    for figure in list(REACH) + list(RESULT_REACH) + list(RESULT_NOT_COUNTED):
         counts: dict[str, int] = {}
         for label, line in zip(labels, lines):
             if _mentions(line, figure):
@@ -240,6 +284,57 @@ def test_this_file_actually_reaches_past_the_two_guarded_sections():
     # the specific occurrence the mutation drill hit, named so it cannot quietly leave
     assert REACH["0.103"].get("5.4") == 1
     assert "×" not in "0.103", "0.103 is not a multiplier, so §5.4's guard never read it"
+
+
+@pytest.mark.parametrize("figure", sorted(RESULT_REACH))
+def test_the_manuscript_restates_the_unledgered_figure_exactly_where_declared(
+        figure, measured):
+    """The same load-bearing check, one layer out from §7's ledger.
+
+    Most of these are printed exactly once, so the count is a presence guard: move the
+    cell and its count goes to zero. That is the point -- a single silent cell in a
+    comparison grid is precisely the copy nobody would notice.
+    """
+    declared, actual = RESULT_REACH[figure], measured[figure]
+    assert actual == declared, (
+        f"{figure} -- a REG-004/REG-005 restatement -- is printed in a pattern the "
+        f"repository has not declared.\n"
+        f"  declared: {dict(sorted(declared.items()))}\n"
+        f"  measured: {dict(sorted(actual.items()))}\n"
+        f"Either a re-run moved a cell of §4.10's comparison table and the manuscript "
+        f"kept the old one, or the table legitimately changed and this count needs "
+        f"updating with it."
+    )
+
+
+def test_the_unledgered_table_is_watched_by_nothing_else():
+    """It must be ADDITIONAL surface, not a fourth guard on figures already covered."""
+    overlap = (set(RESULT_REACH) | set(RESULT_NOT_COUNTED)) & (
+        LEDGER_FIGURES | set(REACH) | set(NOT_COUNTED))
+    assert not overlap, (
+        f"{sorted(overlap)} are already watched by the ledger-derived tables; a figure "
+        f"belongs to exactly one of them or the two will disagree on a legitimate edit."
+    )
+    assert not (set(RESULT_REACH) & set(RESULT_NOT_COUNTED))
+
+
+def test_the_precision_rule_is_what_makes_this_table_possible():
+    """The witness for the selection rule, so it cannot quietly become 'whatever we felt
+    like pinning'.
+
+    Every counted figure carries four or more significant digits. That is the property
+    that separates a reported statistic from a section reference or a publication year,
+    and without it the scrape returns 49 figures for REG-004 alone, most of them the
+    paper's own cross-references.
+    """
+    def significant(fig: str) -> int:
+        return len(fig.replace(".", "").lstrip("0")) if "." in fig else 0
+
+    for fig in RESULT_REACH:
+        assert significant(fig) >= 4, f"{fig} does not meet the stated precision rule"
+    # and the rule genuinely excludes the noise it was written to exclude
+    for noise in ("4.2", "5.4", "1982", "0.05"):
+        assert significant(noise) < 4, f"{noise} would have passed the rule"
 
 
 def test_a_drifted_copy_would_change_a_count(measured):
