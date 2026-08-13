@@ -1428,7 +1428,13 @@ does fall — and falls on both arms alike, which is what makes the comparison a
 naming the standard's own internal trigger run at **0.436**, against **0.403** among firm-years
 that took a non-goodwill charge and no goodwill charge, on whom the mandate does not fall at all.
 Three points across 1,833 classified firm-years measures the vocabulary of the disclosure, not the
-mechanism behind it.
+mechanism behind it. `REG-008` sharpens the instrument to the sentence and to the *named* reporting
+unit, and the separation from the placebo more than doubles — **0.103 against 0.030** — while the
+joint-versus-goodwill-only difference stays at **+0.014** (*p* 0.60) in a design that could have
+detected 0.068. The reason is countable: **no firm-year in the window writes a sentence naming a
+reporting unit, a trigger, and any of the standard's own (f)-family language**, and the two phrases
+the Codification uses for that family appear in none of the 1,925 filings. The disclosure does not
+carry the quantity the decomposition needs.
 
 ---
 
@@ -1570,6 +1576,7 @@ with what would have killed each.
 | **Testing another asset first REDUCES the goodwill charge** | the single-step measurement run against a published worked example | the sequenced and goodwill-first branches agreeing, which would make the ordering inert | a \$850 prior charge converts a \$700 goodwill impairment to **\$0**; the offset is one-for-one inside the region |
 | **The suppressing channel is not visible in entity-level filings** | censored slope of the goodwill charge on the other charge, by sector and by ASU 2017-04 regime, with a placebo date | a consistent negative slope, or a regime contrast the placebo could not reproduce | **failed as registered** — no consistent sign, and the placebo moved further than the true date |
 | **The disclosed trigger does not separate the two channels** | rate at which filers name the standard's own internal trigger, joint-charge against goodwill-only, inside the window where ASC 350-20-50-2(a) compels the description — against a placebo arm on whom it does not | a window-versus-placebo gap wide enough to show the measure reads events rather than accounting policy | **0.436 against 0.403** on 1,833 classified firm-years; the difference is **+0.041** (*p* 0.38) or **−0.032** (*p* 0.24) according to a coding choice fixed in advance so that the sign could not be chosen afterwards |
+| **A sharper disclosure instrument finds the quantity absent, not merely unresolved** | sentence-level co-occurrence of a registered trigger phrase with a *named* reporting unit, joint-charge against goodwill-only, inside the same mandated window and against the same placebo | a window-versus-placebo gap no wider than the keyword families', which would leave the null attributable to the instrument rather than to the filings | the separation more than doubles — **0.103 against 0.030**, where the families gave 0.436 against 0.403 — and the difference stays at **+0.014** (*p* 0.60) in a design that could have detected **0.068**; **0 of 281** joint firm-years name a unit and an (f)-family trigger in one sentence |
 
 Two rows deserve a comment.
 
@@ -1766,8 +1773,10 @@ theorem is a framing that will be argued about instead of the theorem.**
    standards impose — though that sequencing, imposed by ASC 350-20-35-31 and extended to every
    asset class by 35-32, is itself two channels of opposite sign, one creating joint testing and
    one suppressing joint recognition, and §5.4 says so where the number is. The disclosure
-   route that would separate them is closed by a selection argument rather than by sample size,
-   and §5.4 says that where the number is too. It is registered before its instrument is coded,
+   route that would separate them is closed twice over — by a selection argument, and by a count:
+   sharpened to the sentence and to the named reporting unit, the disclosure does not once, in 644
+   firm-years, tie the standard's own internal trigger to the unit it fired in, and §5.4 says that
+   where the numbers are. It is registered before its instrument is coded,
    or it is not run.
 
 ---
