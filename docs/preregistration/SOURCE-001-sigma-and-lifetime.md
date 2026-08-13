@@ -59,12 +59,22 @@ regulatory practice. §4.8 already argues the two coincide closely enough for δ
 off a disclosure; that argument is on the record and is not reopened here. It does mean
 that if the useful life is used, the paper is using an *accounting* rate and must say so.
 
-## 3 · The lifetime half: MEASURED, and the machine-readable route is closed
+## 3 · The lifetime half: what `companyconcept` says — and why that answer is an artifact
+
+> **SUPERSEDED IN ITS CONCLUSIONS BY §3a, `wealthTensor-24`, 2026-08-13.** The measurement
+> below is reproducible and was not wrong; the inference drawn from it was. `companyconcept`
+> does not serve duration-typed facts at all, so a zero from it is a statement about the
+> **instrument**, not about the filers. §3a measures the same question on the surface §3's
+> own final paragraph named as unchecked, and the answer reverses: **0.82 of this panel's
+> 10-K filers tag `PropertyPlantAndEquipmentUsefulLife`.** Anything downstream that cites
+> "the XBRL route is closed" — `-23`'s handoff, its commit messages, the banked lesson — is
+> citing this section's error. §3 is kept rather than deleted because the shape of the
+> mistake is the useful part.
 
 The intuition was that useful lives, being mandated disclosures (ASC 360-10-50,
 ASC 350-30-50), would be available as tagged XBRL facts and could be joined to the existing
-panel cheaply. **That is false on this project's own universes, and the failure is not
-marginal.**
+panel cheaply. **That intuition was right. This section concluded it was false**, on the
+evidence below.
 
 Probed against `data/reg-006-wt092-panel.json` (1,602 firms), a deterministic every-k-th
 sample of 40 firms per universe, one `data.sec.gov` `companyconcept` call per firm per
@@ -80,20 +90,23 @@ concept, 2026-08-13:
 
 The canonical point-valued concepts resolve for nobody. `PropertyPlantAndEquipmentUsefulLife`
 returned HTTP 404 on the frames API for every unit and period tried, and on
-`companyconcept` for Target, Microsoft and Exxon individually — it is not a sparsely-used
-tag, it is one these filers do not use at all. **The class with zero coverage is PP&E, which
-is this project's tier 0, in the universe (retail) where tier 0 carries the most weight.**
+`companyconcept` for Target, Microsoft and Exxon individually — ~~it is not a sparsely-used
+tag, it is one these filers do not use at all~~. **That last clause is the error, and it is
+worth seeing exactly where it happened: a 404 was read as a fact about the filer. Target's
+own 10-K for the very period tested tags the concept six times.** §3a shows the tags.
 
-Three consequences, and the third is the useful one:
+The three consequences drawn here, struck through, with what replaced each:
 
-1. **A tagged-XBRL join is not a route.** Not "expensive" — absent.
-2. **Where a life IS tagged it is a range**, which matches §4.4's "disclosed rectangle"
-   framing and means a design must take an interval, not a number, as its primitive.
-3. **The route that remains is the one this project is already good at.** Useful lives are
-   disclosed *in the accounting-policy footnote, as prose* ("three to seven years"), and
-   REG-007 and REG-008 built exactly this machinery: locate a sentence in a filing, require
-   named structure inside it, hand-audit the precision. The δ half is a sentence-extraction
-   problem of a shape already registered, run and audited twice — **not new infrastructure.**
+1. ~~**A tagged-XBRL join is not a route.** Not "expensive" — absent.~~ → **It is a route,
+   and it is the cheap one.** §3a.
+2. **Where a life IS tagged it is a range** — this one SURVIVES, and arrives stronger: §3a
+   finds the range as an explicit `Range=Minimum` / `Range=Maximum` axis on 0.57 of the
+   dimension sets, crossed with an asset-component axis. §4.4's "disclosed rectangle" is
+   not a framing here; it is the literal shape of the data.
+3. ~~**The route that remains is prose sentence-extraction**, the REG-007/REG-008
+   machinery.~~ → **Available as a fallback, not needed as the route.** The structured facts
+   are better typed than anything sentence-extraction could recover, and they do not need
+   hand-auditing for *precision* — only for meaning.
 
 **What this measurement does NOT establish, stated so it is not read as more than it is.**
 The sample is every-k-th by CIK and is therefore not size-weighted; the panel includes small
@@ -102,6 +115,73 @@ estimate of it. And `companyconcept` may not expose every detail-tagged footnote
 SEC's **Financial Statement and Notes Data Sets** are the fuller surface and were not
 checked. Neither caveat touches the 0-of-80 on PP&E, which is a statement about a concept no
 one used, but both must be closed before the XBRL route is called closed *in general*.
+
+> **That final paragraph was right, and it was written by the same session that then ignored
+> it.** The caveat named the exact surface that reverses the finding, in bold, and the
+> section still declared the route closed in its own title. A caveat that does not gate the
+> conclusion is decoration. §3a is that caveat, run.
+
+## 3a · The correction: the route is OPEN, and it was open the whole time
+
+`wealthTensor-24`, 2026-08-13. §6's step 1, run. Probe:
+`scripts/source001_lifetime_coverage.py`, offline against the SEC's **Financial Statement
+and Notes** data sets (`{2015,2019,2023}q1_notes.zip`), 10-K submissions only, joined to
+`data/reg-006-wt092-panel.json` on CIK.
+
+**Why §3's zero happened.** Useful lives are `xbrli:durationItemType` facts — the value is
+`P39Y`, an ISO-8601 duration, not a number. `companyconcept` and `frames` serve **numeric**
+facts, keyed by `units`; a duration-typed concept has no numeric unit and the endpoint
+returns 404 for every filer, including filers that tag it. In the FSN data sets the same
+split appears as two files, and it is the file nobody reaches for first: numeric facts go
+to `num.tsv`, everything else to **`txt.tsv`**.
+
+**The tell, which is the part that transfers.** The first FSN scan read `num.tsv` and
+returned **11 filers of 4,711** — *worse* than the companyconcept figure it was meant to
+beat — and the three `…UsefulLifeMinimum` reporters §3 did find were absent from it
+entirely. **A coverage number that gets worse when the surface gets bigger is a statement
+about the surface.** That contradiction is what sent the scan to `txt.tsv`.
+
+| 10-K filers tagging … | 2015q1 | 2019q1 | 2023q1 |
+|---|---|---|---|
+| **any** useful-life concept, **our panel** | **419 / 500 = 0.838** | **342 / 399 = 0.857** | **493 / 562 = 0.877** |
+| any useful-life concept, all filers | 3,647 / 4,683 = 0.779 | 3,248 / 3,886 = 0.836 | 3,658 / 4,711 = 0.776 |
+| `PropertyPlantAndEquipmentUsefulLife`, our panel | — | — | **459 / 562 = 0.817** |
+| `FiniteLivedIntangibleAssetUsefulLife`, our panel | — | — | **308 / 562 = 0.548** |
+
+0.972 of the rows carry a standard `us-gaap/20NN` version — these are the mandated tags, not
+company extensions. Coverage is flat across a decade, so the join's usable window is the
+panel's whole span rather than its recent tail.
+
+**PP&E — §3's "class with zero coverage" — is the best-covered class in the panel.** That
+sentence is the whole correction.
+
+**What a join actually gets: a rectangle, not a number.** Median **8** canonical life facts
+per reporting panel firm (max 38), dimensioned. The axes, by frequency:
+`Range` (3,617), `PropertyPlantAndEquipmentByType` (3,146),
+`FiniteLivedIntangibleAssetsByMajorClass` (2,517), `BusinessAcquisition` (1,302).
+
+Hand-audit, Target Corp (CIK 27419, `0000027419-23-000015`, FY ending 2023-01-31) — chosen
+because it is one of the three firms §3 named as proof the concept was unused:
+
+| component | minimum | maximum |
+|---|---|---|
+| Building and building improvements | P8Y | P39Y |
+| Fixtures and equipment | P2Y | P15Y |
+| Computer equipment | P2Y | P7Y |
+
+Verified three ways, because a dataset agreeing with itself is one way: the FSN row says it;
+**Target's own inline-XBRL 10-K carries `name="us-gaap:PropertyPlantAndEquipmentUsefulLife"
+format="ixt-sec:duryear"` six times** (fetched from `Archives/edgar/`, independent of FSN);
+and `companyconcept` for that same CIK and concept still returns 404 today. Tagged, present,
+and invisible to the API §3 asked.
+
+**What this does NOT establish.** Coverage is not accuracy: that a life is tagged says
+nothing about whether the disclosed schedule is the *economic* life, and §2's warning stands
+in full — a disclosed useful life remains an accounting rate, and using it means the paper
+says so. It is also measured on Q1 filings, which favours December fiscal-year ends; a
+firm-year join must confirm per-year coverage on the panel's own `fy_end` distribution
+rather than inherit 0.82 from this table. And nothing here touches σ, which remains §4's
+problem and the harder one.
 
 ## 4 · The σ half: not probed, and the harder one by a wide margin
 
@@ -200,9 +280,10 @@ choice about design rather than about data.
 
 In order, each cheap and each decisive:
 
-1. **Close the XBRL question properly.** Check the Financial Statement and **Notes** Data
-   Sets for the same concepts. If footnote detail tags are materially better covered there,
-   §3's conclusion narrows to "not via `companyconcept`" and the join may be back.
+1. ~~**Close the XBRL question properly.**~~ **DONE — §3a, and it did not narrow §3's
+   conclusion, it reversed it.** Coverage on our own panel is 0.82 for PP&E lives, flat
+   from 2015 to 2023, dimensioned by component × `Range`. The δ half of the σ-and-lifetime
+   claim now has a source. This was the step the previous session called optional.
 2. ~~**Measure the single-dominant-asset restriction on the existing panel.**~~ **DONE —
    §4a.** The branch survives for property and is dead for goodwill at every threshold.
    What remains of this step is arithmetic: re-run the count over all 1,602 firms rather
@@ -214,12 +295,23 @@ In order, each cheap and each decisive:
    rather than a proxy in violation of it. That is a narrower and more defensible claim
    than the one this document opened with.
 
-**Do not skip to step 3.** Step 1 is offline-cheap and can still narrow §3, and step 2 was
-worth its half hour: it turned "restrict to dominant-asset firms" from an option into a
-scope statement REG-009 can put in its title.
+~~**Do not skip to step 3.**~~ **Both cheap steps are now run, and the instruction earned
+its keep twice.** Step 2 turned "restrict to dominant-asset firms" from an option into a
+scope statement REG-009 can put in its title. Step 1 — the one this document called
+merely able to "narrow" §3 — reversed it outright. **Two for two on the steps that looked
+like tidying.**
+
+**The new step 4, which did not exist before §3a.** With a δ source in hand, the two halves
+of §4.7's claim are no longer symmetric: **δ is now sourced and σ is not.** A design that
+tests only the lifetime half is suddenly available, cheap, and does not depend on resolving
+§5's selection problem at all — §5 is an argument about σ's observability, and it says
+nothing about lives. REG-009's first section should price that split before assuming the
+paired design.
 
 ---
 
-*Written against `RESULT-REG-003` §4, `REG-008` §6, and paper III §§4.7–4.8. The probes in
-§3 were throwaway scripts, read-only against `data.sec.gov`; their result is reproduced by
-the table above and the sample rule is stated so a re-run lands on the same 80 firms.*
+*Written against `RESULT-REG-003` §4, `REG-008` §6, and paper III §§4.7–4.8. §3's probes
+were throwaway scripts, which is part of why their conclusion outlived its evidence;
+§3a's and §4a's are committed — `scripts/source001_lifetime_coverage.py` and
+`scripts/source001_concentration.py` — and each carries, as code, the guard that the
+corresponding mistake would have tripped.*
