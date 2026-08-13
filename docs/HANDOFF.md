@@ -1,275 +1,179 @@
 ---
 project: wealth-tensor
-gh_sha: 4db3f23418f64e18414ab1be721a72bf638e292b
+gh_sha: PENDING-STAMP
 updated: 2026-08-13
-session: wealthTensor-22
+session: wealthTensor-23
 gate_passed: true
 gate_version: "2.50"
 ---
 # wealth-tensor — HANDOFF
-*Overwritten every session. `git log -p docs/HANDOFF.md` is the archive. Run
-`python3 scripts/handoff_gate.py --check` before trusting this file.*
-
----
 
 ## ORIENT — read these first, in this order
-
-1. **`docs/CO-AUTHOR-CHARTER.md`** — the constitution. Read it before you touch a line of any
-   manuscript. **THE CHARTER WINS**: where this handoff, any result doc, or any plausible-sounding
-   rewrite conflicts with it, the charter governs and the other thing is wrong. *This file is a
-   status report. It is not law and it cannot amend the charter.*
+1. **`docs/CO-AUTHOR-CHARTER.md`** — the constitution. **THE CHARTER WINS**: where this handoff,
+   any result doc, or any plausible-sounding rewrite conflicts with it, the charter governs and the
+   other thing is wrong. *This file is a status report. It is not law and it cannot amend the charter.*
 2. `python3 scripts/handoff_gate.py --check` — proves this file is not stale.
 3. §7's student-in, then §5's at-bat. **§6 first if you are about to run the gate.**
 
-> **`-22`: `gate_passed` above IS still written by hand — `--stamp` only writes `gh_sha`.** `-21`
-> found eight consecutive handoffs claiming `true` by authorship and mechanised `--emit` against
-> it; `--emit` refuses while the field is false, which means the field is still a claim and the
-> refusal is still the evidence. **This one claims a SCOPED true and §6 states the scope, including
-> the two estate-wide blockers it does not cover.** Believe `--emit`'s exit code and §6 over the
-> frontmatter, always — and if you find a handoff whose §6 equivalent is missing, treat its
-> `gate_passed` as unverified.
-
----
+> **`-23`: `gate_passed: true` here is UNSCOPED — `gate-selfcheck.sh` returned PASS ✅ outright**,
+> with no repo excluded and no sibling-dirt exception claimed. That is the first unscoped true in
+> this file's recent history and it should not be read as the new normal: it happened because a
+> sibling committed its `~/Scripts` work between my first run and my second, thirty seconds apart.
+> The first run FAILED on exactly the dilemma `-22` carded. **Believe `--emit`'s exit code over
+> this field**; a handoff whose gate section is missing has an unverified claim in its frontmatter.
 
 ## 0 · TRANSPORT — darlish, zero-bridge
+Standard bring-up; post the `DARLISH-ENROLL` line to Asana **1217316841710435**, collect, then `dx`.
+First collect has worked **-06 through -23 without exception**. Roster join/claim as
+`big-wealthTensor-24`. `export LESSONS_CONTRIBUTOR=opus`.
 
-```
-curl -s https://system.europeanflorist.com/dsh/darlish-up -o /tmp/darlish-up && chmod +x /tmp/darlish-up && /tmp/darlish-up
-```
-Post the printed `DARLISH-ENROLL v1 id=… fp=…` line **exactly** as a comment on Asana task
-**1217316841710435** via the session's Asana MCP, then run `/tmp/darlish-up` again to collect.
-First collect has now worked **-06 through -22 without exception**.
-```
-curl -s https://system.europeanflorist.com/dsh/dx -o /tmp/dx && chmod +x /tmp/dx
-/tmp/dx '~/Scripts/roster join --who big-wealthTensor-23 --task "<what you are doing>"'
-/tmp/dx '~/Scripts/roster claim --who big-wealthTensor-23 --resource wealth-tensor'
-```
-`export LESSONS_CONTRIBUTOR=opus` before any `lessons.py add`. Six leaves banked this session,
-five global and one project-scoped.
+**Run pytest with `.venv/bin/python`, not `python3`** — the system interpreter has no scipy and
+collection dies on two files before any test runs. `-23` lost a cycle to it.
 
-**NEVER inline a multi-line string in a `dx '...'` argument — AND A HEREDOC IS NOT AN ESCAPE FROM
-THAT RULE.** `-22` learned this the expensive way: `git commit -F - <<EOF` inside `dx '…'`
-terminated at the first double-quote in the body, the commit **landed with a truncated message**,
-and the remaining lines ran as shell commands. It fails *silently*, because the commit succeeds.
-The form with no exceptions: write locally → `dx --put /tmp/msg.txt` → `git commit -F /tmp/msg.txt`.
-Do not amend a pushed registration commit to repair the message; "committed and pushed alone,
-before any statistic had a value" is a claim about the git record and a rewrite muddies it.
+**NEVER inline a multi-line string in a `dx '...'` argument — AND A HEREDOC IS NOT AN ESCAPE.**
+Write locally → `dx --put /tmp/msg.txt` → `git commit -F /tmp/msg.txt`. No exceptions.
 
-`dx --get` fails on binary; base64 both ways (macOS `base64` wants `-i`/`-o`). **`base64 -i
-data/x.gz` piped to a container-side file moved the 3.7 MB corpus in one call, byte-identical by
-`sha256` — do that rather than a re-crawl.** Exit 3 = never reached darwin, safe to re-run; exit 4
-= started, check state first. Use `./.venv/bin/python`. **341 tests, ~41 s** (was 313).
+**Stage by PATH. Never `git add -A` on darwin.** All cloud sessions share ONE working tree, so `-A`
+stages a sibling's in-flight edits under your message, and the roster hook is `post-commit` — it
+tells you after the commit is already made. `-23` did this and got lucky; see §4.
 
-The roster contention warning naming YOU is still noise. Carded on State Machine
-`1217420907841952`. Do not spend a turn on it.
+**569 tests, ~43 s** (was 341).
 
----
+## THE EIGHT THINGS THAT HAVE EACH COST A SESSION A RUN
+1–7 unchanged (registered machinery: `onset_rule="peak"`; `peak_onset` returns a tuple; control arm
+in the same pass; the panel is registered machinery — REG-008 F6 asserts the no-rebuild in code;
+`git log -S` recovers a dangling ordinal and dates a number; **a feasibility probe that reads the
+arm label is the experiment, whatever the file is named**).
+8. **NEW · TAKING "THE LATEST X" AND "THE LATEST Y" INDEPENDENTLY IS COMPARING TWO PERIODS.**
+   `-23`'s asset-concentration probe divided each class's most recent 10-K value by the most recent
+   `Assets`, fetched separately. For firms that stop reporting different concepts in different
+   years that divides one balance sheet by another, and it returned class shares of **93.4, 25.8
+   and 8.26** of total assets. Those announced themselves, being impossible; **a contaminated 0.62
+   would have shipped.** Period-matching moved the headline count from 13 to 6 — it more than
+   doubled the answer. Index every concept by its period end and compare within one end; refuse an
+   impossible value loudly. This is §5.4's wrong-run defect in a new costume, committed by a script
+   written the same session as the guard against it.
 
-## THE SEVEN THINGS THAT HAVE EACH COST A SESSION A RUN — read this first
+**Witness contract:** a `\b` inside a NON-RAW fragment of a concatenated regex is a backspace, not a
+word boundary — `re.compile` succeeds, the pattern never matches, the witness passes. Every piece of
+an assembled regex is a raw string.
 
-The first four are one mistake: **reconstructing registered machinery from its signature instead
-of copying its call site.** Five and six are its mirror in prose and provenance. **Seven is new,
-and it is the only one whose subject is the analyst.**
+**Manuscript:** `patchkit.apply_edits`, never `sed`. Back the file up first.
 
-1. **`extract_events` defaults to `onset_rule="streak"`, which is PRE-001.** The registered
-   PRE-002/REG-003 sample is `onset_rule="peak"`. Call site: `wt089_harvest.py:83`. Copy it.
-2. **`peak_onset` returns a TUPLE** `(onset, censored)`, so `if … is not None` is always true.
-   The real logic is `wt089_riskset.eligible_quarters`, fourteen lines.
-3. **ALWAYS RUN THE UNCHANGED ARM AS A CONTROL, IN THE SAME PASS** (REG-007 F8, REG-008 F1/F9).
-4. **The committed PANEL is registered machinery too** (`data/reg-006-wt092-panel.json`).
-   REG-007 §3.1 forbids the rebuild in writing; **REG-008 F6 now asserts it in code** — the run
-   dies if the panel filename appears in the instrument at all.
-5. **A DANGLING ORDINAL IS RECOVERABLE:** `git log --oneline -S"<sentence>" -- <path>`, then
-   `git show <commit>:<path>` and count as the author saw.
-6. **`git log -S` DATES A NUMBER, AND THAT SETTLES PROVENANCE ARGUMENTS IN ONE CALL.**
-7. **NEW, `-22` · A FEASIBILITY PROBE THAT READS THE ARM LABEL IS THE EXPERIMENT, WHATEVER THE
-   FILE IS NAMED.** This session's first probe printed the named-unit rate **by arm** before
-   REG-008 existed, and came back in the predicted direction — which is worse than coming back
-   wrong. REG-007 §2's boundary ("a property of the instrument or the size of a population") is
-   correct and is enforced by *judgment*; judgment ran out in the first ten minutes. **The
-   enforceable form is mechanical: delete `arm`/`universe` from the rows before counting**
-   (`wt096_entity_anchored.blind()`), and make the deletion a falsifier (REG-008 F8). What it
-   cost is in REG-008 §2.6 and `RESULT-REG-008` §4: the pooled M1 contrast is exploratory
-   **permanently**, and had it come back large, REG-008 could not have claimed it.
+**The gh_sha dance is NOT a defect — do not "fix" it.** `scripts/handoff_gate.py`'s own docstring
+(lines 11, 15–20) and the comment at line 248 prescribe it: `--stamp`, then a commit whose whole
+content is the stamp, so `gh_sha` necessarily trails HEAD by exactly that commit. `--check` reports
+that state as `ADVISORY: docs-only drift` and **exits 0**. `-23` went looking for a bug here on the
+strength of five stamp-only commits in the log and found a documented protocol instead. Read the
+exit code.
 
-### `severity.check`'s witness contract
-A **zero-argument callable** returning the SAME PREDICATE on a world where the claim is FALSE,
-which must come back falsy, and the falsifying world must be RUNNABLE. `-22` shipped a vacuous one
-and the machinery killed the run: **a `\b` inside a NON-RAW fragment of a concatenated regex is a
-backspace, not a word boundary** — `re.compile` succeeds, the pattern never matches, the witness
-passes. When a regex is assembled from pieces, **every piece is a raw string.**
+## 1 · WHAT HAPPENED — `-22`'s item 2 shipped, and it found the surface nobody was watching
 
-### Editing the manuscript
-`scripts/patchkit.py`, `apply_edits`, **never `sed`**. Copy anchors WITH their line breaks and
-leading indentation. Three anchors, three-for-three first try this session; `scripts/wt096_edits_reg008.py`
-is the current worked example. Re-wrap to 100 columns. Back the file up first (`/tmp/paper-III.md.bak`).
+`a877822` (§7 ledger guard) · `028404e` (restatement reach) · `52138a1` + `1a5f252` (SOURCE-001) ·
+`b67d7e43` (AAR, in `claude-blackbook`). 569 tests green. **Manuscript untouched** — every commit
+this session is tests, docs or registration scaffolding; paper III is byte-identical at 2,647 lines.
 
----
+**`tests/test_ledger_provenance.py`** — §7's falsifier ledger is a restatement ledger and is now
+guarded §5.4-style. All 46 claim rows partitioned: 44 figures across 14 rows restate REG-002/003/
+006/007/008, each checked three ways (still-printed · resolves-in-owner · **faithful rounding**, since
+§7 prints `0.103` for REG-008's `0.1025`); the rest are named as script-produced. An unclassified row
+fails the suite. **`-21`'s tables-only surface could not be inherited unchanged** — REG-003 reports
+the `0.327–0.499` range and the `[1.135, 1.285]` interval in prose and in no table — and the obvious
+widening, *tables plus bolded spans*, was measured before adoption and **fails**: REG-006's
+disallowed quotation of `2.41×` is itself bolded. Each entry now declares `TABLE` or a literal
+anchor, and a stale anchor fails loudly.
 
-## 1 · WHAT HAPPENED — THE AT-BAT'S #1 RAN, AND THE DISCLOSURE LINE IS NOW CLOSED
+**`tests/test_restatement_reach.py`** — and this is the one worth reading. **The mutation drill for
+the file above failed for the wrong reason and that was the finding.** Its anchor
+`**0.103 against 0.030**` matched FIRST at line 1432 — inside §5.4, where the existing guard reads
+multipliers and `0.103` is not one — so it mutated an unwatched passage, §7 was untouched, and the
+suite stayed green. Measuring the reach turned the suspicion into a number: **REG-003's α̂ is printed
+eleven times across §4.4, §4.10, §5.4, §7 and §9.** Two guards watched two of those. So this file
+pins, per section, how many times the manuscript prints each figure the ledger declares — **counts,
+not a section set**, because §4.10 prints `0.408` five times and changing one to `0.409` leaves the
+set intact and `0.409` watched by nothing. Three figures are excused by name in `NOT_COUNTED`
+(`0.030`, `0.60`, `0.38` collide with ladder rungs and swept rates). The two files are coupled: a
+ledger entry with no reach declaration goes red.
 
-Four commits: **b02d02e** (REG-008, pushed alone), **9797ff3** (its erratum), **e62cdc8** (the run),
-**609edd8** (the manuscript repairs). **341 tests green, was 313.** Structure unchanged — 2 `#`,
-15 `##`, 29 `###`, 17 `---`; paper III **2,647 lines** (was 2,637); tree clean and pushed.
-
-`-21` ranked "the next disclosure instrument is a parsing problem, not a lexicon problem" as
-unambiguously the top item. It was built, it ran, and **it worked as an instrument and closed the
-question as a route.**
-
-### The instrument got sharper — that part is not in doubt
-REG-008 replaced REG-007's 1,500-character keyword window with a **sentence** anchored on a
-**named reporting unit** (`the Private Cloud reporting unit`, not `a reporting unit`).
-
-| | classified firm-years | rate |
-|---|---|---|
-| mandated window (`G > 0`) | 644 | **0.1025** |
-| placebo (`t > 0`, `G = 0`) | 949 | **0.0295** |
-
-**Δ = 0.0730 against REG-007's 0.033.** M1 extraction precision **60/60 by hand**. The gate F1
-was registered as a *gate*, not as evidence, because §2.6 had already spent that quantity.
-
-### And every Λ is null — with the number that makes a null readable
-Pooled Λ_M1 = **+0.0139** (*p* 0.60) against **MDE₈₀ = 0.0675**; positive in both universes at
-*p* 0.71 each, where each needed Λ ≥ 0.095. **P1 is not supported** — its sign holds, its
-significance and its replication do not, and P5 registered the claim as all three. **P4 is
-refuted twice**: Λ_M2 exceeds Λ_M1 pooled and is *negative* in the pilot universe.
-
-### The finding is the EMPTY cell
-**0 of 281 JOINT and 1 of 363 GOODWILL-ONLY firm-years** contain a sentence carrying a trigger
-phrase, a named reporting unit, **and** any (f)-family term. And the Codification's own (f)
-strings appear in **0 of 1,925 filings** — including `composition or carrying amount of its net
-assets`, **the correction `-21`'s handoff ordered this session to ship.** Standard-text is not
-filing-text: regulated parties paraphrase, they do not quote the rule at you.
-
-That is why the line closes. REG-007's null could not distinguish "the channel is not disclosed"
-from "the instrument is blind." **A sharper instrument finding the quantity absent separates
-them** — and the separation is a count, not an inference.
-
----
+**Both drilled, 11 mutations, every file backed up and restored by sha256.** The first mutation of
+the second drill is the exact edit that silently passed an hour earlier.
 
 ## 2 · RULINGS — DO NOT REOPEN
-
-- **DO NOT BUILD A THIRD DISCLOSURE INSTRUMENT ON THIS CORPUS.** Ruled `-22`, `RESULT-REG-008`
-  §6, on the counts above. `-21`'s at-bat item 1 is **CLOSED**, including its "fold in the two
-  dead keywords" clause, which §2.5 refuted before the run.
-- **The two dead (f) keywords STAY in `INTERNAL`.** REG-007 F2 registered the handling as *report
-  it, do not fix it*; deleting them erases the finding. `tests/test_reg008_instrument.py` pins them.
-- **The phrase set and the generic list are FROZEN** (REG-008 §3.3). `test_generic_list_is_frozen_at_its_registered_size`
-  pins the 38 members. Widening raises precision, narrowing raises recall; either after the run is
-  the degree of freedom the registration closed.
-- **The two retail PP&E × intangible cells STAY OUT of §5.4** (`-20`). **§4.4's table is SETTLED**
-  (`-18`). **The `## References` provenance block stays** (`-16`). **§4.5's 400-vs-4,000 pairing is
-  not a defect** (`-21`).
-- Jason's standing test, `-18`: *"will the econometrician be able to follow the line of thought?"*
-
----
+- Prior rulings all stand: no third disclosure instrument on this corpus (`-21` item 1 CLOSED); the
+  two dead (f) keywords stay in `INTERNAL`; phrase set and generic list frozen at 38 members; retail
+  PP&E × intangible cells out of §5.4 (`-20`); §4.4 settled (`-18`); References block (`-16`);
+  §4.5's 400-vs-4,000 not a defect (`-21`).
+- **NEW · `SOURCE-001` is not a registration and does not license a run.** It says so on line 5.
+  REG-009 gets written against it, and may contradict it — that is what it is for.
+- **NEW · a dominant-asset σ design is a PROPERTY design.** §4a measured it; do not let REG-009
+  quietly widen to goodwill, which is dead at every threshold.
 
 ## 3 · NEW MACHINERY
+`tests/test_ledger_provenance.py` (186 tests) · `tests/test_restatement_reach.py` (42) ·
+`docs/preregistration/SOURCE-001-sigma-and-lifetime.md`. The two mutation drills were throwaway by
+design — the witnesses inside each test file are what survives, and both files carry one that
+proves the helper can fail.
 
-**`scripts/wt096_entity_anchored.py`** — 11 severe · 1 definitional · 0 vacuous, two-stage
-(`--emit-audit`, adjudicate, run). Reads only committed data; F6 asserts the corpus digest, the
-absence of any network import *and* of the panel filename. Its `mde()` prints the minimum
-detectable effect **beside every null**, because "we did not find it" and "we could not have found
-it" look identical in a *p*-value.
+## 4 · THE NEAR-MISS, BECAUSE IT WILL HAPPEN TO YOU TOO
+`murphyTextOrder-2` banked a lesson about `git add -A` on darwin at **18:30:04 UTC**. I ran the
+identical command in the identical repo at **18:30:11** — seven seconds later, having oriented an
+hour before. Neither commit swept anything (`git show --stat`, one file each); that is luck.
 
-**`tests/test_reg008_instrument.py`** — 28 tests, offline, no scipy required. Pins the segmenter,
-the extractor, the frozen sets, exact Fisher (against scipy where scipy exists), offset merging,
-and **both hand-audit ceilings**, so an audit file cannot be quietly widened to make a falsifier pass.
-
-**`scripts/prototypes/reg008_probe_00_CONTAMINATED.py`** — committed under its own name rather
-than deleted. The evidence of the violation is the file.
-
----
-
-## 4 · DO NOT
-
-- **DO NOT WIDEN A FROZEN SET OR AN AUDIT CEILING TO SILENCE A FAILURE.** A guard edited to agree
-  with the thing it guards is worse than no guard, because it reads as verification.
-- **DO NOT read REG-008's null as evidence about the world.** P3 forbade it in advance, twice.
-- **DO NOT claim anything from Λ_M1 pooled** — seen before it was registered (§2.6).
-- **ASK A SUBAGENT FOR ITS UNVERIFIED LIST EXPLICITLY.** Best output of both `-19` subagents was
-  refutation. **IAS 36 ¶104 and ASC 350-20-35-31 RUN IN OPPOSITE DIRECTIONS** — never cite one for
-  the other. FASB's server returns 403 to everything; all Codification text is practitioner
-  reproduction, and that limit lives in `RESULT-REG-007` §3 F9/F10.
-- **Any paragraph number from the SEC Financial Reporting Manual is presumptively stale.** The live
-  citation is **17 CFR 229.303(b)(2)(ii)**. F11 closed `-20`. Nothing printed depends on it.
-- Do not read §5.4 as a rescue of PRE-001; do not restore "PRE-001 was doomed by the φδ confound";
-  do not remove the Bateman, Nerlove or Beaver & Ryan concessions; do not reopen Griliches (1967).
-- Do not edit `TIER_TAGS`. Do not report a δ-rectangle share from REG-004/REG-005. Do not quote a
-  single "recognition rate" — §4.10 shows the name covers three quantities 15% apart.
-- Do not hand Jason a ranked list of problems as the deliverable. Do not run a pure-teardown pass.
-- Do not invoke Mayo as a warrant. Do not ask him to submit anything. Never add a free parameter to
-  absorb an objection. Do not rewrite or summarise the charter inside a handoff.
-
----
+**A leaf delivered at student-in cannot brake a session already in flight**, so the corpus was
+structurally incapable of preventing sighting 2. That is not a lesson being ignored — it is a
+control whose delivery mechanism is slower than the hazard. AAR `git-add-all-sibling-tree` is filed
+and valid (cause class `control-fires-after-the-act`); the repair is a `pre-commit` check against
+the roster, and **the delivery mechanism already exists**: G-AF reports global `core.hooksPath`
+covering 107/107 repos including future clones, so there is one file to edit.
 
 ## 5 · THE AT-BAT, RANKED
+1. **σ — and it is now a much smaller question than `-22` handed over.** `SOURCE-001` §6 step 3:
+   equity-return volatility **for PP&E-dominant firms only**, where the restriction is what makes it
+   admissible under the WT-038 test rather than a proxy in violation of it. Before that, the two
+   cheap steps: **(a)** re-run §4a's concentration count over all 1,602 firms rather than the 74, so
+   a power calculation has a real denominator — pure arithmetic, the probe shape is in the doc;
+   **(b)** step 1, check the SEC **Financial Statement and Notes** data sets for the life concepts,
+   which is the one caveat that could reopen §3's closed XBRL route.
+2. **Widen the reach guard past the ledger's own figures.** It counts only what
+   `test_ledger_provenance` declares, so REG-004's and REG-005's restatements — §4.9's `1.135`
+   neighbourhood, §4.10's four-significant-figure passage — are still uncounted. The mechanism
+   generalises unchanged; it is a `REACH` table and a measurement script. Half an hour, and it
+   closes the same class of hole one layer out.
+3. **The gate defect card, still open: State Machine `1217465036940491`.** Still a good warm-up,
+   and `-23` is fresh evidence for it: the first gate run FAILED on `~/Scripts` dirt that a sibling
+   committed thirty seconds later. Exporting `GATE_ROSTER_WHO=<you>` is what downgrades the
+   sibling-repo case to a named warning — **do that at the top of your session**, it is not
+   documented anywhere else.
+4. **`aar.py sweep`'s coverage fallback is subject-blind** — new card State Machine
+   `1217468400555940`. `SWEEP_MATCH_WINDOW_DAYS = 3`, so one valid AAR grants coverage to every
+   incident-tagged lesson within ±3 days regardless of subject. Watched live: filing my AAR
+   re-attributed an unrelated 2026-08-10 gitignore lesson from one AAR to mine, nothing about it
+   having changed. G-V treats the sweep as its second evidence source, so this weakens the gate.
+5. **AAR actions A1/A2** — the `pre-commit` roster brake (already carded `1217468064910605`) and an
+   audit of the other four `post-*` hooks in `darwin-mac-ops/hooks` for guard-shaped
+   responsibilities. §4 of the AAR explicitly did not do the latter; do not read it as clean.
+6. **The phrase set has a passenger** (unchanged from `-22`): 30.4% of trigger sentences match only
+   `events or circumstances`; 7.9% carry safe-harbour language. Post-hoc, labelled; changing it is a
+   new registration and item 1 outranks it.
+7. Cready et al. (2012) full text, if prior art is reopened.
 
-1. **THE σ-AND-LIFETIME RESULT STILL NEEDS NEW DATA — and it is now the top item, because the
-   disclosure route above it is closed.** Realised return volatility and disclosed useful lives are
-   not in this sample. **Do not proxy — WT-038, a four-time payer.** The honest first move is a
-   registration that names the *source* (CRSP/Compustat, or the ASC 350-30-50 useful-life
-   disclosures parsed from the filings we already hold) and its selection problem, before any code.
-2. **Extend the provenance guard one level up — §7's falsifier ledger.** It now restates ~16 numbers
-   from the §4/§5 body, including **REG-008's new row**, and nothing checks them mechanically.
-   `tests/test_cell_provenance.py`'s `CELLS` pattern generalises directly: a table of
-   `(ledger row, body line, value)` and the same two assertions. Half an hour, retires a by-hand read.
-3. **The phrase set has a passenger, and a future registration should say so.** Post-hoc and
-   labelled as such in `RESULT-REG-008` §5: **30.4%** of the 7,817 trigger-bearing sentences are
-   matched by `events or circumstances` and by no other registered phrase, and **7.9%** carry
-   safe-harbour language ("we undertake no obligation to update these forward-looking
-   statements to reflect events or circumstances after the date of this Report"). One of the nine
-   registered phrases is substantially a forward-looking-statement detector. **The set is frozen and
-   was run as registered** — changing it is a new registration, and item 1 outranks it.
-4. **Cready et al. (2012) full text, if the prior-art question is reopened.** `-20` cleared it by
-   title/abstract only. Scholar/SSRN remain blocked. The gap still looks real.
+## 6 · THE GATE — PASS ✅, unscoped, and here is the caveat anyway
+`gate-selfcheck.sh` returned PASS with no repo excluded: wealth-tensor 0 dirty and pushed,
+claude-blackbook 0 dirty and pushed, `~/Scripts` clean, G-V clean after the AAR was filed and
+validated. **The first run of the same command FAILED twice** — once on G-V (an incident-tagged
+lesson with no covering AAR, fixed by filing one) and once on `~/Scripts` dirt belonging to
+`cloud-s4UIidGW`, which resolved only because that session committed while I was reading. Had it
+not, `-22`'s dilemma would have been mine verbatim. **Export `GATE_ROSTER_WHO` before running the
+gate** — without it the script says outright that it cannot tell whether a sibling's dirt is yours.
 
----
-
-## 6 · THE GATE — PASS for this project, and the two estate blockers are NOT ours
-
-`gate-selfcheck.sh` returns **FAIL estate-wide** on two repos, and **neither is wealth-tensor's**:
-
-```
-- ~/Code/n8n-stack: 4 uncommitted change(s)
-- ~/Scripts:        1 uncommitted change(s)
-```
-
-**Do not commit them.** Their files were modified 8–15 minutes before the check (12:01–12:08
-against a 12:16 run) and `roster who` showed two sessions joined 29 and 26 minutes earlier
-(`cloud-MkA+uoJc`, `cloud-YK+trJdX`). The content is coherent in-flight work — a geo buy-path
-check in `n8n-stack`, STATE-marker helpers in `~/Scripts/asana_client.py`. Committing a sibling's
-mid-edit state under your own name is the wrong repair, and so is setting `gate_passed: true` to
-make the message go away.
-
-**This project's own obligations are met and are checkable:** `wealth-tensor` 0 dirty at
-`353e976`, `claude-blackbook` 0 dirty at `2a34225`, both pushed; coach metrics
-`concessive 0 · conduct-outside-§§6-11 6` against a baseline of 10 (non-increasing, and under);
-structure and test counts as in §1. **That scope is what `gate_passed: true` above claims — nothing
-wider.**
-
-The gate itself has the defect, and it is the ghost-roster-row lesson in a second organ: **a dirty
-repo owned by a LIVE sibling is not estate drift, and grading it as drift makes the signal unusable
-exactly when the estate is busiest.** Carded on State Machine **1217465036940491** with the fix
-shape (downgrade to a named WARNING when the mtimes are fresh *and* a live sibling exists; stay a
-hard blocker otherwise; `--strict` for solo runs). **Take that card if you want a warm-up — it is
-half an hour and it retires a recurring wrap-time dilemma.**
-
----
-
-## 7 · STUDENT-IN — run it, it keeps paying
-
-```
-python3 ~/repos/claude-blackbook/lessons.py doctrine
-python3 ~/repos/claude-blackbook/lessons.py search "<the task>" --scope global,wealth-tensor
-```
-`-19` through `-22` ran it. The top hit for this session's task — *before building an instrument on
-a disclosure, find out what compels the disclosure* — is the leaf that made REG-008's window the
-right window; it is corroborated (`lessons.py record-outcome reg008 pass`). Corroborate what you
-use: `lessons.py use <id> --task <tag>` at student-in, `record-outcome <tag> pass` at wrap.
-
-Six leaves banked this session — five global (**a feasibility probe that reads the treatment label
-is the experiment**; **a guard that greps its own source trips on itself, and a `\b` in a non-raw
-regex fragment is a backspace**; **a correction teed up in a handoff is a hypothesis — standard-text
-is not filing-text**; **print the MDE beside every null**; **a heredoc is not an escape from the dx
-multi-line rule**) and one project-scoped (**the disclosed-trigger route is closed on a count**).
+## 7 · STUDENT-IN
+`lessons.py doctrine`, then `search "<task>" --scope global,wealth-tensor`. `-23` banked seven and
+curated one that went stale inside its own hour (the §7-ledger leaf claimed the prose restatements
+were unguarded; they were guarded ninety minutes later). The new ones worth knowing before you
+start: **a mutation drill that mutates the first match in a file is testing wherever that string
+occurs first, and its false miss is a measurement of unguarded surface** · **bold is not a reporting
+surface, even in docs that bold what they report** · **face-financial XBRL concepts are tagged by
+everyone and footnote concepts by almost nobody — a mandated DISCLOSURE is not a mandated TAG** ·
+**taking the latest X and the latest Y independently compares two periods** · **a lesson in the
+corpus cannot brake a session already in flight; a hazard that recurs faster than a session needs a
+hook, not a leaf.**
