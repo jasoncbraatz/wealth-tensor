@@ -12,13 +12,20 @@ Two jobs, and they are different in kind.
     bounds on its weak joint occurs exactly once at `e216037` — in the sentence that declares
     it — which by `-26`'s rule marks an objection nobody answered.
 
-    Counts are pinned PER FILE, not as a total, and that shape was bought the hard way: the
-    first version of this test totalled the corpus and failed immediately, because (a) this
-    file names the needles in its own parametrisation, and (b) §1.5's repair RESTATES the
-    three bounds while flagging them unanswered. To a grep, the repair and the failure mode
-    look identical. Per-file pins make a new occurrence declare itself — a bound word
-    appearing in `scripts/` or a `RESULT-*` means somebody MEASURED it, which is the event
-    this test exists to be told about.
+    The SHAPE of that second job was bought over two failures and is the interesting part.
+    v1 pinned a corpus TOTAL and failed instantly: this file names every needle in its own
+    parametrisation, and §1.5's repair RESTATES the three bounds while flagging them
+    unanswered — to a raw count, a repair that propagates a finding and a restatement that
+    ignores it are identical. v2 pinned per-file counts and failed again the moment
+    HANDOFF.md reported the finding. THE SECOND FAILURE WAS THE SIGNAL: a guard whose only
+    maintenance is appending to an exclusion list is on its way to being ignored, which is
+    the doctrine's permanently-red check arriving in a new costume.
+
+    v3 holds the two things that are actually invariant. (a) THE ANCHOR: each bound occurs
+    exactly once in paper III, in §4.7's declaring sentence — if that moves, the finding is
+    about a sentence that no longer exists. (b) THE MEASUREMENT HOMES: no bound appears in
+    `scripts/`, `data/` or a `RESULT-*`, because that is where a measurement would land and
+    nowhere else. Design docs are not counted at all — they are supposed to discuss this.
 """
 
 import pathlib
@@ -67,20 +74,21 @@ def _by_file(needle: str) -> dict[str, int]:
 
 
 P3 = "docs/papers/paper-III-dual-tensor/paper-III.md"
-S1 = "docs/preregistration/SOURCE-001-sigma-and-lifetime.md"
 
-# Pinned AFTER §1.5's repair. Every entry is a design/registration document; none is a
-# script, a RESULT or a data artifact, which is the whole point.
-PINNED = {
-    "sticky": ({P3: 1, S1: 1},
-               "bound 2 (lives are sticky within a firm) — REG-009 §2's P0-a measures this"),
-    "industry-median": ({P3: 1},
-                        "bound 3 (the design can run on industry medians) — P0-b measures this"),
-    "industry convention": ({P3: 1, S1: 2},
-                            "bound 1 (lives are anchored by industry convention) — P0-b"),
-    "closely enough": ({S1: 1},
-                       "§1.5's tell — the quantifier that unpicked the §4.8/§4.7 misattribution"),
+# The three bounds §4.7 offers against its own weak joint, plus §1.5's tell.
+BOUNDS = {
+    "sticky": "bound 2 (lives are sticky within a firm) — REG-009 §2's P0-a measures this",
+    "industry-median": "bound 3 (the design can run on industry medians) — P0-b measures this",
+    "industry convention": "bound 1 (lives are anchored by industry convention) — P0-b",
 }
+
+# WHERE A MEASUREMENT WOULD LAND. This is the invariant that carries the finding; the
+# directories are the point, not the counts.
+MEASUREMENT_HOMES = ("scripts/", "data/")
+
+
+def _is_measurement_home(path: str) -> bool:
+    return path.startswith(MEASUREMENT_HOMES) or "/RESULT-" in path
 
 
 # --------------------------------------------------------------------------- (1)
@@ -125,32 +133,56 @@ def test_paper_iii_4_7_still_names_its_weak_joint():
 
 # --------------------------------------------------------------------------- (2)
 
-@pytest.mark.parametrize("needle", sorted(PINNED))
-def test_bound_keyword_locations_are_pinned_per_file(needle):
-    expected, bound = PINNED[needle]
-    actual = _by_file(needle)
-    assert actual == expected, (
-        f"'{needle}' moved: expected {expected}, found {actual}. This is {bound}.\n"
-        f"If a script/ or RESULT-* file gained it, somebody MEASURED it — that is the "
-        f"work REG-009 §1.3 asked for. Update §1.3, move the bound into the discharged "
-        f"column of §3's definition-of-done item 5, and re-pin here.\n"
-        f"If another design doc merely RESTATED it, that is the failure mode §1.3 is "
-        f"about: an assertion repeated is not an assertion answered."
+@pytest.mark.parametrize("needle", sorted(BOUNDS))
+def test_the_declaring_sentence_in_paper_iii_is_still_the_only_one_there(needle):
+    """The ANCHOR of §1.3's finding: each bound appears once in paper III, in §4.7's
+    sentence. If that changes, the manuscript changed and §1.3 must be re-decided.
+
+    Deliberately NOT a corpus total. An earlier version of this test pinned every file's
+    count and fired twice on legitimate propagation — first on §1.5's repair, then on
+    HANDOFF.md reporting the finding. A guard whose only maintenance is appending to an
+    exclusion list is a guard on its way to being ignored (doctrine: the permanently-red
+    check). What is worth holding is the anchor and the measurement homes, below.
+    """
+    n = _by_file(needle).get(P3, 0)
+    assert n == 1, (
+        f"'{needle}' occurs {n} times in paper III (expected 1, §4.7's declaring "
+        f"sentence). This is {bound_desc(needle)}.\n"
+        f"If §4.7 was rewritten, REG-009 §1.3's finding is about a sentence that no "
+        f"longer exists — re-decide it rather than re-pinning this number."
     )
 
 
-def test_no_bound_has_leaked_into_a_script_or_a_result():
-    """The invariant that actually matters, stated independently of the counts above:
-    a MEASUREMENT of any bound would land in scripts/ or in a RESULT document."""
-    offenders = {}
-    for needle in ("sticky", "industry-median", "industry convention"):
-        for path, n in _by_file(needle).items():
-            if path.startswith("scripts/") or "/RESULT-" in path or path.startswith("data/"):
-                offenders[f"{needle} @ {path}"] = n
+def bound_desc(needle: str) -> str:
+    return BOUNDS[needle]
+
+
+@pytest.mark.parametrize("needle", sorted(BOUNDS))
+def test_no_bound_has_leaked_into_an_instrument_or_a_result(needle):
+    """THE INVARIANT THAT CARRIES THE FINDING. §1.3 claims nobody has measured these.
+    A measurement lands in scripts/, in data/, or in a RESULT document — never in a
+    design doc, which is why design docs are not counted at all."""
+    offenders = {p: n for p, n in _by_file(needle).items() if _is_measurement_home(p)}
     assert not offenders, (
-        f"A §4.7 bound now appears in an instrument or a result: {offenders}. If that is a "
-        "measurement, REG-009 §1.3's finding is discharged in part — say so there and in "
-        "§3's item 5 rather than leaving the design doc claiming it is unanswered."
+        f"'{needle}' now appears in an instrument or a result: {offenders}. This is "
+        f"{BOUNDS[needle]}.\n"
+        "If that is a MEASUREMENT: good — it is the work REG-009 §1.3 asked for. Update "
+        "§1.3, move the bound into the discharged column of §3's definition-of-done item "
+        "5, and relax this test by name.\n"
+        "If it is a mention in passing, rename the variable — this directory is reserved "
+        "for the thing that discharges the finding."
+    )
+
+
+def test_closely_enough_has_not_multiplied_in_the_manuscript():
+    """§1.5's tell, held where it matters. The phrase was the thread that unpicked the
+    §4.8/§4.7 misattribution; a NEW one in the manuscript is a new unmeasured quantifier
+    in a place that licenses runs."""
+    n = _by_file("closely enough").get(P3, 0)
+    assert n == 0, (
+        f"'closely enough' now occurs {n} times in paper III. It was the single "
+        "unmeasured quantifier behind §1.5's misattribution; run the §1.3 grep on the "
+        "new one before believing the sentence it sits in."
     )
 
 

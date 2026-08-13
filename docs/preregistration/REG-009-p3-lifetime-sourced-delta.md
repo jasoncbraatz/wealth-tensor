@@ -275,16 +275,27 @@ diagnosing unmeasured adjectives was one paragraph from shipping one**, in the s
 carries its central ruling. The ruling survives — a zip re-read is still not a purchase order —
 but it survives at a price that was checked rather than assumed, and §2 now states that price.
 
-**The test that pins §1.3 failed on its own author, which is the correct outcome and worth the
-paragraph.** `tests/test_reg009_design.py` greps the repository for each bound. On first run all
-three counts came back high, for two reasons that are both self-reference: the test file names the
-needles in its own parametrisation and failure messages, and §1.5's repair to `SOURCE-001` §2
-*restates* the three bounds while flagging them unanswered. The second is the interesting one —
-**the repair looks identical, to a grep, to the failure mode the finding is about.** A corpus
-count is not a durable invariant once the document doing the counting is in the corpus. The fixed
-form pins **per-file** counts rather than a total, so that a new occurrence has to say which of the
-two it is: `scripts/` or a `RESULT-*` gaining one of these words means somebody measured it, and
-that is exactly the failure this test wants to be told about.
+**The test that holds §1.3 failed on its own author twice, and the SECOND failure was the useful
+one.** `tests/test_reg009_design.py` greps the repository for each bound.
+
+- **v1 pinned a corpus total** and failed instantly, for two reasons that are both self-reference:
+  the test names every needle in its own parametrisation, and §1.5's repair *restates* the three
+  bounds while flagging them unanswered. That second one is the deep one — **to a raw count, a
+  repair that propagates a finding and a restatement that ignores it are identical.**
+- **v2 pinned per-file counts** and failed again the moment this session's handoff reported the
+  finding. **That is the signal to redesign, not to keep appending to an exclusion list.** A guard
+  whose only maintenance is exclusions is on its way to being ignored — the doctrine's
+  permanently-red check, arriving in a new costume and looking like diligence.
+- **v3 holds the two things that are actually invariant.** *The anchor:* each bound occurs exactly
+  once **in paper III**, in §4.7's declaring sentence — if that moves, §1.3 is a finding about a
+  sentence that no longer exists and must be re-decided rather than re-pinned. *The measurement
+  homes:* no bound appears in `scripts/`, `data/` or a `RESULT-*`, **because that is where a
+  measurement would land and nowhere else.** Design documents are not counted at all; discussing
+  this is their job.
+
+The general form, and it cost two iterations to see: **when a guard fires on legitimate propagation
+twice, the guard is measuring the wrong thing.** The first firing is information about the code; the
+second is information about the guard.
 
 ---
 

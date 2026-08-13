@@ -1,9 +1,9 @@
 ---
 project: wealth-tensor
-gh_sha: 1636eaa7b9e77b728c20ac9c56d514708aac2ef1
+gh_sha: PENDING_STAMP
 updated: 2026-08-13
-session: wealthTensor-26
-gate_passed: true
+session: wealthTensor-27
+gate_passed: false
 gate_version: "2.51"
 ---
 
@@ -15,232 +15,252 @@ gate_version: "2.51"
    any result doc, or any plausible-sounding rewrite conflicts with it, the charter governs and the
    other thing is wrong. *This file is a status report. It is not law and it cannot amend the charter.*
 2. `python3 scripts/handoff_gate.py --check` — proves this file is not stale.
-3. §7's student-in, then §4's at-bat. **§6 first if you are about to run the gate.**
+3. **`docs/preregistration/REG-009-p3-lifetime-sourced-delta.md`** — new, and it is the thread now.
+   §1 chose the arm; §3 is the definition of done; §4 is a pre-committed refusal.
+4. §7's student-in, then §4's at-bat. **§6 first if you are about to run the gate.**
 
-> **`-26` in one line: `SOURCE-001` has no cheap steps left — every one is run — and the last one
-> did not measure σ, it measured the sentence that licensed measuring σ.** §1. `-23` said a route
-> was closed and it was open; `-24` said a branch was property-only and it was not; `-25` said
-> "flat across a decade" was flat across one quarter; **`-26` says "admissible" was one objection
-> of three, and "large enough to run something" included a company with $388 to its name.** Four
-> sessions, four wrong quantifiers, same document, and the shape has now changed once: `-23`
-> through `-25` mis-scoped a **number**. `-26`'s two were **adjectives** — words in a design
-> sentence that no measurement ever licensed. You will meet the fifth. **When you read an
-> evaluative word in this repo — admissible, sufficient, tighter, clean, alive — the question is
-> not whether it is true. It is which measurement made it sayable.**
+> **`-27` in one line: the arm is δ, and the reason is not sample size — it is that σ's outstanding
+> measurement is a PURCHASE ORDER and δ's is an AFTERNOON.** `SOURCE-001` is closed and stayed
+> closed; no probe was run in it. The fifth wrong quantifier was found where the handoff said to
+> look — in a design sentence — but the shape moved again. `-23`→`-25` mis-scoped a **number**.
+> `-26`'s two were **adjectives promoted past their measurement**. **`-27`'s were adjectives the
+> paper itself flagged as load-bearing, in its own voice, and nobody ever built.** Paper III §4.7
+> names its weak joint in the sharpest words available and then closes it with three bounds —
+> `sticky`, `industry-median`, `industry convention` — **each occurring exactly once in the
+> repository, in the sentence that declares it.** The honest naming of an objection was mistaken,
+> by everything downstream, for the answering of it. **You will meet the sixth. The tell that has
+> now worked twice is a one-minute grep; run it before you trust any sentence that licenses a run.**
 
 ## 0 · TRANSPORT — darlish, zero-bridge
 
 Standard bring-up; post the `DARLISH-ENROLL` line to Asana **1217316841710435**, collect, then `dx`.
-First collect has worked **-06 through -26 without exception**. Roster join/claim as
-`big-wealthTensor-27` — **`roster claim` takes `--resource`, not `--repo`**.
+First collect has worked **-06 through -27 without exception**. Roster join/claim as
+`big-wealthTensor-28` — **`roster claim` takes `--resource`, not `--repo`**.
 `export LESSONS_CONTRIBUTOR=opus`. **`export GATE_ROSTER_WHO=<you>` at the TOP**, not at the gate — §6.
 
+**`~/Scripts/bridge-status.sh` no longer errors on line 64** — that was `-27`'s first bug spray and
+it had been printing `[: 0\n0: integer expression expected` on every clean run. Details in §3.
+
 **Run pytest with `.venv/bin/python`, not `python3`** — the system interpreter has no scipy.
-**640 tests, ~40 s** (was 590).
+**652 tests, ~40 s** (was 640).
 
 **NEVER inline a multi-line string in a `dx '...'` argument — AND A HEREDOC IS NOT AN ESCAPE.**
-Write locally → `dx --put` → run it / `git commit -F`. `-26` moved four repo files, three commit
-messages and **four executable patch scripts** that way, `shasum`-comparing every one; zero
-corruption. **Patch scripts beat `sed` for anything structural**: `-26`'s asserted its anchors and
-exited non-zero rather than guessing, which is what makes a remote edit reviewable.
+Write locally → `dx --put` → run it / `git commit -F`. `-27` moved three repo files, two commit
+messages, two patch scripts and a lessons-banking script that way, `shasum`-comparing every one;
+zero corruption, seven for seven. **Patch scripts beat `sed` for anything structural.** `-27`'s
+two-file patch added one refinement worth keeping: **verify EVERY anchor before writing ANY file** —
+a partial application across two files is worse than a clean refusal.
 
-**Stage by PATH. Never `git add -A` on darwin** — `-26` shared the tree with **eight** claimants and
-was warned by the roster brake on both commits. Three commits, each staged by name, each clean.
+**Stage by PATH. Never `git add -A` on darwin** — `-27` shared the tree with **eight** claimants and
+the roster brake fired on both commits, exactly as designed.
 
-**Bulk SEC work: CLOUD, NOT DARWIN.** Settled three times now. **New, and it will save you an
-hour: `yfinance`/Yahoo is NOT reachable from the cloud container** — `curl_cffi` SSL connection
-reset, network allowlist. `data.sec.gov` and `www.sec.gov` are. `stooq.com` serves a JavaScript
-challenge, not CSV. So **there is no free equity price series from the container**, which is
-precisely why §4c's count 3 is unmeasured rather than zero.
+**Bulk SEC work: CLOUD, NOT DARWIN.** Settled four times. **No free equity price series is
+reachable from the container** — Yahoo is SSL-reset by the allowlist and stooq serves a JavaScript
+challenge. `data.sec.gov` and `www.sec.gov` are fine. That constraint is now load-bearing on a
+*ruling*, not just an inconvenience: it is half of why REG-009 chose δ (§1.2).
 
-## THE ELEVEN THINGS THAT HAVE EACH COST A SESSION A RUN
+## THE TWELVE THINGS THAT HAVE EACH COST A SESSION A RUN
 
 1–8 unchanged (registered machinery: `onset_rule="peak"`; `peak_onset` returns a tuple; control arm
 in the same pass; the panel is registered machinery; `git log -S` recovers a dangling ordinal;
 a feasibility probe that reads the arm label is the experiment; taking "the latest X" and "the
 latest Y" independently is comparing two periods).
 
-9. **A MEASUREMENT THAT CANNOT REPRESENT THE ANSWER IS NOT EVIDENCE OF ABSENCE.** Ask of any zero:
-   *could this instrument, or this sample size, have produced a non-zero?*
+9. **A MEASUREMENT THAT CANNOT REPRESENT THE ANSWER IS NOT EVIDENCE OF ABSENCE.**
 10. **AND ASK IT OF EVERY NON-ZERO TOO — a rate is a claim about whatever the instrument could
-    reach.** The window form (low only at the ENDS of a window = measuring the window) and the
-    slice form (flat on the slice it measured, moving on the one it could not).
-11. **NEW · AN ADJECTIVE IN A DESIGN SENTENCE IS AN UNMEASURED QUANTITY UNTIL YOU NAME THE
-    MEASUREMENT.** 9 and 10 are about numbers whose scope drifted. This is the class above them:
-    words that were never numbers at all, sitting in sentences that license runs. Two of them cost
-    `-26` the whole session's premise —
-    - **"admissible."** §2 rejected equity volatility on **three** counts, each fatal *on its own*;
-      §6 step 3 said the dominant-asset restriction "is what makes it admissible under §2." It
-      clears **one**. **The cheap tell is a grep:** search for each objection's keyword. `levered`
-      and `growth options` appeared **exactly once each in the entire repository** — in the sentence
-      declaring them fatal. *An objection with one occurrence is an objection nobody answered.*
-    - **"large enough to run something."** §4b's 99 firms. **35 of them have total assets under
-      $1M and the smallest has $388.** A ratio is silent about its denominator, and nobody had
-      printed a size.
+    reach.**
+11. **AN ADJECTIVE IN A DESIGN SENTENCE IS AN UNMEASURED QUANTITY UNTIL YOU NAME THE MEASUREMENT.**
+    `-26`'s "admissible" and "large enough to run something". **The cheap tell is a grep: an
+    objection keyword occurring exactly ONCE in the repository is an objection nobody answered.**
+12. **NEW · AND THE WORST CASE IS THE OBJECTION THE DOCUMENT RAISED AGAINST ITSELF.** 11 is about
+    adjectives nobody noticed. This is the class beside it: adjectives *correctly identified as
+    load-bearing*, named in the author's own voice, and then closed with assertions. Paper III §4.7
+    writes *"a disclosed useful life is chosen by the same management whose timeliness is being
+    measured"* — a perfect statement of the problem — and bounds it with three claims that have
+    **one occurrence each**. **Self-criticism reads as rigour and counts as coverage, and it is
+    neither until something measures it.** The grep tell catches this one too, and it is the reason
+    to run the grep on passages you *admire* rather than only on passages you doubt.
 
 **Witness contract:** a `\b` inside a NON-RAW fragment of a concatenated regex is a backspace.
 **Manuscript:** `patchkit.apply_edits`, never `sed`. Back the file up first.
 **The gh_sha dance is NOT a defect — do not "fix" it.** `--stamp`, then a commit whose whole content
 is the stamp. `--check` calls that `ADVISORY: docs-only drift` and **exits 0**. Read the exit code.
 
-## 1 · WHAT HAPPENED — §6 step 5 ran, and it never reached σ
+## 1 · WHAT HAPPENED — the design step, taken
 
-`c28fbe6` (§4c + probe + artifact + 48 tests) and `67996c6` (bug spray + 2 tests). **Manuscript
-untouched** — paper III is byte-identical. **640 tests, ~40 s.**
+`94c3916` (REG-009 §1 + the §1.5 citation repair + 12 tests) in `wealth-tensor`, and `ef87a86`
+(two-instance bug spray) in `darwin-scripts`. **Manuscript untouched** — paper III is byte-identical
+for the third session running. **652 tests, ~40 s.**
 
-**`SOURCE-001` §4c — the restriction clears one of §2's three counts.** §2 rejects equity return
-volatility as a σ proxy on three independent counts, "any one of which is fatal": it is **levered**,
-it **aggregates** every asset, it prices **growth options**. §4's dominant-asset restriction is
-aimed at aggregation, and §4a/§4b priced how hard it bites there. §6 step 3 then promoted that to
-*"the restriction is what makes it admissible under §2 rather than a proxy in violation of it."*
-One count doing three counts' work — and running the σ probe on that sentence would have committed
-WT-038 **with the restriction serving as the alibi.**
+**THE ARM IS δ.** Three reasons, in increasing order of how much they decide, and REG-009 §1 states
+them in that order on purpose:
 
-| | 0.70, no floor | ≥ $1M | ≥ $10M | ≥ $100M |
-|---|---|---|---|---|
-| firms | **99** | 64 | **40** | 18 *(THIN)* |
-| composition | ppe 47, gw 18, int 34 | 28 / 17 / 19 | 19 / 12 / 9 | 10 / 7 / 1 |
-| median total assets | **$4.76M** | $21.0M | $95.5M | $895M |
-| current registrant | 24 / 99 | 18 / 64 | 13 / 40 | 4 / 18 |
+- **§1.0 · Sample size is the weakest and is stated first so it is not mistaken for the argument.**
+  δ has thousands of firm-years; σ has 40 firms at a \$10M floor. A small clean sample beats a large
+  dirty one and nothing established which is which.
+- **§1.1 · §5's selection problem does not bind on δ.** It is an argument about which *assets* carry
+  price series; it is silent about lives. σ requires resolving it first. δ does not require it at all.
+- **§1.2 · The decisive one: what each arm's outstanding measurement COSTS.** σ's count 3 needs
+  market-to-book from a delisted-inclusive source — CRSP/Compustat class, unreachable from the
+  container, **never quoted a price**. δ's outstanding bounds need one more pass over six zips
+  already named by filename. **One is procurement; the other is an afternoon.** That ruling would
+  survive the sample sizes being reversed, which is why it is the one that decides.
 
-1. **Count 1, measured, and it runs AGAINST the restriction.** Book equity / assets, period-matched
-   to the same balance sheet the class share came off — under the accounting identity that *is* the
-   deleveraging factor E/(D+E). At a $10M floor the pooled median is **0.384**, so
-   σ_equity ≈ **2.6 ×** σ_asset. By class the **PP&E arm is the most levered of the three**: 0.113
-   against goodwill's 0.641 and intangibles' 0.605 (z = +2.04 on the share below 0.50; all three
-   buckets are `THIN`, so their rates are refused and only the comparison is reported). **Property
-   is collateral and collateral supports debt, so PP&E-dominance and leverage are one balance sheet
-   read from either side.** The restriction buys count 2 by selecting the firms that fail count 1
-   hardest. That is not a confound to control for; it is the same fact twice.
-2. **Count 3 is NOT MEASURED**, recorded in the artifact as `count3_measured: false` with its reason
-   so nothing downstream can read the silence as a zero. Growth options need **market** equity and
-   no market-data source is reachable from the container. §3's error, refused by naming it.
-3. **A fourth objection §2 never listed.** A class share is a ratio; a ratio is silent about its
-   denominator. The restriction **concentrates** sub-$1M filers rather than inheriting them —
-   0.354 inside against 0.128 in the complement, **z = +6.18** (sub-$10M, z = +7.86) — and does so
-   **monotonically harder as the threshold tightens** (median assets $33.5M → $12.0M → $4.76M →
-   **$1.28M** across 0.50 / 0.60 / 0.70 / 0.80). **So §4b's third consequence inverts:** 0.80 does
-   not "buy a much tighter restriction, which is exactly the trade §2 cares about." It buys
-   concentration by trading real firms for shells.
-4. **Reach, two independent instruments that never touch.** 38 / 47 of the PP&E arm last filed by
-   2019 (median last balance sheet **2016**); 4 / 47 are current registrants (z = −3.49 vs
-   intangibles). They agree without collusion: **0 / 61** of firms last filing ≤2019 are current
-   registrants, **23 / 32** of those filing ≥2023 are. **Stated as an antecedent only** — a
-   CURRENT-registrant file cannot establish that no price series exists; that would be §3's 404 read
-   as a fact about the filer, in a new coat.
-5. **The intangibles arm, which §4b left open, is answered without needing the argument.** `-24`
-   proposed an untested §2 reading (acquisition residue, nearer the goodwill objection). §4c does
-   not need it: the arm is 34 firms with **median total assets $1.28M**, nine above $10M, one above
-   $100M. Whether they pass §2 is downstream of whether enough of them exist. *(The n=1 cell at
-   $100M is explicitly declined, not read — that would be §4b's own error with the roles swapped.)*
+**§1.3 · THE FINDING.** Above, and in the one-liner. Three bounds, one occurrence each, on an
+objection paper III raised against itself.
 
-**New refusal carried as code: `MATERIALITY_FLOORS`, swept rather than assumed** — which floor to
-use is REG-009's choice to defend, and the probe's job is only to price it. `THIN` and `IMPOSSIBLE`
-inherited. **And one incoherence found in my own guard mid-build:** a two-proportion z printed
-between two `THIN` buckets launders rates the same paragraph just refused. Not suppressed — that
-hides information — but **labelled**, so the comparison stays and the refusal is not quietly undone.
+**§1.4 · THE FIFTH ADJECTIVE HAS ITS RULER ALREADY BUILT, and this is the part to read twice.**
+§4.7's third recommendation is that the design *"holds δ approximately constant by construction,
+which is the condition §4.4 identifies."* §4.4 **does** identify it — and §4.4 has **already priced
+it**: over 4,000 simulated four-class ladders, the deferral measure recovers the registered ordering
+in **100.0%** of them at δ common, **11.5%** at δ drawn independently, and **1.9%** under the
+standards' falling ladder. **The exchange rate is committed, simulated and sitting in the manuscript;
+the input has never been computed.** Unlike the four quantifiers before it, this one needs no new
+instrument — only a number fed into code that already exists.
 
-**BUG SPRAY (`67996c6`), two finds.** (a) `source001_concentration.py` is the file `-24` was running
-when darwin got **IP-flagged**, and its docstring still offered *"darwin's disk runs hot"* as the
-only siting consideration — i.e. it read as guidance to run it there. The cloud warning had landed
-in `source001_lifetime_by_fyend.py`, written a session later; **the lesson went to the newer file
-and not to the one that earned it.** (`source001_lifetime_coverage.py` deliberately left alone — it
-reads local zips and makes no network call.) (b) §4c's corrections to §4b and §6 are **pointers**,
-and this document's own finding is that a caveat which does not gate the conclusion is decoration.
-Two tests now hold the cross-references in §§2, 4, 4b and 6, and hold §6 step 5 marked **RUN**, so
-`-27` does not re-run a finished step.
+**§1.5 · A citation defect, repaired.** `SOURCE-001` §2 sent readers to §4.8 for the coincidence
+argument. §4.8 does not make it: its *stated virtue* is that its claim **"does not require inferring
+a physical decay rate from a reporting rule"** — the opposite move. The argument is §4.7's, and the
+repair carries §4.7's weak joint along with the citation so **the bound travels with the licence**.
+`closely enough` occurs exactly once, which is how this was found. Applied by an anchor-asserting
+patch script, backup first, restore exercised.
 
-**Mutation drills, both commits.** A firm moved across the $1M floor reddens three tests; a changed
-digit in a quoted z reddens exactly one; silently shortening `MATERIALITY_FLOORS` reddens the
-guard-on-the-guards; dropping §4b's "INVERTED BY §4c" pointer reddens one. sha256 restore verified
-each time.
+**§1.6 · FOUR DECISIONS, where the inherited handoff named one.**
+
+| | decision | status |
+|---|---|---|
+| **D1** | year window (§3b) | **RULED: carry the whole span with a per-year weight.** A measured 0.727-vs-0.823 gap is a weight; the truncation that avoids it is a truncation nobody priced. |
+| **D2** | interval → point | **DECLARED UNPRICED.** §3a found `Range=Min/Max` on **0.57** of dimension sets — for most firm-years the disclosure is an **interval**, and nothing in this repo maps one to a δ. |
+| **D3** | life-band width | **DECLARED UNPRICED, ruler built** (§4.4). Band width trades within-band δ dispersion against firm-years per band. |
+| **D4** | firm-specific vs industry-median | **DECLARED UNPRICED**, and unpriceable before D3 — "the cost of resolution" *is* a dispersion statement. |
+
+**§2 · P0 IS DECLARED AND PRICED, NOT WRITTEN.** One probe prices D2/D3/D4 and measures two of the
+three bounds: **P0-a** within-firm dispersion across years (stickiness, §4.7 bound 2, never
+measured), **P0-b** within-SIC dispersion (bounds 1 and 3, which are the same claim from two sides),
+**P0-c** within-band δ dispersion swept over band width, fed into §4.4's committed simulation.
+Guards inherited **as code**: `THIN` at 30, a *z* on every quoted gap, no comparison between two
+cells whose rates were just refused (§4c's find), **and an IQR printed beside every median** —
+`-26`'s "what I would do differently", promoted from a lesson to a mechanism.
+
+**§3 · DEFINITION OF DONE — six checkable items** — plus **EXPLICITLY NOT IN SCOPE** (the σ arm,
+count 3, §5's choose-your-shape → **REG-010**) so that finishing is distinguishable from stopping.
+**§4 · STOPPING RULE, pre-committed**: if no band width reaches §4.4 recovery **> 0.80** at **≥ 30**
+firm-years per band, the δ design is **refused** and P0's table is the result. Threshold defended
+rather than derived (§4.4's own poles are 1.000 and 0.115; 30 is §3b's inherited `THIN` line, not a
+new number invented to pass).
 
 ## 2 · RULINGS — DO NOT REOPEN
 
 - Prior rulings stand: no third disclosure instrument; the two dead (f) keywords stay in `INTERNAL`;
   phrase set frozen at 38; retail PP&E × intangible cells out of §5.4; §4.4 settled; References
   block; §4.5's 400-vs-4,000 not a defect. `SOURCE-001` is **not** a registration.
-- `-24`'s reversals stand: a dominant-asset σ design is **not** automatically a property design, and
-  the machine-readable route to useful lives is **open**.
-- `-25`'s stands: §3a's "flat across a decade" is **narrowed, not reversed** — true of Q1 filers,
-  false of the panel. Do not cite the bare clause.
-- **NEW · The dominant-asset restriction delivers a SAMPLE, not an admissible σ.** §6 step 3's
-  admissibility clause does not survive. Restricting to PP&E remains a legitimate *choice*, argued
-  from §2 — it is not a description of what the panel contains (`-24`) and it is not an
-  admissibility argument (`-26`).
-- **NEW · §4b's "0.80 buys the trade §2 cares about" is INVERTED.** Tightening the threshold buys
-  shells. Any future threshold choice states its materiality floor in the same sentence.
-- **NEW · `SOURCE-001` IS FINISHED as a source document.** §6's steps 1, 2, 3 (as reframed), 4 and 5
-  are all run; there is no cheap probe left in it. **`-27` should not go looking for one.** The next
-  artifact is `REG-009`, a different document, and the step that replaces step 5 is a *design* step.
+- `-24`'s, `-25`'s and `-26`'s stand unchanged, including: the dominant-asset restriction delivers a
+  **sample**, not an admissible σ; §4b's "0.80 buys the trade §2 cares about" is **INVERTED**;
+  **`SOURCE-001` IS FINISHED** — `-27` did not open it for a probe and neither should you.
+- **NEW · THE ARM IS δ.** Registered in REG-009 §1 with the cost argument above. Reopening it
+  requires a *quoted price* for a delisted-inclusive series, not an intuition about sample size.
+- **NEW · D1 IS RULED: the whole span, with a per-year, per-fiscal-calendar weight.** The
+  intervening cycles get filled (§4 item 2) rather than the early span getting dropped.
+- **NEW · §4.8 IS NOT THE COINCIDENCE ARGUMENT; §4.7 IS, AND IT COMES WITH A WEAK JOINT.** Anything
+  citing §4.8 for the licence to read δ off a disclosure is citing the wrong section, and the right
+  section does not hand the licence over unbounded.
 
 ## 3 · NEW MACHINERY
 
-`scripts/source001_sigma_admissibility.py` (counts 1 and 2 period-matched, the concentration
-trajectory, two reach instruments, `MATERIALITY_FLOORS` swept; **`--from-json` regenerates the whole
-report offline from the artifact**, which is what makes the tests possible without 400 SEC calls) ·
-`data/source-001-sigma-admissibility.json` (99 per-firm records + provenance + `count3_measured`) ·
-`tests/test_source001_sigma_admissibility.py` (50). **640 tests.**
+`docs/preregistration/REG-009-p3-lifetime-sourced-delta.md` (§1 only — **ships no instrument and
+licenses no run**, deliberately) · `tests/test_reg009_design.py` (**12**) which pins the citation
+repair, the per-file locations of every bound keyword, and an independent invariant that **no bound
+has leaked into `scripts/` or a `RESULT-*`** — because that is where a *measurement* would land.
+**652 tests.**
+
+**BUG SPRAY, `ef87a86` in `darwin-scripts`, and the second instance is the interesting one.**
+`grep -c PATTERN file || echo 0` **prints "0" AND exits 1** on no-match, so the fallback appends a
+*second* zero and every later `-gt` dies on `0\n0`. **It fires only on the clean path** — which is
+why it survived for months in two places. Instance 1 was `bridge-status.sh`, throwing on the very
+first command of this session. Instance 2 was found by asking *where else does this shape live*:
+`shred-call-artifacts.sh`, where the corrupted value feeds the block telling an operator whether a
+Time Machine snapshot may still hold a **pre-shred plaintext copy** of just-destroyed call
+artifacts. A PII destroy tool's one safety report was ending in a bash error on the all-clear path.
+Fixed with `|| true` + `${n:-0}`; three-branch drill (0 matches / 2 matches / no file) extracting
+the fixed idiom rather than reimplementing it — the middle branch matters, because the *naive* fix
+`n=$(grep -c …) || n=0` also silences the error while discarding a real count.
+
+**Mutation drill.** Restoring `SOURCE-001` from its `.bak` reddens exactly 3 tests (the citation
+test and two pinned locations); re-applying returns sha256 `eebdf18a` and green. **The restore was
+exercised, not trusted.**
 
 ## 4 · THE AT-BAT, RANKED
 
-1. **`REG-009` §1. It is now the only move on this thread, and it is a DESIGN step — nothing
-   further needs measuring before it can be written.** `-25` framed it as three open decisions;
-   §4c collapses that. The δ/σ split is no longer symmetric:
-   - **δ**: sourced, 0.82 coverage over thousands of firm-years, one live decision — §3b's
-     **year-window** choice (restrict to the recent span where coverage is uniform, or carry the
-     whole span with a per-year, per-fiscal-calendar weight and say why), with a measured price.
-   - **σ**: **40 firms** at a $10M floor, 13 currently listed, the arm's median last balance sheet
-     **2016**, the most levered of the three classes, and **count 3 not measured at all**. Plus
-     §5's choose-your-shape, unchanged.
-
-   So §1 writes itself as: choose δ and make the year-window call, or choose σ and first buy count 3
-   **and** a delisted-inclusive price series. **Write the definition of done into REG-009's first
-   handoff**, per the standing rule — this thread has now spent four sessions on a source document.
-2. **Count 3, if and only if §1 chooses σ.** Market-to-book at each matched period end, hence a
-   **delisted-inclusive** price source (CRSP/Compustat class — Yahoo and stooq are both out from the
-   container, see §0). **Price the source before running anything**: this design has never been
-   quoted a data cost, and §4c's reach table says why it will not be zero.
-3. **Fill in the coverage series between §3b's two cycles** — *only if* the year-window decision
-   takes the whole span. Six FSN zips per cycle, ~90 s each, **from the cloud**. Mechanical;
+1. **P0. It is the only thing standing between REG-009 and its §§2–8.** REG-009 §2 declares it in
+   full; write it, run it **from the cloud**, commit `RESULT-P0`. Reads the six FSN notes zips per
+   cycle for the disclosed life **VALUES** (`num.tsv` durations, `txt.tsv`'s value column, plus the
+   component × `Range` axis). **Do not price this as a groupby on
+   `data/source-001-lifetime-by-fyend*.json`** — `-27` nearly did, and the reason it is wrong is in
+   §5 below. Outputs P0-a/b/c; then REG-009 §2 fixes D2/D3/D4 **citing P0's table**, and the probe
+   does not get to choose (§4c's precedent).
+2. **Then REG-009 §§2–8, committed ALONE**, before the instrument exists: registered quantities, the
+   seven registration questions, predictions, falsifiers with their *kills the run / kills the
+   marker / kills the interpretation* verdicts. A registration must precede its instrument's **code**.
+3. **Fill the coverage series between §3b's two cycles.** Now unconditional — D1 ruled for the whole
+   span, so this is required rather than optional. Six FSN zips per cycle, ~90 s each, **cloud**.
    `--compare` already does the arithmetic.
 4. **The gate defect card** — State Machine `1217465036940491`. Still open, still a good warm-up.
 5. **AAR actions A1/A2** — the `pre-commit` roster brake (`1217468064910605`) and an audit of the
-   other four `post-*` hooks in `darwin-mac-ops/hooks`. **Untouched for FOUR sessions.** `-26` was
-   warned by the brake on both commits and it worked exactly as intended — which is the argument for
-   finishing it, not for continuing to rely on eight siblings being polite.
+   other four `post-*` hooks in `darwin-mac-ops/hooks`. **Untouched for FIVE sessions now.** The
+   brake fired correctly on both of `-27`'s commits, which is the argument for finishing it rather
+   than for continuing to rely on eight siblings being polite. **This is the item most likely to be
+   deferred a sixth time; consider doing it first, before the at-bat gets interesting.**
 6. **The phrase set has a passenger** (unchanged): 30.4 % of trigger sentences match only
    `events or circumstances`; 7.9 % carry safe-harbour language. Post-hoc, labelled, outranked.
 7. **Widen the reach guard to REG-001/002/006's non-ledger restatements.** Third layer, mechanical.
-8. Cready et al. (2012) full text, if prior art is reopened.
+8. **Run the §1.3 grep on paper III's OTHER self-critical passages.** `-27` ran it on one and found
+   three unanswered bounds. The paper names its own weak joints in several places and that habit is
+   a *virtue*; the finding is that the naming was never followed by measurement. One minute per
+   passage. **This is the cheapest remaining lead in the repository.**
+9. Cready et al. (2012) full text, if prior art is reopened.
 
 ## 5 · WHAT I WOULD DO DIFFERENTLY
 
-**I measured leverage before I described the population, and the population is what made the
-leverage number mean anything.** The first table said **median E/A = −0.476** for the PP&E arm. That
-number is *true*. It is also dominated by book-insolvent shells, and it would have gone into §4c as
-a statement about levered operating firms. What saved it was not care at the writing stage — it was
-that the **IQR was `[−3.257, 0.317]`**, and a distribution that straddles a sign change by four
-units is not one population. **The general version, cheap enough to be automatic: before quoting a
-median, look at the IQR; if it spans a sign change or an order of magnitude, you have two
-populations and the median describes neither.** Ten minutes. It is `-25`'s "the shape was wrong"
-lesson one shelf over — and note that both saves came from the *dispersion*, not the *centre*.
+**I called a measurement cheap in the sentence that carried my central ruling, and "cheap" was my
+own unmeasured adjective.** §1.2's whole argument is that δ's outstanding measurement is a re-read
+and σ's is a purchase order. The first draft said the dispersion probe was a *groupby on a committed
+file already on disk* — `data/source-001-lifetime-by-fyend.json`, which every prose reference in the
+repo describes as carrying "per-firm-year records". It carries four booleans and a **count of tag
+occurrences**; `scan_zip()` filters `txt.tsv` on the tag *name* and never opens a value column. So
+the probe is a re-read of the zips. **The ruling survived — a zip re-read is still not a purchase
+order — but it survived at a price I checked rather than assumed, and I checked it only because I
+was writing a document about unmeasured adjectives.** The general form is cheap and worth
+automating in your head: **an artifact built to answer *was X present* does not answer *what was X*,
+and the two are indistinguishable from the filename and from the prose that cites it.** Sixty
+seconds in the JSON.
 
-Second, and it is the same mistake wearing its process costume: **the order should have been
-describe-then-measure, and I did measure-then-describe and got lucky.** I only looked at asset size
-because a median came back negative. Had the shells been merely small rather than insolvent, nothing
-would have announced them and §4c would have reported a clean-looking leverage table on a population
-half of which cannot carry the design.
+**Second: my guard failed on its own author twice, and the SECOND failure was the useful one.**
+`test_reg009_design.py` greps the corpus to hold §1.3's finding. **v1** pinned a corpus total and
+died immediately — the test names every needle in its own parametrisation, *and* §1.5's repair
+**restates** the three bounds while flagging them unanswered. (**To a raw count, a repair that
+propagates a finding and a restatement that ignores it are identical.**) **v2** pinned per-file
+counts and died again the moment *this handoff* reported the finding. I very nearly just added
+`HANDOFF.md` to the exclusion list. **That would have been the third symptom treated as the second
+fix.** A guard whose only maintenance is appending exclusions is the doctrine's permanently-red
+check wearing a diligence costume. **v3** holds the two things that are genuinely invariant — *the
+anchor* (each bound occurs once **in paper III**, §4.7's declaring sentence; if that moves, §1.3 is
+about a sentence that no longer exists) and *the measurement homes* (no bound in `scripts/`,
+`data/` or a `RESULT-*`, because that is where a measurement would land and nowhere else). Design
+docs are not counted at all — discussing this is their job. **The general form: when a guard fires
+on legitimate propagation twice, the guard is measuring the wrong thing. The first firing is
+information about the code; the second is information about the guard.**
 
-Third, small: I built a guard that printed a two-proportion z between two buckets whose *rates* the
-same function had just refused as `THIN`. Caught it while reading my own output, not while writing
-it. **Guards need to be coherent with each other, not just individually correct** — a refusal in one
-line and a comparison of the refused quantities in the next is a gate with a door beside it.
+**Third, small and structural: I nearly let the handoff's own ranking pick my finding for me.** The
+inherited §4 said δ has "ONE live decision". It has four; three were invisible because nobody had
+asked what the *shape* of a disclosed life is (an interval, 57 % of the time). A handoff's ranked
+list is a previous session's model of the work, and it is exactly as good as that session's
+scope — **the item that says "one live decision" is the one to audit, because a count is a
+quantifier and this repository's speciality is quantifiers that were never measured.**
 
 ## 6 · THE GATE
 
 See the frontmatter for the verdict; **believe `--emit`'s exit code over this field.** Run
-`export GATE_ROSTER_WHO=big-wealthTensor-27` **before** `~/Scripts/gate-selfcheck.sh` — without it
+`export GATE_ROSTER_WHO=big-wealthTensor-28` **before** `~/Scripts/gate-selfcheck.sh` — without it
 the script cannot tell a sibling's dirt in `~/Scripts` from yours, and with eight claimants that is
 the difference between a named warning and a false blocker.
 
@@ -250,22 +270,19 @@ the difference between a named warning and a false blocker.
 
 ## 7 · STUDENT-IN
 
-`lessons.py doctrine`, then `search "<task>" --scope global,wealth-tensor`. `-26` banked three
-global leaves, **curated one**, and corroborated two through the attribution loop.
+`lessons.py doctrine`, then `search "<task>" --scope global,wealth-tensor`. `-27` banked **three
+global leaves and one project leaf**, and corroborated **two** through the attribution loop
+(`wt27-reg009 pass`).
 
-**The curation is worth reading before you trust a snippet.** `-26` used the dominant-asset leaf at
-student-in, then its own work narrowed the leaf's *first sentence* — "THE DOMINANT-ASSET ROUTE TO AN
-ADMISSIBLE σ IS ALIVE" — which is exactly the clause `search` prints as the snippet. It had led with
-an unearned word for three sessions and been corroborated to `active` on the way. **A leaf can pass
-the trust loop and still be wrong in the sentence a skimming reader acts on**, because the loop
-measures whether the *session* succeeded, not whether the *lead clause* held. Curated in place, one
-leaf, current truth first, the intact part (the count/composition split) marked as still standing.
-*When you `use` a leaf, re-read its first sentence at wrap and ask whether your work still licenses
-it — `record-outcome pass` does not do that for you.*
+**The `-26` discipline, run and reported rather than assumed.** Both used leaves' lead clauses were
+re-read at wrap against this session's work. *"SOURCE-001's 0.82 coverage is a RECENT-YEARS number
+and does not hold across the panel's span"* — **still licensed, and now load-bearing**: it is the
+whole of D1's ruling. *"A coverage rate that is low only at the ends of the window is measuring the
+window"* — untouched, still true. Neither needed curation. That is a real check with a null result,
+which §5 of the charter says to report as plainly as a find.
 
-The new ones worth knowing before you start: **a fix that clears one of N independent disqualifying
-conditions clears one, not N — and the grep tell: an objection keyword that occurs exactly once in
-the repo is an objection nobody answered** · **a ratio is silent about its denominator, so a share
-threshold with no materiality floor selects for tiny denominators, monotonically harder as it
-tightens** · **`company_tickers.json` is CURRENT registrants only — a lower bound on price-series
-existence, never evidence of absence; corroborate with an independent survival instrument.**
+The new ones worth knowing before you start: **`grep -c P f || echo 0` yields `0\n0` and fails only
+on the clean path** · **a test that greps the corpus to protect a finding is part of the corpus, and
+so is the document reporting the finding — pin per file, not a total** · **before pricing a
+follow-up measurement as cheap because "the artifact is on disk", open the artifact and read its row
+schema** · **(project) the δ arm's exogeneity case is unmeasured and §4.8 is not where it lives.**
