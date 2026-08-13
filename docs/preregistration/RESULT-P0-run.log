@@ -1,0 +1,233 @@
+======================================================================================
+REG-009 §2 · P0 -- THE PRE-CONDITION PROBE.  Numbers only; P0 does not fix D2/D3/D4.
+======================================================================================
+cycles: 2014-15, 2022-23
+firm-year records with at least one canonical life VALUE: 1296
+prior-period comparatives (the same firm at an earlier year end): 412
+THIN threshold: 30 firm-years (§3b's line, not a new number)
+recognition rate alpha = 0.408 -- §5.4's MEASURED rate, 95% [0.383, 0.432]. §4.4's calibrated 0.05 puts the ENTIRE disclosed rectangle outside the model's domain, so the measured rate is not a refinement here, it is the precondition.
+
+  cycle 2014-15: 847 panel firm-years, 804 with a 10-K, 612 with a life VALUE (0.723)
+    declined and counted: 192 filings with no canonical life value · 2 duplicate iprx rows · 21 unparseable durations · 2318 rows on non-canonical UsefulLife tags
+
+  cycle 2022-23: 837 panel firm-years, 821 with a 10-K, 684 with a life VALUE (0.817)
+    declined and counted: 137 filings with no canonical life value · 314 duplicate iprx rows · 30 unparseable durations · 2672 rows on non-canonical UsefulLife tags
+
+  NON-CANONICAL UsefulLife TAGS, NAMED RATHER THAN CAPPED SILENTLY (top 6 of 177):
+       4304  AcquiredFiniteLivedIntangibleAssetsWeightedAverageUsefulLife
+         44  PropertyPlantAndEquipmentUsefulLifeTableTextBlock
+         44  PropertyPlantAndEquipmentUsefulLifeDescriptionOfTermExtensibleEnumeration
+         33  FiniteLivedIntangibleAssetsWeightedAverageRemainingUsefulLife
+         31  FiniteLivedIntangibleAssetAcquiredUsefulLife
+         30  ScheduleOfPropertyPlantAndEquipmentUsefulLifeTableTextBlock
+
+  D2's SHAPE PROBLEM, MEASURED ON COMPONENTS: interval 3266 (0.512) · point 2944 (0.461) · half_interval 173 (0.027)
+    §1.6 said the disclosure is an interval for the majority of firm-years. That is the axis D2 has to collapse and nothing in this repository said how.
+
+======================================================================================
+TAG: PropertyPlantAndEquipmentUsefulLife
+======================================================================================
+firm-years carrying this tag: 1206
+  R_WEIGHT actually backed by component amounts: 759 (0.629) -- the rest FALL BACK TO R_MID, so where this share is low the two columns are not two rules.
+
+-- P0-a · STICKINESS (paper III §4.7 bound 2, measured for the first time) --
+   |Dlog L| between two observations of the SAME firm. 0 = the disclosed life did not move.
+   R_MID     adjacent             n=31    unchanged 0.323 · within 10% 0.387 · median |Dlog L| 0.2231 [IQR 0.0000-0.5048] CI95 [0.0076, 0.4055]
+   R_MID     decade               n=268   unchanged 0.429 · within 10% 0.519 · median |Dlog L| 0.0846 [IQR 0.0000-0.2877] CI95 [0.0339, 0.1293]
+   R_MID     decade_by_component  n=703   unchanged 0.744 · within 10% 0.770 · median |Dlog L| 0.0000 [IQR 0.0000-0.0572] CI95 [0.0000, 0.0000]
+   R_MID     adjacent vs decade: unchanged 0.323 -> 0.429  (+0.107)
+   R_MID     firms with >=3 observations: 12 -- THIN, the never-changed and moved-once shares are refused
+   R_MIN     adjacent             n=31    unchanged 0.355 · within 10% 0.355 · median |Dlog L| 0.2231 [IQR 0.0000-0.5108] CI95 [0.0000, 0.4055]
+   R_MIN     decade               n=268   unchanged 0.571 · within 10% 0.590 · median |Dlog L| 0.0000 [IQR 0.0000-0.2877] CI95 [0.0000, 0.0000]
+   R_MIN     decade_by_component  n=703   unchanged 0.744 · within 10% 0.770 · median |Dlog L| 0.0000 [IQR 0.0000-0.0572] CI95 [0.0000, 0.0000]
+   R_MIN     adjacent vs decade: unchanged 0.355 -> 0.571  (+0.216)
+   R_MIN     firms with >=3 observations: 12 -- THIN, the never-changed and moved-once shares are refused
+   R_WEIGHT  adjacent             n=31    unchanged 0.097 · within 10% 0.194 · median |Dlog L| 0.2877 [IQR 0.1488-0.5719] CI95 [0.1684, 0.5210]
+   R_WEIGHT  decade               n=268   unchanged 0.201 · within 10% 0.437 · median |Dlog L| 0.1334 [IQR 0.0134-0.3809] CI95 [0.0958, 0.1681]
+   R_WEIGHT  decade_by_component  n=703   unchanged 0.744 · within 10% 0.770 · median |Dlog L| 0.0000 [IQR 0.0000-0.0572] CI95 [0.0000, 0.0000]
+   R_WEIGHT  adjacent vs decade: unchanged 0.097 -> 0.201  (+0.105)
+   R_WEIGHT  firms with >=3 observations: 12 -- THIN, the never-changed and moved-once shares are refused
+
+-- P0-b · INDUSTRY ANCHORING (§4.7 bounds 1 and 3, one claim from two sides) --
+   ratio = within-SIC sd of log L / total sd of log L. 1.00 = industry explains nothing; 0.00 = industry explains everything.
+   R_MID     n=1206  SIC major groups kept 8   refused(THIN) 1   ratio 0.844 CI95 [0.808, 0.875]
+             kept cells hold 1187 of 1206 firm-years (0.984); life-years, all firms: median 5.00 [IQR 4.00-8.00]
+   R_MIN     n=1206  SIC major groups kept 8   refused(THIN) 1   ratio 0.958 CI95 [0.933, 0.974]
+             kept cells hold 1187 of 1206 firm-years (0.984); life-years, all firms: median 3.50 [IQR 3.00-5.00]
+   R_WEIGHT  n=1206  SIC major groups kept 8   refused(THIN) 1   ratio 0.876 CI95 [0.841, 0.907]
+             kept cells hold 1187 of 1206 firm-years (0.984); life-years, all firms: median 5.64 [IQR 4.09-10.00]
+
+-- P0-c · WITHIN-BAND delta DISPERSION, SWEPT OVER BAND WIDTH (D3's ruler, §1.4's uncomputed input) --
+  §4.4's simulation lifted from wt088_disclosed_ladder.py and VERIFIED against its committed poles:
+    delta independent 0.115 · delta common 1.000 · standards' falling ladder 0.019   (paper III §4.4: 0.115 / 1.000 / 0.019)
+
+   R_MID  n=1206  outside the model's domain (delta >= alpha, i.e. a life under 2.45 years): 4 (0.003)
+   HEAPING: 88 distinct life values in 1206 firm-years · integer 0.566 · round number 0.313 · modal value 0.163
+   -> every recovery below is an UPPER BOUND: it is computed from the DISCLOSED delta, and a heaped disclosure makes within-band
+      dispersion small by arithmetic. The gap between disclosed and economic delta is §4.7's weak joint and is NOT measured here.
+     width  bands  firm-yrs  coverage  recovery  worst band  distinct/band   modal
+      0.25     12       874     0.725     0.997       0.990            1.0   1.000   <-- clears §4 (>0.80)
+      0.50     12       954     0.791     0.951       0.881            2.0   0.913   <-- clears §4 (>0.80)
+      1.00      9      1034     0.857     0.764       0.472            4.0   0.592
+      2.00      7      1123     0.931     0.563       0.395            8.0   0.395
+      3.00      5      1128     0.935     0.460       0.322           11.0   0.283
+      5.00      5      1196     0.992     0.417       0.334           17.0   0.272
+      7.50      3      1182     0.980     0.330       0.276           27.0   0.188
+     10.00      3      1201     0.996     0.282       0.234           32.0   0.201
+     15.00      2      1201     0.996     0.230       0.203           42.5   0.136
+     20.00      2      1206     1.000     0.201       0.186           44.0   0.176
+   reference poles at alpha=0.408: the whole disclosed range as one band -> 0.172
+
+   R_MIN  n=1206  outside the model's domain (delta >= alpha, i.e. a life under 2.45 years): 72 (0.060)
+   HEAPING: 46 distinct life values in 1206 firm-years · integer 0.875 · round number 0.658 · modal value 0.405
+   -> every recovery below is an UPPER BOUND: it is computed from the DISCLOSED delta, and a heaped disclosure makes within-band
+      dispersion small by arithmetic. The gap between disclosed and economic delta is §4.7's weak joint and is NOT measured here.
+     width  bands  firm-yrs  coverage  recovery  worst band  distinct/band   modal
+      0.25      7       962     0.798     0.998       0.996            1.0   1.000   <-- clears §4 (>0.80)
+      0.50      7       962     0.798     0.998       0.996            1.0   1.000   <-- clears §4 (>0.80)
+      1.00      7      1109     0.920     0.934       0.820            2.0   0.932   <-- clears §4 (>0.80)
+      2.00      4      1119     0.928     0.683       0.539            4.5   0.665
+      3.00      4      1146     0.950     0.422       0.314            5.5   0.522
+      5.00      3      1157     0.959     0.486       0.447            9.0   0.631
+      7.50      3      1199     0.994     0.270       0.242           12.0   0.385
+     10.00      2      1180     0.978     0.245       0.231           18.0   0.423
+     15.00      2      1201     0.996     0.230       0.217           21.5   0.325
+     20.00      1      1180     0.978     0.210       0.210           36.0   0.414
+   reference poles at alpha=0.408: the whole disclosed range as one band -> 0.201
+
+   R_WEIGHT  n=1206  outside the model's domain (delta >= alpha, i.e. a life under 2.45 years): 8 (0.007)
+   HEAPING: 674 distinct life values in 1206 firm-years · integer 0.308 · round number 0.195 · modal value 0.093
+   -> every recovery below is an UPPER BOUND: it is computed from the DISCLOSED delta, and a heaped disclosure makes within-band
+      dispersion small by arithmetic. The gap between disclosed and economic delta is §4.7's weak joint and is NOT measured here.
+     width  bands  firm-yrs  coverage  recovery  worst band  distinct/band   modal
+      0.25     12       658     0.546     0.882       0.714           24.5   0.656   <-- clears §4 (>0.80)
+      0.50     11       813     0.674     0.790       0.518           24.0   0.595
+      1.00     10       970     0.804     0.679       0.361           27.5   0.366
+      2.00      8      1100     0.912     0.566       0.306           50.0   0.229
+      3.00      7      1144     0.949     0.460       0.194           61.0   0.191
+      5.00      5      1166     0.967     0.398       0.274          109.0   0.170
+      7.50      4      1182     0.980     0.333       0.229          131.5   0.120
+     10.00      3      1182     0.980     0.269       0.199          181.0   0.115
+     15.00      2      1182     0.980     0.208       0.165          331.0   0.075
+     20.00      2      1202     0.997     0.172       0.151          336.0   0.091
+   reference poles at alpha=0.408: the whole disclosed range as one band -> 0.133
+
+======================================================================================
+TAG: FiniteLivedIntangibleAssetUsefulLife
+======================================================================================
+firm-years carrying this tag: 773
+  R_WEIGHT actually backed by component amounts: 451 (0.583) -- the rest FALL BACK TO R_MID, so where this share is low the two columns are not two rules.
+
+-- P0-a · STICKINESS (paper III §4.7 bound 2, measured for the first time) --
+   |Dlog L| between two observations of the SAME firm. 0 = the disclosed life did not move.
+   R_MID     adjacent             n=240   unchanged 0.267 · within 10% 0.425 · median |Dlog L| 0.1397 [IQR 0.0000-0.3567] CI95 [0.1054, 0.1823]
+   R_MID     decade               n=124   unchanged 0.145 · within 10% 0.298 · median |Dlog L| 0.2719 [IQR 0.0750-0.4925] CI95 [0.1771, 0.3365]
+   R_MID     decade_by_component  n=194   unchanged 0.309 · within 10% 0.366 · median |Dlog L| 0.2073 [IQR 0.0000-0.4353] CI95 [0.1431, 0.2443]
+   R_MID     adjacent vs decade: unchanged 0.267 -> 0.145  (-0.122)
+   R_MID     firms with >=3 observations: 71 · never changed 3 (0.042) · moved once 14 (0.197) · moved more 54
+   R_MIN     adjacent             n=240   unchanged 0.296 · within 10% 0.392 · median |Dlog L| 0.1823 [IQR 0.0000-0.5108] CI95 [0.1313, 0.2412]
+   R_MIN     decade               n=124   unchanged 0.242 · within 10% 0.282 · median |Dlog L| 0.3747 [IQR 0.0460-0.6931] CI95 [0.2877, 0.4634]
+   R_MIN     decade_by_component  n=194   unchanged 0.309 · within 10% 0.366 · median |Dlog L| 0.2073 [IQR 0.0000-0.4353] CI95 [0.1431, 0.2443]
+   R_MIN     adjacent vs decade: unchanged 0.296 -> 0.242  (-0.054)
+   R_MIN     firms with >=3 observations: 71 · never changed 4 (0.056) · moved once 18 (0.254) · moved more 49
+   R_WEIGHT  adjacent             n=240   unchanged 0.096 · within 10% 0.321 · median |Dlog L| 0.1955 [IQR 0.0590-0.4548] CI95 [0.1656, 0.2430]
+   R_WEIGHT  decade               n=124   unchanged 0.113 · within 10% 0.274 · median |Dlog L| 0.2713 [IQR 0.0871-0.5634] CI95 [0.1922, 0.3278]
+   R_WEIGHT  decade_by_component  n=194   unchanged 0.309 · within 10% 0.366 · median |Dlog L| 0.2073 [IQR 0.0000-0.4353] CI95 [0.1431, 0.2443]
+   R_WEIGHT  adjacent vs decade: unchanged 0.096 -> 0.113  (+0.017)
+   R_WEIGHT  firms with >=3 observations: 71 · never changed 1 (0.014) · moved once 10 (0.141) · moved more 60
+
+-- P0-b · INDUSTRY ANCHORING (§4.7 bounds 1 and 3, one claim from two sides) --
+   ratio = within-SIC sd of log L / total sd of log L. 1.00 = industry explains nothing; 0.00 = industry explains everything.
+   R_MID     n=773   SIC major groups kept 3   refused(THIN) 6   ratio 0.959 CI95 [0.921, 0.977]
+             kept cells hold 676 of 773 firm-years (0.875); life-years, all firms: median 6.24 [IQR 4.50-9.50]
+   R_MIN     n=773   SIC major groups kept 3   refused(THIN) 6   ratio 0.968 CI95 [0.932, 0.983]
+             kept cells hold 676 of 773 firm-years (0.875); life-years, all firms: median 4.50 [IQR 3.00-7.00]
+   R_WEIGHT  n=773   SIC major groups kept 3   refused(THIN) 6   ratio 0.968 CI95 [0.937, 0.983]
+             kept cells hold 676 of 773 firm-years (0.875); life-years, all firms: median 6.74 [IQR 4.89-10.00]
+
+-- P0-c · WITHIN-BAND delta DISPERSION, SWEPT OVER BAND WIDTH (D3's ruler, §1.4's uncomputed input) --
+
+   R_MID  n=773  outside the model's domain (delta >= alpha, i.e. a life under 2.45 years): 19 (0.025)
+   HEAPING: 149 distinct life values in 773 firm-years · integer 0.541 · round number 0.331 · modal value 0.102
+   -> every recovery below is an UPPER BOUND: it is computed from the DISCLOSED delta, and a heaped disclosure makes within-band
+      dispersion small by arithmetic. The gap between disclosed and economic delta is §4.7's weak joint and is NOT measured here.
+     width  bands  firm-yrs  coverage  recovery  worst band  distinct/band   modal
+      0.25      9       397     0.514     0.973       0.933            3.0   0.950   <-- clears §4 (>0.80)
+      0.50     11       531     0.687     0.890       0.736            7.0   0.750   <-- clears §4 (>0.80)
+      1.00      9       643     0.832     0.743       0.456           11.0   0.562
+      2.00      5       668     0.864     0.569       0.342           25.0   0.362
+      3.00      5       714     0.924     0.457       0.202           18.0   0.251
+      5.00      4       745     0.964     0.407       0.243           36.0   0.341
+      7.50      3       761     0.984     0.333       0.226           39.0   0.224
+     10.00      2       745     0.964     0.267       0.202           68.0   0.227
+     15.00      2       769     0.995     0.214       0.184           72.5   0.220
+     20.00      1       745     0.964     0.168       0.168          136.0   0.106
+   reference poles at alpha=0.408: the whole disclosed range as one band -> 0.166
+
+   R_MIN  n=773  outside the model's domain (delta >= alpha, i.e. a life under 2.45 years): 120 (0.155)
+   HEAPING: 125 distinct life values in 773 firm-years · integer 0.759 · round number 0.492 · modal value 0.203
+   -> every recovery below is an UPPER BOUND: it is computed from the DISCLOSED delta, and a heaped disclosure makes within-band
+      dispersion small by arithmetic. The gap between disclosed and economic delta is §4.7's weak joint and is NOT measured here.
+     width  bands  firm-yrs  coverage  recovery  worst band  distinct/band   modal
+      0.25      7       389     0.503     0.987       0.981            2.0   0.981   <-- clears §4 (>0.80)
+      0.50      7       404     0.523     0.950       0.910            5.0   0.952   <-- clears §4 (>0.80)
+      1.00      8       593     0.767     0.716       0.287           10.0   0.757
+      2.00      6       645     0.834     0.615       0.543           15.0   0.565
+      3.00      4       702     0.908     0.370       0.257           23.0   0.415
+      5.00      4       747     0.966     0.405       0.312           26.0   0.535
+      7.50      3       762     0.986     0.290       0.211           28.0   0.392
+     10.00      2       747     0.966     0.226       0.178           57.0   0.357
+     15.00      2       769     0.995     0.183       0.156           60.5   0.292
+     20.00      1       747     0.966     0.142       0.142          114.0   0.210
+   reference poles at alpha=0.408: the whole disclosed range as one band -> 0.137
+
+   R_WEIGHT  n=773  outside the model's domain (delta >= alpha, i.e. a life under 2.45 years): 18 (0.023)
+   HEAPING: 434 distinct life values in 773 firm-years · integer 0.352 · round number 0.242 · modal value 0.066
+   -> every recovery below is an UPPER BOUND: it is computed from the DISCLOSED delta, and a heaped disclosure makes within-band
+      dispersion small by arithmetic. The gap between disclosed and economic delta is §4.7's weak joint and is NOT measured here.
+     width  bands  firm-yrs  coverage  recovery  worst band  distinct/band   modal
+      0.25      4       199     0.257     0.929       0.857           13.0   0.773   <-- clears §4 (>0.80)
+      0.50     10       461     0.596     0.845       0.746           23.0   0.408   <-- clears §4 (>0.80)
+      1.00      8       600     0.776     0.699       0.409           37.5   0.241
+      2.00      7       712     0.921     0.600       0.316           44.0   0.255
+      3.00      6       736     0.952     0.490       0.211           55.0   0.222
+      5.00      4       742     0.960     0.414       0.250           87.5   0.255
+      7.50      3       759     0.982     0.350       0.228          170.0   0.133
+     10.00      2       742     0.960     0.274       0.207          209.0   0.142
+     15.00      2       768     0.994     0.227       0.192          214.5   0.173
+     20.00      1       742     0.960     0.172       0.172          418.0   0.069
+   reference poles at alpha=0.408: the whole disclosed range as one band -> 0.166
+
+======================================================================================
+REG-009 §4 · THE PRE-COMMITTED STOPPING RULE, APPLIED
+======================================================================================
+Declared BEFORE this probe was written: if no band width achieves a §4.4
+recovery probability above 0.80 while leaving at least 30 firm-years per band,
+the delta design is REFUSED and P0's table is the result.
+Evaluated on the firm-year-weighted recovery across bands that clear the 30
+floor; the worst single band is printed beside it so a mean cannot hide one.
+
+ERRATUM, RECORDED AND NOT REPAIRED. The rule as written prices RECOVERY and
+the THIN floor and says nothing about COVERAGE -- the share of firm-years
+living in bands that clear the floor. It is therefore satisfied by a width
+that recovers well on a quarter of the sample. Coverage is printed in every
+row below and in the sweep above; the verdict is computed on the rule AS
+WRITTEN, because rewriting a pre-commitment after seeing the table is the one
+move a pre-commitment exists to prevent (REG-002 E1's precedent: the defect
+is recorded, the number is left unambiguous).
+  PropertyPlantAndEquipmentUsefulLif R_MID     width  0.25y  recovery 0.997  worst band 0.990  coverage 0.725  distinct/band 1.0  -> CLEARS
+                                               at coverage >= 0.80: width  1.00y  recovery 0.764  worst band 0.472  coverage 0.857  distinct/band 4.0  -> refused
+  PropertyPlantAndEquipmentUsefulLif R_MIN     width  0.25y  recovery 0.998  worst band 0.996  coverage 0.798  distinct/band 1.0  -> CLEARS
+                                               at coverage >= 0.80: width  1.00y  recovery 0.934  worst band 0.820  coverage 0.920  distinct/band 2.0  -> clears
+  PropertyPlantAndEquipmentUsefulLif R_WEIGHT  width  0.25y  recovery 0.882  worst band 0.714  coverage 0.546  distinct/band 24.5  -> CLEARS
+                                               at coverage >= 0.80: width  1.00y  recovery 0.679  worst band 0.361  coverage 0.804  distinct/band 27.5  -> refused
+  FiniteLivedIntangibleAssetUsefulLi R_MID     width  0.25y  recovery 0.973  worst band 0.933  coverage 0.514  distinct/band 3.0  -> CLEARS
+                                               at coverage >= 0.80: width  1.00y  recovery 0.743  worst band 0.456  coverage 0.832  distinct/band 11.0  -> refused
+  FiniteLivedIntangibleAssetUsefulLi R_MIN     width  0.25y  recovery 0.987  worst band 0.981  coverage 0.503  distinct/band 2.0  -> CLEARS
+                                               at coverage >= 0.80: width  2.00y  recovery 0.615  worst band 0.543  coverage 0.834  distinct/band 15.0  -> refused
+  FiniteLivedIntangibleAssetUsefulLi R_WEIGHT  width  0.25y  recovery 0.929  worst band 0.857  coverage 0.257  distinct/band 13.0  -> CLEARS
+                                               at coverage >= 0.80: width  2.00y  recovery 0.600  worst band 0.316  coverage 0.921  distinct/band 44.0  -> refused
+
+  VERDICT: the delta design CLEARS §4 on at least one (tag, rule)
+
+wrote data/reg-009-p0-result.json

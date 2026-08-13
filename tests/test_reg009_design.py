@@ -157,20 +157,80 @@ def bound_desc(needle: str) -> str:
     return BOUNDS[needle]
 
 
+# --------------------------------------------------------------------------- v4
+# THE DISCHARGE LEDGER, wealthTensor-28.
+#
+# v3 asserted that no bound had reached a measurement home, because at `-27` none had.
+# `-28` ran REG-009 §2's P0 and all three bounds were measured, so v3 went red -- on the
+# very event it was built to detect. Its own failure message said what to do: "If that is
+# a MEASUREMENT: good ... move the bound into the discharged column and relax this test by
+# name."
+#
+# The relaxation is NOT an exclusion. An exclusion says "stop looking here"; a LEDGER says
+# "this one was answered, HERE, and if that answer disappears the finding reopens." The
+# difference is the whole of `-27`'s lesson about guards whose only maintenance is
+# appending exclusions: v4 has strictly MORE to fail on than v3, not less.
+#
+# A bound is discharged only against a named artifact. Undischarged bounds keep v3's rule
+# unchanged, so the guard still works the moment §4.7 grows a fourth bound.
+DISCHARGED = {
+    "sticky": ("P0-a", "docs/preregistration/RESULT-P0.md"),
+    "industry convention": ("P0-b", "docs/preregistration/RESULT-P0.md"),
+    "industry-median": ("P0-b", "docs/preregistration/RESULT-P0.md"),
+}
+
+
 @pytest.mark.parametrize("needle", sorted(BOUNDS))
-def test_no_bound_has_leaked_into_an_instrument_or_a_result(needle):
-    """THE INVARIANT THAT CARRIES THE FINDING. §1.3 claims nobody has measured these.
-    A measurement lands in scripts/, in data/, or in a RESULT document — never in a
-    design doc, which is why design docs are not counted at all."""
-    offenders = {p: n for p, n in _by_file(needle).items() if _is_measurement_home(p)}
-    assert not offenders, (
-        f"'{needle}' now appears in an instrument or a result: {offenders}. This is "
-        f"{BOUNDS[needle]}.\n"
-        "If that is a MEASUREMENT: good — it is the work REG-009 §1.3 asked for. Update "
-        "§1.3, move the bound into the discharged column of §3's definition-of-done item "
-        "5, and relax this test by name.\n"
-        "If it is a mention in passing, rename the variable — this directory is reserved "
-        "for the thing that discharges the finding."
+def test_every_bound_is_either_undischarged_and_absent_or_discharged_and_cited(needle):
+    """THE INVARIANT THAT CARRIES THE FINDING, v4.
+
+    UNDISCHARGED: must not appear in `scripts/`, `data/` or a `RESULT-*`, because that is
+    where a measurement lands and nowhere else -- v3's rule, unchanged.
+
+    DISCHARGED: the named result document must exist AND must say which part of P0
+    measured it. A bound cannot be marked answered by a dictionary entry alone; §1.3's
+    finding was that assertions had been mistaken for measurements, and a ledger that
+    accepted its own say-so would be the fifth costume of exactly that.
+    """
+    if needle not in DISCHARGED:
+        offenders = {p: n for p, n in _by_file(needle).items() if _is_measurement_home(p)}
+        assert not offenders, (
+            f"'{needle}' now appears in an instrument or a result: {offenders}. This is "
+            f"{BOUNDS[needle]}.\n"
+            "If that is a MEASUREMENT: good — it is the work REG-009 §1.3 asked for. "
+            "Add it to DISCHARGED with the artifact that measured it.\n"
+            "If it is a mention in passing, rename the variable — this directory is "
+            "reserved for the thing that discharges the finding."
+        )
+        return
+
+    part, doc = DISCHARGED[needle]
+    path = ROOT / doc
+    assert path.exists(), (
+        f"'{needle}' is marked discharged by {part} in {doc}, and {doc} does not exist. "
+        "A discharge ledger that outlives its own evidence is worse than no ledger: it "
+        "reports an objection as answered by a document nobody can read."
+    )
+    t = _ws(path.read_text(encoding="utf-8"))
+    assert part in t, (
+        f"{doc} exists but never mentions {part}, which is what the ledger says "
+        f"measured '{needle}'. Point the ledger at the part that did the work, or "
+        "un-discharge the bound."
+    )
+
+
+@pytest.mark.parametrize("needle", sorted(DISCHARGED))
+def test_a_discharged_bound_carries_a_number_and_not_another_assertion(needle):
+    """The bound is answered by a MEASUREMENT or it is not answered. §1.3's whole finding
+    is that three assertions and a sign were mistaken for the answering of an objection;
+    a result document that discharges them with a fourth assertion repeats it."""
+    part, doc = DISCHARGED[needle]
+    t = (ROOT / doc).read_text(encoding="utf-8")
+    block = [ln for ln in t.splitlines() if part in ln]
+    assert block, f"{doc} names no line carrying {part}"
+    assert re.search(r"\d+\.\d+", " ".join(block)), (
+        f"the {part} lines in {doc} carry no number. '{needle}' is bound 1/2/3 of "
+        f"§4.7's weak joint, and it is discharged by a measurement or not at all."
     )
 
 

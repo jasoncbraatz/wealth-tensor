@@ -102,6 +102,34 @@ occurrence of any of them has to declare itself as a measurement or as a restate
 assertion repeated is not an assertion answered*, and that test is the only thing standing between
 those two.
 
+### 1.3a · DISPOSITION, `wealthTensor-28` — the three bounds now carry numbers
+
+*Appended, not substituted. §1.3's finding was true when it was written and the record of it stays
+as it stands; what follows is what happened when someone measured. `RESULT-P0` is the evidence and
+`tests/test_reg009_design.py`'s v4 discharge ledger is the thing that will notice if it goes away.*
+
+| §4.7's bound | disposition | the number |
+|---|---|---|
+| 1 · anchored by **industry convention** | **MEASURED, and weak** (P0-b) | SIC major group accounts for 0.288 of the variance of log property life, 0.080 of log intangible life |
+| 2 · **sticky** within a firm | **MEASURED, and it SPLITS BY CLASS** (P0-a) | 0.744 of property components carry the identical life eight years apart; 0.309 of intangible components do |
+| 3 · can be run on **industry-median** lives | **MEASURED, and the price is the hazard** (P0-b) | the same ratio: an industry median discards the firm-level endogeneity and keeps ~0.71 of the dispersion as within-band noise |
+| 4 · the sign runs toward *less* variation | **NOT MEASURED**, and out of scope here | — |
+| §1.4's fifth adjective · δ "approximately constant" | **PRICED** (P0-c) | recovery 0.934 at a 1-year property band under `R_MIN`, coverage 0.920 — and an UPPER BOUND, because the disclosure is heaped |
+
+**The shape moved once more, and it is worth naming.** Bounds 1 and 3 are not merely
+unmeasured-then-measured; measuring them showed they are **the same quantity pointing both ways** —
+§4.7 offers industry medians as the escape from its weak joint, and the dispersion that escape
+leaves behind is the dispersion §4.4 says destroys the ranking. An objection and its proposed remedy
+scored on one ruler, and nobody had put a number on either.
+
+**And the sixth quantifier arrived on schedule, in this session's own instrument.** P0-c's first
+table reported a recovery of 0.998 at a quarter-year band and said nothing about the disclosed life
+being a round number 87.5 % of the time. The band was not homogeneous; it held ONE distinct value.
+A probe built to catch adjectives promoted past their measurement had promoted one of its own inside
+an afternoon — caught by asking of a suspiciously good number the question §3a's tell asks of a
+suspiciously bad one: *could this instrument have produced this number for a reason that has nothing
+to do with the world?*
+
 This is the fifth wrong quantifier, and the shape has changed again. `-23` through `-25` mis-scoped
 a **number**. `-26`'s two were **adjectives promoted past what any measurement licensed**. `-27`'s
 are **adjectives that were correctly flagged as load-bearing, in the paper's own voice, and then
@@ -233,6 +261,8 @@ is the thing that ends that. Each item is checkable by someone who was not here.
    here is why*. **D1 is fixed above.** D2–D4 are fixed in §2 after P0.
 2. **P0 has run and `RESULT-P0` is committed**, carrying P0-a, P0-b and P0-c with their guards, and
    the per-firm-year records behind them, so both counts are auditable without re-reading the zips.
+   **DONE, `wealthTensor-28`** — `RESULT-P0.md`, `RESULT-P0-run.log`,
+   `data/reg-009-p0-lives-{2015,2023}.json` (1,296 firm-year records), `data/reg-009-p0-result.json`.
 3. **§§2–8 are committed ALONE** — registered quantities, the seven registration questions, the
    registered predictions, the falsifiers with their *kills the run / kills the marker / kills the
    interpretation* verdicts, and a stopping rule — **in a commit that ships no instrument code.**
@@ -241,6 +271,8 @@ is the thing that ends that. Each item is checkable by someone who was not here.
 5. **Paper III §4.7's three bounds each carry a disposition** — a measurement, or an explicit "not
    established, and here is what the design does instead." §1.3's finding is not discharged by
    REG-009 choosing δ; it is discharged by the bounds getting answers or getting scope.
+   **DONE, `wealthTensor-28`** — see §1.3a. Three measured, one (the sign) explicitly out of scope
+   and marked as such rather than left to look answered.
 6. **§1.5's citation repair is applied** to `SOURCE-001` §2 and any downstream text that inherited
    it.
 
