@@ -1,6 +1,6 @@
 ---
 project: wealth-tensor
-gh_sha: eca042bddf5fccf56f1708306e756ee19d7525ac
+gh_sha: PENDING
 updated: 2026-08-13
 session: wealthTensor-21
 gate_passed: true
@@ -11,6 +11,24 @@ gate_version: "2.50"
 
 *Overwritten every session. `git log -p docs/HANDOFF.md` is the archive. Run
 `python3 scripts/handoff_gate.py --check` before trusting this file.*
+
+---
+
+## ORIENT — read these first, in this order
+
+1. **`docs/CO-AUTHOR-CHARTER.md`** — the constitution. Read it before you touch a line of any
+   manuscript. **THE CHARTER WINS**: where this handoff, any result doc, or any plausible-sounding
+   rewrite conflicts with it, the charter governs and the other thing is wrong. *This file is a
+   status report. It is not law and it cannot amend the charter.*
+2. `python3 scripts/handoff_gate.py --check` — proves this file is not stale.
+3. §8's student-in, then §6's at-bat.
+
+> **`-21`: those two anchors were missing from the last EIGHT handoffs, this project's included.**
+> `--emit` refuses without them (G-ANCHOR-1/2) — and every one of those eight nonetheless shipped
+> `gate_passed: true`, which is a field the *author* writes by hand. The frontmatter boolean is a
+> **claim**; `--emit` is the **evidence**. Run the wrap sequence in full — `--stamp`, commit,
+> `--emit` — and believe its exit code over the frontmatter. `tests/test_handoff_anchors.py` now
+> keeps the anchors from vanishing again without the suite noticing.
 
 ---
 
@@ -42,7 +60,7 @@ it — used three times this session with no incidents, and it is what makes an 
 prereg/result docs into the container in one call** — do that rather than eighteen `--get`s.
 Quote remote paths. Exit 3 = never reached darwin, safe to re-run; exit 4 = started, check state
 first. Use `./.venv/bin/python` — `python3 -m pytest` dies at collection because scipy lives only
-in the venv. **309 tests, ~41 s.**
+in the venv. **313 tests, ~40 s.**
 
 The roster contention warning naming YOU is still noise. Carded on State Machine
 `1217420907841952`. Do not spend a turn on it.
@@ -102,7 +120,8 @@ had already caught everything: three anchors, two files, first try, no incidents
 
 ## 1 · WHAT HAPPENED — THE AT-BAT'S #2 RAN, AND THE SWEEP IT ORDERED FOUND ONE
 
-Two commits: **e117330** (the cell fix) and **23bdc16** (the guard). **309 tests green, was 286.**
+Three code commits: **e117330** (the cell fix), **23bdc16** (the provenance guard) and the anchor
+guard below. **313 tests green, was 286.**
 Structure unchanged — 2 `#`, 15 `##`, 29 `###`, 17 `---`; paper III **2,637 lines**; gate **PASS**;
 tree clean and pushed.
 
@@ -170,8 +189,8 @@ limitation 9 (4.12×/2.02×) against the §5.4 table.
 
 REG-007's Λ result, the placebo, the phrase set, the keyword families, the 0.436/0.403 pair, §4.4's
 table, the ladders — all untouched. **Nothing this session re-ran an instrument;** every change is
-a provenance repair backed by numbers already committed, plus one new offline test. That is why
-309 tests were enough.
+a provenance repair backed by numbers already committed, plus two new offline test files. That is why
+313 tests were enough.
 
 ---
 
@@ -196,6 +215,15 @@ project has now paid for four times; second one to ship a test rather than a par
 
 **Honest limitation, stated in the docstring:** it cannot tell you a correctly-sourced number is
 sitting in the wrong SLOT in a sentence. It removes the silent case, not the reading.
+
+### And a second, smaller one — `tests/test_handoff_anchors.py` (4 tests, offline)
+
+`--emit` refuses a handoff missing its charter anchors, and **eight consecutive handoffs were
+missing both** while each recorded `gate_passed: true` by hand. The gate was right and nothing ran
+it. These four assertions run every session: the charter exists, the handoff points at it, the
+handoff carries `THE CHARTER WINS`, and — because a drill carrying its own copy of the logic passes
+forever while the original rots — the anchor strings are re-read out of `handoff_gate.py` itself,
+so a constant moving there goes red here rather than leaving this file guarding a dead string.
 
 ---
 
