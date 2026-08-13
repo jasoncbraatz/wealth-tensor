@@ -221,6 +221,12 @@ roughly eight per cent of the panel — on the full 1,602 firms that extrapolate
 and retail chains: Kona Grill, Frisch's, Buffalo Wild Wings, Crumbs) and the
 goodwill-dominant firms **disappear entirely by 0.80**.
 
+> **THE COUNT SURVIVED THE FULL PANEL; THE COMPOSITION DID NOT. See §4b.** The
+> extrapolation below is nearly right — 99 firms at 0.70, against "order 130" — and the
+> sentence beside it, *"the branch is alive for property only"*, is wrong. A third class
+> that is **identically zero in all 74 sampled firms** holds 34 of the 99, and goodwill,
+> declared dead by 0.80, is not.
+
 That is §5's argument arriving as a measurement rather than as a prediction. The
 restriction that buys an admissible σ buys it exactly where the asset is tangible, priced
 and long-lived, and it cannot be made to buy one for goodwill at any threshold, because a
@@ -240,6 +246,58 @@ announced themselves, being impossible; a share of 0.62 built the same way would
 It is §5.4's defect class — a figure from the wrong period is indistinguishable on the page
 from one from the right period — committed by a throwaway script written the same session
 as the guard against it. Period-matching changed the ≥0.70 count from 13 to 6.
+
+## 4b · The same count on all 1,602 firms: the magnitude held, the composition inverted
+
+`wealthTensor-24`. §6's step 2 finished — the arithmetic §4a said should be done "before
+any power calculation leans on it". Same rule, same period-matching, same refusal, run by
+`scripts/source001_concentration.py --full`; the 80-firm mode of that script reproduces
+§4a's table exactly (74 matchable, 11 / 9 / 6 / 3), which is what licenses comparing them.
+**1,444 of 1,602 firms matchable** (151 unmatchable, 7 refused as impossible).
+
+| one class ≥ | firms | of 1,444 | PP&E | goodwill | intangibles | §4a's 74-firm reading |
+|---|---|---|---|---|---|---|
+| 0.50 | 255 | 0.177 | 92 | 107 | 56 | 11 — ppe 9, gw 2, **int 0** |
+| 0.60 | 148 | 0.102 | 60 | 47 | 41 | 9 — ppe 7, gw 2, **int 0** |
+| **0.70** | **99** | **0.069** | **47** | **18** | **34** | 6 — ppe 5, gw 1, **int 0** |
+| 0.80 | 59 | 0.041 | 32 | 4 | 23 | 3 — ppe 3, gw 0, **int 0** |
+
+**What survived.** The sample got the *size* of the surviving sample right, and that is the
+number a power calculation needs: 0.069 against 0.081, 99 firms against an extrapolated
+~130. REG-009 has a real denominator now, and it is large enough to run something.
+
+**What did not.** §4a's headline — *"the branch is alive, and it is alive for property
+only"* — is an artifact of 74 draws. Intangibles-dominant firms are **zero at every
+threshold in the sample and 34 of the 99 survivors in the panel**, second only to PP&E,
+and by 0.80 they are within striking distance of it (23 against 32). Goodwill, declared to
+"disappear entirely by 0.80", has four survivors there and eighteen at 0.70.
+
+**The failure mode has a name and it is not sampling error in the usual sense.** The count
+is a proportion and proportions estimate well from 74 draws; the composition is a
+multinomial over three classes whose rarest cell the sample never saw once. A zero cell in
+a small sample is not a small number — **it is the absence of information**, and it reads
+on the page as a finding. §4a wrote a scope ruling on that zero.
+
+**Consequences for REG-009, replacing §4a's.**
+
+1. **A dominant-asset design is not automatically a property design.** The scope sentence
+   §4a offered for REG-009's title is not supported. If the design restricts to PP&E it
+   must do so as a *choice*, argued from §2's admissibility test, not as a description of
+   what the panel contains.
+2. **Intangibles-dominant firms are a live third arm and nobody has looked at them.**
+   Whether they *pass* §2 is a separate question and probably a harder one than PP&E —
+   a firm that is mostly recognised intangibles is closer to the goodwill objection than
+   to the vessel-and-aircraft case — but that argument now has to be made rather than
+   assumed by absence.
+3. **The 0.70 threshold no longer chooses itself.** It was picked where the sample still
+   had survivors. On the panel, 0.80 keeps 59 firms and buys a much tighter restriction,
+   which is exactly the trade §2 cares about.
+
+**Refusals, since they are the guard reporting for duty.** Seven firms produced an
+impossible class share and were excluded by name, the largest an intangibles share of
+**704** — one balance sheet divided by another, loudly. That is the defect §4a's probe
+shipped and this file's `IMPOSSIBLE` constant now refuses; at panel scale it fires seven
+times, and at sample scale it fired once.
 
 ## 5 · The selection problem, which is the whole difficulty
 
@@ -285,15 +343,17 @@ In order, each cheap and each decisive:
    from 2015 to 2023, dimensioned by component × `Range`. The δ half of the σ-and-lifetime
    claim now has a source. This was the step the previous session called optional.
 2. ~~**Measure the single-dominant-asset restriction on the existing panel.**~~ **DONE —
-   §4a.** The branch survives for property and is dead for goodwill at every threshold.
-   What remains of this step is arithmetic: re-run the count over all 1,602 firms rather
-   than the 74, so a power calculation has a real denominator.
-3. **Only then, σ.** Whichever of §4's families survives §4a gets one probe, and the probe
+   §4a, and FINISHED in §4b.** The branch survives: 99 firms of 1,444 at a 0.70
+   threshold. ~~The branch survives for property and is dead for goodwill at every
+   threshold.~~ — that reading was the 74-firm sample's, and the panel contradicts it.
+   The arithmetic this step called "what remains" changed the answer's shape.
+3. **Only then, σ.** Whichever of §4's families survives ~~§4a~~ **§4b** gets one probe, and the probe
    reports coverage the way §3 does — a number against a denominator, on this project's own
-   panel. §4a says which family to probe first: equity-return volatility for
+   panel. §4a said which family to probe first — equity-return volatility for
    **PP&E-dominant firms only**, where the restriction is what makes it admissible under §2
-   rather than a proxy in violation of it. That is a narrower and more defensible claim
-   than the one this document opened with.
+   rather than a proxy in violation of it — and that remains the right *first* probe, but
+   §4b removes the claim that it is the *only* one available. **47 PP&E-dominant firms at
+   0.70, not 5.**
 
 ~~**Do not skip to step 3.**~~ **Both cheap steps are now run, and the instruction earned
 its keep twice.** Step 2 turned "restrict to dominant-asset firms" from an option into a
