@@ -183,6 +183,89 @@ firm-year join must confirm per-year coverage on the panel's own `fy_end` distri
 rather than inherit 0.82 from this table. And nothing here touches σ, which remains §4's
 problem and the harder one.
 
+> **THE MIDDLE CAVEAT IS NOW RUN — §3b, `wealthTensor-25`.** It half-holds, and the half
+> that fails is not the half it warned about. There is no December advantage in the 2023
+> cycle (+0.003, z = 0.09), so 0.82 is not a December artifact *in the panel's recent
+> years*. But the same probe on the 2014–15 cycle finds coverage of **0.727**, and the
+> gap between the two cycles is carried almost entirely by non-December firm-years
+> (+0.140, z = 4.07). §3a's own sentence — *"coverage is flat across a decade, so the
+> join's usable window is the panel's whole span"* — is **true of the slice it measured
+> and false of the panel**, which is this document's recurring mistake in its third
+> costume.
+
+## 3b · The caveat, run: no December bias now, a large one a decade ago
+
+`wealthTensor-25`, 2026-08-13. §3a's outstanding caveat, and the precondition the handoff
+put on designing the δ half. Probe: `scripts/source001_lifetime_by_fyend.py`, offline
+against six FSN notes zips per cycle, unit of analysis the **firm-year**, denominator the
+panel's own rows.
+
+**Why the caveat could not be waved off.** A 10-K is filed 60–90 days after the year ends,
+so a Q1 notes zip can only contain filers whose year ended in roughly the preceding
+October–January. **40.8 per cent of this panel's 9,782 firm-years end in a month other than
+December**, and about 31 per cent end in a month a Q1 zip cannot reach at all. §3a's 0.82
+was not a biased estimate of those firm-years; it was silent about them.
+
+**Design.** Six quarters per cycle, not four, so the twelve fiscal-year-end month ends in
+the window each have their whole filing season inside the instrument. Coverage is
+decomposed — *no 10-K found in the window* is reported separately from *10-K found, no life
+tagged* — because only the second is a statement about tagging.
+
+| | 2014-10-31 … 2015-09-30 | 2022-10-31 … 2023-09-30 |
+|---|---|---|
+| panel firm-years in window | 847 | 837 |
+| 10-K located | 0.949 | 0.981 |
+| **canonical life, December fy_end** | **0.758** (n=505) | **0.824** (n=540) |
+| **canonical life, every other month** | **0.681** (n=342) | **0.822** (n=297) |
+| December − other | **+0.077, z = +2.47** | **+0.003, z = +0.09** |
+| all firm-years | 0.727 | 0.823 |
+
+**The answer, in two parts, because it is two answers.**
+
+1. **For the panel's recent years the caveat is closed.** December and non-December
+   firm-years are covered at the same rate to within a tenth of a point. A join on the
+   2023 cycle can use 0.82 for every month, and the fiscal-calendar worry that gated this
+   step is not a live risk there.
+2. **For the panel's early years it is closed the other way.** Coverage of the 2014–15
+   cycle is 0.727, and the shortfall is concentrated in exactly the firm-years §3a could
+   not see: non-December coverage rose **+0.140 (z = 4.07)** across the decade against
+   December's +0.066. A design that inherits 0.82 across the panel's full 2013–2025 span
+   **overstates early non-December coverage by about fourteen points.**
+
+**So §3a's "flat across a decade" needs its scope written back on.** It is flat *on Q1
+filers*, which is to say on December and January year-ends — and that is exactly the
+population a Q1-only instrument can see. The series that moved is the one it could not.
+This is §3's error and §4a's error in the same shape for the third time: **a property of
+the measured slice, stated as a property of the panel.** The instrument was not wrong and
+the number was not wrong; the quantifier was.
+
+**An error this probe made in flight, kept because the tell is cheap and general.** The
+first run used four quarters (2023q1–q4) rather than six, and reported that only **0.718**
+of September year-ends had a locatable 10-K — a number that looks like delinquency and
+would have gone into this table as one. A September 30 year end is due about December 29;
+the late half of that filing season lands in **2024q1**, outside the window. Adding the
+two edge quarters moved September to 0.923, August to 1.000, and October to 1.000, and
+moved nothing in the interior. **A coverage rate that is low only at the ends of the
+window is measuring the window.** The sibling of §3a's tell, and it cost ten minutes
+because the same question — *could this instrument have seen a higher number?* — was asked
+before the table was written rather than after.
+
+**Two guards this probe carries as code**, following §3a's and §4a's precedent that the
+mistake and its refusal ship together. `THIN` marks and refuses any month bucket under 30
+firm-years (seven of twelve are refused in both cycles) — the direct descendant of §4b's
+zero cell read as a finding. And every gap between two buckets is printed with a
+two-proportion **z**, so a difference has to earn the word: it is what demotes the
+December gap from "0.824 versus 0.822" to nothing, and what promotes the cross-cycle move
+to a result.
+
+**What this does NOT establish.** Two cycles are two points, and nothing here says the
+non-December series rose smoothly rather than in a step — the intervening years were not
+run, and a firm-year join that needs a per-year weight should run them (six zips and a
+minute each). The window is one fiscal cycle per corner, so a firm that skips a year is
+counted as uncovered in that year, correctly for a join and misleadingly as a statement
+about the firm. And coverage is still not accuracy: §2's warning that a disclosed useful
+life is an accounting rate is untouched by any of this.
+
 ## 4 · The σ half: not probed, and the harder one by a wide margin
 
 Nothing here has been measured. What is known is the shape of the problem, and it is the
@@ -368,10 +451,26 @@ tests only the lifetime half is suddenly available, cheap, and does not depend o
 nothing about lives. REG-009's first section should price that split before assuming the
 paired design.
 
+**Step 4's own precondition — DONE, §3b.** The fiscal-calendar caveat is discharged and the
+δ design may proceed on 0.82 **for the panel's recent years only**. What replaces it is a
+narrower and more actionable constraint: coverage is 0.727 on the 2014–15 cycle against
+0.823 on 2022–23, and the movement is almost entirely in non-December firm-years. So the
+lifetime design has a **year-window decision** to make in its first section, alongside the
+δ/σ split — restrict to the recent span where coverage is uniform, or carry the whole span
+with a per-year, per-fiscal-calendar weight and say why. That is a design choice with a
+measured price on it, which is the condition this document exists to produce.
+
+**Step 5, and it is now the only cheap one left.** σ. §4b named the first probe —
+equity-return volatility on the 47 PP&E-dominant firms at 0.70 — and left the 34
+intangibles-dominant firms unassessed against §2. Nothing in `-25` touched either.
+
 ---
 
 *Written against `RESULT-REG-003` §4, `REG-008` §6, and paper III §§4.7–4.8. §3's probes
 were throwaway scripts, which is part of why their conclusion outlived its evidence;
-§3a's and §4a's are committed — `scripts/source001_lifetime_coverage.py` and
-`scripts/source001_concentration.py` — and each carries, as code, the guard that the
-corresponding mistake would have tripped.*
+§3a's, §4a's and §3b's are committed — `scripts/source001_lifetime_coverage.py`,
+`scripts/source001_concentration.py` and `scripts/source001_lifetime_by_fyend.py` — and
+each carries, as code, the guard that the corresponding mistake would have tripped.
+Per-firm-year records for §3b's two cycles are in
+`data/source-001-lifetime-by-fyend{,-2015}.json`, so both counts are auditable without
+re-reading five gigabytes of zips.*
