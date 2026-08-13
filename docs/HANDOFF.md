@@ -1,4 +1,7 @@
 ---
+project: wealth-tensor
+gh_sha: PENDING
+updated: 2026-08-13
 session: wealthTensor-28
 gate_passed: true
 gate_version: "2.51"

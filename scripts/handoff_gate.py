@@ -271,10 +271,33 @@ def emit():
 
 
 def stamp():
-    """Rewrite gh_sha to current HEAD. Run after the final content commit."""
+    """Rewrite gh_sha to current HEAD. Run after the final content commit.
+
+    COUNTS THE SUBSTITUTION AND FAILS AT ZERO (wealthTensor-28). `re.sub` returns the
+    input unchanged when nothing matches, so the previous version wrote a handoff whose
+    frontmatter had no `gh_sha` key straight back to disk, byte-identical, and printed
+    "stamped gh_sha: <head>" regardless. It could only fire on a handoff that was ALREADY
+    malformed -- which is precisely when a false success costs the most, because --check
+    then refuses a file its author has been told is stamped. Live fire: --stamp said it
+    stamped, git said "nothing to commit, working tree clean", and --check kept blocking.
+    Same family as `grep -c P f || echo 0` (-27): a success report on a path where
+    nothing happened."""
     fm, text = frontmatter()
     head = sh("git", "rev-parse", "HEAD")
+    # Count BEFORE substituting: `count=1` stops at the first hit and reports n == 1
+    # whether there is one gh_sha line or five, so the naive form is blind to a
+    # DUPLICATED key while catching a missing one. Zero and two are different failures
+    # and neither may write.
+    n = len(re.findall(r"^gh_sha:.*$", text, flags=re.M))
     new = re.sub(r"^gh_sha:.*$", f"gh_sha: {head}", text, count=1, flags=re.M)
+    if n != 1:
+        print(f"BLOCKER: --stamp matched {n} gh_sha lines in {HANDOFF.name}, expected 1. "
+              f"NOTHING WAS WRITTEN.\n"
+              f"         The frontmatter is missing its `gh_sha:` key (required: "
+              f"{', '.join(REQUIRED)}).\n"
+              f"         Add the key, then re-run --stamp. Do not commit and assume it "
+              f"took -- that is the defect this check exists for.", file=sys.stderr)
+        return 1
     HANDOFF.write_text(new)
     print(f"stamped gh_sha: {head}")
     return 0
