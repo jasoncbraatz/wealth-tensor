@@ -1394,13 +1394,15 @@ Both universes, the same direction, at the resolution 10,000 draws can report; t
 injected excess of five per cent of events with probability 1.00. The pairwise cells put the
 strongest coupling on goodwill with indefinite-lived intangibles in retail (5.83×) and on goodwill
 with finite-lived intangibles in computer services (2.22×), and it is these two
-intangible-with-goodwill cells that replicate across both sectors — 5.83× and 2.34×, 3.33× and
+intangible-with-goodwill cells that replicate across both sectors — 5.83× and 2.41×, 3.33× and
 2.22×, all four surviving Holm correction. Property with goodwill was published at 4.35× and
 4.03× on a tier whose tag list omitted the element most filers use for it; `REG-006` repairs the
 omission and re-derives that cell at **3.99×** and **2.17×**, against **3.63×** and **4.14×** from
 the same crawl unrepaired — so the repair *raises* the retail cell and takes the computer-services
-one below significance, and its cross-sector agreement does not survive the repair. The headline does: **4.01× and 2.10×**
-repaired, against 4.01× and 2.01× from the same crawl unrepaired.
+one below significance, and its cross-sector agreement does not survive the repair. The headline
+does: **4.01× and 2.10×** repaired, against 4.01× and 2.01× from the same crawl unrepaired. So
+does the intangible cells' agreement: **5.86× and 2.34×**, **3.35× and 2.22×** repaired, against
+5.83× and 2.34×, 3.34× and 2.21× from that crawl unrepaired.
 
 **The mechanical reading has to be excluded before the economic one is available, §9 already
 named it, and it is two readings rather than one.** The ordering is imposed by ASC 350-20-35-31,

@@ -209,6 +209,25 @@ before REG-006 was written: 4.12×, 2.02×, 4.35×, 4.03×, 5.83×, 2.22×, 695 
 **F6 is the guard**, and it passed: the committed event file reproduces the published lifts to
 `1e-4` and every published cell exactly. The table and the sample have not drifted.
 
+**Correction, `wealthTensor-21` — the guard's scope was READ, and the exposure was WRITE.** The
+list above is every constant this file *read out of* `RESULT-REG-003.md`. It is not every constant
+this file *wrote into the manuscript*, and the gap between those two sets is where a defect sat for
+a session. The replacement sentence §2.1 licensed — "it is these two intangible-with-goodwill cells
+that replicate across both sectors" — shipped the pair **5.83× and 2.34×**. `RESULT-REG-003` puts
+indefinite-lived intangible × goodwill in computer services at **2.41×** (p 0.0020); **2.34×** is
+*this file's* number, from the new crawl, where it is the value on both arms. The retail half of
+that pair was the published run's and the computer-services half was the repair's, in a sentence
+whose whole job was to report what the published run found — the same baseline substitution
+`wealthTensor-20` found one clause away in the property cell, introduced here by the very commit
+that was correcting a published sentence. §5.4 now reads **2.41×**, and the four cells carry their
+repaired arm (5.86× / 2.34×, 3.35× / 2.22×) against the same crawl unrepaired, so the intangible
+claim is controlled the way the property and headline claims already were.
+
+**The generalisation, for the next guard.** A constants list that enumerates what a run *consumed*
+does not guard what that run *emits*. `F6` is a read-side guard; it passed, correctly and
+irrelevantly, while the write side went unchecked. Any registration that amends published prose
+should enumerate the constants it *introduces* and resolve each against the run that owns it.
+
 ## 5 · The guard, mechanised
 
 `tests/test_tag_resolution.py`, five tests, offline, against a committed audit artifact
