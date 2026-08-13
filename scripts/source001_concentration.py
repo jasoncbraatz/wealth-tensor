@@ -24,6 +24,11 @@ TWO MODES, and --sample is not optional in spirit:
   --full     all 1,602 firms.
 
 Read-only against data.sec.gov. Caches nothing to disk (darwin's disk runs hot).
+
+RUN THIS FROM THE CLOUD, NOT DARWIN. --full is ~4,300 data.sec.gov calls and it
+is what got darwin IP-flagged in wealthTensor-24. A container has a disposable
+address and darwin does not; source001_lifetime_by_fyend.py carries the same
+warning, and this file -- the one that earned it -- did not until -26.
 """
 from __future__ import annotations
 

@@ -324,3 +324,43 @@ def test_doc_refuses_the_n_equals_one_class_claim() -> None:
     assert re.search(r"not made here|is not made", s), (
         "4c must explicitly decline the n=1 class claim, not merely avoid it"
     )
+
+
+def test_the_corrections_4c_makes_are_wired_into_the_sections_they_correct() -> None:
+    """A caveat that does not gate the conclusion is decoration -- this document's
+    own finding, applied to its own cross-references.
+
+    Section 4c overturns two sentences that live elsewhere in the file: section 4b's
+    third consequence ("0.80 ... buys a much tighter restriction, which is exactly
+    the trade section 2 cares about") and section 6 step 3's ("where the restriction
+    is what makes it admissible under section 2"). Without this test a later edit
+    could drop either pointer and leave 4c sitting beside the claim it reverses,
+    with both reading as current. That is exactly how section 3's conclusion
+    outlived its own bolded caveat for two sessions.
+    """
+    txt = _doc()
+    for anchor, wants in (
+        ("## 4b ", ("INVERTED BY §4c", "0.475")),
+        ("## 6 ", ("§4c", "one count\n   doing three counts' work")),
+        ("## 4 ", ("ONE COUNT OF THREE", "§4c")),
+        ("## 2 ", ("§4c",)),
+    ):
+        assert anchor in txt, f"{anchor.strip()} vanished from SOURCE-001"
+        start = txt.index(anchor)
+        nxt = txt.find("\n## ", start + 1)
+        section = txt[start:] if nxt == -1 else txt[start:nxt]
+        for want in wants:
+            assert want in section, (
+                f"section {anchor.strip()} no longer carries 4c's correction: {want!r}"
+            )
+
+
+def test_step_five_is_marked_run_not_pending() -> None:
+    """Section 6's own ledger. `-25` handed over "step 5 is the only cheap one left";
+    if 4c lands and step 5 still reads as pending, the next session re-runs it."""
+    txt = _doc()
+    start = txt.index("## 6 ")
+    nxt = txt.find("\n## ", start + 1)
+    s6 = txt[start:] if nxt == -1 else txt[start:nxt]
+    assert "**RUN — §4c" in s6, "step 5 must be marked run"
+    assert "Step 6" in s6, "section 6 must name what replaces step 5"
