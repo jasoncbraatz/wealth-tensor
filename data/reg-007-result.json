@@ -1,0 +1,123 @@
+{
+ "window": {
+  "joint": 309,
+  "gwonly": 427
+ },
+ "placebo_n": 1189,
+ "misses": 4,
+ "cells_window": {
+  "SILENT": 92,
+  "BOTH": 229,
+  "EXTERNAL": 244,
+  "INTERNAL": 52,
+  "NEITHER": 119
+ },
+ "silent": 92,
+ "neither_strict": 0.2866847826086957,
+ "cells_placebo": {
+  "EXTERNAL": 345,
+  "SILENT": 240,
+  "BOTH": 296,
+  "NEITHER": 222,
+  "INTERNAL": 86
+ },
+ "f_rate_window": 0.4363354037267081,
+ "f_rate_placebo": 0.40252897787144365,
+ "neither_share": 0.18478260869565216,
+ "sensitivity": {
+  "375": {
+   "a": 102,
+   "b": 99,
+   "c": 116,
+   "d": 122,
+   "p_joint": 0.5074626865671642,
+   "p_gwonly": 0.48739495798319327,
+   "lam": 0.020067728583970934,
+   "p_value": 0.7021354805230579,
+   "neither": {
+    "GWONLY:SILENT": 64,
+    "JOINT:NEITHER": 80,
+    "GWONLY:NEITHER": 125,
+    "JOINT:SILENT": 28
+   }
+  },
+  "750": {
+   "a": 136,
+   "b": 108,
+   "c": 145,
+   "d": 136,
+   "p_joint": 0.5573770491803278,
+   "p_gwonly": 0.5160142348754448,
+   "lam": 0.04136281430488298,
+   "p_value": 0.380454844577295,
+   "neither": {
+    "GWONLY:SILENT": 64,
+    "GWONLY:NEITHER": 82,
+    "JOINT:SILENT": 28,
+    "JOINT:NEITHER": 37
+   }
+  },
+  "1500": {
+   "a": 164,
+   "b": 104,
+   "c": 187,
+   "d": 142,
+   "p_joint": 0.6119402985074627,
+   "p_gwonly": 0.5683890577507599,
+   "lam": 0.0435512407567028,
+   "p_value": 0.3158695247797526,
+   "neither": {
+    "GWONLY:SILENT": 64,
+    "GWONLY:NEITHER": 34,
+    "JOINT:SILENT": 28,
+    "JOINT:NEITHER": 13
+   }
+  }
+ },
+ "lambda": {
+  "both_internal": {
+   "a": 136,
+   "b": 108,
+   "c": 145,
+   "d": 136,
+   "p_joint": 0.5573770491803278,
+   "p_gwonly": 0.5160142348754448,
+   "lam": 0.04136281430488298,
+   "p_value": 0.380454844577295,
+   "neither": {
+    "GWONLY:SILENT": 64,
+    "GWONLY:NEITHER": 82,
+    "JOINT:SILENT": 28,
+    "JOINT:NEITHER": 37
+   }
+  },
+  "both_external": {
+   "a": 20,
+   "b": 224,
+   "c": 32,
+   "d": 249,
+   "p_joint": 0.08196721311475409,
+   "p_gwonly": 0.11387900355871886,
+   "lam": -0.03191179044396476,
+   "p_value": 0.24353130377173057,
+   "neither": {
+    "GWONLY:SILENT": 64,
+    "GWONLY:NEITHER": 82,
+    "JOINT:SILENT": 28,
+    "JOINT:NEITHER": 37
+   }
+  }
+ },
+ "dead_phrases": [],
+ "dead_keywords": [
+  "composition of its net assets",
+  "goodwill impairment loss in the financial statements of a subsidiary"
+ ],
+ "polysemy": {
+  "n": 60,
+  "n_non_impairment": 6,
+  "share": 0.1,
+  "ceiling": 0.15,
+  "post_hoc_boilerplate_share": 0.26666666666666666
+ }
+}

@@ -1,0 +1,59 @@
+{
+ "dead_keywords": [
+  "composition of its net assets",
+  "goodwill impairment loss in the financial statements of a subsidiary"
+ ],
+ "dead_phrases": [],
+ "keyword_hits": {
+  "asset group": 1407,
+  "bankruptcy": 94,
+  "carrying amount of its net assets": 1,
+  "change in management": 3,
+  "competitive": 835,
+  "composition of its net assets": 0,
+  "decline in earnings": 5,
+  "decline in revenue": 43,
+  "declining cash flows": 10,
+  "discount rate": 2235,
+  "disposal group": 33,
+  "economic conditions": 1364,
+  "goodwill impairment loss in the financial statements of a subsidiary": 0,
+  "held for sale": 337,
+  "industry": 2028,
+  "interest rate": 723,
+  "key personnel": 177,
+  "labor cost": 79,
+  "litigation": 401,
+  "long-lived asset impairment": 318,
+  "loss of a customer": 1,
+  "loss of customers": 9,
+  "macroeconomic": 817,
+  "market capitalization": 1431,
+  "market conditions": 1251,
+  "raw material": 66,
+  "recoverability of": 1432,
+  "recoverability of a significant asset group": 107,
+  "regulatory": 633,
+  "share price": 281,
+  "stock price": 1221,
+  "tested for recoverability": 123
+ },
+ "phrase_hits": {
+  "events or circumstances": 2491,
+  "impairment indicator": 1059,
+  "impairment indicators": 912,
+  "indicator of impairment": 325,
+  "indicators of impairment": 1521,
+  "interim goodwill impairment": 429,
+  "interim impairment test": 274,
+  "triggering event": 2133,
+  "triggering events": 708
+ },
+ "polysemy": {
+  "ceiling": 0.15,
+  "n": 60,
+  "n_non_impairment": 6,
+  "post_hoc_boilerplate_share": 0.26666666666666666,
+  "share": 0.1
+ }
+}

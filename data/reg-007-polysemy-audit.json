@@ -1,0 +1,614 @@
+{
+ "schema": "reg-007-polysemy-audit/1",
+ "adjudicator": "wealthTensor-19",
+ "seed": 20260813,
+ "n": 60,
+ "n_non_impairment": 6,
+ "share_non_impairment": 0.1,
+ "ceiling": 0.15,
+ "post_hoc_note": "The boilerplate/event-specific split is a POST-HOC reading of the same sample, recorded because it explains F8's near-null. It is not a registered quantity and no test turns on it.",
+ "n_boilerplate": 16,
+ "share_boilerplate": 0.26666666666666666,
+ "windows": [
+  {
+   "i": 0,
+   "cik": 922358,
+   "fy_end": "2018-07-31",
+   "phrase": "triggering event",
+   "sense": "impairment",
+   "reason": "",
+   "register": "event_specific",
+   "excerpt": "P. anticipated would continue into fiscal 2017 and beyond. This expected decline in future cash flows from operations constituted a triggering event in the fourth fiscal quarter of 2016 for its Midstream operations - crude oil logistics reporting unit, requiring impairment testin"
+  },
+  {
+   "i": 1,
+   "cik": 1089063,
+   "fy_end": "2024-02-03",
+   "phrase": "triggering events",
+   "sense": "non_impairment",
+   "reason": "change-of-control triggering event, Senior Notes indenture",
+   "register": "event_specific",
+   "excerpt": "ued and unpaid interest thereon to, but excluding, the redemption date. Change in Control In the event of certain change of control triggering events with respect to the Senior Notes of either series (subject to certain exceptions), the Company will be required to make an offer t"
+  },
+  {
+   "i": 2,
+   "cik": 1606745,
+   "fy_end": "2017-12-31",
+   "phrase": "triggering events",
+   "sense": "non_impairment",
+   "reason": "margin loan agreement price trigger",
+   "register": "event_specific",
+   "excerpt": " common stock or other shares of TripAdvisor. In addition, as discussed above, the Margin Loan Agreements provide that, among other triggering events, if at any time the closing price per share of TripAdvisor common stock falls below certain minimum values, a partial repayment of"
+  },
+  {
+   "i": 3,
+   "cik": 1800347,
+   "fy_end": "2024-02-29",
+   "phrase": "triggering event",
+   "sense": "impairment",
+   "reason": "",
+   "register": "boilerplate_policy",
+   "excerpt": "evaluation or a quantitative test. The qualitative evaluation is an assessment of factors that includes, but is not limited to, the triggering events listed above to determine whether it is more likely than not that the fair value of a reporting unit is less than its carrying amo"
+  },
+  {
+   "i": 4,
+   "cik": 1515319,
+   "fy_end": "2016-12-31",
+   "phrase": "triggering event",
+   "sense": "impairment",
+   "reason": "",
+   "register": "boilerplate_policy",
+   "excerpt": "ur Consolidated Balance Sheet, which is required to be assessed for impairment annually, and more frequently in the case of certain triggering events. We may be required to incur charges against earnings if such impairment tests indicate that the fair value of a reporting unit is"
+  },
+  {
+   "i": 5,
+   "cik": 733269,
+   "fy_end": "2014-03-31",
+   "phrase": "triggering event",
+   "sense": "impairment",
+   "reason": "",
+   "register": "event_specific",
+   "excerpt": "f the European Marketing and data services unit. The restructuring includes exiting the analog paper survey business in Europe. The triggering event related to the Other services reporting unit was a potential exit from that business. In addition to testing the recoverability of "
+  },
+  {
+   "i": 6,
+   "cik": 807882,
+   "fy_end": "2024-09-29",
+   "phrase": "triggering events",
+   "sense": "impairment",
+   "reason": "",
+   "register": "event_specific",
+   "excerpt": "osts, maintenance and repair costs, and property rent. Goodwill Impairment During the third quarter of 2024, the Company identified triggering events that indicated the goodwill allocated to the Del Taco reporting unit might be impaired. The triggering events related to i) a rece"
+  },
+  {
+   "i": 7,
+   "cik": 1008586,
+   "fy_end": "2024-01-31",
+   "phrase": "triggering event",
+   "sense": "impairment",
+   "reason": "",
+   "register": "event_specific",
+   "excerpt": "6, 2023. Following these announcements, the Company\u2019s share price declined significantly. Based on these events (collectively, the \u201cTriggering Events\u201d), the Company identified indicators of possible impairment and initiated testing using a valuation date of October 31, 2023. The "
+  },
+  {
+   "i": 8,
+   "cik": 768835,
+   "fy_end": "2014-02-01",
+   "phrase": "triggering event",
+   "sense": "impairment",
+   "reason": "",
+   "register": "event_specific",
+   "excerpt": "terial impact on the impairment charges we incurred in 2013 or 2012. Our December 2013 announcement of the Canadian Wind Down was a triggering event for an impairment review of the long-lived assets in our Canadian segment. As a result of the wind down, our Canadian segment will "
+  },
+  {
+   "i": 9,
+   "cik": 1774675,
+   "fy_end": "2024-01-31",
+   "phrase": "triggering event",
+   "sense": "impairment",
+   "reason": "",
+   "register": "event_specific",
+   "excerpt": "verse impact on our reported results of operations and financial condition. During the fourth quarter of fiscal 2024, we identified triggering events for impairment primarily attributable to the impact of the observed prolonged and substantial decline in the Company\u2019s stock price"
+  },
+  {
+   "i": 10,
+   "cik": 1715433,
+   "fy_end": "2022-08-31",
+   "phrase": "triggering event",
+   "sense": "impairment",
+   "reason": "",
+   "register": "boilerplate_policy",
+   "excerpt": "ntellectual properties, intangible assets, goodwill, right-of-use assets and long-term purchase agreements, for impairment whenever triggering events or changes in circumstances indicate that the asset may be impaired and carrying value may not be recoverable. If certain criteria"
+  },
+  {
+   "i": 11,
+   "cik": 1494259,
+   "fy_end": "2024-12-31",
+   "phrase": "triggering events",
+   "sense": "impairment",
+   "reason": "",
+   "register": "boilerplate_policy",
+   "excerpt": "ot be recoverable. These impairment tests are based on several factors requiring management\u2019s judgment, including identification of triggering events for reassessment and determination of the fair value of related assets. If such goodwill, intangible assets, or other assets are d"
+  },
+  {
+   "i": 12,
+   "cik": 1621672,
+   "fy_end": "2022-12-31",
+   "phrase": "triggering event",
+   "sense": "impairment",
+   "reason": "",
+   "register": "event_specific",
+   "excerpt": "t book value. As of December 31, 2022 the decline in our stock price and other factors were deemed to be sustained, and therefore a triggering event requiring a goodwill impairment test as of December 30, 2022 was deemed to have occurred. We utilized the market capitalization of "
+  },
+  {
+   "i": 13,
+   "cik": 935419,
+   "fy_end": "2022-09-30",
+   "phrase": "triggering event",
+   "sense": "impairment",
+   "reason": "",
+   "register": "event_specific",
+   "excerpt": "cantly affected. Valuation of Goodwill, Indefinite-Lived Intangibles and Long-Lived Assets We considered the COVID-19 pandemic as a triggering event in the assessment of recoverability of the goodwill, indefinite-lived intangibles, and long-lived assets in our clubs and restauran"
+  },
+  {
+   "i": 14,
+   "cik": 1762359,
+   "fy_end": "2022-12-31",
+   "phrase": "triggering event",
+   "sense": "impairment",
+   "reason": "",
+   "register": "event_specific",
+   "excerpt": "mpairments, net on the Consolidated Statements of Operations. The Company assessed whether any events or changes in circumstances (\"triggering events\") indicated finite-lived intangible assets to be held-and-used would not be recovered. During the years ended December 31, 2022 an"
+  },
+  {
+   "i": 15,
+   "cik": 1762359,
+   "fy_end": "2022-12-31",
+   "phrase": "triggering event",
+   "sense": "non_impairment",
+   "reason": "arrangement-agreement condition precedent (Canopy/Acreage), defined term",
+   "register": "event_specific",
+   "excerpt": "efined in the relevant legislation) or to remove the regulation of such activities from the federal laws of the United States (the \u201cTriggering Event\u201d) and, subject to the satisfaction or waiver of certain closing conditions set out in the Original Arrangement Agreement, Canopy Gr"
+  },
+  {
+   "i": 16,
+   "cik": 1254699,
+   "fy_end": "2023-12-31",
+   "phrase": "triggering events",
+   "sense": "impairment",
+   "reason": "",
+   "register": "boilerplate_policy",
+   "excerpt": "amortized over their respective estimated useful lives to their estimated residual values, and reviewed for impairment upon certain triggering events. Goodwill and other intangible assets with indefinite useful lives (\"indefinite-lived intangible assets\") are not amortized, but i"
+  },
+  {
+   "i": 17,
+   "cik": 779544,
+   "fy_end": "2024-09-28",
+   "phrase": "triggering event",
+   "sense": "impairment",
+   "reason": "",
+   "register": "event_specific",
+   "excerpt": "s for the remaining lease period are less than the carrying value of the restaurant\u2019s assets. Additionally, the Company considers a triggering event related to ROU assets to have occurred related to a specific lease if the location has been subleased and future estimated sublease"
+  },
+  {
+   "i": 18,
+   "cik": 1646972,
+   "fy_end": "2018-02-24",
+   "phrase": "triggering event",
+   "sense": "impairment",
+   "reason": "",
+   "register": "boilerplate_policy",
+   "excerpt": "o our acquisition of Safeway. We review goodwill for impairment in the fourth quarter of each year, and also upon the occurrence of triggering events. We perform reviews of each of our reporting units that have goodwill balances. We review goodwill for impairment by initially con"
+  },
+  {
+   "i": 19,
+   "cik": 1008586,
+   "fy_end": "2024-01-31",
+   "phrase": "triggering event",
+   "sense": "impairment",
+   "reason": "",
+   "register": "event_specific",
+   "excerpt": "ties. 45 Critical Audit Matter \u2013 Goodwill Impairment Assessment As described in Notes 2 and 6 to the financial statements, based on triggering events, the Company identified indicators of possible impairment and initiated testing using a valuation date of October 31, 2023. The te"
+  },
+  {
+   "i": 20,
+   "cik": 764478,
+   "fy_end": "2025-02-01",
+   "phrase": "triggering event",
+   "sense": "non_impairment",
+   "reason": "change-of-control triggering event, 2028 Notes repurchase offer",
+   "register": "event_specific",
+   "excerpt": "s described in the indenture (including the supplemental indenture) relating to the 2028 Notes. Furthermore, if a change of control triggering event occurs, we will be required to offer to purchase the remaining unredeemed 2028 Notes at a price equal to 101 % of their principal a"
+  },
+  {
+   "i": 21,
+   "cik": 1389002,
+   "fy_end": "2017-12-31",
+   "phrase": "triggering events",
+   "sense": "impairment",
+   "reason": "",
+   "register": "event_specific",
+   "excerpt": "d result in a further decline in the market capitalization of the Company\u2019s common stock and lead to additional goodwill impairment triggering events. If the Company determines that its goodwill is impaired, it would be required to record a non-cash charge that may or may not be "
+  },
+  {
+   "i": 22,
+   "cik": 1800347,
+   "fy_end": "2024-02-29",
+   "phrase": "triggering event",
+   "sense": "impairment",
+   "reason": "",
+   "register": "event_specific",
+   "excerpt": "acroeconomic impacts primarily in the technology, freight and transportation sectors. These factors resulted in us determining that triggering events occurred, and goodwill impairment assessments were performed. The fair value of E2open was calculated using an equally weighted co"
+  },
+  {
+   "i": 23,
+   "cik": 1443611,
+   "fy_end": "2022-12-31",
+   "phrase": "triggering event",
+   "sense": "impairment",
+   "reason": "",
+   "register": "boilerplate_policy",
+   "excerpt": " goodwill, to determine whether impairment may exist. Goodwill and certain intangible assets are assessed annually, or when certain triggering events occur, for impairment using fair value measurement techniques. These events could include a significant change in the business cli"
+  },
+  {
+   "i": 24,
+   "cik": 1043156,
+   "fy_end": "2013-01-28",
+   "phrase": "triggering events",
+   "sense": "impairment",
+   "reason": "",
+   "register": "event_specific",
+   "excerpt": " valuing the reporting units in our impairment test. The Company performs its annual impairment analysis in February. There were no triggering events during the year ending January 30, 2012 that would have had an impact on goodwill. There were no goodwill impairment charges recor"
+  },
+  {
+   "i": 25,
+   "cik": 350698,
+   "fy_end": "2020-12-31",
+   "phrase": "triggering event",
+   "sense": "impairment",
+   "reason": "",
+   "register": "event_specific",
+   "excerpt": "nt may have occurred. During the first quarter of 2020, we concluded that, as a result of the impacts from the COVID-19 pandemic, a triggering event had occurred that indicated the fair values of our franchise rights may have been less than their carrying values as of March 31, 2"
+  },
+  {
+   "i": 26,
+   "cik": 60667,
+   "fy_end": "2019-02-01",
+   "phrase": "triggering event",
+   "sense": "impairment",
+   "reason": "",
+   "register": "event_specific",
+   "excerpt": "are identifiable. Cash flows for individual locations do not include an allocation of corporate overhead. We evaluate locations for triggering events relating to long-lived asset impairment on a quarterly basis to determine when a location\u2019s asset may not be recoverable. For oper"
+  },
+  {
+   "i": 27,
+   "cik": 1254699,
+   "fy_end": "2023-12-31",
+   "phrase": "triggering event",
+   "sense": "impairment",
+   "reason": "",
+   "register": "event_specific",
+   "excerpt": "million was recorded during the third quarter of 2022, in impairment losses in the consolidated statements of operations. After the triggering event and impairment loss recorded during the third quarter of 2022, the Company performed a qualitative goodwill impairment analysis dur"
+  },
+  {
+   "i": 28,
+   "cik": 1019671,
+   "fy_end": "2019-01-31",
+   "phrase": "triggering event",
+   "sense": "impairment",
+   "reason": "",
+   "register": "boilerplate_policy",
+   "excerpt": " tests related to our goodwill annually, which we perform during the third quarter of each fiscal year, or when we identify certain triggering events or circumstances that would more likely than not reduce the estimated fair value of the goodwill below its carrying amount. The fo"
+  },
+  {
+   "i": 29,
+   "cik": 1774675,
+   "fy_end": "2024-01-31",
+   "phrase": "triggering events",
+   "sense": "impairment",
+   "reason": "",
+   "register": "event_specific",
+   "excerpt": "arter of fiscal 2024. Impairment for the Fiscal Year Ended January 31, 2023 During the second quarter of fiscal 2023, we identified triggering events for impairment in the Instructor-Led Training reporting unit due primarily to a significant decline in bookings and GAAP revenue. "
+  },
+  {
+   "i": 30,
+   "cik": 1502034,
+   "fy_end": "2017-12-31",
+   "phrase": "triggering event",
+   "sense": "impairment",
+   "reason": "",
+   "register": "event_specific",
+   "excerpt": "rter of 2015, due to the declining financial performance and the Company\u2019s decision to review strategic options for the business, a triggering event occurred requiring an interim goodwill impairment review of the Discount Supplements reporting unit as of September 30, 2015. The C"
+  },
+  {
+   "i": 31,
+   "cik": 832988,
+   "fy_end": "2025-02-01",
+   "phrase": "triggering event",
+   "sense": "impairment",
+   "reason": "",
+   "register": "event_specific",
+   "excerpt": "reporting units and trade names exceeding their carrying values. During the fourth quarter of Fiscal 2024, the Company determined a triggering event had occurred requiring an interim impairment assessment for the Blue Nile trade name which management performed on a quantitative b"
+  },
+  {
+   "i": 32,
+   "cik": 1801661,
+   "fy_end": "2022-12-31",
+   "phrase": "triggering event",
+   "sense": "impairment",
+   "reason": "",
+   "register": "event_specific",
+   "excerpt": "s in circumstances indicate that the carrying value may not be recoverable. In the third and fourth quarters of 2022, we identified triggering events that indicated the carrying amount of the goodwill and intangible assets may not be recoverable, which were primarily related to a"
+  },
+  {
+   "i": 33,
+   "cik": 1462223,
+   "fy_end": "2019-12-31",
+   "phrase": "triggering event",
+   "sense": "non_impairment",
+   "reason": "Series A-1 preferred stock redemption trigger",
+   "register": "event_specific",
+   "excerpt": " subject to a beneficial ownership limitation of 4.99%. The Series A-1 Preferred Stock is redeemable upon the occurrence of certain triggering events. On June 1, 2018, RGI entered into SPAs with the Investors. Pursuant to the SPAs, the Investors purchased a total of 300,000 of sh"
+  },
+  {
+   "i": 34,
+   "cik": 1254699,
+   "fy_end": "2023-12-31",
+   "phrase": "triggering event",
+   "sense": "impairment",
+   "reason": "",
+   "register": "event_specific",
+   "excerpt": "e and $2,420 million related to goodwill were recorded in impairment losses in the consolidated statements of operations. After the triggering event and impairment losses recorded during the third quarter of 2022, the Company performed a qualitative goodwill and tradename impairm"
+  },
+  {
+   "i": 35,
+   "cik": 1514056,
+   "fy_end": "2023-12-31",
+   "phrase": "triggering event",
+   "sense": "non_impairment",
+   "reason": "Certificate of Designation dividend step-up trigger",
+   "register": "event_specific",
+   "excerpt": "ividends accruing on a daily basis in arrears at the rate of 10% per annum, or after the occurrence and during the continuance of a Triggering Event (as defined in the Certificate of Designation), 15% per annum, based on a 360 day year and the stated value of the Series B Preferr"
+  },
+  {
+   "i": 36,
+   "cik": 1359841,
+   "fy_end": "2015-01-03",
+   "phrase": "triggering events",
+   "sense": "impairment",
+   "reason": "",
+   "register": "boilerplate_policy",
+   "excerpt": " not subject to amortization are assessed for impairment at least annually, as of the first day of the third fiscal quarter, and as triggering events occur. The impairment test for identifiable intangible assets not subject to amortization consists of comparing the fair value of "
+  },
+  {
+   "i": 37,
+   "cik": 1418100,
+   "fy_end": "2019-09-30",
+   "phrase": "triggering events",
+   "sense": "impairment",
+   "reason": "",
+   "register": "event_specific",
+   "excerpt": "the trade name exceeded its carrying amount by more than 10% and no impairment existed. The Company assessed whether there were any triggering events that would indicate a potential impairment of its finite-lived intangible assets and did not identify any such triggering events o"
+  },
+  {
+   "i": 38,
+   "cik": 829224,
+   "fy_end": "2019-09-29",
+   "phrase": "triggering event",
+   "sense": "impairment",
+   "reason": "",
+   "register": "event_specific",
+   "excerpt": "ment alternative. Investments for which the measurement alternative has been elected are assessed for impairment quarterly, or if a triggering event indicates impairment may be present. Any adjustments as a result of price changes or impairments are recorded in interest income an"
+  },
+  {
+   "i": 39,
+   "cik": 1389002,
+   "fy_end": "2017-12-31",
+   "phrase": "triggering event",
+   "sense": "impairment",
+   "reason": "",
+   "register": "event_specific",
+   "excerpt": "conomy, trends in the stock price, any estimated control premium and other operating conditions. Ultimately, no goodwill impairment triggering events were identified in any period subsequent to June 30, 2017, including the Company\u2019s annual goodwill impairment test in the fourth q"
+  },
+  {
+   "i": 40,
+   "cik": 1575360,
+   "fy_end": "2018-12-31",
+   "phrase": "triggering event",
+   "sense": "impairment",
+   "reason": "",
+   "register": "event_specific",
+   "excerpt": "18, was reflected in the annual impairment assessment of goodwill and indefinite-lived intangible assets. We also considered this a triggering event for another assessment of finite-lived intangible and other long-lived assets. In calculating fair values for these interim and ann"
+  },
+  {
+   "i": 41,
+   "cik": 832988,
+   "fy_end": "2019-02-02",
+   "phrase": "triggering events",
+   "sense": "impairment",
+   "reason": "",
+   "register": "event_specific",
+   "excerpt": " circumstances change. Due to a sustained decline in the Company\u2019s market capitalization during Fiscal 2019, the Company determined triggering events had occurred that required interim impairment assessments for all of its reporting units. As a result of the interim impairment as"
+  },
+  {
+   "i": 42,
+   "cik": 1504461,
+   "fy_end": "2021-03-31",
+   "phrase": "triggering event",
+   "sense": "impairment",
+   "reason": "",
+   "register": "event_specific",
+   "excerpt": "ave a significant impact on the investment and operating plans of our primary customers. Based on these events, we concluded that a triggering event occurred which required us to perform a quantitative impairment test as of March 31, 2020 for our reporting units. We estimated the"
+  },
+  {
+   "i": 43,
+   "cik": 1800347,
+   "fy_end": "2025-02-28",
+   "phrase": "triggering events",
+   "sense": "impairment",
+   "reason": "",
+   "register": "event_specific",
+   "excerpt": "ed new bookings, lower revenue, higher than expected churn and macroeconomic impacts. These factors resulted in us determining that triggering events occurred, and goodwill impairment assessments were performed for the respective quarters. 57 During fiscal 2025, 2024 and 2023, th"
+  },
+  {
+   "i": 44,
+   "cik": 350698,
+   "fy_end": "2020-12-31",
+   "phrase": "triggering event",
+   "sense": "impairment",
+   "reason": "",
+   "register": "event_specific",
+   "excerpt": "TATEMENTS (Continued) During the first quarter of 2020, we concluded that, as a result of the impacts from the COVID-19 pandemic, a triggering event had occurred that indicated the fair values of our franchise rights may have been less than their carrying values as of March 31, 2"
+  },
+  {
+   "i": 45,
+   "cik": 1861795,
+   "fy_end": "2024-12-31",
+   "phrase": "triggering event",
+   "sense": "impairment",
+   "reason": "",
+   "register": "event_specific",
+   "excerpt": "rges. We experienced declines in our market capitalization as a result of sustained decreases in our stock price, which represented triggering events requiring our management to perform quantitative goodwill impairment tests as of the end of the second, third, and fourth quarters"
+  },
+  {
+   "i": 46,
+   "cik": 1723580,
+   "fy_end": "2021-12-31",
+   "phrase": "triggering events",
+   "sense": "impairment",
+   "reason": "",
+   "register": "boilerplate_policy",
+   "excerpt": " accounting. The Company's long-lived assets are reviewed for impairment at the end of each reporting period and whenever there are triggering events that require us to perform this review. The Company recorded $ 0.6 million of property and equipment impairment during the year en"
+  },
+  {
+   "i": 47,
+   "cik": 1359841,
+   "fy_end": "2021-01-02",
+   "phrase": "triggering events",
+   "sense": "impairment",
+   "reason": "",
+   "register": "boilerplate_policy",
+   "excerpt": "ts not subject to amortization for impairment at least annually, as of the first day of the third fiscal quarter, and more often as triggering events occur. In order to determine the impairment of identifiable intangible assets, we compare the fair value of the intangible asset t"
+  },
+  {
+   "i": 48,
+   "cik": 1254699,
+   "fy_end": "2022-12-31",
+   "phrase": "triggering event",
+   "sense": "impairment",
+   "reason": "",
+   "register": "event_specific",
+   "excerpt": "adename was recorded during the third quarter of 2022, in impairment losses in the consolidated statements of operations. After the triggering event and impairment loss recorded during the third quarter of 2022, the Company performed a qualitative tradename impairment analysis du"
+  },
+  {
+   "i": 49,
+   "cik": 733269,
+   "fy_end": "2014-03-31",
+   "phrase": "triggering events",
+   "sense": "impairment",
+   "reason": "",
+   "register": "event_specific",
+   "excerpt": "any recorded goodwill impairment charges of $23.3 million during fiscal 2014 (see note 6). During the quarter ended March 31, 2013, triggering events occurred which required the Company to test the goodwill of its European Marketing and data services unit for impairment, however,"
+  },
+  {
+   "i": 50,
+   "cik": 1019671,
+   "fy_end": "2023-01-31",
+   "phrase": "triggering event",
+   "sense": "impairment",
+   "reason": "",
+   "register": "boilerplate_policy",
+   "excerpt": " acquired and liabilities assumed. The Company performs impairment tests related to its goodwill on an annual basis or when certain triggering events or circumstances are identified that would more likely than not reduce the estimated fair value of the goodwill below its carrying"
+  },
+  {
+   "i": 51,
+   "cik": 1078075,
+   "fy_end": "2024-03-31",
+   "phrase": "triggering event",
+   "sense": "impairment",
+   "reason": "",
+   "register": "boilerplate_policy",
+   "excerpt": "seful lives. Goodwill is not amortized but subject to annual impairment tests; more frequently if events or circumstances occur (a \"triggering event\") that would indicate the fair value of our reporting unit is below its carrying value. We perform the assessment annually during t"
+  },
+  {
+   "i": 52,
+   "cik": 1366649,
+   "fy_end": "2013-12-31",
+   "phrase": "triggering event",
+   "sense": "impairment",
+   "reason": "",
+   "register": "event_specific",
+   "excerpt": "used could have a material adverse impact on the underlying estimates used in deriving the fair value or could result in additional triggering events requiring future interim impairment tests. Th ese conditions may result in additional impairment charge s in future periods. Stock"
+  },
+  {
+   "i": 53,
+   "cik": 1606745,
+   "fy_end": "2023-12-31",
+   "phrase": "triggering event",
+   "sense": "impairment",
+   "reason": "",
+   "register": "boilerplate_policy",
+   "excerpt": "amortized over their respective estimated useful lives to their estimated residual values, and reviewed for impairment upon certain triggering events. Goodwill and other intangible assets with indefinite useful lives (collectively, \"indefinite lived intangible assets\") are not am"
+  },
+  {
+   "i": 54,
+   "cik": 56873,
+   "fy_end": "2018-02-03",
+   "phrase": "triggering event",
+   "sense": "impairment",
+   "reason": "",
+   "register": "boilerplate_policy",
+   "excerpt": "ned with a history of losses or a projection of continuing losses or a significant decrease in the market value of an asset. When a triggering event occurs, an impairment calculation is performed, comparing projected undiscounted future cash flows, utilizing current cash flow inf"
+  },
+  {
+   "i": 55,
+   "cik": 832988,
+   "fy_end": "2019-02-02",
+   "phrase": "triggering events",
+   "sense": "impairment",
+   "reason": "",
+   "register": "event_specific",
+   "excerpt": " circumstances change. Due to a sustained decline in the Company\u2019s market capitalization during Fiscal 2019, the Company determined triggering events had occurred that required interim impairment assessments for all of its reporting units. As a result of the interim impairment as"
+  },
+  {
+   "i": 56,
+   "cik": 1800347,
+   "fy_end": "2024-02-29",
+   "phrase": "triggering events",
+   "sense": "impairment",
+   "reason": "",
+   "register": "boilerplate_policy",
+   "excerpt": "e fourth quarter of the fiscal year and more frequently if an event or circumstance indicates that an impairment may have occurred. Triggering events that may indicate a potential impairment include but are not limited to a significant decline in the Company's stock price, macroe"
+  },
+  {
+   "i": 57,
+   "cik": 1144980,
+   "fy_end": "2023-12-31",
+   "phrase": "triggering event",
+   "sense": "impairment",
+   "reason": "",
+   "register": "event_specific",
+   "excerpt": "lidated statements of income. Since the resulting impairment charges and the decision to dispose of these dealerships represented a triggering event for goodwill, we performed quantitative impairment tests of goodwill for the affected reporting units in December 2023. The results"
+  },
+  {
+   "i": 58,
+   "cik": 832988,
+   "fy_end": "2019-02-02",
+   "phrase": "triggering event",
+   "sense": "impairment",
+   "reason": "",
+   "register": "event_specific",
+   "excerpt": "to a continued decline in the Company\u2019s market capitalization during the 13 weeks ended February 2, 2019 , the Company determined a triggering event had occurred that required additional interim impairment assessments for its\u2019 reporting units and indefinite-lived intangible asset"
+  },
+  {
+   "i": 59,
+   "cik": 1582982,
+   "fy_end": "2023-12-31",
+   "phrase": "triggering event",
+   "sense": "impairment",
+   "reason": "",
+   "register": "event_specific",
+   "excerpt": "odwill impairment assessment as of October 31, 2023, on its Healthcare IT (HIT) reporting unit. In addition, the Company identified triggering events on August 31, 2023 and December 12, 2023 that resulted in goodwill impairment assessments of HIT for each of the respective dates."
+  }
+ ]
+}
