@@ -68,12 +68,16 @@ reads as coverage. They are classified, named, and left unresolved on purpose.
 
 AND IT COVERS §7 ONLY, WHICH IS NOT THE ONLY PLACE THESE FIGURES ARE RESTATED.
 The mutation drill written alongside this file found that by accident: its first anchor
-for REG-008's headline, `**0.103 against 0.030**`, matched at **line 1432 -- in §5's
-prose** -- before it ever reached §7's row, so the drill mutated an unguarded passage and
-reported a false miss. `4.12×` occurs three times in the manuscript. Every restatement
-outside §5.4 and §7 is still unguarded, and the exposure is the same one this file exists
-for. Teed up in the `-23` handoff rather than fixed here, because the prose surface needs
-its own anchoring scheme and this file's scope was the ledger.
+for REG-008's headline, `**0.103 against 0.030**`, matched at line 1432 -- inside §5.4,
+where the existing guard reads multipliers and 0.103 is not one -- before it ever reached
+§7's row, so the drill mutated an unwatched passage and reported a false miss. REG-003's
+α̂ turned out to be printed **eleven times across five sections**.
+
+`tests/test_restatement_reach.py` closes that, and is the reason the figures below are
+worth keeping in one place: it pins, per section, how many times the manuscript prints
+each figure THIS file declares, so a copy that drifts anywhere in paper III is caught.
+The two files are coupled -- add an entry here without a reach declaration there and that
+suite goes red.
 
 Offline, like every test here. It reads the manuscript and the result docs.
 """
