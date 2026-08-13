@@ -1395,10 +1395,11 @@ injected excess of five per cent of events with probability 1.00. The pairwise c
 strongest coupling on goodwill with indefinite-lived intangibles in retail (5.83×) and on goodwill
 with finite-lived intangibles in computer services (2.22×), and it is these two
 intangible-with-goodwill cells that replicate across both sectors — 5.83× and 2.34×, 3.33× and
-2.22×, all four surviving Holm correction. Property with goodwill runs at 4.35× and 4.03× on a
-tier whose tag list omitted the element most filers use for it; `REG-006` repairs the omission and
-re-derives that cell at **3.99×** and **2.17×**, the second no longer significant, so its
-cross-sector agreement does not survive the repair. The headline does: **4.01× and 2.10×**
+2.22×, all four surviving Holm correction. Property with goodwill was published at 4.35× and
+4.03× on a tier whose tag list omitted the element most filers use for it; `REG-006` repairs the
+omission and re-derives that cell at **3.99×** and **2.17×**, against **3.63×** and **4.14×** from
+the same crawl unrepaired — so the repair *raises* the retail cell and takes the computer-services
+one below significance, and its cross-sector agreement does not survive the repair. The headline does: **4.01× and 2.10×**
 repaired, against 4.01× and 2.01× from the same crawl unrepaired.
 
 **The mechanical reading has to be excluded before the economic one is available, §9 already
@@ -1570,11 +1571,11 @@ with what would have killed each.
 
 Two rows deserve a comment.
 
-The fifth is the reason this section is not decoration. The draft that preceded this one asserted
-that the identification result explained the registered null. The check in that row was written to
-confirm it and refused, in every one of 400 draws, and the claim came out of the paper. A survivals
-ledger that contains only survivals is an advertisement; this one contains the row that cost the
-paper its neatest sentence.
+The row on the inversion sparing the lag statistic is the reason this section is not decoration.
+The draft that preceded this one asserted that the identification result explained the registered
+null. The check in that row was written to confirm it and refused, in every one of 400 draws, and
+the claim came out of the paper. A survivals ledger that contains only survivals is an
+advertisement; this one contains the row that cost the paper its neatest sentence.
 
 The row on the guards' own audit is the one this programme would defend hardest. The claim is not that the work was
 careful. It is that the guards were audited against the possibility of being unfalsifiable, that the

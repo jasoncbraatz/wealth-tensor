@@ -134,10 +134,18 @@ scope correction is not bookkeeping.
 
 ### 2.2 · Two couplings that were previously unmeasurable
 
-With a half-blind tier 0 the paper reports two retail cells at **0.00× and 3.27×, p = 1.0000**.
+With a half-blind tier 0 the ladder returns two retail cells at **0.00× and 3.27×, p = 1.0000**.
 Corrected, they are **7.70× (p 0.012)** and **6.33× (p 0.0048)**. A cell reported as zero
 because the instrument could not see one of its two arms is not a measured zero, and the
 distinction is the same one this project has now paid for three times.
+
+**Correction and scope ruling, `wealthTensor-20`.** This section originally said *the paper*
+reports those two cells. It does not, and never has: `git log -S"0.00×"` against the manuscript
+returns no commit, and §5.4 prints only the goodwill-paired cells. The zero lives in this ladder's
+run log. That distinction also settles what to do with the pair — they are couplings the repair
+**discovered**, not published claims the repair **revised**, so they stay out of §5.4. `REG-006`
+registered the re-derivation of *published* cells; promoting cells that became significant under
+the repair is a new registration, not an amendment.
 
 ## 3 · LADDERS A, A3 AND R — THE ATTEMPT TO SIGN THE NET, AND WHY IT FAILED
 
