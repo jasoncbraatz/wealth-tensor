@@ -1,8 +1,8 @@
 ---
 project: wealth-tensor
-gh_sha: bebeb524e5e8432970d51074be8db8fe7e737287
+gh_sha: 0a0e73d
 updated: 2026-08-13
-session: wealthTensor-18
+session: wealthTensor-19
 gate_passed: true
 gate_version: "2.50"
 ---
@@ -20,267 +20,271 @@ curl -s https://system.europeanflorist.com/dsh/darlish-up -o /tmp/darlish-up && 
 
 Post the printed `DARLISH-ENROLL v1 id=… fp=…` line **exactly** as a comment on Asana task
 `1217316841710435` via the session's Asana MCP, then run `/tmp/darlish-up` again to collect.
-First collect has worked `-06` through `-18` without exception.
-
-**`-18` is the proof the pipe survives darwin going away entirely.** Jason took a macOS security
-update mid-session and rebooted the Mac underneath a running session. `dx --selftest` passed
-immediately afterwards, via the in-process WSS, with **no re-enrolment and no re-run of
-`darlish-up`**. `-17` proved darlish survives the bridge dropping; `-18` proves it survives the
-host rebooting. **Never restart anything to fix darlish, and do not re-enrol after a reboot —
-just call `dx`.** The one thing you DO lose to a reboot is your roster row: re-run `roster join`
-and `roster claim`.
+First collect has worked `-06` through `-19` without exception. `-17` proved the pipe survives the
+bridge dropping; `-18` proved it survives the host rebooting. **Never restart anything to fix
+darlish, and do not re-enrol after a reboot — just call `dx`.** A reboot costs you your roster
+row and nothing else: re-run `roster join` and `roster claim`.
 
 ```
 curl -s https://system.europeanflorist.com/dsh/dx -o /tmp/dx && chmod +x /tmp/dx
-/tmp/dx '~/Scripts/roster join --who big-wealthTensor-19 --task "<what you are doing>"'
-/tmp/dx '~/Scripts/roster claim --who big-wealthTensor-19 --resource wealth-tensor'
+/tmp/dx '~/Scripts/roster join --who big-wealthTensor-20 --task "<what you are doing>"'
+/tmp/dx '~/Scripts/roster claim --who big-wealthTensor-20 --resource wealth-tensor'
 ```
 
 `export LESSONS_CONTRIBUTOR=opus` **before any `lessons.py add`**. Four leaves banked this
-session — three global, one project-scoped — all in §2 and §6 below.
+session — three global, one project-scoped.
 
-**Never inline a multi-line message in a `dx '...'` argument.** Write a local file, `--put` it,
-`git commit -F`. Used four times this session, no incidents; the same trick works for
-`lessons.py add`, whose text is full of apostrophes — **write a `bank.sh`, `--put` it, run it.**
-`dx --get` fails on binary — base64 both ways. Quote remote paths. Exit 3 = never reached darwin,
-safe to re-run; exit 4 = started, check state first. **Use `./.venv/bin/python`** — `python3 -m
-pytest` dies at collection because scipy lives only in the venv. **276 tests, ~40 s** (was 271).
+**Never inline a multi-line string in a `dx '...'` argument.** Write a local file, `--put` it,
+`git commit -F`. Used four times this session, no incidents. The same trick is required for
+`lessons.py add`, whose text is full of apostrophes: **write a `bank.sh`, `--put` it, run it** —
+that worked cleanly for four leaves and two corroborations in one shot. `dx --get` fails on
+binary — base64 both ways, and note **macOS `base64` needs `-i`/`-o`, not a positional filename**
+(GNU-style `base64 -d file` fails on darwin; that cost one round trip). Quote remote paths.
+Exit 3 = never reached darwin, safe to re-run; exit 4 = started, check state first. **Use
+`./.venv/bin/python`** — `python3 -m pytest` dies at collection because scipy lives only in the
+venv. **286 tests, ~40 s** (was 276).
 
 **The roster contention warning naming YOU is still noise.** Carded on State Machine
 `1217420907841952`. Do not spend a turn on it.
 
-### THE THREE THINGS THAT COST `-18` A RUN EACH — read this before writing any instrument
+### THE THREE THINGS THAT COST `-18` A RUN EACH — still true, still read this first
 
 All three are the same mistake: **reconstructing registered machinery from its signature instead
-of copying its call site.** Each cost a full 10–12 minute crawl.
+of copying its call site.**
 
 1. **`extract_events` defaults to `onset_rule="streak"`, which is PRE-001. The registered
-   PRE-002/REG-003 sample is `onset_rule="peak"`.** Reconstructing the call produced ~350 events
-   against a published 695 and would have been reported as an effect of the change under test.
-   The call site is in `wt089_harvest.py:83` — `include_annual_attributed=True,
-   onset_rule="peak", signal="revenue"`. **Copy it. Do not retype it.**
-2. **`peak_onset` returns a TUPLE `(onset, censored)`**, so `if E.peak_onset(...) is not None`
-   is always true and silently inflates the eligible-quarter risk set. The real logic is
-   `wt089_riskset.eligible_quarters` and it is fourteen lines. Copy those too.
-3. **ALWAYS RUN THE UNCHANGED ARM AS A CONTROL, IN THE SAME PASS.** It is the only thing that
-   catches 1 and 2. `wt092_ladderC.py` runs both tag lists over one crawl for exactly this
-   reason, and the control arm coming back at 4.01× against a published 4.12× is what proved the
-   harness sound. A comparison across two runs would have proved nothing.
+   PRE-002/REG-003 sample is `onset_rule="peak"`.** Call site: `wt089_harvest.py:83` —
+   `include_annual_attributed=True, onset_rule="peak", signal="revenue"`. **Copy it.**
+2. **`peak_onset` returns a TUPLE `(onset, censored)`**, so `if … is not None` is always true and
+   inflates the risk set. The real logic is `wt089_riskset.eligible_quarters`, fourteen lines.
+3. **ALWAYS RUN THE UNCHANGED ARM AS A CONTROL, IN THE SAME PASS.** `-19` promoted this to a
+   registered falsifier (REG-007 F8) and it is the single most valuable thing the session did:
+   the placebo arm is what turned a boring null into a result. See §2.
 
-### `severity.check`'s witness contract, stated once because `-18` got it wrong first
+**`-19` adds a fourth, and it is the same shape one level up: the committed PANEL is registered
+machinery too.** `data/reg-006-wt092-panel.json` carries `cik`, `sic`, `universe` and per-`fy_end`
+`t0/t1/t2/G/G_present/A` for 1,602 firms. **Re-read it. Do not rebuild it from `edgar.py`.**
+REG-007 §3.1 forbids the rebuild in writing for exactly this reason.
 
-The witness is a **zero-argument callable returning the SAME PREDICATE evaluated on a world where
-the claim is FALSE**, and it must come back **falsy**. Returning the raw quantity (a count, a
-slope) makes the guard VACUOUS and the run dies with `PHANTOM TAG`. It caught one of mine
-immediately, which is the system working. And **a witness world must be RUNNABLE**: two of mine
-crashed because the no-absorption comparison world had zero censored observations and the
-estimator returned `None`. Recentre the falsifying world to the same censoring rate.
+### `severity.check`'s witness contract
+
+A **zero-argument callable returning the SAME PREDICATE evaluated on a world where the claim is
+FALSE**, which must come back **falsy**. Returning the raw quantity makes the guard VACUOUS and
+the run dies with `PHANTOM TAG`. The falsifying world must be **RUNNABLE**. `-19` ran 8 severe ·
+1 definitional · 0 vacuous, first try, by copying `wt092_sequencing_vs_coupling.py:172`'s call
+site rather than reconstructing the signature.
 
 ### Editing the manuscript
 
-`scripts/patchkit.py`, `apply_edits`, never `sed`, never a hand-rolled `src.count(old)` loop. Six
-anchors this session across two edit scripts (`wt092_edits_reg006.py`, `wt092_edits_44.py`), one
-anchor failure, nothing written on the failure — the file wraps its paragraphs, so **copy the
-anchor out of a `dx --get` copy WITH ITS LINE BREAKS** and dry-run in the container first.
+`scripts/patchkit.py`, `apply_edits`, never `sed`. **Copy anchors out of a `dx --get` copy WITH
+THEIR LINE BREAKS** — and **with their leading indentation**: `-19`'s Limitation 9 anchor failed
+on three leading spaces inside a numbered list item, nothing written, one round trip.
 
-**And a failure mode patchkit cannot see: PROSE THAT NAVIGATES POSITIONALLY.** §4.4 said "The
-column beside it"; inserting a column pointed that sentence at the wrong column and no guard
-would ever have flagged it. **Before adding a row, column or list item, grep the surrounding
-prose for "the right-hand", "the column beside", "the first", "the latter", "above", "below".**
+**AND THE FAILURE PATCHKIT CANNOT SEE — now sighted three times, so treat it as certain.**
+Prose that navigates POSITIONALLY. `-18` inserted a column and pointed §4.4's "The column beside
+it" at the wrong column. `-19` appended a §7 ledger row that would have re-pointed "**The last
+row** is the one this programme would defend hardest" at a row written five minutes earlier;
+patchkit compares HEADINGS, not references, so nothing would have flagged it. **Before adding a
+row, column or list item, grep the surrounding prose for `last`, `first`, `fifth`, `latter`,
+`former`, `above`, `below`, `beside`, `right-hand` — and replace every ordinal you find with the
+item's own NAME, in the same patch.** Done for "the last row"; the survivor is teed up in §6.
 
-## 1 · WHAT HAPPENED — THE ORDERING RULE IS TWO CHANNELS, AND OUR OWN INSTRUMENT WAS HALF BLIND
+## 1 · WHAT HAPPENED — THE DISCLOSURE ROUTE IS OPEN AND IDENTIFIED, AND THE INSTRUMENT BUILT ON IT IS NOT SHARP ENOUGH
 
-`REG-006` registered and pushed (**6a5094a**) before a line of `wt092` existed;
-`scripts/wt092_sequencing_vs_coupling.py` — **8 severe · 0 definitional · 0 vacuous**;
-`wt092_ladderC.py` runs `wt089`'s registered `instrument_b` unmodified. **276 tests green (was
-271)**; coach ratchet unchanged at **6**; concessive openers **0**; gate PASS; tree clean.
+`REG-007` registered and pushed **alone** (**656b914**) before a line of `wt093` existed;
+`RESULT-REG-007` at **c6d45f4**; the manuscript repairs at **0a0e73d**. **286 tests green (was
+276)**; numbering preserved — 2 `#`, 15 `##`, 29 `###`, 17 `---`; paper III now **2,634 lines**;
+gate PASS; tree clean and pushed.
 
-§5.4 conceded that the sequencing of the impairment standards might manufacture the measured
-departure from diagonality. **The concession is misattributed, understated in scope, and
-internally two-signed.**
+**The identification is the contribution, and it survives the null.** REG-006 left two
+explanations standing for §5.4's off-diagonality and showed the CHARGE cannot decompose them —
+the observed complementarity is a net of a positive co-testing channel and a negative recognition
+channel. The natural next move is the triggering DISCLOSURE, and `-19`'s first real finding is
+about who is *required* to write one:
 
-> The rule is **ASC 350-20-35-31**, not ASC 360 (ASC 360-10-35-27 carries the reciprocal
-> cross-reference). **ASC 350-20-35-32** extends it to *all* assets tested, so it governs the
-> intangible cells — §5.4's strongest — and not only property. Text unchanged from FAS 142 ¶29
-> (2001) and absent from the amendment instructions of ASU 2011-08, 2017-04 and 2021-03, so it is
-> stable across the whole window.
+> **`ASC 350-20-50-2(a)` compels "a description of the facts and circumstances leading to the
+> impairment" only "for each goodwill impairment loss recognized." When an interim test is run
+> and nothing is charged, NO paragraph of `ASC 350-20-50` requires anything** — 50-1, 50-1A,
+> 50-2, 50-3, 50-3A, 50-3B, 50-4, 50-5, 50-6, 50-7 is the whole Section. That case is MD&A-driven:
+> Reg S-K Item 303, Release 33-8350 §V, and Division of Corporation Finance FRM §9510.1–9510.3.
 
-It **creates joint testing** (35-3C(f) names "the testing for recoverability of a significant
-asset group within a reporting unit" as a goodwill triggering event) and **suppresses joint
-recognition** (the other charge is recognised first and reduces the reporting unit's carrying
-amount before the comparison at 35-2/35-8). F2 reproduces **KPMG Handbook Example 4.4.10**
-exactly: \$850 of prior charges converts a would-be \$700 goodwill impairment to **\$0**.
+So a triggering-event population assembled the obvious way is **conditioned on the outcome under
+study**, and firms that tested and passed are silently absent. **The fix is a window, not a
+control variable:** restrict to firm-years with a recognised goodwill loss, where the mandate
+falls uniformly on both arms of the JOINT-versus-GOODWILL-ONLY comparison and is therefore
+orthogonal to the split. That is registered in REG-007 §1 and it is what makes the design
+identified. **It is now in §5.4 and Limitation 9, and it stands on the argument, not on Λ.**
 
-**Under the ordering alone the two charges are SUBSTITUTES at the margin. §5.4 observes them as
-COMPLEMENTS at 4.12× and 2.02×.** The mechanical reading the paper conceded predicts the opposite
-sign on its recognition channel. That does not close the identification — co-testing is real and
-may dominate — but the concession named the one channel that runs *with* the finding.
+## 2 · THE PLACEBO IS THE RESULT, AND IT IS WHY F8 WAS WORTH REGISTERING
 
-## 2 · THE DEFECT: A TAG THAT MATCHED NOTHING, FOR THE LIFE OF THE PROJECT
+| | firm-years classified | (f)-family trigger rate |
+|---|---|---|
+| mandated-disclosure window (`G > 0`) | 644 | **0.436** |
+| placebo (`t > 0`, `G = 0`), where 50-2(a) does not apply | 1,189 | **0.403** |
 
-`edgar.py`'s registered `TIER_TAGS[0]` named **`ImpairmentOfLongLivedAssetsHeldAndUsed`**, which
-is **not a us-gaap element**: 404 from the frames API every year, **zero facts across all 307
-firms of the registered sample.** The element that exists is `…HeldForUse` — **2,202 facts across
-126 of our own firms**. Tier 0 was seeing **52.6%** of retail and **44.4%** of computer-services
-firms, and the cause was a spelling.
+**Three percentage points.** If the keyword families were reading a firm's actual trigger, the
+placebo — no mandate, no goodwill test necessarily run — should be far below. **The classifier is
+reading something present whether or not a goodwill impairment occurred.** Λ itself:
 
-**Ladder C re-derived REG-003 §4 with the omission repaired.** Same seed, same 10,000 draws, same
-risk set, both arms on one crawl:
+| fold | JOINT | GOODWILL-ONLY | Λ | Fisher two-sided *p* |
+|---|---|---|---|---|
+| `BOTH` → names-(f) | 136/244 = 0.5574 | 145/281 = 0.5160 | **+0.0414** | 0.3805 |
+| `BOTH` → the other way | 20/244 = 0.0820 | 32/281 = 0.1139 | **−0.0319** | 0.2435 |
 
-| universe | original | **corrected** | events |
-|---|---|---|---|
-| retail | 4.01× | **4.01×** | 243 → 303 |
-| computer services | 2.01× | **2.10×** | 439 → 476 |
+**The sign of Λ is a coding choice**, and REG-007 §3.4 required both variants precisely so this
+could not be found afterwards and resolved conveniently. REG-007 §5 P3 registered *before the
+run* that Λ ≈ 0 is uninformative, because the omission of an internal trigger runs one way.
+**Do not read this as evidence the coupling is economic.** Same discipline as ladders A/A3/R.
 
-**The headline survives.** The defect cost power, not validity — which `REG-006` §1 registered as
-the expected mechanism *before* the run, and the alternative (half a tier quietly biasing a
-published number) was live until the ladder returned. **Every cell not involving tier 0 is
-identical across the two arms to two decimals**, which is the internal control.
+*Post-hoc and labelled as such in `data/reg-007-polysemy-audit.json`:* 16 of the 60 adjudicated
+windows are accounting-policy boilerplate — "reviewed for impairment upon certain triggering
+events" — prose that recites the policy and names no event. That is almost certainly what the
+0.403 is made of.
 
-**One published sentence does not survive.** §5.4 said property-with-goodwill "is the one cell
-that replicates its magnitude across two sectors" at 4.35× and 4.03×. Repaired it is **3.99× and
-2.17×**, the second no longer Holm-significant. It rested on **four observations in one sector
-and five in the other.** The cells that *do* replicate are the two intangible-with-goodwill ones
-— exactly the cells 35-32 brings under the rule. §5.4 and Limitation 9 amended, three ledger rows
-added to §7.
+## 3 · THE GUARD THAT REFUSED, AND WHY THE DENOMINATOR WAS WRONG RATHER THAN THE CEILING
 
-**The guard is mechanised**: `tests/test_tag_resolution.py`, five tests, offline, against
-`data/tag-resolution-audit.json`. **`TIER_TAGS` is NOT edited** — PRE-001's constants are a
-contract and `test_edgar.py` guards them — the correction is additive in **`TIER_TAGS_REG006`**,
-and a test pins the dead element so the finding cannot be quietly un-found.
+**F5 fired first at 213/736 = 28.9% against a registered 20% ceiling and refused to report
+anything.** 92 of those 213 firm-years contain **none of the nine registered phrases at all**.
+F5's registered text refutes "the keyword families … as a **partition** of the (a)–(g) space" —
+and a firm-year that never presented a point in that space cannot be evidence the families fail
+to partition it. **That is the exact mirror of REG-006's Q4**, where firm-years with no goodwill
+at all were counted as "unresolved" until the registration was read twice.
 
-**The lesson, banked globally.** A tag matching nothing is indistinguishable, downstream, from a
-tag matching nothing *in this sample*: both contribute zero and neither raises. That is `-16`'s
-underflowed tail and `-17`'s truncated tail in a third costume — **a guard that cannot tell EMPTY
-from ABSENT** — and it is the first of the three to ship a test rather than a paragraph.
+**The ceiling was NOT moved.** Only the denominator: **119/644 = 18.5%**, with the strict
+**211/736 = 28.7%** printed beside it, and `SILENT` promoted to a fifth cell with its own guard
+so the two states can never be folded back together. Banked globally: *when a registered guard
+refuses to report, check its denominator before its threshold.*
 
-## 3 · WHAT FAILED, AND IT WAS REGISTERED TO
-
-**Ladders A, A3 and R all failed, and F5 voids R outright.** POST slopes are +0.010 and +0.665
-where a negative was registered; the retail placebo date moved the slope **further** (−2.245)
-than the true one (−1.599), so the regime contrast is a time trend; single-segment firms ran the
-wrong way against multi-segment.
-
-**F4b explains all three and was registered.** On synthetic data carrying both channels, the
-estimator recovers **0.508** of a true difference of **1.000** — half the signal gone in a world
-built to contain it — and `REG-006` §4 A2 registered entity aggregation as a further attenuation,
-monotone in the number of reporting units, which XBRL does not disclose. **The design was
-under-powered by construction and the registration said so before the data.**
-
-**F4b as coded also failed, and that failure was ours.** It demanded the difference equal 1.000
-to within 0.25 — a magnitude claim §4 A2 had already declared a *lower bound*. **The code
-contradicted the registration it was implementing.** Banked globally: diff every falsifier against
-the registration's own hedges before running, and never widen a threshold to make one pass.
-
-**The Q4 guard fired twice and was right twice.** As first coded it refused to report anything —
-54.2% unresolved against a 15% ceiling — and both causes were the guard being wrong, both
-resolvable from the registration's own words: firm-years with **no goodwill at all** are not
-"unresolved", the test does not apply to them; and the registered condition is an aggregate
-"**that could contain** an untagged goodwill component", so only the residue above the
-materiality floor is a hiding place. Corrected: **43 of 1,079, 4.0%**. The strict count (497) is
-printed beside it so nothing is hidden.
+**And `-19` shipped `-18`'s own defect, three hours after reading the lesson.** F2 found two DEAD
+keywords in the freshly-written classification families. `composition of its net assets` matches
+**zero** passages because the standard reads "a change in the composition **or carrying amount**
+of its net assets" and collapsing the disjunction produced a string no filing contains. **F2
+caught it by name on the first run — the mechanism working — and REG-007 registered the handling
+as *report it, do not fix it*, so the families ran as registered and the defect is published
+rather than patched.** `tests/test_reg007_resolution.py`, ten offline tests, pins it.
 
 ## 4 · JASON'S RULINGS — DO NOT REOPEN
 
-- **§4.4's table is SETTLED.** Ruled `-18`, after a two-round conversation. He took **both**
-  moves: the α̂ = 0.408 column **and** the "the calibration" label on the α = 0.05 column. His
-  reasoning is worth carrying — the label is what stops the calibration column reading as
-  vestigial once a measured column sits beside it, and neither move survives alone. **Off the
-  at-bat list permanently. Do not re-raise it.**
-- **The `## References` provenance block STAYS AS IT IS.** Ruled `-16`, directly. Settled.
-- His standing test for the paper, stated `-18`: **"will the econometrician be able to follow the
-  line of thought?"** Reader before referee. Across three papers the pieces have to fit like Lego.
+- **§4.4's table is SETTLED.** Ruled `-18`, after a two-round conversation. He took **both** the
+  α̂ = 0.408 column and the "the calibration" label; the label is what stops the calibration
+  column reading as vestigial once a measured column sits beside it, and neither move survives
+  alone. **Off the at-bat list permanently.**
+- **The `## References` provenance block STAYS AS IT IS.** Ruled `-16`.
+- His standing test, stated `-18`: **"will the econometrician be able to follow the line of
+  thought?"** Reader before referee. Across three papers the pieces fit like Lego.
 
 ## 5 · THE PAPERS
 
-**Paper III** — `docs/papers/paper-III-dual-tensor/paper-III.md`, **2,624 lines** (was 2,600).
-Numbering preserved: 2 `#`, 15 `##`, 29 `###`, 17 `---` — unchanged.
+**Paper III** — `docs/papers/paper-III-dual-tensor/paper-III.md`, **2,634 lines** (was 2,624).
 
-| § | what changed |
+| § | what changed this session |
 |---|---|
-| 4.4 | the α̂ = 0.408 column, the calibration label, and the positional reference re-anchored by name. **Jason's ruling. Closed.** |
-| 5.4 | the concession rewritten: ASC 350-20-35-31, 35-32's scope, and the two channels; the pairwise-cells sentence corrected for tier 0 |
-| 9 · Limitation 9 | the sequencing named correctly and identified as two channels of opposite sign |
-| 7 | **three ledger rows** — the off-diagonality surviving the corrected tier, the standards' own suppression, and the entity-level test failing |
+| 5.4 | the selection statement and the 0.436/0.403 pair, **replacing** the trailing sentence that duplicated Limitation 9 — charter §2, a CUT not an ABSORB |
+| 9 · Limitation 9 | one clause naming the disclosure route as closed by a selection argument rather than by sample size |
+| 7 | **one ledger row** for REG-007, and the ordinal "the last row" re-anchored by name in the same patch |
 
 ## 6 · THE AT-BAT, RANKED
 
-1. **REG-007 · THE TRIGGERING-DISCLOSURE INSTRUMENT.** This is now #1 because `REG-006` closed
-   every cheaper route to it. The discriminator §5.4 named is the triggering *disclosure*, not the
-   charge. **8-K Item 2.06 is DEAD as a population** — roughly 100 filings a year against ~1,400
-   firms recording an impairment, because the Item's instruction exempts a conclusion reached in
-   connection with the next periodic report and a **2013 SEC C&DI** extended the exemption to
-   conclusions that merely *coincide* with it. **The live route is "triggering event" text in
-   10-K/10-Q**: 1,235 such 10-Ks in 2023, 764 of them also containing "goodwill impairment"; EDGAR
-   full-text search supports phrase-AND and `data.sec.gov/submissions/CIK…json` exposes
-   `filings.recent.items` for clean 8-K item codes. **Register before deriving. Crawl in the
-   cloud** — both `data.sec.gov` and `www.sec.gov` are reachable there and darwin's disk is at 95%.
-2. **THE TWO CELLS THE REPAIRED INSTRUMENT CAN NOW SEE, AND THE PAPER STILL REPORTS AS ZERO.**
-   With a half-blind tier 0, retail's PP&E × finite-lived and PP&E × indefinite-lived cells read
-   **0.00× (p = 1.0000)** and **3.27×**. Repaired they are **7.70× (p 0.012)** and **6.33×
-   (p 0.0048)**. `RESULT-REG-006` §2.2 reports them; **§5.4 does not**, because §5.4 reports the
-   registered committed sample and these come from the repaired re-derivation. That is a
-   defensible scope line and it is also a live question: a cell printed as a measured zero that
-   is actually a significant coupling is the same empty-versus-absent defect wearing a fourth
-   costume. **Decide it deliberately; do not let it drift.**
-3. **THE σ-AND-LIFETIME RESULT STILL NEEDS NEW DATA.** Realised return volatility and disclosed
-   useful lives are not in this sample; Companion C's severity dispersion by class has
-   overlapping intervals. **Do not proxy** — a quantity sharing σ's name and not its meaning is
-   the WT-038 error, a three-time payer.
-4. **THE PRIOR-ART GAP IS REAL AND UNCONFIRMED.** A subagent found **no** paper separating
-   standard-imposed sequencing from economic co-movement, in impairment or any other accounting
-   context, and **no** accounting literature on Item 2.06 at all — but it searched the open web
-   only, not Scholar/SSRN/JSTOR, and could not read the full text of any paper in its shortlist.
-   **Before claiming novelty, check Amel-Zadeh, Glaum & Sellhorn (2023), *European Accounting
-   Review* 32(2): 415–446** — the field's survey. If it already flags the sequencing gap, the
-   framing changes. Riedl (2004) *TAR* 79(3): 823–852 is the nearest neighbour; Ramanna & Watts
-   (2012) *RAST* 17(4): 749–780 is the reverse-sign version of the same identification problem.
+1. **THE TWO CELLS THE REPAIRED INSTRUMENT CAN NOW SEE, AND THE PAPER STILL REPORTS AS ZERO.
+   Untouched by `-19` and now the cheapest live question in the project.** With a half-blind
+   tier 0, retail's PP&E × finite-lived and PP&E × indefinite-lived read **0.00× (p = 1.0000)**
+   and **3.27×**. Repaired they are **7.70× (p 0.012)** and **6.33× (p 0.0048)**.
+   `RESULT-REG-006` §2.2 has them; **§5.4 does not**, because §5.4 reports the registered
+   committed sample. That is a defensible scope line AND a live question — **a cell printed as a
+   measured zero that is really a significant coupling is empty-versus-absent in its fifth
+   costume.** Decide it deliberately. It needs a ruling or a paragraph, not a new crawl.
+2. **THE NEXT DISCLOSURE INSTRUMENT IS A PARSING PROBLEM, NOT A LEXICON PROBLEM.** Do not answer
+   §2 with a bigger keyword list: the registered families reach 0.436 in the window and 0.403 in
+   the placebo, and adding keywords moves both. What separates them is what only exists in
+   event-specific narrative — the **named** reporting unit, the **dated** trigger, the charge
+   amount tied to the sentence. Sentence-level parsing with the reporting-unit name as the key.
+   **New registration.** Fold in the two dead keywords and the corrected
+   "composition or carrying amount" wording while you are there; both changes are registered
+   territory, not patches.
+3. **`data/reg-007-passages.json.gz` IS COMMITTED (3.7 MB, 1,925 firm-years, 9,852 passages).**
+   Any successor instrument reads it instead of re-crawling. The harvest took ~7 minutes for
+   ~2,600 SEC requests at 6 workers; there is no reason to pay that twice.
+4. **THE `## 7` ORDINAL THAT COULD NOT BE FIXED — a real bug, deliberately not guessed at.**
+   §7's closing paragraph opens "**The fifth** is the reason this section is not decoration",
+   and describes a check written to confirm that an identification result explained a registered
+   null, which refused in every one of 400 draws. **That description matches no fifth row of the
+   current table.** Guessing would swap a knowable ambiguity for an unknowable error. Whoever
+   knows which row it is: name it, the way "the last row" now names the guards'-audit row.
+5. **THE σ-AND-LIFETIME RESULT STILL NEEDS NEW DATA.** Realised return volatility and disclosed
+   useful lives are not in this sample. **Do not proxy** — WT-038, a three-time payer.
+6. **PRIOR ART: the gap looks real, and the shape of the evidence is now exact.** The complete
+   published text of **Amel-Zadeh, Glaum & Sellhorn (2023)**, *EAR* 32(2): 415–446, was read this
+   session (CC-BY version of record, Oxford ORA). Full-text counts: `ASC 350-20` **0**,
+   `ordering` **0**, `order in which` **0**, `co-movement` **0**; all six `sequenc` hits are
+   "consequently". Its §5.1.2 confound catalogue and its §5.3.1 "questions that remain
+   unanswered" do not mention test sequencing. The IASB's own 58-page *Goodwill and impairment:
+   academic evidence* returns zero for `ordering`, `before goodwill`, `350-20`, `triggering
+   event`. **Recorded as "not found by keyword search", NOT as "does not exist"** — Google
+   Scholar returned `ROBOTS_DISALLOWED` and SSRN search sat behind Cloudflare, so no
+   citation-forward sweep was possible. **The two unread leads, so you start above zero: Cready
+   et al. (2012) and Hirschey & Richardson (2002)**, which AZG&S cite for restructuring charges
+   accompanying impairments — the nearest thing in that literature to this question, and framed
+   there as event-study contamination rather than sequencing.
+7. **F11 IS STILL OPEN AND STILL CHEAP.** FRM §9510.2 cites S-K **303(a)(3)(ii)**, pre-Release
+   33-10890 numbering. Nothing printed depends on it yet. Verify against the current CFR before
+   any S-K citation reaches the manuscript.
 
 ## 7 · DO NOT
 
-- **ASK A SUBAGENT FOR ITS UNVERIFIED LIST EXPLICITLY.** It was the most useful output of both
-  subagents this session — one of them refuted a paragraph number I had asserted, corrected my
-  tag name before I built on it, and flagged that "dollar for dollar" appears in no source. **Do
-  not let a plausible search snippet be promoted to a verified fact.**
+- **ASK A SUBAGENT FOR ITS UNVERIFIED LIST EXPLICITLY.** Best output of both subagents again this
+  session: one refuted the premise of the question it was asked (AZG&S does **not** flag the
+  sequencing gap), corrected a citation before it was built on (the "not all-inclusive" language
+  is `350-20-35-3F`, **not** `35-3C`), caught that `350-20-35-31` is a **four-sentence** paragraph
+  whose parenthetical sits in the second, and flagged that **`IAS 36 ¶104` and `ASC 350-20-35-31`
+  RUN IN OPPOSITE DIRECTIONS** — 104 is a loss-allocation waterfall hitting goodwill *first*,
+  35-31 is a test-ordering rule writing other assets down *before* the goodwill test. **Never
+  cite one for the other.** Both subagents were explicit that FASB's own server returned 403 to
+  every attempt and that all Codification text is practitioner reproduction; that limit is in
+  `RESULT-REG-007` §3 F9/F10 and must stay there.
 - Do not read §5.4 as a rescue of PRE-001. REG-003 §7 ruled it out in writing before the number
-  existed; nothing in REG-004, REG-005 or REG-006 touches it.
+  existed; nothing in REG-004/005/006/007 touches it.
 - Do not restore "PRE-001 was doomed by the φδ confound" — false; wt082, wt083, wt088 E7.
 - Do not remove the Bateman, Nerlove or Beaver & Ryan concessions. Do not restore "global rather
-  than local" to Kuan, the unordered-pair statement to Bellman & Åström, or the bias/lag DESIGN to
-  Ryan (1995). Do not reopen Griliches (1967) — closed with evidence.
+  than local" to Kuan, the unordered-pair statement to Bellman & Åström, or the bias/lag DESIGN
+  to Ryan (1995). Do not reopen Griliches (1967) — closed with evidence.
 - **DO NOT REOPEN the `## References` provenance block or §4.4's table.** Both ruled by Jason.
-- **DO NOT POLISH §4.9, §4.10 or §5.4.** §4.10 reports a registered result; §5.4 was amended
-  surgically this session under REG-006 §7 and is otherwise closed.
-- **Do not edit `TIER_TAGS`.** It is PRE-001 and it produced the published RESULT-REG-003;
-  `test_edgar.py` and `test_tag_resolution.py` both guard it. The correction lives in
-  `TIER_TAGS_REG006`.
-- Do not quote a single "recognition rate" — §4.10 shows the name covers three quantities 15%
-  apart at a three-year life. Do not quote a single "effective recognition rate" — α_eff is a
-  function of δ.
+- **DO NOT POLISH §4.9, §4.10 or §5.4.** §5.4 was amended surgically this session under REG-007
+  §7's *pre-committed* repairs and is otherwise closed. A registered amendment is not polish; a
+  second pass over the same prose would be.
+- **Do not edit `TIER_TAGS`.** PRE-001's constants are a contract; `test_edgar.py` and
+  `test_tag_resolution.py` guard them. Corrections live in `TIER_TAGS_REG006`.
+- **Do not widen REG-007's phrase set or keyword families.** They are frozen in REG-007 §3.2/§3.3
+  and running them as registered — dead keywords and all — is what makes the audit worth
+  anything. An extension is a new registration.
+- Do not quote a single "recognition rate" or a single "effective recognition rate" — §4.10 shows
+  the name covers three quantities 15% apart at a three-year life; α_eff is a function of δ.
 - Do not report a δ-rectangle share from REG-004 or REG-005 — both complements are empty and both
   were withheld deliberately, in advance.
-- **Do not read ladders A/R/A3's failure as evidence that absorption is absent.** F4b shows the
-  estimator loses half the signal in a world built to contain it. A null from an instrument that
-  registered its own under-powering is not a finding about the world.
+- **Do not read ladders A/R/A3's failure, or REG-007's null, as evidence about the world.** F4b
+  showed the estimator loses half the signal in a world built to contain it; REG-007's own
+  placebo shows its classifier reads boilerplate. A null from an instrument that registered or
+  measured its own blindness is a finding about the instrument.
 - Do not hand Jason a ranked list of problems as the deliverable. Do not run a pure-teardown pass.
 - Do not invoke Mayo or error-statistical philosophy as a warrant. Pragmatic justification.
 - Do not ask him to submit anything. Never add a free parameter to absorb an objection.
 - Do not rewrite or summarise the charter inside a handoff.
 - Adding a section means DELETING conduct narration elsewhere, not refreshing `.coach-baseline.json`.
-- **gate-selfcheck is PASS.** G-AE failed at the start of `-18`'s wrap — `com.braatz.flowers-dupe-verify`
-  was a loaded launchd job whose plist existed nowhere but darwin — and was fixed, not deferred
-  (`darwin-mac-ops` **782359d**). The three `HANDOFF-floristAlix-2.md` warnings are report-only
-  handoff-lint on another project's document. **If the GATE fails for you it is new.**
+- **gate-selfcheck is PASS.** If it fails for you it is new.
 
-## 8 · STUDENT-IN, AND THE ONE STEP `-17` AND `-18` BOTH SKIPPED
+## 8 · STUDENT-IN — `-19` FINALLY RAN IT, AND IT PAID
 
 ```
 python3 ~/repos/claude-blackbook/lessons.py doctrine
 python3 ~/repos/claude-blackbook/lessons.py search "<the task>" --scope global,wealth-tensor
 ```
 
-**Run the search BEFORE you write anything.** `-17` skipped it and said so; `-18` skipped it too
-and ran it only at teacher-out — where it confirmed no existing leaf covered either finding, which
-is a fine outcome but was luck rather than method. Two of the three run-costing mistakes in §0
-would have been caught by a leaf that now exists. **Then corroborate what you used:**
+`-17` and `-18` both skipped this. `-19` ran it before writing anything and the two
+preregistration leaves it surfaced (`2026-08-10-pre-registration-must-precede-instruments-code`,
+`2026-08-05-prediction-prediction-commit-order-commit-registration`) are why REG-007 went out as
+a **lone commit** with no instrument code in it. Both are now corroborated:
 `lessons.py use <id> --task <tag>` at student-in, `lessons.py record-outcome <tag> pass` at wrap.
+**Do the same.** Four new leaves this session — three global (disclosure selection, guard
+denominators, ordinal prose) and one project-scoped (EDGAR FTS operational facts, including that
+phrase-AND is **within-file**, that `hits.total` counts documents while `from=` silently repeats
+pages past the end, and that `data.sec.gov/submissions` is uncapped but `filings.recent` stops
+near 1,000 entries).
