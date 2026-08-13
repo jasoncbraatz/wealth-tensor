@@ -1,0 +1,81 @@
+panel: 1602 firms · 9782 firm-years (3897 retail / 5885 computer services)
+======================================================================================
+FALSIFIERS — all six before any ladder
+======================================================================================
+
+  F1 · tag resolution over 9782 firm-years
+     tier 0 (corrected) firm-years > 0 : 1080
+     tier 1                           : 401
+     tier 2                           : 236
+     tier 3 (goodwill)                : 737
+     ImpairmentOfLongLivedAssetsHeldAndUsed firm-years > 0 : 0   <-- the registered element
+  SEVERE     every corrected tier resolves to a non-zero number of firm-years
+  SEVERE     the registered tier-0 element matches nothing (REG-006 §1)
+
+  F2 · KPMG Example 4.4.10:  goodwill first = 700  · sequenced = 0
+  SEVERE     sequencing converts KPMG's goodwill impairment to zero
+  SEVERE     absorption is one-for-one strictly inside the region
+
+  F3 · synthetic WITH absorption, gap independent of L: tobit slope = -1.031 (n=3000, censored=1314)
+       same world, absorption OFF, same censoring: -0.023
+  SEVERE     the censored estimator recovers -1 when absorption is the only mechanism
+  F4 · synthetic PURE COUPLING, no absorption: tobit slope = +0.747
+  SEVERE     the estimator returns a POSITIVE slope on a world with no absorption
+  F4b· coupling AND absorption together : +0.455   (same world, absorption switched OFF: +0.963)
+       → the CROSS-SECTIONAL LEVEL is confounded by shock size; the DIFFERENCE, -0.508, is the absorption term.
+       → TRUE latent difference is 1.000 by construction; the estimator
+         recovers 0.508, an ATTENUATION FACTOR of 0.508.
+         This is REG-006 §4 A2's registered attenuation, arriving in the
+         FALSIFIER rather than in the data. THE SIGN SURVIVES IT; NO
+         MAGNITUDE CLAIM MAY BE READ FROM ANY LADDER IN THIS FILE.
+  SEVERE     switching absorption off moves the slope UP (A2 registers the size as a LOWER BOUND, so the sign is the testable content)
+
+======================================================================================
+LADDER A — the absorption slope, by sector and regime
+======================================================================================
+
+  Q4 GUARD
+    firm-years with L>0                        : 1501
+    INELIGIBLE (no goodwill; test never applied): 422
+    ELIGIBLE   (goodwill existed)              : 1079   <- the registered denominator
+    UNRESOLVED (material unexplained roll-up)   : 43 (4.0%)   ceiling 15%
+    [for transparency: treating ANY positive roll-up as a threat, regardless of whether the tagged components already explain it, gives 497]
+  SEVERE     the unresolved bin is below the registered ceiling
+
+  cell                                   n  n_G>0    tobit            95% CI   OLS|G>0
+  pilot/PRE                            503     85   +1.608    [-0.00, +3.38]    +3.296
+  pilot/POST                           417     86   +0.010    [+0.01, +0.29]    +0.010
+  replication/PRE                      220     55   -0.008    [-0.06, +0.17]    +0.878
+  replication/POST                     318     83   +0.665    [-0.07, +1.00]    +0.665
+
+  the OLS|G>0 column is the DELIBERATELY WRONG VARIANT (REG-006 §3 Q3):
+  it conditions on the goodwill charge surviving, which is exactly the
+  observation absorption removes. It is printed so the selection is visible.
+
+======================================================================================
+LADDER R — the regime contrast across ASU 2017-04
+======================================================================================
+
+  pilot          PRE +1.608 (n=503)   POST +0.010 (n=417)   Δ = -1.599
+
+  replication    PRE -0.008 (n=220)   POST +0.665 (n=318)   Δ = +0.674
+
+======================================================================================
+LADDER R-placebo — the regime contrast across ASU 2017-04  (PLACEBO 2016-12-15)
+======================================================================================
+
+  pilot          PRE +2.255 (n=287)   POST +0.010 (n=633)   Δ = -2.245
+
+  replication    PRE +0.035 (n=106)   POST +0.561 (n=432)   Δ = +0.526
+
+======================================================================================
+LADDER A3 — attenuation by entity aggregation (single vs multi segment)
+======================================================================================
+  firm-years with a reported segment count: 1130
+  single-segment       578  tobit slope +0.263
+  multi-segment        552  tobit slope -0.009
+
+
+------------------------------------------------------------------------------
+SEVERITY: 8 severe · 0 definitional · 0 failed/vacuous
+------------------------------------------------------------------------------

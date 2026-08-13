@@ -1,0 +1,51 @@
+{
+ "_what": "Tag resolution audit. For each us-gaap element the project names, the number of facts and firms it matches in the REGISTERED PRE-002/REG-003 sample (data/pre-002-events.json, all 307 firms, FY2013-2024).",
+ "_why": "A tag name that matches nothing is indistinguishable, in every downstream statistic, from a tag name that matches nothing IN THIS SAMPLE: both contribute zero events and neither raises an error. TIER_TAGS[0] shipped a misspelled element for the life of the project and nothing noticed. This file is what tests/test_tag_resolution.py checks against, offline.",
+ "_source": "session wealthTensor-18, REG-006 \u00a71, cloud container, data.sec.gov companyfacts",
+ "_sample": {
+  "firms": 307,
+  "window": "FY2013-2024"
+ },
+ "tags": {
+  "AssetImpairmentCharges": {
+   "facts": 4742,
+   "firms": 201
+  },
+  "GoodwillAndIntangibleAssetImpairment": {
+   "facts": 1637,
+   "firms": 131
+  },
+  "GoodwillImpairmentLoss": {
+   "facts": 5004,
+   "firms": 259
+  },
+  "ImpairmentOfIntangibleAssetsFinitelived": {
+   "facts": 1732,
+   "firms": 155
+  },
+  "ImpairmentOfIntangibleAssetsIndefinitelivedExcludingGoodwill": {
+   "facts": 1040,
+   "firms": 94
+  },
+  "ImpairmentOfLeasehold": {
+   "facts": 213,
+   "firms": 27
+  },
+  "ImpairmentOfLongLivedAssetsHeldAndUsed": {
+   "facts": 0,
+   "firms": 0
+  },
+  "ImpairmentOfLongLivedAssetsHeldForUse": {
+   "facts": 2202,
+   "firms": 126
+  },
+  "ImpairmentOfLongLivedAssetsToBeDisposedOf": {
+   "facts": 679,
+   "firms": 71
+  },
+  "TangibleAssetImpairmentCharges": {
+   "facts": 930,
+   "firms": 61
+  }
+ }
+}

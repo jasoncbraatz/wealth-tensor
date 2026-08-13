@@ -49,6 +49,27 @@ TIER_TAGS: dict[int, tuple[str, ...]] = {
     3: ("GoodwillImpairmentLoss",),
 }
 
+#: REG-006 §1 · THE CORRECTED TIER 0. `TIER_TAGS` above is what PRE-001 registered and what
+#: produced the published RESULT-REG-003, so it is NOT edited: editing it would make the code
+#: and the published table disagree about what was measured. But its first element,
+#: `ImpairmentOfLongLivedAssetsHeldAndUsed`, is not a us-gaap element at all -- it matches ZERO
+#: facts across all 307 firms of the registered sample (data/tag-resolution-audit.json). The
+#: element that exists is `ImpairmentOfLongLivedAssetsHeldForUse`, and it matches 2,202 facts
+#: across 126 of those same firms. Tier 0 was therefore seeing 52.6% of retail and 44.4% of
+#: computer-services firms, and the cause was a spelling.
+#:
+#: A tag that matches nothing is indistinguishable, downstream, from a tag that matches nothing
+#: IN THIS SAMPLE. tests/test_tag_resolution.py is the guard; REG-006 is the registration under
+#: which the correction is used. Instruments from wt092 onward take this list.
+TIER_TAGS_REG006: dict[int, tuple[str, ...]] = {
+    0: ("ImpairmentOfLongLivedAssetsHeldForUse",
+        "TangibleAssetImpairmentCharges",
+        "ImpairmentOfLeasehold"),
+    1: TIER_TAGS[1],
+    2: TIER_TAGS[2],
+    3: TIER_TAGS[3],
+}
+
 #: Tagged as a combined goodwill-and-intangible charge. PRE-001 s5.2 assigns it to tier 3 only
 #: when no separate tier-1/2 charge is reported in the same quarter, because otherwise it is a
 #: roll-up that would double-count.

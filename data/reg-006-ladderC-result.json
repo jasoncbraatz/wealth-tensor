@@ -1,0 +1,402 @@
+{
+ "B": {
+  "original": {
+   "multi_tier_firms": 91,
+   "pilot": {
+    "n_fq": 212,
+    "n_co": 29,
+    "null_mean": 7.2292,
+    "ci": [
+     3,
+     12
+    ],
+    "p_two_sided": 0.00019998000199980003,
+    "direction": "ABOVE",
+    "cells": [
+     {
+      "pair": "PP&E \u00d7 finite-lived intangible",
+      "p": 1.0,
+      "obs": 0,
+      "exp": 0.032
+     },
+     {
+      "pair": "PP&E \u00d7 indefinite-lived intangible",
+      "p": 0.5787421257874212,
+      "obs": 1,
+      "exp": 0.3059
+     },
+     {
+      "pair": "PP&E \u00d7 goodwill",
+      "p": 0.012798720127987202,
+      "obs": 4,
+      "exp": 1.1017
+     },
+     {
+      "pair": "finite-lived intangible \u00d7 indefinite-lived intangible",
+      "p": 0.006399360063993601,
+      "obs": 4,
+      "exp": 0.7575
+     },
+     {
+      "pair": "finite-lived intangible \u00d7 goodwill",
+      "p": 0.0021997800219978004,
+      "obs": 8,
+      "exp": 2.3931
+     },
+     {
+      "pair": "indefinite-lived intangible \u00d7 goodwill",
+      "p": 0.00019998000199980003,
+      "obs": 16,
+      "exp": 2.7466
+     }
+    ],
+    "holm": [
+     {
+      "pair": "indefinite-lived intangible \u00d7 goodwill",
+      "p": 0.00019998000199980003,
+      "p_holm": 0.0011998800119988001
+     },
+     {
+      "pair": "finite-lived intangible \u00d7 goodwill",
+      "p": 0.0021997800219978004,
+      "p_holm": 0.010998900109989003
+     },
+     {
+      "pair": "finite-lived intangible \u00d7 indefinite-lived intangible",
+      "p": 0.006399360063993601,
+      "p_holm": 0.025597440255974404
+     },
+     {
+      "pair": "PP&E \u00d7 goodwill",
+      "p": 0.012798720127987202,
+      "p_holm": 0.038396160383961604
+     },
+     {
+      "pair": "PP&E \u00d7 indefinite-lived intangible",
+      "p": 0.5787421257874212,
+      "p_holm": 1.0
+     },
+     {
+      "pair": "PP&E \u00d7 finite-lived intangible",
+      "p": 1.0,
+      "p_holm": 1.0
+     }
+    ],
+    "power": {
+     "0.05": 1.0,
+     "0.1": 1.0,
+     "0.2": 1.0,
+     "0.4": 1.0
+    }
+   },
+   "replication": {
+    "n_fq": 391,
+    "n_co": 43,
+    "null_mean": 21.3983,
+    "ci": [
+     15,
+     28
+    ],
+    "p_two_sided": 0.00019998000199980003,
+    "direction": "ABOVE",
+    "cells": [
+     {
+      "pair": "PP&E \u00d7 finite-lived intangible",
+      "p": 1.0,
+      "obs": 1,
+      "exp": 0.7016
+     },
+     {
+      "pair": "PP&E \u00d7 indefinite-lived intangible",
+      "p": 1.0,
+      "obs": 0,
+      "exp": 0.2195
+     },
+     {
+      "pair": "PP&E \u00d7 goodwill",
+      "p": 0.0031996800319968005,
+      "obs": 5,
+      "exp": 1.209
+     },
+     {
+      "pair": "finite-lived intangible \u00d7 indefinite-lived intangible",
+      "p": 0.0013998600139986002,
+      "obs": 9,
+      "exp": 3.6085
+     },
+     {
+      "pair": "finite-lived intangible \u00d7 goodwill",
+      "p": 0.00019998000199980003,
+      "obs": 23,
+      "exp": 10.4076
+     },
+     {
+      "pair": "indefinite-lived intangible \u00d7 goodwill",
+      "p": 0.00039996000399960006,
+      "obs": 15,
+      "exp": 6.4097
+     }
+    ],
+    "holm": [
+     {
+      "pair": "finite-lived intangible \u00d7 goodwill",
+      "p": 0.00019998000199980003,
+      "p_holm": 0.0011998800119988001
+     },
+     {
+      "pair": "indefinite-lived intangible \u00d7 goodwill",
+      "p": 0.00039996000399960006,
+      "p_holm": 0.001999800019998
+     },
+     {
+      "pair": "finite-lived intangible \u00d7 indefinite-lived intangible",
+      "p": 0.0013998600139986002,
+      "p_holm": 0.005599440055994401
+     },
+     {
+      "pair": "PP&E \u00d7 goodwill",
+      "p": 0.0031996800319968005,
+      "p_holm": 0.009599040095990401
+     },
+     {
+      "pair": "PP&E \u00d7 finite-lived intangible",
+      "p": 1.0,
+      "p_holm": 1.0
+     },
+     {
+      "pair": "PP&E \u00d7 indefinite-lived intangible",
+      "p": 1.0,
+      "p_holm": 1.0
+     }
+    ],
+    "power": {
+     "0.05": 1.0,
+     "0.1": 1.0,
+     "0.2": 1.0,
+     "0.4": 1.0
+    }
+   },
+   "verdict": [
+    "ABOVE",
+    "ABOVE"
+   ]
+  },
+  "corrected": {
+   "multi_tier_firms": 110,
+   "pilot": {
+    "n_fq": 258,
+    "n_co": 41,
+    "null_mean": 10.2355,
+    "ci": [
+     5,
+     16
+    ],
+    "p_two_sided": 0.00019998000199980003,
+    "direction": "ABOVE",
+    "cells": [
+     {
+      "pair": "PP&E \u00d7 finite-lived intangible",
+      "p": 0.008599140085991401,
+      "obs": 3,
+      "exp": 0.3898
+     },
+     {
+      "pair": "PP&E \u00d7 indefinite-lived intangible",
+      "p": 0.0015998400159984002,
+      "obs": 4,
+      "exp": 0.6318
+     },
+     {
+      "pair": "PP&E \u00d7 goodwill",
+      "p": 0.00019998000199980003,
+      "obs": 14,
+      "exp": 3.5127
+     },
+     {
+      "pair": "finite-lived intangible \u00d7 indefinite-lived intangible",
+      "p": 0.0059994000599940004,
+      "obs": 4,
+      "exp": 0.7537
+     },
+     {
+      "pair": "finite-lived intangible \u00d7 goodwill",
+      "p": 0.0011998800119988001,
+      "obs": 8,
+      "exp": 2.39
+     },
+     {
+      "pair": "indefinite-lived intangible \u00d7 goodwill",
+      "p": 0.00019998000199980003,
+      "obs": 16,
+      "exp": 2.7325
+     }
+    ],
+    "holm": [
+     {
+      "pair": "PP&E \u00d7 goodwill",
+      "p": 0.00019998000199980003,
+      "p_holm": 0.0011998800119988001
+     },
+     {
+      "pair": "indefinite-lived intangible \u00d7 goodwill",
+      "p": 0.00019998000199980003,
+      "p_holm": 0.0011998800119988001
+     },
+     {
+      "pair": "finite-lived intangible \u00d7 goodwill",
+      "p": 0.0011998800119988001,
+      "p_holm": 0.0047995200479952005
+     },
+     {
+      "pair": "PP&E \u00d7 indefinite-lived intangible",
+      "p": 0.0015998400159984002,
+      "p_holm": 0.0047995200479952005
+     },
+     {
+      "pair": "finite-lived intangible \u00d7 indefinite-lived intangible",
+      "p": 0.0059994000599940004,
+      "p_holm": 0.011998800119988001
+     },
+     {
+      "pair": "PP&E \u00d7 finite-lived intangible",
+      "p": 0.008599140085991401,
+      "p_holm": 0.011998800119988001
+     }
+    ],
+    "power": {
+     "0.05": 1.0,
+     "0.1": 1.0,
+     "0.2": 1.0,
+     "0.4": 1.0
+    }
+   },
+   "replication": {
+    "n_fq": 419,
+    "n_co": 53,
+    "null_mean": 25.2969,
+    "ci": [
+     18,
+     33
+    ],
+    "p_two_sided": 0.00019998000199980003,
+    "direction": "ABOVE",
+    "cells": [
+     {
+      "pair": "PP&E \u00d7 finite-lived intangible",
+      "p": 0.29917008299170084,
+      "obs": 4,
+      "exp": 2.3782
+     },
+     {
+      "pair": "PP&E \u00d7 indefinite-lived intangible",
+      "p": 0.04839516048395161,
+      "obs": 2,
+      "exp": 0.3011
+     },
+     {
+      "pair": "PP&E \u00d7 goodwill",
+      "p": 0.028197180281971802,
+      "obs": 8,
+      "exp": 3.6824
+     },
+     {
+      "pair": "finite-lived intangible \u00d7 indefinite-lived intangible",
+      "p": 0.0011998800119988001,
+      "obs": 9,
+      "exp": 3.623
+     },
+     {
+      "pair": "finite-lived intangible \u00d7 goodwill",
+      "p": 0.00019998000199980003,
+      "obs": 23,
+      "exp": 10.3547
+     },
+     {
+      "pair": "indefinite-lived intangible \u00d7 goodwill",
+      "p": 0.00039996000399960006,
+      "obs": 15,
+      "exp": 6.4111
+     }
+    ],
+    "holm": [
+     {
+      "pair": "finite-lived intangible \u00d7 goodwill",
+      "p": 0.00019998000199980003,
+      "p_holm": 0.0011998800119988001
+     },
+     {
+      "pair": "indefinite-lived intangible \u00d7 goodwill",
+      "p": 0.00039996000399960006,
+      "p_holm": 0.001999800019998
+     },
+     {
+      "pair": "finite-lived intangible \u00d7 indefinite-lived intangible",
+      "p": 0.0011998800119988001,
+      "p_holm": 0.0047995200479952005
+     },
+     {
+      "pair": "PP&E \u00d7 goodwill",
+      "p": 0.028197180281971802,
+      "p_holm": 0.08459154084591541
+     },
+     {
+      "pair": "PP&E \u00d7 indefinite-lived intangible",
+      "p": 0.04839516048395161,
+      "p_holm": 0.09679032096790322
+     },
+     {
+      "pair": "PP&E \u00d7 finite-lived intangible",
+      "p": 0.29917008299170084,
+      "p_holm": 0.29917008299170084
+     }
+    ],
+    "power": {
+     "0.05": 1.0,
+     "0.1": 1.0,
+     "0.2": 1.0,
+     "0.4": 1.0
+    }
+   },
+   "verdict": [
+    "ABOVE",
+    "ABOVE"
+   ]
+  }
+ },
+ "drops": {
+  "original": {
+   "no_sic": 0,
+   "sic_out_of_range": 0,
+   "no_revenue_tag": 179,
+   "insufficient_history": 1206,
+   "below_materiality": 1492,
+   "no_assets_denominator": 117,
+   "no_deterioration_run": 0,
+   "right_censored": 82,
+   "ambiguous_tier": 153,
+   "duplicate_restated_fact": 9734
+  },
+  "corrected": {
+   "no_sic": 0,
+   "sic_out_of_range": 0,
+   "no_revenue_tag": 179,
+   "insufficient_history": 1317,
+   "below_materiality": 2341,
+   "no_assets_denominator": 193,
+   "no_deterioration_run": 0,
+   "right_censored": 94,
+   "ambiguous_tier": 153,
+   "duplicate_restated_fact": 12572
+  }
+ },
+ "n_events": {
+  "original": {
+   "pilot": 243,
+   "replication": 439
+  },
+  "corrected": {
+   "pilot": 303,
+   "replication": 476
+  }
+ }
+}
