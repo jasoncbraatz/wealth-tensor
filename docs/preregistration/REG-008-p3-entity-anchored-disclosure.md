@@ -439,10 +439,21 @@ every M1/M2/M3 pattern is run against the corpus and its hit count written to
 `RESULT-REG-008`.** §2.5 predicts four of them. *Kills nothing; makes EMPTY distinguishable from
 ABSENT.*
 
-**F8 · THE ARM LABEL IS NOT READ BEFORE THE FALSIFIERS PASS.** `wt096` computes F1–F7 from
-arm-blind rows and raises if any falsifier function touches the `arm` key. **This is §2.6 promoted
-from a lesson to a mechanism**, and it is the one falsifier whose subject is the analyst rather
-than the filings. *Kills the run.*
+**F8 · THE ARM LABEL IS NOT READ BY ANY FALSIFIER THAT DOES NOT DECLARE IT.** `wt096` computes
+**F2–F7** from rows whose `arm`, `universe`, `sic`, `G`, `t_sum` and `A` keys have been deleted,
+and raises if any of those functions touches a deleted key. **F1 is the single declared exception**
+— the placebo gate is arm-conditional by construction, it is the SEEN quantity of §2.6, and it
+receives the arm label and nothing else: never the universe label, which P1 depends on and which
+remains unseen until F1–F10 have passed. **This is §2.6 promoted from a lesson to a mechanism**,
+and it is the one falsifier whose subject is the analyst rather than the filings. *Kills the run.*
+
+> **ERRATUM, 2026-08-13, before `wt096` existed and before any statistic below had a value.** As
+> first written this falsifier said "computes F1–F7 from arm-blind rows", which F1 cannot do: the
+> placebo gate is a comparison between arms. The inconsistency was found while writing the
+> instrument and is corrected here rather than resolved silently in code — a registration that
+> contradicts itself gets amended in public, dated, with the reason, or it is not a registration.
+> Nothing else moved; F1's threshold, its status as a gate, and §3.5's SEEN/UNSEEN table are
+> unchanged. `git log -S` dates this edit, which is the check `-21` established for exactly this.
 
 **F9 · THE UNIVERSE SPLIT IS COMPUTED ONCE.** Assert that the retail and computer-services cells
 are computed in the same pass as the pooled figure and printed together, so that a thin cell
