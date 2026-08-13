@@ -44,7 +44,9 @@ apply, so state it as a test:
 > **A candidate for σ is admissible only if it measures the volatility of news about the
 > value of THE ASSET WHOSE RECOGNITION IS BEING TIMED.** Not the firm. Not the equity.
 
-Equity return volatility fails this on three independent counts, any one of which is fatal:
+Equity return volatility fails this on three independent counts, any one of which is
+fatal — **and only the second of the three is what the dominant-asset restriction
+addresses; §4c measures the other two**:
 it is levered (so it moves with capital structure, which is not in the model); it aggregates
 every asset the firm holds (so for a multi-asset firm it is a weighted mixture in which the
 asset under test may be a small term); and it prices growth options that correspond to no
@@ -283,6 +285,12 @@ Candidate families, with what each supplies and what each costs:
   overwhelmingly the balance sheet, so the equity series approximates one asset: supplies a
   σ that passes §2 only to the extent the restriction bites, and the extent is measurable
   rather than assumed. **Measured in §4a. It bites, and it bites asymmetrically.**
+  **AND IT BITES ON ONE COUNT OF THREE — §4c.** The restriction is aimed at aggregation;
+  leverage and growth options survive every threshold. §4c measures the first (the
+  PP&E arm is the most levered of the three classes, medians 0.113 against 0.641 and
+  0.605), leaves the third unmeasured for want of a market-data source, and finds a
+  fourth objection §2 never listed: 35 of the 99 survivors have total assets under
+  \$1M.
 
 ## 4a · The dominant-asset restriction, priced
 
@@ -374,13 +382,205 @@ on the page as a finding. §4a wrote a scope ruling on that zero.
    assumed by absence.
 3. **The 0.70 threshold no longer chooses itself.** It was picked where the sample still
    had survivors. On the panel, 0.80 keeps 59 firms and buys a much tighter restriction,
-   which is exactly the trade §2 cares about.
+   ~~which is exactly the trade §2 cares about.~~ **INVERTED BY §4c: it is not that
+   trade.** Tightening the threshold buys concentration by trading real firms for
+   shells — median total assets fall \$33.5M → \$12.0M → \$4.76M → \$1.28M across the
+   four thresholds, and the sub-\$1M share rises 0.216 → 0.291 → 0.354 → **0.475**. At
+   0.80 nearly half the survivors have a balance sheet smaller than a house.
 
 **Refusals, since they are the guard reporting for duty.** Seven firms produced an
 impossible class share and were excluded by name, the largest an intangibles share of
 **704** — one balance sheet divided by another, loudly. That is the defect §4a's probe
 shipped and this file's `IMPOSSIBLE` constant now refuses; at panel scale it fires seven
 times, and at sample scale it fired once.
+
+## 4c · The restriction against §2's OTHER two counts — and the size nobody read
+
+`wealthTensor-26`, 2026-08-13. §6's step 5, and it does not get as far as σ, because the
+step before it had not been taken. Probe: `scripts/source001_sigma_admissibility.py`,
+run from the cloud against `data/source-001-concentration-full.json` and
+`data.sec.gov`, per-firm records in `data/source-001-sigma-admissibility.json`. The
+report regenerates offline from that artifact with `--from-json`.
+
+**The gap, stated plainly.** §2 rejects equity return volatility on **three independent
+counts, "any one of which is fatal"**: it is levered, it aggregates every asset the firm
+holds, and it prices growth options corresponding to no recognised asset. §4's third
+candidate family — the dominant-asset restriction — is aimed at the **second** count, and
+§4a and §4b priced how hard it bites there. §6 step 3 then promotes the result to
+*"equity-return volatility for PP&E-dominant firms only, where the restriction is what
+makes it admissible under §2 rather than a proxy in violation of it."*
+
+That is one count doing three counts' work. A restaurant chain that is 87 per cent PP&E
+is still levered and still holds growth options; concentration of **assets** is silent
+about capital structure and silent about what the equity prices beyond the balance sheet.
+By §2's own arithmetic — any one is fatal — a restriction that clears one leaves two
+standing. **`levered` and `growth options` appear exactly once each in this repository:
+in the sentence that declares them fatal.** Nothing between there and §6 step 3 returns
+to them. Running the volatility probe on the strength of that sentence would have
+committed WT-038 with the restriction serving as the alibi.
+
+### The count that was not in §2 at all: the denominator's size
+
+A class share is a **ratio**, and a ratio is silent about how big its denominator is. The
+cheapest way for one asset class to be four-fifths of a balance sheet is for there to be
+almost no balance sheet.
+
+| | firms | composition | median total assets | current registrant |
+|---|---|---|---|---|
+| **≥ 0.70, no floor** | **99** | ppe 47, gw 18, int 34 | **$4.76M** | 24 / 99 = 0.242 |
+| ≥ 0.70, assets ≥ $1M | 64 | ppe 28, gw 17, int 19 | $21.0M | 18 / 64 = 0.281 |
+| ≥ 0.70, assets ≥ $10M | 40 | ppe 19, gw 12, int 9 | $95.5M | 13 / 40 = 0.325 |
+| ≥ 0.70, assets ≥ $100M | 18 *(THIN)* | ppe 10, gw 7, int 1 | $895M | 4 / 18 = 0.222 |
+
+**35 of the 99 have total assets under one million dollars.** The smallest is a
+PP&E-dominant filer with **$388** of total assets, of which about $283 is property. It
+passes every guard §4a and §4b carry — the period match, the `IMPOSSIBLE` refusal — and
+it is counted, correctly, as one of the 99 firms whose equity series is supposed to
+approximate a single decaying asset.
+
+**And the restriction is concentrating these filers, not inheriting them.** The panel's
+matchable firms are 0.128 sub-$1M in the complement of the restriction and **0.354**
+inside it — **z = +6.18** (sub-$10M: 0.236 against 0.596, **z = +7.86**). The mechanism
+is not subtle and it is monotone in the threshold:
+
+| threshold | firms | median total assets | under $1M |
+|---|---|---|---|
+| 0.50 | 255 | $33.5M | 0.216 |
+| 0.60 | 148 | $12.0M | 0.291 |
+| 0.70 | 99 | $4.76M | 0.354 |
+| **0.80** | **59** | **$1.28M** | **0.475** |
+
+So **§4b's third consequence inverts.** It reads: *"The 0.70 threshold no longer chooses
+itself. On the panel, 0.80 keeps 59 firms and buys a much tighter restriction, which is
+exactly the trade §2 cares about."* The tighter restriction is bought by trading real
+firms for shells — at 0.80 nearly half the survivors have balance sheets under a million
+dollars, and the median is $1.28M. Tightening the threshold makes the sample **less**
+able to carry the design, not more. The trade §2 cares about is not the trade the
+threshold makes.
+
+`MATERIALITY_FLOORS` is now swept in the probe rather than assumed, because *which* floor
+to use is REG-009's choice to defend; this document's job is only to price it. What the
+price looks like: **§4b's 99 — the number a power calculation was to lean on — is 40 at
+$10M and 18 at $100M.**
+
+### Count 1, measured: the restriction and leverage pull in opposite directions
+
+Book equity over assets, period-matched to the same balance sheet the class share came
+off. Under the accounting identity E/A **is** the deleveraging factor E/(D+E), so
+σ_asset ≈ σ_equity × E/A, and 1/(E/A) is the factor by which an equity vol overstates the
+asset vol it is standing in for.
+
+At the $10M floor, on the 40 firms that survive it:
+
+| class | n | median E/A | IQR | E/A < 0.50 |
+|---|---|---|---|---|
+| **ppe** | 19 *(THIN)* | **0.113** | [−0.381, 0.545] | 14 / 19 |
+| goodwill | 12 *(THIN)* | 0.641 | [0.344, 0.838] | 5 / 12 |
+| intangibles | 9 *(THIN)* | 0.605 | [0.226, 0.822] | 3 / 9 |
+| **ALL** | **40** | **0.384** | | |
+
+The pooled median implies **σ_equity ≈ 2.6 × σ_asset**, and the multiplier is not a
+constant to be divided out — the IQR spans firms where it is near 1 and firms where book
+equity is negative and the ratio has no sign to speak of.
+
+**The class-level reading, which is the part that bears on §6 step 3, and the reason it
+is stated carefully.** All three class buckets are under `THIN`, so their *rates* are
+refused. What survives refusal is the comparison itself: on the share below E/A 0.50,
+ppe against intangibles gives **z = +2.04**, and the PP&E median of 0.113 against 0.605
+and 0.641 is a gap no reasonable n makes disappear. **The class §6 step 3 named as the
+right first probe is the most levered of the three, and mechanically so: property is
+collateral, collateral supports debt, so PP&E-dominance and leverage are one phenomenon
+observed twice.** The restriction buys count 2 by selecting exactly the firms that fail
+count 1 hardest. That is not a coincidence to be controlled for; it is the same balance
+sheet read from either side.
+
+At **no floor** the same table reads ppe −0.476, intangibles −0.009, all-firms 0.052 —
+true numbers about a population half of which is book-insolvent, and a demonstration of
+why the floor has to be stated before the median is quoted.
+
+### Count 3: not measured, and the reason recorded rather than elided
+
+Growth options need **market** equity, and no market-data source was reachable from the
+container this ran in. **That is a fact about the instrument and not about the firms** —
+§3's error, and the one this document keeps meeting. It is recorded in the artifact as
+`count3_measured: false` with its reason, so nothing downstream can read the silence as a
+zero. What would close it: market capitalisation at each matched period end, hence
+market-to-book, from a **delisted-inclusive** price source.
+
+### Reach: whether the price series can be got at all
+
+Two instruments, because one instrument agreeing with itself is one instrument.
+
+| class | n | last fy_end ≤ 2019 | current registrant |
+|---|---|---|---|
+| **ppe** | 47 | **38 / 47 = 0.809** | **4 / 47 = 0.085** |
+| goodwill | 18 *(THIN)* | 7 / 18 = 0.389 | 6 / 18 = 0.333 |
+| intangibles | 34 | 16 / 34 = 0.471 | 14 / 34 = 0.412 |
+
+The two agree without touching each other: current-registrant presence is **0 / 61** for
+firms whose last panel balance sheet is 2019 or earlier and **23 / 32** for 2023 or
+later. ppe against intangibles on the registrant rate is **z = −3.49**.
+
+**What this does and does not say, because the difference is this document's whole
+recurring subject.** `company_tickers.json` lists **current** registrants; a firm
+delisted in 2016 is absent from it *by construction*. So 4 / 47 is **not** evidence that
+no price series exists for those firms — that would be §3's 404 read as a fact about the
+filer, in a new coat. What is established, by two independent instruments, is the
+antecedent: **the PP&E-dominant arm is overwhelmingly composed of firms that stopped
+filing years ago**, median last balance sheet **2016**. Their price histories, if wanted,
+must come from a delisted-inclusive source, which is a cost this design has never been
+quoted.
+
+### Structural or terminal
+
+A firm in wind-down writes off goodwill and sells inventory, and what is left is
+property — so distress **mechanically** concentrates a balance sheet, and the dominance
+that licenses the restriction may be an artifact of dying rather than a description of
+the business. The class share is recomputed at every period end the filer reports and
+compared with the share three years earlier.
+
+Of the 47 PP&E-dominant firms, only **31** have a matched balance sheet three years
+before their last; of those, **17 / 31 = 0.548** were already dominant then, with a
+median rise of **+0.142**. So about half the arm's dominance is structural and about half
+arrives late. **And the sample answering the question is itself selected**: the lag is
+unobservable for the other 16 precisely *because* they are short-lived filers, which is
+the same fact the reach table reports. This is a direction, not a rate, and it is
+reported as one.
+
+### What this changes
+
+1. **§6 step 3's sentence does not survive.** The restriction makes equity volatility
+   admissible on count 2 alone. Counts 1 and 3 are untouched by any threshold, count 1 is
+   measured here and is **worse** for the PP&E arm than for either other class, and count
+   3 has not been measured at all. A σ probe run on the 47 would produce a number, and
+   §2's own test would reject it.
+2. **§4b's "large enough to run something" needs its floor written on**, exactly as
+   §3a's "flat across a decade" needed its slice. 99 is right. 99 *firms of the size a
+   power calculation assumes* is 40 at $10M and 18 at $100M, and 4 of the 18 are
+   currently listed.
+3. **The intangibles arm's open question is answered without needing the argument.**
+   §4b left it live and `-24` offered an untested read — that recognised intangibles sit
+   nearer the goodwill objection than the vessel case. That argument may well be right
+   and it is not needed: the arm is 34 firms with a **median size of $1.28M**, nine of
+   which clear $10M and one of which clears $100M. Whether they pass §2 is downstream of
+   whether there are enough of them to matter. *(A class claim from the n=1 cell at
+   $100M would be §4b's own error a second time, and is not made here.)*
+4. **The two families §4 named as passing §2 — assets with their own price series, and
+   the dominant-asset restriction — are now one family.** The restriction does not
+   deliver an admissible σ; it delivers a σ with one of three objections answered, on a
+   sample that is small, levered, short-lived and, at the margin, trivial. §5's
+   observable-region argument was about a *disjointness*; this is the same disjointness
+   arriving as arithmetic on our own panel.
+
+**What this does NOT establish.** Count 3 is unmeasured, so no claim is made about growth
+options either way. Book leverage is not market leverage, and E/A at book understates
+the deleveraging factor for a firm trading above book — the direction of that error
+favours the design and is stated so it can be checked rather than assumed. Every
+class-level bucket at the $10M floor is under `THIN` and its rates are refused; only the
+pooled row and the between-class comparisons are reported. The materiality floors are
+round numbers chosen to show the shape of the curve, not a recommendation: **the probe
+prices the choice, it does not make it.** And nothing here touches δ, whose coverage
+surface is measured and whose design §3b has already priced.
 
 ## 5 · The selection problem, which is the whole difficulty
 
@@ -436,7 +636,10 @@ In order, each cheap and each decisive:
    **PP&E-dominant firms only**, where the restriction is what makes it admissible under §2
    rather than a proxy in violation of it — and that remains the right *first* probe, but
    §4b removes the claim that it is the *only* one available. **47 PP&E-dominant firms at
-   0.70, not 5.**
+   0.70, not 5.** — **AND THE PROBE THIS STEP DESCRIBES IS NOT YET RUNNABLE: §4c.** The
+   clause *"where the restriction is what makes it admissible under §2"* is one count
+   doing three counts' work. §2 declared each of the three fatal on its own; the
+   restriction addresses aggregation and nothing else.
 
 ~~**Do not skip to step 3.**~~ **Both cheap steps are now run, and the instruction earned
 its keep twice.** Step 2 turned "restrict to dominant-asset firms" from an option into a
@@ -460,16 +663,28 @@ lifetime design has a **year-window decision** to make in its first section, alo
 with a per-year, per-fiscal-calendar weight and say why. That is a design choice with a
 measured price on it, which is the condition this document exists to produce.
 
-**Step 5, and it is now the only cheap one left.** σ. §4b named the first probe —
-equity-return volatility on the 47 PP&E-dominant firms at 0.70 — and left the 34
-intangibles-dominant firms unassessed against §2. Nothing in `-25` touched either.
+~~**Step 5, and it is now the only cheap one left.**~~ **RUN — §4c, and it did not
+reach σ, because the step before it had not been taken.** The 47 are the most levered
+of the three classes, 38 of them stopped filing by 2019, and 35 of the 99 have total
+assets under \$1M. The 34 intangibles-dominant firms are assessed — not by the §2
+argument `-24` proposed, which §4c does not need, but by size: median total assets
+\$1.28M, nine above \$10M, one above \$100M.
+
+**Step 6, which is what replaces it, and it is a DESIGN step rather than a measurement.**
+REG-009 §1 can now be written, and §4c hands it a priced δ/σ split rather than an open
+one: δ has 0.82 coverage over thousands of firm-years with a known year-window cost
+(§3b); σ has 40 firms at a \$10M floor, of which 13 are currently listed, before count 3
+is even measured. The one measurement still worth buying is count 3 — market-to-book at
+each matched period end, from a delisted-inclusive price source — and it is worth buying
+only if REG-009 chooses σ anyway.
 
 ---
 
 *Written against `RESULT-REG-003` §4, `REG-008` §6, and paper III §§4.7–4.8. §3's probes
 were throwaway scripts, which is part of why their conclusion outlived its evidence;
-§3a's, §4a's and §3b's are committed — `scripts/source001_lifetime_coverage.py`,
-`scripts/source001_concentration.py` and `scripts/source001_lifetime_by_fyend.py` — and
+§3a's, §4a's, §3b's and §4c's are committed — `scripts/source001_lifetime_coverage.py`,
+`scripts/source001_concentration.py`, `scripts/source001_lifetime_by_fyend.py` and
+`scripts/source001_sigma_admissibility.py` — and
 each carries, as code, the guard that the corresponding mistake would have tripped.
 Per-firm-year records for §3b's two cycles are in
 `data/source-001-lifetime-by-fyend{,-2015}.json`, so both counts are auditable without
