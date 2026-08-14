@@ -1,0 +1,1409 @@
+{
+  "decision_rule": "REG-009 \u00a77.5: \"Only if fewer than two bands clear does the expensive half arrive: a universe outside SIC 5200-5999 and 7370-7379 ... It is REG-011's.\"",
+  "band_rule": "int(v // w) / [b * w, (b + 1) * w)",
+  "floor": 30,
+  "width": 1.0,
+  "events_total": 151,
+  "events_joinable": 110,
+  "profiles": {
+    "R_MID|near": {
+      "occupied": 16,
+      "clear_events": 1,
+      "clear_firms": 0,
+      "clear_events_both_universes": 0,
+      "rows": [
+        {
+          "band": [
+            2.0,
+            3.0
+          ],
+          "events": 1,
+          "firms": 1,
+          "pilot": 0,
+          "replication": 1
+        },
+        {
+          "band": [
+            3.0,
+            4.0
+          ],
+          "events": 7,
+          "firms": 7,
+          "pilot": 0,
+          "replication": 7
+        },
+        {
+          "band": [
+            4.0,
+            5.0
+          ],
+          "events": 22,
+          "firms": 15,
+          "pilot": 3,
+          "replication": 19
+        },
+        {
+          "band": [
+            5.0,
+            6.0
+          ],
+          "events": 36,
+          "firms": 20,
+          "pilot": 19,
+          "replication": 17
+        },
+        {
+          "band": [
+            6.0,
+            7.0
+          ],
+          "events": 3,
+          "firms": 3,
+          "pilot": 3,
+          "replication": 0
+        },
+        {
+          "band": [
+            7.0,
+            8.0
+          ],
+          "events": 14,
+          "firms": 6,
+          "pilot": 8,
+          "replication": 6
+        },
+        {
+          "band": [
+            8.0,
+            9.0
+          ],
+          "events": 1,
+          "firms": 1,
+          "pilot": 1,
+          "replication": 0
+        },
+        {
+          "band": [
+            9.0,
+            10.0
+          ],
+          "events": 8,
+          "firms": 4,
+          "pilot": 8,
+          "replication": 0
+        },
+        {
+          "band": [
+            10.0,
+            11.0
+          ],
+          "events": 4,
+          "firms": 3,
+          "pilot": 4,
+          "replication": 0
+        },
+        {
+          "band": [
+            11.0,
+            12.0
+          ],
+          "events": 1,
+          "firms": 1,
+          "pilot": 1,
+          "replication": 0
+        },
+        {
+          "band": [
+            12.0,
+            13.0
+          ],
+          "events": 2,
+          "firms": 2,
+          "pilot": 0,
+          "replication": 2
+        },
+        {
+          "band": [
+            13.0,
+            14.0
+          ],
+          "events": 5,
+          "firms": 3,
+          "pilot": 5,
+          "replication": 0
+        },
+        {
+          "band": [
+            15.0,
+            16.0
+          ],
+          "events": 3,
+          "firms": 3,
+          "pilot": 3,
+          "replication": 0
+        },
+        {
+          "band": [
+            17.0,
+            18.0
+          ],
+          "events": 1,
+          "firms": 1,
+          "pilot": 1,
+          "replication": 0
+        },
+        {
+          "band": [
+            18.0,
+            19.0
+          ],
+          "events": 1,
+          "firms": 1,
+          "pilot": 1,
+          "replication": 0
+        },
+        {
+          "band": [
+            20.0,
+            21.0
+          ],
+          "events": 1,
+          "firms": 1,
+          "pilot": 1,
+          "replication": 0
+        }
+      ]
+    },
+    "R_MID|early": {
+      "occupied": 16,
+      "clear_events": 1,
+      "clear_firms": 0,
+      "clear_events_both_universes": 0,
+      "rows": [
+        {
+          "band": [
+            2.0,
+            3.0
+          ],
+          "events": 1,
+          "firms": 1,
+          "pilot": 0,
+          "replication": 1
+        },
+        {
+          "band": [
+            3.0,
+            4.0
+          ],
+          "events": 6,
+          "firms": 6,
+          "pilot": 0,
+          "replication": 6
+        },
+        {
+          "band": [
+            4.0,
+            5.0
+          ],
+          "events": 23,
+          "firms": 16,
+          "pilot": 3,
+          "replication": 20
+        },
+        {
+          "band": [
+            5.0,
+            6.0
+          ],
+          "events": 37,
+          "firms": 21,
+          "pilot": 19,
+          "replication": 18
+        },
+        {
+          "band": [
+            6.0,
+            7.0
+          ],
+          "events": 3,
+          "firms": 3,
+          "pilot": 3,
+          "replication": 0
+        },
+        {
+          "band": [
+            7.0,
+            8.0
+          ],
+          "events": 13,
+          "firms": 5,
+          "pilot": 7,
+          "replication": 6
+        },
+        {
+          "band": [
+            8.0,
+            9.0
+          ],
+          "events": 1,
+          "firms": 1,
+          "pilot": 1,
+          "replication": 0
+        },
+        {
+          "band": [
+            9.0,
+            10.0
+          ],
+          "events": 8,
+          "firms": 4,
+          "pilot": 8,
+          "replication": 0
+        },
+        {
+          "band": [
+            10.0,
+            11.0
+          ],
+          "events": 3,
+          "firms": 3,
+          "pilot": 3,
+          "replication": 0
+        },
+        {
+          "band": [
+            11.0,
+            12.0
+          ],
+          "events": 3,
+          "firms": 2,
+          "pilot": 3,
+          "replication": 0
+        },
+        {
+          "band": [
+            12.0,
+            13.0
+          ],
+          "events": 3,
+          "firms": 2,
+          "pilot": 2,
+          "replication": 1
+        },
+        {
+          "band": [
+            13.0,
+            14.0
+          ],
+          "events": 3,
+          "firms": 2,
+          "pilot": 3,
+          "replication": 0
+        },
+        {
+          "band": [
+            15.0,
+            16.0
+          ],
+          "events": 3,
+          "firms": 3,
+          "pilot": 3,
+          "replication": 0
+        },
+        {
+          "band": [
+            17.0,
+            18.0
+          ],
+          "events": 1,
+          "firms": 1,
+          "pilot": 1,
+          "replication": 0
+        },
+        {
+          "band": [
+            18.0,
+            19.0
+          ],
+          "events": 1,
+          "firms": 1,
+          "pilot": 1,
+          "replication": 0
+        },
+        {
+          "band": [
+            28.0,
+            29.0
+          ],
+          "events": 1,
+          "firms": 1,
+          "pilot": 1,
+          "replication": 0
+        }
+      ]
+    },
+    "R_MID|late": {
+      "occupied": 16,
+      "clear_events": 1,
+      "clear_firms": 0,
+      "clear_events_both_universes": 0,
+      "rows": [
+        {
+          "band": [
+            2.0,
+            3.0
+          ],
+          "events": 1,
+          "firms": 1,
+          "pilot": 0,
+          "replication": 1
+        },
+        {
+          "band": [
+            3.0,
+            4.0
+          ],
+          "events": 7,
+          "firms": 7,
+          "pilot": 0,
+          "replication": 7
+        },
+        {
+          "band": [
+            4.0,
+            5.0
+          ],
+          "events": 22,
+          "firms": 15,
+          "pilot": 3,
+          "replication": 19
+        },
+        {
+          "band": [
+            5.0,
+            6.0
+          ],
+          "events": 36,
+          "firms": 20,
+          "pilot": 19,
+          "replication": 17
+        },
+        {
+          "band": [
+            6.0,
+            7.0
+          ],
+          "events": 2,
+          "firms": 2,
+          "pilot": 2,
+          "replication": 0
+        },
+        {
+          "band": [
+            7.0,
+            8.0
+          ],
+          "events": 14,
+          "firms": 6,
+          "pilot": 8,
+          "replication": 6
+        },
+        {
+          "band": [
+            8.0,
+            9.0
+          ],
+          "events": 1,
+          "firms": 1,
+          "pilot": 1,
+          "replication": 0
+        },
+        {
+          "band": [
+            9.0,
+            10.0
+          ],
+          "events": 9,
+          "firms": 5,
+          "pilot": 9,
+          "replication": 0
+        },
+        {
+          "band": [
+            10.0,
+            11.0
+          ],
+          "events": 4,
+          "firms": 3,
+          "pilot": 4,
+          "replication": 0
+        },
+        {
+          "band": [
+            11.0,
+            12.0
+          ],
+          "events": 1,
+          "firms": 1,
+          "pilot": 1,
+          "replication": 0
+        },
+        {
+          "band": [
+            12.0,
+            13.0
+          ],
+          "events": 2,
+          "firms": 2,
+          "pilot": 0,
+          "replication": 2
+        },
+        {
+          "band": [
+            13.0,
+            14.0
+          ],
+          "events": 5,
+          "firms": 3,
+          "pilot": 5,
+          "replication": 0
+        },
+        {
+          "band": [
+            15.0,
+            16.0
+          ],
+          "events": 3,
+          "firms": 3,
+          "pilot": 3,
+          "replication": 0
+        },
+        {
+          "band": [
+            17.0,
+            18.0
+          ],
+          "events": 1,
+          "firms": 1,
+          "pilot": 1,
+          "replication": 0
+        },
+        {
+          "band": [
+            18.0,
+            19.0
+          ],
+          "events": 1,
+          "firms": 1,
+          "pilot": 1,
+          "replication": 0
+        },
+        {
+          "band": [
+            20.0,
+            21.0
+          ],
+          "events": 1,
+          "firms": 1,
+          "pilot": 1,
+          "replication": 0
+        }
+      ]
+    },
+    "R_MIN|near": {
+      "occupied": 11,
+      "clear_events": 2,
+      "clear_firms": 1,
+      "clear_events_both_universes": 0,
+      "rows": [
+        {
+          "band": [
+            1.0,
+            2.0
+          ],
+          "events": 3,
+          "firms": 2,
+          "pilot": 2,
+          "replication": 1
+        },
+        {
+          "band": [
+            2.0,
+            3.0
+          ],
+          "events": 2,
+          "firms": 2,
+          "pilot": 0,
+          "replication": 2
+        },
+        {
+          "band": [
+            3.0,
+            4.0
+          ],
+          "events": 47,
+          "firms": 32,
+          "pilot": 23,
+          "replication": 24
+        },
+        {
+          "band": [
+            4.0,
+            5.0
+          ],
+          "events": 8,
+          "firms": 6,
+          "pilot": 3,
+          "replication": 5
+        },
+        {
+          "band": [
+            5.0,
+            6.0
+          ],
+          "events": 31,
+          "firms": 19,
+          "pilot": 18,
+          "replication": 13
+        },
+        {
+          "band": [
+            7.0,
+            8.0
+          ],
+          "events": 12,
+          "firms": 5,
+          "pilot": 6,
+          "replication": 6
+        },
+        {
+          "band": [
+            9.0,
+            10.0
+          ],
+          "events": 2,
+          "firms": 1,
+          "pilot": 2,
+          "replication": 0
+        },
+        {
+          "band": [
+            10.0,
+            11.0
+          ],
+          "events": 2,
+          "firms": 2,
+          "pilot": 1,
+          "replication": 1
+        },
+        {
+          "band": [
+            12.0,
+            13.0
+          ],
+          "events": 1,
+          "firms": 1,
+          "pilot": 1,
+          "replication": 0
+        },
+        {
+          "band": [
+            15.0,
+            16.0
+          ],
+          "events": 1,
+          "firms": 1,
+          "pilot": 1,
+          "replication": 0
+        },
+        {
+          "band": [
+            17.0,
+            18.0
+          ],
+          "events": 1,
+          "firms": 1,
+          "pilot": 1,
+          "replication": 0
+        }
+      ]
+    },
+    "R_MIN|early": {
+      "occupied": 11,
+      "clear_events": 2,
+      "clear_firms": 1,
+      "clear_events_both_universes": 0,
+      "rows": [
+        {
+          "band": [
+            1.0,
+            2.0
+          ],
+          "events": 3,
+          "firms": 2,
+          "pilot": 2,
+          "replication": 1
+        },
+        {
+          "band": [
+            2.0,
+            3.0
+          ],
+          "events": 1,
+          "firms": 1,
+          "pilot": 0,
+          "replication": 1
+        },
+        {
+          "band": [
+            3.0,
+            4.0
+          ],
+          "events": 52,
+          "firms": 35,
+          "pilot": 23,
+          "replication": 29
+        },
+        {
+          "band": [
+            4.0,
+            5.0
+          ],
+          "events": 4,
+          "firms": 4,
+          "pilot": 3,
+          "replication": 1
+        },
+        {
+          "band": [
+            5.0,
+            6.0
+          ],
+          "events": 33,
+          "firms": 20,
+          "pilot": 20,
+          "replication": 13
+        },
+        {
+          "band": [
+            7.0,
+            8.0
+          ],
+          "events": 9,
+          "firms": 3,
+          "pilot": 3,
+          "replication": 6
+        },
+        {
+          "band": [
+            9.0,
+            10.0
+          ],
+          "events": 2,
+          "firms": 1,
+          "pilot": 2,
+          "replication": 0
+        },
+        {
+          "band": [
+            10.0,
+            11.0
+          ],
+          "events": 3,
+          "firms": 3,
+          "pilot": 2,
+          "replication": 1
+        },
+        {
+          "band": [
+            12.0,
+            13.0
+          ],
+          "events": 1,
+          "firms": 1,
+          "pilot": 1,
+          "replication": 0
+        },
+        {
+          "band": [
+            15.0,
+            16.0
+          ],
+          "events": 1,
+          "firms": 1,
+          "pilot": 1,
+          "replication": 0
+        },
+        {
+          "band": [
+            17.0,
+            18.0
+          ],
+          "events": 1,
+          "firms": 1,
+          "pilot": 1,
+          "replication": 0
+        }
+      ]
+    },
+    "R_MIN|late": {
+      "occupied": 11,
+      "clear_events": 2,
+      "clear_firms": 1,
+      "clear_events_both_universes": 0,
+      "rows": [
+        {
+          "band": [
+            1.0,
+            2.0
+          ],
+          "events": 3,
+          "firms": 2,
+          "pilot": 2,
+          "replication": 1
+        },
+        {
+          "band": [
+            2.0,
+            3.0
+          ],
+          "events": 2,
+          "firms": 2,
+          "pilot": 0,
+          "replication": 2
+        },
+        {
+          "band": [
+            3.0,
+            4.0
+          ],
+          "events": 48,
+          "firms": 33,
+          "pilot": 24,
+          "replication": 24
+        },
+        {
+          "band": [
+            4.0,
+            5.0
+          ],
+          "events": 8,
+          "firms": 6,
+          "pilot": 3,
+          "replication": 5
+        },
+        {
+          "band": [
+            5.0,
+            6.0
+          ],
+          "events": 30,
+          "firms": 18,
+          "pilot": 17,
+          "replication": 13
+        },
+        {
+          "band": [
+            7.0,
+            8.0
+          ],
+          "events": 12,
+          "firms": 5,
+          "pilot": 6,
+          "replication": 6
+        },
+        {
+          "band": [
+            9.0,
+            10.0
+          ],
+          "events": 2,
+          "firms": 1,
+          "pilot": 2,
+          "replication": 0
+        },
+        {
+          "band": [
+            10.0,
+            11.0
+          ],
+          "events": 2,
+          "firms": 2,
+          "pilot": 1,
+          "replication": 1
+        },
+        {
+          "band": [
+            12.0,
+            13.0
+          ],
+          "events": 1,
+          "firms": 1,
+          "pilot": 1,
+          "replication": 0
+        },
+        {
+          "band": [
+            15.0,
+            16.0
+          ],
+          "events": 1,
+          "firms": 1,
+          "pilot": 1,
+          "replication": 0
+        },
+        {
+          "band": [
+            17.0,
+            18.0
+          ],
+          "events": 1,
+          "firms": 1,
+          "pilot": 1,
+          "replication": 0
+        }
+      ]
+    },
+    "R_WEIGHT|near": {
+      "occupied": 16,
+      "clear_events": 0,
+      "clear_firms": 0,
+      "clear_events_both_universes": 0,
+      "rows": [
+        {
+          "band": [
+            2.0,
+            3.0
+          ],
+          "events": 1,
+          "firms": 1,
+          "pilot": 0,
+          "replication": 1
+        },
+        {
+          "band": [
+            3.0,
+            4.0
+          ],
+          "events": 8,
+          "firms": 8,
+          "pilot": 0,
+          "replication": 8
+        },
+        {
+          "band": [
+            4.0,
+            5.0
+          ],
+          "events": 23,
+          "firms": 17,
+          "pilot": 5,
+          "replication": 18
+        },
+        {
+          "band": [
+            5.0,
+            6.0
+          ],
+          "events": 29,
+          "firms": 14,
+          "pilot": 10,
+          "replication": 19
+        },
+        {
+          "band": [
+            6.0,
+            7.0
+          ],
+          "events": 9,
+          "firms": 7,
+          "pilot": 7,
+          "replication": 2
+        },
+        {
+          "band": [
+            7.0,
+            8.0
+          ],
+          "events": 2,
+          "firms": 2,
+          "pilot": 2,
+          "replication": 0
+        },
+        {
+          "band": [
+            9.0,
+            10.0
+          ],
+          "events": 8,
+          "firms": 4,
+          "pilot": 8,
+          "replication": 0
+        },
+        {
+          "band": [
+            10.0,
+            11.0
+          ],
+          "events": 14,
+          "firms": 5,
+          "pilot": 14,
+          "replication": 0
+        },
+        {
+          "band": [
+            11.0,
+            12.0
+          ],
+          "events": 2,
+          "firms": 2,
+          "pilot": 2,
+          "replication": 0
+        },
+        {
+          "band": [
+            12.0,
+            13.0
+          ],
+          "events": 3,
+          "firms": 3,
+          "pilot": 2,
+          "replication": 1
+        },
+        {
+          "band": [
+            13.0,
+            14.0
+          ],
+          "events": 3,
+          "firms": 2,
+          "pilot": 3,
+          "replication": 0
+        },
+        {
+          "band": [
+            14.0,
+            15.0
+          ],
+          "events": 2,
+          "firms": 2,
+          "pilot": 1,
+          "replication": 1
+        },
+        {
+          "band": [
+            15.0,
+            16.0
+          ],
+          "events": 1,
+          "firms": 1,
+          "pilot": 1,
+          "replication": 0
+        },
+        {
+          "band": [
+            17.0,
+            18.0
+          ],
+          "events": 2,
+          "firms": 2,
+          "pilot": 2,
+          "replication": 0
+        },
+        {
+          "band": [
+            19.0,
+            20.0
+          ],
+          "events": 2,
+          "firms": 1,
+          "pilot": 0,
+          "replication": 2
+        },
+        {
+          "band": [
+            20.0,
+            21.0
+          ],
+          "events": 1,
+          "firms": 1,
+          "pilot": 1,
+          "replication": 0
+        }
+      ]
+    },
+    "R_WEIGHT|early": {
+      "occupied": 17,
+      "clear_events": 1,
+      "clear_firms": 0,
+      "clear_events_both_universes": 0,
+      "rows": [
+        {
+          "band": [
+            2.0,
+            3.0
+          ],
+          "events": 1,
+          "firms": 1,
+          "pilot": 0,
+          "replication": 1
+        },
+        {
+          "band": [
+            3.0,
+            4.0
+          ],
+          "events": 8,
+          "firms": 8,
+          "pilot": 0,
+          "replication": 8
+        },
+        {
+          "band": [
+            4.0,
+            5.0
+          ],
+          "events": 22,
+          "firms": 16,
+          "pilot": 5,
+          "replication": 17
+        },
+        {
+          "band": [
+            5.0,
+            6.0
+          ],
+          "events": 30,
+          "firms": 14,
+          "pilot": 11,
+          "replication": 19
+        },
+        {
+          "band": [
+            6.0,
+            7.0
+          ],
+          "events": 10,
+          "firms": 8,
+          "pilot": 7,
+          "replication": 3
+        },
+        {
+          "band": [
+            7.0,
+            8.0
+          ],
+          "events": 2,
+          "firms": 2,
+          "pilot": 2,
+          "replication": 0
+        },
+        {
+          "band": [
+            9.0,
+            10.0
+          ],
+          "events": 3,
+          "firms": 3,
+          "pilot": 3,
+          "replication": 0
+        },
+        {
+          "band": [
+            10.0,
+            11.0
+          ],
+          "events": 13,
+          "firms": 5,
+          "pilot": 13,
+          "replication": 0
+        },
+        {
+          "band": [
+            11.0,
+            12.0
+          ],
+          "events": 5,
+          "firms": 4,
+          "pilot": 4,
+          "replication": 1
+        },
+        {
+          "band": [
+            12.0,
+            13.0
+          ],
+          "events": 2,
+          "firms": 2,
+          "pilot": 1,
+          "replication": 1
+        },
+        {
+          "band": [
+            13.0,
+            14.0
+          ],
+          "events": 2,
+          "firms": 2,
+          "pilot": 2,
+          "replication": 0
+        },
+        {
+          "band": [
+            14.0,
+            15.0
+          ],
+          "events": 1,
+          "firms": 1,
+          "pilot": 1,
+          "replication": 0
+        },
+        {
+          "band": [
+            15.0,
+            16.0
+          ],
+          "events": 2,
+          "firms": 2,
+          "pilot": 2,
+          "replication": 0
+        },
+        {
+          "band": [
+            17.0,
+            18.0
+          ],
+          "events": 1,
+          "firms": 1,
+          "pilot": 1,
+          "replication": 0
+        },
+        {
+          "band": [
+            19.0,
+            20.0
+          ],
+          "events": 2,
+          "firms": 1,
+          "pilot": 0,
+          "replication": 2
+        },
+        {
+          "band": [
+            20.0,
+            21.0
+          ],
+          "events": 5,
+          "firms": 1,
+          "pilot": 5,
+          "replication": 0
+        },
+        {
+          "band": [
+            28.0,
+            29.0
+          ],
+          "events": 1,
+          "firms": 1,
+          "pilot": 1,
+          "replication": 0
+        }
+      ]
+    },
+    "R_WEIGHT|late": {
+      "occupied": 16,
+      "clear_events": 0,
+      "clear_firms": 0,
+      "clear_events_both_universes": 0,
+      "rows": [
+        {
+          "band": [
+            2.0,
+            3.0
+          ],
+          "events": 1,
+          "firms": 1,
+          "pilot": 0,
+          "replication": 1
+        },
+        {
+          "band": [
+            3.0,
+            4.0
+          ],
+          "events": 8,
+          "firms": 8,
+          "pilot": 0,
+          "replication": 8
+        },
+        {
+          "band": [
+            4.0,
+            5.0
+          ],
+          "events": 23,
+          "firms": 17,
+          "pilot": 5,
+          "replication": 18
+        },
+        {
+          "band": [
+            5.0,
+            6.0
+          ],
+          "events": 29,
+          "firms": 14,
+          "pilot": 10,
+          "replication": 19
+        },
+        {
+          "band": [
+            6.0,
+            7.0
+          ],
+          "events": 8,
+          "firms": 6,
+          "pilot": 6,
+          "replication": 2
+        },
+        {
+          "band": [
+            7.0,
+            8.0
+          ],
+          "events": 2,
+          "firms": 2,
+          "pilot": 2,
+          "replication": 0
+        },
+        {
+          "band": [
+            9.0,
+            10.0
+          ],
+          "events": 9,
+          "firms": 5,
+          "pilot": 9,
+          "replication": 0
+        },
+        {
+          "band": [
+            10.0,
+            11.0
+          ],
+          "events": 14,
+          "firms": 5,
+          "pilot": 14,
+          "replication": 0
+        },
+        {
+          "band": [
+            11.0,
+            12.0
+          ],
+          "events": 2,
+          "firms": 2,
+          "pilot": 2,
+          "replication": 0
+        },
+        {
+          "band": [
+            12.0,
+            13.0
+          ],
+          "events": 3,
+          "firms": 3,
+          "pilot": 2,
+          "replication": 1
+        },
+        {
+          "band": [
+            13.0,
+            14.0
+          ],
+          "events": 3,
+          "firms": 2,
+          "pilot": 3,
+          "replication": 0
+        },
+        {
+          "band": [
+            14.0,
+            15.0
+          ],
+          "events": 2,
+          "firms": 2,
+          "pilot": 1,
+          "replication": 1
+        },
+        {
+          "band": [
+            15.0,
+            16.0
+          ],
+          "events": 1,
+          "firms": 1,
+          "pilot": 1,
+          "replication": 0
+        },
+        {
+          "band": [
+            17.0,
+            18.0
+          ],
+          "events": 2,
+          "firms": 2,
+          "pilot": 2,
+          "replication": 0
+        },
+        {
+          "band": [
+            19.0,
+            20.0
+          ],
+          "events": 2,
+          "firms": 1,
+          "pilot": 0,
+          "replication": 2
+        },
+        {
+          "band": [
+            20.0,
+            21.0
+          ],
+          "events": 1,
+          "firms": 1,
+          "pilot": 1,
+          "replication": 0
+        }
+      ]
+    }
+  },
+  "ceilings": {
+    "joined": 110,
+    "unjoined": 41,
+    "adversarial_max_bands": 3,
+    "proportional_scale": 1.3727272727272728,
+    "proportional_bands": 2,
+    "proportional_counts": [
+      1.4,
+      9.6,
+      30.2,
+      49.4,
+      4.1,
+      19.2,
+      1.4,
+      11.0,
+      5.5,
+      1.4,
+      2.7,
+      6.9,
+      4.1,
+      1.4,
+      1.4,
+      1.4
+    ]
+  },
+  "clear_primary": 1,
+  "design_survives": false
+}

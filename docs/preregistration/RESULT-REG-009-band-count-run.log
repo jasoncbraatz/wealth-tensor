@@ -1,0 +1,153 @@
+
+======================================================================================
+  REG-009 §7.5 · THE BAND COUNT — the tee-up's cheap half, run
+======================================================================================
+  REG-009 §7.5: "Only if fewer than two bands clear does the expensive half arrive: a universe outside SIC 5200-5999 and 7370-7379 ... It is REG-011's."
+  The rule was written before this instrument existed and is not moved here.
+
+G1 · THE EVENT FILES ARE THE COMMITTED ONES, BY DIGEST
+  SEVERE     G1 · reg-006-ladderC-events-corrected.json is the committed file, by digest
+  SEVERE     G1 · pre-002-events.json is the committed file, by digest
+
+G2 · AND SO ARE THE LIVES  (the same digests REG-009's instrument pins)
+  SEVERE     G2 · reg-009-p0-lives-2015.json is the committed file, by digest
+  SEVERE     G2 · reg-009-p0-lives-2023.json is the committed file, by digest
+    cycle windows lifted from the files' own metadata: {'2014-15': (2014, 2015), '2022-23': (2022, 2023)}
+
+G3 · D3's BINS ARE LIFTED THROUGH REG-009's INSTRUMENT, NOT RETYPED
+  D3's bins lifted from reg009_p0_lifetime_values.py: index `int(v // w)`, edges `[b * w, (b + 1) * w)` -> midpoint = (lo + hi) / 2
+  SEVERE     G3a · the bin rule appears nowhere in THIS file as a literal
+  SEVERE     G3b · the lifted midpoint is the centre of the lifted bin, at the width REG-009 §6 D3 registered
+
+======================================================================================
+  §7.5's TABLE, REPRODUCED BEFORE IT IS EXTENDED
+======================================================================================
+  corrected:
+    tier 0   151 events /  98 firms   joinable 110 /  72 firms
+    tier 1   135 events /  91 firms   joinable  71 /  48 firms
+    tier 2    78 events /  47 firms   joinable   0 /   0 firms
+    tier 3   415 events / 234 firms   joinable   0 /   0 firms
+    all      779 events / 338 firms   joinable 181
+  collected:
+    tier 0    55 events /  38 firms   joinable  36 /  26 firms
+    tier 1   136 events /  91 firms   joinable  71 /  48 firms
+    tier 2    81 events /  47 firms   joinable   0 /   0 firms
+    tier 3   423 events / 234 firms   joinable   0 /   0 firms
+    all      695 events / 307 firms   joinable 107
+  SEVERE     G4 · every cell of §7.5's table that this instrument can reach reproduces
+    32 cells checked, 0 disagreements
+  SEVERE     G8 · 'joinable' means the TIER'S OWN life: tier 1's 71 reproduces under the intangible tag and not under the property tag
+    tier 1 under the PROPERTY tag would be 96, not 71
+
+======================================================================================
+  TWO ERRATA IN §7.5's TABLE — measured, recorded, NOT repaired retroactively
+======================================================================================
+  SEVERE     G6 · §7.5's 'all' row prints 307 firms in BOTH columns, and the repaired file carries more
+    ERRATUM 1 · the repaired crawl carries 338 distinct firms, not 307. 307 is the count under the tag list REG-006 repaired; the repair added firms as well as events.
+  SEVERE     G7 · §7.5's '7 qualifying bands' is P0-c's count under R_MIN, and the primary rule gives a different one
+    ERRATUM 2 · P0-c at a 1.00-year width, property: R_MIN 7 qualifying bands, R_MID 9.
+    §7.5's '151 over 7 bands averages 21' therefore divides by the qualifying-band count of the rule §6 REFUSES to promote. Under the primary rule the same arithmetic gives 16.8.
+
+======================================================================================
+  THE JOIN, AND WHAT IT CANNOT REACH
+======================================================================================
+  SEVERE     G9 · q_star//4 reproduces §7.5's stated event span
+    events span 2012..2026; the disclosed lives are measured in 2014-15 and 2022-23 only.
+    110 of 151 property events are joinable; 41 are not, and no band can hold them.
+    39 joinable events (24 firms) belong to a firm that discloses a property life in BOTH cycles — G10's subject.
+
+======================================================================================
+  THE COUNT — 1.00-year property bands clearing 30
+======================================================================================
+
+  R_MID  (PRIMARY)
+    near   16 occupied bands · 1 clear 30 EVENTS · 0 clear 30 FIRMS · 0 clear in BOTH universes
+    early  16 occupied bands · 1 clear 30 EVENTS · 0 clear 30 FIRMS · 0 clear in BOTH universes
+    late   16 occupied bands · 1 clear 30 EVENTS · 0 clear 30 FIRMS · 0 clear in BOTH universes
+    near's profile:
+      [ 2.00,  3.00)  events   1  firms   1  (pilot   0 / repl   1)
+      [ 3.00,  4.00)  events   7  firms   7  (pilot   0 / repl   7)
+      [ 4.00,  5.00)  events  22  firms  15  (pilot   3 / repl  19)
+      [ 5.00,  6.00)  events  36  firms  20  (pilot  19 / repl  17)  <== clears
+      [ 6.00,  7.00)  events   3  firms   3  (pilot   3 / repl   0)
+      [ 7.00,  8.00)  events  14  firms   6  (pilot   8 / repl   6)
+      [ 8.00,  9.00)  events   1  firms   1  (pilot   1 / repl   0)
+      [ 9.00, 10.00)  events   8  firms   4  (pilot   8 / repl   0)
+      [10.00, 11.00)  events   4  firms   3  (pilot   4 / repl   0)
+      [11.00, 12.00)  events   1  firms   1  (pilot   1 / repl   0)
+      [12.00, 13.00)  events   2  firms   2  (pilot   0 / repl   2)
+      [13.00, 14.00)  events   5  firms   3  (pilot   5 / repl   0)
+      [15.00, 16.00)  events   3  firms   3  (pilot   3 / repl   0)
+      [17.00, 18.00)  events   1  firms   1  (pilot   1 / repl   0)
+      [18.00, 19.00)  events   1  firms   1  (pilot   1 / repl   0)
+      [20.00, 21.00)  events   1  firms   1  (pilot   1 / repl   0)
+
+  R_MIN
+    near   11 occupied bands · 2 clear 30 EVENTS · 1 clear 30 FIRMS · 0 clear in BOTH universes
+    early  11 occupied bands · 2 clear 30 EVENTS · 1 clear 30 FIRMS · 0 clear in BOTH universes
+    late   11 occupied bands · 2 clear 30 EVENTS · 1 clear 30 FIRMS · 0 clear in BOTH universes
+    near's profile:
+      [ 1.00,  2.00)  events   3  firms   2  (pilot   2 / repl   1)
+      [ 2.00,  3.00)  events   2  firms   2  (pilot   0 / repl   2)
+      [ 3.00,  4.00)  events  47  firms  32  (pilot  23 / repl  24)  <== clears
+      [ 4.00,  5.00)  events   8  firms   6  (pilot   3 / repl   5)
+      [ 5.00,  6.00)  events  31  firms  19  (pilot  18 / repl  13)  <== clears
+      [ 7.00,  8.00)  events  12  firms   5  (pilot   6 / repl   6)
+      [ 9.00, 10.00)  events   2  firms   1  (pilot   2 / repl   0)
+      [10.00, 11.00)  events   2  firms   2  (pilot   1 / repl   1)
+      [12.00, 13.00)  events   1  firms   1  (pilot   1 / repl   0)
+      [15.00, 16.00)  events   1  firms   1  (pilot   1 / repl   0)
+      [17.00, 18.00)  events   1  firms   1  (pilot   1 / repl   0)
+
+  R_WEIGHT
+    near   16 occupied bands · 0 clear 30 EVENTS · 0 clear 30 FIRMS · 0 clear in BOTH universes
+    early  17 occupied bands · 1 clear 30 EVENTS · 0 clear 30 FIRMS · 0 clear in BOTH universes
+    late   16 occupied bands · 0 clear 30 EVENTS · 0 clear 30 FIRMS · 0 clear in BOTH universes
+    near's profile:
+      [ 2.00,  3.00)  events   1  firms   1  (pilot   0 / repl   1)
+      [ 3.00,  4.00)  events   8  firms   8  (pilot   0 / repl   8)
+      [ 4.00,  5.00)  events  23  firms  17  (pilot   5 / repl  18)
+      [ 5.00,  6.00)  events  29  firms  14  (pilot  10 / repl  19)
+      [ 6.00,  7.00)  events   9  firms   7  (pilot   7 / repl   2)
+      [ 7.00,  8.00)  events   2  firms   2  (pilot   2 / repl   0)
+      [ 9.00, 10.00)  events   8  firms   4  (pilot   8 / repl   0)
+      [10.00, 11.00)  events  14  firms   5  (pilot  14 / repl   0)
+      [11.00, 12.00)  events   2  firms   2  (pilot   2 / repl   0)
+      [12.00, 13.00)  events   3  firms   3  (pilot   2 / repl   1)
+      [13.00, 14.00)  events   3  firms   2  (pilot   3 / repl   0)
+      [14.00, 15.00)  events   2  firms   2  (pilot   1 / repl   1)
+      [15.00, 16.00)  events   1  firms   1  (pilot   1 / repl   0)
+      [17.00, 18.00)  events   2  firms   2  (pilot   2 / repl   0)
+      [19.00, 20.00)  events   2  firms   1  (pilot   0 / repl   2)
+      [20.00, 21.00)  events   1  firms   1  (pilot   1 / repl   0)
+  SEVERE     G10 · the primary count does not depend on which of a firm's two disclosed cycles is read
+
+  G10 · all three cycle choices give 1 band(s) under R_MID — but the three INTERVAL RULES do not agree with each other: R_MID 1, R_MIN 2, R_WEIGHT 0.
+  SEVERE     G11 · every joinable event lands in exactly one band, and none is lost
+
+======================================================================================
+  THE CEILING A COVERAGE FILL COULD REACH — a lower bound is not an absence
+======================================================================================
+  110 joined · 41 unjoined · a complete fill scales each band by 1.373
+  ADVERSARIAL  — every unjoined event handed to the cheapest bands: at most 3 bands could clear.
+  PROPORTIONAL — unjoined events distributed like the joined ones: 2 bands clear (1.4, 9.6, 30.2, 49.4, 4.1, 19.2, 1.4, 11.0, 5.5, 1.4, 2.7, 6.9, 4.1, 1.4, 1.4, 1.4).
+  Neither is a prediction. Filling SOURCE-001's coverage series between the two cycles is the measurement that would replace them.
+
+======================================================================================
+  §7.5's DECISION RULE, APPLIED
+======================================================================================
+  Bands clearing 30 events under R_MID, near: 1.
+  §7.5: fewer than two -> the expensive half arrives. VERDICT: REG-011 needs the new universe.
+  And under the floor's NATIVE unit — §3b counts FIRM-years, not events — 0 band(s) clear.
+
+======================================================================================
+  G12 · NO FREE PARAMETER
+======================================================================================
+  SEVERE     G12 · every module-level literal in this file is registered with a provenance
+    16 registered, 0 unregistered
+
+  wrote data/reg-009-band-count.json
+
+------------------------------------------------------------------------------
+SEVERITY · REG-009 §7.5 band count: 14 severe · 0 definitional · 0 failed/vacuous
+------------------------------------------------------------------------------
