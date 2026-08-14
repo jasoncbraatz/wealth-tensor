@@ -1,0 +1,124 @@
+
+======================================================================================
+  REG-010 · THE HALF-INTEGER-EDGED BANDING — beside P3's failure, not instead of it
+======================================================================================
+  Registered alone at f61f75a; construction alone at 8d1245b; this instrument
+  did not exist at either commit. P3 failed as registered and is not re-scored
+  here. Both branches of the reading were fixed before this run: a difference
+  INSIDE five points is the WORSE outcome for Psi, not the better one.
+
+F1 · THE RULER IS LIFTED, NOT REBUILT
+  ruler lifted from wt088_disclosed_ladder.py (sha256 fae38f289360) by name: ALPHA, A_EXT, PHI, DELTA, LIFE_PPE, LIFE_FIN, G, N, SEED, d1_boundary
+    recomputed from the lifted constants : admissible at alpha=0.05 is 0.0 %; at alpha=0.35 the rung rises in 99.7 % of an admissible 100.0 %
+    wt088's own stdout, run in this pass  : admissible 0.0 %, EXTENSION alpha=0.35, rung rises in 99.7 %
+    the falsifying world the F1 witnesses use: wt088's intangible rectangle on BOTH axes -> rises 65.8 %
+  SEVERE     F1a · the lifted constants reproduce wt088's committed admissible pole (0.0 % at the paper's alpha)
+  SEVERE     F1b · the lifted constants reproduce wt088's committed rising pole (99.7 % of the admissible rectangle at alpha=0.35)
+  SEVERE     F1c · what was lifted is what wt088 still PRINTS — the extraction did not drift from the script it claims to be using
+  SEVERE     F1d · phi is paper III §4.4's (0.80, 0.60), lifted rather than retyped
+  SEVERE     F1e · wt088's closed-form boundary line and the R comparison it summarises agree on every cell of wt088's own grid
+  bootstrap replicates and seed are LIFTED from wt088 (N=4000, SEED=20260812); this instrument chooses neither.
+
+F2/F7 · THE POPULATION IS PSI's, AND THE DIGESTS GATE THE READ
+  SEVERE     F7a · reg-009-p0-lives-2015.json is the committed file, by digest
+  SEVERE     F7a · reg-009-p0-lives-2023.json is the committed file, by digest
+    683 disclosed pairs — NOT the band count's 133 of 151, which is a different instrument on a different unit (see the registration §1).
+
+G2 · D3's BINS ARE LIFTED, AND THE SHIFT IS DERIVED FROM THE LIFTED FUNCTION
+  D3's bins lifted from reg009_p0_lifetime_values.py: index `int(v // w)`, edges `[b * w, (b + 1) * w)` -> midpoint = (lo + hi) / 2
+  SEVERE     G2a · no bin index is retyped anywhere in THIS file
+  SEVERE     G2b · the lifted midpoint is still D3's own, at D3's width
+
+G3 · THE SHIFTED COLLAPSE IS THE CENTRE OF A HALF-INTEGER-EDGED BIN
+  SEVERE     G3a · every shifted collapse is an integer multiple of the band width — i.e. the new bin CENTRES sit where D3's EDGES did
+  SEVERE     G3b · every life lies within w/2 of its own shifted collapse — i.e. the value is IN the bin whose centre it is given
+
+G4 · THE TIE-BREAK IS INHERITED FROM D3's HALF-OPENNESS, NOT CHOSEN
+  SEVERE     G4a · an integer life is a FIXED POINT of the shifted collapse — the heap sits at a bin centre and the collapse is a rounding, which is what §4 asked
+  SEVERE     G4b · a half-integer life sits on the NEW left edge and is carried UP by w/2 — the heap is relocated, not removed (C3)
+  SEVERE     G4c · the mirror convention disagrees with the registered one on EXACTLY the half-integer lives, and nowhere else
+    of 4098 lives entering the collapse: 2283 integers (0.5571) and 715 half-integers (0.1745).
+    D3's edges are at the integers, so D3 translates the 55.71% heap by +0.50 y. The shift's edges are at the half-integers, so it translates the 17.45% heap instead and leaves the other fixed.
+
+======================================================================================
+  G5 · REG-009's COMMITTED ROW, REPRODUCED BEFORE IT IS EXTENDED
+======================================================================================
+    committed record read from data/reg-009-result.json
+  SEVERE     G5a · the pair count is REG-009's 683
+  SEVERE     G5b · Psi reproduces the committed 0.6586 exactly
+  SEVERE     G5c · Psi_band reproduces the committed 0.7236 exactly
+  SEVERE     G5d · both admissible counts and both distinct-pair counts reproduce
+  SEVERE     G5e · the integer share reproduces RESULT-REG-009 §4's published 55.7 %, which is how this run knows it is reading Psi's population
+
+======================================================================================
+  G6 · THE BAND THE SHIFT CREATES — examined, not assumed (C5)
+======================================================================================
+    band     collapsed to zero:   0   of those, admissible on their raw value: 0
+    shifted  collapsed to zero:   7   of those, admissible on their raw value: 0
+    mirror   collapsed to zero:   9   of those, admissible on their raw value: 0
+    admissibility needs 1/L < 0.408, i.e. L > 2.45 y; every zero-collapsing life is below 0.50 y.
+  SEVERE     G6a · D3's own collapse cannot produce a zero — its leftmost band's centre is w/2, a legal life. The shift's leftmost band centre is 0, which is not.
+  SEVERE     G6b · REFUSAL: no life the shift sends to zero would have been admissible on its own value, so no pair leaves the admissible set unannounced
+
+======================================================================================
+  THE OPERATOR'S OWN CONTRIBUTION — declared in C3, computed here
+======================================================================================
+    band     mean|Δ| 0.3162 y   max|Δ| 0.5000 y   fixed  379   up  871   down  116
+    shifted  mean|Δ| 0.1838 y   max|Δ| 0.5000 y   fixed  740   up  495   down  131
+    mirror   mean|Δ| 0.1838 y   max|Δ| 0.5000 y   fixed  740   up  116   down  510
+    Neither banding is the operator-free one; the pair brackets the operator.
+
+======================================================================================
+  THE ROW — Psi under each banding  (DISCLOSED δ, not the economic δ)
+======================================================================================
+  pooled
+    raw      n= 683 adm= 665 A=0.9736  Psi=0.6586 [0.6211,0.6964]  distinct=428  modal=0.0256
+    band     n= 683 adm= 673 A=0.9854  Psi=0.7236 [0.6886,0.7574]  distinct=178  modal=0.0431
+    shifted  n= 683 adm= 664 A=0.9722  Psi=0.6536 [0.6145,0.6914]  distinct=176  modal=0.0557
+    mirror   n= 683 adm= 657 A=0.9619  Psi=0.6225 [0.5827,0.6606]  distinct=176  modal=0.0457
+  2014-15
+    raw      n= 321 adm= 313 A=0.9751  Psi=0.6326 [0.5793,0.6859]  distinct=249  modal=0.0256
+    band     n= 321 adm= 316 A=0.9844  Psi=0.7120 [0.6593,0.7610]  distinct=140  modal=0.0411
+    shifted  n= 321 adm= 312 A=0.9720  Psi=0.6314 [0.5784,0.6845]  distinct=133  modal=0.0481
+    mirror   n= 321 adm= 309 A=0.9626  Psi=0.6052 [0.5513,0.6613]  distinct=133  modal=0.0421
+  2022-23
+    raw      n= 362 adm= 352 A=0.9724  Psi=0.6818 [0.6335,0.7314]  distinct=251  modal=0.0284
+    band     n= 362 adm= 357 A=0.9862  Psi=0.7339 [0.6880,0.7809]  distinct=111  modal=0.0532
+    shifted  n= 362 adm= 352 A=0.9724  Psi=0.6733 [0.6243,0.7239]  distinct=114  modal=0.0625
+    mirror   n= 362 adm= 348 A=0.9613  Psi=0.6379 [0.5879,0.6884]  distinct=109  modal=0.0603
+  Every row is the DISCLOSED life's band, never the economic one.
+
+======================================================================================
+  THE READING — registration §3, both branches fixed before this run
+======================================================================================
+    |Psi_band  - Psi| = 0.0650   (committed; P3's subject)
+    |Psi_band' - Psi| = 0.0050   (REG-010, registered convention)
+    |Psi_mirror- Psi| = 0.0361   (the mirror, priced, never chosen)
+    P3's registered tolerance: 0.05
+
+    BRANCH B. P3 STILL FAILS — REG-010 does not re-score it. What this
+    establishes is WORSE for Psi, not better: the verdict turns on the
+    edge placement of a nuisance parameter nobody registered. Psi_band and
+    Psi_band' differ by w/2 of arbitrary offset and by nothing else.
+    No sentence is softened and no verdict is amended.
+
+======================================================================================
+  G7 · THE MIRROR MOVES THE LIVES EXACTLY AS FAR, AND THE OTHER WAY
+======================================================================================
+    715 of 4098 lives are collapsed differently by the two conventions, and they are exactly the half-integer lives.
+  SEVERE     G7a · the two conventions move every life by the SAME distance — so any Psi they disagree about is a disagreement about DIRECTION, not about magnitude
+  SEVERE     G7b · and they disagree on exactly the half-integer lives, over the whole population rather than over probe points
+
+======================================================================================
+  G8 · NO FREE PARAMETER · G9 · NOTHING COMMITTED IS OVERWRITTEN
+======================================================================================
+  SEVERE     G8 · every module-level literal in this file is registered with a provenance
+    8 registered, 0 unregistered
+    14 committed REG-009 artifacts under data/, digested before and after this run
+  SEVERE     G9 · every REG-009 artifact is byte-identical after this run — beside, never instead of
+
+  wrote data/reg-010-half-integer-banding.json
+
+------------------------------------------------------------------------------
+SEVERITY · REG-010 half-integer-edged banding: 25 severe · 0 definitional · 0 failed/vacuous
+------------------------------------------------------------------------------

@@ -1,0 +1,249 @@
+{
+  "registration": "REG-010-p3-half-integer-banding.md",
+  "construction": "CONSTRUCTION-REG-010-edge-convention.md",
+  "band_rule_lifted": "int(v // w) / [b * w, (b + 1) * w)",
+  "width": 1.0,
+  "shift": 0.5,
+  "alpha_hat": 0.408,
+  "p3_tolerance": 0.05,
+  "qualifier": "DISCLOSED \u03b4, not the economic \u03b4",
+  "integer_share": 0.5571010248901903,
+  "half_integer_share": 0.17447535383113713,
+  "psi": {
+    "pooled|R_MID|raw": {
+      "rule": "R_MID",
+      "band": false,
+      "n": 683,
+      "n_admissible": 665,
+      "A": 0.9736456808199122,
+      "psi": 0.6586466165413534,
+      "ci_lo": 0.6210514299447248,
+      "ci_hi": 0.6964319079649797,
+      "distinct_pairs": 428,
+      "modal_share": 0.02556390977443609,
+      "excl_property_only": 3,
+      "excl_intangible_only": 15,
+      "excl_both": 0
+    },
+    "pooled|R_MID|band": {
+      "rule": "R_MID",
+      "band": true,
+      "n": 683,
+      "n_admissible": 673,
+      "A": 0.9853587115666179,
+      "psi": 0.7236255572065379,
+      "ci_lo": 0.6885946937014669,
+      "ci_hi": 0.7573529411764706,
+      "distinct_pairs": 178,
+      "modal_share": 0.04309063893016345,
+      "excl_property_only": 1,
+      "excl_intangible_only": 9,
+      "excl_both": 0
+    },
+    "pooled|R_MID|shifted": {
+      "rule": "R_MID",
+      "band": true,
+      "n": 683,
+      "n_admissible": 664,
+      "A": 0.972181551976574,
+      "psi": 0.6536144578313253,
+      "ci_lo": 0.6144751828584649,
+      "ci_hi": 0.6913795184601024,
+      "distinct_pairs": 176,
+      "modal_share": 0.05572289156626506,
+      "excl_property_only": 3,
+      "excl_intangible_only": 16,
+      "excl_both": 0
+    },
+    "pooled|R_MID|mirror": {
+      "rule": "R_MID",
+      "band": true,
+      "n": 683,
+      "n_admissible": 657,
+      "A": 0.9619326500732065,
+      "psi": 0.6225266362252664,
+      "ci_lo": 0.5827007690449443,
+      "ci_hi": 0.660551848762858,
+      "distinct_pairs": 176,
+      "modal_share": 0.045662100456621,
+      "excl_property_only": 6,
+      "excl_intangible_only": 20,
+      "excl_both": 0
+    },
+    "2014-15|R_MID|raw": {
+      "rule": "R_MID",
+      "band": false,
+      "n": 321,
+      "n_admissible": 313,
+      "A": 0.9750778816199377,
+      "psi": 0.6325878594249201,
+      "ci_lo": 0.5792836733439842,
+      "ci_hi": 0.6858974358974359,
+      "distinct_pairs": 249,
+      "modal_share": 0.025559105431309903,
+      "excl_property_only": 2,
+      "excl_intangible_only": 6,
+      "excl_both": 0
+    },
+    "2014-15|R_MID|band": {
+      "rule": "R_MID",
+      "band": true,
+      "n": 321,
+      "n_admissible": 316,
+      "A": 0.9844236760124611,
+      "psi": 0.7120253164556962,
+      "ci_lo": 0.6593042355683256,
+      "ci_hi": 0.7610062893081762,
+      "distinct_pairs": 140,
+      "modal_share": 0.04113924050632911,
+      "excl_property_only": 1,
+      "excl_intangible_only": 4,
+      "excl_both": 0
+    },
+    "2014-15|R_MID|shifted": {
+      "rule": "R_MID",
+      "band": true,
+      "n": 321,
+      "n_admissible": 312,
+      "A": 0.9719626168224299,
+      "psi": 0.6314102564102564,
+      "ci_lo": 0.5784274572448789,
+      "ci_hi": 0.6845425867507886,
+      "distinct_pairs": 133,
+      "modal_share": 0.04807692307692308,
+      "excl_property_only": 2,
+      "excl_intangible_only": 7,
+      "excl_both": 0
+    },
+    "2014-15|R_MID|mirror": {
+      "rule": "R_MID",
+      "band": true,
+      "n": 321,
+      "n_admissible": 309,
+      "A": 0.9626168224299065,
+      "psi": 0.6051779935275081,
+      "ci_lo": 0.5512820512820513,
+      "ci_hi": 0.6612903225806451,
+      "distinct_pairs": 133,
+      "modal_share": 0.042071197411003236,
+      "excl_property_only": 4,
+      "excl_intangible_only": 8,
+      "excl_both": 0
+    },
+    "2022-23|R_MID|raw": {
+      "rule": "R_MID",
+      "band": false,
+      "n": 362,
+      "n_admissible": 352,
+      "A": 0.9723756906077348,
+      "psi": 0.6818181818181818,
+      "ci_lo": 0.6335227272727273,
+      "ci_hi": 0.7314338175948346,
+      "distinct_pairs": 251,
+      "modal_share": 0.028409090909090908,
+      "excl_property_only": 1,
+      "excl_intangible_only": 9,
+      "excl_both": 0
+    },
+    "2022-23|R_MID|band": {
+      "rule": "R_MID",
+      "band": true,
+      "n": 362,
+      "n_admissible": 357,
+      "A": 0.9861878453038674,
+      "psi": 0.7338935574229691,
+      "ci_lo": 0.6880048256110479,
+      "ci_hi": 0.7809054903669582,
+      "distinct_pairs": 111,
+      "modal_share": 0.05322128851540616,
+      "excl_property_only": 0,
+      "excl_intangible_only": 5,
+      "excl_both": 0
+    },
+    "2022-23|R_MID|shifted": {
+      "rule": "R_MID",
+      "band": true,
+      "n": 362,
+      "n_admissible": 352,
+      "A": 0.9723756906077348,
+      "psi": 0.6732954545454546,
+      "ci_lo": 0.6242847312762567,
+      "ci_hi": 0.723943661971831,
+      "distinct_pairs": 114,
+      "modal_share": 0.0625,
+      "excl_property_only": 1,
+      "excl_intangible_only": 9,
+      "excl_both": 0
+    },
+    "2022-23|R_MID|mirror": {
+      "rule": "R_MID",
+      "band": true,
+      "n": 362,
+      "n_admissible": 348,
+      "A": 0.9613259668508287,
+      "psi": 0.6379310344827587,
+      "ci_lo": 0.5878836610158295,
+      "ci_hi": 0.6883899231080535,
+      "distinct_pairs": 109,
+      "modal_share": 0.0603448275862069,
+      "excl_property_only": 2,
+      "excl_intangible_only": 12,
+      "excl_both": 0
+    }
+  },
+  "zero_band": {
+    "band": {
+      "collapsed_to_zero": 0,
+      "would_have_been_admissible": 0
+    },
+    "shifted": {
+      "collapsed_to_zero": 7,
+      "would_have_been_admissible": 0
+    },
+    "mirror": {
+      "collapsed_to_zero": 9,
+      "would_have_been_admissible": 0
+    }
+  },
+  "displacement": {
+    "band": {
+      "n": 1366,
+      "mean_abs": 0.3162011593775899,
+      "max_abs": 0.5,
+      "fixed_points": 379,
+      "moved_up": 871,
+      "moved_down": 116
+    },
+    "shifted": {
+      "n": 1366,
+      "mean_abs": 0.1837988406224101,
+      "max_abs": 0.5,
+      "fixed_points": 740,
+      "moved_up": 495,
+      "moved_down": 131
+    },
+    "mirror": {
+      "n": 1366,
+      "mean_abs": 0.1837988406224101,
+      "max_abs": 0.5,
+      "fixed_points": 740,
+      "moved_up": 116,
+      "moved_down": 510
+    }
+  },
+  "deltas": {
+    "band": 0.0649789406651845,
+    "shifted": 0.005032158710028045,
+    "mirror": 0.036119980316086986
+  },
+  "inside_p3_tolerance": {
+    "band": false,
+    "shifted": true,
+    "mirror": true
+  },
+  "direction_only": {
+    "lives": 4098,
+    "same_magnitude": true,
+    "disagreeing": 715
+  }
+}
