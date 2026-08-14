@@ -1,0 +1,28 @@
+{
+  "tags": {
+    "PropertyPlantAndEquipmentUsefulLife": 1206,
+    "FiniteLivedIntangibleAssetUsefulLife": 773
+  },
+  "rules": {
+    "R_MID": 683,
+    "R_MIN": 683,
+    "R_WEIGHT": 683
+  },
+  "R_WEIGHT_backed_both": 273,
+  "R_WEIGHT_backed_share": 0.39970717423133234,
+  "wt088_symbols": {
+    "ALPHA": "0.05",
+    "A_EXT": "0.35",
+    "PHI": "[0.8, 0.6, 0.4, 0.2]",
+    "DELTA": "[0.03, 0.02, 0.01, 0.002]",
+    "LIFE_PPE": "(10.0, 40.0)",
+    "LIFE_FIN": "(3.0, 20.0)",
+    "G": "400",
+    "N": "4000",
+    "SEED": "20260812"
+  },
+  "wt088_boundary_expr": "ALPHA * DELTA[0] / (2 * ALPHA - DELTA[0])",
+  "wt088_sha256": "fae38f2893600e248cf8d581ca77730d66e1f93ff0020cffc0f2addf66cd0c43",
+  "pass_id": "e5acfd79512df290",
+  "dead": []
+}

@@ -1,0 +1,120 @@
+
+======================================================================================
+  REG-009 · LADDER INPUTS — §11's falsifiers, in order, before any statistic
+======================================================================================
+  F1, F2, F7, F8, F9a and F10 run here, before anything is computed. F3, F4,
+  F5 and F6 assert properties OF THE REPORT and run against the rendered
+  document before it is written to disk. See RESULT-REG-009 §0.
+
+F1 · THE RULER IS LIFTED, NOT REBUILT
+  ruler lifted from wt088_disclosed_ladder.py (sha256 fae38f289360) by name: ALPHA, A_EXT, PHI, DELTA, LIFE_PPE, LIFE_FIN, G, N, SEED, d1_boundary
+    recomputed from the lifted constants : admissible at alpha=0.05 is 0.0 %; at alpha=0.35 the rung rises in 99.7 % of an admissible 100.0 %
+    wt088's own stdout, run in this pass  : admissible 0.0 %, EXTENSION alpha=0.35, rung rises in 99.7 %
+    the falsifying world the F1 witnesses use: wt088's intangible rectangle on BOTH axes -> rises 65.8 %
+  SEVERE     F1a · the lifted constants reproduce wt088's committed admissible pole (0.0 % at the paper's alpha)
+  SEVERE     F1b · the lifted constants reproduce wt088's committed rising pole (99.7 % of the admissible rectangle at alpha=0.35)
+  SEVERE     F1c · what was lifted is what wt088 still PRINTS — the extraction did not drift from the script it claims to be using
+  SEVERE     F1d · phi is paper III §4.4's (0.80, 0.60), lifted rather than retyped
+  SEVERE     F1e · wt088's closed-form boundary line and the R comparison it summarises agree on every cell of wt088's own grid
+  bootstrap replicates and seed are LIFTED from wt088 (N=4000, SEED=20260812); this instrument chooses neither.
+
+F2 · THE POPULATION IS THE ONE §7.1 COUNTED  (F7's digests gate the read)
+  SEVERE     F7a · reg-009-p0-lives-2015.json is the committed file, by digest
+  SEVERE     F7a · reg-009-p0-lives-2023.json is the committed file, by digest
+    pairs_2014_15        321
+    pairs_2022_23        362
+    pairs_pooled         683
+    firms_pooled         577
+    firms_both_cycles    106
+    r_weight_both        273
+    one_tag_only         613
+    ppe_only             523
+    fin_only             90
+    any_2014_15          612
+    any_2022_23          684
+  SEVERE     F2a · the pair join reproduces §7.1's table exactly — 321 · 362 · 683 · 577 · 273
+  SEVERE     F2b · each cycle carries at least §3b's THIN floor of 30 pairs
+  SEVERE     F2c · all three D2 rules resolve on all 683 pairs
+  SEVERE     F2d · alpha_hat, read from paper III §5.4, is the rate the committed records themselves carry
+
+D3 · THE BAND MIDPOINT IS P0's BIN, LIFTED  (not a registered falsifier — an implementation-provenance guard, counted by severity like any other)
+  D3's bins lifted from reg009_p0_lifetime_values.py: index `int(v // w)`, edges `[b * w, (b + 1) * w)` -> midpoint = (lo + hi) / 2
+  SEVERE     D3a · every band midpoint is the centre of P0's own bin for that life
+    integer share of the lives entering Ψ_band: 0.557 — and P0's bins are [b·w, (b+1)·w), so an integer life sits on a bin's LEFT EDGE and a midpoint collapse TRANSLATES it by +0.50 y rather than rounding it. Read P3 with that in the same sentence.
+
+F7 · NO NEW SOURCE, NO NETWORK, NO ZIP
+    network/archive modules resident: none
+  SEVERE     F7b · the instrument has imported no network module and no archive reader
+  SEVERE     F7c · the instrument's own source opens no archive and names no URL
+
+F8 · THE STATISTIC DOES NOT SEE ANYTHING BUT THE PAIR
+    forbidden keys present in any row the statistic receives: none
+  SEVERE     F8a · cik, name, sic, adsh, period and components are absent from every row
+  SEVERE     F8b · and a touch RAISES rather than reading as absent — a key that returns None is a key a .get() swallows
+    declared exceptions: `cycle` reaches only the splitter and `cik` only the resampler; both travel in their own arrays, never in the row.
+
+F9 · EMPTY IS DISTINGUISHABLE FROM ABSENT, AND ABSENCE IS ASSERTED
+    one-tag-only firm-years: 613 = 523 property-only + 90 intangible-only. Their own row; no denominator.
+  SEVERE     F9a · no industry-median variant is computed anywhere in this run (§6, D4)
+
+F10 · NO FREE PARAMETER
+    module-level literals not in REGISTERED_CONSTANTS: none
+  SEVERE     F10 · the instrument exposes no tunable that was not fixed in REG-009 before this file was written
+
+======================================================================================
+  §7.3 · THE REGISTERED STATISTICS — one pass, all rates
+======================================================================================
+  pooled    R_MID     n= 683 adm= 665 A=0.974  Ψ=0.6586 [0.6211,0.6964]  Ψ_band=0.7236  distinct=428 modal=0.026  excl(p/i/both)=3/15/0
+  pooled    R_MIN     n= 683 adm= 533 A=0.780  Ψ=0.5366 [0.4893,0.5794]  Ψ_band=0.6155  distinct=199 modal=0.109  excl(p/i/both)=37/100/13
+  pooled    R_WEIGHT  n= 683 adm= 664 A=0.972  Ψ=0.6431 [0.6057,0.6798]  Ψ_band=0.6893  distinct=629 modal=0.009  excl(p/i/both)=6/13/0
+  2014-15   R_MID     n= 321 adm= 313 A=0.975  Ψ=0.6326 [0.5796,0.6871]  Ψ_band=0.7120  distinct=249 modal=0.026  excl(p/i/both)=2/6/0
+  2014-15   R_MIN     n= 321 adm= 245 A=0.763  Ψ=0.4939 [0.4318,0.5551]  Ψ_band=0.5645  distinct=128 modal=0.086  excl(p/i/both)=19/51/6
+  2014-15   R_WEIGHT  n= 321 adm= 312 A=0.972  Ψ=0.6474 [0.5935,0.6994]  Ψ_band=0.7098  distinct=299 modal=0.013  excl(p/i/both)=2/7/0
+  2022-23   R_MID     n= 362 adm= 352 A=0.972  Ψ=0.6818 [0.6348,0.7322]  Ψ_band=0.7339  distinct=251 modal=0.028  excl(p/i/both)=1/9/0
+  2022-23   R_MIN     n= 362 adm= 288 A=0.796  Ψ=0.5729 [0.5158,0.6285]  Ψ_band=0.6596  distinct=116 modal=0.128  excl(p/i/both)=18/49/7
+  2022-23   R_WEIGHT  n= 362 adm= 352 A=0.972  Ψ=0.6392 [0.5887,0.6882]  Ψ_band=0.6713  distinct=345 modal=0.006  excl(p/i/both)=4/6/0
+  Ψ_rect[calibration alpha=0.050]  admissible=0.0000  rises_of_admissible=vacuous (admissible set empty)
+  Ψ_rect[extension   alpha=0.350]  admissible=1.0000  rises_of_admissible=0.9973
+  Ψ_rect[measured    alpha=0.408]  admissible=1.0000  rises_of_admissible=0.9980
+  S[R_MID    ] = 0.1391  (95/683 pairs inside the asserted rectangle)
+  S[R_MIN    ] = 0.0571  (39/683 pairs inside the asserted rectangle)
+  S[R_WEIGHT ] = 0.2123  (145/683 pairs inside the asserted rectangle)
+
+======================================================================================
+  §9 · THE REGISTERED PREDICTIONS, SCORED
+======================================================================================
+  P1: HOLDS
+  P2: HOLDS
+  P3: FAILS
+  P4: HOLDS
+  §12: Ψ=0.6586 vs Ψ_rect(α̂)=0.9980 — DISAGREE within [0.6211, 0.6964]
+
+======================================================================================
+  Q6 · RESOLUTION AUDIT — every identifier resolved against this sample
+======================================================================================
+    PropertyPlantAndEquipmentUsefulLife                  1206
+    FiniteLivedIntangibleAssetUsefulLife                 773
+    R_MID                                                683
+    R_MIN                                                683
+    R_WEIGHT                                             683
+    DEAD by name: none
+  SEVERE     Q6 · every identifier this registration names resolves to something in its own sample
+
+======================================================================================
+  THE REPORT — rendered, scanned by F3/F4/F5/F6, then written
+======================================================================================
+    F3: clean
+    F4: clean
+    F5: clean
+    F6: clean
+    F9b: clean
+  SEVERE     F3 · every table printing an R_WEIGHT quantity prints the amount-backed share beside it
+  SEVERE     F4 · no table reports Ψ, A, S or Ψ_band without the disclosed-versus-economic δ gap named in it, and the summary names it too
+  SEVERE     F5 · Ψ_rect(0.05), Ψ_rect(0.35), Ψ_rect(α̂) and Ψ are produced in one invocation and printed in one table
+  SEVERE     F6 · the distinct-pair count and the modal-pair share are printed beside every Ψ
+  SEVERE     F9b · the one-tag-only firm-years are their own row, broken out by which tag is missing, and are not a denominator anywhere
+    written: docs/preregistration/RESULT-REG-009.md · data/reg-009-result.json · data/reg-009-resolution-audit.json
+
+------------------------------------------------------------------------------
+REG-009 LADDER INPUTS: 24 severe · 0 definitional · 0 failed/vacuous
+------------------------------------------------------------------------------
