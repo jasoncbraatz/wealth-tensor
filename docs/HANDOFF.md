@@ -84,6 +84,13 @@ Standard bring-up; post the `DARLISH-ENROLL` line to Asana **1217316841710435**,
 > `~/Scripts/roster-identity-drill.sh` — three cases against a scratch `ROSTER_DB`, live board never
 > written, mutation-proved red at exactly 1. **`-39`'s "commits logged `big-wealthTensor-39`" was
 > the `--replaces` half being true and the commit-name half not.**
+>
+> **THE COMMIT HOOK IS NOT THE ONLY CONSUMER — `gate-selfcheck.sh` NEEDS IT TOO.** Without the
+> prefix the gate says of a dirty sibling repo *"THIS session did not export GATE_ROSTER_WHO so I
+> cannot tell whether that is you"*; with it, the same run says *"ANOTHER session's work in flight.
+> Do NOT commit it"* — a definite answer instead of a shrug. **Prefix it at wrap:**
+> `dx 'GATE_ROSTER_WHO=big-wealthTensor-NN ~/Scripts/gate-selfcheck.sh'`. Assume any darwin-side
+> tool that asks who you are needs the prefix; it is one token and it is never wrong to add.
 
 **THE MINUTE-TWO STANZA IS TWO LINES.** `dx --get`/`--put` are **binary-clean and self-verifying**
 (`darwin-scripts 9fd8b1f`). **No base64. No manual `shasum`.**
