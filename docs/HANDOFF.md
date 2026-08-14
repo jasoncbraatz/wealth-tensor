@@ -1,6 +1,6 @@
 ---
 project: wealth-tensor
-gh_sha: 7861ea02b7d3ba5d791d525998db0ed827c8d0af
+gh_sha: PENDING
 updated: 2026-08-14
 session: wealthTensor-35
 gate_passed: true
@@ -52,9 +52,9 @@ Standard bring-up; post the `DARLISH-ENROLL` line to Asana **1217316841710435**,
 **`dx --get` IS TEXT-ONLY.** Pulling a `.tgz` wrote a 0-byte file and exited 2. Ship binaries
 base64'd and `shasum` both ends — dx prints the on-wire byte count, not the file size, so its own
 success line cannot certify a transfer (card `1217488245131362`). **The minute-two shape, run again
-in `-35` and worth every second: `tar czf` only `docs scripts tests src` on darwin (5.5 MB extracted
-out of a 684 MB repo), base64, ONE `--get`, `shasum` both ends, extract, then grep and read in the
-cloud at zero round trips.** `-35` additionally ran the whole edit script and all four mutation
+in `-35` and worth every second: `tar czf` only `docs scripts tests src` on darwin — 1.8 MB on the
+wire, 5.5 MB extracted, out of a 684 MB working tree (measured this session) — base64, ONE `--get`,
+`shasum` both ends, extract, then grep and read in the cloud at zero round trips.** `-35` additionally ran the whole edit script and all four mutation
 proofs against the **cloud copy first**, then performed on darwin and compared sha256 of the paper
 across the two machines — byte-identical. **A cloud dry run costs nothing and means the first thing
 that touches the real tree has already worked once.** Do that.
@@ -202,11 +202,16 @@ cannot tell.
    `dx --get`'s byte count **and its total failure on binary** (`1217488245131362`).
 4. **AAR A2** — the four other `post-*` hooks in `darwin-mac-ops/hooks`; plus **A1's residual**
    (`1217468064910605`), now with **six** consecutive sessions' evidence. `GATE_ROSTER_WHO` still
-   does not reach the commit hook. **`-35` narrowed it further and cheaply:** the hook did not log a
-   `cloud-*` row this time — it logged the *correct* `big-wealthTensor-35` and then warned about
-   **roster contention with itself** ("wealth-tensor is ALSO claimed by: big-wealthTensor-35"). So
-   the hook now sees the identity and the *contention check does not exclude the committing
-   session*. That is a one-line fix in the brake and it is a different bug from A1's original.
+   does not reach the commit hook: every commit in `-35` logged **`cloud-4U6RYyNA`** while the
+   roster row said `big-wealthTensor-35`. **`roster leave` BOTH rows at wrap** — `-35` did.
+   **`-35` also found a SECOND bug sitting downstream of A1**, cheap, separate and carded nowhere
+   yet: the roster brake printed **`⚠️ ROSTER CONTENTION — wealth-tensor is ALSO claimed by:
+   big-wealthTensor-35`** on *every* commit. The brake compares the hook's `cloud-*` identity
+   against the roster and reports **the committing session's own human-named row as a rival**. It
+   is alarming, it is wrong, and its real cost is that it trains sessions to ignore a contention
+   warning that will one day be true. It vanishes the moment A1 is fixed, and it can also be fixed
+   on its own by having the brake treat a roster claim on the repo it is committing to as *self*
+   when no other session holds one.
 5. **card-lint's structural false positive** (`1217483699706758`) · **the gate defect card**
    (`1217465036940491`).
 6. **The phrase set has a passenger** (unchanged): 30.4 % of trigger sentences match only
@@ -232,7 +237,7 @@ cannot tell.
 - **PATCHKIT CONSTRAINS THE ANCHOR, NOT THE REPLACEMENT.** `-35` spent time designing around a
   feared reflow cascade before noticing that a one-line anchor may emit **two** lines. That is what
   let §8's closing edit add the reconciling clause and re-wrap in a single anchor without touching a
-  neighbouring line. Nine anchors from `-33` to `-35`, zero misses.
+  neighbouring line. **Thirteen anchors from `-32` to `-35` — 3, 1, 5, 4 — zero misses.**
 - **RUN THE WHOLE THING IN THE CLOUD COPY FIRST.** The edit script, the guard and all four mutations
   were exercised against `/tmp/wt` before darwin saw any of it; the post-edit sha256 then matched
   across both machines. Cost: nothing. Bought: the first command that touched the real tree had
