@@ -623,6 +623,9 @@ which is exactly the repair A1 already demands on independent grounds. **One fix
 than chosen." III §4.3 *retracts that exact defence* for φ. **Read in order, II §2.3 is refuted by
 III §4.3.** (Relatedly: III says "refused five times" three separate times, and §7 enumerates four.
 The missing fifth is II's ρ — which cannot be counted, because §4.3 concedes the defence was unsound.)
+*Pointer note, appended 2026-08-14 by `wealthTensor-34`: the list is in paper III **§8**,
+not §7 — the sections were renumbered after this dossier was written. The finding itself is
+unrepaired and is carded at State Machine `1217490492527699` with its repair pre-written.*
 
 ## E3 · **What it would mean to fail as a SYSTEM — the answer to your open question**
 
