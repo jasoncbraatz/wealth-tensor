@@ -1975,8 +1975,9 @@ public data.
   `python3 scripts/wt026_severe_test.py --universe pilot --onset peak` and
   `--universe replication --onset peak`
 - **Test suite:** `python3 -m pytest tests/ -q` — **100 tests at the pinned commit d655501**, which
-  is the state that produced every result in §A.2 and §2. The head of the repository carries 103.
-  The three later additions guard claims this paper makes and change no model code: two for §3.1's
+  is the state that produced every result in §A.2 and §2. The suite at the head of the repository
+  is larger and grows with every registration in `docs/preregistration/`; three of its additions
+  guard claims this paper makes and change no model code: two for §3.1's
   closed form D(φ) = (1 − φ)·D(0) and its accompanying negative claim that the lag is *not* linear,
   and one asserting the algebraic collapse §4 publishes — which had no test until an
   audit found the published form using the entropy rate where it meant the effective decay.
@@ -1993,9 +1994,16 @@ public data.
   `docs/preregistration/PRE-002-wt026-peak-to-charge.md`, registered at commit **d655501**, which
   **also contains the implementation of PRE-002's instrument**; see the disclosure in §5.1. Results
   and full run logs are in the same directory.
-- **Code state for the results reported here:** commit **d655501** (last commit touching `src/`).
-  A submission-time head-of-repository SHA will be pinned when this paper is posted; **d655501** is
-  the SHA a replicator needs and is verifiable now.
+- **Code state for the results reported here:** the per-file pins —
+  `src/wealth_tensor/edgar.py` at commit **d655501**, `src/wealth_tensor/lag.py` at **ad779eb**
+  (its only commit) and `src/wealth_tensor/lambda_sensitivity.py` at **b9089c7** — each
+  verifiable with `git log -1 --format=%h <sha> -- <path>`. `src/` as a whole has moved since,
+  on companion-paper modules and, at **93a159b**, on one addition to `edgar.py` that appends
+  the REG-006-corrected tier-0 tag list beside the registered one without editing it: the
+  `TIER_TAGS` block that selected §5's published sample is byte-identical at **d655501** and at
+  the head of the repository.
+  A submission-time head-of-repository SHA will be pinned when this paper is posted; the per-file
+  pins are what a replicator needs and are verifiable now.
 - **Drop accounting for §5**, as required by the registrations: the per-bucket attrition from
   candidate charges to the 688 analysed events, by universe and by tier, is in the run logs at
   `docs/preregistration/RESULT-002-*-run.log`. **A reader should check that attrition does not
