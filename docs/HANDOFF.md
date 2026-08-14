@@ -1,13 +1,17 @@
 ---
 project: wealth-tensor
-gh_sha: 349d29393b56614f380d26428baa4411fd097cf8
+gh_sha: 0140d2e9549fd4b30021f0179996a58737cc0302
 updated: 2026-08-14
-session: wealthTensor-37
+session: wealthTensor-38
 gate_passed: true
 gate_version: "2.51"
 ---
 
 # wealth-tensor — HANDOFF
+
+*`gh_sha` points at the commit this file describes; the only thing added after it is this file, so
+`--check` prints `ADVISORY: docs-only drift` and exits 0. `-37` used two commits for that; one is
+enough and the meaning is the same.*
 
 ## ORIENT — read these first, in this order
 
@@ -16,252 +20,279 @@ gate_version: "2.51"
    other thing is wrong. *This file is a status report. It is not law and it cannot amend the charter.*
 2. `python3 scripts/handoff_gate.py --check` — proves this file is not stale. `ADVISORY: docs-only
    drift` exits 0 and is NOT a defect. **Read the exit code.**
-3. **`docs/preregistration/RESULT-TERM-001.md`** — `-37`'s registration and the one place the
-   **five-site ruling** is recorded. §1 is the find (including why the inherited count was wrong)
-   and §2 is the ruling and the scope exclusions. Read §2 before touching any *rectangle*.
-4. `docs/preregistration/REG-010-p3-half-integer-banding.md` — `-36`'s registration. **§1 is the
-   population ruling and §3 is the two-branch ruling. Read both before touching anything REG-010
-   named**, and read §3 before reading any number REG-010 produced.
-5. `docs/preregistration/CONSTRUCTION-REG-010-edge-convention.md` — C3 (the heap is *relocated*, not
-   removed) and C5 (the band the shift creates) are the two a later session will walk past.
-6. `docs/preregistration/RESULT-REG-010-half-integer-banding.md` — **§3 first** (why the flattering
-   number is not good news), then **§4** (the finding).
-7. **`docs/preregistration/RESULT-TERM-002.md`** — `-35`'s repair and the **two-numeral ruling**.
-   Read §2 before touching §8, §8.1 or §A.2.4.
-8. `docs/preregistration/RESULT-PIN-001.md` · `RESULT-SCOPE-001.md` — `-34`'s and `-33`'s repairs.
-9. `docs/preregistration/RESULT-REG-009-band-count-filled.md` — `-32`'s run. §4, then §3, then §6.
-10. `docs/preregistration/CONSTRUCTION-REG-009-coverage-fill.md` — **R5 is load-bearing.**
-11. `docs/preregistration/RESULT-REG-009.md` — **§3's S = 0.1391 is now load-bearing in a test.**
-    `test_term001_rectangle` recomputes 1 − S at run time and matches it against the share paper III
-    prints. Restating S without restating §4.4's percentage goes red, by design.
-12. `docs/preregistration/REG-009-p3-lifetime-sourced-delta.md` — **READ THE HEADER NOTE FIRST.**
-    **The numbering is 6–12 and not 2–8 by ruling.** §12 is where the *asserted rectangle* term was
-    registered, and `-37`'s §2.7-style disclosure pattern now applies to §2 of `REG-008`.
+3. **`docs/preregistration/REG-012-band-count-edge-phase.md`** — `-38`'s registration. **§§1–2 are
+   two findings about how the question was ASKED, and they are the session's main result**; §6 is the
+   two-branch ruling. Read both before touching anything edge- or band-shaped.
+4. `docs/preregistration/RESULT-REG-012-band-edge-phase.md` — **§0 first** (the two defects), then
+   **§3** (why one quarter of the phase circle is not one quarter of an argument), then §4.
+5. **`docs/preregistration/RESULT-TERM-001.md`** — `-37`'s registration and the one place the
+   **five-site ruling** is recorded. §2 before touching any *rectangle*.
+6. `docs/preregistration/REG-010-p3-half-integer-banding.md` — **§1 is the population ruling** and §3
+   is the two-branch ruling. **§1 is now doubly load-bearing: `-38` found it was violated two
+   documents later, by a card, in the other direction.**
+7. `docs/preregistration/CONSTRUCTION-REG-010-edge-convention.md` — **§C2 owns the 55.71 %, and owns
+   its population in the same sentence.** C3 and C5 are the two a later session walks past.
+8. `docs/preregistration/RESULT-REG-010-half-integer-banding.md` — §3 first, then §4.
+9. **`docs/preregistration/RESULT-TERM-002.md`** — the **two-numeral ruling**; §2 before §8, §8.1, §A.2.4.
+10. `RESULT-PIN-001.md` · `RESULT-SCOPE-001.md` — `-34`'s and `-33`'s repairs.
+11. `docs/preregistration/RESULT-REG-009-band-count-filled.md` — `-32`'s run. §4, then §3, then §6.
+12. `docs/preregistration/CONSTRUCTION-REG-009-coverage-fill.md` — **R5 is load-bearing and `-38`
+    did not spend it.**
+13. `RESULT-REG-009.md` — **§3's S = 0.1391 is load-bearing in a test.**
+14. `REG-009-p3-lifetime-sourced-delta.md` — **READ THE HEADER NOTE FIRST.** Numbering is 6–12 by ruling.
 
-> **`-37` in one line: THE LAST PRE-WRITTEN PASTE NAMED FOUR SITES AND THERE WERE FIVE, AND THE COUNT
-> WAS THE ONE CLAIM IN IT THAT NO ANCHOR COULD HAVE CONTRADICTED.** `patchkit` proves every anchor
-> resolves **exactly once** and refuses to write otherwise — which reads as total coverage and is
-> not: **it cannot know the list is short.** A four-anchor patch would have reported success, left
-> the fifth site standing two hundred lines away, and kept all 805 tests green. The omitted site was
-> inside **§4.4**, the section `REG-009` §12's repair was aimed at, where *"the entire **disclosed**
-> rectangle lies outside the domain"* sat **five lines above** *"the **asserted** rectangle lies
-> inside the domain after all"*: one object, two names, one paragraph, either side of the paper's
-> sharpest reversal. Registered alone at `c0c0814`, performed at `f8e271d`, then BUG SPRAY at
-> `9b3b013`. **The estate is now out of pre-written pastes: the next at-bat is CHOSEN, not pasted.**
+> **`-38` in one line: THE CARD WAS RIGHT THAT THERE WAS A QUESTION AND WRONG ABOUT BOTH THE NUMBER
+> AND THE INSTRUMENT, AND BOTH WERE SETTLED BY READING BEFORE ANYTHING WAS COMPUTED.** Its premise
+> — *55.7 % of lives are integers on a left edge* — is **Ψ_band's** statistic over 4098 lives
+> (683 pairs × 2 tags × 3 rules); the band count's unit is an **event**, one tag, one rule, one life
+> each, and its own edge mass is **63.16 %**. Four boundaries, one number carried across all four —
+> **two documents after `REG-010` §1 was written to forbid exactly that.** And the instrument the
+> card proposed, *"mass within w/2 of an edge"*, is **1.000 for every band of every sample**: every
+> point of a half-open band of width `w` is within `w/2` of its nearer edge. It would have been
+> computed, tabled as a description of the heap, and believed.
 
 ### Transport — darlish, zero-bridge
 
 Standard bring-up; post the `DARLISH-ENROLL` line to Asana **1217316841710435**, collect, then `dx`.
-**First try, no fallback, `-06` through `-37`.** If it does not come up, the first move is
-`dsh-fire` + `dwait`, not diagnosis. darlish is not on the bridge; never restart the app to fix it.
+**First try, no fallback, `-06` through `-38`.** If it does not come up the first move is `dsh-fire`
++ `dwait`, not diagnosis. darlish is not on the bridge; never restart the app to fix it.
+
+**Join with `--replaces`, which no STEP 0 has ever used:**
+
+```
+/tmp/dx '~/Scripts/roster join --who big-wealthTensor-39 --replaces "$DARLISH_SESSION" --task "..."'
+```
+
+The enrollment auto-joins a `cloud-*` **session** row before you pick a name; `--replaces` absorbs it
+instead of leaving a twin. **The CLAIM half of that twinning is fixed as of `-38`** (see §1), so with
+`--replaces` you should now be **one name, one session row, one claim row** — the first session that
+can be. If `roster who` still shows you twice, that is a finding, not a nuisance.
 
 **`dx --get` IS TEXT-ONLY.** Base64 binaries and `shasum` both ends — dx prints the on-wire byte
-count, not the file size, so its own success line cannot certify a transfer (card `1217488245131362`).
-**The minute-two shape, run again in `-37`:** `tar czf` `docs scripts tests src` **and** `data`
-separately on darwin, base64, ONE `--get` each, `shasum` both ends, extract. 1.9 MB + 4.7 MB out of
-a 684 MB tree, and it paid for itself twice: the whole TERM-001 instrument, both mutation harnesses
-(twelve mutations), and every suite run happened in the cloud copy first, so **the first command
-that touched the real tree had already worked.** `-37` went further and did not cross the edited
-manuscript at all — it crossed the *builder* and ran it on darwin, and **the artifact came out
-byte-identical on both machines, sha256 `fc5595b7`, two interpreters.** Do that: it is a free
-reproduction proof.
+count, not the file size, so its own success line certifies nothing (card `1217488245131362`).
+**The minute-two shape, run again in `-38` and again worth it:** `tar czf` `docs scripts tests src`
+**and** `data` separately on darwin, base64, ONE `--get` each, `shasum` both ends, extract. Every
+instrument run, every mutation and both full suites happened in the cloud copy first, so the first
+command that touched the real tree had already worked. **And cross the BUILDER, not the artifact:**
+`-38` shipped the instrument, ran it on darwin, and the artifact came out byte-identical on both
+machines (`e4de7842`) — two interpreters, free reproduction proof.
 
-`PYTHONPATH=<root>/src` for the suite in the cloud. Cloud is **806 passed / 8 skipped in ~229 s**
-and **every skip is `not a git work tree`** — that is the whole explanation, checked in `-37`, so
-nobody needs to re-derive it. Darwin is `.venv/bin/python -m pytest`, **816 passed in ~56 s**.
+**SUITE COUNTS — STATE THE COLLECTED COUNT, NOT THE PASS COUNT.** `-37` left *"cloud 806 passed / 8
+skipped"* and *"darwin 816 passed"* in this file, and those two numbers **disagreed with each other**:
+806 + 8 = 814 ≠ 816. The cloud figure was stale by two tests `-37` itself added after stamping, and
+nothing could tell, because a pass count on a machine that skips is not comparable to a pass count on
+a machine that does not. **Collected is:** cloud `pytest --collect-only` and darwin's pass count are
+the same number when the suite is green, so it cross-checks itself.
 
-## 0 · THE TELL, NOW IN TWELVE SHAPES — and `-37`'s is about a number nothing can contradict
+| | at `0140d2e` |
+|---|---|
+| collected | **828** |
+| cloud (`PYTHONPATH=<root>/src`) | **820 passed / 8 skipped**, ~229 s, **every skip `not a git work tree`** |
+| darwin (`.venv/bin/python -m pytest`) | **828 passed**, ~60 s |
+
+## 0 · THE TELL, NOW IN FIFTEEN SHAPES
 
 Ask the instrument-artefact question of numbers that look GOOD (`-28`), that SETTLE AN ARGUMENT
 (`-29`), of a REGISTERED CONTROL THAT FAILS (`-30`), OF THE DENOMINATOR (`-31`), OF A TIE-BREAK AT A
-NEW CARDINALITY and OF A TELL THAT HAS GONE QUIET (`-32`). `-33` added two about instruments that
-agree with themselves. `-34` added the one that finds defects nobody introduced. `-35` added the one
-that finds defects you are about to introduce. `-36` added two: **pre-commit the interpretation of
-the FAVOURABLE outcome**, and **a handoff item naming both a source document and a population is two
-claims.** `-37` adds three:
+NEW CARDINALITY and OF A TELL THAT HAS GONE QUIET (`-32`). `-33`: instruments that agree with
+themselves. `-34`: defects nobody introduced. `-35`: defects you are about to introduce. `-36`:
+pre-commit the FAVOURABLE outcome's meaning, and an item naming both a document and a population is
+two claims. `-37`: a pre-written repair's site count is the one part no anchor can contradict; bind a
+repair to the measurement that warrants it, not to a spelling; and a mutation that does not mutate
+reports your guard as weak. `-38` adds three:
 
-- **A PRE-WRITTEN REPAIR'S SITE COUNT IS THE ONE PART NO ANCHOR CAN CONTRADICT.** Validate-then-write
-  patching proves each anchor is *unambiguous*; nothing proves the list is *complete*, and the two
-  feel identical in the output. **So resolve the site set yourself — one exhaustive grep, then read
-  every hit in its own context, because the referent decides membership and only reading decides the
-  referent.** And shape the guard against the failure: **assert an ABSENCE and a COUNT, never N
-  presences** — absence is the only assertion a short list cannot satisfy, and a count bound to
-  `len(EDITS)` is the only numeral that cannot drift. Companion to `-35`'s rule: `-35` covers whether
-  each replacement is TRUE, this covers whether the LIST is COMPLETE, **and the second is invisible
-  to every check the first passes.** Banked: `2026-08-14-pre-written-repair-s-site-count`.
-- **BIND A TERMINOLOGY REPAIR TO THE MEASUREMENT THAT WARRANTS IT, NOT TO A SPELLING.** The guard
-  everyone writes — assert the new word, assert the old one is gone — passes forever after the
-  measurement that justified the rename has been removed or restated, leaving a word whose
-  justification has quietly left the repository. `test_term001_rectangle` instead reads S out of
-  `RESULT-REG-009` and recomputes 1 − S against the share paper III prints. **Whenever an edit's
-  justification is a number living in another file, the guard must read THAT number, or you have
-  guarded the conclusion and not the premise.** Banked:
-  `2026-08-14-bind-terminology-repair-measurement-warrants-spelling`.
-- **A MUTATION THAT DOES NOT ACTUALLY MUTATE REPORTS YOUR GUARD AS WEAK, AND THE FALSE ALARM IS
-  INDISTINGUISHABLE FROM A REAL HOLE.** Live fire: proving a guard fails on an empty edit list, the
-  drill rewrote `EDITS = [` to `EDITS = [] if False else [` — valid Python evaluating to the FULL
-  list. The suite stayed green and the honest reading of that was *"the vacuity check does not
-  bite"*, which was false. **A surviving mutation is TWO hypotheses and the cheap one is that the
-  mutation is inert — eliminate it first by asserting the artefact actually changed.** The second
-  harness this session does that in code. Banked:
-  `2026-08-14-mutation-does-actually-mutate-reports-guard`.
+- **A PROPOSED STATISTIC CAN BE A TAUTOLOGY IN MEASUREMENT'S CLOTHING — EVALUATE IT ON AN ARBITRARY
+  INPUT BEFORE YOU BUILD IT.** If it returns the same value for every possible sample it is a
+  definition, and it will ship as a green number that reads as coverage. The check is purely
+  symbolic, costs one minute, needs no data — and the same minute usually hands you the statistic
+  that *does* discriminate, because working out **why** the proposal is constant tells you what the
+  constant was hiding. Live fire: *"how much of the modal band's mass sits within w/2 of an edge"* →
+  always 1.000 → the quantity it was hiding is the **fractional parts**, which is what edge phase is
+  a function of. Banked: `2026-08-14-before-building-instrument-tee-up-proposes`.
+- **A CITATION CARRIES ITS POPULATION OR IT CARRIES NOTHING — AND COUNT THE BOUNDARIES.** `-36`
+  banked the two-claims version of this; `-38` is the recurrence, and the recurrence is the finding.
+  A number reached this session's card across **four** boundaries at once (unit, tag, interval rule,
+  selection) and was 7.45 points wrong for the population it was quoted about, **while the rule
+  forbidding it sat in a registration two documents earlier, written by the session that had just
+  been burned.** *A rule stated inside a document protects that document and nothing else.* To bind,
+  it has to leave: a guard, a checklist item, or the habit of treating *names a document AND a
+  number* as two verifications. Banked: `2026-08-14-citation-carries-its-population-carries-nothing`.
+- **WHEN A QUESTION HAS SURVIVED THREE OR MORE HANDOFFS, GREP THE ESTATE FOR THE ANSWER — NOT THE
+  SYMPTOM.** Grep the **identifier by name**, docstrings included, and ask **which consumer actually
+  reads it**. Nine handoffs carried `GATE_ROSTER_WHO`; one grep settled it (§1). The tell that you
+  are in this failure mode: **a handoff item whose text has grown by observations and not by
+  hypotheses eliminated.** Banked: `2026-08-14-question-has-survived-three-handoffs-grep`.
 
-**AND (BUG SPRAY): A LEDGER OF KNOWN VIOLATIONS THAT LIVES ONLY IN THE TEST SUITE IS NOT A
-DISCLOSURE.** `KNOWN_VIOLATIONS` recorded both commit-order violations correctly, in both directions
-— in `tests/`, while `REG-008` went on being subjected *"registered alone"* and `PRE-002`'s
-AMENDMENTS said *"(none)"*. The repair is a **dated addendum at the scene, marked as written after
-the fact**, plus a guard requiring every file the ledger records to be **named, by basename**, in
-the document that shipped it — basename because *a path is a fact about the tree and a name is a
-fact about the disclosure*, so a file that later moves cannot silently un-disclose itself. Banked:
-`2026-08-14-ledger-known-violations-lives-only-test`.
+**AND (BUG SPRAY, and an AAR): IN A SHARED TOOLS DIRECTORY THE FILE-CREATION VERB IS THE SAFETY
+CHECK.** `git status` showing ` M` where you expected `??` means you did not create a file, you
+overwrote one. `-38` destroyed a five-case drill in `~/Scripts` with a whole-file write to a name it
+had guessed correctly and never checked, and **every downstream signal was consistent with success**
+— the new drill passed, and it correctly went red against the bug. Restored from git, cases merged.
+The distinguishing feature is whether a filename is **derived or conventional**: a derived name
+forces you to look at what exists (`REG-NNN` numbering did, the same session); a conventional one
+lets you guess it right and never look. AAR `drill-name-collision-clobbered-sibling-drill`; banked
+`2026-08-14-shared-tools-directory-file-creation-verb`.
 
-**Everything `-33` through `-36` banked is unchanged and still sharp.** A guard must scan assertions,
-not quotations. Expose builders, not finished strings — and now not finished RULES either. Commit-
-shaped mutations go in a throwaway worktree. `severity.check`'s witness must return FALSY.
+**Everything `-33` through `-37` banked is unchanged and still sharp.** A guard must scan assertions,
+not quotations. Expose builders, not finished strings or finished rules. Commit-shaped mutations go
+in a throwaway worktree. **`severity.check`'s witness must return FALSY** — `-38` tripped the phantom
+tag twice by writing witnesses that returned True.
 
 ---
 
 ## 1 · WHAT HAPPENED
 
-**`c0c0814` — TERM-001 registered, alone, pushed before the instrument existed.** Five sites, the
-referent test recorded, and the scope exclusions stated as rules rather than conveniences.
+**`ba59370` — REG-012 registered, ALONE, pushed before the instrument existed.** Both defects in the
+card established by reading (§§1–2), the population fixed to the cited document's own instrument
+(§3), the descriptor specified (§4), the refusals stated as an **absence** to be asserted (§5), and
+both branches pre-committed **with the flattering one written at greater length** (§6) — including
+the complete list of what a rigid heap would *not* be allowed to mean.
 
-**`f8e271d` — TERM-001 performed.** `scripts/wt101_edits_term001.py` builds **both** noun phrases
-from one adjective pair, so neither is typed anywhere. `tests/test_term001_rectangle.py` asserts the
-absence, the count, each repaired span's uniqueness, and the warrant. **Six mutations, all red:** the
-term reappearing at one site; the site numeral and the section numeral each moved alone (both
-directions of the count); the edit list emptied; S drifting; and the paper dropping the share that
-warrants the word (both directions of the warrant). Artifact byte-identical on both machines.
+**`0140d2e` — REG-012 performed.** `scripts/reg012_band_edge_phase.py`, 13 severe checks, 0 vacuous.
 
-**`9b3b013` — BUG SPRAY, its own commit, no claim added.** `REG-008` §2.7 and `PRE-002`'s AMENDMENTS
-now name what their commits carried. **The tee-up was wrong in a useful direction:** `REG-008` §2
-*does* discuss all three probes — by the provisional names `probe.py`, `probe2.py`, `probe3.py`,
-which have never existed on disk. So the defect was disclosure-in-substance with broken provenance,
-and the mapping was **read off the files** (`probe_01` and `probe_02` open *"REG-008 probe 2"* and
-*"REG-008 probe 3"*; `probe_00` is the one counting by `r["arm"]`), not inferred from the order.
-**And the find nobody teed up: `reg008_probe_00_CONTAMINATED.py`'s own docstring says it is clean** —
-*"computes no statistic that any REG-008 prediction depends on"*, committed in the same commit as
-§2.6, which rules that what it computed **is** the comparison and makes Λ_anchor permanently
-exploratory. The file has not been modified since `b02d02e` and was **not** modified here: the
-docstring is evidence of what was believed at the time, correcting it would edit the witness, and
-the addendum is the correction. **`PRE-002` was worse** — it named neither of its two files, one of
-them the instrument itself. Six more mutations, all red, each asserted to have actually changed the
-file before its verdict was read.
+- **The heap.** 84 of 133 lives sit exactly on a left edge — **63.16 %**, not the card's 55.71 %.
+  **Four** distinct fractional values in the entire sample: 0, 1/4, 1/2, 3/4. A 1.00-year band drawn
+  on a variable that moves in steps of 0.25.
+- **Phase rigidity.** The grouping survives on **1/4** of the phase circle, and **all** of it is the
+  interval `(3/4, 1]` above the largest fractional value, where the whole heap moves down together
+  and *any* sample's grouping survives — asserted separately as `E4-blind`, so the trivial quarter
+  cannot be read as concentration. **Measure strictly below it: 0.0000.** There is no non-trivial
+  edge placement under which these 133 events group as they do now. **Branch F.**
+- **R5 is not spent.** No edge moved, no floor re-read, **no count of bands computed** — asserted as
+  an ABSENCE over the instrument, the result document and the artifact's keys, and mutation-proved
+  live in both directions (injected threshold read → exit 1, A1 red; clean → exit 0).
+- **One selection path.** `reg009_band_count.selected_lives` extracted from `bands_for` so a
+  description of the count's lives cannot read a different sample than the count does.
+  **Behaviour-preserving, proved by re-running both committed instruments byte-identical**
+  (`6aa58d63`, `6c86b96c`) in a scratch tree, on a different interpreter and machine.
+
+**`darwin-scripts fd4f278` — the nine-session `GATE_ROSTER_WHO` item, CLOSED.** Cause: **nothing had
+ever wired it.** The variable appears **nowhere** in the hook chain — it is the *gate's* variable
+(`gate-selfcheck.sh`, drilled by `gate-roster-drill.sh`) and `~/Scripts/roster-oncommit.py` read only
+`DARLISH_SESSION`. Not lost in transit, not read early: there was nothing to lose and nothing to be
+early for. **And the consequence was already written down** — `roster_live.me_names()`'s docstring
+says *"ONE session, TWO rows"* in as many words, added the same day the mystery was being re-narrowed
+one directory away. `me_names()` taught the **readers** both names; `-38` fixed the **write**.
+Drilled three directions, **appended** to the five existing cases; red against the pre-fix hook
+(exactly the two new cases, 15/2) and green against the fixed one (17/0). Live proof on the board:
+`big-wealthTensor-38 claims Scripts — "roster-oncommit: claim under the name the session gave itself"`.
+
+**`claude-blackbook 82fc9e11` — AAR for the drill clobber**, cause class `unverified-preserved-
+behaviour`, lesson adopted so the sweep stops matching it by date. `aar.py sweep` PASSES.
 
 | | |
 |---|---|
-| **G-COACH-3 across the session** | **3 → 3 (+0)**, against a pre-edit copy taken before the tree was dirtied (`bd4ae3be`, identical in cloud and on darwin) |
-| suite | **805 → 816**, green in 56 s |
-| new guards | `tests/test_term001_rectangle.py` (9) · two added to `test_registrations_precede_their_instruments.py` |
-| mutations | **twelve**, all red, all restored, zero residue |
-| lessons | **four** banked global; **three** quarantined leaves corroborated `pass` |
-| cards | State Machine `1217496274465337` · `1217496491255205` · `1217496462088036` (all new) |
+| **G-COACH-3** | **unmoved — the manuscript was not touched at all** (`git diff --stat` on `docs/papers/` across the session is empty), as REG-012 §6 registered in advance |
+| suite | **816 → 828 collected**; cloud 820 passed / 8 skipped, darwin 828 passed |
+| new guards | `tests/test_reg012_band_edge_phase.py` (12) + `A1`/`A2` inside the instrument |
+| mutations | live absence mutation (instrument, both directions) · numeral guard both directions · premise-convergence guard · drill red-against-old-hook — **each asserted to have actually changed its subject first** |
+| lessons | **four** banked global; one adopted by an AAR |
+| cards | `1217494219393416` answered · `1217468064910605` closed |
 
 ---
 
 ## 2 · RULINGS — DO NOT REOPEN
 
-- All of `-31`'s through `-36`'s rulings stand verbatim: no third disclosure instrument; phrase set
+- All of `-31`'s through `-37`'s rulings stand verbatim: no third disclosure instrument; phrase set
   frozen at 38; §4.4 settled; **`SOURCE-001` IS FINISHED**; **THE ARM IS δ**; **§4.8 IS NOT THE
-  COINCIDENCE ARGUMENT; §4.7 IS**; **EVERY P0 AND REG-009 NUMBER IS AN UPPER BOUND — the *disclosed*
-  δ**; **REG-009 IS CLOSED and its numbering is 6–12**; **§4's COVERAGE SILENCE STAYS RECORDED, NOT
-  REPAIRED**; **§7.5's TWO ERRATA ARE RECORDED, NOT REPAIRED**; **DO NOT SPEND THE TIE-BREAK**; **DO
-  NOT PROMOTE `R_MIN`**; **`data/reg-009-band-count.json` IS `-31`'s**;
-  **`test_the_cycle_choice_now_decides_the_answer` IS A RESULT, NOT A DEFECT**; **§10 IS NOT TOUCHED
-  BY SCOPE-001**; **SCOPE-001, PIN-001, TERM-002 ARE CLOSED**; **§11 PINS PER FILE**; **TERM-002's
-  COUNT IS TWO NUMERALS AND §8's FOURTH ITEM STAYS**; **P3 FAILED AND REG-010 DID NOT RE-SCORE IT**;
-  **REG-010's POPULATION IS Ψ's 683 DISCLOSED PAIRS, NOT THE FILLED 133**; **NEITHER BANDING IS
-  PROMOTED — THE PAIR OF ROWS IS THE DELIVERABLE**; **THE BAND COUNT MAY NOT BE RE-EDGED AND ITS
-  FLOOR RE-READ (R5).**
-- **NEW · TERM-001 IS CLOSED AT FIVE SITES AND THE RECTANGLE IS *ASSERTED* IN THE MANUSCRIPT.** The
-  eleven bare occurrences of the noun keep their wording — the defect was the adjective's claim, not
-  the shape. **Do not "finish the job" in the records:** `RESULT-REG-004`, `RESULT-REG-003`,
-  `RESULT-REG-002`, `RESULT-P0`, `REG-003`, `REG-004` and `SOURCE-001` said what they said when they
-  said it. **And do not rename the instrument prose** — `wt088_disclosed_ladder.py` and four siblings
-  print the phrase inside severity-check descriptions and run logs that other documents quote and
-  pin; renaming there edits the witness to match the testimony. `RESULT-TERM-001` §2 is the
-  disclosure of that inconsistency and is the honest form of it.
-- **NEW · REG-008 §2's PROVISIONAL FILENAMES STAY.** §2 refers to `probe.py`, `probe2.py`,
-  `probe3.py`; §2.7 maps them to the real paths. **Do not edit §2 to use the real names** — it is a
-  record, the mapping is disclosed, and the addendum is dated and marked as after-the-fact precisely
-  so nobody mistakes it for something registered in advance.
-- **NEW · `reg008_probe_00_CONTAMINATED.py`'s DOCSTRING IS LEFT STANDING.** It contradicts §2.6 and
-  that contradiction is the evidence. It is disclosed, not repaired. Do not "fix" the file.
+  COINCIDENCE ARGUMENT; §4.7 IS**; **EVERY P0 AND REG-009 NUMBER IS THE *DISCLOSED* δ**; **REG-009
+  IS CLOSED, numbering 6–12**; **§4's COVERAGE SILENCE AND §7.5's TWO ERRATA STAY RECORDED, NOT
+  REPAIRED**; **DO NOT SPEND THE TIE-BREAK**; **DO NOT PROMOTE `R_MIN`**; **`data/reg-009-band-count.json`
+  IS `-31`'s**; **`test_the_cycle_choice_now_decides_the_answer` IS A RESULT**; **§10 IS NOT TOUCHED
+  BY SCOPE-001**; **SCOPE-001, PIN-001, TERM-001, TERM-002 ARE CLOSED**; **§11 PINS PER FILE**;
+  **P3 FAILED AND REG-010 DID NOT RE-SCORE IT**; **REG-010's POPULATION IS Ψ's 683 PAIRS**;
+  **NEITHER BANDING IS PROMOTED**; **REG-008 §2's PROVISIONAL FILENAMES STAY and the CONTAMINATED
+  probe's DOCSTRING IS LEFT STANDING**; **THE BAND COUNT MAY NOT BE RE-EDGED AND ITS FLOOR RE-READ (R5).**
+- **NEW · REG-012 IS CLOSED, ON BRANCH F, AND IT ANSWERS NOTHING ABOUT §7.5.** The band count's
+  placement is edge-phase dependent and that is **a disclosure written beside the count, not a permit
+  to recount**. R5 forbids re-edging whether the heap is rigid or fragile. **Do not "follow up" by
+  running the shifted band count** — that is the measurement REG-012 §7 says is *refused rather than
+  merely unperformed*.
+- **NEW · THE TWO SENSITIVITIES ARE SEPARATE AND MUST NOT BE MERGED.** `RESULT-REG-009-band-count-
+  filled` §4's straddle (registered reading 1, every other 2) is made by the **nearest-cycle
+  tie-break deciding 50 of the 133**. Edge phase cannot reach it and REG-012 does not touch it.
+  Any sentence that treats "the band count is fragile" as one fact is wrong about which parameter.
+- **NEW · REG-012's NUMBERS ARE THE BAND COUNT'S, AND 55.71 % IS Ψ's.** Do not restate either for
+  the other population. `tests/test_reg012_band_edge_phase.py` reads both out of the files that own
+  them and goes red if they converge.
+- **NEW · `selected_lives` IS THE ONE SELECTION PATH.** Anything that needs the lives behind the band
+  count calls it. Retyping the selection beside it is the defect the extraction exists to prevent.
 
 ---
 
-## 3 · THE AT-BAT, RANKED — **and for the first time in eight sessions, none of these is a paste**
+## 3 · THE AT-BAT, RANKED — **the research ledger is empty; what is left is infra and process**
 
-There is no pre-written stanza left. **Every item below needs a session to decide its own shape**,
-which is a different kind of at-bat from the last eight and worth knowing before you start.
+**`-38` closed the last open research item on paper III.** Nothing below is a paste, and nothing
+below is a measurement. That is the cleanest this ledger has been and it is worth saying out loud
+before you go looking for something to measure: **if you find yourself designing a new registration,
+check first that you are not re-opening a closed one.**
 
-1. **The band count's own half-integer question** (`1217494219393416`) — the largest genuinely open
-   *research* item. Real, separate, and **cannot** be answered by re-reading the floor of 30;
-   `CONSTRUCTION-REG-009-coverage-fill` **R5 forbids re-edging in response to the number**. It must
-   be a **description of the heap that reads no threshold**. **Read the card before starting**, and
-   register the interpretation of the *favourable* outcome before running anything (`-36`'s rule).
-2. **AAR A2 + A1's residual** (`1217468064910605`, new datum at `1217496462088036`) — **EIGHT**
-   consecutive sessions. `-37` narrowed it: `GATE_ROSTER_WHO=big-wealthTensor-37` was exported
-   **inside the same `dx` invocation as the `git commit`**, i.e. in the committing process's own
-   environment, and the hook *still* logged `cloud-RRvNUwGw`. **So this is not a variable lost
-   crossing the dx boundary — the hook is not reading it, or reads it before it is set.** Cheap next
-   step: read the hook in `darwin-mac-ops/hooks` and check how it resolves identity. Eight sessions
-   of re-observing is enough. Plus A2's four other `post-*` hooks.
-3. **Infra, all carded, all Claude-hands:** `@concierge_ingest` / `@concierge_router` carry the same
-   Caddy ordering defect `@darlish` had (`1217488447555628`) · the live capability path is committed
-   in cleartext to `n8n-stack` and the repo copy has drifted from live (`1217488117177482`) ·
-   `dx --get`'s byte count **and its total failure on binary** (`1217488245131362`).
-4. **card-lint's structural false positive** (`1217483699706758`) · **the gate defect card**
-   (`1217465036940491`).
-5. **The phrase set has a passenger** (unchanged): 30.4 % of trigger sentences match only
+1. **Infra, all carded, all Claude-hands** — the top of the list for the first time:
+   `@concierge_ingest` / `@concierge_router` carry the same Caddy ordering defect `@darlish` had
+   (`1217488447555628`) · the live capability path is committed in cleartext to `n8n-stack` and the
+   repo copy has drifted from live (`1217488117177482`) · **`dx --get`'s byte count and its total
+   failure on binary** (`1217488245131362`) — the last one is felt every single session at minute two.
+2. **AAR A2's residual** (`1217496462088036`) — A1 is **closed** (§1). What remains is the other four
+   `post-*` hooks, and the cheap follow-up `-38` did not take: the enrollment auto-join still creates
+   a `cloud-*` **session** row. `roster join --replaces "$DARLISH_SESSION"` is the designed remedy and
+   belongs in the STEP 0 text (already in this file's Transport section — **verify it works and then
+   say so**, because an untested instruction in a handoff is exactly what item 2 above was for nine sessions).
+3. **card-lint's structural false positive** (`1217483699706758`) · **the gate defect card** (`1217465036940491`).
+4. **The phrase set has a passenger** (unchanged): 30.4 % of trigger sentences match only
    `events or circumstances`; 7.9 % carry safe-harbour language. Post-hoc, labelled, outranked.
-6. **`AcquiredFiniteLivedIntangibleAssetsWeightedAverageUsefulLife` is 4,304 rows P0 excluded.**
-7. **Not mine, not touched:** handoff-lint warns `HANDOFF-acmeLedger-07.md:22` makes a verification
+5. **`AcquiredFiniteLivedIntangibleAssetsWeightedAverageUsefulLife` is 4,304 rows P0 excluded.**
+6. **Not mine, not touched:** handoff-lint warns `HANDOFF-acmeLedger-07.md:22` makes a verification
    claim with no vantage point. A sibling was live on it; don't clobber, but it is still open.
+7. **A genuine option, and say so if you take it:** with the research ledger empty, the highest-value
+   *paper* work is no longer a new row but the **scouting report** the charter §4 schedules before
+   posting. It is not carded and it is not started. It needs Jason's ruling on timing, not a session's.
 
 ---
 
-## 4 · WHAT WOULD HAVE SAVED `-37` TIME
+## 4 · WHAT WOULD HAVE SAVED `-38` TIME
 
-- **RESOLVE THE SITE SET FROM THE DOCUMENT, NOT FROM THE ITEM THAT NAMES IT.** One `grep -o | wc -l`
-  and five reads-in-context, before writing a line. It cost ten minutes and it **decided what the
-  session was** — the inherited count was wrong and nothing downstream would have said so. This is
-  the third session running whose first ten minutes were the whole game (`-35` truth, `-36`
-  population, `-37` count).
-- **CHECK THE ARITHMETIC IN YOUR OWN NEW PROSE BEFORE COMMITTING IT.** Three claims in the draft
-  registration — a line offset, a paragraph boundary, and a count of bare nouns — were wrong, all
-  three caught by one grep, all three fixed before the commit. **A registration is committed alone
-  and pushed; there is no quiet second chance at its wording.**
-- **CHECK BEFORE YOU REPAIR, AGAIN, AND IT CHANGED THE FINDING AGAIN.** The tee-up said `REG-008`
-  mentions none of its three probes. It discusses all three, under names that never existed on disk
-  — a different defect with a different repair, found by one grep. `-36` recorded this same rule
-  after nearly carding a plausible claim; it has now paid twice.
-- **A PRE-EDIT COPY BEFORE THE TREE IS DIRTIED, ON BOTH MACHINES.** `--against` has no second chance,
-  and the two copies hashing identically (`bd4ae3be`) is what let the cloud dry-run stand in for the
-  real one.
-- **CROSS THE BUILDER, NOT THE ARTIFACT.** Running `wt101` on darwin instead of shipping the edited
-  manuscript produced a byte-identical file for free — a reproduction proof at zero cost, and one
-  fewer large file on the wire.
+- **THE FIRST TEN MINUTES DECIDED THE SESSION FOR THE FOURTH TIME RUNNING** (`-35` truth, `-36`
+  population, `-37` count, `-38` **premise and instrument**). Both of `-38`'s findings came from
+  reading three documents before writing a line, and **neither could have been found afterwards**:
+  a tautological statistic returns a clean number and a wrong-population premise is invisible to
+  every check on the instrument that uses it. Spend the ten minutes.
+- **RESOLVE A NUMBER TO THE FILE THAT OWNS IT, THEN READ THAT FILE'S SENTENCE.** `CONSTRUCTION-REG-010`
+  §C2 names its population *in the same sentence as the number*. One `grep 55.7` and one read.
+- **DO THE ALGEBRA ON THE PROPOSED STATISTIC BEFORE BUILDING IT.** Thirty seconds of
+  `min(v − b·w, (b+1)·w − v) ≤ w/2` saved an instrument that could only ever print 1.000.
+- **`severity.check`'s WITNESS MUST RETURN FALSY.** Two phantom-tag failures cost a round trip each.
+  The witness evaluates the SAME predicate in a mutated world; a witness returning True means the
+  guard cannot fail.
+- **CHECK THE NAME BEFORE A WHOLE-FILE WRITE INTO A SHARED DIRECTORY** (`git ls-files <name>`), and
+  **append to an existing drill rather than replacing it.** The recovery cost twenty minutes; the
+  check costs one command.
+- **A PRE-EDIT COPY BEFORE THE TREE IS DIRTIED** if the manuscript will be touched — `--against` has
+  no second chance. `-38` did not touch it, which is its own kind of clean.
 - **`git commit -F <file>` VIA `dx --put`, `shasum`'d BOTH ENDS.** Never inline a multi-line string
-  in `dx '...'`. Nine files crossed this session, every one matched.
-- **`ROSTER_BRAKE_ACK=<n>` MUST EQUAL THE STAGED COUNT** — `-37`'s were 1, 3, 3.
-- **`roster leave` BOTH rows at wrap** — the human-named one and the `cloud-*` one the hook creates.
+  in `dx '...'`. **`ROSTER_BRAKE_ACK=<n>` MUST EQUAL THE STAGED COUNT** — `-38`'s were 1, 6, 2, 2.
+- **`roster leave` BOTH rows at wrap** until item 2 is done: the claim half is fixed, the session
+  half is not.
+- **STATE SUITE COUNTS AS COLLECTED + SKIPS**, not as two pass counts that cannot be compared (see
+  Transport). `-37`'s two figures disagreed with each other in this very file and nothing noticed.
+- **CORROBORATE THE LEAVES YOU USED.** `-38` ran `lessons.py doctrine` at student-in and never ran
+  `lessons.py use`, so `record-outcome` resolved **zero** leaves at wrap. The quarantine cannot clear
+  itself. Run `use` when you read a leaf, not when you remember to.
 
 ---
 
 ## 5 · DEFINITION OF DONE (carry this forward)
 
-TERM-001 is **done**: registered alone before any anchor was touched, five sites each read in its own
-context first, the count bound to one parse, the adjective bound to the measurement that warrants it,
-six mutations, G-COACH-3 at (+0), suite green, and the card carrying the find **and** the
-performance. The BUG SPRAY disclosure is **done** and adds no claim.
+REG-012 is **done**: two defects in the question found by reading before anything ran, the population
+resolved from the cited document's own instrument through a single selection path, a descriptor that
+reads no threshold, both branches registered alone and pushed before the instrument existed, the
+refusal asserted as an **absence** and mutation-proved in both directions, the artifact reproduced
+byte-identically on two machines, the suite green, and the card carrying the find **and** the
+performance. The `GATE_ROSTER_WHO` fix is **done**: caused, fixed, drilled red-and-green, live-proved.
 
-**The estate is out of pre-written pastes**, and every repair the `§1.3` grep produced is built
-(SCOPE-001, PIN-001, TERM-002, TERM-001). **Every row `RESULT-REG-009` §4 teed up is run.**
+**The research ledger on paper III is empty.** Every row `RESULT-REG-009` §4 teed up is run, every
+repair the `§1.3` grep produced is built, and the last open research question is answered.
 
-The next unit of done is **item 1, the band count's half-integer question** — the last open research
-item on paper III, and the first at-bat in eight sessions that has to be *designed* rather than
-performed. Its definition of done is a **description of the heap that reads no threshold**, registered
-with both branches — including what a favourable answer is allowed to mean — before the instrument
-exists. A session that finishes it leaves the estate with only infra and process cards, which is the
-cleanest the ledger has been.
+The next unit of done is therefore **not a measurement**. It is either item 1 (infra, and `dx --get`
+on binary is the one every session pays for) or item 7 (the scouting report, which needs a ruling
+before it needs a session). **A session that goes looking for a new registration to write should
+first satisfy itself that the estate is asking for one** — the ledger says it is not.
