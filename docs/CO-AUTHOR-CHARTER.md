@@ -80,6 +80,24 @@ The full hostile-referee simulation is retained — reframed and caged:
   commenters the paper will face. Jason's '93 practice: hunt for scoops and attacks so
   the whitespace comes out clean. Adversarial input, constructive output.
 - **When:** once, scheduled, shortly before posting/submission. Not a standing mode.
+  **CLAUDE SCHEDULES IT. This is not a HITL ask** (Jason ruling, 2026-08-14, wealthTensor-39:
+  *"go ahead and make that call with whatever timing makes sense with the project — I'm
+  agnostic to when the scouting reports run"*). `-38`'s handoff carried it as **"NEEDS A
+  RULING, NOT A SESSION"** and `-39` duly asked; the answer was that it had never been his
+  call. Note what that cost and where it was already written down: `lessons.py` has carried
+  **ANY DEFENSIBLE POSITION: PICK AND GO** since 2026-08-08 — *"do not file a HITL ask; do
+  not park it on a card as Jason's call"* — and `-39` read that leaf, in the same
+  `doctrine` output, minutes before filing the ask anyway. **A handoff instruction beat a
+  standing doctrine leaf, because the handoff was specific and sitting in front of it.**
+  That is the `-38` tell inverted: a rule stated inside a document protects that document
+  and nothing else, so a doctrine leaf loses, silently, to any handoff that contradicts it.
+  The structural repair is this line, at the scene, in the charter that outranks the handoff.
+  His inbox is earned only by: irreversible-with-no-undo-path, real money leaving,
+  PII/security policy, or an external human relationship. A scouting report is none of them.
+  **Standing schedule as of `-39`: the research ledger on paper III is empty and its content
+  is frozen, so no future session's work can change what a referee sees. The scouting report
+  therefore runs NOW — it is `-40`'s at-bat.** Nothing was gained by waiting and the infra
+  cards do not block it.
 - **Where it lands:** `docs/scouting/`. It feeds PRACTICE (a list of §2-style repair
   tickets for the coach and player to work) — it never flows raw into the manuscript.
 - **Who adjudicates:** contested findings go to the EDITOR (Jason, or a fresh session
