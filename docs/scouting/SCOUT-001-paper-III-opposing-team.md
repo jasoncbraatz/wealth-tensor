@@ -455,7 +455,9 @@ the tail of the tier predicted to be tallest. Measured from `pre-002-events.json
 | 2 · indefinite-lived intangible | 11.8 | 17.0 |
 | **3 · goodwill (predicted longest)** | **5.1** | **12.5** |
 
-Goodwill is the *least*-censored tier in retail and the least in computer services. **The
+Goodwill is the least-censored tier in computer services and the *second*-least in retail —
+tier 0 is 4.8% there, one line above in this table, and the first draft of this sentence said
+"least in retail" anyway. **The
 twenty-quarter cap is not where the gradient went**, and §5.3's PRE-001-versus-PRE-002 table already
 carries half of this argument without drawing the tier-level conclusion. *Free STEELMAN: add the
 per-tier censoring column to that table. It costs four numbers and closes an attack outright.*

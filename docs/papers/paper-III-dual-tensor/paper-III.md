@@ -55,24 +55,26 @@ pre-registered, tested on 688 EDGAR-derived events across two sectors declared i
 fired). The identification result does not explain that failure, and this paper reports the check
 that refused to: **the lag statistic is the one observable the composite does not invert**, holding
 its ordering in 100% of the same admissible ladders and in 66.2% when δ is drawn independently,
-against 11.5% for the magnitude measure. What it cannot do is exist in public data — the
-model's lag is a cross-correlation against a physical series no filing reports — so the registered
-instrument necessarily measured a substitute, and the bridge to it was never written down. The
-repair follows from the theorem: **disclosed useful lives supply δ from outside the series**,
-restoring φ for every class that has one, and none for goodwill, where at δ = 0 the parameter is not
-ill-conditioned but absent. The disclosed lives also fix the model's domain, and they fix it
-tightly: the deferral measure exists only where the recognition rate exceeds the decay rate, and at
-the calibration used here **no disclosed useful life short enough to appear in a filing satisfies
-that** — which makes the recognition rate, rather than the ordering, the quantity a cross-sectional
-design has to establish first. The same registered events establish it: **the recognition rate is
-0.41 per year against a calibration of 0.05**, so the disclosed lives lie inside the model's domain,
-and the hazard rises with the age of the gap rather than staying constant as the model assumes.
-**The closed form survives that: the deferral measure is the recognition lag's moment generating
-function evaluated at the decay rate, and what the constant hazard supplied was not the result but
-its domain** — under a rising hazard there is no domain restriction, and the correction to the
-measure is under one per cent across the classes ranked here and 44% at a disclosed three-year life.
-The events also reject the reporting layer's diagonality, clustering across asset classes within a
-firm-quarter at two to four times the independence rate in both sectors.
+against 11.5% for the magnitude measure. What it cannot do is exist in public data — the model's lag
+is a cross-correlation against a physical series no filing reports — so the registered instrument
+necessarily measured a substitute, and the bridge to it was never written down. The repair follows
+from the theorem: **disclosed useful lives supply δ from outside the series**, restoring φ for every
+class that has one, and none for goodwill, where at δ = 0 the parameter is not ill-conditioned but
+absent. The disclosed lives also fix the model's domain, and they fix it tightly: the deferral
+measure exists only where the recognition rate exceeds the decay rate, and at the calibration used
+here **no disclosed useful life short enough to appear in a filing satisfies that** — which makes
+the recognition rate, rather than the ordering, the quantity a cross-sectional design has to
+establish first. The same registered events establish it: **the peak-to-charge recognition rate is
+0.41 per year against a calibration of 0.05, on both known biases' inflating side**, so the
+disclosed lives lie inside the model's domain — 0.97 of the disclosed pairs at that rate and 0.81 at
+the registered adverse cut — and the hazard rises with the age of the gap rather than staying
+constant as the model assumes. **The closed form survives that: the deferral measure is the
+recognition lag's moment generating function evaluated at the decay rate, and what the constant
+hazard supplied was not the result but its domain** — under a rising hazard there is no domain
+restriction, and the correction to the measure is under one per cent across the classes ranked here
+and 44% at a disclosed three-year life. The events also reject the reporting layer's diagonality,
+clustering across asset classes within a firm-quarter at two to four times the independence rate in
+both sectors.
 
 **Keywords:** identification · conditional conservatism · reporting lag · impairment ·
 pre-registration · asset life · deferred information
@@ -371,6 +373,11 @@ conditioning.
 > the *identical* reported series. The filter's two roots — the reporting rate and the physical
 > decay rate — are exchangeable, and the quantity preserved by the exchange is exactly **φδ**.
 
+**And this is not a property of the particular filter.** Any model in which reporting lag attenuates
+a physical signal will multiply a timeliness parameter by an asset-life parameter somewhere, because
+the observable is a rate times a duration. The model's contribution is to make the product explicit
+enough to be checked.
+
 The numerical confirmation runs alongside the proof rather than in place of it: the largest
 deviation between a series and its mirror is 8 × 10⁻¹⁶, the arithmetic and not the model, against
 3 × 10⁻¹ when the mirror's φ′ is replaced by the value that would preserve the *unrecognised gap*
@@ -437,12 +444,17 @@ and the conserved quantity generalises to (φ − g₀)δ = (φ′ − g₀)α. 
 are not observed from acquisition* — makes matters worse rather than better.
 
 Second, and this is the sharp form: **when the physical scale is not observed, φ is not two-valued.
-It is free.** Fix a reported series generated at φ = 0.60 and ask what other parameter vectors
-reproduce it exactly. Assuming a physical scale of 0.76 implies φ = 0; assuming 1.27 implies φ = 1;
-every assumption in between implies an intermediate φ, and every one of them regenerates the
-observed series to 2 × 10⁻¹⁶. **A factor of 1.67 in the unobserved physical scale spans the entire
-unit interval of timeliness.** The reported series is consistent with a firm that recognises
-everything at once and with a firm that recognises nothing.
+It is free.** Fix a reported series generated at φ = 0.60 in a world whose books already open 15%
+above the physical asset — the shifted map above, not §4.2's square opening — and ask what other
+parameter vectors reproduce it exactly. Assuming a physical scale of 0.76 implies φ = 0; assuming
+1.27 implies φ = 1; every assumption in between implies an intermediate φ, and every one of them
+regenerates the observed series to 2 × 10⁻¹⁶. **A factor of 1.67 in the unobserved physical scale
+spans the entire unit interval of timeliness.** Each member of that family also carries its own
+opening gap, and the φ = 0 end requires books opening **51% above** the physical asset — the state
+impairment accounting exists to prevent. Bounding that gap at ten per cent still leaves an
+identified set covering **31.7%** of the unit interval, which is fatal to a cross-sectional ranking
+and not an artefact of an unbounded freedom. The reported series is consistent with a firm that
+recognises everything at once and with a firm that recognises nothing.
 
 The condition under which this bites is worth naming precisely, because it is the empirical norm
 rather than an edge case. E₀ is observed when an asset is followed from acquisition, where cost
@@ -488,10 +500,6 @@ reverses sign under an exchange the data cannot detect is not a quantity a reade
 and the classes accounting standards distinguish are, almost by construction, the classes whose
 durability differs. That is why the standards distinguish them.
 
-This is not a defect of the present model. Any model in which reporting lag attenuates a physical
-signal will multiply a timeliness parameter by an asset-life parameter somewhere, because the
-observable is a rate times a duration. The model's contribution is to make the product explicit
-enough to be checked.
 
 ### 4.4 · The design has a validity region, and the disclosed numbers fall outside it
 
@@ -509,19 +517,20 @@ same ladder, because a class is placed on a schedule precisely when its decline 
 enough to schedule. Goodwill sits at the end of both: least observable, and with no degradation
 schedule at all.
 
-| tier | φ | 1 − φ | δ | (1 − φ)δ | **R** at α = 0.05, the calibration | **R** at α̂ = 0.408, measured (§5.4) | R at a common δ |
-|---|---|---|---|---|---|---|---|
-| 0 · property, plant and equipment | 0.80 | 0.20 | 0.030 | 0.00600 | **0.2999** | **0.0159** | 0.1333 |
-| 1 · finite-lived intangibles | 0.60 | 0.40 | 0.020 | 0.00800 | **0.2667** | **0.0206** | 0.2667 |
-| 2 · indefinite-lived intangibles | 0.40 | 0.60 | 0.010 | 0.00600 | **0.1500** | **0.0151** | 0.4000 |
-| 3 · goodwill | 0.20 | 0.80 | 0.002 | 0.00160 | **0.0333** | **0.0039** | 0.5333 |
+| tier | φ | 1 − φ | δ | (1 − φ)δ | **R** at α = 0.05, the calibration | **R** at α̂ = 0.408, measured (§5.4) | **R** at α̂ = 0.327, the registered adverse cut | R at a common δ |
+|---|---|---|---|---|---|---|---|---|
+| 0 · property, plant and equipment | 0.80 | 0.20 | 0.030 | 0.00600 | **0.3000** | **0.0159** | **0.0202** | 0.1333 |
+| 1 · finite-lived intangibles | 0.60 | 0.40 | 0.020 | 0.00800 | **0.2667** | **0.0206** | **0.0261** | 0.2667 |
+| 2 · indefinite-lived intangibles | 0.40 | 0.60 | 0.010 | 0.00600 | **0.1500** | **0.0151** | **0.0189** | 0.4000 |
+| 3 · goodwill | 0.20 | 0.80 | 0.002 | 0.00160 | **0.0333** | **0.0039** | **0.0049** | 0.5333 |
 
 The right-hand column is the world the design assumed: classes differing in observability and in
 nothing else. There the deferral measure rises monotonically up the ladder exactly as predicted,
 Kendall τ = +1. The two **R** columns are the world the standards describe, at the recognition rate
 calibrated here and at the one §5.4 goes on to measure. There the deferral measure is monotone
-too — **running the other way.** Kendall τ = **−1** at the calibrated rate, and **−0.67** at the
-measured one, where the first rung alone turns over; the rung that separates them is identified
+too — **running the other way.** Kendall τ = **−1** at the calibrated rate, and **−0.67** at both the
+measured rate and the registered adverse cut, where the first rung alone turns over; the rung
+that separates them is identified
 below.
 
 **The design and its own observable are anti-aligned across the ladder.** A confounded design
@@ -605,18 +614,22 @@ separately (63.3% and 68.2%). Swept uniformly and independently over the rectang
 the same test returns 99.8% at the same rate, and 86.1% of the disclosed pairs fall outside that
 rectangle.
 
-**And the binding constraint is the model's domain, not the ordering.** R is defined only for
-δ < α. Past that the deferred gap grows without bound relative to the asset — the ratio reaches
-10⁶⁹ by period 400 at δ = 0.20 — and there is no steady-state deferral measure to rank. At the
-α = 0.05 calibrated here **the entire asserted rectangle lies outside the domain**: every useful
-life short enough to appear in a filing implies a decay rate at or above the recognition rate. Half
-of the rectangle is admissible only at α ≈ 0.19, and all of it above α = 0.33. **That made the
-recognition rate, not the ordering, the quantity to establish first — and §5.4 establishes it.**
-On the registered sample the recognition rate is **α̂ = 0.408 per year**, 95% interval
-[0.383, 0.432]: the calibration used here is low by an order of magnitude, the asserted rectangle
-lies inside the domain after all, and so do **0.974** of the 683 disclosed pairs. The domain
-restriction is a property of the calibration and not
-of the disclosure.
+**And the binding constraint is the model's domain, not the ordering.** R is defined only for δ < α.
+Past that the deferred gap grows without bound relative to the asset — the ratio reaches 10⁶⁹ by
+period 400 at δ = 0.20 — and there is no steady-state deferral measure to rank. At the α = 0.05
+calibrated here **the entire asserted rectangle lies outside the domain**: every useful life short
+enough to appear in a filing implies a decay rate at or above the recognition rate. Half of the
+rectangle is admissible only at α ≈ 0.19, and all of it above α = 0.33. **That made the recognition
+rate, not the ordering, the quantity to establish first — and §5.4 establishes it.** On the
+registered sample the recognition rate PRE-002's instrument identifies is **α̂ = 0.408 per year**,
+95% interval [0.383, 0.432]: the calibration used here is low by an order of magnitude, and the
+asserted rectangle lies inside the domain at the measured rate and across its 95% interval, where
+**0.974** of the 683 disclosed pairs are admissible and **0.959** at the interval's lower bound. At
+the cut REG-003 registered in advance as the one that would break it — the 175 events charged one
+quarter after the peak dropped, giving **0.327** — the rectangle's own fastest disclosed rate of
+0.3333 is no longer cleared, and **0.814** of the pairs remain admissible. The domain restriction is
+a property of the calibration and not of the disclosure, and what its remaining margin turns on is
+the onset bridge rather than the sample.
 
 **The shape of this argument is not new, and its best-known instance is one field over.** Fisher and
 McGowan (1983) argued that an accounting rate of return cannot be used to infer economic
@@ -928,12 +941,13 @@ what was registered and what happened; §6 states what may now be claimed.
 
 ### 4.9 · The closed form does not need the constant hazard, and what it does need is a tail
 
-§5.4 measures the recognition rate and, in the same fit, rejects the shape the model assumes:
-discrete Weibull k̂ = 1.210, 95% interval [1.135, 1.285], stable under truncation at eight, twelve
-and sixteen quarters. **R = (1 − φ)δ/(α − δ) is derived by summing a geometric**, and a geometric is
-the one lag distribution whose hazard does not depend on how long the gap has been open. Everything
-§4.3 and §4.4 read off that expression — the cross-class ranking, the top-rung crossing, the
-domain — inherits whatever the assumption was doing. REG-004 asks what it was doing.
+§5.4 measures the recognition rate PRE-002's instrument identifies and, in the same fit, rejects the
+shape the model assumes: discrete Weibull k̂ = 1.210, 95% interval [1.135, 1.285], stable under
+truncation at eight, twelve and sixteen quarters. **R = (1 − φ)δ/(α − δ) is derived by summing a
+geometric**, and a geometric is the one lag distribution whose hazard does not depend on how long
+the gap has been open. Everything §4.3 and §4.4 read off that expression — the cross-class ranking,
+the top-rung crossing, the domain — inherits whatever the assumption was doing. REG-004 asks what it
+was doing.
 
 **It survives, and it survives as a transform.** Let a gap cohort created at time *s* be recognised
 after a lag *T* ≥ 1 periods, so it sits in the gap over *s*+1 … *s*+*T*. The gap is then the flow
@@ -1288,11 +1302,14 @@ none reverses the verdict.
 | events retained, both universes | 322 | **688** |
 | charges discarded for no onset | **1,047** | **0** |
 | right-censored | 0% | 7.8% pilot, 14.2% replication |
+| right-censored by tier, 0 · 1 · 2 · 3 | 0% throughout | pilot 4.8 · 17.6 · 11.8 · **5.1** %; replication 17.6 · 15.7 · 17.0 · **12.5** % |
 | pilot IQR width, tier 3 | 3.0–7.0 | 1.0–9.0 |
 
 The lag distribution now spans the registered range instead of piling against a ceiling imposed by
 signal volatility, and censoring is non-zero — which is what an instrument capable of observing
-long lags looks like.
+long lags looks like. **And the ceiling is not where the gradient went:** goodwill, the tier
+predicted to lag longest, carries the least censoring of the four in the replication and the
+second-least in the pilot, so the twenty-quarter cap is not hiding its tail.
 
 **Negative control.** Tier labels permuted 1,000 times with the lag distribution held fixed:
 
@@ -1343,12 +1360,12 @@ license a prediction and sound enough to license its refutation.
 
 **The shape of the failure, stated as sharply as the data allow.** Both z-statistics are negative,
 meaning the point estimates ran *opposite* to the predicted ordering in both universes, as they had
-in the PRE-001 pilot. And the ladder does not merely fail to be monotone — it is wrong in a
-specific and instructive place: **tier 2, indefinite-lived intangibles, carries the longest median
-lag in both universes, with goodwill sitting below it** (5.5 against 5.0 in the pilot, 6.0 against
-5.0 in the replication). A four-rung ladder whose *third* rung is the tallest cannot be rescued by
-appeal to the top rung's behaviour, and no reading of the tier ordering as a noisy version of the
-predicted one survives that pattern.
+in the PRE-001 pilot. And the ladder does not merely fail to be monotone — it is wrong in a specific
+and instructive place: **tier 2, indefinite-lived intangibles, carries the longest median lag in
+both universes, with goodwill sitting below it** (5.5 against 5.0 in the pilot, 6.0 against 5.0 in
+the replication). Those are point estimates, and the ordering is the claim: **the predicted ordering
+appears in 5.7% of firm-clustered resamples in the pilot and 5.8% in the replication**, resampling
+firms rather than events because §5.4's own finding says events are not the unit.
 
 **The stopping rule fired.** There is no third instrument. A hypothesis that requires one on the
 same data is a hypothesis being fitted.
@@ -1366,7 +1383,8 @@ events across 307 firms** against 688 across 311, with three of four tier counts
 censoring at 7.7% against 7.8%. The registered reconciliation rule, fixed before the count was
 known, admits this as the registered sample.
 
-**The recognition rate is 0.41 per year, and the calibration was low by an order of magnitude.**
+**The peak-to-charge recognition rate is 0.41 per year, and the calibration was low by an order
+of magnitude.**
 Each event carries the interval from the onset of deterioration to the charge, right-censored at
 twenty quarters — which is α's definition, measured once per event, by an instrument built to look
 at something else. The censored geometric maximum likelihood estimate is **α̂ = 0.1227 per quarter
@@ -1460,9 +1478,10 @@ carry the quantity the decomposition needs.
 ### 6.1 · The demotion, stated exactly
 
 **Not supported:** that recognition lag scales with the unobservability of degradation, where
-unobservability is identified with GAAP asset class, in US-listed retail trade or computer and
-data processing services over 2013–2024, at the firm level, at effect sizes of one quarter per
-tier or larger.
+unobservability is identified with GAAP asset class, in US-listed retail trade (SIC 5200–5999) or
+computer and data processing services (SIC 7370–7379), among registrants filing in 2013–2024, on
+charges recognised 2012 Q2 – 2026 Q2, at the firm level, at effect sizes of one quarter per tier or
+larger.
 
 **Unaffected:** every result in §A.2 and §§2–3. Those are properties of a stated model, established by
 simulation and held in place by a test suite. A model result is not made false by the failure of
@@ -1571,7 +1590,7 @@ with what would have killed each.
 | **The design's validity region has a fitted boundary** | logistic of failure on log(leverage / budget), 4,000 ladders | a slope indistinguishable from zero | slope **+1.58**, z = **+19.5**; the same fit on a permuted outcome gives z = 0.23 |
 | **The *asserted* rectangle lies outside the model's domain *at the calibrated rate*** | useful lives spanning disclosure practice against α = 0.05, and the 683 disclosed pairs against the measured rate | any part of it admitting a steady-state deferral measure | **0%** admissible at α = 0.05; **all** of the asserted rectangle and **0.974** of the disclosed pairs at the measured α̂ = 0.408 |
 | **The rectangle's 99.7% is a property of the assumed support, not of the disclosure** | §4.4's first rung evaluated on 683 disclosed firm-year pairs across 577 firms, against the same test on the asserted rectangle at the same rate | the two agreeing within the clustered interval, which would have made the rectangle an adequate stand-in for the disclosure | rises in **0.659** of admissible pairs [**0.621**, **0.696**] against **0.998** on the rectangle; only **0.139** of the pairs fall inside it |
-| **The recognition rate is an order of magnitude above the calibration** | censored geometric MLE on 695 registered events, two universes, three sensitivities, four truncations | any cut returning a rate near the swept 0.05 | **α̂ = 0.408/yr** [0.383, 0.432]; range **0.327–0.499** across every cut, none containing 0.05 |
+| **The peak-to-charge recognition rate is an order of magnitude above the calibration** | censored geometric MLE on 695 registered events, two universes, three sensitivities, four truncations | any cut returning a rate near the swept 0.05 | **α̂ = 0.408/yr** [0.383, 0.432]; range **0.327–0.499** across every cut, none containing 0.05 |
 | **The constant hazard the model assumes is rejected** | discrete Weibull fitted, not assumed, with a profile interval | k̂ = 1, which would have left α a constant | **k̂ = 1.210** [1.135, 1.285]; the hazard rises with the age of the gap |
 | **The closed form survives an age-dependent hazard** | general form against an age-structured simulation carrying the gap as cohorts, no closed form in the loop | departure beyond §4.3's published transient bound | held to **2 × 10⁻¹³** against a 2 × 10⁻⁴ bound; the same simulation **rejects** α ← 1/E[T] at 2 × 10⁻³ |
 | **φ is a pure scale under age-dependence too** | R(φ)/R(0) against (1 − φ), φ swept on a tenth-grid | any φ at which the ratio departs | held to **exactly 0.0** |
@@ -1730,34 +1749,34 @@ theorem is a framing that will be argued about instead of the theorem.**
 1. **The severe test failed and this paper does not know why.** Three post-hoc explanations exist —
    the theory is wrong; the bridge was wrong; the unit of observation was wrong — and **the data do
    not distinguish them.** The first is listed first on purpose, being the one the author has the
-   strongest incentive to list last.
-2. **The unit mismatch is real, unfixed, and was unfixed by both registrations.** The impairment
-   charge is asset-level; the deterioration signal used was firm-level. A firm can impair a failing
-   reporting unit while consolidated revenue rises. Fixing this requires segment-level disclosures
-   and is a different project with a different registration — which **may not cite the present
-   failure as support for anything.**
-3. **The filter model is deterministic and single-firm.** No stochastic degradation, no
-   heterogeneity, no interaction between firms, no market. Every empirical signature it suggests is
-   therefore a qualitative target, not a fitted one. **The determinism is not innocuous, and §4.8 is
-   where it bites**: the goodwill limit reported there is a consequence of the physical layer being
-   noiseless, and it dissolves once that layer is allowed to move for reasons other than a schedule.
-   Admitting stochastic degradation is the single change to this model most likely to alter what it
-   says, which is why it is named here rather than in a list of extensions.
-4. **φ and θ are not measured; they are swept — and for φ the reason is §4.** α is no longer
-   in that list: §5.4 estimates it at 0.408 per year on the registered sample, against the 0.05
-   swept through the body, and finds the constant hazard the model assumes to be rejected. §4.9
-   settles what that rejection costs: the closed form is the recognition lag's moment generating
-   function evaluated at the decay rate, so it survives with an effective rate that is a function
-   of δ rather than a constant, and what the constant hazard was supplying was the domain. The
-   paper reports how outcomes vary across the sweep and does not claim any firm's φ is known. That is
-   no longer a concession about this construction: §4.2 establishes that **no** estimator
-   recovers φ from a reported series, because the series does not contain it. The consequence
-   is stated there rather than softened here, together with the one repair available — an
-   independent determination of δ, for which disclosed useful lives are a candidate this
-   programme has not yet used. (Method, scripts and full figures for the conditioning result
-   that preceded the theorem: `docs/notes/NOTE-001-phi-identifiability.md`. Synthetic data only.
-   It is **not** evidence about §5's null, which used an entirely different, non-parametric
-   estimator.)
+   strongest incentive to list last. 2. **The unit mismatch is real, unfixed, and was unfixed by
+   both registrations.** The impairment charge is asset-level; the deterioration signal used was
+   firm-level. A firm can impair a failing reporting unit while consolidated revenue rises. Fixing
+   this requires segment-level disclosures and is a different project with a different registration
+   — which **may not cite the present failure as support for anything.** 3. **The filter model is
+   deterministic and single-firm.** No stochastic degradation, no heterogeneity, no interaction
+   between firms, no market. Every empirical signature it suggests is therefore a qualitative
+   target, not a fitted one. **The determinism is not innocuous, and §4.8 is where it bites**: the
+   goodwill limit reported there is a consequence of the physical layer being noiseless, and it
+   dissolves once that layer is allowed to move for reasons other than a schedule. Admitting
+   stochastic degradation is the single change to this model most likely to alter what it says,
+   which is why it is named here rather than in a list of extensions. 4. **φ and θ are not measured;
+   they are swept — and for φ the reason is §4.** α is measured, but for the quantity PRE-002's
+   instrument dates rather than for the model's α: §5.4 estimates that rate at 0.408 per year on the
+   registered sample, against the 0.05 swept through the body, and finds the constant hazard the
+   model assumes to be rejected. The bridge from that rate to the model's α is the one §6.2 requires
+   of every registration, and this paper has not written it. §4.9 settles what that rejection costs:
+   the closed form is the recognition lag's moment generating function evaluated at the decay rate,
+   so it survives with an effective rate that is a function of δ rather than a constant, and what
+   the constant hazard was supplying was the domain. The paper reports how outcomes vary across the
+   sweep and does not claim any firm's φ is known. That is no longer a concession about this
+   construction: §4.2 establishes that **no** estimator recovers φ from a reported series, because
+   the series does not contain it. The consequence is stated there rather than softened here,
+   together with the one repair available — an independent determination of δ, for which disclosed
+   useful lives are a candidate this programme has not yet used. (Method, scripts and full figures
+   for the conditioning result that preceded the theorem:
+   `docs/notes/NOTE-001-phi-identifiability.md`. Synthetic data only. It is **not** evidence about
+   §5's null, which used an entirely different, non-parametric estimator.)
 
 5. **Λ⁻¹ and SDG 7.3.1 are the same quantity dimensionally, not empirically.** The SDG series is a
    national aggregate over primary energy and PPP output; the model's coupling is a firm-level
@@ -2005,6 +2024,14 @@ public data.
   the head of the repository.
   A submission-time head-of-repository SHA will be pinned when this paper is posted; the per-file
   pins are what a replicator needs and are verifiable now.
+- **Data retrieval, pinned.** `companyfacts` serves each firm's *latest* view of its own
+  history, so a re-pull is not the original pull and the sample grows with every filing —
+  §5.4 reports 688 → 695 over one week. The events analysed here were retrieved on
+  **2026-08-12** and are committed rather than re-fetched, at commit **0569ab6**:
+  `data/pre-002-events.json`, SHA-256 **`974d156b53dfb915f48bdc3df99d7f2f2dd146427fa537fd7bdff4a503006bf0`**,
+  and `data/pre-002-riskset.json`, SHA-256 **`60627429d937bc42b9cf96a1be4bcfb78d198948a3212ac8f8c5e4412a436cce`**.
+  Charges in that file run **2012 Q2 – 2026 Q2** and onsets
+  **2010 Q1 – 2026 Q1**; the 2013–2024 window selects registrants, not events.
 - **Drop accounting for §5**, as required by the registrations: the per-bucket attrition from
   candidate charges to the 688 analysed events, by universe and by tier, is in the run logs at
   `docs/preregistration/RESULT-002-*-run.log`. **A reader should check that attrition does not
