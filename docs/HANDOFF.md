@@ -1,8 +1,8 @@
 ---
 project: wealth-tensor
-gh_sha: b35cbf70afa62d8a0cc9668ed25e0a20766d0295
+gh_sha: PENDING
 updated: 2026-08-14
-session: wealthTensor-29
+session: wealthTensor-30
 gate_passed: true
 gate_version: "2.51"
 ---
@@ -15,60 +15,49 @@ gate_version: "2.51"
    any result doc, or any plausible-sounding rewrite conflicts with it, the charter governs and the
    other thing is wrong. *This file is a status report. It is not law and it cannot amend the charter.*
 2. `python3 scripts/handoff_gate.py --check` — proves this file is not stale.
-3. **`docs/preregistration/REG-009-p3-lifetime-sourced-delta.md` — READ THE HEADER NOTE FIRST.**
-   The file is now in two parts. §§0–5 are Part I (the arm, the four decisions, P0's declaration,
-   the definition of done, P0's stopping rule). **§§6–12 are Part II, committed by `-29` alone** —
-   D2/D3/D4 fixed, the registered quantities, the seven questions, the predictions, ten falsifiers,
-   the stopping rule. **The numbering is 6–12 and not 2–8, on purpose; the header note says why.**
-4. `docs/preregistration/RESULT-P0.md` — the evidence §6 cites.
-5. §7's SEEN/UNSEEN table before you compute anything, then §12's stopping rule.
+3. **`docs/preregistration/RESULT-REG-009.md`** — the run `-30` committed. Read §0 first: it states
+   the one reading §11 required, and §4 is a **registered control that FAILED** and is reported
+   rather than repaired.
+4. `docs/preregistration/REG-009-p3-lifetime-sourced-delta.md` — **READ THE HEADER NOTE FIRST.**
+   Two parts; §§0–5 are Part I, §§6–12 Part II. **The numbering is 6–12 and not 2–8 by ruling.**
+5. `docs/preregistration/RESULT-P0.md` — the evidence §6 cites.
 
-> **`-29` in one line: REG-009 is now a registration rather than a design note — and the seventh
-> unmeasured quantifier turned up in paper III's own REPAIR, in the clause "it runs on the sample
-> §5 already collected."** Counted: **55 property events across 38 firms** as §5 collected them,
-> **151 across 98** on the `REG-006`-repaired tag list. **The mirror tell caught this session's own
-> first draft**, which had shipped the 55 alone and read as a refusal — the repaired count is 2.7×
-> larger and changes the verdict to MARGINAL. **The tell now has three shapes: a number that
-> disappoints, a number that pleases, and a number that SETTLES AN ARGUMENT.** A count is a claim
-> about the tag list that produced it.
+> **`-30` in one line: §3's definition of done is CLOSED — the instrument ran, and the manuscript's
+> 99.7 % did not survive contact with the disclosure's own joint distribution.** Ψ = **0.6586**
+> [0.6211, 0.6964] on 665 admissible pairs across 577 firms, against Ψ_rect(α̂) = **0.9980** on the
+> asserted rectangle at the *same* rate. **P1 HOLDS · P2 HOLDS · P3 FAILS · P4 HOLDS.** §12's three
+> manuscript repairs landed in the same session, as registered. And the charter's G-COACH-3 — the
+> defensive-sentence invariant declared 2026-08-12 and evaluated zero times since — is **mechanised**.
 
 ## 0 · TRANSPORT — darlish, zero-bridge
 
 Standard bring-up; post the `DARLISH-ENROLL` line to Asana **1217316841710435**, collect, then `dx`.
-First collect has worked **-06 through -29 without exception**. Roster join/claim as
-`big-wealthTensor-30` — **`roster claim` takes `--resource`, not `--repo`**.
-`export LESSONS_CONTRIBUTOR=opus`. **`export GATE_ROSTER_WHO=<you>` at the TOP**, not at the gate.
+First collect has worked **-06 through -30 without exception**. Roster join/claim as
+`big-wealthTensor-31` — **`roster claim` takes `--resource`, not `--repo`**.
+`export LESSONS_CONTRIBUTOR=opus` and **`export GATE_ROSTER_WHO=<you>` at the TOP**, not at the gate.
 
-**NEW · THE ROSTER BRAKE IS LIVE AND IT WILL STOP YOU (`-29` built it, AAR A1).** `pre-commit` now
-refuses a commit when another **fresh** (<4h) session claims the repo AND more than one path is
-staged AND **nothing dirty is left unstaged** — the `git add -A` fingerprint. **It blocked its own
-author's first commit**: four files staged by path, nothing else dirty, one live sibling. Exits, in
-order: stage by path · `ROSTER_BRAKE_ACK=<n> git commit ...` where *n* must equal the staged count ·
-`git commit --no-verify`. Not a bug, a known false-positive shape — see State Machine
-`1217468064910605`.
-
-**NEW · `patchkit` READS A SHELL `# ` COMMENT AS A MARKDOWN HEADING.** Patching a hook or any
-`.sh`/`.py` file with a block comment raises `StructureError` until you declare
-`expect_structure={"#": +N}`. And `expect_structure` applies **per file inside one call**, so a
-multi-file patch with different deltas needs **one `apply_edits` call per file**. Cost `-29` two
-round trips.
-
-**macOS `base64` REJECTS A BARE FILE ARGUMENT.** `cat f.b64 | base64 -d > out`, never `base64 -d f`.
+**THE ROSTER BRAKE IS LIVE.** It fired on both of `-30`'s commits and both were honest
+`git add <path>` stagings, so the exit is routine: `ROSTER_BRAKE_ACK=<n> git commit -F <file>` where
+*n* must EQUAL the staged count (6 and 7 here). It is a **heads-up after the fact**, not a block;
+the block is pre-commit and only refuses the `git add -A` shape.
 
 **Run pytest with `.venv/bin/python`, not `python3`** — the system interpreter has no scipy.
-**690 tests, ~42 s on darwin.**
+**732 tests, ~56 s on darwin** (was 690; `-30` added 42).
 
-**NEVER inline a multi-line string in a `dx '...'` argument — AND A HEREDOC IS NOT AN ESCAPE.**
-Write locally → `dx --put` → run it / `git commit -F`, and `shasum` every file across. `-29` moved
-eight files that way, all eight byte-for-byte. **Patch scripts beat `sed`; verify EVERY anchor
-before writing ANY file** — patchkit does both and it refused a bad write twice this session.
+**NEVER inline a multi-line string in a `dx '...'` argument — a heredoc is not an escape.** Write
+locally → `dx --put` → run it / `git commit -F`, and `shasum` every file across. `-30` moved eleven
+files that way, all eleven byte-for-byte. **macOS `base64` rejects a bare file argument:**
+`cat f.b64 | base64 -d > out`. **Patch scripts beat `sed`; `patchkit` validates every anchor before
+writing anything.** `patchkit` reads a shell `# ` comment as a markdown heading — declare
+`expect_structure={"#": +N}`, and it applies PER FILE inside one call.
 
-**Stage by PATH. Never `git add -A` on darwin** — and now the brake enforces it.
+**NEW · NESTED SAME-QUOTE f-STRINGS NEED PYTHON 3.12+.** `f"{', '.join(f'{d[k]}' for k in ks)}"`
+parses on the cloud container and **fails on darwin's venv**. Precompute the inner string with
+`%`-formatting or a named variable. Cost `-30` one round trip.
 
-**Bulk SEC work: CLOUD, NOT DARWIN.** Settled five times. `data.sec.gov`/`www.sec.gov` are fast
-(630 MB zip < 1 min, full `txt.tsv` scan ~16 s). **No free equity price series is reachable.**
+**Bulk SEC work: CLOUD, NOT DARWIN.** Settled five times.
 
-## THE FOURTEEN THINGS THAT HAVE EACH COST A SESSION A RUN
+## THE FIFTEEN THINGS THAT HAVE EACH COST A SESSION A RUN
 
 1–8 unchanged (registered machinery: `onset_rule="peak"`; `peak_onset` returns a tuple; control arm
 in the same pass; the panel is registered machinery; `git log -S` recovers a dangling ordinal; a
@@ -78,58 +67,60 @@ taken independently is comparing two periods).
 9. **A MEASUREMENT THAT CANNOT REPRESENT THE ANSWER IS NOT EVIDENCE OF ABSENCE.**
 10. **AND ASK IT OF EVERY NON-ZERO TOO — a rate is a claim about whatever the instrument could reach.**
 11. **AN ADJECTIVE IN A DESIGN SENTENCE IS AN UNMEASURED QUANTITY UNTIL YOU NAME THE MEASUREMENT.**
-    The cheap tell is a grep: an objection keyword occurring exactly ONCE is an objection nobody answered.
 12. **AND THE WORST CASE IS THE OBJECTION THE DOCUMENT RAISED AGAINST ITSELF.**
-13. **ASK THE INSTRUMENT-ARTEFACT QUESTION OF NUMBERS THAT LOOK GOOD** (`-28`, on a 99.8 % recovery
-    from a band holding one distinct value).
-14. **NEW · AND OF NUMBERS THAT SETTLE AN ARGUMENT. A COUNT IS A CLAIM ABOUT THE TAG LIST THAT
-    PRODUCED IT.** `-29` was one paragraph from publishing a feasibility refusal built on 55 events
-    from a tier tag list **this repository had already repaired**; the repaired count is 151.
-    Cheapest check in the family: when two artifacts of one population exist and one is labelled
-    *corrected*, **diff their counts before quoting either**.
+13. **ASK THE INSTRUMENT-ARTEFACT QUESTION OF NUMBERS THAT LOOK GOOD.**
+14. **AND OF NUMBERS THAT SETTLE AN ARGUMENT. A COUNT IS A CLAIM ABOUT THE TAG LIST THAT PRODUCED IT.**
+15. **NEW · AND OF A REGISTERED CONTROL THAT FAILS — ASK WHETHER THE OPERATOR IS THE ONE THE
+    PREDICTION NAMED.** `-30`'s P3 failed on Ψ_band. Before writing that down, the band's bin edges
+    were checked against the instrument that PRICED the band and found identical — so the banding was
+    inherited, not invented, and the failure is real. But the bins are half-open on the left and
+    **55.7 % of the lives are integers**, which sit on a bin's LEFT EDGE, so a midpoint collapse
+    **translates** by +0.5 y where §9 said "a one-year *rounding*". **That does not rescue the
+    control** — it is reported FAILED, the mechanism is labelled post-hoc, and the alternative
+    banding is teed up for its OWN registration so it cannot arrive later as a fix. The general
+    rule now lives in `claude-blackbook`.
 
 **Witness contract:** a `\b` inside a NON-RAW fragment of a concatenated regex is a backspace.
-**Manuscript:** `patchkit.apply_edits`, never `sed`. Back the file up first.
-**The gh_sha dance is NOT a defect — do not "fix" it.** `--stamp`, then a commit whose whole content
-is the stamp. `--check` calls that `ADVISORY: docs-only drift` and **exits 0**. Read the exit code.
+**NEW · A SOURCE-TEXT GUARD FIRES ON ITS OWN WITNESS.** F9a greps the instrument's source for
+`industry_median` and matched the literal inside its own `witness=lambda: ... "def
+industry_median(): pass"`. Fixes, both one line: write the pattern with single-char classes
+(`industry[_]median`) so the literal cannot match itself, and **compose the witness world from
+fragments** (`"def industry" + "_median"`). Any check whose subject is text it is part of has this.
+**The gh_sha dance is NOT a defect.** `--stamp`, then a commit whose whole content is the stamp;
+`--check` calls that `ADVISORY: docs-only drift` and **exits 0**. Read the exit code.
 
 ## 1 · WHAT HAPPENED
 
-**`0dbbdef` in `wealth-tensor` — one file, no instrument code.** REG-009 Part II (§§6–12), plus
-three dated pointers appended to Part I in §1.3a's manner (the header numbering note, §1.6a, and a
-disposition line on §3's item 3). **Nothing in Part I was rewritten.** 690 tests green.
+**`f069ab2` — the instrument.** `scripts/reg009_ladder_inputs.py` (+ 12 pinning tests,
+`RESULT-REG-009.md`, its run log, `reg-009-result.json`, `reg-009-resolution-audit.json`).
+**24 severe checks, 0 definitional, 0 vacuous.**
 
-**§3's definition of done: items 1, 2, 3, 5 and 6 are now DONE. Item 4 is the only one left.**
+| | value |
+|---|---|
+| **Ψ** (`R_MID`, pooled) | **0.6586** [0.6211, 0.6964] · 665 admissible of 683 · 428 distinct pairs · modal 0.026 |
+| Ψ by cycle | 0.6326 (2014-15) · 0.6818 (2022-23) — **P1 holds in both separately** |
+| **Ψ_rect(α̂ = 0.408)** | **0.9980** · at α = 0.35, 0.9973 · at α = 0.05, **vacuous** (admissible set empty) |
+| **S** (`R_MID`) | **0.1391** — 95 of 683 pairs inside the asserted rectangle |
+| **Ψ_band** | 0.7236 — **|Δ| = 0.0650, above P3's five points** |
+| A (`R_MID`) | 0.974 · 3 pairs inadmissible on property alone, 15 on intangible, 0 on both |
 
-**THE NUMBERING, because it will look wrong at first glance.** Part I said "§§2–8 are deliberately
-absent" while §§2–5 already existed: 2–8 named the *template's* slots (REG-007/008 run
-3 quantities · 4 questions · 5 predictions · 6 not-doing · 7 repairs · 8 falsifiers · 9 stopping)
-and §§2–5 were this file's own scaffolding. **Resolved by ADDITION.** §§0–5 keep their addresses
-because `RESULT-P0` §4 cites "REG-009 §4" and `tests/test_reg009_design.py` cites §1.3 — and
-re-addressing a pre-commitment after seeing its result is the move a pre-commitment exists to
-prevent. **Do not renumber it later "for tidiness."**
+**§12's attribution is PERFORMED, not pointed at.** Moving α from 0.35 to α̂ on the *same* rectangle
+moves its answer by **0.0007 — 0.2 % of the 0.339 gap.** The recognition rate is ruled out
+quantitatively; support (S = 0.139) and measure (428 distinct pairs, modal 0.026) jointly carry the
+rest, and **this design does not decompose those two and says so**.
 
-**THE EXPERIMENT REG-009 NOW REGISTERS.** §4.4 evaluates its first rung over a **400 × 400 uniform
-grid** on a rectangle **asserted** in `wt088_disclosed_ladder.py` as `LIFE_PPE = (10, 40)` and
-`LIFE_FIN = (3, 20)`, with δ₀ and δ₁ swept **independently** — and the **99.7 %** the manuscript
-quotes is computed at **α = 0.35**, a rate that appears nowhere in the paper (verified by running
-`wt088`; at the paper's own α = 0.05 the number is 0.0 %). A filing does not supply a rectangle. It
-supplies **one point, both coordinates chosen by one management on one page**. Ψ replaces the
-product measure on an assumed support with the **empirical joint distribution**: **683 paired
-firm-years across 577 firms** (321 and 362 by cycle, 106 firms in both), all three D2 rules
-resolvable on every one. **P2 predicts against this project's own published number.**
+**`d4c6487` — §12's manuscript repairs, plus G-COACH-3.** §4.4's 99.7 % → the measured share with
+its denominator; §4.4's now-redundant sequel sentence CUT and replaced by 0.974 of the 683 pairs;
+§4.7's "runs on the sample §5 already collected" → carries 151/98, 55/38, 110 joinable, and 21 per
+band against a floor of 30; §7's rectangle row relabelled **asserted** and REG-009 added to the
+ledger with six figures, six reach declarations and a new docs-fixture owner.
 
-**D2/D3/D4, FIXED — AND D2 REFUSES THE RULE THAT SCORES BEST, ON PURPOSE.** `R_MIN` leads P0-c's
-recovery column partly because it **heaps hardest** (87.5 % integers, 46 distinct values over 1,206
-property firm-years), which is an argument about the disclosure wearing a rule's costume — and it
-collapses both tags toward each other **along the exact axis of §7's comparison**. `R_MID` is
-primary (the only rule using both disclosed endpoints); `R_WEIGHT` is amount-backed on both tags in
-**273 of 683 pairs (0.400)** and cannot be primary on a count. D3 → 1.00 y / property / `R_MIN`, the
-one rung clearing §4 at coverage ≥ 0.80, used here as the heaping-robustness row Ψ_band. D4 →
-firm-specific; the industry-median variant is **not run at all** and F9 asserts the absence.
-
-**AAR A1, DEFERRED SIX SESSIONS, IS BUILT** — `darwin-scripts 27bea21`, `darwin-mac-ops a4bde04`.
-See §3.
+**`scripts/defensive_count.py` + `tests/test_defensive_count.py` + `DEFENSIVE-BASELINE.json`.** The
+charter's §2 invariant was declared 2026-08-12 and evaluated **zero times**, because nothing could
+count one. It reports a **delta between two versions of one document**, never a verdict about a
+document — which is what survives this estate's own "a crude detector reads as coverage" objection.
+The baseline is committed, so a legitimate increase must be raised in the same commit. First live
+fire on `-30`'s own pass: **3 → 3. G-COACH-3 holds.**
 
 ## 2 · RULINGS — DO NOT REOPEN
 
@@ -139,64 +130,62 @@ See §3.
 - **THE ARM IS δ.** Reopening it requires a *quoted price* for a delisted-inclusive series.
 - **D1 IS RULED: the whole span, with a per-year, per-fiscal-calendar weight.**
 - **§4.8 IS NOT THE COINCIDENCE ARGUMENT; §4.7 IS, AND IT COMES WITH A WEAK JOINT.**
-- **P0 DID NOT CHOOSE D2/D3/D4. §6 DID, and that is now closed too.**
-- **EVERY P0 AND REG-009 NUMBER IS AN UPPER BOUND** — computed from the *disclosed* δ. F4 asserts
-  the qualifier travels in the same table.
-- **NEW · REG-009's NUMBERING IS 6–12 BY RULING, NOT BY ACCIDENT.** §§0–5 keep their addresses.
-- **NEW · §4's COVERAGE SILENCE STAYS RECORDED, NOT REPAIRED**, and §6's D3 applies the coverage
-  hold-out *in §6*, not retroactively into §4. REG-002 E1's precedent, honoured twice now.
+- **EVERY P0 AND REG-009 NUMBER IS AN UPPER BOUND** — the *disclosed* δ. F4 asserts it travels.
+- **REG-009's NUMBERING IS 6–12 BY RULING.** §§0–5 keep their addresses.
+- **§4's COVERAGE SILENCE STAYS RECORDED, NOT REPAIRED.** Honoured twice; do not fix retroactively.
+- **NEW · P3's FAILURE IS NOT REOPENED BY RE-BANDING.** A control rescued after it fails is not a
+  control. The half-integer-edged banding is REG-010's, in its own document, reported BESIDE this
+  failure and never instead of it. F10 refused the seventh free parameter and it passed.
+- **NEW · REG-009 IS CLOSED.** §3's six items are done. Anything further is REG-010/REG-011.
 
-## 3 · NEW MACHINERY (outside wealth-tensor)
+## 3 · THE AT-BAT, RANKED
 
-`~/Scripts/roster-brake.py` (pre-commit brake) · `~/Scripts/roster_live.py` (**the one reader** of
-the board's claim rows) · `~/Scripts/roster-brake-drill.py` (**15 hermetic cases**, scratch repos +
-`ROSTER_DB` override, calling the real brake) · `hooks/pre-commit` wiring, **after** the secret scan,
-at both exit paths. **Two bugs found and fixed while building it:** `roster-oncommit.py` filtered on
-a column named `expires_at` while the table's is `expires`, so the expiry predicate was **silently
-dropped**; and **a session can be its own sibling** — a container joins under `GATE_ROSTER_WHO` and
-auto-claims under `DARLISH_SESSION`, one session and two rows, so `me` is now a **set**. Drills:
-brake 15/15, estate `hooks-drill.sh` 26/26.
-
-## 4 · THE AT-BAT, RANKED
-
-1. **BUILD THE INSTRUMENT AND COMMIT `RESULT-REG-009`** — §3's item 4, the last one open.
-   `scripts/reg009_ladder_inputs.py`, written **after** Part II (it is), running F1–F10 in order,
-   then §7.3's Ψ / A / S / Ψ_rect(0.05, 0.35, α̂) / Ψ_band. **F1 lifts the ruler from `wt088` by
-   name at run time** and aborts unless it still reproduces 0.0 % and 99.7 % — P0-c's mechanism,
-   which caught its own miss on its first run. **Read §7.4's UNSEEN list before you compute
-   anything; this session deliberately did not look at any of it.**
-2. **§12's manuscript repairs land whatever Ψ returns**, and that is registered so the result cannot
-   decide whether the paper gets fixed. Two sentences: §4.4's 99.7 % (name the α, label the
-   rectangle as asserted, or replace it with the measured share) and §4.7's "it runs on the sample
-   §5 already collected" (carry the 151/55, or cut the clause). §7's survived-tests row on the
-   disclosed rectangle's admissibility goes in the same pass.
-3. **Fill the coverage series between §3b's two cycles.** Unconditional since D1's ruling.
-   ~1 min download + ~16 s scan per zip from the **cloud**; `reg009_p0_lifetime_values.py extract`
-   gives values for the same zips in the same pass and `--compare` does the coverage arithmetic.
-   **It raises §7.5's joinable column and does NOT move the 151.**
-4. **The cheap half of §7.5's tee-up.** Join `reg-006-ladderC-events-corrected.json`'s 151 property
-   events to the disclosed lives, bin at D3's 1.00 y, **count how many bands clear 30.** One
-   afternoon on committed data, no new harvest — and it decides whether REG-011 needs an expensive
-   new universe or not.
-5. **Run the §1.3 grep on paper III's OTHER self-critical passages.** `-27` ran it on one and found
-   three unanswered bounds; `-28` measured all three and two came back against the paper; `-29`
-   found the seventh in §4.7's repair clause. **Still the cheapest lead in the repository.**
-6. **AAR action A2** — audit the four other `post-*` hooks in `darwin-mac-ops/hooks`. A1 is done;
-   A2 is not, and A1 turned up two silent bugs in the one file it touched.
-7. **The gate defect card** — State Machine `1217465036940491`.
-8. **The phrase set has a passenger** (unchanged): 30.4 % of trigger sentences match only
+1. **The cheap half of §7.5's tee-up.** Join `reg-006-ladderC-events-corrected.json`'s **151**
+   property events to the disclosed lives, bin at D3's 1.00 y, **count how many bands clear 30.**
+   One afternoon on committed data, no harvest — and it decides whether REG-011 needs an expensive
+   new universe. **The paper now prints "21 per band against a floor of 30" (§4.7), so this count is
+   load-bearing for a sentence that is already published.**
+2. **REG-010: the half-integer-edged banding, registered before it is run.** §4's tee-up in
+   `RESULT-REG-009`. Bins centred on the heap rather than starting on it, so the collapse is a
+   rounding and not a translation. **Registered in its own document, reported beside P3's failure.**
+   One function and one run on committed data.
+3. **Fill the coverage series between §3b's two cycles.** ~1 min download + ~16 s scan per zip,
+   **CLOUD**. Raises §7.5's joinable column (110 of 151); **does NOT move the 151.**
+4. **The §1.3 grep on paper III's other self-critical passages.** Four sessions, four finds. Still
+   the cheapest lead in the repository. `-30` did not run it.
+5. **`defensive_count.py` covers paper III only.** Papers I and II have no baseline and no test. Two
+   lines each in `tests/test_defensive_count.py` if anyone wants the invariant to mean the estate.
+6. **AAR action A2** — the four other `post-*` hooks in `darwin-mac-ops/hooks`. A1 turned up two
+   silent bugs in the ONE file it touched; A2 is untouched. Plus A1's residual (State Machine
+   `1217468064910605`): make `roster join` write an alias file so a session's identity set survives a
+   fresh `dx` shell.
+7. **"disclosed rectangle" still appears at lines 964, 996, 1123 and 1573 of paper III**, where it
+   denotes the [10,40]×[3,20] product. `-30` renamed it to *asserted* only at the two sites §12
+   registered. **86.1 % of the disclosure falls outside it, so the adjective is wrong at all four** —
+   a terminology pass, with `test_ledger_provenance` and `test_restatement_reach` re-run after.
+8. **The gate defect card** — State Machine `1217465036940491`.
+9. **The phrase set has a passenger** (unchanged): 30.4 % of trigger sentences match only
    `events or circumstances`; 7.9 % carry safe-harbour language. Post-hoc, labelled, outranked.
-9. **`AcquiredFiniteLivedIntangibleAssetsWeightedAverageUsefulLife` is 4,304 rows P0 excluded** to
-   keep its population identical to §3a's and §3b's. REG-010 may want it.
+10. **`AcquiredFiniteLivedIntangibleAssetsWeightedAverageUsefulLife` is 4,304 rows P0 excluded.**
+    REG-010 may want it.
 
-## 5 · WHAT WOULD HAVE SAVED `-29` TIME
+## 4 · WHAT WOULD HAVE SAVED `-30` TIME
 
-- **Read the sibling REG docs' section headings FIRST** (`grep -n "^#\{1,3\} " REG-00{6,7,8}*.md`).
-  The template is §3 quantities · §4 questions · §5 predictions · §6 not-doing · §7 repairs ·
-  §8 falsifiers · §9 stopping. Thirty seconds, and it is what exposed the numbering collision.
-- **Measure the join before designing the statistic.** The `-28` handoff ranked the §4.7 within-band
-  design first; twenty minutes of counting showed the class it selects carries 55 events. **The
-  feasibility probe is the design step, not a preliminary to it.**
-- **Print counts and NOTHING else in a feasibility probe.** `-29`'s probes deliberately emitted no
-  life value, no percentile, no correlation — looking at them spends them (REG-008 §2.6). Write that
-  refusal into the probe's docstring so the next reader knows the omission was a decision.
+- **Read `severity.check`'s contract before writing ten witnesses.** A witness returns the SAME
+  predicate evaluated in a falsifying world, so it must come back FALSY. Two of `-30`'s witnesses
+  shipped without the leading `not` and died on the run — cheaply, loudly, correctly, but twice.
+- **Grep the pricing instrument for the rule you are about to re-implement.** `Ψ_band`'s bin edges
+  took ninety seconds to find in `reg009_p0_lifetime_values.py` and turned an assertion in a result
+  doc into a lifted, checked mechanism. The same ninety seconds is what separates "the control
+  failed" from "the control failed and here is why, from two lines of committed source."
+- **When a test WRITES tracked files, snapshot and restore them.** `-30`'s rerun test regenerates
+  four outputs; without the `finally` restore it would one day be blamed for a dirty tree at the gate.
+- **Adding an owner to `test_ledger_provenance` is THREE edits**, not one: the `R<n>` constant, the
+  `LEDGER` entries, and the `docs` fixture's enumeration. The `KeyError` from the third is the guard
+  refusing to check a figure against a document it was never given.
+
+## 5 · DEFINITION OF DONE (carry this forward)
+
+REG-009 is **done**. The next unit of done is item 1 above, and it has one: *a printed count of
+1.00-year property bands clearing 30, committed as `RESULT-REG-010` or as an amendment to §7.5,
+after which §4.7's published "21 per band" sentence is either confirmed or narrowed.*
