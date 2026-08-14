@@ -102,6 +102,7 @@ R3 = "RESULT-REG-003.md"   # the published crawl, recognition rate, off-diagonal
 R6 = "RESULT-REG-006.md"   # the re-crawl, sequencing vs coupling
 R7 = "RESULT-REG-007.md"   # the keyword-family disclosure instrument
 R8 = "RESULT-REG-008.md"   # the entity-anchored instrument
+R9 = "RESULT-REG-009.md"   # the ladder inputs: the disclosure's own joint
 
 TABLE = "TABLE"            # the value must appear in a table row of its owner
 
@@ -130,7 +131,11 @@ LEDGER = [
 
     # --- REG-003 · the published crawl -------------------------------------------------
     # The calibrated rate this row leans on is REG-003's, not REG-002's own.
-    ("disclosed rectangle lies outside", "0.408", "0.4077", R3, TABLE),
+    # The key omits the adjective on purpose: wealthTensor-30 renamed the row from
+    # `disclosed` to `asserted` rectangle, this key went stale, and the guard
+    # caught it. A key anchored on the part of a title that carries the CLAIM
+    # survives a rename that only sharpens the wording.
+    ("rectangle lies outside", "0.408", "0.4077", R3, TABLE),
     ("recognition rate is an order of magnitude", "0.408", "0.4077", R3, TABLE),
     ("recognition rate is an order of magnitude", "0.383", "0.383", R3, TABLE),
     ("recognition rate is an order of magnitude", "0.432", "0.432", R3, TABLE),
@@ -179,6 +184,18 @@ LEDGER = [
     ("sharper disclosure instrument", "281", "281", R8, TABLE),
     ("sharper disclosure instrument", "0.436", "0.436", R7, TABLE),
     ("sharper disclosure instrument", "0.403", "0.403", R7, TABLE),
+
+    # --- REG-009 · the ladder inputs -------------------------------------------------
+    # The first rung evaluated on the DISCLOSURE's own joint distribution rather than
+    # on the rectangle §4.4 assumes. The admissible share below is why the repaired
+    # row above can say `all of the asserted rectangle` without implying `all of the
+    # disclosure`.
+    ("rectangle lies outside", "0.974", "0.9736", R9, TABLE),
+    ("99.7% is a property of the assumed support", "0.659", "0.6586", R9, TABLE),
+    ("99.7% is a property of the assumed support", "0.621", "0.6211", R9, TABLE),
+    ("99.7% is a property of the assumed support", "0.696", "0.6964", R9, TABLE),
+    ("99.7% is a property of the assumed support", "0.998", "0.9980", R9, TABLE),
+    ("99.7% is a property of the assumed support", "0.139", "0.1391", R9, TABLE),
 ]
 
 # --------------------------------------------------------------------------------------
@@ -254,7 +271,7 @@ def rows(section_7) -> list[str]:
 @pytest.fixture(scope="module")
 def docs() -> dict[str, str]:
     return {name: (PREREG / name).read_text(encoding="utf-8")
-            for name in (R2, R3, R6, R7, R8)}
+            for name in (R2, R3, R6, R7, R8, R9)}
 
 
 def _table_lines(text: str) -> str:

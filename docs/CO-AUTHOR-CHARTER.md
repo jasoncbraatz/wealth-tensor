@@ -120,6 +120,14 @@ than to marksmanship. Guards:
   conduct, honesty, or revision history (beyond the one methods paragraph)? → blocker;
   move to docs/.
 - **G-COACH-3:** Defensive-sentence count vs. previous revision: non-increasing?
+  *(2026-08-14, wealthTensor-30 — MECHANISED. `scripts/defensive_count.py` counts;
+  `tests/test_defensive_count.py` binds it to a committed baseline
+  `docs/papers/paper-III-dual-tensor/DEFENSIVE-BASELINE.json`, so a pass that raises
+  the count must raise the baseline in the same commit and show the increase in a
+  diff. The invariant is not "never hedge"; it is "never hedge silently", which is
+  the version a session can be held to. `--against <old version>` gives the delta for
+  one pass. The counter's LEVEL is not evidence — only its delta is; the tool's
+  docstring says why, and says what it cannot see.)*
 - **G-COACH-4:** Any hostile-simulation output produced outside a scheduled scouting
   slot, or landed anywhere but docs/scouting/? → blocker.
 - **G-COACH-5:** Did the session include at least one specific, checkable strength

@@ -598,8 +598,12 @@ it at the measured rate**, where the same boundary is 0.0156. That is the rung t
 on, and it turns on the recognition rate's *level* rather than its shape: the top three rungs are
 unchanged at either rate, and §4.9 puts the shape's contribution to the crossing below it at 0.13%. Disclosure, however,
 amortises finite-lived intangibles over materially *shorter* lives than property, so δ₁ > δ₀ is what
-a filing presents; across the rectangle of lives disclosure spans — ten to forty years for property,
-three to twenty for finite-lived intangibles — **the first rung rises in 99.7% of it.**
+a filing presents. Measured on the filings themselves — 665 admissible firm-year pairs across 577
+firms, both lives read off one page — **the first rung rises in 65.9% of them**, in both cycles
+separately (63.3% and 68.2%). Swept uniformly and independently over the rectangle those lives were
+*assumed* to span — ten to forty years for property, three to twenty for finite-lived intangibles —
+the same test returns 99.8% at the same rate, and 86.1% of the disclosed pairs fall outside that
+rectangle.
 
 **And the binding constraint is the model's domain, not the ordering.** R is defined only for
 δ < α. Past that the deferred gap grows without bound relative to the asset — the ratio reaches
@@ -609,9 +613,9 @@ life short enough to appear in a filing implies a decay rate at or above the rec
 of the rectangle is admissible only at α ≈ 0.19, and all of it above α = 0.33. **That made the
 recognition rate, not the ordering, the quantity to establish first — and §5.4 establishes it.**
 On the registered sample the recognition rate is **α̂ = 0.408 per year**, 95% interval
-[0.383, 0.432]: the calibration used here is low by an order of magnitude, the disclosed rectangle
-lies inside the domain after all, and the first-rung result above therefore holds at a measured rate
-rather than at a hypothetical one. The domain restriction is a property of the calibration and not
+[0.383, 0.432]: the calibration used here is low by an order of magnitude, the asserted rectangle
+lies inside the domain after all, and so do **0.974** of the 683 disclosed pairs. The domain
+restriction is a property of the calibration and not
 of the disclosure.
 
 **The shape of this argument is not new, and its best-known instance is one field over.** Fisher and
@@ -843,7 +847,10 @@ an estimate of the physical decay rate, made by the firm, audited, published, an
 the series whose timeliness is in question. Pinning δ rather than estimating it jointly is precisely
 the 291-fold improvement quoted in §4.2. A design that uses disclosed useful lives as an independent
 δ, and compares timeliness only within a life band, is reading φ rather than φδ, and it runs on
-the sample §5 already collected.
+the sample §5 already collected — **151 property events across 98 firms** on the tier-0 tag list
+§5.4 repaired, against 55 across 38 on the list as first collected, with 110 of the 151 joining to
+a disclosed life. Across the one-year life bands that design requires, 151 events average 21 per
+band against §5's floor of 30.
 
 Three properties recommend that design over the one this paper registered. It is diagonal-safe: no
 comparison crosses a class boundary, so the diagonality assumption of §4.1 is not load-bearing. It
@@ -1552,7 +1559,8 @@ with what would have killed each.
 | **τ = −1 is a knife edge in its top rung** | closed form for the crossing rate, verified by bisection to 1 × 10⁻⁹ | a crossing rate far above any defensible goodwill decay | **δ₃\* = 0.0079**, an eighty-seven-year half-life; the table assigns 0.002 |
 | **Lumpy defers more than slow at an identical mean rate** | compound-Poisson decline, 2,000 paths, mean rate matched exactly | the ratio at or below 1, which would license reading "unscheduled" as "slow" | **1.30×** (se 0.002), a δ-equivalent of 0.0123 — above the crossing rate |
 | **The design's validity region has a fitted boundary** | logistic of failure on log(leverage / budget), 4,000 ladders | a slope indistinguishable from zero | slope **+1.58**, z = **+19.5**; the same fit on a permuted outcome gives z = 0.23 |
-| **The disclosed rectangle lies outside the model's domain *at the calibrated rate*** | useful lives spanning disclosure practice against α = 0.05 | any part of it admitting a steady-state deferral measure | **0%** admissible at α = 0.05; **all** of it admissible at the measured α̂ = 0.408 |
+| **The *asserted* rectangle lies outside the model's domain *at the calibrated rate*** | useful lives spanning disclosure practice against α = 0.05, and the 683 disclosed pairs against the measured rate | any part of it admitting a steady-state deferral measure | **0%** admissible at α = 0.05; **all** of the asserted rectangle and **0.974** of the disclosed pairs at the measured α̂ = 0.408 |
+| **The rectangle's 99.7% is a property of the assumed support, not of the disclosure** | §4.4's first rung evaluated on 683 disclosed firm-year pairs across 577 firms, against the same test on the asserted rectangle at the same rate | the two agreeing within the clustered interval, which would have made the rectangle an adequate stand-in for the disclosure | rises in **0.659** of admissible pairs [**0.621**, **0.696**] against **0.998** on the rectangle; only **0.139** of the pairs fall inside it |
 | **The recognition rate is an order of magnitude above the calibration** | censored geometric MLE on 695 registered events, two universes, three sensitivities, four truncations | any cut returning a rate near the swept 0.05 | **α̂ = 0.408/yr** [0.383, 0.432]; range **0.327–0.499** across every cut, none containing 0.05 |
 | **The constant hazard the model assumes is rejected** | discrete Weibull fitted, not assumed, with a profile interval | k̂ = 1, which would have left α a constant | **k̂ = 1.210** [1.135, 1.285]; the hazard rises with the age of the gap |
 | **The closed form survives an age-dependent hazard** | general form against an age-structured simulation carrying the gap as cohorts, no closed form in the loop | departure beyond §4.3's published transient bound | held to **2 × 10⁻¹³** against a 2 × 10⁻⁴ bound; the same simulation **rejects** α ← 1/E[T] at 2 × 10⁻³ |

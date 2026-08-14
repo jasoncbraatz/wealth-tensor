@@ -133,6 +133,16 @@ REACH = {
     "0.014":  {"5.4": 1, "7": 1},
     "0.068":  {"5.4": 1, "7": 1},
     "281":    {"7": 1},
+
+    # --- REG-009 · the ladder inputs -------------------------------------------------
+    # 0.974 is restated in §4.4 beside the calibration it corrects; the rest live in
+    # §7 only, which is what a ledger row for a run nothing else cites looks like.
+    "0.974":  {"4.4": 1, "7": 1},
+    "0.659":  {"7": 1},
+    "0.621":  {"7": 1},
+    "0.696":  {"7": 1},
+    "0.998":  {"7": 1},
+    "0.139":  {"7": 1},
 }
 
 
