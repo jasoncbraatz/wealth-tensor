@@ -608,7 +608,7 @@ rectangle.
 **And the binding constraint is the model's domain, not the ordering.** R is defined only for
 δ < α. Past that the deferred gap grows without bound relative to the asset — the ratio reaches
 10⁶⁹ by period 400 at δ = 0.20 — and there is no steady-state deferral measure to rank. At the
-α = 0.05 calibrated here **the entire disclosed rectangle lies outside the domain**: every useful
+α = 0.05 calibrated here **the entire asserted rectangle lies outside the domain**: every useful
 life short enough to appear in a filing implies a decay rate at or above the recognition rate. Half
 of the rectangle is admissible only at α ≈ 0.19, and all of it above α = 0.33. **That made the
 recognition rate, not the ordering, the quantity to establish first — and §5.4 establishes it.**
@@ -973,7 +973,7 @@ any positive decay rate at all. **The interval [1.135, 1.285] is therefore doing
 rejecting a null.** It is what makes the model well-posed across the disclosed range, and had the
 same fit returned k̂ < 1 the closed form would have had no domain to be restricted to.
 
-**This does not rescue the disclosed rectangle, and the statistic that would look as though it did
+**This does not rescue the asserted rectangle, and the statistic that would look as though it did
 is withdrawn rather than reported.** §4.4 reports the share of the rectangle inside the domain. If
 the domain is everything, that share is one by construction and its complement is empty; a share of
 an empty set is arithmetic, not evidence. What replaces it is the level of R, which is defined
@@ -1005,7 +1005,7 @@ direction.
 
 **An effective rate exists and it is not a constant.** Writing α_eff(δ) = δ Π(z)/(Π(z) − 1) returns
 the published form verbatim, R = (1 − φ)δ/(α_eff − δ). But α_eff runs from **0.437** per year at a
-forty-year life to **0.476** at a three-year one — a ninth of itself across the disclosed rectangle,
+forty-year life to **0.476** at a three-year one — a ninth of itself across the asserted rectangle,
 in the direction that a faster-decaying class behaves as though recognition were faster. Across the
 four-tier ladder it moves by six parts in a thousand, which is why the magnitudes there barely move.
 **A recalibration is therefore available and is not a repair:** any comparative static that holds
@@ -1132,7 +1132,7 @@ same sample. They agree to **five parts in ten thousand** at a twenty-year life 
 a three-year one, where they differ by **15%** and move in opposite directions from α̂. Least squares
 on the series matches the mean, the transform matches the tail, and the likelihood matches the event
 dates: three functionals of one distribution, with no obligation to coincide. §4.9 says a single
-effective rate misstates one end of the disclosed rectangle; the series adds that a single
+effective rate misstates one end of the asserted rectangle; the series adds that a single
 *recognition rate* does not name one quantity.
 
 **§4.2's exchange survives into all of this, and it is forced rather than discovered.** The mimic
@@ -1588,7 +1588,7 @@ with what would have killed each.
 | **The lag's shape leaves a trace in the reported series** | best admissible constant-hazard mimic, five disclosed lives x four φ | a mimic reproducing the measured shape to machine precision — the shape would not be identified at any precision | residue **3.9 × 10⁻⁴** per quarter at a ten-year life, **4.1 × 10⁻³** at a three-year one |
 | **The T = 0 mass is invisible in the reported series** | conditioning on T ≥ 1 against a compensating φ, five lives x three φ | any series moving after the substitution | held to **5 × 10⁻¹⁶** — and the same conditioning moves α_eff by **6%** |
 | **A decreasing-hazard lag is NOT mimicked by a constant one** | k = 0.5 witness at matched δ and φ | the metric fitting a world with no steady state as easily as the measured one | **5.4 × 10⁻³**, a **14×** separation |
-| **Three recognition rates are three quantities** | series match vs. deferral match vs. event-date MLE across the disclosed rectangle | the three agreeing everywhere, making the distinction empty | agree to **7 × 10⁻⁴** at twenty years, **15%** apart at three |
+| **Three recognition rates are three quantities** | series match vs. deferral match vs. event-date MLE across the asserted rectangle | the three agreeing everywhere, making the distinction empty | agree to **7 × 10⁻⁴** at twenty years, **15%** apart at three |
 | **The framework's guards can fail** | audit of the guards themselves | a guard that could not fail passing silently | **six found and retired**, before publication, recorded in `METHOD-001` |
 | **The departure from diagonality is not an artefact of tier 0's tag list** | §5.4's permutation re-derived with the omitted element restored, both arms on one crawl | the lift moving with the tag list, which would make it a property of the instrument | **4.01× → 4.01×** and **2.01× → 2.10×**; every cell not involving tier 0 identical to two decimals |
 | **Testing another asset first REDUCES the goodwill charge** | the single-step measurement run against a published worked example | the sequenced and goodwill-first branches agreeing, which would make the ordering inert | a \$850 prior charge converts a \$700 goodwill impairment to **\$0**; the offset is one-for-one inside the region |
