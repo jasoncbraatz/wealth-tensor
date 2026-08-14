@@ -91,6 +91,10 @@ Standard bring-up; post the `DARLISH-ENROLL` line to Asana **1217316841710435**,
 > Do NOT commit it"* — a definite answer instead of a shrug. **Prefix it at wrap:**
 > `dx 'GATE_ROSTER_WHO=big-wealthTensor-NN ~/Scripts/gate-selfcheck.sh'`. Assume any darwin-side
 > tool that asks who you are needs the prefix; it is one token and it is never wrong to add.
+> **A THIRD consumer, found by the ghost it left: `lessons.py` AUTO-COMMITS, so prefix the
+> `lessons.py` call itself** — `dx 'cd ~/repos/claude-blackbook && GATE_ROSTER_WHO=... LESSONS_CONTRIBUTOR=opus python3 lessons.py add ...'` — or its commit files a `cloud-<fp>`
+> claim on `claude-blackbook` that survives your `roster leave`. `-40` left one and had to
+> `roster release --who cloud-<fp>` after leaving.
 
 **THE MINUTE-TWO STANZA IS TWO LINES.** `dx --get`/`--put` are **binary-clean and self-verifying**
 (`darwin-scripts 9fd8b1f`). **No base64. No manual `shasum`.**
