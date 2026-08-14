@@ -852,8 +852,10 @@ the sample §5 already collected — **151 property events across 98 firms** on 
 a disclosed life. Across the one-year life bands that design requires, those 110 events occupy
 sixteen bands and **exactly one clears §5's floor of 30** — thirty-six events from twenty firms
 at a five-year life — with none clearing on firms rather than events. Filling the coverage §5's
-two cycles leave between them would bring a second band to the floor if the unjoined events fall
-like the joined ones, and no allocation of them brings more than a third.
+two cycles leave between them — the seven intervening cycles, run — raises the join to **133
+of the 151** and leaves the same single band clearing: the second band reaches twenty-seven against
+the floor of thirty. The registered reading is the only one that gives one — the two other cycle
+choices give two, as does the nearest-cycle rule under the opposite tie-break.
 
 Three properties recommend that design over the one this paper registered. It is diagonal-safe: no
 comparison crosses a class boundary, so the diagonality assumption of §4.1 is not load-bearing. It
