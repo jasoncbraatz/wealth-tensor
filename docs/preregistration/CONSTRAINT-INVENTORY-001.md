@@ -66,12 +66,12 @@ INST = governs an instrument or its inputs. **Machine:** the test that would go 
 | C16 | `REG-003` §7 | *"rejecting independence in §4 does not rescue PRE-001"* | the lag gradient | document | MS | yes | §5.3/§5.4 draw no such inference — **compliant**; also the ruling barring T2 | none |
 | C17 | `REG-003` §7 | §4.4 *"may change one number and the sentences that carry it, and may not reopen the argument"* | §4.4 | section | MS | yes | §4.4's argument is unchanged since `wt089`; `-41` and `-42` changed numbers and their sentences — **compliant** | none |
 | C18 | `REG-004` §5 | S3's general search *"is teed up in the handoff and is not attempted in this session"* | the age-dependent mirror | session | INST | yes | teed up, never attempted — **compliant** | none |
-| C19 | **`REG-004` §6** | **may not be claimed: *"that α_eff is 'the' recognition rate — it is a function of δ"*** | α_eff | sentence | MS | yes | **checked through both doors** (noun phrase and symbol): §4.10 names α_eff a function of δ at every site and §4.10's lead says *"three recognition rates now live in this paper and they are three different quantities"* — **compliant** | none — see §3 |
+| C19 | **`REG-004` §6** | **may not be claimed: *"that α_eff is 'the' recognition rate — it is a function of δ"*** | α_eff | sentence | MS | yes | **checked through both doors** (noun phrase and symbol): §4.10 names α_eff a function of δ at every site and §4.10's lead says *"three recognition rates now live in this paper and they are three different quantities"* — **compliant** | **`test_reg004_sec6_alpha_eff.py`** (new, `-43`) |
 | C20 | `REG-004` §6 | may not be claimed: that the correction *"rescues PRE-001"* | PRE-001 | document | MS | yes | not claimed — **compliant** | none |
-| C21 | `REG-004` §6 / `REG-005` §7 | *"unregistered robustness may be reported, labelled as robustness, and may not change a verdict"* | any unregistered cut | sentence | MS | yes | §5.4's shifted estimate 0.460 is labelled unregistered and changes nothing — **compliant** | none — see §3 |
+| C21 | `REG-004` §6 / `REG-005` §7 | *"unregistered robustness may be reported, labelled as robustness, and may not change a verdict"* | any unregistered cut | sentence | MS | yes | **SEVEN LIVE VIOLATIONS at `e947fb6`**, and the compliant grade above was reached through the `unregistered` keyword, which finds the site carrying the label and not the site carrying the **wrong** one. `REG-003` §3.1 A3 registers three sensitivities and §3.2 registers no cut; the 0.327 cut is filed under `RESULT-REG-003` §2's *"Unregistered robustness"* heading and the manuscript called it **"the registered adverse cut"** at four sites, with three more reporting unregistered values unlabelled. Repaired by `wt110` | **`test_reg004_sec6_unregistered_robustness.py`** (new, `-43`) |
 | C22 | `REG-004` §6 / `REG-005` §7 | *"no parameter is added to the model at any point"* | the model | document | MS | yes | no parameter added — **compliant** | none |
 | C23 | `REG-005` §7 | may not be claimed: that a negative result *"licenses removing §4.9's correction"* | §4.9 | section | MS | yes | §4.9 stands and §5.4 holds the lag distribution — **compliant** | none |
-| C24 | `REG-005` §7 | may not be claimed: *"that the fitted lag distribution transfers to classes the PRE-002 sample does not cover"* | the lag distribution | sentence | MS | yes | §6.1's scope sentence (`-41` T5) states the covered classes — **compliant** | none — see §3 |
+| C24 | `REG-005` §7 | may not be claimed: *"that the fitted lag distribution transfers to classes the PRE-002 sample does not cover"* | the lag distribution | sentence | MS | yes | §6.1's scope sentence (`-41` T5) states the covered classes — **compliant** | **`test_reg005_sec7_lag_transfer.py`** (new, `-43`) |
 | C25 | `REG-005` §7 | may not be claimed: *"that the normalisation of §1 is innocuous — it is generous"* | §1's normalisation | sentence | RES | yes | binds `RESULT-REG-005` — **out of manuscript scope** | none |
 | C26 | `REG-006` §4 Q1 | *"the word 'impairment' never appears unqualified"* and *"the count of firm-periods behind each ratio is printed next to the ratio"* | REG-006 statistics | every ratio | RES | yes | binds `REG-006`/`RESULT-REG-006` — **out of manuscript scope** | none |
 | C27 | `REG-006` §4 Q2 | a cell with fewer than 20 firm-periods *"is reported as its count and no ratio is formed from it"* | thin cells | cell | RES | yes | binds `RESULT-REG-006` | none |
@@ -95,7 +95,7 @@ INST = governs an instrument or its inputs. **Machine:** the test that would go 
 | C45 | `CONSTRUCTION-REG-009` R5 | *"no band edge, band width, floor, tag or interval rule is re-chosen in response to the number"*; `R_MIN` not promoted | the band count | document | RES | yes | **closed by ruling; unspent** | `test_reg012_band_edge_phase.py` |
 | C46 | `CONSTRUCTION-REG-010` C4 | the mirror is *"computed, reported beside, never used to choose"*; *"never promoted"* | the mirror | document | RES | yes | **compliant** | `test_reg010_half_integer_banding.py` |
 | C47 | `REG-012` §5 | E1 and E2 *"are reported beside it, never instead of"* the histogram E3 | the phase histogram | document | RES | yes | **compliant** | `test_reg012_band_edge_phase.py` |
-| C48 | `REG-012` §6 | *"this measurement produces no new answer to §7.5's decision rule, and no sentence of the manuscript's §4.7 is changed by any outcome of it"* | §4.7 | **sentence** | MS | yes | §4.7 is unchanged since `REG-012` — **compliant** | none — see §3 |
+| C48 | `REG-012` §6 | *"this measurement produces no new answer to §7.5's decision rule, and no sentence of the manuscript's §4.7 is changed by any outcome of it"* | §4.7 | **sentence** | MS | yes | §4.7 is unchanged since `REG-012` — **compliant**, and now pinned at `ba59370` | **`test_reg012_sec6_sec47_frozen.py`** (new, `-43`) |
 | C49 | `REG-012` §7 | the shifted band count *"is refused, not merely unperformed"* | the band count | sentence | MS+RES | yes | **compliant**; the distinction is load-bearing and named in `HANDOFF` §2 | `test_reg012_band_edge_phase.py` |
 | C50 | `SOURCE-001` §5 | two caveats *"must be closed before the XBRL route is called closed in general"* | the XBRL route | document | RES | yes | `SOURCE-001` is FINISHED by ruling and the general claim is not made — **compliant** | `test_source001_coverage.py` |
 
@@ -103,7 +103,9 @@ INST = governs an instrument or its inputs. **Machine:** the test that would go 
 
 ## 2 · What the sweep found
 
-**Fifty constraints. Forty-nine were compliant or not live. One was violated at four sites.**
+**Fifty constraints. Forty-eight were compliant or not live. TWO were violated — C12 at four
+sites, found by this sweep; C21 at seven units, found by `-43` when it built C21's machine and
+found this file's own grade to be the one-door verdict.**
 
 - **C12 — `REG-003` §3.3 — is the finding.** Every cut of the run landed in **R1**, so the
   registered asymmetry fires, and the manuscript reported α̂ as the result at five places while
@@ -124,24 +126,51 @@ INST = governs an instrument or its inputs. **Machine:** the test that would go 
   section's headline, which is what E1 governs — **and worth re-reading the moment §4.4 is
   re-headlined or the knife-edge is promoted into the abstract's lead.**
 - **Nine of the fifty already had a machine**, all of them incidental: the test was written for
-  a prediction or an artifact and happens to bind the constraint too. **C12 and C15 are the only
-  two with a machine written FOR the constraint**, and `-41` wrote one of them.
+  a prediction or an artifact and happens to bind the constraint too. **C12 and C15 were the
+  only two with a machine written FOR the constraint**, and `-41` wrote one of them. `-43`
+  added four more — C19, C21, C24, C48 — so the class now has **six** purpose-built guards and
+  the only unmechanised entry in §3 is C36, which is a judgement about a reader and stays
+  Jason's call.
+- **`-43`'s finding, which is this file's own tell turned on this file.** §0 says an inventory
+  built on the keyword grep alone would have been *a plausible, shorter, wrong list*. C21's row
+  was graded by exactly that door: grep `unregistered`, find §5.4's labelled 0.460, mark the
+  constraint compliant. **The second door for a labelling constraint is the WRONG label, not
+  the missing one** — and behind it were four sites calling an unregistered cut *registered*
+  and three reporting unregistered numbers bare.
 
-## 3 · The ones a machine could recognise and does not have one
+## 3 · The ones a machine could recognise — FOUR OF FIVE NOW HAVE ONE (`-43`)
 
-Ranked by what a violation would cost. None of these is a defect today; each is an unguarded
-invariant, which this estate's own doctrine says is the state that rots quietly.
+Ranked by what a violation would cost. Written by `-42` as *"none of these is a defect today"*;
+**that held for three of the four and not for C21**, which is the entry to read first.
 
-1. **C19 · `REG-004` §6 — α_eff may not be called "the" recognition rate.** The exact sibling of
-   C15, one symbol over, and the manuscript is clean at all six α_eff sites *today*. The guard is
-   `test_reg003_sec7_rounding.py` with a second symbol and a second qualifier set. Cheap.
-2. **C21 · unregistered robustness must be labelled as robustness.** Recognisable: a unit that
-   reports a cut not named in any `REG-*` file and carries no *unregistered* label. Needs the
-   list of registered cuts, which `RESULT-REG-003` §1 already tabulates.
-3. **C48 · no sentence of §4.7 is changed by any outcome of `REG-012`.** A frozen-section
-   assertion — hash §4.7 and pin it, the way `test_pin001_code_state.py` pins code.
+1. **C19 · `REG-004` §6 — α_eff may not be called "the" recognition rate.** ✅ **MECHANISED** —
+   `tests/test_reg004_sec6_alpha_eff.py`. The exact sibling of C15, one symbol over, and the
+   manuscript is clean at all six α_eff sites. Two doors, as C15 needed: the symbol and the
+   VALUE, because §4.10's table can carry the claim with the symbol left out. No pre-edit
+   violating text exists, so the control is the registration's own forbidden claim plus a
+   mechanical mutation of §4.9's one at-risk sentence — delete the δ-motion clause and the guard
+   must go red, or its green on the manuscript means nothing.
+2. **C21 · unregistered robustness must be labelled as robustness.** ✅ **MECHANISED, AND IT WAS
+   NOT CLEAN** — `tests/test_reg004_sec6_unregistered_robustness.py`, seven live units repaired
+   by `wt110`. See §2. The row above graded this constraint compliant off the one site that
+   carries the label; the machine reads `REG-003` §3.1 A3's three registered sensitivities and
+   `RESULT-REG-003` §2's unregistered heading, and asks about the label the manuscript actually
+   used. Two limbs, because they fail separately: the label is WRONG, or the label is MISSING.
+3. **C48 · no sentence of §4.7 is changed by any outcome of `REG-012`.** ✅ **MECHANISED** —
+   `tests/test_reg012_sec6_sec47_frozen.py`, pinned at `ba59370`, the commit that registered
+   `REG-012`. **The pin records which version it froze**, and a git test reads §4.7 out of that
+   commit and requires it to hash to the pin — otherwise the freeze silently re-anchors to
+   whenever somebody last ran the file, which is a snapshot wearing a freeze's clothes. The red
+   message states both readings (REG-012's outcome → revert; anything else → re-pin in the same
+   commit and name the licence), because a guard that cannot tell them apart teaches the next
+   session to re-pin without reading.
 4. **C24 · the fitted lag distribution may not be claimed to transfer beyond the sample's
-   classes.** Recognisable through the scope noun phrase §6.1 now owns.
+   classes.** ✅ **MECHANISED** — `tests/test_reg005_sec7_lag_transfer.py`. Clean, and the file
+   says out loud which half of its predicate is live: the manuscript names the fit, makes
+   extension claims about other things, and never pairs them. Two traps found while building it:
+   `travels` is not an extension verb (§4.10's *"travels with the lag distribution rather than
+   with the filings"* is the paper making this constraint's own point), and a scope test keyed on
+   the word *sample* passes `REG-004` §6's own example of the violation.
 5. **C36 · a refusal is stated in the same sentence as the number that caused it.** This is the
    constraint underneath the presentation item on the board — §7's forty-row ledger dilutes the
    §4.5 row that **refused in 400 of 400 draws**. The registration requires the refusal and its

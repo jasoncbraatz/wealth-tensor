@@ -67,7 +67,7 @@ the recognition rate, rather than the ordering, the quantity a cross-sectional d
 establish first. The same registered events establish it: **the peak-to-charge recognition rate is
 0.41 per year against a calibration of 0.05, on both known biases' inflating side**, so the
 disclosed lives lie inside the model's domain — 0.97 of the disclosed pairs at that rate and 0.81 at
-the registered adverse cut — and the hazard rises with the age of the gap rather than staying
+the unregistered adverse cut — and the hazard rises with the age of the gap rather than staying
 constant as the model assumes. **The closed form survives that: the deferral measure is the
 recognition lag's moment generating function evaluated at the decay rate, and what the constant
 hazard supplied was not the result but its domain** — under a rising hazard there is no domain
@@ -517,7 +517,7 @@ same ladder, because a class is placed on a schedule precisely when its decline 
 enough to schedule. Goodwill sits at the end of both: least observable, and with no degradation
 schedule at all.
 
-| tier | φ | 1 − φ | δ | (1 − φ)δ | **R** at α = 0.05, the calibration | **R** at α̂ = 0.408, measured (§5.4) | **R** at α̂ = 0.327, the registered adverse cut | R at a common δ |
+| tier | φ | 1 − φ | δ | (1 − φ)δ | **R** at α = 0.05, the calibration | **R** at α̂ = 0.408, measured (§5.4) | **R** at α̂ = 0.327, the unregistered adverse cut | R at a common δ |
 |---|---|---|---|---|---|---|---|---|
 | 0 · property, plant and equipment | 0.80 | 0.20 | 0.030 | 0.00600 | **0.3000** | **0.0159** | **0.0202** | 0.1333 |
 | 1 · finite-lived intangibles | 0.60 | 0.40 | 0.020 | 0.00800 | **0.2667** | **0.0206** | **0.0261** | 0.2667 |
@@ -529,7 +529,7 @@ nothing else. There the deferral measure rises monotonically up the ladder exact
 Kendall τ = +1. The two **R** columns are the world the standards describe, at the recognition rate
 calibrated here and at the one §5.4 goes on to measure. There the deferral measure is monotone
 too — **running the other way.** Kendall τ = **−1** at the calibrated rate, and **−0.67** at both the
-measured rate and the registered adverse cut, where the first rung alone turns over; the rung
+measured rate and the unregistered adverse cut, where the first rung alone turns over; the rung
 that separates them is identified
 below.
 
@@ -625,7 +625,8 @@ registered sample the recognition rate PRE-002's instrument identifies is **α̂
 95% interval [0.383, 0.432], on both known biases' inflating side: the calibration used here is low by an order of magnitude, and the
 asserted rectangle lies inside the domain at the measured rate and across its 95% interval, where
 **0.974** of the 683 disclosed pairs are admissible and **0.959** at the interval's lower bound. At
-the cut REG-003 registered in advance as the one that would break it — the 175 events charged one
+the unregistered cut aimed at the doubt REG-003 §3.3 registered in advance — the 175 events
+charged one
 quarter after the peak dropped, giving **0.327** — the rectangle's own fastest disclosed rate of
 0.3333 is no longer cleared, and **0.814** of the pairs remain admissible. The domain restriction is
 a property of the calibration and not of the disclosure, and what its remaining margin turns on is
@@ -1390,7 +1391,8 @@ twenty quarters — which is α's definition, measured once per event, by an ins
 at something else. The censored geometric maximum likelihood estimate is **α̂ = 0.1227 per quarter
 (se 0.0046), 0.408 per year, 95% interval [0.383, 0.432]**; the median observed gap is five
 quarters. Retail gives 0.433 and computer services 0.394. The three sensitivities registered with PRE-002 give
-0.397, 0.499 and 0.413, and administratively censoring the sample at eight, twelve and sixteen
+0.397, 0.499 and 0.413. As unregistered robustness, administratively censoring the sample at
+eight, twelve and sixteen
 quarters instead of twenty gives 0.396, 0.398 and 0.404. **Every cut lands in the same regime,** and
 the calibrated 0.05 is outside the interval of all of them.
 
@@ -1409,7 +1411,7 @@ before the number.** A gap that opened and was never recognised leaves no filing
 a charge over-represents short intervals. If revenue peaks after economic value has turned — the
 ordinary case for a business whose customers have not yet left — the measured interval is short of
 the true one. Against those, the sample contains no lag of zero, so fitting on a support that
-includes it understates α̂; the unregistered shifted estimate is 0.460. **The one cut that removes
+includes it understates α̂; the unregistered shifted estimate is 0.460. **The one unregistered cut that removes
 the mass where the onset bridge is least credible — the 175 events charged one quarter after the
 peak — gives 0.327, still an order of magnitude above the calibration.** The result does not rest on
 its most suspect quarter.
@@ -1590,7 +1592,7 @@ with what would have killed each.
 | **The design's validity region has a fitted boundary** | logistic of failure on log(leverage / budget), 4,000 ladders | a slope indistinguishable from zero | slope **+1.58**, z = **+19.5**; the same fit on a permuted outcome gives z = 0.23 |
 | **The *asserted* rectangle lies outside the model's domain *at the calibrated rate*** | useful lives spanning disclosure practice against α = 0.05, and the 683 disclosed pairs against the measured rate | any part of it admitting a steady-state deferral measure | **0%** admissible at α = 0.05; **all** of the asserted rectangle and **0.974** of the disclosed pairs at the measured α̂ = 0.408 |
 | **The rectangle's 99.7% is a property of the assumed support, not of the disclosure** | §4.4's first rung evaluated on 683 disclosed firm-year pairs across 577 firms, against the same test on the asserted rectangle at the same rate | the two agreeing within the clustered interval, which would have made the rectangle an adequate stand-in for the disclosure | rises in **0.659** of admissible pairs [**0.621**, **0.696**] against **0.998** on the rectangle; only **0.139** of the pairs fall inside it |
-| **The peak-to-charge recognition rate is an order of magnitude above the calibration** | censored geometric MLE on 695 registered events, two universes, three sensitivities, four truncations | any cut returning a rate near the swept 0.05 | **α̂ = 0.408/yr** [0.383, 0.432], on both known biases' inflating side; range **0.327–0.499** across every cut, none containing 0.05 |
+| **The peak-to-charge recognition rate is an order of magnitude above the calibration** | censored geometric MLE on 695 registered events, two universes, three sensitivities, four truncations | any cut returning a rate near the swept 0.05 | **α̂ = 0.408/yr** [0.383, 0.432], on both known biases' inflating side; range **0.327–0.499** across every cut including the unregistered robustness, none containing 0.05 |
 | **The constant hazard the model assumes is rejected** | discrete Weibull fitted, not assumed, with a profile interval | k̂ = 1, which would have left α a constant | **k̂ = 1.210** [1.135, 1.285]; the hazard rises with the age of the gap |
 | **The closed form survives an age-dependent hazard** | general form against an age-structured simulation carrying the gap as cohorts, no closed form in the loop | departure beyond §4.3's published transient bound | held to **2 × 10⁻¹³** against a 2 × 10⁻⁴ bound; the same simulation **rejects** α ← 1/E[T] at 2 × 10⁻³ |
 | **φ is a pure scale under age-dependence too** | R(φ)/R(0) against (1 − φ), φ swept on a tenth-grid | any φ at which the ratio departs | held to **exactly 0.0** |
