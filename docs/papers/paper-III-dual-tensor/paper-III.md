@@ -1200,6 +1200,11 @@ unit of observation this test did not have. That yields a four-tier ordering, pr
 | 2 | indefinite-lived intangibles | ↓ |
 | 3 | goodwill | longest lag |
 
+**Every event in this test is a recognised impairment, which places the sample on the boundary
+of §10's restriction rather than inside its complement:** a charge is the moment degradation
+became estimable, so §2 governs the accumulation that precedes it and the event marks where that
+accumulation ends — which is why an interval is measurable on these events and on no others.
+
 **The registration preceded the data.** PRE-001 was committed **alone**, at commit 9722342, and
 pushed, before any lag was computed; the analysis code did not yet exist. The git history is the
 timestamp, and it is the entire evidence that the prediction preceded the outcome — which is why
