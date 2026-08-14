@@ -1,0 +1,64 @@
+  D3's bins lifted from reg009_p0_lifetime_values.py: index `int(v // w)`, edges `[b * w, (b + 1) * w)` -> midpoint = (lo + hi) / 2
+
+======================================================================================
+  REG-012 · THE BAND COUNT'S EDGE-PHASE QUESTION — a description of the heap
+======================================================================================
+  Registration: docs/preregistration/REG-012-band-count-edge-phase.md (committed alone; this file did not exist at that commit).
+  R5 stands: no edge is moved, no width re-chosen, no threshold read, and no count of bands appears below.
+  Reading: R_MID|near   ·   bin rule lifted: int(v // w) / [b * w, (b + 1) * w)
+
+======================================================================================
+  P4 · THE CITED ROW, REPRODUCED BEFORE ITS POPULATION IS DESCRIBED
+======================================================================================
+  SEVERE     G2 · reg-009-p0-lives-2015.json is the committed file, by digest
+  SEVERE     G2 · reg-009-p0-lives-2023.json is the committed file, by digest
+  SEVERE     P4 · the joinable population reproduces the cited table's own count
+  SEVERE     P4b · and the whole R_MID|near row vector reproduces it, band for band — the population described below is the one the cited table was built from
+    133 events joinable, in 17 occupied bins, from RESULT-REG-009-band-count-filled.md
+
+======================================================================================
+  P2 · THE LIVES, TAKEN FROM THE COUNT'S OWN SELECTION PATH
+======================================================================================
+  SEVERE     P2 · every joinable event contributes exactly one life, and the count of them is bound to the population rather than typed
+  SEVERE     P2b · binning those lives by the lifted rule rebuilds the cited row exactly, so these are the values the published table was built from
+
+======================================================================================
+  H3 · THE FRACTIONAL PARTS — re-read losslessly, not rounded
+======================================================================================
+  SEVERE     H3 · every life round-trips through its own shortest decimal, so the fractional parts below are the values as written and not a quantisation
+
+======================================================================================
+  E1-E3 · THE HEAP
+======================================================================================
+  SEVERE     E-vac · the histogram accounts for the whole population, so no share below is computed over a subset this file chose
+    lives sitting exactly on a left edge : 84 of 133 = 0.6316
+    distinct fractional values           : 4
+    modal fractional value               : 0, 84 of 133 = 0.6316
+
+    the fractional-part histogram (E3) — every value, with its share:
+      0        84   0.6316
+      1/4       9   0.0677
+      1/2      35   0.2632
+      3/4       5   0.0376
+
+======================================================================================
+  E4 · PHASE RIGIDITY — how much of the phase circle leaves the grouping alone
+======================================================================================
+  SEVERE     E4-vac · the phase axis is partitioned exactly — contiguous from 0 to 1, lengths summing to 1 — so the measure below is a share of the whole circle and not of a window this file chose
+  SEVERE     E4-blind · shifting EVERY life down one bin leaves the grouping identical — so this measure reads which events share a bin, not which bin they share
+  SEVERE     E4-alive · shifting ONE life out of a bin that holds others does change the grouping — so a phase reported as grouping-preserving is a fact about the sample and not a function that cannot tell
+    grouping-preserving phases : measure 1/4 = 0.2500 of the circle
+      (3/4, 1]   — the whole heap moves together here; this interval preserves the grouping of ANY sample
+    widest single such interval: 1/4 = 0.2500
+    of that, below the largest fractional value present (3/4): 0 = 0.0000
+    constant pieces of the phase axis: 4
+
+======================================================================================
+  A1 · THE ABSENCE — this run reads no threshold
+======================================================================================
+  SEVERE     A1 · this instrument names none of the ways a band count is read in this repository — asserted as an ABSENCE, because a list of what a file DOES contain cannot be shown to be complete
+  SEVERE     A2 · every module-level literal in this file is on the registered list
+
+------------------------------------------------------------------------------
+REG-012 band edge phase: 13 severe · 0 definitional · 0 failed/vacuous
+------------------------------------------------------------------------------

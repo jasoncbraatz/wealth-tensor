@@ -1,0 +1,48 @@
+{
+ "registration": "docs/preregistration/REG-012-band-count-edge-phase.md",
+ "cited_document": "RESULT-REG-009-band-count-filled.md",
+ "cited_table": "reg-009-band-count-filled.json",
+ "reading": "R_MID|near",
+ "band_rule": "int(v // w) / [b * w, (b + 1) * w)",
+ "width": 1.0,
+ "population": 133,
+ "occupied_bins_reproduced": 17,
+ "on_a_left_edge": 84,
+ "on_a_left_edge_share": 0.631578947368421,
+ "distinct_fractional_values": 4,
+ "modal_fractional_value": "0",
+ "modal_fractional_share": 0.631578947368421,
+ "histogram": [
+  {
+   "frac": "0",
+   "n": 84,
+   "share": 0.631578947368421
+  },
+  {
+   "frac": "1/4",
+   "n": 9,
+   "share": 0.06766917293233082
+  },
+  {
+   "frac": "1/2",
+   "n": 35,
+   "share": 0.2631578947368421
+  },
+  {
+   "frac": "3/4",
+   "n": 5,
+   "share": 0.03759398496240601
+  }
+ ],
+ "phase_pieces": 4,
+ "grouping_preserving_measure": 0.25,
+ "grouping_preserving_widest": 0.25,
+ "grouping_preserving_intervals": [
+  [
+   "3/4",
+   "1"
+  ]
+ ],
+ "largest_fractional_value": "3/4",
+ "grouping_preserving_below_largest_frac": 0.0
+}

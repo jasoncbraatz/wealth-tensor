@@ -207,16 +207,32 @@ def pick_cycle(recs: dict, q_star: int, mode: str, years: dict) -> str:
     return min(recs, key=lambda c: min(abs(yr - y) for y in years[c]))
 
 
+def selected_lives(events: list, idx: dict, years: dict, rule: str, mode: str) -> list:
+    """(event, cycle, life value) for every event this index can bin -- the selection
+    `bands_for` performs, exposed so that a second reader of THIS population gets it from
+    here rather than retyping it beside this file.
+
+    REG-012 §3 P2 is why this exists as a function instead of four lines inside the loop
+    below: a descriptor of the band count's own lives has to read the band count's own
+    lives, and a retyped selection is a statistic about the retyper's idea of the sample.
+    One path, so a divergence is impossible rather than merely unlikely. `bands_for`'s
+    behaviour is unchanged by the extraction, and REG-012's P3 proves that by re-running
+    both committed instruments and comparing their artifacts byte for byte."""
+    out = []
+    for e in events:
+        tag = TIER_LIFE[e["tier"]]
+        recs = {c: r for c, r in idx[int(e["cik"])].items() if tag in r["lives"]}
+        cyc = pick_cycle(recs, e["q_star"], mode, years)
+        out.append((e, cyc, float(recs[cyc]["lives"][tag][rule])))
+    return out
+
+
 def bands_for(events: list, idx: dict, years: dict, rule: str, mode: str, mid) -> dict:
     """Every event placed in exactly one band, by the D3 bin its firm's disclosed
     property life falls in. The bin INDEX is recovered from the lifted midpoint rather
     than recomputed: midpoint = lo + w/2, so index = round((mid - w/2) / w)."""
     out: dict = defaultdict(list)
-    for e in events:
-        tag = TIER_LIFE[e["tier"]]
-        recs = {c: r for c, r in idx[int(e["cik"])].items() if tag in r["lives"]}
-        cyc = pick_cycle(recs, e["q_star"], mode, years)
-        v = float(recs[cyc]["lives"][tag][rule])
+    for e, _cyc, v in selected_lives(events, idx, years, rule, mode):
         b = int(round((mid(v, BAND_WIDTH) - BAND_WIDTH / 2.0) / BAND_WIDTH))
         out[b].append(e)
     return out
