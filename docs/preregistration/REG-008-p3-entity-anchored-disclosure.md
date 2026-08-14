@@ -201,6 +201,40 @@ exactly this class of error. The enforceable form is mechanical and is adopted f
 **delete the label from the rows before counting.** A probe that cannot see the arm cannot condition
 on it.
 
+**2.7 · ADDENDUM, `wealthTensor-37`, 2026-08-14 — THE THREE PROBE FILES, NAMED. NOT REGISTERED IN
+ADVANCE; WRITTEN AFTER THE FACT AND MARKED AS SUCH.**
+
+This registration's introducing commit `b02d02e` has the subject *"the entity-anchored trigger
+sentence, **registered alone**"* and it was not alone. It carried three files, disclosed here at the
+paths they actually occupy:
+
+| file, as committed | what it is | how §2 refers to it |
+|---|---|---|
+| `scripts/prototypes/reg008_probe_00_CONTAMINATED.py` | the probe that read the arm label and printed the rate by arm | §2.6's `probe.py` |
+| `scripts/prototypes/reg008_probe_01_armblind.py` | arm- and universe-blind by construction; §2.5's lexicon table | §2's `probe2.py` |
+| `scripts/prototypes/reg008_probe_02_segmentation.py` | arm-blind; §2.3's segmentation feasibility and the INTERNAL head | §2's `probe3.py` |
+
+**The mapping is read off the files, not inferred from the order.** `reg008_probe_01_armblind.py`
+and `reg008_probe_02_segmentation.py` open with the words *"REG-008 probe 2"* and *"REG-008 probe
+3"*, and both carry verbatim the `r.pop` line §2 quotes as the enforcement. `reg008_probe_00` is
+the one that counts by `r["arm"]`, which is §2.6's subject and its whole defect.
+
+**And the contaminated probe's own docstring says it is clean.** As committed at `b02d02e` it reads
+*"computes no statistic that any REG-008 prediction depends on. Declared in REG-008 section 2"* —
+in the same commit as §2.6, which rules that what it computed is *"not a property of the instrument
+… It is the comparison"* and makes Λ_anchor permanently exploratory on that ground. The file and
+the registration contradict each other inside one commit, and the only thing on disk that agrees
+with §2.6 is the `CONTAMINATED` suffix in the filename. The docstring is left standing: it is
+evidence of what was believed at the time, and correcting it now would edit the witness. **This
+paragraph is the correction.**
+
+**Nothing here is repaired, and that is deliberate.** The commit-order violation happened; its entry
+in `tests/test_registrations_precede_their_instruments.py`'s `KNOWN_VIOLATIONS` stays, asserted in
+both directions, and history is not rewritten to make anything green. §2.6's rulings are unchanged
+and still binding. What was missing was only that the ledger lived in the test suite while this
+document went on asserting it had shipped alone — so the disclosure is added where the violation
+happened, and a guard now requires it of every entry in the ledger.
+
 ---
 
 ## 3 · The registered quantities

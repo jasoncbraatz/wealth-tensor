@@ -129,4 +129,18 @@ can be written honestly.
 
 ## AMENDMENTS
 
-*(none)*
+**`wealthTensor-37`, 2026-08-14 — the two files this registration shipped with, named. Not
+registered in advance; written after the fact and marked as such.**
+
+The introducing commit `d655501` carried this registration together with
+`scripts/wt026_severe_test.py` — the instrument itself — and `src/wealth_tensor/edgar.py`. **What
+makes a prediction a prediction is the commit order, and this one does not have it.** The
+consequence is the plain one and is not softened here: nothing in this file was proved to precede
+the instrument by the repository, and any severity claim resting on its priority rests instead on
+the reader's trust.
+
+This is the live-fire instance the 2026-08-10 lesson was banked from, and its entry in
+`tests/test_registrations_precede_their_instruments.py`'s `KNOWN_VIOLATIONS` stays, asserted in
+both directions. History is not rewritten to make a test green. The disclosure is added here
+because a ledger that lives only in the test suite leaves this document still implying it stood
+alone.

@@ -137,6 +137,50 @@ def test_every_ledger_entry_is_still_a_violation(introductions):
             f"records {sorted(files)}")
 
 
+def test_every_ledger_entry_is_disclosed_where_the_violation_happened():
+    """A LEDGER THAT LIVES ONLY IN THE TEST SUITE IS NOT A DISCLOSURE.
+
+    `KNOWN_VIOLATIONS` above records what each of these two commits carried, and asserts it
+    in both directions -- but it records it HERE, in `tests/`, while the registration
+    documents themselves went on reading as though they had shipped alone. `REG-008`'s
+    introducing commit is literally subjected *"registered alone"*; a reader of that file
+    had no way to learn otherwise without running this suite and reading its source.
+
+    So the ledger is required to be legible at the scene: every file an entry records must
+    be NAMED, by basename, in the registration document that shipped it. Basename and not
+    full path, because a path is a fact about the tree and a name is a fact about the
+    disclosure -- a file that moves must not silently un-disclose itself, and a document
+    that names the file keeps naming it either way.
+
+    This is the same shape as `DEFENSIVE-BASELINE.json` and as `KNOWN_VIOLATIONS` itself:
+    the invariant is never "never X", which history cannot satisfy, but "never X
+    SILENTLY" -- and silence in the only place a reader actually looks is still silence.
+    """
+    missing = {}
+    for name, (_sha, files) in KNOWN_VIOLATIONS.items():
+        doc = PREREG / name
+        assert doc.exists(), f"{name} is in KNOWN_VIOLATIONS but is not on disk"
+        text = doc.read_text(encoding="utf-8")
+        absent = [f for f in files if pathlib.PurePath(f).name not in text]
+        if absent:
+            missing[name] = absent
+    assert not missing, (
+        "a registration carries a recorded commit-order violation and does not name what "
+        "it shipped with:\n"
+        + "\n".join(f"  {n}  ->  {', '.join(a)}" for n, a in missing.items())
+        + "\n\nThe ledger in this file records the violation; the document has to disclose "
+          "it. Add a dated addendum naming the files, marked as written after the fact. Do "
+          "not remove the ledger entry and do not rewrite history: the violation happened.")
+
+
+def test_the_disclosure_check_is_not_vacuous():
+    """The other branch. With an empty ledger, or entries carrying no files, the check
+    above passes over nothing and reads as coverage."""
+    assert KNOWN_VIOLATIONS, "the violation ledger is empty; the disclosure check is vacuous"
+    for name, (_sha, files) in KNOWN_VIOLATIONS.items():
+        assert files, f"{name}'s ledger entry records no files, so nothing is disclosed"
+
+
 def test_reg010_was_registered_alone(introductions):
     """The instance this guard was written alongside, asserted by name."""
     for name in ("REG-010-p3-half-integer-banding.md",
