@@ -1,0 +1,160 @@
+  D3's bins lifted from reg009_p0_lifetime_values.py: index `int(v // w)`, edges `[b * w, (b + 1) * w)` -> midpoint = (lo + hi) / 2
+
+======================================================================================
+  REG-009 §7.5's BAND COUNT, ON THE COVERAGE-FILLED JOIN
+======================================================================================
+  REG-009 §7.5: "Only if fewer than two bands clear does the expensive half arrive: a universe outside SIC 5200-5999 and 7370-7379 ... It is REG-011's."
+  The rule is §7.5's and is not moved here. Construction: docs/preregistration/CONSTRUCTION-REG-009-coverage-fill.md
+  R_MIN is not promoted under any outcome of this run (R5).
+
+======================================================================================
+  H1 · `-31`'s ROW, REPRODUCED BEFORE IT IS EXTENDED
+======================================================================================
+  SEVERE     G2 · reg-009-p0-lives-2015.json is the committed file, by digest
+  SEVERE     G2 · reg-009-p0-lives-2023.json is the committed file, by digest
+  SEVERE     H1 · the two-cycle count reproduces `-31`'s committed row exactly
+    {"events_total": 151, "events_joinable": 110, "clear_primary": 1, "clear_firms": 0, "occupied": 16}
+  SEVERE     H1b · and agrees with the artifact `-31` committed
+
+======================================================================================
+  THE FILL'S INPUTS — seven cycles, no window invented
+======================================================================================
+  SEVERE     H3 · reg-009-p0-lives-2015-16.json is the committed file, by digest
+  SEVERE     H3 · reg-009-p0-lives-2016-17.json is the committed file, by digest
+  SEVERE     H3 · reg-009-p0-lives-2017-18.json is the committed file, by digest
+  SEVERE     H3 · reg-009-p0-lives-2018-19.json is the committed file, by digest
+  SEVERE     H3 · reg-009-p0-lives-2019-20.json is the committed file, by digest
+  SEVERE     H3 · reg-009-p0-lives-2020-21.json is the committed file, by digest
+  SEVERE     H3 · reg-009-p0-lives-2021-22.json is the committed file, by digest
+  SEVERE     H2 · every filled window is the committed 2014-15 window translated by whole years — this fill invented no window
+    2014-15  [2014-10-31 .. 2015-09-30]   (committed, `-31`'s)
+    2015-16  [2015-10-31 .. 2016-09-30]   (this fill)
+    2016-17  [2016-10-31 .. 2017-09-30]   (this fill)
+    2017-18  [2017-10-31 .. 2018-09-30]   (this fill)
+    2018-19  [2018-10-31 .. 2019-09-30]   (this fill)
+    2019-20  [2019-10-31 .. 2020-09-30]   (this fill)
+    2020-21  [2020-10-31 .. 2021-09-30]   (this fill)
+    2021-22  [2021-10-31 .. 2022-09-30]   (this fill)
+    2022-23  [2022-10-31 .. 2023-09-30]   (committed, `-31`'s)
+    duplicate (cik, cycle) rows, last-in-file kept (`-31`'s rule): 35
+
+    P0's coverage series across the nine cycles (parsed life VALUE per panel firm-year in window — NOT §3b's tagging rate):
+      2014-15  612 / 847 = 0.723   (committed)
+      2015-16  593 / 828 = 0.716
+      2016-17  583 / 767 = 0.760
+      2017-18  599 / 762 = 0.786
+      2018-19  600 / 766 = 0.783
+      2019-20  584 / 737 = 0.792
+      2020-21  586 / 736 = 0.796
+      2021-22  685 / 853 = 0.803
+      2022-23  684 / 837 = 0.817   (committed)
+
+======================================================================================
+  H8 · WHAT THE SERIES CANNOT REACH — the October gap, measured not closed
+======================================================================================
+  SEVERE     H8 · the series leaves one gap between every pair of consecutive windows, and this run reports it rather than widening the window to remove it
+    8 inter-window gaps, each 30 days (1-30 October, every year).
+    26 panel firm-years across 8 firms fall in a gap; 1 of those firms own a tier-0 property event.
+
+======================================================================================
+  THE FILLED COUNT — 1.00-year property bands clearing 30
+======================================================================================
+  SEVERE     H5 · the filled join is a SUPERSET of the two-cycle one — the fill adds coverage and removes none
+  SEVERE     H6 · the fill does not move the 151
+
+  R_MID  (PRIMARY)
+    near   17 occupied bands · 1 clear 30 EVENTS · 0 clear 30 FIRMS · 0 clear in BOTH universes
+    early  16 occupied bands · 2 clear 30 EVENTS · 0 clear 30 FIRMS · 0 clear in BOTH universes
+    late   17 occupied bands · 2 clear 30 EVENTS · 0 clear 30 FIRMS · 0 clear in BOTH universes
+
+  R_MIN
+    near   11 occupied bands · 2 clear 30 EVENTS · 1 clear 30 FIRMS · 0 clear in BOTH universes
+    early  11 occupied bands · 2 clear 30 EVENTS · 1 clear 30 FIRMS · 0 clear in BOTH universes
+    late   10 occupied bands · 2 clear 30 EVENTS · 1 clear 30 FIRMS · 1 clear in BOTH universes
+
+  R_WEIGHT
+    near   18 occupied bands · 1 clear 30 EVENTS · 0 clear 30 FIRMS · 0 clear in BOTH universes
+    early  18 occupied bands · 1 clear 30 EVENTS · 0 clear 30 FIRMS · 0 clear in BOTH universes
+    late   18 occupied bands · 2 clear 30 EVENTS · 0 clear 30 FIRMS · 0 clear in BOTH universes
+
+  R_MID / near — the FILLED profile, with `-31`'s two-cycle row beside it:
+      [ 2.00,  3.00)  events   1 (was   1)  firms   1 (was   1)  (pilot   0 / repl   1)
+      [ 3.00,  4.00)  events  13 (was   7)  firms  11 (was   7)  (pilot   3 / repl  10)
+      [ 4.00,  5.00)  events  27 (was  22)  firms  18 (was  15)  (pilot   4 / repl  23)
+      [ 5.00,  6.00)  events  47 (was  36)  firms  22 (was  20)  (pilot  21 / repl  26)  <== clears
+      [ 6.00,  7.00)  events   6 (was   3)  firms   6 (was   3)  (pilot   4 / repl   2)
+      [ 7.00,  8.00)  events  10 (was  14)  firms   6 (was   6)  (pilot  10 / repl   0)
+      [ 8.00,  9.00)  events   2 (was   1)  firms   2 (was   1)  (pilot   2 / repl   0)
+      [ 9.00, 10.00)  events  10 (was   8)  firms   5 (was   4)  (pilot  10 / repl   0)
+      [10.00, 11.00)  events   2 (was   4)  firms   2 (was   3)  (pilot   2 / repl   0)
+      [11.00, 12.00)  events   1 (was   1)  firms   1 (was   1)  (pilot   1 / repl   0)
+      [12.00, 13.00)  events   2 (was   2)  firms   2 (was   2)  (pilot   1 / repl   1)
+      [13.00, 14.00)  events   3 (was   5)  firms   2 (was   3)  (pilot   3 / repl   0)
+      [15.00, 16.00)  events   3 (was   3)  firms   3 (was   3)  (pilot   3 / repl   0)
+      [17.00, 18.00)  events   1 (was   1)  firms   1 (was   1)  (pilot   1 / repl   0)
+      [18.00, 19.00)  events   1 (was   1)  firms   1 (was   1)  (pilot   1 / repl   0)
+      [20.00, 21.00)  events   1 (was   1)  firms   1 (was   1)  (pilot   1 / repl   0)
+      [21.00, 22.00)  events   3 (was   -)  firms   1 (was   -)  (pilot   3 / repl   0)
+  SEVERE     H11 · every joinable event lands in exactly one band, and none is lost
+
+======================================================================================
+  H7 · THE FILL'S PRICE — the join is not only larger, it is partly RE-CHOSEN
+======================================================================================
+  SEVERE     H7 · the three parts and the residual partition the 151 exactly
+    newly joinable    23 events / 10 firms   (the fill's GAIN)
+    moved band        14 events /  8 firms   (a NEARER disclosure now supplies the life — the fill's PRICE)
+    unchanged         96 events
+    still unjoined    18 events / 16 firms   (out of reach in all nine cycles)
+    the moves, band before -> after (each is a re-choosing, not a gain):
+      [4, 5) -> [6, 7)   1 event(s)
+      [5, 6) -> [3, 4)   2 event(s)
+      [7, 8) -> [5, 6)   6 event(s)
+      [10, 11) -> [9, 10)   2 event(s)
+      [12, 13) -> [4, 5)   1 event(s)
+      [13, 14) -> [8, 9)   1 event(s)
+      [13, 14) -> [12, 13)   1 event(s)
+
+======================================================================================
+  H10 · THE TIE-BREAK — a free parameter the FILL created, and it straddles the floor
+======================================================================================
+  SEVERE     H10a · the near-pick tie was UNREACHABLE on two cycles and is reachable on nine — no prior registration could have stated this convention
+    two cycles : 0 of 110 joinable events hit a tie (39 had a life in both cycles at all)
+    nine cycles: 50 of 133 joinable events hit a tie
+  SEVERE     H10b · the registered tie-break and its mirror are computed on the SAME joinable population — the convention moves bands, never coverage
+    registered (tie -> EARLIER disclosure): 1 band(s) clear 30
+    mirror     (tie -> LATER   disclosure): 2 band(s) clear 30
+    §7.5's threshold is CROSSED by the tie-break alone.
+
+======================================================================================
+  THE RESIDUAL — what is STILL out of reach
+======================================================================================
+  133 joined · 18 still unjoined · a complete fill of the residual would scale each band by 1.135
+  ADVERSARIAL  — at most 2 bands could clear.
+  PROPORTIONAL — 2 bands clear (1.1, 14.8, 30.7, 53.4, 6.8, 11.4, 2.3, 11.4, 2.3, 1.1, 2.3, 3.4, 3.4, 1.1, 1.1, 1.1, 3.4).
+  `-31`'s brackets, on 41 unjoined: adversarial 3, proportional 2 — those were the estimates THIS run replaces.
+
+======================================================================================
+  §7.5's DECISION RULE, APPLIED TO THE FILLED COUNT
+======================================================================================
+  Two-cycle (`-31`, stands): 1 band(s) clear 30 events under R_MID / near.
+  Coverage-filled (this run): 1 band(s) clear.
+  §7.5: fewer than two -> the expensive half arrives. VERDICT ON THE FILLED POPULATION: REG-011 still needs the new universe.
+  In the floor's NATIVE unit — §3b counts FIRM-years — 0 band(s) clear.
+  By interval rule (filled): R_MID 1, R_MIN 2, R_WEIGHT 1.  R_MIN is NOT promoted (R5).
+  By cycle pick (filled, R_MID): near 1, early 2, late 2.  `-31` reported all three AGREEING at 1; on the filled join they do not.
+  And the primary pick's own tie-break moves it: registered 1, mirror 2.
+  THE REGISTERED READING IS THE ONLY ONE THAT GIVES 1. That is reported as the strength it has, not as the strength the rule's binary suggests.
+  Every band above is a band of the DISCLOSED life. The economic delta is unmeasured here and the fill does not touch it.
+
+======================================================================================
+  H4/H12 · THE GUARDS ON THIS FILE ITSELF
+======================================================================================
+  SEVERE     H4 · the bin rule appears nowhere in THIS file as a literal (the pattern is imported, so its subject is never written down twice)
+  SEVERE     H12 · every module-level literal in this file is registered with a provenance
+    9 registered, 0 unregistered
+
+  wrote data/reg-009-band-count-filled.json
+
+------------------------------------------------------------------------------
+SEVERITY · REG-009 §7.5 band count, coverage-filled: 21 severe · 0 definitional · 0 failed/vacuous
+------------------------------------------------------------------------------
