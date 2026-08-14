@@ -1,8 +1,8 @@
 ---
 project: wealth-tensor
-gh_sha: 09169b22fe7d4a07cd71c12cba5ca11d4f15de57
+gh_sha: d26226dfebb7912e0cb43ad0d35d0294eae6903b
 updated: 2026-08-14
-session: wealthTensor-42
+session: wealthTensor-43
 gate_passed: true
 gate_version: "2.51"
 ---
@@ -17,18 +17,22 @@ gate_version: "2.51"
 1. **`docs/CO-AUTHOR-CHARTER.md`** — the constitution. **THE CHARTER WINS**: where this handoff, any
    result doc, or any plausible-sounding rewrite conflicts with it, the charter governs and the other
    thing is wrong. *This file is a status report. It is not law and it cannot amend the charter.*
-2. **`docs/preregistration/CONSTRAINT-INVENTORY-001.md` — NEW, and it is the map for this thread.**
-   **Fifty reporting constraints across sixteen registration and construction documents**, each with
-   its governed quantity, **the RESOLUTION it is written at**, its scope, **whether it is LIVE**, the
-   compliance verdict, and whether a machine exists. §3 names the five a machine could recognise and
-   does not have one — **that is `-43`'s at-bat.** §2 is what the sweep found. Read §0 first: it says
-   how the list was built and why a keyword grep alone produces a plausible, shorter, wrong one.
+2. **`docs/preregistration/CONSTRAINT-INVENTORY-001.md` — the map for this thread, and `-43`
+   rewrote three parts of it.** Fifty reporting constraints across sixteen registration and
+   construction documents, each with its governed quantity, **the RESOLUTION it is written at**, its
+   scope, **whether it is LIVE**, the verdict, and its machine. **§3 is now four-of-five DONE**;
+   **§2's count is 48 compliant / 2 violated**, because C21 was not clean and this file's own grade
+   of it was the one-door verdict. Read §0 first — the two doors — then §2's `-43` bullet, then §3.
 3. `python3 scripts/handoff_gate.py --check` — proves this file is not stale.
 4. **`docs/preregistration/REG-003-p3-recognition-rate-and-off-diagonal.md` §§3.2, 3.3, 7.** §3.2 is
    the four-regime ladder, **§3.3 is the registered bias asymmetry AND the second reporting
    constraint**, §7 the rest. **BOTH §3.3 and §7 now have machines** —
-   `tests/test_reg003_sec33_asymmetry.py` and `tests/test_reg003_sec7_rounding.py`. They are the only
-   two guards in the estate written FOR a constraint rather than inheriting it from a prediction.
+   `tests/test_reg003_sec33_asymmetry.py` and `tests/test_reg003_sec7_rounding.py`. **`-43` added
+   four more purpose-built constraint guards, so the class now has six**:
+   `test_reg004_sec6_alpha_eff.py` (C19) · `test_reg004_sec6_unregistered_robustness.py` (C21, the
+   one that found something) · `test_reg012_sec6_sec47_frozen.py` (C48, a section freeze pinned at
+   the registering commit) · `test_reg005_sec7_lag_transfer.py` (C24). Read C21's first — it is the
+   only one of the four whose manuscript scan started red.
 5. **`docs/scouting/SCOUT-001-paper-III-opposing-team.md`** — **WORKED, NOT PENDING.** `-41` landed
    five of six tickets and both free steelmen; only T2 remains and T2 is carded and barred on this
    data. **It does not run again on this paper.** Read it for measurements, not for a to-do list, and
@@ -43,14 +47,17 @@ gate_version: "2.51"
    `CONSTRUCTION-REG-009` (**R5 is load-bearing and unspent**) · `RESULT-REG-009` (**§3's S = 0.1391
    is load-bearing in a test**) · `REG-009` (**READ THE HEADER NOTE FIRST**; numbering 6–12 by ruling).
 
-> **`-42` in one line: THE CONSTRAINT CLASS HAS A SECOND MEMBER, IT IS CONDITIONAL, AND THE ONE SITE
-> THAT ALREADY COMPLIED COMPLIED BY ACCIDENT.** `REG-003` §3.3 says a high α̂ must be reported with the
-> two registered upward biases attached **in the same paragraph, not in a limitations section** — but
-> only if the run lands in R1 or R2. It landed in **R1 in every cut**. The manuscript reported the
-> finding at five places and attached the direction at exactly one: the abstract, because `-41`'s §7
-> repair happened to carry the phrase. Nobody was aiming at §3.3. **`SCOUT-001`'s own diagnosis of §7
-> — *a qualification that exists in the right paragraph and does not travel* — was reproduced by the
-> repair for the other constraint, in the session that named it.**
+> **`-43` in one line: A LABELLING CONSTRAINT'S SECOND DOOR IS THE WRONG LABEL, NOT THE MISSING
+> ONE — AND THE INVENTORY THAT NAMED THE TWO-DOORS TELL GRADED C21 THROUGH ONE DOOR.**
+> `CONSTRAINT-INVENTORY-001` marked *"unregistered robustness may be reported, labelled as
+> robustness"* **compliant**, on the strength of §5.4's *"the unregistered shifted estimate is
+> 0.460"* — a grade reached by grepping `unregistered`, which finds the site carrying the label and
+> is structurally blind to the site carrying the **opposite** one. `REG-003` §3.1 A3 registers three
+> sensitivities and §3.2 registers no cut; `RESULT-REG-003` §2 files the 0.327 cut under
+> *"Unregistered robustness."* **The manuscript called it "the registered adverse cut" — in the
+> ABSTRACT, in §4.4's table header, in §4.4's τ sentence, and at length in §4.4's prose** — and
+> three more units reported unregistered numbers bare. Seven units, repaired by `wt110` as REPLACE:
+> every number survives verbatim, because C21 permits the number and requires the label.
 
 ---
 
@@ -250,33 +257,61 @@ the standing repair and costs thirty seconds.
   Keep taking them — they are the reversibility path and `--against` is the cleanest read of a single
   pass — but **cite `tests/test_defensive_count.py` and `DEFENSIVE-BASELINE.json` as the evidence**,
   because those are in the SSOT and the `.bak` is not.
+- **NEW · THE 0.327 CUT IS UNREGISTERED ROBUSTNESS, AND THE MANUSCRIPT NOW SAYS SO.** `REG-003` §3.1
+  **A3 registers exactly three sensitivities** — annual-attributed excluded, right-censored excluded,
+  one event per firm — and §3.2 registers a regime ladder and **no cut**. What `REG-003` registered
+  in advance about the adverse cut was §3.3's **B2 doubt about the onset bridge**, not the cut.
+  *"The registered adverse cut"* does not return, at any site;
+  `test_reg004_sec6_unregistered_robustness.py` is the machine and it carries the pre- AND
+  post-repair sentences as its red and green cases.
+- **NEW · `RESULT-REG-003` §2's *"Every cut lands in R1"* IS TEED UP, NOT REPAIRED** — carded
+  `1217518687033967` (State Machine). Two readings; under one of them 0.327 < 0.33 is R2 by the
+  registration's own ladder. **A `RESULT-*` document is the record of a run and editing the artefact
+  edits the witness** (the `-37` precedent: the repair shape is a dated addendum, not an edit).
+  **C12's guard is unaffected either way** — §3.3 fires in R1 **or** R2 — and the manuscript's own
+  regime sentence is correct at its own scope.
+- **NEW · §4.7 IS PINNED AT `ba59370`, THE COMMIT THAT REGISTERED `REG-012`.** A legitimate edit to
+  §4.7 — one that does **not** come from `REG-012`'s outcome — is allowed, and it moves
+  `SEC_47_SHA256` in `test_reg012_sec6_sec47_frozen.py` **in the same commit**, naming the licence.
+  An edit that does come from `REG-012`'s outcome is reverted: `REG-012` is closed on branch F.
 
 ---
 
-## 3 · THE AT-BAT for `-43` — **finish the mechanisation. `CONSTRAINT-INVENTORY-001` §3 is the list.**
+## 3 · THE AT-BAT for `-44` — **the inventory's §3 is empty. Ask the question it cannot answer.**
 
-`-42` inventoried fifty constraints and found one live violation. **§3 of the inventory names five
-that a machine could recognise on sight and that have no machine.** None is a defect today; each is
-an unguarded invariant, which this estate's own doctrine says is the state that rots quietly. Work
-them in this order, in the shape `test_reg003_sec33_asymmetry.py` established — *predication, not
-vocabulary; RED on real violating text and GREEN on real legal text including anything a cruder cut
-flags; a declared warrant, plus the antecedent if the rule is conditional*:
+`-42` inventoried fifty constraints; `-43` mechanised four of the five §3 named and found the fifth
+had never been a defect at all — C36 is a judgement about a reader and stays Jason's. **The finite
+list is finished.** What is left is the question `-42` wrote into the definition of done:
 
-1. **C19 · `REG-004` §6 — α_eff may not be called "the" recognition rate.** The exact sibling of the
-   one `-41` mechanised, **one symbol over**, and the manuscript is clean at all six α_eff sites
-   today. This is `-41`'s two-doors tell aimed at the *guard* rather than at the audit: a guard
-   written for α̂ says nothing about α_eff, and the estate has three recognition rates. Cheapest and
-   highest-value. `test_reg003_sec7_rounding.py` is the file to read first, not to edit.
-2. **C21 · unregistered robustness must be labelled as robustness and may not change a verdict**
-   (`REG-004` §6 and `REG-005` §7, identical wording). Recognisable: a unit reporting a cut that
-   appears in no `REG-*` file and carrying no *unregistered* label. `RESULT-REG-003` §1 already
-   tabulates the registered cuts, so the allow-list is a read, not a judgement.
-3. **C48 · `REG-012` §6 — "no sentence of the manuscript's §4.7 is changed by any outcome of it."**
-   A frozen-section assertion: hash §4.7 and pin it the way `test_pin001_code_state.py` pins code.
-   Note the warrant subtlety — the freeze is relative to `REG-012`, so the pin must record *which*
-   version it froze, or a legitimate future edit reports as a `REG-012` violation.
-4. **C24 · `REG-005` §7 — the fitted lag distribution may not be claimed to transfer beyond the
-   sample's classes.** Recognisable through the scope noun phrase §6.1 now owns after `-41`'s T5.
+> **Which of the fifty are constraints a machine could NEVER recognise, and what does the estate do
+> about those?**
+
+That is `-44`'s at-bat, and it is a reading job before it is a building job. The shape that would
+make it a result rather than an essay:
+
+1. **Partition the fifty by RECOGNISABILITY, not by importance**, and put the partition in
+   `CONSTRAINT-INVENTORY-001` as a column, because the file already carries `resolution` and `live?`
+   and this is the third axis of the same table. Three cells, and the boundary is the interesting
+   part: (a) a machine has one; (b) a machine could have one and nobody wrote it — **this cell is
+   now EMPTY and that is the finding to protect**; (c) recognisable only by a reader.
+2. **For every (c), name what a machine CAN check that is adjacent to it.** C36 is the worked
+   example and `-42` did the work: the registration requires a refusal and its number to share a
+   sentence — machine-checkable, and `RESULT-REG-009` complies — while the thing that actually
+   bothers a reader is the row sharing a table with thirty rows that risked nothing. **The adjacent
+   check is not the constraint, and saying which is which out loud is the deliverable.**
+3. **Then ask the harder half: what does an unrecognisable constraint get instead of a machine?**
+   A named owner, a scheduled re-read, a place in the gate, or an honest "nothing, and here is why."
+   `REG-001` §5's *"may not be amended after the first result commit"* has an incidental guard;
+   `PRE-002` §5's *"the next move is not a third instrument on the same data"* has a **ruling** and
+   no guard, and a ruling is what a constraint gets when nothing can watch it. **That is already the
+   estate's answer to this question and nobody has written it down as an answer.**
+
+**One warning from `-43`, and it is the cheapest thing in this file.** Every one of the four guards
+built this session cost more in its CONTROL than in its rule. Two of the four had a trap that made
+the first cut wrong in a way the manuscript scan could not reveal: `travels` is not an extension verb
+(C24), and `unregistered` **contains** `registered` (C21, which went red on its own repair). **Feed
+the registration's own forbidden claim to the linter before you trust its green**, and put the
+POST-repair sentences in the legal set beside the pre-repair ones.
 
 **IF YOU TAKE SOMETHING ELSE, SAY WHY IN ONE LINE.** The remaining board, unchanged in order:
 
@@ -307,43 +342,60 @@ flags; a declared warrant, plus the antecedent if the rule is conditional*:
 
 ---
 
-## 4 · WHAT WOULD HAVE SAVED `-42` TIME
+## 4 · WHAT WOULD HAVE SAVED `-43` TIME
 
-- **THE FIRST TEN MINUTES DECIDED THE SESSION FOR THE EIGHTH TIME RUNNING** (`-35` truth, `-36`
+- **THE FIRST TEN MINUTES DECIDED THE SESSION FOR THE NINTH TIME RUNNING** (`-35` truth, `-36`
   population, `-37` count, `-38` premise-and-instrument, `-39` severity, `-40` the promise the
-  document made about itself, `-41` the resolution the promise was written at, **`-42` whether the
-  promise was even in force**). The whole finding came from reading `REG-003` §3.2's ladder, noticing
-  §3.3's rule was *conditional*, and then going to `RESULT-REG-003` to see which regime the run
-  landed in. **Two files, four minutes.** Spend the ten minutes, and spend them on the registration.
-- **BUILD THE INVENTORY THROUGH BOTH DOORS BEFORE GRADING ANYTHING.** The keyword grep took ninety
-  seconds and would have produced a list missing six rules. The heading grep took another ninety.
-- **PULL BOTH TARBALLS.** `-42` ran the cloud suite against a tree with no `data/` and read *12
-  failed, 59 errors* for thirty seconds before recognising it. Nothing was wrong.
-- **WRITE THE EDIT SCRIPT'S GATE AGAINST THE MANUSCRIPT'S OWN PUBLISHED CELLS, IN EXACT ARITHMETIC.**
-  `wt108`'s gate re-derives the annualisation *and* the regime, so it refuses to attach a
-  registration's sentence in a world where that registration has released the manuscript.
-- **`patchkit` ANCHORS MUST HAVE NO INTERNAL NEWLINE.** One of `-42`'s four anchors spanned a hard
-  wrap; shortening to the newline-free tail fixed it immediately. Do not fight the wrap, move the
-  anchor.
-- **SET `GATE_ROSTER_WHO` INLINE**, on every darwin-side tool that asks who you are. Five for five.
-- **`roster leave` ONCE**, at wrap. **CORROBORATE THE LEAVES YOU USED** — `use` when you read one,
-  `record-outcome` at wrap.
+  document made about itself, `-41` the resolution it was written at, `-42` whether it was in force,
+  **`-43` who the promise was made ABOUT** — the constraint's subject, not its predicate). The whole
+  finding came from reading `REG-003` §3.1 A3 to build C21's allow-list and noticing the list had
+  three entries where the manuscript spoke of a fourth. **Two files, six minutes.**
+- **A GUARD'S CONTROL COSTS MORE THAN ITS RULE, AND THE CONTROL IS THE PART THAT IS WORTH IT.** Each
+  of the four rules here is ten lines. Each red-and-green pair took three times that, and both real
+  errors were found by the control, not by review.
+- **FEED THE REGISTRATION ITS OWN FORBIDDEN CLAIM.** `REG-004` §6's *"the right one for classes other
+  than those the sample covers"* contains the words *the sample covers* — so C24's first scope test,
+  keyed on the word `sample`, **passed the registration's own example of the violation.** Ninety
+  seconds to catch, and nothing else would have caught it.
+- **WATCH FOR A REPAIR THAT EMBEDS THE DEFECT'S TOKEN.** `unregistered` contains `registered`: it hit
+  `wt110`'s post-edit assertion and then C21's linter, ten minutes apart, both as innocuous-looking
+  substring checks. `(?<!un)` in both, and the post-repair sentences in `LEGAL_SITES`.
+- **A NON-VACUITY TEST MUST ASSERT THE CONJUNCTION, NOT A CONJUNCT.** C24's first cut asserted its
+  TRANSFER regex fired nowhere in the manuscript and went red on three legal sentences about entirely
+  other things. What is true and worth asserting is that OBJECT **and** TRANSFER never meet.
+- **PULL BOTH TARBALLS** and run the suite in the cloud first: 923 collected · **cloud 914 passed +
+  9 skipped (~238 s)** · **darwin 923 passed (~62 s)**. The ninth skip is C48's git test, which needs
+  a work tree — `SUITE = COLLECTED + SKIPS`, and the skip count moved by one on purpose.
+- **`patchkit` ANCHORS MUST HAVE NO INTERNAL NEWLINE.** Three of `wt110`'s seven missed on the first
+  pass, all three on a hard wrap. Shorten to the newline-free tail; do not fight the wrap.
+- **COMMIT BY PATH ON `claude-blackbook`.** Nine `lessons/global/*.md` were staged when `-43` looked;
+  five belonged to a sibling session whose auto-commit the roster brake had blocked. `git commit -F
+  msg <paths>` takes yours and leaves theirs. **Check `git status --porcelain` before every commit on
+  a shared repo** — the brake stops the `git add -A` shape and nothing stops a careless `git add`.
+- **SET `GATE_ROSTER_WHO` INLINE**, on every darwin-side tool that asks who you are. Five for five
+  again. Note `lessons.py`'s auto-commit does **not** inherit it and reports you as `cloud-<fp>`;
+  that is cosmetic, the leaf files are written, and you commit them yourself.
+- **`roster leave` ONCE**, at wrap. **`use` when you read a leaf, `record-outcome` at wrap** — `-43`
+  used four and `record-outcome wealthTensor-43 pass` resolved exactly those four.
 
 ---
 
 ## 5 · DEFINITION OF DONE (carry this forward)
 
-**The manuscript pass is done and the constraint sweep is done.** Fifty constraints are enumerated
-with their resolutions and their live status; the one live violation is repaired at all four sites
-with a machine behind it; a structural regression `-41` introduced is repaired with a machine behind
-it too. **The estate now knows what its registrations forbid**, which is a thing it could not say
-yesterday, and the answer was bounded and greppable exactly as `-41` predicted.
+**The manuscript pass is done, the constraint sweep is done, and the mechanisable list is empty.**
+Fifty constraints are enumerated with their resolutions and their live status. Two were violated —
+C12 at four sites, repaired by `-42`; **C21 at seven units, repaired by `-43`**, which the inventory
+had graded compliant through the one door a labelling constraint has two of. Six guards are now
+written FOR a constraint rather than inherited from a prediction, and `CONSTRAINT-INVENTORY-001` §3
+has nothing left in it that a machine could recognise and does not have.
 
 **The research ledger on paper III is still empty, and it stays empty.** T2 is the only live
 registration idea and it is barred on this data by ruling.
 
-**The next unit of done is `CONSTRAINT-INVENTORY-001` §3, worked to zero** — four constraints a
-machine can recognise, each with a red-and-green proof and a declared warrant. That is a finite list
-with a finite end, and when it is empty the honest question becomes the one the inventory cannot
-answer: **which of these fifty are constraints a machine could never recognise, and what does the
-estate do about those?** Answer that in the handoff, not in a new document.
+**The next unit of done is the question §3 cannot answer** — which of the fifty a machine could never
+recognise, what each of those gets instead, and whether the estate's existing answer (a ruling, where
+no guard is possible) is the right one written down. §3 above says what would make it a result. When
+that is answered, **the reporting-constraint thread is finished**, and the honest next question is
+not another audit of this corpus: it is whether the paper is ready for the scouting report's repair
+tickets to be worked, which is Claude's call on timing (charter §4) and nobody has made it since
+`-40` ran the report.
