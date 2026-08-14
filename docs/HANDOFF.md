@@ -1,8 +1,8 @@
 ---
 project: wealth-tensor
-gh_sha: 1b1d148f69ee863e5f85d5f8a15d1b66d776322e
+gh_sha: PENDING
 updated: 2026-08-14
-session: wealthTensor-33
+session: wealthTensor-34
 gate_passed: true
 gate_version: "2.51"
 ---
@@ -16,173 +16,170 @@ gate_version: "2.51"
    other thing is wrong. *This file is a status report. It is not law and it cannot amend the charter.*
 2. `python3 scripts/handoff_gate.py --check` — proves this file is not stale. `ADVISORY: docs-only
    drift` exits 0 and is NOT a defect. **Read the exit code.**
-3. **`docs/preregistration/RESULT-SCOPE-001.md`** — `-33`'s repair: §10's restriction and §5's
+3. **`docs/preregistration/RESULT-PIN-001.md`** — `-34`'s repair: §11's code-state pin, and the
+   first costume of the §1.3 shape that was **true when it was written**.
+4. `docs/preregistration/RESULT-SCOPE-001.md` — `-33`'s repair: §10's restriction and §5's
    selection, read in the same sitting. §2 is the registered stanza; read it before touching either
    section.
-4. **`docs/preregistration/RESULT-REG-009-band-count-filled.md`** — `-32`'s run. §4 first (the
-   verdict and the parameter the fill created), then §3 (the fill's price), then §6 (the manuscript
-   repair, registered and performed).
-5. `docs/preregistration/CONSTRUCTION-REG-009-coverage-fill.md` — the rules `-32` fixed **in their
+5. `docs/preregistration/RESULT-REG-009-band-count-filled.md` — `-32`'s run. §4 first (the verdict
+   and the parameter the fill created), then §3 (the fill's price), then §6 (the manuscript repair).
+6. `docs/preregistration/CONSTRUCTION-REG-009-coverage-fill.md` — the rules `-32` fixed **in their
    own commit, before any count existed**. `git log --follow` on that file is the ordering proof.
-6. `docs/preregistration/RESULT-REG-009-band-count.md` — `-31`'s two-cycle run, **unaltered except
+7. `docs/preregistration/RESULT-REG-009-band-count.md` — `-31`'s two-cycle run, **unaltered except
    for the amendment at the end of §4**. Its two errata stay errata.
-7. `docs/preregistration/REG-009-p3-lifetime-sourced-delta.md` — **READ THE HEADER NOTE FIRST.**
+8. `docs/preregistration/REG-009-p3-lifetime-sourced-delta.md` — **READ THE HEADER NOTE FIRST.**
    §§0–5 are Part I, §§6–12 Part II. **The numbering is 6–12 and not 2–8 by ruling.**
 
-> **`-33` in one line: the fifth costume is REPAIRED, and the session's engineering went into the
-> transport it ran over.** §10 restricts §2 to degradation carrying no estimable loss; §5 selects its
-> whole sample on recognised impairments. One sentence in §5 — a STEELMAN, not a caveat — places the
-> sample on the **boundary** of the restricted region: a charge is the moment degradation *became*
-> estimable. §10 untouched, G-COACH-3 3 → 3, suite 772 → 777, guard proved by mutation. And the
-> session opened with darlish down for a reason no symptom row covered: a source-IP handler above the
-> capability-path handler in Caddy, fixed live, now diagnosed automatically.
+> **`-34` in one line: THE §1.3 GREP IS FINISHED, it produced a sixth costume, and the sixth
+> costume is a claim that was RIGHT when it was written.** All 26 remaining paragraphs read. §11
+> told a replicator that `d655501` was "the last commit touching `src/`" and "is verifiable now";
+> four commits had touched `src/` since, one of them adding twenty-one lines to `edgar.py`, a module
+> §11's own **Modules** bullet names. Nineteen lines earlier the same section put the head of the
+> repository at 103 tests; it carries 783. Registered alone at `214ff57`, performed at `a74a4ca`,
+> guarded by a **git** check proved by **three** mutations, G-COACH-3 3 → 3 (+0), suite 777 → 783.
 
 ### Transport — darlish, zero-bridge
 
 Standard bring-up; post the `DARLISH-ENROLL` line to Asana **1217316841710435**, collect, then `dx`.
-**If it does not come up, the first move is `dsh-fire` + `dwait`, not diagnosis** — one command
-through the fallback tells you whether darwin is alive, and that single fact reclassifies everything
-after it. See §4.
+It came up first try in `-34` with no fallback needed. **If it does not, the first move is
+`dsh-fire` + `dwait`, not diagnosis.** See `-33`'s §4, which still holds.
 
-## 0 · THE TELL, NOW IN EIGHT SHAPES — and this session's two are both about INSTRUMENTS THAT AGREE WITH THEMSELVES
+**`dx --get` IS TEXT-ONLY.** Pulling a `.tgz` wrote a 0-byte file and exited 2. Ship binaries
+base64'd and `shasum` both ends — dx prints the on-wire byte count, not the file size, so its own
+success line cannot certify a transfer (card `1217488245131362`, addendum filed). **The shape that
+paid: `tar czf` only `docs scripts tests src` on darwin (1.8 MB of a 684 MB repo), base64, ONE
+`--get`, extract, then grep and read in the cloud at zero round trips.** That is worth doing on
+minute two of any session that will read this repository.
+
+## 0 · THE TELL, NOW IN NINE SHAPES — and `-34`'s is the one that finds defects nobody introduced
 
 Ask the instrument-artefact question of numbers that look GOOD (`-28`), that SETTLE AN ARGUMENT
 (`-29`), of a REGISTERED CONTROL THAT FAILS (`-30`), OF THE DENOMINATOR (`-31`), OF A CHOICE RULE'S
-TIE-BREAK AT A NEW CARDINALITY and OF A TELL THAT HAS GONE QUIET (`-32`). `-33` adds two, and
-neither is about the paper:
+TIE-BREAK AT A NEW CARDINALITY and OF A TELL THAT HAS GONE QUIET (`-32`). `-33` added two about
+instruments that agree with themselves. `-34` adds the one that is not about a mistake at all:
 
-- **A FAILURE SIGNATURE IS A CLASSIFICATION, NOT A CAUSE.** The pipe was down; every instrument said
-  "handshake timeout", which is also what a dead broker, a firewalled port and an unreachable
-  upstream say. The cause was a *live* server answering with the *wrong* content. One plain GET on
-  the same path separated "nothing is listening" from "the wrong thing is listening" — and only the
-  first was an outage. **When a diagnostic reports a symptom that four causes share, the next command
-  is the one that splits them, not the one that acts on the most likely.**
-- **A MISMATCH REPORTED BY A HAND-ROLLED COMPARISON IS A CLAIM ABOUT THE COMPARATOR.** A one-liner
-  interpolated through two layers of `ssh` quoting hashed the escaped quotes along with the value and
-  reported that darwin's stored capability path differed from the Caddyfile's. The queued next step
-  was to "repair" darwin to match — which would have broken a correct config during an outage. A
-  file-shipped re-derivation returned MATCH. **Re-derive a finding by a different route BEFORE it
-  triggers a destructive repair.** (AAR `darlish-shadowed-path-outage`; lessons
-  `2026-08-14-reverse-proxy-matcher-list-ordered-source`, `2026-08-14-mismatch-reported-hand-rolled-comparison-claim`.)
+- **A CLAIM WHOSE TRUTH VALUE DEPENDS ON SOMETHING THAT CAN CHANGE WITHOUT THE CLAIM CHANGING WILL
+  EVENTUALLY BE FALSE, AND NOTHING WILL NOTICE** — because the failure signature is that *nobody
+  edited the sentence*, and every reflow guard, diff review and re-read in this repository is
+  structurally blind to that. **The discriminator is not "is this quantity measured?" but "is this
+  sentence's truth a function of the repository's PRESENT state?"** — a HEAD, a *last commit
+  touching X*, a live count, a file list, an *as of today*. **The repair is never a fresher number**,
+  because the fresh one rots identically: replace the moving target with a fixed one (per-file
+  commit pins instead of a global "nothing has changed"), then pin *that* with a check that goes red
+  on the next event that would invalidate it, so the doc and the state must move in the same commit.
+- **The greppable corollary that makes the class findable: a load-bearing identifier occurring ONLY
+  in prose and never in `scripts/`, `tests/` or `src/` is unguarded by construction.** `d655501`
+  occurs six times in this repository and every one is prose. Every *other* load-bearing SHA in the
+  estate — `93a159b`, `b02d02e`, `656b914`, `6a5094a`, `e216037` — sits in an instrument header
+  where something would notice.
 
-**Witness contract, unchanged:** `severity.check`'s witness must return **FALSY**, and a witness that
-could be true in a legitimate world dies as VACUOUS rather than reporting. Write witnesses that are
-*structurally* false. **A source-text guard fires on its own witness** — `-33` sidestepped it the way
-`-32` did, by IMPORTING the subject (`test_scope001_steelman.py` imports the sentence from
-`scripts/wt093_edits_scope001.py`) rather than retyping it. **And prove a new guard by MUTATION
-before trusting it** — commit first so git is the undo path, delete the subject in the working tree,
-watch it go red, `git checkout --` it back. `-33` did; 2 of 5 tests fired.
+**Witness contract, unchanged:** `severity.check`'s witness must return **FALSY**, and a witness
+that could be true in a legitimate world dies as VACUOUS rather than reporting. **A source-text
+guard fires on its own witness** — sidestep it by IMPORTING the subject (`-32`, `-33`, and
+`test_pin001_code_state.py`, which imports every SHA, the `TIER_TAGS` hash and both rotted phrases
+from `scripts/wt099_edits_pin001.py`) rather than retyping it. **And prove a new guard by MUTATION**
+— see §4 for the correction to that recipe that `-34` paid for.
 
 ---
 
 ## 1 · WHAT HAPPENED
 
-**`4124973` — the registration, alone.** `RESULT-SCOPE-001.md` and nothing else, so the ordering is
-provable rather than asserted. It declares the repair to be a STEELMAN, declares it goes in §5 and
-not §10, and declares G-COACH-3 will be evaluated across the edit — all before the edit script
-existed on disk.
+**`214ff57` — the registration, alone.** `RESULT-PIN-001.md` and nothing else, before the edit
+script existed on disk.
 
-**`3795372` — SCOPE-001 performed.** The find `-32` located to the line: paper III §10 restricts §2's
-claim to degradation *"carrying no impairment trigger, no estimable expected loss and no observable
-event to key recognition to"*, while §5 selects its whole sample on three recognised-impairment tags
-(`edgar.TIER_TAGS_REG006[0]`). Both sentences are correct in their own section; on their face the
-restriction excludes exactly the region the selection selects on. One sentence added to §5.1,
-immediately after the four-tier table:
+**`a74a4ca` — PIN-001 performed.** Five anchors, all inside §11, no heading or rule moved:
 
-> **Every event in this test is a recognised impairment, which places the sample on the boundary of
-> §10's restriction rather than inside its complement:** a charge is the moment degradation became
-> estimable, so §2 governs the accumulation that precedes it and the event marks where that
-> accumulation ends — which is why an interval is measurable on these events and on no others.
+> - **Code state for the results reported here:** the per-file pins — `src/wealth_tensor/edgar.py`
+>   at commit **d655501**, `src/wealth_tensor/lag.py` at **ad779eb** (its only commit) and
+>   `src/wealth_tensor/lambda_sensitivity.py` at **b9089c7** — each verifiable with
+>   `git log -1 --format=%h <sha> -- <path>`. `src/` as a whole has moved since, on companion-paper
+>   modules and, at **93a159b**, on one addition to `edgar.py` that appends the REG-006-corrected
+>   tier-0 tag list beside the registered one without editing it: the `TIER_TAGS` block that
+>   selected §5's published sample is byte-identical at **d655501** and at the head of the repository.
 
-§10 was **not touched**. No hedge, no caveat, no free parameter — the ABSORB move charter §2 forbids
-was available and refused.
+and the test-suite bullet stops quoting a live count while keeping the three named additions, which
+were always correctly described. **STEELMAN, not cut**: a global SHA is the wrong instrument for a
+per-file guarantee, and the per-file version additionally *discloses* the REG-006 correction instead
+of leaving it behind a stale pin.
 
 | | |
 |---|---|
 | **G-COACH-3 across the edit** | **3 → 3 (+0)**, `--against` the pre-edit copy |
-| suite | **772 → 777**, green in ~57 s |
-| new guard | `tests/test_scope001_steelman.py`, 5 tests, **proved by mutation** |
-| card | State Machine `1217484751716249` — **closed**, with the performance recorded on it |
+| suite | **777 → 783**, green in 56 s |
+| new guard | `tests/test_pin001_code_state.py`, 6 tests, **proved by three mutations** |
+| card | State Machine `1217490178082403` — the find, the repair, the performance |
 
-**One correction to the card, on the record.** It said "§5's 151 tier-0 property events". 151 is
-REG-009's REG-006-**repaired** population; §5.3's published tier-0 counts are 21 and 34. The claim is
-true in every version — all of them are recognised impairments — and `RESULT-SCOPE-001` states it in
-the units each number belongs to. **A number inherited from a card is still a number to check.**
+**The guard is a git check, not a source-text guard with a git check bolted on**, because PIN-001's
+signature is that nobody edited the sentence. `test_each_pinned_path_was_last_touched_by_the_sha_the_paper_discloses`
+goes red on the **next** commit that touches a pinned module — the one moment §11 needs re-reading —
+and `test_the_registered_tier_tags_block_is_byte_identical_at_both_shas` checks the **substance** of
+the disclosure rather than only the SHA. It skips outside a git work tree, so a source tarball does
+not read a lie about the paper.
 
-**AND THE SESSION OPENED WITH AN OUTAGE, WHICH IS WHERE MOST OF THE ENGINEERING WENT.** darlish would
-not come up: enrollment authorized, then `TimeoutError: timed out during opening handshake`, three
-times, twenty seconds apart. Root cause: `handle @allowed` (remote_ip `10.10.10.0/24`,
-`172.16.0.0/12`) sits ABOVE `handle @darlish` in the n8n.braatz.io site block, and **this container
-reached Caddy from 10.10.10.1** — inside `@allowed` — so n8n was served on the capability path. n8n
-answers a WS upgrade with 200 HTML and never upgrades. Latent twelve days; every previous container
-egressed from a public IP (broker log `xff=160.79.106.x`) and fell through correctly.
+**Three mutations, all reversible, committed first so git was the undo path.** (1) §11 reverted to
+the rotted prose → 2 of 6 red. (2) **A real commit touching a pinned module**, made in a throwaway
+`git worktree` on a scratch branch → the load-bearing test red, naming the offending SHA. That is
+the 2026-08-13 event that went unnoticed for nine days, replayed. (3) The registered `TIER_TAGS`
+list edited → the byte-identity test red. Worktree and branch removed; tree clean.
 
-- **Fixed live**: `@darlish` block hoisted above `@allowed`, `caddy validate` gating the write,
-  `caddy reload`, backup `/opt/n8n/Caddyfile.bak-darlish-order-20260814-125648`, auto-rollback on
-  failure. Pipe green on the first try after.
-- **The whole diagnosis ran over the three-leg fallback** (`dsh-fire` + `dwait`), which proved darwin
-  alive inside two minutes and reached the Linode through it. **darlish being down never meant darwin
-  was down**, and the fallback is genuinely load-bearing rather than theoretical.
-- **`darlish-check` now asks WHO ANSWERED** on a timeout (426 broker · 200 HTML shadowed · 403 stanza
-  missing), names BOTH causes of the 200-HTML case (a stale local path is the cheaper one — try
-  `darlish-up` first), and **routes**: a finding that names its own fix now prints State Machine, not
-  Batter's Box. The old card paged Jason for a Caddyfile line move. Both branches exercised before
-  publish; relay verified byte-identical (`darwin-scripts 93fe470`).
-- **DARLISH.md** gains the symptom row it was missing and the converse of the darwin-green trap: the
-  route a client takes is a property of THAT client, not of its class (`n8n-stack 20c5fde`).
+**`afbdd5c` — a docs-only pointer fix.** `REVIEW-004` sends a reader to paper III **§7** for the
+"refused five times" list; it is in §8. Appended, not substituted, in the §1.3a manner.
+
+**AND THE GREP THAT RAN FOR SIX SESSIONS IS FINISHED.** All 26 remaining paragraphs read, in the
+instrument-vs-prose form. Two findings, one repaired here and one carded (§3 item 1).
 
 ---
 
 ## 2 · RULINGS — DO NOT REOPEN
 
-- All of `-31`'s and `-32`'s rulings stand verbatim: no third disclosure instrument; phrase set frozen
-  at 38; §4.4 settled; **`SOURCE-001` IS FINISHED**; **THE ARM IS δ**; **§4.8 IS NOT THE COINCIDENCE
-  ARGUMENT; §4.7 IS**; **EVERY P0 AND REG-009 NUMBER IS AN UPPER BOUND — the *disclosed* δ**;
-  **REG-009 IS CLOSED and its numbering is 6–12**; **§4's COVERAGE SILENCE STAYS RECORDED, NOT
-  REPAIRED**; **§7.5's TWO ERRATA ARE RECORDED, NOT REPAIRED**; **DO NOT SPEND THE TIE-BREAK** (the
-  chronological convention was fixed in `958956a` before any count existed — do not flip it, do not
-  switch the cycle pick, do not report the mirror as the answer); **DO NOT PROMOTE `R_MIN`**;
-  **`data/reg-009-band-count.json` IS `-31`'s**; **`test_the_cycle_choice_now_decides_the_answer` IS
-  A RESULT, NOT A DEFECT.**
-- **NEW · §10 IS NOT TOUCHED BY SCOPE-001, AND THE STEELMAN LIVES IN §5.** The restriction is correct
-  as written. A future session that "tidies" the repair by moving it into §10, or that softens §10 to
-  accommodate §5, has converted a steelman into scope creep. `test_scope001_steelman.py` goes red
-  both ways.
-- **NEW · SCOPE-001 IS CLOSED.** The find is repaired, registered, guarded and carded. What remains
-  of that thread is item 1 below, which is the *rest of the grep*, not a re-litigation of this one.
+- All of `-31`'s, `-32`'s and `-33`'s rulings stand verbatim: no third disclosure instrument; phrase
+  set frozen at 38; §4.4 settled; **`SOURCE-001` IS FINISHED**; **THE ARM IS δ**; **§4.8 IS NOT THE
+  COINCIDENCE ARGUMENT; §4.7 IS**; **EVERY P0 AND REG-009 NUMBER IS AN UPPER BOUND — the *disclosed*
+  δ**; **REG-009 IS CLOSED and its numbering is 6–12**; **§4's COVERAGE SILENCE STAYS RECORDED, NOT
+  REPAIRED**; **§7.5's TWO ERRATA ARE RECORDED, NOT REPAIRED**; **DO NOT SPEND THE TIE-BREAK**;
+  **DO NOT PROMOTE `R_MIN`**; **`data/reg-009-band-count.json` IS `-31`'s**;
+  **`test_the_cycle_choice_now_decides_the_answer` IS A RESULT, NOT A DEFECT**; **§10 IS NOT TOUCHED
+  BY SCOPE-001 AND THE STEELMAN LIVES IN §5**; **SCOPE-001 IS CLOSED.**
+- **NEW · PIN-001 IS CLOSED, AND §11 PINS PER FILE FROM NOW ON.** Do not restore a global "last
+  commit touching `src/`" claim in any form, and do not "tidy" the per-file pins back into one SHA —
+  that is the defect, re-introduced. When a pinned module legitimately moves, update `LATEST_TOUCH`
+  in `scripts/wt099_edits_pin001.py` **and** the §11 sentence **in the same commit**, and say in the
+  paper what the new commit changed. If it changed a published result, register that first.
+- **NEW · THE §1.3 GREP IS EXHAUSTED AS AN ENUMERATION.** All 31 (in fact 34, see §4) paragraphs are
+  read. A seventh run is a new instrument, not a resumption — and if one is built, it enumerates by
+  **anchor phrase**, never by paragraph index. See §4.
 
 ---
 
 ## 3 · THE AT-BAT, RANKED
 
-1. **THE §1.3 GREP IS NOT EXHAUSTED — and it is now the oldest live thread.** 31 self-critical
-   paragraphs enumerated; 8 read (`-32`), and the ninth became SCOPE-001. **Paragraphs 90, 134–139,
-   185–188, 252, 265, 277–283, 294, 305, 316–317, 322, 347 are still unread.** Re-run with the
-   **instrument-vs-prose split** as the discriminator, never the raw count — the raw form returns
-   nothing because the discussion docs restate every needle 2–6 times. Five costumes so far: a
-   mis-scoped NUMBER (`-23…-25`), ADJECTIVES promoted past their measurement (`-26`), adjectives
-   flagged load-bearing and never built (`-27`), and now a SCOPE RESTRICTION vs a SAMPLE SELECTION
-   (`-33`). **Assume a sixth.**
+1. **`"refused five times"` — three sites, a list of four. Carded with the repair pre-written and
+   the one ruling already made: `1217490492527699`.** paper III asserts the count at three places;
+   §8's list enumerates four items, and the fourth is not a refusal at all — §8.1's φ move was made,
+   relied on, and withdrawn. `REVIEW-004` recorded this on 2026-08-13 and nothing was built:
+   **`-27`'s costume, not a new one.** The card carries the registration stanza, three single-line
+   anchors, the wrap hazard on the first one, and a guard that **counts the list and asserts the
+   numeral matches it**, so the number and the enumeration can never disagree again in either
+   direction. Ruling on the card: **four**, keeping the instance that got through and saying so —
+   dropping to three to make the arithmetic clean would delete the one case that cost something.
 2. **REG-010: the half-integer-edged banding, REGISTERED BEFORE IT IS RUN.** §4's tee-up in
-   `RESULT-REG-009`. Bins centred on the heap rather than starting on it. In its own document, beside
-   P3's failure, never instead of it. **Run it on the FILLED population — 133, not 110** —
-   `reg009_band_count_filled.chronological()` hands you the nine-cycle index in one call. And per
-   `-32`'s lesson: before extending anything a matching rule runs against, enumerate the rules whose
-   TIES become reachable at the new cardinality and register the tie-break in its own commit first.
-3. **"disclosed rectangle" at paper III lines 964, 996, 1123, 1573.** 86.1 % of the disclosure falls
-   outside it, so the adjective is wrong at all four. Stanza pre-written — recover with
-   `git show 958956a~1:docs/HANDOFF.md` — paste into a two-paragraph `RESULT-TERM-001.md`, perform,
-   then re-run `test_ledger_provenance` + `test_restatement_reach`. **Four sessions old.** SCOPE-001
-   proves the paste-and-perform shape works: `-33` spent zero tokens searching.
+   `RESULT-REG-009`. Bins centred on the heap rather than starting on it. In its own document,
+   beside P3's failure, never instead of it. **Run it on the FILLED population — 133, not 110** —
+   `reg009_band_count_filled.chronological()` hands you the nine-cycle index in one call. Before
+   extending anything a matching rule runs against, enumerate the rules whose TIES become reachable
+   at the new cardinality and register the tie-break in its own commit first.
+3. **"disclosed rectangle" at paper III §4.4 and §5** — 86.1 % of the disclosure falls outside it,
+   so the adjective is wrong at all four sites. Stanza pre-written; recover with
+   `git show 958956a~1:docs/HANDOFF.md`. **Five sessions old.** SCOPE-001 and PIN-001 both prove the
+   paste-and-perform shape: `-33` and `-34` each spent zero tokens searching.
 4. **Infra, all carded, all Claude-hands:** `@concierge_ingest` / `@concierge_router` carry the same
-   ordering defect `@darlish` had (State Machine `1217488447555628`) · the live capability path is
-   committed in cleartext to `n8n-stack` and the repo copy has drifted from live
-   (`1217488117177482`) · `dx --get` reports the on-wire byte count as the file size
-   (`1217488245131362`).
+   Caddy ordering defect `@darlish` had (`1217488447555628`) · the live capability path is committed
+   in cleartext to `n8n-stack` and the repo copy has drifted from live (`1217488117177482`) ·
+   `dx --get`'s byte count **and its total failure on binary** (`1217488245131362`, addendum filed).
 5. **AAR A2** — the four other `post-*` hooks in `darwin-mac-ops/hooks`; plus **A1's residual**
-   (`1217468064910605`), now with **four** consecutive sessions' evidence and one new datum: the env
-   var reaches `roster` when dx runs it directly and is lost only in the hook's own subprocess, which
-   narrows the fault to how the pre-commit hook builds its environment.
+   (`1217468064910605`), now with **five** consecutive sessions' evidence. `GATE_ROSTER_WHO` still
+   does not reach the commit hook: every commit in `-34` logged `cloud-JuwyZKqj` while the roster
+   row said `big-wealthTensor-34`. `-33` narrowed it to the hook's own subprocess.
 6. **card-lint's structural false positive** (`1217483699706758`) · **the gate defect card**
    (`1217465036940491`).
 7. **The phrase set has a passenger** (unchanged): 30.4 % of trigger sentences match only
@@ -192,39 +189,49 @@ egressed from a public IP (broker log `xff=160.79.106.x`) and fell through corre
 
 ---
 
-## 4 · WHAT WOULD HAVE SAVED `-33` TIME
+## 4 · WHAT WOULD HAVE SAVED `-34` TIME
 
-- **THE FIRST FIVE MINUTES OF A DEAD PIPE BELONG TO `dsh-fire` + `dwait`, NOT TO DIAGNOSIS.** Firing
-  one command through the fallback proves whether darwin is alive, and that single fact reclassifies
-  everything after it. `-33` spent three `darlish-check` runs before reaching for it.
-  `curl -s https://system.europeanflorist.com/dsh/{dsh-fire,dwait} -o /tmp/…` — the secret is already
-  at `/tmp/.dsh-fire.env` after `darlish-up`'s collect phase, even when the pipe itself fails.
-- **`/tmp/dfx` is worth re-creating in one paste** if darlish is down: fire + parse the token + wait,
-  with dx-shaped exit codes (3 = never reached darwin, 75 = fired but no result). It made the
-  fallback feel like `dx` and cost four minutes to write. Copy it out of this session's outputs.
-- **NEVER interpolate a comparison through nested `ssh`.** Write it to a file, ship it, run it, and
-  have it print MATCH/MISMATCH plus both hashes. `-33`'s one violation of this produced a false
-  mismatch that nearly triggered a destructive repair. (Same rule the ROSTER BRAKE section states for
-  multi-line strings — it applies to *comparisons*, not just to edits.)
-- **`defensive_count.py` takes a PATH and is meaningless without `--against`.** Copy the pre-edit file
-  to `/tmp` *before* running the patch script; there is no second chance once the tree is dirty.
-- **The patchkit anchor rule paid again**: one single-line anchor with no internal newline, replaced
-  by multi-line text, resolved first try. Three edits in `-32`, one in `-33`, zero misses.
-- **`aar.py eject` will duplicate cards you already filed.** Set an action's urgency to `medium`/`low`
-  with a pointer to the existing card, or you get a second card for the same work — and note that
-  `eject` files to **State Machine**, correctly, not to Batter's Box.
+- **THE HANDOFF'S OWN PARAGRAPH INDICES WERE STALE BY +1, AND THAT COST THE FIRST HALF HOUR.** `-32`
+  enumerated against the pre-SCOPE-001 paper; `-33`'s edit (`3795372`) inserted a new blank-line
+  block at what is now block **206**, so every listed index ≥ 206 was off by one. Uncorrected, four
+  of them land on a horizontal rule or a bare heading — which reads like a broken enumerator rather
+  than a shifted one. **Both members of each ±1 pair were read, so the coverage claim does not
+  depend on the correction being right.** The list also contained 26 indices against a stated 22,
+  and 8 read + 26 unread = 34 against "31 enumerated": the arithmetic was never checkable because
+  **the enumerator was never committed.** *This is the session's own finding turned on the session's
+  own paperwork — coordinates are a moving target. A handoff should carry anchor phrases, not line
+  numbers or block indices. This file does.*
+- **THE MUTATION RECIPE IN `-33`'s HANDOFF IS WRONG FOR ONE COMMON FORM.** `git checkout <sha> --
+  <path>` **also stages** the old blob, so the documented `git checkout -- <path>` restores the
+  *mutation* from the index and the tests stay red — which reads exactly like a guard that cannot be
+  un-mutated, at the moment you are least able to tell. **Correct un-mutation:
+  `git reset HEAD -- <path>` then `git checkout HEAD -- <path>`, with `git status --porcelain`
+  printing nothing as the proof.**
+- **MUTATE IN A `git worktree` WHEN THE MUTATION IS A COMMIT.** Proving that
+  `test_each_pinned_path_was_last_touched_by_...` fires needed a *real* commit touching a pinned
+  file. `git worktree add -b <scratch> /tmp/<dir> HEAD`, commit there, run pytest with the main
+  `.venv/bin/python`, then `git worktree remove --force` + `git branch -D`. The live tree is never
+  in a state `git status` cannot describe. **And a guard mutated one way has been proved one way** —
+  PIN-001 was mutated three, and each reddened a different test.
+- **`defensive_count.py` takes a PATH and is meaningless without `--against`.** Copy the pre-edit
+  file to `/tmp` *before* running the patch script; there is no second chance once the tree is dirty.
+- **The patchkit anchor rule paid a third time**: five single-line anchors, no internal newlines,
+  all five resolved first try. Three edits in `-32`, one in `-33`, five in `-34`, zero misses.
+- **`git checkout <sha> -- <path>` aside, never interpolate a comparison through nested `ssh`** —
+  write it to a file, ship it, run it. `-33`'s one violation produced a false mismatch that nearly
+  triggered a destructive repair.
 
 ---
 
 ## 5 · DEFINITION OF DONE (carry this forward)
 
-SCOPE-001 is **done**: registered alone, performed on §5, guarded by a mutation-proved test, G-COACH-3
-non-increasing across the edit, suite green at 777, card closed with the performance recorded on it.
-The transport it ran over is **done and better than it was found**: the outage is fixed, the runbook
-carries the symptom row, and `darlish-check` now discriminates the cause instead of naming the
-symptom.
+PIN-001 is **done**: registered alone, performed on §11, guarded by a git check proved by three
+mutations, G-COACH-3 non-increasing, suite green at 783, card carrying the find and the performance.
+**The §1.3 grep is done as an enumeration** — six sessions, six costumes, every enumerated paragraph
+read.
 
-The next unit of done is **item 1** — the rest of the §1.3 grep, in its instrument-vs-prose form,
-starting at paragraph 90. It is a SEARCH, not a paste-and-perform, and it should end the way `-32`'s
-did: with the find located to the line and its repair pre-written on a card, whether or not the same
-session performs it.
+The next unit of done is **item 1**, and it is a paste-and-perform, not a search: the
+`"refused five times"` count, registered alone in a two-paragraph `RESULT-TERM-002.md`, performed at
+three anchors, guarded by a test that **counts §8's list and asserts the numeral matches it**, and
+proved by mutation. The card has all of it, including the ruling. A session that finishes it should
+land in under two hours and leave item 2 — REG-010 — as the next real search.
