@@ -1661,11 +1661,12 @@ jointly; slow-decaying assets are not, and for those an independent δ is the on
 What that independent determination should be is deliberately *not* specified here — an instrument
 named in a paper before it is registered is an instrument that has escaped its registration.
 
-**Adding a free parameter to absorb an objection.** Refused five times across this programme and
+**Adding a free parameter to absorb an objection.** Faced four times across this programme and
 worth recording as a class, since each instance looked locally reasonable: introducing a scaling
 constant to rescue the dimensional argument; defining a levy's base so a companion paper's claim
 came out right; letting λ vary freely rather than in a shaped way; and, as §8.1 now concedes,
-leaning on an unmeasured φ. A quantity that can accommodate any observation forbids nothing.
+leaning on an unmeasured φ — three refused, the fourth not. A quantity that can accommodate any
+observation forbids nothing.
 
 ---
 
@@ -1689,7 +1690,7 @@ The partition is drawn along φ, and φ is not measured anywhere in this work �
 it is swept, not estimated. So "the objection holds where φ is high and the model holds where φ is
 low" concedes every case an efficient-markets reader could check and claims every case nobody can,
 along a coordinate no one has observed. That is a free parameter absorbing an objection, which is
-the move this programme has refused five times in other costumes (§8) and should have refused here.
+the move this programme has refused three times in other costumes (§8) and should have refused here.
 
 The requirement was recognised before the severe test was run and was written down: a framework
 conceding everything the efficient-markets reading claims and retaining only the unobserved residue
@@ -2251,7 +2252,7 @@ magnitude, while every currency-denominated quantity scales with it exactly line
 ### A.2.4 · Λ is not a constant that wobbles; it is a sawtooth
 
 A freely-varying Λ that is never pinned would forbid nothing, and a quantity that forbids nothing
-is the free parameter this programme has refused five times in other costumes. So the claim is not
+is the free parameter this programme has refused three times in other costumes. So the claim is not
 that Λ *varies*. It is that Λ varies **in a specific parameterised shape**, and the shape is a
 prediction.
 
