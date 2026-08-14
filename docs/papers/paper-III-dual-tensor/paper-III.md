@@ -622,7 +622,7 @@ enough to appear in a filing implies a decay rate at or above the recognition ra
 rectangle is admissible only at α ≈ 0.19, and all of it above α = 0.33. **That made the recognition
 rate, not the ordering, the quantity to establish first — and §5.4 establishes it.** On the
 registered sample the recognition rate PRE-002's instrument identifies is **α̂ = 0.408 per year**,
-95% interval [0.383, 0.432]: the calibration used here is low by an order of magnitude, and the
+95% interval [0.383, 0.432], on both known biases' inflating side: the calibration used here is low by an order of magnitude, and the
 asserted rectangle lies inside the domain at the measured rate and across its 95% interval, where
 **0.974** of the 683 disclosed pairs are admissible and **0.959** at the interval's lower bound. At
 the cut REG-003 registered in advance as the one that would break it — the 175 events charged one
@@ -1383,7 +1383,7 @@ events across 307 firms** against 688 across 311, with three of four tier counts
 censoring at 7.7% against 7.8%. The registered reconciliation rule, fixed before the count was
 known, admits this as the registered sample.
 
-**The peak-to-charge recognition rate is 0.41 per year, and the calibration was low by an order
+**The peak-to-charge recognition rate is 0.41 per year on both known biases' inflating side, and the calibration was low by an order
 of magnitude.**
 Each event carries the interval from the onset of deterioration to the charge, right-censored at
 twenty quarters — which is α's definition, measured once per event, by an instrument built to look
@@ -1590,7 +1590,7 @@ with what would have killed each.
 | **The design's validity region has a fitted boundary** | logistic of failure on log(leverage / budget), 4,000 ladders | a slope indistinguishable from zero | slope **+1.58**, z = **+19.5**; the same fit on a permuted outcome gives z = 0.23 |
 | **The *asserted* rectangle lies outside the model's domain *at the calibrated rate*** | useful lives spanning disclosure practice against α = 0.05, and the 683 disclosed pairs against the measured rate | any part of it admitting a steady-state deferral measure | **0%** admissible at α = 0.05; **all** of the asserted rectangle and **0.974** of the disclosed pairs at the measured α̂ = 0.408 |
 | **The rectangle's 99.7% is a property of the assumed support, not of the disclosure** | §4.4's first rung evaluated on 683 disclosed firm-year pairs across 577 firms, against the same test on the asserted rectangle at the same rate | the two agreeing within the clustered interval, which would have made the rectangle an adequate stand-in for the disclosure | rises in **0.659** of admissible pairs [**0.621**, **0.696**] against **0.998** on the rectangle; only **0.139** of the pairs fall inside it |
-| **The peak-to-charge recognition rate is an order of magnitude above the calibration** | censored geometric MLE on 695 registered events, two universes, three sensitivities, four truncations | any cut returning a rate near the swept 0.05 | **α̂ = 0.408/yr** [0.383, 0.432]; range **0.327–0.499** across every cut, none containing 0.05 |
+| **The peak-to-charge recognition rate is an order of magnitude above the calibration** | censored geometric MLE on 695 registered events, two universes, three sensitivities, four truncations | any cut returning a rate near the swept 0.05 | **α̂ = 0.408/yr** [0.383, 0.432], on both known biases' inflating side; range **0.327–0.499** across every cut, none containing 0.05 |
 | **The constant hazard the model assumes is rejected** | discrete Weibull fitted, not assumed, with a profile interval | k̂ = 1, which would have left α a constant | **k̂ = 1.210** [1.135, 1.285]; the hazard rises with the age of the gap |
 | **The closed form survives an age-dependent hazard** | general form against an age-structured simulation carrying the gap as cohorts, no closed form in the loop | departure beyond §4.3's published transient bound | held to **2 × 10⁻¹³** against a 2 × 10⁻⁴ bound; the same simulation **rejects** α ← 1/E[T] at 2 × 10⁻³ |
 | **φ is a pure scale under age-dependence too** | R(φ)/R(0) against (1 − φ), φ swept on a tenth-grid | any φ at which the ratio departs | held to **exactly 0.0** |
@@ -1749,34 +1749,35 @@ theorem is a framing that will be argued about instead of the theorem.**
 1. **The severe test failed and this paper does not know why.** Three post-hoc explanations exist —
    the theory is wrong; the bridge was wrong; the unit of observation was wrong — and **the data do
    not distinguish them.** The first is listed first on purpose, being the one the author has the
-   strongest incentive to list last. 2. **The unit mismatch is real, unfixed, and was unfixed by
-   both registrations.** The impairment charge is asset-level; the deterioration signal used was
-   firm-level. A firm can impair a failing reporting unit while consolidated revenue rises. Fixing
-   this requires segment-level disclosures and is a different project with a different registration
-   — which **may not cite the present failure as support for anything.** 3. **The filter model is
-   deterministic and single-firm.** No stochastic degradation, no heterogeneity, no interaction
-   between firms, no market. Every empirical signature it suggests is therefore a qualitative
-   target, not a fitted one. **The determinism is not innocuous, and §4.8 is where it bites**: the
-   goodwill limit reported there is a consequence of the physical layer being noiseless, and it
-   dissolves once that layer is allowed to move for reasons other than a schedule. Admitting
-   stochastic degradation is the single change to this model most likely to alter what it says,
-   which is why it is named here rather than in a list of extensions. 4. **φ and θ are not measured;
-   they are swept — and for φ the reason is §4.** α is measured, but for the quantity PRE-002's
-   instrument dates rather than for the model's α: §5.4 estimates that rate at 0.408 per year on the
-   registered sample, against the 0.05 swept through the body, and finds the constant hazard the
-   model assumes to be rejected. The bridge from that rate to the model's α is the one §6.2 requires
-   of every registration, and this paper has not written it. §4.9 settles what that rejection costs:
-   the closed form is the recognition lag's moment generating function evaluated at the decay rate,
-   so it survives with an effective rate that is a function of δ rather than a constant, and what
-   the constant hazard was supplying was the domain. The paper reports how outcomes vary across the
-   sweep and does not claim any firm's φ is known. That is no longer a concession about this
-   construction: §4.2 establishes that **no** estimator recovers φ from a reported series, because
-   the series does not contain it. The consequence is stated there rather than softened here,
-   together with the one repair available — an independent determination of δ, for which disclosed
-   useful lives are a candidate this programme has not yet used. (Method, scripts and full figures
-   for the conditioning result that preceded the theorem:
-   `docs/notes/NOTE-001-phi-identifiability.md`. Synthetic data only. It is **not** evidence about
-   §5's null, which used an entirely different, non-parametric estimator.)
+   strongest incentive to list last.
+2. **The unit mismatch is real, unfixed, and was unfixed by both registrations.** The impairment
+   charge is asset-level; the deterioration signal used was firm-level. A firm can impair a failing
+   reporting unit while consolidated revenue rises. Fixing this requires segment-level disclosures
+   and is a different project with a different registration — which **may not cite the present
+   failure as support for anything.**
+3. **The filter model is deterministic and single-firm.** No stochastic degradation, no
+   heterogeneity, no interaction between firms, no market. Every empirical signature it suggests is
+   therefore a qualitative target, not a fitted one. **The determinism is not innocuous, and §4.8 is
+   where it bites**: the goodwill limit reported there is a consequence of the physical layer being
+   noiseless, and it dissolves once that layer is allowed to move for reasons other than a schedule.
+   Admitting stochastic degradation is the single change to this model most likely to alter what it
+   says, which is why it is named here rather than in a list of extensions.
+4. **φ and θ are not measured; they are swept — and for φ the reason is §4.** α is measured, but for
+   the quantity PRE-002's instrument dates rather than for the model's α: §5.4 estimates that rate
+   at 0.408 per year on the registered sample, against the 0.05 swept through the body and on both
+   known biases' inflating side, and finds the constant hazard the model assumes to be rejected. The
+   bridge from that rate to the model's α is the one §6.2 requires of every registration, and this
+   paper has not written it. §4.9 settles what that rejection costs: the closed form is the
+   recognition lag's moment generating function evaluated at the decay rate, so it survives with an
+   effective rate that is a function of δ rather than a constant, and what the constant hazard was
+   supplying was the domain. The paper reports how outcomes vary across the sweep and does not claim
+   any firm's φ is known. That is no longer a concession about this construction: §4.2 establishes
+   that **no** estimator recovers φ from a reported series, because the series does not contain it.
+   The consequence is stated there rather than softened here, together with the one repair available
+   — an independent determination of δ, for which disclosed useful lives are a candidate this
+   programme has not yet used. (Method, scripts and full figures for the conditioning result that
+   preceded the theorem: `docs/notes/NOTE-001-phi-identifiability.md`. Synthetic data only. It is
+   **not** evidence about §5's null, which used an entirely different, non-parametric estimator.)
 
 5. **Λ⁻¹ and SDG 7.3.1 are the same quantity dimensionally, not empirically.** The SDG series is a
    national aggregate over primary energy and PPP output; the model's coupling is a firm-level
