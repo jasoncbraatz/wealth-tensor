@@ -849,8 +849,11 @@ the 291-fold improvement quoted in §4.2. A design that uses disclosed useful li
 δ, and compares timeliness only within a life band, is reading φ rather than φδ, and it runs on
 the sample §5 already collected — **151 property events across 98 firms** on the tier-0 tag list
 §5.4 repaired, against 55 across 38 on the list as first collected, with 110 of the 151 joining to
-a disclosed life. Across the one-year life bands that design requires, 151 events average 21 per
-band against §5's floor of 30.
+a disclosed life. Across the one-year life bands that design requires, those 110 events occupy
+sixteen bands and **exactly one clears §5's floor of 30** — thirty-six events from twenty firms
+at a five-year life — with none clearing on firms rather than events. Filling the coverage §5's
+two cycles leave between them would bring a second band to the floor if the unjoined events fall
+like the joined ones, and no allocation of them brings more than a third.
 
 Three properties recommend that design over the one this paper registered. It is diagonal-safe: no
 comparison crosses a class boundary, so the diagonality assumption of §4.1 is not load-bearing. It
