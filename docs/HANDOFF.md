@@ -1,8 +1,8 @@
 ---
 project: wealth-tensor
-gh_sha: a77c5c516a9d30e5db133836ec8beceba5719eef
-updated: 2026-08-14
-session: wealthTensor-44
+gh_sha: 19fa03f3965e7a012813d5396a288d99bc600616
+updated: 2026-08-15
+session: wealthTensor-45
 gate_passed: true
 gate_version: "2.51"
 ---
@@ -17,59 +17,56 @@ gate_version: "2.51"
 1. **`docs/CO-AUTHOR-CHARTER.md`** — the constitution. **THE CHARTER WINS**: where this handoff, any
    result doc, or any plausible-sounding rewrite conflicts with it, the charter governs and the other
    thing is wrong. *This file is a status report. It is not law and it cannot amend the charter.*
-2. **`docs/preregistration/CONSTRAINT-INVENTORY-001.md` — the map for this thread, and `-44`
-   rewrote it again.** Fifty reporting constraints, now on **two axes**: `recog` (MECH / PROXY /
-   READER / n/a — a property of the CONSTRAINT) and a **FOR / BINDS / PARTIAL / ADJACENT** grade
-   on the machine cell (a property of the ESTATE). **Read §3 first** — the partition, the audit,
-   and §3.4, which is the answer to the question `-42` wrote into the definition of done. Then
-   §2's amended bullet and §2a's counts block.
+2. **`docs/preregistration/CONSTRAINT-INVENTORY-001.md`** — the map for this thread. Fifty reporting
+   constraints on two axes: `recog` (MECH / PROXY / READER / n/a — a property of the CONSTRAINT) and
+   a **FOR / BINDS / PARTIAL / ADJACENT / TRIPWIRE** grade on the machine cell (a property of the
+   ESTATE). **Read §3.4 first this time** — it is the tripwire class, now built rather than
+   described. Then §2's provenance bullet (`-45`'s finding, six wrong rows) and §2a's counts block.
 3. `python3 scripts/handoff_gate.py --check` — proves this file is not stale.
 4. **`docs/preregistration/REG-003-p3-recognition-rate-and-off-diagonal.md` §§3.2, 3.3, 7** — the
-   four-regime ladder, the registered bias asymmetry, the rounding rule. Three of the estate's
-   eight purpose-built guards point here.
+   four-regime ladder, the registered bias asymmetry, the rounding rule.
 5. **`docs/scouting/SCOUT-001-paper-III-opposing-team.md`** — **WORKED, NOT PENDING.** Only T2
    remains and T2 is carded and barred on this data. Read it for measurements, not for a to-do list.
-6. `REG-012` §§6–7 · `RESULT-REG-012-band-edge-phase` §§4–5 (the refusal speech act `-44` put a
-   machine on) · `RESULT-TERM-001` the five-site ruling · `REG-010` **§1 is the population ruling**
-   · `CONSTRUCTION-REG-010` **§C2 owns 55.71 % and its population in one sentence**.
+6. `REG-012` §§6–7 · `RESULT-REG-012-band-edge-phase` §§4–5 · `RESULT-TERM-001` the five-site
+   ruling · `REG-010` **§1 is the population ruling** · `CONSTRUCTION-REG-010` **§C2 owns 55.71 %
+   and its population in one sentence**.
 7. `RESULT-REG-010` §3 → §4 · **`RESULT-TERM-002`** §2 before §8 · `RESULT-PIN-001` ·
    `RESULT-SCOPE-001` · `CONSTRUCTION-REG-009` (**R5 is load-bearing and unspent**) ·
    `RESULT-REG-009` (**§3's S = 0.1391 is load-bearing in a test**) · `REG-009` (**READ THE HEADER
    NOTE FIRST**; numbering 6–12 by ruling).
 
-> **`-44` in one line: A COLUMN THAT NAMES A GUARD IS A COVERAGE CLAIM, AND NOBODY HAD EVER
-> VERIFIED A SINGLE ROW OF IT.**
-> `-43` closed with *"cell (b) — a machine could recognise this and nobody wrote one — is now
-> EMPTY and that is the finding to protect."* Protecting a finding means testing it. **It did not
-> survive.** The emptiness rested on the inventory's `machine` column being read as coverage;
-> audited one row at a time against *"if the constraint were violated, would this named test
-> necessarily go RED?"*, the eighteen incidental entries came back **2 BINDS · 6 PARTIAL · 10
-> ADJACENT**. **Cell (b) holds thirty-three of the fifty.** And §2's *"nine of the fifty already
-> had a machine"* was itself wrong — **twenty-four rows name one** — a count of a column in that
-> file, in prose, that nobody had recomputed in two sessions.
+> **`-45` in one line: THE CONSTRAINT THE WHOLE SESSION WAS BUILT AROUND HAD BEEN FILED UNDER THE
+> WRONG FALSIFIER SINCE `-42`, AND EVERY CHECK ANYBODY WOULD THINK TO RUN CAME BACK GREEN.**
+> C09's row, §2's bullet, §3.3, §3.4 and two handoffs all said `REG-002` **E1**. The clause they
+> quote is **E2**'s. E2 is the one `RESULT-REG-002` §1 records as **FIRED** (δ₃\* = 0.00789 <
+> 0.010); **E1 is the mean-τ falsifier that §2 of that same RESULT records as MIS-SPECIFIED, and it
+> did not fire.** The citation survived because *both* govern §4.4's headline, so *does E1 exist?*
+> and *does E1 mention the headline?* both return yes to a wrong pointer. Audited across all fifty
+> rows: **six wrong, in three shapes** — four wrong locators (C09, C33, C26, C27, C28), one
+> paraphrase that dropped a conditional's **antecedent** (C05), one that dropped a **referent**
+> (C26). All repaired, and mechanised so they cannot recur.
 
 ---
 
 ### Transport — darlish, zero-bridge
 
 Standard bring-up; post the `DARLISH-ENROLL` line to Asana **1217316841710435**, collect, then `dx`.
-**First try, no fallback, `-06` through `-44`.** If it does not come up the first move is `dsh-fire`
+**First try, no fallback, `-06` through `-45`.** If it does not come up the first move is `dsh-fire`
 + `dwait`, not diagnosis. darlish is not on the bridge; never restart the app to fix it.
 `darlish-check` is **not** in the cloud kit — do not chase its 127.
 
-**`--replaces` verified again in `-44`**: `roster join --replaces cloud-<fp>` printed `absorbed 1
+**`--replaces` verified again in `-45`**: `roster join --replaces cloud-<fp>` printed `absorbed 1
 row(s)`. `roster leave` ONCE at wrap.
 
 > ### ⚠ SET `GATE_ROSTER_WHO` INLINE. THE `export` FORM IS RETIRED AND NEVER WORKED.
-> dx spawns a **fresh remote shell per call and carries no environment**. `-44` used the inline
-> form on `roster join`, `roster claim`, both commits, `lessons.py use`, `lessons.py add`,
-> `record-outcome` and `gate-selfcheck.sh` — every one first time.
+> dx spawns a **fresh remote shell per call and carries no environment**. `-45` used the inline form
+> on `roster join`, `roster claim`, the commit, and every `lessons.py` call — first time, every time.
+> **Exception, and it is worth knowing: `export GATE_ROSTER_WHO=…` DOES work inside a script you
+> `--put` and run with `bash /tmp/x.sh`**, because that is one shell. `-45` banked four lessons and
+> a `record-outcome` that way in a single call.
 
-> ### ⚠ NEW · `git commit -F <msg> <paths>` CANNOT STAGE AN UNTRACKED FILE.
-> The stanza every handoff since `-40` carries is the *second* half of the move. A new test file
-> is untracked, and `git commit -F msg tests/test_new.py` dies with **`error: pathspec ... did not
-> match any file(s) known to git`** before the brake is even consulted. `-44` lost a round-trip to
-> it. The whole move, on a shared repo:
+> ### ⚠ `git commit -F <msg> <paths>` CANNOT STAGE AN UNTRACKED FILE.
+> Look, add, then commit — the whole move on a shared repo:
 >
 > ```
 > /tmp/dx 'cd ~/repos/<repo> && git status --porcelain'                 # look FIRST
@@ -77,15 +74,12 @@ row(s)`. `roster leave` ONCE at wrap.
 > /tmp/dx 'cd ~/repos/<repo> && GATE_ROSTER_WHO=big-<sess> ROSTER_BRAKE_ACK=<n> \
 >            git commit -F /tmp/msg.txt <all your paths, new AND modified>'
 > ```
-> **`<n>` is the count of YOUR paths, not the staged total.** `-44`'s were 4 and 10.
+> **`<n>` is the count of YOUR paths, not the staged total.** `-45`'s was 7, first try.
 
-**COMMIT BY PATH ON `claude-blackbook`, ALWAYS — CONFIRMED AGAIN.** `-44` found **fifteen** staged
-leaves and **five were a sibling's** (acmeLedger's firewall / cmd-log / containerizing /
-producer-reader / ufw leaves). `git commit -F msg <paths>` took the ten that were mine and left
-theirs. **`lessons.py` auto-commit is still blocked by the roster brake and still reports you as
-`cloud-<fp>`** — cosmetic, the leaf files are written, you commit them yourself. **Check the diff
-for `used_by` before committing**: a `use` shows `used_by: [.., wealthTensor-NN]` and a
-`record-outcome` shows `passes` and possibly `trust: quarantine -> active`.
+**COMMIT BY PATH ON `claude-blackbook`, ALWAYS.** `-45` found the tree clean and `lessons.py`
+auto-commit **working and pushing** — four `add`s, three `use`s and a `record-outcome` all
+self-committed. Do not assume that; **`git status --porcelain` first**, and if a sibling's leaves
+are staged, commit by path as `-44` had to.
 
 **THE MINUTE-TWO STANZA IS TWO LINES, AND YOU NEED BOTH TARBALLS.**
 
@@ -94,27 +88,34 @@ for `used_by` before committing**: a `use` shows `used_by: [.., wealthTensor-NN]
 /tmp/dx --get /tmp/wt-lite.tgz /tmp/wt-lite.tgz && /tmp/dx --get /tmp/wt-data.tgz /tmp/wt-data.tgz
 ```
 
-`-44` measured 2,421,423 + 4,682,860 bytes, both `verified against darwin` **in words**. Trust the
+`-45` measured 2,452,442 + 4,682,860 bytes, both `verified against darwin` **in words**. Trust the
 sentence. **Exit 3** = never reached darwin, safe to re-run · **4** = dropped after the command
 started, check state first · **5** = crossed but mismatched, nothing written, replay-safe.
-**`$HOME` in the cloud container is `/root`, not `/home/claude`** — `~/wt` resolves to `/root/wt`
-and the Read tool wants the absolute path. **Never inline a multi-line string in `dx '...'`** —
-write locally, `--put`, run it; `-44` ran its lessons bank and both commit messages that way.
+**`$HOME` in the cloud container is `/root`, not `/home/claude`** — unpack to `/root/wt` and give
+the Read tool the absolute path. **Never inline a multi-line string in `dx '...'`** — write locally,
+`--put`, run it.
+
+> **`conftest.py`, `requirements.txt`, `README.md`, `LICENSE` and `.gitignore` ARE NOT IN THE
+> TARBALL** and `-45` needed one of them. The stanza pulls `docs scripts tests src` + `data`, so a
+> repo-root file is invisible in the cloud: `pytest` runs anyway (the cloud uses
+> `PYTHONPATH=<root>/src` instead of conftest's `sys.path` insert), which is exactly why nobody
+> noticed. If your at-bat touches pytest configuration, markers, or dependencies, `/tmp/dx --get`
+> the file first — do not infer it from the suite passing.
 
 **SUITE COUNTS — COLLECTED = PASSED + SKIPPED, NOT TWO PASS COUNTS.**
 
-| | at `a77c5c5` (verified in `-44`, both machines, same hour) |
+| | at `19fa03f` (verified in `-45`, both machines, same hour) |
 |---|---|
-| collected | **944** |
-| cloud (`PYTHONPATH=<root>/src`) | **935 passed / 9 skipped**, ~164 s, **every skip `not a git work tree`** |
-| darwin (`.venv/bin/python -m pytest`) | **944 passed**, ~60 s |
+| collected | **976** (was 944 at `a1fef70`; `-45` added 32) |
+| cloud (`PYTHONPATH=<root>/src`) | **967 passed / 9 skipped**, ~135 s, **every skip `not a git work tree`** |
+| darwin (`.venv/bin/python -m pytest`) | **976 passed**, ~59 s |
 
-`scripts/defensive_count.py` **takes a positional `path`** and errors without one:
-`python3 scripts/defensive_count.py docs/papers/paper-III-dual-tensor/paper-III.md`.
+`scripts/defensive_count.py` **takes a positional `path`** and errors without one.
+**New: `pytest -m tripwire` selects the four-file tripwire class; `-m "not tripwire"` excludes it.**
 
 ---
 
-## 0 · THE TELL, NOW IN THIRTY-SIX SHAPES
+## 0 · THE TELL, NOW IN THIRTY-NINE SHAPES
 
 Ask the instrument-artefact question of numbers that look GOOD (`-28`), that SETTLE AN ARGUMENT
 (`-29`), of a REGISTERED CONTROL THAT FAILS (`-30`), OF THE DENOMINATOR (`-31`), OF A TIE-BREAK AT A
@@ -128,98 +129,90 @@ sites found them through ONE DOOR; a paragraph-resolution grade against a senten
 GREEN. `-42`: a constraint can be CONDITIONAL and its guard must assert its ANTECEDENT; a
 whitespace-identity guard certifies no character moved, not no meaning; the second door is the
 SECTION HEADING; evidence in a gitignored file is not in the SSOT. `-43`: a labelling constraint's
-second door is the WRONG label; a repair that is the defect's token with a prefix matches every
-substring check; **feed the registration its own forbidden claim before you trust the green**; a
-non-vacuity test must assert the CONJUNCTION. **`-44` adds three:**
+second door is the WRONG label; **feed the registration its own forbidden claim before you trust the
+green**; a non-vacuity test must assert the CONJUNCTION. `-44`: a column that names a guard is a
+COVERAGE CLAIM and nobody ever verifies it — audit it with ONE question asked identically of every
+row; **the reproduced numbers bind, the prohibitions escape**; when a rule says *X, not merely Y*, an
+ABSENCE guard is logically incapable of enforcing it; an unrecognisable constraint gets a machine on
+its ANTECEDENT and a human on its CONSEQUENT; **do not fuse a property of the artefact with a
+property of the estate into one partition.** **`-45` adds three:**
 
-- **A COLUMN THAT NAMES A GUARD IS A COVERAGE CLAIM, AND NOBODY EVER VERIFIES IT.** Eighteen rows
-  of `CONSTRAINT-INVENTORY-001` said *"incidental — the test was written for a prediction and
-  happens to bind the constraint too."* That phrase had never been checked for a single row.
-  Audited against one question — *would this test go RED if the constraint were violated?* — the
-  eighteen came back **2 BINDS / 6 PARTIAL / 10 ADJACENT**, and one named the wrong test entirely.
-  **THE PATTERN IS NOT RANDOM: THE REPRODUCED NUMBERS BIND, THE PROHIBITIONS ESCAPE.** A test
-  written for a prediction opens the data artifact; a constraint on *how a thing may be reported*
-  lives in prose the test never reads — **of twelve distinct incidental test files, three open a
-  `.md` at all**, and two of those only to check a numeral appears somewhere in it. The audit is
-  cheap and parallel: one reader per test, a mutation on a scratch copy as the tiebreak.
-  Banked: `2026-08-14-column-names-guard-coverage-claim-nobody`.
-- **WHEN A RULE SAYS "X, NOT MERELY Y", AN ABSENCE GUARD IS LOGICALLY INCAPABLE OF ENFORCING IT —
-  BOTH STATES SHARE THE ABSENCE.** `REG-012` §7 requires the shifted band count to be *refused,
-  not merely unperformed*. Its guard asserts the document names no way of computing one — a
-  strong, un-gameable **absence**, with the same truth value in the compliant world and the
-  violating one. Deleting every refusal sentence from the RESULT left the suite green. The repair
-  is a **pair**, not a better absence: presence of the declaration, in the document's own voice
-  (blockquotes excluded — reporting a prohibition is not performing a refusal), naming its
-  warrant. Generalises to *disclosed not omitted*, *declined not overlooked*, *deprecated not
-  deleted*. Banked: `2026-08-14-rule-says-x-merely-y-absence`.
-- **AN UNRECOGNISABLE CONSTRAINT GETS A MACHINE ON ITS ANTECEDENT AND A HUMAN ON ITS CONSEQUENT —
-  A TRIPWIRE, NOT A GUARD.** Same mechanism, opposite speech act: it fires on a checkable
-  antecedent and says *a human must read this*, not *this is wrong*. **A tripwire whose red
-  message names a violation teaches the next session to suppress it.** The corollary is how the
-  gap hid for two sessions: **do not fuse a property of the artefact with a property of the estate
-  into one partition.** `-43`'s three cells were *has a machine / could have one / reader only* —
-  the first is about who did work, the third about what is knowable — and the fusion left no cell
-  for *a machine is named and cannot see the constraint*, which is where sixteen rows lived.
-  Banked: `2026-08-14-constraint-machine-cannot-recognise-machine-its`.
+- **A `source` CELL IS A PROVENANCE CLAIM, AND AN ADDRESS THAT RESOLVES IS NOT AN ADDRESS THAT IS
+  RIGHT.** `-44`'s finding one column to the left, and it had the same shape: nobody had verified a
+  single one. **Both** an existence check (*does E1 exist?*) **and** a whole-file search (*is this
+  text in `REG-002`?*) pass a wrong citation. The question that catches it is *does the **cited
+  block** contain the words in the **quotation column***, and it needs two things a looser check
+  does not have: **resolve the exact block** (heading or bold label to the next peer, not the file),
+  and **NEST multi-part locators** — `§4 Q1` means Q1 *inside* §4, and a union resolves it correctly
+  whenever the label happens to be unique in the file, which is how C26, C27 and C28 pointed at the
+  wrong section for four sessions. Also: compare the **conjunction** of a row's quotations. The
+  first cut used `any`, and C05's paraphrase passed on the strength of a correctly-quoted fragment
+  beside it. Banked: `2026-08-15-citation-column-provenance-claim-nobody`.
+- **WHEN TWO ITEMS IN ONE DOCUMENT CONSTRAIN THE SAME THING, A CITATION TO EITHER READS AS CORRECT.**
+  `REG-002` E1 and E2 both govern §4.4's headline, so the wrong one was **more** durable than an
+  obviously-wrong one would have been — it passed every check a reader would think to run. This is
+  the general case for any registration that pre-commits several ways to fail one section. The
+  repair is to **assert the warrant at the scene**: the tripwire built this session asserts E2's
+  clause *and* that `RESULT-REG-002`'s E2 row still reads FIRED. Banked:
+  `2026-08-15-two-items-one-document-constrain-same`.
+- **A QUOTATION IS A LOSSY COPY, AND THE FIRST THINGS IT LOSES ARE THE ANTECEDENT AND THE REFERENT.**
+  Two of the six defects were not wrong addresses: C05's *"the next move is not a third instrument"*
+  for *"the next move **in that case** is not…"* — dropping the conditional's antecedent, which
+  turns a rule that fires only on failure into an unconditional ban — and C26's *"never appears
+  unqualified"* for *"never appears **in it** unqualified"*, which turns a rule about one document's
+  own statistics into a rule about the manuscript. `-42`'s rule has a twin: **a conditional
+  constraint's QUOTATION must carry its antecedent.** Banked:
+  `2026-08-15-quotation-lossy-copy-first-things`.
 
-**Everything `-33` through `-43` banked is unchanged and still sharp.** `severity.check`'s witness
-must return FALSY. Check `git ls-files <name>` before a whole-file write into a shared directory
-(`-44` checked; all three new names were free). `patchkit` anchors have **no internal newline**.
+**Everything `-33` through `-44` banked is unchanged and still sharp.** `severity.check`'s witness
+must return FALSY. Check `git ls-files <name>` before a whole-file write into a shared directory.
+`patchkit` anchors have **no internal newline**.
 
 ---
 
 ## 1 · WHAT HAPPENED
 
-**`a77c5c5` — the recognisability partition, and the audit that inverted `-43`'s headline.**
+**`19fa03f` — the tripwire class built and registered, and the source column audited.**
 
-- **`docs/preregistration/CONSTRAINT-INVENTORY-001.md`** — two axes where there was one. §1's table
-  carries `recog` beside a binding grade; **§2a is a machine-readable counts block**; **§3 is the
-  partition, the audit, cell (b) ranked eight-deep, and §3.3's adjacent check named for each
-  reader-only constraint**; **§3.4 is what an unrecognisable constraint gets instead of a machine**
-  — a ruling, Jason's call, or a tripwire, with the three tripwires the estate owes (C09, C17,
-  C36) named. §3.0 preserves `-43`'s list verbatim.
-- **The four cells**, where `-43` had three: **10 bound** (7 written FOR the constraint, 3
-  incidental and genuinely binding) · **33 in cell (b)**, sixteen of which *name a machine that
-  does not bind* · **3 reader-only** (C05, C18, C36) · **4 not live**.
-- **Pointer defects, all corrected in the table.** C40 named the wrong test entirely
-  (`test_term002_count.py` is about §8's free-parameter numeral and never opens §4.7 or the
-  strings 151/98/55/38; the real binder is `test_reg012_sec6_sec47_frozen.py`'s §4.7 freeze).
-  C42's two named tests pin **three of its fifteen** frozen numbers. C47 and C50 cited the wrong
-  section. **C07's own test docstring says it cannot see the thing C07 forbids** — the row
-  inherited the file because the names rhymed.
-- **`scripts/wt111_inventory_recognisability.py`** reproduces the graded file **byte-for-byte**
-  from the pre-edit copy, verified.
+**Four new test files, 32 tests, all green on both machines.**
 
-**Two new guards:**
-
-| guard | what goes red |
+| file | what it is |
 |---|---|
-| `tests/test_reg012_sec7_refusal_is_asserted.py` (9 tests) | the C49 repair. The **presence** limb of a pair: the refusal must be declared in the document's own voice and name R5. **Red on the merely-unperformed document, with the old absence guard green on it** — which is the demonstration, not the assertion. Carries a LOST WARRANT branch if `REG-012` §7 drops the sentence. |
-| `tests/test_constraint_inventory_selfconsistent.py` (12 tests) | the inventory counts itself: header-and-cell alignment, C01–C50 contiguous, grade ⟺ pointer, every named machine exists on disk, `n/a` ⟺ not live, and §2a against §1. Six mutation controls, each firing on its own defect. |
+| `tests/test_tripwire_c09_sec44_headline.py` (8) | C09. §4.4's heading pinned byte-for-byte (**it is `###`, not the `##` two handoffs said**) and the knife-edge's paragraph position in the abstract pinned **as a floor** — earlier is promotion and fires, later or pushed down by an insert is not and does not. Asserts its own warrant: `REG-002` E2's clause **and** `RESULT-REG-002`'s E2 row still reading FIRED |
+| `tests/test_tripwire_c17_sec44_argument.py` (6) | C17. **Not a freeze** — `REG-003` §7 *licenses* one number and the sentences carrying it, so a byte pin would go red every time the registration did what it registered. The pin is §4.4 with every numeric literal **masked** |
+| `tests/test_tripwire_c36_sec7_ledger_shape.py` (7) | C36. §7's ledger column tuple and row count. **The prose said forty rows for two sessions; it is forty-seven** — corrected in three places. The red message says **ask Jason, once** |
+| `tests/test_tripwire_class_is_registered.py` (11) | the class registrar. File name · `tripwire` marker (`conftest.py`) · `TRIPWIRE` grade in the inventory, bound in **both** directions, plus the SHAPE of every member's red message |
 
-**Two defects this pass introduced and caught** (the `-35` tell, on itself): `wt111`'s first cut
-announced `recog` in the header **one position left of where it inserted the cells** — fifty rows
-misaligned, table still rendering, caught by recomputing counts rather than by reading it. And the
-self-check's pointer regex was `[a-z0-9_]`-only, so a `..._OLD.py` rename **failed to match at all**
-and the grade-agreement test fired instead, blaming the wrong thing — *a pointer regex narrower than
-the filenames it must catch reports the WRONG defect, which is worse than reporting none.* Both are
-now assertions in the file.
+**And the provenance machine**, in `test_constraint_inventory_selfconsistent.py`:
+`test_every_quoted_constraint_appears_in_its_cited_source` reads all fifty rows every run, plus
+`test_the_unquoted_rows_are_the_pinned_four` (deleting a quotation is the cheapest way to silence
+the check, so the set of describing-not-quoting rows is pinned) and a non-vacuity test that feeds it
+the real defect — C09's quotation must be in E2 and **must not be** in E1.
+
+**Six inventory rows repaired**: C09 `E1`→**E2** · C33 `§4`→**§3.1** · C26, C27, C28 `§4 Q1/Q2`→
+**§3 Q1/Q2** · C05 and C26's quotations made verbatim.
 
 | | |
 |---|---|
-| **G-COACH-3** | **3 → 3 (+0)** — the manuscript was not touched this session. Evidence: `DEFENSIVE-BASELINE.json` + `tests/test_defensive_count.py`, both in the SSOT (`-42`'s bug-spray tell honoured) |
-| **G-COACH-1** | held — every weakness named shipped a repair: C49 REPAIRED in-session, the other fifteen re-graded honestly and ranked, four pointer defects corrected |
-| **G-COACH-5** | held — the strength named is **`REG-012` §5's own defence of its absence guard**: *"an absence is the only assertion a short list cannot satisfy."* That is exactly right about the limb it defends, and writing it down is what made the OTHER limb visible. A document that argues for its own guard is auditable; one that just asserts coverage is not. |
-| suite | **944 collected** · darwin **944 passed** (~60 s) · cloud **935 passed / 9 skipped** (~164 s) |
-| new tests | 2 files, 21 tests |
-| lessons | **three** banked global · **seven** used and corroborated `record-outcome wealthTensor-44 pass` |
+| **G-COACH-3** | **3 → 3 (+0)** — the manuscript was not touched this session |
+| **G-COACH-1** | held — six provenance defects found and **repaired in-session**, not filed; C37's tripwire teed up rather than half-built |
+| **G-COACH-5** | held — the strength named is **`test_reg012_sec6_sec47_frozen.py`'s docstring**, which argues for its own design rather than asserting it (*"the pin records which version it froze"*). That paragraph is what taught this session that C09's tripwire had to assert its warrant. **A guard that argues is reusable; one that asserts is not.** |
+| suite | **976 collected** · darwin **976 passed** (~59 s) · cloud **967 passed / 9 skipped** (~135 s) |
+| new tests | 4 files, 32 tests |
+| lessons | **four** banked global · **three** used and corroborated `record-outcome wealthTensor-45 pass` |
 | stopping rules | **honoured — no lag gradient computed on any subsample; the research ledger on paper III is still empty** |
+
+**Verification was empirical, not argued** (`-44`'s rule). Five mutations against the C09 tripwire
+(re-headline · promotion into the abstract lead · warrant reworded · E2 no longer FIRED ·
+knife-edge deleted from §4.4) and seven against the provenance check (each of the six real defects
+re-injected, plus deleting a quotation to silence it): **every one RED on a scratch copy, unmutated
+GREEN.**
 
 ---
 
 ## 2 · RULINGS — DO NOT REOPEN
 
-- All of `-31`'s through `-43`'s rulings stand **verbatim**: no third disclosure instrument; phrase
+- All of `-31`'s through `-44`'s rulings stand **verbatim**: no third disclosure instrument; phrase
   set frozen at 38; §4.4 settled; **`SOURCE-001` IS FINISHED**; **THE ARM IS δ**; **§4.8 IS NOT THE
   COINCIDENCE ARGUMENT; §4.7 IS**; **EVERY P0 AND REG-009 NUMBER IS THE *DISCLOSED* δ**; **REG-009 IS
   CLOSED, numbering 6–12**; **§4's COVERAGE SILENCE AND §7.5's TWO ERRATA STAY RECORDED, NOT
@@ -233,66 +226,66 @@ now assertions in the file.
   CLAUDE'S CALL**; **"THE REGISTERED ADVERSE CUT" DOES NOT RETURN AT ANY SITE**; **§4.7 IS PINNED AT
   `ba59370`**; **§9's LIMITATIONS ARE FOUR LIST ITEMS AND STAY FOUR**; **`wt107` IS NOT EDITED**;
   **THE `.bak` COPIES ARE GITIGNORED — CITE THE TEST, NOT THE BACKUP**; **`RESULT-REG-003` §2's
-  "EVERY CUT LANDS IN R1" IS TEED UP, NOT REPAIRED** (carded `1217518687033967`).
-- **NEW · THE `machine` COLUMN IS NOT A COVERAGE COLUMN AND MAY NOT BE READ AS ONE.** A row's grade
-  is **FOR / BINDS / PARTIAL / ADJACENT**, and only the first two mean the constraint is guarded. A
-  session adding a machine adds its grade **in the same commit**, and
-  `test_constraint_inventory_selfconsistent.py` refuses a pointer without a grade or a grade
-  without a pointer. **Do not re-derive the counts in prose** — §2a is the counts block and the
-  test binds it to the table.
-- **NEW · CELL (b) IS THIRTY-THREE AND THAT IS A RANKING, NOT A BACKLOG.** §3.2 orders eight by
-  cost×cheapness. Nothing in cell (b) is a live defect: **every one of the fifty is compliant or
-  not live at `a77c5c5`** — what is missing is the machine, not the compliance. Building one is
-  never urgent and is often the cheapest real work available.
-- **NEW · C49's GUARD IS A PAIR AND BOTH HALVES ARE LOAD-BEARING.**
-  `test_reg012_sec7_refusal_is_asserted.py` asserts the *other* file still contains
-  `assert not _threshold_reads(doc)`. Tidying either file alone breaks the constraint silently.
-- **NEW · `RESULT-REG-012-band-edge-phase.md`'s REFUSAL SENTENCES ARE NOW LOAD-BEARING TEXT.**
-  §4's *"Branch F does not license the measurement it makes tempting"* and §5's *"refused rather
-  than merely unperformed"* are asserted by a test. Rewording is allowed; deleting is a red suite.
+  "EVERY CUT LANDS IN R1" IS TEED UP, NOT REPAIRED** (carded `1217518687033967`); **THE `machine`
+  COLUMN IS NOT A COVERAGE COLUMN**; **DO NOT RE-GRADE A `machine` CELL WITHOUT DOING THE AUDIT —
+  THE EVIDENCE FOR A BINDS IS A MUTATION THAT GOES RED**; **C49's GUARD IS A PAIR**; **DO NOT DELETE
+  THE REFUSAL SENTENCES FROM `RESULT-REG-012-band-edge-phase.md`**.
+- **NEW · C09's WARRANT IS `REG-002` E2. IT WAS NEVER E1.** E1 is the mean-τ falsifier
+  `RESULT-REG-002` §2 records as **mis-specified**; it did not fire and its consequent was
+  discharged by rewriting §4.4. Do not "restore" the E1 citation because older documents carry it —
+  §2's ERRATUM in `RESULT-REG-002` is the record, and
+  `test_every_quoted_constraint_appears_in_its_cited_source` now refuses it.
+- **NEW · `TRIPWIRE` IS A GRADE AND IT IS NOT COVERAGE.** Only **FOR** and **BINDS** mean a
+  constraint is guarded. `-45`'s three tripwires moved C09, C17 and C36 from `none` to `TRIPWIRE`
+  and moved **none of them out of cell (b) or out of reader-only** — §3's cells are unchanged at
+  **10 / 33 / 3 / 4**. `test_tripwire_class_is_registered.py` refuses any row carrying FOR or BINDS
+  against a `test_tripwire_*` file.
+- **NEW · A TRIPWIRE'S RED MESSAGE IS PART OF THE ARTEFACT AND IS ASSERTED.** Every member must be
+  tagged `TRIPWIRE ·`, say **NOT A FAILURE**, and name what to read or whom to ask. Rewording is
+  allowed; dropping any of the three is a red suite. A tripwire whose red names a violation teaches
+  the next session to suppress it.
+- **NEW · THE THREE TRIPWIRE PINS MOVE IN THE SAME COMMIT AS THE EDIT THAT MOVED THEM**, with the
+  reason in the commit message — `SEC_44_HEADING`, `KNIFE_EDGE_ABSTRACT_PARAGRAPH`,
+  `SEC_44_MASKED_SHA256`, `LEDGER_COLUMNS`, `LEDGER_ROWS`. A pin moved in a later commit is a pin
+  nobody reviewed.
 
 ---
 
-## 3 · THE AT-BAT for `-45` — **build the tripwire the estate keeps describing.**
+## 3 · THE AT-BAT for `-46` — **C42's fifteen frozen numbers.**
 
-§3.4 names three tripwires the estate owes and has never built. **C09 is the one to build**, and
-it is the highest-value hour on the board because it is the only place where a *closest-call*
-compliance verdict is protected by nothing at all:
+`CONSTRAINT-INVENTORY-001` §3.2 ranked cell (b) eight deep and C42 has been item 1 for two
+sessions. It is now the top of the board on both halves of the ranking:
 
-> `REG-002` E1 fired — δ₃\* = 0.0079 < 0.010 — so **§4.4 may not report τ = −1 as the section's
-> headline.** It currently does not: §4.4 is *titled* for the validity region and the knife-edge is
-> one bolded paragraph lead inside it. §2's own bullet calls this **the closest call in the table**
-> and says it is *"worth re-reading the moment §4.4 is re-headlined or the knife-edge is promoted
-> into the abstract's lead."* **That sentence is a tripwire specification and nobody built it.**
+> `REG-010` §4 lists **fifteen numbers this may not move**. Its two named tests pin **three of
+> them**. Moving Ψ, n, the distinct-pair count and **all four prediction verdicts** in
+> `data/reg-009-result.json` leaves both named files green — the pins that catch those live in
+> `test_reg009_ladder_inputs.py`, which the row did not name until `-44` corrected it.
 
-The shape, and the thing that makes it a tripwire rather than a guard:
+**Why it is the at-bat and not a chore.** It is the cheapest real guard in the estate — one test,
+fifteen assertions, **no judgement anywhere in it** — and its failure mode is the one this project
+keeps re-discovering under different names: *a number moves and nobody notices*. `-45` just spent a
+session proving that the estate's own prose counts drift silently (forty rows that were
+forty-seven; nine machines that were twenty-four; an E1 that was an E2). Fifteen frozen numbers
+with twelve unpinned is the same defect waiting in the one place where it would be load-bearing.
 
-1. **Two machine-checkable antecedents.** §4.4's `##` title, pinned; and the knife-edge's numeral
-   or phrase entering the abstract's lead. Neither is the constraint — *headline* is a reader's
-   judgement — and the file must say so in its docstring, at the scene.
-2. **The red message names a RE-READ, not a violation.** *"§4.4 was re-headlined — read it against
-   `REG-002` E1, which fired. This is not a failure."* Get this wrong and the next session learns
-   to re-pin without reading, which is the failure mode `-43` called out for C48's freeze.
-3. **Then C17 and C36**, which are the same shape: C17 freezes §4.4's *argument* paragraphs the way
-   C48 freezes §4.7 (a changed hash asks *did this reopen the argument?*); C36 watches §7's ledger
-   shape, and if a column separating algebra rows from rows that risked something is ever added, or
-   the row count moves, Jason's presentation judgement is live again and he is asked **once**.
-4. **Register the class.** A tripwire is not a guard, and a suite that cannot tell them apart will
-   eventually have one deleted as a false alarm. Whatever marks it — a `tripwire_` name prefix, a
-   marker, a line in the inventory — decide it in `-45` while there is exactly one.
+The shape, and the two traps:
+1. **Read `REG-010` §4 and take the list verbatim.** Fifteen means fifteen; if the count you
+   extract is not fifteen, that is the finding and you stop and say so.
+2. **Assert the antecedent** (`-42`): §4's list is *"one new artifact, overwrites nothing"* — so
+   the guard must also assert that the artifact `-31`'s numbers live in still exists and is the one
+   being read. A freeze on numbers in a file that could be deleted is an absence guard (`-44`).
+3. **Feed it its own forbidden move** (`-43`): mutate each of the fifteen on a scratch copy and
+   require red. Twelve of them are currently unpinned, so **twelve of those mutations pass today** —
+   run the control BEFORE you write the guard and record the number, because that measurement is
+   the evidence the guard was needed.
+4. **Do not re-grade C42's cell without the audit.** It is `PARTIAL` today and the grade moves to
+   `FOR` only when a mutation goes red.
 
-**IF YOU TAKE SOMETHING ELSE, SAY WHY IN ONE LINE.** The obvious alternative is §3.2 item 1 —
-**C42's fifteen frozen numbers**, twelve of them unpinned, one test, no judgement anywhere in it.
-That is the cheapest real guard in the estate and a perfectly good session; it is second only
-because C42's failure mode is *a number moves and nobody notices*, while C09's is *the paper's
-closest compliance call quietly stops being true*.
-
-**One warning from `-44`, and it cost the most time.** The audit's value came from **one question
-asked identically of every row** — *would this test go red?* — not from reading the tests well.
-Four parallel readers, each given the constraint's exact quotation and told to construct a
-concrete surviving violation, produced a better result in twelve minutes than a careful sequential
-read would have in an hour, **and the two that empirically injected their violation into a scratch
-copy were the two whose findings needed no re-checking**. Make the mutation, not the argument.
+**IF YOU TAKE SOMETHING ELSE, SAY WHY IN ONE LINE.** The obvious alternative is **C37's tripwire** —
+`REG-009` §12's *"never by narration"*, teed up in `CONSTRAINT-INVENTORY-001` §3.3, the same shape
+as the three built this session and about an hour. It is second because the class now exists and a
+fourth member proves less than the first three did, while C42 is fifteen unguarded load-bearing
+numbers.
 
 ---
 
@@ -303,39 +296,45 @@ copy were the two whose findings needed no re-checking**. Make the mutation, not
    Two readings; under one, 0.327 < 0.33 is R2 by the registration's own ladder. **A `RESULT-*` is
    the record of a run and editing the artefact edits the witness** — the `-37` precedent says the
    repair shape is a dated addendum. C12's guard is unaffected either way.
-3. **NEW · cell (b), ranked in `CONSTRAINT-INVENTORY-001` §3.2.** C42's fifteen numbers · C07's
+3. **Cell (b), ranked in `CONSTRAINT-INVENTORY-001` §3.2**, C42 first (§3 above), then C07's
    amended-after-result git test · C26's *"never appears unqualified"* regex · the
    beside/never-promoted/does-not-re-score family (C44/C46/C41, one guard, three constraints) ·
    C10 (C21's exact shape, one document over) · the five-constraint forbidden-claim family ·
    C45's two assertions · the reportable-at-all presence guards.
-4. **§7's ledger dilutes its own two load-bearing rows — Jason's call**, and it is inventory C36,
-   which makes it the worked example for the tripwire class. **Do not card it; tripwire it.**
-5. Infra siblings, carded, Claude-hands: concierge pinholes carry the same Caddy ordering defect
-   `1217488447555628` · capability path in cleartext in n8n-stack + repo drift `1217488117177482`.
-6. AAR A2's residual — the other four `post-*` hooks · card-lint `1217483699706758` · gate
+4. **C37's tripwire** — `REG-009` §12's *"never by narration"*. §3.3 names the adjacent check: a
+   numeral in `RESULT-REG-009`'s attribution paragraph. Same shape as `-45`'s three.
+5. **§7's ledger dilutes its own two load-bearing rows — Jason's call, and it is TRIPWIRED, not
+   carded.** `test_tripwire_c36_sec7_ledger_shape.py` will ask him the moment the shape moves. **Do
+   not card it and do not ask him pre-emptively.**
+6. Infra siblings, carded, Claude-hands: Caddy ordering `1217488447555628` · capability path in
+   cleartext + repo drift `1217488117177482`.
+7. AAR A2's residual — the other four `post-*` hooks · card-lint `1217483699706758` · gate
    `1217465036940491`.
-7. Dossier era, re-served by nobody: `REVIEW-004` **C6** (ASC 410) and **C10** (IAS 36's reversal
+8. Dossier era, re-served by nobody: `REVIEW-004` **C6** (ASC 410) and **C10** (IAS 36's reversal
    asymmetry, a free cross-regime falsification test).
-8. Phrase-set passenger: 30.4 % match only `events or circumstances`; 7.9 % safe-harbour. Outranked.
-9. `AcquiredFiniteLivedIntangibleAssetsWeightedAverageUsefulLife` is 4,304 rows P0 excluded.
-10. Not mine, not touched: handoff-lint warns `HANDOFF-acmeLedger-07.md:22`, `-09.md:36,42`, and
+9. Phrase-set passenger: 30.4 % match only `events or circumstances`; 7.9 % safe-harbour. Outranked.
+10. `AcquiredFiniteLivedIntangibleAssetsWeightedAverageUsefulLife` is 4,304 rows P0 excluded.
+11. Not mine, not touched: handoff-lint warns `HANDOFF-acmeLedger-07.md:22`, `-09.md:36,42`, and
     `-12.md` / `-13.md` carry items with ZERO `verify:` lines.
 
 ---
 
 ## 5 · DO NOT
 
-* Everything `-31`→`-43` forbade still stands verbatim — R5, the two sensitivities,
+* Everything `-31`→`-44` forbade still stands verbatim — R5, the two sensitivities,
   `selected_lives`, §4.4's `0.3000`, T4's `31.7%`, the δ arm, TERM-001/002, the dossier era, §9's
   FOUR list items, `wt107` IS NOT EDITED, the gitignored `.bak`, **"THE REGISTERED ADVERSE CUT"
   DOES NOT RETURN**, **§4.7 IS PINNED AT `ba59370`**. §2.
-* **NEW · DO NOT RE-GRADE A `machine` CELL WITHOUT DOING THE AUDIT.** The grades in §1 each cost a
-  full read of the named test against the constraint's exact quotation. Upgrading ADJACENT →
-  BINDS because a test *looks* related recreates the exact defect this session removed. The
-  evidence for a BINDS is a mutation that goes red.
-* **NEW · DO NOT DELETE THE REFUSAL SENTENCES FROM `RESULT-REG-012-band-edge-phase.md`**, and do
-  not "simplify" `test_reg012_sec7_refusal_is_asserted.py` by folding it into the absence guard.
-  The pair is the point.
+* **NEW · DO NOT "SIMPLIFY" A TRIPWIRE INTO A GUARD.** Each of the three had a cheaper, wronger
+  version available — byte-freeze §4.4, fire on any abstract edit, count §7's rows and grade them —
+  and **each of those would be green today and deleted within three sessions.** In particular:
+  `KNIFE_EDGE_ABSTRACT_PARAGRAPH` is a **floor, not an equality** (later is not promotion), and
+  C17's digest is **numeral-masked on purpose** (`REG-003` §7 licenses the number).
+* **NEW · DO NOT REPAIR A PROVENANCE FAILURE BY DELETING THE QUOTATION.** It is the cheapest
+  silencing move available and `test_the_unquoted_rows_are_the_pinned_four` refuses it. Three
+  readings of a red are in the assertion message; only one of them is a typo.
+* **NEW · DO NOT ASSUME THE CLOUD TARBALL IS THE REPO.** `conftest.py`, `requirements.txt`,
+  `README.md`, `LICENSE` and `.gitignore` are outside `docs scripts tests src data`.
 * Do not `git add -A` on darwin. Do not run bulk SEC work on darwin — cloud.
 
 ---
@@ -345,10 +344,11 @@ copy were the two whose findings needed no re-checking**. Make the mutation, not
 Emit one line — `Oriented: <state> · at-bat: <X> · opening with <first action>.` — then start
 building. Don't wait for a go. Do not open by asking Jason anything.
 
-Coffee status: ☕ **TEN SESSIONS RUNNING, AND THE FIRST TEN MINUTES DECIDED THE WHOLE SESSION
+Coffee status: ☕ **ELEVEN SESSIONS RUNNING, AND THE FIRST TEN MINUTES DECIDED THE WHOLE SESSION
 AGAIN** — `-35` truth, `-36` population, `-37` count, `-38` premise-and-instrument, `-39` severity,
 `-40` the promise the document made about itself, `-41` the resolution it was written at, `-42`
-whether it was in force, `-43` who the promise was made about, **`-44` WHETHER THE THING GUARDING
-IT CAN SEE IT.** The entire `-44` finding came from parsing the inventory's own table to count a
-column the prose had already counted, and getting a different number. One script, ninety seconds.
-**Spend the ten minutes, and spend them recomputing something the document already tells you.**
+whether it was in force, `-43` who the promise was made about, `-44` whether the thing guarding it
+can see it, **`-45` WHETHER THE ADDRESS ON IT WAS RIGHT.** `-44`'s finding came from parsing a table
+to count a column the prose had already counted. `-45`'s came from opening the section a row said it
+was quoting, and reading it. Ninety seconds, and it moved the whole session's warrant. **Spend the
+ten minutes, and spend them checking something the document has already told you twice.**
