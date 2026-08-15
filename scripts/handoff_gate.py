@@ -54,6 +54,30 @@ REQUIRED = ["project", "gh_sha", "updated", "session", "gate_passed", "gate_vers
 # in ADR-001 and is quoted into the frontmatter. If it ever gains a row, port ledger_dod() too.
 DOD_KEY = "definition_of_done"
 DOD_REQUIRED = os.environ.get("HANDOFF_DOD_REQUIRED", "1") not in ("0", "false", "no")
+DOD_PLACEHOLDERS = ("", "FILL ME IN", "FILLMEIN", "TODO", "TBD", "XXX", "N/A", "?")
+
+
+def dod_value(fm):
+    """The stated DoD, or "" if what is there is a PLACEHOLDER. A scaffolded key that passes
+    the gate is decoration -- the wrap would go green with "FILL ME IN" as the definition of
+    done and every surface downstream would print it with a straight face."""
+    v = (fm.get(DOD_KEY) or "").strip().strip("\"'").strip()
+    u = v.upper()
+    if u in DOD_PLACEHOLDERS or u.startswith("FILL ME IN") or (v.startswith("<") and v.endswith(">")):
+        return ""
+    return v
+
+
+def dod_howto():
+    """A refusal that does not name the fix converts drift-protection into a spelunk. Session 0
+    should not have to know where the DoD lives -- it learns here, once, at its first wrap."""
+    return [
+        "  FIX IT: add this line to the frontmatter of docs/HANDOFF.md --",
+        '      %s: "<one checkable sentence>"' % DOD_KEY,
+        "  NORTH-STAR §4 is the test: could someone mark that sentence right or wrong?",
+        "  For this repo the answer already exists: ADR-001 carries the corpus-level clause",
+        "  and the per-paper clauses. Quote it; do not invent a new one.",
+    ]
 
 
 SHA_RE = re.compile(r"^[0-9a-f]{40}$")
@@ -115,10 +139,13 @@ def show_dod(fm):
     MORE here than in a repo with a passing test, not less: prose has no bit that flips, so
     "three preprints publicly posted" is the only thing standing between a session and a very
     well-written paragraph nobody asked for."""
-    dod = (fm.get(DOD_KEY) or "").strip()
+    dod = dod_value(fm)
     if not dod:
         print("\U0001F3AF DONE = (NOT STATED — this handoff does not say what done looks like)")
-        print("   Fix that before anything else; it is cheaper than any work you could do today.\n")
+        print("   Fix that before anything else; it is cheaper than any work you could do today.")
+        for line in dod_howto():
+            print(line)
+        print("")
         return
     print(f"\U0001F3AF DONE = {dod}")
     print("   Is your at-bat on the path to that line? If not, STOP and say so —")
@@ -266,8 +293,10 @@ def emit():
     for k in REQUIRED:
         if not fm.get(k):
             problems.append(f"missing frontmatter field: {k}")
-    if not (fm.get(DOD_KEY) or "").strip():
-        msg = (f"missing frontmatter field: {DOD_KEY} — the handoff does not say what done "
+    if not dod_value(fm):
+        raw = (fm.get(DOD_KEY) or "").strip()
+        msg = (f"{DOD_KEY} is still a placeholder ({raw[:40]!r})" if raw else
+               f"missing frontmatter field: {DOD_KEY} — the handoff does not say what done "
                "looks like, so nothing downstream can tell drift from progress")
         if DOD_REQUIRED:
             problems.append(msg)
@@ -327,11 +356,14 @@ def stamp():
     fm, text = frontmatter()
     # The wrap is where the DoD is ENFORCED rather than shown -- and it is the cheapest possible
     # moment to write one, which is exactly why skipping it here is the most expensive.
-    if not (fm.get(DOD_KEY) or "").strip():
-        msg = (f"no {DOD_KEY} in the handoff — state what done looks like in ONE sentence "
-               "someone could mark right or wrong")
+    if not dod_value(fm):
+        raw = (fm.get(DOD_KEY) or "").strip()
+        msg = (f"{DOD_KEY} is still a placeholder ({raw[:40]!r})" if raw else
+               f"no {DOD_KEY} in the handoff")
         if DOD_REQUIRED:
             print(f"REFUSING TO STAMP: {msg}. NOTHING WAS WRITTEN.", file=sys.stderr)
+            for line in dod_howto():
+                print(line, file=sys.stderr)
             return 1
         print(f"  ! WARNING: {msg}   [BLOCKER SHORTLY — fix it now]")
     head = sh("git", "rev-parse", "HEAD")
