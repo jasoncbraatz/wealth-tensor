@@ -265,7 +265,8 @@ not about promotion and **C45's grade stays ADJACENT.**
 > probe, and the probe is now two minutes.**
 
 **THE HARNESS WAS THE FIRST FALSE GREEN, AND IT WAS FOUND BEFORE THE FIRST PROBE RAN.**
-`mutation_control.py` as `-46` shipped it excluded `.git` from every scratch copy. Nine tests
+`mutation_control.py` as `-46` shipped it excluded `.git` from every scratch copy. ~~Nine tests~~
+**Fourteen** tests
 in this estate skip with *"not a git work tree"*, and one of them is the only machine
 anywhere near C07 — §3.2's **item 1**. Under that harness `R1` would have returned green
 while proving nothing, because the harness would have deleted the only candidate guard and
@@ -276,7 +277,15 @@ then reported its absence as the measurement.
 > this is that tell one level up, inside the instrument built to catch it. `.git` is now
 > copied on request and `R1` was re-run under a real work tree before C07's guard was
 > written. The same finding retired the cloud's two-tarball stanza: a source tarball without
-> `.git` runs **990/999**, and the nine it drops are exactly the axis nobody had probed.
+> `.git` drops exactly the axis nobody had probed.
+>
+> **AND THE COUNT ITSELF WENT STALE, WHICH IS THE `-46` TELL A FIFTH TIME.** `-47` wrote
+> *"nine tests · 990/999"*; it was true then. Measured at `142d386` by `-50`: **1034 passed,
+> 14 skipped, across SIX files** — the suite grew and the sentence did not. It is corrected
+> above rather than softened, and the durable repair is in `mutation_control.py`'s docstring:
+> **the number is replaced by the one command that produces it.** A count in prose is a
+> claim; a command is an instrument. `-51`'s residual (§4 item 6) is therefore **13 tests,
+> not 8** — `R1` spent one of the fourteen.
 
 **C07 is built** — `tests/test_reg001_sec5_no_amendment_after_result.py`, and `R1` is red
 with exactly one catcher, the guard written for it. The other six positions are unchanged in

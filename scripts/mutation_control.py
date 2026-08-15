@@ -38,7 +38,7 @@ tell you which one the suite saw.
 THE HARNESS ITSELF WAS THE FIRST FALSE GREEN (`-47`)
 -----------------------------------------------------
 `-46` built this script with `.git` in the ignore list, because a scratch copy does not need
-history to run the suite. It does need history to be **measured**: nine tests in this estate
+history to run the suite. It does need history to be **measured**: fourteen tests in this estate
 skip with *"not a git work tree"*, and one of them —
 `test_registrations_precede_their_instruments.py` — is the only machine anywhere near C07,
 which §3.2 ranked **first** in cell (b). A C07 probe run under the original harness would have
@@ -49,7 +49,14 @@ That is `-37`'s tell one level up: **a mutation that the harness cannot see repo
 guard in the unseen part of the estate as absent.** So `.git` is copied on request, and a
 probe whose constraint is about commit order MUST set `{"git": True}` or it is measuring
 nothing. The same finding retired the two-tarball cloud stanza: a source tarball without
-`.git` runs 990/999, and the nine it drops are exactly the axis nobody had probed.
+`.git` drops exactly the axis nobody had probed.
+
+**DO NOT QUOTE A COUNT OF THEM FROM MEMORY — RUN IT.** `-47` wrote *"nine tests"* and it was
+true; at `142d386` it is **fourteen, across six files**, because the suite grew and nobody
+recomputed (`-46`'s tell, fifth session running). The count is one command:
+
+    rm -rf /tmp/nogit && cp -r . /tmp/nogit && rm -rf /tmp/nogit/.git \\
+      && (cd /tmp/nogit && PYTHONPATH=$PWD/src python3 -m pytest -q -rs | grep '^SKIPPED')
 """
 from __future__ import annotations
 
