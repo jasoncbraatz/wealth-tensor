@@ -30,6 +30,7 @@ built to catch stale handoffs was blind to the most obvious stale handoff there 
 unverifiable claim must never be reported as a verified one.
 """
 import json
+import os
 import re
 import subprocess
 import sys
@@ -38,6 +39,21 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 HANDOFF = ROOT / "docs" / "HANDOFF.md"
 REQUIRED = ["project", "gh_sha", "updated", "session", "gate_passed", "gate_version"]
+
+# --- the definition-of-done force function (ported from the canonical handoff-kit gate,
+# --- pitchingMachine-5, 2026-08-15) --------------------------------------------------------
+# THIS FILE IS NOT A COPY OF THE CANONICAL GATE. It shares a filename and nothing else -- its
+# own lineage, its own REQUIRED set, its own sha classifier, its own coach. The at-bat spec
+# said "propagate all 5 copies and verify byte-identity"; that instruction was written from a
+# retelling. Byte-propagating here would have DELETED classify_sha, coach() and anchors() --
+# every hard-won control wealthTensor-27/-28 built -- and the byte-identity check would have
+# reported success. So the FEATURE is ported and the file is not: check() shows the line,
+# emit() requires it, stamp() refuses without it. Same three moments, this file's idiom.
+#
+# No ledger derivation here on purpose: wealth-tensor has no auto-bridge row, so its DoD lives
+# in ADR-001 and is quoted into the frontmatter. If it ever gains a row, port ledger_dod() too.
+DOD_KEY = "definition_of_done"
+DOD_REQUIRED = os.environ.get("HANDOFF_DOD_REQUIRED", "1") not in ("0", "false", "no")
 
 
 SHA_RE = re.compile(r"^[0-9a-f]{40}$")
@@ -91,8 +107,27 @@ def files_changed_since(sha):
     return [f for f in out.splitlines() if f]
 
 
+def show_dod(fm):
+    """Print what done looks like, FIRST, above everything else this gate has to say.
+
+    Position is the mechanism. A session reads the top of the output and skims the rest; the
+    one line it can least afford to skim therefore goes at the top. A corpus-level DoD matters
+    MORE here than in a repo with a passing test, not less: prose has no bit that flips, so
+    "three preprints publicly posted" is the only thing standing between a session and a very
+    well-written paragraph nobody asked for."""
+    dod = (fm.get(DOD_KEY) or "").strip()
+    if not dod:
+        print("\U0001F3AF DONE = (NOT STATED — this handoff does not say what done looks like)")
+        print("   Fix that before anything else; it is cheaper than any work you could do today.\n")
+        return
+    print(f"\U0001F3AF DONE = {dod}")
+    print("   Is your at-bat on the path to that line? If not, STOP and say so —")
+    print("   you are on neither the map nor the territory.\n")
+
+
 def check():
     fm, _ = frontmatter()
+    show_dod(fm)
     head = sh("git", "rev-parse", "HEAD")
     recorded = fm.get("gh_sha", "")
     print(f"handoff gh_sha : {recorded}")
@@ -231,6 +266,13 @@ def emit():
     for k in REQUIRED:
         if not fm.get(k):
             problems.append(f"missing frontmatter field: {k}")
+    if not (fm.get(DOD_KEY) or "").strip():
+        msg = (f"missing frontmatter field: {DOD_KEY} — the handoff does not say what done "
+               "looks like, so nothing downstream can tell drift from progress")
+        if DOD_REQUIRED:
+            problems.append(msg)
+        else:
+            print(f"  ! {msg}   [WARNING TODAY, BLOCKER SHORTLY — fix it now]")
     if fm.get("gate_passed", "").lower() != "true":
         problems.append("gate_passed is not true -- walk HANDOFF-GATE.md first")
     head = sh("git", "rev-parse", "HEAD")
@@ -283,6 +325,15 @@ def stamp():
     Same family as `grep -c P f || echo 0` (-27): a success report on a path where
     nothing happened."""
     fm, text = frontmatter()
+    # The wrap is where the DoD is ENFORCED rather than shown -- and it is the cheapest possible
+    # moment to write one, which is exactly why skipping it here is the most expensive.
+    if not (fm.get(DOD_KEY) or "").strip():
+        msg = (f"no {DOD_KEY} in the handoff — state what done looks like in ONE sentence "
+               "someone could mark right or wrong")
+        if DOD_REQUIRED:
+            print(f"REFUSING TO STAMP: {msg}. NOTHING WAS WRITTEN.", file=sys.stderr)
+            return 1
+        print(f"  ! WARNING: {msg}   [BLOCKER SHORTLY — fix it now]")
     head = sh("git", "rev-parse", "HEAD")
     # Count BEFORE substituting: `count=1` stops at the first hit and reports n == 1
     # whether there is one gh_sha line or five, so the naive form is blind to a

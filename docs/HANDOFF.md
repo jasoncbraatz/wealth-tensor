@@ -5,6 +5,7 @@ updated: 2026-08-15
 session: wealthTensor-51
 gate_passed: true
 gate_version: "2.58"
+definition_of_done: "Three preprints (II, III, IV) publicly posted — the corpus-level Definition of Done in ADR-001 as amended (was four; Paper I folded into IV). Per-paper clauses in ADR-001 govern each paper's 'ready to submit' terminal state, and nothing ships until the corpus is done."
 ---
 # wealth-tensor — HANDOFF
 *`gh_sha` points at the commit this file describes; the only thing added after it is this file, so
