@@ -1,12 +1,11 @@
 ---
 project: wealth-tensor
-gh_sha: 19fa03f3965e7a012813d5396a288d99bc600616
+gh_sha: PENDING
 updated: 2026-08-15
-session: wealthTensor-45
+session: wealthTensor-46
 gate_passed: true
 gate_version: "2.51"
 ---
-
 # wealth-tensor — HANDOFF
 
 *`gh_sha` points at the commit this file describes; the only thing added after it is this file, so
@@ -20,51 +19,56 @@ gate_version: "2.51"
 2. **`docs/preregistration/CONSTRAINT-INVENTORY-001.md`** — the map for this thread. Fifty reporting
    constraints on two axes: `recog` (MECH / PROXY / READER / n/a — a property of the CONSTRAINT) and
    a **FOR / BINDS / PARTIAL / ADJACENT / TRIPWIRE** grade on the machine cell (a property of the
-   ESTATE). **Read §3.4 first this time** — it is the tripwire class, now built rather than
-   described. Then §2's provenance bullet (`-45`'s finding, six wrong rows) and §2a's counts block.
+   ESTATE). **Read §2b first this time** — it is `-46`'s finding, and it is about this file's own
+   prose. Then §3.2's opening note, then §3.1's PARTIAL block, then §2a's counts.
 3. `python3 scripts/handoff_gate.py --check` — proves this file is not stale.
-4. **`docs/preregistration/REG-003-p3-recognition-rate-and-off-diagonal.md` §§3.2, 3.3, 7** — the
-   four-regime ladder, the registered bias asymmetry, the rounding rule.
-5. **`docs/scouting/SCOUT-001-paper-III-opposing-team.md`** — **WORKED, NOT PENDING.** Only T2
+4. **`python3 scripts/mutation_control.py --list`** — new in `-46`. The instrument that answers
+   *what does the suite actually catch*. **Read its module docstring before you grade anything.**
+5. **`docs/preregistration/REG-003` §§3.2, 3.3, 7** (`REG-003-p3-recognition-rate-and-off-diagonal.md`)
+   — the four-regime ladder, the registered bias asymmetry, the rounding rule.
+6. **`docs/scouting/SCOUT-001-paper-III-opposing-team.md`** — **WORKED, NOT PENDING.** Only T2
    remains and T2 is carded and barred on this data. Read it for measurements, not for a to-do list.
-6. `REG-012` §§6–7 · `RESULT-REG-012-band-edge-phase` §§4–5 · `RESULT-TERM-001` the five-site
-   ruling · `REG-010` **§1 is the population ruling** · `CONSTRUCTION-REG-010` **§C2 owns 55.71 %
-   and its population in one sentence**.
-7. `RESULT-REG-010` §3 → §4 · **`RESULT-TERM-002`** §2 before §8 · `RESULT-PIN-001` ·
+7. `REG-012` §§6–7 · `RESULT-REG-012-band-edge-phase` §§4–5 · `RESULT-TERM-001` the five-site
+   ruling · `REG-010` **§1 is the population ruling, §4 is the freeze `-46` built** ·
+   `CONSTRUCTION-REG-010` **§C2 owns 55.71 % and its population in one sentence**.
+8. `RESULT-REG-010` §3 → §4 · **`RESULT-TERM-002`** §2 before §8 · `RESULT-PIN-001` ·
    `RESULT-SCOPE-001` · `CONSTRUCTION-REG-009` (**R5 is load-bearing and unspent**) ·
    `RESULT-REG-009` (**§3's S = 0.1391 is load-bearing in a test**) · `REG-009` (**READ THE HEADER
    NOTE FIRST**; numbering 6–12 by ruling).
 
-> **`-45` in one line: THE CONSTRAINT THE WHOLE SESSION WAS BUILT AROUND HAD BEEN FILED UNDER THE
-> WRONG FALSIFIER SINCE `-42`, AND EVERY CHECK ANYBODY WOULD THINK TO RUN CAME BACK GREEN.**
-> C09's row, §2's bullet, §3.3, §3.4 and two handoffs all said `REG-002` **E1**. The clause they
-> quote is **E2**'s. E2 is the one `RESULT-REG-002` §1 records as **FIRED** (δ₃\* = 0.00789 <
-> 0.010); **E1 is the mean-τ falsifier that §2 of that same RESULT records as MIS-SPECIFIED, and it
-> did not fire.** The citation survived because *both* govern §4.4's headline, so *does E1 exist?*
-> and *does E1 mention the headline?* both return yes to a wrong pointer. Audited across all fifty
-> rows: **six wrong, in three shapes** — four wrong locators (C09, C33, C26, C27, C28), one
-> paraphrase that dropped a conditional's **antecedent** (C05), one that dropped a **referent**
-> (C26). All repaired, and mechanised so they cannot recur.
+> **`-46` in one line: THE AT-BAT'S OWN WARRANT WAS A COVERAGE CLAIM NOBODY HAD MEASURED, AND
+> RUNNING THE CONTROL FIRST — EXACTLY AS THE TEE-UP INSTRUCTED — DESTROYED THE TEE-UP.**
+> `CONSTRAINT-INVENTORY-001` §3.2 ranked C42 first in cell (b) for two sessions on the sentence
+> *"twelve of fifteen unpinned"*, and the `-45` handoff carried it forward as the whole reason to
+> build. Twenty-two mutations later: **nineteen were already caught.** Fourteen of the fifteen on
+> the artifact side, four of seven on the prose side. The claim was true of the **two named files**
+> and false of the **estate**, because the `machine` column names the tests written FOR a constraint
+> and never the tests that happen to catch it — eight of C42's fifteen were held by
+> `test_the_instrument_reruns_to_the_same_numbers`, which belongs in no row's `machine` cell.
+> **This is the third session running that a coverage claim in this estate turned out to be
+> unverified: `-44` the `machine` column, `-45` the `source` column, `-46` the inventory's own
+> ranking prose.** The three genuinely unguarded probes — the 98 firms, the 110 and the 133 — are
+> now guarded, and the tedious measurement is a committed script so the next session does not
+> hand-roll it.
 
 ---
 
 ### Transport — darlish, zero-bridge
 
 Standard bring-up; post the `DARLISH-ENROLL` line to Asana **1217316841710435**, collect, then `dx`.
-**First try, no fallback, `-06` through `-45`.** If it does not come up the first move is `dsh-fire`
+**First try, no fallback, `-06` through `-46`.** If it does not come up the first move is `dsh-fire`
 + `dwait`, not diagnosis. darlish is not on the bridge; never restart the app to fix it.
 `darlish-check` is **not** in the cloud kit — do not chase its 127.
-
-**`--replaces` verified again in `-45`**: `roster join --replaces cloud-<fp>` printed `absorbed 1
-row(s)`. `roster leave` ONCE at wrap.
+`roster leave` ONCE at wrap.
 
 > ### ⚠ SET `GATE_ROSTER_WHO` INLINE. THE `export` FORM IS RETIRED AND NEVER WORKED.
-> dx spawns a **fresh remote shell per call and carries no environment**. `-45` used the inline form
-> on `roster join`, `roster claim`, the commit, and every `lessons.py` call — first time, every time.
-> **Exception, and it is worth knowing: `export GATE_ROSTER_WHO=…` DOES work inside a script you
-> `--put` and run with `bash /tmp/x.sh`**, because that is one shell. `-45` banked four lessons and
-> a `record-outcome` that way in a single call.
-
+> dx spawns a **fresh remote shell per call and carries no environment**. Inline on `roster join`,
+> `roster claim`, the commit, and every `lessons.py` call — first time, every time.
+> **Exception: `export GATE_ROSTER_WHO=…` DOES work inside a script you `--put` and run with
+> `bash /tmp/x.sh`**, because that is one shell.
+> ### ⚠ `roster claim` TAKES `--resource`, NOT `--repo`.
+> `-46` lost a call to `--repo` (exit 2, clean usage message). The full move:
+> `roster claim --who <who> --resource <repo> --task "<what>"`. `roster join` takes `--who/--task`.
 > ### ⚠ `git commit -F <msg> <paths>` CANNOT STAGE AN UNTRACKED FILE.
 > Look, add, then commit — the whole move on a shared repo:
 >
@@ -74,12 +78,10 @@ row(s)`. `roster leave` ONCE at wrap.
 > /tmp/dx 'cd ~/repos/<repo> && GATE_ROSTER_WHO=big-<sess> ROSTER_BRAKE_ACK=<n> \
 >            git commit -F /tmp/msg.txt <all your paths, new AND modified>'
 > ```
-> **`<n>` is the count of YOUR paths, not the staged total.** `-45`'s was 7, first try.
+> **`<n>` is the count of YOUR paths, not the staged total.** `-46`'s was 4.
 
-**COMMIT BY PATH ON `claude-blackbook`, ALWAYS.** `-45` found the tree clean and `lessons.py`
-auto-commit **working and pushing** — four `add`s, three `use`s and a `record-outcome` all
-self-committed. Do not assume that; **`git status --porcelain` first**, and if a sibling's leaves
-are staged, commit by path as `-44` had to.
+**COMMIT BY PATH ON `claude-blackbook`, ALWAYS.** `git status --porcelain` first; if a sibling's
+leaves are staged, commit by path.
 
 **THE MINUTE-TWO STANZA IS TWO LINES, AND YOU NEED BOTH TARBALLS.**
 
@@ -88,7 +90,7 @@ are staged, commit by path as `-44` had to.
 /tmp/dx --get /tmp/wt-lite.tgz /tmp/wt-lite.tgz && /tmp/dx --get /tmp/wt-data.tgz /tmp/wt-data.tgz
 ```
 
-`-45` measured 2,452,442 + 4,682,860 bytes, both `verified against darwin` **in words**. Trust the
+`-46` measured 2,514,127 + 4,682,858 bytes, both `verified against darwin` **in words**. Trust the
 sentence. **Exit 3** = never reached darwin, safe to re-run · **4** = dropped after the command
 started, check state first · **5** = crossed but mismatched, nothing written, replay-safe.
 **`$HOME` in the cloud container is `/root`, not `/home/claude`** — unpack to `/root/wt` and give
@@ -96,26 +98,27 @@ the Read tool the absolute path. **Never inline a multi-line string in `dx '...'
 `--put`, run it.
 
 > **`conftest.py`, `requirements.txt`, `README.md`, `LICENSE` and `.gitignore` ARE NOT IN THE
-> TARBALL** and `-45` needed one of them. The stanza pulls `docs scripts tests src` + `data`, so a
-> repo-root file is invisible in the cloud: `pytest` runs anyway (the cloud uses
-> `PYTHONPATH=<root>/src` instead of conftest's `sys.path` insert), which is exactly why nobody
-> noticed. If your at-bat touches pytest configuration, markers, or dependencies, `/tmp/dx --get`
-> the file first — do not infer it from the suite passing.
+> TARBALL.** `-46` needed `conftest.py` (`/tmp/dx --get` it — 1,346 bytes) and `requirements.txt`
+> (`numpy>=1.26 scipy>=1.11 pytest>=8.0`; `pip install --break-system-packages`). **Copy
+> `conftest.py` into `/root/wt` before running pytest** or the `tripwire` marker is unregistered.
+> A cloud container is **2 CPUs** — a full-suite mutation sweep is `--jobs 2` and takes ~2 min per
+> probe. Budget for it: `-46`'s twenty-two probes were ~40 minutes of wall clock, and they were the
+> session.
 
 **SUITE COUNTS — COLLECTED = PASSED + SKIPPED, NOT TWO PASS COUNTS.**
 
-| | at `19fa03f` (verified in `-45`, both machines, same hour) |
+| | at `HEAD` (verified in `-46`, both machines, same hour) |
 |---|---|
-| collected | **976** (was 944 at `a1fef70`; `-45` added 32) |
-| cloud (`PYTHONPATH=<root>/src`) | **967 passed / 9 skipped**, ~135 s, **every skip `not a git work tree`** |
-| darwin (`.venv/bin/python -m pytest`) | **976 passed**, ~59 s |
+| collected | **999** (was 976 at `19fa03f`; `-46` added 23) |
+| cloud (`PYTHONPATH=<root>/src`) | **990 passed / 9 skipped**, ~118 s, **every skip `not a git work tree`** |
+| darwin (`.venv/bin/python -m pytest`) | **999 passed**, ~61 s |
 
 `scripts/defensive_count.py` **takes a positional `path`** and errors without one.
-**New: `pytest -m tripwire` selects the four-file tripwire class; `-m "not tripwire"` excludes it.**
+`pytest -m tripwire` selects the four-file tripwire class; `-m "not tripwire"` excludes it.
 
 ---
 
-## 0 · THE TELL, NOW IN THIRTY-NINE SHAPES
+## 0 · THE TELL, NOW IN FORTY-TWO SHAPES
 
 Ask the instrument-artefact question of numbers that look GOOD (`-28`), that SETTLE AN ARGUMENT
 (`-29`), of a REGISTERED CONTROL THAT FAILS (`-30`), OF THE DENOMINATOR (`-31`), OF A TIE-BREAK AT A
@@ -131,40 +134,34 @@ whitespace-identity guard certifies no character moved, not no meaning; the seco
 SECTION HEADING; evidence in a gitignored file is not in the SSOT. `-43`: a labelling constraint's
 second door is the WRONG label; **feed the registration its own forbidden claim before you trust the
 green**; a non-vacuity test must assert the CONJUNCTION. `-44`: a column that names a guard is a
-COVERAGE CLAIM and nobody ever verifies it — audit it with ONE question asked identically of every
-row; **the reproduced numbers bind, the prohibitions escape**; when a rule says *X, not merely Y*, an
-ABSENCE guard is logically incapable of enforcing it; an unrecognisable constraint gets a machine on
-its ANTECEDENT and a human on its CONSEQUENT; **do not fuse a property of the artefact with a
-property of the estate into one partition.** **`-45` adds three:**
+COVERAGE CLAIM and nobody ever verifies it; **the reproduced numbers bind, the prohibitions escape**;
+an ABSENCE guard cannot enforce *X, not merely Y*; **do not fuse a property of the artefact with a
+property of the estate into one partition.** `-45`: a `source` cell is a PROVENANCE claim and an
+address that resolves is not an address that is right; when two items in one document constrain the
+same thing, a citation to either reads as correct; a quotation is a lossy copy and the first things
+it loses are the ANTECEDENT and the REFERENT. **`-46` adds three:**
 
-- **A `source` CELL IS A PROVENANCE CLAIM, AND AN ADDRESS THAT RESOLVES IS NOT AN ADDRESS THAT IS
-  RIGHT.** `-44`'s finding one column to the left, and it had the same shape: nobody had verified a
-  single one. **Both** an existence check (*does E1 exist?*) **and** a whole-file search (*is this
-  text in `REG-002`?*) pass a wrong citation. The question that catches it is *does the **cited
-  block** contain the words in the **quotation column***, and it needs two things a looser check
-  does not have: **resolve the exact block** (heading or bold label to the next peer, not the file),
-  and **NEST multi-part locators** — `§4 Q1` means Q1 *inside* §4, and a union resolves it correctly
-  whenever the label happens to be unique in the file, which is how C26, C27 and C28 pointed at the
-  wrong section for four sessions. Also: compare the **conjunction** of a row's quotations. The
-  first cut used `any`, and C05's paraphrase passed on the strength of a correctly-quoted fragment
-  beside it. Banked: `2026-08-15-citation-column-provenance-claim-nobody`.
-- **WHEN TWO ITEMS IN ONE DOCUMENT CONSTRAIN THE SAME THING, A CITATION TO EITHER READS AS CORRECT.**
-  `REG-002` E1 and E2 both govern §4.4's headline, so the wrong one was **more** durable than an
-  obviously-wrong one would have been — it passed every check a reader would think to run. This is
-  the general case for any registration that pre-commits several ways to fail one section. The
-  repair is to **assert the warrant at the scene**: the tripwire built this session asserts E2's
-  clause *and* that `RESULT-REG-002`'s E2 row still reads FIRED. Banked:
-  `2026-08-15-two-items-one-document-constrain-same`.
-- **A QUOTATION IS A LOSSY COPY, AND THE FIRST THINGS IT LOSES ARE THE ANTECEDENT AND THE REFERENT.**
-  Two of the six defects were not wrong addresses: C05's *"the next move is not a third instrument"*
-  for *"the next move **in that case** is not…"* — dropping the conditional's antecedent, which
-  turns a rule that fires only on failure into an unconditional ban — and C26's *"never appears
-  unqualified"* for *"never appears **in it** unqualified"*, which turns a rule about one document's
-  own statistics into a rule about the manuscript. `-42`'s rule has a twin: **a conditional
-  constraint's QUOTATION must carry its antecedent.** Banked:
-  `2026-08-15-quotation-lossy-copy-first-things`.
+- **A COVERAGE COUNT READ OFF THE `machine` COLUMN IS A CLAIM ABOUT THE COLUMN, NOT ABOUT THE
+  SUITE.** `-44`'s lesson turned on the paragraph that states it. The column names the tests written
+  FOR a constraint; the tests that *happen* to catch it are, by construction, never in it — and for
+  C42 those were eight of fifteen. **The only instrument that measures coverage is a mutation with
+  the whole suite behind it**, which is why `scripts/mutation_control.py` is committed rather than
+  scratch. Banked: `2026-08-15-coverage-count-machine-column-claim-about-column`.
+- **A REPRODUCIBILITY PIN IS NOT A FREEZE.** Two of C42's fifteen — `A` and `α̂` — were held by
+  **nothing but** `test_the_instrument_reruns_to_the_same_numbers`, which regenerates the artifact
+  and compares. That catches a hand-edit and is **blind to a number legitimately re-derived by a
+  changed instrument**, which is the exact failure mode `REG-010` §4 names. You cannot see this from
+  a red; you see it from the CATCHER LIST, which is why `mutation_control.py` prints every catcher
+  and not the first. Banked: `2026-08-15-reproducibility-pin-is-not-a-freeze`.
+- **THE NUMBER WITH NO ARTIFACT IS THE ONE THAT ESCAPES.** Fourteen of the fifteen live in a `.json`
+  and were caught. **The 98 firms exists as a numeral in prose and nowhere else**, and it was the one
+  green probe on the artifact axis. The repair is not to pin the string — it is to **recompute the
+  quantity from the committed inputs and bind the prose to that**. Generalise: when a frozen list
+  mixes recorded and unrecorded quantities, the unrecorded ones are where the guard is missing, and
+  they are invisible to any audit that starts from `data/`. Banked:
+  `2026-08-15-number-with-no-artifact-escapes`.
 
-**Everything `-33` through `-44` banked is unchanged and still sharp.** `severity.check`'s witness
+**Everything `-33` through `-45` banked is unchanged and still sharp.** `severity.check`'s witness
 must return FALSY. Check `git ls-files <name>` before a whole-file write into a shared directory.
 `patchkit` anchors have **no internal newline**.
 
@@ -172,47 +169,51 @@ must return FALSY. Check `git ls-files <name>` before a whole-file write into a 
 
 ## 1 · WHAT HAPPENED
 
-**`19fa03f` — the tripwire class built and registered, and the source column audited.**
+**The control came first, and it is the deliverable.** Twenty-two forbidden moves, each on its own
+scratch copy of the repo, each with the whole suite behind it:
 
-**Four new test files, 32 tests, all green on both machines.**
+| axis | probes | caught BEFORE `-46` | caught after |
+|---|---|---|---|
+| the fifteen moved in `data/` | 15 | **14** | 15 |
+| the same numbers moved in `RESULT-*` PROSE ONLY | 7 | 4 | 7 |
+| **total** | **22** | **19** | **22** |
+
+The three that were green: **the 98 firms, the 110, the 133** — all three in the band-count
+documents, which no reproducibility test regenerates.
+
+**Two new files, 23 tests, green on both machines.**
 
 | file | what it is |
 |---|---|
-| `tests/test_tripwire_c09_sec44_headline.py` (8) | C09. §4.4's heading pinned byte-for-byte (**it is `###`, not the `##` two handoffs said**) and the knife-edge's paragraph position in the abstract pinned **as a floor** — earlier is promotion and fires, later or pushed down by an insert is not and does not. Asserts its own warrant: `REG-002` E2's clause **and** `RESULT-REG-002`'s E2 row still reading FIRED |
-| `tests/test_tripwire_c17_sec44_argument.py` (6) | C17. **Not a freeze** — `REG-003` §7 *licenses* one number and the sentences carrying it, so a byte pin would go red every time the registration did what it registered. The pin is §4.4 with every numeric literal **masked** |
-| `tests/test_tripwire_c36_sec7_ledger_shape.py` (7) | C36. §7's ledger column tuple and row count. **The prose said forty rows for two sessions; it is forty-seven** — corrected in three places. The red message says **ask Jason, once** |
-| `tests/test_tripwire_class_is_registered.py` (11) | the class registrar. File name · `tripwire` marker (`conftest.py`) · `TRIPWIRE` grade in the inventory, bound in **both** directions, plus the SHAPE of every member's red message |
+| `tests/test_reg010_sec4_frozen_numbers.py` (23) | C42. §4's sentence pinned verbatim · the fifteen frozen as LITERALS at every artifact site · the document side bound by anchors **built from the artifacts, never retyped** · the 98 recomputed from the filings through `reg009_band_count`'s pure functions · one forbidden move per number, each required to **name its own item** · a separate non-vacuity for the prose limb · `-42`'s antecedent asserted before anything is read |
+| `scripts/mutation_control.py` | the control, committed. `--list`, `--only <slug>`, `--jobs`. Prints **every** catcher per probe, not the first, because that is how you tell a freeze from a reproducibility pin |
 
-**And the provenance machine**, in `test_constraint_inventory_selfconsistent.py`:
-`test_every_quoted_constraint_appears_in_its_cited_source` reads all fifty rows every run, plus
-`test_the_unquoted_rows_are_the_pinned_four` (deleting a quotation is the cheapest way to silence
-the check, so the set of describing-not-quoting rows is pinned) and a non-vacuity test that feeds it
-the real defect — C09's quotation must be in E2 and **must not be** in E1.
+**Inventory edits:** C42 `PARTIAL` → **`FOR`** (graded on the mutation, per `-44`'s ruling) · §2a
+counts `FOR` 7→8, `PARTIAL` 6→5 · §3's cross-table 10/33 → **11/32** · §3.2 renumbered to seven
+items with a note that **every remaining position rests on an unmeasured claim of the same kind** ·
+§3.1's PARTIAL block rewritten · **new §2b** carries the measurement.
 
-**Six inventory rows repaired**: C09 `E1`→**E2** · C33 `§4`→**§3.1** · C26, C27, C28 `§4 Q1/Q2`→
-**§3 Q1/Q2** · C05 and C26's quotations made verbatim.
+**BUG SPRAY, found and fixed in-session:** §3.1 asserted that `RESULT-REG-009-band-count.md` *"can
+be deleted outright … green"*. `-46`'s own guard made that false the moment it landed — the deletion
+is now five reds. **Corrected in place, and the grades deliberately did NOT move**: an incidental red
+is not coverage, which is the whole point of §3's two axes. The supersession-prose limb of C44/C46
+is still unmeasured and is now the live half of §3.2's item 3.
 
 | | |
 |---|---|
 | **G-COACH-3** | **3 → 3 (+0)** — the manuscript was not touched this session |
-| **G-COACH-1** | held — six provenance defects found and **repaired in-session**, not filed; C37's tripwire teed up rather than half-built |
-| **G-COACH-5** | held — the strength named is **`test_reg012_sec6_sec47_frozen.py`'s docstring**, which argues for its own design rather than asserting it (*"the pin records which version it froze"*). That paragraph is what taught this session that C09's tripwire had to assert its warrant. **A guard that argues is reusable; one that asserts is not.** |
-| suite | **976 collected** · darwin **976 passed** (~59 s) · cloud **967 passed / 9 skipped** (~135 s) |
-| new tests | 4 files, 32 tests |
-| lessons | **four** banked global · **three** used and corroborated `record-outcome wealthTensor-45 pass` |
+| **G-COACH-1** | held — the stale C44/C46 sentence was repaired in-session, not filed |
+| **G-COACH-5** | held — the strength named is **`test_reg009_band_count.py`'s docstring**, which pins its counts *against the filings rather than against the run* and says why. That paragraph is what taught this session to recompute the 98 instead of pinning its string. **A guard that recomputes its subject outlives the artifact that recorded it.** |
+| suite | **999 collected** · darwin **999 passed** (~61 s) · cloud **990 passed / 9 skipped** (~118 s) |
+| new tests | 2 files, 23 tests |
+| lessons | **three** banked global · **three** used and corroborated `record-outcome wealthTensor-46 pass` |
 | stopping rules | **honoured — no lag gradient computed on any subsample; the research ledger on paper III is still empty** |
-
-**Verification was empirical, not argued** (`-44`'s rule). Five mutations against the C09 tripwire
-(re-headline · promotion into the abstract lead · warrant reworded · E2 no longer FIRED ·
-knife-edge deleted from §4.4) and seven against the provenance check (each of the six real defects
-re-injected, plus deleting a quotation to silence it): **every one RED on a scratch copy, unmutated
-GREEN.**
 
 ---
 
 ## 2 · RULINGS — DO NOT REOPEN
 
-- All of `-31`'s through `-44`'s rulings stand **verbatim**: no third disclosure instrument; phrase
+- All of `-31`'s through `-45`'s rulings stand **verbatim**: no third disclosure instrument; phrase
   set frozen at 38; §4.4 settled; **`SOURCE-001` IS FINISHED**; **THE ARM IS δ**; **§4.8 IS NOT THE
   COINCIDENCE ARGUMENT; §4.7 IS**; **EVERY P0 AND REG-009 NUMBER IS THE *DISCLOSED* δ**; **REG-009 IS
   CLOSED, numbering 6–12**; **§4's COVERAGE SILENCE AND §7.5's TWO ERRATA STAY RECORDED, NOT
@@ -222,70 +223,67 @@ GREEN.**
   **REG-012 IS CLOSED ON BRANCH F**; **THE TWO SENSITIVITIES ARE SEPARATE**; **55.71 % IS Ψ's AND
   63.16 % IS THE BAND COUNT'S**; **`selected_lives` IS THE ONE SELECTION PATH**; **§4.4's TIER-0
   CALIBRATION CELL IS `0.3000`**; **T4's IDENTIFIED-SET WIDTH IS `31.7%`**; **`SCOUT-001` IS WORKED**;
-  **T2 MAY NOT BE RUN ON THIS DATA** (carded `1217501628088122`); **THE SCOUTING REPORT'S TIMING IS
-  CLAUDE'S CALL**; **"THE REGISTERED ADVERSE CUT" DOES NOT RETURN AT ANY SITE**; **§4.7 IS PINNED AT
-  `ba59370`**; **§9's LIMITATIONS ARE FOUR LIST ITEMS AND STAY FOUR**; **`wt107` IS NOT EDITED**;
-  **THE `.bak` COPIES ARE GITIGNORED — CITE THE TEST, NOT THE BACKUP**; **`RESULT-REG-003` §2's
-  "EVERY CUT LANDS IN R1" IS TEED UP, NOT REPAIRED** (carded `1217518687033967`); **THE `machine`
-  COLUMN IS NOT A COVERAGE COLUMN**; **DO NOT RE-GRADE A `machine` CELL WITHOUT DOING THE AUDIT —
-  THE EVIDENCE FOR A BINDS IS A MUTATION THAT GOES RED**; **C49's GUARD IS A PAIR**; **DO NOT DELETE
-  THE REFUSAL SENTENCES FROM `RESULT-REG-012-band-edge-phase.md`**.
-- **NEW · C09's WARRANT IS `REG-002` E2. IT WAS NEVER E1.** E1 is the mean-τ falsifier
-  `RESULT-REG-002` §2 records as **mis-specified**; it did not fire and its consequent was
-  discharged by rewriting §4.4. Do not "restore" the E1 citation because older documents carry it —
-  §2's ERRATUM in `RESULT-REG-002` is the record, and
-  `test_every_quoted_constraint_appears_in_its_cited_source` now refuses it.
-- **NEW · `TRIPWIRE` IS A GRADE AND IT IS NOT COVERAGE.** Only **FOR** and **BINDS** mean a
-  constraint is guarded. `-45`'s three tripwires moved C09, C17 and C36 from `none` to `TRIPWIRE`
-  and moved **none of them out of cell (b) or out of reader-only** — §3's cells are unchanged at
-  **10 / 33 / 3 / 4**. `test_tripwire_class_is_registered.py` refuses any row carrying FOR or BINDS
-  against a `test_tripwire_*` file.
-- **NEW · A TRIPWIRE'S RED MESSAGE IS PART OF THE ARTEFACT AND IS ASSERTED.** Every member must be
-  tagged `TRIPWIRE ·`, say **NOT A FAILURE**, and name what to read or whom to ask. Rewording is
-  allowed; dropping any of the three is a red suite. A tripwire whose red names a violation teaches
-  the next session to suppress it.
-- **NEW · THE THREE TRIPWIRE PINS MOVE IN THE SAME COMMIT AS THE EDIT THAT MOVED THEM**, with the
-  reason in the commit message — `SEC_44_HEADING`, `KNIFE_EDGE_ABSTRACT_PARAGRAPH`,
-  `SEC_44_MASKED_SHA256`, `LEDGER_COLUMNS`, `LEDGER_ROWS`. A pin moved in a later commit is a pin
-  nobody reviewed.
+  **T2 MAY NOT BE RUN ON THIS DATA** (carded `1217501628088122`); **"THE REGISTERED ADVERSE CUT" DOES
+  NOT RETURN AT ANY SITE**; **§4.7 IS PINNED AT `ba59370`**; **§9's LIMITATIONS ARE FOUR LIST ITEMS
+  AND STAY FOUR**; **`wt107` IS NOT EDITED**; **THE `.bak` COPIES ARE GITIGNORED — CITE THE TEST, NOT
+  THE BACKUP**; **`RESULT-REG-003` §2's "EVERY CUT LANDS IN R1" IS TEED UP, NOT REPAIRED** (carded
+  `1217518687033967`); **THE `machine` COLUMN IS NOT A COVERAGE COLUMN**; **DO NOT RE-GRADE A
+  `machine` CELL WITHOUT DOING THE AUDIT — THE EVIDENCE FOR A BINDS IS A MUTATION THAT GOES RED**;
+  **C49's GUARD IS A PAIR**; **DO NOT DELETE THE REFUSAL SENTENCES FROM
+  `RESULT-REG-012-band-edge-phase.md`**; **C09's WARRANT IS `REG-002` E2, NEVER E1**; **`TRIPWIRE` IS
+  A GRADE AND IT IS NOT COVERAGE**; **A TRIPWIRE'S RED MESSAGE IS PART OF THE ARTEFACT**; **THE THREE
+  TRIPWIRE PINS MOVE IN THE SAME COMMIT AS THE EDIT THAT MOVED THEM**.
+- **NEW · §3.2's RANKING IS NOT EVIDENCE, AND `-46` PROVED IT ON ITS OWN TOP ITEM.** Every position
+  in that list was assigned from the `machine` column. One was measured and it was wrong by eleven.
+  **Do not build the next guard on a ranked position without running its probe first** — and the
+  probe is now a two-minute call, so there is no excuse: `python3 scripts/mutation_control.py`.
+- **NEW · C42's FIFTEEN ARE FROZEN AS LITERALS AND THE LITERALS STAY.** The document anchors are
+  derived from the artifacts on purpose; the fifteen values are **not**, because a check that only
+  asserts *the document agrees with the record* goes green when both move together (`-38`). If a
+  registered re-run legitimately moves one of the fifteen, that is a `REG-010` §4 event and it wants
+  a ruling, not a quiet edit to `PSI_CELL`.
+- **NEW · THE PARSE OF §4 IS READING (A), AND IT IS WRITTEN DOWN.** `Ψ = 0.6586 and its clustered
+  interval` is ONE item; `the 110 and the 133 of the band counts` is TWO. Reading (B) is the mirror
+  and also gives fifteen. Both freeze the same sixteen quantities. **Do not "fix" the parse** — the
+  file's docstring states it and `test_section_4_still_says_what_this_file_read` pins the sentence,
+  so a reword is red under either reading.
+- **NEW · AN INCIDENTAL RED IS NOT COVERAGE.** `test_reg010_sec4_frozen_numbers.py` makes deleting
+  `RESULT-REG-009-band-count.md` red. That did **not** move C44's or C46's grade and must not be
+  read as having done so.
 
 ---
 
-## 3 · THE AT-BAT for `-46` — **C42's fifteen frozen numbers.**
+## 3 · THE AT-BAT for `-47` — **measure §3.2's ranking, then build from the top of the MEASURED list.**
 
-`CONSTRAINT-INVENTORY-001` §3.2 ranked cell (b) eight deep and C42 has been item 1 for two
-sessions. It is now the top of the board on both halves of the ranking:
+The tee-up `-46` inherited was wrong, and the reason it was wrong applies unchanged to the seven
+positions left in `CONSTRAINT-INVENTORY-001` §3.2. **The instrument now exists and the sweep is the
+at-bat.**
 
-> `REG-010` §4 lists **fifteen numbers this may not move**. Its two named tests pin **three of
-> them**. Moving Ψ, n, the distinct-pair count and **all four prediction verdicts** in
-> `data/reg-009-result.json` leaves both named files green — the pins that catch those live in
-> `test_reg009_ladder_inputs.py`, which the row did not name until `-44` corrected it.
+The shape:
 
-**Why it is the at-bat and not a chore.** It is the cheapest real guard in the estate — one test,
-fifteen assertions, **no judgement anywhere in it** — and its failure mode is the one this project
-keeps re-discovering under different names: *a number moves and nobody notices*. `-45` just spent a
-session proving that the estate's own prose counts drift silently (forty rows that were
-forty-seven; nine machines that were twenty-four; an E1 that was an E2). Fifteen frozen numbers
-with twelve unpinned is the same defect waiting in the one place where it would be load-bearing.
+1. **Write one probe per ranked position** into `scripts/mutation_control.py`'s `PROBES` — the
+   forbidden move that constraint names, one move per probe. C07: amend a registration after its
+   `RESULT-*` commit. C26: write *impairment* unqualified into `RESULT-REG-006`. C44/C46/C41: the
+   **supersession prose** limb, which `-46` explicitly left unmeasured. C10: label the re-ask `E4`.
+   C16/C20/C23/C25/C30: assert each registration's own forbidden claim. C45: promote `R_MIN`.
+   C01–C04/C06: delete the reportable-at-all disclosure.
+2. **Run the sweep** (`--jobs 2`, ~2 min per probe) and **record the catcher list, not just the
+   colour** — a probe whose only catcher reruns an instrument is a reproducibility pin, not a guard,
+   and that distinction is invisible in a pass/fail column.
+3. **Rewrite §3.2 from the measurement**, and say in the file how many positions the measurement
+   moved. If the answer is *none moved*, that is a celebrated result and it is worth the sweep.
+4. **Then build the top of the measured list**, with its own non-vacuity, as `-45` and `-46` did.
 
-The shape, and the two traps:
-1. **Read `REG-010` §4 and take the list verbatim.** Fifteen means fifteen; if the count you
-   extract is not fifteen, that is the finding and you stop and say so.
-2. **Assert the antecedent** (`-42`): §4's list is *"one new artifact, overwrites nothing"* — so
-   the guard must also assert that the artifact `-31`'s numbers live in still exists and is the one
-   being read. A freeze on numbers in a file that could be deleted is an absence guard (`-44`).
-3. **Feed it its own forbidden move** (`-43`): mutate each of the fifteen on a scratch copy and
-   require red. Twelve of them are currently unpinned, so **twelve of those mutations pass today** —
-   run the control BEFORE you write the guard and record the number, because that measurement is
-   the evidence the guard was needed.
-4. **Do not re-grade C42's cell without the audit.** It is `PARTIAL` today and the grade moves to
-   `FOR` only when a mutation goes red.
+**Why this and not another guard.** `-44`, `-45` and `-46` each found one unverified claim and each
+repaired it one row at a time. The pattern is now three deep and the general form is visible: **this
+estate's prose about itself is the least-audited surface it has.** A sweep converts the remaining
+ranking from assertion into measurement in one pass, and every guard built afterwards starts from a
+number instead of a sentence.
 
 **IF YOU TAKE SOMETHING ELSE, SAY WHY IN ONE LINE.** The obvious alternative is **C37's tripwire** —
-`REG-009` §12's *"never by narration"*, teed up in `CONSTRAINT-INVENTORY-001` §3.3, the same shape
-as the three built this session and about an hour. It is second because the class now exists and a
-fourth member proves less than the first three did, while C42 is fifteen unguarded load-bearing
-numbers.
+`REG-009` §12's *"never by narration"*, teed up in `CONSTRAINT-INVENTORY-001` §3.3, the same shape as
+`-45`'s three and about an hour. It is second because a fifth tripwire proves less than the sweep
+does, and because the sweep is the thing that stops the next session inheriting a wrong warrant.
 
 ---
 
@@ -296,11 +294,12 @@ numbers.
    Two readings; under one, 0.327 < 0.33 is R2 by the registration's own ladder. **A `RESULT-*` is
    the record of a run and editing the artefact edits the witness** — the `-37` precedent says the
    repair shape is a dated addendum. C12's guard is unaffected either way.
-3. **Cell (b), ranked in `CONSTRAINT-INVENTORY-001` §3.2**, C42 first (§3 above), then C07's
-   amended-after-result git test · C26's *"never appears unqualified"* regex · the
-   beside/never-promoted/does-not-re-score family (C44/C46/C41, one guard, three constraints) ·
-   C10 (C21's exact shape, one document over) · the five-constraint forbidden-claim family ·
-   C45's two assertions · the reportable-at-all presence guards.
+3. **Cell (b), ranked in `CONSTRAINT-INVENTORY-001` §3.2 — SEVEN entries, and the ranking is
+   unmeasured (§3 above).** C07's amended-after-result git test · C26's *"never appears in it
+   unqualified"* regex · the beside/never-promoted/does-not-re-score family (C44/C46/C41, whose
+   **deletion limb is now red and whose supersession limb is not**) · C10 (C21's exact shape, one
+   document over) · the five-constraint forbidden-claim family · C45's two assertions · the
+   reportable-at-all presence guards.
 4. **C37's tripwire** — `REG-009` §12's *"never by narration"*. §3.3 names the adjacent check: a
    numeral in `RESULT-REG-009`'s attribution paragraph. Same shape as `-45`'s three.
 5. **§7's ledger dilutes its own two load-bearing rows — Jason's call, and it is TRIPWIRED, not
@@ -321,20 +320,20 @@ numbers.
 
 ## 5 · DO NOT
 
-* Everything `-31`→`-44` forbade still stands verbatim — R5, the two sensitivities,
+* Everything `-31`→`-45` forbade still stands verbatim — R5, the two sensitivities,
   `selected_lives`, §4.4's `0.3000`, T4's `31.7%`, the δ arm, TERM-001/002, the dossier era, §9's
   FOUR list items, `wt107` IS NOT EDITED, the gitignored `.bak`, **"THE REGISTERED ADVERSE CUT"
-  DOES NOT RETURN**, **§4.7 IS PINNED AT `ba59370`**. §2.
-* **NEW · DO NOT "SIMPLIFY" A TRIPWIRE INTO A GUARD.** Each of the three had a cheaper, wronger
-  version available — byte-freeze §4.4, fire on any abstract edit, count §7's rows and grade them —
-  and **each of those would be green today and deleted within three sessions.** In particular:
-  `KNIFE_EDGE_ABSTRACT_PARAGRAPH` is a **floor, not an equality** (later is not promotion), and
-  C17's digest is **numeral-masked on purpose** (`REG-003` §7 licenses the number).
-* **NEW · DO NOT REPAIR A PROVENANCE FAILURE BY DELETING THE QUOTATION.** It is the cheapest
-  silencing move available and `test_the_unquoted_rows_are_the_pinned_four` refuses it. Three
-  readings of a red are in the assertion message; only one of them is a typo.
-* **NEW · DO NOT ASSUME THE CLOUD TARBALL IS THE REPO.** `conftest.py`, `requirements.txt`,
-  `README.md`, `LICENSE` and `.gitignore` are outside `docs scripts tests src data`.
+  DOES NOT RETURN**, **§4.7 IS PINNED AT `ba59370`**, **DO NOT "SIMPLIFY" A TRIPWIRE INTO A GUARD**,
+  **DO NOT REPAIR A PROVENANCE FAILURE BY DELETING THE QUOTATION**, **DO NOT ASSUME THE CLOUD
+  TARBALL IS THE REPO**. §2.
+* **NEW · DO NOT GRADE A CONSTRAINT FROM THE `machine` COLUMN, INCLUDING WHEN YOU ARE ONLY
+  *RANKING*.** `-44` made this a ruling for grades; `-46` found the ranking prose doing the same
+  thing one paragraph away from the ruling that forbids it. Ranking is grading.
+* **NEW · DO NOT DELETE `PSI_CELL`, `S_R_MID`, `PSI_RECT`, `ALPHA_HAT*`, `VERDICTS`,
+  `REG_009_NUMBERING`, `EVENTS_TOTAL`, `FIRMS`, `JOINABLE_*` AND LEAVE THE DERIVED ANCHORS.** That
+  turns a freeze into a consistency check and it goes green on a re-run that moved everything.
+* **NEW · DO NOT PIN THE 98 AS A STRING.** It is recomputed from the filings on purpose. A string
+  pin would survive the filings changing, which is the one thing worth catching.
 * Do not `git add -A` on darwin. Do not run bulk SEC work on darwin — cloud.
 
 ---
@@ -344,11 +343,12 @@ numbers.
 Emit one line — `Oriented: <state> · at-bat: <X> · opening with <first action>.` — then start
 building. Don't wait for a go. Do not open by asking Jason anything.
 
-Coffee status: ☕ **ELEVEN SESSIONS RUNNING, AND THE FIRST TEN MINUTES DECIDED THE WHOLE SESSION
+Coffee status: ☕ **TWELVE SESSIONS RUNNING, AND THE FIRST TEN MINUTES DECIDED THE WHOLE SESSION
 AGAIN** — `-35` truth, `-36` population, `-37` count, `-38` premise-and-instrument, `-39` severity,
 `-40` the promise the document made about itself, `-41` the resolution it was written at, `-42`
 whether it was in force, `-43` who the promise was made about, `-44` whether the thing guarding it
-can see it, **`-45` WHETHER THE ADDRESS ON IT WAS RIGHT.** `-44`'s finding came from parsing a table
-to count a column the prose had already counted. `-45`'s came from opening the section a row said it
-was quoting, and reading it. Ninety seconds, and it moved the whole session's warrant. **Spend the
-ten minutes, and spend them checking something the document has already told you twice.**
+can see it, `-45` whether the address on it was right, **`-46` WHETHER THE SENTENCE THAT SENT YOU
+HERE WAS EVER CHECKED.** `-45`'s came from opening the section a row said it was quoting. `-46`'s
+came from doing what the handoff told it to do — run the control first — and reading the answer
+instead of the instruction. **The tee-up is not evidence. Spend the ten minutes measuring the thing
+the last session was sure of.**

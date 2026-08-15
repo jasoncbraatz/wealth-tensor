@@ -89,7 +89,7 @@ INST = governs an instrument or its inputs. **Machine:** the test that would go 
 | C39 | `REG-009` §12 | *"no free parameter may be introduced to reconcile Ψ with 99.7 %"* | Ψ | document | MS+INST | yes | §7's row reports 0.659 against 0.998 and reconciles nothing — **compliant** | PROXY | **ADJACENT** · F10, and `test_reg009_ladder_inputs.py` |
 | C40 | `REG-009` §12 | §7.5's count lands *"whatever Ψ returns"*: 151/98 repaired against 55/38 as §5 collected it | §4.7's clause | sentence | MS | yes | §4.7 carries both counts — **compliant** | MECH | **BINDS** · `test_reg012_sec6_sec47_frozen.py` — **not** `test_term002_count.py`, which is about §8's free-parameter numeral and never opens §4.7 |
 | C41 | `REG-010` §0 | *"P3 failed as registered and REG-010 does not re-score it"* | P3 | document | RES | yes | **closed by ruling** — do not reopen | PROXY | **PARTIAL** · `test_reg010_half_integer_banding.py` |
-| C42 | `REG-010` §4 | a list of fifteen numbers *"this may not move"*; one new artifact, overwrites nothing | REG-009's numbers | artifact | RES+INST | yes | **compliant** | MECH | **PARTIAL** · `test_reg009_ladder_inputs.py` (four numbers), `test_reg009_band_count.py` (three), `test_reg010_half_integer_banding.py` |
+| C42 | `REG-010` §4 | a list of fifteen numbers *"this may not move"*; one new artifact, overwrites nothing | REG-009's numbers | artifact | RES+INST | yes | **compliant** | MECH | **FOR** · `test_reg010_sec4_frozen_numbers.py` (`-46`) — all fifteen frozen at every artifact site AND in the documents that report them, each with its own forbidden move; graded on the mutation, not the pointer (see §2b). Incidentally also `test_reg009_ladder_inputs.py`, `test_reg009_band_count.py`, `test_reg010_half_integer_banding.py` |
 | C43 | `CONSTRUCTION-REG-009` R2 | the fill raises *"the joinable column only"* | the fill | artifact | INST | yes | H6 refuses the run if `events_total` moves — **compliant** | MECH | **PARTIAL** · `test_reg009_band_count_filled.py` |
 | C44 | `CONSTRUCTION-REG-009` R3 | the count is reported *"BESIDE `-31`'s, never instead of it"* | the band count | artifact | RES | yes | two artifacts, both committed — **compliant** | MECH | **PARTIAL** · `test_reg009_band_count.py` + `_filled` |
 | C45 | `CONSTRUCTION-REG-009` R5 | *"no band edge, band width, floor, tag or interval rule is re-chosen in response to the number"*; `R_MIN` not promoted | the band count | document | RES | yes | **closed by ruling; unspent** | MECH | **ADJACENT** · `test_reg012_band_edge_phase.py` |
@@ -179,6 +179,55 @@ found this file's own grade to be the one-door verdict.**
   the missing one** — and behind it were four sites calling an unregistered cut *registered*
   and three reporting unregistered numbers bare.
 
+## 2b · C42, and the third coverage claim nobody had measured (`-46`)
+
+> **`-44` FOUND THAT THE `machine` COLUMN WAS A COVERAGE CLAIM NOBODY VERIFIED. `-45` FOUND
+> THE SAME OF THE `source` COLUMN. `-46` FOUND IT OF THIS FILE'S OWN PROSE — AND THE PROSE
+> WAS WRONG BY ELEVEN.**
+
+§3.2 ranked **C42 first in cell (b) for two sessions** on the sentence *"twelve of fifteen
+unpinned"*, and the `-45` → `-46` handoff carried it forward as the at-bat's whole warrant
+(*"twelve of those mutations pass today — run the control BEFORE you write the guard"*).
+`-46` ran the control first, exactly as instructed, and the instruction's own premise did not
+survive it. Each of `REG-010` §4's fifteen was moved on a scratch copy of the repo and the
+whole suite run:
+
+| | probes | caught before `-46` |
+|---|---|---|
+| the fifteen, moved in `data/` | 15 | **14** |
+| the same numbers moved in the `RESULT-*` PROSE ONLY, artifacts untouched | 7 | 4 |
+| **total** | **22** | **19** |
+
+**The three that were green** are the 98 firms, the 110 and the 133 — all three of them in
+`RESULT-REG-009-band-count.md` and `RESULT-REG-009-band-count-filled.md`, which no
+reproducibility test regenerates. **The 98 is the sharpest: it is the one frozen number with
+no field in any artifact at all.** It exists as a numeral in prose and nowhere else, so
+`test_reg010_sec4_frozen_numbers.py` recomputes it from the committed filings through the
+band-count instrument's own pure functions and binds the prose to *that*.
+
+**Why the claim was wrong, and why it read as right.** The grade was derived from the
+`machine` column — *these two files pin three of the fifteen* — and the column names the
+tests written **for** a constraint, never the tests that happen to catch it. Eight of the
+fifteen turn out to be held by `test_reg009_ladder_inputs.py`'s
+`test_the_instrument_reruns_to_the_same_numbers`, which is in no row's `machine` cell for
+C42 and would not belong there. So the sentence was true of the **named files** and false of
+the **estate**, and every check a reader would run — *does the row name the right tests? do
+those tests pin only three?* — returns yes.
+
+> **THE RULE, AND IT IS THE THIRD IN THIS FAMILY: A COVERAGE COUNT READ OFF THE `machine`
+> COLUMN IS A CLAIM ABOUT THE COLUMN. The only instrument that measures coverage is a
+> mutation with the whole suite behind it.** Every other position in §3.2's ranking was
+> assigned the same way and none of them has been measured. Read §3.2's note.
+
+**And a second finding, smaller and worth keeping.** Of the fourteen already caught, **two —
+`A` and `α̂` — were caught by NOTHING BUT the instrument-reruns-to-itself test.** That test
+regenerates the artifact and compares, so it catches a *hand-edit* and is blind to a number
+**legitimately re-derived** by a changed instrument, which is the failure mode §4 names.
+**A reproducibility pin is not a freeze.** `test_reg010_sec4_frozen_numbers.py` holds the
+fifteen as literals for that reason, beside the derived-from-artifact document anchors rather
+than instead of them: a check that only asserts the document agrees with the artifact goes
+green when both move together (`-38`).
+
 ## 2a · The counts, recomputed
 
 `tests/test_constraint_inventory_selfconsistent.py` parses §1's table and requires this block
@@ -200,9 +249,9 @@ two sessions.
 | recog:PROXY | 8 |
 | recog:READER | 3 |
 | recog:n/a | 4 |
-| machine:FOR | 7 |
+| machine:FOR | 8 |
 | machine:BINDS | 3 |
-| machine:PARTIAL | 6 |
+| machine:PARTIAL | 5 |
 | machine:ADJACENT | 8 |
 | machine:TRIPWIRE | 3 |
 | machine:none | 23 |
@@ -216,7 +265,7 @@ could NEVER recognise, and what does the estate do about those?** `-43` answered
 cells — (a) has a machine, (b) could have one and nobody wrote it, (c) recognisable only by a
 reader — and reported **(b) EMPTY**.
 
-**(b) is not empty. It holds thirty-three of the fifty**, and the three-cell shape is why it
+**(b) is not empty. It held thirty-three of the fifty when `-44` measured it, and thirty-two since `-46` built C42's guard**, and the three-cell shape is why it
 looked empty. Cell (a) is a fact about the ESTATE — somebody wrote a test. Cell (c) is a fact
 about the CONSTRAINT — no test could be written. Those are two different axes fused into one
 row of cells, and the fusion has a specific consequence: **anything with a name in the `machine`
@@ -229,7 +278,7 @@ the one the three-cell shape had no room for:
 
 | | a machine binds it | nothing binds it |
 |---|---|---|
-| **machine-recognisable** (MECH·PROXY, 43) | **10** — 7 written FOR the constraint, 3 incidental and genuinely binding | **33** — the cell `-43` reported empty. 16 of them **name a machine that does not bind**: the false-green class |
+| **machine-recognisable** (MECH·PROXY, 43) | **11** — 8 written FOR the constraint, 3 incidental and genuinely binding | **32** — the cell `-43` reported empty. 15 of them **name a machine that does not bind**: the false-green class |
 | **reader-only** (READER, 3) | — | **3** — C05, C18, C36. §4 is what they get instead |
 
 *(Four rows are `n/a`: C08, C13, C28, C29 fire on antecedents that never occurred, so there is
@@ -252,13 +301,26 @@ is materialised in the committed artifact, so a violating world is a red world; 
 binds the **antecedent**, going red identically when the constraint is *honoured*, and must be
 re-read by a human the moment it fires.
 
-**PARTIAL (6)** — C38, C41, C42, C43, C44, C46. Each binds the number and misses the
-prohibition. Sharpest: **C42** names two tests that pin **three of its fifteen** frozen
-numbers; moving Ψ, n, the distinct-pair count and **all four prediction verdicts** in
-`data/reg-009-result.json` leaves both named files green (the pins that catch it are in
-`test_reg009_ladder_inputs.py`, which the row did not name — now corrected). **C44** and
-**C46**: neither named test opens a single `.md`, so `RESULT-REG-009-band-count.md` can be
-deleted outright and the filled count written as superseding `-31`'s, green.
+**PARTIAL (5)** — C38, C41, C43, C44, C46. Each binds the number and misses the
+prohibition. **C44** and **C46**: neither named test opens a single `.md`.
+
+> **HALF OF C44/C46's SENTENCE WENT STALE ON 2026-08-15 AND IS CORRECTED HERE RATHER THAN
+> LEFT TO ROT.** It read *"so `RESULT-REG-009-band-count.md` can be deleted outright and
+> the filled count written as superseding `-31`'s, green."* `-46` deleted the file on a
+> scratch copy and ran the suite: **five red**, all of them in
+> `test_reg010_sec4_frozen_numbers.py`, whose `-42` antecedent check asserts that the
+> documents the freeze reads still exist. **The grades do not move.** That test binds
+> C42's fifteen numbers and is blind to C44/C46's *beside, never instead of* — deleting
+> the file is caught, and rewriting its claim as superseding still is not. **An incidental
+> red is not coverage, which is the whole lesson of §3's two axes.** The second limb —
+> the supersession prose — remains unmeasured and is the live half of §3.2's item 3.
+
+> **C42 WAS THE SIXTH, AND ITS GRADE WAS DERIVED FROM THIS COLUMN RATHER THAN FROM THE
+> SUITE.** The sentence that stood here read *"names two tests that pin three of its
+> fifteen"*, and `-46` measured it: **fourteen of the fifteen already went red.** The claim
+> was true of the **named files** and false of the **estate**, and reading the first as the
+> second is `-44`'s own lesson turned on the paragraph that states it. §2b has the
+> measurement and C42's row now carries **FOR**.
 
 **ADJACENT (10)** — C07, C11, C32, C34, C37, C39, C45, C50, and two that were pointer defects
 rather than coverage defects:
@@ -285,29 +347,32 @@ rather than coverage defects:
 
 ### 3.2 · Cell (b), ranked — what is worth building next
 
-Thirty-three entries, so this is a ranking and not a to-do list. Ordered by *what a violation
+Thirty-two entries, so this is a ranking and not a to-do list. Ordered by *what a violation
 would cost times how cheaply it can be caught*, and each names the shape it should take.
 
-1. **C42 · the fifteen frozen numbers** — twelve of fifteen unpinned, and the constraint is a
-   literal list. This is the cheapest high-value guard in the estate: one test, fifteen
-   assertions, no judgement anywhere in it.
-2. **C07 · amended-after-result** — a git test, and the shape already exists in
+> **C42 was item 1 for two sessions and is no longer in this cell** — `-46` built its guard
+> and, in the control that preceded it, found the ranking's own reason for putting it first
+> (*"twelve of fifteen unpinned"*) to be wrong by eleven. **Read §2b before ranking anything
+> else in this list: every position below rests on a coverage claim of exactly the same kind,
+> and not one of them has been measured either.**
+
+1. **C07 · amended-after-result** — a git test, and the shape already exists in
    `test_reg012_sec6_sec47_frozen.py`. Compare each registration's last-modifying commit
    against its `RESULT-*` commit.
-3. **C26 · *"the word 'impairment' never appears unqualified"*** — a pure regex constraint,
+2. **C26 · *"the word 'impairment' never appears unqualified"*** — a pure regex constraint,
    over `RESULT-REG-006`, and its sibling limb (the count printed next to each ratio) is the
    `-43` two-limb shape.
-4. **C44 / C46 / C41 · the "beside, never instead of / never promoted / does not re-score"
+3. **C44 / C46 / C41 · the "beside, never instead of / never promoted / does not re-score"
    family** — one guard, three constraints: assert both documents exist and that the later one
    carries no supersession claim. All three are currently guarded only by numerals.
-5. **C10 · *"labelled an EXTENSION of E4 throughout, never as E4"*** — C21's exact shape, one
+4. **C10 · *"labelled an EXTENSION of E4 throughout, never as E4"*** — C21's exact shape, one
    document over, and C21 is the one that was not clean. Two limbs: wrong label, missing label.
-6. **C16 / C20 / C23 / C25 / C30 · the forbidden-claim family** — five constraints, one
+5. **C16 / C20 / C23 / C25 / C30 · the forbidden-claim family** — five constraints, one
    claim-scanner shape, already built twice (C19, C24). Feed each registration its own
    forbidden claim before trusting the green (`-43`).
-7. **C45 · `R_MIN` not promoted** — two assertions: `art["reading"]` and `art["band_rule"]`
+6. **C45 · `R_MIN` not promoted** — two assertions: `art["reading"]` and `art["band_rule"]`
    are the registered ones. Currently unguarded in both limbs.
-8. **C01–C04, C06 · the reportable-at-all family** — presence guards, low cost, low risk,
+7. **C01–C04, C06 · the reportable-at-all family** — presence guards, low cost, low risk,
    and C02's is conditional (assert the antecedent, `-42`).
 
 ### 3.3 · The three that are reader-only, and the adjacent check for each
