@@ -4,7 +4,7 @@ gh_sha: 3f63237481906bf63d00eb1417b3a2a907101920
 updated: 2026-08-15
 session: wealthTensor-51
 gate_passed: true
-gate_version: "2.54"
+gate_version: "2.58"
 ---
 # wealth-tensor — HANDOFF
 *`gh_sha` points at the commit this file describes; the only thing added after it is this file, so
@@ -64,6 +64,10 @@ Standard bring-up; post the `DARLISH-ENROLL` line to Asana **1217316841710435**,
 + `dwait`, not diagnosis. darlish is not on the bridge; never restart the app to fix it.
 `darlish-check` is **not** in the cloud kit — do not chase its 127.
 `roster leave` ONCE at wrap.
+**The gate moved to 2.58 during `-51` (the inherited prompt said 2.54).** `gate-selfcheck.sh`
+prints the version in force — **trust that line, not this one**, and update this frontmatter
+when it disagrees. `-51` found the drift only because the self-check prints it; the gate range
+is now `G-A`→`G-AK`.
 
 > ### ⚠ SET `GATE_ROSTER_WHO` INLINE. THE `export` FORM IS RETIRED AND NEVER WORKED.
 > dx spawns a **fresh remote shell per call and carries no environment**. Inline on `roster join`,
