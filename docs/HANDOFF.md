@@ -1,8 +1,8 @@
 ---
 project: wealth-tensor
-gh_sha: 393eaa8dfe1493d1a123acb294145abc618ad2c4
+gh_sha: 3f63237481906bf63d00eb1417b3a2a907101920
 updated: 2026-08-15
-session: wealthTensor-50
+session: wealthTensor-51
 gate_passed: true
 gate_version: "2.54"
 ---
@@ -10,13 +10,9 @@ gate_version: "2.54"
 *`gh_sha` points at the commit this file describes; the only thing added after it is this file, so
 `--check` prints `ADVISORY: docs-only drift` and exits 0. **Read the exit code, and assert it
 exactly (`-39`) — `| tail` will mask it.***
-> **`-50` tripped this gate and the gate was right.** The first handoff commit carried a
-> **docstring** change to `scripts/mutation_control.py` alongside the handoff, and `--check` called
-> `BLOCKER: code advanced past the handoff` — correctly, because it classifies by PATH and cannot
-> know a `.py` diff was prose. The fix was to repoint `gh_sha` at the commit that actually holds the
-> described state, **not** to rewrite pushed history and **not** to teach the gate to guess.
-> **Lesson for you: land code and docs in the commit `gh_sha` names, and write the handoff alone in
-> the one after it.** A gate that is conservative about a `.py` file is doing its job.
+> **`-50` tripped this gate and the gate was right**, by landing a `.py` docstring change in the
+> handoff commit. `-51` did not: code and docs went in `3f63237`, this file alone in the one after.
+> **Land code and docs in the commit `gh_sha` names, and write the handoff alone in the next.**
 
 ## ORIENT — read these first, in this order
 1. **`docs/CO-AUTHOR-CHARTER.md`** — the constitution. **THE CHARTER WINS**: where this handoff, any
@@ -25,13 +21,15 @@ exactly (`-39`) — `| tail` will mask it.***
 2. **`docs/preregistration/CONSTRAINT-INVENTORY-001.md`** — the map for this thread. Fifty reporting
    constraints on two axes: `recog` (MECH / PROXY / READER / n/a — a property of the CONSTRAINT) and
    a **FOR / BINDS / PARTIAL / ADJACENT / TRIPWIRE** grade on the machine cell (a property of the
-   ESTATE). **Read §2f first this time** — it is `-50`'s finding, and the paragraph about a
-   correction that never reached the estate is the one that matters. Then §2e (`-49`), §2d (`-48`),
-   §2c (`-47`'s measurement, still the warrant for the ranking), then §3.2, then §2a's counts.
+   ESTATE). **Read §2g first this time** — it is `-51`'s finding, and the paragraph about an
+   instrument that printed its loudest red as a green is the one that matters. Then §2f (`-50`),
+   §2e (`-49`), §2d (`-48`), §2c (`-47`'s measurement, still the warrant for the ranking), then
+   §3.2, then §2a's counts.
 3. `python3 scripts/handoff_gate.py --check` — proves this file is not stale.
-4. **`python3 scripts/mutation_control.py --list`** — **48 probes now** (45 at `-49`; `-50` added
-   `R4b`/`R4c`/`R4d`). **Read its module docstring before you grade anything** — including the new
-   paragraph that replaces a stale count with the command that produces it.
+4. **`python3 scripts/mutation_control.py --list`** — **61 probes now** (48 at `-50`; `-51` added
+   `G1`–`G13`). **Read its module docstring before you grade anything** — including the paragraph
+   `-51` added about the file it used to name wrongly, and the one that replaces a stale count with
+   the command that produces it.
 5. **`docs/preregistration/REG-003` §§3.2, 3.3, 7** (`REG-003-p3-recognition-rate-and-off-diagonal.md`)
    — the four-regime ladder, the registered bias asymmetry, the rounding rule.
 6. **`docs/scouting/SCOUT-001-paper-III-opposing-team.md`** — **WORKED, NOT PENDING.** Only T2
@@ -44,23 +42,25 @@ exactly (`-39`) — `| tail` will mask it.***
    `RESULT-REG-009` (**§3's S = 0.1391 is load-bearing in a test**) · `REG-009` (**READ THE HEADER
    NOTE FIRST**; numbering 6–12 by ruling).
 
-> **`-50` in one line: THE TEE-UP MEASURED IT, WROTE IT DOWN, AND THE ESTATE NEVER GOT THE MEMO.**
-> `-49` spent four tool calls proving that only ONE of `RESULT-REG-002`'s four `E4` mentions is the
-> re-ask, and that a guard on *"every mention"* is red on three lawful sites. It put that in its
-> handoff. **C10's row in `CONSTRAINT-INVENTORY-001` still said `resolution: every mention` and
-> `governed quantity: E4`** — the exact reading `-49` had disproved, sitting in the file every
-> session is told to build from, two commits away from the measurement that killed it. **Seven
-> sessions running, the thing that did not survive checking was the estate's prose about itself**:
-> `-44` the `machine` column, `-45` the `source` column, `-46` the ranking prose, `-47` the harness
-> AND the DO-NOT list, `-48` the tee-up's reading of its document, `-49` the tee-up's *design* for a
-> guard, **`-50` the DELIVERY — a measurement that was right, was written down, and never arrived.**
-> C10 is **BUILT** and grades **FOR**, four probes, every limb separably load-bearing.
+> **`-51` in one line: THE INSTRUMENT PRINTED `[GREEN]` — ITS WORD FOR *NO GUARD EXISTS* — FOR A
+> MUTATION THAT STOPPED THE SUITE FROM COLLECTING AT ALL.**
+> `mutation_control.py` recognised a red by parsing pytest's `FAILED ` lines. `G8` is the first
+> probe in this estate ever aimed at a **module** rather than a document; it broke three imports,
+> pytest emitted `ERROR ` lines and stopped at collection having run no test, nothing matched, and
+> the harness reported the position **unguarded**. **The instrument was anti-monotonic in severity:
+> the more damage a probe did, the cleaner its green.** Eight sessions running, the thing that did
+> not survive checking was the estate's account of itself — `-44` the `machine` column, `-45` the
+> `source` column, `-46` the ranking prose, `-47` the harness's blind axis AND the DO-NOT list,
+> `-48` the tee-up's reading, `-49` the tee-up's guard *design*, `-50` the DELIVERY of a correction,
+> **`-51` the INSTRUMENT'S ABILITY TO READ ITS OWN OUTPUT.** The git axis is probed: **eleven of the
+> thirteen have a probe, nine of those isolating, and the two unreachable ones are measurements with
+> reasons, not gaps.**
 
 ---
 
 ### Transport — darlish, zero-bridge
 Standard bring-up; post the `DARLISH-ENROLL` line to Asana **1217316841710435**, collect, then `dx`.
-**First try, no fallback, `-06` through `-50`.** If it does not come up the first move is `dsh-fire`
+**First try, no fallback, `-06` through `-51`.** If it does not come up the first move is `dsh-fire`
 + `dwait`, not diagnosis. darlish is not on the bridge; never restart the app to fix it.
 `darlish-check` is **not** in the cloud kit — do not chase its 127.
 `roster leave` ONCE at wrap.
@@ -69,31 +69,36 @@ Standard bring-up; post the `DARLISH-ENROLL` line to Asana **1217316841710435**,
 > dx spawns a **fresh remote shell per call and carries no environment**. Inline on `roster join`,
 > `roster claim`, the commit, and every `lessons.py` call — first time, every time.
 > **Exception: `export GATE_ROSTER_WHO=…` DOES work inside a script you `--put` and run with
-> `bash /tmp/x.sh`**, because that is one shell. `-47` through `-50` all ran their `lessons.py`
+> `bash /tmp/x.sh`**, because that is one shell. `-47` through `-51` all ran their `lessons.py`
 > calls that way. The roster brake still prints the **absorbed** row name (`cloud-…`) in its `you:`
 > line; cosmetic, not a mis-identity.
 > ### ⚠ `roster claim` TAKES `--resource`, NOT `--repo`. `record-outcome` TAKES NO `--id`.
 > `roster claim --who <who> --resource <repo> --task "<what>"`; `roster join` takes `--who/--task`.
 > **`lessons.py record-outcome <task-tag> pass` is TWO positional args and nothing else.** One call
 > resolves every leaf you marked with `use --task <tag>`.
+> ### ⚠ NEVER DRIVE `lessons.py use` FROM A LOOP OVER A `grep` OF LEAF FILENAMES. **`-51` DID.**
+> Meaning to corroborate the ONE leaf it had built on, `-51` looped over
+> `ls lessons/global/ | grep -i correction`, matched **six**, and `record-outcome` then promoted
+> **four leaves it had never read**. Corroboration is what lifts a leaf out of quarantine, so an
+> unearned `use` is the trust signal lying. **`use` takes an exact id.** Repaired in
+> `claude-blackbook` `5a8f7224` and banked; the repair shape is in that leaf, and note that `use`
+> auto-pushes on the spot, so it is public before you notice.
 > ### ⚠ `lessons.py` AUTO-COMMITS AND AUTO-PUSHES EACH LEAF. **DO NOT HAND-COMMIT AFTERWARDS.**
-> `-49` hit no brake; `-50` hit none either — every `add`, `use` and `record-outcome` self-committed
-> and self-pushed while a sibling held the repo. **LOOK before you reach for a commit**; a
-> hand-commit of already-committed leaves is a no-op that reads like a problem:
+> `-49`, `-50` and `-51` all hit no brake — every `add`, `use` and `record-outcome` self-committed
+> and self-pushed. **LOOK before you reach for a commit**; a hand-commit of already-committed leaves
+> is a no-op that reads like a problem:
 >
 > ```
 > /tmp/dx 'cd ~/repos/claude-blackbook && git log --oneline origin/main..HEAD | wc -l'   # 0 = done
 > /tmp/dx 'cd ~/repos/claude-blackbook && git status --porcelain'                        # siblings'
 > ```
-> **Siblings' leaves WILL be dirty in that listing and are not yours.** `-50` saw five modified and
-> one untracked belonging to `opus-acmeLedger-23`. Commit by path, never `-A`.
+> **`record-outcome` is the exception**: it stages a `passes:` bump and leaves it UNCOMMITTED, so a
+> `git status` that is dirty in exactly your corroborated leaves is normal — commit those by path.
+> **Siblings' leaves WILL also be dirty and are not yours.** Commit by path, never `-A`.
 > ### ⚠ `lessons.py add` SILENTLY FORKS A TWIN ON AN ID COLLISION — CHECK, THEN CURATE.
-> `-50`'s conjunction-resolution leaf collided with `-49`'s and was banked as
-> `…-same-2.md`, printing one line about it in a wall of banner text. **Doctrine says curate the ONE
-> leaf.** The move: read both, rewrite the ORIGINAL to carry both measurements, name both sessions in
-> `source:`, `git rm` the twin, commit by path. `-50` did this; the merged leaf is
-> `2026-08-15-conjunction-guard-token-token-b-same` and it is worth reading — it is one rule measured
-> from both sides.
+> `-50`'s collided and was banked as `…-same-2.md`. **Doctrine says curate the ONE leaf.** The move:
+> read both, rewrite the ORIGINAL to carry both measurements, name both sessions in `source:`,
+> `git rm` the twin, commit by path. `-51` checked with `ls lessons/*/2026-08-15-*` and forked none.
 > ### ⚠ `git commit -F <msg> <paths>` CANNOT STAGE AN UNTRACKED FILE.
 > Look, add, then commit — the whole move on a shared repo:
 >
@@ -103,12 +108,19 @@ Standard bring-up; post the `DARLISH-ENROLL` line to Asana **1217316841710435**,
 > /tmp/dx 'cd ~/repos/<repo> && GATE_ROSTER_WHO=big-<sess> ROSTER_BRAKE_ACK=<n> \
 >            git commit -F /tmp/msg.txt <all your paths, new AND modified>'
 > ```
-> **`<n>` is the count of YOUR paths, not the staged total.** `-50`'s was 3.
-> ### ⚠ SMALL DIFFS DO NOT NEED A TARBALL ROUND TRIP. `-50` PUSHED FOUR FILES WITH `--put`.
+> **`<n>` is the count of YOUR paths, not the staged total.** `-51`'s was 4.
+> ### ⚠ SMALL DIFFS DO NOT NEED A TARBALL ROUND TRIP. `-51` PUSHED FOUR FILES WITH `--put`.
 > If you edited **N ≤ ~5 files** in the cloud, `cat f | /tmp/dx --put /Users/jasoncbraatz/repos/wealth-tensor/<path>`
 > per file is one call each, prints a **sha256 verified against darwin**, and skips the tar/chown/
 > AppleDouble dance entirely. Then run the suite on darwin and commit there. The tarball stanza
 > below is for **coming down** (cloud needs the tree) — it is not the way back up.
+> ### ⚠ WRITE PYTHON PATCH SCRIPTS TO A FILE. **`-51` LOST A ROUND TRIP TO NESTED-STRING ESCAPING.**
+> A patch script that embeds a block of Python inside a Python string inside a heredoc has three
+> levels of `\n` escaping and the middle one is silent: the block was written with real newlines
+> inside its string literals and `mutation_control.py` came back with an unterminated string. The
+> move is `Write` the block to `/tmp/block.py` as ORDINARY code, then a three-line inserter reads
+> both files and splices. `git checkout <file>` is the free undo; take it early rather than debug
+> the escaping.
 > ## ⚠ ONE TARBALL, AND IT IS THE INBOUND DIRECTION ONLY.
 >
 > ```
@@ -120,7 +132,7 @@ Standard bring-up; post the `DARLISH-ENROLL` line to Asana **1217316841710435**,
 > chown -R root:root /root/wtg && find /root/wtg -name '._*' -delete   # BOTH are required
 > cd /root/wtg && git status --porcelain   # expect EMPTY. Anything here means the tar was wrong.
 > ```
-> `-50` measured **20,020,423 bytes** at `8cdf78e`, `verified against darwin` in words, and
+> `-51` measured **20,183,651 bytes** at `281421c`, `verified against darwin` in words, and
 > `git status` empty on the first try. `.venv` is **650 MB** — exclude it. The two `chown`/`find`
 > lines are not optional: macOS tar writes `._*` AppleDouble files that show as untracked, and
 > darwin's uid makes git refuse the tree with *"dubious ownership"*.
@@ -133,29 +145,30 @@ Standard bring-up; post the `DARLISH-ENROLL` line to Asana **1217316841710435**,
 
 **SUITE COUNTS — COLLECTED = PASSED + SKIPPED, AND THE SKIPS ARE STILL GONE (with `.git`).**
 
-| | at `HEAD` = `142d386` (verified in `-50`, both machines, same hour) |
+| | at `HEAD` = `3f63237` (verified in `-51`, both machines, same hour) |
 |---|---|
-| collected | **1048** (was 1031 at `11b3b10`; `-50` added 17) |
-| cloud, FULL tarball (`PYTHONPATH=/root/wtg/src`) | **1048 passed**, **~234 s**, **zero skips** |
-| darwin (`.venv/bin/python -m pytest`) | **1048 passed**, ~62 s |
-| cloud **without** `.git` | **1034 passed, 14 skipped** — see §4 item 6 |
+| collected | **1055** (was 1048 at `142d386`; `-51` added 7) |
+| cloud, FULL tarball (`PYTHONPATH=/root/wtg/src`) | **1055 passed**, **~170 s**, **zero skips** |
+| darwin (`.venv/bin/python -m pytest`) | **1055 passed**, ~63 s |
+| cloud **without** `.git` | **1034 passed, 14 skipped** — unchanged; the axis is probed, not narrowed |
 
 `scripts/defensive_count.py` **takes a positional `path`** and errors without one.
 `pytest -m tripwire` selects the four-file tripwire class; `-m "not tripwire"` excludes it.
 
-> ### ⚠ PROBE TIMING, RE-MEASURED, AND IT IS SLOWER THAN `-49` RECORDED.
-> A cloud container is **2 CPUs**; the sweep is `--jobs 2`. `-49` measured ~2 min 30 s per probe.
-> **`-50` measured ~3 min 30 s** at the same `--jobs` — the suite grew. **Four probes ≈ 14 min**,
-> and a single foreground `Bash` call is killed at **10 minutes**. Run probes with `nohup … &` into
-> a file and poll it with `sleep N; tail`; **do not poll with a `while pgrep` loop**, which burns
-> the whole ceiling on waiting and dies with exit 143 having printed nothing. `pgrep -f
-> mutation_control` can also read *running* for seconds after the summary block prints — **trust
-> the summary block, not the pgrep.** Budget for running the sweep **twice**; `-49` and `-50` both
-> found a real defect on the second run and both would have shipped it on the first.
+> ### ⚠ PROBE TIMING, RE-MEASURED. A GIT PROBE IS NOT SLOWER, BUT THERE ARE THIRTEEN MORE OF THEM.
+> A cloud container is **2 CPUs**; the sweep is `--jobs 2`. `-50` measured ~3 min 30 s per probe and
+> `-51` measured the same for the `G` family — `{"git": True}` copies `.git` (~20 MB) and costs
+> nothing noticeable. **Thirteen probes at `--jobs 2` is ~25 minutes**, and a single foreground
+> `Bash` call is killed at **10 minutes**: run with `nohup … &` into a file and poll with
+> `sleep N; tail`. **Do not poll with `while pgrep`.** Prefer `--out <json>` and read the JSON —
+> `-51` mis-counted a catcher list by `awk`-ing the log between two slugs, and probes print in
+> **completion order**, not argument order, so log-slicing interleaves. The JSON is per-probe and
+> exact. **Budget for running the sweep twice**; `-49`, `-50` and `-51` all found a real defect on
+> the second run and all three would have shipped it on the first.
 
 ---
 
-## 0 · THE TELL, NOW IN FIFTY-SEVEN SHAPES
+## 0 · THE TELL, NOW IN SIXTY-ONE SHAPES
 Ask the instrument-artefact question of numbers that look GOOD (`-28`), that SETTLE AN ARGUMENT
 (`-29`), of a REGISTERED CONTROL THAT FAILS (`-30`), OF THE DENOMINATOR (`-31`), OF A TIE-BREAK AT A
 NEW CARDINALITY and OF A TELL GONE QUIET (`-32`). `-33`: instruments that agree with themselves; a
@@ -165,114 +178,123 @@ not mutate reports your guard as weak. `-38`: a statistic can be a tautology in 
 clothing. `-39`: a handoff silently outranks a doctrine leaf; **assert the EXACT exit code**.
 `-40`: a STALE NEGATIVE closes a question harder than an open one. `-41`: **a hand-audit that found
 N sites found them through ONE DOOR.** `-42`: a constraint can be CONDITIONAL and its guard must
-assert its ANTECEDENT; the second door is the SECTION HEADING. `-43`: a labelling constraint's
-second door is the WRONG label; **feed the registration its own forbidden claim before you trust the
+assert its ANTECEDENT. `-43`: **feed the registration its own forbidden claim before you trust the
 green**; a non-vacuity test must assert the CONJUNCTION. `-44`: a column that names a guard is a
-COVERAGE CLAIM and nobody ever verifies it; **do not fuse a property of the artefact with a property
-of the estate into one partition.** `-45`: a `source` cell is a PROVENANCE claim; **a quotation is a
-lossy copy and the first things it loses are the ANTECEDENT and the REFERENT.** `-46`: a coverage
-count read off the `machine` column is a claim about the COLUMN; a reproducibility pin is not a
-freeze. `-47`: **a mutation the harness cannot see reports every guard in the unseen part of the
-estate as absent**; a method that is wrong and mostly right is the most dangerous kind; *untracked*
-and *gitignored* are different facts. `-48`: a handoff's CHARACTERISATION of a document is not a
-MEASUREMENT of it; when a constraint's referent decides its scope, the referent is the guard's
-DISCRIMINATOR. `-49`: a handoff's proposed GUARD DESIGN is the next unchecked surface after its
-counts; a text-normalising helper is tuned to its own constraint's discriminator; a self-test whose
-predicate is ABSENCE goes red on the mutant too; for a conjunction guard the UNIT is a design choice.
+COVERAGE CLAIM and nobody ever verifies it. `-45`: a `source` cell is a PROVENANCE claim; **a
+quotation is a lossy copy and the first things it loses are the ANTECEDENT and the REFERENT.**
+`-46`: a coverage count read off the `machine` column is a claim about the COLUMN; a reproducibility
+pin is not a freeze. `-47`: **a mutation the harness cannot see reports every guard in the unseen
+part of the estate as absent**; *untracked* and *gitignored* are different facts. `-48`: a handoff's
+CHARACTERISATION of a document is not a MEASUREMENT of it. `-49`: a handoff's proposed GUARD DESIGN
+is the next unchecked surface after its counts; for a conjunction guard the UNIT is a design choice.
+`-50`: **a correction that lives only in a handoff has not been made**; a homograph count is not a
+homograph audit; any self-test reading the real document is a second catcher unless it skips on a
+dirty base.
 
-**`-50` adds four:**
+**`-51` adds four:**
 
-- **A CORRECTION THAT LIVES ONLY IN A HANDOFF HAS NOT BEEN MADE.** `-49` measured C10's real scope,
-  found *"every mention"* wrong, wrote the right reading into its handoff — and **the inventory row
-  a session is instructed to build from still carried the disproved cell.** The handoff is a message
-  to one session; the inventory is the estate. **A finding is not banked until the ARTEFACT it
-  corrects has been edited, in the same commit, and the handoff entry names the file it changed.**
-  Banked: `2026-08-15-correction-lives-only-handoff-has-not-been-made`.
-- **FOR A CONJUNCTION GUARD, THE UNIT'S WRONG CHOICE FAILS IN BOTH DIRECTIONS, AND THE CHEAP-LOOKING
-  DIRECTION IS THE DANGEROUS ONE.** `-49` moved C44 to CLAUSE resolution to escape a false RED. C10's
-  referent and token are separated by **commas only**, so clause resolution returns **0 on the real
-  document and 0 on `R4`'s mutant** — vacuous, silent, indistinguishable from a clean pass. A false
-  red announces itself; a false green does not. **Run the predicate at BOTH resolutions against the
-  exact probe string before writing a line, and pin the table in a test.** Merged into `-49`'s leaf
-  (see the transport note on twins): `2026-08-15-conjunction-guard-token-token-b-same`.
-- **A HOMOGRAPH COUNT IS NOT A HOMOGRAPH AUDIT.** `-49` sized C10's third surface as *"~88 hits and
-  essentially all of them are `# noqa: E402`"* and prescribed a word boundary. Measured: **90
-  substring, 61 noqa, and all 29 survivors are true `\bE4\b` across SEVEN files** — `E4` is a
-  per-script *local exhibit label*. The remedy removes 61 and leaves 21. **Knowing what the noise IS
-  does not tell you how much of it the fix removes.** Banked:
-  `2026-08-15-homograph-count-not-homograph-audit`.
-- **ANY SELF-TEST THAT READS THE REAL DOCUMENT, LIVING IN A FILE THE SWEEP MUTATES, IS A SECOND
-  CATCHER FOR EVERY PROBE UNLESS IT SKIPS ON A DIRTY BASE.** Not just over-breadth tests — a
-  near-miss pin that re-asserts the main limb, a resolution pin that assumes a clean base, a
-  non-vacuity test whose anchor a *different* probe deletes. All four fired. **Predicate on
-  CONTRIBUTION; skip on a dirty base and name the limb that owns the red; skip rather than assert
-  when a probe removes your anchor.** Banked:
-  `2026-08-15-test-reads-real-document-asserts-property`.
+- **A RED THE HARNESS CANNOT *PARSE* REPORTS THE GUARD AS ABSENT — AND THE LOUDEST RED IS THE ONE IT
+  CANNOT PARSE.** `mutation_control.py` matched `^FAILED (tests/\S+)`. A probe that mutates a
+  **module** breaks an import; pytest reports those files as `ERROR`, and past a handful it stops at
+  collection having run no test at all — so nothing matched and `G8` printed `[GREEN]`, this
+  instrument's word for *no guard exists*. **Anti-monotonic in severity: the more damage, the
+  cleaner the green.** Every earlier probe edited a document or a JSON file, which cannot break an
+  import, so the blindness was there from day one with nothing to reveal it. Fixed (`-rfE`,
+  `CATCHER_RE`, `is_unparsed_red`), pinned in `tests/test_mutation_control_reads_errors.py`, and
+  **`R5a`–`R5e` re-run under the fixed harness all returned `rc=0`, so no recorded grade moved** —
+  a harness repair is a claim about every measurement ever taken with it. Banked:
+  `2026-08-15-mutation-harness-recognises-red-parsing-pytest`.
+- **A CORRECTION APPLIED TO ONE ARTEFACT WHILE A SECOND ASSERTS THE SAME CLAIM HAS A LIVE
+  RESERVOIR — AND THE RESERVOIR IS THE INSTRUMENT.** `-47` diagnosed that C07's row had inherited
+  `test_registrations_precede_their_instruments.py` *"because the names rhymed"* and corrected the
+  inventory — leaving the identical claim in `mutation_control.py`'s docstring, which ORIENT tells
+  every session to read **before grading anything**. `-50` read it and wrote it into its
+  pre-measurement. `-51` ran `R1`: its sole catcher is
+  `test_reg001_sec5_no_amendment_after_result.py`. **Grep the CLAIM, not the file.** Banked:
+  `2026-08-15-correction-applied-one-artefact-while-second`.
+- **A RESIDUAL OF (TOTAL − SPENT) CAN HAVE A RIGHT TOTAL AND A WRONG ATTRIBUTION, AND THE RIGHT
+  TOTAL IS WHAT MAKES THE WRONG ATTRIBUTION INVISIBLE.** `13 = 14 − 1` is correct whichever test
+  the 1 is. `-50` ran the command for the total — the durable repair `-47` asked for — and took the
+  attribution from prose, **in the same bullet**. The subtraction is an instrument; the map is a
+  claim. Banked: `2026-08-15-residual-computed-total-minus-spent-can`.
+- **A PROBE WHOSE MOVE IS *"INTRODUCE AN IDENTIFIER NO INSTRUMENT NAMES"* CANNOT NAME IT, BECAUSE
+  THE HARNESS LIVES INSIDE THE ESTATE IT MUTATES.** `G11`'s first draft wrote its chosen SHA into a
+  docstring under `scripts/`; the guard asks whether the SHA appears anywhere under
+  `scripts/tests/src`; the probe came back **GREEN, entirely correctly**. The probe's documentation
+  of the identifier's absence is what falsified its own precondition. Choose such identifiers at run
+  time. Banked: `2026-08-15-probe-whose-forbidden-move-introduce-identifier`.
 
-**Everything `-33` through `-49` banked is unchanged and still sharp.** `severity.check`'s witness
+**Everything `-33` through `-50` banked is unchanged and still sharp.** `severity.check`'s witness
 must return FALSY. Check `git ls-files <name>` before a whole-file write into a shared directory.
 `patchkit` anchors have **no internal newline**.
 
 ---
 
 ## 1 · WHAT HAPPENED
-**Twenty minutes on the documents before a line of test code, for the third session running, and for
-the third session running that is where it was won.** `-48` found a handoff's *counts* go unchecked;
-`-49` found its *designs* do; `-50` found that even when both are right and written down, **the file
-they correct does not necessarily get edited.**
+**Twenty minutes on the documents before a line of test code, for the fourth session running, and
+for the fourth session running that is where it was won.** The at-bat was `-47`'s residual, open
+since `-47`, deferred three times, and `-50` pre-measured it so `-51` inherited numbers rather than
+a characterisation. **The numbers were right and the map was not**, which `-51` found by doing what
+§3 said and running one probe before writing a design: `R1`, whose catcher list disagreed with the
+sentence that sent it there.
 
-**One new file, 17 tests, green on both machines: `tests/test_reg002_sec5_e4_extension_label.py`.**
+**One new file, 7 tests, green on both machines: `tests/test_mutation_control_reads_errors.py`** —
+the first test in this estate whose subject is **the measuring instrument**, not the manuscript.
 
 | what | how |
 |---|---|
-| **LOST WARRANT** ×2 | `REG-002` §5's clause and `RESULT-REG-002` §3's existence each report *retire me*, not *violation* (`-42`), each anchored on its own **section heading** so a renumber fails loudly |
-| **limb A · the referent scan** | a supersession marker (*substitution* / *re-ask*) **and** a bare `E4` in **one sentence**, where `LABELLED_E4` has not already covered that occurrence. Matched as a unit, so the guard carries no magic character window |
-| **limb A · the three lawful sites, pinned** | §1's table row, §3's heading, §3's opening — all name E4 *as the registered test*. Pinned so a rewrite that pulls a substitution word into one is read by a human, not by a widened regex |
-| **limb B · the presence limb** | an absence guard cannot express *X, not merely not-Y* (`-44`'s C49 shape). Limb A is **green** on a document that simply deletes the labelling sentence; limb B is not |
-| **limb C · the third surface** | the same pair scoped to `wt088_disclosed_ladder.py` **alone**, because `E4` is a per-script local label in six other scripts. The scope is pinned as three numbers, not as a habit |
-| **`own_voice()`, asked one removal at a time** | blockquotes **stripped** (`-33`) · fenced code **stripped** · **inline code DELIBERATELY KEPT** — this document writes `E4` bold and bare, never in backticks, so the removal buys nothing and would blind the guard the day someone writes `` `E4` ``. `-49`'s lesson, applied in the *don't* direction |
-| **resolution, measured both ways** | sentence → 0 real / 1 mutant · comma-clause → 0 / **0**. Pinned in `test_the_resolution_choice_is_pinned` |
-| **non-vacuity ×4** | each probe's **exact** string, each asserting the **CONJUNCTION** (`-43`), each **skipping** rather than piling on when the base is dirty (`-39`) |
-| **over-breadth ×2** | the CONTRIBUTION predicate — `detector(doc + quotation) == detector(doc)` |
+| **the harness fix** | `-rf` → `-rfE`; recogniser hoisted to `CATCHER_RE` and matching `ERROR`; `is_unparsed_red(rc, catchers)` gives *did-not-complete-and-nothing-attributable* its own printed state, which is not green |
+| **both halves pinned separately** | fixing only the recogniser leaves the defect reachable through a collection stop, so the recogniser and the rc rule are two tests, not one |
+| **CONTRIBUTION, not presence** (`-49`/`-50`) | the recogniser test asserts what adding one `ERROR` line does to a FIXED transcript, which a match-everything regex cannot satisfy; a third test denies it the non-`tests/` path, the prose mention and the indented line |
+| **the conjunction asserted** (`-43`) | `is_unparsed_red(2, ["tests/x.py"])` is False — asserting only the rc leg would flag every hard-stopped run whose reds we can in fact read |
+| **the flag pinned** | both halves are correct and useless if `-rf` comes back; the invocation is asserted in its own test |
+| **the fix proved red on the old harness** | the pre-fix regex and rc rule were replayed by hand against the same transcript: contribution assertion **False**, `unparsed(2,[])` **False → GREEN**. `-43`'s rule applied to a repair |
 
-**Grading, on the reds and not on the column (`-44`).** `R4` → 2 catchers (limb A owned; limb B
-genuine — `R4` deletes the label as it mislabels) · `R4b` → **1, limb A alone** · `R4c` → 2 (limb B
-owned; the fusion pin, genuine) · `R4d` → 3 (both limb C tests owned; the third,
-`test_reg009_ladder_inputs.py`'s instrument re-run, is a reproducibility pin and **incidental**,
-`-46`). **Limbs A and B each hold a probe the other is green on — separably load-bearing, measured.**
+**The thirteen, and the grading (on the reds, `-44`).** `G1` → 1 · `G2` → 3, all in the guard's own
+family · `G3` → 3 (1 owned, 2 genuine document-name catchers) · `G4` `G5` `G6` → 1 each, three limbs
+three clean owns · `G7` → 1 · `G8` → 3 (owned + two genuine `test_tag_resolution.py` siblings)
+· `G9` → 2 · `G11` → 1 · `G13` → 1. **Eleven of thirteen probed, nine isolating.**
 
-**`scripts/mutation_control.py`: +`R4b`/`R4c`/`R4d`, 45 → 48.**
+**The two that are not, recorded as measurements rather than gaps** (`-46`): `G10` establishes that
+`test_both_documents_are_in_history` is **unreachable from the working tree** — `git rev-list HEAD --
+<path>` matches commits that touched the path *in history*, so after the rename two commits still
+resolve and the suite stays `rc=0`; **its docstring claimed a rename would empty it and that is
+measurably false**, repaired in the same commit. `G13` establishes that
+`test_the_pinned_digest_is_the_version_REG_012_saw` reads the blob at `ba59370`, so the §4.7 freeze
+is owned by `test_section_47_is_byte_identical_to_the_pin` — a different, non-git test — and the
+git-gated one is a self-consistency check on immutable history. `G12` is kept and **labelled
+non-isolating in its own `--list` description**: it catches its target inside a list of **196**.
 
-**Inventory edits:** C10 `none` → **`FOR`** · **its `resolution` cell `every mention` → `sentence`
-and its `governed quantity` cell `E4` → *the α = 0.35 substitution, not the token*** — the correction
-`-49` measured and nobody applied · §2a `FOR` 13→14, `none` 22→21 · §3's cross-table 16/27 →
-**17/26** with the eleven false-greens **recomputed and unchanged** · §3.2 item 4 struck through with
-what it was silent about named · §2c's *"nine tests · 990/999"* corrected to **14 across six files**
-with the stale-count tell recorded rather than the sentence softened · **new §2f** carries all of it.
+**BUG SPRAY, on myself, twice.** (1) `G8`'s first draft renamed the `TIER_TAGS` block, which is what
+exposed the harness defect — but once the harness could see it, the probe was still red *for the
+wrong reason*: collection died before the digest guard ran. Narrowed to editing one registered tag
+string, and it now catches its own guard. **A mutation big enough to stop the suite cannot tell you
+which guard saw it.** (2) `G11`'s self-referential literal, above. Both found on the second sweep run.
 
-**BUG SPRAY / the honest correction, on myself:** the first draft shipped **four** self-tests with
-ABSENCE predicates — `-49`'s banked defect, one session old, read and then reproduced — and the
-sweep put them in every catcher list (`R4` had four catchers where it has two, `R4b` four where it
-has one). Found in the measurement, fixed before the grade, banked as the fourth tell above.
-**Knowing the lesson was not enough; running the sweep twice was.**
+**BUG SPRAY, third, and it was not in this repo:** the `lessons.py use` loop that corroborated four
+leaves this session never read. Reverted and pushed (`claude-blackbook` `5a8f7224`), banked, and
+written into the transport block above.
 
-**BUG SPRAY, second:** `lessons.py` forked a twin on an id collision. Merged into the original leaf,
-twin `git rm`'d, both sessions named in `source:` — see the transport note.
+**Inventory edits:** **new §2g** carries the harness finding, the attribution correction, the
+thirteen-row table, the two unreachable invariants and the `R5a`–`R5e` re-run · §2c's C07 sentence
+now **names the right machine** and points at §2g.
+**Instrument edits:** `mutation_control.py`'s docstring no longer names the wrong file, and says why
+it mattered · `test_reg001_sec5_no_amendment_after_result.py`'s docstring corrected.
 
 | | |
 |---|---|
 | **G-COACH-3** | **3 → 3 (+0)** — the manuscript was not touched this session |
-| **G-COACH-1** | held — `-49`'s uncorrected inventory cells were fixed **in-session**, not filed |
-| **G-COACH-5** | held — the strength named is **the two-minute-per-probe sweep, run TWICE**. `-49` named it and spent it; `-50` spent it again and it paid again, catching four spurious co-catchers that review had passed. **A measurement cheap enough to repeat is a different instrument from the same measurement taken once — and this is now the second consecutive session where the second run, not the first, produced the finding.** |
-| suite | **1048 collected** · darwin **1048 passed** (~62 s) · cloud **1048 passed, zero skips** (~234 s) |
-| new tests | 1 file, 17 tests · 3 new probes (45 → 48) |
-| lessons | **three** banked global + **one merged** into `-49`'s leaf · **five** used and corroborated `record-outcome wealthTensor-50 pass` — four promoted quarantine → active, one at pass#3 |
+| **G-COACH-1** | held — the wrong-file claim and the wrong docstring were fixed **in-session**, in the same commit, and this entry names the files |
+| **G-COACH-5** | held — the strength named is **the sweep run TWICE**, third consecutive session where the second run produced the finding. `-51` adds a second: **run ONE probe before writing a design.** `R1` took four minutes and disproved the sentence the whole at-bat was framed by |
+| suite | **1055 collected** · darwin **1055 passed** (~63 s) · cloud **1055 passed, zero skips** (~170 s) · without `.git` **1034 / 14 skipped**, unchanged |
+| new tests | 1 file, 7 tests · **13 new probes (48 → 61)** |
+| lessons | **five** banked global + **one** project-scoped · corroborated `record-outcome wealthTensor-51 pass`, then **un-corroborated four that were stamped in error** |
 | stopping rules | **honoured — no lag gradient computed on any subsample; the research ledger on paper III is still empty** |
 
 ---
 
 ## 2 · RULINGS — DO NOT REOPEN
-- All of `-31`'s through `-49`'s rulings stand **verbatim**: no third disclosure instrument; phrase
+- All of `-31`'s through `-50`'s rulings stand **verbatim**: no third disclosure instrument; phrase
   set frozen at 38; §4.4 settled; **`SOURCE-001` IS FINISHED**; **THE ARM IS δ**; **§4.8 IS NOT THE
   COINCIDENCE ARGUMENT; §4.7 IS**; **EVERY P0 AND REG-009 NUMBER IS THE *DISCLOSED* δ**; **REG-009 IS
   CLOSED, numbering 6–12**; **§4's COVERAGE SILENCE AND §7.5's TWO ERRATA STAY RECORDED, NOT
@@ -295,66 +317,55 @@ twin `git rm`'d, both sessions named in `source:` — see the transport note.
   (A)**; **AN INCIDENTAL RED IS NOT COVERAGE**; **DO NOT PIN THE 98 AS A STRING**; **`.git` IS
   OPT-IN IN `mutation_control.py` AND A COMMIT-ORDER PROBE MUST SET IT**; **C07'S GUARD IS SCOPED TO
   REG-001 ON PURPOSE**; **§3.2's SEVEN POSITIONS ARE MEASURED AND THE RANKING STANDS**; **C26's
-  DISCRIMINATOR IS *IS THIS A STATISTIC*; ITS TWO BARE SITES ARE LAWFUL AND PINNED; LIMB B IS
-  BOUNDED, NOT CLEAN**; **C44's DISCRIMINATOR IS THE REFERENT AND ITS RESOLUTION IS THE CLAUSE**;
-  **C46's AND C41's DISCRIMINATOR IS THE POLARITY**; **AN OVER-BREADTH OR NON-VACUITY SELF-TEST IS
-  PREDICATED ON CONTRIBUTION, NOT ABSENCE**.
-- **NEW · C10 GOVERNS THE SUBSTITUTION, NOT THE TOKEN, AND ITS RESOLUTION IS THE SENTENCE.**
-  `RESULT-REG-002` names `E4` four times and **three of them are lawful** — §1's table row, §3's
-  heading, §3's opening sentence all name E4 *as the registered test*, which is what it is. **If you
-  think the guard is under-broad, read §2f before you touch it**, and do not "fix" it by moving to
-  clause resolution, which makes it vacuous in both directions.
-- **NEW · C10's THIRD SURFACE IS `wt088_disclosed_ladder.py` AND NOTHING ELSE.** `E4` is a per-script
-  local exhibit label in six other scripts. The manuscript is out of scope and that is a
-  **measurement** (zero occurrences), not a reading — `test_the_manuscript_is_out_of_scope_as_a_measurement`
-  will tell you the day the premise changes.
-- **NEW · A CORRECTION IS NOT MADE UNTIL THE ARTEFACT IS EDITED.** Writing a finding into a handoff
-  is telling one session. Editing the inventory row is telling the estate. Do both, in one commit,
-  and name the file you changed.
+  DISCRIMINATOR IS *IS THIS A STATISTIC***; **C44's DISCRIMINATOR IS THE REFERENT AND ITS RESOLUTION
+  IS THE CLAUSE**; **C46's AND C41's DISCRIMINATOR IS THE POLARITY**; **AN OVER-BREADTH OR
+  NON-VACUITY SELF-TEST IS PREDICATED ON CONTRIBUTION, NOT ABSENCE**; **C10 GOVERNS THE SUBSTITUTION,
+  NOT THE TOKEN, AND ITS RESOLUTION IS THE SENTENCE**; **C10's THIRD SURFACE IS `wt088` AND NOTHING
+  ELSE**; **A CORRECTION IS NOT MADE UNTIL THE ARTEFACT IS EDITED**.
+- **NEW · C07's MACHINE IS `test_reg001_sec5_no_amendment_after_result.py`, MEASURED FROM `R1`'s
+  CATCHER LIST.** `test_registrations_precede_their_instruments.py` is a guard on a *different*
+  invariant — commit-order at INTRODUCTION — and its own docstring says it cannot see C07's move.
+  Three artefacts said otherwise at some point; two are corrected and the third (`-50`'s handoff) is
+  superseded by this file. **If a sentence tells you which guard covers a constraint, run its
+  probe.**
+- **NEW · A GREEN FROM `mutation_control.py` IS ONLY A MEASUREMENT IF THE RUN COMPLETED.** `rc=0`
+  with no catchers is the real thing; anything else with no catchers now prints `[UNPARSED RED]` and
+  **must not be graded**. Do not re-introduce `-rf`; the test will tell you.
+- **NEW · G10 AND G13 ARE ESTABLISHING PROBES AND ARE EXPECTED GREEN.** Their green IS the
+  measurement — do not "fix" them into reds, and do not count their invariants as unguarded. §2g.
+- **NEW · G12 IS NON-ISOLATING (196 CATCHERS) AND ITS RED IS NOT COVERAGE.** Kept deliberately;
+  the reason is in its `--list` description and in §2g.
 
 ---
 
-## 3 · THE AT-BAT for `-51` — **§4 item 6, THE GIT-AXIS SWEEP. IT IS ITS TURN AND THIS IS THE
-OUT-LOUD SAYING-SO `-49` ASKED FOR.**
+## 3 · THE AT-BAT for `-52` — **§3.2 ITEM 5, THE FIVE-CONSTRAINT FORBIDDEN-CLAIM FAMILY.**
 
-`-49` wrote: *"If `-50` takes the ranking again, `-51` should take this — and somebody should say so
-out loud rather than re-deferring it a fourth time."* **`-50` took the ranking. So this is the
-at-bat, and it is not negotiable against a fifth deferral.** It has been open since `-47` and it is
-the **only place the estate has proof its instrument was blind.**
+`-51` closed the git axis, so the standing reason for holding item 5 back — *"cheap and
+well-understood, which is exactly why it should not displace the axis nobody can see"* — is spent.
+It is now the top of cell (b) on a measurement, and `-51` re-measured its warrant on the way past:
+**`R5a`–`R5e` were re-run under the repaired harness and all five returned `rc = 0` with zero
+catchers.** Genuine greens, not parse failures. Five constraints — C16, C20, C23, C25, C30 — each
+with a probe already written and already red-worthy, and **one claim-scanner shape already built
+twice, at C19 and C24.**
 
-**AND `-50` PRE-MEASURED IT, SO YOU DO NOT INHERIT ANOTHER UNCHECKED CHARACTERISATION.** These are
-measurements at `142d386`, not claims:
+**AND `-51` DID NOT PRE-MEASURE THE DESIGN, DELIBERATELY.** `-50` pre-measured this at-bat's
+numbers and its file map, the numbers were right and the map was wrong, and the right numbers are
+what hid it. So the honest tee-up is this: **the five probes are green and the greens are real; that
+is all `-51` knows.** Whether the five constraints want ONE scanner or five, whether their
+discriminators are the same (`-49`'s C44/C46/C41 family was one file for three constraints, and
+`-48`'s C26 was two limbs for one), and whether any of the five is a `TRIPWIRE` rather than a
+`FOR` — **all unmeasured. Read the five rows in §1 and the five probe bodies in
+`mutation_control.py` before you decide the shape.**
 
-- **The residual is 13 tests across 6 files, not 8.** `-47`'s *"nine tests"* was true when written
-  and rotted; the suite grew. Measured: the full suite **without `.git`** is **1034 passed, 14
-  skipped**. `R1` spent one of the fourteen (`test_registrations_precede_their_instruments.py`), so
-  **thirteen git-gated invariants have never had a mutation run against them.** The count is now a
-  command, not a number — it is in `mutation_control.py`'s docstring, and §2c records the tell.
-- **The six files, with their git-gated test counts:**
-  `test_registrations_precede_their_instruments.py` (4, one probed by `R1`) ·
-  `test_backups_are_ignored.py` (3) · `test_pin001_code_state.py` (3) ·
-  `test_reg001_sec5_no_amendment_after_result.py` (2) ·
-  `test_reg012_sec6_sec47_frozen.py` (1) · `test_manuscript_shas_are_instrumented.py` (1).
-- **`{"git": True}` appears on exactly ONE probe today** (`R1`). Every probe you add here needs it or
-  it measures nothing — that is `-47`'s ruling and it is the whole reason this axis is dark.
+**DO THE TWENTY MINUTES, AND RUN ONE THING BEFORE YOU DESIGN.** Four sessions running it has been
+where the session was won, and `-51`'s was won by a single `--only R1` that cost four minutes and
+disproved the sentence its whole at-bat was framed by. Read `CONSTRAINT-INVENTORY-001` **§2g** first,
+then `-43`'s ruling (feed the registration its own forbidden claim before you trust the green) —
+it is the governing lesson for a forbidden-claim family, and C19/C24 are the worked examples.
 
-The shape: **a probe per invariant, not per file.** Each of the thirteen asserts something about
-history — a pin, a commit order, an ignore rule, a SHA resolving — so each needs a mutation that is
-a *history* move (amend, reorder, un-ignore, retarget a SHA), and `_amend_after_result` /
-`_git` in `mutation_control.py` are the helpers already written for exactly that. Grade on the reds
-(`-44`). Expect some of the thirteen to be **reproducibility pins rather than freezes** (`-46`) —
-say which, in the row, rather than counting them as coverage.
-
-**AND DO THE TWENTY MINUTES ANYWAY.** Everything above is measured; the *design* is not. `-48` proved
-a handoff's counts go unchecked, `-49` proved its guard designs do, `-50` proved its corrections can
-fail to arrive. **Run the predicate — here, the probe — against the real thing before you write the
-first assertion.**
-
-**IF YOU TAKE SOMETHING ELSE, SAY WHY IN ONE LINE.** The strongest alternative is **§3.2 item 5, the
-five-constraint forbidden-claim family** (`R5a`–`R5e`, all green, one claim-scanner shape already
-built twice at C19 and C24) — cheap and well-understood, which is exactly why it should not be
-allowed to displace the axis nobody can see. The other is **C37's tripwire** (`REG-009` §12's
-*"never by narration"*, `§3.3`, about an hour).
+**IF YOU TAKE SOMETHING ELSE, SAY WHY IN ONE LINE.** The alternatives are **C45's two assertions**
+and **the reportable-at-all presence guards** (§3.2's other two), and **C37's tripwire**
+(`REG-009` §12's *"never by narration"*, `§3.3`, about an hour).
 
 ---
 
@@ -369,11 +380,13 @@ allowed to displace the axis nobody can see. The other is **C37's tripwire** (`R
    the record of a run and editing the artefact edits the witness** — the `-37` precedent says the
    repair shape is a dated addendum. C12's guard is unaffected either way.
 4. **Cell (b), ranked in `CONSTRAINT-INVENTORY-001` §3.2 — THREE entries left, still MEASURED
-   (§2c).** The five-constraint forbidden-claim family · C45's two assertions · the
-   reportable-at-all presence guards.
+   (§2c).** **The five-constraint forbidden-claim family is now §3, the at-bat.** The other two:
+   C45's two assertions · the reportable-at-all presence guards.
 5. **C37's tripwire** — `REG-009` §12's *"never by narration"*. §3.3 names the adjacent check.
-6. **`-47`'s residual — NOW §3, THE AT-BAT. Do not re-defer it.** 13 unprobed git-gated invariants
-   across 6 files; numbers and file list in §3.
+6. ~~**`-47`'s residual, the git axis**~~ — **DONE (`-51`)**, `G1`–`G13`, §2g. What remains is not a
+   gap but two recorded unreachables and one non-isolating probe; **do not re-open them as work.**
+   The live follow-on is smaller and real: **no probe in this estate has ever mutated `src/`
+   except `G7`/`G8`.** The module surface is where the harness was blind, and it is thin.
 7. **§7's ledger dilutes its own two load-bearing rows — Jason's call, and it is TRIPWIRED, not
    carded.** `test_tripwire_c36_sec7_ledger_shape.py` will ask him the moment the shape moves. **Do
    not card it and do not ask him pre-emptively.**
@@ -383,18 +396,17 @@ allowed to displace the axis nobody can see. The other is **C37's tripwire** (`R
    `1217465036940491`.
 10. Dossier era, re-served by nobody: `REVIEW-004` **C6** (ASC 410) and **C10** (IAS 36's reversal
     asymmetry, a free cross-regime falsification test). *(That `C10` is REVIEW-004's, not the
-    inventory's — different numbering space, and the collision has now bitten three times, including
-    once in this session's own search results. Say which C10 you mean, always.)*
+    inventory's — different numbering space, and the collision has now bitten three times. Say which
+    C10 you mean, always.)*
 11. Phrase-set passenger: 30.4 % match only `events or circumstances`; 7.9 % safe-harbour. Outranked.
 12. `AcquiredFiniteLivedIntangibleAssetsWeightedAverageUsefulLife` is 4,304 rows P0 excluded.
 13. Not mine, not touched: handoff-lint warns on `HANDOFF-acmeLedger-07.md:22`, `-09.md:36,42`, and
-    `-12.md` / `-13.md` carry items with ZERO `verify:` lines. **Leave them alone** — `acmeLedger-23`
-    was on the roster this session.
+    `-12.md` / `-13.md` carry items with ZERO `verify:` lines. **Leave them alone.**
 
 ---
 
 ## 5 · DO NOT
-* Everything `-31`→`-49` forbade still stands verbatim — R5, the two sensitivities,
+* Everything `-31`→`-50` forbade still stands verbatim — R5, the two sensitivities,
   `selected_lives`, §4.4's `0.3000`, T4's `31.7%`, the δ arm, TERM-001/002, the dossier era, §9's
   FOUR list items, `wt107` IS NOT EDITED, cite the test not the backup, **"THE REGISTERED ADVERSE
   CUT" DOES NOT RETURN**, **§4.7 IS PINNED AT `ba59370`**, **DO NOT "SIMPLIFY" A TRIPWIRE INTO A
@@ -405,21 +417,23 @@ allowed to displace the axis nobody can see. The other is **C37's tripwire** (`R
   MACHINE**, **DO NOT PIN THE 98 AS A STRING**, **DO NOT WIDEN C26 LIMB A TO EVERY OCCURRENCE**,
   **DO NOT COPY AN `own_voice()` HELPER WITHOUT ASKING WHICH REMOVALS YOUR DISCRIMINATOR NEEDS TO
   SURVIVE**, **DO NOT WRITE AN OVER-BREADTH OR NON-VACUITY SELF-TEST WITH AN ABSENCE PREDICATE**,
-  **DO NOT DELETE `RESULT-REG-010`'s REFUSAL SENTENCES**. §2.
-* **NEW · DO NOT WIDEN C10 TO EVERY OCCURRENCE OF `E4`.** Three of the four are lawful and the
-  widened guard is red on a compliant document. §2f, and the near-miss pin will tell you.
-* **NEW · DO NOT MOVE C10's DETECTOR TO CLAUSE RESOLUTION.** It goes vacuous in both directions and
-  nothing turns red to say so. The pin test carries the measured table; read it before you edit the
-  splitter.
-* **NEW · DO NOT SCAN `scripts/` REPO-WIDE FOR `E4`.** A word boundary leaves 21 false positives
-  from six unrelated scripts. Scope to `wt088`.
-* **NEW · DO NOT QUOTE THE GIT-SKIP COUNT FROM PROSE — RUN THE COMMAND.** It was nine, it is
-  fourteen, and it will move again. The command is in `mutation_control.py`'s docstring.
-* **NEW · DO NOT LEAVE A FINDING IN A HANDOFF WITHOUT EDITING THE ARTEFACT IT CORRECTS.** That is
-  this session's whole finding, and it will happen again the moment somebody is in a hurry.
-* **NEW · DO NOT TRUST A HANDOFF'S DESIGN — INCLUDING THIS ONE'S §3.** Every number in §1 and every
-  git-axis measurement in §3 was measured this session at `142d386`. The *shape* proposed for the
-  git sweep is a claim about probes nobody has run. **Run one first.**
+  **DO NOT DELETE `RESULT-REG-010`'s REFUSAL SENTENCES**, **DO NOT WIDEN C10 TO EVERY OCCURRENCE OF
+  `E4`**, **DO NOT MOVE C10's DETECTOR TO CLAUSE RESOLUTION**, **DO NOT SCAN `scripts/` REPO-WIDE
+  FOR `E4`**, **DO NOT QUOTE THE GIT-SKIP COUNT FROM PROSE — RUN THE COMMAND**, **DO NOT LEAVE A
+  FINDING IN A HANDOFF WITHOUT EDITING THE ARTEFACT IT CORRECTS**. §2.
+* **NEW · DO NOT REVERT `mutation_control.py` TO `-rf`, AND DO NOT READ A `[GREEN]` WITHOUT ITS
+  `rc`.** A green is a claim that the estate is unguarded at that position. `rc=0` earns it;
+  anything else with no catchers is `[UNPARSED RED]` and earns nothing.
+* **NEW · DO NOT WRITE A PROBE'S TARGET IDENTIFIER AS A LITERAL IN THE PROBE.** If the constraint is
+  about an identifier appearing nowhere under `scripts/tests/src`, the probe's own source is inside
+  that search space. Choose it at run time. `G11`.
+* **NEW · DO NOT MAKE A PROBE BIGGER TO MAKE IT REDDER.** `G8`'s first draft stopped collection and
+  its catcher list was two import errors, with the guard it was aimed at never having run. **A
+  mutation big enough to stop the suite cannot tell you which guard saw it.**
+* **NEW · DO NOT SLICE THE SWEEP LOG BY SLUG.** Probes print in **completion** order, not argument
+  order. Use `--out <json>`.
+* **NEW · DO NOT DRIVE `lessons.py use` FROM A `grep` OVER LEAF FILENAMES.** Exact ids only. An
+  unearned corroboration is the trust signal lying, and it auto-pushes before you notice.
 * Do not `git add -A` on darwin. Do not run bulk SEC work on darwin — cloud.
 * Do not poll a background probe run with `while pgrep` — the 10-minute tool ceiling eats it.
 
@@ -429,17 +443,14 @@ allowed to displace the axis nobody can see. The other is **C37's tripwire** (`R
 Emit one line — `Oriented: <state> · at-bat: <X> · opening with <first action>.` — then start
 building. Don't wait for a go. Do not open by asking Jason anything.
 
-Coffee status: ☕ **SIXTEEN SESSIONS RUNNING, AND THE FIRST TWENTY MINUTES DECIDED THE WHOLE SESSION
-AGAIN** — `-35` truth, `-36` population, `-37` count, `-38` premise-and-instrument, `-39` severity,
-`-40` the promise the document made about itself, `-41` the resolution it was written at, `-42`
-whether it was in force, `-43` who the promise was made about, `-44` whether the thing guarding it
-can see it, `-45` whether the address on it was right, `-46` whether the sentence that sent you here
-was ever checked, `-47` whether the instrument that checks it can see the whole board, `-48` whether
-the sentence that sent you here had ever opened the document, `-49` whether the machine that sentence
-told you to build had ever been run, **`-50` WHETHER THE CORRECTION SOMEBODY ALREADY MADE EVER
-REACHED THE FILE IT WAS ABOUT.** `-49`'s came from running one regex by hand. `-50`'s came from
-reading C10's inventory row and its handoff paragraph side by side and noticing they disagreed —
-**one minute, and the row had been wrong since before the measurement that disproved it was taken.**
-The cheapest check in the estate is still the one nobody runs. It was the fact, then the plan, and
-now it is **THE DELIVERY. A finding you wrote down and did not install is a finding the estate does
-not have.**
+Coffee status: ☕ **SEVENTEEN SESSIONS RUNNING, AND THE FIRST TWENTY MINUTES DECIDED THE WHOLE
+SESSION AGAIN** — `-44` whether the thing guarding it can see it, `-45` whether the address on it
+was right, `-46` whether the sentence that sent you here was ever checked, `-47` whether the
+instrument can see the whole board, `-48` whether the sentence that sent you here had ever opened
+the document, `-49` whether the machine that sentence told you to build had ever been run, `-50`
+whether the correction somebody already made ever reached the file it was about, **`-51` WHETHER THE
+INSTRUMENT CAN READ ITS OWN OUTPUT.** It went: run `R1`, read four lines of catcher list, notice
+they name a different file than the sentence that sent you. Four minutes. Then thirteen probes, and
+the thirteenth-from-last came back GREEN on a mutation that had stopped the suite dead — and green,
+in that instrument's own words, means *no guard exists*. **The estate had been asking its instrument
+what it could not see. It had never asked what it could not READ.**
