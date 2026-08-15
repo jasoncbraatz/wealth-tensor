@@ -309,6 +309,24 @@ RANKED_PROBES: list[tuple] = [
                            "and here as an **extension of** REG-002 E4 rather than as the"
                            " registered test.",
                            "and here as REG-002 E4, the registered test.")),
+    #     `-50`: three more doors. R4 is the WRONG label at the labelling sentence; R4b is
+    #     the wrong label at the OTHER site (the re-ask sentence itself), R4c is the MISSING
+    #     label, and R4d is the third surface. R4c matters most: limb A is GREEN on it, so
+    #     without a probe of its own the presence limb would be a claim (`-47`).
+    ("R4b", "C10: the re-ask sentence itself names E4 bare, one site upstream of R4",
+     lambda r: _prose_edit(r, [f"{DOCS}/RESULT-REG-002.md"],
+                           "rises in 99.7%** of the rectangle.",
+                           "rises in 99.7%** of the rectangle, which E4 reports.")),
+    ("R4c", "C10: the sentence labelling the substitution an extension is deleted outright",
+     lambda r: _prose_edit(r, [f"{DOCS}/RESULT-REG-002.md"],
+                           " That substitution is labelled in the script, in the manuscript\n"
+                           "and here as an **extension of** REG-002 E4 rather than as the"
+                           " registered test.",
+                           "")),
+    ("R4d", "C10: the third surface — wt088 stops labelling its own substitution",
+     lambda r: _prose_edit(r, ["scripts/wt088_disclosed_ladder.py"],
+                           'That substitution is an EXTENSION of REG-002 E4,")',
+                           'That substitution is REG-002 E4,")')),
 
     # 5 · C16 / C20 / C23 / C25 / C30 · the forbidden-claim family. Each registration names
     #     its own forbidden claim in its own words; each probe asserts exactly that claim in

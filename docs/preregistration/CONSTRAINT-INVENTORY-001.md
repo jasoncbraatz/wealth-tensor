@@ -57,7 +57,7 @@ INST = governs an instrument or its inputs. **Machine:** the test that would go 
 | C07 | `REG-001` §5 | *"this registration may not be amended after the first result commit"* | REG-001 | document | RES | yes | `RESULT-REG-001` returns NO VERDICT and the file is unamended — **compliant** | MECH | **FOR** · `test_reg001_sec5_no_amendment_after_result.py` (`-47`) — ancestry, not date; scope asserted to be REG-001 alone; graded on probe `R1`, which was GREEN before it and is RED after (see §2c). Still incidentally adjacent: `test_registrations_precede_their_instruments.py`, whose docstring says it cannot see this |
 | C08 | `REG-001` §7 | a pass licenses exactly one sentence; it does **not** license *"the price-layer result is novel — which it is not, and Wicksteed gets that credit in the text"* | novelty of the price-layer result | document | Paper I | **NO** | **the antecedent never occurred** — `RESULT-REG-001` is NO VERDICT, not a pass. Wicksteed's credit is discharged in `LEDGER` WT-066 and `ADR-001`; paper III does not carry the claim | n/a | none needed |
 | C09 | `REG-002` **E2** | if δ₃\* < 0.010, *"§4.4 may not report it as the section's headline"* | τ = −1 | section | MS | **YES — δ₃\* < 0.010** | δ₃\* = 0.0079 < 0.010 → **the constraint FIRES**; §4.4 is titled *"The design has a validity region, and the disclosed numbers fall outside it"* and the knife-edge is one bolded paragraph lead inside it, not the section's headline — **compliant, and this is the closest call in the table**. *Cited as E1 until `-45`; see §2* | PROXY | **TRIPWIRE** · `test_tripwire_c09_sec44_headline.py` — antecedents only, **not coverage** |
-| C10 | `REG-002` §5 | E4's re-ask is *"labelled an EXTENSION of E4 throughout, never as E4"* | E4 | every mention | RES | yes | the manuscript names no `E`-labels at all (0 occurrences); the constraint binds `RESULT-REG-002` only — **out of manuscript scope** | MECH | none |
+| C10 | `REG-002` §5 | E4's re-ask is *"labelled an EXTENSION of E4 throughout, never as E4"* | the α = 0.35 **substitution**, not the token `E4` | sentence | RES | yes | **compliant.** `RESULT-REG-002` names `E4` four times and **only one is the re-ask** (§3's closing sentence); §1's table row, §3's heading and §3's opening name E4 *as the registered test*, which is what it is. The manuscript names `E4` **zero** times — **out of manuscript scope**, now a measurement rather than a reading. The **script** surface is real and is `wt088` alone — see §2f | MECH | **FOR** · `test_reg002_sec5_e4_extension_label.py` (`-50`) — a REFERENT scan at SENTENCE resolution (limb A), a presence limb for the label (limb B), and the same pair scoped to `wt088` (limb C). Graded on the catcher lists, not the pointers (`-44`): `R4` → 2 (limb A owned; limb B genuine — `R4` deletes the label as it mislabels) · `R4b` → **1, limb A alone** · `R4c` → 2 (limb B owned; the fusion pin, genuine — the deletion removes one of §3's two substitution sentences) · `R4d` → 3 (both limb C tests owned; its third, `test_reg009_ladder_inputs.py`'s instrument re-run, is a reproducibility pin and **incidental**, `-46`). Limbs A and B each hold a probe the other is green on, so both are separably load-bearing |
 | C11 | `REG-003` §2 | a differently-composed rebuilt sample *"may not be"* silently substituted | the sample | document | RES | yes | §5.4 reports 695 vs 688 and cites the registered reconciliation rule — **compliant** | PROXY | **ADJACENT** · `test_pre002_data_is_pinned.py` (adjacent) |
 | C12 | **`REG-003` §3.3** | **if α̂ lands in R1/R2 the finding *"must be reported with that sentence attached, in the same paragraph, not in a limitations section"*** | α̂ | **paragraph** | MS | **YES — R1 in every cut** | **FOUR LIVE VIOLATIONS at `1e474b4`**: §4.4, §5.4's bolded lead, §7's ledger row, §9 limitation 4. Repaired by `wt108` | MECH | **FOR** · **`test_reg003_sec33_asymmetry.py`** (new) |
 | C13 | `REG-003` §3.3 | if `d = 0` in any sensitivity cell, *"that cell is reported as UNDEFINED and never as a number"* | α̂ per cell | cell | MS+RES | **NO** | `d` is 228–613 in every published cell; the antecedent never fired — **not live** | n/a | none needed |
@@ -243,7 +243,7 @@ probe for each, so this is a number rather than a sentence:
 | 1 · C07 amended-after-result | `R1` | **0/1** | — |
 | 2 · C26 unqualified *impairment* · the count beside each ratio | `R2a` `R2b` | 0/2 | — |
 | 3 · C44 / C46 / C41, the **supersession** limb `-46` left unmeasured | `R3a` `R3b` `R3c` | 0/3 | — · *re-measured 0/3 at `469012b` by `-49`, then built; §2e* |
-| 4 · C10 the re-ask labelled `E4` | `R4` | 0/1 | — |
+| 4 · C10 the re-ask labelled `E4` | `R4` | 0/1 | — · *re-measured 0/1 at `11b3b10` by `-50`, then built with three more doors `R4b`/`R4c`/`R4d`; §2f* |
 | 5 · C16 / C20 / C23 / C25 / C30 forbidden claims | `R5a`–`R5e` | 0/5 | — |
 | 6 · C45 `R_MIN` promoted · the band rule re-chosen | `R6a` `R6b` | **1/2** | `test_reg012_band_edge_phase.py::test_the_population_is_the_cited_tables_own` |
 | 7 · C01–C04, C06 reportable-at-all | `R7a`–`R7e` | 0/5 | — |
@@ -382,6 +382,88 @@ predicate is ABSENCE turns one defect into two red lines and buries the one that
 The predicate is now CONTRIBUTION — *the quotation adds no hit* — which is true on a violating
 document and on a clean one, and it removed a spurious co-catcher from three probe rows.
 
+## 2f · C10 built — and the correction that lived in a handoff and never reached the estate (`-50`)
+
+**C10 is `FOR`.** `tests/test_reg002_sec5_e4_extension_label.py`, three limbs, four probes,
+`R4` `R4b` `R4c` `R4d` green before and red after. The build is unremarkable. Three things
+found on the way to it are not.
+
+### The estate kept the wrong cell after the handoff recorded the right reading
+
+`-49` spent four tool calls pre-measuring C10 so `-50` would not inherit an unchecked
+characterisation, and its finding was exact: **`RESULT-REG-002` names `E4` four times and
+only one of them is the re-ask.** A guard requiring every occurrence to carry the label is
+red on a compliant document at three sites.
+
+That correction went into the handoff. **It never went into this file.** C10's `resolution`
+cell still read *"every mention"* — the precise reading `-49` had disproved — and its
+`governed quantity` cell still read *"E4"*, the token, rather than the substitution. A
+session that built C10 from its own row, as every session is told to, would have built the
+guard that is red on three lawful sites, and `-49`'s measurement would have been sitting in
+a handoff two commits away saying so.
+
+> **A CORRECTION THAT LIVES ONLY IN A HANDOFF HAS NOT BEEN MADE.** The handoff is a message
+> to one session; the inventory is the estate. `-44` found a column that was a coverage
+> claim nobody verified, `-45` a `source` column, `-46` the ranking prose, `-47` the harness,
+> `-48` a handoff's characterisation of a document, `-49` a handoff's design for a guard.
+> **`-50` adds the delivery: a measurement can be right, be written down, and still not
+> arrive.** The cells are corrected above — `governed quantity` is now *the α = 0.35
+> substitution, not the token `E4`*, and `resolution` is *sentence*.
+
+### The resolution knob is the same knob as `-49`'s and it turns the other way
+
+`-49` built C44 at **clause** resolution because at sentence resolution its detector was red
+on a compliant document. C10's governed sentence is
+
+    That substitution is labelled in the script, in the manuscript and here as an
+    **extension of** REG-002 E4 rather than as the registered test.
+
+and `R4` mutates its tail to *"and here as REG-002 E4, the registered test."* The referent
+and the token are separated by **commas only**. Measured both ways before a line was written:
+
+| resolution | real document | `R4` mutant |
+|---|---|---|
+| **sentence** | 0 | **1** ← built here |
+| comma-clause | 0 | **0** ← vacuous, and silently so |
+
+**So the unit is not a preference and it is not portable.** For C44 the wrong unit was a
+false RED, loud and self-announcing. For C10 it is a false GREEN. `-49` said pick the
+resolution deliberately and say so in the docstring; the sharper form is **measure it on the
+probe, in both units, and pin the table** — `test_the_resolution_choice_is_pinned` holds it.
+
+### The tee-up's remedy for the third surface is necessary and not sufficient
+
+C10's witness says the label travels *"in the script, in the manuscript and here"*. `-49`
+warned that scanning `scripts/` returns ~88 hits *"and essentially all of them are
+`# noqa: E402`"*, and prescribed a word boundary excluding `E40x`. Measured at `11b3b10`:
+
+    substring `E4`            90
+    of which `noqa: E402`     61      ← the boundary removes these
+    residual                  29      ← ALL of them true \bE4\b, across SEVEN files
+
+**"Essentially all" is 68 %.** The 29 survivors are the estate's **local exhibit labels**,
+reassigned per script: `wt085`'s E4 is *news collapses the continuum*, `wt086`'s is *the
+level*, `reg012`'s is *phase rigidity*. Only 8 of the 29 are REG-002's. So the word boundary
+is necessary and leaves 21 false positives; **only scoping to `wt088_disclosed_ladder.py`
+makes the third surface scannable at all**, and `test_the_third_surface_scope_is_warranted`
+pins that as three numbers so the scope cannot decay into a habit nobody can defend.
+
+*Generalisable, and it is `-43`'s unregistered-contains-registered lesson one level out:*
+**a homograph count is not a homograph audit.** Knowing what the noise IS does not tell you
+how much of it the fix removes, and a remedy sized by inspection was off by a factor of
+three here.
+
+### The honest correction, on myself
+
+The first draft of this file shipped four self-tests with **ABSENCE** predicates — the exact
+defect `-49` banked one session earlier — and the sweep put them in every catcher list:
+`R4` had four catchers where it should have two, `R4b` four where it should have one, `R4c`
+four where it should have one. Two needed `-39`'s already-violating skip, one needed to stop
+re-asserting limb A, and one needed to skip rather than assert when a *different* probe
+deletes the sentence its anchor lives in. **Found in the measurement, fixed before the
+grade** — and the reason it was found is that the probe sweep is two minutes and was run
+twice rather than once (`-49`'s G-COACH-5 strength, spent again and earning again).
+
 ## 2a · The counts, recomputed
 
 `tests/test_constraint_inventory_selfconsistent.py` parses §1's table and requires this block
@@ -403,12 +485,12 @@ two sessions.
 | recog:PROXY | 8 |
 | recog:READER | 3 |
 | recog:n/a | 4 |
-| machine:FOR | 13 |
+| machine:FOR | 14 |
 | machine:BINDS | 3 |
 | machine:PARTIAL | 2 |
 | machine:ADJACENT | 7 |
 | machine:TRIPWIRE | 3 |
-| machine:none | 22 |
+| machine:none | 21 |
 
 ---
 
@@ -419,7 +501,7 @@ could NEVER recognise, and what does the estate do about those?** `-43` answered
 cells — (a) has a machine, (b) could have one and nobody wrote it, (c) recognisable only by a
 reader — and reported **(b) EMPTY**.
 
-**(b) is not empty. It held thirty-three of the fifty when `-44` measured it, thirty-two since `-46` built C42's guard, thirty-one since `-47` built C07's, thirty since `-48` built C26's, and twenty-seven since `-49` built the C44/C46/C41 family in one file**, and the three-cell shape is why it
+**(b) is not empty. It held thirty-three of the fifty when `-44` measured it, thirty-two since `-46` built C42's guard, thirty-one since `-47` built C07's, thirty since `-48` built C26's, twenty-seven since `-49` built the C44/C46/C41 family in one file, and twenty-six since `-50` built C10's**, and the three-cell shape is why it
 looked empty. Cell (a) is a fact about the ESTATE — somebody wrote a test. Cell (c) is a fact
 about the CONSTRAINT — no test could be written. Those are two different axes fused into one
 row of cells, and the fusion has a specific consequence: **anything with a name in the `machine`
@@ -432,7 +514,7 @@ the one the three-cell shape had no room for:
 
 | | a machine binds it | nothing binds it |
 |---|---|---|
-| **machine-recognisable** (MECH·PROXY, 43) | **16** — 13 written FOR the constraint, 3 incidental and genuinely binding | **27** — the cell `-43` reported empty. 11 of them **name a machine that does not bind**: the false-green class |
+| **machine-recognisable** (MECH·PROXY, 43) | **17** — 14 written FOR the constraint, 3 incidental and genuinely binding | **26** — the cell `-43` reported empty. 11 of them **name a machine that does not bind**: the false-green class (C10 left this cell from `none`, so the eleven are unchanged — recomputed, not assumed) |
 | **reader-only** (READER, 3) | — | **3** — C05, C18, C36. §4 is what they get instead |
 
 *(Four rows are `n/a`: C08, C13, C28, C29 fire on antecedents that never occurred, so there is
@@ -561,9 +643,17 @@ would cost times how cheaply it can be caught*, and each names the shape it shou
    a REFERENT test for C44 (whose lawful uses of *replace* have different objects) and a
    POLARITY test for C46/C41 (whose lawful sites name the mirror and name P3 **in order to
    refuse them**). A single predicate is red on all three compliant documents. §2e.
-4. **C10 · *"labelled an EXTENSION of E4 throughout, never as E4"*** — probe `R4` green.
+4. ~~**C10 · *"labelled an EXTENSION of E4 throughout, never as E4"*** — probe `R4` green.
    C21's exact shape, one document over, and C21 is the one that was not clean. Two limbs:
-   wrong label, missing label.
+   wrong label, missing label.~~ — **BUILT (`-50`)**,
+   `tests/test_reg002_sec5_e4_extension_label.py`, probes `R4`/`R4b`/`R4c` plus a new third
+   surface probe `R4d`, all green before and red after. **The description above was right
+   about the two limbs and silent about the thing that decides them**, and it is kept for
+   the same reason item 3 is: C21's shape carried over the *audit* lesson (a labelling
+   constraint's second door is the wrong label) and not the *scope* one. C10 governs the
+   **substitution**, not the token — three of the document's four `E4` mentions are lawful —
+   and the two limbs are separated at **sentence** resolution, where C44's needed the clause.
+   A third limb was needed for the script surface the constraint's own witness names. §2f.
 5. **C16 / C20 / C23 / C25 / C30 · the forbidden-claim family** — probes `R5a`–`R5e`, all
    five green, each having asserted that registration's own forbidden claim in the document
    it governs. Five constraints, one claim-scanner shape, already built twice (C19, C24).
