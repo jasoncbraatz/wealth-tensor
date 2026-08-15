@@ -106,8 +106,26 @@ and the whitespace at their intersection is real.
 
 ## Order of publication
 
-**II → III → I → IV.** Reasoning, since the order is not obvious and is the part most likely to
-be second-guessed:
+**II → III → IV.** *(Corrected in place 2026-08-15, `wealthTensor-51`. This section read
+**II → III → I → IV** until today — the order as decided on 2026-08-05 and reconfirmed
+2026-08-10. The 2026-08-11 `-10` addendum folded Paper I into IV and its "What changes" table
+recorded the new order, **and nobody applied it here.** The heading is the live claim; the
+addendum was a footnote to it. Item 3 below is struck rather than deleted, because the reasoning
+that placed Paper I third is the record of how the decision was reached.*
+>
+> **This is the failure this ADR predicted about itself.** The `-10` addendum closes:
+> *"Recorded because a corpus that quietly becomes three papers, in a repository whose central
+> document says four, is a contradiction a future session would find the hard way."* `-51` found
+> it the hard way — it quoted the stale order to Jason, in a summary of what the estate had
+> already decided, and **Jason caught it.** The correction existed, was correct, was dated, and
+> lived one screen below the sentence it corrected.
+>
+> It is `-50`'s tell and `-51`'s at ADR scale: **a correction that lives only in an addendum has
+> not been made**, and **a correction applied to one place while a second asserts the same claim
+> has a live reservoir.** Here the reservoir was the section heading — the most-read line in the
+> file. Amend the CLAUSE; let the addendum explain why, not carry the fix.)*
+
+Reasoning, since the order is not obvious and is the part most likely to be second-guessed:
 
 1. **II first as the rehearsal.** Jason's stated gap is not the science, it is *"the systems
    knowledge of the preprint infra as it stands today."* Learn abstracts, JEL codes, keywords,
@@ -116,9 +134,19 @@ be second-guessed:
 2. **III second, and it does not wait.** WT-026 is a data project that proceeds *in parallel*
    with drafting II, so the flagship is not deferred — it is cooking. By the time it ships there
    is a name already on record and the machinery is understood.
-3. **I third.** Complete, but it is the most likely to draw territorial referees, and it is
-   strongest when the author is not an unknown.
-4. **IV last**, necessarily.
+3. ~~**I third.** Complete, but it is the most likely to draw territorial referees, and it is
+   strongest when the author is not an unknown.~~ **SUPERSEDED 2026-08-11 (`-10`): Paper I is not
+   a preprint.** Its surviving identity — *the crossing height IS the volume* — is a subsection of
+   IV, and its dead framings become IV's Abandoned Approaches entry. The reasoning above is kept
+   as the record of a decision that was later overtaken by Paper I's claims dying to their own
+   referees (WT-066, WT-070), not by a change of mind about ordering.
+4. **IV last**, necessarily — and it now carries Paper I's subsection as well as its own charter.
+
+> **AND THE ORDER IS A BATCH, NOT A SCHEDULE** (`-08` addendum, 2026-08-11, Jason's ruling).
+> Nothing ships until the corpus is done, because the conjunction gets exactly one first
+> end-to-end pass and shipping early spends it. **A session's job is to bring a paper to
+> "ready to submit"** — that is a paper's terminal state, and no session should ask Jason to
+> trigger a submission before all three reach it.
 
 ## Alternatives considered
 
