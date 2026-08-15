@@ -28,9 +28,28 @@ TWO THINGS THIS SCRIPT EXISTS TO STOP YOU DOING
    catches a hand-edit and is blind to a number a changed instrument re-derives. A
    reproducibility pin is not a freeze, and you only see that in the catcher list.
 
-ADDING A PROBE: append to `PROBES`. A probe is `(slug, description, fn)` where `fn` takes
-the scratch root and makes exactly one forbidden move. Keep them one-move: a probe that
-changes two things cannot tell you which one the suite saw.
+ADDING A PROBE: append to `PROBES`. A probe is `(slug, description, fn)`, or
+`(slug, description, fn, opts)` where `opts` is a dict, and `fn` takes the scratch root and
+makes exactly one forbidden move. Keep them one-move: a probe that changes two things cannot
+tell you which one the suite saw.
+
+    opts = {"git": True}   # the scratch copy is a REAL git work tree
+
+THE HARNESS ITSELF WAS THE FIRST FALSE GREEN (`-47`)
+-----------------------------------------------------
+`-46` built this script with `.git` in the ignore list, because a scratch copy does not need
+history to run the suite. It does need history to be **measured**: nine tests in this estate
+skip with *"not a git work tree"*, and one of them —
+`test_registrations_precede_their_instruments.py` — is the only machine anywhere near C07,
+which §3.2 ranked **first** in cell (b). A C07 probe run under the original harness would have
+come back GREEN and the green would have meant *the harness deleted the guard*, not *no guard
+exists*.
+
+That is `-37`'s tell one level up: **a mutation that the harness cannot see reports every
+guard in the unseen part of the estate as absent.** So `.git` is copied on request, and a
+probe whose constraint is about commit order MUST set `{"git": True}` or it is measuring
+nothing. The same finding retired the two-tarball cloud stanza: a source tarball without
+`.git` runs 990/999, and the nine it drops are exactly the axis nobody had probed.
 """
 from __future__ import annotations
 
@@ -78,11 +97,71 @@ def _prose_edit(root: Path, rels: list[str], old: str, new: str):
         raise SystemExit(f"PROBE SITE MISSING: {old!r} in {rels}")
 
 
+def _insert_after(root: Path, rel: str, anchor: str, sentence: str):
+    """Write a forbidden CLAIM into a document, immediately after `anchor`.
+
+    The claim probes take this shape rather than `_prose_edit`'s substitution because the
+    forbidden-claim family (C16/C20/C23/C25/C30) forbids *asserting* something, not
+    mis-stating a number: the violating document says everything the compliant one says and
+    one sentence more. A probe that edited an existing sentence would be measuring a
+    different constraint.
+
+    Anchoring matters. `-43` ruled that a claim-scanner must be fed the registration's own
+    forbidden claim before its green is trusted; the mirror-image rule for a PROBE is that
+    the claim must land where a real violation would land — beside the paragraph that
+    discusses the thing — and not appended to the end of the file where a section-scoped
+    scanner would miss it for a reason that has nothing to do with the constraint.
+    """
+    p = root / rel
+    if not p.exists():
+        raise SystemExit(f"PROBE SITE MISSING: {rel} does not exist")
+    text = p.read_text()
+    if anchor not in text:
+        raise SystemExit(f"PROBE SITE MISSING: anchor {anchor[:60]!r} in {rel}")
+    p.write_text(text.replace(anchor, anchor + sentence, 1))
+
+
+def _drop_section(root: Path, rel: str, heading: str):
+    """Delete one `## ` section, heading included, up to the next `## `."""
+    p = root / rel
+    text = p.read_text()
+    if heading not in text:
+        raise SystemExit(f"PROBE SITE MISSING: {heading!r} in {rel}")
+    head, _, rest = text.partition(heading)
+    nxt = rest.find("\n## ")
+    p.write_text(head + (rest[nxt + 1:] if nxt >= 0 else ""))
+
+
+def _git(root: Path, *args: str):
+    proc = subprocess.run(["git", *args], cwd=str(root), capture_output=True, text=True)
+    if proc.returncode != 0:
+        raise SystemExit(f"PROBE GIT FAILED: git {' '.join(args)} -> {proc.stderr.strip()}")
+
+
+def _amend_after_result(root: Path, rel: str):
+    """C07's forbidden move: amend a registration in a commit that lands after its result.
+
+    One move, but it has two parts on purpose — the edit and the COMMIT. C07 is a constraint
+    on history, so an uncommitted edit is not the violation; it is a dirty tree. This is the
+    one probe whose green would be uninformative without `{"git": True}`.
+    """
+    p = root / rel
+    p.write_text(p.read_text()
+                 + "\n\n## 99 · Amendment\n\nThis registration is amended here, after its"
+                   " result document was committed.\n")
+    _git(root, "add", rel)
+    _git(root, "-c", "user.name=mutation-probe", "-c", "user.email=probe@invalid",
+         "commit", "-q", "-m", "REG-001: amend the registration after its result")
+
+
 R9 = f"{DATA}/reg-009-result.json"
 R10 = f"{DATA}/reg-010-half-integer-banding.json"
 BC = f"{DATA}/reg-009-band-count.json"
 BCF = f"{DATA}/reg-009-band-count-filled.json"
 PRIMARY = ("psi", "pooled|R_MID|raw")
+
+MS = "docs/papers/paper-III-dual-tensor/paper-III.md"
+R12 = f"{DATA}/reg-012-band-edge-phase.json"
 
 BAND_DOCS = [f"{DOCS}/RESULT-REG-009-band-count.md",
              f"{DOCS}/RESULT-REG-009-band-count-filled.md",
@@ -136,12 +215,135 @@ PROBES: list[tuple[str, str, object]] = [
 ]
 
 
+# ---------------------------------------------------------------------------------------
+# CONSTRAINT-INVENTORY-001 §3.2's RANKING, MEASURED (`-47`)
+# ---------------------------------------------------------------------------------------
+# `-46` measured the top of this list and found the reason it was at the top wrong by
+# eleven, then wrote the ruling: **§3.2's ranking is not evidence.** Every position below it
+# was assigned the same way — off the `machine` column — and none had been measured. These
+# probes measure them. One slug per position; a letter suffix where the position names more
+# than one constraint or more than one limb, because a position that goes red on one limb
+# and green on the other is exactly the PARTIAL that §3.1's audit keeps finding, and a
+# single probe per position would average that away.
+#
+# Each probe makes the move the constraint's own words forbid. Where the constraint governs
+# a document, the move is written into that document; where it governs an artifact, into the
+# artifact. **Read the catcher list, not the colour** — an incidental red is not coverage
+# (`-46`'s ruling), and the commonest incidental catcher in this estate is a numeral freeze
+# that happens to contain the sentence you moved.
+RANKED_PROBES: list[tuple] = [
+    # 1 · C07 · REG-001 §5 — "may not be amended after the first result commit"
+    ("R1", "C07: amend REG-001 in a commit after its RESULT-* commit [git]",
+     lambda r: _amend_after_result(r, f"{DOCS}/REG-001-p3-second-layer.md"),
+     {"git": True}),
+
+    # 2 · C26 · REG-006 §3 Q1 — two limbs, registered in one sentence
+    ("R2a", "C26 limb 1: the word 'impairment', unqualified, in RESULT-REG-006",
+     lambda r: _insert_after(
+         r, f"{DOCS}/RESULT-REG-006.md", "**Ladder A fails.**",
+         " The impairment is 4.1% of the population and 12.4% of the tested subset.")),
+    ("R2b", "C26 limb 2: drop the firm-period count printed next to a ratio",
+     lambda r: _prose_edit(r, [f"{DOCS}/RESULT-REG-006.md"],
+                           "**+0.010** (retail, n = 417)", "**+0.010** (retail)")),
+
+    # 3 · C44 / C46 / C41 · the beside / never-promoted / does-not-re-score family.
+    #     `-46` made the DELETION limb red and left the SUPERSESSION limb unmeasured; §3.1
+    #     names that the live half. This is it.
+    ("R3a", "C44: RESULT-REG-009-band-count-filled claims to supersede `-31`'s count",
+     lambda r: _insert_after(
+         r, f"{DOCS}/RESULT-REG-009-band-count-filled.md", "\n\n",
+         "**This count supersedes the `-31` count, which is withdrawn and should no longer"
+         " be cited; the filled population replaces it.**\n\n")),
+    ("R3b", "C46: RESULT-REG-010 promotes the mirror to the registered reading",
+     lambda r: _insert_after(
+         r, f"{DOCS}/RESULT-REG-010-half-integer-banding.md", "\n\n",
+         "**The mirror is promoted to the registered reading: it is the convention this"
+         " result is read under, and C2's inheritance is set aside.**\n\n")),
+    ("R3c", "C41: RESULT-REG-010 re-scores P3",
+     lambda r: _insert_after(
+         r, f"{DOCS}/RESULT-REG-010-half-integer-banding.md", "\n\n",
+         "**P3 is re-scored on this evidence: what REG-009 recorded as a failure is a pass"
+         " under the banding registered here.**\n\n")),
+
+    # 4 · C10 · REG-002 §5 — "labelled an EXTENSION of E4 throughout, never as E4"
+    ("R4", "C10: the re-ask relabelled as E4 itself, not as an extension of it",
+     lambda r: _prose_edit(r, [f"{DOCS}/RESULT-REG-002.md"],
+                           "and here as an **extension of** REG-002 E4 rather than as the"
+                           " registered test.",
+                           "and here as REG-002 E4, the registered test.")),
+
+    # 5 · C16 / C20 / C23 / C25 / C30 · the forbidden-claim family. Each registration names
+    #     its own forbidden claim in its own words; each probe asserts exactly that claim in
+    #     the document the constraint governs (`-43`: feed the registration its own claim).
+    ("R5a", "C16: the manuscript claims §4's rejection rescues PRE-001",
+     lambda r: _insert_after(
+         r, MS, "The permutation distribution is centred on zero with unit spread in both"
+                " universes.",
+         " Rejecting independence in §4 therefore rescues PRE-001: the lag gradient was"
+         " there all along and the flat point estimates were an artefact of the"
+         " independence assumption.")),
+    ("R5b", "C20: the manuscript claims the age-dependent correction rescues PRE-001",
+     lambda r: _insert_after(
+         r, MS, "The permutation distribution is centred on zero with unit spread in both"
+                " universes.",
+         " With the age-dependent correction applied, PRE-001 is rescued.")),
+    ("R5c", "C23: the manuscript claims the negative result licenses removing §4.9",
+     lambda r: _insert_after(
+         r, MS, "The permutation distribution is centred on zero with unit spread in both"
+                " universes.",
+         " A negative result of this kind licenses removing §4.9's correction, which no"
+         " longer has anything to correct.")),
+    ("R5d", "C25: RESULT-REG-005 claims §1's normalisation is innocuous",
+     lambda r: _insert_after(
+         r, f"{DOCS}/RESULT-REG-005.md", "\n\n",
+         "**The normalisation of §1 is innocuous** — it neither inflates nor deflates any"
+         " quantity reported below, so results inherit from it unchanged.\n\n")),
+    ("R5e", "C30: the manuscript sells a null Λ as evidence for co-movement",
+     lambda r: _insert_after(
+         r, MS, "The permutation distribution is centred on zero with unit spread in both"
+                " universes.",
+         " Λ is indistinguishable from zero, which is evidence for co-movement: the two"
+         " layers move together rather than in sequence.")),
+
+    # 6 · C45 · CONSTRUCTION-REG-009 R5 — "`R_MIN` is not promoted"; no rule re-chosen
+    ("R6a", "C45 limb 1: the artifact's reading promoted from R_MID to R_MIN",
+     lambda r: _json_edit(r, R12, "reading", "R_MIN|near")),
+    ("R6b", "C45 limb 2: the artifact's band_rule re-chosen to the R_MIN interval",
+     lambda r: _json_edit(r, R12, "band_rule",
+                          "int(v // w) / [b * w - w/2, (b + 1) * w - w/2)")),
+
+    # 7 · C01–C04, C06 · the reportable-at-all family. The forbidden move is DELETION: each
+    #     registration makes its disclosure a condition of the result being reportable.
+    ("R7a", "C01: delete RESULT-001's drop accounting (PRE-001 §9)",
+     lambda r: _drop_section(r, f"{DOCS}/RESULT-001-wt026.md",
+                             "## 2 · Drop accounting (PRE-001 §9)")),
+    ("R7b", "C02: delete the permutation negative control's centred-and-unit-spread report",
+     lambda r: _prose_edit(
+         r, [MS],
+         "The permutation distribution is centred on zero with unit spread in both"
+         " universes. ", "")),
+    ("R7c", "C03: delete the empirical permutation p-value from the replication row",
+     lambda r: _prose_edit(r, [MS], ", permutation p = **0.520**", "")),
+    ("R7d", "C04: delete the report-whatever-happened power statement",
+     lambda r: _prose_edit(r, [MS], "a power curve to be reported whatever happened, ", "")),
+    ("R7e", "C06: delete the right-censoring row from the manuscript's table",
+     lambda r: _prose_edit(r, [MS], "| right-censored | 0% | 7.8% pilot, 14.2% replication |\n",
+                           "")),
+]
+
+PROBES += RANKED_PROBES
+
+
 def run_probe(probe, scratch: Path, jobs_note: str = "") -> dict:
-    slug, desc, fn = probe
+    slug, desc, fn = probe[0], probe[1], probe[2]
+    opts = probe[3] if len(probe) > 3 else {}
     root = scratch / slug
     shutil.rmtree(root, ignore_errors=True)
-    shutil.copytree(ROOT, root, ignore=shutil.ignore_patterns(
-        "__pycache__", ".pytest_cache", ".git", "*.tgz"))
+    skip = ["__pycache__", ".pytest_cache", "*.tgz"]
+    if not opts.get("git"):
+        skip.append(".git")          # see the module docstring: this is opt-IN, and a
+    shutil.copytree(ROOT, root,      # constraint about commit order needs {"git": True}
+                    ignore=shutil.ignore_patterns(*skip))
     try:
         fn(root)
     except SystemExit as exc:
@@ -167,7 +369,8 @@ def main() -> int:
     args = ap.parse_args()
 
     if args.list:
-        for slug, desc, _ in PROBES:
+        for probe in PROBES:
+            slug, desc = probe[0], probe[1]
             print(f"{slug:>3}  {desc}")
         return 0
 

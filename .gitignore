@@ -6,3 +6,13 @@ venv/
 .DS_Store
 data/.universes/
 *.egg-info/
+
+# The pre-edit backups. `-47`: the standing rule in docs/HANDOFF.md says these are
+# "gitignored" and they were merely UNTRACKED — one `git add -A` from entering the SSOT,
+# which is why "do not git add -A" had to be a separate rule propping this one up. The
+# consequence the rulings care about (evidence in a .bak is not in the SSOT — cite the test,
+# not the backup) is now true by construction rather than by discipline.
+# tests/test_backups_are_ignored.py holds it.
+*.bak
+*.bak[0-9]
+*.bak-*

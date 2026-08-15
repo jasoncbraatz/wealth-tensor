@@ -54,7 +54,7 @@ INST = governs an instrument or its inputs. **Machine:** the test that would go 
 | C04 | `PRE-002` §3 | the synthetic power statement is **reported whatever happens** | power | document | MS | yes | §5.3's *"a power curve to be reported whatever happened"* — **compliant** | MECH | none |
 | C05 | `PRE-002` §5 | *"The next move in that case is not a third instrument on the same data"* — **`in that case` carries `PRE-002` §5's antecedent, *"if PRE-002 fails"*, which the shorter quotation had dropped; restored `-45`** | the lag gradient | document | MS+INST | yes | honoured; **T2 is carded and barred** on this ruling | READER | none — the ruling lives in `HANDOFF` §2 |
 | C06 | `PRE-002` §2 | right-censored events **reported as such** | censoring | sentence | MS | yes | §5.3/§5.4 report censoring rates — **compliant** | MECH | none |
-| C07 | `REG-001` §5 | *"this registration may not be amended after the first result commit"* | REG-001 | document | RES | yes | `RESULT-REG-001` returns NO VERDICT and the file is unamended — **compliant** | MECH | **ADJACENT** · `test_registrations_precede_their_instruments.py` (adjacent) |
+| C07 | `REG-001` §5 | *"this registration may not be amended after the first result commit"* | REG-001 | document | RES | yes | `RESULT-REG-001` returns NO VERDICT and the file is unamended — **compliant** | MECH | **FOR** · `test_reg001_sec5_no_amendment_after_result.py` (`-47`) — ancestry, not date; scope asserted to be REG-001 alone; graded on probe `R1`, which was GREEN before it and is RED after (see §2c). Still incidentally adjacent: `test_registrations_precede_their_instruments.py`, whose docstring says it cannot see this |
 | C08 | `REG-001` §7 | a pass licenses exactly one sentence; it does **not** license *"the price-layer result is novel — which it is not, and Wicksteed gets that credit in the text"* | novelty of the price-layer result | document | Paper I | **NO** | **the antecedent never occurred** — `RESULT-REG-001` is NO VERDICT, not a pass. Wicksteed's credit is discharged in `LEDGER` WT-066 and `ADR-001`; paper III does not carry the claim | n/a | none needed |
 | C09 | `REG-002` **E2** | if δ₃\* < 0.010, *"§4.4 may not report it as the section's headline"* | τ = −1 | section | MS | **YES — δ₃\* < 0.010** | δ₃\* = 0.0079 < 0.010 → **the constraint FIRES**; §4.4 is titled *"The design has a validity region, and the disclosed numbers fall outside it"* and the knife-edge is one bolded paragraph lead inside it, not the section's headline — **compliant, and this is the closest call in the table**. *Cited as E1 until `-45`; see §2* | PROXY | **TRIPWIRE** · `test_tripwire_c09_sec44_headline.py` — antecedents only, **not coverage** |
 | C10 | `REG-002` §5 | E4's re-ask is *"labelled an EXTENSION of E4 throughout, never as E4"* | E4 | every mention | RES | yes | the manuscript names no `E`-labels at all (0 occurrences); the constraint binds `RESULT-REG-002` only — **out of manuscript scope** | MECH | none |
@@ -228,6 +228,60 @@ fifteen as literals for that reason, beside the derived-from-artifact document a
 than instead of them: a check that only asserts the document agrees with the artifact goes
 green when both move together (`-38`).
 
+## 2c · Cell (b)'s ranking, MEASURED — and the harness that would have faked the answer (`-47`)
+
+> **`-46` MEASURED THE TOP OF §3.2's RANKING AND FOUND ITS WARRANT WRONG BY ELEVEN, THEN
+> RULED THAT THE RANKING IS NOT EVIDENCE. `-47` MEASURED THE REST OF IT. NINETEEN PROBES,
+> ONE PER RANKED POSITION AND ONE PER LIMB: EIGHTEEN GREEN.**
+
+Every remaining position in §3.2 was assigned the same way C42's was — by reading the
+`machine` column — and none had been measured. `scripts/mutation_control.py` now carries a
+probe for each, so this is a number rather than a sentence:
+
+| §3.2 position | probes | caught | what the one red was |
+|---|---|---|---|
+| 1 · C07 amended-after-result | `R1` | **0/1** | — |
+| 2 · C26 unqualified *impairment* · the count beside each ratio | `R2a` `R2b` | 0/2 | — |
+| 3 · C44 / C46 / C41, the **supersession** limb `-46` left unmeasured | `R3a` `R3b` `R3c` | 0/3 | — |
+| 4 · C10 the re-ask labelled `E4` | `R4` | 0/1 | — |
+| 5 · C16 / C20 / C23 / C25 / C30 forbidden claims | `R5a`–`R5e` | 0/5 | — |
+| 6 · C45 `R_MIN` promoted · the band rule re-chosen | `R6a` `R6b` | **1/2** | `test_reg012_band_edge_phase.py::test_the_population_is_the_cited_tables_own` |
+| 7 · C01–C04, C06 reportable-at-all | `R7a`–`R7e` | 0/5 | — |
+
+**HOW MANY POSITIONS THE MEASUREMENT MOVED: ZERO.** Every one of the seven is as unguarded
+as the ranking said, and the single red is incidental in the precise sense `-46` ruled on —
+`test_the_population_is_the_cited_tables_own` asserts
+`art["occupied_bins_reproduced"] == cited["profiles"][art["reading"]]["occupied"]`, a
+*consistency* check between two artifacts. It goes red because promoting `R_MIN` breaks a
+cross-reference, and it would go green on a re-run that moved both together (`-38`). It is
+not about promotion and **C45's grade stays ADJACENT.**
+
+> **AND THAT IS THE FINDING, NOT A FORMALITY. A METHOD THAT IS WRONG AND MOSTLY RIGHT IS
+> THE WORST KIND, BECAUSE ITS CONFIRMATIONS HIDE ITS COUNTEREXAMPLE.** Reading coverage off
+> the `machine` column gave the right answer at seven of eight positions and a wrong one —
+> by eleven — at the eighth, and there is no way to tell from the column which kind you are
+> holding. Seven greens do not license the eighth; they are what made it invisible for two
+> sessions. **A confirmed ranking and an unverified ranking look identical until you run the
+> probe, and the probe is now two minutes.**
+
+**THE HARNESS WAS THE FIRST FALSE GREEN, AND IT WAS FOUND BEFORE THE FIRST PROBE RAN.**
+`mutation_control.py` as `-46` shipped it excluded `.git` from every scratch copy. Nine tests
+in this estate skip with *"not a git work tree"*, and one of them is the only machine
+anywhere near C07 — §3.2's **item 1**. Under that harness `R1` would have returned green
+while proving nothing, because the harness would have deleted the only candidate guard and
+then reported its absence as the measurement.
+
+> **A MUTATION THE HARNESS CANNOT SEE REPORTS EVERY GUARD IN THE UNSEEN PART OF THE ESTATE
+> AS ABSENT.** `-37` found that a mutation which does not mutate reports a guard as weak;
+> this is that tell one level up, inside the instrument built to catch it. `.git` is now
+> copied on request and `R1` was re-run under a real work tree before C07's guard was
+> written. The same finding retired the cloud's two-tarball stanza: a source tarball without
+> `.git` runs **990/999**, and the nine it drops are exactly the axis nobody had probed.
+
+**C07 is built** — `tests/test_reg001_sec5_no_amendment_after_result.py`, and `R1` is red
+with exactly one catcher, the guard written for it. The other six positions are unchanged in
+rank and now rest on a measurement instead of a column.
+
 ## 2a · The counts, recomputed
 
 `tests/test_constraint_inventory_selfconsistent.py` parses §1's table and requires this block
@@ -249,10 +303,10 @@ two sessions.
 | recog:PROXY | 8 |
 | recog:READER | 3 |
 | recog:n/a | 4 |
-| machine:FOR | 8 |
+| machine:FOR | 9 |
 | machine:BINDS | 3 |
 | machine:PARTIAL | 5 |
-| machine:ADJACENT | 8 |
+| machine:ADJACENT | 7 |
 | machine:TRIPWIRE | 3 |
 | machine:none | 23 |
 
@@ -265,7 +319,7 @@ could NEVER recognise, and what does the estate do about those?** `-43` answered
 cells — (a) has a machine, (b) could have one and nobody wrote it, (c) recognisable only by a
 reader — and reported **(b) EMPTY**.
 
-**(b) is not empty. It held thirty-three of the fifty when `-44` measured it, and thirty-two since `-46` built C42's guard**, and the three-cell shape is why it
+**(b) is not empty. It held thirty-three of the fifty when `-44` measured it, thirty-two since `-46` built C42's guard, and thirty-one since `-47` built C07's**, and the three-cell shape is why it
 looked empty. Cell (a) is a fact about the ESTATE — somebody wrote a test. Cell (c) is a fact
 about the CONSTRAINT — no test could be written. Those are two different axes fused into one
 row of cells, and the fusion has a specific consequence: **anything with a name in the `machine`
@@ -278,7 +332,7 @@ the one the three-cell shape had no room for:
 
 | | a machine binds it | nothing binds it |
 |---|---|---|
-| **machine-recognisable** (MECH·PROXY, 43) | **11** — 8 written FOR the constraint, 3 incidental and genuinely binding | **32** — the cell `-43` reported empty. 15 of them **name a machine that does not bind**: the false-green class |
+| **machine-recognisable** (MECH·PROXY, 43) | **12** — 9 written FOR the constraint, 3 incidental and genuinely binding | **31** — the cell `-43` reported empty. 14 of them **name a machine that does not bind**: the false-green class |
 | **reader-only** (READER, 3) | — | **3** — C05, C18, C36. §4 is what they get instead |
 
 *(Four rows are `n/a`: C08, C13, C28, C29 fire on antecedents that never occurred, so there is
@@ -322,7 +376,17 @@ prohibition. **C44** and **C46**: neither named test opens a single `.md`.
 > second is `-44`'s own lesson turned on the paragraph that states it. §2b has the
 > measurement and C42's row now carries **FOR**.
 
-**ADJACENT (10)** — C07, C11, C32, C34, C37, C39, C45, C50, and two that were pointer defects
+> **C45's ADJACENT SURVIVED A PROBE, WHICH IS NOT THE SAME AS EARNING A GRADE (`-47`).**
+> `R6a` promoted `R_MIN` in `data/reg-012-band-edge-phase.json` and one test went red:
+> `test_the_population_is_the_cited_tables_own`, which asserts
+> `art["occupied_bins_reproduced"] == cited["profiles"][art["reading"]]["occupied"]`. That is
+> a **consistency check between two artifacts**, red because a cross-reference broke, green
+> on any re-run that moved both together (`-38`). `R6b`, which re-chooses the band rule —
+> R5's other limb, in R5's own words — is **green**. So C45 is ADJACENT on the measurement
+> and not merely on the reading, and the incidental red must not be read as coverage.
+
+**ADJACENT (10)** — C07 *(now FOR, `-47`; the row is kept here because the adjacent pointer
+is still true and still not coverage)*, C11, C32, C34, C37, C39, C45, C50, and two that were pointer defects
 rather than coverage defects:
 * **C40 named the wrong test entirely.** `test_term002_count.py` is about §8's free-parameter
   refusal numeral and never opens §4.7 or the strings 151/98/55/38. The clause **is**
@@ -347,33 +411,51 @@ rather than coverage defects:
 
 ### 3.2 · Cell (b), ranked — what is worth building next
 
-Thirty-two entries, so this is a ranking and not a to-do list. Ordered by *what a violation
+Thirty-one entries, so this is a ranking and not a to-do list. Ordered by *what a violation
 would cost times how cheaply it can be caught*, and each names the shape it should take.
 
-> **C42 was item 1 for two sessions and is no longer in this cell** — `-46` built its guard
-> and, in the control that preceded it, found the ranking's own reason for putting it first
-> (*"twelve of fifteen unpinned"*) to be wrong by eleven. **Read §2b before ranking anything
-> else in this list: every position below rests on a coverage claim of exactly the same kind,
-> and not one of them has been measured either.**
+> **EVERY POSITION BELOW HAS NOW BEEN MEASURED, AND THE MEASUREMENT MOVED NONE OF THEM.**
+> `-46` removed C42 from this cell after finding the ranking's reason for putting it first
+> (*"twelve of fifteen unpinned"*) wrong by eleven, and ruled that **a ranking read off the
+> `machine` column is a claim about the column**. `-47` ran a probe for each of the seven
+> positions that remained — nineteen probes, one per limb — and **eighteen came back green**.
+> The single red is incidental and C45's grade did not move. **§2c is the measurement, and it
+> is the reason this list may now be built from top-down without re-deriving its own warrant
+> each time.** Item 1 (C07) has been built and is struck through below; before adding a
+> position to this list, run its probe — `python3 scripts/mutation_control.py --only <slug>`.
+>
+> **What the seven greens do NOT license: reading the `machine` column again.** The column
+> was right at seven of these eight positions and wrong by eleven at the other, and nothing
+> visible in the column distinguishes the two. The confirmations are what hid the
+> counterexample for two sessions.
 
-1. **C07 · amended-after-result** — a git test, and the shape already exists in
-   `test_reg012_sec6_sec47_frozen.py`. Compare each registration's last-modifying commit
-   against its `RESULT-*` commit.
-2. **C26 · *"the word 'impairment' never appears unqualified"*** — a pure regex constraint,
+1. ~~**C07 · amended-after-result**~~ — **BUILT (`-47`)**, probe `R1`, green before and red
+   after: `tests/test_reg001_sec5_no_amendment_after_result.py`. It compares ancestry rather
+   than dates, and asserts that REG-001 is still the only registration making the promise, so
+   a second one adopting it goes red saying EXTEND ME.
+2. **C26 · *"the word 'impairment' never appears unqualified"*** — probes `R2a`/`R2b`, both
+   green; **now the top of the measured list.** A pure regex constraint,
    over `RESULT-REG-006`, and its sibling limb (the count printed next to each ratio) is the
    `-43` two-limb shape.
 3. **C44 / C46 / C41 · the "beside, never instead of / never promoted / does not re-score"
-   family** — one guard, three constraints: assert both documents exist and that the later one
-   carries no supersession claim. All three are currently guarded only by numerals.
-4. **C10 · *"labelled an EXTENSION of E4 throughout, never as E4"*** — C21's exact shape, one
-   document over, and C21 is the one that was not clean. Two limbs: wrong label, missing label.
-5. **C16 / C20 / C23 / C25 / C30 · the forbidden-claim family** — five constraints, one
-   claim-scanner shape, already built twice (C19, C24). Feed each registration its own
-   forbidden claim before trusting the green (`-43`).
-6. **C45 · `R_MIN` not promoted** — two assertions: `art["reading"]` and `art["band_rule"]`
-   are the registered ones. Currently unguarded in both limbs.
-7. **C01–C04, C06 · the reportable-at-all family** — presence guards, low cost, low risk,
-   and C02's is conditional (assert the antecedent, `-42`).
+   family** — probes `R3a`/`R3b`/`R3c`, all three green, which **closes the question `-46`
+   left open**: it made the *deletion* limb red incidentally and said the *supersession* limb
+   was unmeasured. It is measured now and it is unguarded. One guard, three constraints:
+   assert both documents exist and that the later one carries no supersession claim.
+4. **C10 · *"labelled an EXTENSION of E4 throughout, never as E4"*** — probe `R4` green.
+   C21's exact shape, one document over, and C21 is the one that was not clean. Two limbs:
+   wrong label, missing label.
+5. **C16 / C20 / C23 / C25 / C30 · the forbidden-claim family** — probes `R5a`–`R5e`, all
+   five green, each having asserted that registration's own forbidden claim in the document
+   it governs. Five constraints, one claim-scanner shape, already built twice (C19, C24).
+   Feed each registration its own forbidden claim before trusting the green (`-43`).
+6. **C45 · `R_MIN` not promoted** — probe `R6b` green; `R6a`'s red is a cross-artifact
+   consistency check and not coverage (§3.1). Two assertions: `art["reading"]` and
+   `art["band_rule"]` are the registered ones.
+7. **C01–C04, C06 · the reportable-at-all family** — probes `R7a`–`R7e`, all five green;
+   deleting the drop accounting, the negative control, the permutation p, the power statement
+   or the censoring row leaves the suite silent. Presence guards, low cost, low risk, and
+   C02's is conditional (assert the antecedent, `-42`).
 
 ### 3.3 · The three that are reader-only, and the adjacent check for each
 
