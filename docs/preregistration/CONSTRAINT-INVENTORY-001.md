@@ -268,7 +268,11 @@ not about promotion and **C45's grade stays ADJACENT.**
 `mutation_control.py` as `-46` shipped it excluded `.git` from every scratch copy. ~~Nine tests~~
 **Fourteen** tests
 in this estate skip with *"not a git work tree"*, and one of them is the only machine
-anywhere near C07 — §3.2's **item 1**. Under that harness `R1` would have returned green
+anywhere near C07 — §3.2's **item 1**. **That machine is
+`test_reg001_sec5_no_amendment_after_result.py`, measured from `R1`'s catcher list in `-51`;
+`mutation_control.py`'s docstring named a different file here until `-51` corrected it, and
+that uncorrected copy is what `-50`'s pre-measurement inherited. See §2g.** Under that harness
+`R1` would have returned green
 while proving nothing, because the harness would have deleted the only candidate guard and
 then reported its absence as the measurement.
 
@@ -502,6 +506,117 @@ two sessions.
 | machine:none | 21 |
 
 ---
+
+## 2g · The git axis probed at last — and the harness that called its loudest red a green (`-51`)
+
+> **THE INSTRUMENT REPORTED `[GREEN]` FOR A MUTATION THAT STOPPED THE SUITE FROM COLLECTING
+> AT ALL. IN THIS FILE'S VOCABULARY, GREEN MEANS *NO GUARD EXISTS*.**
+
+`-47` found that a harness which deletes `.git` reports every git-gated guard as absent, made
+`.git` opt-in, and set `{"git": True}` on exactly one probe. Four sessions later that was still
+the only one. Fourteen tests skip without a work tree, `R1` spends one, and **the other
+thirteen had never had a mutation run against them** — the only place the estate had proof its
+instrument was blind. `-51` built `G1`–`G13` and ran the sweep twice.
+
+### The finding: a red the harness could not PARSE was reported as a guard that does not exist
+
+`G8` mutates a **module** — the registered `TIER_TAGS` block in `edgar.py` — and is the first
+probe in this estate ever aimed at one rather than at a document. Three modules reference
+`TIER_TAGS` by name, so the import died, pytest reported the affected files as `ERROR` and
+stopped at collection having run no test at all. `run_probe` parsed lines matching
+`^FAILED (tests/\S+)`, found none, and printed:
+
+```
+[GREEN]  G8  edit the registered TIER_TAGS block [git]
+```
+
+**The instrument was anti-monotonic in severity: the more damage a probe did, the cleaner its
+green.** A quiet mutation yields a parseable red; a catastrophic one yields an unparseable
+green — and green is the state that licenses *"write a guard, there is none"*.
+
+This is `-37`'s tell at the third level. `-37`: a mutation that does not mutate reports a guard
+as weak. `-47`: a mutation the harness cannot **see** reports every guard in the unseen part of
+the estate as absent. `-51`: **a red the harness cannot PARSE does the same, and the parse — not
+the mutation, not the coverage — is what failed.** Every previous probe edited a document or a
+JSON file, which cannot break an import; the blindness was real from the day the harness
+shipped and simply had nothing to reveal it.
+
+**Repaired, and given a machine** (`-35`'s ruling: do not soften a sentence that turns out to be
+false — make it true, then give it a machine): `-rf` → `-rfE`; the recogniser is hoisted to
+`CATCHER_RE` and matches `ERROR` as well as `FAILED`; and `is_unparsed_red(rc, catchers)` gives
+*did-not-complete-and-nothing-attributable* its own printed state, which is **not** green.
+`tests/test_mutation_control_reads_errors.py` pins both halves separately, because fixing only
+the recogniser leaves the defect reachable through a collection stop. Its assertions are
+CONTRIBUTION-predicated (`-49`/`-50`), never presence.
+
+**No recorded grade moved.** The five greens the ranking rests on — `R5a`–`R5e`, §3.2 item 5 —
+were re-run under the fixed harness and all five returned **rc = 0**: the suite ran to
+completion and passed. Genuine greens, and the ranking stands. That check is the point: a
+harness repair is a claim about every measurement ever taken with it.
+
+### The second finding: a right total hiding a wrong attribution
+
+`-50`'s pre-measurement of this at-bat said *"`R1` spent one of the fourteen
+(`test_registrations_precede_their_instruments.py`)"*. `-51` ran `R1` and read the catcher
+list: its **sole** catcher is
+`test_reg001_sec5_no_amendment_after_result.py::test_the_registration_was_not_amended_after_its_result_commit`.
+The other file is a guard on a different invariant and its own docstring says it *"cannot see a
+registration edited after its result existed"* — which is precisely C07.
+
+`-47` had already diagnosed this exact confusion and corrected it, in **§2b of this file**
+(*"the row inherited the file because the names rhymed"*) — and left the identical claim
+standing in `scripts/mutation_control.py`'s module docstring, which the handoff's ORIENT list
+tells every session to read **before grading anything**. `-50` read it, believed it, propagated
+it. **A CORRECTION APPLIED TO ONE ARTEFACT WHILE A SECOND ARTEFACT ASSERTS THE SAME CLAIM IS A
+CORRECTION WITH A LIVE RESERVOIR** — and the reservoir is usually the instrument, because this
+estate grades documents and merely reads instruments. `-50`'s rule was *edit the artefact, not
+just the handoff*; the corollary is **grep the CLAIM, not the file.**
+
+Note what did not catch it. **The residual count was right.** `13 = 14 − 1` is correct whichever
+test the 1 is, it was computed by running the command rather than quoting prose, and it is
+re-verified here (1034 passed / 14 skipped without `.git`, unchanged). **A right total is what
+makes a wrong attribution invisible.** The corrected split by file is below.
+
+### The thirteen, measured — the count was right, the map was not
+
+| file | git-gated | probe | catchers | reading |
+|---|---|---|---|---|
+| `test_registrations_precede_their_instruments.py` | 4 | `G1` `G2` `G3` `G12` | 1 · 3 · 3 · 196 | **4 unprobed before this session, not 3** |
+| `test_backups_are_ignored.py` | 3 | `G4` `G5` `G6` | 1 · 1 · 1 | three limbs, three clean owns |
+| `test_pin001_code_state.py` | 3 | `G7` `G8` `G9` | 1 · 3 · 2 | `G8` is the module probe above |
+| `test_reg001_sec5_no_amendment_after_result.py` | 2 | `R1` (`-47`) + `G10` | 1 · **0** | **1 unprobed before this session, not 2** — `R1` is here |
+| `test_reg012_sec6_sec47_frozen.py` | 1 | `G13` | 1 | the catcher is **not** the git-gated test |
+| `test_manuscript_shas_are_instrumented.py` | 1 | `G11` | 1 | owned |
+
+**Eleven of the thirteen now have a probe; nine of those are isolating.** The remaining two are
+recorded as measurements, not as gaps — `-46`'s rule, that what a probe *cannot* reach belongs
+in the row:
+
+* **`test_both_documents_are_in_history` is unreachable from the working tree, and its own
+  docstring said otherwise.** It read *"a rename that empties the check must be loud"*.
+  Measured: `_first_commit` is `git rev-list HEAD -- <path>`, a pathspec matches commits that
+  touched the path **in history**, and after `G10` renames `RESULT-REG-001.md` two commits
+  still resolve — the suite stays green at **rc = 0**. What it actually guards is the constant
+  drifting to a path that was never committed. A real guard, correctly green, wrongly described;
+  docstring repaired in the same commit.
+* **`test_the_pinned_digest_is_the_version_REG_012_saw` reads the blob at `ba59370`, so no move
+  on the tree can reach it.** `G13` edits §4.7 at HEAD and the catcher is
+  `test_section_47_is_byte_identical_to_the_pin` — a different, non-git test. **The freeze is
+  owned by that test; the git-gated one is a self-consistency check on immutable history.**
+  That is exactly `-46`'s freeze-versus-pin distinction, and it is now in the row rather than
+  counted as coverage.
+
+`G12` is kept and labelled **non-isolating**: it catches its target
+(`test_the_scan_found_registrations_to_scan`) inside a catcher list of **196**, because the only
+single move that empties a registration scan is a convention change that trips the whole estate
+first. Its green would be informative; its red is not coverage. Said out loud rather than
+counted (`-46`), and the `--list` description says so where a reader will meet it.
+
+**No silent caps.** `G1`–`G13` are thirteen probes against thirteen invariants but not a
+bijection: `G12` reaches the scan's non-vacuity limb, `G10` and `G13` are establishing probes
+expected green. Suite: **1055 passed, zero skips** with `.git` (1048 at `142d386`; `-51` added
+7). Without `.git`: **1034 passed, 14 skipped**, unchanged — the axis is probed now, not
+narrowed.
 
 ## 3 · THE RECOGNISABILITY PARTITION (`-44`)
 

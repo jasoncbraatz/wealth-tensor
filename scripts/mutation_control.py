@@ -39,11 +39,29 @@ THE HARNESS ITSELF WAS THE FIRST FALSE GREEN (`-47`)
 -----------------------------------------------------
 `-46` built this script with `.git` in the ignore list, because a scratch copy does not need
 history to run the suite. It does need history to be **measured**: fourteen tests in this estate
-skip with *"not a git work tree"*, and one of them —
-`test_registrations_precede_their_instruments.py` — is the only machine anywhere near C07,
+skip with *"not a git work tree"*, and one of them is the only machine anywhere near C07,
 which §3.2 ranked **first** in cell (b). A C07 probe run under the original harness would have
 come back GREEN and the green would have meant *the harness deleted the guard*, not *no guard
 exists*.
+
+**THAT MACHINE IS `test_reg001_sec5_no_amendment_after_result.py`, AND THIS PARAGRAPH NAMED
+THE WRONG FILE FOR FOUR SESSIONS.** It said `test_registrations_precede_their_instruments.py`
+— a guard on a different invariant, whose own docstring says *"it cannot see a registration
+edited after its result existed"*, which is precisely C07. `-47` diagnosed exactly that
+confusion and corrected it in `CONSTRAINT-INVENTORY-001` §2b (*"the row inherited the file
+because the names rhymed"*) — and left the identical claim standing HERE, in the file the
+handoff's ORIENT list tells every session to read *before it grades anything*. `-50` read it,
+believed it, and wrote it into its pre-measurement of the git axis; `-51` ran `R1` and
+measured the catcher: `test_reg001_sec5_no_amendment_after_result.py::
+test_the_registration_was_not_amended_after_its_result_commit`, alone.
+
+**A CORRECTION APPLIED TO ONE ARTEFACT WHILE A SECOND ASSERTS THE SAME CLAIM IS A CORRECTION
+WITH A LIVE RESERVOIR**, and the reservoir is usually the instrument, because the estate
+grades documents and reads instruments. `-50`'s rule was *edit the artefact, not just the
+handoff*; the corollary is **grep the CLAIM, not the file**. Note what did NOT catch this:
+the residual count was right. `-50` computed 13 = 14 − 1 by running the command, and the
+subtraction is correct no matter which test the 1 is; **a right total is what makes a wrong
+attribution invisible.**
 
 That is `-37`'s tell one level up: **a mutation that the harness cannot see reports every
 guard in the unseen part of the estate as absent.** So `.git` is copied on request, and a
@@ -74,6 +92,26 @@ ROOT = Path(__file__).resolve().parent.parent
 DATA = "data"
 DOCS = "docs/preregistration"
 DEFAULT_SCRATCH = Path(os.environ.get("MUTATION_SCRATCH", "/tmp/wt-mutation-control"))
+
+#: How a red is recognised in pytest's short summary. **`ERROR` is not optional.** A probe
+#: that mutates a MODULE breaks an import; pytest reports those files as `ERROR`, not
+#: `FAILED`, and past a handful it stops at collection having run no test at all. `-51`
+#: found this reading `FAILED` only, which made a suite that would not even collect arrive
+#: as an EMPTY catcher list — printed as GREEN, whose documented meaning in this file is
+#: *no guard exists*. The instrument was anti-monotonic in severity: the worse the damage,
+#: the cleaner the green. `tests/test_mutation_control_reads_errors.py` pins both halves.
+CATCHER_RE = re.compile(r"^(?:FAILED|ERROR) (tests/\S+)", re.M)
+
+
+def is_unparsed_red(returncode: int, catchers: list) -> bool:
+    """True when the run did not complete AND nothing was attributable.
+
+    pytest exits 0 (all passed) or 1 (tests failed); 2 is interrupted-or-collection-error,
+    3 internal, 4 usage. Any of the latter with no parsed catcher means the probe measured
+    NOTHING, and the one thing it must never be called is green.
+    """
+    return returncode not in (0, 1) and not catchers
+
 
 
 # ----------------------------------------------------------------------------- helpers
@@ -397,6 +435,253 @@ RANKED_PROBES: list[tuple] = [
 PROBES += RANKED_PROBES
 
 
+# ------------------------------------------------------------------ git-axis helpers (-51)
+def _git_commit(root: Path, msg: str, *paths: str):
+    """Stage the named paths and commit. The probe identity is fixed so that a scratch
+    tree left behind by a crash is legible as a probe's work and not as somebody's."""
+    _git(root, "add", "--", *paths)
+    _git(root, "-c", "user.name=mutation-probe", "-c", "user.email=probe@invalid",
+         "commit", "-q", "-m", msg)
+
+
+def _git_mv_commit(root: Path, src_rel: str, dst_rel: str, msg: str):
+    """Rename a tracked path and commit it.
+
+    The forbidden move behind four of the git-axis guards: a document renamed out from
+    under a ledger, a pin, an ancestry check, or a scan. It is one move in the sense that
+    matters — a session does it in one `git mv` — and it is a HISTORY move, not a tree
+    edit, which is why every probe using it needs `{"git": True}`.
+    """
+    if not (root / src_rel).exists():
+        raise SystemExit(f"PROBE SITE MISSING: {src_rel}")
+    _git(root, "mv", src_rel, dst_rel)
+    _git(root, "-c", "user.name=mutation-probe", "-c", "user.email=probe@invalid",
+         "commit", "-q", "-m", msg)
+
+
+def _register_with_instrument(root: Path):
+    """G1 - a registration and its own instrument in ONE commit: the PRE-001/PRE-002 move.
+
+    The registration's text says "registered alone", exactly as `REG-008`'s commit subject
+    did, so the probe reproduces the shape the ledger records and not a strawman.
+    """
+    reg = f"{DOCS}/REG-099-probe-registration.md"
+    code = "scripts/reg099_probe.py"
+    (root / reg).write_text(
+        "# REG-099 - probe registration\n"
+        "\n"
+        "Registered alone, ahead of any instrument.\n")
+    (root / code).write_text(
+        "# the instrument this registration says it does not have\n")
+    _git_commit(root, "REG-099: the probe registration, registered alone", reg, code)
+
+
+def _unignore_backups(root: Path):
+    """G4 - strip the *.bak patterns from .gitignore: the exact state `-47` found."""
+    p = root / ".gitignore"
+    text = p.read_text()
+    keep = [ln for ln in text.split("\n")
+            if ln.strip() not in ("*.bak", "*.bak[0-9]", "*.bak-*")]
+    out = "\n".join(keep)
+    if out == text:
+        raise SystemExit("PROBE SITE MISSING: no *.bak patterns in .gitignore")
+    p.write_text(out)
+
+
+def _track_a_backup(root: Path):
+    """G5 - force one backup into the index.
+
+    `.gitignore` is left alone on purpose. Ignoring and not-tracking are two facts, the
+    test file asserts both, and a probe that changed the ignore rules would be measuring
+    G4's limb instead of this one.
+    """
+    baks = sorted(q for q in root.rglob("*.bak*")
+                  if q.is_file() and ".git/" not in str(q))
+    if not baks:
+        raise SystemExit("PROBE SITE MISSING: no *.bak* on disk to track")
+    rel = str(baks[0].relative_to(root))
+    _git(root, "add", "-f", "--", rel)
+    _git(root, "-c", "user.name=mutation-probe", "-c", "user.email=probe@invalid",
+         "commit", "-q", "-m", "chore: sweep in a backup")
+
+
+def _delete_all_backups(root: Path):
+    """G6 - the non-vacuity move: somebody tidies the backups away and the ignore guard
+    starts passing over an empty set."""
+    baks = [q for q in root.rglob("*.bak*") if q.is_file() and ".git/" not in str(q)]
+    if not baks:
+        raise SystemExit("PROBE SITE MISSING: no *.bak* on disk to delete")
+    for q in baks:
+        q.unlink()
+
+
+def _touch_pinned_file(root: Path):
+    """G7 - commit a change to a pinned module: the PIN-001 defect, reintroduced."""
+    rel = "src/wealth_tensor/edgar.py"
+    p = root / rel
+    p.write_text(p.read_text()
+                 + "\n# a later edit that the manuscript does not disclose\n")
+    _git_commit(root, "edgar: an edit after the pin", rel)
+
+
+def _edit_tier_tags(root: Path):
+    """G8 - edit a tag INSIDE the registered TIER_TAGS block: what PRE-001 forbids without
+    an amendment, and what §11's published digest exists to make impossible in silence.
+
+    THE MOVE IS DELIBERATELY NARROW, AND `-51`'s FIRST DRAFT WAS NOT. Renaming the block
+    (`TIER_TAGS:` -> something else) also turns it red, but for the wrong reason: three
+    modules reference `TIER_TAGS` by name, the import dies, pytest stops at COLLECTION, and
+    the catcher list comes back as two file-level import errors with the digest guard never
+    having run at all. A mutation big enough to stop the suite cannot tell you which guard
+    saw it. Change one registered tag string and the module still imports, so the digest
+    guard gets its turn - which is the whole measurement.
+    """
+    rel = "src/wealth_tensor/edgar.py"
+    p = root / rel
+    text = p.read_text()
+    old_tag = '"ImpairmentOfLeasehold"'
+    if "TIER_TAGS: " not in text or old_tag not in text:
+        raise SystemExit("PROBE SITE MISSING: TIER_TAGS block or its tier-0 tag")
+    p.write_text(text.replace(old_tag, '"ImpairmentOfLeaseholdProbe"', 1))
+
+
+def _retarget_a_pin(root: Path):
+    """G9 - point a §11 pin at a real commit that never touched that file.
+
+    `8cdf78e` is a docs-only commit in this repository's history: it resolves, so the pin
+    still LOOKS like a pin, which is the failure mode worth probing. A garbage hex string
+    would be caught by something cheaper.
+    """
+    rel = "scripts/wt099_edits_pin001.py"
+    p = root / rel
+    text = p.read_text()
+    old = '"src/wealth_tensor/lag.py": "ad779eb"'
+    if old not in text:
+        raise SystemExit(f"PROBE SITE MISSING: {old}")
+    p.write_text(text.replace(old, '"src/wealth_tensor/lag.py": "8cdf78e"', 1))
+
+
+def _orphan_sha_in_manuscript(root: Path):
+    """G11 - write a real commit SHA into the paper that no instrument names.
+
+    This is the PIN-001 CLASS rather than the instance: the SHA resolves, so it reads as a
+    pin, and nothing in the repository is watching it.
+
+    THE SHA IS CHOSEN AT RUN TIME AND DELIBERATELY NOT WRITTEN DOWN HERE. `-51`'s first
+    draft named one in this docstring and the probe came back GREEN, correctly: the guard
+    asks whether the SHA appears anywhere under scripts/, tests/ or src/, and this file is
+    under scripts/. **A probe whose forbidden move is "introduce an identifier no
+    instrument names" cannot name the identifier, because the harness lives inside the
+    estate it mutates.** Writing the literal is what falsifies the probe's own premise.
+    """
+    text = (root / MS).read_text()
+    instruments = "\n".join(
+        q.read_text(encoding="utf-8", errors="ignore")
+        for d in ("scripts", "tests", "src")
+        for q in sorted((root / d).rglob("*.py"))
+    )
+    picked = None
+    for line in subprocess.run(
+            ["git", "log", "--format=%h", "-60"], cwd=str(root),
+            capture_output=True, text=True).stdout.split():
+        if (len(line) >= 7 and any(c.isdigit() for c in line)
+                and any(c in "abcdef" for c in line)
+                and line not in instruments and line not in text):
+            picked = line
+            break
+    if picked is None:
+        raise SystemExit("PROBE SITE MISSING: no commit is absent from every instrument")
+    i = text.find("\n## ", len(text) // 2)
+    if i < 0:
+        raise SystemExit("PROBE SITE MISSING: no mid-document heading in the manuscript")
+    claim = f"\n\nThe analysis in this section was produced at commit {picked}.\n"
+    (root / MS).write_text(text[:i] + claim + text[i:])
+
+
+def _rename_prereg_dir(root: Path):
+    """G12 - the convention change the registration scan's non-vacuity guard exists to
+    catch. Deliberately broad: see the note above `GIT_PROBES` about what its catcher
+    list is and is not evidence of."""
+    _git_mv_commit(root, "docs/preregistration", "docs/prereg-archive",
+                   "docs: move the registrations under a new convention")
+
+
+def _edit_sec_47_today(root: Path):
+    """G13 - edit manuscript §4.7 at HEAD, after REG-012 froze it.
+
+    The REG-012 digest pin reads the blob at `ba59370`, not the working tree. This probe
+    exists to MEASURE whether that pin can see a present-day edit at all - `-46`'s
+    question (is this a freeze or a reproducibility pin?) asked of a pin whose subject is
+    immutable history. Read its catcher list for which test actually owns the freeze.
+    """
+    p = root / MS
+    text = p.read_text()
+    m = re.search(r"^### 4\.7 · .*$", text, re.M)
+    if not m:
+        raise SystemExit("PROBE SITE MISSING: no §4.7 heading in the manuscript")
+    j = text.find("\n", m.end()) + 1
+    p.write_text(text[:j] + "\nThis section is edited after REG-012 froze it.\n" + text[j:])
+
+
+# --------------------------------------------------------------------------- THE GIT AXIS
+# `-47` found that a harness which deletes `.git` reports every git-gated guard as ABSENT.
+# `.git` became opt-in and exactly ONE probe (`R1`) ever set it. Fourteen tests in this
+# suite skip without a work tree and `R1` spends one of them; **these probe the other
+# thirteen**, which had never had a mutation run against them. Until this file, that axis
+# was the only place the estate had proof its instrument was blind.
+#
+# EVERY probe here sets `{"git": True}`. Without it the scratch copy has no history, the
+# thirteen skip, and the probe measures nothing while printing a green. That is `-47`'s
+# ruling and it is the whole reason this axis stayed dark for four sessions.
+#
+# TWO OF THE THIRTEEN ARE NOT ISOLABLE BY A SINGLE MOVE, AND THAT IS A MEASUREMENT.
+# `G12` (the registration scan's non-vacuity guard) and `G13` (REG-012's historical digest
+# pin) are here to establish WHY, not to earn a grade. Read their catcher lists as
+# evidence about the guard's reach, never as coverage - `-46`'s ruling.
+GIT_PROBES: list[tuple] = [
+    ("G1", "commit a registration together with its own instrument [git]",
+     _register_with_instrument, {"git": True}),
+    ("G2", "rename a ledgered registration out from under KNOWN_VIOLATIONS [git]",
+     lambda r: _git_mv_commit(r, f"{DOCS}/PRE-002-wt026-peak-to-charge.md",
+                              f"{DOCS}/PRE-002-renamed.md",
+                              "docs: rename PRE-002"),
+     {"git": True}),
+    ("G3", "rename REG-010, the instance asserted to have been registered alone [git]",
+     lambda r: _git_mv_commit(r, f"{DOCS}/REG-010-p3-half-integer-banding.md",
+                              f"{DOCS}/REG-010-renamed.md",
+                              "docs: rename REG-010"),
+     {"git": True}),
+    ("G4", "drop the *.bak patterns from .gitignore [git]",
+     _unignore_backups, {"git": True}),
+    ("G5", "git add -f a backup into the index [git]",
+     _track_a_backup, {"git": True}),
+    ("G6", "delete every *.bak, emptying the set the ignore guard scans [git]",
+     _delete_all_backups, {"git": True}),
+    ("G7", "commit an edit to a pinned module after the pin [git]",
+     _touch_pinned_file, {"git": True}),
+    ("G8", "edit the registered TIER_TAGS block [git]",
+     _edit_tier_tags, {"git": True}),
+    ("G9", "retarget a §11 pin at a commit that never touched that file [git]",
+     _retarget_a_pin, {"git": True}),
+    # G10 is an ESTABLISHING probe, like G13: it is expected GREEN and the green is the
+    # measurement. See the note above and the docstring it corrected.
+    ("G10", "rename RESULT-REG-001 — establishes that a rename does NOT empty "
+            "rev-list, so the non-vacuity guard is unreachable from the tree [git]",
+     lambda r: _git_mv_commit(r, f"{DOCS}/RESULT-REG-001.md",
+                              f"{DOCS}/RESULT-REG-001-renamed.md",
+                              "docs: rename RESULT-REG-001"),
+     {"git": True}),
+    ("G11", "write an uninstrumented commit SHA into the manuscript [git]",
+     _orphan_sha_in_manuscript, {"git": True}),
+    ("G12", "move docs/preregistration to a new naming convention [git]",
+     _rename_prereg_dir, {"git": True}),
+    ("G13", "edit manuscript §4.7 at HEAD, after REG-012 froze it [git]",
+     _edit_sec_47_today, {"git": True}),
+]
+
+PROBES += GIT_PROBES
+
+
 def run_probe(probe, scratch: Path, jobs_note: str = "") -> dict:
     slug, desc, fn = probe[0], probe[1], probe[2]
     opts = probe[3] if len(probe) > 3 else {}
@@ -415,11 +700,23 @@ def run_probe(probe, scratch: Path, jobs_note: str = "") -> dict:
     env = dict(os.environ, PYTHONPATH=str(root / "src"), PYTHONDONTWRITEBYTECODE="1")
     proc = subprocess.run(
         [sys.executable, "-m", "pytest", "-q", "-p", "no:cacheprovider",
-         "--no-header", "--tb=no", "-rf"],
+         "--no-header", "--tb=no", "-rfE"],
         cwd=str(root), capture_output=True, text=True, env=env, timeout=7200)
-    catchers = sorted(set(re.findall(r"^FAILED (tests/\S+)", proc.stdout, re.M)))
+    # `-rfE`, not `-rf`. A mutation to a MODULE breaks an import, pytest reports the
+    # affected files as ERROR rather than FAILED, and with enough of them it stops at
+    # collection and never runs a test at all. `-51` found the harness reading only
+    # `FAILED` lines, which made the LOUDEST possible red — a suite that will not even
+    # collect — arrive as an empty catcher list, i.e. as `UNGUARDED`. The instrument was
+    # anti-monotonic in severity: the worse the damage, the cleaner the green.
+    catchers = sorted(set(CATCHER_RE.findall(proc.stdout)))
+    # The belt to that suspenders. Anything other than pytest's 0 (all passed) or 1 (tests
+    # failed) means the run did not complete normally — 2 is interrupted/collection error,
+    # 3 internal, 4 usage. If we ALSO parsed no catchers, the probe measured nothing and
+    # must never be graded as a green. Report it, loudly, as its own state.
+    unparsed = is_unparsed_red(proc.returncode, catchers)
     shutil.rmtree(root, ignore_errors=True)
-    return {"probe": slug, "what": desc, "catchers": catchers}
+    return {"probe": slug, "what": desc, "catchers": catchers,
+            "rc": proc.returncode, "unparsed_red": unparsed}
 
 
 def main() -> int:
@@ -450,15 +747,30 @@ def main() -> int:
             if row.get("error"):
                 print(f"[ERROR] {row['probe']:>3}  {row['error']}", flush=True)
                 continue
+            if row.get("unparsed_red"):
+                # NOT a green. The suite did not finish and nothing was parseable; the
+                # probe measured nothing. `-51`: this state used to print as GREEN.
+                print(f"[UNPARSED RED] {row['probe']:>3}  {row['what']}", flush=True)
+                print(f"           pytest exited {row['rc']} with no FAILED/ERROR lines "
+                      f"— the run did not complete. This is NOT evidence of an unguarded "
+                      f"constraint; it is evidence the probe broke the suite in a way "
+                      f"this harness cannot attribute. Narrow the move and re-run.",
+                      flush=True)
+                continue
             mark = "RED  " if row["catchers"] else "GREEN"
             print(f"[{mark}] {row['probe']:>3}  {row['what']}", flush=True)
             for c in row["catchers"]:
                 print(f"           {c}", flush=True)
 
-    green = [r for r in rows if not r.get("error") and not r["catchers"]]
+    unparsed = [r for r in rows if r.get("unparsed_red")]
+    green = [r for r in rows
+             if not r.get("error") and not r["catchers"] and not r.get("unparsed_red")]
     print("\n" + "=" * 84)
-    print(f"{len(rows) - len(green)}/{len(rows)} probes caught. "
+    print(f"{len(rows) - len(green) - len(unparsed)}/{len(rows)} probes caught. "
           f"{len(green)} UNGUARDED: {[r['probe'] for r in green] or 'none'}")
+    if unparsed:
+        print(f"{len(unparsed)} UNPARSED RED (measured nothing, NOT green): "
+              f"{[r['probe'] for r in unparsed]}")
     print("A probe with no catchers is the evidence a guard is needed. A probe whose only")
     print("catcher reruns the instrument is a reproducibility pin, NOT a freeze — read the")
     print("list above before you write a grade into CONSTRAINT-INVENTORY-001 §1.")

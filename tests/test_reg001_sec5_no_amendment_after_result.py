@@ -149,11 +149,21 @@ def test_the_rule_is_still_in_force():
 
 
 def test_both_documents_are_in_history(repo):
-    """A rename that empties the check must be loud, not silent.
+    """A path that resolves to no commit must be loud, not silent.
 
     Either path resolving to no commit would make `amendments_after` return `[]` and the
     guard below would pass over nothing while reading as coverage — `-44`'s false-green
     class, in the one shape a path-based test is prone to.
+
+    **`-51`, MEASURED: A RENAME IS NOT THAT SHAPE, AND THIS DOCSTRING USED TO SAY IT WAS.**
+    `_first_commit` is `git rev-list HEAD -- <path>`, and a pathspec matches the commits
+    that touched the path *in history*; renaming the file today leaves those commits
+    exactly where they were. Probe `G10` renames `RESULT-REG-001.md` and this test stays
+    green, correctly — two commits still resolve. What it does guard is the constant
+    drifting to a path that was NEVER committed: a typo in `REGISTRATION`/`RESULT`, or a
+    document created and never added. That is a real failure mode and this is a real
+    guard; it is simply not reachable from the working tree, which is why `G10` exists to
+    record the fact rather than to earn a grade.
     """
     assert _first_commit(repo, f"docs/preregistration/{REGISTRATION}"), REGISTRATION
     assert _first_commit(repo, f"docs/preregistration/{RESULT}"), RESULT
