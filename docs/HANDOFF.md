@@ -1,15 +1,22 @@
 ---
 project: wealth-tensor
-gh_sha: 142d38678d2b4fa929c6197790efa7ea9b7ec9cc
+gh_sha: 393eaa8dfe1493d1a123acb294145abc618ad2c4
 updated: 2026-08-15
 session: wealthTensor-50
 gate_passed: true
 gate_version: "2.54"
 ---
 # wealth-tensor — HANDOFF
-*`gh_sha` points at the commit this file describes; the only thing added after it is this file plus
-the two docs-only corrections in §1's last block, so `--check` prints `ADVISORY: docs-only drift`
-and exits 0. **Read the exit code, and assert it exactly (`-39`) — `| tail` will mask it.***
+*`gh_sha` points at the commit this file describes; the only thing added after it is this file, so
+`--check` prints `ADVISORY: docs-only drift` and exits 0. **Read the exit code, and assert it
+exactly (`-39`) — `| tail` will mask it.***
+> **`-50` tripped this gate and the gate was right.** The first handoff commit carried a
+> **docstring** change to `scripts/mutation_control.py` alongside the handoff, and `--check` called
+> `BLOCKER: code advanced past the handoff` — correctly, because it classifies by PATH and cannot
+> know a `.py` diff was prose. The fix was to repoint `gh_sha` at the commit that actually holds the
+> described state, **not** to rewrite pushed history and **not** to teach the gate to guess.
+> **Lesson for you: land code and docs in the commit `gh_sha` names, and write the handoff alone in
+> the one after it.** A gate that is conservative about a `.py` file is doing its job.
 
 ## ORIENT — read these first, in this order
 1. **`docs/CO-AUTHOR-CHARTER.md`** — the constitution. **THE CHARTER WINS**: where this handoff, any
