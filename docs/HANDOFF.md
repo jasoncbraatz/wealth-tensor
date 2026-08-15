@@ -25,19 +25,25 @@ exactly (`-39`) — `| tail` will mask it.***
    instrument that printed its loudest red as a green is the one that matters. Then §2f (`-50`),
    §2e (`-49`), §2d (`-48`), §2c (`-47`'s measurement, still the warrant for the ranking), then
    §3.2, then §2a's counts.
-3. `python3 scripts/handoff_gate.py --check` — proves this file is not stale.
-4. **`python3 scripts/mutation_control.py --list`** — **61 probes now** (48 at `-50`; `-51` added
+3. **`docs/adr/ADR-001-paper-decomposition.md` — THE SEQUENCING DECISION, AND READ §Order of
+   publication AND the addenda TOGETHER.** Three preprints, **II → III → IV**, submission is a
+   **batch** (`-08`), Definition of Done clauses per paper, monograph only after IV. `-51`
+   corrected §Order of publication in place (`842d7f2`) after quoting its stale four-paper order
+   to Jason and being caught. **`docs/HANDOFF-PROMPT.md` goes with it** — frozen at `-11`, and it
+   carries **WT-079: the deliverable is the paper, not a list of fixes.**
+4. `python3 scripts/handoff_gate.py --check` — proves this file is not stale.
+5. **`python3 scripts/mutation_control.py --list`** — **61 probes now** (48 at `-50`; `-51` added
    `G1`–`G13`). **Read its module docstring before you grade anything** — including the paragraph
    `-51` added about the file it used to name wrongly, and the one that replaces a stale count with
    the command that produces it.
-5. **`docs/preregistration/REG-003` §§3.2, 3.3, 7** (`REG-003-p3-recognition-rate-and-off-diagonal.md`)
+6. **`docs/preregistration/REG-003` §§3.2, 3.3, 7** (`REG-003-p3-recognition-rate-and-off-diagonal.md`)
    — the four-regime ladder, the registered bias asymmetry, the rounding rule.
-6. **`docs/scouting/SCOUT-001-paper-III-opposing-team.md`** — **WORKED, NOT PENDING.** Only T2
+7. **`docs/scouting/SCOUT-001-paper-III-opposing-team.md`** — **WORKED, NOT PENDING.** Only T2
    remains and T2 is carded and barred on this data. Read it for measurements, not for a to-do list.
-7. `REG-012` §§6–7 · `RESULT-REG-012-band-edge-phase` §§4–5 · `RESULT-TERM-001` the five-site
+8. `REG-012` §§6–7 · `RESULT-REG-012-band-edge-phase` §§4–5 · `RESULT-TERM-001` the five-site
    ruling · `REG-010` **§1 is the population ruling, §4 is the freeze `-46` built** ·
    `CONSTRUCTION-REG-010` **§C2 owns 55.71 % and its population in one sentence**.
-8. `RESULT-REG-010` §3 → §4 · **`RESULT-TERM-002`** §2 before §8 · `RESULT-PIN-001` ·
+9. `RESULT-REG-010` §3 → §4 · **`RESULT-TERM-002`** §2 before §8 · `RESULT-PIN-001` ·
    `RESULT-SCOPE-001` · `CONSTRUCTION-REG-009` (**R5 is load-bearing and unspent**) ·
    `RESULT-REG-009` (**§3's S = 0.1391 is load-bearing in a test**) · `REG-009` (**READ THE HEADER
    NOTE FIRST**; numbering 6–12 by ruling).
@@ -342,34 +348,72 @@ it mattered · `test_reg001_sec5_no_amendment_after_result.py`'s docstring corre
 
 ---
 
-## 3 · THE AT-BAT for `-52` — **§3.2 ITEM 5, THE FIVE-CONSTRAINT FORBIDDEN-CLAIM FAMILY.**
+## 3 · THE AT-BAT for `-52` — **PAPER III, TOWARD READY-TO-SUBMIT. JASON'S RULING, 2026-08-15.**
 
-`-51` closed the git axis, so the standing reason for holding item 5 back — *"cheap and
-well-understood, which is exactly why it should not displace the axis nobody can see"* — is spent.
-It is now the top of cell (b) on a measurement, and `-51` re-measured its warrant on the way past:
-**`R5a`–`R5e` were re-run under the repaired harness and all five returned `rc = 0` with zero
-catchers.** Genuine greens, not parse failures. Five constraints — C16, C20, C23, C25, C30 — each
-with a probe already written and already red-worthy, and **one claim-scanner shape already built
-twice, at C19 and C24.**
+**THE GUARD PROGRAMME IS PAUSED, NOT ABANDONED, AND THIS IS THE OUT-LOUD SAYING-SO.** Jason asked
+`-51` at wrap how many handoffs remained; the answer required reading `ADR-001`, and reading it
+found that **the estate had drifted off its own written sequencing decision without ever recording
+a decision to drift.** `ADR-001` §Order of publication (corrected in place, `842d7f2`) says
+**II → III → IV**; `docs/HANDOFF-PROMPT.md` says **WT-079 · THE DELIVERABLE IS THE PAPER, NOT A
+LIST OF FIXES**; and the `-08` addendum says nothing ships until the corpus is done. None of that
+was ever in dispute. It was simply not what sessions `-42` through `-51` did.
 
-**AND `-51` DID NOT PRE-MEASURE THE DESIGN, DELIBERATELY.** `-50` pre-measured this at-bat's
-numbers and its file map, the numbers were right and the map was wrong, and the right numbers are
-what hid it. So the honest tee-up is this: **the five probes are green and the greens are real; that
-is all `-51` knows.** Whether the five constraints want ONE scanner or five, whether their
-discriminators are the same (`-49`'s C44/C46/C41 family was one file for three constraints, and
-`-48`'s C26 was two limbs for one), and whether any of the five is a `TRIPWIRE` rather than a
-`FOR` — **all unmeasured. Read the five rows in §1 and the five probe bodies in
-`mutation_control.py` before you decide the shape.**
+**THE MEASUREMENTS THAT SETTLED IT — all re-derivable, none a characterisation:**
 
-**DO THE TWENTY MINUTES, AND RUN ONE THING BEFORE YOU DESIGN.** Four sessions running it has been
-where the session was won, and `-51`'s was won by a single `--only R1` that cost four minutes and
-disproved the sentence its whole at-bat was framed by. Read `CONSTRAINT-INVENTORY-001` **§2g** first,
-then `-43`'s ruling (feed the registration its own forbidden claim before you trust the green) —
-it is the governing lesson for a forbidden-claim family, and C19/C24 are the worked examples.
+- `docs/HANDOFF-PROMPT.md`, the standing prompt naming the deliverable, is **frozen at `-11`**.
+- `docs/LEDGER.md`'s last entry is **WT-088, `-14`**. Thirty-seven sessions, zero research entries
+  — which every recent handoff has been reporting under stopping rules and nobody read as a signal.
+- `CONSTRAINT-INVENTORY-001` was built at `-42`, **nine days after the ADR and two days after the
+  pre-posting dossier**, and its own header scopes it: *"The point of this file is the LIST"* and
+  *"this is an inventory, not a ruling."* **It never claimed to be a gate on posting.** The
+  escalation from *enumerate* to *build a machine for each of the fifty* happened implicitly, via
+  §3.2's RANKING — and a ranking is a priority order, not a mandate to exhaust.
+- The sweep's payload landed early: **50 constraints, 48 compliant or not-live, 2 violated**
+  (C12, C21), both FOUND. Everything since is regression insurance.
+- **All eight findings from `-44` to `-51` are about the estate's account of ITSELF. Not one is
+  about the manuscript.** A high finding rate against the instrument is evidence the instrument is
+  deep, not that the paper is unsafe.
+- `paper-III.md` is **32,831 words on disk**. `REVIEW-004-pre-posting-dossier.md` opens:
+  *"Nothing here is a reason not to post."*
 
-**IF YOU TAKE SOMETHING ELSE, SAY WHY IN ONE LINE.** The alternatives are **C45's two assertions**
-and **the reportable-at-all presence guards** (§3.2's other two), and **C37's tripwire**
-(`REG-009` §12's *"never by narration"*, `§3.3`, about an hour).
+**WHAT "DONE" MEANS, AND IT WAS ALREADY WRITTEN DOWN — `-51` SAID IT WAS NOT AND WAS WRONG.**
+`ADR-001` carries per-paper **Definition of Done** clauses and the corpus-level one, amended to
+**"Three preprints publicly posted…"**. And by the `-08` ruling the order is a **submission BATCH,
+not a schedule**: *"ready to submit"* is a paper's terminal state and nothing posts until II, III
+and IV all reach it. **So your at-bat is III toward READY-TO-SUBMIT. It is not "post III."** Do
+not ask Jason to trigger a submission.
+
+**OPEN WITH THE TWENTY MINUTES, AIMED SOMEWHERE NEW.** You are the first session in ten to open
+`paper-III.md` with intent to change it. Read `docs/HANDOFF-PROMPT.md` §STEP 2's four rules first
+— **WT-079** (a straw man in the prose, in the file; not a memo of fixes), **WT-078** (coaches not
+umpires), **WT-080** (run the math before writing the finding), **WT-081** (contribute and have
+fun). Then `REVIEW-004` as INPUT, never as a template. Then measure, do not characterise, what
+still stands between III and ready-to-submit: the ADR's per-paper Definition of Done clause is the
+checklist, and `§Consequences`'s missing-apparatus list (abstract, keywords, JEL codes,
+contributions list, limitations, data/code availability, *Independent researcher*) is cheap and
+may already be partly done. **Nobody has measured which of those III currently has. Do that
+before you write a word of prose** — it is this thread's whole method, pointed at the paper.
+
+**THE AUDIT IS KEPT, AND JASON ASKED FOR IT TO BE SCOPED MORE FORMALLY AND RUN MORE EFFICIENTLY.**
+`-51` proposed three moves and **Jason has not ruled on them — do not treat them as decided:**
+1. **Audit the CLASS, not the constraint.** All eight recent findings are one species: a sentence
+   about the repo that drifted from the command that produces it. ONE linter over claims naming a
+   count, a filename or a coverage fact — each required to carry the command that regenerates it
+   — would have caught `-44`, `-45`, `-46`, `-47`, `-50` and `-51` in a single pass. `-51` banked
+   the seam: **grep the CLAIM, not the file.**
+2. **Bound by value, not by list.** §3.2 ranked 7 positions and 3 remain (the forbidden-claim
+   family C16/C20/C23/C25/C30, C45, the reportable-at-all family). The other ~19 in cell (b) were
+   never argued to be worth machines.
+3. **Audit at the BOUNDARY, not continuously.** Guards protect against edits, and III is about to
+   be heavily edited. Run the guard pass **after III freezes** — worth most, costs least.
+**And the higher-level audit Jason asked for already exists, designed and unclaimed:** the `-08`
+addendum's **end-to-end test** — *"the end-to-end test is itself a deliverable and has [nobody
+claimed it]"* — is the conjunction-level severe test his own methodological position calls for,
+and the `-10` addendum notes it is **easier to pose for three papers than four**. It is the
+natural successor to the parts-level guard programme, and it belongs after IV.
+
+**IF YOU TAKE SOMETHING ELSE, SAY WHY IN ONE LINE** — and if you take a guard, say why it beats
+the paper, because for ten sessions nobody asked that question.
 
 ---
 
@@ -383,9 +427,13 @@ and **the reportable-at-all presence guards** (§3.2's other two), and **C37's t
    Two readings; under one, 0.327 < 0.33 is R2 by the registration's own ladder. **A `RESULT-*` is
    the record of a run and editing the artefact edits the witness** — the `-37` precedent says the
    repair shape is a dated addendum. C12's guard is unaffected either way.
-4. **Cell (b), ranked in `CONSTRAINT-INVENTORY-001` §3.2 — THREE entries left, still MEASURED
-   (§2c).** **The five-constraint forbidden-claim family is now §3, the at-bat.** The other two:
-   C45's two assertions · the reportable-at-all presence guards.
+4. **Cell (b), ranked in §3.2 — THREE entries left, still MEASURED (§2c), and now PAUSED behind
+   the paper by Jason's 2026-08-15 ruling.** The forbidden-claim family (C16/C20/C23/C25/C30,
+   probes `R5a`–`R5e`, **all five re-verified `rc=0` under the repaired harness by `-51`**) ·
+   C45's two assertions · the reportable-at-all presence guards. **Paused is not abandoned**: the
+   ranking is measured and still good, and §3 carries the three scoping proposals Jason asked for
+   and has not yet ruled on. Do not silently resume this track — if you take it, say why it beats
+   Paper III.
 5. **C37's tripwire** — `REG-009` §12's *"never by narration"*. §3.3 names the adjacent check.
 6. ~~**`-47`'s residual, the git axis**~~ — **DONE (`-51`)**, `G1`–`G13`, §2g. What remains is not a
    gap but two recorded unreachables and one non-isolating probe; **do not re-open them as work.**
