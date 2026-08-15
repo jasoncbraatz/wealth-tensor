@@ -1,6 +1,6 @@
 ---
 project: wealth-tensor
-gh_sha: 3f63237481906bf63d00eb1417b3a2a907101920
+gh_sha: 842d7f22bda1980ec54e11cc1709c5c4b63cca32
 updated: 2026-08-15
 session: wealthTensor-51
 gate_passed: true
@@ -11,8 +11,18 @@ gate_version: "2.58"
 `--check` prints `ADVISORY: docs-only drift` and exits 0. **Read the exit code, and assert it
 exactly (`-39`) — `| tail` will mask it.***
 > **`-50` tripped this gate and the gate was right**, by landing a `.py` docstring change in the
-> handoff commit. `-51` did not: code and docs went in `3f63237`, this file alone in the one after.
+> handoff commit. `-51` did not: code and the inventory went in `3f63237`, this file alone after it.
 > **Land code and docs in the commit `gh_sha` names, and write the handoff alone in the next.**
+>
+> **AND `gh_sha` MOVED ONCE MORE, DELIBERATELY.** After `-51` wrapped, Jason's questions produced a
+> coda — an ADR correction in `842d7f2` — so `gh_sha` was **repointed from `3f63237` to `842d7f2`**,
+> the last commit that is not this file. The sentence above is an INVARIANT, not a description:
+> *the only thing after `gh_sha` is this file.* When a post-wrap commit breaks it, **repoint
+> `gh_sha` and re-master this file** — do not let the gate's exit 0 stand in for the sentence being
+> true. `--check` classifies by PATH, so it is green whenever the drift is docs-only; it cannot
+> tell you that `docs/adr/…` is not `docs/HANDOFF.md`. **`-51` found this by re-reading its own
+> preamble when Jason asked whether the handoff was still good. The gate was passing and the
+> sentence was false.**
 
 ## ORIENT — read these first, in this order
 1. **`docs/CO-AUTHOR-CHARTER.md`** — the constitution. **THE CHARTER WINS**: where this handoff, any
@@ -201,7 +211,7 @@ is the next unchecked surface after its counts; for a conjunction guard the UNIT
 homograph audit; any self-test reading the real document is a second catcher unless it skips on a
 dirty base.
 
-**`-51` adds four:**
+**`-51` adds six** — four from the at-bat, two from the coda Jason's wrap-up questions produced:
 
 - **A RED THE HARNESS CANNOT *PARSE* REPORTS THE GUARD AS ABSENT — AND THE LOUDEST RED IS THE ONE IT
   CANNOT PARSE.** `mutation_control.py` matched `^FAILED (tests/\S+)`. A probe that mutates a
@@ -233,6 +243,25 @@ dirty base.
   `scripts/tests/src`; the probe came back **GREEN, entirely correctly**. The probe's documentation
   of the identifier's absence is what falsified its own precondition. Choose such identifiers at run
   time. Banked: `2026-08-15-probe-whose-forbidden-move-introduce-identifier`.
+
+- **AN AMENDMENT RECORDED AS AN *ADDENDUM* HAS NOT AMENDED THE DECISION — AMEND THE CLAUSE.**
+  `ADR-001` §Order of publication said **II → III → I → IV** for five days after the `-10` addendum
+  folded Paper I into IV and recorded **II → III → IV** in its own "What changes" table. `-51`
+  quoted the stale heading to Jason while summarising what the estate had already decided, **and
+  Jason caught it.** The addendum had literally predicted this in its closing line — *"a corpus
+  that quietly becomes three papers, in a repository whose central document says four, is a
+  contradiction a future session would find the hard way."* **Predicting a failure mode in the same
+  document you decline to fix is not a mitigation.** Strike the superseded clause in place, keep the
+  old reasoning struck-through as the record, and reserve the addendum for the WHY. Fixed in
+  `842d7f2`. Banked: `2026-08-15-amendment-recorded-addendum-has-not-amended`.
+- **WHEN AN AUDIT KEEPS PRODUCING FINDINGS, CHECK WHAT THE FINDINGS ARE *ABOUT* BEFORE READING THE
+  RATE AS A REASON TO CONTINUE.** This programme found two live violations in its first two sessions
+  and then produced **eight consecutive findings every one of which was about the audit apparatus
+  itself.** A high finding rate against the instrument is evidence the instrument is deep, not that
+  the artefact is unsafe. Two cheaper questions decide it: **are the findings about the SUBJECT or
+  the INSTRUMENT**, and **does the artefact still get EDITED** (regression guards are worth most on
+  living code and least on something about to be frozen and posted). Banked:
+  `2026-08-15-audit-programme-keeps-producing-findings-check`.
 
 **Everything `-33` through `-50` banked is unchanged and still sharp.** `severity.check`'s witness
 must return FALSY. Check `git ls-files <name>` before a whole-file write into a shared directory.
@@ -300,6 +329,29 @@ it mattered · `test_reg001_sec5_no_amendment_after_result.py`'s docstring corre
 | new tests | 1 file, 7 tests · **13 new probes (48 → 61)** |
 | lessons | **five** banked global + **one** project-scoped · corroborated `record-outcome wealthTensor-51 pass`, then **un-corroborated four that were stamped in error** |
 | stopping rules | **honoured — no lag gradient computed on any subsample; the research ledger on paper III is still empty** |
+
+### The coda — what Jason's wrap-up questions produced, AFTER the gate had passed
+
+**`-51` was wrapped, gated and off the roster when Jason asked two ordinary questions: *paste the
+handoff*, and *how many more handoffs do you estimate?* The second one could not be answered without
+reading `ADR-001`, and nobody had read it in ten sessions.** Everything below came from that.
+
+| what | outcome |
+|---|---|
+| **the estate had drifted off its own written sequencing decision** | `ADR-001` (II → III → IV), `HANDOFF-PROMPT.md` (**WT-079: the deliverable is the paper**), and the `-08` batch ruling were never in dispute — they were just not what `-42`→`-51` did. §3 carries the measurements |
+| **`ADR-001` §Order of publication was five days stale** | `-51` quoted it to Jason; **Jason caught it**; corrected in place at `842d7f2`, item 3 struck-through not deleted |
+| **two things `-51` told Jason were WRONG** | (1) *"no Definition of Done exists"* — it does, per-paper clauses plus corpus-level *"Three preprints publicly posted…"*; (2) papers do **not** ship individually — the `-08` ruling makes the order a **batch**, so a paper's terminal state is *ready to submit* |
+| **`gh_sha` repointed `3f63237` → `842d7f2`** | the ADR commit broke the preamble's invariant. See the preamble: the gate was passing and the sentence was false |
+| **the at-bat retargeted** | §3 is now Paper III toward ready-to-submit; the guard track is **paused, not abandoned**, with three scoping proposals recorded and marked **UNRULED** |
+| **`paper-IV.md` DOES NOT EXIST** | and nothing posts until it does. **IV is the long pole, not III** — measured from the `docs/papers/` listing, and no session has ever claimed it |
+
+**BUG SPRAY, on myself, a fourth time — and this one is the sharpest.** Re-mastering this file,
+`-51` wrote a **full 40-character `gh_sha` it had never seen**, expanding the abbreviation
+`842d7f2` from imagination. It was caught in the same breath and replaced with
+`git rev-parse 842d7f2`'s real output. **An abbreviated SHA is a HANDLE and a full SHA is a
+CLAIM**, and this estate's entire PIN-001 lineage is about SHAs that live in prose being unguarded
+by construction. **Never type a SHA you have not resolved. `git rev-parse` is one call.**
+
 
 ---
 
@@ -486,6 +538,14 @@ the paper, because for ten sessions nobody asked that question.
   order. Use `--out <json>`.
 * **NEW · DO NOT DRIVE `lessons.py use` FROM A `grep` OVER LEAF FILENAMES.** Exact ids only. An
   unearned corroboration is the trust signal lying, and it auto-pushes before you notice.
+* **NEW · DO NOT TYPE A FULL SHA YOU HAVE NOT RESOLVED.** `-51` expanded `842d7f2` into a
+  fabricated 40-character `gh_sha` while re-mastering this file and caught it one line later. An
+  abbreviated SHA is a handle; a full SHA is a claim. `git rev-parse <short>` is one call, and
+  `RESULT-PIN-001` is the whole reason this estate cares.
+* **NEW · DO NOT LET `handoff_gate.py --check`'s EXIT 0 STAND IN FOR THE PREAMBLE BEING TRUE.** It
+  classifies by PATH, so any docs-only drift is green — including a `docs/adr/…` commit that makes
+  *"the only thing added after it is this file"* false. If a post-wrap commit lands, **repoint
+  `gh_sha` and re-master.**
 * Do not `git add -A` on darwin. Do not run bulk SEC work on darwin — cloud.
 * Do not poll a background probe run with `while pgrep` — the 10-minute tool ceiling eats it.
 
