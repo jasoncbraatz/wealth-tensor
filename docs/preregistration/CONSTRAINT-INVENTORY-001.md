@@ -52,11 +52,11 @@ INST = governs an instrument or its inputs. **Machine:** the test that would go 
 | C02 | `PRE-002` §3 | permutation *z* must be centred near 0 / sd near 1 or **no result from this pipeline is reportable** | negative control | document | MS+RES | yes | §5.3 reports it centred on zero with unit spread — **compliant** | MECH | none |
 | C03 | `PRE-002` §3 | the observed *z* additionally reported as an **empirical permutation p-value** | `p` | sentence | MS | yes | §5.3 gives permutation p = 0.590 / 0.520 — **compliant** | MECH | none |
 | C04 | `PRE-002` §3 | the synthetic power statement is **reported whatever happens** | power | document | MS | yes | §5.3's *"a power curve to be reported whatever happened"* — **compliant** | MECH | none |
-| C05 | `PRE-002` §5 | *"the next move is not a third instrument on the same data"* | the lag gradient | document | MS+INST | yes | honoured; **T2 is carded and barred** on this ruling | READER | none — the ruling lives in `HANDOFF` §2 |
+| C05 | `PRE-002` §5 | *"The next move in that case is not a third instrument on the same data"* — **`in that case` carries `PRE-002` §5's antecedent, *"if PRE-002 fails"*, which the shorter quotation had dropped; restored `-45`** | the lag gradient | document | MS+INST | yes | honoured; **T2 is carded and barred** on this ruling | READER | none — the ruling lives in `HANDOFF` §2 |
 | C06 | `PRE-002` §2 | right-censored events **reported as such** | censoring | sentence | MS | yes | §5.3/§5.4 report censoring rates — **compliant** | MECH | none |
 | C07 | `REG-001` §5 | *"this registration may not be amended after the first result commit"* | REG-001 | document | RES | yes | `RESULT-REG-001` returns NO VERDICT and the file is unamended — **compliant** | MECH | **ADJACENT** · `test_registrations_precede_their_instruments.py` (adjacent) |
 | C08 | `REG-001` §7 | a pass licenses exactly one sentence; it does **not** license *"the price-layer result is novel — which it is not, and Wicksteed gets that credit in the text"* | novelty of the price-layer result | document | Paper I | **NO** | **the antecedent never occurred** — `RESULT-REG-001` is NO VERDICT, not a pass. Wicksteed's credit is discharged in `LEDGER` WT-066 and `ADR-001`; paper III does not carry the claim | n/a | none needed |
-| C09 | `REG-002` E1 | if δ₃\* < 0.010, *"§4.4 may not report it as the section's headline"* | τ = −1 | section | MS | **YES — δ₃\* < 0.010** | δ₃\* = 0.0079 < 0.010 → **the constraint FIRES**; §4.4 is titled *"The design has a validity region, and the disclosed numbers fall outside it"* and the knife-edge is one bolded paragraph lead inside it, not the section's headline — **compliant, and this is the closest call in the table** | PROXY | none |
+| C09 | `REG-002` **E2** | if δ₃\* < 0.010, *"§4.4 may not report it as the section's headline"* | τ = −1 | section | MS | **YES — δ₃\* < 0.010** | δ₃\* = 0.0079 < 0.010 → **the constraint FIRES**; §4.4 is titled *"The design has a validity region, and the disclosed numbers fall outside it"* and the knife-edge is one bolded paragraph lead inside it, not the section's headline — **compliant, and this is the closest call in the table**. *Cited as E1 until `-45`; see §2* | PROXY | **TRIPWIRE** · `test_tripwire_c09_sec44_headline.py` — antecedents only, **not coverage** |
 | C10 | `REG-002` §5 | E4's re-ask is *"labelled an EXTENSION of E4 throughout, never as E4"* | E4 | every mention | RES | yes | the manuscript names no `E`-labels at all (0 occurrences); the constraint binds `RESULT-REG-002` only — **out of manuscript scope** | MECH | none |
 | C11 | `REG-003` §2 | a differently-composed rebuilt sample *"may not be"* silently substituted | the sample | document | RES | yes | §5.4 reports 695 vs 688 and cites the registered reconciliation rule — **compliant** | PROXY | **ADJACENT** · `test_pre002_data_is_pinned.py` (adjacent) |
 | C12 | **`REG-003` §3.3** | **if α̂ lands in R1/R2 the finding *"must be reported with that sentence attached, in the same paragraph, not in a limitations section"*** | α̂ | **paragraph** | MS | **YES — R1 in every cut** | **FOUR LIVE VIOLATIONS at `1e474b4`**: §4.4, §5.4's bolded lead, §7's ledger row, §9 limitation 4. Repaired by `wt108` | MECH | **FOR** · **`test_reg003_sec33_asymmetry.py`** (new) |
@@ -64,7 +64,7 @@ INST = governs an instrument or its inputs. **Machine:** the test that would go 
 | C14 | `REG-003` §4.3 | *"direction is reported as part of the result, never absorbed into a p-value"* | N_co | sentence | MS | yes | §5.4 reports clustering *above* the interval in both universes with the direction named — **compliant** | MECH | none |
 | C15 | `REG-003` §7 | *"no sentence anywhere may round it"* — α̂ to *"the recognition rate"* | α̂ | **sentence** | MS | yes | six violations found and repaired by `-41` | MECH | **FOR** · **`test_reg003_sec7_rounding.py`** |
 | C16 | `REG-003` §7 | *"rejecting independence in §4 does not rescue PRE-001"* | the lag gradient | document | MS | yes | §5.3/§5.4 draw no such inference — **compliant**; also the ruling barring T2 | MECH | none |
-| C17 | `REG-003` §7 | §4.4 *"may change one number and the sentences that carry it, and may not reopen the argument"* | §4.4 | section | MS | yes | §4.4's argument is unchanged since `wt089`; `-41` and `-42` changed numbers and their sentences — **compliant** | PROXY | none |
+| C17 | `REG-003` §7 | §4.4 *"may change one number and the sentences that carry it, and may not reopen the argument"* | §4.4 | section | MS | yes | §4.4's argument is unchanged since `wt089`; `-41` and `-42` changed numbers and their sentences — **compliant** | PROXY | **TRIPWIRE** · `test_tripwire_c17_sec44_argument.py` — §4.4 numeral-masked, **not coverage** |
 | C18 | `REG-004` §5 | S3's general search *"is teed up in the handoff and is not attempted in this session"* | the age-dependent mirror | session | INST | yes | teed up, never attempted — **compliant** | READER | none |
 | C19 | **`REG-004` §6** | **may not be claimed: *"that α_eff is 'the' recognition rate — it is a function of δ"*** | α_eff | sentence | MS | yes | **checked through both doors** (noun phrase and symbol): §4.10 names α_eff a function of δ at every site and §4.10's lead says *"three recognition rates now live in this paper and they are three different quantities"* — **compliant** | MECH | **FOR** · **`test_reg004_sec6_alpha_eff.py`** (new, `-43`) |
 | C20 | `REG-004` §6 | may not be claimed: that the correction *"rescues PRE-001"* | PRE-001 | document | MS | yes | not claimed — **compliant** | MECH | none |
@@ -73,17 +73,17 @@ INST = governs an instrument or its inputs. **Machine:** the test that would go 
 | C23 | `REG-005` §7 | may not be claimed: that a negative result *"licenses removing §4.9's correction"* | §4.9 | section | MS | yes | §4.9 stands and §5.4 holds the lag distribution — **compliant** | MECH | none |
 | C24 | `REG-005` §7 | may not be claimed: *"that the fitted lag distribution transfers to classes the PRE-002 sample does not cover"* | the lag distribution | sentence | MS | yes | §6.1's scope sentence (`-41` T5) states the covered classes — **compliant** | MECH | **FOR** · **`test_reg005_sec7_lag_transfer.py`** (new, `-43`) |
 | C25 | `REG-005` §7 | may not be claimed: *"that the normalisation of §1 is innocuous — it is generous"* | §1's normalisation | sentence | RES | yes | binds `RESULT-REG-005` — **out of manuscript scope** | MECH | none |
-| C26 | `REG-006` §4 Q1 | *"the word 'impairment' never appears unqualified"* and *"the count of firm-periods behind each ratio is printed next to the ratio"* | REG-006 statistics | every ratio | RES | yes | binds `REG-006`/`RESULT-REG-006` — **out of manuscript scope** | MECH | none |
-| C27 | `REG-006` §4 Q2 | a cell with fewer than 20 firm-periods *"is reported as its count and no ratio is formed from it"* | thin cells | cell | RES | yes | binds `RESULT-REG-006` | MECH | none |
-| C28 | `REG-006` §4 Q2 | the cap region's slope reported *"as a function of L/W, never as a point"* | the cap slope | sentence | MS+RES | **NO** | ladder C **failed as registered** (§7's row); no cap-region slope is reported anywhere, as a point or otherwise — **not live** | n/a | none needed |
+| C26 | `REG-006` **§3** Q1 | *"the word \"impairment\" never appears in it unqualified"* and *"the count of firm-periods behind each ratio is printed next to the ratio"* | REG-006 statistics | every ratio | RES | yes | binds `REG-006`/`RESULT-REG-006` — **out of manuscript scope** | MECH | none |
+| C27 | `REG-006` **§3** Q2 | a cell with fewer than 20 firm-periods *"is reported as its count and no ratio is formed from it"* | thin cells | cell | RES | yes | binds `RESULT-REG-006` | MECH | none |
+| C28 | `REG-006` **§3** Q2 | the cap region's slope reported *"as a function of L/W, never as a point"* | the cap slope | sentence | MS+RES | **NO** | ladder C **failed as registered** (§7's row); no cap-region slope is reported anywhere, as a point or otherwise — **not live** | n/a | none needed |
 | C29 | `REG-006` §8 | if ladder C's corrected lift lands below `REG-003`'s figure, §5.4's number is amended *"in the text where the number is — not in a footnote, and not in Limitation 9"* | §5.4's lift | **placement** | MS | **NO** | ladder C failed; no amendment was owed — **not live** | n/a | none needed |
 | C30 | `REG-007` §5 | *"Λ ≈ 0 is NOT evidence for co-movement"* — stated before the run so a null cannot be sold as a finding | Λ | sentence | MS+RES | yes | the manuscript makes no co-movement claim from Λ — **compliant** | MECH | none |
 | C31 | `REG-007` P4 | *"the registered claim is a sign and a significance level, nothing more"*; no threshold on Λ | Λ | sentence | MS | yes | §7's row reports the instrument as failed; no Λ magnitude claim — **compliant** | PROXY | none |
 | C32 | `REG-007` §9 | if Λ is withheld, *"the counts are published anyway and the withholding is named as such"* | Λ | document | RES | yes | binds `RESULT-REG-007` — **compliant there** | MECH | **ADJACENT** · `test_reg007_resolution.py` (adjacent) |
-| C33 | `REG-007` §4 | rebuilding the panel from `edgar.py` *"is forbidden by this registration"* | the panel | instrument | INST | yes | the committed panel is re-read — **compliant** | MECH | none |
+| C33 | `REG-007` **§3.1** | rebuilding the panel from `edgar.py` *"is forbidden by this registration"* | the panel | instrument | INST | yes | the committed panel is re-read — **compliant** | MECH | none |
 | C34 | `REG-008` §9 | thin arms → *"reported as underpowered, the counts are published, and no significance claim is made"* | P1 replication | document | RES | yes | binds `RESULT-REG-008` | MECH | **ADJACENT** · `test_reg008_instrument.py` (adjacent) |
 | C35 | `REG-008` §9 | if F1's gate fails, *"no Λ is printed at all"* | Λ | document | RES | yes | binds `RESULT-REG-008` — **compliant** | MECH | **BINDS** · `test_reg008_instrument.py` |
-| C36 | `REG-009` §4 | a refusal is *"stated in the same sentence as the number that caused it"* | the δ design | **sentence** | RES | yes | `RESULT-REG-009` §4 states it that way — **compliant**. See §3: this is the constraint behind the §7-ledger presentation item on the board | READER | none |
+| C36 | `REG-009` §4 | a refusal is *"stated in the same sentence as the number that caused it"* | the δ design | **sentence** | RES | yes | `RESULT-REG-009` §4 states it that way — **compliant**. See §3: this is the constraint behind the §7-ledger presentation item on the board | READER | **TRIPWIRE** · `test_tripwire_c36_sec7_ledger_shape.py` — §7's ledger shape, **not coverage**; a red asks Jason once |
 | C37 | `REG-009` §12 | if Ψ and Ψ_rect(α̂) disagree the difference is attributed by S and the columns, *"never by narration"* | Ψ | sentence | RES | yes | `RESULT-REG-009` attributes numerically — **compliant** | PROXY | **ADJACENT** · `test_reg009_ladder_inputs.py` (adjacent) |
 | C38 | `REG-009` §12 | §4.4's rectangle sentence repaired *"in one of exactly two ways"*: the rate named **and the rectangle labelled asserted rather than observed** | the rectangle | every mention | MS | yes | eight *asserted rectangle* sites; the label travels — **compliant** | MECH | **PARTIAL** · **`test_term001_rectangle.py`** |
 | C39 | `REG-009` §12 | *"no free parameter may be introduced to reconcile Ψ with 99.7 %"* | Ψ | document | MS+INST | yes | §7's row reports 0.659 against 0.998 and reconciles nothing — **compliant** | PROXY | **ADJACENT** · F10, and `test_reg009_ladder_inputs.py` |
@@ -119,12 +119,49 @@ found this file's own grade to be the one-door verdict.**
   antecedent that never occurred (C08). Recording those is the point: a constraint graded
   *"not live"* with its antecedent named is a question that stays closed, and a constraint
   nobody looked at is a question nobody knows is open.
-- **C09 is the closest call in the table.** `REG-002`'s E1 falsifier *did* trip — δ₃\* = 0.0079
-  is below the registered 0.010 — so §4.4 may not report τ = −1 as its headline. It does not:
-  §4.4 is *titled* for the validity region, and the knife-edge is one bolded paragraph lead
-  inside it plus a §7 survivals row carrying its eighty-seven-year half-life. Compliant on the
-  section's headline, which is what E1 governs — **and worth re-reading the moment §4.4 is
-  re-headlined or the knife-edge is promoted into the abstract's lead.**
+- **C09 is the closest call in the table.** `REG-002`'s **E2** falsifier *did* trip —
+  δ₃\* = 0.0079 is below the registered 0.010 — so §4.4 may not report τ = −1 as its headline.
+  It does not: §4.4 is *titled* for the validity region, and the knife-edge is one bolded
+  paragraph lead inside it plus a §7 survivals row carrying its eighty-seven-year half-life.
+  Compliant on the section's headline, which is what E2 governs — **and worth re-reading the
+  moment §4.4 is re-headlined or the knife-edge is promoted into the abstract's lead.**
+  **That sentence is now built: `tests/test_tripwire_c09_sec44_headline.py` (`-45`).**
+- **~~`REG-002` E1~~ — THE ROW CITED THE WRONG FALSIFIER FOR THREE SESSIONS, AND EVERY CHECK
+  ANYBODY COULD HAVE RUN CAME BACK GREEN.** C09's row, this bullet, §3.3, §3.4 and two
+  handoffs all named **E1**. The clause quoted in the row — *"§4.4 may not report it as the
+  section's headline"* — is **E2**'s, and E2 is the one `RESULT-REG-002` §1 records as
+  **FIRED**. E1 is the mean-τ falsifier that §2 of that same RESULT records as
+  **mis-specified**, and it did not fire. The citation survived because **both** falsifiers
+  constrain §4.4's headline — E1 would have downgraded the headline claim from *inverts* to
+  *destroys* — so an existence check (*does `REG-002` have an E1? does it mention §4.4's
+  headline?*) returns yes to a wrong pointer. This is `-44`'s finding one column to the left:
+  **a `source` cell is a provenance claim exactly as a `machine` cell is a coverage claim, and
+  nobody had verified a single one of those either.** The audit question that catches it is
+  not *does the cited section exist* but **does the cited section contain the words in the
+  quotation column** — mechanised in `test_constraint_inventory_selfconsistent.py`
+  (`test_every_quoted_constraint_appears_in_its_cited_source`, `-45`), which now reads all
+  fifty rows on every run.
+- **THE PROVENANCE AUDIT, ASKED OF ALL FIFTY: SIX ROWS WERE WRONG, IN THREE SHAPES.** Forty-six
+  rows quote; four describe (C02, C03, C04, C06, pinned, because deleting a quotation is the
+  cheapest way to silence this check). Of the forty-six:
+  * **Wrong locator, right document — four rows.** C09 (`E1` → **E2**) · C33 (`§4` → **§3.1**;
+    the panel-rebuild prohibition is in §3.1's frame) · C26, C27, C28 (`§4 Q1/Q2` → **§3** Q1/Q2;
+    §4 of `REG-006` is *The registered predictions* and the Q-block is §3). **Every one of these
+    resolves under an existence check and under a whole-file search** — which is why the audit
+    had to resolve the *exact* cited block, and why the machine nests its locators: `Q1` is
+    unique in `REG-006`, so a union of `§4` and `Q1` finds the right text under a wrong address.
+  * **A paraphrase that dropped the antecedent — one row.** C05 quoted *"the next move is not a
+    third instrument on the same data"*; `PRE-002` §5 says *"The next move **in that case** is
+    not a third instrument…"*, and *in that case* is the conditional's antecedent (*if PRE-002
+    fails*). `-42`'s rule — **a conditional constraint's guard must assert its antecedent** —
+    has a twin here: **a conditional constraint's QUOTATION must carry its antecedent**, or the
+    row records an unconditional rule the registration never wrote.
+  * **A paraphrase that dropped a referent — one row.** C26 quoted *"the word 'impairment' never
+    appears unqualified"*; the registration says *"never appears **in it** unqualified"*, where
+    *it* is the file's own statistics. The shorter form reads as a rule about the manuscript.
+  The check compares the **conjunction** of a row's quotations, not any one of them: the first
+  cut used `any`, and C05's paraphrase passed on the strength of the correctly-quoted fragment
+  sitting beside it. A containment test over a disjunction certifies its weakest conjunct.
 - **~~Nine of the fifty already had a machine~~ — EIGHTEEN did, and sixteen of the eighteen do
   not bind (`-44`).** This bullet said *nine, all of them incidental: the test was written for
   a prediction or an artifact and happens to bind the constraint too.* Both halves were wrong,
@@ -149,6 +186,13 @@ to match it. It exists because the sentence it replaces — *"nine of the fifty 
 machine"* — was a count of a column in this file, stated in prose, wrong, and load-bearing for
 two sessions.
 
+> **`machine:TRIPWIRE` IS NOT A COVERAGE GRADE AND MUST NOT BE ADDED TO ONE.** Only **FOR**
+> and **BINDS** mean a constraint is guarded. `-45`'s three tripwires moved C09, C17 and C36
+> from `none` to `TRIPWIRE`, and moved **none of them out of cell (b) or out of reader-only**
+> — the cells in §3 are unchanged at 10 / 33 / 3 / 4. What changed is that somebody is now
+> guaranteed to be asked. `tests/test_tripwire_class_is_registered.py` asserts that no row
+> ever carries a FOR or BINDS grade against a `test_tripwire_*` file.
+
 | grade | n |
 |---|---|
 | rows | 50 |
@@ -160,7 +204,8 @@ two sessions.
 | machine:BINDS | 3 |
 | machine:PARTIAL | 6 |
 | machine:ADJACENT | 8 |
-| machine:none | 26 |
+| machine:TRIPWIRE | 3 |
+| machine:none | 23 |
 
 ---
 
@@ -272,7 +317,7 @@ sentence *saying which is which* — the adjacent check is never the constraint.
 
 | | the constraint (reader) | the adjacent check (machine) | what the gap is |
 |---|---|---|---|
-| **C36** | a refusal is *"stated in the same sentence as the number that caused it"* — the reader's worry is §7's forty-row ledger diluting the §4.5 row that **refused in 400 of 400 draws** | the registration's literal requirement: the refusal and its number share a sentence. `RESULT-REG-009` §4 complies, and this is checkable | the registration says nothing about the row sharing a table with thirty rows that risked nothing. **A machine can check the sentence; only a reader can see the table.** Jason's call |
+| **C36** | a refusal is *"stated in the same sentence as the number that caused it"* — the reader's worry is §7's forty-seven-row ledger diluting the §4.5 row that **refused in 400 of 400 draws** | the registration's literal requirement: the refusal and its number share a sentence. `RESULT-REG-009` §4 complies, and this is checkable | the registration says nothing about the row sharing a table with thirty rows that risked nothing. **A machine can check the sentence; only a reader can see the table.** Jason's call |
 | **C05** | *"the next move is not a third instrument on the same data"* | no new instrument script targets the lag gradient; T2's card stays closed | the constraint is about a research *decision*, made by whoever holds the next at-bat. There is no artifact to read, because the artifact would be the violation |
 | **C18** | S3's general search *"is teed up in the handoff and is not attempted in this session"* | the handoff carries the tee-up; no S3 instrument exists | *"in this session"* is unaddressable — a machine reading the repo cannot see which session did what, only what is there now |
 
@@ -282,6 +327,12 @@ checks are already built and are mistaken for the constraint: **C09** (a machine
 argument"* — a machine can freeze the argument's paragraphs, as C48 does for §4.7), and
 **C37** (*"never by narration"* — a machine can require a numeral in the attribution paragraph;
 whether the prose is doing the attributing is a reading).
+
+**C09 and C17 now have tripwires on exactly those adjacent facts (`-45`, §3.4), and the
+distinction this paragraph draws is the reason the tripwires say what they say.** The pin is
+the title; the constraint is the headline. A red is *go and read §4.4*, never *§4.4 is wrong*.
+**C37 is the obvious fourth** and is not built: its antecedent — a numeral leaving the
+attribution paragraph of `RESULT-REG-009` — is the same shape and about an hour of work.
 
 ---
 
@@ -321,7 +372,7 @@ below is still the best short account of what building each of these guards actu
    with the filings"* is the paper making this constraint's own point), and a scope test keyed on
    the word *sample* passes `REG-004` §6's own example of the violation.
 5. **C36 · a refusal is stated in the same sentence as the number that caused it.** This is the
-   constraint underneath the presentation item on the board — §7's forty-row ledger dilutes the
+   constraint underneath the presentation item on the board — §7's forty-seven-row ledger dilutes the
    §4.5 row that **refused in 400 of 400 draws**. The registration requires the refusal and its
    number to share a sentence; it says nothing about the row sharing a table with thirty rows
    that risked nothing. That gap is a judgement about a reader and stays Jason's call.
@@ -339,9 +390,13 @@ interchangeable:
    a constraint gets when nothing can watch it *and* the decision is the estate's own.
 2. **JASON'S CALL.** What C36 has. Reserved, per the charter, for judgements about a reader —
    not for anything a Claude with darwin and the repos could decide. C36 qualifies because the
-   thing at issue is what a referee's eye does with a forty-row table, which is not a fact
+   thing at issue is what a referee's eye does with a forty-seven-row table, which is not a fact
    about the repo.
-3. **A TRIPWIRE — and this is the one the estate keeps inventing in prose and never builds.**
+3. **A TRIPWIRE — ~~the one the estate keeps inventing in prose and never builds~~. BUILT IN
+   `-45`.** All three below exist, are marked as a class in three places, and are green:
+   `tests/test_tripwire_c09_sec44_headline.py` · `tests/test_tripwire_c17_sec44_argument.py` ·
+   `tests/test_tripwire_c36_sec7_ledger_shape.py`, registered by
+   `tests/test_tripwire_class_is_registered.py` and the `tripwire` marker in `conftest.py`.
 
 **The tripwire is the general answer, and it is not the adjacent check.** An adjacent check
 fires when a *machine-checkable neighbour* of the constraint is violated and says *"this is
@@ -356,20 +411,47 @@ abstract) attached to a **reader-only consequent** (is τ = −1 now the headlin
 it, so it is a re-read that depends on a future session happening to read this bullet — which
 is exactly the failure `-39` documented.
 
-Three tripwires are owed, and each is two assertions and a message that says *go read this*:
+Three tripwires were owed. **`-45` built all three**, and what each turned out to be:
 
-* **C09** — §4.4's title, and the knife-edge out of the abstract's lead.
-* **C17** — §4.4's argument paragraphs, frozen the way C48 freezes §4.7. A changed hash is not
-  a violation; it is *"§4.4 moved — read it against `REG-003` §7's may-not-reopen."*
-* **C36** — the shape of §7's ledger. If a column separating algebra rows from rows that risked
-  something is ever added, or if the row count moves, the presentation judgement Jason owns is
-  live again and he should be asked once, not silently inherited.
+* **C09** — `tests/test_tripwire_c09_sec44_headline.py`. §4.4's heading pinned byte-for-byte,
+  and the knife-edge's paragraph position in the abstract pinned **as a floor**: moving earlier
+  is promotion and fires, moving later or being pushed down by an inserted paragraph is not and
+  does not. A tripwire that fires on any edit to the abstract is noise, and noise is how a
+  tripwire dies. It also asserts its own warrant — `REG-002` E2's clause, **and**
+  `RESULT-REG-002`'s E2 row still reading FIRED — because C09 is conditional and a re-run that
+  put δ₃\* above 0.010 would leave the file guarding nothing, silently (`-42`'s rule, applied
+  to the tripwire rather than to the guard). *The heading is `###`, not the `##` two handoffs
+  said.*
+* **C17** — `tests/test_tripwire_c17_sec44_argument.py`. **Not** a freeze: `REG-003` §7
+  *licenses* one number and the sentences carrying it, so a byte pin would go red every time
+  the registration did exactly what it registered. The pin is over §4.4 **with every numeric
+  literal masked** — a number moving is silent, prose moving is not. Its blind spots are in
+  its docstring, and the first is that section cross-references are numerals too.
+* **C36** — `tests/test_tripwire_c36_sec7_ledger_shape.py`. §7's ledger column tuple and row
+  count (**47**), and the red message says *ask Jason, once*, with the re-pin path as the way
+  his answer gets recorded. It does not grade the presentation and must not be improved into
+  doing so.
+
+**Registering the class, which is the part that keeps them alive.** A tripwire is not a guard,
+and a suite that cannot tell them apart will eventually have one deleted as a false alarm. The
+class is marked in **three** places — the file name `test_tripwire_*.py`, a `tripwire` pytest
+marker registered in `conftest.py` (so `-m tripwire` selects the class and `-m "not tripwire"`
+excludes it), and a `TRIPWIRE` grade in §1's `machine` column — and
+`tests/test_tripwire_class_is_registered.py` requires all three to agree in both directions,
+because any one alone rots quietly: a file renamed, a marker dropped in a tidy-up, a row
+re-graded. **`TRIPWIRE` IS NOT COVERAGE**, and that is asserted rather than trusted: no row may
+carry a FOR or BINDS grade against a `test_tripwire_*` file. The three cells in §3 are
+unchanged — C09 and C17 are still in cell (b), C36 is still reader-only. What changed is that
+somebody is now guaranteed to be asked.
 
 **The rule to carry forward: a constraint a machine cannot recognise gets a machine on its
 ANTECEDENT and a human on its consequent — and a guard whose red message names a violation
 when it should name a re-read teaches the next session to suppress it.** `-42` learned the
 same lesson about conditional constraints in the other direction: different failures, different
-messages.
+messages. **`-45`'s addition: the antecedent has to be the one a reader would actually act on.**
+Every one of the three had a cheaper, wronger version available — freeze the section, fire on
+any abstract edit, count the rows and grade them — and each of those would have been green
+today and deleted within three sessions.
 
 ---
 
