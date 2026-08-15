@@ -121,6 +121,19 @@ def _insert_after(root: Path, rel: str, anchor: str, sentence: str):
     p.write_text(text.replace(anchor, anchor + sentence, 1))
 
 
+def _delete_file(root: Path, rel: str):
+    """Remove one committed file.
+
+    The forbidden move for a *beside, never instead of* pair (`-49`): the surviving half
+    satisfies every prohibition in the estate and violates the pairing outright, which is
+    why an absence guard cannot express that constraint (`-44`'s C49 shape).
+    """
+    p = root / rel
+    if not p.exists():
+        raise SystemExit(f"PROBE SITE MISSING: {rel} does not exist")
+    p.unlink()
+
+
 def _drop_section(root: Path, rel: str, heading: str):
     """Delete one `## ` section, heading included, up to the next `## `."""
     p = root / rel
@@ -272,6 +285,23 @@ RANKED_PROBES: list[tuple] = [
          r, f"{DOCS}/RESULT-REG-010-half-integer-banding.md", "\n\n",
          "**P3 is re-scored on this evidence: what REG-009 recorded as a failure is a pass"
          " under the banding registered here.**\n\n")),
+
+    # `-49`: the three probes above measure the PROSE limb of each constraint. The three
+    # below measure the PRESENCE limb, which fails the other way round — by deletion, not
+    # by assertion. `R3d` is expected to have incidental catchers (`-46` measured five, in
+    # `test_reg010_sec4_frozen_numbers.py`, whose `-42` antecedent asserts the documents
+    # the freeze reads still exist); it is here so that the OWNED catcher can be told apart
+    # from them, which is the whole of §3's two axes.
+    ("R3d", "C44: `-31`'s count is deleted, leaving the filled row standing alone",
+     lambda r: _delete_file(r, f"{DOCS}/RESULT-REG-009-band-count.md")),
+    ("R3e", "C46: RESULT-REG-010's refusal of the mirror is deleted (silence, not refusal)",
+     lambda r: _prose_edit(
+         r, [f"{DOCS}/RESULT-REG-010-half-integer-banding.md"],
+         "**The mirror is not promoted, under this outcome or any other.** ", "")),
+    ("R3f", "C41: RESULT-REG-010's restatement of P3's failure is deleted",
+     lambda r: _prose_edit(
+         r, [f"{DOCS}/RESULT-REG-010-half-integer-banding.md"],
+         "It does not re-score P3, which failed and stays failed. ", "")),
 
     # 4 · C10 · REG-002 §5 — "labelled an EXTENSION of E4 throughout, never as E4"
     ("R4", "C10: the re-ask relabelled as E4 itself, not as an extension of it",

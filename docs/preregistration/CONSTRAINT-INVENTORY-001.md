@@ -88,12 +88,12 @@ INST = governs an instrument or its inputs. **Machine:** the test that would go 
 | C38 | `REG-009` §12 | §4.4's rectangle sentence repaired *"in one of exactly two ways"*: the rate named **and the rectangle labelled asserted rather than observed** | the rectangle | every mention | MS | yes | eight *asserted rectangle* sites; the label travels — **compliant** | MECH | **PARTIAL** · **`test_term001_rectangle.py`** |
 | C39 | `REG-009` §12 | *"no free parameter may be introduced to reconcile Ψ with 99.7 %"* | Ψ | document | MS+INST | yes | §7's row reports 0.659 against 0.998 and reconciles nothing — **compliant** | PROXY | **ADJACENT** · F10, and `test_reg009_ladder_inputs.py` |
 | C40 | `REG-009` §12 | §7.5's count lands *"whatever Ψ returns"*: 151/98 repaired against 55/38 as §5 collected it | §4.7's clause | sentence | MS | yes | §4.7 carries both counts — **compliant** | MECH | **BINDS** · `test_reg012_sec6_sec47_frozen.py` — **not** `test_term002_count.py`, which is about §8's free-parameter numeral and never opens §4.7 |
-| C41 | `REG-010` §0 | *"P3 failed as registered and REG-010 does not re-score it"* | P3 | document | RES | yes | **closed by ruling** — do not reopen | PROXY | **PARTIAL** · `test_reg010_half_integer_banding.py` |
+| C41 | `REG-010` §0 | *"P3 failed as registered and REG-010 does not re-score it"* | P3 | document | RES | yes | **closed by ruling** — do not reopen; `RESULT-REG-010` restates the failure in its own voice at §0, §3 and §6 — **compliant** | PROXY | **FOR** · `test_reg009_reg010_supersession_family.py` (`-49`) — a POLARITY pair: no unnegated clause re-scores P3, and the document's own two refusal sentences are pinned present. Graded on probes `R3c` (1 catcher) and `R3f` (1 catcher). Still incidentally PARTIAL via `test_reg010_half_integer_banding.py`, which binds the number and misses the prohibition |
 | C42 | `REG-010` §4 | a list of fifteen numbers *"this may not move"*; one new artifact, overwrites nothing | REG-009's numbers | artifact | RES+INST | yes | **compliant** | MECH | **FOR** · `test_reg010_sec4_frozen_numbers.py` (`-46`) — all fifteen frozen at every artifact site AND in the documents that report them, each with its own forbidden move; graded on the mutation, not the pointer (see §2b). Incidentally also `test_reg009_ladder_inputs.py`, `test_reg009_band_count.py`, `test_reg010_half_integer_banding.py` |
 | C43 | `CONSTRUCTION-REG-009` R2 | the fill raises *"the joinable column only"* | the fill | artifact | INST | yes | H6 refuses the run if `events_total` moves — **compliant** | MECH | **PARTIAL** · `test_reg009_band_count_filled.py` |
-| C44 | `CONSTRUCTION-REG-009` R3 | the count is reported *"BESIDE `-31`'s, never instead of it"* | the band count | artifact | RES | yes | two artifacts, both committed — **compliant** | MECH | **PARTIAL** · `test_reg009_band_count.py` + `_filled` |
+| C44 | `CONSTRUCTION-REG-009` R3 | the count is reported *"BESIDE `-31`'s, never instead of it"* | the band count | artifact | RES | yes | two artifacts, both committed — **compliant**, and the one near-miss (§0's *"the measurement replacing both brackets"*) is lawful at CLAUSE resolution and pinned; see §2e | MECH | **FOR** · `test_reg009_reg010_supersession_family.py` (`-49`) — a REFERENT scan (the verb's object must be `-31`'s count) plus the presence pair *beside* requires. Graded on probes `R3a` (1 catcher) and `R3d` (1 owned catcher; its other five are `test_reg010_sec4_frozen_numbers.py`'s `-42` antecedent and are incidental). Still incidentally PARTIAL via `test_reg009_band_count.py` + `_filled` |
 | C45 | `CONSTRUCTION-REG-009` R5 | *"no band edge, band width, floor, tag or interval rule is re-chosen in response to the number"*; `R_MIN` not promoted | the band count | document | RES | yes | **closed by ruling; unspent** | MECH | **ADJACENT** · `test_reg012_band_edge_phase.py` |
-| C46 | `CONSTRUCTION-REG-010` C4 | the mirror is *"computed, reported beside, never used to choose"*; *"never promoted"* | the mirror | document | RES | yes | **compliant** | PROXY | **PARTIAL** · `test_reg010_half_integer_banding.py` |
+| C46 | `CONSTRUCTION-REG-010` C4 | the mirror is *"computed, reported beside, never used to choose"*; *"never promoted"* | the mirror | document | RES | yes | **compliant** — §4 refuses the mirror *"under this outcome or any other"* in the document's own voice | PROXY | **FOR** · `test_reg009_reg010_supersession_family.py` (`-49`) — the same POLARITY pair as C41, on the mirror. Graded on probes `R3b` (1 catcher) and `R3e` (1 catcher). Still incidentally PARTIAL via `test_reg010_half_integer_banding.py` |
 | C47 | `REG-012` §4 | E1 and E2 *"are reported beside it, never instead of"* the histogram E3 | the phase histogram | document | RES | yes | **compliant** | MECH | **BINDS** · `test_reg012_band_edge_phase.py` |
 | C48 | `REG-012` §6 | *"this measurement produces no new answer to §7.5's decision rule, and no sentence of the manuscript's §4.7 is changed by any outcome of it"* | §4.7 | **sentence** | MS | yes | §4.7 is unchanged since `REG-012` — **compliant**, and now pinned at `ba59370` | MECH | **FOR** · **`test_reg012_sec6_sec47_frozen.py`** (new, `-43`) |
 | C49 | `REG-012` §7 | the shifted band count *"is refused, not merely unperformed"* | the band count | sentence | MS+RES | yes | **compliant** — but `-44` found the guard could not tell a refusal from a silence: both states have zero band counts and `test_reg012_band_edge_phase.py`'s assertion is an **absence**. Paired guard added | MECH | **FOR** · **`test_reg012_sec7_refusal_is_asserted.py`** (new, `-44`, the *presence* limb) + `test_reg012_band_edge_phase.py` (the *absence* limb) |
@@ -242,7 +242,7 @@ probe for each, so this is a number rather than a sentence:
 |---|---|---|---|
 | 1 · C07 amended-after-result | `R1` | **0/1** | — |
 | 2 · C26 unqualified *impairment* · the count beside each ratio | `R2a` `R2b` | 0/2 | — |
-| 3 · C44 / C46 / C41, the **supersession** limb `-46` left unmeasured | `R3a` `R3b` `R3c` | 0/3 | — |
+| 3 · C44 / C46 / C41, the **supersession** limb `-46` left unmeasured | `R3a` `R3b` `R3c` | 0/3 | — · *re-measured 0/3 at `469012b` by `-49`, then built; §2e* |
 | 4 · C10 the re-ask labelled `E4` | `R4` | 0/1 | — |
 | 5 · C16 / C20 / C23 / C25 / C30 forbidden claims | `R5a`–`R5e` | 0/5 | — |
 | 6 · C45 `R_MIN` promoted · the band rule re-chosen | `R6a` `R6b` | **1/2** | `test_reg012_band_edge_phase.py::test_the_population_is_the_cited_tables_own` |
@@ -326,6 +326,62 @@ a pinned row that acquires a count goes red saying SHRINK ME. Carded, not repair
 unambiguous inside a table row and a judgement call in a paragraph, so they sit outside the
 locator's scope and **nobody has adjudicated them.**
 
+## 2e · The supersession family built — one prohibition, two discriminators (`-49`)
+
+> **THE TEE-UP SAID *"ASSERT BOTH DOCUMENTS EXIST AND THAT THE LATER ONE CARRIES NO
+> SUPERSESSION CLAIM."* THAT IS ONE PREDICATE, AND THE ONE PREDICATE IS RED ON ALL THREE
+> COMPLIANT DOCUMENTS.**
+
+C44, C46 and C41 say the same thing about three objects — *a later measurement stands beside
+an earlier verdict and never in place of it* — so they share a file. They do **not** share a
+discriminator, and finding that out was the session:
+
+- **C44 · the REFERENT** (`-45`'s lesson, one domain over). `CONSTRUCTION-REG-009` R3 forbids
+  superseding **`-31`'s count**. A bare verb scan returns three sites in
+  `RESULT-REG-009-band-count-filled.md`, all lawful, because each verb's object is something
+  else: §0's *"the measurement replacing both brackets"*, §6's *"the conditional is REPLACED …
+  by the measured outcome"*, §6's *"a bound that the measurement has superseded"*. The object
+  is the discriminator.
+- **C46 / C41 · the POLARITY.** `RESULT-REG-010` names the mirror and names P3 precisely in
+  order to refuse them — *"The mirror is not promoted, under this outcome or any other."* ·
+  *"It does not re-score P3, which failed and stays failed."* A referent test cannot tell a
+  refusal from a promotion. An unnegated clause can.
+
+**AND THE RESOLUTION IS THE LOAD-BEARING CHOICE, RUNNING THE OTHER WAY FROM §0's WARNING.**
+§0 records `-41`'s tell that *a grade applied at paragraph resolution against a sentence-level
+rule is a false green*. Here the danger is one notch finer. At **sentence** resolution C44's
+detector is RED on the compliant document, because §0's opening sentence carries a reference
+to `RESULT-REG-009-band-count` and the verb *replacing* — and is lawful. At **clause**
+resolution (splitting on `.!?;`, an em-dashed aside, a colon) the verb and the referent fall
+in different clauses at every lawful site, and the detector is clean on the document and red
+on `R3a`'s exact insertion. That sentence is pinned as `LAWFUL_NEAR_MISS` with a second
+assertion that its clauses have not fused, so a rewrite is read by a human.
+
+> **A COPIED `own_voice()` HELPER WOULD HAVE MADE C44 VACUOUS, AND ONLY THE `-43` NON-VACUITY
+> TEST WOULD HAVE SAID SO.** `-48`'s helper strips inline code for a reason correct in its own
+> file — *"`GoodwillImpairmentLoss` is an XBRL element, not the word `impairment`"*. This
+> estate writes cross-references in backticks, so `` `-31` `` **is** inline code: stripping it
+> deletes the referent from the lawful sites and from `R3a`'s forbidden insertion alike, and
+> the detector then reports zero on both. **An own-voice filter is not a portable utility; it
+> is tuned to what the constraint's discriminator has to read.** `-44` said copy helpers
+> rather than import them; this is the case that shows copying is not merely tidier.
+
+**Six probes, six reds, and the ownership is legible.** `R3a`/`R3b`/`R3c` (the prose limbs)
+each have **exactly one** catcher, all in the new file. `R3e`/`R3f` delete the document's own
+refusal sentences — C49's shape, `-44`: *an absence guard cannot express X-not-merely-Y* — and
+each has exactly one catcher. `R3d` deletes `RESULT-REG-009-band-count.md` and has **six**: the
+owned presence assertion, and the five `test_reg010_sec4_frozen_numbers.py` reds `-46` measured
+and correctly called incidental. The grade is written off the owned ones.
+
+**A defect this session introduced and caught in its own probe run**, recorded because the
+mechanism generalises: the two over-breadth tests first asserted *the detector finds nothing
+in document + quotation*. On `R3a`'s mutant that assertion is **also** red — the document is
+violating, so the detector correctly finds the violation, and an over-breadth test reads as an
+over-breadth defect the guard does not have. `-39`'s tell, in a new place: **a self-test whose
+predicate is ABSENCE turns one defect into two red lines and buries the one that names it.**
+The predicate is now CONTRIBUTION — *the quotation adds no hit* — which is true on a violating
+document and on a clean one, and it removed a spurious co-catcher from three probe rows.
+
 ## 2a · The counts, recomputed
 
 `tests/test_constraint_inventory_selfconsistent.py` parses §1's table and requires this block
@@ -347,9 +403,9 @@ two sessions.
 | recog:PROXY | 8 |
 | recog:READER | 3 |
 | recog:n/a | 4 |
-| machine:FOR | 10 |
+| machine:FOR | 13 |
 | machine:BINDS | 3 |
-| machine:PARTIAL | 5 |
+| machine:PARTIAL | 2 |
 | machine:ADJACENT | 7 |
 | machine:TRIPWIRE | 3 |
 | machine:none | 22 |
@@ -363,7 +419,7 @@ could NEVER recognise, and what does the estate do about those?** `-43` answered
 cells — (a) has a machine, (b) could have one and nobody wrote it, (c) recognisable only by a
 reader — and reported **(b) EMPTY**.
 
-**(b) is not empty. It held thirty-three of the fifty when `-44` measured it, thirty-two since `-46` built C42's guard, thirty-one since `-47` built C07's, and thirty since `-48` built C26's**, and the three-cell shape is why it
+**(b) is not empty. It held thirty-three of the fifty when `-44` measured it, thirty-two since `-46` built C42's guard, thirty-one since `-47` built C07's, thirty since `-48` built C26's, and twenty-seven since `-49` built the C44/C46/C41 family in one file**, and the three-cell shape is why it
 looked empty. Cell (a) is a fact about the ESTATE — somebody wrote a test. Cell (c) is a fact
 about the CONSTRAINT — no test could be written. Those are two different axes fused into one
 row of cells, and the fusion has a specific consequence: **anything with a name in the `machine`
@@ -376,7 +432,7 @@ the one the three-cell shape had no room for:
 
 | | a machine binds it | nothing binds it |
 |---|---|---|
-| **machine-recognisable** (MECH·PROXY, 43) | **13** — 10 written FOR the constraint, 3 incidental and genuinely binding | **30** — the cell `-43` reported empty. 14 of them **name a machine that does not bind**: the false-green class |
+| **machine-recognisable** (MECH·PROXY, 43) | **16** — 13 written FOR the constraint, 3 incidental and genuinely binding | **27** — the cell `-43` reported empty. 11 of them **name a machine that does not bind**: the false-green class |
 | **reader-only** (READER, 3) | — | **3** — C05, C18, C36. §4 is what they get instead |
 
 *(Four rows are `n/a`: C08, C13, C28, C29 fire on antecedents that never occurred, so there is
@@ -399,8 +455,14 @@ is materialised in the committed artifact, so a violating world is a red world; 
 binds the **antecedent**, going red identically when the constraint is *honoured*, and must be
 re-read by a human the moment it fires.
 
-**PARTIAL (5)** — C38, C41, C43, C44, C46. Each binds the number and misses the
-prohibition. **C44** and **C46**: neither named test opens a single `.md`.
+**PARTIAL (2)** — C38, C43. Each binds the number and misses the prohibition.
+
+> **THREE OF THIS ROW'S FIVE LEFT IT ON 2026-08-15.** C41, C44 and C46 are **FOR** since
+> `-49` built `tests/test_reg009_reg010_supersession_family.py`; the sentence that stood
+> here — *"**C44** and **C46**: neither named test opens a single `.md`"* — was true when
+> it was written and is the reason the family was buildable. Their PARTIAL pointers are
+> kept in §1's rows, marked incidental, because the pointer is still true and is still not
+> coverage. §2e is the build.
 
 > **HALF OF C44/C46's SENTENCE WENT STALE ON 2026-08-15 AND IS CORRECTED HERE RATHER THAN
 > LEFT TO ROT.** It read *"so `RESULT-REG-009-band-count.md` can be deleted outright and
@@ -410,8 +472,13 @@ prohibition. **C44** and **C46**: neither named test opens a single `.md`.
 > documents the freeze reads still exist. **The grades do not move.** That test binds
 > C42's fifteen numbers and is blind to C44/C46's *beside, never instead of* — deleting
 > the file is caught, and rewriting its claim as superseding still is not. **An incidental
-> red is not coverage, which is the whole lesson of §3's two axes.** The second limb —
-> the supersession prose — remains unmeasured and is the live half of §3.2's item 3.
+> red is not coverage, which is the whole lesson of §3's two axes.** ~~The second limb —
+> the supersession prose — remains unmeasured and is the live half of §3.2's item 3.~~
+> **MEASURED by `-47` (`R3a`/`R3b`/`R3c`, all green), re-measured green at `469012b` by
+> `-49`, and BUILT by `-49`. This paragraph's own prediction held exactly**: `-49` added
+> `R3d`, which deletes `RESULT-REG-009-band-count.md`, and its catcher list is the owned
+> guard plus the five `test_reg010_sec4_frozen_numbers.py` reds `-46` measured here — the
+> incidental set, now visibly separable from the owned one, which is what a probe is for.
 
 > **C42 WAS THE SIXTH, AND ITS GRADE WAS DERIVED FROM THIS COLUMN RATHER THAN FROM THE
 > SUITE.** The sentence that stood here read *"names two tests that pin three of its
@@ -484,11 +551,16 @@ would cost times how cheaply it can be caught*, and each names the shape it shou
    description is the instructive part: the constraint's referent (`-45`: *it* = the file's
    own statistics) is what decides which occurrences are in scope, and a regex over every
    occurrence goes RED on a compliant document. §2d.
-3. **C44 / C46 / C41 · the "beside, never instead of / never promoted / does not re-score"
-   family** — probes `R3a`/`R3b`/`R3c`, all three green, which **closes the question `-46`
-   left open**: it made the *deletion* limb red incidentally and said the *supersession* limb
-   was unmeasured. It is measured now and it is unguarded. One guard, three constraints:
-   assert both documents exist and that the later one carries no supersession claim.
+3. ~~**C44 / C46 / C41 · the "beside, never instead of / never promoted / does not re-score"
+   family**~~ — **BUILT (`-49`)**, `tests/test_reg009_reg010_supersession_family.py`, probes
+   `R3a`/`R3b`/`R3c` green before and red after with **exactly one catcher each**, plus three
+   new probes `R3d`/`R3e`/`R3f` for the presence limbs. **The description above was right
+   about the shape and wrong about the mechanism**, and the entry is left in place with the
+   correction attached because the wrong half is the instructive half: *"assert … that the
+   later one carries no supersession claim"* is one predicate, and the family needs **two** —
+   a REFERENT test for C44 (whose lawful uses of *replace* have different objects) and a
+   POLARITY test for C46/C41 (whose lawful sites name the mirror and name P3 **in order to
+   refuse them**). A single predicate is red on all three compliant documents. §2e.
 4. **C10 · *"labelled an EXTENSION of E4 throughout, never as E4"*** — probe `R4` green.
    C21's exact shape, one document over, and C21 is the one that was not clean. Two limbs:
    wrong label, missing label.
