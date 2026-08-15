@@ -245,6 +245,14 @@ RANKED_PROBES: list[tuple] = [
     ("R2b", "C26 limb 2: drop the firm-period count printed next to a ratio",
      lambda r: _prose_edit(r, [f"{DOCS}/RESULT-REG-006.md"],
                            "**+0.010** (retail, n = 417)", "**+0.010** (retail)")),
+    # `-48`: R2b moves a PROSE site, which C26's guard binds by a pinned literal. The row
+    # sweep is the other mechanism in the same file and was unprobed when it shipped —
+    # `-47`'s rule, applied to a guard one session old: a limb with no probe is a claim.
+    ("R2c", "C26 limb 2, the table-row mechanism: strip `obs` from a counted ratio row",
+     lambda r: _prose_edit(r, [f"{DOCS}/RESULT-REG-006.md"],
+                           "| retail | 3.63× (p 0.038, 4 obs) | "
+                           "**3.99× (p 0.0012, 14 obs)** |",
+                           "| retail | 3.63× (p 0.038) | **3.99× (p 0.0012)** |")),
 
     # 3 · C44 / C46 / C41 · the beside / never-promoted / does-not-re-score family.
     #     `-46` made the DELETION limb red and left the SUPERSESSION limb unmeasured; §3.1

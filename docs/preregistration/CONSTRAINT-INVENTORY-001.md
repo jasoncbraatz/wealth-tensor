@@ -73,7 +73,7 @@ INST = governs an instrument or its inputs. **Machine:** the test that would go 
 | C23 | `REG-005` §7 | may not be claimed: that a negative result *"licenses removing §4.9's correction"* | §4.9 | section | MS | yes | §4.9 stands and §5.4 holds the lag distribution — **compliant** | MECH | none |
 | C24 | `REG-005` §7 | may not be claimed: *"that the fitted lag distribution transfers to classes the PRE-002 sample does not cover"* | the lag distribution | sentence | MS | yes | §6.1's scope sentence (`-41` T5) states the covered classes — **compliant** | MECH | **FOR** · **`test_reg005_sec7_lag_transfer.py`** (new, `-43`) |
 | C25 | `REG-005` §7 | may not be claimed: *"that the normalisation of §1 is innocuous — it is generous"* | §1's normalisation | sentence | RES | yes | binds `RESULT-REG-005` — **out of manuscript scope** | MECH | none |
-| C26 | `REG-006` **§3** Q1 | *"the word \"impairment\" never appears in it unqualified"* and *"the count of firm-periods behind each ratio is printed next to the ratio"* | REG-006 statistics | every ratio | RES | yes | binds `REG-006`/`RESULT-REG-006` — **out of manuscript scope** | MECH | none |
+| C26 | `REG-006` **§3** Q1 | *"the word \"impairment\" never appears in it unqualified"* and *"the count of firm-periods behind each ratio is printed next to the ratio"* | REG-006 statistics | every ratio | RES | yes | binds `REG-006`/`RESULT-REG-006` — **out of manuscript scope**. Compliant on limb A, and **not for the reason three handoffs gave**: the document carries twelve occurrences and **two are bare** — they are lawful because neither states a statistic of this study, which is what *in it* means (`-45`). Limb B is **BOUNDED, NOT CLEAN**: §2's internal-control table prints twelve ratios and no counts — see §2d | MECH | **FOR** · `test_reg006_sec3_q1_two_limbs.py` (`-48`) — one locator, two assertions; graded on probes `R2a` and `R2b`, both green before it and red after, each with exactly one catcher |
 | C27 | `REG-006` **§3** Q2 | a cell with fewer than 20 firm-periods *"is reported as its count and no ratio is formed from it"* | thin cells | cell | RES | yes | binds `RESULT-REG-006` | MECH | none |
 | C28 | `REG-006` **§3** Q2 | the cap region's slope reported *"as a function of L/W, never as a point"* | the cap slope | sentence | MS+RES | **NO** | ladder C **failed as registered** (§7's row); no cap-region slope is reported anywhere, as a point or otherwise — **not live** | n/a | none needed |
 | C29 | `REG-006` §8 | if ladder C's corrected lift lands below `REG-003`'s figure, §5.4's number is amended *"in the text where the number is — not in a footnote, and not in Limitation 9"* | §5.4's lift | **placement** | MS | **NO** | ladder C failed; no amendment was owed — **not live** | n/a | none needed |
@@ -282,6 +282,50 @@ then reported its absence as the measurement.
 with exactly one catcher, the guard written for it. The other six positions are unchanged in
 rank and now rest on a measurement instead of a column.
 
+## 2d · C26 built — and the document's compliance was right for the wrong reason (`-48`)
+
+> **THREE HANDOFFS DESCRIBED `RESULT-REG-006` AS CARRYING *"impairment"* ELEVEN TIMES,
+> *"EVERY ONE OF THEM QUALIFIED"*. IT CARRIES IT TWELVE TIMES AND TWO ARE BARE. THE
+> DOCUMENT IS COMPLIANT ANYWAY — FOR A REASON NOBODY HAD WRITTEN DOWN.**
+
+The tee-up's premise was that limb A is a regex requiring every occurrence to be qualified.
+Built that way the guard is **RED on the real document**, at:
+
+- *"Test goodwill first and the impairment is \$700"* — KPMG *Handbook* Example 4.4.10,
+  narrated. The \$700 is KPMG's arithmetic and not a measurement of this study.
+- *"1,400 firms recording an impairment"* — the 8-K Item 2.06 population, in both
+  `REG-006` §5 and `RESULT-REG-006` §3. Here the bare word is **doing honest work**: it
+  means *any* impairment, tagged or folded, which is the undifferentiated thing Q1 exists
+  to say the threshold cannot separate. Qualifying it would make the sentence wrong.
+
+What saves both is the referent `-45` restored: **the clause reads *never appears IN IT
+unqualified*, and *it* is the file's own statistics.** So the discriminator is not *is this
+occurrence qualified* but *is this occurrence naming a statistic* — and Q1's own third
+conjunct says what kind of statistic it means: one with a count of firm-periods behind it, a
+ratio. The guard fires on a bare `impairment` sharing a sentence with a ratio token, which is
+exactly probe `R2a`'s insertion and neither of the two sites above.
+
+> **A GUARD BUILT FROM A HANDOFF'S CHARACTERISATION OF A DOCUMENT WOULD HAVE SENT THIS
+> SESSION TO REPAIR A COMPLIANT WITNESS.** `-44` the `machine` column, `-45` the `source`
+> column, `-46` the ranking prose, `-47` the harness and the DO-NOT list, `-48` the tee-up's
+> reading of the document it was teeing up. **Five sessions, five times, the estate's prose
+> about itself. Measure the artefact, not the sentence that sent you to it.**
+
+**And limb B is bounded, not clean.** *"The count of firm-periods behind each ratio is
+printed next to the ratio"* is a **placement** rule (C29's shape), so the count has to be in
+the row. §2's headline table prints `events`, `firm-quarters` and `N_co`; §2.1's PP&E table
+prints `4 obs` / `14 obs`; §3's slopes print `n = 417` / `n = 318`. **§2's six-row
+internal-control table prints twelve ratios and not one count**, and the counts exist — the
+`obs` column of each pair block in `RESULT-REG-006-ladderC-run.log`. Printing them into that
+table edits a witness, which the `-37` precedent says is a dated addendum's job and not a
+test's, so the guard **bounds** it: the six rows are pinned, an unpinned seventh goes red, and
+a pinned row that acquires a count goes red saying SHRINK ME. Carded, not repaired.
+
+**A named residual, so nobody inherits it as a silence:** §2.2's four discovered couplings
+(0.00×, 3.27×, 7.70×, 6.33×) are reported in prose with p-values and no counts. *Next to* is
+unambiguous inside a table row and a judgement call in a paragraph, so they sit outside the
+locator's scope and **nobody has adjudicated them.**
+
 ## 2a · The counts, recomputed
 
 `tests/test_constraint_inventory_selfconsistent.py` parses §1's table and requires this block
@@ -303,12 +347,12 @@ two sessions.
 | recog:PROXY | 8 |
 | recog:READER | 3 |
 | recog:n/a | 4 |
-| machine:FOR | 9 |
+| machine:FOR | 10 |
 | machine:BINDS | 3 |
 | machine:PARTIAL | 5 |
 | machine:ADJACENT | 7 |
 | machine:TRIPWIRE | 3 |
-| machine:none | 23 |
+| machine:none | 22 |
 
 ---
 
@@ -319,7 +363,7 @@ could NEVER recognise, and what does the estate do about those?** `-43` answered
 cells — (a) has a machine, (b) could have one and nobody wrote it, (c) recognisable only by a
 reader — and reported **(b) EMPTY**.
 
-**(b) is not empty. It held thirty-three of the fifty when `-44` measured it, thirty-two since `-46` built C42's guard, and thirty-one since `-47` built C07's**, and the three-cell shape is why it
+**(b) is not empty. It held thirty-three of the fifty when `-44` measured it, thirty-two since `-46` built C42's guard, thirty-one since `-47` built C07's, and thirty since `-48` built C26's**, and the three-cell shape is why it
 looked empty. Cell (a) is a fact about the ESTATE — somebody wrote a test. Cell (c) is a fact
 about the CONSTRAINT — no test could be written. Those are two different axes fused into one
 row of cells, and the fusion has a specific consequence: **anything with a name in the `machine`
@@ -332,7 +376,7 @@ the one the three-cell shape had no room for:
 
 | | a machine binds it | nothing binds it |
 |---|---|---|
-| **machine-recognisable** (MECH·PROXY, 43) | **12** — 9 written FOR the constraint, 3 incidental and genuinely binding | **31** — the cell `-43` reported empty. 14 of them **name a machine that does not bind**: the false-green class |
+| **machine-recognisable** (MECH·PROXY, 43) | **13** — 10 written FOR the constraint, 3 incidental and genuinely binding | **30** — the cell `-43` reported empty. 14 of them **name a machine that does not bind**: the false-green class |
 | **reader-only** (READER, 3) | — | **3** — C05, C18, C36. §4 is what they get instead |
 
 *(Four rows are `n/a`: C08, C13, C28, C29 fire on antecedents that never occurred, so there is
@@ -433,10 +477,13 @@ would cost times how cheaply it can be caught*, and each names the shape it shou
    after: `tests/test_reg001_sec5_no_amendment_after_result.py`. It compares ancestry rather
    than dates, and asserts that REG-001 is still the only registration making the promise, so
    a second one adopting it goes red saying EXTEND ME.
-2. **C26 · *"the word 'impairment' never appears unqualified"*** — probes `R2a`/`R2b`, both
-   green; **now the top of the measured list.** A pure regex constraint,
-   over `RESULT-REG-006`, and its sibling limb (the count printed next to each ratio) is the
-   `-43` two-limb shape.
+2. ~~**C26 · *"the word 'impairment' never appears **in it** unqualified"***~~ — **BUILT
+   (`-48`)**, probes `R2a` and `R2b`, both green before and red after, one catcher each:
+   `tests/test_reg006_sec3_q1_two_limbs.py`. **It is not the pure regex this line said it
+   was**, and the entry is left in place with the correction attached because the wrong
+   description is the instructive part: the constraint's referent (`-45`: *it* = the file's
+   own statistics) is what decides which occurrences are in scope, and a regex over every
+   occurrence goes RED on a compliant document. §2d.
 3. **C44 / C46 / C41 · the "beside, never instead of / never promoted / does not re-score"
    family** — probes `R3a`/`R3b`/`R3c`, all three green, which **closes the question `-46`
    left open**: it made the *deletion* limb red incidentally and said the *supersession* limb
