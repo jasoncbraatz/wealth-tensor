@@ -41,7 +41,7 @@ never asked. The 61 probes already built are an asset; they are not a destinatio
 | **P11b** | corpus | 🔨 OPEN | 0/1 |
 | **P11c** | corpus | ✅ CLOSED | 1/1 |
 | **P11d** | corpus | 🔨 OPEN | 0/1 |
-| **P11e** | corpus | 🔨 OPEN | 0/1 |
+| **P11e** | corpus | ✅ CLOSED | 1/1 |
 | **P11f** | corpus | 🔨 OPEN | 0/1 |
 | **P11g** | corpus | 🔨 OPEN | 0/1 |
 | **P13** | corpus | 🔨 OPEN | 0/1 |
@@ -112,7 +112,7 @@ never asked. The 61 probes already built are an asset; they are not a destinatio
 - [ ] P11b · END-TO-END-001 leg E2 is RUN and its verdict is recorded — the unowned claim — does the conjunction assert something no paper defends? — **UNMET** _(rc=2)_
 - [x] P11c · END-TO-END-001 leg E3 is RUN and its verdict is recorded — the containment matrix — is ADR-001's promise about failure true? — **MET** _(check passed)_
 - [ ] P11d · END-TO-END-001 leg E4 is RUN and its verdict is recorded — the corpus's empirical content, stated whole — **UNMET** _(rc=2)_
-- [ ] P11e · END-TO-END-001 leg E5 is RUN and its verdict is recorded — the over-subscribed guard — does one test hold two claims that could come apart? — **UNMET** _(rc=2)_
+- [x] P11e · END-TO-END-001 leg E5 is RUN and its verdict is recorded — the over-subscribed guard — does one test hold two claims that could come apart? — **MET** _(check passed)_
 - [ ] P11f · END-TO-END-001 leg E6 is RUN and its verdict is recorded — the cross-paper contradiction — does the corpus assert and deny the same fact in two volumes? — **UNMET** _(rc=2)_
 - [ ] P11g · The pass verdict, read off END-TO-END-001 §3's rule rather than off anyone's judgement, and recorded in the pass-level RESULT document — **UNMET** _(rc=2)_
 - [ ] P13 · The deliverable: a BEAUTIFULLY DESIGNED, arXiv-ready PDF — a point-in-time capture of the corpus as it would present if we stopped here — together with the recipe that regenerates it — **UNMET** _(rc=1)_
