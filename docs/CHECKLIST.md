@@ -89,7 +89,7 @@ never asked. The 61 probes already built are an asset; they are not a destinatio
 | **P5l** | paper-IV | ✅ CLOSED | 1/1 |
 | **P5m** | paper-IV | ✅ CLOSED | 1/1 |
 
-**The next piece is `P13`.** Work it, or say in your handoff why you worked something else.
+**The first OPEN lane in dependency order is `P13`** — which is where the board points, not a schedule; a project's own ordering rulings outrank it. Work it, or say in your handoff why you worked something else.
 
 ## Every criterion, and how it was measured
 
