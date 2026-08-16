@@ -10,7 +10,14 @@
 # nothing goes red; a session that committed it would have deleted the board's statement of
 # what the corpus is for and called it a regeneration.
 #
-# The flags were recorded nowhere runnable. They are recorded here now.
+# THE FLAGS WERE NOT UNRECORDED — THEY WERE RECORDED SOMEWHERE THIS REPO CANNOT SEE.
+# `~/code/darwin-mac-ops/project-charters.tsv` carries the full invocation in its `brief`
+# column, and `charter-read.sh` runs it correctly every session. So the knowledge existed
+# on the machine and was still absent at the point of use: a session working inside
+# wealth-tensor, reading wealth-tensor's docs, had no path to it. That is the actual defect,
+# and it is the more common shape — not a missing fact, a fact filed under the tool instead
+# of under the artefact. This wrapper puts it under the artefact.
+#
 # Reversible by construction: it writes one generated file that git can restore.
 set -euo pipefail
 cd "$(dirname "$0")/.."
