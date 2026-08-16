@@ -2103,10 +2103,16 @@ switch-off regime demonstrates is that the framework's subject matter is conting
 that could take another value, which is the minimum a claim must satisfy to be empirical rather
 than definitional. It is not itself a refutation, and no refutation is offered here.
 
-*A companion result on the same theme, in a sibling paper of this programme, is cited rather than
-reproduced: a levy whose base cannot observe an accrual is inert regardless of its rate. The
-mechanism is the same — observability binds before intensity — and the evidence for it belongs to
-that paper.*
+*A companion result on the same theme is cited rather than reproduced: **Paper II** of this
+programme reports that a levy whose base cannot observe an accrual is inert regardless of its
+rate, and the evidence for it belongs to that paper. An earlier version of this aside added that
+the mechanism was **the same**. That identification is withdrawn. Put to a cross-scale check it
+does not hold: what this paper's filter fails to recognise is deferred, held in the gap and
+released at rate α, while what a levy's base fails to recognise is never assessed at all, and a
+levy has no parameter that plays α's part. The two results share the question and not the
+operator. The check, and the fact that the withdrawal was written down before it was run, are
+recorded in `docs/RESULT-END-TO-END-001-E1.md`; that this appendix still carried the withdrawn
+identification after the check had run is recorded in `docs/RESULT-END-TO-END-001-E3.md`.*
 
 ### A.1.4 · Independence
 

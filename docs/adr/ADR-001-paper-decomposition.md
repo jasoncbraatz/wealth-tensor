@@ -737,3 +737,67 @@ deleted `P11`/`P12`), then a regex for corpus ids (which would have deleted `P13
 correct predicate is the **complement**: keep every row I do **not** emit. A generator can
 enumerate its own output exactly and can never enumerate everything a future session will
 legitimately add beside it. **Stop enumerating what to keep; enumerate what you own.**
+
+---
+
+### Addendum · 2026-08-16 · wealthTensor-57 · **THE FOURTH CLAIM DID NOT SURVIVE ITS OWN FIRST END-TO-END TEST — `T = 2`, and this ADR's own dependency graph is corrected**
+
+`END-TO-END-001` §3's verdict rule, pre-committed in both directions on 2026-08-16 before any leg
+was run: **THE SYSTEM FAILS iff `T ≥ 2`**, where `T` counts TEST legs that fail. Two of the three
+TEST legs have now run and **both failed.**
+
+- **`E1` — the shared degeneracy.** FAILED at `E1a`. Paper II's ρ and Paper III's φ are not the same
+  kind of object: what the reporting filter does not recognise is *deferred*, held in the gap and
+  released at rate α; what the levy's base does not recognise is *destroyed*, and Paper II has no
+  parameter that plays α's part. The join between the sovereign and firm scales is vocabulary.
+  `docs/RESULT-END-TO-END-001-E1.md`.
+- **`E3` — the containment matrix.** FAILED on the second registered failure shape: *striking a
+  single paper removes claims from both others.* `docs/RESULT-END-TO-END-001-E3.md`.
+
+**TEST legs run 2, TEST legs failed 2, AUDIT legs run 0.** No combined score exists and none is
+offered. `E2`, `E4` and `E5` remain unrun; `T` can rise and cannot fall.
+
+**What `T ≥ 2` cashes out to, per §3, and what has been done about each:** Paper IV's chain claim is
+gone (§3 rewritten by `-56`, the abstract narrowed by `-57`); Papers II and III are unaffected and
+ship as independent works; this addendum is §3's third consequence; and **`P13` renders three works,
+not one stack** — recorded, not built, `P13` being last.
+
+#### The correction this ADR owes, and it is to the addendum of 2026-08-10
+
+That addendum's §1 states the corpus's dependency graph as a fact:
+
+> *"Draw the graph from §Decision's evidence allocation and there is exactly one edge set in the
+> whole project: **IV needs I, II and III. I, II and III have no edges among them.**"*
+
+**The second sentence is false, and `E3` is what read it.** Paper III §A.1.3 carried an italicised
+aside asserting, in Paper III's own voice, that its mechanism and Paper II's are *"the same"* —
+which is a claim that becomes unsupported if Paper II's headline is assumed false, and is therefore
+an edge III → II. It is the only one: Paper III's three other cross-paper sentences are pointers and
+apparatus, and Paper II's only contact with Paper III is a **retraction**, which striking Paper III
+would not restore. Two sentences of contact in 37,000 words, running in opposite directions, one of
+them a claim.
+
+**The sentence is corrected in place here rather than by editing the 2026-08-10 addendum**, on this
+file's own convention that addenda carry the record and §Decision stays frozen. The true graph, as
+measured:
+
+> **IV needs II and III (IV declares this itself, §9.3). III carried exactly one undeclared edge to
+> II, repaired in `wealthTensor-57`. II has no edges. With that repair applied, "I, II and III have
+> no edges among them" is true again — and it is now a measured statement rather than an assumed
+> one.**
+
+#### §Consequences' containment sentence is **NOT** retracted, and the reason is pre-registered
+
+`END-TO-END-001` §2/E3's remedy retracts it *"if the matrix is a star rather than a stack"* — the
+`-37` precedent. **The matrix is a stack.** Paper IV is a pure sink, the matrix is lower-triangular
+in II → III → IV order, and the promise as actually written — *"a rejection of III no longer takes I
+and II with it"* — is **true**: reject Paper III and Paper II loses nothing. Applying a remedy whose
+antecedent did not occur would be re-choosing a fixed clause in the direction the corpus happens to
+prefer, which is the move this repository has spent fifty sessions refusing.
+
+What is retracted is the *stronger* claim the 2026-08-10 addendum made, above. And what the promise
+cost, until this session, was one appendix aside — which is the honest size of it and is now on the
+record instead of in an unnamed italic.
+
+*The insurance policy was bought on the Tuesday, the house caught fire on the Thursday, and eleven
+days later somebody finally read the policy.*
