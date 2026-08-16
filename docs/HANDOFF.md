@@ -1,8 +1,8 @@
 ---
 project: wealth-tensor
-gh_sha: eaeb45d6250971230a29de26b9d58fb2a82576c6
+gh_sha: baf91a60b8f0116ea0b3bce2bc920dae6baed910
 updated: 2026-08-16
-session: wealthTensor-54
+session: wealthTensor-55
 gate_passed: true
 gate_version: "2.59"
 definition_of_done: "CLEARED FOR LIFTOFF (Jason's ruling, 2026-08-16, superseding the 'three preprints publicly posted' line carried since sessionZero): Papers II, III and IV done with their coaching and editing, the corpus audited as ONE thing, the python scripts done with every number regenerating from a committed one, and ONE well-designed deliverable that visualises the work — then Jason reads it, does whatever minor re-arranging document design reveals, and clears it. At that moment Claude is finished on wealth-tensor. POSTING IS NOT IN SCOPE: Voice Box Jasonizing, Jason's own-hand rewrite, the endorsement ask and submission are SUCCESSOR projects. A session driving toward 'posted' is driving past the end of the road. The deliverable is a PDF **and a recipe**: RECIPE.md paint-by-numbers (every font, size, leading, margin, package version), a preflight that FAILS on a substituted font rather than approximating, vendored/checksummed fonts, and a rebuild that reproduces the committed page count and per-page text hash — because Jason does the layout and visualisation analysis exactly ONCE."
@@ -11,558 +11,365 @@ definition_of_done: "CLEARED FOR LIFTOFF (Jason's ruling, 2026-08-16, supersedin
 `gh_sha` names the commit this file describes; **the only thing added after it is this file**,
 so `--check` prints `ADVISORY: docs-only drift` and exits 0. Assert the exit code exactly
 (`-39`); `| tail` masks it. That sentence is an **INVARIANT, not a description** — `-51` learned
-that the hard way when a post-wrap ADR commit made it false while the gate stayed green, because
-`--check` classifies by PATH and any docs-only drift is green. If a post-wrap commit lands,
-repoint `gh_sha` and re-master this file.
-`-54` landed `770f766` (Paper II's three prose gaps, alone, so that commit is green on its own),
-`be0bdfc` (the instrument and everything with it), `206e6c6` (Jason's first DoD ruling — P8 to the
-end) and `ef48c4a` (**his second, which replaced the Definition of Done itself**) and `1f4e98a`
-(`P13` specified — the recipe rows), then re-mastered this file alone after them. **`-54` is also the worked example of
-this paragraph's own instruction:** it wrapped at `be0bdfc`, Jason then ruled on the DoD, the
-amendment touched `scripts/` and `tests/`, and `--check` went from `ADVISORY: docs-only drift` to
-`BLOCKER: code advanced past the handoff` — exactly as designed. The repair is what you are reading:
-repoint `gh_sha`, re-master, re-stamp the charter, re-walk the gate.
+that the hard way. If a post-wrap commit lands, repoint `gh_sha` and re-master this file.
+**`-55` adds the modern reason it breaks: A LIVE SIBLING.** `-54` and `-55` ran concurrently on
+one darwin working tree all afternoon. `-55` wrapped at `baf91a6`; if `-54` lands anything after
+that, this file is describing a state that has moved, through nobody's error. **Run
+`~/Scripts/roster who` BEFORE you trust the header**, and if a sibling is live on wealth-tensor,
+repoint before you plan.
 `gh_sha` is the full SHA from `git rev-parse`, not an expanded abbreviation.
 ---
 ## ORIENT — read these first, in this order
-1. **`docs/CHECKLIST.md`** — the generated board. **Regenerate with `./scripts/regen-board.sh`,
-   never `board.py` by hand — see `-53`'s note in that file.** Never hand-tick. As of `-54`:
-   **59 criteria, 46 met, FIVE lanes OPEN — all `P13`'s** (`P13c`/`P13d` closed by ADR-002). First time in this
-   project's history the board's open work is the thing Jason actually asked for. **It is still
-   the LAST thing Claude builds. Read §3 before you take it.**
-2. **`docs/CO-AUTHOR-CHARTER.md`** — the constitution. **THE CHARTER WINS** over this file, any
-   result doc, and any plausible rewrite. **Stamp that you read it:
-   `~/Scripts/charter-read.sh wealthTensor-<NN>` — POSITIONAL slug, no env var — and re-stamp
-   AFTER you amend `done-criteria.tsv`, because `G-AL` compares the stamped SHA against the file
-   as it stands at wrap. `-54` failed the gate on exactly that and it is not a bug: the finish
-   line moved because `-54` moved it.**
-3. **`scripts/gen_apparatus_rows.py`** — **NEW, and the session's real deliverable.** Read its
-   docstring before you touch a single apparatus row. All forty `P1x`/`P3x`/`P5x` rows are
-   emitted from one template; **hand-editing a sub-row in `done-criteria.tsv` is now a mistake
-   the next regeneration silently reverts.**
-4. **`scripts/redproof_apparatus.py`** + **`tests/test_apparatus_rows_are_falsifiable.py`** —
-   34 mutations, 0 survivors, ~1 s, wired into the suite with a census.
-5. **`docs/papers/paper-II-redistribution/paper-II.md`** — three gaps closed. §Abstract, §5's
-   first limitation and §7 all moved. Read the abstract first: it now carries the loss.
-6. **`docs/adr/ADR-001-paper-decomposition.md`** — `-54`'s TWO addenda at the foot, and the
-   second one is a **ruling from Jason that reorders the finish line — read it before you plan
-   anything**. The title and The title and
-   §Decision stay **deliberately frozen** at four papers as the decision-as-made; do not "fix"
-   them. Every live clause says three.
-7. `python3 scripts/handoff_gate.py --check` · `docs/papers/PREPRINT-CHECKLIST.md` §A/§B/§D ·
-   `python3 scripts/mutation_control.py --list` (61 probes) ·
-   `docs/preregistration/CONSTRAINT-INVENTORY-001.md` — **the constraint-inventory thread is
-   still PAUSED**, see §3.
-8. REG-013 + `RESULT-REG-013` §4.1 (read before quoting the headline) · REG-003 §§3.2/3.3/7 ·
-   SCOUT-001 (WORKED) · REG-012 §§6–7 · RESULT-TERM-001's five-site ruling · REG-010 §1/§4 ·
+1. **`docs/END-TO-END-001.md`** — **NEW, `-55`'s deliverable, and the thing that decides the
+   endgame.** `P11`'s system test, designed and deliberately NOT run. Six legs, each with a failure
+   criterion, a refutation criterion and the corpus's **pre-registered** response to every outcome
+   including failure. **Read it before you plan anything**, because §3's verdict rule is what
+   `P13` renders and §2's E1 is what Papers II and IV may be about to say.
+2. **`docs/CHECKLIST.md`** — the generated board. **`./scripts/regen-board.sh`, never `board.py`
+   by hand.** As of `-55`: **59 criteria, 45 met, fourteen lines open** — `P13`'s remaining lanes
+   plus the corpus rows. Never hand-tick.
+3. **`docs/CO-AUTHOR-CHARTER.md`** — the constitution. **THE CHARTER WINS.** Stamp it:
+   `~/Scripts/charter-read.sh wealthTensor-<NN>` — POSITIONAL slug, no env var. **And re-stamp
+   IMMEDIATELY BEFORE THE GATE whether or not you touched `done-criteria.tsv`** — see §4's first
+   item; `-55` learned this the new way.
+4. **`docs/adr/ADR-001-paper-decomposition.md`** — the last four addenda are `-54`'s and the third
+   **replaced the Definition of Done**. Addendum 6 (`-08`) is the one `END-TO-END-001` answers.
+   Title and §Decision stay **deliberately frozen** at four papers as the decision-as-made.
+5. **`docs/adr/ADR-002`** — `-54`'s typography decision: Libertinus, loaded by path, vendored and
+   checksummed. `P13c`/`P13d` closed.
+6. **`docs/papers/paper-IV-composition/paper-IV.md` §3, §4.4.3, §9.2** — repaired by `-55`. Read
+   §3's second paragraph: it is the corpus's first correction that no per-paper review could have
+   produced.
+7. **`scripts/gen_apparatus_rows.py`** — read the docstring before touching any apparatus row. All
+   forty `P1x`/`P3x`/`P5x` rows are emitted from one template; a hand-edit is silently reverted.
+8. `scripts/redproof_apparatus.py` + `tests/test_apparatus_rows_are_falsifiable.py` (37 mutations,
+   0 survivors, ~1 s) · `python3 scripts/handoff_gate.py --check` · `PREPRINT-CHECKLIST.md` §A/§B/§D
+   · `mutation_control.py --list` · `CONSTRAINT-INVENTORY-001.md` (**the guard programme is still
+   PAUSED**).
+9. REG-013 + `RESULT-REG-013` §4.1 · **REG-003 (its diagonality arm is what `-55`'s repair is
+   about)** · REG-003 §§3.2/3.3/7 · SCOUT-001 · REG-012 §§6–7 · RESULT-TERM-001 · REG-010 §1/§4 ·
    CONSTRUCTION-REG-009 (R5 unspent) · REG-009 (READ THE HEADER NOTE FIRST).
 ---
-## `-54` in one line
-**PAPER II IS MEASURED — AND MEASURING A THIRD PAPER IS WHAT PROVED THE INSTRUMENT WAS
-MEASURING TYPOGRAPHY.** Six of the twelve apparatus legs went red on Paper II for reasons that
-had nothing to do with whether Paper II satisfies the criterion. `-53` found this defect once,
-in `P1c`, and fixed it once. It was six. The rows are generated now, and every green has been
-watched to go red.
-**AND THEN JASON MOVED THE FINISH LINE**, mid-session: his own-hand pass (`P8`) is now ONE pass
-over the whole corpus, taken LAST, after a new `P11` audits the three papers **as a system**.
-Read §1's last block before you plan — **it changes which at-bat is on the critical path.**
+## `-55` in one line
+**THE CORPUS'S FIRST SYSTEM-LEVEL TEST IS WRITTEN DOWN — AND WRITING IT FOUND A CONTRADICTION
+BETWEEN TWO PAPERS THAT NEITHER PAPER'S OWN REVIEW COULD EVER HAVE SEEN.** Paper IV said
+diagonality's test was *"open"* and *"until it returns"*. Paper III had run it and **rejected** it,
+at 4.12× and 2.02×, *p* = 0.0002. Paper IV's own §9.2 was a conditional whose antecedent had become
+true, so the paper carrying the corpus's composition chain **entailed that its own firm-scale link
+was broken and did not know it.** Both papers were internally consistent. That is precisely why
+`P11` exists, and it is no longer a hypothesis about the value of the exercise.
 ---
 ## 1 · WHAT HAPPENED
-**The at-bat was P3, and Paper II's gaps are CLOSED. `P3` itself stays `manual:` and unticked —
-by the standing ruling, not by omission.**
+**The at-bat was `P11`'s DESIGN half and it is CLOSED. `P11` itself stays unticked and
+`PENDING-HUMAN` — the running half is a later session's, by the row's own note.**
 
-### The artefact: three real gaps, none of them cosmetic
-| | |
-|---|---|
-| **the abstract** | **265 w → 249 w** (bar 250; chars 1642 → 1513). Not a trim: PREPRINT-CHECKLIST §D says a prediction that was tested and lost goes in the body **and the abstract**, and §3.1's half-failure — *"a flow levy does not oppose the multiplicative term regardless of rate"*, false as stated — appeared only in the body. So the abstract had to lose ~55 words **and gain the loss**. It now names the nested frontiers, **stock 0.000 against flow 0.125**, placed where it leads into the surviving claim rather than where it gets the last word |
-| **§1 promised what §7 did not deliver** | Contribution 5 said the claims are held by *"18 tests including two that exist specifically to make overclaiming fail loudly (§7)"* and §7 named **neither**. Both named now, with what each pins, plus the distinction between the 18 that hold this paper's claims and the repository's whole suite |
-| **the first limitation did not run against comfort** | Papers III and IV both lead with the item that costs them most and III says so in terms (*"listed first on purpose"*). Paper II led with a scope statement already made twice elsewhere and buried the one that hurts — **ρ is exogenous here and in the world it is not, and endogenising it makes the flow base WEAKER than reported** — at number two. Promoted. No text cut; two items changed places |
+### `docs/END-TO-END-001.md` — the answer to a question this repo has carried unanswered since `-08`
+> *What would it mean for the three papers to fail as a system, as opposed to one of them failing?*
 
-**And a tell fired on the way in.** `-53`'s handoff **characterised** Paper II's abstract as
-261 w / 1,646 c. Measured today, on a file `git diff` proves has not moved, it was
-**265 w / 1,642 c**. A handoff's characterisation is not a measurement — and this is the second
-consecutive session to prove it about its own predecessor.
+Committed **before** anything was run, in its own commit (`4ea6361`), on the `REG-013` precedent.
+Its structure, and the three parts of it that are load-bearing:
 
-### The instrument: six legs of twelve were keyed to Paper III's formatting
-`-52` wrote the twelve legs against Paper III. `-53` hand-cloned them onto Paper IV and **all
-twelve passed** — because III and IV happen to share a section numbering and a house style in
-which every numbered item opens in bold. Paper II shares neither.
+- **§1 states the system claim `S` so that it can fail** — that the three papers describe *the same*
+  object's measuring layer at three scales, and that Paper IV's *"a chain rather than three
+  analogies"* is the assertion under test. Everything attacks `S` and nothing else.
+- **§1.1 · THE ADMISSION CRITERION.** *A leg is admissible only if a competent fresh-eyes review of
+  any ONE paper could not have found it* — applied at design time to admit a leg, and again **at run
+  time to every finding**. Anything a single-paper review could have found is reclassified `P7` and
+  scores nothing. **This is the guard that stops `P11` becoming `P7` done three times**, which is the
+  cheapest way for the exercise to fail while looking successful.
+- **§2.0 · TEST vs AUDIT, classified in advance.** Three legs are TESTs (outcome unknown to the
+  designer, can lose); three are AUDITs (outcome anticipated — the value is stating it whole, and
+  the **remedy is pre-registered so the run cannot negotiate it afterwards**). The verdict rule
+  counts TESTs only and **the run may not report a combined score.**
 
-| leg | what it was actually measuring | Paper II |
+| leg | | class |
 |---|---|---|
-| `P*e` | a **bold prefix** on every numbered contribution | II's five open in plain prose → scored **zero** against a bar of five |
-| `P*f` | the literal string `## 8 · Abandoned approaches` | II's is **§4**. Body-ness is now MEASURED — a further numbered section must follow — instead of implied by Paper III's section number |
-| `P*g` | `## 9 · Limitations`, **and** the phrase grepped against the whole file rather than item 1, **and** defeated by a markdown line wrap | all three legs repaired; the phrase is now required **in item 1**, whitespace-joined first |
-| `P*h` | `## 1[01] · Data and code availability` | II's is **§7** |
-| `P*i` | the **English word** "placeholder" | II §7 legitimately uses it as a common noun, in a sentence about why a bare one was refused |
-| `P*c` | keywords plus mid-keyword wraps — **`-53`'s find** | II is the case that proves it: unjoined **9**, joined **8** |
+| **E1** | **the shared degeneracy — is the II↔III join load-bearing or vocabulary?** Paper III's series identifies the *product* φδ and never the factor. If Paper II's ρ and *r* stand in that relation to Paper II's observable, the corpus has an unstated non-identification result of the same shape. If not, the chain's sovereign link is a resemblance | **TEST** |
+| **E2** | **the unowned claim** — a sentence three abstracts leave a reader holding that lives in none of them. Blind extraction first, with a named-candidate power check | **TEST** |
+| **E3** | **the containment matrix** — `ADR-001` promised *"failure is contained"* in 2026-08-05 and nobody ever tested it. Quotation-only 3×3 | **TEST** |
+| **E4** | **the corpus's empirical content, stated whole** — three papers each disclose their own share and the sum is nowhere | AUDIT |
+| **E5** | **the over-subscribed guard** — two tests are cited by name in two papers each | **TEST** |
+| **E6** | **the cross-paper contradiction** — shared facts compared by MODALITY, not just truth value | AUDIT |
 
-**The repair is not six expressions.** `scripts/gen_apparatus_rows.py` emits all forty sub-rows
-from ONE template with a per-paper parameter block, so a leg can differ between papers only
-where the *paper* genuinely differs. Exactly three legitimately do — the abstract's loss marker,
-the first limitation's phrase, the pre-registration clause — and they are the parameter block.
-Idempotent; keeps the hand-maintained `P1`–`P10` corpus rows verbatim; **`P1x` and `P5x` stayed
-green through the rewrite**, which is the check that the repair did not quietly weaken III and IV.
+**E1 is the spine and it is a real test.** The reason it can lose is in the code, not the paper:
+`recognised_flow += rho * gain + wage`, then `assessed = max(recognised_flow, 0)`. **The wage enters
+the base unscaled by ρ and the clip is non-linear**, so *r* scales the liability while ρ scales the
+base's *dispersion* toward a wage floor. Whether the observable can tell those apart at matched κ
+is not stated anywhere in the corpus and was not obvious to the session that wrote the leg.
+Thresholds fixed: κ matched to **1 %**, separation **≥ 3×** the within-point seed spread over
+**≥ 20 seeds** = FAIL, **≤ 1×** = REFUTED, between = UNDECIDED and **not rounded toward comfort**,
+no locus = **VOID**.
 
-### The greens are now proven rather than asserted
-`scripts/redproof_apparatus.py` applies to each row the smallest mutation that ought to break
-it and requires the row's own check to go red. **34 mutations, 0 survivors, ~1 s**, manuscripts
-restored byte-for-byte with a sha256 assertion in a `finally:`.
-`tests/test_apparatus_rows_are_falsifiable.py` runs it in the suite and carries a **census**, so
-a paper that acquires apparatus rows cannot skip red-proofing.
+**And E1 carries an audit half the corpus has already published without noticing.** Paper II §3.1
+reports Gini **0.222 against 0.125** at matched κ ≈ 0.10 across the two bases — κ *under-determines*
+the outcome — while Paper III's φδ determines the reported series exactly. **That is a prima facie
+disanalogy sitting in numbers both papers already print, and no document in this repository
+mentions it.**
 
-**The first run reported FIVE rows WEAK, and every one was the harness's own mis-aimed
-mutation** — in a 200 kB manuscript the first `1. ` is nowhere near the contributions list.
-That is the cheaper failure but **not** the harmless one: a mutation that does not mutate reports
-a **sound** guard as weak, and invites the next session to "strengthen" a check that was already
-right. Mutations are section-scoped now (`within()`).
-
-### New rows
-`P3a`–`P3n`. Two are worth knowing individually:
-- **`P3k` does not wave the pre-registration clause past.** PREPRINT-CHECKLIST §D says in terms
-  that *"Papers III and IV carry empirical predictions; I and II do not"*, so Paper II owes no
-  registration — and the row asserts **that clause is still what the list says**, plus a
-  tripwire: the day Paper II cites a registration it must cite a SHA with it. *A criterion that
-  passes because it does not apply should say why, in a check, or it is a blank line wearing a
-  tick.*
-- **`P3n` is the first `P6` upgrade to land.** It **derives** Paper II's "18 tests" from
-  `pytest --collect-only` and greps for whatever came back, so the claim cannot be satisfied by a
-  constant that drifted. This is Jason's `-51` scoping proposal **(a)** applied to one claim.
+### The find: Paper IV did not know its own chain was broken
+Found while **reading the three papers to design the legs** — not by running one — and repaired in
+the commit immediately after the design (`93e9c7c`), because a correction that lives only in a
+document has not been made. **`END-TO-END-001` §2/E6 excludes it from E6's run in terms: a leg does
+not get credit for a finding made before it existed.**
 
 | | |
 |---|---|
-| suite | **1063 passed** on darwin (~65 s), zero skips · was 1058; +5 are the falsifiability tests |
-| board | **27/36 → 41/50** · P3a–P3l + P3n green, P3m human-deferred · **zero OPEN lanes** |
-| defensive sentences | paper-II baseline **0/0**, unchanged by the prose edits; charter §2's non-increasing invariant holds estate-wide |
-| lessons | **4 banked** (3 global, 1 project) · `use` on 2 leaves + `record-outcome … pass` both run |
-| gate | **PASS ✅ at 2.59** after re-stamping the charter (see §4) |
+| Paper III §9.9 / §5.4 | *"The diagonality of the reporting layer is an assumption, it was testable, and **it is false**"* — independence rejected in **both** universes, same direction, **4.12× and 2.02×**, both *p* = 0.0002, power 1.00 at a 5 % injected excess (headline survives the tag-list repair at 4.01× / 2.10×) |
+| Paper IV §4.4.3 | *"Paper III registers the test. **Until it returns**, the composition chain has an unverified link"* |
+| Paper IV §9.2 | *"its test is **open**. **If** recognition events cluster within firm-quarters, the Hadamard form in §3 is wrong and the chain has a broken link"* |
 
-### The DoD amendment — Jason's ruling, taken mid-session
-**In his words:** *"I'm going to do the pending human step as the very last step (after the entire
-corpus gets audited as a whole)… in fact since I'll be re-writing this doc with my own hand, I'll
-probably do it at that step."*
+**The antecedent is true.** Three sites repaired, plus §3's *"it is diagonal over asset classes"*
+→ *"is **written** as diagonal"* so the section does not assert what its own next paragraph rejects.
 
-`P8` was *"Jason's own-hand pass over each converged paper"* — a gate three times over, between
-each paper's convergence and the batch declaration. It is now **one pass over the whole corpus,
-taken last**, with two rows ahead of it:
+**The repair reports the result rather than deleting the chain**, and says the two things that run
+against the paper's convenience:
+1. **what was rejected is the REPORTING layer's clean composition, not the extensive state's** —
+   diagonality is a property of the *filter*, and Paper IV's composition claim is about the *state*,
+   which adds however it is recorded. The link is **degraded, not severed**. The honest cost is that
+   the firm's *reported* object no longer composes from its classes' reported objects without
+   cross-terms, which is the scale anyone actually reads;
+2. **the cause is unidentified** — ASC 350-20-35-31/35-32 sequence the tests, so Paper III's design
+   cannot separate an economic coupling from an accounting artefact, and **Paper IV may not read the
+   rejection as evidence that the underlying degradations are coupled.**
 
-| row | | |
-|---|---|---|
-| **`P11`** | the corpus audited **as a system** | ADR-001 addendum 6's end-to-end test — *what would it mean for the three papers to fail as a system rather than one of them failing* — designed, written down, and run. **Unclaimed since 2026-08-11 and now load-bearing**, because `P8` waits on it |
-| **`P12`** | the arXiv endorsement path | PREPRINT-CHECKLIST §C. **The only other human-blocking item on the board, and it was invisible until `P8`'s move exposed it.** arXiv requires an endorsement before a first submission to a category and an unaffiliated first-timer must find a personal endorser; the lead time is social, not computational. SSRN needs none, which is why the batch order already puts II first |
+*The `P7` note for whoever polishes Paper IV: §3's second paragraph is new and long. It is right,
+and it may want tightening. Do not tighten away clause 2.*
 
-**IT IS NOT A REORDERING, AND READING IT AS ONE IS THE TRAP.** Moving a human gate to the end
-changes what *terminal* means upstream of it. If Jason re-writes prose at `P8`, **no session may
-treat any paper's prose as final before `P8` closes.** The concrete case was already on the board:
-`P1m`/`P3m`/`P5m` said the submission-time SHA *"closes at posting, which is P9's moment."* **A SHA
-pinned at `P9` is stale by construction now** — the prose changes after it. All three notes are
-repointed at `P8`. That consequence is not *in* the ruling; it *follows* from it, and a session
-that had only reordered the rows would have left three pins aimed at a moment that no longer
-exists. **`P9` is now the handoff INTO `P8`**, not the end of the line.
-
-**TWO BUGS, FOUND BY MAKING THE CHANGE — both in code `-54` had written an hour earlier, and both
-the same defect.** `gen_apparatus_rows.py` held `CORPUS` as a hardcoded tuple `("P1".."P10")` and
-rewrites the whole file, so the next regeneration would have **deleted `P11` and `P12` silently**.
-`test_apparatus_rows_are_falsifiable.py` split row ids with `f[0][:2]`, so `"P11"` read as family
-`"P1"` — harmless by luck, and the first row numbered `P30` would have invented a `"P3"` sub-row
-out of nothing. **A prefix taken by POSITION is an assumption about how many digits the world will
-ever have; an allowlist that ENUMERATES instances is a census that stops counting.** Both are
-shapes now (`^P[0-9]+$`, `P[0-9][a-z]`).
-
-**Row ids are stable identifiers and are NEVER renumbered** — handoffs, addenda and lessons cite
-them by name — so `P11`/`P12` sit between `P7` and `P8` in **file order, which is dependency
-order**. Do not tidy them into numeric order.
+### Bug spray — two tools that asserted more than they measured
+Both in `~/Scripts`, `.bak` beside each, both syntax-checked and re-run end to end. **`darwin-mac-ops`/
+`Scripts` was taken off a STALE claim** (`cloud-oaujFobu`, 7 h+); §4 of the previous handoff
+nominated the first of these for whichever session wanted a small win.
 
 | | |
 |---|---|
-| board | **50 → 52 criteria, 41 met** · the two new lines are both `PENDING-HUMAN` and both are real work, not ceremony |
-| suite | **1063 passed**, zero skips, unchanged by the amendment |
-| red-proof | 34 mutations, 0 survivors, re-run after the amendment |
+| `charter-read.sh` | printed `full board: <dir>/DONE.md` and `<dir>/design/ARCHITECTURE.md` **unconditionally**. Neither exists in wealth-tensor, so every stamp since `-53` told the reader to go and read two things that are not there. Each pointer now prints only if the file exists. **Found `-53`, confirmed `-54`, fixed `-55`** |
+| `handoff-kit/board.py` | printed **"The next piece is `X`."** — a *scheduling* claim. It knows OPEN status and file order and **nothing about a project's rulings on sequence.** wealth-tensor is the worked case: `P13` is its only OPEN lane and a standing ruling says `P13` is LAST, so **the previous handoff carried a whole paragraph titled "FIRST, THE TRAP" to disarm one generated sentence.** Now reports what it measured — *"the first OPEN lane in dependency order"* — and says a project's ordering rulings outrank it |
 
-### THE DEFINITION OF DONE CHANGED — read this before you plan anything
-**In his words:** *"The definition of done is when the wealth tensor paper is done with it's
-coaching and editing and python scripts and you make me a pretty cool looking deliverable at the
-end to visualize it — then it's cleared for liftoff. The other things I mentioned aren't part of
-this project (Jasonizing, perhaps some random questions here and there but that'll be in an ad-hoc
-prompts)."*
-
-**`Three preprints publicly posted` was this project's stated DoD for fifty-four sessions and was
-never Jason's finish line.** Posting is two projects downstream: Voice Box Jasonizing (the Voice
-Box is not trained yet — that happens *after* this project), then his own-hand rewrite for cadence,
-telos and ethos, and only then the endorsement ask. **The finished document is the vehicle for that
-ask** — he will not approach his old professors without a proof in hand — which is exactly why the
-endorsement cannot come earlier. **That is a sequence, not a blocker.**
+**The shape both share is one tell** (§0). Neither could fail loudly, so both stayed wrong quietly
+and **the artefacts grew prose to work around them.**
 
 | | |
 |---|---|
-| **`P13` NEW** | **the deliverable — the only OPEN lane on the board.** One well-designed, self-contained artefact that *visualises* the corpus. Split so the machine checks what a machine can (it exists, no remote script or stylesheet) and **Jason judges whether it is any good** |
-| **`P12` GONE** | the arXiv endorsement row, added by `-54` **one message earlier**. A correct observation filed against the wrong project. Deleted, not rescoped |
-| **`P9`** | *"never ask Jason to trigger a SUBMISSION"* had no submission to name. It is the single handoff into `P8` |
-| **`P8`** | the **END of the project**, not a step in it |
-| **`P1m`/`P3m`/`P5m`** | pinned a *"submission-time head-of-repository SHA"* — **UNREACHABLE here, which is worse than failing**, because an unreachable row reads exactly like a deferred one and nothing would ever have flagged it. Rescoped to the in-scope leg: every 7-hex pin in a data-and-code section must **resolve** to a commit, and the section may not defer its pin to posting. **Three permanent ambers → three greens**, each red-proofed |
-
-**And the rescope caught a live defect in a deliverable.** Paper IV read *"Commit for the results
-reported here: **to be pinned at posting**"* — a forward promise to a date that had just stopped
-existing. **It walked straight past the no-live-placeholders guard**, because that guard knows the
-phrase *"to be migrated"* (the one instance WT-047 found) and not its sibling. Paper IV now pins
-`5efe626`. Also swept: the board preamble still named the old destination, and `handoff_gate.py`'s
-own docstring used *"three preprints publicly posted"* as its worked example of a good DoD.
-
-| | |
-|---|---|
-| board | **52 criteria, 44 met, ONE OPEN lane** |
-| suite | **1063 passed**, zero skips · defensive counts unchanged after the Paper IV edit |
-| red-proof | **37 mutations, 0 survivors** (the three new `m` rows included) |
-
-### `ADR-002` — the typeface is DECIDED, the fonts are VENDORED, and `P13c`/`P13d` are CLOSED
-Jason delegated it: *"I totally trust you with the font selection :-D. Basically, whatever is
-apropos for this type of research paper is the best."* **Read `docs/adr/ADR-002-typography-and-the-reproducible-build.md` before touching anything in `docs/deliverable/`.**
-
-**The choice was settled by a measurement, not by taste.** Probing darwin found macOS ships its
-own STIX Two Text at `/System/Library/Fonts/Supplemental/STIXTwoText.ttf`, **metrics differing
-from TeX Live's OTF of the same name**. A family-name lookup can resolve to either on a machine
-that looks identical from outside. That killed the otherwise-obvious choice and dictated
-everything else.
-
-- **Libertinus** Serif / Serif Display / Sans / **Math**, + **Inconsolata (zi4)** for code.
-  Libertinus because it has a **matched math font** (this corpus is κ, ρ, Φ, φ, tensors
-  throughout) and is **SIL OFL**, which is what makes vendoring legal and `P13d` possible at all.
-  Inconsolata because `test_excess_demand_is_monotone_here_so_this_is_not_an_SMD_result` is
-  **58 characters** and a wide monospace overflows the measure.
-- **LuaLaTeX, TeX Live 2026, pinned.** Preflight **refuses** a mismatch; the override is
-  documented and **invalidates `LAYOUT-MANIFEST.json` by design**.
-- **`fontspec Path=`, never a family name.** That one line of syntax *is* the anti-substitution
-  mechanism.
-- **15 OTFs (3.6 MB) vendored** with their OFL files and a sha256 each.
-- **`P13c` and `P13d` are CLOSED and RED-PROOFED** — `tests/test_preflight_refuses.py` breaks the
-  preflight three ways and requires a refusal each time.
-- **`ADR-002` §5 decides NO metrics on purpose.** Size, leading, measure, margins, display-maths
-  spacing belong in `RECIPE.md`, **measured from the build, not guessed**. Do not "helpfully"
-  fill them in from this file.
-
-**Why this was not "building `P13` early", which §2 forbids:** a font is a **dependency**, not a
-layout decision. Dependencies get pinned as early as possible, layout as late as possible. §4 of
-the ADR records the distinction so nobody relitigates it.
-
-### `P13` — what the deliverable actually is, and why the recipe is the load-bearing half
-**In his words:** *"a paint-by-numbers as to how the tex is formatted, font, line, etc all has to
-be Claude-Opus-ready to just walk through like a checklist so there are no surprises it has to
-debug — the worst that could happen … would be it couldn't find the same font for example or it
-didn't have the spacing recipe we use in this project. It could get close perhaps but then I have
-to go back a re-tweak everything … so that after this project is done, **I only have to do the
-layout and viz analysis once on it**."*
-
-**THE CATASTROPHE HAS A MECHANISM. TeX does not fail on a missing font — it SUBSTITUTES.** The
-build succeeds, the metrics change by a hair, the reflow moves, a page boundary shifts, and the
-document is *close*. **Close is the failure**, because it spends Jason's layout analysis a second
-time. `P13a`–`P13g` are therefore not about producing a PDF; they are about making a rebuild
-**provably the same document**, and about **refusing loudly rather than approximating**.
-
-| row | | |
-|---|---|---|
-| `P13a` | the PDF **stamps its source commit** | a point-in-time capture that cannot be confused with a later one |
-| `P13b` | `RECIPE.md` is a **numbered checklist** | every font family/weight/size/leading · every margin, measure and vertical space · engine and every package **with its version** · figure placement · reference style — **as values, never as "match the existing look"** |
-| `P13c` | **preflight that FAILS** | on a missing or substituted font, tool or version. No fallback, no nearest match. **Refusing to build is the feature** |
-| `P13d` | fonts **vendored** or pinned by name+version+checksum | *"the same font"* has to be a fact on disk, not a hope about the next machine |
-| `P13e` | **layout reproducible, proved not promised** | a rebuild must reproduce the committed page count and **per-page text hash**. A build that merely *looks* right cannot pass |
-| `P13f` | every figure from a **committed script and committed numbers** | `FIGURES.tsv` maps figure → script → source. **No model-generated and no hand-drawn imagery** — charts in an economics paper have to be the data. `P6`'s rule pointed at the pictures |
-| `P13g` | economics house convention (Chicago author-date) | **manual on purpose**: a reference-style linter passes documents that are technically Chicago and read wrong |
-
-**`P13e` IS THE ROW TO DEFEND** if a later session wants to relax something. Every other row can be
-argued down to taste. That one is the mechanical detector of a silent font substitution, and it is
-the whole difference between *"we wrote down how it was made"* and *"we can prove the rebuild is
-the same document."* This project has said the same thing about backups for fifty sessions:
-**reversibility you never verified is not reversibility. A recipe nobody re-ran is not a recipe.**
-
-**Scope note.** Jason editing the `.md` for language, marking where graphics go, and a session
-reformatting to submission spec is *"its own, likely just one-off prompt of 'final paper
-reformatting' or somesuch."* **Not wealth-tensor.** What wealth-tensor owes it is a recipe good
-enough that the successor never re-derives a spacing value or hunts for a font.
+| suite | **1068 passed** on darwin (~66 s), zero skips |
+| red-proof | **37 mutations, 0 survivors**, re-run after the Paper IV edit |
+| defensive sentences | paper-IV **0/0** against a **0/0** baseline — unchanged by the repair |
+| board | **59 criteria, 45 met** |
+| lessons | **5 banked** (4 global, 1 project) · `use` + `record-outcome … pass` both run on `wt55-p11-design` |
+| commits | `4ea6361` design · `93e9c7c` Paper IV repair · `baf91a6` board · `~/Scripts` `49826c7` |
 ---
 ## 2 · RULINGS — DO NOT REOPEN
-- **All of `-31`'s through `-53`'s rulings stand verbatim**, including: REG-013's decision rule is
-  SPENT and may not be re-chosen; H1 licenses OCCUPANCY, not fertility; `P5` and `P2` stay manual;
-  §9's limitations are NINE items; ADR-001's title and §Decision are deliberately frozen; the
-  abstract is a submission FIELD (`scripts/check_abstract_size.py`, never `wc -w`); no third
-  disclosure instrument; phrase set frozen at 38; SOURCE-001 FINISHED; THE ARM IS δ; §4.8 IS NOT
-  THE COINCIDENCE ARGUMENT, §4.7 IS; REG-009 CLOSED; DO NOT SPEND THE TIE-BREAK; DO NOT PROMOTE
-  R_MIN; **R5 IS UNSPENT**; 55.71% IS Ψ's AND 63.16% IS THE BAND COUNT'S; T4's WIDTH IS 31.7%;
-  **T2 MAY NOT BE RUN ON THIS DATA**; §4.7 IS PINNED AT `ba59370`; `wt107` IS NOT EDITED; CITE THE
-  TEST, NOT THE `.bak`; **A CORRECTION IS NOT MADE UNTIL THE ARTEFACT IS EDITED.**
-- **NEW · `P3` STAYS MANUAL.** Thirteen of Paper II's fourteen rows are green and that is **not**
-  *ready to submit*. The session that closed the gaps does not get to score whether the paper is
-  ready — same clause as `P2` and `P5`. P7's fresh eyes and P8 are the judges. **All three papers
-  are now in exactly this state**, which is the corpus's real position: measured, unjudged.
-- **NEW · APPARATUS SUB-ROWS ARE GENERATED, NOT WRITTEN.** Edit
-  `scripts/gen_apparatus_rows.py` and re-run it; a hand-edit to a `P1x`/`P3x`/`P5x` row in
-  `done-criteria.tsv` is reverted by the next regeneration **without a diff anyone will read**.
-  The `P1`–`P10` corpus rows are the exception and are kept verbatim on purpose.
-- **NEW · A ROW IS NOT DONE WHEN IT IS GREEN. IT IS DONE WHEN IT HAS BEEN SEEN RED.**
-  Any new or changed `cmd:` row gets a mutation in `redproof_apparatus.MUTATIONS`, and the census
-  test refuses a paper that has apparatus rows and no manuscript registered in the harness.
-- **NEW · A `WEAK` VERDICT IS A CLAIM ABOUT THE HARNESS UNTIL THE MUTATION IS SHOWN TO LAND.**
-  Five for five, first run.
-- **NEW · `P8` IS ONE PASS, OVER THE WHOLE CORPUS, TAKEN LAST — JASON'S RULING, 2026-08-16.** It
-  does not interleave and it is not per-paper. **Nothing that depends on final prose may be spent
-  before it closes**, the submission-time SHA pins above all. `P9` declares the batch ready *for*
-  that pass, exactly once, and stops.
-- **NEW · `P7` DOES NOT CLOSE THE CORPUS.** Converging three papers individually is a different
-  object from auditing the conjunction. That is why `P11` exists rather than being folded into
-  `P7`, and folding it back in is how the corpus would ship without ever having been read whole.
-- **NEW · DONE IS "CLEARED FOR LIFTOFF", NOT "POSTED" — JASON'S RULING, 2026-08-16.** Coaching
-  and editing converged · the corpus audited whole · the scripts done · **one well-designed
-  deliverable that visualises the work** · then he clears it and Claude is finished here.
-  **Jasonizing, his own-hand rewrite, the endorsement ask and submission are SUCCESSOR projects.**
-  Ad-hoc questions to a session are fine and are not this project either.
-- **NEW · `P13` IS LAST, NOT NEXT.** Eight OPEN lanes make it look like the at-bat. It is not.
-  Building the pretty thing before the prose converges means building it twice, and Jason asked
-  for it *"at the end"*. See §3.
-- **NEW · `P13` IS A PDF *AND A RECIPE*, AND THE RECIPE IS THE DELIVERABLE THAT OUTLIVES THIS
-  PROJECT.** Do not ship a beautiful PDF with an undocumented build. **A preflight that
-  approximates instead of refusing is a bug, not a convenience**, and `P13e` — page count plus
-  per-page text hash — is the row that proves the rebuild rather than promising it.
-- **NEW · A CRITERION THAT CANNOT BE REACHED IS WORSE THAN ONE THAT FAILS.** `P1m`/`P3m`/`P5m` sat
-  amber for weeks describing an event this project never reaches. **An unreachable row and a
-  deferred row are indistinguishable on a board**, so nothing flags it. When a row has been amber
-  a long time, ask what would have to happen for it to close — and whether that thing is in scope.
-- **NEW · ROW IDS ARE NEVER RENUMBERED. FILE ORDER IS DEPENDENCY ORDER.** `P11`/`P12` between
-  `P7` and `P8` is deliberate. Every handoff, addendum and lesson cites rows by name. Check where the edit landed before you touch the guard.
+- **All of `-31`'s through `-54`'s rulings stand verbatim**, including: REG-013's decision rule is
+  SPENT; H1 licenses OCCUPANCY, not fertility; `P2`/`P3`/`P5` stay manual; ADR-001's title and
+  §Decision are frozen; the abstract is a submission FIELD (`check_abstract_size.py`, never
+  `wc -w`); no third disclosure instrument; phrase set frozen at 38; SOURCE-001 FINISHED; THE ARM
+  IS δ; §4.8 IS NOT THE COINCIDENCE ARGUMENT, §4.7 IS; REG-009 CLOSED; DO NOT SPEND THE TIE-BREAK;
+  DO NOT PROMOTE R_MIN; **R5 IS UNSPENT**; 55.71 % IS Ψ's AND 63.16 % IS THE BAND COUNT'S; T4's
+  WIDTH IS 31.7 %; **T2 MAY NOT BE RUN ON THIS DATA**; §4.7 IS PINNED AT `ba59370`; `wt107` IS NOT
+  EDITED; APPARATUS SUB-ROWS ARE GENERATED, NOT WRITTEN; A ROW IS NOT DONE UNTIL IT HAS BEEN SEEN
+  RED; A `WEAK` VERDICT IS A CLAIM ABOUT THE HARNESS; `P8` IS ONE PASS OVER THE WHOLE CORPUS TAKEN
+  LAST; `P7` DOES NOT CLOSE THE CORPUS; DONE IS "CLEARED FOR LIFTOFF", NOT "POSTED"; **`P13` IS
+  LAST, NOT NEXT**; `P13` IS A PDF *AND A RECIPE*; A CRITERION THAT CANNOT BE REACHED IS WORSE THAN
+  ONE THAT FAILS; **ROW IDS ARE NEVER RENUMBERED AND FILE ORDER IS DEPENDENCY ORDER.**
+- **NEW · `END-TO-END-001` IS FIXED AND MAY NOT BE EDITED IN RESPONSE TO A RESULT.** Its §5 says
+  which clauses are fixed. If a leg turns out mis-specified the repair is a **second registration**,
+  `END-TO-END-002`, that says so and why — the `REG-001` precedent — **not an edit to the file.**
+  This is the single easiest ruling in the project to break, because the file is a design document
+  and design documents feel editable. It is a registration.
+- **NEW · A LEG MAY NOT COUNT A FINDING MADE BEFORE IT EXISTED.** E6's diagonality catch is `-55`'s
+  and is excluded from E6's run by the design's own text. A run that scores it has inflated itself.
+- **NEW · THE RUN REPORTS TEST AND AUDIT COUNTS SEPARATELY, AND THE VERDICT COUNTS TESTS ONLY.**
+  "Five of six legs clear" is not available and never was.
+- **NEW · THE ADMISSION CRITERION IS NOT ADVISORY.** Every finding the run produces gets asked
+  *could a single-paper review have found this?* If yes it is a `P7` finding and scores nothing.
 ---
-## 3 · THE AT-BAT for `-55` — **DESIGN `P11`'s END-TO-END TEST, BEFORE `P7` POLISHES THE PAPERS**
-**Every mechanically checkable criterion in the estate is green and the board names no next piece.
-That is a state to be careful with, not to celebrate.** Eleven lines remain, all `PENDING-HUMAN`,
-which means *a human or a fresh-eyes pass judges them* — **not** that they are done. **The DoD is
-three preprints POSTED. Nothing is posted.**
+## 3 · THE AT-BAT for `-56` — **RUN `E1`, THE ONLY LEG THAT MUST GO BEFORE `P7`**
+**The design is fixed and the legs are now schedulable. They do not all want the same slot, and
+this is the one piece of sequencing `END-TO-END-001` deliberately left open (§5) — so it is a
+recommendation, not a clause, and you may overrule it in one line.**
 
-**FIRST, THE TRAP.** `P13` — the deliverable — is the only OPEN lane, so the board points at it
-and it is by far the most fun job on the list. **It is the LAST thing Claude builds, not the next.**
-Jason asked for it *"at the end"*, and a visualisation built before the prose converges is a
-visualisation built twice — the second time after `P7` has changed the very sentences it renders.
-Its OPEN status is a statement about the finish line, not about this week.
-
-**Take `P11`'s DESIGN half — write the end-to-end test down, do not run it.** The reasoning is the
-ruling's own:
-- **`P8` now waits on `P11`, so the end-to-end test moved onto the critical path** after five
-  sessions of sitting unclaimed. It is no longer the interesting optional thing; it is the gate.
-- **And it has to be designed BEFORE `P7`, not after.** `P11`'s own note says designing the test
-  after the results are known is not a severe test. The three results are already known — but the
-  papers have not yet been polished by fresh-eyes passes, and **a system test written after `P7`
-  will be a test the polished corpus passes.** The window where the design can still be honest is
-  open right now and `P7` is what closes it.
-- It is Jason's own methodological position, it has **no written answer anywhere in this
-  repository**, and it is the biggest genuinely-unclaimed thing on the board.
-- **Design only.** Write `docs/END-TO-END-001.md`: what a system-level failure would look like,
-  what evidence would show it, and what the corpus would have to do about each outcome — committed
-  *before* the answer is known, the same discipline every `REG-0xx` in this repo follows. Running
-  it is `-56`'s job at the earliest, and running it in the same sitting that designed it satisfies
-  neither half.
-
-**Then `P7`, and Paper IV first.** Its §4 — the SMD-versus-scale resolution — remains the
-highest-value target in the estate: load-bearing, drafted by one Claude in one pass, and ADR-001
-predicted precisely that section is where the unforced error lives. `P7` needs **two consecutive
-zero-finding passes**, so the earliest possible finish is two sessions away no matter what.
+**Take `E1`, both halves, and take it now:**
+- **It is the only leg whose result changes what the papers SAY.** E2/E3/E5/E6 grade the text.
+  **E1 can add a result to Paper II and a sentence to Paper IV** — and if `P7` polishes those
+  sections first, `P7` polishes prose E1 is about to rewrite. **Everything else in the design is
+  better run AFTER `P7`, on the text that will actually ship; E1 is the one that must run before.**
+- **It is prose-independent**, so nothing `P7` does can overtake it.
+- **It is cheap.** `src/wealth_tensor/redistribution.py` and `scripts/wt030_report.py` exist; the
+  leg is a sweep, a locus, three statistics and a seed-noise yardstick.
+- **`E1a` FIRST and it can settle the whole leg on its own.** Build the symbol table across the
+  three papers. **φ is a share of a *change* (a degradation) that reaches the claim layer; ρ is a
+  share of a *gain* that is recognised as flow.** If those are different in kind, "same structure"
+  fails at E1a and **E1b is not run** — a simulation cannot rescue an equation between two objects
+  of different type.
+- Then `E1b`: locate the iso-κ locus **numerically, off the committed code, never off the paper's
+  closed form**, and compare **Gini, top-decile share and Var[log a]** — the third because Paper II
+  §3.1 already uses it to show two levies at one κ can act on different objects. That is the
+  discriminating instrument and it is already in the corpus.
+- **Write `docs/RESULT-END-TO-END-001-E1.md`** in the shape of the other `RESULT-*` documents: what
+  was run, what came back, drop accounting, verdict read off §2's rule rather than off your
+  judgement. The corpus's response to each outcome is **already written** in the design's E1 table.
+  Apply it; do not renegotiate it.
 
 **IF YOU TAKE SOMETHING ELSE, SAY WHY IN ONE LINE.** The honest alternatives:
-- **`P7` on Paper IV now, and design `P11` after.** Defensible if you judge the severity argument
-  above to be over-fine — say so explicitly and record the judgement, because it is the exact
-  trade `P11`'s note was written to force into the open.
-- **`P7` on Paper II** — also unreviewed, and it is the paper `-54` just edited in three places.
-- **`P13`, the deliverable, deliberately early.** Defensible on ONE argument and only one: a
-  rough pass reveals layout and fold behaviour that could inform what `P7` does to the prose,
-  rather than the other way round. If you take it on that reasoning, **say so and build it
-  throwaway** — do not commit it as the deliverable, because `P13` closing early is how the corpus
-  ships a picture of a draft.
-- **`P6`, the remaining two thirds.** `P3n` proved the shape; `P1n` and `P5n` are the same row
-  repointed. Mechanical, valuable, last corpus-level row with a writable check.
+- **`P7` on Paper IV, §4 first and hard.** Still the highest-value prose target in the estate:
+  load-bearing, drafted by one Claude in one pass, and ADR-001 predicted the unforced error lives
+  there. **`-55` has just added a long new paragraph to §3 that would benefit from fresh eyes.**
+  Defensible — but you are polishing §3/§4.4/§9 that E1 may reopen, so say you accept that.
+- **`P7` on Paper II** — also unreviewed. Same caveat: E1's refuted branch adds a §3.x to it.
+- **`P6`'s remaining two thirds.** `P1n`/`P5n` are `P3n` repointed at Papers III and IV; the
+  generator has the shape and needs each paper's regenerating command. Mechanical, ~30 minutes,
+  moves the last corpus-level row with a writable check.
+- **`P13`.** Eight lanes were open, two closed by `-54`. **STILL LAST, and now for a second and
+  sharper reason: §3 of the design makes `P13`'s subject matter conditional on the verdict.** If the
+  system fails, `P13` renders *three works*, not one stack. Building the deliverable before `P11`
+  lands is building a picture of a corpus that may not be one.
 
-**THE GUARD PROGRAMME REMAINS PAUSED** (Jason, 2026-08-15) and `-54` did not resume it. A new
-guard is in-contour **only** when it names the paper claim it protects and that claim sits on an
-open P-line. Jason's three scoping proposals from `-51` are **still UNRULED** — (a) audit the
-CLASS not the constraint, with one linter over claims naming a count, a filename or a coverage
-fact, each required to carry the command that regenerates it; (b) bound by value; (c) audit at
-the BOUNDARY. **`-54` is the eighth consecutive session proposal (a) would have caught, and this
-time it half-landed on its own**: `P3n` IS proposal (a), applied to one claim, and it took four
-lines. That is the cheapest possible evidence that the proposal is right. **A ruling would be
-worth more than another session of finding out.**
+**THE GUARD PROGRAMME REMAINS PAUSED** (Jason, 2026-08-15). **Jason's three `-51` scoping proposals
+are STILL UNRULED** — (a) audit the CLASS not the constraint; (b) bound by value; (c) audit at the
+BOUNDARY. `-55` is the **ninth** consecutive session (a) would have caught, and `-55` is a
+particularly clean instance: **`END-TO-END-001`'s E5 leg is proposal (a) pointed at the test suite,
+and E6 is proposal (a) pointed at the prose.** Two independent sessions have now half-implemented
+the same unruled proposal. **A ruling would be worth more than another session of finding out.**
 ---
 ## 4 · TEED UP, IN ORDER
-- **`G-AL` COMPARES THE STAMP TO THE FILE AS IT STANDS AT WRAP, SO AMENDING `done-criteria.tsv`
-  INVALIDATES YOUR OWN STAMP.** `-54` hit this and it is correct behaviour badly explained: the
-  message says *"the definition of done was amended after you read it"*, which reads like a
-  sibling did it. **If you change the criteria, re-run `~/Scripts/charter-read.sh <slug>` before
-  the gate.** Fix shape: name the amending session when the stamp and the amendment share one.
-- **`charter-read.sh` PRINTS TWO PATHS THAT DO NOT EXIST** — `docs/DONE.md` and
-  `docs/design/ARCHITECTURE.md`, neither of which is in wealth-tensor. Found by `-53`, confirmed
-  still live by `-54`, **still not fixed** and now for a weaker reason than `-53`'s: the sibling
-  contention has aged out (`cloud-oaujFobu`'s claims read STALE at 7h+), so the next session that
-  wants a small win can take `darwin-mac-ops` and do it. Fix: print each pointer only if the file
-  exists, or read both from `project-charters.tsv` like the criteria path.
-- **`G-AL`'s REMEDY LINE DOES NOT WORK AS PRINTED** — *"Read it: ~/Scripts/charter-read.sh"* with
-  no slug exits 2. The gate knows the slug; it prints it in the same sentence. One line.
+- **NEW, AND IT COST `-55` A NEAR-MISS · RE-STAMP THE CHARTER IMMEDIATELY BEFORE THE GATE, ALWAYS.**
+  `G-AL` compares your stamp against `done-criteria.tsv` **as it stands at wrap**, and Jason runs
+  2–3 sessions **on one darwin working tree**. `-55` stamped `wealthTensor@1a3c2ab` at student-in
+  and `@56da9dc` an hour later **without ever touching the file** — `-54` closed `P13c`/`P13d` in
+  the same tree. The previous handoff framed this as "if you amend the criteria, re-stamp." **That
+  is too narrow. A live sibling invalidates your stamp while you are innocent**, and `G-AL`'s
+  message — *"the definition of done was amended after you read it"* — reads like you did it.
+  Fix shape: have `G-AL` name the amending session when it can, and say *"by you or by a sibling."*
+- **`G-AL`'s REMEDY LINE STILL DOES NOT WORK AS PRINTED** — *"Read it: ~/Scripts/charter-read.sh"*
+  with no slug exits 2. The gate knows the slug and prints it in the same sentence. One line.
+  *(`-55` was in this file and did not fix it — it is in the gate, not in `charter-read.sh`, and
+  `-55` had already taken `Scripts` off a stale claim once. Small, free, unclaimed.)*
 - **`G-T` calls a STALE claim LIVE and tells the owner not to commit.** `-52`'s find, unfixed,
   warning-level. Same family as `G-AL`: a check that cannot identify who is asking.
 - **`~/.local/state/claude-session/current` is a single global file** and Jason runs 2–3 sessions.
-  `G-AL` no longer trusts it; **anything else reading it has the same bug.** One grep would find
-  them.
-- **JASON'S THREE `-51` SCOPING PROPOSALS ARE STILL UNRULED** — (a) audit the CLASS not the
-  constraint, with one linter over claims naming a count, a filename or a coverage fact, each
-  required to carry the command that regenerates it; (b) bound by value; (c) audit at the
-  BOUNDARY. **`-54` is the eighth consecutive session (a) would have caught, and this time it
-  half-landed on its own**: `P3n` IS proposal (a) applied to one claim, and it took four lines.
-  That is the cheapest possible evidence the proposal is right. **A ruling would be worth more
-  than another session of finding out.**
-- **`P1n` and `P5n`** — `P3n` repointed at Papers III and IV. The generator already has the shape;
-  it needs each paper's regenerating command. Half an hour, and it moves `P6`.
-- **The use/mention guard, generalised.** `P*i` now forbids the marker rather than the word, and
-  the general repair — *a guard that would fire on a document DISCUSSING the thing it forbids is
-  matching vocabulary, not structure* — is banked but applied in exactly one place. Other guards
-  in this repo grep for vocabulary.
+  `G-AL` no longer trusts it; **anything else reading it has the same bug.** One grep would find them.
+- **JASON'S THREE `-51` SCOPING PROPOSALS ARE STILL UNRULED.** See §3's last paragraph — the
+  evidence for (a) is now two sessions deep and arrived from two different directions.
+- **`P1n` and `P5n`** — `P3n` repointed. Half an hour, and it moves `P6`.
+- **The use/mention guard, generalised.** `P*i` forbids the marker rather than the word; the general
+  repair is banked and applied in exactly one place. Other guards in this repo grep for vocabulary.
 - **C26 limb B** — carded `1217525563299334`. §2's twelve ratios with no counts.
-- **RESULT-REG-003 §2's "Every cut lands in R1"** — carded `1217518687033967`. Repair shape is a
-  dated addendum (`-37` precedent).
-- **Cell (b), ranked in §3.2 — THREE entries left**, measured, **paused behind the papers.** The
-  forbidden-claim family (C16/C20/C23/C25/C30, probes R5a–R5e) · C45's two assertions · the
-  reportable-at-all presence guards.
-- **No probe has ever mutated `src/` except G7/G8.** Real, small, still unclaimed — and
-  `redproof_apparatus.py` is now a worked example of the shape.
+- **RESULT-REG-003 §2's "Every cut lands in R1"** — carded `1217518687033967`. Dated addendum
+  (`-37` precedent).
+- **Cell (b), ranked in §3.2 — THREE entries left**, measured, **paused behind the papers.**
+- **No probe has ever mutated `src/` except G7/G8.** `redproof_apparatus.py` is the worked shape.
 - **C37's tripwire** — REG-009 §12's "never by narration"; §3.3 names the adjacent check.
 - **§7's ledger dilutes its own two load-bearing rows** — Jason's call, TRIPWIRED not carded.
 - **Dossier era, re-served by nobody:** REVIEW-004 C6 (ASC 410) and C10 (IAS 36's reversal
   asymmetry). *That C10 is REVIEW-004's, not the inventory's; the collision has bitten three times.*
 - **REG-013 re-run worth doing:** the biophysical audience was capped at 4 000 of 7 801, which
-  **suppresses** its overlaps and is the one bias favouring H1. Clean, bounded, pre-specified.
+  **suppresses** its overlaps and is the one bias favouring H1.
 - Infra siblings, carded: Caddy ordering `1217488447555628` · capability path in cleartext
   `1217488117177482` · AAR A2's four post-* hooks · card-lint `1217483699706758` · gate
   `1217465036940491`.
 ---
 ## 5 · DO NOT
-- **Everything `-31`→`-53` forbade still stands verbatim** — R5, the two sensitivities,
-  `selected_lives`, §4.4's 0.3000, T4's 31.7%, the δ arm, TERM-001/002, §9's list well-formedness,
-  `wt107` IS NOT EDITED, §4.7 IS PINNED AT `ba59370`, DO NOT "SIMPLIFY" A TRIPWIRE INTO A GUARD,
-  DO NOT REPAIR A PROVENANCE FAILURE BY DELETING THE QUOTATION, DO NOT GRADE A CONSTRAINT FROM THE
-  `machine` COLUMN, DO NOT WIDEN C07's GUARD, DO NOT WRITE AN OVER-BREADTH SELF-TEST WITH AN
-  ABSENCE PREDICATE, DO NOT SLICE THE SWEEP LOG BY SLUG, **DO NOT TYPE A FULL SHA YOU HAVE NOT
-  RESOLVED**, DO NOT LEAVE A FINDING IN A HANDOFF WITHOUT EDITING THE ARTEFACT IT CORRECTS, DO NOT
-  OBEY A DO-NOT THAT NAMES A MACHINE WITHOUT RUNNING THE MACHINE, DO NOT MEASURE A TEXT LENGTH
-  WITH `wc -w`, DO NOT ADD A REQUIRED KEY TO A GATE WITHOUT REBUILDING ITS FIXTURES, DO NOT LET A
-  `manual:` ROW BE SCORED BY WHOEVER DID THE WORK, DO NOT RUN `board.py` BY HAND, DO NOT READ A
-  CO-CITATION NUMBER WITHOUT ITS TWO CONTROLS, DO NOT ROUTE BIBLIOMETRIC API WORK THROUGH THE
-  CLOUD CONTAINER, DO NOT PUT A COLON OR COMMA INSIDE AN OPENALEX `filter=` VALUE.
-- **NEW · DO NOT HAND-EDIT A `P1x`/`P3x`/`P5x` ROW.** Edit the generator. A hand-edit is reverted
-  by the next `gen_apparatus_rows.py` run and leaves no diff anyone will read.
-- **NEW · DO NOT TRUST A GREEN CLONE.** A check that passes on a second instance is not evidence
-  the check is sound — it is evidence the two instances look alike. Six legs proved this in one
-  session.
-- **NEW · DO NOT "STRENGTHEN" A CHECK A MUTATION HARNESS CALLED WEAK UNTIL YOU HAVE CONFIRMED THE
-  MUTATION LANDED IN THE SECTION THE CHECK READS.** Five false WEAKs, first run.
-- **NEW · DO NOT WRITE A FORBIDDEN-TOKEN GUARD THAT WOULD FIRE ON A DOCUMENT DISCUSSING THE THING
-  IT FORBIDS.** That guard is matching vocabulary, not structure. Paper II §7 is the worked case.
+- **Everything `-31`→`-54` forbade still stands verbatim** — R5, the two sensitivities,
+  `selected_lives`, §4.4's 0.3000, T4's 31.7 %, the δ arm, TERM-001/002, §9's list well-formedness,
+  `wt107` IS NOT EDITED, §4.7 IS PINNED AT `ba59370`, DO NOT "SIMPLIFY" A TRIPWIRE INTO A GUARD, DO
+  NOT REPAIR A PROVENANCE FAILURE BY DELETING THE QUOTATION, DO NOT GRADE A CONSTRAINT FROM THE
+  `machine` COLUMN, DO NOT WIDEN C07's GUARD, DO NOT WRITE AN OVER-BREADTH SELF-TEST WITH AN ABSENCE
+  PREDICATE, DO NOT SLICE THE SWEEP LOG BY SLUG, **DO NOT TYPE A FULL SHA YOU HAVE NOT RESOLVED**,
+  DO NOT LEAVE A FINDING IN A HANDOFF WITHOUT EDITING THE ARTEFACT IT CORRECTS, DO NOT OBEY A DO-NOT
+  THAT NAMES A MACHINE WITHOUT RUNNING THE MACHINE, DO NOT MEASURE A TEXT LENGTH WITH `wc -w`, DO
+  NOT ADD A REQUIRED KEY TO A GATE WITHOUT REBUILDING ITS FIXTURES, DO NOT LET A `manual:` ROW BE
+  SCORED BY WHOEVER DID THE WORK, DO NOT RUN `board.py` BY HAND, DO NOT READ A CO-CITATION NUMBER
+  WITHOUT ITS TWO CONTROLS, DO NOT ROUTE BIBLIOMETRIC API WORK THROUGH THE CLOUD CONTAINER, DO NOT
+  PUT A COLON OR COMMA INSIDE AN OPENALEX `filter=` VALUE, DO NOT HAND-EDIT A `P1x`/`P3x`/`P5x` ROW,
+  DO NOT TRUST A GREEN CLONE, DO NOT "STRENGTHEN" A CHECK A MUTATION HARNESS CALLED WEAK UNTIL THE
+  MUTATION IS SHOWN TO LAND, DO NOT WRITE A FORBIDDEN-TOKEN GUARD THAT WOULD FIRE ON A DOCUMENT
+  DISCUSSING THE THING IT FORBIDS.
+- **NEW · DO NOT EDIT `END-TO-END-001.md` IN RESPONSE TO A RESULT.** It is a registration wearing a
+  design document's filename. `END-TO-END-002` is the repair path.
+- **NEW · DO NOT RUN A LEG YOU EXPECT TO LOSE ANYWAY BY SKIPPING IT.** A leg skipped because its
+  answer seemed obvious is the same failure mode as designing the test after the results, and the
+  design says so in §6.
+- **NEW · DO NOT BUILD `P13` BEFORE `P11` LANDS.** What the deliverable depicts is now
+  *conditional on the verdict* — one stack, or three works.
 - Do not `git add -A` on darwin. Do not run bulk SEC work on darwin — cloud. Do not poll a
-  background probe run with `while pgrep`. **Do not edit shared infra a sibling is mid-edit on** —
-  check for a `.bak` dated today before you reach for `~/Scripts/`.
+  background probe with `while pgrep`. **Do not edit shared infra a sibling is mid-edit on** — check
+  for a `.bak` dated today before you reach for `~/Scripts/`.
 ---
-## 6 · TRANSPORT — darlish, zero-bridge (unchanged, worked first try)
+## 6 · TRANSPORT — darlish, zero-bridge (unchanged, worked first try, `-06` → `-55`)
 Standard bring-up; post the `DARLISH-ENROLL` line to Asana `1217316841710435` via the session's
-Asana MCP, collect, then `dx`. First try, no fallback, `-06` through `-54`. **Never restart the
-app to fix darlish — it is not on the bridge.** `darlish-check` is not in the cloud kit; do not
-chase its 127. `roster leave` ONCE at wrap.
+Asana MCP, collect, then `dx`. **Never restart the app to fix darlish — it is not on the bridge.**
+`darlish-check` is not in the cloud kit; do not chase its 127. `roster leave` ONCE at wrap.
 - ⚠ **SET `GATE_ROSTER_WHO` INLINE** — `dx` spawns a fresh shell per call and carries no
-  environment. **`export` DOES work inside a script you `--put` and run with `bash /tmp/x.sh`, and
-  that is the right default for anything with more than one step.** `-54` ran its commit batch and
-  its lesson batch that way and neither needed a second round trip.
-- ⚠ **`roster claim` and `roster join` BOTH need `--who`** even when `GATE_ROSTER_WHO` is set;
-  `claim` takes `--resource`, not `--repo`. `record-outcome <tag> pass` is two positionals.
-- ⚠ **`gate-selfcheck.sh` TAKES ~5–8 MINUTES AND A FOREGROUND `Bash` CALL DIES AT 8m20s.** `-54`
-  lost one round trip to this. Run it detached and poll:
+  environment. **`export` DOES work inside a script you `--put` and run with `bash /tmp/x.sh`**, and
+  that is the right default for anything with more than one step. `-55` ran every commit, every
+  patch and the whole lesson batch that way; **zero heredoc losses, zero round trips lost.**
+- ⚠ **`roster claim`/`join` BOTH need `--who`** even with `GATE_ROSTER_WHO` set; `claim` takes
+  `--resource`, not `--repo`. `record-outcome <tag> pass` is two positionals.
+- ⚠ **`gate-selfcheck.sh` TAKES ~5–8 MINUTES AND A FOREGROUND `Bash` CALL DIES AT 8m20s.** Detach:
   `nohup env GATE_ROSTER_WHO=big-<sess> bash -c "$HOME/Scripts/gate-selfcheck.sh > /tmp/gate.log 2>&1" &`
-  then `sleep 240; tail /tmp/gate.log`. **And re-stamp the charter first if you amended
-  `done-criteria.tsv`** — see §4.
-- ⚠ **`board.py` NEEDS FOUR FLAGS AND WARNS ABOUT NONE OF THEM.** `./scripts/regen-board.sh`.
-- ⚠ **HEREDOCS INSIDE `dx` DO NOT SURVIVE.** `-51` warned, `-52`, `-53` and `-54` each lost a
-  round trip. Write the script to a local file, `--put` it, run `python3 /tmp/x.py`. Four sessions
-  have now paid for this; take it the first time. `git checkout <file>` is the free undo.
-- ⚠ **NON-ASCII IN A `--put` SCRIPT: WRITE THE LITERAL CHARACTER.** `-54` lost a round trip
-  writing `\xc2\xb7` for `·` in a Python string — it encodes to four bytes, every middot-keyed
-  grep silently returned nothing, and the probe reported eleven legs red that were fine. **A probe
-  that reports everything broken is usually broken itself.**
-- ⚠ **SMALL DIFFS DO NOT NEED A TARBALL.** `cat f | /tmp/dx --put /Users/jasoncbraatz/repos/...`
-  per file: one call, sha256 verified. `-54` pushed six files that way. The tarball stanza is for
-  coming DOWN only. `--get` with a leading `~` expands in the CLOUD and fails; use the full path.
+  then `sleep 300; grep -E "GATE SELF-CHECK|^  FAIL" /tmp/gate.log`. **COMMIT EVERYTHING FIRST** —
+  the gate reads the working tree and a gate started before your last commit fails on DIRTY (`-54`
+  lost a full run to it). **And re-stamp the charter immediately before it** (§4, item 1).
+- ⚠ **`board.py` NEEDS FOUR FLAGS AND WARNS ABOUT NONE.** `./scripts/regen-board.sh`.
+- ⚠ **HEREDOCS INSIDE `dx` DO NOT SURVIVE.** Write locally, `--put`, run. `git checkout <file>` is
+  the free undo. **A nested heredoc inside a `--put` script is fine** — `-55` shipped Python
+  heredocs inside `bash` scripts all afternoon; it is only the `dx '...'` argument that eats them.
+- ⚠ **NON-ASCII IN A `--put` SCRIPT: WRITE THE LITERAL CHARACTER.** `\xc2\xb7` for `·` encodes to
+  four bytes and every middot-keyed grep silently returns nothing.
+- ⚠ **SMALL DIFFS DO NOT NEED A TARBALL.** `cat f | /tmp/dx --put /Users/jasoncbraatz/repos/...` —
+  one call, sha256 verified. **`--get` with a leading `~` expands in the CLOUD and fails; use the
+  full path** (`--put` accepts `~`, `--get` does not — `-55` confirmed both).
 - ⚠ **`lessons.py` AUTO-COMMITS AND AUTO-PUSHES each leaf.** Look before you reach for a commit.
 - Exit codes: `3` never reached darwin (safe to re-run) · `4` dropped after the command started ·
   `5` crossed but mismatched.
 - Deps: `pip install --break-system-packages 'numpy>=1.26' 'scipy>=1.11' 'pytest>=8.0'`.
-**SUITE:** 1063 collected, 1063 passed, zero skips — darwin ~65 s, cloud ~175 s.
-`pytest -m tripwire` selects the tripwire class. `scripts/defensive_count.py` takes a positional
-path. **Adding a manuscript to `docs/papers/` fails the suite until you add it to
-`tests/test_defensive_count.py::MANUSCRIPTS` AND commit a `DEFENSIVE-BASELINE.json` beside it** —
-and, as of `-54`, until you register it in `redproof_apparatus.PAPER` too. **Probe sweep:**
-~3 min 30 s per probe at `--jobs 2`; `nohup … &` and poll. **Budget for running the sweep twice.**
+**SUITE:** 1068 collected, 1068 passed, zero skips — darwin ~66 s, cloud ~175 s. `pytest -m tripwire`
+selects the tripwire class. `defensive_count.py` takes a positional path and **only a DELTA means
+anything** — the tool says so itself. **Adding a manuscript to `docs/papers/` fails the suite until
+you add it to `test_defensive_count.py::MANUSCRIPTS`, commit a `DEFENSIVE-BASELINE.json` beside it,
+AND register it in `redproof_apparatus.PAPER`.** **Probe sweep:** ~3 min 30 s per probe at
+`--jobs 2`; `nohup … &` and poll. **Budget for running the sweep twice.**
 ---
-## 0 · THE TELL, NOW IN SEVENTY-EIGHT SHAPES
-`-28` through `-53`'s tells all stand (ask the instrument-artefact question of numbers that look
-GOOD, that SETTLE AN ARGUMENT, of a REGISTERED CONTROL THAT FAILS, OF THE DENOMINATOR; a guard
-must scan assertions not quotations; a mutation that does not mutate reports your guard as weak;
-pre-commit the FAVOURABLE outcome's meaning; a handoff's CHARACTERISATION is not a MEASUREMENT;
-a correction that lives only in a handoff has not been made; the visible reds are the cheap half;
-a rule can be false on the day it is written; a count is not a measurement until it agrees across
-machines; a commissioned test that was never run is the most durable debt; a favourable result is
-when the controls matter most; a count whose answer moves when the file is re-wrapped is measuring
-the formatting; a fact can be recorded and still be absent at the point of use). `-54` adds seven:
-- **AN INSTRUMENT POINTED AT ONLY TWO INSTANCES CANNOT TELL A CRITERION FROM A CONVENTION, AND
-  THE THIRD INSTANCE IS THE MEASUREMENT.** Twelve checks were written against one manuscript and
-  cloned onto a second, where all twelve passed — because the two papers shared a section
-  numbering and a bold-prefix house style. On a third, six went red for reasons having nothing to
-  do with the criterion. **The second instance is not a test of the instrument; it is a second
-  sample of the same convention**, and a green clone is the weakest evidence available that a
-  check measures what it says. `-53` found one of these six and fixed it in place, which was
-  right and was also how the other five stayed hidden: **fixing an instance of a defect is what
-  stops you looking for the class.**
-- **A MUTATION THAT LANDS OUTSIDE THE REGION THE CHECK READS REPORTS A SOUND GUARD AS WEAK, AND
-  THAT IS THE MORE DANGEROUS DIRECTION.** Five for five on the first run. A false WEAK does not
-  merely waste a session — **it invites the next one to strengthen a check that was already
-  right**, which is how a precise guard becomes a broad one and how `DO NOT WIDEN` lists get
-  written after the fact. Treat WEAK as a claim about the harness until the edit is shown to land.
-- **A GUARD THAT CANNOT TELL USE FROM MENTION SCORES THE MENTION.** A grep forbidding
-  `placeholder` fired on the one paragraph in the corpus that explains why a bare placeholder was
-  refused. **The document was right and the guard called it wrong.** The general test: *if a
-  document DISCUSSING the thing you forbid would trip the guard, the guard is matching vocabulary
-  rather than structure* — and the repair is convention (caps, delimiters), not weakening.
-- **MOVING A GATE CHANGES WHAT *TERMINAL* MEANS UPSTREAM OF IT, AND THAT CONSEQUENCE IS NEVER IN
-  THE INSTRUCTION.** Jason moved his own-hand pass to the end of the project. The instruction was
-  one sentence; the consequence was that three submission-time SHA pins, each saying it "closes at
-  posting, which is P9's moment", were now aimed at a moment that no longer exists — because the
-  prose changes after them. **A session that had only reordered the rows would have done exactly
-  what was asked and left the corpus broken in a way nobody would find until posting day.** When a
-  gate moves, walk everything that named the old ordering and ask what it was assuming; the
-  instruction names the gate, and the damage is always somewhere else.
-- **AND THE SAME TELL FIRED THREE TIMES IN TWO HOURS, WHICH IS THE REAL LESSON.** Ruling one
-  moved `P8` to the end and stranded three SHA pins aimed at `P9`. Ruling two moved the finish line
-  itself and stranded **the same three rows again**, plus an endorsement row a session had added an
-  hour earlier, the board preamble, a docstring inside the gate, and a sentence inside a
-  manuscript. **Each time the instruction named the gate and the damage was somewhere else.** After
-  a scope or ordering change, `grep` the whole estate for the OLD terminal event by name — here it
-  was the word *posting* — and read every hit. The instruction is one line; the blast radius is
-  every place anyone ever wrote "when X happens".
-- **A ROW THAT CANNOT BE REACHED IS INDISTINGUISHABLE FROM A ROW THAT IS MERELY DEFERRED, AND ONLY
-  ONE OF THEM IS FINE.** `P1m`/`P3m`/`P5m` described an event outside the project's scope and sat
-  amber, patiently, looking exactly like good practice. **Nothing on a board can flag this**,
-  because "not done yet" and "will never be done" render identically. Ask of any long-amber row:
-  *what exactly would have to happen for this to close, and is that thing in this project?*
-- **A CRITERION THAT PASSES BECAUSE IT DOES NOT APPLY IS A BLANK LINE WEARING A TICK.** Paper II
-  owes no pre-registration; PREPRINT-CHECKLIST §D says so in terms. The cheap move is to drop the
-  row and the honest one is to make the row assert **the clause**, plus a tripwire for the day the
-  premise moves. **Inapplicability is a fact about the world and facts about the world can change
-  without anyone telling the board.**
+## 0 · THE TELL, NOW IN EIGHTY-ONE SHAPES
+`-28` through `-54`'s tells all stand (ask the instrument-artefact question of numbers that look
+GOOD, that SETTLE AN ARGUMENT, of a REGISTERED CONTROL THAT FAILS, OF THE DENOMINATOR; a guard must
+scan assertions not quotations; a mutation that does not mutate reports your guard as weak;
+pre-commit the FAVOURABLE outcome's meaning; a handoff's CHARACTERISATION is not a MEASUREMENT; a
+correction that lives only in a handoff has not been made; a rule can be false on the day it is
+written; an instrument pointed at two instances cannot tell a criterion from a convention; a guard
+that cannot tell use from mention scores the mention; **moving a gate changes what *terminal* means
+upstream of it and the consequence is never in the instruction**; a row that cannot be reached is
+indistinguishable from one merely deferred; a criterion that passes because it does not apply is a
+blank line wearing a tick). `-55` adds three:
+
+- **A SYSTEM OF DOCUMENTS CAN HOLD A CONTRADICTION THAT NO PER-DOCUMENT REVIEW CAN FIND, BECAUSE
+  EVERY REVIEWER GRADES A DOCUMENT AGAINST THAT DOCUMENT'S OWN CLAIMS.** Both papers passed their
+  own review; the corpus was broken. **The detector is a shared-fact table that compares MODALITY,
+  not truth value** — asserted / conditional / open / rejected — and the killing shape is one
+  document carrying as PENDING what another reports as SETTLED. It is worse when the pending one is
+  a **conditional whose antecedent has since become true**, because the document then *entails its
+  own defect* and reads as careful while doing it. Paper IV's §9.2 was exactly that sentence, and it
+  had been true-in-form and false-in-fact since the day `REG-003` returned.
+- **A TOOL THAT ASSERTS MORE THAN IT MEASURED GROWS WORKAROUND PROSE IN THE ARTEFACTS IT SERVES —
+  AND THAT PROSE IS THE FIND-IT SIGNAL.** `board.py` measured OPEN status and file order and printed
+  a *schedule*; the cost was a handoff paragraph titled "FIRST, THE TRAP" whose entire job was to
+  contradict one generated sentence. `charter-read.sh` claimed two files existed and readers
+  concluded the *repo* was broken rather than the tool. **When you find a doc paragraph that exists
+  to work around a tool's output, the bug is in the tool**, and the repair is almost always to
+  report the measurement instead of issuing the conclusion.
+- **A TEST WHOSE OUTCOME THE DESIGNER CAN PREDICT IS WORTH RUNNING AND IS NOT A TEST, AND MIXING
+  THE TWO IS HOW A PASS REPORTS A NUMBER THAT MEANS NOTHING.** Six legs, five clear, reads like a
+  grade — and is worthless if three of the six could not have lost. **Classify TEST vs AUDIT before
+  the run, pre-register the AUDIT legs' remedies so they cannot be argued about afterwards, and
+  score the two separately.** The corollary is the admission criterion: without one, a system-level
+  pass silently degenerates into the component pass done N times, **and that run looks exactly like
+  a successful one.**
 ---
 ## 7 · ORIENT-THEN-GO
 Emit one line — `Oriented: <state> · at-bat: <X> · opening with <first action>.` — then start
 building. Don't wait for a go. Do not open by asking Jason anything.
-**Coffee status:** ☕ TWENTY SESSIONS, and this one ended three times. First: all three papers
-measured against the same bar — which is exactly when the bar turned out to be measuring six things
-that were never in it. Second: Jason moved his own-hand pass to the very end, which stranded three
-SHA pins aimed at a moment that had just stopped existing. Third: he said what *done* actually
-means, and it is **cleared for liftoff** — not the "three preprints publicly posted" this project
-had been driving at since sessionZero, two whole projects too far down the road. **The corpus is
-measured, the finish line is finally the real one, and there is exactly one thing left to build.**
-Not yet, though. 🥎
+**Coffee status:** ☕ TWENTY-ONE SESSIONS. This one had one job — write down what it would mean for
+the whole corpus to fail, *before* anyone knows — and the reading it took to do that job turned up a
+paper that did not know its own chain was broken. **The design has not been run and it has already
+paid for itself.** Fourteen lines open, one leg wants the next slot, and for the first time in
+fifty-five sessions there is a written answer to a question this repository has been carrying since
+August the eleventh. 🥎
