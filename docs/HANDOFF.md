@@ -26,7 +26,7 @@ exactly (`-39`) — `| tail` will mask it.***
 > sentence was false.**
 
 > **RETROFIT NOTE (2026-08-16, between -51 and -52, Jason + Fable process audit):**
-> `docs/CHECKLIST.md` now exists — the corpus contours P1–P10, the existing law (ADR-001
+> `docs/CHECKLIST.md` is now GENERATED (Tier 2, 2026-08-16): criteria live in `docs/done-criteria.tsv` (hand-maintained), status measured by `~/Scripts/handoff-kit/board.py` — P1's measurement results land as P1x sub-ROWS in the tsv with real checks, then regenerate. Never hand-tick the checklist. The corpus contours P1–P10, the existing law (ADR-001
 > clauses, PREPRINT-CHECKLIST §A, WT-079, the batch rule) made countable, plus the convergence
 > rule (P7: two consecutive zero-substantive-finding review passes = done) and Jason's own-hand
 > pass (P8) as explicit terminal lines. `--check` prints distance-to-done at every orient from

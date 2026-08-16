@@ -1,0 +1,16 @@
+# wealth-tensor — done-criteria.tsv (Tier 2, converted from the hand-ticked P1..P10 on
+# 2026-08-16, sessionZero). CRITERIA hand-maintained here, quoted from ADR-001 clauses +
+# PREPRINT-CHECKLIST §A + Jason's rulings; STATUS generated into docs/CHECKLIST.md by
+# handoff-kit/board.py. P1's measurement results land HERE as new sub-rows (P1a, P1b, ...),
+# each with a real check — not as prose ticks. manual: rows are judgment by design; where a
+# check becomes writable (P6 per-paper regen scripts), upgrade the row.
+P1	corpus	Paper III measured against its ADR-001 DoD clause + PREPRINT-CHECKLIST §A, gap by gap, results recorded as P1x sub-rows in this file	manual:the standing at-bat (wealthTensor-52). Done when the sub-rows exist and this row's owner flips it to a grep: on their presence.
+P2	corpus	Paper III gaps closed in the prose, in the file (WT-079: the deliverable is the paper)	manual:judged against the P1x sub-rows once they exist.
+P3	corpus	Paper II re-measured against the same two lists, gaps closed, ready to submit	manual:same bar as III; II built the template and must still satisfy it.
+P4	corpus	Paper IV exists as a full draft (own charter + Paper I's surviving subsection + Abandoned Approaches)	cmd:ls $HOME/repos/wealth-tensor/docs/papers/paper-IV*/paper-IV.md >/dev/null 2>&1
+P5	corpus	Paper IV ready to submit (same two lists, same bar)	manual:follows P4; the long pole.
+P6	corpus	Every number in every paper regenerates from a COMMITTED script at the pinned SHA, re-run at close	manual:upgrade to cmd: rows per paper as the regen scripts are enumerated (WT-027 lesson: a number without a script is a number nobody has checked).
+P7	corpus	Convergence per paper: fresh-eyes review passes repeat until TWO CONSECUTIVE passes yield ZERO substantive findings	manual:perfection==done operationalized; a zero-finding pass is a RESULT and gets its REVIEW doc.
+P8	corpus	Jason's own-hand pass over each converged paper — his voice, his name, the last human step	manual:a human gate a script can satisfy is not a human gate. Never auto-closes.
+P9	corpus	The batch declared ONCE when all three are terminal (never ask Jason to trigger a submission)	manual:ADR-001 -08; declaring readiness is the session's job, submitting is his.
+P10	corpus	Registered in the shared ledger with a calibrated estimate (brake + closer armed)	cmd:sqlite3 $HOME/.local/state/auto-bridge/ledger.db "SELECT 1 FROM projects WHERE id='wealthTensor'" | grep -q 1
