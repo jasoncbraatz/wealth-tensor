@@ -1,0 +1,136 @@
+[seed] T: W4301267015     4839  The Entropy Law and the Economic Process
+[seed] T: W599717221      259  The Economic Growth Engine: How Energy and Work Drive Material Prosper
+[seed] T: W1999991401      386  Accounting for growth: the role of physical work
+[seed] T: W2784652317      251  Energy and the Wealth of Nations : Understanding the Biophysical Econo
+[seed] T: W2057002878     2125  Environmental accounting: EMERGY and environmental decision making
+[seed] T: W578084117      304  Steady-state economics: The economics of biophysical equilibrium and m
+[seed] T: W2494434296      109  The Second Law of Economics
+[seed] S: W3142658434      586  Monetary Economics: An Integrated Approach to Credit, Money, Income, P
+[seed] S: W2063101294      163  Post-Keynesian stock-flow-consistent modelling: a survey
+[seed] S: W2619187398      140  STOCK‐FLOW CONSISTENT MACROECONOMIC MODELS: A SURVEY
+[seed] S: W3121836316       83  Seven Unsustainable Processes: Medium-Term Prospects and Policies for 
+[seed] S: W3122322896      353  Post-Keynesian economics: new foundations
+[seed] S: W2100379291       79  Keynesian theorising during hard times: stock-flow consistent models a
+[seed] K: W2035169993      547  Statistical mechanics of money
+[seed] K: W1978341896      426  Statistical mechanics of money: how saving propensity affects its dist
+[seed] K: W2098353707      573  Wealth condensation in a simple model of economy
+[seed] K: W2143240768      173  Kinetic exchange models for income and wealth distributions
+[seed] K: W2031849821      501  <i>Colloquium</i>: Statistical mechanics of money, wealth, and income
+[seed] K: W2601333143       10  Statistical model with a standard Gamma distribution
+[seed] X: W2045435533    17506  A Programmable Dual-RNA–Guided DNA Endonuclease in Adaptive Bacterial 
+[seed] X: W2064815984    15891  Multiplex Genome Engineering Using CRISPR/Cas Systems
+[seed] X: W2003171404     9470  RNA-Guided Human Genome Engineering via Cas9
+[seed] X: W2050480410     7067  The new frontier of genome engineering with CRISPR-Cas9
+[seed] X: W1977709885    11855  Genome engineering using the CRISPR-Cas9 system
+[seed] X: W2336828812     5556  Programmable editing of a target base in genomic DNA without double-st
+[cite] T: fetching audience
+    T: 200
+    T: 400
+    T: 600
+    T: 800
+    T: 1000
+    T: 1200
+    T: 1400
+    T: 1600
+    T: 1800
+    T: 2000
+    T: 2200
+    T: 2400
+    T: 2600
+    T: 2800
+    T: 3000
+    T: 3200
+    T: 3400
+    T: 3600
+    T: 3800
+    T: 4000
+[cite] S: fetching audience
+    S: 200
+    S: 400
+    S: 600
+    S: 800
+    S: 1000
+    S: 1139
+[cite] K: fetching audience
+    K: 200
+    K: 400
+    K: 600
+    K: 800
+    K: 1000
+    K: 1200
+    K: 1383
+[cite] X: fetching audience
+    X: 200
+    X: 400
+    X: 600
+    X: 800
+    X: 1000
+    X: 1200
+    X: 1400
+    X: 1600
+    X: 1800
+    X: 2000
+    X: 2200
+    X: 2400
+    X: 2600
+    X: 2800
+    X: 3000
+    X: 3200
+    X: 3400
+    X: 3600
+    X: 3800
+    X: 4000
+[ceil] T: split 4/3
+    T-even: 200
+    T-even: 400
+    T-even: 600
+    T-even: 800
+    T-even: 1000
+    T-even: 1200
+    T-even: 1400
+    T-even: 1600
+    T-even: 1800
+    T-even: 2000
+    T-even: 2200
+    T-even: 2400
+    T-even: 2600
+    T-even: 2800
+    T-even: 3000
+    T-even: 3200
+    T-even: 3400
+    T-even: 3600
+    T-even: 3800
+    T-even: 4000
+    T-odd: 200
+    T-odd: 400
+    T-odd: 600
+    T-odd: 797
+[ceil] S: split 3/3
+    S-even: 200
+    S-even: 400
+    S-even: 600
+    S-even: 800
+    S-even: 996
+    S-odd: 200
+    S-odd: 298
+[ceil] K: split 3/3
+    K-even: 200
+    K-even: 400
+    K-even: 600
+    K-even: 800
+    K-even: 1000
+    K-even: 1200
+    K-even: 1252
+    K-odd: 200
+    K-odd: 400
+    K-odd: 511
+
+=== REG-013 ===
+ceiling P = 0.4773   floor F = 0.0000   VOID=False
+  T,X    O=0.0000  z=nan  floor
+  S,X    O=0.0000  z=nan  floor
+  K,X    O=0.0000  z=nan  floor
+  T,S    O=0.0202  z=0.042  WHITESPACE
+  T,K    O=0.0108  z=0.023  WHITESPACE
+  S,K    O=0.0053  z=0.011  WHITESPACE
+H1: SURVIVES

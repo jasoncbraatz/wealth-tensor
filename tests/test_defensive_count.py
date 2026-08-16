@@ -42,6 +42,7 @@ MANUSCRIPTS = {
     "paper-I": PAPERS / "paper-I-price-formation" / "paper-I.md",
     "paper-II": PAPERS / "paper-II-redistribution" / "paper-II.md",
     "paper-III": PAPERS / "paper-III-dual-tensor" / "paper-III.md",
+    "paper-IV": PAPERS / "paper-IV-composition" / "paper-IV.md",
 }
 
 sys.path.insert(0, str(ROOT / "scripts"))

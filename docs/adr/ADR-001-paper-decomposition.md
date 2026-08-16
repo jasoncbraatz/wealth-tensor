@@ -183,9 +183,17 @@ Reasoning, since the order is not obvious and is the part most likely to be seco
   one, and appears in every paper**, populated from the ledger's DEAD-END entries.
 - **The missing apparatus is now a per-paper checklist**, not a vague worry: abstract, keywords,
   JEL codes, explicit contributions list, limitations section, data/code availability, and
-  *Independent researcher* as the affiliation. All are absent today; all are cheap.
-- **One live placeholder to clear:** *"Further entries to be migrated from the project findings
-  ledger as they accumulate"* is a TODO sitting in the deliverable.
+  *Independent researcher* as the affiliation. ~~All are absent today; all are cheap.~~
+  **Struck 2026-08-16 (`wealthTensor-53`): they are not absent, and had not been for weeks when
+  `-52` measured it.** Papers II, III and IV each carry every item; the state is MEASURED, not
+  asserted, as rows `P1a`-`P1m` (Paper III) and `P5a`-`P5m` (Paper IV) in `docs/done-criteria.tsv`,
+  and the board reports it. **Do not read this clause for the state of the apparatus — run the
+  board.** The struck sentence is kept because the ADR being wrong about its own consequence for
+  weeks, while a checklist sat one directory away unmeasured, is the record.
+- ~~**One live placeholder to clear:** *"Further entries to be migrated from the project findings
+  ledger as they accumulate"* is a TODO sitting in the deliverable.~~ **Cleared and now guarded**
+  (`wealthTensor-53`): rows `P1i` and `P5i` assert the absence of live placeholders in Papers III
+  and IV, existence-leg first so the predicate cannot pass vacuously on a missing file.
 
 ## Relitigation record
 
@@ -498,3 +506,36 @@ object to design it against.
 
 *Recorded because a corpus that quietly becomes three papers, in a repository whose central document
 says four, is a contradiction a future session would find the hard way.* (L35.)
+
+
+### Addendum · 2026-08-16 · wealthTensor-53 · **Paper IV exists, and the whitespace is a measurement now**
+
+Recorded here because §Decision's Paper IV entry names three inputs and one of them was a
+commissioned test that had never been run, which a future session would otherwise discover by
+writing a paragraph around it.
+
+**Paper IV is drafted** — `docs/papers/paper-IV-composition/paper-IV.md`, ~6.3k words, carrying its
+own charter, Paper I's surviving identity as §5, and the largest Abandoned Approaches entry in the
+corpus. §Decision's *"Needs: I-III to exist"* is satisfied: II and III exist and I is folded in per
+the `-10` addendum. Its apparatus is measured, not asserted — rows `P5a`-`P5m`.
+
+**§Decision's one named unforced error is answered explicitly, in §4 of the paper**, and the answer
+is a distinction rather than a hedge: **SMD is a theorem about behavioural MAPS, and the atomic unit
+is a STATE.** Aggregation preserves the extensive state and destroys the behavioural map; SMD is the
+second clause, proved by the mainstream fifty years ago, and this framework is the first. They are
+complementary halves of one statement, not rivals — which is also why §5's price-formation instance
+(zero income effects, allocation cancels identically) and SMD (income effects, the map stops
+composing) belong in the same paper as opposite ends of one axis.
+
+**The citation-graph whitespace is no longer an anecdote.** `REG-006`'s heir `REG-013` was
+registered in its own commit (`fff7063`) and run: a split-half ceiling of **0.477**, a floor of
+**exactly 0.000** against CRISPR, and the three target pairs at **0.020 / 0.011 / 0.005** — six works
+in the world cite both a stock-flow-consistent seed and a kinetic-exchange seed. `H1` survives under
+the registered rule. **And the result reports its own soft spot rather than waiting for a referee to
+find it:** biophysical economics is itself a loose federation (split-half 0.168), so under a stricter
+per-cluster ceiling the biophysical x stock-flow pair reads UNDECIDED. The registered rule governs
+and was not re-chosen; the sensitivity is in `RESULT-REG-013` §4.1 and in the paper's §6.
+
+**What this does NOT change.** The split, the order, the batch ruling, and the per-paper Definition
+of Done. P5 -- *ready to submit* -- is not P4, and nobody should read a full draft as a terminal
+state.
