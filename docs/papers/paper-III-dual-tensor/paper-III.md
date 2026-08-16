@@ -15,66 +15,27 @@ jason@braatzresearch.com
 ## Abstract
 
 A balance sheet is an instrument, and instruments have transfer functions. Model the reporting
-layer as a low-pass filter on a physical layer that degrades whether or not anyone records the
-degradation: a share **φ** of each true change is observable and passes through at once, the
-remainder accrues in an unrecognised gap and is released at rate **α**, and the integral of what the
-statements owe is exactly **(1 − φ)** times its value at φ = 0, in closed form.
+layer as a low-pass filter on a physical layer that degrades whether or not anyone records it: a
+share **φ** of each true change passes through at once, the rest released at rate **α** from an
+unrecognised gap.
 
-The parameter of interest is not recoverable from what the instrument emits. **The triples (α, δ, φ)
-and (δ, α, φδ/α) generate the identical reported series**, where δ is the physical decay rate: the
-filter's two roots are exchangeable and the exchange preserves φδ exactly. The proof is four lines —
-the exchange imposes two coefficient conditions and both reduce to φ′α = φδ — and the reported gap is
-a Bateman function, whose exchange symmetry pharmacokinetics has called *flip-flop* since the 1970s.
-Timeliness and durability are therefore not separately identified from a reported series, and a
-series cannot distinguish a prompt reporter of a durable asset from a slow reporter of a perishable
-one. **Where the asset's physical scale is not observed — every firm-level series, which aggregates
-vintages — the identified set is not two points but a continuum, and a factor of 1.67 in that
-unobserved scale spans the whole unit interval of timeliness.** A second series drawn from the
-asset repairs this — the returns the field's instruments already condition on suffice — but the
-repair is a rate and not a proof. Its strength belongs to the asset rather than to the design: the
-level is set by how far the book's amortisation rate sits from the asset's true decline, the
-response to news is set by the decay rate and reverses sign as that rate approaches zero, and no
-horizon attains the root-T rate, because every term in the estimating equation decays with the asset
-itself.
+**The triples (α, δ, φ) and (δ, α, φδ/α) generate the identical reported series**, where δ is the
+physical decay rate: the roots exchange, preserving φδ exactly. Timeliness and durability are
+therefore not separately identified, and where the asset's physical scale is unobserved (every
+firm-level series) the identified set is a continuum, a factor of **1.67** in that scale spanning
+the whole unit interval.
 
-Indexing asset classes and writing the recursion with a Hadamard product, the corollary is
-cross-sectional: **classes are ordered by (1 − φ) ⊙ δ ⊘ (α − δ), not by φ** — decay reaching the
-ranking through two channels, neither of them the parameter of interest. A φ-ordered
-cross-section is therefore valid only inside a region of δ-space, and the region has a closed-form
-boundary in quantities the design already declares: the probability that it recovers its own
-ordering crosses one half when per-rung δ leverage reaches **0.61** of the design budget. Across the
-four GAAP classes with the decay rates the standards imply, that ratio is 2.58 and the composite
-does not blur the intended ranking but **inverts** it, Kendall τ = −1. Draw δ independently instead
-and the ordering survives in **11.5%** of 4,000 ladders — dispersion destroys the ranking, and the
-standards' ladder is what turns the wreck into a reversal. This constrains any cross-sectional use
-of the conditional-conservatism measures, which read a recognition property off a reported series.
+The corollary is cross-sectional: **classes are ordered by (1 − φ) ⊙ δ ⊘ (α − δ), not by φ**.
+Across the four GAAP classes, δ leverage is **2.58** times the level at which recovery fails, and
+the composite **inverts** the intended ranking, Kendall τ = −1; drawing δ independently, the
+ordering survives in **11.5%** of 4,000 ladders. This constrains cross-sectional use of the
+conditional-conservatism measures.
 
-The framework's own sharpest prediction — recognition lag ordered by GAAP asset class — was
-pre-registered, tested on 688 EDGAR-derived events across two sectors declared in advance, and
-**failed** (Jonckheere–Terpstra z = −0.290 and −0.095 against power 0.95–1.00; the stopping rule
-fired). The identification result does not explain that failure, and this paper reports the check
-that refused to: **the lag statistic is the one observable the composite does not invert**, holding
-its ordering in 100% of the same admissible ladders and in 66.2% when δ is drawn independently,
-against 11.5% for the magnitude measure. What it cannot do is exist in public data — the model's lag
-is a cross-correlation against a physical series no filing reports — so the registered instrument
-necessarily measured a substitute, and the bridge to it was never written down. The repair follows
-from the theorem: **disclosed useful lives supply δ from outside the series**, restoring φ for every
-class that has one, and none for goodwill, where at δ = 0 the parameter is not ill-conditioned but
-absent. The disclosed lives also fix the model's domain, and they fix it tightly: the deferral
-measure exists only where the recognition rate exceeds the decay rate, and at the calibration used
-here **no disclosed useful life short enough to appear in a filing satisfies that** — which makes
-the recognition rate, rather than the ordering, the quantity a cross-sectional design has to
-establish first. The same registered events establish it: **the peak-to-charge recognition rate is
-0.41 per year against a calibration of 0.05, on both known biases' inflating side**, so the
-disclosed lives lie inside the model's domain — 0.97 of the disclosed pairs at that rate and 0.81 at
-the unregistered adverse cut — and the hazard rises with the age of the gap rather than staying
-constant as the model assumes. **The closed form survives that: the deferral measure is the
-recognition lag's moment generating function evaluated at the decay rate, and what the constant
-hazard supplied was not the result but its domain** — under a rising hazard there is no domain
-restriction, and the correction to the measure is under one per cent across the classes ranked here
-and 44% at a disclosed three-year life. The events also reject the reporting layer's diagonality,
-clustering across asset classes within a firm-quarter at two to four times the independence rate in
-both sectors.
+The framework's sharpest prediction, recognition lag ordered by GAAP asset class, was
+pre-registered, tested on 688 EDGAR-derived events in two pre-declared sectors, and **failed**
+(Jonckheere–Terpstra z = −0.290, −0.095; power 0.95–1.00). The repair follows from the theorem, not
+the failure: **disclosed useful lives supply δ from outside the series**, restoring φ for every
+class but goodwill, where at δ = 0 the parameter is absent.
 
 **Keywords:** identification · conditional conservatism · reporting lag · impairment ·
 pre-registration · asset life · deferred information

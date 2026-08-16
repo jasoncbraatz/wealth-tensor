@@ -86,8 +86,14 @@ NOT_COUNTED = {
 REACH = {
     # --- REG-002's ladder draws: §4.4 and §4.5 report them, §7 restates ----------------
     "0.32":   {"4.4": 1, "7": 1},
-    "0.41":   {"4.4": 2, "5.4": 1, "7": 1, "Abstract": 1},
-    "11.5":   {"1": 1, "4.4": 1, "4.5": 1, "7": 2, "Abstract": 2},
+    # wealthTensor-52 · the Abstract counts below MOVED, and legitimately: the abstract was
+    # 872 words / 5480 characters -- 2.85x arXiv's hard 1920-character metadata ceiling, so the
+    # paper could not have been submitted with it -- and was cut to 247 words / 1564. Every
+    # figure it lost is still in the body at the section this table already names, which is
+    # what made the cut safe and what this file just proved. The guard fired on all three; it
+    # is the only thing in the suite that noticed the abstract had changed at all.
+    "0.41":   {"4.4": 2, "5.4": 1, "7": 1},
+    "11.5":   {"1": 1, "4.4": 1, "4.5": 1, "7": 2, "Abstract": 1},
     "1.1":    {"4.4": 1, "7": 1},
     "23.8":   {"4.4": 1, "7": 1},
     "0.0079": {"4.4": 1, "7": 1},
@@ -95,7 +101,7 @@ REACH = {
     "0.0123": {"4.4": 1, "7": 1},
     "1.58":   {"4.4": 1, "7": 1},
     "19.5":   {"4.4": 1, "7": 1},
-    "66.2":   {"4.5": 1, "7": 1, "Abstract": 1},
+    "66.2":   {"4.5": 1, "7": 1},
     "0.011":  {"4.5": 1, "7": 1},
 
     # --- REG-003: the widest reach in the paper, and the reason this file exists -------

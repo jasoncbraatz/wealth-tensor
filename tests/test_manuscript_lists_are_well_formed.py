@@ -27,6 +27,29 @@ One property, at the resolution the defect lives at: **a numbered or bulleted li
 marker may not appear mid-line.** That is a pure structural fact about the source, cheap to
 state, and it is exactly what a re-wrap breaks and a content edit does not.
 
+WHAT THIS FILE DOES **NOT** ASSERT — READ THIS BEFORE PARAPHRASING IT
+--------------------------------------------------------------------
+**It asserts no COUNT, of §9's limitations or of anything else.** It asserts one structural
+property, everywhere in the manuscript: a list-item marker may not sit mid-line.
+
+Recorded because a paraphrase of this file went wrong and was inherited ten times.
+`-42`'s handoff introduced a DO-NOT reading **"§9's LIMITATIONS ARE FOUR LIST ITEMS AND STAY
+FOUR"**, citing this file as its machine. §9 had **nine** numbered items on the day that
+sentence was written — `git show e947fb6:…/paper-III.md` counts nine — and has nine today. The
+"four" was lifted from the WHAT HAPPENED narrative above, where four *markers* (`1.`–`4.`) were
+the ones a single re-wrapped block flattened. An incident's arithmetic became a standing rule
+about a section's contents, and rode the DO-NOT list from `-42` through `-51` unmeasured,
+because a DO-NOT is the one part of a handoff nobody re-runs.
+
+The live risk was to the manuscript, not to the suite: a session obeying that rule and finding
+nine items would either delete five real limitations — from the section whose whole purpose is
+that a reader can calibrate what is admitted — or refuse to add a tenth the paper needed. A
+rule that is false in the direction of removing honesty is worse than no rule.
+
+Measured and corrected `wealthTensor-52` (2026-08-16). If you need a count of §9, run:
+    awk '/^## 9 · Limitations/{f=1;next} /^## 10 /{f=0} f' <paper> | grep -cE '^[0-9]+\. \*\*'
+The count is a MEASUREMENT. Nothing in this repository mandates it.
+
 THE CONTROL
 -----------
 `-37`: a mutation that does not mutate reports your guard as weak. So the red proof is the

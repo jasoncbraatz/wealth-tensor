@@ -27,17 +27,29 @@ sys.path.insert(0, str(ROOT / "scripts"))
 
 import handoff_gate as G  # noqa: E402
 
-GOOD = """---
-project: wealth-tensor
-gh_sha: PENDING
-updated: 2026-08-13
-session: test
-gate_passed: true
-gate_version: "2.51"
----
-
-# body
-"""
+#: A frontmatter that is complete BY CONSTRUCTION: every key in ``G.REQUIRED``, built from
+#: ``G.REQUIRED`` itself rather than typed out. `definition_of_done` was added to the gate's
+#: required set on 2026-08-16 and this literal was not updated, which took two tests red --
+#: and, quietly, took THREE more vacuously green: they assert ``rc == 1`` and were getting it
+#: from the missing key rather than from the gh_sha condition each one is named for. A fixture
+#: that hard-codes the very set the code under test owns will drift again, so it no longer does.
+_VALUES = {
+    "project": "wealth-tensor",
+    "gh_sha": "PENDING",
+    "updated": "2026-08-13",
+    "session": "test",
+    "gate_passed": "true",
+    "gate_version": '"2.51"',
+    "definition_of_done": '"Three preprints (II, III, IV) publicly posted."',
+}
+assert not set(G.REQUIRED) - set(_VALUES), (
+    "handoff_gate.REQUIRED gained %s -- give it a value here, or every rc == 1 assertion in "
+    "this file starts passing for the wrong reason" % sorted(set(G.REQUIRED) - set(_VALUES))
+)
+GOOD = "---\n" + "".join(
+    "%s: %s\n" % (k, _VALUES[k]) for k in ["project", "gh_sha", "updated", "session",
+                                           "gate_passed", "gate_version", "definition_of_done"]
+) + "---\n\n# body\n"
 
 
 def _run(tmp_path, text) -> tuple[int, str]:

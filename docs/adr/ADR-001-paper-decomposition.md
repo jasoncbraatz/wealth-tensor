@@ -212,8 +212,10 @@ Reasoning, since the order is not obvious and is the part most likely to be seco
      self-select for it.
 - **Order II → III → I → IV reconfirmed by Jason same date** ("I'd probably like to just stick
   to it in order").
-- **New post-IV artifact, TEED UP, not scheduled — THE MONOGRAPH.** After I–IV ship, compile
-  the four preprints back into a single narrative volume for the stated audience: connective
+- **New post-IV artifact, TEED UP, not scheduled — THE MONOGRAPH.** After ~~I–IV ship, compile
+  the four preprints~~ **II, III and IV ship, compile the three preprints** *(corrected in place
+  2026-08-16, `wealthTensor-52`, per the `-10` amendment; Paper I is a subsection of IV, not a
+  preprint)* back into a single narrative volume for the stated audience: connective
   tissue, the ledger stories, the lost bet honoured, Abandoned Approaches in full. The
   preprints are the scholarly deliverable; the monograph is the stewardship one. Guernica had
   dozens of standalone studies; the mural came after. Do not start it before IV exists.
@@ -418,14 +420,23 @@ record already establishes that the conjunction *is* the fourth claim; it follow
 needs its own test, and that a corpus gets exactly one first end-to-end pass. Shipping II early spends
 that pass to bank a partial win.
 
-**What changes.** Nothing about the split, the order, or the per-paper Definition of Done. **II → III
-→ I → IV is now the order of a submission *batch*, not a schedule of separate events.** A session's
-job is to bring papers to DONE; "ready to submit" is the terminal state for an individual paper, and
-no session should ask Jason to trigger a submission before all four reach it.
+**What changes.** Nothing about the split, the order, or the per-paper Definition of Done. ~~**II → III
+→ I → IV**~~ **II → III → IV is now the order of a submission *batch*, not a schedule of separate
+events.** A session's job is to bring papers to DONE; "ready to submit" is the terminal state for an
+individual paper, and no session should ask Jason to trigger a submission before all ~~four~~
+**three** reach it.
+
+> *Counts corrected in place 2026-08-16 (`wealthTensor-52`). This addendum is dated `-08` and the
+> `-10` addendum below it — same day, hours later — folded Paper I into Paper IV. The batch ruling
+> itself is untouched and still governs; only its arithmetic moved. Struck rather than deleted, per
+> `-51`'s precedent at §Order of publication. **This is the third site in this file found asserting
+> the four-paper count after `-10` amended it, and the second found after `-51` corrected the
+> first** — the header's "the addenda amend it" policy is exactly what lets a superseded count keep
+> reappearing in clauses a reader treats as live. Grep the CLAIM, not the file.*
 
 **What this opens, and nobody has claimed it.** The end-to-end test is itself a deliverable and has
-not been designed. **What would it mean for the four papers to fail as a system, as opposed to one of
-them failing?** That question has no written answer anywhere in this repository. It should have one
+not been designed. **What would it mean for the ~~four~~ three papers to fail as a system, as opposed
+to one of them failing?** That question has no written answer anywhere in this repository. It should have one
 before the fourth paper is finished, not after — a test designed once the result is known is not a
 severe test, which is the whole point of the position being recorded here.
 
