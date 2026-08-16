@@ -1,6 +1,6 @@
 ---
 project: wealth-tensor
-gh_sha: be0bdfc8dda7b67af02ac5062279820c669da47c
+gh_sha: 206e6c69f4c3a519dd9a46671d5114728d2166fb
 updated: 2026-08-16
 session: wealthTensor-54
 gate_passed: true
@@ -14,8 +14,13 @@ so `--check` prints `ADVISORY: docs-only drift` and exits 0. Assert the exit cod
 that the hard way when a post-wrap ADR commit made it false while the gate stayed green, because
 `--check` classifies by PATH and any docs-only drift is green. If a post-wrap commit lands,
 repoint `gh_sha` and re-master this file.
-`-54` landed `770f766` (Paper II's three prose gaps, alone, so that commit is green on its own)
-and `be0bdfc` (the instrument and everything with it), then wrote this file alone after them.
+`-54` landed `770f766` (Paper II's three prose gaps, alone, so that commit is green on its own),
+`be0bdfc` (the instrument and everything with it) and `206e6c6` (Jason's DoD amendment, ruled
+mid-session), then re-mastered this file alone after them. **`-54` is also the worked example of
+this paragraph's own instruction:** it wrapped at `be0bdfc`, Jason then ruled on the DoD, the
+amendment touched `scripts/` and `tests/`, and `--check` went from `ADVISORY: docs-only drift` to
+`BLOCKER: code advanced past the handoff` — exactly as designed. The repair is what you are reading:
+repoint `gh_sha`, re-master, re-stamp the charter, re-walk the gate.
 `gh_sha` is the full SHA from `git rev-parse`, not an expanded abbreviation.
 ---
 ## ORIENT — read these first, in this order
@@ -37,7 +42,9 @@ and `be0bdfc` (the instrument and everything with it), then wrote this file alon
    34 mutations, 0 survivors, ~1 s, wired into the suite with a census.
 5. **`docs/papers/paper-II-redistribution/paper-II.md`** — three gaps closed. §Abstract, §5's
    first limitation and §7 all moved. Read the abstract first: it now carries the loss.
-6. **`docs/adr/ADR-001-paper-decomposition.md`** — `-54`'s addendum at the foot. The title and
+6. **`docs/adr/ADR-001-paper-decomposition.md`** — `-54`'s TWO addenda at the foot, and the
+   second one is a **ruling from Jason that reorders the finish line — read it before you plan
+   anything**. The title and The title and
    §Decision stay **deliberately frozen** at four papers as the decision-as-made; do not "fix"
    them. Every live clause says three.
 7. `python3 scripts/handoff_gate.py --check` · `docs/papers/PREPRINT-CHECKLIST.md` §A/§B/§D ·
@@ -54,6 +61,9 @@ MEASURING TYPOGRAPHY.** Six of the twelve apparatus legs went red on Paper II fo
 had nothing to do with whether Paper II satisfies the criterion. `-53` found this defect once,
 in `P1c`, and fixed it once. It was six. The rows are generated now, and every green has been
 watched to go red.
+**AND THEN JASON MOVED THE FINISH LINE**, mid-session: his own-hand pass (`P8`) is now ONE pass
+over the whole corpus, taken LAST, after a new `P11` audits the three papers **as a system**.
+Read §1's last block before you plan — **it changes which at-bat is on the critical path.**
 ---
 ## 1 · WHAT HAPPENED
 **The at-bat was P3, and Paper II's gaps are CLOSED. `P3` itself stays `manual:` and unticked —
@@ -124,6 +134,48 @@ right. Mutations are section-scoped now (`within()`).
 | defensive sentences | paper-II baseline **0/0**, unchanged by the prose edits; charter §2's non-increasing invariant holds estate-wide |
 | lessons | **4 banked** (3 global, 1 project) · `use` on 2 leaves + `record-outcome … pass` both run |
 | gate | **PASS ✅ at 2.59** after re-stamping the charter (see §4) |
+
+### The DoD amendment — Jason's ruling, taken mid-session
+**In his words:** *"I'm going to do the pending human step as the very last step (after the entire
+corpus gets audited as a whole)… in fact since I'll be re-writing this doc with my own hand, I'll
+probably do it at that step."*
+
+`P8` was *"Jason's own-hand pass over each converged paper"* — a gate three times over, between
+each paper's convergence and the batch declaration. It is now **one pass over the whole corpus,
+taken last**, with two rows ahead of it:
+
+| row | | |
+|---|---|---|
+| **`P11`** | the corpus audited **as a system** | ADR-001 addendum 6's end-to-end test — *what would it mean for the three papers to fail as a system rather than one of them failing* — designed, written down, and run. **Unclaimed since 2026-08-11 and now load-bearing**, because `P8` waits on it |
+| **`P12`** | the arXiv endorsement path | PREPRINT-CHECKLIST §C. **The only other human-blocking item on the board, and it was invisible until `P8`'s move exposed it.** arXiv requires an endorsement before a first submission to a category and an unaffiliated first-timer must find a personal endorser; the lead time is social, not computational. SSRN needs none, which is why the batch order already puts II first |
+
+**IT IS NOT A REORDERING, AND READING IT AS ONE IS THE TRAP.** Moving a human gate to the end
+changes what *terminal* means upstream of it. If Jason re-writes prose at `P8`, **no session may
+treat any paper's prose as final before `P8` closes.** The concrete case was already on the board:
+`P1m`/`P3m`/`P5m` said the submission-time SHA *"closes at posting, which is P9's moment."* **A SHA
+pinned at `P9` is stale by construction now** — the prose changes after it. All three notes are
+repointed at `P8`. That consequence is not *in* the ruling; it *follows* from it, and a session
+that had only reordered the rows would have left three pins aimed at a moment that no longer
+exists. **`P9` is now the handoff INTO `P8`**, not the end of the line.
+
+**TWO BUGS, FOUND BY MAKING THE CHANGE — both in code `-54` had written an hour earlier, and both
+the same defect.** `gen_apparatus_rows.py` held `CORPUS` as a hardcoded tuple `("P1".."P10")` and
+rewrites the whole file, so the next regeneration would have **deleted `P11` and `P12` silently**.
+`test_apparatus_rows_are_falsifiable.py` split row ids with `f[0][:2]`, so `"P11"` read as family
+`"P1"` — harmless by luck, and the first row numbered `P30` would have invented a `"P3"` sub-row
+out of nothing. **A prefix taken by POSITION is an assumption about how many digits the world will
+ever have; an allowlist that ENUMERATES instances is a census that stops counting.** Both are
+shapes now (`^P[0-9]+$`, `P[0-9][a-z]`).
+
+**Row ids are stable identifiers and are NEVER renumbered** — handoffs, addenda and lessons cite
+them by name — so `P11`/`P12` sit between `P7` and `P8` in **file order, which is dependency
+order**. Do not tidy them into numeric order.
+
+| | |
+|---|---|
+| board | **50 → 52 criteria, 41 met** · the two new lines are both `PENDING-HUMAN` and both are real work, not ceremony |
+| suite | **1063 passed**, zero skips, unchanged by the amendment |
+| red-proof | 34 mutations, 0 survivors, re-run after the amendment |
 ---
 ## 2 · RULINGS — DO NOT REOPEN
 - **All of `-31`'s through `-53`'s rulings stand verbatim**, including: REG-013's decision rule is
@@ -147,40 +199,57 @@ right. Mutations are section-scoped now (`within()`).
   Any new or changed `cmd:` row gets a mutation in `redproof_apparatus.MUTATIONS`, and the census
   test refuses a paper that has apparatus rows and no manuscript registered in the harness.
 - **NEW · A `WEAK` VERDICT IS A CLAIM ABOUT THE HARNESS UNTIL THE MUTATION IS SHOWN TO LAND.**
-  Five for five, first run. Check where the edit landed before you touch the guard.
+  Five for five, first run.
+- **NEW · `P8` IS ONE PASS, OVER THE WHOLE CORPUS, TAKEN LAST — JASON'S RULING, 2026-08-16.** It
+  does not interleave and it is not per-paper. **Nothing that depends on final prose may be spent
+  before it closes**, the submission-time SHA pins above all. `P9` declares the batch ready *for*
+  that pass, exactly once, and stops.
+- **NEW · `P7` DOES NOT CLOSE THE CORPUS.** Converging three papers individually is a different
+  object from auditing the conjunction. That is why `P11` exists rather than being folded into
+  `P7`, and folding it back in is how the corpus would ship without ever having been read whole.
+- **NEW · ROW IDS ARE NEVER RENUMBERED. FILE ORDER IS DEPENDENCY ORDER.** `P11`/`P12` between
+  `P7` and `P8` is deliberate. Every handoff, addendum and lesson cites rows by name. Check where the edit landed before you touch the guard.
 ---
-## 3 · THE AT-BAT for `-55` — **`P7` ON PAPER IV, AND COME AT §4 FIRST**
-**Every mechanically checkable criterion in the estate is green and the board names no next
-piece. That is a state to be careful with, not to celebrate.** Nine lines remain, all
-`PENDING-HUMAN`, which means *a human or a fresh-eyes pass judges them* — **not** that they are
-done. **The DoD is three preprints POSTED. Nothing is posted.** A session that reads the board's
-silence as *finished* will be the first this project has had to correct about its own completion.
+## 3 · THE AT-BAT for `-55` — **DESIGN `P11`'s END-TO-END TEST, BEFORE `P7` POLISHES THE PAPERS**
+**Every mechanically checkable criterion in the estate is green and the board names no next piece.
+That is a state to be careful with, not to celebrate.** Eleven lines remain, all `PENDING-HUMAN`,
+which means *a human or a fresh-eyes pass judges them* — **not** that they are done. **The DoD is
+three preprints POSTED. Nothing is posted.**
 
-**Take `P7` on Paper IV — a fresh-eyes review pass.** Reasons, in order:
-- **The apparatus programme has run out of road, and that is the signal to stop.** `-52` measured
-  Paper III, `-53` measured Paper IV, `-54` measured Paper II and generated the rows. There is no
-  fourth paper. The banked lesson *"when an audit programme's last N findings are all about the
-  instrument, measure the artefact"* was used this session and paid — three prose gaps in Paper II
-  came out of one hour of reading. **Paper IV has never been read by anyone but the session that
-  wrote it.**
-- **Its §4 is the highest-value target in the estate.** The SMD-versus-scale resolution is the
-  paper's load-bearing argument, it was drafted by one Claude in one pass, and ADR-001 predicted
-  precisely that section is where the unforced error lives. Come at it first and hard.
-- P7 needs **two consecutive zero-finding passes**, so the earliest possible finish is two
-  sessions away no matter what. Starting it is the only thing that shortens the corpus.
+**`-54` recommended `P7` on Paper IV, and then Jason's ruling changed the answer. Take `P11`'s
+DESIGN half instead — write the end-to-end test down, do not run it.** The reasoning is the ruling's
+own:
+- **`P8` now waits on `P11`, so the end-to-end test moved onto the critical path** after five
+  sessions of sitting unclaimed. It is no longer the interesting optional thing; it is the gate.
+- **And it has to be designed BEFORE `P7`, not after.** `P11`'s own note says designing the test
+  after the results are known is not a severe test. The three results are already known — but the
+  papers have not yet been polished by fresh-eyes passes, and **a system test written after `P7`
+  will be a test the polished corpus passes.** The window where the design can still be honest is
+  open right now and `P7` is what closes it.
+- It is Jason's own methodological position, it has **no written answer anywhere in this
+  repository**, and it is the biggest genuinely-unclaimed thing on the board.
+- **Design only.** Write `docs/END-TO-END-001.md`: what a system-level failure would look like,
+  what evidence would show it, and what the corpus would have to do about each outcome — committed
+  *before* the answer is known, the same discipline every `REG-0xx` in this repo follows. Running
+  it is `-56`'s job at the earliest, and running it in the same sitting that designed it satisfies
+  neither half.
+
+**Then `P7`, and Paper IV first.** Its §4 — the SMD-versus-scale resolution — remains the
+highest-value target in the estate: load-bearing, drafted by one Claude in one pass, and ADR-001
+predicted precisely that section is where the unforced error lives. `P7` needs **two consecutive
+zero-finding passes**, so the earliest possible finish is two sessions away no matter what.
 
 **IF YOU TAKE SOMETHING ELSE, SAY WHY IN ONE LINE.** The honest alternatives:
-- **`P7` on Paper II instead** — it also has had no review pass, and it is the paper `-54` just
-  edited in three places, which is exactly when a fresh reader is worth most. Weaker than IV only
-  because IV's §4 carries more weight.
+- **`P7` on Paper IV now, and design `P11` after.** Defensible if you judge the severity argument
+  above to be over-fine — say so explicitly and record the judgement, because it is the exact
+  trade `P11`'s note was written to force into the open.
+- **`P7` on Paper II** — also unreviewed, and it is the paper `-54` just edited in three places.
+- **`P12`, the endorsement path.** Not a Claude task — but a session CAN draft the ask, assemble
+  the case (public repo, 1063 tests, three papers with measured apparatus) and shortlist candidate
+  endorsers from the reference lists. **The lead time is weeks and it is the only other thing that
+  can block posting**, so preparing the ask early costs nothing and buys the whole delay back.
 - **`P6`, the remaining two thirds.** `P3n` proved the shape; `P1n` and `P5n` are the same row
-  repointed, and every other number-bearing claim in III and IV is a candidate. Mechanical,
-  valuable, and it is the last corpus-level row with a writable check.
-- **The end-to-end test, still unclaimed after six sessions** (ADR-001 addendum 6): *what would it
-  mean for the three papers to fail as a system, as opposed to one of them failing?* No written
-  answer exists anywhere in this repository, it is Jason's own methodological position, and
-  **designing it after the results are known is not a severe test.** Biggest genuinely-unclaimed
-  thing on the board.
+  repointed. Mechanical, valuable, last corpus-level row with a writable check.
 
 **THE GUARD PROGRAMME REMAINS PAUSED** (Jason, 2026-08-15) and `-54` did not resume it. A new
 guard is in-contour **only** when it names the paper claim it protects and that claim sits on an
@@ -211,6 +280,13 @@ worth more than another session of finding out.**
 - **`~/.local/state/claude-session/current` is a single global file** and Jason runs 2–3 sessions.
   `G-AL` no longer trusts it; **anything else reading it has the same bug.** One grep would find
   them.
+- **JASON'S THREE `-51` SCOPING PROPOSALS ARE STILL UNRULED** — (a) audit the CLASS not the
+  constraint, with one linter over claims naming a count, a filename or a coverage fact, each
+  required to carry the command that regenerates it; (b) bound by value; (c) audit at the
+  BOUNDARY. **`-54` is the eighth consecutive session (a) would have caught, and this time it
+  half-landed on its own**: `P3n` IS proposal (a) applied to one claim, and it took four lines.
+  That is the cheapest possible evidence the proposal is right. **A ruling would be worth more
+  than another session of finding out.**
 - **`P1n` and `P5n`** — `P3n` repointed at Papers III and IV. The generator already has the shape;
   it needs each paper's regenerating command. Half an hour, and it moves `P6`.
 - **The use/mention guard, generalised.** `P*i` now forbids the marker rather than the word, and
@@ -299,7 +375,7 @@ path. **Adding a manuscript to `docs/papers/` fails the suite until you add it t
 and, as of `-54`, until you register it in `redproof_apparatus.PAPER` too. **Probe sweep:**
 ~3 min 30 s per probe at `--jobs 2`; `nohup … &` and poll. **Budget for running the sweep twice.**
 ---
-## 0 · THE TELL, NOW IN SEVENTY-FIVE SHAPES
+## 0 · THE TELL, NOW IN SEVENTY-SIX SHAPES
 `-28` through `-53`'s tells all stand (ask the instrument-artefact question of numbers that look
 GOOD, that SETTLE AN ARGUMENT, of a REGISTERED CONTROL THAT FAILS, OF THE DENOMINATOR; a guard
 must scan assertions not quotations; a mutation that does not mutate reports your guard as weak;
@@ -308,7 +384,7 @@ a correction that lives only in a handoff has not been made; the visible reds ar
 a rule can be false on the day it is written; a count is not a measurement until it agrees across
 machines; a commissioned test that was never run is the most durable debt; a favourable result is
 when the controls matter most; a count whose answer moves when the file is re-wrapped is measuring
-the formatting; a fact can be recorded and still be absent at the point of use). `-54` adds four:
+the formatting; a fact can be recorded and still be absent at the point of use). `-54` adds five:
 - **AN INSTRUMENT POINTED AT ONLY TWO INSTANCES CANNOT TELL A CRITERION FROM A CONVENTION, AND
   THE THIRD INSTANCE IS THE MEASUREMENT.** Twelve checks were written against one manuscript and
   cloned onto a second, where all twelve passed — because the two papers shared a section
@@ -328,6 +404,14 @@ the formatting; a fact can be recorded and still be absent at the point of use).
   refused. **The document was right and the guard called it wrong.** The general test: *if a
   document DISCUSSING the thing you forbid would trip the guard, the guard is matching vocabulary
   rather than structure* — and the repair is convention (caps, delimiters), not weakening.
+- **MOVING A GATE CHANGES WHAT *TERMINAL* MEANS UPSTREAM OF IT, AND THAT CONSEQUENCE IS NEVER IN
+  THE INSTRUCTION.** Jason moved his own-hand pass to the end of the project. The instruction was
+  one sentence; the consequence was that three submission-time SHA pins, each saying it "closes at
+  posting, which is P9's moment", were now aimed at a moment that no longer exists — because the
+  prose changes after them. **A session that had only reordered the rows would have done exactly
+  what was asked and left the corpus broken in a way nobody would find until posting day.** When a
+  gate moves, walk everything that named the old ordering and ask what it was assuming; the
+  instruction names the gate, and the damage is always somewhere else.
 - **A CRITERION THAT PASSES BECAUSE IT DOES NOT APPLY IS A BLANK LINE WEARING A TICK.** Paper II
   owes no pre-registration; PREPRINT-CHECKLIST §D says so in terms. The cheap move is to drop the
   row and the honest one is to make the row assert **the clause**, plus a tripwire for the day the
@@ -337,10 +421,11 @@ the formatting; a fact can be recorded and still be absent at the point of use).
 ## 7 · ORIENT-THEN-GO
 Emit one line — `Oriented: <state> · at-bat: <X> · opening with <first action>.` — then start
 building. Don't wait for a go. Do not open by asking Jason anything.
-**Coffee status:** ☕ TWENTY SESSIONS, and for the first time all three papers have been measured
-against the same bar — which is exactly when the bar turned out to be measuring six things that
-were never in it. Ten sessions audited the apparatus, `-52` opened a manuscript and found an
-abstract 2.85× the ceiling, `-53` ran the test the corpus had been citing since day one without
-ever running it, and `-54` pointed the same twelve checks at a third paper and watched half of
-them fail at typography. **The corpus is measured. Nobody has read Paper IV but the session that
-wrote it.** That is the next at-bat, and it is a reading job, not a tooling one. 🥎
+**Coffee status:** ☕ TWENTY SESSIONS, and the session ended twice. The first ending: all three
+papers measured against the same bar for the first time — which is exactly when the bar turned out
+to be measuring six things that were never in it. Then Jason read the board, moved his own-hand
+pass to the very end, and the second ending was better than the first: the move exposed an
+end-to-end test that has sat unclaimed since day eleven and is now the gate, an arXiv endorsement
+nobody had put on the board, and three SHA pins quietly aimed at a moment that had just stopped
+existing. **The corpus is measured. Nobody has read Paper IV but the session that wrote it, and
+nobody has ever read the three of them as one thing.** That last one is the at-bat. 🥎
