@@ -188,13 +188,36 @@ import pathlib
 # would have deleted both without a word. An allowlist that enumerates instances is a
 # census that stops counting the day someone adds one.
 import re
-CORPUS = re.compile(r"^P[0-9]+$")
+# THE PREDICATE IS THE COMPLEMENT OF WHAT THIS SCRIPT OWNS, and it took three tries to
+# get there. It was a tuple ("P1".."P10"), which would have deleted P11/P12 when Jason
+# amended the DoD; then ^P[0-9]+$, which would have deleted P13a..P13g when he specified
+# the deliverable. Both asked "is this row one I recognise". The right question is "is this
+# row one I EMIT" -- because a generator can enumerate its own output exactly, and can
+# never enumerate everything a future session will legitimately add beside it.
+# Anything not emitted here is preserved verbatim, in place.
+OWNED = None  # set below, once ROWS exists
 target = pathlib.Path(__file__).resolve().parent.parent / "docs" / "done-criteria.tsv"
+OWNED = {r[0] for r in ROWS}
+emit = {rid: "%s\t%s\t%s\t%s" % (rid, pid, " ".join(desc.split()), check)
+        for rid, pid, desc, check in ROWS}
+
 old = target.read_text(encoding="utf-8").split("\n")
-head = [l for l in old if l.startswith("#")]
-corpus = [l for l in old if l and not l.startswith("#") and CORPUS.match(l.split("\t")[0])]
-body = "".join("%s\t%s\t%s\t%s\n" % (rid, pid, " ".join(desc.split()), check)
-               for rid, pid, desc, check in ROWS)
-target.write_text("\n".join(head) + "\n" + "\n".join(corpus) + "\n" + body, encoding="utf-8")
-print("wrote %s: %d header, %d corpus, %d sub-rows (%s)"
-      % (target, len(head), len(corpus), len(ROWS), " ".join(r[0] for r in ROWS)))
+out, seen = [], set()
+for line in old:
+    if not line:
+        continue
+    rid = line.split("\t")[0]
+    if line.startswith("#") or rid not in OWNED:
+        out.append(line)          # preserved verbatim, in place
+        continue
+    if rid not in seen:           # replaced in place, order untouched
+        out.append(emit[rid])
+        seen.add(rid)
+for rid, _, _, _ in ROWS:         # newly-introduced rows land at the end
+    if rid not in seen:
+        out.append(emit[rid])
+        seen.add(rid)
+target.write_text("\n".join(out) + "\n", encoding="utf-8")
+kept = len(out) - len(ROWS)
+print("wrote %s: %d row(s) preserved verbatim, %d generated (%s)"
+      % (target, kept, len(ROWS), " ".join(r[0] for r in ROWS)))

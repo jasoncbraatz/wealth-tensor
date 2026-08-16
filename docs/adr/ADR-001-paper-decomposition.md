@@ -687,3 +687,53 @@ gate and the damage was somewhere else.**
 **What this does NOT change.** The split, the batch ruling (nothing is finished until the corpus
 is), the per-paper "ready to submit" terminal state, or the papers themselves. `ADR-001`'s title
 and §Decision stay frozen as the decision-as-made.
+
+
+### Addendum · 2026-08-16 · wealthTensor-54 · **`P13` specified: the deliverable is a PDF *and a recipe*, and the recipe is the load-bearing half**
+
+**In his words:** *"a paint-by-numbers as to how the tex is formatted, font, line, etc all has to
+be Claude-Opus-ready to just walk through like a checklist so there are no surprises it has to
+debug — the worst that could happen, and it'd be a very bad scenario — would be it couldn't find
+the same font for example or it didn't have the spacing recipe we use in this project. It could
+get close perhaps but then I have to go back a re-tweak everything to make sure it presents the
+way the information is designed to be presented… it should be an easy step by step recipe that's
+replicable so that after this project is done, I only have to do the layout and viz analysis once
+on it."*
+
+**The catastrophe has a name and a mechanism, and it is worth stating precisely because it
+determines the whole row family. TeX does not fail when a font is missing — it SUBSTITUTES.** The
+build succeeds, the metrics change by a hair, the reflow moves, a page boundary shifts, and the
+document is *close*. Close is the failure: it costs Jason the one thing this deliverable exists to
+buy him, which is doing the layout and visualisation analysis **exactly once**.
+
+So `P13a`–`P13g` are not about producing a PDF. They are about making a rebuild **provably the
+same document**, and about **refusing loudly rather than approximating**:
+
+| | |
+|---|---|
+| `P13a` | the PDF exists and **stamps the commit it was built from** — a point-in-time capture that cannot be confused with a later one |
+| `P13b` | `RECIPE.md` is a numbered checklist naming every font family, weight, size and leading; every margin, measure and vertical space; the engine and every package **with its version**; figure-placement rules; the reference style — **as values, never as "match the existing look"** |
+| `P13c` | a **preflight that fails** on a missing or substituted font, tool or version. No fallback, no nearest match. Refusing to build is the feature |
+| `P13d` | fonts **vendored** into the repository, or — where the licence forbids redistribution — pinned by exact name, version and checksum that preflight verifies. *"The same font"* has to be a fact on disk, not a hope about the next machine |
+| `P13e` | **the layout is reproducible, proved not promised**: a rebuild must reproduce the committed page count and per-page text hash. This is the row that detects the exact failure above — a build that merely *looks* right cannot pass it |
+| `P13f` | every figure produced by a **committed script from committed numbers**. No model-generated and no hand-drawn imagery: charts in an economics paper have to be the data. This is `P6`'s rule pointed at the pictures |
+| `P13g` | economics house convention (Chicago author-date and the layout a q-fin / econ.GN reader expects) — **manual, and deliberately not automated**: a reference-style linter passes documents that are technically Chicago and read wrong |
+
+**`P13e` is the one to defend if a later session wants to relax something.** Every other row can be
+argued down to a matter of taste. That one is the mechanical detector of a silent font
+substitution, and it is the difference between *"we wrote down how it was made"* and *"we can prove
+the rebuild is the same document."* This project has said the same thing about backups for fifty
+sessions: **reversibility you never verified is not reversibility.** A recipe nobody re-ran is not
+a recipe.
+
+**Scope note.** The successor work — Jason editing the `.md` for language, marking where graphics
+go, and a session reformatting to submission spec — is *"its own, likely just one-off prompt of
+'final paper reformatting' or somesuch."* It is **not** wealth-tensor. What wealth-tensor owes it
+is a recipe good enough that the successor never re-derives a spacing value or hunts for a font.
+
+**And the generator was fixed for the third time this session, on the same defect.** It preserved
+rows by asking *"is this id one I recognise"* — first a tuple of corpus ids (which would have
+deleted `P11`/`P12`), then a regex for corpus ids (which would have deleted `P13a`–`P13g`). The
+correct predicate is the **complement**: keep every row I do **not** emit. A generator can
+enumerate its own output exactly and can never enumerate everything a future session will
+legitimately add beside it. **Stop enumerating what to keep; enumerate what you own.**
