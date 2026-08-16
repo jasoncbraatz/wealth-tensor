@@ -1,0 +1,107 @@
+END-TO-END-001 · E1b — the iso-kappa locus inside the flow base
+N=800 mu=0.05 sigma=0.2 a=0.05 T=1200 seeds=20 kappa_tol=1%
+registered: FAIL >= 3x seed spread on any of {Gini, top-decile, Var[log a]}; REFUTED <= 1x on all three; VOID if no non-trivial locus
+
+=== kappa* = 0.0050 ====================================================
+  rho        r     kappa               Gini             top10%  Var[log a]       Var[log w]
+ 1.00  0.04879   0.00497     0.72342+-0.01580     0.66023+-0.05291    0.074937    1.2224+-0.0983
+ 0.90  0.05419   0.00497     0.72349+-0.01580     0.66030+-0.05291    0.074937    1.2226+-0.0983
+ 0.80  0.06094   0.00497     0.72357+-0.01580     0.66039+-0.05292    0.074938    1.2228+-0.0984
+ 0.70  0.06960   0.00497     0.72367+-0.01581     0.66051+-0.05293    0.074939    1.2231+-0.0985
+ 0.60  0.08112   0.00497     0.72381+-0.01581     0.66068+-0.05294    0.074940    1.2236+-0.0986
+ 0.50  0.09723   0.00497     0.72401+-0.01581     0.66091+-0.05296    0.074942    1.2242+-0.0987
+ 0.40  0.12130   0.00497     0.72431+-0.01581     0.66127+-0.05299    0.074946    1.2251+-0.0990
+ 0.30  0.16120   0.00497     0.72483+-0.01582     0.66188+-0.05303    0.074951    1.2268+-0.0994
+ 0.20  0.24013   0.00497     0.72591+-0.01584     0.66316+-0.05312    0.074962    1.2302+-0.1002
+ 0.10  0.46995   0.00498     0.72929+-0.01588     0.66714+-0.05341    0.074995    1.2411+-0.1028
+ 0.05  0.89907   0.00500     0.73610+-0.01596     0.67517+-0.05393    0.075062    1.2633+-0.1083
+  locus points: 11  rho span 0.05-1.00
+  within-point seed spread (pooled SD): Gini 0.01583  top10% 0.05310  Var[log w] 0.1001
+  separation across the locus, in seed-spread units: Gini 0.80x  top10% 0.28x  Var[log a] 0.01x  (supplementary Var[log w] 0.41x)
+  -> REFUTED at kappa* = 0.0050
+
+=== kappa* = 0.0100 ====================================================
+  rho        r     kappa               Gini             top10%  Var[log a]       Var[log w]
+ 1.00  0.09758   0.00998     0.59625+-0.01241     0.51457+-0.03523    0.073354    0.8809+-0.0347
+ 0.90  0.10838   0.00998     0.59634+-0.01241     0.51467+-0.03524    0.073355    0.8811+-0.0347
+ 0.80  0.12187   0.00998     0.59644+-0.01241     0.51478+-0.03526    0.073356    0.8813+-0.0348
+ 0.70  0.13919   0.00998     0.59658+-0.01242     0.51493+-0.03528    0.073359    0.8817+-0.0348
+ 0.60  0.16225   0.00998     0.59676+-0.01242     0.51513+-0.03530    0.073361    0.8821+-0.0349
+ 0.50  0.19445   0.00998     0.59702+-0.01243     0.51542+-0.03534    0.073365    0.8827+-0.0349
+ 0.40  0.24260   0.00998     0.59741+-0.01245     0.51585+-0.03540    0.073371    0.8837+-0.0350
+ 0.30  0.32239   0.00998     0.59810+-0.01247     0.51661+-0.03551    0.073382    0.8853+-0.0352
+ 0.20  0.48026   0.00999     0.59952+-0.01252     0.51819+-0.03572    0.073403    0.8887+-0.0356
+ 0.10  0.93990   0.01000     0.60398+-0.01267     0.52312+-0.03640    0.073469    0.8993+-0.0368
+ 0.05       --        --   unattainable (max kappa at r=1 is 0.00556)
+  locus points: 10  rho span 0.10-1.00
+  within-point seed spread (pooled SD): Gini 0.01246  top10% 0.03547  Var[log w] 0.0351
+  separation across the locus, in seed-spread units: Gini 0.62x  top10% 0.24x  Var[log a] 0.01x  (supplementary Var[log w] 0.52x)
+  -> REFUTED at kappa* = 0.0100
+
+=== kappa* = 0.0200 ====================================================
+  rho        r     kappa               Gini             top10%  Var[log a]       Var[log w]
+ 1.00  0.19517   0.02000     0.44456+-0.00694     0.35971+-0.01819    0.070276    0.5460+-0.0193
+ 0.90  0.21677   0.02000     0.44465+-0.00694     0.35979+-0.01820    0.070278    0.5462+-0.0193
+ 0.80  0.24374   0.02000     0.44476+-0.00695     0.35989+-0.01821    0.070281    0.5465+-0.0193
+ 0.70  0.27838   0.02000     0.44491+-0.00695     0.36003+-0.01822    0.070285    0.5468+-0.0193
+ 0.60  0.32449   0.02000     0.44510+-0.00696     0.36021+-0.01824    0.070290    0.5472+-0.0194
+ 0.50  0.38890   0.02000     0.44538+-0.00697     0.36047+-0.01826    0.070298    0.5477+-0.0194
+ 0.40  0.48520   0.02000     0.44581+-0.00698     0.36087+-0.01829    0.070309    0.5486+-0.0194
+ 0.30  0.64479   0.02000     0.44655+-0.00701     0.36155+-0.01835    0.070329    0.5502+-0.0194
+ 0.20  0.96052   0.02000     0.44810+-0.00706     0.36298+-0.01848    0.070370    0.5534+-0.0195
+ 0.10       --        --   unattainable (max kappa at r=1 is 0.01064)
+ 0.05       --        --   unattainable (max kappa at r=1 is 0.00556)
+  locus points: 9  rho span 0.20-1.00
+  within-point seed spread (pooled SD): Gini 0.00697  top10% 0.01827  Var[log w] 0.0194
+  separation across the locus, in seed-spread units: Gini 0.51x  top10% 0.18x  Var[log a] 0.01x  (supplementary Var[log w] 0.38x)
+  -> REFUTED at kappa* = 0.0200
+
+=== kappa* = 0.0500 ====================================================
+  rho        r     kappa               Gini             top10%  Var[log a]       Var[log w]
+ 1.00  0.48792   0.05000     0.24999+-0.00178     0.20765+-0.00603    0.061856    0.1958+-0.0081
+ 0.90  0.54192   0.05000     0.25007+-0.00178     0.20770+-0.00604    0.061861    0.1959+-0.0081
+ 0.80  0.60936   0.05000     0.25017+-0.00178     0.20776+-0.00604    0.061867    0.1960+-0.0081
+ 0.70  0.69596   0.05000     0.25030+-0.00178     0.20784+-0.00605    0.061876    0.1962+-0.0081
+ 0.60  0.81124   0.05000     0.25047+-0.00179     0.20795+-0.00605    0.061887    0.1965+-0.0081
+ 0.50  0.97226   0.05000     0.25072+-0.00179     0.20811+-0.00607    0.061903    0.1968+-0.0081
+ 0.40       --        --   unattainable (max kappa at r=1 is 0.04122)
+ 0.30       --        --   unattainable (max kappa at r=1 is 0.03102)
+ 0.20       --        --   unattainable (max kappa at r=1 is 0.02082)
+ 0.10       --        --   unattainable (max kappa at r=1 is 0.01064)
+ 0.05       --        --   unattainable (max kappa at r=1 is 0.00556)
+  locus points: 6  rho span 0.50-1.00
+  within-point seed spread (pooled SD): Gini 0.00178  top10% 0.00605  Var[log w] 0.0081
+  separation across the locus, in seed-spread units: Gini 0.41x  top10% 0.08x  Var[log a] 0.03x  (supplementary Var[log w] 0.13x)
+  -> REFUTED at kappa* = 0.0500
+
+=== kappa* = 0.1000 ====================================================
+  rho        r     kappa               Gini             top10%  Var[log a]       Var[log w]
+ 1.00  0.97585   0.10000     0.12831+-0.00062     0.14074+-0.00169    0.051538    0.0562+-0.0029
+ 0.90       --        --   unattainable (max kappa at r=1 is 0.09226)
+ 0.80       --        --   unattainable (max kappa at r=1 is 0.08205)
+ 0.70       --        --   unattainable (max kappa at r=1 is 0.07184)
+ 0.60       --        --   unattainable (max kappa at r=1 is 0.06163)
+ 0.50       --        --   unattainable (max kappa at r=1 is 0.05143)
+ 0.40       --        --   unattainable (max kappa at r=1 is 0.04122)
+ 0.30       --        --   unattainable (max kappa at r=1 is 0.03102)
+ 0.20       --        --   unattainable (max kappa at r=1 is 0.02082)
+ 0.10       --        --   unattainable (max kappa at r=1 is 0.01064)
+ 0.05       --        --   unattainable (max kappa at r=1 is 0.00556)
+  -> VOID for this target: no non-trivial locus (fewer than two matched (r, rho) pairs)
+
+======================================================================
+E1b LEG VERDICT: REFUTED
+  (FAIL on any attainable target is FAIL: the design's failure criterion is 'on ANY of the three observables', and a locus that separates anywhere is a locus on which the observable identifies the factors.)
+======================================================================
+DISCLOSED SENSITIVITY — is the non-identification exact, or resolution-limited?
+  kappa* = 0.02, locus endpoints rho = 1.0 and 0.2, 20 seeds
+      N    Gini(rho=1.0)    Gini(rho=0.2)      drift   seed SD     sep
+    800         0.444561         0.448099   0.003538  0.007003   0.51x
+   1600         0.443860         0.447380   0.003520  0.003646   0.97x
+   3200         0.446440         0.450130   0.003690  0.004086   0.90x
+   6400         0.444852         0.448409   0.003558  0.002250   1.58x
+  Read this column, not the verdict: if `sep` climbs with N the degeneracy is
+  RESOLUTION-LIMITED (same shape as Paper III's, weaker in kind); if it is flat
+  the drift is itself seed noise and the degeneracy is structural.
+  elapsed 130s
+  json -> /Users/jasoncbraatz/repos/wealth-tensor/docs/notes/e2e001-e1b-iso-kappa.json
