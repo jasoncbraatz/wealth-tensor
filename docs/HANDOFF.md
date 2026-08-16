@@ -3,7 +3,7 @@ project: wealth-tensor
 gh_sha: 6fb2de59adfe21a043945264aeac51930bf3768f
 updated: 2026-08-16
 session: wealthTensor-59
-gate_passed: PENDING
+gate_passed: false
 gate_version: "2.59"
 definition_of_done: "CLEARED FOR LIFTOFF (Jason's ruling, 2026-08-16, superseding the 'three preprints publicly posted' line carried since sessionZero): Papers II, III and IV done with their coaching and editing, the corpus audited as ONE thing, the python scripts done with every number regenerating from a committed one, and ONE well-designed deliverable that visualises the work — then Jason reads it, does whatever minor re-arranging document design reveals, and clears it. At that moment Claude is finished on wealth-tensor. POSTING IS NOT IN SCOPE: Voice Box Jasonizing, Jason's own-hand rewrite, the endorsement ask and submission are SUCCESSOR projects. A session driving toward 'posted' is driving past the end of the road. The deliverable is a PDF **and a recipe**: RECIPE.md paint-by-numbers (every font, size, leading, margin, package version), a preflight that FAILS on a substituted font rather than approximating, vendored/checksummed fonts, and a rebuild that reproduces the committed page count and per-page text hash — because Jason does the layout and visualisation analysis exactly ONCE."
 ---
@@ -13,6 +13,29 @@ definition_of_done: "CLEARED FOR LIFTOFF (Jason's ruling, 2026-08-16, supersedin
 exit code exactly. **`| tail` MASKS `$?` ON EVERY `dx` CALL** — `cmd; echo rc=$?` with no pipe, or
 you are reading `tail`'s status. `gh_sha` is the full SHA from `git rev-parse`, never an expanded
 abbreviation.
+
+> ⚠ **`gate_passed: false`, THIRD CONSECUTIVE SESSION, SAME TWO FILES — and this time the diagnosis
+> is finished.** Every repo `-59` touched — `wealth-tensor`, `~/Scripts`, `claude-blackbook` — is
+> **committed AND pushed, tree clean**, and everything else in the gate is green (`G-A`→`G-AJ`, the
+> launchd census, hook coverage 114/114, the ghost drill's 15 checks). The single `FAIL` is
+> `~/Scripts DIRTY(2)`: `braatz-crawl-check.py` and `serve-braatz-archive.py`, untracked, belonging to
+> **`big_worker-braatzArchive`**, live for 3+ hours and still not holding a claim on that repo.
+>
+> **`-59` checked the thing `-57` and `-58` did not, and it is worth knowing.** The gate's message
+> reads *"no live roster claim covers this repo"* while this session **did** hold a live claim on
+> `Scripts` — that is not a lookup bug. `gate-selfcheck.sh:232` calls `_roster_other_claimant`, which
+> correctly excludes your own claim; the wording is just terser than the logic. **Do not file that as
+> a defect.**
+>
+> **And the carded fix is smaller than it looks and also weaker than it looks.** `G-H#22c` attributes
+> by exact substring, and the card says *"normalising both sides"* would widen the path. It would not:
+> `braatzArchive` normalised is `braatzarchive`, and `braatz-crawl-check.py` normalised is
+> `braatzcrawlcheckpy` — **still not a substring either way.** What would actually attribute these two
+> files is **shared-token overlap** (`braatz`), which is a materially weaker matcher that downgrades
+> `FAIL`→`WARN` on one common word. That is a judgement change to a safety guard, not a typo fix, and
+> it is exactly why the card asks for its own at-bat **and a drill case**. `-59` declines to make a
+> guard more permissive in the last ten minutes of a session. Card `1217526943288480` updated with
+> this.
 
 ---
 ## 0 · NOTHING IS PERISHABLE ANY MORE, AND THAT IS NEW
