@@ -1,6 +1,6 @@
 ---
 project: wealth-tensor
-gh_sha: 842d7f22bda1980ec54e11cc1709c5c4b63cca32
+gh_sha: 52007093b13ed1fcce6e1fd47d43388987a716ef
 updated: 2026-08-15
 session: wealthTensor-51
 gate_passed: true
@@ -24,6 +24,15 @@ exactly (`-39`) — `| tail` will mask it.***
 > tell you that `docs/adr/…` is not `docs/HANDOFF.md`. **`-51` found this by re-reading its own
 > preamble when Jason asked whether the handoff was still good. The gate was passing and the
 > sentence was false.**
+
+> **RETROFIT NOTE (2026-08-16, between -51 and -52, Jason + Fable process audit):**
+> `docs/CHECKLIST.md` now exists — the corpus contours P1–P10, the existing law (ADR-001
+> clauses, PREPRINT-CHECKLIST §A, WT-079, the batch rule) made countable, plus the convergence
+> rule (P7: two consecutive zero-substantive-finding review passes = done) and Jason's own-hand
+> pass (P8) as explicit terminal lines. `--check` prints distance-to-done at every orient from
+> now on. **The §3 at-bat below IS P1** — measuring III is now ticking a line, not obeying a
+> paragraph. The project is also registered in the auto-bridge ledger (est 15 sessions from
+> here, brake at 45) — the sixty-session era of nothing counting the sessions is over.
 
 ## ORIENT — read these first, in this order
 1. **`docs/CO-AUTHOR-CHARTER.md`** — the constitution. **THE CHARTER WINS**: where this handoff, any
