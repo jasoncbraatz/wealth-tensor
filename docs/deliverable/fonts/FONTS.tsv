@@ -1,0 +1,24 @@
+# wealth-tensor · docs/deliverable/fonts/FONTS.tsv
+# The font manifest P13d checks. Every file here is VENDORED -- present in this
+# repository, not resolved from a system font path -- because the named catastrophe for
+# this deliverable is a font that silently substitutes and moves the reflow.
+# Source: TeX Live 2026, /usr/local/texlive/2026/texmf-dist. Licence: SIL Open Font Licence 1.1 (files carried alongside).
+# The recipe MUST load these by PATH (fontspec Path=), never by family name: macOS ships
+# its own STIX Two and Helvetica-class faces, and a name lookup can resolve to a
+# different file with different metrics on a machine that looks identical.
+file	package	sha256	source_in_texmf	bytes
+InconsolataN-Bold.otf	inconsolata	6a63f52d84c893332ce89e19dbd3accbb13bb249639b5e26addbd0affdef6695	fonts/opentype/public/inconsolata/InconsolataN-Bold.otf	28464
+InconsolataN-Regular.otf	inconsolata	07a966abe1d6500b93d18eb207c6718dcaa79e59b61014d4bce87ae140b175d8	fonts/opentype/public/inconsolata/InconsolataN-Regular.otf	26540
+Inconsolatazi4-Bold.otf	inconsolata	515b21ca6b972d929b7362dda30548764f7541eb31cba0dabbb666433cd6552f	fonts/opentype/public/inconsolata/Inconsolatazi4-Bold.otf	47780
+Inconsolatazi4-Regular.otf	inconsolata	fa4d0728e461e228e4c3b706cc0836f72cb146852a757127c92647d8c405b638	fonts/opentype/public/inconsolata/Inconsolatazi4-Regular.otf	37420
+LibertinusMath-Regular.otf	libertinus-fonts	e81bd44acbb7119c8f00128b36fecc5d980e10d2450a226ba52402ccf4da9d32	fonts/opentype/public/libertinus-fonts/LibertinusMath-Regular.otf	588848
+LibertinusSans-Bold.otf	libertinus-fonts	6d321e921ae278afb3e81f7a1df4b65816b92928e838f3d11fc1abfe4c15715f	fonts/opentype/public/libertinus-fonts/LibertinusSans-Bold.otf	290244
+LibertinusSans-Italic.otf	libertinus-fonts	cd74ad255b2f04939196bb280bd3856285f25fe44eab9eb350e704b425dba4d5	fonts/opentype/public/libertinus-fonts/LibertinusSans-Italic.otf	298720
+LibertinusSans-Regular.otf	libertinus-fonts	41b60a752ab3b0eb1b1a689272b1502f165b2ed95d097194c2f56bc2009fa66e	fonts/opentype/public/libertinus-fonts/LibertinusSans-Regular.otf	267824
+LibertinusSerif-Bold.otf	libertinus-fonts	cec426e3a1a8029d9525355208c8daaf00d82df7e89aa8ec5ce0ad1a91b77f74	fonts/opentype/public/libertinus-fonts/LibertinusSerif-Bold.otf	293908
+LibertinusSerif-BoldItalic.otf	libertinus-fonts	f6e08d6ac1b208ecc41f6fe58cd4ea2e4cd4d19c99c9d932e828a7992c7d16bf	fonts/opentype/public/libertinus-fonts/LibertinusSerif-BoldItalic.otf	259176
+LibertinusSerif-Italic.otf	libertinus-fonts	6b91c901e9a843f5c011a81d0ee07c4af23895c2e78d4a8a1cee094e81bedac2	fonts/opentype/public/libertinus-fonts/LibertinusSerif-Italic.otf	332312
+LibertinusSerif-Regular.otf	libertinus-fonts	eaca0213ab907e36524aa61130ed5b8faa8c0b0f54e74bf84b7c87e85ba25df7	fonts/opentype/public/libertinus-fonts/LibertinusSerif-Regular.otf	337132
+LibertinusSerif-Semibold.otf	libertinus-fonts	27985deb13136c759dfc5079fb2dd1487c789096c3dce03b096a06fd137d1b9d	fonts/opentype/public/libertinus-fonts/LibertinusSerif-Semibold.otf	291640
+LibertinusSerif-SemiboldItalic.otf	libertinus-fonts	bff1ec3eb69e0dfd51e3f3b43340bae4e894dd7faaf0cc9b4c67720113fa83ee	fonts/opentype/public/libertinus-fonts/LibertinusSerif-SemiboldItalic.otf	343148
+LibertinusSerifDisplay-Regular.otf	libertinus-fonts	a7fd8f01dbeb26f941050364eb98aea9ded576e5ee2147028ceab1573c982a63	fonts/opentype/public/libertinus-fonts/LibertinusSerifDisplay-Regular.otf	263688
