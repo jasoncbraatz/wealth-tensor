@@ -579,3 +579,46 @@ guard as weak and invites the next session to "strengthen" a check that was alre
 **What this does NOT change.** The split, the order, the batch ruling, and the per-paper Definition
 of Done. `P3` — *ready to submit* — stays `manual:` for `P2`'s reason: the session that closed the
 gaps does not get to score whether the paper is ready. P7's fresh eyes and P8 are the judges.
+
+
+### Addendum · 2026-08-16 · wealthTensor-54 · **P8 moves to the END, and the corpus is audited as a whole before it** (Jason's ruling)
+
+**In his words:** *"I'm going to do the pending human step as the very last step (after the entire
+corpus gets audited as a whole)… in fact since I'll be re-writing this doc with my own hand, I'll
+probably do it at that step."*
+
+**What changed.** `P8` was *"Jason's own-hand pass over each converged paper"* — a gate that sat
+between each paper's convergence and the batch declaration, three times over. It is now **one pass
+over the whole corpus, taken last**, and two rows were added ahead of it:
+
+| row | | |
+|---|---|---|
+| **`P11`** | the corpus audited **as a system** | ADR-001 addendum 6's end-to-end test — *what would it mean for the three papers to fail as a system, as opposed to one of them failing* — designed, written down, and run. Unclaimed since 2026-08-11 and **now load-bearing**, because `P8` waits on it |
+| **`P12`** | the arXiv endorsement path | PREPRINT-CHECKLIST §C's requirement, carried as a row so its lead time is visible rather than discovered on the day of posting |
+
+Row ids are **stable identifiers and are never renumbered** — handoffs, addenda and banked lessons
+cite them by name — so `P11` and `P12` sit between `P7` and `P8` in **file order, which is
+dependency order**. Do not tidy them into numeric order.
+
+**This is not a reordering, and reading it as one is the trap.** Moving a human gate to the end
+changes what *terminal* means for everything upstream of it. If Jason re-writes prose at `P8`, then
+**no session may treat any paper's prose as final before `P8` closes**, and nothing that depends on
+final prose may be spent earlier. The concrete case is the one the corpus was already carrying:
+`P1m`/`P3m`/`P5m` — the submission-time head-of-repository SHA — said in terms that they *"close at
+posting, which is P9's moment."* **A SHA pinned at `P9` is stale by construction now**, because the
+prose changes after it. All three notes are repointed at `P8`. That consequence was not in the
+ruling; it follows from it, and a session that had only reordered the rows would have left three
+pins pointing at a moment that no longer exists.
+
+**`P9` is now the handoff INTO `P8`, not the end of the line.** A session declares the batch ready
+for Jason's own-hand pass, exactly once, and then stops. Posting follows `P8` and is his. The
+`-08` batch ruling is untouched: nothing ships until the corpus is done, and the conjunction still
+gets exactly one first end-to-end pass — `P11` is that pass, and it now has a place to happen.
+
+**`P7` is unchanged and explicitly does not close the corpus.** Converging all three papers
+individually is not the same object as auditing the conjunction; that distinction is the whole
+reason `P11` exists rather than being folded into `P7`.
+
+**What this does NOT change.** The split, the order, the batch ruling, the per-paper Definition of
+Done, or which papers ship. `P8` was always the last *human* step; it is now the last step, and the
+corpus has somewhere to be audited as a whole before it.

@@ -17,6 +17,7 @@ These tests keep three things true:
 """
 import hashlib
 import pathlib
+import re
 import subprocess
 import sys
 
@@ -54,7 +55,9 @@ def test_every_paper_with_cmd_rows_is_red_proofed():
     prefixes = set()
     for line in TSV.read_text(encoding="utf-8").split("\n"):
         f = line.split("\t")
-        if len(f) == 4 and f[3].startswith("cmd:") and len(f[0]) > 2 and f[0][0] == "P":
+        # A sub-row id is P<digit><letter> -- matched as a SHAPE. Slicing f[0][:2] read
+        # "P11" (a CORPUS row) as family "P1", which was harmless only by luck.
+        if len(f) == 4 and f[3].startswith("cmd:") and re.fullmatch(r"P[0-9][a-z]", f[0]):
             prefixes.add(f[0][:2])
     missing = sorted(p for p in prefixes if p not in rp.PAPER)
     assert not missing, (
@@ -66,10 +69,10 @@ def test_every_paper_with_cmd_rows_is_red_proofed():
 def test_each_manuscript_has_a_full_row_family(prefix):
     """A paper measured by four legs is not measured by the same bar as one measured by
     twelve. -54 found Paper II carrying zero sub-rows while III and IV carried thirteen."""
-    have = {r[len(prefix):] for r in
+    have = {rid[len(prefix):] for rid in
             (l.split("\t")[0] for l in TSV.read_text(encoding="utf-8").split("\n")
-             if l.startswith(prefix) and len(l.split("\t")) == 4)
-            if len(r) > len(prefix)}
+             if len(l.split("\t")) == 4)
+            if re.fullmatch(re.escape(prefix) + r"[a-z]", rid)}
     required = set("abcdefghijklm")
     assert required <= have, "%s is missing apparatus rows: %s" % (
         prefix, sorted(required - have))

@@ -148,9 +148,9 @@ K = {
            % (R, PAPERS["P3"]["path"], PAPERS["P3"]["path"])),
 }
 M = {
-    "P1": "manual:DEFERRED BY DESIGN, not a gap -- 11 says so in the paper and the per-file pins are what a replicator needs today. Closes at posting, which is P9's moment, not P2's.",
-    "P3": "manual:DEFERRED BY DESIGN, not a gap -- 7 says so in the paper and the per-file pin (d655501, the last commit touching src/) is what a replicator needs today. Closes at posting, which is P9's moment. Same clause as P1m and P5m.",
-    "P5": "manual:DEFERRED BY DESIGN, not a gap -- 10 says so in the paper and Papers II and III's per-file pins are what a replicator needs today. Closes at posting, which is P9's moment. Same clause as P1m.",
+    "P1": "manual:DEFERRED BY DESIGN, not a gap -- 11 says so in the paper and the per-file pins are what a replicator needs today. Closes at POSTING, which since the 2026-08-16 amendment falls AFTER P8, not at P9: Jason re-writes the prose in his own hand at P8, so any head-of-repository SHA pinned before it is stale by construction.",
+    "P3": "manual:DEFERRED BY DESIGN, not a gap -- 7 says so in the paper and the per-file pin (d655501, the last commit touching src/) is what a replicator needs today. Closes at POSTING, which since the 2026-08-16 amendment falls AFTER P8. Same clause as P1m and P5m.",
+    "P5": "manual:DEFERRED BY DESIGN, not a gap -- 10 says so in the paper and Papers II and III's per-file pins are what a replicator needs today. Closes at POSTING, which since the 2026-08-16 amendment falls AFTER P8. Same clause as P1m.",
 }
 for prefix, P in PAPERS.items():
     ROWS.append((prefix + "k", P["pid"], K[prefix][0], K[prefix][1]))
@@ -179,11 +179,17 @@ out = io.StringIO()
 # VERBATIM (they are hand-maintained judgment); every sub-row is replaced.
 # Reversible by construction -- it writes one tracked file git can restore.
 import pathlib
-CORPUS = ("P1", "P2", "P3", "P4", "P5", "P6", "P7", "P8", "P9", "P10")
+# A corpus row is any row whose id is P<digits> -- a SHAPE, not a list of the rows this
+# script happened to know about when it was written. It was a tuple ("P1".."P10") until
+# 2026-08-16, when Jason's DoD amendment added P11 and P12 and the next regeneration
+# would have deleted both without a word. An allowlist that enumerates instances is a
+# census that stops counting the day someone adds one.
+import re
+CORPUS = re.compile(r"^P[0-9]+$")
 target = pathlib.Path(__file__).resolve().parent.parent / "docs" / "done-criteria.tsv"
 old = target.read_text(encoding="utf-8").split("\n")
 head = [l for l in old if l.startswith("#")]
-corpus = [l for l in old if l and not l.startswith("#") and l.split("\t")[0] in CORPUS]
+corpus = [l for l in old if l and not l.startswith("#") and CORPUS.match(l.split("\t")[0])]
 body = "".join("%s\t%s\t%s\t%s\n" % (rid, pid, " ".join(desc.split()), check)
                for rid, pid, desc, check in ROWS)
 target.write_text("\n".join(head) + "\n" + "\n".join(corpus) + "\n" + body, encoding="utf-8")
