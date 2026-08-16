@@ -539,3 +539,43 @@ and was not re-chosen; the sensitivity is in `RESULT-REG-013` §4.1 and in the p
 **What this does NOT change.** The split, the order, the batch ruling, and the per-paper Definition
 of Done. P5 -- *ready to submit* -- is not P4, and nobody should read a full draft as a terminal
 state.
+
+
+### Addendum · 2026-08-16 · wealthTensor-54 · **Paper II is measured, and six of the twelve legs were measuring the paper's typography**
+
+Recorded here because §Decision's per-paper Definition of Done says every paper is measured against
+*the same two lists*, and until today that sentence was true of the criteria and false of the
+instrument.
+
+**Paper II now carries the full apparatus** — rows `P3a`–`P3n` — so all three papers of the corpus
+are measured against PREPRINT-CHECKLIST §A and their ADR-001 clause. Twelve of the thirteen are
+green; `P3m` is the same deferred-by-design SHA pin as `P1m` and `P5m`.
+
+**The interesting part is what measuring a THIRD paper exposed.** `-52` wrote the twelve legs against
+Paper III and `-53` hand-cloned them onto Paper IV, where they worked — because III and IV happen to
+share a section numbering and a house style in which every numbered item opens in bold. Paper II
+shares neither. Measured against it, **six of the twelve legs went red for reasons that had nothing
+to do with whether Paper II satisfies the criterion**: three hard-coded Paper III's section numbers
+(`## 8`, `## 9`, `## 1[01]` — Paper II's are 4, 5 and 7), one assumed a bold prefix on every numbered
+contribution (Paper II's five open in plain prose, and the leg scored them **zero**), one phrase grep
+was defeated by a markdown line wrap, and one forbade the *English word* "placeholder" where §7
+legitimately uses it as a common noun. This is the same defect `-53` found once, in `P1c`, and fixed
+once. It was six.
+
+**So the repair is not six expressions; it is that the rows are no longer hand-cloned.**
+`scripts/gen_apparatus_rows.py` emits all forty sub-rows from one template with a per-paper parameter
+block, so a leg can differ between papers only where the *paper* genuinely differs. The three legs
+that are legitimately per-paper — the abstract's loss marker, the first limitation's phrase, the
+pre-registration clause — are the parameter block, and everything else is shared by construction.
+
+**And the greens are now proven rather than asserted.** `scripts/redproof_apparatus.py` applies, to
+each row, the smallest mutation that ought to break it and requires the row's own check to go red;
+`tests/test_apparatus_rows_are_falsifiable.py` runs it in the suite and carries a census, so a paper
+that acquires apparatus rows cannot skip red-proofing. Thirty-four mutations, zero survivors. The
+first run reported five rows WEAK and every one was the harness's own mis-aimed mutation — which is
+the cheaper failure but not the harmless one, because a mutation that does not mutate reports a sound
+guard as weak and invites the next session to "strengthen" a check that was already right.
+
+**What this does NOT change.** The split, the order, the batch ruling, and the per-paper Definition
+of Done. `P3` — *ready to submit* — stays `manual:` for `P2`'s reason: the session that closed the
+gaps does not get to score whether the paper is ready. P7's fresh eyes and P8 are the judges.
