@@ -152,9 +152,45 @@ def show_dod(fm):
     print("   you are on neither the map nor the territory.\n")
 
 
+def show_checklist():
+    """The session-0 checklist CONTOUR, ported BY HAND from the handoff-kit canonical
+    (sessionZero-01, 2026-08-16 — this repo's gate is a deliberate fork, propagate-gate.sh
+    excludes it, so the port is manual like the DoD one was). docs/CHECKLIST.md is what the
+    corpus set out to do; this prints distance-to-done and asks that drift be NAMED. It never
+    blocks and never touches the exit code — sixty sessions of handoffs predicting the next
+    at-bat from the previous session's vantage point is how ten sessions of guards happened
+    to a three-paper corpus, and the cure is a fixed destination in view at every orient,
+    not another blocker."""
+    path = ROOT / "docs" / "CHECKLIST.md"
+    try:
+        lines = path.read_text(encoding="utf-8").splitlines()
+    except OSError:
+        return
+    done, todo = [], []
+    for ln in lines:
+        m = re.match(r"\s*-\s*\[([ xX])\]\s*(.+)", ln)
+        if m:
+            (done if m.group(1).strip() else todo).append(m.group(2).strip())
+    if not done and not todo:
+        return
+    print(f"checklist      : {len(done)}/{len(done) + len(todo)} done (docs/CHECKLIST.md — the corpus contours)")
+    for t in todo[:8]:
+        print(f"     open      : {t}")
+    if len(todo) > 8:
+        print(f"     open      : ... and {len(todo) - 8} more")
+    if todo:
+        print("     CONTOUR   : if this session's work aims at none of the open lines, that is")
+        print("                 drift — maybe GOOD drift. Name it in the handoff either way,")
+        print("                 and if it is a guard, say which PAPER CLAIM the guard protects.")
+    else:
+        print("     every corpus line is ticked — is the Definition of Done MET? Say so out")
+        print("                 loud; a milestone met but never declared keeps getting continued.")
+
+
 def check():
     fm, _ = frontmatter()
     show_dod(fm)
+    show_checklist()
     head = sh("git", "rev-parse", "HEAD")
     recorded = fm.get("gh_sha", "")
     print(f"handoff gh_sha : {recorded}")
