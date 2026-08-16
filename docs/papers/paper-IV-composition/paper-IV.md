@@ -187,13 +187,33 @@ appear, the same question is asked of them — what does the measuring layer obs
 answer at each scale is a *quantitative* one that the paper for that scale reports. Paper II's κ,
 the share of aggregate wealth actually moved per assessment, is a composition quantity: it is
 defined at the sovereign scale and it is a fold over household-scale liabilities. Paper III's φ ⊙ δ
-is a composition quantity: it is defined at the firm scale and it is diagonal over asset classes.
+is a composition quantity: it is defined at the firm scale and is *written* as diagonal over asset
+classes — a form the next paragraph reports as tested and rejected, which changes what the link
+carries and not whether there is one.
 
-And **the place where the chain could break is named and is open.** Diagonality is an assumption,
-not a theorem. If recognition events cluster within firm-quarters rather than occurring
-independently across classes, the Hadamard form is wrong and the firm's reporting does *not*
-compose from its classes'. Paper III registers that test (`REG-003`) and reports it; this paper
-inherits the exposure rather than being insured against it, and §9 says so.
+And **the place where the chain could break was named, was tested, and the test rejected it.**
+Diagonality is an assumption, not a theorem: if recognition events cluster within firm-quarters
+rather than occurring independently across classes, the Hadamard form is wrong and the firm's
+reporting does *not* compose from its classes' without cross-terms. Paper III registered that test
+(`REG-003`) and ran it, and **independence is rejected in both universes in the same direction —
+4.12× and 2.02× the independence expectation, both *p* = 0.0002, in a design that detects an
+injected excess of five per cent of events with probability 1.00** (Paper III §5.4; the headline
+survives that section's tag-list repair at 4.01× and 2.10×).
+
+**Three things follow, and the middle one is why this paper reports the rejection in the section
+that makes the claim rather than only in its limitations.** First, the consequence is *bounded
+rather than open*: the Hadamard form is now an approximation whose error is measured, not an
+assumption whose status is unknown, and a measured approximation is a stronger object to build on
+than an untested premise. Second, **what the rejection costs is the reporting layer's clean
+composition, not the state's.** Diagonality is a property of the *filter* — of how recognition in
+one class relates to recognition in another — and never of the extensive state, which adds by
+§2.2 whatever the recording practice does. The chain's firm-scale link is therefore degraded and
+not severed: the firm's *state* still composes from its classes' states, and it is the firm's
+*reporting* of that state that carries cross-terms the diagonal form omits. Third, and this is the
+part that runs against the paper's convenience, **Paper III's design cannot separate an economic
+coupling from the sequencing the standards impose** (ASC 350-20-35-31 and 35-32 order the tests),
+so this paper may not read the rejection as evidence that the underlying degradations are coupled.
+It inherits a measured departure with an unidentified cause, and §9 says so.
 
 ---
 
@@ -269,9 +289,14 @@ Three, and none of them is rhetorical.
    as *weighted* combinations whose weights are themselves state, and Paper III's ladder results
    are what happens when one forgets this and ranks classes by a parameter rather than by a
    product.
-3. **Diagonality is assumed at the firm scale.** §3 names this and Paper III registers the test.
-   Until it returns, the composition chain has an unverified link at exactly the scale where the
-   accounting is done.
+3. **Diagonality is assumed at the firm scale, and the assumption is measurably wrong.** §3 names
+   this; Paper III registered the test, ran it, and rejected independence across classes within a
+   firm-quarter in both universes. The composition chain therefore has a *degraded* link at exactly
+   the scale where the accounting is done — degraded rather than severed, because what was rejected
+   is a property of the reporting filter and not of the extensive state, and because the departure
+   is now a measured quantity rather than an open exposure. What is not available is its cause: the
+   design cannot say whether the coupling is economic or an artefact of the order the standards
+   impose on the tests.
 
 ---
 
@@ -510,9 +535,18 @@ model — and worse, makes the paper's centrepiece a fifty-year-old theorem the 
    the claim to the extensive state, and Papers II and III are both, in substance, demonstrations
    that measuring layers do not see the thing that matters. A composed state nobody can read is a
    weaker asset than the argument's confidence might suggest.
-2. **Diagonality at the firm scale is assumed and its test is open.** If recognition events cluster
-   within firm-quarters, the Hadamard form in §3 is wrong and the chain has a broken link at the
-   scale where accounting happens.
+2. **Diagonality at the firm scale is assumed, its test is closed, and it went against the
+   assumption.** Recognition events do cluster within firm-quarters — 4.12× and 2.02× the
+   independence expectation, both universes, both *p* = 0.0002 (Paper III §5.4) — so the Hadamard
+   form in §3 is an approximation and not an identity, and the chain's link at the scale where
+   accounting happens is degraded. It is degraded rather than broken for a reason this paper's own
+   §4.2 supplies and should not be allowed to sound like a rescue: diagonality is a claim about the
+   *reporting filter*, and this paper's composition claim is about the *extensive state*, which
+   adds regardless of how it is recorded. The honest cost is that **the firm's reported object no
+   longer composes from its classes' reported objects without cross-terms**, which is the scale at
+   which anyone would actually read it. And the cause is unidentified: the standards sequence the
+   tests, so an accounting artefact and an economic coupling are not separated by the design that
+   found the departure.
 3. **This paper contributes no new computation.** Its claims are joins over results established
    elsewhere, plus one measurement on the literature. A reader who rejects Paper II or Paper III
    should reject the corresponding link here.
