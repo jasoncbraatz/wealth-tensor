@@ -38,7 +38,7 @@ never asked. The 61 probes already built are an asset; they are not a destinatio
 | **P7** | corpus | 🧍 PENDING-HUMAN | 0/1 |
 | **P11** | corpus | 🧍 PENDING-HUMAN | 0/1 |
 | **P11a** | corpus | ✅ CLOSED | 1/1 |
-| **P11b** | corpus | 🔨 OPEN | 0/1 |
+| **P11b** | corpus | ✅ CLOSED | 1/1 |
 | **P11c** | corpus | ✅ CLOSED | 1/1 |
 | **P11d** | corpus | 🔨 OPEN | 0/1 |
 | **P11e** | corpus | ✅ CLOSED | 1/1 |
@@ -96,7 +96,7 @@ never asked. The 61 probes already built are an asset; they are not a destinatio
 | **P5l** | paper-IV | ✅ CLOSED | 1/1 |
 | **P5m** | paper-IV | ✅ CLOSED | 1/1 |
 
-**The first OPEN lane in dependency order is `P11b`** — which is where the board points, not a schedule; a project's own ordering rulings outrank it. Work it, or say in your handoff why you worked something else.
+**The first OPEN lane in dependency order is `P11d`** — which is where the board points, not a schedule; a project's own ordering rulings outrank it. Work it, or say in your handoff why you worked something else.
 
 ## Every criterion, and how it was measured
 
@@ -109,7 +109,7 @@ never asked. The 61 probes already built are an asset; they are not a destinatio
 - [ ] P7 · Convergence per paper: fresh-eyes review passes repeat until TWO CONSECUTIVE passes yield ZERO substantive findings — **PENDING-HUMAN** _(perfection==done operationalized; a zero-finding pass is a RESULT and gets its REVIEW doc. P7 is PER PAPER and closing it for all three does NOT close the corpus -- P11 audits the conjunction, which is a different object (ADR-001's batch ruling: the corpus gets exactly one first end-to-end pass).)_
 - [ ] P11 · The corpus audited AS A WHOLE — ADR-001 addendum 6's end-to-end test, designed and run: what would it mean for the three papers to fail AS A SYSTEM, as opposed to one of them failing — **PENDING-HUMAN** _(UNCLAIMED SINCE 2026-08-11 and now load-bearing, because Jason's own-hand pass (P8) waits on it. ADR-001's batch ruling says the conjunction gets exactly ONE first end-to-end pass and shipping early spends it, so this is the pass. Stays manual because designing the test AFTER the three results are known is not a severe test -- the design has to be written down and defensible before it is run, and a session that designs and passes it in one sitting has done neither.)_
 - [x] P11a · END-TO-END-001 leg E1 is RUN and its verdict is recorded — the shared degeneracy — is the II<->III join load-bearing or vocabulary? — **MET** _(check passed)_
-- [ ] P11b · END-TO-END-001 leg E2 is RUN and its verdict is recorded — the unowned claim — does the conjunction assert something no paper defends? — **UNMET** _(rc=2)_
+- [x] P11b · END-TO-END-001 leg E2 is RUN and its verdict is recorded — the unowned claim — does the conjunction assert something no paper defends? — **MET** _(check passed)_
 - [x] P11c · END-TO-END-001 leg E3 is RUN and its verdict is recorded — the containment matrix — is ADR-001's promise about failure true? — **MET** _(check passed)_
 - [ ] P11d · END-TO-END-001 leg E4 is RUN and its verdict is recorded — the corpus's empirical content, stated whole — **UNMET** _(rc=2)_
 - [x] P11e · END-TO-END-001 leg E5 is RUN and its verdict is recorded — the over-subscribed guard — does one test hold two claims that could come apart? — **MET** _(check passed)_

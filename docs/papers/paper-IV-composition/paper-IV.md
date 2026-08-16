@@ -101,7 +101,8 @@ It is that a predecessor was solving a differently-constrained problem, and the 
    contradicting itself, and §4 exists to make sure this one does not.
 2. **The consequence, which is the corpus's thesis in one sentence** (§4.3): aggregation destroys
    the behavioural information macroeconomics believes it is measuring, and preserves the
-   thermodynamic structure nobody is looking at.
+   thermodynamic structure nobody is looking at, because it is not what an aggregate is usually
+   built for.
 3. **A worked instance at the smallest possible scale** (§5): in a market for a single indivisible
    good, the quantity coordinate of the supply-and-demand diagram is not a behavioural aggregate
    at all. It is a state variable — the allocation mismatch — and the two curves' difference is
@@ -164,7 +165,11 @@ at each scale and the operator that moves between them is addition**.
 **Household.** The unit is a holding: a dwelling, a vehicle, a claim on a pension. It has a
 physical component that degrades at some rate and a claim component recorded at some other rate.
 Nothing here is metaphorical; a roof has a service life and a mortgage has an amortisation
-schedule, and they are different numbers.
+schedule, and they are different numbers. **Paper III §2 is that holding**, before anything is
+summed: its physical layer degrades at an effective 0.02 per period and its claim layer
+recognises at α = 0.05, and §3.1 reports what the distance between those two rates costs. The
+household scale's quantitative answer is Paper III's, read before §4 indexes the holding by
+asset class.
 
 **Firm.** A balance sheet is the household's holding, summed and reported. Paper III's result is
 that this reporting is a filter: a share φ of each true change passes through at once and the
