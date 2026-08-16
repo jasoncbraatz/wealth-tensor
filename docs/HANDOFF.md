@@ -1,11 +1,11 @@
 ---
 project: wealth-tensor
-gh_sha: ef48c4adf46edcd16107c8eaf06ff4ed89fbca91
+gh_sha: 1f4e98aa8d69e7f567eb134c0302d0db0cd8a3a7
 updated: 2026-08-16
 session: wealthTensor-54
 gate_passed: true
 gate_version: "2.59"
-definition_of_done: "CLEARED FOR LIFTOFF (Jason's ruling, 2026-08-16, superseding the 'three preprints publicly posted' line carried since sessionZero): Papers II, III and IV done with their coaching and editing, the corpus audited as ONE thing, the python scripts done with every number regenerating from a committed one, and ONE well-designed deliverable that visualises the work — then Jason reads it, does whatever minor re-arranging document design reveals, and clears it. At that moment Claude is finished on wealth-tensor. POSTING IS NOT IN SCOPE: Voice Box Jasonizing, Jason's own-hand rewrite, the endorsement ask and submission are SUCCESSOR projects. A session driving toward 'posted' is driving past the end of the road."
+definition_of_done: "CLEARED FOR LIFTOFF (Jason's ruling, 2026-08-16, superseding the 'three preprints publicly posted' line carried since sessionZero): Papers II, III and IV done with their coaching and editing, the corpus audited as ONE thing, the python scripts done with every number regenerating from a committed one, and ONE well-designed deliverable that visualises the work — then Jason reads it, does whatever minor re-arranging document design reveals, and clears it. At that moment Claude is finished on wealth-tensor. POSTING IS NOT IN SCOPE: Voice Box Jasonizing, Jason's own-hand rewrite, the endorsement ask and submission are SUCCESSOR projects. A session driving toward 'posted' is driving past the end of the road. The deliverable is a PDF **and a recipe**: RECIPE.md paint-by-numbers (every font, size, leading, margin, package version), a preflight that FAILS on a substituted font rather than approximating, vendored/checksummed fonts, and a rebuild that reproduces the committed page count and per-page text hash — because Jason does the layout and visualisation analysis exactly ONCE."
 ---
 # wealth-tensor — HANDOFF
 `gh_sha` names the commit this file describes; **the only thing added after it is this file**,
@@ -16,8 +16,8 @@ that the hard way when a post-wrap ADR commit made it false while the gate staye
 repoint `gh_sha` and re-master this file.
 `-54` landed `770f766` (Paper II's three prose gaps, alone, so that commit is green on its own),
 `be0bdfc` (the instrument and everything with it), `206e6c6` (Jason's first DoD ruling — P8 to the
-end) and `ef48c4a` (**his second, which replaced the Definition of Done itself**), then re-mastered
-this file alone after them. **`-54` is also the worked example of
+end) and `ef48c4a` (**his second, which replaced the Definition of Done itself**) and `1f4e98a`
+(`P13` specified — the recipe rows), then re-mastered this file alone after them. **`-54` is also the worked example of
 this paragraph's own instruction:** it wrapped at `be0bdfc`, Jason then ruled on the DoD, the
 amendment touched `scripts/` and `tests/`, and `--check` went from `ADVISORY: docs-only drift` to
 `BLOCKER: code advanced past the handoff` — exactly as designed. The repair is what you are reading:
@@ -27,9 +27,9 @@ repoint `gh_sha`, re-master, re-stamp the charter, re-walk the gate.
 ## ORIENT — read these first, in this order
 1. **`docs/CHECKLIST.md`** — the generated board. **Regenerate with `./scripts/regen-board.sh`,
    never `board.py` by hand — see `-53`'s note in that file.** Never hand-tick. As of `-54`:
-   **52 criteria, 44 met, and exactly ONE lane OPEN — `P13`, the deliverable.** Everything else
-   outstanding is `PENDING-HUMAN`. **The board will point you at `P13`. DO NOT TAKE IT YET — it
-   is the LAST thing Claude builds, and §3 says why.**
+   **59 criteria, 44 met, EIGHT lanes OPEN — every one of them `P13`'s.** First time in this
+   project's history the board's open work is the thing Jason actually asked for. **It is still
+   the LAST thing Claude builds. Read §3 before you take it.**
 2. **`docs/CO-AUTHOR-CHARTER.md`** — the constitution. **THE CHARTER WINS** over this file, any
    result doc, and any plausible rewrite. **Stamp that you read it:
    `~/Scripts/charter-read.sh wealthTensor-<NN>` — POSITIONAL slug, no env var — and re-stamp
@@ -213,6 +213,41 @@ own docstring used *"three preprints publicly posted"* as its worked example of 
 | board | **52 criteria, 44 met, ONE OPEN lane** |
 | suite | **1063 passed**, zero skips · defensive counts unchanged after the Paper IV edit |
 | red-proof | **37 mutations, 0 survivors** (the three new `m` rows included) |
+
+### `P13` — what the deliverable actually is, and why the recipe is the load-bearing half
+**In his words:** *"a paint-by-numbers as to how the tex is formatted, font, line, etc all has to
+be Claude-Opus-ready to just walk through like a checklist so there are no surprises it has to
+debug — the worst that could happen … would be it couldn't find the same font for example or it
+didn't have the spacing recipe we use in this project. It could get close perhaps but then I have
+to go back a re-tweak everything … so that after this project is done, **I only have to do the
+layout and viz analysis once on it**."*
+
+**THE CATASTROPHE HAS A MECHANISM. TeX does not fail on a missing font — it SUBSTITUTES.** The
+build succeeds, the metrics change by a hair, the reflow moves, a page boundary shifts, and the
+document is *close*. **Close is the failure**, because it spends Jason's layout analysis a second
+time. `P13a`–`P13g` are therefore not about producing a PDF; they are about making a rebuild
+**provably the same document**, and about **refusing loudly rather than approximating**.
+
+| row | | |
+|---|---|---|
+| `P13a` | the PDF **stamps its source commit** | a point-in-time capture that cannot be confused with a later one |
+| `P13b` | `RECIPE.md` is a **numbered checklist** | every font family/weight/size/leading · every margin, measure and vertical space · engine and every package **with its version** · figure placement · reference style — **as values, never as "match the existing look"** |
+| `P13c` | **preflight that FAILS** | on a missing or substituted font, tool or version. No fallback, no nearest match. **Refusing to build is the feature** |
+| `P13d` | fonts **vendored** or pinned by name+version+checksum | *"the same font"* has to be a fact on disk, not a hope about the next machine |
+| `P13e` | **layout reproducible, proved not promised** | a rebuild must reproduce the committed page count and **per-page text hash**. A build that merely *looks* right cannot pass |
+| `P13f` | every figure from a **committed script and committed numbers** | `FIGURES.tsv` maps figure → script → source. **No model-generated and no hand-drawn imagery** — charts in an economics paper have to be the data. `P6`'s rule pointed at the pictures |
+| `P13g` | economics house convention (Chicago author-date) | **manual on purpose**: a reference-style linter passes documents that are technically Chicago and read wrong |
+
+**`P13e` IS THE ROW TO DEFEND** if a later session wants to relax something. Every other row can be
+argued down to taste. That one is the mechanical detector of a silent font substitution, and it is
+the whole difference between *"we wrote down how it was made"* and *"we can prove the rebuild is
+the same document."* This project has said the same thing about backups for fifty sessions:
+**reversibility you never verified is not reversibility. A recipe nobody re-ran is not a recipe.**
+
+**Scope note.** Jason editing the `.md` for language, marking where graphics go, and a session
+reformatting to submission spec is *"its own, likely just one-off prompt of 'final paper
+reformatting' or somesuch."* **Not wealth-tensor.** What wealth-tensor owes it is a recipe good
+enough that the successor never re-derives a spacing value or hunts for a font.
 ---
 ## 2 · RULINGS — DO NOT REOPEN
 - **All of `-31`'s through `-53`'s rulings stand verbatim**, including: REG-013's decision rule is
@@ -249,9 +284,13 @@ own docstring used *"three preprints publicly posted"* as its worked example of 
   deliverable that visualises the work** · then he clears it and Claude is finished here.
   **Jasonizing, his own-hand rewrite, the endorsement ask and submission are SUCCESSOR projects.**
   Ad-hoc questions to a session are fine and are not this project either.
-- **NEW · `P13` IS LAST, NOT NEXT.** It is the only OPEN lane, which makes it look like the
-  at-bat. It is not. Building the pretty thing before the prose converges means building it
-  twice, and Jason asked for it *"at the end"*. See §3.
+- **NEW · `P13` IS LAST, NOT NEXT.** Eight OPEN lanes make it look like the at-bat. It is not.
+  Building the pretty thing before the prose converges means building it twice, and Jason asked
+  for it *"at the end"*. See §3.
+- **NEW · `P13` IS A PDF *AND A RECIPE*, AND THE RECIPE IS THE DELIVERABLE THAT OUTLIVES THIS
+  PROJECT.** Do not ship a beautiful PDF with an undocumented build. **A preflight that
+  approximates instead of refusing is a bug, not a convenience**, and `P13e` — page count plus
+  per-page text hash — is the row that proves the rebuild rather than promising it.
 - **NEW · A CRITERION THAT CANNOT BE REACHED IS WORSE THAN ONE THAT FAILS.** `P1m`/`P3m`/`P5m` sat
   amber for weeks describing an event this project never reaches. **An unreachable row and a
   deferred row are indistinguishable on a board**, so nothing flags it. When a row has been amber
