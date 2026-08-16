@@ -238,7 +238,16 @@ it is rebuilt from scratch.
 
 1. **The numbering is not a dependency order.** Draw the graph from §Decision's evidence
    allocation and there is exactly one edge set in the whole project: **IV needs I, II and III.**
-   I, II and III have no edges among them. The I/II/III/IV numbering is a *reading* order for the
+   ~~I, II and III have no edges among them.~~ **I, II and III have no edges among them —
+   MEASURED rather than assumed, and it was FALSE on the day it was written:** Paper III
+   §A.1.3 carried one undeclared edge to Paper II, an italicised appendix aside naming no
+   sibling and asserting *"the mechanism is the same"* — a claim that becomes unsupported if
+   Paper II's headline is assumed false. It is repaired and the sentence is true again.
+   *(Corrected in place 2026-08-16, `wealthTensor-57`, by `END-TO-END-001` leg `E3` — the leg
+   written to read this exact sentence; see the addendum at the foot of this file and
+   `docs/RESULT-END-TO-END-001-E3.md`. Amended here and not only in that addendum, on the
+   standing lesson that an amendment recorded as an addendum has not amended anything.)*
+   The I/II/III/IV numbering is a *reading* order for the
    monograph, not a construction order, and conflating the two is what makes the question feel
    hard.
 2. **III is the root, not the middle — because the axioms live in it.** Starting at I means
@@ -777,9 +786,11 @@ apparatus, and Paper II's only contact with Paper III is a **retraction**, which
 would not restore. Two sentences of contact in 37,000 words, running in opposite directions, one of
 them a claim.
 
-**The sentence is corrected in place here rather than by editing the 2026-08-10 addendum**, on this
-file's own convention that addenda carry the record and §Decision stays frozen. The true graph, as
-measured:
+**The sentence is amended in the CLAUSE, twenty lines into that addendum, and not only here** — on
+the standing lesson (`-51`, caught by Jason) that *an amendment recorded as an addendum has not
+amended the decision*, and in this file's own strikethrough-plus-dated-parenthetical convention
+(the `-52` precedent). §Decision and the title stay frozen; a factual sentence in a 2026-08-10
+addendum is neither. The true graph, as measured:
 
 > **IV needs II and III (IV declares this itself, §9.3). III carried exactly one undeclared edge to
 > II, repaired in `wealthTensor-57`. II has no edges. With that repair applied, "I, II and III have
