@@ -191,6 +191,36 @@ the same sentence.
 
 **`E3` VERDICT: FAIL.**
 
+### 2.7 · And a fourth: the registration instructs every runner to destroy leg `E2`
+
+`END-TO-END-001` §4.2 names the threat itself, correctly:
+
+> *"**E2's candidate is named in this document and could prime the run.** Mitigated by ordering:
+> the blind pass records its list **first** … A run that reads §2's candidate before extracting has
+> destroyed the leg and must say so."*
+
+**And §6, the instruction to the session that runs it, says: *"Read this file end to end before
+touching anything."*** §2 contains the candidate. The two instructions cannot both be followed, and
+the one printed as an imperative is the one that burns the leg.
+
+**It has already been followed twice.** `-56` and `-57` each read the design end to end before
+running a leg, because the design told them to and because a leg cannot be run from a summary.
+**Both sessions are therefore disqualified from `E2`'s blind pass, and this is the run that says
+so** — §4.2's own disclosure clause, discharged.
+
+The mitigation is not the ordering; it is a **reader who has not read §2/E2**. That is available and
+costs nothing: the blind pass needs the three abstracts and the three contributions lists, which is
+what §2/E2's check paragraph asks for and no more. `E2` remains runnable — by a session that stops
+reading at the words *"writes down, in plain sentences, what a competent economist would now
+believe"* and does not scroll to **The power check**. Whoever takes it should say, in the result,
+where they stopped and who read what.
+
+This is the **fourth** false premise or self-defeating clause a leg of this pass has found in the
+pass's own registration, and the fourth to be **about the design rather than the corpus**. It
+scores nothing, `END-TO-END-001` is not edited, and `END-TO-END-002` is the repair path. The class
+is now stable enough to state as a rule: **a registration is an instrument, and nobody has ever
+pointed an instrument at it.**
+
 ### 2.6 · A third false premise in the registration, found while building the board rows
 
 `END-TO-END-001` §2.0 states its own tally, and the tally is used twice — once to justify the
