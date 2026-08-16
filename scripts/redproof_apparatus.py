@@ -99,6 +99,8 @@ MUTATIONS = {
           within(*ABSTRACT, inner=lambda t: "\n\nA tidy summary with every number intact and no "
                  "mention of what this paper got wrong, which is exactly the abstract this row "
                  "exists to refuse. " + ("filler " * 150).strip() + "\n\n")),
+    "m": ("the code pin is replaced by one that resolves to nothing",
+          within(*DATACODE, inner=sub(r"\*\*[0-9a-f]{7}\*\*|`[0-9a-f]{7}`", "**0000000**"))),
     "n": ("the asserted test count drifts away from the suite",
           sub(r"18 tests", "19 tests", 0, count=0)),
 }
@@ -108,8 +110,12 @@ def rows_for(prefix):
     out = {}
     for line in TSV.read_text(encoding="utf-8").split("\n"):
         f = line.split("\t")
-        if len(f) == 4 and f[0].startswith(prefix) and len(f[0]) > len(prefix) \
-                and f[3].startswith("cmd:"):
+        # Match the SHAPE P<digit><letter>. startswith(prefix) collected the CORPUS rows
+        # P11/P12/P13 into family "P1" -- harmless only because "1"/"2"/"3" are not
+        # mutation keys, which is luck, not design. Same defect as the generator's old
+        # CORPUS tuple, and banked as a lesson the same afternoon.
+        if len(f) == 4 and f[3].startswith("cmd:") \
+                and re.fullmatch(re.escape(prefix) + r"[a-z]", f[0]):
             out[f[0][len(prefix):]] = f[3][4:]
     return out
 

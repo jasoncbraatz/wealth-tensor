@@ -6,11 +6,18 @@
 > commit after work that could flip a line — `--check` fails the gate when stale.
 > Scoring: this file's git history is the criteria-flip time series.
 
-## The destination (ADR-001, restated once)
-Three preprints — II, III, IV — each at "ready to submit", then ONE batch. Nothing ships
-early. THE CHARTER STILL WINS; ADR-001 still governs sequencing; this board adds no law, it
-makes the existing law COUNTABLE — and now MEASURED (Tier 2: criteria in
-`docs/done-criteria.tsv`, status generated; upgraded from hand-ticked 2026-08-16).
+## The destination (ADR-001 as amended 2026-08-16 — Jason's ruling)
+Papers II, III and IV done with their **coaching and editing**; the corpus audited as ONE thing;
+the **python scripts** done, every number regenerating from a committed one; and **one
+well-designed deliverable that visualises the work** — then Jason clears it for **LIFTOFF**, and
+Claude is finished on this project.
+
+**POSTING IS NOT THIS PROJECT'S FINISH LINE, AND IT WAS THE STATED DoD FOR FIFTY-FOUR SESSIONS.**
+Jasonizing through the Voice Box, Jason's own-hand rewrite, the endorsement ask and submission are
+SUCCESSOR efforts with their own projects. A session driving toward "posted" is driving past the
+end of the road. THE CHARTER STILL WINS; ADR-001 still governs sequencing; this board adds no law,
+it makes the existing law COUNTABLE — and MEASURED (criteria in `docs/done-criteria.tsv`, status
+generated).
 
 ## The guard contour (the drift that ate ten sessions, named)
 The guard track is PAUSED (Jason, 2026-08-15) and STAYS paused as a default. A new guard is
@@ -30,9 +37,9 @@ never asked. The 61 probes already built are an asset; they are not a destinatio
 | **P6** | corpus | 🧍 PENDING-HUMAN | 0/1 |
 | **P7** | corpus | 🧍 PENDING-HUMAN | 0/1 |
 | **P11** | corpus | 🧍 PENDING-HUMAN | 0/1 |
-| **P12** | corpus | 🧍 PENDING-HUMAN | 0/1 |
-| **P8** | corpus | 🧍 PENDING-HUMAN | 0/1 |
+| **P13** | corpus | 🔨 OPEN | 0/1 |
 | **P9** | corpus | 🧍 PENDING-HUMAN | 0/1 |
+| **P8** | corpus | 🧍 PENDING-HUMAN | 0/1 |
 | **P10** | corpus | ✅ CLOSED | 1/1 |
 | **P1a** | paper-III | ✅ CLOSED | 1/1 |
 | **P1b** | paper-III | ✅ CLOSED | 1/1 |
@@ -46,7 +53,7 @@ never asked. The 61 probes already built are an asset; they are not a destinatio
 | **P1j** | paper-III | ✅ CLOSED | 1/1 |
 | **P1k** | paper-III | ✅ CLOSED | 1/1 |
 | **P1l** | paper-III | ✅ CLOSED | 1/1 |
-| **P1m** | paper-III | 🧍 PENDING-HUMAN | 0/1 |
+| **P1m** | paper-III | ✅ CLOSED | 1/1 |
 | **P3a** | paper-II | ✅ CLOSED | 1/1 |
 | **P3b** | paper-II | ✅ CLOSED | 1/1 |
 | **P3c** | paper-II | ✅ CLOSED | 1/1 |
@@ -59,7 +66,7 @@ never asked. The 61 probes already built are an asset; they are not a destinatio
 | **P3j** | paper-II | ✅ CLOSED | 1/1 |
 | **P3k** | paper-II | ✅ CLOSED | 1/1 |
 | **P3l** | paper-II | ✅ CLOSED | 1/1 |
-| **P3m** | paper-II | 🧍 PENDING-HUMAN | 0/1 |
+| **P3m** | paper-II | ✅ CLOSED | 1/1 |
 | **P3n** | paper-II | ✅ CLOSED | 1/1 |
 | **P5a** | paper-IV | ✅ CLOSED | 1/1 |
 | **P5b** | paper-IV | ✅ CLOSED | 1/1 |
@@ -73,7 +80,9 @@ never asked. The 61 probes already built are an asset; they are not a destinatio
 | **P5j** | paper-IV | ✅ CLOSED | 1/1 |
 | **P5k** | paper-IV | ✅ CLOSED | 1/1 |
 | **P5l** | paper-IV | ✅ CLOSED | 1/1 |
-| **P5m** | paper-IV | 🧍 PENDING-HUMAN | 0/1 |
+| **P5m** | paper-IV | ✅ CLOSED | 1/1 |
+
+**The next piece is `P13`.** Work it, or say in your handoff why you worked something else.
 
 ## Every criterion, and how it was measured
 
@@ -85,9 +94,9 @@ never asked. The 61 probes already built are an asset; they are not a destinatio
 - [ ] P6 · Every number in every paper regenerates from a COMMITTED script at the pinned SHA, re-run at close — **PENDING-HUMAN** _(upgrade to cmd: rows per paper as the regen scripts are enumerated (WT-027 lesson: a number without a script is a number nobody has checked). FIRST ONE LANDED: P3n derives Paper II's '18 tests' from pytest --collect-only instead of trusting the constant. Two papers to go.)_
 - [ ] P7 · Convergence per paper: fresh-eyes review passes repeat until TWO CONSECUTIVE passes yield ZERO substantive findings — **PENDING-HUMAN** _(perfection==done operationalized; a zero-finding pass is a RESULT and gets its REVIEW doc. P7 is PER PAPER and closing it for all three does NOT close the corpus -- P11 audits the conjunction, which is a different object (ADR-001's batch ruling: the corpus gets exactly one first end-to-end pass).)_
 - [ ] P11 · The corpus audited AS A WHOLE — ADR-001 addendum 6's end-to-end test, designed and run: what would it mean for the three papers to fail AS A SYSTEM, as opposed to one of them failing — **PENDING-HUMAN** _(UNCLAIMED SINCE 2026-08-11 and now load-bearing, because Jason's own-hand pass (P8) waits on it. ADR-001's batch ruling says the conjunction gets exactly ONE first end-to-end pass and shipping early spends it, so this is the pass. Stays manual because designing the test AFTER the three results are known is not a severe test -- the design has to be written down and defensible before it is run, and a session that designs and passes it in one sitting has done neither.)_
-- [ ] P12 · The arXiv endorsement path opened for the categories Papers III and IV target (q-fin / econ.GN) — **PENDING-HUMAN** _(THE ONLY OTHER HUMAN-BLOCKING ITEM ON THE BOARD, and it was invisible until -54 went looking for what P8 was hiding behind. PREPRINT-CHECKLIST C: arXiv REQUIRES an endorsement before a first submission to a category, and an unaffiliated first-timer must find a personal endorser who has published in the domain in roughly the last 3-5 years. No Claude session can do this and its lead time is social, not computational -- weeks, not minutes. SSRN (Paper II) needs none, which is why the batch order already puts II first. Carried as a row so the lead time is visible rather than discovered on the day of posting.)_
-- [ ] P8 · Jason's own-hand pass over the WHOLE corpus, ONCE, as the LAST step of the project — his voice, his name, and he expects to re-write in his own hand at this step — **PENDING-HUMAN** _(a human gate a script can satisfy is not a human gate. Never auto-closes. AMENDED 2026-08-16 (wealthTensor-54, Jason's ruling): this was 'over each converged paper' and is now ONE pass over the corpus taken LAST, after P7 converges every paper AND P11 audits them as a system. It does not interleave and it is not per-paper. THE UPSTREAM CONSEQUENCE IS THE POINT: no session may treat any paper's prose as final before P8 closes, and nothing that depends on final prose -- the submission-time SHA pins above all -- may be spent before it.)_
-- [ ] P9 · The batch declared ONCE when all three papers and the corpus audit are terminal (never ask Jason to trigger a submission) — **PENDING-HUMAN** _(ADR-001 -08; declaring readiness is the session's job, submitting is his. AMENDED 2026-08-16: with P8 moved terminal, P9 is the HANDOFF INTO P8 rather than the end of the line -- a session declares the batch ready for Jason's own-hand pass, exactly once, and then stops. Posting follows P8 and is his.)_
+- [ ] P13 · The deliverable: ONE well-designed, self-contained artefact that VISUALISES the corpus — the three papers as a single object, their results with the controls that make them mean anything, and how they compose — **UNMET** _(rc=1)_
+- [ ] P9 · Liftoff declared ONCE, when the papers are converged, the corpus is audited whole, the scripts are done and the deliverable is built (never ask Jason to trigger anything) — **PENDING-HUMAN** _(declaring readiness is the session's job. RESCOPED 2026-08-16 (Jason's ruling): this said 'the batch declared when all three are terminal... never ask Jason to trigger a SUBMISSION'. There is no submission in this project. It is the single handoff into P8 -- said once, then stop.)_
+- [ ] P8 · Jason reads the deliverable, does whatever minor re-arranging document design reveals, and CLEARS IT FOR LIFTOFF — at which point Claude is officially finished on wealth-tensor — **PENDING-HUMAN** _(a human gate a script can satisfy is not a human gate. Never auto-closes. RESCOPED 2026-08-16 (Jason's ruling): this is the END OF THE PROJECT, not a step in it. He sees how the information PRESENTS once layout has converged -- above the fold means something different to a human than below it -- so the re-arranging he does here is informed by the designed artefact, not by markdown. What follows liftoff (Voice Box Jasonizing, his own-hand rewrite, the endorsement ask, posting) is SUCCESSOR WORK and belongs to other projects; ad-hoc questions to a session are fine and are not this project either.)_
 - [x] P10 · Registered in the shared ledger with a calibrated estimate (brake + closer armed) — **MET** _(check passed)_
 - [x] P1a · Abstract is 150-250 words AND <=1920 characters -- arXiv's hard metadata ceiling (info.arxiv.org/help/prep.html, re-verified 2026-08-16). Counted on the DECODED string by the one script all three papers use; wc -w and awk NF disagree across platforms — **MET** _(check passed)_
 - [x] P1b · Author block carries the name, *Independent researcher* and an email — **MET** _(check passed)_
@@ -101,7 +110,7 @@ never asked. The 61 probes already built are an asset; they are not a destinatio
 - [x] P1j · The reproducibility paragraph names BOTH overclaim-forbidding tests (PREPRINT-CHECKLIST B) — **MET** _(check passed)_
 - [x] P1k · Pre-registrations cited WITH their registering commit SHAs (PREPRINT-CHECKLIST D) — **MET** _(check passed)_
 - [x] P1l · The failed prediction appears in the ABSTRACT as well as the body (PREPRINT-CHECKLIST D; charter 3.4 -- reported once, and not given the last word) — **MET** _(check passed)_
-- [ ] P1m · Submission-time head-of-repository SHA pinned in the data-availability statement — **PENDING-HUMAN** _(DEFERRED BY DESIGN, not a gap -- 11 says so in the paper and the per-file pins are what a replicator needs today. Closes at POSTING, which since the 2026-08-16 amendment falls AFTER P8, not at P9: Jason re-writes the prose in his own hand at P8, so any head-of-repository SHA pinned before it is stale by construction.)_
+- [x] P1m · The data-and-code statement pins a RESOLVABLE commit for the state of the code that produced the numbers -- a pin, never a promise. RESCOPED 2026-08-16 (Jason's ruling): this row said 'submission-time head-of-repository SHA', and posting is outside this project's scope, so it could never close here -- which is worse than a failing row, because it reads as deferred rather than unreachable. The in-scope leg is what a replicator needs TODAY and it is checkable: every 7-hex pin in the section must resolve to a commit in this repository, and the section may not defer its pin to posting — **MET** _(check passed)_
 - [x] P3a · Abstract is 150-250 words AND <=1920 characters -- arXiv's hard metadata ceiling (info.arxiv.org/help/prep.html, re-verified 2026-08-16). Counted on the DECODED string by the one script all three papers use; wc -w and awk NF disagree across platforms — **MET** _(check passed)_
 - [x] P3b · Author block carries the name, *Independent researcher* and an email — **MET** _(check passed)_
 - [x] P3c · Keywords line carries 6-8 keywords. The lines are JOINED FIRST: a markdown wrap falling mid-keyword survives 'tr' as a separator and counts that keyword twice (found by -53 on P1c; Paper II is the case that proves it -- unjoined it reads 9, joined it reads 8) — **MET** _(check passed)_
@@ -114,7 +123,7 @@ never asked. The 61 probes already built are an asset; they are not a destinatio
 - [x] P3j · The reproducibility paragraph names BOTH overclaim-forbidding tests (PREPRINT-CHECKLIST B) — **MET** _(check passed)_
 - [x] P3k · Pre-registration, scoped by the ratified list rather than waved past. PREPRINT-CHECKLIST D says in terms that 'Papers III and IV carry empirical predictions; I and II do not', so II owes no registration -- and this row asserts that CLAUSE is still what the list says, plus a tripwire: the day Paper II cites a registration it must cite a SHA with it. A criterion that passes because it does not apply should say WHY, in a check, or it is a blank line wearing a tick — **MET** _(check passed)_
 - [x] P3l · The half-failed prediction of 3.1 appears in the ABSTRACT as well as the body. II carries no PRE-REGISTERED prediction (PREPRINT-CHECKLIST D scopes those to III and IV), but 3.1's 'regardless of rate' claim was tested by this paper's own sweep and lost, and charter 3.4 does not care whether a loss was registered -- only that it is not buried — **MET** _(check passed)_
-- [ ] P3m · Submission-time head-of-repository SHA pinned in the data-availability statement — **PENDING-HUMAN** _(DEFERRED BY DESIGN, not a gap -- 7 says so in the paper and the per-file pin (d655501, the last commit touching src/) is what a replicator needs today. Closes at POSTING, which since the 2026-08-16 amendment falls AFTER P8. Same clause as P1m and P5m.)_
+- [x] P3m · The data-and-code statement pins a RESOLVABLE commit for the state of the code that produced the numbers -- a pin, never a promise. RESCOPED 2026-08-16 (Jason's ruling): this row said 'submission-time head-of-repository SHA', and posting is outside this project's scope, so it could never close here -- which is worse than a failing row, because it reads as deferred rather than unreachable. The in-scope leg is what a replicator needs TODAY and it is checkable: every 7-hex pin in the section must resolve to a commit in this repository, and the section may not defer its pin to posting — **MET** _(check passed)_
 - [x] P3n · Every count Paper II asserts about its own test suite regenerates from the command that produces it. The paper says '18 tests' in the abstract and in 1; this row DERIVES the number from pytest --collect-only and greps for whatever came back, so the check cannot be satisfied by a constant that drifted. This is Jason's -51 scoping proposal (a) applied to one claim: a claim naming a count must carry the command that regenerates it — **MET** _(check passed)_
 - [x] P5a · Abstract is 150-250 words AND <=1920 characters -- arXiv's hard metadata ceiling (info.arxiv.org/help/prep.html, re-verified 2026-08-16). Counted on the DECODED string by the one script all three papers use; wc -w and awk NF disagree across platforms — **MET** _(check passed)_
 - [x] P5b · Author block carries the name, *Independent researcher* and an email — **MET** _(check passed)_
@@ -128,5 +137,5 @@ never asked. The 61 probes already built are an asset; they are not a destinatio
 - [x] P5j · The reproducibility paragraph names BOTH overclaim-forbidding tests (PREPRINT-CHECKLIST B) — **MET** _(check passed)_
 - [x] P5k · Pre-registration cited WITH its registering commit SHA (PREPRINT-CHECKLIST D) — **MET** _(check passed)_
 - [x] P5l · The result's own adverse reading appears in the ABSTRACT as well as the body (PREPRINT-CHECKLIST D; charter 3.4). REG-013 SURVIVED, so what must reach the abstract is the pair that goes UNDECIDED under a stricter ceiling -- the nearest thing this paper has to a loss, and it does not get the last word — **MET** _(check passed)_
-- [ ] P5m · Submission-time head-of-repository SHA pinned in the data-availability statement — **PENDING-HUMAN** _(DEFERRED BY DESIGN, not a gap -- 10 says so in the paper and Papers II and III's per-file pins are what a replicator needs today. Closes at POSTING, which since the 2026-08-16 amendment falls AFTER P8. Same clause as P1m.)_
+- [x] P5m · The data-and-code statement pins a RESOLVABLE commit for the state of the code that produced the numbers -- a pin, never a promise. RESCOPED 2026-08-16 (Jason's ruling): this row said 'submission-time head-of-repository SHA', and posting is outside this project's scope, so it could never close here -- which is worse than a failing row, because it reads as deferred rather than unreachable. The in-scope leg is what a replicator needs TODAY and it is checkable: every 7-hex pin in the section must resolve to a commit in this repository, and the section may not defer its pin to posting — **MET** _(check passed)_
 

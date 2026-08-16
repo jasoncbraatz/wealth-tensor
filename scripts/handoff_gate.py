@@ -137,8 +137,10 @@ def show_dod(fm):
     Position is the mechanism. A session reads the top of the output and skims the rest; the
     one line it can least afford to skim therefore goes at the top. A corpus-level DoD matters
     MORE here than in a repo with a passing test, not less: prose has no bit that flips, so
-    "three preprints publicly posted" is the only thing standing between a session and a very
-    well-written paragraph nobody asked for."""
+    a stated finish line is the only thing standing between a session and a very well-written
+    paragraph nobody asked for. And it has to be the RIGHT line: wealth-tensor carried "three
+    preprints publicly posted" as its DoD for fifty-four sessions and its owner's actual finish
+    line was "cleared for liftoff", two whole projects earlier."""
     dod = dod_value(fm)
     if not dod:
         print("\U0001F3AF DONE = (NOT STATED — this handoff does not say what done looks like)")

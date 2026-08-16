@@ -148,14 +148,17 @@ K = {
            % (R, PAPERS["P3"]["path"], PAPERS["P3"]["path"])),
 }
 M = {
-    "P1": "manual:DEFERRED BY DESIGN, not a gap -- 11 says so in the paper and the per-file pins are what a replicator needs today. Closes at POSTING, which since the 2026-08-16 amendment falls AFTER P8, not at P9: Jason re-writes the prose in his own hand at P8, so any head-of-repository SHA pinned before it is stale by construction.",
-    "P3": "manual:DEFERRED BY DESIGN, not a gap -- 7 says so in the paper and the per-file pin (d655501, the last commit touching src/) is what a replicator needs today. Closes at POSTING, which since the 2026-08-16 amendment falls AFTER P8. Same clause as P1m and P5m.",
-    "P5": "manual:DEFERRED BY DESIGN, not a gap -- 10 says so in the paper and Papers II and III's per-file pins are what a replicator needs today. Closes at POSTING, which since the 2026-08-16 amendment falls AFTER P8. Same clause as P1m.",
+    # RESCOPED 2026-08-16: was "submission-time head-of-repository SHA" (manual, deferred to
+    # posting) until Jason ruled posting out of this project. A criterion that can never
+    # close is not deferred, it is unreachable, and it reads exactly like the former.
+    "_desc": "The data-and-code statement pins a RESOLVABLE commit for the state of the code that produced the numbers -- a pin, never a promise. RESCOPED 2026-08-16 (Jason's ruling): this row said 'submission-time head-of-repository SHA', and posting is outside this project's scope, so it could never close here -- which is worse than a failing row, because it reads as deferred rather than unreachable. The in-scope leg is what a replicator needs TODAY and it is checkable: every 7-hex pin in the section must resolve to a commit in this repository, and the section may not defer its pin to posting",
+    "_check": 'cmd:cd $HOME/repos/wealth-tensor && awk \'/^## [0-9]+ · Data and code availability/{f=1;next} f && /^## /{exit} f\' %s > /tmp/wt-pin-%s.txt && ! grep -qi \'to be pinned\' /tmp/wt-pin-%s.txt && PINS=$(grep -ohE \'[*][*][0-9a-f]{7}[*][*]|`[0-9a-f]{7}`\' /tmp/wt-pin-%s.txt | tr -d \'*`\' | sort -u) && test -n "$PINS" && for s in $PINS; do git cat-file -e "${s}^{commit}" || exit 1; done',
 }
+
 for prefix, P in PAPERS.items():
     ROWS.append((prefix + "k", P["pid"], K[prefix][0], K[prefix][1]))
-    ROWS.append((prefix + "m", P["pid"],
-                 "Submission-time head-of-repository SHA pinned in the data-availability statement", M[prefix]))
+    ROWS.append((prefix + "m", P["pid"], M["_desc"],
+                 M["_check"] % (P["path"], P["pid"], P["pid"], P["pid"])))
 
 # Paper II only: the count it asserts about its own suite must REGENERATE, not be trusted.
 ROWS.append(("P3n", "paper-II",

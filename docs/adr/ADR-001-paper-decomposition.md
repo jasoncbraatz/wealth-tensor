@@ -622,3 +622,68 @@ reason `P11` exists rather than being folded into `P7`.
 **What this does NOT change.** The split, the order, the batch ruling, the per-paper Definition of
 Done, or which papers ship. `P8` was always the last *human* step; it is now the last step, and the
 corpus has somewhere to be audited as a whole before it.
+
+
+### Addendum · 2026-08-16 · wealthTensor-54 · **THE DEFINITION OF DONE IS "CLEARED FOR LIFTOFF", NOT "POSTED"** (Jason's ruling — supersedes the DoD carried since sessionZero)
+
+**In his words:** *"The definition of done is when the wealth tensor paper is done with it's
+coaching and editing and python scripts and you make me a pretty cool looking deliverable at the
+end to visualize it — then it's cleared for liftoff. The other things I mentioned aren't part of
+this project (Jasonizing, perhaps some random questions here and there but that'll be in an ad-hoc
+prompts)."*
+
+And on why posting cannot be in scope, which is the part that makes the ruling obvious in
+hindsight — *"once I've re-written the entire document in my own hand (I'll Jasonize it first
+using our Voice Box…) … that'll be a new project (both Jasonizing it and re-writing it). After
+that point, then I feel good about getting it in front of a few econometricians who already are
+established with the pre-print servers… a few are my old professors but I don't want to ask them
+without a proof: sending this document to them in the same request is the vehicle to get their
+sponsorship."*
+
+**What this project's finish line actually is.** Papers II, III and IV done with their coaching
+and editing · the corpus audited as one thing · the python scripts done, every number regenerating
+from a committed one · **one well-designed deliverable that visualises the work** · then Jason
+reads it, does whatever minor re-arranging document design reveals, and clears it for **liftoff**.
+At that moment Claude is finished on wealth-tensor.
+
+**What is NOT in scope, and each of these was silently assumed to be.** Jasonizing through the
+Voice Box (which is not trained yet, and whose training happens *after* this project). Jason's
+own-hand rewrite for cadence, telos and ethos. The endorsement ask. Submission. Posting. They are
+successor efforts with their own projects; ad-hoc questions to a session are fine and are not this
+project either.
+
+**The chicken-and-egg is not a blocker — it is the sequence.** The endorsement cannot be asked for
+without a finished document, and the finished document is two projects downstream. So the ask
+simply waits, which is a schedule, not an obstacle. **`P12` — the arXiv endorsement row — was
+added by this very session one message earlier and is DELETED, not rescoped.** It was a correct
+observation filed against the wrong project.
+
+**Three rows could never have closed here, which is worse than failing.** `P1m`/`P3m`/`P5m` pinned
+a *"submission-time head-of-repository SHA"*. With posting out of scope they were unreachable —
+and an unreachable row reads exactly like a deferred one, so nothing would ever have flagged it.
+Rescoped to the leg that is in scope, checkable, and what a replicator needs today: **every 7-hex
+pin in a data-and-code section must resolve to a commit in this repository, and the section may
+not defer its pin to posting.** All three are now green rather than permanently amber.
+
+**And that rescope caught a live defect in the deliverable.** Paper IV's data-and-code section read
+*"Commit for the results reported here: **to be pinned at posting**"* — a forward promise to a date
+that had just stopped existing. It walked straight past the no-live-placeholders guard, because
+that guard knows the phrase *"to be migrated"* (the one instance WT-047 found) and not its sibling.
+Paper IV now pins `5efe626`, the last commit touching `scripts/reg013_citation_whitespace.py`, by
+the same non-circularity that governs Papers II and III.
+
+**`P13` is new and is the only OPEN lane on the board** — the deliverable itself, split so that the
+machine checks what a machine can check (it exists, it is self-contained, no remote script or
+stylesheet) and Jason judges what only he can: whether it is any good. A human gate a script can
+satisfy is not a human gate.
+
+**The tell, for the third time in two hours:** *moving a gate changes what "terminal" means
+upstream of it, and the consequence is never in the instruction.* Ruling one moved `P8` to the end
+and stranded three SHA pins aimed at `P9`. Ruling two moved the finish line itself and stranded the
+same three rows again, an endorsement row a session had added an hour before, a board preamble, a
+docstring in the gate, and a sentence inside a manuscript. **Each time the instruction named the
+gate and the damage was somewhere else.**
+
+**What this does NOT change.** The split, the batch ruling (nothing is finished until the corpus
+is), the per-paper "ready to submit" terminal state, or the papers themselves. `ADR-001`'s title
+and §Decision stay frozen as the decision-as-made.
