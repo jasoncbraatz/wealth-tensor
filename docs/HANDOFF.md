@@ -1,6 +1,6 @@
 ---
 project: wealth-tensor
-gh_sha: 1f4e98aa8d69e7f567eb134c0302d0db0cd8a3a7
+gh_sha: eaeb45d6250971230a29de26b9d58fb2a82576c6
 updated: 2026-08-16
 session: wealthTensor-54
 gate_passed: true
@@ -27,7 +27,7 @@ repoint `gh_sha`, re-master, re-stamp the charter, re-walk the gate.
 ## ORIENT — read these first, in this order
 1. **`docs/CHECKLIST.md`** — the generated board. **Regenerate with `./scripts/regen-board.sh`,
    never `board.py` by hand — see `-53`'s note in that file.** Never hand-tick. As of `-54`:
-   **59 criteria, 44 met, EIGHT lanes OPEN — every one of them `P13`'s.** First time in this
+   **59 criteria, 46 met, FIVE lanes OPEN — all `P13`'s** (`P13c`/`P13d` closed by ADR-002). First time in this
    project's history the board's open work is the thing Jason actually asked for. **It is still
    the LAST thing Claude builds. Read §3 before you take it.**
 2. **`docs/CO-AUTHOR-CHARTER.md`** — the constitution. **THE CHARTER WINS** over this file, any
@@ -213,6 +213,36 @@ own docstring used *"three preprints publicly posted"* as its worked example of 
 | board | **52 criteria, 44 met, ONE OPEN lane** |
 | suite | **1063 passed**, zero skips · defensive counts unchanged after the Paper IV edit |
 | red-proof | **37 mutations, 0 survivors** (the three new `m` rows included) |
+
+### `ADR-002` — the typeface is DECIDED, the fonts are VENDORED, and `P13c`/`P13d` are CLOSED
+Jason delegated it: *"I totally trust you with the font selection :-D. Basically, whatever is
+apropos for this type of research paper is the best."* **Read `docs/adr/ADR-002-typography-and-the-reproducible-build.md` before touching anything in `docs/deliverable/`.**
+
+**The choice was settled by a measurement, not by taste.** Probing darwin found macOS ships its
+own STIX Two Text at `/System/Library/Fonts/Supplemental/STIXTwoText.ttf`, **metrics differing
+from TeX Live's OTF of the same name**. A family-name lookup can resolve to either on a machine
+that looks identical from outside. That killed the otherwise-obvious choice and dictated
+everything else.
+
+- **Libertinus** Serif / Serif Display / Sans / **Math**, + **Inconsolata (zi4)** for code.
+  Libertinus because it has a **matched math font** (this corpus is κ, ρ, Φ, φ, tensors
+  throughout) and is **SIL OFL**, which is what makes vendoring legal and `P13d` possible at all.
+  Inconsolata because `test_excess_demand_is_monotone_here_so_this_is_not_an_SMD_result` is
+  **58 characters** and a wide monospace overflows the measure.
+- **LuaLaTeX, TeX Live 2026, pinned.** Preflight **refuses** a mismatch; the override is
+  documented and **invalidates `LAYOUT-MANIFEST.json` by design**.
+- **`fontspec Path=`, never a family name.** That one line of syntax *is* the anti-substitution
+  mechanism.
+- **15 OTFs (3.6 MB) vendored** with their OFL files and a sha256 each.
+- **`P13c` and `P13d` are CLOSED and RED-PROOFED** — `tests/test_preflight_refuses.py` breaks the
+  preflight three ways and requires a refusal each time.
+- **`ADR-002` §5 decides NO metrics on purpose.** Size, leading, measure, margins, display-maths
+  spacing belong in `RECIPE.md`, **measured from the build, not guessed**. Do not "helpfully"
+  fill them in from this file.
+
+**Why this was not "building `P13` early", which §2 forbids:** a font is a **dependency**, not a
+layout decision. Dependencies get pinned as early as possible, layout as late as possible. §4 of
+the ADR records the distinction so nobody relitigates it.
 
 ### `P13` — what the deliverable actually is, and why the recipe is the load-bearing half
 **In his words:** *"a paint-by-numbers as to how the tex is formatted, font, line, etc all has to
