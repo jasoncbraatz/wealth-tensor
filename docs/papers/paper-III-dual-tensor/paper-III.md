@@ -1958,9 +1958,16 @@ public data.
 - **Regenerate §5:**
   `python3 scripts/wt026_severe_test.py --universe pilot --onset peak` and
   `--universe replication --onset peak`
-- **Test suite:** `python3 -m pytest tests/ -q` — **100 tests at the pinned commit d655501**, which
-  is the state that produced every result in §A.2 and §2. The suite at the head of the repository
-  is larger and grows with every registration in `docs/preregistration/`; three of its additions
+- **Test suite:** `python3 -m pytest tests/ -q` runs the whole repository; at the pinned commit
+  **d655501** — the state that produced every result in §A.2 and §2 — that suite held **100** tests,
+  of which the **62** in `tests/test_edgar.py`, `tests/test_lag.py` and
+  `tests/test_lambda_sensitivity.py` are the ones that hold this paper's claims in place. The
+  remaining 38 hold a companion paper's claims and are named here only because a suite total is a
+  property of the repository and not of any one paper in it. Both counts are derived from the
+  repository rather than asserted, and `tests/test_paper_test_counts_are_derived.py` fails if either
+  drifts. The suite at the head of the repository is much larger — it grows with every registration
+  in `docs/preregistration/`, which is why the paper-scoped count is the one quoted; three of its
+  additions
   guard claims this paper makes and change no model code: two for §3.1's
   closed form D(φ) = (1 − φ)·D(0) and its accompanying negative claim that the lag is *not* linear,
   and one asserting the algebraic collapse §4 publishes — which had no test until an
