@@ -1,11 +1,11 @@
 ---
 project: wealth-tensor
-gh_sha: 206e6c69f4c3a519dd9a46671d5114728d2166fb
+gh_sha: ef48c4adf46edcd16107c8eaf06ff4ed89fbca91
 updated: 2026-08-16
 session: wealthTensor-54
 gate_passed: true
 gate_version: "2.59"
-definition_of_done: "Three preprints (II, III, IV) publicly posted — the corpus-level Definition of Done in ADR-001 as amended (was four; Paper I folded into IV). Per-paper clauses in ADR-001 govern each paper's 'ready to submit' terminal state, and nothing ships until the corpus is done."
+definition_of_done: "CLEARED FOR LIFTOFF (Jason's ruling, 2026-08-16, superseding the 'three preprints publicly posted' line carried since sessionZero): Papers II, III and IV done with their coaching and editing, the corpus audited as ONE thing, the python scripts done with every number regenerating from a committed one, and ONE well-designed deliverable that visualises the work — then Jason reads it, does whatever minor re-arranging document design reveals, and clears it. At that moment Claude is finished on wealth-tensor. POSTING IS NOT IN SCOPE: Voice Box Jasonizing, Jason's own-hand rewrite, the endorsement ask and submission are SUCCESSOR projects. A session driving toward 'posted' is driving past the end of the road."
 ---
 # wealth-tensor — HANDOFF
 `gh_sha` names the commit this file describes; **the only thing added after it is this file**,
@@ -15,8 +15,9 @@ that the hard way when a post-wrap ADR commit made it false while the gate staye
 `--check` classifies by PATH and any docs-only drift is green. If a post-wrap commit lands,
 repoint `gh_sha` and re-master this file.
 `-54` landed `770f766` (Paper II's three prose gaps, alone, so that commit is green on its own),
-`be0bdfc` (the instrument and everything with it) and `206e6c6` (Jason's DoD amendment, ruled
-mid-session), then re-mastered this file alone after them. **`-54` is also the worked example of
+`be0bdfc` (the instrument and everything with it), `206e6c6` (Jason's first DoD ruling — P8 to the
+end) and `ef48c4a` (**his second, which replaced the Definition of Done itself**), then re-mastered
+this file alone after them. **`-54` is also the worked example of
 this paragraph's own instruction:** it wrapped at `be0bdfc`, Jason then ruled on the DoD, the
 amendment touched `scripts/` and `tests/`, and `--check` went from `ADVISORY: docs-only drift` to
 `BLOCKER: code advanced past the handoff` — exactly as designed. The repair is what you are reading:
@@ -26,8 +27,9 @@ repoint `gh_sha`, re-master, re-stamp the charter, re-walk the gate.
 ## ORIENT — read these first, in this order
 1. **`docs/CHECKLIST.md`** — the generated board. **Regenerate with `./scripts/regen-board.sh`,
    never `board.py` by hand — see `-53`'s note in that file.** Never hand-tick. As of `-54`:
-   **50 criteria, 41 met, ZERO lanes OPEN**, and the nine that remain are all `PENDING-HUMAN`
-   by design. **The board prints no "next piece" line. Read §3 before you read that as done.**
+   **52 criteria, 44 met, and exactly ONE lane OPEN — `P13`, the deliverable.** Everything else
+   outstanding is `PENDING-HUMAN`. **The board will point you at `P13`. DO NOT TAKE IT YET — it
+   is the LAST thing Claude builds, and §3 says why.**
 2. **`docs/CO-AUTHOR-CHARTER.md`** — the constitution. **THE CHARTER WINS** over this file, any
    result doc, and any plausible rewrite. **Stamp that you read it:
    `~/Scripts/charter-read.sh wealthTensor-<NN>` — POSITIONAL slug, no env var — and re-stamp
@@ -176,6 +178,41 @@ order**. Do not tidy them into numeric order.
 | board | **50 → 52 criteria, 41 met** · the two new lines are both `PENDING-HUMAN` and both are real work, not ceremony |
 | suite | **1063 passed**, zero skips, unchanged by the amendment |
 | red-proof | 34 mutations, 0 survivors, re-run after the amendment |
+
+### THE DEFINITION OF DONE CHANGED — read this before you plan anything
+**In his words:** *"The definition of done is when the wealth tensor paper is done with it's
+coaching and editing and python scripts and you make me a pretty cool looking deliverable at the
+end to visualize it — then it's cleared for liftoff. The other things I mentioned aren't part of
+this project (Jasonizing, perhaps some random questions here and there but that'll be in an ad-hoc
+prompts)."*
+
+**`Three preprints publicly posted` was this project's stated DoD for fifty-four sessions and was
+never Jason's finish line.** Posting is two projects downstream: Voice Box Jasonizing (the Voice
+Box is not trained yet — that happens *after* this project), then his own-hand rewrite for cadence,
+telos and ethos, and only then the endorsement ask. **The finished document is the vehicle for that
+ask** — he will not approach his old professors without a proof in hand — which is exactly why the
+endorsement cannot come earlier. **That is a sequence, not a blocker.**
+
+| | |
+|---|---|
+| **`P13` NEW** | **the deliverable — the only OPEN lane on the board.** One well-designed, self-contained artefact that *visualises* the corpus. Split so the machine checks what a machine can (it exists, no remote script or stylesheet) and **Jason judges whether it is any good** |
+| **`P12` GONE** | the arXiv endorsement row, added by `-54` **one message earlier**. A correct observation filed against the wrong project. Deleted, not rescoped |
+| **`P9`** | *"never ask Jason to trigger a SUBMISSION"* had no submission to name. It is the single handoff into `P8` |
+| **`P8`** | the **END of the project**, not a step in it |
+| **`P1m`/`P3m`/`P5m`** | pinned a *"submission-time head-of-repository SHA"* — **UNREACHABLE here, which is worse than failing**, because an unreachable row reads exactly like a deferred one and nothing would ever have flagged it. Rescoped to the in-scope leg: every 7-hex pin in a data-and-code section must **resolve** to a commit, and the section may not defer its pin to posting. **Three permanent ambers → three greens**, each red-proofed |
+
+**And the rescope caught a live defect in a deliverable.** Paper IV read *"Commit for the results
+reported here: **to be pinned at posting**"* — a forward promise to a date that had just stopped
+existing. **It walked straight past the no-live-placeholders guard**, because that guard knows the
+phrase *"to be migrated"* (the one instance WT-047 found) and not its sibling. Paper IV now pins
+`5efe626`. Also swept: the board preamble still named the old destination, and `handoff_gate.py`'s
+own docstring used *"three preprints publicly posted"* as its worked example of a good DoD.
+
+| | |
+|---|---|
+| board | **52 criteria, 44 met, ONE OPEN lane** |
+| suite | **1063 passed**, zero skips · defensive counts unchanged after the Paper IV edit |
+| red-proof | **37 mutations, 0 survivors** (the three new `m` rows included) |
 ---
 ## 2 · RULINGS — DO NOT REOPEN
 - **All of `-31`'s through `-53`'s rulings stand verbatim**, including: REG-013's decision rule is
@@ -207,6 +244,18 @@ order**. Do not tidy them into numeric order.
 - **NEW · `P7` DOES NOT CLOSE THE CORPUS.** Converging three papers individually is a different
   object from auditing the conjunction. That is why `P11` exists rather than being folded into
   `P7`, and folding it back in is how the corpus would ship without ever having been read whole.
+- **NEW · DONE IS "CLEARED FOR LIFTOFF", NOT "POSTED" — JASON'S RULING, 2026-08-16.** Coaching
+  and editing converged · the corpus audited whole · the scripts done · **one well-designed
+  deliverable that visualises the work** · then he clears it and Claude is finished here.
+  **Jasonizing, his own-hand rewrite, the endorsement ask and submission are SUCCESSOR projects.**
+  Ad-hoc questions to a session are fine and are not this project either.
+- **NEW · `P13` IS LAST, NOT NEXT.** It is the only OPEN lane, which makes it look like the
+  at-bat. It is not. Building the pretty thing before the prose converges means building it
+  twice, and Jason asked for it *"at the end"*. See §3.
+- **NEW · A CRITERION THAT CANNOT BE REACHED IS WORSE THAN ONE THAT FAILS.** `P1m`/`P3m`/`P5m` sat
+  amber for weeks describing an event this project never reaches. **An unreachable row and a
+  deferred row are indistinguishable on a board**, so nothing flags it. When a row has been amber
+  a long time, ask what would have to happen for it to close — and whether that thing is in scope.
 - **NEW · ROW IDS ARE NEVER RENUMBERED. FILE ORDER IS DEPENDENCY ORDER.** `P11`/`P12` between
   `P7` and `P8` is deliberate. Every handoff, addendum and lesson cites rows by name. Check where the edit landed before you touch the guard.
 ---
@@ -216,9 +265,14 @@ That is a state to be careful with, not to celebrate.** Eleven lines remain, all
 which means *a human or a fresh-eyes pass judges them* — **not** that they are done. **The DoD is
 three preprints POSTED. Nothing is posted.**
 
-**`-54` recommended `P7` on Paper IV, and then Jason's ruling changed the answer. Take `P11`'s
-DESIGN half instead — write the end-to-end test down, do not run it.** The reasoning is the ruling's
-own:
+**FIRST, THE TRAP.** `P13` — the deliverable — is the only OPEN lane, so the board points at it
+and it is by far the most fun job on the list. **It is the LAST thing Claude builds, not the next.**
+Jason asked for it *"at the end"*, and a visualisation built before the prose converges is a
+visualisation built twice — the second time after `P7` has changed the very sentences it renders.
+Its OPEN status is a statement about the finish line, not about this week.
+
+**Take `P11`'s DESIGN half — write the end-to-end test down, do not run it.** The reasoning is the
+ruling's own:
 - **`P8` now waits on `P11`, so the end-to-end test moved onto the critical path** after five
   sessions of sitting unclaimed. It is no longer the interesting optional thing; it is the gate.
 - **And it has to be designed BEFORE `P7`, not after.** `P11`'s own note says designing the test
@@ -244,10 +298,11 @@ zero-finding passes**, so the earliest possible finish is two sessions away no m
   above to be over-fine — say so explicitly and record the judgement, because it is the exact
   trade `P11`'s note was written to force into the open.
 - **`P7` on Paper II** — also unreviewed, and it is the paper `-54` just edited in three places.
-- **`P12`, the endorsement path.** Not a Claude task — but a session CAN draft the ask, assemble
-  the case (public repo, 1063 tests, three papers with measured apparatus) and shortlist candidate
-  endorsers from the reference lists. **The lead time is weeks and it is the only other thing that
-  can block posting**, so preparing the ask early costs nothing and buys the whole delay back.
+- **`P13`, the deliverable, deliberately early.** Defensible on ONE argument and only one: a
+  rough pass reveals layout and fold behaviour that could inform what `P7` does to the prose,
+  rather than the other way round. If you take it on that reasoning, **say so and build it
+  throwaway** — do not commit it as the deliverable, because `P13` closing early is how the corpus
+  ships a picture of a draft.
 - **`P6`, the remaining two thirds.** `P3n` proved the shape; `P1n` and `P5n` are the same row
   repointed. Mechanical, valuable, last corpus-level row with a writable check.
 
@@ -375,7 +430,7 @@ path. **Adding a manuscript to `docs/papers/` fails the suite until you add it t
 and, as of `-54`, until you register it in `redproof_apparatus.PAPER` too. **Probe sweep:**
 ~3 min 30 s per probe at `--jobs 2`; `nohup … &` and poll. **Budget for running the sweep twice.**
 ---
-## 0 · THE TELL, NOW IN SEVENTY-SIX SHAPES
+## 0 · THE TELL, NOW IN SEVENTY-EIGHT SHAPES
 `-28` through `-53`'s tells all stand (ask the instrument-artefact question of numbers that look
 GOOD, that SETTLE AN ARGUMENT, of a REGISTERED CONTROL THAT FAILS, OF THE DENOMINATOR; a guard
 must scan assertions not quotations; a mutation that does not mutate reports your guard as weak;
@@ -384,7 +439,7 @@ a correction that lives only in a handoff has not been made; the visible reds ar
 a rule can be false on the day it is written; a count is not a measurement until it agrees across
 machines; a commissioned test that was never run is the most durable debt; a favourable result is
 when the controls matter most; a count whose answer moves when the file is re-wrapped is measuring
-the formatting; a fact can be recorded and still be absent at the point of use). `-54` adds five:
+the formatting; a fact can be recorded and still be absent at the point of use). `-54` adds seven:
 - **AN INSTRUMENT POINTED AT ONLY TWO INSTANCES CANNOT TELL A CRITERION FROM A CONVENTION, AND
   THE THIRD INSTANCE IS THE MEASUREMENT.** Twelve checks were written against one manuscript and
   cloned onto a second, where all twelve passed — because the two papers shared a section
@@ -412,6 +467,19 @@ the formatting; a fact can be recorded and still be absent at the point of use).
   what was asked and left the corpus broken in a way nobody would find until posting day.** When a
   gate moves, walk everything that named the old ordering and ask what it was assuming; the
   instruction names the gate, and the damage is always somewhere else.
+- **AND THE SAME TELL FIRED THREE TIMES IN TWO HOURS, WHICH IS THE REAL LESSON.** Ruling one
+  moved `P8` to the end and stranded three SHA pins aimed at `P9`. Ruling two moved the finish line
+  itself and stranded **the same three rows again**, plus an endorsement row a session had added an
+  hour earlier, the board preamble, a docstring inside the gate, and a sentence inside a
+  manuscript. **Each time the instruction named the gate and the damage was somewhere else.** After
+  a scope or ordering change, `grep` the whole estate for the OLD terminal event by name — here it
+  was the word *posting* — and read every hit. The instruction is one line; the blast radius is
+  every place anyone ever wrote "when X happens".
+- **A ROW THAT CANNOT BE REACHED IS INDISTINGUISHABLE FROM A ROW THAT IS MERELY DEFERRED, AND ONLY
+  ONE OF THEM IS FINE.** `P1m`/`P3m`/`P5m` described an event outside the project's scope and sat
+  amber, patiently, looking exactly like good practice. **Nothing on a board can flag this**,
+  because "not done yet" and "will never be done" render identically. Ask of any long-amber row:
+  *what exactly would have to happen for this to close, and is that thing in this project?*
 - **A CRITERION THAT PASSES BECAUSE IT DOES NOT APPLY IS A BLANK LINE WEARING A TICK.** Paper II
   owes no pre-registration; PREPRINT-CHECKLIST §D says so in terms. The cheap move is to drop the
   row and the honest one is to make the row assert **the clause**, plus a tripwire for the day the
@@ -421,11 +489,11 @@ the formatting; a fact can be recorded and still be absent at the point of use).
 ## 7 · ORIENT-THEN-GO
 Emit one line — `Oriented: <state> · at-bat: <X> · opening with <first action>.` — then start
 building. Don't wait for a go. Do not open by asking Jason anything.
-**Coffee status:** ☕ TWENTY SESSIONS, and the session ended twice. The first ending: all three
-papers measured against the same bar for the first time — which is exactly when the bar turned out
-to be measuring six things that were never in it. Then Jason read the board, moved his own-hand
-pass to the very end, and the second ending was better than the first: the move exposed an
-end-to-end test that has sat unclaimed since day eleven and is now the gate, an arXiv endorsement
-nobody had put on the board, and three SHA pins quietly aimed at a moment that had just stopped
-existing. **The corpus is measured. Nobody has read Paper IV but the session that wrote it, and
-nobody has ever read the three of them as one thing.** That last one is the at-bat. 🥎
+**Coffee status:** ☕ TWENTY SESSIONS, and this one ended three times. First: all three papers
+measured against the same bar — which is exactly when the bar turned out to be measuring six things
+that were never in it. Second: Jason moved his own-hand pass to the very end, which stranded three
+SHA pins aimed at a moment that had just stopped existing. Third: he said what *done* actually
+means, and it is **cleared for liftoff** — not the "three preprints publicly posted" this project
+had been driving at since sessionZero, two whole projects too far down the road. **The corpus is
+measured, the finish line is finally the real one, and there is exactly one thing left to build.**
+Not yet, though. 🥎
