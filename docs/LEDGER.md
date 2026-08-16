@@ -2414,3 +2414,44 @@ identifiability and the transfer-function criterion, and no citing source descri
 root exchange. The transfer-function definition **is** theirs; the pole-set consequence is now drawn
 in this paper's own voice, where it can be checked. Same animal as the Kuan adjective (WT-084), one
 costume over: **a source credited with a consequence of its method rather than with its method.**
+
+---
+
+## WT-089 · RESULT · 2026-08-16
+**The corpus's II↔III join is vocabulary, and the fact that says so had been sitting in
+`docs/REVIEW-004` for four days.**
+
+`END-TO-END-001` leg `E1` — the first leg of the corpus's one and only end-to-end pass — asked
+whether Paper II's realisation share ρ and Paper III's observability share φ are the same object
+seen from two sides, as Paper II §3.2 asserted and Paper IV §3 built a chain on. **They are not.**
+What Paper III's filter does not recognise is *deferred* — held in an unrecognised gap and released
+at rate α, which is the whole of that paper's crisis result. What Paper II's base does not recognise
+is *destroyed*: `recognised_flow[:] = 0.0` at every assessment, and Paper II has no parameter that
+plays α's part. A lag and a loss share the adjective *"a measurement layer with a systematically
+incomplete view"* and share nothing else. The leg FAILS at `E1a`, and by the design's own text a
+simulation may not be run to rescue an equation between objects of different type.
+
+**The remedy was pre-registered and is applied**: Paper II §3.2's "same structure" sentence is
+withdrawn in the paper, and Paper IV §3's *"a chain rather than three analogies"* is demoted in
+terms to *"three instances of one question, asked at three scales"*.
+
+**The part worth re-reading in five years is where the fact came from.** `REVIEW-004` §E2, written
+2026-08-12, states it: *"They are not the same structure … Non-arrival and deferred arrival are
+different dynamical objects."* `REVIEW-004` §E3, same document, is titled *"What it would mean to
+fail as a SYSTEM — the answer to your open question"* and ranks *"the conjunction is a coincidence
+of vocabulary"* first, **already partly true**, with the diagnostic *"write the bridge proposition
+between ρ and φ"* — which is E1, named four days before E1 was designed by a session that recorded
+the question as having *"no written answer anywhere in this repository."* The answer was in a
+document that session had read for other purposes and that nothing indexed as the answer.
+
+**The transferable half.** `E1a` run against the three *manuscripts* returned "same kind" and would
+have sent the leg to a simulation that reports REFUTED. `E1a` run against the two *implementations*
+returned "different in kind" and ends the leg. The deciding fact — the fate of the unrecognised
+remainder — is in neither paper's prose, because neither paper has a reason to state what its own
+complement does. **A cross-paper type check is a check on code and not on text**, and this
+repository now has one instance where the two answer differently and the difference is the result.
+
+*(Same class as `WT-049` — a model parameter and a measurable that share a name may not share a
+meaning — one level up: two model parameters in two papers that share a *sentence* may not share a
+type. And the same class as `RESULT-TERM-002`'s costume: a finding correctly named in `docs/` and
+never turned into an edit.)*

@@ -182,16 +182,31 @@ clothes: the base of a levy — stock or flow — is the question of *which comp
 state the assessing layer can see*, and at zero realisation a confiscatory levy on flow is
 statistically indistinguishable from no levy at all.
 
-**Note what makes this a chain rather than three analogies.** At each step the same two components
-appear, the same question is asked of them — what does the measuring layer observe? — and the
-answer at each scale is a *quantitative* one that the paper for that scale reports. Paper II's κ,
+**Note what this is: three instances of one question, asked at three scales.** At each step the
+same two components appear, the same question is asked of them — what does the measuring layer
+observe? — and the answer at each scale is a *quantitative* one that the paper for that scale
+reports. Paper II's κ,
 the share of aggregate wealth actually moved per assessment, is a composition quantity: it is
 defined at the sovereign scale and it is a fold over household-scale liabilities. Paper III's φ ⊙ δ
 is a composition quantity: it is defined at the firm scale and is *written* as diagonal over asset
 classes — a form the next paragraph reports as tested and rejected, which changes what the link
 carries and not whether there is one.
 
-And **the place where the chain could break was named, was tested, and the test rejected it.**
+**An earlier draft of this section claimed more than three instances of one question, and the
+corpus's first end-to-end test took the surplus away.** It said the three scales made *a chain
+rather than three analogies*. `END-TO-END-001` leg `E1` asked whether the sovereign and firm scales
+stand in the relation the word *chain* asserts — whether Paper II's realisation share ρ and Paper
+III's observability share φ are the same object seen twice — and they are not. What Paper III's
+filter does not recognise is **deferred**, held in an unrecognised gap and released at rate α;
+what Paper II's base does not recognise is **never assessed**. A lag and a loss are different
+operators, and Paper II has no parameter that plays α's part. So what joins the scales is the
+question and the fact that each scale answers it quantitatively, which is what this section now
+claims and no more. The demotion was written into that document's §2 **before** the leg was run,
+precisely so that it could not be renegotiated afterwards; `docs/RESULT-END-TO-END-001-E1.md`
+records the run and the reasoning.
+
+And **the place where the firm-scale link could break was named, was tested, and the test rejected
+it.**
 Diagonality is an assumption, not a theorem: if recognition events cluster within firm-quarters
 rather than occurring independently across classes, the Hadamard form is wrong and the firm's
 reporting does *not* compose from its classes' without cross-terms. Paper III registered that test
@@ -207,7 +222,7 @@ assumption whose status is unknown, and a measured approximation is a stronger o
 than an untested premise. Second, **what the rejection costs is the reporting layer's clean
 composition, not the state's.** Diagonality is a property of the *filter* — of how recognition in
 one class relates to recognition in another — and never of the extensive state, which adds by
-§2.2 whatever the recording practice does. The chain's firm-scale link is therefore degraded and
+§2.2 whatever the recording practice does. The firm-scale link is therefore degraded and
 not severed: the firm's *state* still composes from its classes' states, and it is the firm's
 *reporting* of that state that carries cross-terms the diagonal form omits. Third, and this is the
 part that runs against the paper's convenience, **Paper III's design cannot separate an economic
@@ -291,7 +306,7 @@ Three, and none of them is rhetorical.
    product.
 3. **Diagonality is assumed at the firm scale, and the assumption is measurably wrong.** §3 names
    this; Paper III registered the test, ran it, and rejected independence across classes within a
-   firm-quarter in both universes. The composition chain therefore has a *degraded* link at exactly
+   firm-quarter in both universes. The composition claim therefore has a *degraded* link at exactly
    the scale where the accounting is done — degraded rather than severed, because what was rejected
    is a property of the reporting filter and not of the extensive state, and because the departure
    is now a measured quantity rather than an open exposure. What is not available is its cause: the
@@ -459,6 +474,18 @@ the claim for the state, and neither implies the other.
 had this route worked, which sentence in this paper would be different? An abandonment that could
 not have cost anything is an advertisement, not a disclosure.*
 
+**"A chain rather than three analogies."** The sentence this paper's §3 carried until the corpus's
+first end-to-end test was run against it. Had it survived, §3 would assert a structural
+correspondence between the sovereign scale's realisation share and the firm scale's observability
+share, and that correspondence — not the three separate results — would have been this paper's
+central contribution. `END-TO-END-001` leg `E1` shows the two shares are not the same kind of
+object: the unrecognised remainder is deferred in one and discarded in the other, and the firm
+scale carries a release rate α for which the sovereign scale has no counterpart. What is left is
+weaker, is what §3 now says, and is still worth publishing: one question, asked at three scales,
+answered quantitatively at each. The surviving resemblance is not nothing and is not a structure —
+and the test that separated those two readings was designed, with its response to every outcome
+fixed in advance, before anybody knew which one it would return.
+
 **A fourth paper, on price formation, that was written and is not being published.** The largest
 entry, and it cost the most. A complete draft existed — roughly 7,400 words, references verified —
 arguing that supply and demand are not independent equations. It is not in this corpus. Had the
@@ -538,8 +565,8 @@ model — and worse, makes the paper's centrepiece a fifty-year-old theorem the 
 2. **Diagonality at the firm scale is assumed, its test is closed, and it went against the
    assumption.** Recognition events do cluster within firm-quarters — 4.12× and 2.02× the
    independence expectation, both universes, both *p* = 0.0002 (Paper III §5.4) — so the Hadamard
-   form in §3 is an approximation and not an identity, and the chain's link at the scale where
-   accounting happens is degraded. It is degraded rather than broken for a reason this paper's own
+   form in §3 is an approximation and not an identity, and the composition claim's link at the scale
+   where accounting happens is degraded. It is degraded rather than broken for a reason this paper's own
    §4.2 supplies and should not be allowed to sound like a rescue: diagonality is a claim about the
    *reporting filter*, and this paper's composition claim is about the *extensive state*, which
    adds regardless of how it is recorded. The honest cost is that **the firm's reported object no
