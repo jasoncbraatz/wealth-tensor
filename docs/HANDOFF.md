@@ -3,12 +3,12 @@ project: wealth-tensor
 session_n: 67
 gh_repo: jasoncbraatz/wealth-tensor
 branch: main
-gh_sha: 9cb7827675580921d130b9124b6b6fd6a24b8d31
+gh_sha: PENDING0921d130b9124b6b6fd6a24b8d31
 updated: 2026-08-17
 session: wealthTensor-67
 live_theme: "The two mandatory citations placed — and one of the card's two placement rules turned out to have no site in any manuscript, so the citation went where the paper actually claims something instead of where the instruction said. Then the wrap gate refused, and reading WHY surfaced a live customer credit-card number in the wisdom repo."
 phase: "Manuscript repair under a settled thesis. Paper II is credited and internally consistent; its second independent read is now the live at-bat and it inherits one question this session raised and refused to decide."
-gate_passed: true  # green on the RE-RUN; the first run FAILED G-V and that failure is the session's second story — see §THE GATE REFUSED
+gate_passed: true
 gate_version: "2.59"
 next_at_bat: "PAPER II's SECOND INDEPENDENT READ — could start a convergence count, and it now owns the abstract question card 1217561330623702. The manuscript moved in 24 places in 48 hours and then again today in §1, §3.1 and §6. DIFF against paper-II.md.bak-wt67-cites, .bak-wt65-decA and .bak-wt64-p7; do not read the repaired text as given."
 blockers: []
@@ -303,10 +303,15 @@ right and matches wrong.**
   and `CANNOT VERIFY` expecting `0`. **Do not `grep -c "G-AL"`** — returns 1 on a green run.
 - **WRAP SEQUENCE:** `gh_sha: PENDING` → commit → `--stamp` → commit → push → `--emit` → **PASTE
   INTO CHAT.** That last step is a step, not a courtesy — card `1217560480809492`.
-- **`--emit` refuses on `REQUIRED`**, which is `[project, session_n, gh_repo, branch, gh_sha,
-  updated, live_theme, phase, gate_passed, next_at_bat]` (`handoff_gate.py:50`). It was **never**
-  refusing over `gate_passed`; handoffs since `-58` said so and were wrong. **Read the failure
-  text, do not recall it.**
+- **▲ `--emit` HAS TWO REFUSAL LIMBS, AND `-66`'s CORRECTION WAS HALF RIGHT.** It refuses on
+  missing `REQUIRED` fields — `[project, session_n, gh_repo, branch, gh_sha, updated, live_theme,
+  phase, gate_passed, next_at_bat]` (`handoff_gate.py:50`), which is the limb `-66` found and
+  fixed — **and it separately refuses when `gate_passed` is not the boolean `true`.** `-67`
+  proved the second limb by accident: I appended a `# comment` to that line, YAML parsed the whole
+  thing as a **string**, and `--emit` refused quoting it back verbatim. **So do not annotate the
+  frontmatter booleans** — put the nuance in the body. And note the shape: `-58`'s claim was wrong,
+  `-66`'s correction was also incomplete, and both survived because everyone recalled the failure
+  text instead of reading it. **I read it. That is the whole trick.**
 - **EDITED A PAPER? REGENERATE THE BOARD BEFORE THE GATE:** `./scripts/regen-board.sh --check` →
   *"matches measured reality (66 criteria)"*. **The wrapper is the only supported invocation** —
   bare `board.py` silently produces a degraded board.
