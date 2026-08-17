@@ -2667,3 +2667,82 @@ not reach, which is `WT-092` in one line.
 **Until the gate is widened, a session that edits a repository with a test suite must run it and
 say the result out loud in the handoff.** `-64` did: 1073 passed, 1 failed, the failure carded and
 not this pass's. See the `REG-012` card for why that one cannot simply be re-pinned.
+
+---
+
+## WT-096 · METHOD · 2026-08-17 · wealthTensor-65
+
+**A GUARD THAT ANTICIPATES A LEGITIMATE EDIT AND HAS NO REPRESENTATION FOR ONE IS NOT STRICT. IT
+IS A GUARD THAT MUST BE EITHER VIOLATED OR DISABLED, AND THE SESSION FACING THAT CHOICE UNDER TIME
+PRESSURE WILL DISABLE IT.**
+
+`tests/test_reg012_sec6_sec47_frozen.py` froze paper-III's §4.7 against `REG-012` §6. `-43` wrote
+it with **one** constant, `SEC_47_SHA256`, serving two incompatible roles, and a red message that
+told the next session to *"re-pin `SEC_47_SHA256` in the SAME commit as the edit"* — an
+instruction the **same file** forbids: `test_the_pinned_digest_is_the_version_REG_012_saw`
+requires that constant to equal §4.7 **at `ba59370`**. Once §4.7 moves for a warranted reason
+the two demands name different values. **No value passes both. The prescribed remedy was executable
+exactly zero times**, and the first warranted edit wedged the guard red for good.
+
+It fired on 2026-08-17 at `6314302`, `-63`'s III-3 repair, licensed by **ASC 350-30-35-15** — an
+outside accounting standard. `-65`'s ruling: **reading (b), legitimate, not a `REG-012`
+violation.** §6 forbids the edits that come from `REG-012`'s own outcome, and its branches R/F/N
+are about the band count's edge phase; no path runs from any of them to a sentence about whether
+indefinite-lived intangibles disclose a useful life. The edit corrects *"For three of the four
+classes"* to *"two"* — it **narrows** the paper's own claim, which is the opposite of the
+self-flattery §6 was written to stop.
+
+**Measured rather than inferred** (`scripts/wt113_sec47_history.py`, which walks every commit that
+touched paper-III since the registration and prints §4.7's digest at each): §4.7 held
+**byte-identical across eight commits** and moved at **exactly one**. The card's history claim was
+right; it had not been checked, and a claim about history is checkable.
+
+**THE REPAIR — two constants and a checkable ledger.**
+
+| | role | moves? |
+|---|---|---|
+| `SEC_47_AT_REGISTRATION` | what §4.7 was at `ba59370`. A fact about a date. | **never** |
+| `SEC_47_CURRENT` | what §4.7 is now. Derived from the ledger. | with a warrant |
+| `AMENDMENTS` | one entry per warranted move: commit, licence, resulting digest. | append only |
+
+Each amendment is **checked against git** — that its commit really moved §4.7, and moved it to
+the digest it claims — because a warrant is checkable or it is decoration (`PIN-001`'s own
+lesson: a pin with nothing watching it is the same defect in a smaller font). A licence naming
+`REG-012`'s outcome is refused outright: that is reading (a) arriving through the door the ledger
+opened.
+
+**ON THE TIMING CLAUSE** — *"a pin moved in a later commit is a pin nobody reviewed."* The window
+the rule wanted closed at `6314302`. Ruled: **the rule wants the review, not the SHA.** Naming the
+licensing commit, the standard, and the resulting digest reconstructs exactly what a same-commit
+re-pin would have shown a reviewer. It must be ruled this way, because the alternative is that a
+guard whose remedy is impossible can never be repaired at all.
+
+**AND THE PART THAT COST A REWRITE — `WT-092` IN THE REPAIR FOR `WT-092`.** The new emptiness limb
+compared `SEC_47_CURRENT` to the anchor. But `SEC_47_CURRENT` is *derived from* `AMENDMENTS`, so
+deleting every amendment collapses it back onto the anchor, the two constants agree, and a test
+named *"an amendment is declared exactly when §4.7 has moved"* would report that no amendment is
+correctly declared **for a section that had moved**. It was measuring its own bookkeeping instead
+of the manuscript. Caught by firing all seven limbs before shipping, not by reading the code.
+**Fourth instance of `-63`'s corollary: a repair can introduce a defect** — and the first where
+the introduced defect was the *same class* as the one being repaired.
+
+**FALSIFIED, then retired in favour of the estate's own harness.** `-65` first built a private
+mutation script, got 7/7, and **deleted it** — `scripts/mutation_control.py` already does this
+better (whole suite per probe, catcher lists, `{"git": True}`), and shipping a second, weaker
+harness would have been one more instrument silent about what it does not reach. Two probes added
+there instead, for the two doors the ledger opens:
+
+```
+G14  launder reading (a) into the ledger as a licence   → 3 catchers
+G15  re-pin SEC_47_AT_REGISTRATION, declared immutable  → 1 catcher
+G13  edit §4.7 with no warrant (pre-existing)           → still caught
+```
+
+`3/3 probes caught, 0 UNGUARDED`. **Suite at the end: 1077 passed, 0 failed** — up from `-64`'s
+1073 passed, 1 failed: the red repaired, three limbs added. `CONSTRAINT-INVENTORY-001`'s C48 row
+said *"§4.7 is unchanged since `REG-012` — compliant"*, which went false at `6314302` and could
+not go red because it is prose; repaired in the same commit.
+
+*The freeze was never the problem. `-43` reasoned all the way to "a guard crying a violation it
+cannot possibly have observed is worse than no guard" — wrote that sentence into the docstring —
+and then built the guard that does it, because the remedy it prescribed was never once run.*

@@ -219,6 +219,7 @@ BCF = f"{DATA}/reg-009-band-count-filled.json"
 PRIMARY = ("psi", "pooled|R_MID|raw")
 
 MS = "docs/papers/paper-III-dual-tensor/paper-III.md"
+GUARD = "tests/test_reg012_sec6_sec47_frozen.py"
 R12 = f"{DATA}/reg-012-band-edge-phase.json"
 
 BAND_DOCS = [f"{DOCS}/RESULT-REG-009-band-count.md",
@@ -623,6 +624,55 @@ def _edit_sec_47_today(root: Path):
     p.write_text(text[:j] + "\nThis section is edited after REG-012 froze it.\n" + text[j:])
 
 
+def _launder_reading_a(root: Path):
+    """G14 - edit §4.7 AND record an amendment whose licence is REG-012's own outcome.
+
+    `-65` replaced the single `SEC_47_SHA256` with a registration anchor, a current digest
+    and an `AMENDMENTS` ledger, because the old file's prescribed remedy - re-pin in the same
+    commit - was forbidden by its own sibling test and could be executed zero times. A ledger
+    that records warranted edits opens a door the freeze did not have: write the violation
+    down and it becomes a record instead of a violation. This probe walks through that door.
+    `G13` cannot express it, because `G13` predates the ledger.
+    """
+    _edit_sec_47_today(root)
+    p = root / GUARD
+    text = p.read_text()
+    old = "AMENDMENTS: tuple[Amendment, ...] = ("
+    if old not in text:
+        raise SystemExit("PROBE SITE MISSING: no AMENDMENTS ledger in the REG-012 guard")
+    entry = (
+        "AMENDMENTS: tuple[Amendment, ...] = (\n"
+        "    Amendment(\n"
+        '        sha="HEAD",\n'
+        "        licence=(\n"
+        "            \"REG-012's outcome licenses this edit, padded well past the length \"\n"
+        '            "floor so that only the citation limb can possibly catch it."\n'
+        "        ),\n"
+        '        digest_after="' + "0" * 64 + '",\n'
+        "    ),\n"
+    )
+    p.write_text(text.replace(old, entry, 1))
+
+
+def _repin_the_registration_anchor(root: Path):
+    """G15 - move `SEC_47_AT_REGISTRATION`, which the guard declares immutable.
+
+    The forbidden move the OLD file's own red message invited: it told the next session to
+    re-pin, and the only way to make a one-constant guard green after a legitimate edit was
+    to point the freeze at today. That is a snapshot wearing a freeze's clothes - `-43`'s own
+    words for it, in a file that then made it the prescribed remedy. The anchor is a fact
+    about `ba59370`; this probe asserts a session cannot quietly make it a fact about now.
+    """
+    p = root / GUARD
+    text = p.read_text()
+    anchor = 'SEC_47_AT_REGISTRATION = "'
+    if anchor not in text:
+        raise SystemExit("PROBE SITE MISSING: no SEC_47_AT_REGISTRATION in the REG-012 guard")
+    head, _, rest = text.partition(anchor)
+    _old, _, tail = rest.partition('"')
+    p.write_text(head + anchor + "0" * 64 + '"' + tail)
+
+
 # --------------------------------------------------------------------------- THE GIT AXIS
 # `-47` found that a harness which deletes `.git` reports every git-gated guard as ABSENT.
 # `.git` became opt-in and exactly ONE probe (`R1`) ever set it. Fourteen tests in this
@@ -677,6 +727,11 @@ GIT_PROBES: list[tuple] = [
      _rename_prereg_dir, {"git": True}),
     ("G13", "edit manuscript §4.7 at HEAD, after REG-012 froze it [git]",
      _edit_sec_47_today, {"git": True}),
+    ("G14", "record REG-012's own outcome as an amendment licence, laundering "
+            "reading (a) into the ledger [git]",
+     _launder_reading_a, {"git": True}),
+    ("G15", "re-pin SEC_47_AT_REGISTRATION, the constant the guard calls immutable [git]",
+     _repin_the_registration_anchor, {"git": True}),
 ]
 
 PROBES += GIT_PROBES

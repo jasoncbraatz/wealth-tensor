@@ -95,7 +95,7 @@ INST = governs an instrument or its inputs. **Machine:** the test that would go 
 | C45 | `CONSTRUCTION-REG-009` R5 | *"no band edge, band width, floor, tag or interval rule is re-chosen in response to the number"*; `R_MIN` not promoted | the band count | document | RES | yes | **closed by ruling; unspent** | MECH | **ADJACENT** · `test_reg012_band_edge_phase.py` |
 | C46 | `CONSTRUCTION-REG-010` C4 | the mirror is *"computed, reported beside, never used to choose"*; *"never promoted"* | the mirror | document | RES | yes | **compliant** — §4 refuses the mirror *"under this outcome or any other"* in the document's own voice | PROXY | **FOR** · `test_reg009_reg010_supersession_family.py` (`-49`) — the same POLARITY pair as C41, on the mirror. Graded on probes `R3b` (1 catcher) and `R3e` (1 catcher). Still incidentally PARTIAL via `test_reg010_half_integer_banding.py` |
 | C47 | `REG-012` §4 | E1 and E2 *"are reported beside it, never instead of"* the histogram E3 | the phase histogram | document | RES | yes | **compliant** | MECH | **BINDS** · `test_reg012_band_edge_phase.py` |
-| C48 | `REG-012` §6 | *"this measurement produces no new answer to §7.5's decision rule, and no sentence of the manuscript's §4.7 is changed by any outcome of it"* | §4.7 | **sentence** | MS | yes | §4.7 is unchanged since `REG-012` — **compliant**, and now pinned at `ba59370` | MECH | **FOR** · **`test_reg012_sec6_sec47_frozen.py`** (new, `-43`) |
+| C48 | `REG-012` §6 | *"this measurement produces no new answer to §7.5's decision rule, and no sentence of the manuscript's §4.7 is changed by any outcome of it"* | §4.7 | **sentence** | MS | yes | §4.7 moved once since `REG-012` — at `6314302`, licensed by `ASC 350-30-35-15` and recorded — **compliant**; the `ba59370` anchor is immutable | MECH | **FOR** · **`test_reg012_sec6_sec47_frozen.py`** (new, `-43`) |
 | C49 | `REG-012` §7 | the shifted band count *"is refused, not merely unperformed"* | the band count | sentence | MS+RES | yes | **compliant** — but `-44` found the guard could not tell a refusal from a silence: both states have zero band counts and `test_reg012_band_edge_phase.py`'s assertion is an **absence**. Paired guard added | MECH | **FOR** · **`test_reg012_sec7_refusal_is_asserted.py`** (new, `-44`, the *presence* limb) + `test_reg012_band_edge_phase.py` (the *absence* limb) |
 | C50 | `SOURCE-001` §3 | two caveats *"must be closed before the XBRL route is called closed in general"* | the XBRL route | document | RES | yes | `SOURCE-001` is FINISHED by ruling and the general claim is not made — **compliant** | MECH | **ADJACENT** · `test_source001_coverage.py` |
 
@@ -837,13 +837,19 @@ below is still the best short account of what building each of these guards actu
    `RESULT-REG-003` §2's unregistered heading, and asks about the label the manuscript actually
    used. Two limbs, because they fail separately: the label is WRONG, or the label is MISSING.
 3. **C48 · no sentence of §4.7 is changed by any outcome of `REG-012`.** ✅ **MECHANISED** —
-   `tests/test_reg012_sec6_sec47_frozen.py`, pinned at `ba59370`, the commit that registered
-   `REG-012`. **The pin records which version it froze**, and a git test reads §4.7 out of that
-   commit and requires it to hash to the pin — otherwise the freeze silently re-anchors to
-   whenever somebody last ran the file, which is a snapshot wearing a freeze's clothes. The red
-   message states both readings (REG-012's outcome → revert; anything else → re-pin in the same
-   commit and name the licence), because a guard that cannot tell them apart teaches the next
-   session to re-pin without reading.
+   `tests/test_reg012_sec6_sec47_frozen.py`, anchored at `ba59370`, the commit that registered
+   `REG-012`. **The anchor records which version it froze**, and a git test reads §4.7 out of
+   that commit and requires it to hash to the anchor — otherwise the freeze silently re-anchors
+   to whenever somebody last ran the file, which is a snapshot wearing a freeze's clothes.
+   **`-43` wrote that anchor and the working-tree freeze as ONE constant, and the red message
+   told the next session to re-pin it — an instruction this same file forbids**, since the git
+   test nails the constant to `ba59370` and no single value can also equal an edited §4.7. The
+   remedy could be executed zero times, so the first warranted edit (`6314302`, `ASC
+   350-30-35-15`) wedged the guard red and it stayed red for four days under a gate that
+   reports `PASS` without running a suite. `-65` split it: `SEC_47_AT_REGISTRATION` is
+   immutable, `SEC_47_CURRENT` follows an `AMENDMENTS` ledger, and each amendment is checked
+   against git for having moved §4.7 to the digest it claims — a warrant is checkable or it is
+   decoration. Probes `G14` and `G15` fire the two doors the ledger opens. `WT-096`.
 4. **C24 · the fitted lag distribution may not be claimed to transfer beyond the sample's
    classes.** ✅ **MECHANISED** — `tests/test_reg005_sec7_lag_transfer.py`. Clean, and the file
    says out loud which half of its predicate is live: the manuscript names the fit, makes
