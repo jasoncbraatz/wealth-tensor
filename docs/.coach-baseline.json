@@ -5,10 +5,14 @@
   },
   "paper-II-redistribution": {
     "concessive": 0,
-    "conduct_outside_allowed": 1
+    "conduct_outside_allowed": 2
   },
   "paper-III-dual-tensor": {
     "concessive": 0,
-    "conduct_outside_allowed": 10
+    "conduct_outside_allowed": 5
+  },
+  "paper-IV-composition": {
+    "concessive": 0,
+    "conduct_outside_allowed": 1
   }
 }

@@ -114,6 +114,12 @@ that reopens it: a referee reading the abstract as a priority claim** — then `
 Three lessons banked (two global), `use`/`record-outcome` corroborated for the two leaves this
 read leaned on (`wt68-p2read → pass`).
 
+**And at wrap, `--emit` refused — revealing its THIRD limb** (`G-COACH-3`; see TOOLING). The
+stray was `-67`'s own References disclosure, a legitimate `REFERENCE-POLICY` §4 note in a
+section the coach's allowed-list doesn't know. Baseline refreshed deliberately
+(`--coach-refresh`, the refusal's own sanctioned exit), the manuscript NOT reworded to duck the
+detector, the instrument gap carded (`1217562682350929`).
+
 ---
 
 ## THE TELL, now TEN deep
@@ -184,9 +190,15 @@ absolute and a relative reading, and when they differ materially, **write the nu
   correct count of zero; assert the printed number, never `$?` — same for pytest through
   `| tail`).
 - **WRAP SEQUENCE:** `gh_sha: PENDING` → commit → `--stamp` → commit → push → `--emit` → **PASTE
-  INTO CHAT.** `--emit` has TWO refusal limbs: missing `REQUIRED` fields, and `gate_passed` not
-  the bare boolean `true` — **do not annotate frontmatter booleans** (`-67` proved it; a
-  trailing `# comment` turns the YAML value into a string and it refuses).
+  INTO CHAT.** ▲ **`--emit` has THREE refusal limbs, and each session has found exactly one:**
+  missing `REQUIRED` fields (`-66`); `gate_passed` not the bare boolean `true` — do not annotate
+  frontmatter booleans (`-67`); and **`G-COACH-3`** — the conduct-narration count per paper must
+  be non-increasing against `docs/.coach-baseline.json` (`-68`, found live: `-67`'s Crossref
+  disclosure *"an earlier draft gave the issue as 282(3)"* in the References counts as stray
+  because `CONDUCT_ALLOWED_SECTIONS` only knows §§6–11 + Appendix). The sanctioned exit is
+  `--coach-refresh` **with the reason documented**; do NOT reword a legitimate disclosure to
+  duck the phrase tuple. The section-list gap is carded: `1217562682350929`. Three limbs, three
+  sessions, one lesson: **read the instrument, not your memory of its failure text.**
 - **EDITED A PAPER? REGENERATE THE BOARD BEFORE THE GATE:** `./scripts/regen-board.sh --check`
   → "matches measured reality (66 criteria)". The wrapper is the only supported invocation.
 - **ANY ABSTRACT EDIT:** `python3 scripts/check_abstract_size.py <PATH> --print`. Paper II
