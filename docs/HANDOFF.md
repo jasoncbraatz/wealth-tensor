@@ -1,6 +1,6 @@
 ---
 project: wealth-tensor
-gh_sha: 2b3e24b5c6a01a891eee8a6cb81d37d6ff422b6d
+gh_sha: a6da09f1fa1428c30b52b64395153ca5e89213be
 updated: 2026-08-17
 session: wealthTensor-64
 gate_passed: false
@@ -19,6 +19,10 @@ three things about the review apparatus that are worth more than the nine:** `PI
 repair watches one manuscript of four (Paper IV's `5efe626` is orphaned), the handoff gate never
 runs a test suite, and — **read this first** — **the repository's suite is RED at HEAD and has been
 since `-63`'s commit.** `LEDGER` `WT-092`→`WT-095`. Board still **52/66**, regenerated and verified.
+Commits `2b3e24b` (the pass), `a9c2dbd` (stamp), `a6da09f` (a `G-COACH-3` fixup that
+`--emit` caught: the `II-10a` repair put *"this programme"* into §1, and defensiveness is
+non-increasing by charter — the third instance of `-63`'s corollary that a repair can
+introduce a defect, this one found by an instrument instead of a diff).
 
 > 🔴 **NEW AND LOUD: `python3 -m pytest tests/ -q` IS 1073 PASSED, 1 FAILED.** The failure is
 > `tests/test_reg012_sec6_sec47_frozen.py::test_section_47_is_byte_identical_to_the_pin`, red since
