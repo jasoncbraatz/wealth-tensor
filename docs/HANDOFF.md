@@ -1,8 +1,8 @@
 ---
 project: wealth-tensor
-gh_sha: a6da09f1fa1428c30b52b64395153ca5e89213be
+gh_sha: PENDING
 updated: 2026-08-17
-session: wealthTensor-64
+session: wealthTensor-65
 gate_passed: false
 gate_version: "2.59"
 definition_of_done: "CLEARED FOR LIFTOFF (Jason's ruling, 2026-08-16): Papers II, III and IV done with their coaching and editing, the corpus audited as ONE thing, the python scripts done with every number regenerating from a committed one, and ONE well-designed deliverable that visualises the work — then Jason reads it, does whatever minor re-arranging document design reveals, and clears it. At that moment Claude is finished on wealth-tensor. POSTING IS NOT IN SCOPE: Voice Box Jasonizing, Jason's own-hand rewrite, the endorsement ask and submission are SUCCESSOR projects. A session driving toward 'posted' is driving past the end of the road. The deliverable is a PDF **and a recipe**: RECIPE.md paint-by-numbers (every font, size, leading, margin, package version), a preflight that FAILS on a substituted font rather than approximating, vendored/checksummed fonts, and a rebuild that reproduces the committed page count and per-page text hash — because Jason does the layout and visualisation analysis exactly ONCE."
@@ -11,201 +11,261 @@ definition_of_done: "CLEARED FOR LIFTOFF (Jason's ruling, 2026-08-16): Papers II
 
 **ORIENT: read `docs/CO-AUTHOR-CHARTER.md` first. THE CHARTER WINS over anything in this file.**
 
-## `-64` IN ONE LINE
-**PAPER II WAS READ INDEPENDENTLY FOR THE FIRST TIME AND RETURNED NINE FINDINGS, ALL REPAIRED** —
-`docs/REVIEW-007-P7-pass-3.md`. Two of the nine are `REVIEW-004` §A3 items that have been live for
-five days under a commit message that reads as though A3 was served whole. **And the pass turned up
-three things about the review apparatus that are worth more than the nine:** `PIN-001`'s class
-repair watches one manuscript of four (Paper IV's `5efe626` is orphaned), the handoff gate never
-runs a test suite, and — **read this first** — **the repository's suite is RED at HEAD and has been
-since `-63`'s commit.** `LEDGER` `WT-092`→`WT-095`. Board still **52/66**, regenerated and verified.
-Commits `2b3e24b` (the pass), `a9c2dbd` (stamp), `a6da09f` (a `G-COACH-3` fixup that
-`--emit` caught: the `II-10a` repair put *"this programme"* into §1, and defensiveness is
-non-increasing by charter — the third instance of `-63`'s corollary that a repair can
-introduce a defect, this one found by an instrument instead of a diff).
+## `-65` IN ONE LINE
+**THE SUITE IS GREEN. 1078 passed, 0 failed — I ran it, that is the number.** `-64` handed off
+`1073 passed, 1 failed`; the red is repaired and three limbs were added on the way. Both apparatus
+at-bats are closed: the `REG-012` §4.7 freeze (`3ffb3f1`, `WT-096`) and `PIN-001`'s class hole
+(`ba95302`, `WT-097`). **No manuscript was touched this session** — zero paper edits, so the board
+is unmoved at 52/66 and needed no regeneration (checked anyway: *"matches measured reality (66
+criteria)"*).
 
-> 🔴 **NEW AND LOUD: `python3 -m pytest tests/ -q` IS 1073 PASSED, 1 FAILED.** The failure is
-> `tests/test_reg012_sec6_sec47_frozen.py::test_section_47_is_byte_identical_to_the_pin`, red since
-> `6314302`. **It is not a `REG-012` violation** — §6 freezes §4.7 against *"any outcome of it"* and
-> the edit is `-63`'s `III-3` repair, licensed by `ASC 350-30-35-15`, an outside standard. **And the
-> guard's own prescribed remedy is impossible**: it tells you to re-pin `SEC_47_SHA256`, while its
-> sibling `test_the_pinned_digest_is_the_version_REG_012_saw` asserts the pin equals §4.7 *at the
-> registration commit*. No value passes both. **DO NOT re-pin it on the strength of the failure
-> message.** Card `1217542940969153` has the whole analysis and the two options. `-64` declined for
-> the standing reason: a judgement change to a safety guard — here over a preregistration — wants
-> its own at-bat.
+**`DECISION-001` IS STILL ALL FOUR `☐`.** Checked first, before anything else, per `-64`'s
+instruction. `grep -c "☑"` → 0; file unchanged since Aug 16 19:02 local. Do not write a second
+one-pager and do not re-litigate it.
 
-> ⚠ **`gate_passed: false`, EIGHTH CONSECUTIVE SESSION, SAME TWO FILES. PERMANENT. YOU WILL INHERIT
-> IT.** The single `FAIL` is `~/Scripts DIRTY(2)`: `braatz-crawl-check.py`,
-> `serve-braatz-archive.py`. **DO NOT COMMIT THEM.** `-61` measured it: mtimes Aug 16 13:37 / 13:35,
-> before any roster join — they cannot be ours, and that is arithmetic. Card `1217526943288480`.
-> `-59`→`-64` all declined. **Say it out loud anyway: a session that EXPECTS a red gate will not
-> notice a real one** — which is exactly how the pytest red above crossed a `PASS`ing gate.
+---
 
-## FIRST, BEFORE ANYTHING: `DECISION-001` IS STILL UNTICKED
-`docs/DECISION-001-A2-and-road-one.md`, all four boxes `☐`, mtime **Aug 17 00:02**, verified at
-10:24 today. **If a box is ticked, that outranks the board and everything below.** Do not write a
-second one-pager and do not re-litigate it. `II-2` and `II-3` are two of whichever option's edits —
-they were **re-found independently by `-64`** (before `REVIEW-005` §2 was read, by a different
-route) and stay blocked for `REVIEW-005`'s reason, which is still right.
+## READ FIRST, in this order
+1. **`docs/LEDGER.md` `WT-096` and `WT-097`** — this session's two rulings, both with the evidence.
+2. **`docs/REVIEW-007-P7-pass-3.md` §9** — still the frame. `-65` is `WT-092` three more times.
+3. **`DECISION-001-A2-and-road-one.md`** — unticked, still the biggest single unblock.
+4. `REVIEW-006` §7 and `REVIEW-005` §3 remain worth the ten minutes.
 
-## STATE
-- **The end-to-end pass is CLOSED** (T=2, A=0, the system fails, E1–E6 spent). Settled, not an
-  at-bat.
-- **`P7` has three documents now**: `REVIEW-005` (`-62`, the backlog drain), `REVIEW-006` (`-63`,
-  the re-grade + Papers IV and III·A.2), `REVIEW-007` (`-64`, Paper II).
-- **`P7`'s consecutive-zero count is 0 for all three papers**, and every paper has now had exactly
-  **one** independent read. Convergence needs **two consecutive zero-finding passes per paper**, so
-  the earliest any paper can close is its next pass. Paper II's first read found nine; do not read
-  that as "Paper II is the bad one" — Paper IV found six and Paper III's appendix two, on the same
-  first look. `WT-091`.
-- **§3 of Paper II reproduces byte-exact** from `python3 scripts/wt030_report.py` at `T=1200`,
-  `seed=0` — every number, first time anyone ran the committed command rather than reimplementing
-  from the prose. The two defects it exposed were both in the one section whose numbers are *not*
-  in the table.
+---
 
-## WHAT `-64` DID, so you do not re-derive it
-Nine findings, all repaired, 14 hunks in `paper-II.md` + one `LATEST_TOUCH` entry. In full in
-`REVIEW-007` §1; the ones that will otherwise cost you time:
-- **`II-5` · §7's pin was the `PIN-001` sentence, verbatim, in the sibling manuscript.** *"d655501 —
-  the last commit touching `src/`"*, false since 2026-08-10, present since `f1ceac7`, and **absent
-  from `PIN-001`'s own census of six occurrences.** Now a per-file pin (`3b11f23`) *and*
-  instrumented. `WT-093`.
-- **`II-6`/`II-7` · §3.4 carried a 600-period run under a paper-wide `T = 1200`** (0.977/0.988
-  against §3.1's 0.994/1.000 — `REVIEW-004` §A3 said *"nothing explains the gap"*; `is_bounded`'s
-  own docstring explains it), and its separation range *"0.19–0.50"* is refuted by the paper's own
-  sweep **on either reading of the unnamed statistic** (Gini: 0.000–0.891; top decile: 0.100–0.861).
-- **`II-8` · *"within 5 % and which the test suite asserts"* was wrong in both halves.** Residuals
-  −4.4 / −4.9 / **−6.8** %, and the suite asserts `rel=0.10`. Prose repaired; the code fix is
-  carded (`1217542935918371`) **with the term `REVIEW-004` §A3 missed** — the wage is in the flow
-  base (`recognised_flow += rho*gain + self.wage`), so the numerator omits a term and the
-  denominator omits growth, and they partially cancel.
-- **`II-9` · §1 and the closing note both said "§3.1 mentions zakat".** §3.1 does not — zero
-  occurrences, normalised. The house-style pass removed it and left both pointers.
-- **`II-11` · the abstract said "an open repository with 18 tests"**; the repository holds **572**
-  test definitions. §1 and §7 scope it correctly and `-58`'s instrument asserts §7's phrasing, so
-  **no test could see it.** Repaired **word-neutrally** (249 words, 4 chars shorter) — see the
-  do-not below, this one nearly cost a falsification instrument its subject.
+## WHAT `-65` DID, so you do not re-derive it
+
+### 1 · THE `REG-012` §4.7 RED — ruled, repaired, falsified (`3ffb3f1`, `WT-096`)
+
+**Ruling: NOT a violation.** Reading (b). §6 forbids edits arising from `REG-012`'s **own**
+outcome, and its branches R/F/N are about the band count's edge phase; no path runs from any of
+them to a sentence about whether indefinite-lived intangibles disclose a useful life. `-63`'s
+`6314302` edit is licensed by **ASC 350-30-35-15** and **narrows** the paper's claim (*"For three
+of the four classes"* → *"two"*), which is the opposite of the self-flattery §6 exists to stop.
+
+**Verified, not inherited.** `scripts/wt113_sec47_history.py` walks every commit that touched
+paper-III since `ba59370` and prints §4.7's digest at each: **byte-identical across eight commits,
+moved at exactly one.** The card's history claim was right and had never been checked. A claim
+about history is checkable — check it.
+
+**The defect was never the freeze.** `-43` wrote `SEC_47_SHA256` as ONE constant serving two
+incompatible roles and a red message prescribing *"re-pin in the SAME commit as the edit"* — which
+`test_the_pinned_digest_is_the_version_REG_012_saw` forbids, since it nails that constant to
+`ba59370`. **No value passes both. The prescribed remedy was executable exactly zero times**, so
+the first warranted edit wedged the guard red permanently.
+
+**The repair:** `SEC_47_AT_REGISTRATION` (immutable, a fact about `ba59370`) + `SEC_47_CURRENT`
+(derived from an append-only `AMENDMENTS` ledger). Each amendment carries commit + licence +
+resulting digest and **is checked against git** for having actually moved §4.7 to the digest it
+claims. A licence naming `REG-012`'s own outcome is refused: that is reading (a) coming through the
+door the ledger opened.
+
+**Timing clause ruled:** *"a pin moved in a later commit is a pin nobody reviewed"* wants the
+**review**, not the SHA. Naming the licensing commit, the standard and the resulting digest
+reconstructs what a same-commit re-pin would have shown. It must be ruled this way, or a guard
+whose remedy is impossible could never be repaired at all.
+
+**Also repaired, same commit:** `CONSTRAINT-INVENTORY-001`'s C48 row asserted *"§4.7 is unchanged
+since `REG-012` — compliant"*. False since `6314302`, and prose, so it could not go red.
+
+### 2 · `PIN-001`'s CLASS HOLE — closed (`ba95302`, `WT-097`)
+
+**Part 1 first, as the card required, and the ordering was MEASURED.** The widened instrument was
+run from a scratch path **against the un-instrumented registry, before anything was edited**. It
+went red naming exactly `['paper-IV.md 5efe626']`, and green the moment `LATEST_TOUCH` learned
+`scripts/reg013_citation_whitespace.py` → `5efe626`. A red that arrives on schedule is evidence; a
+red nobody provoked is a guess.
+
+**Part 2 · the glob.** `PAPERS = sorted((ROOT / "docs/papers").glob("*/paper-*.md"))`. A fifth
+manuscript is covered the day its file lands. `*.bak-*` siblings do not end in `.md`.
+
+**And the glob is asserted too** — `test_the_glob_still_finds_every_manuscript`, floor of four.
+Widening a constant into a discovery trades one failure mode for another: `-49`'s rule is that an
+absence predicate passes vacuously on a missing file, and **a glob matching nothing passes every
+downstream assertion vacuously**.
+
+**`LATEST_TOUCH`'s own comment** said the mapping was *"as of this edit"* — `PIN-001`'s edit,
+2026-08-11 — after gaining Paper II's module (`-64`) and Paper IV's (here). Repaired.
+
+### 3 · THREE NEW MUTATION PROBES, because a guard nobody fired is the defect being repaired
+
+Added to `scripts/mutation_control.py` — **not** to a private harness. `-65` built one, got 7/7,
+and **deleted it**: the estate's harness already does this better (whole suite per probe, catcher
+lists, `{"git": True}`), and shipping a second weaker one would have been one more instrument
+silent about what it does not reach.
+
+```
+G14  launder reading (a) into the AMENDMENTS ledger as a licence   3 catchers
+G15  re-pin SEC_47_AT_REGISTRATION, declared immutable             1 catcher
+G16  uninstrumented SHA into PAPER I — where the guard was blind    2 catchers
+G13, G11 (pre-existing)                                            still caught
+```
+`3/3` and `2/2`, **0 UNGUARDED** both runs. `G16` exists because `G11` is caught before *and*
+after the widening and therefore proves nothing about it; paper I was chosen because it pins
+nothing today, so a catcher there cannot be another guard's accident.
+
+---
+
+## THE TELL, now five deep
+
+`-61`: a corpus under repair has a moving referent and only the filesystem knows. `-62`: the
+line-wrap grep trap runs both ways. `-63`: a backlog drain measures the backlog, not the paper.
+`-64`: **a review apparatus has the same defect as a manuscript — its own coverage is an unmeasured
+claim, and the silence reads exactly like coverage.**
+
+**`-65` ADDS: THE FIX FOR `WT-092` HAS `WT-092`. Ask the question of your own repair, before you
+ship it, by FIRING IT — not by reading it.** Three instruments this session claimed a class and
+touched an instance, and the third was mine:
+
+- the `REG-012` freeze — one constant for two roles, remedy impossible;
+- `PIN-001`'s SHA guard — one paper of four, under a docstring saying **CLASS**;
+- **my own new emptiness limb** — it compared `SEC_47_CURRENT` to the anchor, but `SEC_47_CURRENT`
+  is *derived from* `AMENDMENTS`, so deleting every amendment collapses it back onto the anchor,
+  the two constants agree, and a test named *"an amendment is declared exactly when §4.7 has
+  moved"* reports a correctly-empty ledger **for a section that moved**. It was measuring its own
+  bookkeeping instead of the manuscript. Caught by the mutation pass, not by re-reading the code —
+  which is the whole point. **Fifth instance of `-63`'s corollary that a repair can introduce a
+  defect, and the first where the introduced defect was the same class as the one being repaired.**
+
+`LEDGER WT-096`. Free corollary, unchanged and still cheap: end every pass by asking which
+instrument would have caught each finding, and whether it exists for the other three papers.
+
+---
 
 ## YOUR AT-BAT — take one, in this order
-1. **THE `REG-012` RED.** The corpus is red and everything else is polishing while it is. Card
-   `1217542940969153`. It needs one ruling, not one hour, and the analysis is done — you are
-   choosing between reverting an outside-licensed repair and restructuring the guard so a warranted
-   edit can be recorded without erasing the registration-era anchor.
-2. **`PIN-001`'s CLASS HOLE.** Card `1217542847080795`. **Instrument Paper IV's `5efe626` FIRST**,
-   then widen `test_manuscript_shas_are_instrumented.py` to a glob over all four manuscripts.
-   Widening first goes red. `-64` measured the census without editing the instrument; the numbers
-   are in the card.
-3. **PAPER II's SECOND INDEPENDENT READ** — the one that could actually start a convergence count.
-   Not a re-read of `REVIEW-007`'s findings: a fresh end-to-end pass asking `P7`'s question, of a
-   manuscript that changed in 14 places this morning. **`-63`'s corollary applies with force: a
-   repair can introduce a defect, and two of `-62`'s seven did.** Diff against
-   `paper-II.md.bak-wt64-p7` rather than reading the repaired text as given.
-4. **THE ABSTRACT COMPRESSION PASS**, still teed up from `REVIEW-005` §7 and still cheap: III
-   247/250, IV 248, **II 249** (unchanged — `-64`'s abstract repair was deliberately word-neutral to
-   leave the slack for `DECISION-001`). `-63` showed the cheap direction is deleting false
-   generalisations, and it is nearly exhausted.
-5. **`P6`'s remaining two thirds** (`P1n`/`P5n` are `P3n` repointed, ~30 min, mechanical).
-6. **Paper II's companion reference entries** — card `1217542940968749`, `REFERENCE-POLICY`
+
+1. **PAPER II's SECOND INDEPENDENT READ** — now the highest-value item, because the two apparatus
+   at-bats that were blocking it are closed and the corpus is green. A fresh end-to-end pass of a
+   manuscript that moved in 14 places yesterday; **diff against `paper-II.md.bak-wt64-p7`, do not
+   read the repaired text as given.** This is the pass that could start a convergence count.
+2. **THE ABSTRACT COMPRESSION PASS**, still teed up from `REVIEW-005` §7: III 247/250, IV 248,
+   II 249 (**unchanged** — `-64`'s repair was deliberately word-neutral to leave the slack for
+   `DECISION-001`; two of its four candidates measured 250 and would have spent it).
+3. **P6's remaining two thirds** (`P1n`/`P5n` are `P3n` repointed, ~30 min, mechanical).
+4. **Paper II's companion reference entries** — card `1217542940968749`, `REFERENCE-POLICY`
    jurisdiction.
+5. **Paper I's second independent read** — the only manuscript with no `P7` pass at all. It pins
+   nothing and is the quietest file in the corpus, which after this session is a reason to look,
+   not a reason to relax.
 
-**FORCING LINE (`-59`'s ruling, kept): take none of these, say why in ONE LINE at the top of your
-handoff. It costs nothing.**
+**FORCING LINE (`-59`'s ruling, kept): take none of the five, say why in ONE LINE at the top of
+your handoff. It costs nothing.**
 
-## THE TELL, and it is now four deep
-`-61`: **a corpus under repair has a moving referent and only the filesystem knows.**
-`-62`: **the line-wrap grep trap runs both ways** — normalise before asserting presence *or*
-absence (`tr '\n' ' ' < f | tr -s ' ' | grep -o '…'`), and **never `grep -oc`** (`-c` overrides
-`-o` and counts lines; on a flattened file it counts **1**, always — `-64` tripped this and caught
-it by re-measuring with `grep -o | wc -l`).
-`-63`: **a backlog drain measures the backlog, not the paper, and the two are indistinguishable on
-the board.**
-**`-64`: A REVIEW APPARATUS HAS THE SAME DEFECT AS A MANUSCRIPT — ITS OWN COVERAGE IS AN UNMEASURED
-CLAIM, AND THE SILENCE READS EXACTLY LIKE COVERAGE.** `REVIEW-004` §A3 said "three things" and was
-closed by serving one. `PIN-001` said *"this repairs the CLASS"* and hardcoded one of four
-manuscripts. The gate says `PASS` and never runs a suite. Each is **right about what it checks and
-silent about what it does not reach.** The question that finds all three is not *is this checked?*
-but **what is the widest object this check's own words claim, and what is the narrowest thing it
-actually touches?** `LEDGER WT-092`.
-**Corollary, free, do it every pass:** end by asking *which instrument would have caught this
-finding, and does it exist for the other three papers?* Six of `-64`'s nine findings had an
-instrument watching the identical thing one file over.
+---
 
-## DO-NOTs THAT ARE NOW RULINGS
-- **DO NOT re-pin `SEC_47_SHA256`** because the failure message says to. Read card
-  `1217542940969153` first; the sibling test forbids it.
-- **DO NOT widen `test_manuscript_shas_are_instrumented.py`** before instrumenting Paper IV's
-  `5efe626`. It goes red.
-- **DO NOT delete `"18 tests"` from Paper II's abstract.** It is one of only two *literal*
-  occurrences (§1 has `the 18 tests in`, §7 has `the **18** tests in`), and it is the subject of
-  `scripts/redproof_apparatus.py:105`'s mutation control and of a board row's rationale in
-  `gen_apparatus_rows.py:166`. Deleting it starves a falsification instrument **while the suite
-  stays green.** `WT-094`. Same rule generally: **grep `tests/` and `scripts/` for any manuscript
-  string before you edit it.**
-- **DO NOT re-derive the κ residuals.** −6.78 / −4.91 / −4.35 %, monotone, therefore a denominator
-  convention. Twice-derived now (`REVIEW-004` §A3 and `-64`, independently, identical).
-- **DO NOT re-derive `III-1`'s 4.2×.** Correct under both readings; scale-invariant. `REVIEW-006` §1.
-- **DO NOT propose a `REG-013` re-run to "fix" the seeds.** §6 forbids re-choosing a seed list in
-  response to anything. The correction note is the whole remedy. `WT-090`.
-- **DO NOT re-derive the `P2`-at-three-strengths lead** (withdrawn, `REVIEW-005` §3), **re-mine the
-  `E2` blind pass** (all 28 rows scored), or **re-serve `REVIEW-004` by section number** — its §
-  numbers are from an earlier draft and do not resolve. **Match on its verbatim quotes only.** And
-  note `-64`'s addition: **§A3 is the section every re-serving pass skips**, because Part A reads as
-  the big three and A3 reads as the leftovers. It holds three real items.
+## KNOWN, DIAGNOSED, PERMANENT — do not re-derive, do not commit
+The gate **FAILs** on `~/Scripts` `DIRTY(2)`, `braatz-crawl-check.py` and
+`serve-braatz-archive.py` — **ninth** session running. Card `1217526943288480`. `-59`→`-65` all
+declined. Jason's gate rule: **`CANNOT VERIFY == 0`, exactly ONE issue, that one.** Measured this
+session: `grep -c "CANNOT VERIFY"` → **0**, `grep -c "G-AL"` → **0** (silent on success), one
+issue, that one.
 
-## TOOLING, measured at `-64`
-- **STEP 0 was `READY` on the first try again** (fourth session running): `darlish-up` → post the
-  printed `DARLISH-ENROLL` line verbatim as an Asana comment on `1217316841710435` → `darlish-up`
-  again → fetch `dx`. Budget four minutes, and it took less.
-- **`dx --get` printed the remote `cat: No such file` error and still exited 0.** Observed once,
-  on a wrong absolute path (`/root/...` — **darwin's `$HOME` is `/Users/jasoncbraatz`, use `~`**).
-  So `--get`'s exit code did not carry a missing-source failure; check the file landed. The
-  documented codes (3 = never reached darwin, 4 = dropped after starting) held everywhere else.
-- **RUN THE GATE AS:** `GATE_ROSTER_WHO=big-wealthTensor-NN nohup ~/Scripts/gate-selfcheck.sh
-  > /tmp/gate.log 2>&1 &` then poll with two `sleep`s (~170s each; cloud Bash caps at 2 min).
-  **`G-AL` and `G-AL#board` are SILENT ON SUCCESS.** The thing to grep is
-  **`grep -c "CANNOT VERIFY"` == 0**.
-- **AND RUN THE REPO'S SUITE YOURSELF.** `python3 -m pytest tests/ -q`, ~70 s, 1074 tests. The gate
-  does not (`WT-095`). Say the result in your handoff.
+**AND THE WARNING THAT EARNED ITSELF:** *a session that EXPECTS a red gate will not notice a real
+one* — which is exactly how the pytest red got here. `WT-095` still stands: **the gate does not run
+a test suite**, so run it yourself and say the number in the handoff. `-64` did. `-65` did:
+**1078 passed, 0 failed.**
+
+---
+
+## RULINGS THAT ARE NOW SETTLED — do not reopen
+- **`REG-012` §4.7 is ruled** (`WT-096`). `SEC_47_AT_REGISTRATION` is **immutable**; a red there
+  means the extractor changed meaning or history was rewritten, never a re-pin. A warranted §4.7
+  edit **appends an `Amendment`**, in the same commit where possible, naming the licensing commit
+  where not.
+- **DO NOT widen `ROTTED` by glob** the way the SHA instrument was widened.
+  `test_pin001_code_state.py` asserts *"last commit touching"* is **absent** from paper III because
+  there it was the rotted whole-directory claim; **Paper IV §10 uses the same words correctly** —
+  *"the last commit touching `scripts/reg013_citation_whitespace.py`"* — which is the per-file form
+  `PIN-001` chose as **the remedy**. Glob it and you go red on a correct pin. **The rot was never
+  the phrase; it was the phrase with a directory after it.** Written into the instrument's own
+  docstring, where the session reaching for the glob will be standing.
+- **DO NOT re-derive the κ residuals** (−6.78/−4.91/−4.35 %, monotone, therefore a denominator
+  convention — twice-derived independently).
+- **DO NOT re-serve `REVIEW-004` by section number** — its § numbers are from an earlier draft.
+  **Match on verbatim quotes only.** §A3 is the section every re-serving pass skips, because Part A
+  reads as the big three and A3 reads as the leftovers; it holds three real items and one is still
+  open.
+- **DO NOT** re-derive `III-1`'s 4.2× (`REVIEW-006` §1), propose a `REG-013` re-run to "fix" the
+  seeds (§6 forbids it; `WT-090`), re-mine the `E2` blind pass (all 28 rows scored), or re-derive
+  the P2-at-three-strengths lead (withdrawn, `REVIEW-005` §3).
+- The **end-to-end pass is CLOSED** (T=2, A=0, the system fails, E1–E6 spent). Settled.
+
+---
+
+## TOOLING, measured at `-65` (deltas from `-64` marked ▲)
+- **RUN THE GATE AS:** `GATE_ROSTER_WHO=big-wealthTensor-NN nohup ~/Scripts/gate-selfcheck.sh >
+  /tmp/gate.log 2>&1 &` then poll with sleeps (~170 s each; cloud Bash caps at 2 min). **It needs
+  two polls, not one** — `-65` measured ~5 minutes wall clock. `G-AL` and `G-AL#board` are silent
+  on success; grep `CANNOT VERIFY` and expect `0`.
+- **▲ `grep -c` exits 1 when the count is 0**, and that is a *correct* zero, not a failure. Assert
+  the printed number, not `$?`, on any `grep -c` used as a measurement. (Sibling of `-64`'s
+  `| tail` masking rule and `-62`'s `grep -oc` trap.)
+- **▲ `dx --put` into a directory that does not exist FAILS** (`zsh: no such file or directory`,
+  exit 1). `mkdir -p` on darwin first — the same trap the cloud side has for `--get`.
+- **▲ The cloud Bash cwd does NOT reliably persist between calls.** `-65` lost it mid-session; a
+  `cat relative-path | dx --put` then hung five minutes on an empty pipe and wrote a **0-byte
+  file** to darwin. **Use absolute local paths in every `dx --put` pipeline.** The `.bak` taken
+  first is what made that a non-event.
+- **THIS REPO HAS ITS OWN WRAP SEQUENCE** (`scripts/handoff_gate.py` docstring): edit
+  `docs/HANDOFF.md` with `gh_sha: PENDING` → commit → `--stamp` → commit → `--emit`. `--emit` does
+  **not** stamp and refuses `PENDING`. It also runs `G-COACH-2/3` against all four papers.
 - **IF YOU EDIT ANY PAPER, REGENERATE THE BOARD BEFORE THE GATE:**
   `python3 ~/Scripts/handoff-kit/board.py --criteria docs/done-criteria.tsv --project wealth-tensor
-  --out docs/CHECKLIST.md --preamble docs/checklist-preamble.md --check` — rc=0 prints *"matches
-  measured reality (66 criteria)"*. Drop `--check` to write it.
-- **ANY EDIT TO ANY ABSTRACT:** `python3 scripts/check_abstract_size.py <PATH> --print`. **It takes
-  a PATH, not a slug.** NEVER hand-count — and note `-64`'s use of it: it will also *measure
-  candidate rewrites*, which is how the word-neutral abstract repair was chosen out of four
-  candidates in one call. Two of the four were 250 and would have spent the last word of slack.
-- **A BATCHED PATCH SCRIPT BEATS N EDITS.** `scripts/wt112_edits_wt64_paperII.py` is this session's
-  worked example: one list of `(path, label, old, new)`, `assert count(old) == 1` for **every**
-  anchor before any write, `.bak` every touched file, `--dry` mode that writes `*.wt64-dryrun`
-  siblings. **Dry-run in the cloud container against a copy and `diff` it there first** — that is
-  what caught four ragged rewraps (extend anchors to **sentence** boundaries, per `-63`) before
-  anything reached darwin. `awk 'length>100'` before and after: 6 → 6, all pre-existing.
-- **Name your patch script in a free `wtNNN` tag.** `-64` first wrote `wt093_…` and collided with
-  another session's five-script family; tags run to `wt111`, so `wt112` was free.
+  --out docs/CHECKLIST.md --preamble docs/checklist-preamble.md --check` (rc=0 prints *"matches
+  measured reality (66 criteria)"*). `-65` edited no paper and ran `--check` anyway; it is cheap.
+- **ANY EDIT TO ANY ABSTRACT:** `python3 scripts/check_abstract_size.py <PATH> --print`. Takes a
+  PATH, not a slug. Never hand-count. Use it to measure **candidate** rewrites.
+- **A BATCHED PATCH SCRIPT BEATS N EDITS.** `scripts/wt113_edits_wt65_reg012.py`,
+  `wt114_edits_wt65_pin001class.py`, `wt114b_probe_g16.py` are three more worked examples: one
+  list of `(path, label, old, new)`, `assert count(old) == 1` for **every** anchor before any
+  write, `.bak` every touched file, `--dry` writing `*.wt65-dryrun` siblings. **Dry-run and `diff`
+  first** — it caught a PEP8 blank-line defect before anything landed.
+- **▲ A test file can be dry-run under the REAL suite** by putting it at `<repo>/.some-dir/x.py`:
+  `ROOT = parents[1]` still resolves to the repo, and a dot-directory is skipped by pytest
+  collection. That is how the widened instrument was proven red-then-green without touching
+  `tests/`. **`rm -rf` the scratch dir before `git add -A`.**
+- **▲ `awk 'length>100'` counts BYTES, not characters** — `§` and `—` are multi-byte, so a
+  99-character line can report 103. Measure with Python (`max(len(l) for l in ...)`) when it
+  matters, and compare against the file's own `.bak` baseline rather than to zero.
+- **NAME YOUR PATCH SCRIPT IN A FREE `wtNNN` TAG.** `-64` collided at `wt093`; tags now run to
+  `wt114b`, so **`wt115` is free**.
+- **`dx` chokes on multiline / apostrophe-bearing command strings.** Write locally, `dx --put`,
+  run there. Corroborated again this session (`pass#3`, ACTIVE).
+- **`COMMITMSG.txt` → `dx --put` → `git commit -F`.** Never inline a multi-line message.
 - **`lessons.py use` / `record-outcome` can hang past 4 minutes.** One per `dx` call, 300 s
-  timeout. `lessons.py add` was fast (~10 s) and auto-commits and pushes `claude-blackbook`.
-- **`COMMITMSG.txt` → `dx --put` → `git commit -F`.** Never inline a multi-line message in `dx '…'`.
+  timeout; two `use` calls separated by `;` in one call worked fine. `add` is fast (~10 s) and
+  auto-commits and pushes.
 - **Asana `create_tasks` silently drops `projects`** — `update_tasks` with `add_projects`, then
-  **verify** with `get_task opt_fields=name,projects.name`. Held again this session.
+  verify with `get_task opt_fields=name,projects.name`.
 - **`roster claim` needs `--who` AND `--resource`. `lessons.py use <id> --task <tag>` — id
   positional.**
-- **The project's own wrap sequence for this file** (from `scripts/handoff_gate.py`'s docstring, and
-  it is load-bearing): edit content with `gh_sha: PENDING` → commit → `--stamp` → commit → `--emit`.
-  `--emit` does **not** stamp, and it refuses a `PENDING` sha.
+
+---
+
+## A PROCESS MISS OF MINE, SO THE NEXT SESSION DOES NOT REPEAT IT
+**I never ran `lessons.py search` at student-in.** I followed the `dx` multiline rule and the
+batched-patch convention because **this handoff restates them**, not because I read the leaves —
+and then corroborated them at wrap, which is corroboration of a practice I got from the wrapper
+rather than from the tree. That is a quiet failure mode worth naming: **a handoff good enough to
+inline the lessons removes the reason to open the lesson tree**, and the tree is where the leaves
+that this project has *not* inlined are sitting. Next session: run
+`lessons.py search "<the at-bat>" --scope global,wealth-tensor` **before** reading the rest of
+this file, and record what it returned that this handoff did not.
+
+---
 
 ## JASON-SIZED, already surfaced, not yours to decide
 - **(a) `DECISION-001`, A/B/C, still unticked.** `II-2` and `II-3` are two of whichever option's
-  edits; do not repair them separately.
+  edits; do not repair them separately. **Six sessions have now waited on this**, and it is the
+  single largest unblock on the board.
 - **(b) Paper IV's title and abstract leading clause** still read *"from the household to the
   sovereign"*. Narrow it, or ratify the appended demotion as sufficient.
-- **(c) `P7` is still ONE BOOLEAN** reading 0/1 for a criterion that is per-paper with a two-pass
-  counter. `-62` carded it, `-63` confirmed it, and `-64` now makes it concrete: **the board cannot
-  distinguish "no paper has ever been read" from "every paper has had exactly one independent read
-  and found between two and nine defects"** — which is the true state today. Adding rows moves the
-  66, so it wants its own at-bat.
+- **(c) `P7` is still ONE BOOLEAN** for a criterion that is per-paper with a two-pass counter. The
+  board cannot distinguish *"no paper has ever been read"* from *"every paper has had exactly one
+  independent read and found between two and nine defects"* — which is the true state today.
+  Adding rows moves the 66, so it wants its own at-bat.
 
 ## AT WRAP
 `~/Scripts/charter-read.sh wealthTensor-NN` **immediately** before the gate; the gate detached
-**with `GATE_ROSTER_WHO` set**; `python3 -m pytest tests/ -q` and say the number; `roster leave`
-once; and paste a handoff better than this one into the chat as the **last act**.
+**with `GATE_ROSTER_WHO` set**; `python3 -m pytest tests/ -q` and **say the number**; `roster
+leave --who` once; and paste a handoff better than this one into the chat as the **last act**.
