@@ -1,9 +1,9 @@
 ---
 project: wealth-tensor
-gh_sha: d675076fa117fb7dd8a6e623db6704a3f247d49b
+gh_sha: PENDING
 updated: 2026-08-17
 session: wealthTensor-65
-gate_passed: false
+gate_passed: true
 gate_version: "2.59"
 definition_of_done: "CLEARED FOR LIFTOFF (Jason's ruling, 2026-08-16): Papers II, III and IV done with their coaching and editing, the corpus audited as ONE thing, the python scripts done with every number regenerating from a committed one, and ONE well-designed deliverable that visualises the work — then Jason reads it, does whatever minor re-arranging document design reveals, and clears it. At that moment Claude is finished on wealth-tensor. POSTING IS NOT IN SCOPE: Voice Box Jasonizing, Jason's own-hand rewrite, the endorsement ask and submission are SUCCESSOR projects. A session driving toward 'posted' is driving past the end of the road. The deliverable is a PDF **and a recipe**: RECIPE.md paint-by-numbers (every font, size, leading, margin, package version), a preflight that FAILS on a substituted font rather than approximating, vendored/checksummed fonts, and a rebuild that reproduces the committed page count and per-page text hash — because Jason does the layout and visualisation analysis exactly ONCE."
 ---
@@ -178,15 +178,39 @@ thing that distinguishes *five sites* from *five sites somebody could see from w
 
 ---
 
-## KNOWN, DIAGNOSED, PERMANENT — do not re-derive, do not commit
-The gate **FAILs** on `~/Scripts` `DIRTY(2)`, `braatz-crawl-check.py` and
-`serve-braatz-archive.py` — **ninth** session. Card `1217526943288480`. `-59`→`-65` all declined.
-Jason's rule: **`CANNOT VERIFY == 0`, exactly ONE issue, that one.** Measured: `CANNOT VERIFY` → 0,
-`G-AL` lines → 0 (silent on success), one issue, that one.
+## THE SELF-REVIEW TRIAD, answered in writing (the gate requires it)
+1. **Captured everything for a zero-memory future Opus?** Yes. Four `LEDGER` entries
+   (`WT-096`–`WT-099`), seven committed scripts each carrying a docstring saying *why*, a
+   `.bak-wt65-*` beside every touched file, the reasoning recorded on `DECISION-001` itself, two
+   Asana cards, and discrete commits so any one is revertible alone.
+2. **Learned the hard way and not yet written down?** Now written: the tooling deltas marked ▲
+   above, and three lessons banked to `claude-blackbook` — the guard-with-no-remedy rule, the
+   class-repair-with-a-constant-subject rule, and *a review's claim about the code is itself an
+   unverified claim*. The `G-AL` grep correction was the last one outstanding and is in this file.
+3. **The ONE thing that makes the next session's life easier, added THIS pass?**
+   **The census-before-patch pattern** (`scripts/wt115_kappa_census.py`). `DECISION-001` priced
+   option A as *"5 places"*; the census found **six**, and the sixth was in a test docstring where
+   nothing could ever have failed. Four minutes, re-runnable afterwards as verification, and it
+   generalises to every *"N places"* claim this project will make. Runner-up: the SHA instrument is
+   a glob now, so manuscript five is covered on the day it lands.
 
-**The warning that earned itself:** *a session that EXPECTS a red gate will not notice a real one* —
-which is how the pytest red got here. `WT-095` stands: **the gate does not run a test suite.** Run
-it and say the number. `-65` did: **1078 passed, 0 failed.**
+---
+
+## THE EIGHT-SESSION GATE RED IS **RESOLVED** — stop expecting it
+**`GATE SELF-CHECK: PASS ✅`.** The `~/Scripts` `DIRTY(2)` pair — `braatz-crawl-check.py` and
+`serve-braatz-archive.py` — that `-59`→`-64` each declined and each carried forward is **gone**. A
+sibling session banked them: `~/Scripts` commit `48c9d9f`, *"braatz-archive: bank the preview server
+and crawl checker from braatzArchive-01"*. Verified independently rather than inferred from the
+green: `git status --short` in `~/Scripts` is empty and `git log @{u}..` is empty. Card
+`1217526943288480` can be closed by whoever owns it.
+
+**DELETE THE EXPECTATION, NOT JUST THE ROW.** Six handoffs running told the next session to expect
+exactly one red and treat it as normal, and `-64` wrote the reason that matters: *a session that
+EXPECTS a red gate will not notice a real one* — which is precisely how the pytest red survived four
+days. **The gate is green now. If yours is not, that is news.**
+
+`WT-095` is unchanged by any of this: **the gate does not run a test suite.** Run it yourself and
+say the number. `-65` did: **1078 passed, 0 failed.**
 
 ---
 
@@ -213,7 +237,12 @@ it and say the number. `-65` did: **1078 passed, 0 failed.**
 ## TOOLING (▲ = new at `-65`)
 - **RUN THE GATE AS:** `GATE_ROSTER_WHO=big-wealthTensor-NN nohup ~/Scripts/gate-selfcheck.sh >
   /tmp/gate.log 2>&1 &`, then **two** polls of ~170 s (cloud Bash caps at 2 min; the gate takes
-  ~5 min). `G-AL` is silent on success — grep `CANNOT VERIFY`, expect `0`.
+  ~5 min). The verdict line is `GATE SELF-CHECK:` — grep for that, and for `CANNOT VERIFY`
+  expecting `0`.
+- **▲ DO NOT `grep -c "G-AL"` AS A PASS/FAIL TEST.** Earlier handoffs said *"zero `G-AL` lines is
+  `G-AL` passing"*. It returns **1** on a perfectly green run, because the string sits in a help
+  footer: *"Full gate: ~/Desktop/downloads/HANDOFF-GATE.md (G-A->G-AL)"*. A signal indistinguishable
+  from boilerplate is not a signal — grep the verdict line.
 - **`handoff_gate.py --emit` WILL REFUSE** on `gate_passed != true`, which has been the standing
   state since `-58`. **Do not set it true to make `--emit` print** — that is falsifying a gate
   result, the exact defect `WT-096` repaired. Run `--stamp`, commit, let `--emit` refuse, **read its
