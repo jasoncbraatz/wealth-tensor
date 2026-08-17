@@ -714,7 +714,7 @@ of Economic Surveys*, 31(5), 1204–1239.
 **Kinetic exchange**
 
 Bouchaud, J.-P., & Mézard, M. (2000). Wealth condensation in a simple model of economy. *Physica
-A*, 282(3), 536–545. ✓
+A*, 282(3–4), 536–545. ✓
 
 Chakraborti, A., & Chakrabarti, B. K. (2000). Statistical mechanics of money: how saving propensity
 affects its distribution. *The European Physical Journal B*, 17(1), 167–170. ✓

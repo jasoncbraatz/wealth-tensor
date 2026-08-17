@@ -73,7 +73,9 @@ they came from.
 2. The result that the **base caps the reachable region and the rate only moves you within it**,
    with κ — the levy's compressive *budget*, not its mechanism — separating the bases by an
    order of magnitude, and a closed form for the flow base's κ that the simulation reproduces
-   to within 7 % at every rate tabulated (§3.1).
+   to within 7 % at every rate tabulated (§3.1). The stock-versus-flow contrast this result
+   sharpens is prior and is credited in §6; what is new is κ itself — the levy's budget,
+   separated from its mechanism — and the closed form for it.
 3. The identification of **realisation as the decisive quantity**, including the limiting result
    that a confiscatory levy on flow, at zero realisation, leaves the wealth vector exactly
    unchanged — its base is uniform, not absent (§3.2). This is a statement about what a base
@@ -194,6 +196,20 @@ reaches into the multiplicative term itself. The stock base truncates the outcom
 damps the generator — and both register as a smaller Gini, which is why the distinction is invisible
 in the statistic normally reported. An outcome measure records that the distribution was compressed.
 It does not record whether the mechanism producing next period's distribution was touched.
+
+**This contrast is not new, and the credit belongs precisely.** Bouchaud and Mézard (2000) carry a
+flow levy, a stock levy and the per-capita redistribution of each in a single wealth balance, and
+give the stationary Pareto exponent in closed form in all four coordinates. They write that exponent
+μ — a different object from §2.1's growth drift μ, with which it unhappily shares a letter, and the
+second such collision this paper has had to disclose. Their ranking is the one measured here, and
+they state it more strongly: income taxes *"tend to reduce the inequalities of wealth (i.e., lead to
+an increase of μ), even more so if part of this tax is redistributed"*, while *"quite surprisingly,
+capital tax, if used simultaneously to income tax and not redistributed, leads to a decrease of μ"*.
+Their stock levy can *reverse* the sign of the effect; the one measured here merely buys less
+compression per unit of budget. What this section adds is not the contrast but the pair of witnesses
+for it — κ, which says how much budget a base has, and Var[log *a*], which says whether the levy
+spent it on the outcome or on the generator — in a discrete process where the two can be matched and
+separated. §6 states what that leaves.
 
 **κ is necessary and it is not sufficient, and this paper reports both witnesses.** The
 paragraph above matches the two levies at κ ≈ 0.10 and finds them compressing unequally, 0.222
@@ -360,12 +376,38 @@ criterion fails loudly instead of quietly re-scoring condensation as success.
 ## 6 · Relation to existing work
 
 The condensation result is standard in kinetic exchange (Chakrabarti, Chatterjee, Chakravarty and
-the surrounding literature), where the effect of saving propensity, taxation and redistribution
-on stationary wealth distributions has been examined from several directions. The contribution
-here is not that redistribution opposes condensation — that is established — but that the
-mechanisms sort by **observability of the base** rather than by rate or institutional form, and
-that the budget through which they operate has a closed form (κ) rather than being a simulation
-regularity — though the sorting is not a function of that budget alone (§3.1).
+the surrounding literature), where the effect of saving propensity, taxation and redistribution on
+stationary wealth distributions has been examined from several directions. **Two results in that
+literature are prior to this paper's central contrast, and are cited here rather than restated.**
+
+**Bouchaud and Mézard (2000)** carry a flow levy, a stock levy and the per-capita redistribution of
+each in one wealth balance and give the stationary Pareto exponent in closed form in all four
+coordinates, together with the stock-versus-flow ranking (§3.1). The contrast between the two bases
+— in terms of what each does to the shape of the stationary distribution — is theirs, and the
+per-capita rebate fraction is a coordinate in their solution rather than an extension awaiting one.
+
+**Benhabib, Bisin and Zhu (2011)** supply three further results that bound what is left. Their
+Proposition 3 has the tail index rising in both the estate tax and the capital income tax, so the
+*nested* frontiers this paper reaches in §3.1 — by falsifying a sharper prediction of its own — were
+already visible in a different metric and a different model. Their Proposition 4 has tail inequality
+rising with a mean-preserving spread of the return process, which is the general form of §3.1's
+finding that the flow levy reaches the dispersion of the multiplier and the stock levy does not. And
+their §4.1 notes that an economy whose multiplier is bounded below one has a stationary distribution
+bounded above, with no power-law tail at all — a claim this paper does not make and does not need,
+but the first one any extension of §3.1 toward tail indices would meet.
+
+**What remains is narrower than the contrast, and is stated as such.** It is not that redistribution
+opposes condensation, and it is not that the two bases act differently on the shape of the
+distribution. It is that the mechanisms sort by **observability of the base** (§3.2) rather than by
+rate or institutional form; that the budget through which they operate has a closed form (κ) rather
+than being a simulation regularity, though the sorting is not a function of that budget alone
+(§3.1); and that a single sweep separates the two by measuring the generator and the outcome side by
+side. Three further differences are of construction rather than of claim, and none is offered as a
+result: the levy here is on the **realised gain only**, with no loss offset, so the multiplier is
+asymmetrically truncated rather than symmetrically contracted toward one; the two bases are compared
+at matched compressive **budget** rather than at matched rate; and the process is a discrete
+Kesten-type recursion with an explicit per-period budget identity rather than a continuous-time
+mean-field one.
 
 The realisation result touches the public-finance literature on realisation-based versus
 mark-to-market taxation from an unfamiliar angle: not from the incentive or valuation side, but
@@ -420,14 +462,20 @@ part of the record rather than an appendix to it.
 
 ## References
 
-*Bibliographic details for the entries marked ✓ were verified against live sources on
-2026-08-10; the remainder are standard works whose details are to be re-checked at submission per
+*Bibliographic details for the entries marked ✓ were verified against live sources on 2026-08-10.
+The two marked ✓⧗ were re-verified against their Crossref records on 2026-08-17 and name, in the
+entry, the pre-publication version actually read, per `REFERENCE-POLICY` §4. The remainder are
+standard works whose details are to be re-checked at submission per
 `docs/papers/PREPRINT-CHECKLIST.md`.*
 
 **Kinetic exchange and wealth condensation**
 
-Bouchaud, J.-P., & Mézard, M. (2000). Wealth condensation in a simple model of economy.
-*Physica A*, 282(3), 536–545. ✓
+Bouchaud, J.-P., & Mézard, M. (2000). Wealth condensation in a simple model of economy. *Physica A:
+Statistical Mechanics and its Applications*, 282(3–4), 536–545. `doi:10.1016/S0378-4371(00)00205-3`
+✓⧗ *(issue and pagination checked against the Crossref record, 2026-08-17; an earlier draft gave the
+issue as 282(3). Text consulted: arXiv `cond-mat/0002374`, read in full. The quotations in §3.1 are
+attributed to that preprint and may not appear verbatim in the article of record. Consulted
+2026-08-17 / published 2000.)*
 
 Chakrabarti, B. K., Chakraborti, A., Chakravarty, S. R., & Chatterjee, A. (2013). *Econophysics of
 Income and Wealth Distributions*. Cambridge University Press.
@@ -450,8 +498,11 @@ income. *Reviews of Modern Physics*, 81(4), 1703–1725. ✓
 **Wealth dynamics and inequality**
 
 Benhabib, J., Bisin, A., & Zhu, S. (2011). The distribution of wealth and fiscal policy in economies
-with finitely lived agents. *Econometrica*, 79(1), 123–157. ✓ *(journal and volume
-verified; page range to re-check)*
+with finitely lived agents. *Econometrica*, 79(1), 123–157. `doi:10.3982/ECTA8416` ✓⧗ *(page range
+checked against the Crossref record, 2026-08-17, which resolves the flag carried by earlier drafts.
+Text consulted: NBER Working Paper 14730 full text, read in full; §6's characterisation of
+Propositions 3 and 4 and of §4.1 is taken from that version and the numbering may differ in the
+article of record. Consulted 2026-08-17 / published 2011.)*
 
 Gabaix, X. (2009). Power laws in economics and finance. *Annual Review of Economics*, 1, 255–294.
 

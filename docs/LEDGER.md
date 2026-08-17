@@ -3143,3 +3143,156 @@ phrase straddles a newline (`-62`'s trap, which runs both ways).
 the body wraps at 100 — but titles are headings and exempt, and `paper-I.md`'s title is **115**.
 The patch script checks replacement prose widths in **characters**, since `—` is multi-byte and
 `awk 'length>100'` would have refused a legal line.*
+
+---
+
+## WT-103 · FACT · 2026-08-17 · wealthTensor-67
+
+### Paper II's two mandatory citations are placed — and one of the two placement rules had no site
+
+`SCOUT-001` and card `1217556375636027` made the citations mandatory: *"the difference between a
+contribution and an uncredited restatement."* Applied in `scripts/wt123_paperII_mandatory_citations.py`,
+after the census in `scripts/wt122_paperII_citation_census.py`. Suite **1078 passed, 0 failed**;
+board still **66 criteria**; abstract **untouched at 244 words**, so `-65`'s six words of slack are
+still on the table.
+
+**THE DEFECT WAS NOT A MISSING REFERENCE. BOTH WORKS WERE ALREADY IN THE LIST.**
+
+| surname | body mentions, before | reference entries, before |
+|---|---|---|
+| Bouchaud | **0** | 1 |
+| Mézard | **0** | 1 |
+| Benhabib | **0** | 1 |
+| Bisin | **0** | 1 |
+| Zhu | **0** | 1 |
+
+Five for five, **listed and never cited** — the same defect `paper-I`'s `REVIEW-002` `A10` caught
+one manuscript over (*"`[II]` is listed and never cited"*). A reference-list entry is a signpost,
+not a credit. A referee reading §3.1's stock-versus-flow result would have found Bouchaud & Mézard
+in the back of the paper and drawn the worse of the two available conclusions.
+
+### The census refused one of the card's own instructions, and that is the entry's point
+
+The card gave two placement rules. `wt122` measured both, every probe carrying a positive control:
+
+- **`H1` — B&M *"wherever Paper II contrasts the stock levy with the flow levy"*: 1 site.**
+  §3.1's *"They act on different objects"* paragraph. Placed there.
+- **`H2` — BBZ §4.1 *"wherever the `r = 1` cap appears"*: ZERO sites, in ALL FOUR manuscripts.**
+
+The `r = 1` cap — `ess-sup A = 0.9524 < 1`, so no power law exists at all — lives in **8 `docs/`
+files and 5 `scripts/`** and in **no manuscript**. It is a project-notebook claim. `HANDOFF-PROMPT`,
+`DECISION-001`, `ROADS-001` and `SCOUT-001` all discuss it, and five sessions of handoffs describe
+it in a register that makes it sound like something Paper II asserts. It never did.
+
+**The zero is a measurement and not a dark predicate:** `R1_CAP`'s control fired on `DECISION-001`
+at 3 hits before the manuscripts were scored, per `WT-101`.
+
+**So BBZ was NOT placed at a cap Paper II does not make.** It is placed in §6, against what Paper II
+*does* claim: Proposition 3 (tail index rising in **both** the estate tax and the capital income tax
+— so §3.1's *nested* frontiers, which this paper reached by falsifying a sharper prediction of its
+own, were already visible in another metric), Proposition 4 (tail inequality rising with a
+mean-preserving spread — the general form of §3.1's dispersion finding), and §4.1 named explicitly
+as *"a claim this paper does not make and does not need."*
+
+> **The failure mode this refused: when an instruction says "cite X wherever Y appears" and Y
+> appears nowhere, the cheap repair is to write Y in so the citation has somewhere to land.**
+> That manufactures a claim in order to credit someone else for it — an overclaim with a
+> footnote, which is harder to catch than an overclaim without one.
+
+### Two bibliographic corrections found while verifying, both at Crossref
+
+- **`Physica A` 282(**3**) → 282(**3–4**).** Crossref `10.1016/S0378-4371(00)00205-3` gives issue
+  `"3-4"`. **Wrong in `paper-II.md` AND `paper-IV.md`; corrected in both.** `SCOUT-001` §8 had it
+  right — the error was in the manuscripts, and it had survived every reference pass to date.
+- **BBZ's *"page range to re-check"* flag is RESOLVED.** Crossref `10.3982/ECTA8416` confirms
+  *Econometrica* **79**(1), **123–157**. A flag carried by earlier drafts, closed with a source
+  rather than deleted.
+
+Both entries move **✓ → ✓⧗** under `REFERENCE-POLICY` §4's pre-publication rule, because the text
+consulted in `-66` was arXiv `cond-mat/0002374` and NBER w14730 respectively — the result cited to
+the article of record, the quotation attributed to the version read, dual-dated, and the entry says
+in terms that the sentence may not appear verbatim in the article of record.
+
+**`paper-IV.md`'s B&M entry keeps its `✓` and that is deliberate, not an oversight.** Paper IV
+names B&M in a list of literature families and quotes nothing from it; `✓⧗` discloses which *text*
+a claim leans on, and Paper IV leans on none. Two papers carrying different marks for the same work
+is what a per-entry read-status disclosure looks like when the two papers rely on it differently.
+
+### §1 was made consistent with §6 in the same pass
+
+Contribution 2 claimed *"the base caps the reachable region and the rate only moves you within it"*
+without qualification. §6 now concedes the bare contrast to B&M, so contribution 2 points at §6 and
+narrows to what is actually new — **κ itself, the budget separated from the mechanism, and its
+closed form.** A contributions list that survives its own related-work section unchanged has not
+read it.
+
+**The abstract makes the same claim and was NOT touched.** Whether an abstract owes a
+related-work concession is a judgement about the manuscript rather than about this citation, and it
+belongs to Paper II's second independent read. Card filed rather than decided here.
+
+---
+
+## WT-104 · METHOD · 2026-08-17 · wealthTensor-67
+
+### Three near-misses, all of the same species: a name that renders right and matches wrong
+
+`-66` gave the tell *a dark predicate is not evidence of absence until a document you know contains
+the thing has made it fire.* All three of this session's misses are that lesson's siblings — an
+identity that **looks** satisfied and is not, because two things that display identically are
+different to a matcher.
+
+**1 · THE IDEMPOTENCE GUARD COULD NOT SEE ITS OWN EDIT.** `wt123` guards against double-application
+with a sentinel substring. It printed, in its own post-write verification, immediately after a
+successful apply:
+
+    sentinel present: False
+
+The guard chose the sentinel from the *unwrapped* source string; the script's own `wrap()` had
+broken it across a line before writing. **A re-run would have sailed past the guard and appended the
+paragraph a second time.** Every other comparison in this session's instruments normalises
+whitespace first, because the manuscripts are hard-wrapped at 100 columns (`wt120`'s rule,
+`WT-099`). Nobody thought of an idempotence check as *a comparison against a hard-wrapped corpus*,
+which is exactly what it is. Fixed, and then **fired** — the re-run now refuses with exit 2 — rather
+than read, per `-65` (i).
+
+> **A guard's post-condition must be asserted, not printed.** This one printed `False` beside the
+> word `APPLIED` and returned **0**. It now returns 2 if the sentinel is not visible afterwards.
+> The bug was one line; the near-miss was the exit code.
+
+**2 · U+00B5 vs U+03BC — one glyph, two codepoints, and the manuscripts were clean until this
+patch.** `SCOUT-001` transcribes the Pareto exponent as **U+00B5 MICRO SIGN**; `paper-II.md` uses
+**U+03BC GREEK SMALL LETTER MU** for the growth drift, five times. They render identically. Drafting
+the credit paragraph from `SCOUT-001` would have put the micro sign into a manuscript for the first
+time — a grep for one silently missing the other ever after. Measured: **6 files carry U+00B5, all
+in `docs/` notebook and `scripts/`, and ZERO manuscripts.** `wt123` now refuses to write a micro
+sign into a manuscript at all.
+
+And underneath the codepoint, the *semantic* collision: μ was already the growth drift. The credit
+paragraph discloses the clash in the paper's own established register — §3.1 already apologises for
+`a` — rather than quietly shipping two meanings for one letter.
+
+**3 · THE HOMOGRAPH CANARY FIRED, AND IT WAS RIGHT.** The suite went **1 failed, 1077 passed** on
+`test_reg002_sec5_e4_extension_label.py::test_the_third_surface_scope_is_warranted`. That test pins
+an identity across `scripts/`: raw substring hits for the estate's fourth exhibit label, minus the
+flake8 `noqa` homograph, must equal the word-boundary hits. `wt123` had named its edits `E1..E7`,
+so an `_NEW`-suffixed constant on the fourth one **contained the token without being it** — a third
+homograph, exactly what the test's failure message says to go find. Renamed to `ED1..ED7`; suite
+back to **1078 passed, 0 failed**. **The canary was working as designed and the test was not
+widened.** `E4` is a *per-script local* label in this estate, which is precisely why a global
+identity over `scripts/` is the only thing that can police it.
+
+**And the comment documenting all this tripped the canary a second time**, because the first
+draft spelled the token while explaining why not to. The note in `wt123`'s docstring is written
+without spelling it. *A warning about a landmine is not exempt from the landmine.*
+
+### What generalises
+
+> **`WT-094` says grep `tests/` and `scripts/` for the manuscript strings you are about to edit.
+> That is necessary and it is not sufficient. A patch script is itself a new file in `scripts/`,
+> and the repository's guards read it too.** Three of this session's four self-inflicted problems
+> were in the *instrument*, not in the prose: an identifier that collided with a guarded namespace,
+> a sentinel the instrument's own formatter destroyed, and a codepoint inherited from the notebook
+> it was reading. The census (`wt122`) walked `scripts/`, found its own anchor strings there, and
+> reported four `*** UNSAFE ***` anchors — **an instrument that searches the tree it lives in
+> manufactures its own collisions**, the same shape as `-66`'s `NO_LOSS_OFFSET` firing on *"without
+> loss of generality."* Read a census's self-hits before believing its refusals.
