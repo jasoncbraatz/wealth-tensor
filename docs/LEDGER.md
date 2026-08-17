@@ -3405,3 +3405,73 @@ defect. Nothing in a green run reveals the problem, and the failure path — the
 message is read — is by construction the path where the session is busy. **A guard's failure text
 is tested exactly when nobody has attention to spare on it, which is the argument for writing it
 well the first time rather than the argument for leaving it.**
+
+---
+
+## WT-109 · RULING · 2026-08-17 · wealthTensor-69
+
+### Jason: ASSIGN the next at-bat. Do not offer a menu. (`HANDOFF-GATE` v2.60, G-F slot 5)
+
+**Jason, shown `-69`'s handoff:** *"letting the future session pick which to do can be either
+daunting, or it looks at me cross-eyed for data that's already been written down somewhere. Could
+you make the decisions for the future sessions? … after many of these, you'd be surprised at how
+many sessions that has done a brain scramble on."*
+
+**Eleven consecutive wealth-tensor handoffs shipped a ranked "take one, in this order" menu**, and
+**every one of them obeyed the recipe as written.** G-F slot 5 said *"the specific phase/bundle …
+with the recommended FIRST action + the sequence rationale"* — and **a ranked list with a
+recommendation at the top satisfies that sentence exactly while doing the opposite of what the
+slot is for.** That is the interesting part: this was not eleven sessions being sloppy. It was a
+correct instruction with a hole in it, which is the same species as `WT-096` (*ask the question of
+your own repair*) pointed at a process doc instead of a script.
+
+**The two failure modes Jason named are both caused by the menu, not by the reader.** A session
+either (a) burns its opening on a choice it is **worse-positioned to make than the author was**,
+or (b) goes hunting for the ranking evidence — **which is already written down in the handoff it
+is standing in**, so the hunt is pure loss. Neither is fixed by ranking harder.
+
+**THE ASYMMETRY IS THE WHOLE ARGUMENT.** The outgoing session knows what it just touched, what it
+deliberately left, which manuscript has fresh eyes and which does not, and what it would do next
+if it had another hour. **None of that survives the gap.** A menu spends none of it and then asks a
+cold session to re-derive the ranking from a list it has no basis to rank. **A menu is a decision
+handed BACKWARDS through the gap — the one direction a handoff cannot carry anything.**
+
+### What shipped, and why it did not stop at this repo
+
+- **`HANDOFF-GATE.md` v2.60** — G-F recipe **slot 5** rewritten: ONE named at-bat; a **definition
+  of done someone could mark right or wrong** (the same refusal `rail.py` makes a feature, now
+  asked of every handoff); everything else ranked under a heading that says **context, not a
+  menu**; a named guess at the *next* session's assignment (free — the thinking is already done);
+  and the `-59` forcing line **re-pointed at the assignment instead of at the list**, which is what
+  keeps a single assignment safe rather than brittle. Wording-only, **no new G-letter**, range refs
+  asserted unchanged. Mirrored to `claude-blackbook`. Undo `.bak-wt69-v260`.
+- **This repo's `HANDOFF.md`** — the worked example, with the rule stated in-file so `-70` inherits
+  the *shape* and not merely the habit.
+- **A global lesson**, because this is a property of multi-session handoffs, not of wealth-tensor.
+
+**Jason's own doctrine decided the scope, not a judgement call:** *a rule nobody enforces is a
+wish.* Fixing only this repo's handoff would have left the recipe that produced eleven menus
+standing, and the twelfth would have been written by someone reading the recipe.
+
+### And the guard lesson arrived a SECOND time, in the same session
+
+`gate260.py`'s range-ref guard was written as
+`assert new.count("G-A→G-AL") == text.count(...)` and **fired — on the changelog entry's own prose
+mention of the range.** Nothing had moved; a count went up because the patch *quoted* the thing it
+was protecting. Rewritten to compare the **set of range targets**
+(`set(re.findall(r"G-A→G-[A-Z]+", …))`), which is invariant to being talked about.
+
+**`WT-108` said a count guard makes you find the defect yourself. This says a count guard can also
+invent one.** Same root: a count answers *"how many"* when the question was *"which"*, and the two
+diverge the moment the document discusses itself. **A guard on a self-describing document must be
+written in terms of identity, not quantity** — every doctrine file is a self-describing document.
+
+### Also, live, at a cost of five minutes
+
+`cat gate260.py | dx --put` with a **relative** path, from a session whose own handoff says
+*"absolute local paths in EVERY `cat X | dx --put`"* in bold. The container's cwd had reset to
+`/home/claude`; `cat` failed; `dx --put` then **blocked on empty stdin until the 5-minute timeout**
+rather than erroring. **A rule you wrote yourself, in the file you are working from, is not
+protection — only a mechanism is.** The failure mode is worth naming precisely because it does not
+look like a failure: no error, just a hang. Left as a TOOLING note rather than a script, since the
+one-line fix is "absolute paths" and the tell is now recorded twice.

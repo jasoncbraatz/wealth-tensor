@@ -3,14 +3,14 @@ project: wealth-tensor
 session_n: 69
 gh_repo: jasoncbraatz/wealth-tensor
 branch: main
-gh_sha: 2a3a39c5305ae1fc36cf7b2b5bdfb5b901565e5c
+gh_sha: PENDING
 updated: 2026-08-17
 session: wealthTensor-69
 live_theme: "Paper IV's §1–§3 read against the NARROWED framing — three findings, four edits, all repaired in-pass. The largest sat in the sentence the paper labels its own central claim, and it got there because a correct patch moved the referent out from under prose that had agreed with the old one."
 phase: "Manuscript repair under a settled thesis. Paper IV's framing is now consistent through §3; §4–§11 have never been read against it. Paper II's convergence counter is live and waiting on fresh eyes."
 gate_passed: true
-gate_version: "2.59"
-next_at_bat: "PAPER IV §4–§11 against WT-102 — the other half of the range this session opened. §4.4 and §9 carry limits language written for the pre-narrowing framing and are NAMED UNCHECKED, not passed. Same method as -69: read for the SHAPE, because the census already proved the strings are gone and that proof is true-and-insufficient. ~35 min."
+gate_version: "2.60"
+next_at_bat: "ASSIGNED, not offered: read Paper IV §4–§11 against WT-102. -69 propagated the narrowing through §1–§3 and stopped at the section boundary; §4.4 and §9 bound a claim the abstract no longer makes and are NAMED UNCHECKED, not passed. Read for the SHAPE — the census already proved the strings are gone and that proof is true-and-insufficient. DONE WHEN: §4–§11 read end-to-end on that one question, every finding repaired in-pass or carded with a falsifier, REVIEW-010 written with its own not-checked list, suite/board/coach green. ~35 min. Blocked? take the first startable item in the queue and say so in one line."
 blockers: []
 drift_flags: []
 parking_lot: []
@@ -45,54 +45,97 @@ unmoved — fourth session running.** Coach **1/0, at baseline, no refresh neede
 
 ---
 
-## YOUR AT-BAT — take one, in this order
+## YOUR AT-BAT — ASSIGNED. Do not choose.
 
-### 1. **PAPER IV §4–§11 AGAINST `WT-102`.** The other half of the range `-69` opened, and the
-same species is *likelier* there, not less: §4.4 ("the limits of the resolution") and §9
-(limitations) were written to bound a claim the abstract no longer makes, so their hedges may now
-be hedging against nothing — or, worse, re-asserting the ladder in order to bound it. §7's
-relocation method and §5's worked instance are also unread against the narrowing. **Read for the
-SHAPE.** `wt120` proved the ladder *string* is gone from `paper-IV.md`; `-69` found three
-paraphrases downstream of that proof. ~35 min.
+> # ▶ `-70`, YOUR AT-BAT IS: **PAPER IV §4–§11, READ AGAINST `WT-102`.**
+>
+> **Start here. You do not need to read the rest of this section to begin, and you are not being
+> asked to weigh it against anything.** ~35 min.
+>
+> **What it is.** `-69` propagated the narrowed framing through §1–§3 and stopped at the section
+> boundary. §4–§11 have **never** been read against `WT-102`. The species is *likelier* there, not
+> less: §4.4 ("the limits of the resolution") and §9 (limitations) were written to bound a claim
+> the abstract no longer makes, so their hedges may now be hedging against nothing — or, worse,
+> **re-asserting the ladder in order to bound it**. §7's relocation method and §5's worked
+> instance are also unread against the narrowing.
+>
+> **How.** Read for the **SHAPE**, not the string. `wt120` proved the ladder *phrase* is gone from
+> `paper-IV.md` and that proof was true; `-69` then found three paraphrases downstream of it.
+> Method that worked, in order: diff against `.bak-wt69-p7` first → read the range whole → census
+> before patching (`WT-099`) → one batched guarded patch script (`wt126` is free; `wt125` is the
+> exemplar) → board, coach, suite after.
+>
+> **DONE WHEN:** every section §4–§11 has been read end-to-end with the single question *"does
+> this prose assert the ladder, or bound a claim the abstract no longer makes?"*; every finding is
+> either repaired in-pass or carded with a named falsifier; `REVIEW-010` exists and carries its
+> own explicit **not-checked** list; suite green, board re-checked, coach at baseline. **A
+> zero-finding read is a RESULT** — it still gets `REVIEW-010`, and it says so in one line.
+>
+> **IF AND ONLY IF THIS IS GENUINELY BLOCKED** — not merely less appealing than something below —
+> take **the first item in the queue you can actually start**, and say in ONE LINE at the top of
+> your handoff which you took and what blocked this one. That is the forcing line (`-59`'s ruling,
+> kept, now pointed at a single assignment instead of a menu).
 
-### 2. **PAPER II'S THIRD INDEPENDENT READ — the first with a live chance of a zero** (9 → 2).
-`-68` did pass 4 and `-69` did not touch Paper II, so **the eyes are fresh again as of now** —
-this is the first session since `-67` where taking it does not break the independence the counter
-depends on. Diff against `.bak-wt68-p7` first, then read whole. A zero-finding pass is a RESULT
-and gets its own REVIEW doc.
+### THE QUEUE BEHIND IT — context, not a menu. Do not shop here.
 
-### 3. **PAPER I's FIRST INDEPENDENT READ** — still the only manuscript with no `P7` pass at all,
-and now the oldest untouched thing in the batch.
+Listed so you can *recognise* an item if your assigned at-bat collides with it, and so the next
+handoff has a ranked pool to assign from. **Reading this list is not a decision you are being
+asked to make.**
 
-### 4. **P6's remaining two thirds** (`P1n`/`P5n` are `P3n` repointed, ~30 min, mechanical).
+1. **PAPER II'S THIRD INDEPENDENT READ — the first with a live chance of a zero** (9 → 2). `-68`
+   did pass 4 and `-69` did not touch Paper II, so the eyes are fresh again as of now. Diff
+   against `.bak-wt68-p7` first, then read whole. **This is the likely assignment for `-71`.**
+2. **PAPER I's FIRST INDEPENDENT READ** — still the only manuscript with no `P7` pass at all, and
+   now the oldest untouched thing in the batch.
+3. **P6's remaining two thirds** (`P1n`/`P5n` are `P3n` repointed, ~30 min, mechanical).
+4. **The ρ = 0 test UNDER-asserts** — card `1217547799559841`. Read the card first: tightening the
+   float tolerance to `==` hands the next machine a red suite. Assert the **structural** property.
+   The manuscript claim itself is measured; this is apparatus, not prose.
+5. **`REFERENCE-POLICY`'s sixth pass** — card `1217556161163494`. **Fourth** session it would have
+   saved.
+6. **The U+00B5 guard** — card `1217561398864561`. NOT in `tests/test_redistribution.py` (its 18
+   is quoted in Paper II's abstract); a new module is fine. `-69` put an in-script glyph guard in
+   `wt125`; the tree-wide one is still missing.
+7. **The `CONDUCT_ALLOWED_SECTIONS` gap** — card `1217562682350929`. `-68` hit it; `-69` avoided
+   it only by reading the tuple first. A landmine two sessions have walked around rather than
+   lifted.
+8. **PASTE THE HANDOFF forcing function** — card `1217560480809492`. (`-67`, `-68`, `-69` all
+   pasted. Three data points, still not a fix.)
+9. **Paper II's companion reference entries** — card `1217542940968749`.
+10. **`A3` from the PAN AAR — estate-level, STILL UNCHECKED:** where else do call transcripts and
+    their `.srt` intermediates land, committed or pushed? Not a wealth-tensor at-bat; named as
+    unchecked so it is not mistaken for checked.
 
-### 5. **The ρ = 0 test UNDER-asserts** — card `1217547799559841`. Read the card first: tightening
-the float tolerance to `==` hands the next machine a red suite. Assert the **structural**
-property. The manuscript claim itself is measured (`np.array_equal` True, max diff 0.0); this is
-apparatus, not prose.
+---
 
-### 6. **`REFERENCE-POLICY`'s sixth pass** — card `1217556161163494`. **Fourth** session it would
-have saved.
+### ⚖️ WHEN YOU WRITE YOUR OWN HANDOFF: **ASSIGN, DON'T OFFER.** (Jason's ruling, 2026-08-17)
 
-### 7. **The U+00B5 guard** — card `1217561398864561`. NOT in `tests/test_redistribution.py`
-(its 18 is quoted in Paper II's abstract); a new module is fine. `-68`'s census: 0 micro signs.
-`-69` added an in-script glyph guard to `wt125` as well — the tree-wide one is still missing.
+Handoffs in this project shipped a ranked menu for eleven sessions, and Jason called it: *"letting
+the future session pick which to do can be either daunting, or it looks at me cross-eyed for data
+that's already been written down somewhere."* Both failure modes are real and both are **caused by
+the menu**, not by the reader.
 
-### 8. **The `CONDUCT_ALLOWED_SECTIONS` gap** — card `1217562682350929`. `-68` hit it, `-69`
-avoided it only by checking the tuple before writing. That is a landmine two sessions have now
-walked around rather than lifted.
+**The outgoing session is strictly better positioned to choose than the incoming one.** It has the
+full context of what it just touched, what it deliberately left, and what is fresh versus stale.
+It spends that context choosing, or it throws it away and makes a cold session re-derive the
+ranking from a list it has no basis to rank. **A menu is a decision handed backwards through the
+gap — the one direction a handoff cannot carry anything.**
 
-### 9. **PASTE THE HANDOFF forcing function** — card `1217560480809492`. (`-67`, `-68`, `-69` all
-pasted. Three data points, still not a fix.)
+So: **name ONE at-bat, give it a definition of done someone could mark right or wrong, and put
+everything else under a heading that says it is not a menu.** Keep the forcing line — it is the
+escape hatch that makes a single assignment safe rather than brittle — but point it at the
+assignment, not at the list. Rank the queue anyway, and name your best guess at the *next*
+session's assignment; that is what makes the next handoff cheap to write, and it costs you nothing
+because you already did the thinking.
 
-### 10. **Paper II's companion reference entries** — card `1217542940968749`.
-
-### 11. **`A3` from the PAN AAR — estate-level, STILL UNCHECKED:** where else do call transcripts
-and their `.srt` intermediates land, committed or pushed? Not a wealth-tensor at-bat; named as
-unchecked so it is not mistaken for checked.
-
-**FORCING LINE (`-59`'s ruling, kept): take none of the eleven, say why in ONE LINE at the top of
-your handoff.**
+**This applies to every multi-session project, not just this one** — so it is not only stated here.
+It is now **`HANDOFF-GATE.md` v2.60, G-F recipe slot 5** (`~/Desktop/downloads/HANDOFF-GATE.md`,
+mirrored to `claude-blackbook`), a wording-only clarification with no new G-letter, and banked
+global as `assign-do-not-offer`. **The gate is the enforcement; this section is the worked
+example.** Undo for the gate edit: `HANDOFF-GATE.md.bak-wt69-v260`; the patch script is vaulted at
+`~/code/darwin-mac-ops/gate-edits/gate260_v260_assign_not_offer.py` — **not** in the everything
+folder, whose allowlist `.gitignore` would have left it darwin-only on an uninsured SSD (caught by
+`git check-ignore`, which is the two-second version of the geography rule).
 
 ---
 
@@ -255,7 +298,13 @@ invalidates — the patch's author is the last person who knows.
 - **▲ TAGS RUN TO `wt125`; `wt126` IS FREE.** `ED`-prefixed edit labels are the proven-safe shape.
 - **`dx` chokes on multiline / apostrophe-bearing strings.** Write locally, `--put`, run there.
   `git commit -F`; append with `--put /tmp/x.md` then `cat /tmp/x.md >> docs/FILE.md`.
-  **Absolute local paths in every `cat X | dx --put`** — fourth session, zero cwd losses. ▲ A
+  ▲ **ABSOLUTE local paths in every `cat X | dx --put`, and here is the cost of not:** the cloud
+  container's cwd **resets between `Bash` calls**, so a relative path that worked ten calls ago can
+  stop working — and when `cat` fails, **`dx --put` blocks on the empty stdin until the tool
+  timeout instead of erroring.** No message, no exit code, just a five-minute stall that reads like
+  a slow transfer. `-69` paid it while holding a handoff that carried this rule in bold. **Signature
+  to recognise: a `--put` silent for more than a few seconds is reading an empty pipe, not moving
+  bytes.** ▲ A
   `git commit -F /dev/stdin <<'MSG'` heredoc **through `dx` commits successfully and then returns
   RC=2** with an "unexpected EOF" from the outer eval; check `git log`, don't re-commit.
 - **`lessons.py use`/`record-outcome`: one per `dx` call at 300 s, never chained.** Batched `add`s
@@ -277,11 +326,15 @@ invalidates — the patch's author is the last person who knows.
 2. **Learned the hard way and not yet written down?** Now written: the blast-radius tell
    (`WT-107`, global), the count-vs-set guard rule (`WT-108`, global), Paper IV's scales-don't-nest
    fact (project), the coach-tuple pre-read and the `dx` heredoc RC=2 artifact (TOOLING above).
-3. **The ONE thing that makes the next session's life easier, added THIS pass?** `REVIEW-009` §5
-   and this handoff's at-bat #1 are **the same list** — the pass's own not-checked section IS the
-   next session's brief, so nobody has to reconstruct scope from a diff. Runner-up: the exemplar
-   repointing, which means the next patch script inherits a guard that names its defect instead of
-   one that makes you find it.
+3. **The ONE thing that makes the next session's life easier, added THIS pass?** **The at-bat is
+   now ASSIGNED rather than offered**, with a definition of done attached — Jason's ruling this
+   session, after eleven handoffs of ranked menus that scrambled incoming sessions in two distinct
+   ways (daunted by the choice, or hunting for ranking data already written down). The rule is
+   stated in the at-bat section so the *next* handoff inherits the shape, and banked global so
+   every project does. Runner-up: `REVIEW-009` §5 and this handoff's assignment are **the same
+   list** — the pass's own not-checked section IS the next session's brief, so nobody
+   reconstructs scope from a diff. Bronze: the exemplar repointing (`wt125`), so the next patch
+   script inherits a guard that names its defect instead of one that makes you find it.
 
 ---
 
@@ -300,4 +353,7 @@ invalidates — the patch's author is the last person who knows.
 `~/Scripts/charter-read.sh wealthTensor-NN` **immediately** before the gate; the gate detached
 **with `GATE_ROSTER_WHO` set**; `python3 -m pytest tests/ -q` **and say the number** (summary
 line, never `$?` through a pipe); `roster leave --who` once; and **paste a handoff better than
-this one into the chat as the last act.** 🥎
+this one into the chat as the last act.**
+
+**And when you write it: ASSIGN ONE AT-BAT WITH A DEFINITION OF DONE. Do not hand `-71` a menu.**
+You will know things at wrap that a cold session cannot recover — spend them on the choice. 🥎
