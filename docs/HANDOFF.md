@@ -3,7 +3,7 @@ project: wealth-tensor
 session_n: 71
 gh_repo: jasoncbraatz/wealth-tensor
 branch: main
-gh_sha: PENDING
+gh_sha: ed10bdb538b801cea3d0e68af9a6141516c2591b
 updated: 2026-08-17
 session: wealthTensor-71
 live_theme: "Paper II's third independent read, taken as assigned. Four findings, five edits, one carded — and NOT ONE of them is a wrong number. Every arithmetic claim in the paper was recomputed by hand and checks. All four are QUANTIFIER AND REFERENCE defects: a closed form printed without its condition, a range attributed to a table that cannot show it, an 'every number above' that §7 contradicts in terms, and a count of two in front of a list of five. A paper this heavily reviewed has stopped getting its numbers wrong and has not stopped over-claiming the scope of its own sentences."
