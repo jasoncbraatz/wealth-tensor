@@ -146,6 +146,65 @@ Paper IV states it that way.
 - **Occupancy, not fertility.** REG-013 §4's final clause, restated because it is the one a
   favourable result makes easy to forget: an empty intersection is not thereby a valuable one.
 
+> **CORRECTION · `wealthTensor-62`, 2026-08-17 — appended by the seed-provenance check, NOT an edit
+> to the text above.**
+> §4.3's second bullet defends the seed choice with a claim about this repository's own
+> bibliography: *"The seeds are named in the registration, fixed before the run, and **are the works
+> this corpus actually cites** — which makes them the right seeds for *this* claim (does the work I
+> am building on get read together?)."* **The seed lists and the corpus's bibliography are neither a
+> subset nor a superset of one another. The claim fails in both directions**, checked against the
+> live text of Papers I, II, III and IV with newlines normalised to spaces, so that a title wrapping
+> a line boundary cannot read as an absence.
+>
+> **Direction one — five of the nineteen target seeds are works this corpus does not cite, anywhere:**
+>
+> | cluster | seeds | cited in Papers I–IV | **cited nowhere in Papers I–IV** |
+> |---|---|---|---|
+> | **T** biophysical | 7 | 5 | Ayres & Warr, *The Economic Growth Engine* (2009) · Kümmel, *The Second Law of Economics* (2011) |
+> | **S** stock-flow | 6 | **3** | Godley, "Seven unsustainable processes" (1999) · Lavoie, *Post-Keynesian Economics: New Foundations* (2014) · Dos Santos, "Keynesian theorising during hard times" (2005) |
+> | **K** kinetic exchange | 6 | **6** | — |
+>
+> `Kümmel`, `Second Law of Economics`, `Economic Growth Engine`, `Seven Unsustainable`,
+> `new foundations`, `Keynesian theorising` and `Dos Santos` each return **zero** over all four
+> manuscripts. All six `K` seeds are in Paper II's reference list; **half of cluster `S` is in no
+> paper's**, and `S` supplies the smaller audience — the statistic's denominator — in two of the
+> three target pairs, including the `S,K` pair the abstract quotes.
+>
+> **Direction two — the corpus cites work inside a seeded literature that is not a seed.** Paper II
+> §References carries **Chakrabarti, Chakraborti, Chakravarty & Chatterjee (2013), *Econophysics of
+> Income and Wealth Distributions*, Cambridge University Press** — kinetic-exchange econophysics by
+> its own title, by three of cluster `K`'s own seed authors, and not in cluster `K`. Paper III
+> carries **Soddy (1926/1961), *Wealth, Virtual Wealth and Debt*,** whose membership in cluster `T`
+> is arguable rather than certain and is flagged as arguable here; the Chakrabarti volume needs no
+> such hedge.
+>
+> **What this touches and what it does not.** It does not move a number, it does not reopen the
+> verdict, and it may not: `REG-013` §6 fixes the seed lists and forbids re-choosing them in
+> response to anything, this correction included. What it removes is a **defence**. §4.3's first
+> sentence — *"Seed choice is a judgement"* — names the one threat in this run that no
+> pre-registration can retire, because the registration is the place where the judgement is
+> exercised. The bullet answers it by saying the judgement was not the analyst's but the
+> bibliography's. For fourteen seeds that answer holds; for five it does not, and one work the
+> bibliography does supply was left out. **The seeds are a defensible curation of these three
+> literatures. They are not a transcription of this corpus's reference lists, and the sentence that
+> says they are is the sentence a referee can take away in one grep** — so it is taken away here
+> first.
+>
+> **One smaller thing, recorded rather than claimed as a second finding.** `REG-013` §3.1's fourth
+> `T` seed names two different works by two different author teams separated by a slash — *"Hall,
+> Cleveland & Kaufmann, `Energy and Resource Quality` / Hall & Klitgaard, `Energy and the Wealth of
+> Nations` (2012)"* — under one date. §6 declares the seed lists fixed, but that entry does not fix
+> a work. The instrument resolved **`W2784652317`, Hall & Klitgaard** (`RESULT-REG-013-run.log`
+> line 4), which is the one the corpus cites, so the run is unaffected; the choice was nonetheless
+> made by the script, after the registration. §6's guarantee is one seed weaker than it reads, and
+> `Cleveland` returns zero across all four manuscripts.
+>
+> Appended rather than applied, because a result document is a dated record and rewriting it would
+> destroy the evidence — `RESULT-END-TO-END-001-E6.md` §7's precedent, followed here. **No
+> manuscript is edited and none needs to be:** the provenance claim occurs only at line 140 of this
+> file (`grep -rn "works this corpus actually cites" docs/` returns one hit), and Paper IV §6 says
+> only *"Each literature is defined by seed works named in the registration"*, which is true.
+
 ## 5 · Reproduce
 
 ```

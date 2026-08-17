@@ -2455,3 +2455,54 @@ repository now has one instance where the two answer differently and the differe
 meaning — one level up: two model parameters in two papers that share a *sentence* may not share a
 type. And the same class as `RESULT-TERM-002`'s costume: a finding correctly named in `docs/` and
 never turned into an edit.)*
+
+---
+
+## WT-090 · METHOD · 2026-08-17 · wealthTensor-62
+**A result document's defence of an un-preregisterable judgement is itself a checkable claim, and this one was false in both directions.**
+
+`REG-013` measures the citation-graph whitespace with everything that *can* be pre-committed
+pre-committed: seeds, controls, statistic, cap, thresholds, VOID rule. Exactly one thing cannot be,
+and `RESULT-REG-013.md` §4.3 names it — *"Seed choice is a judgement."* The bullet then answers the
+threat it has just named, by grounding the judgement outside the analyst: *"The seeds … **are the
+works this corpus actually cites** — which makes them the right seeds for *this* claim (does the
+work I am building on get read together?)."*
+
+**One grep over four reference lists, and the grounding fails both ways.**
+
+- **Five of nineteen target seeds are cited nowhere in Papers I–IV**: Ayres & Warr *The Economic
+  Growth Engine* (2009), Kümmel *The Second Law of Economics* (2011), Godley "Seven unsustainable
+  processes" (1999), Lavoie *Post-Keynesian Economics: New Foundations* (2014), Dos Santos
+  "Keynesian theorising during hard times" (2005). By cluster: **K 6/6 · T 5/7 · S 3/6.**
+- **And the corpus cites inside a seeded literature without seeding it**: Paper II carries
+  Chakrabarti, Chakraborti, Chakravarty & Chatterjee (2013), *Econophysics of Income and Wealth
+  Distributions* — kinetic exchange by its title and by three of cluster `K`'s own seed authors,
+  and not a seed. (Paper III's Soddy 1926/1961 is a second, arguable, case.)
+
+**It moves no number and may not.** `REG-013` §6 forbids re-choosing a seed list in response to
+anything, this finding included; the verdict, the ceiling, the floor and the three *z* values stand
+exactly as run. A dated correction note is appended to `RESULT-REG-013.md` rather than an edit made
+to it — a result document is a record (`RESULT-…-E6.md` §7's precedent). No manuscript is touched:
+the claim occurs at exactly one line in `docs/`, and Paper IV §6 does not repeat it.
+
+***Why it is worth a ledger row anyway, and this is the transferable half.*** The corpus's audit
+machinery is pointed at **claims about the world** — registrations, results, propositions, the
+end-to-end pass. This is a claim about **the repository itself**, made in passing, inside a
+threats-to-validity section, in the sentence whose whole job is to retire the one threat that
+pre-registration cannot. **A defence is the least-audited sentence in a document, because it reads
+as the place where the auditing already happened.** `wealthTensor-61` found the same shape one level
+out: *a candidate produced by asking "what did I miss?" arrives with a gap's authority rather than a
+claim's.* This is that again — a sentence arrives with a **defence's** authority rather than a
+claim's, and gets less scrutiny for it, in the one section a referee reads most carefully.
+
+*Cost to find: one grep, after two false starts that are themselves the lesson's fine print.* A
+line-oriented grep for a multi-word title returns zero when the title wraps (`-61`'s `A rate is not
+extensive`, in the opposite direction — here it would have manufactured absences rather than
+fabrications), so the check ran with newlines normalised to spaces. And the first draft of the
+correction asserted that the seed lists were at least a **superset** of the corpus's bibliography;
+that sentence was written before it was checked, and checking it produced direction two. **The
+finding got sharper because the write-up was verified against the bytes rather than shipped.**
+
+*(Same class as `WT-089` — a fact correctly stated in `docs/` and indexed under nothing — inverted:
+here the fact was correctly stated in `docs/` and indexed under *reassurance*, which is worse,
+because a reader who finds it stops looking.)*
