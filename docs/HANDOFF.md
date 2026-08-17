@@ -1,6 +1,6 @@
 ---
 project: wealth-tensor
-gh_sha: 2d4080e40537d7d96edd591f104387a36a21f65d
+gh_sha: PENDING
 updated: 2026-08-17
 session: wealthTensor-65
 gate_passed: false
@@ -209,6 +209,14 @@ a test suite**, so run it yourself and say the number in the handoff. `-64` did.
 - **THIS REPO HAS ITS OWN WRAP SEQUENCE** (`scripts/handoff_gate.py` docstring): edit
   `docs/HANDOFF.md` with `gh_sha: PENDING` → commit → `--stamp` → commit → `--emit`. `--emit` does
   **not** stamp and refuses `PENDING`. It also runs `G-COACH-2/3` against all four papers.
+- **▲ `--emit` WILL REFUSE, and that is the standing state, not your bug.** `handoff_gate.py:343`
+  refuses on `gate_passed != true`, and `gate_passed` has been `false` since `-58` because the gate
+  FAILs on the known `~/Scripts` pair. **Do not set it `true` to make `--emit` print** — that is
+  falsifying a gate result, which is the exact class of defect `WT-096` spent this session
+  repairing, and `G-COACH` would be the only thing left watching. Run `--stamp`, commit, let
+  `--emit` refuse, read its `G-COACH-2/3` table for regressions (`-65`: concessive openers **0**
+  across all four; conduct narration 1/1/5/2, unchanged), and **paste the handoff into the chat
+  yourself** — which is what `-59`→`-65` each did.
 - **IF YOU EDIT ANY PAPER, REGENERATE THE BOARD BEFORE THE GATE:**
   `python3 ~/Scripts/handoff-kit/board.py --criteria docs/done-criteria.tsv --project wealth-tensor
   --out docs/CHECKLIST.md --preamble docs/checklist-preamble.md --check` (rc=0 prints *"matches
