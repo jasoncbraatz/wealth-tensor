@@ -1,16 +1,16 @@
 ---
 project: wealth-tensor
-session_n: 68
+session_n: 69
 gh_repo: jasoncbraatz/wealth-tensor
 branch: main
-gh_sha: 407e6c7b126a1ae0d320c785220b06792b79e99d
+gh_sha: PENDING
 updated: 2026-08-17
-session: wealthTensor-68
-live_theme: "Paper II's second independent read: two findings against pass 3's nine, both repaired in-pass — the first measured evidence of convergence in the batch. The inherited abstract question was decided, not deferred, and both B&M quotations were re-verified character-exact against the preprint itself."
-phase: "Manuscript repair under a settled thesis, and the convergence counter is finally live: the NEXT independent read of Paper II is the first in the batch with a real chance of scoring a zero."
+session: wealthTensor-69
+live_theme: "Paper IV's §1–§3 read against the NARROWED framing — three findings, four edits, all repaired in-pass. The largest sat in the sentence the paper labels its own central claim, and it got there because a correct patch moved the referent out from under prose that had agreed with the old one."
+phase: "Manuscript repair under a settled thesis. Paper IV's framing is now consistent through §3; §4–§11 have never been read against it. Paper II's convergence counter is live and waiting on fresh eyes."
 gate_passed: true
 gate_version: "2.59"
-next_at_bat: "PAPER IV's re-read after the narrowing — now the top of the order. §1 and §3 still carry the ladder framing in prose; 'composes from X to Y' is a SHAPE, not a string, and a grep cannot see a paraphrase. ~40 min. (Paper II's next read wants FRESH eyes — do not take it if you can help it two sessions running; the counter is only credible if consecutive passes are independent.)"
+next_at_bat: "PAPER IV §4–§11 against WT-102 — the other half of the range this session opened. §4.4 and §9 carry limits language written for the pre-narrowing framing and are NAMED UNCHECKED, not passed. Same method as -69: read for the SHAPE, because the census already proved the strings are gone and that proof is true-and-insufficient. ~35 min."
 blockers: []
 drift_flags: []
 parking_lot: []
@@ -21,240 +21,280 @@ definition_of_done: "Three preprints (II, III, IV) each at ready-to-submit per A
 
 **ORIENT: read `docs/CO-AUTHOR-CHARTER.md` first. THE CHARTER WINS over anything in this file.**
 
-## `-68` IN ONE LINE
+## `-69` IN ONE LINE
 
-**Paper II's second independent read found two, repaired two, and the trajectory is 9 → 2** —
-plus the inherited abstract question (card `1217561330623702`) is **decided at (a), closed, do
-not relitigate** (falsifier named on the card), and both §3.1 quotations now stand verified
-**character-exact against the preprint's own text**, not against the corpus's copy of it.
+**Took at-bat #1 as ordered. Paper IV's §1–§3 re-read after the narrowing found three, repaired
+four edits, and the biggest one was the paper's own thesis sentence** — which still said *"the
+same atomic unit, a household's, aggregates to a firm's and to a sovereign's"* thirty-five lines
+under an abstract that had just stopped saying that.
 
-Commit: this session's. Suite **1078 passed, 0 failed** before AND after (numbers read from the
-summary line, per `-67`'s tail-masks-rc warning). Board **66 criteria, matches, unmoved**.
-Abstract **untouched at 244/1478**.
+Commit `372516e`. Suite **1078 passed, 0 failed** before AND after. Board **66 criteria, matches,
+unmoved — fourth session running.** Coach **1/0, at baseline, no refresh needed.** Abstract
+**untouched at 238/1585**.
 
 ---
 
 ## READ FIRST, in this order
-1. **`docs/REVIEW-008-P7-pass-4.md`** — the pass of record. §4 is the card decision; §5 is the
-   convergence arithmetic; §2's method note is the guard-kit checklist in its newest form.
-2. **`docs/LEDGER.md` `WT-105`** (fact) and **`WT-106`** (method — the two-readings-of-a-prose-
-   magnitude rule, which is `-67`'s two-codepoint μ one level up).
-3. `scripts/wt124_paperII_p7pass4_edits.py` — small, but it is the full `-67` guard kit in 100
-   lines and its idempotence guard was FIRED (exit 2), not read.
+1. **`docs/REVIEW-009-P7-paperIV-narrowing-reread.md`** — the pass of record. §1 is the mechanism
+   (why a *correct* patch created these); §4 is the instrument lesson; **§5 names what this pass
+   did NOT look at**, which is your at-bat.
+2. **`docs/LEDGER.md` `WT-107`** (a framing patch's blast radius) and **`WT-108`** (count-vs-set
+   guards).
+3. **`scripts/wt125_paperIV_p7_narrowing_reread.py`** — ▲ **this is now the guard-kit exemplar,
+   not `wt124`.** Same kit, one improvement, and see TOOLING for why the old one is left alone.
 
 ---
 
 ## YOUR AT-BAT — take one, in this order
 
-### 1. **PAPER IV's re-read after the narrowing.** Top of the order now. §1 and §3 still carry
-the ladder framing in prose even though the title and abstract no longer promise it. `wt120`'s
-census found the phrase only twice and both are fixed — but *"composes from X to Y"* is a
-**shape, not a string**, and a grep cannot see a paraphrase. Read §1–§3 with the narrowed claim
-(`WT-102`) in mind. ~40 min.
+### 1. **PAPER IV §4–§11 AGAINST `WT-102`.** The other half of the range `-69` opened, and the
+same species is *likelier* there, not less: §4.4 ("the limits of the resolution") and §9
+(limitations) were written to bound a claim the abstract no longer makes, so their hedges may now
+be hedging against nothing — or, worse, re-asserting the ladder in order to bound it. §7's
+relocation method and §5's worked instance are also unread against the narrowing. **Read for the
+SHAPE.** `wt120` proved the ladder *string* is gone from `paper-IV.md`; `-69` found three
+paraphrases downstream of that proof. ~35 min.
 
-### 2. **P6's remaining two thirds** (`P1n`/`P5n` are `P3n` repointed, ~30 min, mechanical).
+### 2. **PAPER II'S THIRD INDEPENDENT READ — the first with a live chance of a zero** (9 → 2).
+`-68` did pass 4 and `-69` did not touch Paper II, so **the eyes are fresh again as of now** —
+this is the first session since `-67` where taking it does not break the independence the counter
+depends on. Diff against `.bak-wt68-p7` first, then read whole. A zero-finding pass is a RESULT
+and gets its own REVIEW doc.
 
-### 3. **The ρ = 0 test UNDER-asserts** — card `1217547799559841`. Read the card first:
-tightening the float tolerance to `==` hands the next machine a red suite. Assert the
-**structural** property (the ρ = 0 flow base is uniform across agents). Note the manuscript's
-claim itself is measured (`np.array_equal` True, max diff 0.0 — LEDGER); this at-bat is about
-the APPARATUS catching a future regression, not about the claim.
+### 3. **PAPER I's FIRST INDEPENDENT READ** — still the only manuscript with no `P7` pass at all,
+and now the oldest untouched thing in the batch.
 
-### 4. **PAPER I's FIRST INDEPENDENT READ** — still the only manuscript with no `P7` pass at all.
+### 4. **P6's remaining two thirds** (`P1n`/`P5n` are `P3n` repointed, ~30 min, mechanical).
 
-### 5. **PAPER II's THIRD INDEPENDENT READ — the first with a live chance of a zero.** It is
-deliberately NOT #1: the counter is only credible if consecutive passes are independent, and
-`-68` just did pass 4. If you take it, diff against `.bak-wt68-p7` first, then read whole.
-A zero-finding pass is a RESULT and gets its own REVIEW doc (`P7`'s rule).
+### 5. **The ρ = 0 test UNDER-asserts** — card `1217547799559841`. Read the card first: tightening
+the float tolerance to `==` hands the next machine a red suite. Assert the **structural**
+property. The manuscript claim itself is measured (`np.array_equal` True, max diff 0.0); this is
+apparatus, not prose.
 
-### 6. **`REFERENCE-POLICY`'s sixth pass** — card `1217556161163494`. Third session running that
-would have been saved by it existing.
+### 6. **`REFERENCE-POLICY`'s sixth pass** — card `1217556161163494`. **Fourth** session it would
+have saved.
 
-### 7. **The U+00B5 guard** — card `1217561398864561`. ⚠ NOT in `tests/test_redistribution.py`,
-whose 18 is quoted in the abstract; a new module is fine. (`-68`'s glyph census of Paper II
-after its edits: 0 micro signs, 9 Greek mus — the guard would have passed today, which is when
-you want to install it.)
+### 7. **The U+00B5 guard** — card `1217561398864561`. NOT in `tests/test_redistribution.py`
+(its 18 is quoted in Paper II's abstract); a new module is fine. `-68`'s census: 0 micro signs.
+`-69` added an in-script glyph guard to `wt125` as well — the tree-wide one is still missing.
 
-### 8. **PASTE THE HANDOFF forcing function** — card `1217560480809492`. (`-67` and `-68` both
-pasted it. Two data points, still not a fix.)
+### 8. **The `CONDUCT_ALLOWED_SECTIONS` gap** — card `1217562682350929`. `-68` hit it, `-69`
+avoided it only by checking the tuple before writing. That is a landmine two sessions have now
+walked around rather than lifted.
 
-### 9. **Paper II's companion reference entries** — card `1217542940968749`.
+### 9. **PASTE THE HANDOFF forcing function** — card `1217560480809492`. (`-67`, `-68`, `-69` all
+pasted. Three data points, still not a fix.)
 
-### 10. **`A3` from the PAN AAR — the estate's highest-value loose thread, still unchecked:**
-*where else do call transcripts and their `.srt` intermediates land, and is any of it committed
-or pushed?* Not a wealth-tensor at-bat; named as unchecked so it is not mistaken for checked.
+### 10. **Paper II's companion reference entries** — card `1217542940968749`.
 
-**FORCING LINE (`-59`'s ruling, kept): take none of the ten, say why in ONE LINE at the top of
+### 11. **`A3` from the PAN AAR — estate-level, STILL UNCHECKED:** where else do call transcripts
+and their `.srt` intermediates land, committed or pushed? Not a wealth-tensor at-bat; named as
+unchecked so it is not mistaken for checked.
+
+**FORCING LINE (`-59`'s ruling, kept): take none of the eleven, say why in ONE LINE at the top of
 your handoff.**
 
 ---
 
-## WHAT `-68` DID, so you do not re-derive it
+## WHAT `-69` DID, so you do not re-derive it
 
-**One at-bat: Paper II P7 pass 4** (`docs/REVIEW-008-P7-pass-4.md`). Diffed against three
-`.bak`s first, then read whole. Re-graded every repair since pass 3 — all hold. Verified both
-B&M quotations **verbatim against the preprint full text** (ar5iv; the local PDF was gone).
-Checked the two-rankings coherence (matched-rate vs matched-budget; consistent, and the credit
-paragraph's "per unit of budget" is the B&M-congruent one). Confirmed `II-2`/`II-3` repairs and
-the ρ = 0 structural identity's measurement. Verified §7's pin (`3b11f23` IS the last commit
-touching `redistribution.py`, re-run this session) and the 18-test count (collected: 18).
+**One at-bat: Paper IV §1–§3, read against `WT-102`.** Diffed `paper-IV.md` against
+`.bak-wt66b-narrow` **first**, which is what turned a vague brief into a scoped one: `wt121`
+touched **exactly three places** — the title, the abstract's leading clause, and one reference
+page range. Everything else in the paper was written under the *old* framing and had never been
+re-read.
 
-**The two findings, both repaired via `wt124`:**
-- **`II-13`** — §3.1's table stated no configuration for its flow rows (they run at ρ = 1, the
-  constructor default). One-sentence table note added. The `II-12` species, one section over.
-- **`II-14`** — *"a change of six parts in a million"*: exact read absolutely, ~13× off read
-  ppm-relative. Now says `6 × 10⁻⁶`. Survived pass 3 verbatim.
+**The three findings, four edits, all repaired via `wt125`:**
+- **`IV-11`** — §1 ¶3, the paper's own thesis sentence, still walked the ladder: *"the same atomic
+  unit, a household's, **aggregates to** a firm's **and to** a sovereign's without changing type."*
+  A verb of derivation — a *stronger* ladder than the "from…to" `WT-102` removed — with the
+  trailing "without changing type" being exactly the defence `WT-102` called *"a retreat even when
+  it is correct."* Now: *"a household's holding, a firm's balance sheet and a sovereign's accounts
+  are the same kind of object, and summing holdings does not change the kind"* — the abstract's
+  own post-narrowing shape, addition kept.
+- **`IV-12`** — §3 **opens** claiming *"the operator that moves between them is addition"* and
+  **closes**, fifty lines later, *"what joins the scales is the question … and no more."* Addition
+  is a joiner; the closing deleted its own opening. The closing was the over-reaching one (`E1`
+  removed the *chain*, never §2.2's addition), so the closing now names it.
+- **`IV-13`** (two edits) — §3 wrote **both** scale transitions as part-whole nesting: *"A balance
+  sheet is the household's holding, summed"* and *"National accounts are firms summed."* **False as
+  set composition** — households are not constituents of firms, and the SNA puts households,
+  government and NPISH in national accounts alongside corporations, so the paper's own §3
+  Household paragraph could only reach the sovereign scale by first becoming a firm. **And nesting
+  is the "one structure" the narrowed abstract disclaims** — a claim about *membership*, which is
+  stronger than the sequence claim that was removed.
 
-**The card decision:** `1217561330623702` closed at **(a) leave the abstract** — no priority
-claimed, the abstract's numbers are the paper's own (`WT-103`), credit is one click away in §1
-contribution 2, and 244/250 cannot hold a citation abstracts do not carry anyway. **Falsifier
-that reopens it: a referee reading the abstract as a priority claim** — then `WT-102`'s shape
-(delete, don't argue) and the six words of slack.
+**Verification:** census of 7757 files before writing (`WT-099`); every anchor unique except
+`IV-12`'s, which also lives in `scripts/patch_wt56_e1_remedy.py` as that one-shot's quoted
+replacement text — **left alone** per `WT-102`'s records rule, after *verifying* (not assuming)
+that no test and no Makefile target executes it. `.bak-wt69-p7` beside the manuscript.
+Idempotence guard **FIRED, exit 2**. Board and coach re-run after apply, both unmoved.
 
-Three lessons banked (two global), `use`/`record-outcome` corroborated for the two leaves this
-read leaned on (`wt68-p2read → pass`).
-
-**And at wrap, `--emit` refused — revealing its THIRD limb** (`G-COACH-3`; see TOOLING). The
-stray was `-67`'s own References disclosure, a legitimate `REFERENCE-POLICY` §4 note in a
-section the coach's allowed-list doesn't know. Baseline refreshed deliberately
-(`--coach-refresh`, the refusal's own sanctioned exit), the manuscript NOT reworded to duck the
-detector, the instrument gap carded (`1217562682350929`).
+Two global lessons + one project lesson banked; `use`/`record-outcome` corroborated —
+**`p7-convergence-pass-fed-backlog-drain` graduated quarantine → active on this pass.**
 
 ---
 
-## THE TELL, now TEN deep
+## THE TELL, now ELEVEN deep
 
-`-61`: a corpus under repair has a moving referent. `-62`: the line-wrap grep trap runs both
-ways. `-63`: a backlog drain measures the backlog, not the paper. `-64`: a review apparatus's
-own coverage is an unmeasured claim. `-65`(i): fire your repair, don't read it. `-65`(ii): an
+`-61`: a corpus under repair has a moving referent. `-62`: the line-wrap grep trap runs both ways.
+`-63`: a backlog drain measures the backlog, not the paper. `-64`: a review apparatus's own
+coverage is an unmeasured claim. `-65`(i): fire your repair, don't read it. `-65`(ii): an
 instrument that reads prose cannot report on code. `-66`: a dark predicate is not evidence of
-absence until a known-positive document fires it. `-66b`: a false certification re-files a
-defect under a category that stops anyone fixing it. `-67`: an instruction "cite X wherever Y
-appears" hides a count hypothesis, and at N = 0 the cheap repair is to write Y in.
+absence until a known-positive document fires it. `-66b`: a false certification re-files a defect
+under a category that stops anyone fixing it. `-67`: "cite X wherever Y appears" hides a count
+hypothesis; at N = 0 the cheap repair is to write Y in. `-68`: byte-exact numbers do not certify
+the sentences around them — a census of values is not a census of claims.
 
-**`-68` ADDS:**
+**`-69` ADDS, and it is `-61` read backwards:**
 
-> ### BYTE-EXACT NUMBERS DO NOT CERTIFY THE SENTENCES AROUND THEM. A CENSUS OF VALUES IS NOT A CENSUS OF CLAIMS.
+> ### A FRAMING PATCH'S BLAST RADIUS IS EVERY LINE THAT AGREED WITH THE OLD FRAMING IN ITS OWN WORDS — AND NONE OF THEM APPEAR IN YOUR DIFF.
 
-`-64` reproduced every number in §3's table byte-exact — and both of `-68`'s findings sat
-touching that table: the table's *configuration* was never stated (`II-13`), and the prose
-*framing* a verified number misstated its magnitude under the phrase's most natural reading
-(`II-14`, in the `.bak` `-64` read). A pass's coverage is shaped by its question. The number
-pass asked "does the value match?"; nobody had asked "does the sentence beside the value say
-what the value says?" Corollary already banked as `WT-106`: a magnitude written as prose has an
-absolute and a relative reading, and when they differ materially, **write the number**.
+`-61`'s tell has been read four sessions running in its **missed-defect** direction: *diff before
+you read, or you review a document that has moved.* This is the **created-defect** direction.
+`wt121` was correct, ruled, censused, guarded, and three lines long. `-63`'s `REVIEW-006` had read
+§1 and passed it — **and `REVIEW-006` was right at the time**, because §1's thesis sentence and
+the then-current abstract said the same thing in the same shape. The patch did not make §1 change.
+**The patch made §1's staying still into an error.**
+
+And the standing kit cannot see it. `WT-099`'s census catches *strings*; `wt120` proved
+`paper-IV.md` no longer contains the ladder phrase, and that verification was **true and
+insufficient — a paraphrase has no string.** The operational rule: **after a framing patch lands,
+the at-bat is not over. Re-read every section that ARGUED for the old framing. The census names
+the files that quoted it; nothing names the sentences that agreed with it.** Cheapest fix, offered
+not built: a framing patch names, in its own docstring, the sections whose argument it
+invalidates — the patch's author is the last person who knows.
 
 ---
 
 ## RULINGS NOW SETTLED — do not reopen
-- **Card `1217561330623702` DECIDED at (a).** The abstract stays. Reopen ONLY on the named
-  falsifier (a referee reading it as a priority claim). The rationale is on the card and in
-  `REVIEW-008` §4 — do not re-argue it from scratch.
-- **`DECISION-001` closed at A for good.** DO NOT RE-RUN THE LITERATURE SEARCH. Extend the
-  corpus in `wt118_fulltext_absence.py` if extending; never start over.
-- **Paper IV's framing is RULED AND APPLIED** (`WT-102`). Do not re-litigate.
-- **The `r = 1` cap and the stock-vs-flow contrast are CITED, not claimed** — and **`WT-103`:
-  the `r = 1` cap is in NO MANUSCRIPT.** Do not "restore" it; it was never there.
+- **Paper IV's framing is RULED AND APPLIED (`WT-102`), and `-69` propagated it through §3.** Do
+  not re-litigate the ruling. **§4–§11 are UNPROPAGATED, which is a different thing** — that is
+  work, not a reopening.
+- **Card `1217561330623702` DECIDED at (a).** Paper II's abstract stays. Reopen ONLY on the named
+  falsifier (a referee reading it as a priority claim); rationale on the card + `REVIEW-008` §4.
+- **`DECISION-001` closed at A for good.** DO NOT RE-RUN THE LITERATURE SEARCH; extend
+  `wt118_fulltext_absence.py` if extending, never start over.
+- **`WT-103`: the `r = 1` cap is in NO MANUSCRIPT.** Do not "restore" it; it was never there.
 - The 14 *"from the household to the sovereign"* occurrences in `END-TO-END-001.md` and
-  `RESULT-E*.md` are **DELIBERATELY UNTOUCHED**. Rewriting them falsifies history.
-- **`REG-012` §4.7** (`WT-096`): immutable; a warranted edit **appends an Amendment**. **DO NOT
-  widen `ROTTED` by glob.**
-- **GREP `tests/`+`scripts/` before editing a manuscript string** (`WT-094`) — and remember
-  `-67`'s rider: your own patch script is a new file in `scripts/` and the guards read it too.
-  **Census before you patch** (`WT-099`). **Do not delete "18 tests" from Paper II's abstract.**
+  `RESULT-E*.md` are **DELIBERATELY UNTOUCHED** — rewriting them falsifies history. ▲ `-69` adds
+  a sibling case: `patch_wt56_e1_remedy.py`'s quoted replacement text now differs from the live
+  manuscript **on purpose**. A spent patch script is a record of what it did.
+- **`REG-012` §4.7** (`WT-096`): immutable; a warranted edit **appends an Amendment**. DO NOT
+  widen `ROTTED` by glob.
+- **GREP `tests/`+`scripts/` before editing a manuscript string** (`WT-094`); your own patch
+  script is itself a `scripts/` file the guards read (`-67`). **Census before you patch**
+  (`WT-099`). **Do not delete "18 tests" from Paper II's abstract.**
 - **DO NOT re-derive** the κ residuals, `III-1`'s 4.2×, the `E2` blind pass, the
   P2-at-three-strengths lead (withdrawn).
-- **DO NOT re-serve `REVIEW-004` by section number** — verbatim quotes only; §A3 is the section
-  every re-serving pass skips.
+- **DO NOT re-serve `REVIEW-004` by section number** — verbatim quotes only; §A3 is the one every
+  re-serving pass skips.
 - **`REVIEW-005` §2's `II-3` diagnosis is WRONG about the code** (`WT-098`).
 - The **end-to-end pass is CLOSED** (T=2, A=0, E1–E6 spent). The version stamp is `P8`/`P11`'s,
-  pre-scored by `-64` — do not score it as a new finding.
+  pre-scored by `-64` — do not score it as new.
 
 ---
 
 ## HONEST LOOSE ENDS
-- **`wt117b_litsearch.py` still has not finished** (inherited, unchanged since `-66`). The
-  verdict does not depend on it; cheapest finish is dropping Semantic Scholar from `SOURCES` or
-  adding an API key. Minutes, not an at-bat.
-- **The board did not move. Third time.** `-66b` (Paper IV's title), `-67` (a related-work
-  rewrite + two reference upgrades), now `-68` (a config note + a magnitude repair). **No
-  criterion tracks credit, marks, or framing.** When `P7`'s schema is rebuilt (Jason item (c)),
-  this is the standing question to fold in.
+- **`wt117b_litsearch.py` still has not finished** (inherited, unchanged since `-66`). The verdict
+  does not depend on it; cheapest finish is dropping Semantic Scholar from `SOURCES` or adding an
+  API key. Minutes, not an at-bat.
+- **The board did not move. FOURTH time** — `-66b`, `-67`, `-68`, now `-69`, and `-69` is the
+  sharpest datum yet because it repaired a **factually false sentence** (`IV-13`: firms are not
+  households summed) and the board still reads 66/66. **No criterion tracks credit, marks,
+  framing, or internal consistency.** This is now the strongest evidence for Jason item (c).
+- **`REVIEW-009` §5 names three things this pass did NOT check** — Paper IV §4–§11, whether Papers
+  I–III paraphrase Paper IV's old framing, and Paper I's total absence of a `P7` pass. They are
+  named so they are not mistaken for checked.
 
 ---
 
-## TOOLING (▲ = new at `-68`)
+## TOOLING (▲ = new at `-69`)
 - **RUN THE GATE AS:** `GATE_ROSTER_WHO=big-wealthTensor-NN nohup ~/Scripts/gate-selfcheck.sh >
   /tmp/gate.log 2>&1 &`, then polls of ~170 s. Grep `GATE SELF-CHECK:` and `CANNOT VERIFY`
-  expecting 0. Do not `grep -c "G-AL"` — returns 1 on a green run (and `grep -c` exits 1 on a
-  correct count of zero; assert the printed number, never `$?` — same for pytest through
-  `| tail`).
+  expecting 0. **Assert the printed number, never `$?`** — `grep -c` exits 1 on a correct count of
+  zero, and `| tail` masks pytest's rc.
 - **WRAP SEQUENCE:** `gh_sha: PENDING` → commit → `--stamp` → commit → push → `--emit` → **PASTE
-  INTO CHAT.** ▲ **`--emit` has THREE refusal limbs, and each session has found exactly one:**
-  missing `REQUIRED` fields (`-66`); `gate_passed` not the bare boolean `true` — do not annotate
-  frontmatter booleans (`-67`); and **`G-COACH-3`** — the conduct-narration count per paper must
-  be non-increasing against `docs/.coach-baseline.json` (`-68`, found live: `-67`'s Crossref
-  disclosure *"an earlier draft gave the issue as 282(3)"* in the References counts as stray
-  because `CONDUCT_ALLOWED_SECTIONS` only knows §§6–11 + Appendix). The sanctioned exit is
-  `--coach-refresh` **with the reason documented**; do NOT reword a legitimate disclosure to
-  duck the phrase tuple. The section-list gap is carded: `1217562682350929`. Three limbs, three
-  sessions, one lesson: **read the instrument, not your memory of its failure text.**
-- **EDITED A PAPER? REGENERATE THE BOARD BEFORE THE GATE:** `./scripts/regen-board.sh --check`
-  → "matches measured reality (66 criteria)". The wrapper is the only supported invocation.
+  INTO CHAT.** **`--emit` has FOUR known refusal limbs, one found per session for four sessions:**
+  (1) missing `REQUIRED` fields (`-66`); (2) `gate_passed` not the bare boolean (`-67`);
+  (3) `G-COACH-3`, conduct-narration count per paper non-increasing vs `docs/.coach-baseline.json`
+  (`-68`); (4) `gh_sha ≠ HEAD` with content changed since the stamp (`-68`) — **if anything
+  re-commits after the stamp, re-stamp.** One rule: **read the instrument, not your memory of its
+  failure text.**
+- **▲ THE COACH TUPLES ARE READABLE — READ THEM BEFORE YOU WRITE, NOT AFTER IT REFUSES.**
+  `scripts/handoff_gate.py` ~L246–260: `CONCESSIVES` (12 openers) and `CONDUCT` (5 phrases,
+  **case-sensitive** — "An earlier draft" capitalised does NOT count, which is why Paper IV's
+  baseline is 1 and not 2), allowed only in `## 6 `–`## 11 ` + `# Appendix`. `-69` asserted both
+  counts non-increasing **inside `wt125`**, so the gate never had a chance to refuse. Thirty
+  seconds of reading beats a refusal at wrap.
+- **EDITED A PAPER? REGENERATE THE BOARD BEFORE THE GATE:** `./scripts/regen-board.sh --check` →
+  "matches measured reality (66 criteria)". The wrapper is the only supported invocation.
 - **ANY ABSTRACT EDIT:** `python3 scripts/check_abstract_size.py <PATH> --print`. Paper II
-  244/1478; Paper IV 238/1585.
-- **▲ VERBATIM QUOTES: `ar5iv.labs.arxiv.org/html/<arxiv-id>` serves the FULL text** where the
-  `/abs` page truncates. One fetch verifies a quotation character-exact when the local PDF is
-  gone. (NBER PDFs: `https://www.nber.org/system/files/working_papers/wNNNNN/wNNNNN.pdf` with a
-  browser `User-Agent`; `pdftotext` is on darwin.)
-- **CROSSREF settles `to re-check` flags in seconds:** `https://api.crossref.org/works/<DOI>`.
-- **▲ TAGS RUN TO `wt124`; `wt125` IS FREE.** Name your patch script in a free tag, and check
-  identifier names against the guarded namespaces (`ED`-prefixed edit labels are the proven-safe
-  shape; the exhibit-label canary polices the shorter one).
-- **A BATCHED PATCH SCRIPT BEATS N EDITS** — `wt124` is the smallest complete example: whole-
-  anchor `assert count == 1` before any write, `.bak` first, `--dry`, idempotence guard
-  **normalised and ASSERTED and then FIRED**, glyph guard, char-width guard (characters, not
-  bytes).
+  244/1478; Paper IV 238/1585. (Run it even when you *believe* you did not touch the abstract —
+  it is two seconds and it converts a belief into a measurement.)
+- **▲ THE GUARD-KIT EXEMPLAR IS NOW `wt125`, NOT `wt124`.** Same kit — whole-anchor
+  `assert count == 1` literal *and* normalised before any write, `.bak` first, `--dry`,
+  idempotence guard normalised + ASSERTED + FIRED, glyph guard, char-width guard in CHARACTERS —
+  **plus the width guard as a SET, not a count** (`WT-108`):
+
+  ```python
+  wide     = {ln for ln in new.splitlines()  if len(ln) > 100 and not ln.startswith("|")}
+  old_wide = {ln for ln in text.splitlines() if len(ln) > 100 and not ln.startswith("|")}
+  assert wide <= old_wide, f"introduced long lines: {sorted(wide - old_wide)}"
+  ```
+
+  `wt124`'s count form fired **correctly** on `-69`'s first `--dry` and then printed six lines —
+  one introduced, five pre-existing — under the heading *"introduced long lines"*. **`wt124` is
+  deliberately NOT patched**: it is spent, its idempotence guard exits 2, and editing it would
+  falsify what ran. The fix is repointing the exemplar, which is this bullet.
+- **▲ VERBATIM QUOTES: `ar5iv.labs.arxiv.org/html/<arxiv-id>` serves the FULL text** where `/abs`
+  truncates — one fetch turns an inherited quotation into a measurement. NBER PDFs:
+  `https://www.nber.org/system/files/working_papers/wNNNNN/wNNNNN.pdf` with a browser `User-Agent`;
+  `pdftotext` is on darwin. **CROSSREF settles `to re-check` flags in seconds:**
+  `https://api.crossref.org/works/<DOI>`.
+- **▲ TAGS RUN TO `wt125`; `wt126` IS FREE.** `ED`-prefixed edit labels are the proven-safe shape.
 - **`dx` chokes on multiline / apostrophe-bearing strings.** Write locally, `--put`, run there.
-  `COMMITMSG.txt` → `--put` → `git commit -F`. Appending to a doc: `--put` to `/tmp/x.md` then
-  `cat /tmp/x.md >> docs/FILE.md`. **Absolute local paths in every `cat X | dx --put`** — third
-  session running with zero cwd losses.
-- **`lessons.py use`/`record-outcome`: one per `dx` call at 300 s, never chained.** Batched
-  `add`s in a single `--put` shell script worked fine (`-68`, three adds, all pushed).
-- **▲ `roster claim` syntax is `--who X --resource Y --task Z`** — the resource is a named flag,
-  not positional (`-68` ate one usage error so you don't).
-- **MULTI-SESSION IS REAL.** `roster who` before consequential work; the brake refuses the
-  `git add -A` SHAPE; `ROSTER_BRAKE_ACK=<n>` is the honest exit, `--no-verify` is not.
-- Asana `create_tasks` rejects `assignee: null` — omit the key. `add_comment` + `update_tasks`
-  landed first try this session.
+  `git commit -F`; append with `--put /tmp/x.md` then `cat /tmp/x.md >> docs/FILE.md`.
+  **Absolute local paths in every `cat X | dx --put`** — fourth session, zero cwd losses. ▲ A
+  `git commit -F /dev/stdin <<'MSG'` heredoc **through `dx` commits successfully and then returns
+  RC=2** with an "unexpected EOF" from the outer eval; check `git log`, don't re-commit.
+- **`lessons.py use`/`record-outcome`: one per `dx` call at 300 s, never chained.** Batched `add`s
+  in a single `--put` shell script work fine (`-68` three, `-69` three + two `use` + one
+  `record-outcome`, all pushed).
+- **`roster claim` syntax is `--who X --resource Y --task Z`** — resource is a NAMED flag.
+  `roster join` returns RC=0 with **no output** on a re-join: success, not a hang.
+- **MULTI-SESSION IS REAL.** `rail` + `roster who` before consequential work; the brake refuses the
+  `git add -A` SHAPE — explicit-path staging of your own claimed repo goes through clean (`-68`
+  twice, `-69` once). `ROSTER_BRAKE_ACK=<n>` is the honest exit, `--no-verify` is not.
+- Asana `create_tasks` rejects `assignee: null` — omit the key.
 
 ---
 
 ## THE SELF-REVIEW TRIAD, answered in writing
-1. **Captured everything for a zero-memory future Opus?** Yes: `REVIEW-008` is the pass of
-   record; `WT-105`/`WT-106` in the LEDGER; the card closed with rationale AND falsifier; three
-   lessons banked; `.bak-wt68-p7` beside the touched manuscript; this handoff.
-2. **Learned the hard way and not yet written down?** Now written: the two-readings rule
-   (`WT-106`, global), the ar5iv path (global), the pass-4 record with the do-not-relitigate
-   marker (project). The roster-claim syntax is in TOOLING above.
-3. **The ONE thing that makes the next session's life easier, added THIS pass?** The
-   convergence counter finally means something: 9 → 2 with both repaired makes the NEXT Paper II
-   read the first that can plausibly score a zero — and this handoff deliberately queues it
-   BEHIND Paper IV so the eyes are fresh. Runner-up: the quote-verification norm — a quotation
-   inherited from a prior session is a claim, and one fetch turns it into a measurement.
+1. **Captured everything for a zero-memory future Opus?** Yes: `REVIEW-009` is the pass of record
+   and its §5 is an explicit not-checked list; `WT-107`/`WT-108` in the LEDGER; three lessons
+   banked; `.bak-wt69-p7` beside the manuscript; `wt125` committed and readable; this handoff.
+2. **Learned the hard way and not yet written down?** Now written: the blast-radius tell
+   (`WT-107`, global), the count-vs-set guard rule (`WT-108`, global), Paper IV's scales-don't-nest
+   fact (project), the coach-tuple pre-read and the `dx` heredoc RC=2 artifact (TOOLING above).
+3. **The ONE thing that makes the next session's life easier, added THIS pass?** `REVIEW-009` §5
+   and this handoff's at-bat #1 are **the same list** — the pass's own not-checked section IS the
+   next session's brief, so nobody has to reconstruct scope from a diff. Runner-up: the exemplar
+   repointing, which means the next patch script inherits a guard that names its defect instead of
+   one that makes you find it.
 
 ---
 
 ## JASON-SIZED, not yours to decide
 - **(a) `DECISION-001`** — closed for good.
-- **(b) Paper IV's framing** — ruled and applied (`WT-102`).
-- **(c) `P7` is still ONE BOOLEAN** for a per-paper criterion with a two-pass counter — the only
-  open wealth-tensor Jason item. It is a board-schema task with a ruling attached: propose the
-  schema, Jason ratifies in one line. Fold in the framing-criterion question (three sessions of
-  board-didn't-move evidence now).
-- **(d) The PAN history purge** — Batter's Box `1217561667484767`, paste-able purge prompt on
-  the card. NOT a wealth-tensor item; do not rewrite `claude-blackbook` history on your own
-  initiative.
+- **(b) Paper IV's framing** — ruled and applied (`WT-102`); `-69` propagated it through §3.
+- **(c) `P7` IS STILL ONE BOOLEAN** for a per-paper two-pass criterion — the only open
+  wealth-tensor Jason item. A board-schema task with a ruling attached: **propose the schema,
+  Jason ratifies in one line.** Fold in whether ANY criterion should track credit, marks, framing
+  or internal consistency — **the board has now not moved for four consecutive sessions, and `-69`
+  repaired a factually false sentence without moving it.**
+- **(d) The PAN history purge** — Batter's Box `1217561667484767`, paste-able prompt on the card.
+  NOT a wealth-tensor item; do not rewrite `claude-blackbook` history on your own initiative.
 
 ## AT WRAP
 `~/Scripts/charter-read.sh wealthTensor-NN` **immediately** before the gate; the gate detached
