@@ -3,7 +3,7 @@ project: wealth-tensor
 session_n: 69
 gh_repo: jasoncbraatz/wealth-tensor
 branch: main
-gh_sha: PENDING
+gh_sha: 2a3a39c5305ae1fc36cf7b2b5bdfb5b901565e5c
 updated: 2026-08-17
 session: wealthTensor-69
 live_theme: "Paper IV's §1–§3 read against the NARROWED framing — three findings, four edits, all repaired in-pass. The largest sat in the sentence the paper labels its own central claim, and it got there because a correct patch moved the referent out from under prose that had agreed with the old one."
