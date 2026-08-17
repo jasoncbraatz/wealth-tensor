@@ -3,7 +3,7 @@ project: wealth-tensor
 session_n: 68
 gh_repo: jasoncbraatz/wealth-tensor
 branch: main
-gh_sha: 3b073bd2e3437d44ea184a90f0e85ec47b414245
+gh_sha: 407e6c7b126a1ae0d320c785220b06792b79e99d
 updated: 2026-08-17
 session: wealthTensor-68
 live_theme: "Paper II's second independent read: two findings against pass 3's nine, both repaired in-pass — the first measured evidence of convergence in the batch. The inherited abstract question was decided, not deferred, and both B&M quotations were re-verified character-exact against the preprint itself."
