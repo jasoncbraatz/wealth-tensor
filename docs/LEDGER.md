@@ -2552,3 +2552,118 @@ but eleven live is ten and twenty-one dismissed is twenty-two. **The count that 
 one nobody had a reason to add up**, which is the same shape as `WT-090`: a number inside a
 document's own accounting arrives with the document's authority and gets less scrutiny than the
 claims it is counting.
+
+---
+
+## WT-092 · METHOD · 2026-08-17 · wealthTensor-64
+
+**A REVIEW APPARATUS HAS THE SAME DEFECT AS A MANUSCRIPT: ITS OWN COVERAGE IS AN UNMEASURED
+CLAIM, AND THE SILENCE READS EXACTLY LIKE COVERAGE.**
+
+Three instances, all found in one pass, none of them by looking for them:
+
+1. **`REVIEW-004` §A3 holds three Paper II items and was served one-third.** Commit `bde6d65` is
+   titled *"REVIEW-004 A3's remedy, four days late, and made to stay fixed by derivation"* and
+   served item 3 (the test count). Items 1 (the unopposed run has two values in one paper) and 2
+   (the κ closed form is better than its advertised 5 %) stayed live for five days, and were
+   re-derived from scratch by `-64` — the referee's residuals −6.78 %, −4.91 %, −4.35 % arrived
+   again, identically, from Φ(0.25) and φ(0.25). **A bucket named for its smallest member gets
+   closed by its smallest member.** §A3's title — *"Three smaller things I verified in passing"* —
+   is why every re-serving pass read Part A and skipped it.
+2. **`PIN-001` said *"this repairs the CLASS"* and hardcoded one manuscript of four.** See
+   `WT-093`.
+3. **The handoff gate reports `PASS` over a red suite.** See `WT-095`.
+
+**The question that finds all three** is not *is this checked?* — each instrument is correct about
+what it checks. It is **what is the widest object this check's own words claim, and what is the
+narrowest thing it actually touches?** A3 claimed "three things" and closed one. `PIN-001` claimed
+a class and took a file. The gate claims a session is safe to end and measures only whether it is
+pushed.
+
+**Operational corollary for `P7`.** End a pass by asking, of each finding: *which instrument would
+have caught this, and does that instrument exist for the other three papers?* Six of `-64`'s nine
+findings had an instrument watching the identical thing one file over.
+
+---
+
+## WT-093 · FACT · 2026-08-17 · wealthTensor-64
+
+**`PIN-001`'s CLASS REPAIR REACHES ONE MANUSCRIPT OF FOUR, AND ITS OWN CENSUS OF THE DEFECT
+MISSED THE SECOND.**
+
+`RESULT-PIN-001` records that `d655501` *"occurs six times in this repository and every one of them
+is prose — paper III four times, `LEDGER.md`, `RESULT-002-wt026.md`, the session notes."* **Paper II
+§7 said `d655501` too, in the same words — *"the last commit touching `src/`"* — and is absent from
+that list.** `git log -S` puts the phrase in Paper II at `f1ceac7`, the commit that completed the
+paper, so it was present and false throughout `PIN-001`'s own session. Both instruments the repair
+built hardcode `paper-III.md`.
+
+**The census across all four manuscripts, as of `6314302`:**
+
+| manuscript | pins | orphaned |
+|---|---|---|
+| paper-I | — | — |
+| paper-II | `d655501` (repaired by `-64` to a per-file `3b11f23`) | none |
+| paper-III | `0569ab6` `93a159b` `ad779eb` `b9089c7` `d655501` | none |
+| paper-IV | `5efe626` `fff7063` | **`5efe626`** |
+
+**Widening `test_manuscript_shas_are_instrumented.py` to every manuscript goes red on Paper IV
+today**, because `5efe626` — the per-file pin for `scripts/reg013_citation_whitespace.py` — lives
+only in prose. That is the `PIN-001` shape, intact, in the newest paper. `-64` repaired Paper II
+(per-file pin **plus** a `LATEST_TOUCH` entry, because a per-file pin with nothing watching it is
+the same defect in a smaller font) and carded the rest rather than commit a red suite.
+
+*The old pin was not wrong about the bytes — `redistribution.py` last moved at `3b11f23`, before
+`d655501`, so the pinned tree state of the module was correct and still is. It was false about
+why.*
+
+---
+
+## WT-094 · METHOD · 2026-08-17 · wealthTensor-64
+
+**BEFORE EDITING A MANUSCRIPT STRING, GREP `tests/` AND `scripts/` FOR IT. A REPAIR THAT DELETES AN
+INSTRUMENT'S SUBJECT PASSES EVERY TEST.**
+
+`-64`'s first draft of the Paper II abstract repair deleted *"with 18 tests"* outright: word
+negative, false attribution gone, three words of slack returned. It would also have starved a
+falsification instrument of its subject —
+
+```
+scripts/redproof_apparatus.py:105     sub(r"18 tests", "19 tests", 0, count=0)
+scripts/gen_apparatus_rows.py:166     "The paper says '18 tests' in the abstract and in 1; …"
+```
+
+— because §1 reads `the 18 tests in` and §7 reads `the **18** tests in`, so the **abstract's
+literal `18 tests` is one of only two targets the mutation control has**, and one of two facts a
+board row's rationale asserts. **The suite would have stayed green**, which is the whole point: a
+mutation control with no subject to mutate does not fail, it stops meaning anything. This is the
+`redproof` failure mode arriving through the front door, carried by a correct repair.
+
+The repair chosen instead keeps the literal string, is word-neutral (249 words, four characters
+shorter), and preserves Paper II's one word of abstract slack for `DECISION-001`. Two minutes of
+grep bought it.
+
+**Companion to `-63`'s corollary** (*a repair can introduce a defect*, caught only by diffing the
+`.bak` chain): a repair can also **remove a guard's reason to exist**, and no diff of the
+manuscript shows it — only a grep of the instruments does.
+
+---
+
+## WT-095 · FACT · 2026-08-17 · wealthTensor-64
+
+**THE HANDOFF GATE DOES NOT RUN A TEST SUITE. A RED REPOSITORY CROSSES A `PASS`ING GATE IN
+SILENCE.**
+
+Measured, not inferred: `grep -n pytest ~/Scripts/gate-selfcheck.sh` returns **exactly one line**,
+and it is a directory-exclusion list (`.pytest_cache`, alongside `node_modules` and `.venv`). The
+gate proves every repo under `~/repos`, `~/code`, `~/Desktop/downloads` and `~/Scripts` is
+committed **and** pushed. It says nothing about whether what was pushed is green.
+
+`-63` handed off a gate `PASS` with *"exactly ONE issue"* over a suite that was already red —
+`tests/test_reg012_sec6_sec47_frozen.py` had been failing since that session's own commit
+(`6314302`). The handoff was accurate about what the gate measured and silent about what it did
+not reach, which is `WT-092` in one line.
+
+**Until the gate is widened, a session that edits a repository with a test suite must run it and
+say the result out loud in the handoff.** `-64` did: 1073 passed, 1 failed, the failure carded and
+not this pass's. See the `REG-012` card for why that one cannot simply be re-pinned.

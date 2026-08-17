@@ -35,8 +35,8 @@ the base can see. At zero realisation a **100 % levy on flow is indistinguishabl
 at all** (Gini 0.994 and top decile 1.000 in both). Third, periodicity and threshold are trim,
 not structure: they modulate the effective rate without opening or closing a region; a threshold
 at a quarter of the mean is close to free. The claims are properties of a model class; no causal
-claim about any institution is made. All results reproduce from an open repository with 18
-tests.
+claim about any institution is made. All results reproduce from open code; 18 tests pin
+them.
 
 **Keywords:** kinetic exchange models · wealth condensation · multiplicative growth · Gini
 coefficient · tax base · realisation · agent-based models · econophysics
@@ -72,7 +72,7 @@ they came from.
    that the process's behaviour is a function of these alone (§2).
 2. The result that the **base caps the reachable region and the rate only moves you within it**,
    with the mechanism identified as κ and a closed form for the flow base's κ that the
-   simulation reproduces to within 5 % (§3.1).
+   simulation reproduces to within 7 % at every rate tabulated (§3.1).
 3. The identification of **realisation as the decisive quantity**, including the limiting result
    that a confiscatory levy on flow, at zero realisation, is indistinguishable from no levy
    (§3.2). This is a statement about what a base can *observe*, not about how hard it squeezes.
@@ -84,14 +84,14 @@ they came from.
    public repository, and the claims are held in place by the 18 tests in
    `tests/test_redistribution.py`, one of which exists specifically to make overclaiming fail
    loudly — alongside a second, in a companion module of the same suite, that does the same
-   office for the companion paper (§7).
+   office for this programme's price-formation manuscript (§7).
 
 **A boundary, stated once and maintained throughout.** Everything here is positive. The claims
 are properties of a model class. Where a historical institution is mentioned it is mentioned as
 a *coordinate* — an existence proof that a region of the parameter space is implementable — and
-never as a recommendation. Zakat appears in §3.1 for exactly one reason: it is assessed on stock
-held above a threshold across a full year rather than on income received, which places it
-somewhere specific on the base axis. That is a measurement, not an endorsement, and the paper
+never as a recommendation. Zakat is named in this paper for exactly one reason: it is assessed
+on stock held above a threshold across a full year rather than on income received, which places
+it somewhere specific on the base axis. That is a measurement, not an endorsement, and the paper
 would be unchanged if the institution had never existed.
 
 ---
@@ -167,8 +167,11 @@ tested. The mechanism is visible in the third column and is not a fitted relatio
 - for a **stock** base, κ = *r* exactly;
 - for a **flow** base, κ = *r*·E[η⁺], where E[η⁺] is the *gross positive* growth rate — because a
   levy cannot rebate a loss. In closed form,
-  **E[η⁺] = μΦ(μ/σ) + σφ(μ/σ) = 0.1073** for the parameters above, which the simulation
-  reproduces to within 5 % and which the test suite asserts.
+  **E[η⁺] = μΦ(μ/σ) + σφ(μ/σ) = 0.1073** for the parameters above. The simulated κ runs
+  **4–7 % below** that form at every rate tabulated, and the residual is monotone in the
+  rate — −4.4 %, −4.9 %, −6.8 % at *r* = 1.000, 0.100, 0.025 — which makes it a
+  denominator convention rather than noise: the implementation measures κ against
+  post-growth wealth. The test suite asserts agreement within 10 %.
 
 So a **confiscatory** levy on flow has approximately the compressive budget of a **10 % levy on
 stock**. The base is not a detail of implementation. It sets a ceiling, and the rate — the
@@ -234,14 +237,16 @@ written down before the check was run are recorded in `docs/RESULT-END-TO-END-00
 Both remaining coordinates modulate the *effective rate* rather than opening or closing a region,
 which is what leaves base and rate as the two structural axes.
 
-**Periodicity.** Holding the average rate constant at 0.02 per period, assessing every *P*
-periods at rate 0.02·*P* moves the stationary Gini from 0.486 (*P* = 1) to 0.456 (*P* = 20). A
+**Periodicity.** On a stock base, holding the average rate constant at 0.02 per period,
+assessing every *P* periods at rate 0.02·*P* moves the stationary Gini from 0.486 (*P* = 1) to
+0.456 (*P* = 20). A
 lumpier assessment is very slightly **stronger**, because it catches dispersion that has had time
 to accumulate. An annual assessment is therefore not a watered-down continuous one — which is the
 relevant observation for any levy assessed on a yearly cycle.
 
-**Threshold.** Monotone and smooth, with no cliff: Gini 0.443 at zero exemption rising to 0.770
-at 20× the mean of the base. The interesting part is the near end. A threshold at **0.25× the
+**Threshold.** On the same base at *r* = 0.025, monotone and smooth, with no cliff: Gini 0.443
+at zero exemption rising to 0.770 at 20× the mean of the base. The interesting part is the
+near end. A threshold at **0.25× the
 mean costs nothing measurable** in compression (0.444 against 0.443) while reducing κ by a
 quarter. Exempting small holders removes a quarter of the assessed volume and none of the effect,
 because the compression is performed by transfers at the top of the distribution.
@@ -258,12 +263,15 @@ scored the **unopposed** process, the one the entire exercise exists to contrast
 
 The Gini of *N* agents is capped at (*N*−1)/*N*. A fully condensed economy therefore also stops
 rising — not because it reached a stationary distribution but because it ran out of headroom. At
-*N* = 800 the unopposed process reads Gini 0.977 and flat, while its top decile holds 0.988 of
-everything. The drift test was measuring the ceiling.
+*N* = 800 and *T* = 1200 the unopposed process reads Gini 0.994 and flat — short of the
+0.99875 ceiling it is pinned against — while its top decile holds 1.000 of everything. The
+drift test was measuring the ceiling.
 
-The criterion now requires a settled Gini **and** a top decile below 0.90, at which point the
-separation is unambiguous: bounded runs sit at 0.19–0.50, condensed runs at 0.99–1.00, and the
-top-share statistic is horizon-stable where the Gini is not.
+The criterion now requires a settled Gini **and** a top decile below 0.90 — and it is the
+second condition that does all of the separating. Across the sweep of §3.1 the bounded runs'
+Gini spans 0.000–0.891 against the condensed run's 0.994, which separates nothing; their top
+decile spans 0.100–0.861 against 1.000, clearing the 0.90 threshold with 0.039 to spare. The
+top-share statistic is also horizon-stable where the Gini is not.
 
 **The general rule, which is not confined to this model: a summary statistic with a hard ceiling
 cannot distinguish "converged" from "saturated."** Before using one as a convergence criterion,
@@ -316,9 +324,12 @@ criterion fails loudly instead of quietly re-scoring condensation as success.
 3. **No production, no labour supply, no portfolio choice, no behavioural response to the levy.**
    The Lucas critique applies in full force and is not answered here.
 4. **One good, one asset, no prices.** The process is a wealth process, not an economy.
-5. **Finite N and a fixed parameter neighbourhood.** *N* = 800, and the results are means over a
-   tail window across seeds; the qualitative separations are large relative to that noise, but
-   the third decimal is not defended.
+5. **Finite N, one seed per reported figure, and a fixed parameter neighbourhood.** *N* = 800,
+   and every number above is a mean over a tail window of a **single** path at `seed = 0`
+   rather than an ensemble average. Seed-robustness is asserted separately rather than averaged
+   in: `test_the_result_is_not_a_lucky_seed` holds two configurations inside a stated band
+   across five seeds. The qualitative separations are large relative to that band, but the
+   third decimal is not defended.
 6. **Growth shocks are Gaussian and i.i.d. across agents and time.** Heavy tails and
    autocorrelation both plausibly matter and neither is explored.
 7. **Positive, not normative — and that boundary is a constraint on the reader too.** Nothing
@@ -362,18 +373,24 @@ used, because no empirical data is used at all — every number is generated by 
 - **The two tests that exist to make overclaiming fail loudly:**
   `test_a_flat_gini_does_not_mean_a_bounded_one`, which pins §3.4's boundedness criterion so that
   any future simplification of it fails instead of quietly re-scoring condensation as success,
-  and `test_excess_demand_is_monotone_here_so_this_is_not_an_SMD_result`, which constrains the
-  companion paper in the same suite. A test suite that constrains its author is a different
-  object from one that flatters him, and the difference is checkable rather than asserted.
-- **Commit for the results reported here:** **d655501** — the last commit touching `src/`, and
-  therefore the state of the module that produced §3's simulation output. It does **not** cover the
-  two `scripts/` commands named above, which produce §3 numbers from outside `src/`. *A
-  head-of-repository SHA will additionally be pinned when this paper is posted, and it is what
-  covers them.*
+  and `test_excess_demand_is_monotone_here_so_this_is_not_an_SMD_result`, which constrains this
+  programme's price-formation manuscript — since superseded by its own internal referee, and the
+  guard outlives it — in the same suite; it is a different companion from §3.2's work on the
+  reporting layer. A test suite that constrains its author is a different object from one that
+  flatters him, and the difference is checkable rather than asserted.
+- **Commit for the results reported here:** **3b11f23** — the last commit touching
+  `src/wealth_tensor/redistribution.py`, and therefore the state of the module that produced
+  §3's simulation output. The pin is **per file** deliberately, and an earlier draft of this
+  section shows why: it pinned the last commit touching `src/` as a whole, which is a sentence
+  whose truth changes whenever any unrelated module moves and which nothing in the repository
+  was watching. It does **not** cover the two `scripts/` commands named above, which produce §3
+  numbers from outside `src/`. *A head-of-repository SHA will additionally be pinned when this
+  paper is posted, and it is what covers them.*
 
-Pinning the last commit that touched `src/` rather than a bare placeholder is deliberate: it is
-non-circular (a paper cannot cite the commit that adds the paper), it is verifiable today, and it
-names the object a replicator actually needs — the state of the code, not the state of the prose.
+Pinning the last commit that touched the module rather than a bare placeholder is deliberate: it
+is non-circular (a paper cannot cite the commit that adds the paper), it is verifiable today,
+and it names the object a replicator actually needs — the state of the code, not the state of
+the prose.
 
 The repository's `docs/` directory is deliberately public and contains the project's working
 notebook, including the entries in which the claim of §3.1 half-failed and was narrowed. It is
@@ -442,7 +459,7 @@ Series on Public Policy*, 1, 19–46.
 
 ---
 
-*One citation is deliberately absent and is flagged rather than faked: §3.1 mentions zakat as a
+*One citation is deliberately absent and is flagged rather than faked: §1 mentions zakat as a
 coordinate on the base axis — a levy assessed on stock held above a threshold across a full year.
 A primary source for that characterisation should be added at submission. The paper's argument does
 not depend on it (the institution is a measurement, not a premise, and §1 says so), but an

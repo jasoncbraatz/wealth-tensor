@@ -50,6 +50,11 @@ PINS: dict[str, str] = {
 #: the next commit touching a pinned file makes the guard red, so the pin and the paper
 #: move together or the suite says so.
 LATEST_TOUCH: dict[str, str] = {
+    # wealthTensor-64: paper II §7 pinned "the last commit touching src/" — the PIN-001
+    # sentence, in the sibling manuscript, false since 2026-08-10 and missed by PIN-001's
+    # own census of six occurrences. §7 now pins this module per file; this line is what
+    # makes that pin go red the day the module moves, instead of nine days later.
+    "src/wealth_tensor/redistribution.py": "3b11f23",
     "src/wealth_tensor/edgar.py": "93a159b",
     "src/wealth_tensor/lag.py": "ad779eb",
     "src/wealth_tensor/lambda_sensitivity.py": "b9089c7",
