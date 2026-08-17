@@ -3,12 +3,12 @@ project: wealth-tensor
 session_n: 67
 gh_repo: jasoncbraatz/wealth-tensor
 branch: main
-gh_sha: 9fe02f077f4b33eac7ef2682896244b004fa8337
+gh_sha: PENDING33eac7ef2682896244b004fa8337
 updated: 2026-08-17
 session: wealthTensor-67
-live_theme: "The two mandatory citations placed — and one of the card's two placement rules turned out to have no site in any manuscript, so the citation went where the paper actually claims something instead of where the instruction said."
+live_theme: "The two mandatory citations placed — and one of the card's two placement rules turned out to have no site in any manuscript, so the citation went where the paper actually claims something instead of where the instruction said. Then the wrap gate refused, and reading WHY surfaced a live customer credit-card number in the wisdom repo."
 phase: "Manuscript repair under a settled thesis. Paper II is credited and internally consistent; its second independent read is now the live at-bat and it inherits one question this session raised and refused to decide."
-gate_passed: true
+gate_passed: true  # green on the RE-RUN; the first run FAILED G-V and that failure is the session's second story — see §THE GATE REFUSED
 gate_version: "2.59"
 next_at_bat: "PAPER II's SECOND INDEPENDENT READ — could start a convergence count, and it now owns the abstract question card 1217561330623702. The manuscript moved in 24 places in 48 hours and then again today in §1, §3.1 and §6. DIFF against paper-II.md.bak-wt67-cites, .bak-wt65-decA and .bak-wt64-p7; do not read the repaired text as given."
 blockers: []
@@ -94,6 +94,13 @@ data point, not a fix.)*
 
 ### 9. **Paper II's companion reference entries** — card `1217542940968749`.
 
+### 10. **`A3` from the new AAR — the blast-radius question I could not answer.** *Where else do
+call transcripts and their `.srt` intermediates land, and is any of it committed or pushed?* This
+PAN reached a lesson because it was in a transcript, and `call-artifact-srt-intermediates-on-tmp`
+is already an AAR in this corpus about those artefacts sitting in the wrong place. **Unchecked, and
+named as unchecked so it is not mistaken for checked.** Not a `wealth-tensor` at-bat — but it is the
+highest-value loose thread on the estate right now and it should not wait for someone to trip over it.
+
 **FORCING LINE (`-59`'s ruling, kept): take none of the nine, say why in ONE LINE at the top of
 your handoff. It costs nothing.**
 
@@ -136,6 +143,59 @@ number corrected.
   (arXiv `cond-mat/0002374`, NBER w14730). **`paper-IV`'s B&M entry KEEPS `✓` deliberately:** it
   quotes nothing, so it leans on no text. Different reliance, different mark — that is what a
   per-entry read-status disclosure *is*.
+
+---
+
+## THE GATE REFUSED, AND THAT IS THE SECOND STORY
+
+**`G-V` failed at wrap.** Not on anything `-67` did — on a lesson a **live sibling session**
+(`opus-florist-order`) had banked 49 minutes earlier, incident-tagged with no covering AAR. The
+gate offered a one-line escape: adopt the AAR sitting within ±3 days, `stale-session-pointer-false-gate-fail`.
+
+**That adoption would have been a false certification** — a stale session pointer has nothing to do
+with a phone-order transcription near-miss — and `WT-102` is one day old and about exactly that:
+*a false certification does not merely fail to fix a defect, it re-files it under a category that
+stops anyone fixing it.* So instead of adopting, I opened the lesson body to see whether I could
+responsibly write the AAR myself.
+
+**The lesson body contained a full 16-digit, Luhn-valid Visa PAN.** A real customer's card, quoted
+as the evidence for the lesson, auto-committed and **pushed** by `lessons.py add` in under four
+minutes — into the repo every session greps at student-in, whose search output lands in context
+windows. `claude-blackbook` is **private**, which is what makes this a cleanup rather than a
+disclosure.
+
+| what | state |
+|---|---|
+| working file redacted + pushed | ✅ `d5f09e31` — PAN gone from all future search output, gate logs and context |
+| PAN still in git history and on `origin` | ⚠️ **Jason-sized** — Batter's Box `1217561667484767`, with a paste-able purge prompt |
+| pre-commit hook cannot see PANs | 📋 State Machine `1217561601836055` |
+| AAR filed, validated, lesson adopted | ✅ `pan-written-into-wisdom-repo`, sweep now **PASS** |
+
+**Three things worth carrying forward, none of them about credit cards:**
+
+1. **`G-AF` reports the pre-commit secret hook covering `114/114` repos and is GREEN. It passed a
+   full PAN.** The hook is scoped to *secrets that authenticate us* — API keys, token prefixes,
+   high-entropy strings. A card number is *regulated data about a customer*: sixteen low-entropy
+   digits inside ordinary prose, space-separated, so even a naive `\d{16}` misses it.
+   **`G-AF` measures COVERAGE, not CAPABILITY** — that a hook *runs* in 114 repos, never that it
+   can *see*. That is `-64`'s tell one level out and `-66`'s applied to a security control.
+2. **The predicate lesson repeated itself, in my hands, within the hour.** My first PAN sweep —
+   13–19 digits with a separator allowed anywhere — returned **165 tree-wide hits** and was pure
+   noise, because it spans prose and fuses unrelated numbers. Tightened to *16 contiguous digits or
+   a **consistently**-separated 4-4-4-4*, then Luhn, then a known issuer BIN: **exactly 1 hit —
+   `4111111111111111`, the universal Visa test card, in a docs fixture.** That hit is the
+   predicate's **positive control**, and it is the only reason the rest of the tree reading clean is
+   a measurement rather than a dark predicate. **A zero-hit sweep with no control is not a clean
+   bill of health.** (`-66`, third time this week.)
+3. **What actually caught this was a gate that forced a session to READ A DOCUMENT.** No scanner in
+   the estate could have. `G-V` was failing about a missing *AAR* and found a *PAN* sideways. When
+   `G-V`'s cost gets questioned — and it will, it is the noisiest check in the gate — that is the
+   line to remember.
+
+**The roster brake also paid out**, unprompted: `claude-blackbook` was claimed by the live sibling,
+and the brake let a single-path `git add` through while refusing the `git add -A` shape — exactly
+the distinction `git-add-all-sibling-tree` exists to enforce. When the AAR commit legitimately did
+cover the whole dirty tree, `ROSTER_BRAKE_ACK=2` is the honest exit and `--no-verify` is not.
 
 ---
 
