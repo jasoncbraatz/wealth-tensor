@@ -3,7 +3,7 @@ project: wealth-tensor
 session_n: 67
 gh_repo: jasoncbraatz/wealth-tensor
 branch: main
-gh_sha: PENDING0921d130b9124b6b6fd6a24b8d31
+gh_sha: 234d02e03d5a39a93cd569e6ba12f25c5126dac5
 updated: 2026-08-17
 session: wealthTensor-67
 live_theme: "The two mandatory citations placed — and one of the card's two placement rules turned out to have no site in any manuscript, so the citation went where the paper actually claims something instead of where the instruction said. Then the wrap gate refused, and reading WHY surfaced a live customer credit-card number in the wisdom repo."
