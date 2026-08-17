@@ -3475,3 +3475,113 @@ rather than erroring. **A rule you wrote yourself, in the file you are working f
 protection — only a mechanism is.** The failure mode is worth naming precisely because it does not
 look like a failure: no error, just a hang. Left as a TOOLING note rather than a script, since the
 one-line fix is "absolute paths" and the tell is now recorded twice.
+
+---
+
+## WT-110 · TELL · 2026-08-17 · wealthTensor-70
+
+### A census and an identity guard prove what the text SAYS; neither looks at WHERE IT SITS
+
+`wt126`'s `ED3` added the abstract's headline limit to Paper IV's §9 and placed it **first**,
+because §9 is ordered by weight and the abstract ranks that limit second of its two headline
+statements. The insertion shifted seven ordinals and changed **no sentence**. Every guard in the
+kit passed, and the kit is now large: census over 379 files, anchors asserted `== 1` literal and
+normalised, an **identity** guard asserting that the list of pre-existing item bodies survived the
+renumber byte-for-byte, a set-based width guard, a glyph guard, a document-wide coach guard. The
+suite passed, 1078. Then `regen-board.sh --check` went **STALE**, and **`P5g` flipped ✅ → 🔨** —
+the first board movement in five sessions.
+
+`P5g` is *"Limitations is a numbered list and THE FIRST ITEM runs against the paper's own
+comfort,"* and its check greps **item 1 specifically** for `A composed state nobody can read`.
+
+**In a corpus that measures list position, an ordinal is a criterion.** Every guard in the kit
+answers *what does the text say* — by string, by set, by normalised identity. Not one of them
+answers *where does it sit*, and position is exactly what an insertion changes about everything
+below it. **Any insertion at the head of a numbered list in a manuscript is an edit to a criterion,
+not just to prose**, and the same holds for reordering a table's rows, renumbering a section, or
+moving a paragraph between sections that a criterion locates by name.
+
+**The board caught it, which is the system working — and the reason it worked is worth naming.**
+`P5g` is written positionally (*"THE FIRST ITEM"*) rather than existentially (*"the list contains
+an item that…"*), and its check was tightened in an earlier session to look **in item 1** rather
+than anywhere in the file. A weaker, more forgiving criterion would have stayed green while the
+paper's flagship self-costing limitation quietly became item 2. **A criterion strict enough to be
+annoying is a criterion strict enough to fire.**
+
+**Repaired by placement, not by phrasing.** `wt127` moves the new item to position 2. Rewording it
+to carry `P5g`'s phrase would have satisfied the checker while demoting the item the criterion
+exists to protect — gaming a green. And `wt126` was **not** edited: it ran, and editing a spent
+script falsifies the record of what ran (`-69`'s ruling on `wt124`, kept). **The two-script trail
+is the finding.**
+
+**The general form, for the guard kit:** before an edit, ask what in the tree is *positional* about
+the thing being edited. `grep -rl "FIRST ITEM\|first item\|^1\." docs/done-criteria.tsv` is a
+five-second check that this session did not run and should have. Reading the criteria that govern
+a file before editing it is the same move as `-69`'s *read the instrument, and read it early* —
+applied to the board instead of to the gate.
+
+---
+
+## WT-111 · TELL · 2026-08-17 · wealthTensor-70
+
+### The censused string is not the only string — and a repair's blast radius reaches outside the range that produced it
+
+Two findings in `REVIEW-010`, one shape: **the thing that proves a defect is gone is scoped
+narrower than the defect.**
+
+**`IV-14`, the census's blind spot.** `WT-102` removed *"composes from **the** household to **the**
+sovereign"* from Paper IV's title and abstract. `wt120` censused that string corpus-wide and
+reported it gone from `paper-IV.md`. The report was **true**. §4.1 said *"You claim a unit that
+composes from household to sovereign"* — the same phrase with both definite articles dropped —
+and sat there through `wt121`, `REVIEW-009` and `wt125`.
+
+`-69`'s tell was *a paraphrase has no string*, and it is right. **This is the sharper case: the
+paraphrase HAD a string, and it was not the one anybody censused.** A verbatim census is a
+substring test, and English function words are exactly what a writer drops when compressing a
+clause. **A census over a phrase should be run over its content words in order**, not over the
+phrase as typed — `composes.*household.*sovereign` would have found it in one grep, in any
+session since the narrowing.
+
+**`IV-15`, the repair that reached past its own range.** `wt125` (`-69`, same day) added *"and the
+addition of §2.2"* to §3's closing enumeration. §8 contained *"What is left is weaker, **is what §3
+now says**, and is still worth publishing: one question, asked at three scales, answered
+quantitatively at each"* — a paraphrase of §3's closing that was exact before `wt125` and stale
+after it. **`-69` discovered the species — a framing patch's blast radius is every line that agreed
+with the old framing in its own words (`WT-107`) — and generated a fresh instance of it, one
+section outside the range it was reading, while writing that sentence.**
+
+`REVIEW-009` §5's scope note is honest about not having opened §4–§11. What no scope note can
+carry is that **an edit made inside a read range lands outside it.** So a scope declaration needs
+two halves, not one: *what I read* **and** *what I changed*, because the second is a coverage
+claim on sections the first never mentions.
+
+**Repaired by DELETING the cross-reference** (`WT-098`, third application) rather than resyncing
+it. §8's first sentence already names §3, so nothing was lost — and the clause was a **standing
+drift generator**: a paraphrase of another section's content must be re-synced every time that
+section moves, and nothing in the tree measures whether it has been. Resyncing buys one correct
+sentence and leaves the generator running. **Prefer deleting a stale cross-reference to updating
+it, unless the reference is load-bearing.**
+
+---
+
+## WT-112 · HYGIENE · 2026-08-17 · wealthTensor-70
+
+### Paper IV has ten sections; three documents told `-70` to read eleven
+
+`-69`'s `HANDOFF.md`, its `next_at_bat` front-matter field and the session's forcing line all
+assigned *"Paper IV §4–§11"*. **Paper IV's last numbered section is §10** (Data and code
+availability), followed by References. §11 is **Paper III's** number for Limitations — Paper IV's
+is §9, which the board's own `P5h` criterion text already records verbatim: *"Section located by
+NAME (III is 11, IV is 10, II is 7)."*
+
+Nothing was missed — the range read was §4 through §10 plus References, which is the whole tail of
+the manuscript — and the assignment's *substance* was exactly right. But a section number was
+inherited from a sibling manuscript, repeated three times in the handoff that carried it, and
+survived a gate pass.
+
+**The cheap mechanism, if a future session wants it:** the board already locates sections by name
+per paper because hard-coding `## 8` was a defect once (`P5f`'s criterion text says so). A handoff
+that names a section RANGE is making the same hard-coded claim, in a file the gate reads. A gate
+check that any `§N` mentioned in `HANDOFF.md` against a named paper exists in that paper is about
+six lines. **Not written this session** — carded rather than built, because writing it mid-at-bat
+is the rabbit hole the standing order tells you to tee up instead.

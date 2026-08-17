@@ -256,14 +256,14 @@ It inherits a measured departure with an unidentified cause, and §9 says so.
 
 Here is the objection this paper would deserve if §3 were the whole of it.
 
-*You claim a unit that composes from household to sovereign. But the best-established result about
-aggregation in economics says the opposite. Sonnenschein (1972, 1973), Mantel (1974) and Debreu
-(1974) proved that aggregate excess demand inherits from individually rational agents only
-continuity, homogeneity of degree zero and Walras's Law — not downward slope, not uniqueness, not
-stability. Aggregate demand can take essentially arbitrary shape. Worse: your own Paper I cites
-SMD approvingly, as evidence that doubting inherited aggregation is inside the mainstream. You
-cannot cite the theorem that aggregation destroys structure and then claim structure survives
-aggregation.*
+*You claim a unit that keeps one type at the household, firm and sovereign scales and survives
+being summed. But the best-established result about aggregation in economics says the opposite.
+Sonnenschein (1972, 1973), Mantel (1974) and Debreu (1974) proved that aggregate excess demand
+inherits from individually rational agents only continuity, homogeneity of degree zero and
+Walras's Law — not downward slope, not uniqueness, not stability. Aggregate demand can take
+essentially arbitrary shape. Worse: your own Paper I cites SMD approvingly, as evidence that
+doubting inherited aggregation is inside the mainstream. You cannot cite the theorem that
+aggregation destroys structure and then claim structure survives aggregation.*
 
 That is correct as far as it goes and it is the strongest thing anyone will say about this paper.
 It is also answerable in one distinction, and the answer is not a hedge.
@@ -504,8 +504,8 @@ share, and that correspondence — not the three separate results — would have
 central contribution. `END-TO-END-001` leg `E1` shows the two shares are not the same kind of
 object: the unrecognised remainder is deferred in one and discarded in the other, and the firm
 scale carries a release rate α for which the sovereign scale has no counterpart. What is left is
-weaker, is what §3 now says, and is still worth publishing: one question, asked at three scales,
-answered quantitatively at each. The surviving resemblance is not nothing and is not a structure —
+weaker and is still worth publishing: one question, asked at three scales, answered
+quantitatively at each. The surviving resemblance is not nothing and is not a structure —
 and the test that separated those two readings was designed, with its response to every outcome
 fixed in advance, before anybody knew which one it would return.
 
@@ -585,7 +585,15 @@ model — and worse, makes the paper's centrepiece a fifty-year-old theorem the 
    the claim to the extensive state, and Papers II and III are both, in substance, demonstrations
    that measuring layers do not see the thing that matters. A composed state nobody can read is a
    weaker asset than the argument's confidence might suggest.
-2. **Diagonality at the firm scale is assumed, its test is closed, and it went against the
+2. **The three scales share one question, not one structure.** The corpus's own end-to-end test
+   (`END-TO-END-001` leg `E1`) asked whether the sovereign scale's realisation share and the
+   firm scale's observability share are one object seen twice, and rejected it: what the firm
+   scale's filter does not recognise is deferred and released at rate α, what the sovereign
+   scale's base does not recognise is never assessed, and there is no parameter on one side
+   playing α's part on the other. What the framework offers across scales is therefore one
+   type, one question answered quantitatively at each, and addition within a scale — not a
+   correspondence between the scales' parameters. §3 records the demotion and §8 the route.
+3. **Diagonality at the firm scale is assumed, its test is closed, and it went against the
    assumption.** Recognition events do cluster within firm-quarters — 4.12× and 2.02× the
    independence expectation, both universes, both *p* = 0.0002 (Paper III §5.4) — so the Hadamard
    form in §3 is an approximation and not an identity, and the composition claim's link at the scale
@@ -597,18 +605,18 @@ model — and worse, makes the paper's centrepiece a fifty-year-old theorem the 
    which anyone would actually read it. And the cause is unidentified: the standards sequence the
    tests, so an accounting artefact and an economic coupling are not separated by the design that
    found the departure.
-3. **This paper contributes no new computation.** Its claims are joins over results established
+4. **This paper contributes no new computation.** Its claims are joins over results established
    elsewhere, plus one measurement on the literature. A reader who rejects Paper II or Paper III
    should reject the corresponding link here.
-4. **§5's instance is the zero-income-effect case, which is the load-bearing restriction.** The
+5. **§5's instance is the zero-income-effect case, which is the load-bearing restriction.** The
    allocation cancels identically because each agent's demand does not depend on their own
    endowment. That is the special case; the general one is where SMD lives.
-5. **The three-literature framing is a choice, not a partition.** Ecological economics, industrial
+6. **The three-literature framing is a choice, not a partition.** Ecological economics, industrial
    ecology, national accounting theory and the aggregation literature proper all have claims on
    this territory. The three named here are the ones whose results the corpus actually uses.
-6. **Nothing here is normative.** The corpus characterises what is measurable and what composes.
+7. **Nothing here is normative.** The corpus characterises what is measurable and what composes.
    It does not say what should be measured, taxed, recorded or done.
-7. **The whitespace measurement is about occupancy, not fertility.** `REG-013` can establish that
+8. **The whitespace measurement is about occupancy, not fertility.** `REG-013` can establish that
    an intersection is unoccupied. That it is worth occupying is what the argument has to earn, and
    the measurement cannot help with it.
 
