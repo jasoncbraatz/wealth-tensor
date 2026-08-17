@@ -155,7 +155,16 @@ def test_the_base_sets_a_ceiling_that_the_rate_cannot_cross():
 
 
 def test_reallocation_intensity_is_what_the_base_caps():
-    """kappa -- the share of aggregate wealth moved per assessment -- is the mechanism.
+    """kappa -- the share of aggregate wealth moved per assessment -- is the levy's BUDGET.
+
+    NOT its mechanism, and this docstring said otherwise until `-65`. DECISION-001 prices
+    option A as "demote kappa from mechanism to budget in FIVE places" and all five are in
+    paper-II.md; this file was the sixth. Nothing asserts a docstring, so the retraction in
+    the manuscript would have left the test suite still making the claim -- the
+    abstract-versus-body defect one file out. What refutes it is the paper's own table: two
+    levies matched at kappa ~ 0.10 compress to Gini 0.222 and 0.125, and a threshold at 0.25x
+    the mean removes a quarter of kappa at no measurable cost. kappa is necessary, not
+    sufficient. The assertions below were always budget facts; only the prose overreached.
 
     For a stock base kappa is the rate itself -- exactly, by construction. For a flow base
     it is the rate times the *gross positive* growth rate, because a levy cannot rebate a
@@ -166,7 +175,7 @@ def test_reallocation_intensity_is_what_the_base_caps():
 
     which for mu = 0.05, sigma = 0.20 is 0.1073 -- twice mu, and still an order of magnitude
     below what a stock levy reaches. Non-deductibility of losses works *in favour* of the
-    flow base here, and it is still not close. That gap, not the rate, is the mechanism.
+    flow base here, and it is still not close. That gap, not the rate, is what the base caps.
     """
     from math import erf, exp, pi, sqrt
 

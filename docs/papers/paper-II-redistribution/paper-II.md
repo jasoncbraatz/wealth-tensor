@@ -25,14 +25,14 @@ without bound and the Gini approaches unity. Any distribution that does not cond
 opposed by something. This paper classifies the opposing mechanisms not by institutional origin
 but by four coordinates — **base, rate, periodicity, threshold** — and asks which regions bound
 inequality below unity. First, the **base sets a ceiling the rate cannot cross**: at a matched
-rate the two bases differ by roughly an order of magnitude in compression. The mechanism is κ,
-the share of aggregate wealth moved per assessment, for which the flow base admits a closed
-form. The stronger prediction it was built to test — that a flow levy fails to oppose the
-multiplicative term *regardless of rate* — is **false, and this paper's own sweep falsified
-it**: the frontiers are **nested**, stock 0.000 against flow 0.125. Second, the surviving claim
-is narrower and better: the decisive quantity is **realisation** — the share of a period's gain
-the base can see. At zero realisation a **100 % levy on flow is indistinguishable from no levy
-at all** (Gini 0.994 and top decile 1.000 in both). Third, periodicity and threshold are trim,
+rate the two bases differ by roughly an order of magnitude in κ, the levy's compressive budget,
+for which the flow base admits a closed form. The stronger prediction it was built to test —
+that a flow levy fails to oppose the multiplicative term *regardless of rate* — is **false, and
+this paper's own sweep falsified it**: the frontiers are **nested**, stock 0.000 against flow
+0.125. Second, the surviving claim is narrower and better: the decisive quantity is
+**realisation** — the share of a period's gain the base can see. At zero realisation the flow
+base is uniform, so a **100 % levy on flow leaves wealth exactly unchanged** (Gini 0.994 and
+top decile 1.000 in both). Third, periodicity and threshold are trim,
 not structure: they modulate the effective rate without opening or closing a region; a threshold
 at a quarter of the mean is close to free. The claims are properties of a model class; no causal
 claim about any institution is made. All results reproduce from open code; 18 tests pin
@@ -71,11 +71,13 @@ they came from.
    rate, periodicity, threshold — plus the realisation share of the base, and a demonstration
    that the process's behaviour is a function of these alone (§2).
 2. The result that the **base caps the reachable region and the rate only moves you within it**,
-   with the mechanism identified as κ and a closed form for the flow base's κ that the
-   simulation reproduces to within 7 % at every rate tabulated (§3.1).
+   with κ — the levy's compressive *budget*, not its mechanism — separating the bases by an
+   order of magnitude, and a closed form for the flow base's κ that the simulation reproduces
+   to within 7 % at every rate tabulated (§3.1).
 3. The identification of **realisation as the decisive quantity**, including the limiting result
-   that a confiscatory levy on flow, at zero realisation, is indistinguishable from no levy
-   (§3.2). This is a statement about what a base can *observe*, not about how hard it squeezes.
+   that a confiscatory levy on flow, at zero realisation, leaves the wealth vector exactly
+   unchanged — its base is uniform, not absent (§3.2). This is a statement about what a base
+   can *observe*, not about how hard it squeezes.
 4. A methodological result of independent interest: **a summary statistic with a hard ceiling
    cannot serve as a convergence criterion.** The Gini is capped at (N−1)/N, so a fully
    condensed economy also stops rising, and a drift test scores total condensation as bounded
@@ -143,8 +145,9 @@ picked, and the paper's central result is a statement about the whole ρ axis.
 
 **Gini**, of the wealth vector, in the exact sorted-rank form rather than a Lorenz
 approximation. **Top decile share**, because the Gini saturates (§3.4). And **κ**, the share of
-aggregate wealth actually moved per assessment — the levy's *compressive budget*, and the
-quantity through which the base does its work.
+aggregate wealth actually moved per assessment — the levy's *compressive budget*. It is a
+budget and not a mechanism: §3.1 matches two levies at κ and finds them compressing
+unequally, and §3.3 removes a quarter of κ at no measurable cost.
 
 ---
 
@@ -162,7 +165,7 @@ quantity through which the base does its work.
 | flow, *r* = 1.000 | 0.125 | 0.1026 | 0.138 | yes |
 
 At a matched rate the two bases sit roughly an order of magnitude apart in κ, at every rate
-tested. The mechanism is visible in the third column and is not a fitted relationship:
+tested. The budget is visible in the third column and is not a fitted relationship:
 
 - for a **stock** base, κ = *r* exactly;
 - for a **flow** base, κ = *r*·E[η⁺], where E[η⁺] is the *gross positive* growth rate — because a
@@ -192,6 +195,15 @@ damps the generator — and both register as a smaller Gini, which is why the di
 in the statistic normally reported. An outcome measure records that the distribution was compressed.
 It does not record whether the mechanism producing next period's distribution was touched.
 
+**κ is necessary and it is not sufficient, and this paper reports both witnesses.** The
+paragraph above matches the two levies at κ ≈ 0.10 and finds them compressing unequally, 0.222
+against 0.125. §3.3 supplies the converse from the other side: a threshold at 0.25× the mean
+removes a quarter of κ at no measurable cost in compression, 0.444 against 0.443. κ can hold
+while the outcome moves and move while the outcome holds, so **no function of κ alone
+reproduces this section's table.** κ is what a base makes available to spend — which is why the
+bases sort, and why the closed form is worth having — but what the spending buys is fixed by
+the object the levy acts on, which is the distinction the preceding paragraph draws.
+
 **A prediction that half-failed, reported as such.** The claim this section was built to test was
 stronger: that a levy on flow does not oppose the multiplicative term *regardless of rate*. That
 is **false as stated**, and the sweep is what falsified it. At full mark-to-market realisation a
@@ -212,9 +224,16 @@ was doing the work all along:
 | 0.25 | 0.395 |
 | 0.00 | **0.994** |
 
-At ρ = 0 — the holder whose gains accrue but are never realised — a **100 % levy on flow is
-statistically indistinguishable from no levy at all**: Gini 0.994 against 0.994, top decile 1.000
-in both. That is the true "regardless of rate" result, and note what kind of statement it is. It
+At ρ = 0 — the holder whose gains accrue but are never realised — a **100 % levy on flow leaves
+the wealth vector exactly unchanged**: Gini 0.994 against 0.994, top decile 1.000 in both, and
+the two paths agree agent by agent rather than merely on the summary statistics. The identity is
+structural, and saying so is stronger than calling it a near-match. The levy is still assessed —
+at ρ = 0 the flow base is not empty but is the accrued **wage**, and the assessments do fire —
+but the wage is identical for every agent, so the levy takes the same amount from each and
+returns it per capita. A uniform assessment with a uniform rebate is the identity on the wealth
+vector. What ρ = 0 removes is not the levy but the **dispersion in its base**.
+
+That is the true "regardless of rate" result, and note what kind of statement it is. It
 is a claim about what a base is able to **observe**, not about how hard it squeezes. A rate is an
 intensity; realisation is an *observability*, and the observability binds first.
 
@@ -345,7 +364,8 @@ the surrounding literature), where the effect of saving propensity, taxation and
 on stationary wealth distributions has been examined from several directions. The contribution
 here is not that redistribution opposes condensation — that is established — but that the
 mechanisms sort by **observability of the base** rather than by rate or institutional form, and
-that this sorting has a closed-form mechanism (κ) rather than being a simulation regularity.
+that the budget through which they operate has a closed form (κ) rather than being a simulation
+regularity — though the sorting is not a function of that budget alone (§3.1).
 
 The realisation result touches the public-finance literature on realisation-based versus
 mark-to-market taxation from an unfamiliar angle: not from the incentive or valuation side, but

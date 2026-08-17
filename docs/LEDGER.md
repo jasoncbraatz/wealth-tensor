@@ -2816,3 +2816,117 @@ Suite: **1078 passed, 0 failed.**
 (one constant for two roles), `PIN-001`'s SHA guard (one paper of four), and `LATEST_TOUCH`'s own
 comment. None was wrong about what it checked. All three were silent about what they did not
 reach, and the silence read exactly like coverage.*
+
+---
+
+## WT-098 · FACT · 2026-08-17 · wealthTensor-65
+
+**A REVIEW DOCUMENT'S CLAIM ABOUT THE CODE IS ITSELF AN UNVERIFIED CLAIM. `REVIEW-005` DIAGNOSED
+THE ρ = 0 RESULT FROM THE PROSE AND GOT THE MECHANISM WRONG — IN THE PAPER'S FAVOUR.**
+
+`REVIEW-005` §2, on `II-3`: *"ρ is defined as the share of a gain recognised as flow, and κ =
+r·E[η⁺] on the flow base, so ρ = 0 sets the base and κ to **exactly zero**: the levied path *is*
+the unlevied path."* Both halves were about to be written into the abstract. Neither had been
+checked against `src/`.
+
+```
+src/wealth_tensor/redistribution.py:131
+    recognised_flow += self.rho * gain + self.wage
+```
+
+**At ρ = 0 the flow base is not empty. It is the accrued WAGE.** Measured at T = 1200
+(`scripts/wt115_rho_zero.py`, committed):
+
+| case | stationary Gini | κ | assessments |
+|---|---|---|---|
+| unlevied | 0.9944 | 0.000000 | 0 |
+| flow *r* = 1, ρ = 0 | 0.9944 | **0.000565** | **1200** |
+| flow *r* = 1, ρ = 1 | 0.1252 | 0.102609 | 1200 |
+
+κ is **not** zero, 1200 assessments really fire, and wealth really moves. **And the conclusion is
+nevertheless true, and stronger than either the review or the paper knew**: `np.array_equal` on
+the two wealth vectors returns **True**, maximum difference **0.0**, stationary Gini identical to
+sixteen digits.
+
+**The actual mechanism is uniformity, not emptiness.** `self.wage` is a **scalar**, identical for
+every agent, so at ρ = 0 `recognised_flow` accumulates the same quantity for everyone; `liable` is
+uniform, `levy` is uniform, and `w - levy + pot/n` returns the vector unchanged. **A uniform
+assessment with a uniform per-capita rebate is the identity map.** What ρ = 0 removes is not the
+levy but the *dispersion in its base* — which is precisely the observability point §3.2 is making,
+arrived at from the code rather than asserted.
+
+**So the paper was UNDERCLAIMING.** It said *"statistically indistinguishable"* — empirical
+near-match language, which invites *"across how many seeds?"* from a referee who has just been
+told (`II-4`) that §5 runs one. The truth is an exact structural identity, and an exact identity
+has no seed question. Repaired **upward** in three places: the abstract, §1 contribution 3, and
+§3.2.
+
+**AND IT MOVED A DECISION.** `ROADS-001`'s case for option C was that under Road One this
+tautology *"becomes a passed test — the framework predicting in advance that ρ cannot change *A*'s
+shape."* That story requires the ρ = 0 result to be about the multiplicative term. It is not; it
+is about a constant wage. **One of C's two headline "embarrassments become confirmations" was
+resting on the same misdiagnosis**, found in the twenty minutes between Jason ticking A and the
+first edit landing. The result survives; the frame C wanted to build on it does not, unexamined.
+
+**This is `-64`'s §4 recurring one level up.** There, `REVIEW-004`'s referee **reimplemented
+§3's table from the prose** instead of running `wt030_report.py`, and both defects it missed were
+in the section whose numbers are not in the table. Here, `REVIEW-005` **reasoned about
+`redistribution.py` from the manuscript** instead of opening it. Same failure, different artefact:
+*a review is an instrument, and an instrument that reads prose cannot report on code.*
+
+**The rule, cheap and general: before writing a review's diagnosis into a manuscript, open the
+file the diagnosis is about.** It cost one script and four minutes here, and the paper got a
+better sentence out of it than either document proposed.
+
+---
+
+## WT-099 · METHOD · 2026-08-17 · wealthTensor-65
+
+**"IN FIVE PLACES" IS A CENSUS, AND A CENSUS IS A CLAIM ABOUT A CORPUS. `DECISION-001` COUNTED
+FIVE AND LOOKED IN ONE FILE; THE SIXTH SITE WAS IN A TEST DOCSTRING, WHERE NOTHING CHECKS IT.**
+
+`DECISION-001` prices option A as *"Demote κ from **mechanism** to **budget** in 5 places"* and
+names them: the abstract, §1 contribution 2, §2.4, §3.1's heading and gloss, §6. All five are in
+`paper-II.md`. `-65` swept the manuscripts, `tests/`, `scripts/` and `src/` before editing any of
+them (`scripts/wt115_kappa_census.py`) and found a **sixth**:
+
+```
+tests/test_redistribution.py:158
+    """kappa -- the share of aggregate wealth moved per assessment -- is the mechanism.
+tests/test_redistribution.py:169
+    ...That gap, not the rate, is the mechanism.
+```
+
+**Nothing asserts a docstring.** The test's own name is `test_reallocation_intensity_is_what_the
+_base_caps` — the *budget* framing, correct all along — and every assertion in its body is a
+budget fact (κ = *r* exactly on stock; κ = *r*·E[η⁺] on flow). Only the prose overreached, and
+only the prose was unguarded. Left alone, the manuscript would have retracted a claim **its own
+test suite goes on making** — the abstract-versus-body defect this estate keeps finding, moved one
+file out of the manuscript and therefore out of every instrument that watches manuscripts.
+
+**The source was already right**, which is the part worth noticing:
+`redistribution.py:50` reads *"kappa, the share of aggregate wealth moved per assessment. This is
+the levy's **compressive budget**, and it is what the base caps."* The code never made the claim.
+The paper made it, and the test file — the artefact a replicator opens to find out what the estate
+believes — echoed it.
+
+**The census also has to report what it excludes, or it becomes the thing it hunts.** A patch
+script *quotes the text it replaced*, as its anchor: `wt112` carries `-64`'s and `wt116` carries
+this session's. Those are **records of edits that already happened**, and rewriting them would
+falsify the history of what a past session did. The census reports them as a separate count (19)
+rather than dropping them silently — because a census that hides a category is `WT-092` wearing a
+census's clothes. It also cleared three genuine false positives it must never touch: paper-III's
+z-transform *"the mechanism is visible in the transform"*, `REG-009`'s bin-rule note, and
+`handoff_gate.py`'s *"position is the mechanism"* about output layout.
+
+**Result: 3 live hits, all correctly out of scope, and 0 in `paper-II.md`.**
+
+**THE RULE.** When a decision document, a card or a handoff prices work as *"N places"*, treat the
+number as a hypothesis and the file list as the real claim. **Write the census as a script before
+writing the patch** — it costs a few minutes, it is re-runnable as a verification afterwards, and
+it is the only thing that can tell you the difference between *five sites* and *five sites
+somebody could see from where they were standing*.
+
+*Companion to `WT-094` (grep `tests/` and `scripts/` before editing a manuscript string, because a
+repair can starve an instrument). That rule protects the instruments from the manuscript. This one
+protects the manuscript from the instruments — the same border, crossed the other way.*
