@@ -3585,3 +3585,86 @@ that names a section RANGE is making the same hard-coded claim, in a file the ga
 check that any `§N` mentioned in `HANDOFF.md` against a named paper exists in that paper is about
 six lines. **Not written this session** — carded rather than built, because writing it mid-at-bat
 is the rabbit hole the standing order tells you to tee up instead.
+
+---
+
+## WT-113 · REVIEW · 2026-08-17 · wealthTensor-71
+
+### A law printed without its condition is falsified by its own paper, two subsections later
+
+Paper II §3.1 stated the levy's compressive budget as a law: *"for a **stock** base, κ = *r*
+exactly"*. §3.3 of the same paper exhibits the counterexample — a threshold at 0.25× the mean
+*"reduc[es] κ by a quarter"* — and §3.1's own next-but-one paragraph **cites that result
+approvingly**, so the author knew the condition while writing the unconditional sentence.
+
+The bullet was scoped **by context**: it explains the third column of a table whose rows all
+run at θ = 0. Context is not a condition. A reader who quotes the bullet — which is exactly
+what a bullet formatted as a closed form invites — quotes something the paper disproves 110
+lines later.
+
+**The general form, and it is cheap to check for.** In a paper that parameterises its object,
+every closed form is conditional on the coordinates it does not mention. `κ = r` holds at
+θ = 0, P = 1, ρ irrelevant. The test is one question per formula: *which of my own coordinates
+did I hold fixed to write this, and does the sentence say so?* **Repair by naming the condition
+and pointing at the section that lifts it** — the witness is already in the paper, so nothing
+new is asserted and no number moves.
+
+---
+
+## WT-114 · REVIEW · 2026-08-17 · wealthTensor-71
+
+### A range attributed to a table is a claim that the range can be read off that table
+
+Paper II §3.4: *"Across the sweep of §3.1 the bounded runs' Gini spans 0.000–0.891 ... their top
+decile spans 0.100–0.861."* §3.1 displays **six rows** whose bounded Gini range is 0.125–0.812
+and whose top-decile range is 0.138–0.734. **Three of the four endpoints appear nowhere in the
+paper.** The sweep behind the table is wider than the table; the table never says so; §3.4
+points at it as though a referee could check the range there.
+
+This is `-68`'s `II-13` rotated 180°. `II-13` was *the displayed rows' configuration is
+unstated* and was repaired by saying what the rows **are** (ρ = 1). This is *the displayed rows'
+coverage is unstated* — what they are **not**, namely all of it. **A table is two claims: what
+each row is, and whether the rows are everything. Reviews keep catching the first and walking
+past the second.**
+
+**Repaired from both sides** (`WT-111`: a scope note needs two halves) — the table is marked a
+selection, and the downstream sentence stops naming the table as the place to look. **No new
+number was pasted in**, deliberately: the defect is a false claim about *checkability*, and
+adding rows this pass did not regenerate would fix the symptom by committing the next session
+to numbers nobody ran.
+
+---
+
+## WT-115 · REVIEW · 2026-08-17 · wealthTensor-71
+
+### A paper's quantifiers are contradicted by its own later sections, and the contradiction is always DOWNSTREAM
+
+Two instances in one read of Paper II, in different sections, with the same shape:
+
+- §5 limitation 5: *"**every number above** is a mean over a tail window of a **single** path at
+  `seed = 0`"*. §7, two sections later: *"**except the three Var[log *a*] values in §3.1**, which
+  are quadrature over the multiplier's distribution rather than simulation output."* §7 is right.
+  And the contradiction runs **against the paper**: those three values carry §3.1's *"a change of
+  6 × 10⁻⁶"*, and limitation 5 closes *"the third decimal is not defended"* — read literally, §5
+  withdraws the precision §3.1's headline contrast requires.
+- §6 opens *"**Two results** in that literature are prior to this paper's central contrast"* and
+  two paragraphs later credits Benhabib, Bisin and Zhu with *"**three further results**"*, one of
+  which is then said to have made this paper's frontiers *"already visible"* — i.e. is itself
+  prior. The topic sentence counts two; the section delivers five. The noun was wrong: two
+  **works** are cited, and the paragraph structure says so.
+
+**The mechanism is directional and that is the useful part.** A quantifier — *every*, *two*,
+*all*, *none* — is written while looking at the material **above** it. The set it ranges over is
+finished **below** it. §5 was written before §7 existed in its current form; §6's topic sentence
+was written before the second bolded work was placed under it (`bf07363`, `-67`). **So the
+falsifier for a quantifier is never local to the sentence, and never upstream of it: read
+forward from the quantifier to the end of the document, asking only "does anything below me
+belong to the set I just counted, and is it in it?"** That is a different reading pass from
+checking whether a sentence is true, which is why four review passes and 66 board criteria had
+missed both.
+
+**Neither was visible to any guard in the kit.** Every guard answers *what does the text say*
+(`-70` added *where does it sit*). A quantifier defect is a claim about a SET, and no census,
+identity guard or positional criterion enumerates the set a sentence ranges over.
+
+---

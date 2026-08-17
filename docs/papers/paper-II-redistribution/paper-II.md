@@ -167,12 +167,14 @@ unequally, and §3.3 removes a quarter of κ at no measurable cost.
 | flow, *r* = 1.000 | 0.125 | 0.1026 | 0.138 | yes |
 
 *The flow rows are assessed at full realisation, ρ = 1 — §2.3's mark-to-market case and the
-implementation's default; §3.2 is the sweep that lowers it.*
+implementation's default; §3.2 is the sweep that lowers it. These six rows are a selection: the
+rate sweep behind them is wider on both bases, and §3.4 quantifies over all of it.*
 
 At a matched rate the two bases sit roughly an order of magnitude apart in κ, at every rate
 tested. The budget is visible in the third column and is not a fitted relationship:
 
-- for a **stock** base, κ = *r* exactly;
+- for a **stock** base at zero exemption, κ = *r* exactly — §3.3 raises the threshold and κ
+  falls;
 - for a **flow** base, κ = *r*·E[η⁺], where E[η⁺] is the *gross positive* growth rate — because a
   levy cannot rebate a loss. In closed form,
   **E[η⁺] = μΦ(μ/σ) + σφ(μ/σ) = 0.1073** for the parameters above. The simulated κ runs
@@ -306,8 +308,9 @@ rising — not because it reached a stationary distribution but because it ran o
 drift test was measuring the ceiling.
 
 The criterion now requires a settled Gini **and** a top decile below 0.90 — and it is the
-second condition that does all of the separating. Across the sweep of §3.1 the bounded runs'
-Gini spans 0.000–0.891 against the condensed run's 0.994, which separates nothing; their top
+second condition that does all of the separating. Across §3.1's full rate sweep — wider than the
+six rows tabulated there — the bounded runs' Gini spans 0.000–0.891 against the condensed run's
+0.994, which separates nothing; their top
 decile spans 0.100–0.861 against 1.000, clearing the 0.90 threshold with 0.039 to spare. The
 top-share statistic is also horizon-stable where the Gini is not.
 
@@ -363,8 +366,10 @@ criterion fails loudly instead of quietly re-scoring condensation as success.
    The Lucas critique applies in full force and is not answered here.
 4. **One good, one asset, no prices.** The process is a wealth process, not an economy.
 5. **Finite N, one seed per reported figure, and a fixed parameter neighbourhood.** *N* = 800,
-   and every number above is a mean over a tail window of a **single** path at `seed = 0`
-   rather than an ensemble average. Seed-robustness is asserted separately rather than averaged
+   and every *simulated* number above is a mean over a tail window of a **single** path at
+   `seed = 0` rather than an ensemble average — the exception is §3.1's three Var[log *a*]
+   values, which are quadrature rather than simulation output (§7). Seed-robustness is asserted
+   separately rather than averaged
    in: `test_the_result_is_not_a_lucky_seed` holds two configurations inside a stated band
    across five seeds. The qualitative separations are large relative to that band, but the
    third decimal is not defended.
@@ -380,7 +385,7 @@ criterion fails loudly instead of quietly re-scoring condensation as success.
 
 The condensation result is standard in kinetic exchange (Chakrabarti, Chatterjee, Chakravarty and
 the surrounding literature), where the effect of saving propensity, taxation and redistribution on
-stationary wealth distributions has been examined from several directions. **Two results in that
+stationary wealth distributions has been examined from several directions. **Two works in that
 literature are prior to this paper's central contrast, and are cited here rather than restated.**
 
 **Bouchaud and Mézard (2000)** carry a flow levy, a stock levy and the per-capita redistribution of
