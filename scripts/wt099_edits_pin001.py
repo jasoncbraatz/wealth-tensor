@@ -45,16 +45,28 @@ PINS: dict[str, str] = {
     "src/wealth_tensor/lambda_sensitivity.py": "b9089c7",
 }
 
-#: The commit that most recently touched each pinned path, as of this edit. THIS is what
-#: the guard checks, and it is what makes the defect impossible to reintroduce silently:
-#: the next commit touching a pinned file makes the guard red, so the pin and the paper
-#: move together or the suite says so.
+#: The commit that most recently touched each pinned path — **the corpus's per-file pin
+#: registry**, and no longer a snapshot of PIN-001's own edit. It began as one paper's
+#: (`-56`, paper III); `-64` added paper II's module and `-65` added paper IV's as each
+#: manuscript's pin was instrumented. This comment said "as of this edit" for two
+#: sessions after that stopped being true — WT-092 in the registry that exists to stop
+#: WT-092, and worth one line to say out loud. THIS is what the guard checks, and it is
+#: what makes the defect impossible to reintroduce silently: the next commit touching a
+#: pinned file makes the guard red, so the pin and the paper move together or the suite
+#: says so.
 LATEST_TOUCH: dict[str, str] = {
     # wealthTensor-64: paper II §7 pinned "the last commit touching src/" — the PIN-001
     # sentence, in the sibling manuscript, false since 2026-08-10 and missed by PIN-001's
     # own census of six occurrences. §7 now pins this module per file; this line is what
     # makes that pin go red the day the module moves, instead of nine days later.
     "src/wealth_tensor/redistribution.py": "3b11f23",
+    # wealthTensor-65: paper IV §10 pins the REG-013 instrument per file — "5efe626 —
+    # the last commit touching scripts/reg013_citation_whitespace.py, and therefore the
+    # state of the instrument that produced every number in §6". It was the LAST orphan
+    # in the four-manuscript census: the pin was TRUE and completely unwatched, which is
+    # exactly how d655501 stayed true for five days and false for nine more. This line is
+    # what makes it go red the day the instrument moves.
+    "scripts/reg013_citation_whitespace.py": "5efe626",
     "src/wealth_tensor/edgar.py": "93a159b",
     "src/wealth_tensor/lag.py": "ad779eb",
     "src/wealth_tensor/lambda_sensitivity.py": "b9089c7",

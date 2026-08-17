@@ -2746,3 +2746,73 @@ not go red because it is prose; repaired in the same commit.
 *The freeze was never the problem. `-43` reasoned all the way to "a guard crying a violation it
 cannot possibly have observed is worse than no guard" — wrote that sentence into the docstring —
 and then built the guard that does it, because the remedy it prescribed was never once run.*
+
+---
+
+## WT-097 · METHOD · 2026-08-17 · wealthTensor-65
+
+**A CLASS REPAIR WHOSE SUBJECT IS A CONSTANT IS A REPAIR OF ONE INSTANCE WEARING THE WORD
+"CLASS". MAKE THE SUBJECT A GLOB AND THE WORD BECOMES TRUE.**
+
+`RESULT-PIN-001` wrote it plainly: *"PIN-001 repaired the sentence. This repairs the CLASS, in
+the one place it is mechanical."* Both instruments it built opened with
+
+```
+PAPER = ROOT / "docs/papers/paper-III-dual-tensor/paper-III.md"
+```
+
+`-64` measured the census and found the shape alive in **two** of the other three papers: Paper
+II carried the `d655501` sentence **verbatim** and was missing from `PIN-001`'s own census, and
+Paper IV §10 pinned `5efe626` in prose, named by no file under `scripts/`, `tests/` or `src/`.
+
+**THE ORDERING, AND WHY IT IS THE MEASUREMENT.** The card said widening first goes red. `-65`
+did not take that on trust and did not reason about it either — the widened instrument was run
+**against the un-instrumented registry, from a scratch path, before anything was edited**. It
+went red naming exactly `['paper-IV.md 5efe626']`, and green the moment `LATEST_TOUCH` learned
+the module. A red that arrives on schedule is evidence; a red nobody provoked is a guess.
+
+**PART 1 — the orphan.** `scripts/reg013_citation_whitespace.py` → `5efe626` added to
+`LATEST_TOUCH`, so `test_each_pinned_path_was_last_touched_by_the_sha_the_paper_discloses` now
+watches it. The pin was **TRUE** — `5efe626` really is that file's last-touch today — and
+completely unwatched, which is the exact state `d655501` was in for the five days before it
+became false and the nine days after. A true pin with nothing watching it is not a pin that is
+working; it is a pin whose failure has not been scheduled yet.
+
+**PART 2 — the glob.** `PAPERS = sorted((ROOT / "docs/papers").glob("*/paper-*.md"))`. A fifth
+manuscript is covered the day its file lands rather than the day somebody remembers the
+instrument exists. `*.bak-*` siblings do not end in `.md` and are not matched.
+
+**A GLOB CAN EMPTY, SO THE GLOB IS ASSERTED TOO.** `test_the_glob_still_finds_every_manuscript`
+holds a floor of four. Widening a constant to a discovery trades one failure mode for another:
+`-49`'s rule is that an absence predicate passes vacuously on a missing file, and a glob that
+matches nothing passes **every** downstream assertion vacuously. A renamed `docs/papers/` would
+otherwise have turned this file green by deleting its subject.
+
+**MEASURED, `G16`.** `G11` writes an uninstrumented SHA into paper III and was caught before this
+session and after it — so `G11` alone cannot tell you the widening did anything. `G16` makes the
+identical move in **paper I**, chosen because it pins nothing today, so a catcher there cannot be
+another guard's accident. `G11` and `G16` both RED, `2/2 caught, 0 UNGUARDED`. `G11`'s body was
+extracted and shared rather than copied — a probe harness carrying two copies of its own
+forbidden move is the `PIN-001` shape arriving in the harness that probes for it.
+
+**THE REGISTRY WAS DESCRIBING ITSELF WRONG, TOO.** `LATEST_TOUCH`'s comment said the mapping was
+*"as of this edit"* — `PIN-001`'s edit, 2026-08-11. It had since gained Paper II's module (`-64`)
+and Paper IV's (here). Repaired to say what it is: the corpus's per-file pin registry. `WT-092`
+in the registry that exists to prevent `WT-092`, which is now the third place this session found
+it.
+
+**A TRAP LEFT WRITTEN DOWN FOR THE NEXT WIDENING.** `test_pin001_code_state.py`'s `ROTTED` check
+asserts the phrase *"last commit touching"* is **absent** from paper III, because there it was
+the rotted whole-directory claim. Paper IV §10 uses those same words **correctly** — *"the last
+commit touching `scripts/reg013_citation_whitespace.py`"* — which is the per-file form `PIN-001`
+chose as **the remedy**. Widening `ROTTED` by glob the way the SHA instrument was widened would
+go red on a correct pin. **The rot was never the phrase; it was the phrase with a directory after
+it.** Recorded in the instrument's own docstring, where the session that reaches for the glob
+will be standing.
+
+Suite: **1078 passed, 0 failed.**
+
+*Three instruments this session claimed a class and touched an instance: the `REG-012` freeze
+(one constant for two roles), `PIN-001`'s SHA guard (one paper of four), and `LATEST_TOUCH`'s own
+comment. None was wrong about what it checked. All three were silent about what they did not
+reach, and the silence read exactly like coverage.*

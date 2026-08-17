@@ -220,6 +220,7 @@ PRIMARY = ("psi", "pooled|R_MID|raw")
 
 MS = "docs/papers/paper-III-dual-tensor/paper-III.md"
 GUARD = "tests/test_reg012_sec6_sec47_frozen.py"
+PAPER_I = "docs/papers/paper-I-price-formation/paper-I.md"
 R12 = f"{DATA}/reg-012-band-edge-phase.json"
 
 BAND_DOCS = [f"{DOCS}/RESULT-REG-009-band-count.md",
@@ -575,7 +576,17 @@ def _orphan_sha_in_manuscript(root: Path):
     instrument names" cannot name the identifier, because the harness lives inside the
     estate it mutates.** Writing the literal is what falsifies the probe's own premise.
     """
-    text = (root / MS).read_text()
+    _orphan_sha_in(root, MS)
+
+
+def _orphan_sha_in(root: Path, rel: str):
+    """`G11`'s forbidden move, aimed at whichever manuscript is named.
+
+    Extracted by `-65` so `G16` can make the identical move in a different paper without
+    the harness carrying two copies of it — which would be the PIN-001 shape arriving in
+    the instrument that probes for the PIN-001 shape.
+    """
+    text = (root / rel).read_text()
     instruments = "\n".join(
         q.read_text(encoding="utf-8", errors="ignore")
         for d in ("scripts", "tests", "src")
@@ -594,9 +605,23 @@ def _orphan_sha_in_manuscript(root: Path):
         raise SystemExit("PROBE SITE MISSING: no commit is absent from every instrument")
     i = text.find("\n## ", len(text) // 2)
     if i < 0:
-        raise SystemExit("PROBE SITE MISSING: no mid-document heading in the manuscript")
+        raise SystemExit(f"PROBE SITE MISSING: no mid-document heading in {rel}")
     claim = f"\n\nThe analysis in this section was produced at commit {picked}.\n"
-    (root / MS).write_text(text[:i] + claim + text[i:])
+    (root / rel).write_text(text[:i] + claim + text[i:])
+
+
+def _orphan_sha_in_paper_i(root: Path):
+    """G16 - the same move as G11, in a manuscript the OLD instrument could not see.
+
+    `test_manuscript_shas_are_instrumented.py` hardcoded paper III until `-65`. Its own
+    docstring said it repaired the CLASS; it touched one file of four, and `-64` found the
+    shape alive in paper IV. Against a tree where that instrument is still a constant this
+    probe is GREEN, and the green is the finding. Against this commit it is RED.
+
+    Paper I is chosen deliberately: it is the manuscript that pins NOTHING today, so a
+    catcher here cannot be an accident of some other guard already watching its SHAs.
+    """
+    _orphan_sha_in(root, PAPER_I)
 
 
 def _rename_prereg_dir(root: Path):
@@ -732,6 +757,9 @@ GIT_PROBES: list[tuple] = [
      _launder_reading_a, {"git": True}),
     ("G15", "re-pin SEC_47_AT_REGISTRATION, the constant the guard calls immutable [git]",
      _repin_the_registration_anchor, {"git": True}),
+    ("G16", "write an uninstrumented commit SHA into PAPER I — the move G11 makes in "
+            "paper III, aimed where the instrument was blind until -65 [git]",
+     _orphan_sha_in_paper_i, {"git": True}),
 ]
 
 PROBES += GIT_PROBES
