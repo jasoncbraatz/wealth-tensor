@@ -2930,3 +2930,131 @@ somebody could see from where they were standing*.
 *Companion to `WT-094` (grep `tests/` and `scripts/` before editing a manuscript string, because a
 repair can starve an instrument). That rule protects the instruments from the manuscript. This one
 protects the manuscript from the instruments — the same border, crossed the other way.*
+
+---
+
+## WT-100 · FACT · 2026-08-17 · wealthTensor-66
+
+### The truncation-versus-scaling result is KNOWN. Option C collapses on its headline.
+
+Six sessions carried option **C** as *"blocked on one literature search, never run."* The search
+ran. `docs/SCOUT-001-truncation-vs-scaling-prior-art.md` is the note; this is the finding.
+
+**Bouchaud, J.-P. & Mézard, M. (2000), *Physica A* 282, 536–545, equations (11)–(13)** derive the
+Pareto tail exponent µ of a multiplicative wealth process in **closed form** as a function of four
+coordinates that are ours: an **income (flow) tax rate** φ_I, a **capital (stock) tax rate** φ_C,
+and the **fractions f_I, f_C of each redistributed per capita**. Their stated scope, verbatim from
+the introduction: *"We discuss the influence of simple parameters, such as … **the role of income
+or capital taxes and of state redistribution of wealth, on the value of the exponent µ**."*
+
+And they report the ranking, with a stronger sign result than ours:
+
+> *"income taxes tend to reduce the inequalities of wealth (i.e., lead to an increase of µ), even
+> more so if part of this tax is redistributed. On the other hand, **quite surprisingly, capital
+> tax, if used simultaneously to income tax and not redistributed, leads to a decrease of µ, i.e.
+> to a wider distribution of wealth.**"*
+
+`ROADS-001`'s proposed abstract sentence for C was *"a levy contingent on the realised gain
+compresses substantially more than a proportional levy on the stock … it reverses the standard
+wealth-tax-is-stronger prior, and it is a fact about your model that **as far as I can find nobody
+has stated**."* Somebody stated it in 2000, in closed form, more strongly, **with the rebate
+fraction as an explicit coordinate** — which is the "fifth coordinate" `ROADS-001` §2 proposed to
+introduce as novel.
+
+They also make the organising observation itself, about a Lotka–Volterra variant: it *"has an
+additional term … which **breaks the symmetry under wealth rescaling**, and as a consequence **the
+Pareto tail is truncated for large wealths**."*
+
+**AND THE `r = 1` CAP IS NOT OURS EITHER.** `ROADS-001` calls it *"the strongest claim and the one
+most likely to be wrong."* It is not wrong; it is **Benhabib, Bisin & Zhu (2011)**, *Econometrica*
+79(1), §4.1, verbatim: *"heavy tails in the stationary distribution require … some γ_i > 1.
+Consider instead an economy with limited capital income risk, where γ_i < 1 for all i … **it is
+straightforward to show that the stationary distribution of wealth would be bounded above**."*
+Their Proposition 4 additionally has tail inequality rising in a **mean-preserving spread** of the
+return process — the general form of *dispersion, not mean, sets the tail*.
+
+**WHY SIX SESSIONS DID NOT FIND IT.** `REVIEW-004`, `ROADS-001` and `HANDOFF-PROMPT` all name the
+same place to look — **optimal-taxation-with-Pareto-tails**. I searched it; it is not there and it
+was never going to be, because public finance asks what a tax raises and who bears it, not what it
+does to the shape of a random multiplier. **Statistical physics has asked exactly that since the
+1990s.** The blackbook leaf that predicts this failure exactly
+(`2026-08-12-search-prior-art-shape-equation-subject`, from the Bateman priority search) is the
+single most valuable thing `lessons.py search` returned that `HANDOFF.md` had not inlined — which
+is `-65`'s process-miss note paying for itself on the first session that obeyed it.
+
+**WHAT IS LEFT, described as the narrow strip it is.** `NO_LOSS_OFFSET` is dark across all 12
+valid full texts: Bouchaud & Mézard's income tax is `φ_I dW_i/dt` applied **symmetrically to both
+signs**, an affine contraction of the multiplier toward 1. Ours is on the **realised gain only**,
+`A − r·(A−1)⁺`, **no loss offset** — which is what makes ours a truncation rather than a
+contraction. Nor does anyone compare at matched *revenue*: Bouchaud & Mézard compare at equal
+*rates*, and Guvenen et al. (NBER w26284) compare at equal revenue but route to an **efficiency**
+conclusion through entrepreneurial reallocation, never to a tail index. That strip is a remark
+inside a paper, not a thesis to lead one with.
+
+**CONSEQUENCE.** `DECISION-001` stays ticked at **A**; Jason's Kelly ruling — *"only re-allocate
+that bet once we can build … credibility behind C"* — has had its test and the answer is **do not
+re-allocate**. Paper II acquires two **mandatory** citations, not optional ones: Bouchaud & Mézard
+(2000) wherever the stock-versus-flow tail contrast is made, and Benhabib, Bisin & Zhu (2011)
+wherever the `r = 1` cap appears. Card `1217547572131984` closed; a new card filed for the
+citations. **This is the referee outcome no reproducibility apparatus can absorb — *this is known
+and the author did not know* — bought for one at-bat instead of a 26 KB rewrite.**
+
+---
+
+## WT-101 · METHOD · 2026-08-17 · wealthTensor-66
+
+### A dark predicate is not evidence of absence until a document you KNOW contains the thing has made it fire.
+
+The verdict in `WT-100` is worth exactly what the instrument is worth, and the instrument was
+wrong three times first. Two of the three would have produced a **confident, clean, and wrong**
+answer, which is worse than no answer, because a clean absence is what would have re-opened C.
+
+**1 · The corpus-level ceiling passed vacuously.** `wt117_litsearch.py` v1 gated on
+`sum(positive_controls_screened_in) > 0` and printed `apparatus_valid: true` on **one** hit across
+four controls while **ten of fourteen** API calls had errored out. A sum cannot distinguish *every
+control fired* from *one fired and three failed silently*. This is `WT-092` exactly — a limb
+measuring its own bookkeeping — and it is the **third** consecutive session to ship one. Replaced
+with per-control scoring plus a **known-item tier**: twelve works named in advance, searched by
+title, retrieval checked individually.
+
+**2 · The validity ceiling was testing my vocabulary, not the extraction.** It required the phrase
+*"tail index | Pareto exponent | …"* and voided four documents that had extracted perfectly at
+100k–286k characters, because they write *"Pareto parameter."* Split into an **extraction** limb
+(function words + a length floor), a **topic** limb, and a **dialect probe that does not gate**.
+The length floor was itself wrong at 20,000 characters — it discarded Sornette (1998) at 10,359
+and Manrubia & Zanette at 17,416, both *Physical Review* letters, which are four pages by design.
+**A threshold calibrated on 40-page economics working papers silently deletes an entire literature
+for being concise.**
+
+**3 · THE ONE THAT MATTERS. The headline predicate could not fire at all.** Every alternative in
+`TRUNCATION_x_TAIL`'s regex contained the literal word *"tail"* or *"Pareto"*, so it was blind to
+the statistical-physics register, which says *"truncated power law"* and *"exponent µ"* and almost
+never *"tail."* **It was dark across eleven economics full texts and the note was one step from
+being written up as a clean absence.**
+
+What caught it was adding **predicate positive controls** — corpus members whose job is not to be
+evidence but to prove the matcher *can* fire. Sornette & Cont (1997), a paper **titled** *"power
+laws and truncated power laws"*, left `TRUNCATION_x_TAIL` dark, and the summary line
+`predicates_proven_capable_of_firing: []` is what turned the session around. Widened, the predicate
+fired on both controls — and then on Bouchaud & Mézard, who had the answer.
+
+> **A corpus-level ceiling asks *"do my searches return papers?"*. A predicate-level ceiling asks
+> *"does my matcher fire on a paper that certainly contains the thing?"*. They are different
+> instruments and only the second one found this. Every absence predicate needs a document whose
+> job is to make it fire.**
+
+**4 · Minor, and the same shape.** `NO_LOSS_OFFSET` initially fired on Boar & Midrigan and Piketty
+& Saez purely via the mathematician's idiom **"without loss of generality."** A predicate that
+matches boilerplate **manufactures its own positives**, which is worse than a dark one: it makes a
+corpus look covered. Negative lookahead added; the false positives are recorded in the script
+rather than quietly deleted.
+
+*This extends `REFERENCE-POLICY` §3. Its five passes are all about a **reference** — does it
+exist, does it do work, is it the object, is it the version, was it read. None of them asks whether
+the **instrument** that found or missed it was capable of firing. That is a sixth pass, and it
+belongs in the portable document, because every project that ever publishes a zero-hit table needs
+it.*
+
+*Companion to `-65`'s `WT-096` tell — "the fix for `WT-092` has `WT-092`; ask the question of your
+own repair, and answer it by **firing** the repair, not by reading it." Here the repair was an
+absence predicate, and the only way to fire it was to hand it a document that had to set it off.*
