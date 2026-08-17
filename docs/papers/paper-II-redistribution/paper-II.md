@@ -84,7 +84,7 @@ they came from.
    public repository, and the claims are held in place by the 18 tests in
    `tests/test_redistribution.py`, one of which exists specifically to make overclaiming fail
    loudly — alongside a second, in a companion module of the same suite, that does the same
-   office for this programme's price-formation manuscript (§7).
+   office for the companion price-formation manuscript (§7).
 
 **A boundary, stated once and maintained throughout.** Everything here is positive. The claims
 are properties of a model class. Where a historical institution is mentioned it is mentioned as
