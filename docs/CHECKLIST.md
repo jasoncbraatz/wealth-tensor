@@ -42,8 +42,8 @@ never asked. The 61 probes already built are an asset; they are not a destinatio
 | **P11c** | corpus | ✅ CLOSED | 1/1 |
 | **P11d** | corpus | ✅ CLOSED | 1/1 |
 | **P11e** | corpus | ✅ CLOSED | 1/1 |
-| **P11f** | corpus | 🔨 OPEN | 0/1 |
-| **P11g** | corpus | 🔨 OPEN | 0/1 |
+| **P11f** | corpus | ✅ CLOSED | 1/1 |
+| **P11g** | corpus | ✅ CLOSED | 1/1 |
 | **P13** | corpus | 🔨 OPEN | 0/1 |
 | **P13a** | deliverable | 🔨 OPEN | 0/1 |
 | **P13b** | deliverable | 🔨 OPEN | 0/1 |
@@ -96,7 +96,7 @@ never asked. The 61 probes already built are an asset; they are not a destinatio
 | **P5l** | paper-IV | ✅ CLOSED | 1/1 |
 | **P5m** | paper-IV | ✅ CLOSED | 1/1 |
 
-**The first OPEN lane in dependency order is `P11f`** — which is where the board points, not a schedule; a project's own ordering rulings outrank it. Work it, or say in your handoff why you worked something else.
+**The first OPEN lane in dependency order is `P13`** — which is where the board points, not a schedule; a project's own ordering rulings outrank it. Work it, or say in your handoff why you worked something else.
 
 ## Every criterion, and how it was measured
 
@@ -113,8 +113,8 @@ never asked. The 61 probes already built are an asset; they are not a destinatio
 - [x] P11c · END-TO-END-001 leg E3 is RUN and its verdict is recorded — the containment matrix — is ADR-001's promise about failure true? — **MET** _(check passed)_
 - [x] P11d · END-TO-END-001 leg E4 is RUN and its verdict is recorded — the corpus's empirical content, stated whole — **MET** _(check passed)_
 - [x] P11e · END-TO-END-001 leg E5 is RUN and its verdict is recorded — the over-subscribed guard — does one test hold two claims that could come apart? — **MET** _(check passed)_
-- [ ] P11f · END-TO-END-001 leg E6 is RUN and its verdict is recorded — the cross-paper contradiction — does the corpus assert and deny the same fact in two volumes? — **UNMET** _(rc=2)_
-- [ ] P11g · The pass verdict, read off END-TO-END-001 §3's rule rather than off anyone's judgement, and recorded in the pass-level RESULT document — **UNMET** _(rc=2)_
+- [x] P11f · END-TO-END-001 leg E6 is RUN and its verdict is recorded — the cross-paper contradiction — does the corpus assert and deny the same fact in two volumes? — **MET** _(check passed)_
+- [x] P11g · The pass verdict, read off END-TO-END-001 §3's rule rather than off anyone's judgement, and recorded in the pass-level RESULT document — **MET** _(check passed)_
 - [ ] P13 · The deliverable: a BEAUTIFULLY DESIGNED, arXiv-ready PDF — a point-in-time capture of the corpus as it would present if we stopped here — together with the recipe that regenerates it — **UNMET** _(rc=1)_
 - [ ] P13a · The PDF exists, is committed, and STAMPS the commit it was built from — a point-in-time capture that cannot be confused with a later one — **UNMET** _(rc=1)_
 - [ ] P13b · RECIPE.md is PAINT-BY-NUMBERS: a numbered checklist naming every font family, weight, size and leading; every margin, measure and vertical space; the TeX engine and every package with its version; figure-placement rules; and the reference style — as VALUES, never as 'match the existing look'. Written for a session with no memory of this project to execute top to bottom with no judgement call and nothing to debug. The typeface, engine and font-loading discipline are ALREADY DECIDED in ADR-002 and are not the build session's to re-open; RECIPE.md implements them and supplies the METRICS ADR-002 deliberately left unset (size, leading, measure, margins, display-maths spacing), measured from the build rather than guessed — **UNMET** _(rc=1)_

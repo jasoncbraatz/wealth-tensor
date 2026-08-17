@@ -345,6 +345,23 @@ direction stated.** Stated:
    addition wherever it is summed"*, and names what the three scales share: *"one question, asked at
    each scale and answered quantitatively at each, and not one structure"*, with the cross-scale
    check and the rejected diagonal form stated in the abstract rather than left to §3.
+
+> **CORRECTION · `wealthTensor-61`, 2026-08-17 — appended by `E6`, NOT an edit to the text above.**
+> The quoted string *"the same atomic **state** composes by addition wherever it is summed"* **does
+> not occur anywhere in the corpus.** `grep -rn "wherever it is summed" docs/` returns exactly one
+> hit: line 345 of this document. Diffed against `paper-IV.md.bak-wt57-e3`, the edit `E3` actually
+> applied was `unit` → `**state**` plus the appended clause *"sooner than an earlier draft claimed,
+> because the corpus's end-to-end test found the sovereign and firm scales share **one question, not
+> one structure**"*. **The phrase `§3`'s remedy names for narrowing — *"from the household to the
+> sovereign"* — was not removed. It is still in the abstract and still in Paper IV's title.** The
+> substance of the demotion was appended; the narrowing was not performed, and the sentence
+> certifying it quotes text that has never existed.
+>
+> Appended rather than applied, because a result document is a dated record and rewriting it would
+> destroy the evidence. See `RESULT-END-TO-END-001-E6.md` §6 and `RESULT-END-TO-END-001.md` §2
+> item 1. **The residual decision — narrow the abstract's leading clause and the title, or ratify
+> the appended form as sufficient — is Jason's**; `E2` already ruled the title Jason-sized.
+
 2. **Papers II and III are unaffected and ship as independent works — the containment promise
    cashed.** **APPLIED, with the correction the leg forced.** It is cashable, and it was one
    sentence short of true when the leg started: Paper III §A.1.3's aside is repaired in this
