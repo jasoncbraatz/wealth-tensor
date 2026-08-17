@@ -3,7 +3,7 @@ project: wealth-tensor
 session_n: 66
 gh_repo: jasoncbraatz/wealth-tensor
 branch: main
-gh_sha: fa046c8a351dd42ecedd9949f4b1b2dfa2cbd525
+gh_sha: PENDING
 updated: 2026-08-17
 session: wealthTensor-66
 live_theme: "The prior-art search that six sessions filed behind a decision, run at last — verdict KNOWN, option C collapses on its headline, and Jason's Kelly bet on A is confirmed."
@@ -14,7 +14,7 @@ next_at_bat: "Paper II's two MANDATORY citations from SCOUT-001 — Bouchaud & M
 blockers: []
 drift_flags: []
 parking_lot: []
-definition_of_done: "Three preprints (II, III, IV) each at ready-to-submit per ADR-001 clauses, every number regenerated from committed scripts, convergence reached (two consecutive zero-finding review passes per paper), Jason's own-hand pass complete — then the batch declared, once."
+definition_of_done: "CLEARED FOR LIFTOFF (Jason's ruling, 2026-08-16): Papers II, III and IV done with their coaching and editing, the corpus audited as ONE thing, the python scripts done with every number regenerating from a committed one, and ONE well-designed deliverable that visualises the work — then Jason reads it, does whatever minor re-arranging document design reveals, and clears it. At that moment Claude is finished on wealth-tensor. POSTING IS NOT IN SCOPE: Voice Box Jasonizing, Jason's own-hand rewrite, the endorsement ask and submission are SUCCESSOR projects. A session driving toward 'posted' is driving past the end of the road. The deliverable is a PDF **and a recipe**: RECIPE.md paint-by-numbers (every font, size, leading, margin, package version), a preflight that FAILS on a substituted font rather than approximating, vendored/checksummed fonts, and a rebuild that reproduces the committed page count and per-page text hash — because Jason does the layout and visualisation analysis exactly ONCE."
 
 ---
 # wealth-tensor — HANDOFF
@@ -224,8 +224,18 @@ then re-run — a few minutes, not an at-bat.
 - **RUN THE GATE AS:** `GATE_ROSTER_WHO=big-wealthTensor-NN nohup ~/Scripts/gate-selfcheck.sh >
   /tmp/gate.log 2>&1 &`, then **two** polls of ~170 s. Grep the verdict line `GATE SELF-CHECK:`
   and `CANNOT VERIFY` expecting `0`. **Do not `grep -c "G-AL"`** — it returns 1 on a green run.
-- **WRAP SEQUENCE:** `gh_sha: PENDING` → commit → `--stamp` → commit → `--emit`. `--emit` does
-  not stamp and refuses `PENDING`. **Never set `gate_passed` true to make it print.**
+- **WRAP SEQUENCE:** `gh_sha: PENDING` → commit → `--stamp` → commit → push → `--emit`. `--emit`
+  does not stamp and refuses `PENDING`. **Never set `gate_passed` true to make it print.**
+- **▲ CORRECTION, AND IT COST `-66` TWO EXTRA ROUNDS: `--emit` WAS NEVER REFUSING OVER
+  `gate_passed`.** Handoffs since `-58` have said *"`--emit` will refuse on `gate_passed != true`,
+  which has been the standing state."* It refuses on **`REQUIRED`**, which is
+  `['project', 'session_n', 'gh_repo', 'branch', 'gh_sha', 'updated', 'live_theme', 'phase',
+  'gate_passed', 'next_at_bat']` (`handoff_gate.py:50`) — and **this file has never carried
+  `session_n`, `gh_repo`, `branch`, `live_theme`, `phase` or `next_at_bat`.** `-66` added all six;
+  `--emit` then printed **`OK -- handoff is complete, stamped, and matches a clean tree.`**
+  **The lesson is `-64`'s, one level out: a session that EXPECTS a refusal will not read the
+  refusal.** The message names its own six fields every time it fires. Nobody read it, because
+  everybody already knew why it was refusing. **Read the failure text, do not recall it.**
 - **EDITED A PAPER? REGENERATE THE BOARD BEFORE THE GATE** (`board.py … --check` → *"matches
   measured reality (66 criteria)"*). `-66` edited no paper; the 66 did not move.
 - **▲ `dx` + long-running work: `nohup … &` inside a `dx` call survives**, but **`print(flush=True)`
