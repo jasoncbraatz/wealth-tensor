@@ -3,7 +3,7 @@ project: wealth-tensor
 session_n: 72
 gh_repo: jasoncbraatz/wealth-tensor
 branch: main
-gh_sha: PENDING
+gh_sha: 3a98cb8a4f18c04b670f4c3bfb665341d3168496
 updated: 2026-08-17
 session: wealthTensor-72
 live_theme: "Paper II's fourth independent read, taken as assigned, with the quantifier sweep run as an INSTRUMENT for the first time — 155 quantifier tokens on 117 lines, enumerated by a committed script rather than by attention. Three findings, three edits, none carded. The sharpest one is a paper that names a failure mode in §7 and commits that exact failure in §1: 'a single command named for numbers it does not produce is a provenance claim that reads as checked and is not' — and §1 claimed a single command. The tool matters more than the findings: this is the first coverage claim in the project that is countable rather than narrative, and it says Paper III is 864 tokens on 668 lines with no independent read at all."
