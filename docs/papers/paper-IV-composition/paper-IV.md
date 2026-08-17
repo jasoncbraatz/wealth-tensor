@@ -51,9 +51,10 @@ the accounting must close. **Kinetic-exchange econophysics** treats a wealth dis
 stationary state of a stochastic exchange process. Each is a serious research programme with its
 own journals, and each is describing a different layer of the same object.
 
-This paper is the claim that they are layers of one stack, and that the object at the bottom of it
-composes: **the same atomic unit, a household's, aggregates to a firm's and to a sovereign's
-without changing type.** That claim is worth stating carefully, because a nearby and stronger
+This paper is the claim that they are layers of one stack, and that the object at the bottom of
+it has one type wherever it appears: **a household's holding, a firm's balance sheet and a
+sovereign's accounts are the same kind of object, and summing holdings does not change the
+kind.** That claim is worth stating carefully, because a nearby and stronger
 version of it is false, and the difference between the two is this paper's central technical
 content.
 
@@ -179,10 +180,10 @@ and §3.1 reports what the distance between those two rates costs. The
 household scale's quantitative answer is Paper III's, read before §4 indexes the holding by
 asset class.
 
-**Firm.** A balance sheet is the household's holding, summed and reported. Paper III's result is
-that this reporting is a filter: a share φ of each true change passes through at once and the
-remainder is released at rate α from an unrecognised gap. The filter is a *per-class* object —
-Paper III indexes classes *i* and writes the recursion with a Hadamard product,
+**Firm.** A balance sheet is holdings of the household's kind, summed and reported. Paper III's
+result is that this reporting is a filter: a share φ of each true change passes through at once
+and the remainder is released at rate α from an unrecognised gap. The filter is a *per-class*
+object — Paper III indexes classes *i* and writes the recursion with a Hadamard product,
 
 > **C**(*t*+1) = **C**(*t*) + **φ** ⊙ Δ**E** + **α** ⊙ **gap**(*t*),
 
@@ -190,9 +191,10 @@ and the elementwise product is not notation. It is the claim that the reporting 
 **diagonal in class space**, which is exactly the statement that the firm's reporting composes
 from its classes' reporting without cross-terms.
 
-**Sovereign.** National accounts are firms summed, and Paper II's parameter space is what happens
-when a levy is assessed on that sum. Its central result is a composition result wearing different
-clothes: the base of a levy — stock or flow — is the question of *which component of the composed
+**Sovereign.** National accounts are the same holdings summed across every institutional sector,
+households and firms alike, and Paper II's parameter space is what happens when a levy is
+assessed on that sum. Its central result is a composition result wearing different clothes: the
+base of a levy — stock or flow — is the question of *which component of the composed
 state the assessing layer can see*, and at zero realisation a confiscatory levy on flow is
 statistically indistinguishable from no levy at all.
 
@@ -215,8 +217,9 @@ III's observability share φ are the same object seen twice — and they are not
 filter does not recognise is **deferred**, held in an unrecognised gap and released at rate α;
 what Paper II's base does not recognise is **never assessed**. A lag and a loss are different
 operators, and Paper II has no parameter that plays α's part. So what joins the scales is the
-question and the fact that each scale answers it quantitatively, which is what this section now
-claims and no more. The demotion was written into that document's §2 **before** the leg was run,
+question, the fact that each scale answers it quantitatively, and the addition of §2.2 — which is
+what this section now claims and no more. The demotion was written into that document's §2
+**before** the leg was run,
 precisely so that it could not be renegotiated afterwards; `docs/RESULT-END-TO-END-001-E1.md`
 records the run and the reasoning.
 

@@ -3329,3 +3329,79 @@ plausibly and resolve differently. It survived one full independent read (`-64`,
 `.bak-wt64-p7`) because a number-checking pass checks numbers, not the prose that frames them.
 Corollary used this pass: when the local PDF is gone, `ar5iv.labs.arxiv.org/html/<id>` serves
 full text where the `/abs` page truncates, so a verbatim quote check costs one fetch.
+
+---
+
+## WT-107 · TELL · 2026-08-17 · wealthTensor-69
+
+### A framing patch's blast radius is every line that agreed with the old framing in its own words
+
+`WT-102` narrowed Paper IV's title and abstract. `wt121` was correct, ruled, censused and guarded,
+and it touched **exactly three places** — title, abstract leading clause, one reference page range.
+Diffed against `.bak-wt66b-narrow`, §1–§3 body prose was **not** in that patch, and nobody read it
+against the new framing for a session and a half.
+
+**Three findings sat there** (`REVIEW-009`, `IV-11`/`IV-12`/`IV-13`), and the largest was in **the
+sentence the paper labels its own central claim**: *"the same atomic unit, a household's,
+aggregates to a firm's and to a sovereign's without changing type"* — the ladder, in a verb of
+derivation, thirty-five lines below an abstract that had just given the ladder up.
+
+**The mechanism, and it is the part worth carrying.** `-63`'s `REVIEW-006` read §1 and passed it,
+and `REVIEW-006` was **right at the time**: §1's thesis sentence and the then-current abstract said
+the same thing in the same shape. The patch did not make §1 change. **The patch made §1's staying
+still into an error.** `-61`'s tell — *a corpus under repair has a moving referent* — has been read
+four sessions running in its missed-defect direction (*diff before you read*). This is the other
+direction: **you moved the referent, so every passage that pointed at it is now pointing at nothing,
+and none of them appear in your diff.**
+
+**AND THE EXISTING KIT CANNOT SEE IT.** `WT-099`'s census catches *strings*; `wt120` proved
+`paper-IV.md` no longer contains the ladder phrase and that verification was **true and
+insufficient**. A paraphrase has no string. The rule that follows:
+
+> **After a framing patch lands, the at-bat is not finished. Re-read every section that argued for
+> the old framing — the census tells you which FILES quoted it, and it cannot tell you which
+> SENTENCES agreed with it.**
+
+Cheap operationalisation, offered rather than built: a framing patch should name, in its own
+docstring, the sections whose argument it invalidates — the author of the patch is the last person
+who knows.
+
+---
+
+## WT-108 · TELL · 2026-08-17 · wealthTensor-69
+
+### A guard that reports a COUNT makes you find the defect; a guard that reports a SET hands it to you
+
+`wt125`'s first `--dry` failed its character-width guard. **Correct** — `ED2`'s replacement had
+re-joined a sentence into a 120-character line, and the guard caught it before any write. But the
+guard was inherited from `wt124` as
+
+```python
+assert len(wide) <= len(old_wide), f"introduced long lines: {wide}"
+```
+
+so its failure text printed **six lines: the one introduced and five pre-existing** front-matter
+lines (the title, two declarations, the keyword list, one indented continuation) that had been over
+100 characters since the file was created. The message said *"introduced long lines"* and listed
+five lines nobody had introduced. The session diffed two lists by eye to find its own defect.
+
+Repaired in place, sets not counts:
+
+```python
+wide     = {ln for ln in new.splitlines()  if len(ln) > 100 and not ln.startswith("|")}
+old_wide = {ln for ln in text.splitlines() if len(ln) > 100 and not ln.startswith("|")}
+assert wide <= old_wide, f"introduced long lines: {sorted(wide - old_wide)}"
+```
+
+Same predicate, same strictness, and the failure now names **exactly the defect and nothing else**.
+
+**The species.** This is `-66b`'s census rule — *report the historical category separately rather
+than dropping it silently* — arriving at a guard instead of at a report. An instrument that cannot
+distinguish **what it found** from **what was already there** is a diffing exercise wearing a
+guard's clothes. It still fires correctly; it just charges the reader for the last mile.
+
+**And the reason it survived four sessions:** the count form is *correct*. It never passed a
+defect. Nothing in a green run reveals the problem, and the failure path — the only path where the
+message is read — is by construction the path where the session is busy. **A guard's failure text
+is tested exactly when nobody has attention to spare on it, which is the argument for writing it
+well the first time rather than the argument for leaving it.**
