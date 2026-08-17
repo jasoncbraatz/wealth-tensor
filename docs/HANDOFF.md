@@ -28,7 +28,7 @@ edits** (`wt126`), and then **a fourth edit** (`wt127`) because the board flippe
 on a repair that changed no sentence. The biggest finding was **the ladder phrase itself**, alive
 in §4.1 with both definite articles dropped — invisible to the census that certified its absence.
 
-Commits `d8fc6bd`←…→HEAD. Suite **1078 passed, 0 failed** before AND after. Board **66 criteria,
+Commit `2821533` (+ the `gh_sha` stamp on top). Suite **1078 passed, 0 failed** before AND after. Board **66 criteria,
 matches** — it **moved once and came back**, which is the most informative thing it has done in
 five sessions. Coach **0/1, at baseline**. Abstract **untouched at 238/1585**.
 
