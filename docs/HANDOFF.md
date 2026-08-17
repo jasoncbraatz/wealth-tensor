@@ -3,7 +3,7 @@ project: wealth-tensor
 session_n: 70
 gh_repo: jasoncbraatz/wealth-tensor
 branch: main
-gh_sha: PENDING
+gh_sha: 98218e318daf29b5e6e4eb0be421f0f9c9583bbb
 updated: 2026-08-17
 session: wealthTensor-70
 live_theme: "Paper IV's §4–§10 read against the narrowed framing — three findings, three edits, and then a fourth edit to undo the placement of the third. The ladder phrase was still alive in §4.1 with its articles dropped, §8 carried a cross-reference that -69's own repair had falsified two hours earlier, and §9 did not carry the limitation the abstract advertises. The board caught the repair that every guard in the kit passed."
