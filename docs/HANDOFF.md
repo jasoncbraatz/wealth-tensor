@@ -3,7 +3,7 @@ project: wealth-tensor
 session_n: 66
 gh_repo: jasoncbraatz/wealth-tensor
 branch: main
-gh_sha: PENDING
+gh_sha: fa046c8a351dd42ecedd9949f4b1b2dfa2cbd525
 updated: 2026-08-17
 session: wealthTensor-66
 live_theme: "The prior-art search that six sessions filed behind a decision, run at last — verdict KNOWN, option C collapses on its headline, and Jason's Kelly bet on A is confirmed."
@@ -14,7 +14,7 @@ next_at_bat: "Paper II's two MANDATORY citations from SCOUT-001 — Bouchaud & M
 blockers: []
 drift_flags: []
 parking_lot: []
-definition_of_done: "CLEARED FOR LIFTOFF (Jason's ruling, 2026-08-16): Papers II, III and IV done with their coaching and editing, the corpus audited as ONE thing, the python scripts done with every number regenerating from a committed one, and ONE well-designed deliverable that visualises the work — then Jason reads it, does whatever minor re-arranging document design reveals, and clears it. At that moment Claude is finished on wealth-tensor. POSTING IS NOT IN SCOPE: Voice Box Jasonizing, Jason's own-hand rewrite, the endorsement ask and submission are SUCCESSOR projects. A session driving toward 'posted' is driving past the end of the road. The deliverable is a PDF **and a recipe**: RECIPE.md paint-by-numbers (every font, size, leading, margin, package version), a preflight that FAILS on a substituted font rather than approximating, vendored/checksummed fonts, and a rebuild that reproduces the committed page count and per-page text hash — because Jason does the layout and visualisation analysis exactly ONCE."
+definition_of_done: "Three preprints (II, III, IV) each at ready-to-submit per ADR-001 clauses, every number regenerated from committed scripts, convergence reached (two consecutive zero-finding review passes per paper), Jason's own-hand pass complete — then the batch declared, once."
 
 ---
 # wealth-tensor — HANDOFF
