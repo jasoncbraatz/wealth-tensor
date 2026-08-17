@@ -1,16 +1,16 @@
 ---
 project: wealth-tensor
-session_n: 66
+session_n: 67
 gh_repo: jasoncbraatz/wealth-tensor
 branch: main
-gh_sha: 5fa40763cb07e803873fbfb784215b05b15a5f3b
+gh_sha: PENDING
 updated: 2026-08-17
-session: wealthTensor-66
-live_theme: "The prior-art search that six sessions filed behind a decision, run at last — verdict KNOWN, option C collapses on its headline, Jason's Kelly bet on A is confirmed, and Paper IV narrowed on his ruling."
-phase: "Manuscript repair under a settled thesis — Papers II/III/IV coaching and editing toward CLEARED FOR LIFTOFF. Paper IV's framing ruled and applied; the only open Jason item is P7's board schema."
+session: wealthTensor-67
+live_theme: "The two mandatory citations placed — and one of the card's two placement rules turned out to have no site in any manuscript, so the citation went where the paper actually claims something instead of where the instruction said."
+phase: "Manuscript repair under a settled thesis. Paper II is credited and internally consistent; its second independent read is now the live at-bat and it inherits one question this session raised and refused to decide."
 gate_passed: true
 gate_version: "2.59"
-next_at_bat: "Paper II's two MANDATORY citations from SCOUT-001 — Bouchaud & Mezard (2000) wherever the stock-vs-flow tail contrast is made, and Benhabib, Bisin & Zhu (2011) Sec 4.1 wherever the r=1 cap appears. Card 1217556375636027. Both read in full at source; exact quotes and DOIs on the card. Grep tests/ and scripts/ first (WT-094) and census before you patch (WT-099)."
+next_at_bat: "PAPER II's SECOND INDEPENDENT READ — could start a convergence count, and it now owns the abstract question card 1217561330623702. The manuscript moved in 24 places in 48 hours and then again today in §1, §3.1 and §6. DIFF against paper-II.md.bak-wt67-cites, .bak-wt65-decA and .bak-wt64-p7; do not read the repaired text as given."
 blockers: []
 drift_flags: []
 parking_lot: []
@@ -21,299 +21,300 @@ definition_of_done: "Three preprints (II, III, IV) each at ready-to-submit per A
 
 **ORIENT: read `docs/CO-AUTHOR-CHARTER.md` first. THE CHARTER WINS over anything in this file.**
 
-## `-66` / `-66b` IN ONE LINE
-**THE LITERATURE SEARCH RAN, AND THE ANSWER IS `KNOWN`.** Bouchaud & Mézard (2000) already
-derive the Pareto tail exponent in closed form in a **flow** tax rate, a **stock** tax rate and
-the **per-capita rebate fraction of each** — and report the ranking more strongly than
-`ROADS-001` proposed it. Option **C collapses on its headline**; Jason's Kelly bet on **A** was
-right. Six sessions carried this as *"blocked, never run"*; it cost **one at-bat**. Suite
-**1078 passed, 0 failed**. Commit `1e59b6e`.
+## `-67` IN ONE LINE
 
-**AND THE THING THAT NEARLY WENT WRONG, because it is the more portable half:** my headline
-absence predicate **could not fire at all**, was dark across eleven economics full texts, and I
-was one step from writing that up as a **clean absence** — which is the answer that would have
-*re-opened* C. See §THE TELL.
+**The two mandatory citations are placed, and the interesting part is that I refused half the
+instruction.** The card said *cite Benhabib, Bisin & Zhu wherever the `r = 1` cap appears.* The
+census found the `r = 1` cap in **8 `docs/` files, 5 `scripts/` — and ZERO of the four
+manuscripts.** Paper II is a Gini-and-κ paper; it names no tail index anywhere. The cheap repair
+was to write the cap in so the citation had somewhere to land. That would have **manufactured a
+claim in order to credit someone else for it** — an overclaim *with* a footnote, which is harder
+to catch than one without. BBZ went into §6 against what Paper II actually asserts instead.
 
-**THEN JASON RULED ON PAPER IV AND THE SESSION RE-OPENED (`-66b`).** Title and abstract ¶1
-**narrowed** to *"one atomic unit at the household, firm and sovereign scales"* (`WT-102`,
-`wt121_paperIV_narrow.py`). Abstract 248 → 238 words, suite still **1078/0**, board still 66.
-**The oldest Jason item is closed — and the census run before the patch found it was never purely
-a taste question: `E1` issued the narrowing as a FAIL remedy, and `E3` certified it applied while
-quoting an abstract text that exists nowhere in the corpus.** `E6` §6 caught the false
-certification; nobody connected it to the Jason item it had created. Read `WT-102`.
+**And the defect was never a missing reference.** Both works were **already in the reference
+list**: Bouchaud / Mézard / Benhabib / Bisin / Zhu all measured **body = 0, references = 1**.
+Listed and never cited — the same defect `paper-I`'s `REVIEW-002` `A10` caught one manuscript
+over. A reference-list entry is a signpost, not a credit.
+
+Commit **`bf07363`**. Suite **1078 passed, 0 failed**. Board **66 criteria**. Abstract
+**untouched at 244 words** — `-65`'s six words of slack are still on the table.
 
 ---
 
 ## READ FIRST, in this order
-1. **`docs/SCOUT-001-truncation-vs-scaling-prior-art.md`** — the deliverable. Verdict in one
-   markable sentence, the evidence at source, the method failures, and the one hole named.
-2. **`docs/LEDGER.md` `WT-100`** (the fact) and **`WT-101`** (the method).
-3. **`docs/ROADS-001-two-reconstructions.md`** — now **ticked**. Its *"What I could not check
-   and you should"* section carries the answer. **Do not read it as a live proposal.**
-4. `docs/DECISION-001-A2-and-road-one.md` — unchanged, still ticked at A, now with its
-   re-allocation test spent.
+1. **`docs/LEDGER.md` `WT-103`** (the fact: what was placed, where, and why one rule had no site)
+   and **`WT-104`** (the method: three near-misses, all one species).
+2. **`scripts/wt122_paperII_citation_census.py`** — read its *output*, not just its code. It is
+   the newest worked example of a census that names its hazard in advance and carries a positive
+   control on every probe.
+3. `docs/SCOUT-001-truncation-vs-scaling-prior-art.md` §4 and §8 — still the evidence of record.
+4. `docs/papers/paper-II-redistribution/paper-II.md` §1 contribution 2, §3.1's last new
+   paragraph, and **all of §6** — that is everything that moved today.
 
 ---
 
 ## YOUR AT-BAT — take one, in this order
 
-### 1. **PAPER II's TWO MANDATORY CITATIONS.** Card `1217556375636027`. **This is the one.**
-Not optional additions — the difference between a contribution and an uncredited restatement.
-**Bouchaud & Mézard (2000)** wherever Paper II contrasts the stock levy with the flow levy in
-terms of the multiplier's shape; **Benhabib, Bisin & Zhu (2011) §4.1** wherever the `r = 1` cap
-appears. Both read in full at source; exact quotes and DOIs are on the card and in `SCOUT-001`
-§4. Bounded, concrete, and it is the direct consequence of this session.
-**Before you edit:** `WT-094` (grep `tests/` and `scripts/` first), `WT-099` (census before
-patch), and the abstract has **six words of slack that `-65` returned deliberately** — spend
-them only if you must.
+### 1. **PAPER II's SECOND INDEPENDENT READ.** ***This is the one.*** Could start a convergence
+count, and it is now overdue in a way it was not yesterday: the manuscript moved in 24 places in
+48 hours, and then **`-67` moved §1, §3.1 and §6 on top of that.** **DIFF against
+`paper-II.md.bak-wt67-cites` first, then `.bak-wt65-decA` and `.bak-wt64-p7`.** Do not read the
+repaired text as given — that is the whole point of an independent read.
+**It inherits one live question, carded rather than decided:** card `1217561330623702`. §6 now
+concedes the bare stock-versus-flow contrast to Bouchaud & Mézard and §1 was narrowed to match.
+**The abstract still opens with *"the base sets a ceiling the rate cannot cross"* and was not
+touched.** Whether an abstract owes a related-work concession is a judgement about the
+manuscript, not about the citation. The card argues both sides and lists the constraints.
 
-### 2. **PAPER II's SECOND INDEPENDENT READ** — could start a convergence count. It has now moved
-in 24 places in 48 hours. **Diff against `paper-II.md.bak-wt65-decA` and `.bak-wt64-p7`**; do not
-read the repaired text as given. *Natural to combine with #1, but they are different jobs: #1 is
-a known patch, #2 is an open read. Do not let #1 quietly become the whole at-bat.*
+### 2. **PAPER IV's re-read after the narrowing.** §1 and §3 still carry the ladder framing in
+prose even though the title and abstract no longer promise it. `wt120`'s census found the phrase
+only twice and both are fixed — but *"composes from X to Y"* is a **shape, not a string**, and a
+grep cannot see a paraphrase. Read §1–§3 with the narrowed claim in mind. ~40 min.
+*(`-67` touched `paper-IV.md` for exactly one token — the `Physica A` issue number — so the
+narrowing pass is otherwise undisturbed.)*
 
 ### 3. **P6's remaining two thirds** (`P1n`/`P5n` are `P3n` repointed, ~30 min, mechanical).
-### 4. **The ρ = 0 test UNDER-asserts** — card `1217547799559841`. Read the card first: tightening
-the float tolerance to `==` is how you hand the next machine a red suite. Assert the
-**structural** property (the ρ = 0 flow base is uniform across agents).
-### 5. **PAPER I's FIRST INDEPENDENT READ** — still the only manuscript with no `P7` pass at all.
-### 6. **`REFERENCE-POLICY`'s sixth pass** — card `1217556161163494`. Small, portable, and it
-nearly cost this project a wrong verdict. See §THE TELL.
-### 7. Paper II's companion reference entries — card `1217542940968749`.
 
-**FORCING LINE (`-59`'s ruling, kept): take none of the seven, say why in ONE LINE at the top of
+### 4. **The ρ = 0 test UNDER-asserts** — card `1217547799559841`. Read the card first:
+tightening the float tolerance to `==` hands the next machine a red suite. Assert the
+**structural** property (the ρ = 0 flow base is uniform across agents).
+
+### 5. **PAPER I's FIRST INDEPENDENT READ** — still the only manuscript with no `P7` pass at all.
+
+### 6. **`REFERENCE-POLICY`'s sixth pass** — card `1217556161163494`. The predicate-level ceiling.
+`-67` is the second session running that would have been saved by it existing already.
+
+### 7. **The U+00B5 guard** — card `1217561398864561`. **NEW, small, and it is a live hazard.**
+See §THE TELL. Note the constraint: **do not add it to `tests/test_redistribution.py`**, whose
+count of **18** is quoted in Paper II's abstract and §1. A new module is fine.
+
+### 8. **Make PASTE THE HANDOFF a forcing function** — card `1217560480809492`. Small, and it
+failed twice in one session with the fix written down in between. *(`-67` pasted it. That is one
+data point, not a fix.)*
+
+### 9. **Paper II's companion reference entries** — card `1217542940968749`.
+
+**FORCING LINE (`-59`'s ruling, kept): take none of the nine, say why in ONE LINE at the top of
 your handoff. It costs nothing.**
 
 ---
 
-## WHAT `-66` DID, so you do not re-derive it
+## WHAT `-67` DID, so you do not re-derive it
 
-**ONE at-bat, then Jason ruled and `-66b` did the Paper IV narrowing.** The output is a scouting
-note, three ledger entries, six committed instruments, a tick and one manuscript edit.
+**One at-bat.** Two committed instruments, one commit, two `LEDGER` entries, four banked lessons
+(three global), three Asana cards (one closed, two filed).
 
-### A · The verdict: `KNOWN` (`WT-100`)
-**Bouchaud, J.-P. & Mézard, M. (2000), *Physica A* 282, 536–545, eqs (11)–(13).** Their wealth
-balance carries **both** levies **and both rebates** — `−φ_I dW_i/dt` (flow), `−φ_C W_i` (stock),
-`+f_I φ_I dW̄/dt + f_C φ_C W̄` (per-capita redistribution) — and eq. (13) gives the Pareto exponent
-µ in closed form in all four. Their stated scope, verbatim: *"the role of income or capital taxes
-and of state redistribution of wealth, on the value of the exponent µ."*
+### A · The census (`scripts/wt122_paperII_citation_census.py`)
+Named its hazard **before it ran** — *"is the `r = 1` cap actually in a manuscript at all, or only
+in `docs/`?"* — walked live `.md` and `.py` with `.bak-*` and `._*` excluded and the exclusions
+printed, normalised whitespace before matching, and carried a **positive control on every probe**.
 
-And the ranking, **stronger than ours**:
-
-> *"income taxes tend to reduce the inequalities of wealth (i.e., lead to an increase of µ), even
-> more so if part of this tax is redistributed. On the other hand, **quite surprisingly, capital
-> tax, if used simultaneously to income tax and not redistributed, leads to a decrease of µ**."*
-
-The per-capita rebate `ROADS-001` §2 wanted to introduce as a novel **fifth coordinate** is a
-coordinate in their equation. They also state the organising contrast: a term that *"breaks the
-symmetry under wealth rescaling"* leaves *"the Pareto tail truncated for large wealths."*
-
-**AND THE `r = 1` CAP IS NOT OURS EITHER.** `ROADS-001` calls it *"the strongest claim and the
-one most likely to be wrong."* It is not wrong — it is **Benhabib, Bisin & Zhu (2011)**,
-*Econometrica* 79(1) §4.1: *"…where γ_i < 1 for all i … **it is straightforward to show that the
-stationary distribution of wealth would be bounded above**."* Their Prop. 4 additionally has tail
-inequality rising in a **mean-preserving spread** of the return process.
-
-### B · Why six sessions missed it, which is the reusable part
-`REVIEW-004`, `ROADS-001` and `HANDOFF-PROMPT` all name **optimal-taxation-with-Pareto-tails**. I
-searched it; the result is not there and was never going to be, because public finance asks what
-a tax *raises* and who *bears* it, not what it does to the *shape of a random multiplier*.
-**Statistical physics has asked exactly that since the 1990s.**
-
-The blackbook leaf that predicts this precise failure —
-`2026-08-12-search-prior-art-shape-equation-subject`, *"search prior art by the SHAPE OF THE
-EQUATION, not by the subject matter"*, banked by `-12` during the Bateman search — **is what
-found the paper.** It surfaced because `-65`'s process-miss note asked the next session to run
-`lessons.py search` at student-in. `use` + `record-outcome pass` recorded against it.
-
-**A handoff good enough to inline the lessons removes the reason to open the tree, and the tree
-holds what the project has NOT inlined. `-65` was right, and this session is the receipt.**
-
-### C · What survives, described as the narrow strip it is
-`NO_LOSS_OFFSET` is **dark, 0 of 12 valid full texts**. Bouchaud & Mézard's income tax is
-`φ_I dW_i/dt`, symmetric in **both signs** — an affine *contraction* of the multiplier. Ours is on
-the **realised gain only**, `A − r·(A−1)⁺`, **no loss offset**, which is what makes ours a genuine
-*truncation*. Nor does anyone compare at matched **revenue**: Bouchaud & Mézard compare at equal
-*rates*; Guvenen et al. (w26284) compare at equal revenue but route to an **efficiency**
-conclusion through entrepreneurial reallocation, never to a tail index.
-**That is a remark inside a paper. It is not a thesis to lead one with — `ROADS-001` already
-tried that.**
-
-### D · The instruments, all committed and re-runnable
-| script | what it is |
+| hypothesis | measured |
 |---|---|
-| `scripts/wt117_litsearch.py` | discovery **v1, superseded**. Kept because **its failure is the lesson** (`WT-101` §1). |
-| `scripts/wt117b_litsearch.py` | discovery v2: 4 indexes × 20 queries × 3 tiers, **known-item retrieval** + per-control scoring. |
-| `scripts/wt118_fulltext_absence.py` | **the absence half.** 18 works downloaded, `pdftotext`-extracted, 6 **pre-registered** conjunction predicates, per-document validity, **predicate positive controls**. |
-| `scripts/wt119_roads_tick.py` | the `ROADS-001` tick; anchored on a whole paragraph, `assert count == 1`, `--dry`, idempotence guard. |
+| `H1` B&M *"wherever the stock/flow contrast is made"* | **1 site** — §3.1's *"different objects"* paragraph |
+| `H2` BBZ *"wherever the `r = 1` cap appears"* | **0 sites, all four manuscripts** |
+| `H3` are the works cited or merely listed? | **body 0 / refs 1, all five surnames** |
+| `H4` `WT-094` — anchors in `tests/`, `scripts/`, `src/`? | clear |
+
+All three probes fired their controls first, so **`H2`'s zero is a measurement, not a dark
+predicate** (`WT-101`'s rule, applied).
+
+### B · The patch (`scripts/wt123_paperII_mandatory_citations.py`)
+Whole-paragraph anchors, `assert count == 1` on **every** anchor before any write, `.bak` first,
+`--dry`, idempotence guard, character-width assertion, **and a new glyph guard** (see §THE TELL).
+Seven edits: §3.1 credit paragraph · §6 rewritten in four paragraphs · §1's contribution 2
+narrowed and pointed at §6 · both `paper-II` reference entries upgraded · the `paper-IV` issue
+number corrected.
+
+### C · Two bibliographic corrections, both at Crossref
+- **`Physica A` 282(3) → 282(3–4).** `doi:10.1016/S0378-4371(00)00205-3` gives issue `"3-4"`.
+  **Wrong in `paper-II.md` AND `paper-IV.md`, fixed in both.** `SCOUT-001` §8 had it right — the
+  error was in the manuscripts, and it had survived every reference pass to date.
+- **BBZ's standing *"page range to re-check"* flag is RESOLVED.** `doi:10.3982/ECTA8416` confirms
+  *Econometrica* **79**(1), **123–157**. Closed with a source rather than deleted.
+- Both `paper-II` entries move **✓ → ✓⧗** under `REFERENCE-POLICY` §4's pre-publication rule
+  (arXiv `cond-mat/0002374`, NBER w14730). **`paper-IV`'s B&M entry KEEPS `✓` deliberately:** it
+  quotes nothing, so it leans on no text. Different reliance, different mark — that is what a
+  per-entry read-status disclosure *is*.
 
 ---
 
-## THE TELL, now SEVEN deep
+## THE TELL, now NINE deep
 
-`-61`: a corpus under repair has a moving referent and only the filesystem knows. `-62`: the
-line-wrap grep trap runs both ways. `-63`: a backlog drain measures the backlog, not the paper.
-`-64`: a review apparatus has the same defect as a manuscript — its own coverage is an unmeasured
-claim. `-65` (i): the fix for `WT-092` has `WT-092` — fire your repair, do not read it. `-65`
-(ii): an instrument that reads prose cannot report on code.
+`-61`: a corpus under repair has a moving referent. `-62`: the line-wrap grep trap runs both
+ways. `-63`: a backlog drain measures the backlog, not the paper. `-64`: a review apparatus's own
+coverage is an unmeasured claim. `-65` (i): the fix for `WT-092` has `WT-092` — fire your repair,
+don't read it. `-65` (ii): an instrument that reads prose cannot report on code. `-66`: a dark
+predicate is not evidence of absence until a document you **know** contains the thing has made it
+fire. `-66b`: a false certification re-files a defect under a category that stops anyone fixing it.
 
-**`-66` ADDS THE ONE THEY WERE ALL POINTING AT:**
+**`-67` ADDS:**
 
-> ### A DARK PREDICATE IS NOT EVIDENCE OF ABSENCE UNTIL A DOCUMENT YOU **KNOW** CONTAINS THE THING HAS MADE IT FIRE.
+> ### AN INSTRUCTION THAT SAYS "CITE X WHEREVER Y APPEARS" CONTAINS A HIDDEN COUNT HYPOTHESIS, AND WHEN Y APPEARS NOWHERE THE CHEAP REPAIR IS TO WRITE Y IN.
 
-`TRUNCATION_x_TAIL` — the headline predicate, the one the whole verdict rested on — had every
-alternative in its regex containing the literal word *"tail"* or *"Pareto"*. It was therefore
-**structurally blind** to the statistical-physics register, which says *"truncated power law"* and
-*"exponent µ"* and almost never *"tail."* It was dark across **eleven economics full texts**, and
-that darkness read exactly like a finding.
+That repair is **invisible in review** — the paper gains a claim *and* a citation for it in the
+same commit, so the citation looks like the reason the claim is there. `WT-099` says treat *"N
+places"* as a hypothesis. This is the case where **N = 0**, and it is the one that matters,
+because a census that returns zero reads like a chore that found nothing rather than a finding.
+It is `-66`'s lesson with the subject changed: `-66` measured whether the *instrument* could fire;
+`-67` measured whether the *instruction* had a referent.
 
-What caught it was adding **predicate positive controls** — corpus members whose job is *not to
-be evidence* but to prove the matcher can fire. **Sornette & Cont (1997), a paper TITLED *"power
-laws and truncated power laws"*, left it dark**, and the summary line
-`predicates_proven_capable_of_firing: []` is what turned the session around. Widened, it fired on
-both controls, and then on Bouchaud & Mézard, who had the answer.
+**And a second, smaller, entirely self-inflicted — three misses, one species: a name that renders
+right and matches wrong.**
 
-**The two ceilings are different instruments.** A *corpus-level* ceiling asks *"do my searches
-return papers?"* A *predicate-level* ceiling asks *"does my matcher fire on a document that
-certainly contains the thing?"* Only the second one found this. `-64` proved a review's coverage
-is an unmeasured claim; `-66` says the same of **the matcher inside the instrument**.
+1. **The idempotence guard could not see its own edit.** `wt123` printed, in its own post-write
+   verification, immediately after a successful apply: `sentinel present: False`. The sentinel was
+   chosen from the *unwrapped* source string and the script's own `wrap()` broke it across a line
+   before writing. **A re-run would have appended the paragraph twice.** Every other comparison in
+   this session normalised whitespace first, because the manuscripts are hard-wrapped — **nobody
+   thought of an idempotence check as a comparison against a hard-wrapped corpus, which is exactly
+   what it is.** Fixed, and then **fired** (re-run now exits 2) rather than read.
+   > **A guard's post-condition must be ASSERTED, not printed.** It printed `False` beside the
+   > word `APPLIED` and returned `0`. The bug was one line; the near-miss was the exit code.
 
-**Two lesser ones, same family, both recorded in `WT-101`:**
-- **A calibration gate built as a SUM over controls** cannot distinguish *all fired* from *one
-  fired, three failed silently*. v1 printed `apparatus_valid: true` on **one** hit across four
-  controls with **ten of fourteen** API calls errored. Score every control, and **name** the
-  failures.
-- **A threshold tuned on one literature deletes another for being concise.** A 20,000-character
-  extraction floor, calibrated on 40-page economics working papers, silently voided *Physical
-  Review* letters at 10k and 17k chars — which are four pages **by design**. Also: a
-  document-validity ceiling that tested **my vocabulary** rather than the extraction voided four
-  papers that had extracted perfectly, because they write *"Pareto parameter"*.
-- And `NO_LOSS_OFFSET` initially fired on two papers **entirely via "without loss of generality."**
-  **A predicate that matches boilerplate manufactures its own positives** — worse than a dark one,
-  because it makes a corpus look covered.
+2. **U+00B5 vs U+03BC.** `SCOUT-001` writes the Pareto exponent as **MICRO SIGN**; the
+   manuscripts use **GREEK SMALL LETTER MU**. They render identically and grep differently.
+   Drafting §3.1's credit from `SCOUT-001` would have put the micro sign into a manuscript for the
+   **first time** — measured: **6 files carry it, all `docs/` and `scripts/`, ZERO manuscripts.**
+   `wt123` now refuses it; card `1217561398864561` asks for a guard that outlives the script.
+   *(Underneath the codepoint was a semantic collision too: μ was already the growth drift. The
+   new paragraph discloses the clash in the paper's own register — §3.1 already apologises for
+   `a` — rather than shipping two meanings for one letter.)*
+
+3. **The homograph canary fired and it was RIGHT.** Suite went **1 failed, 1077 passed** on
+   `test_reg002_sec5_e4_extension_label.py::test_the_third_surface_scope_is_warranted`, which pins
+   an identity over `scripts/`. `wt123` had named its edits `E1..E7` and an `_NEW`-suffixed
+   constant on the fourth **contained the token without being it**. Renamed `ED1..ED7`; back to
+   **1078**. **The canary works; the name was the bug; the test was NOT widened.**
+   *And the docstring explaining all this tripped the canary a second time*, because the first
+   draft spelled the token while explaining why not to. **A warning about a landmine is not exempt
+   from the landmine.**
+
+> **`WT-094` says grep `tests/` and `scripts/` for the manuscript strings you are about to edit.
+> Necessary; NOT sufficient. A patch script is itself a new file in `scripts/`, and the
+> repository's guards read it too.** Three of `-67`'s four self-inflicted problems were in the
+> **instrument**, not the prose. The census walked `scripts/`, found its own anchor strings there,
+> and reported four `*** UNSAFE ***` anchors — **an instrument that searches the tree it lives in
+> manufactures its own collisions**, the same shape as `-66`'s `NO_LOSS_OFFSET` firing on *"without
+> loss of generality."* **Read a census's self-hits before believing its refusals.**
 
 ---
 
 ## RULINGS NOW SETTLED — do not reopen
-- **`DECISION-001` is ruled A, and its re-allocation test is now SPENT.** The search came back
-  `KNOWN`. **C does not get re-opened.** There is no remaining Jason-sized decision on this axis.
-- **DO NOT RE-RUN THE LITERATURE SEARCH.** `SCOUT-001` is the note; `WT-100` is the fact; the
-  instruments are committed. If you want to *extend* it, extend the corpus in
-  `wt118_fulltext_absence.py` — do not start over.
-- **The `r = 1` cap and the stock-vs-flow tail contrast are CITED, not claimed.** Card
-  `1217556375636027`.
-- **`REG-012` §4.7** (`WT-096`): `SEC_47_AT_REGISTRATION` is **immutable**; a warranted edit
-  **appends an Amendment**.
-- **DO NOT widen `ROTTED` by glob** — Paper IV §10 uses the same words correctly.
-- **GREP `tests/` AND `scripts/`** before editing a manuscript string (`WT-094`); **census before
-  you patch** (`WT-099`). Do not delete *"18 tests"* from Paper II's abstract.
-- **DO NOT re-derive** the κ residuals; `III-1`'s 4.2×; the `E2` blind pass; the
-  P2-at-three-strengths lead (withdrawn). **DO NOT re-serve `REVIEW-004` by section number** —
-  verbatim quotes only, and §A3 is the section every re-serving pass skips.
-- **`REVIEW-005` §2's `II-3` diagnosis is WRONG about the code** (`WT-098`). Do not re-serve it
-  without opening `src/`.
+- **`DECISION-001` closed at A for good.** DO NOT RE-RUN THE LITERATURE SEARCH. `SCOUT-001` is the
+  note, `WT-100` the fact, the instruments are committed. To extend it, extend the corpus in
+  `wt118_fulltext_absence.py`; do not start over.
+- **Paper IV's framing is RULED AND APPLIED** (`WT-102`). Do not re-litigate.
+- **The `r = 1` cap and the stock-vs-flow contrast are CITED, not claimed** — and **`WT-103`: the
+  `r = 1` cap is in NO MANUSCRIPT.** Do not "restore" it; it was never there.
+- The 14 occurrences of *"from the household to the sovereign"* in `END-TO-END-001.md` and the
+  `RESULT-E*.md` documents are **DELIBERATELY UNTOUCHED** — records of what the paper said at the
+  time. Rewriting them falsifies history.
+- **`REG-012` §4.7** (`WT-096`): `SEC_47_AT_REGISTRATION` immutable; a warranted edit **appends an
+  Amendment**. **DO NOT widen `ROTTED` by glob.**
+- **GREP `tests/`+`scripts/` before editing a manuscript string** (`WT-094`); **census before you
+  patch** (`WT-099`). **Do not delete *"18 tests"* from Paper II's abstract.**
+- **DO NOT re-derive** the κ residuals, `III-1`'s 4.2×, the `E2` blind pass, the
+  P2-at-three-strengths lead (withdrawn).
+- **DO NOT re-serve `REVIEW-004` by section number** — verbatim quotes only; **§A3 is the section
+  every re-serving pass skips.**
+- **`REVIEW-005` §2's `II-3` diagnosis is WRONG about the code** (`WT-098`).
 - The **end-to-end pass is CLOSED** (T=2, A=0, E1–E6 spent).
 
 ---
 
-## HONEST LOOSE END, so you do not discover it as a surprise
-**`wt117b_litsearch.py` did not finish inside the session.** Its **known-item tier completed
-12 of 12, all retrieved** — the ceiling that matters — but the P/T/N sweep was still grinding
-when I wrapped and **`/tmp/wt117b-results.json` was never written.** Cause: **Semantic Scholar
-rate-limits hard** and the exponential backoff costs ~124 s per failed call.
-**The verdict does not depend on it** — the *absence* half (`wt118`) is what licenses the claim
-under `REFERENCE-POLICY` §1, and that completed. Treat `wt117b` as unfinished corroboration.
-**Cheapest finish:** drop Semantic Scholar from `SOURCES` (OpenAlex covers it) or add an API key,
-then re-run — a few minutes, not an at-bat.
+## HONEST LOOSE ENDS
+- **`wt117b_litsearch.py` still has not finished** (inherited, unchanged). Known-item tier
+  completed 12 of 12 — the ceiling that matters — but the P/T/N sweep was still grinding at `-66`'s
+  wrap and `/tmp/wt117b-results.json` was never written. Semantic Scholar rate-limits at ~124 s
+  per failed call. **The verdict does not depend on it**; `wt118` is what licenses the claim under
+  `REFERENCE-POLICY` §1 and it completed. Cheapest finish: drop Semantic Scholar from `SOURCES`
+  (OpenAlex covers it) or add an API key, then re-run. Minutes, not an at-bat.
+- **The board did not move.** 66 criteria before and after a session that edited two manuscripts
+  and rewrote a related-work section. **No criterion tracks credit, reference marks or framing** —
+  the same small finding `-66b` reported about Paper IV's title, now seen twice. Worth a thought
+  when `P7`'s schema gets rebuilt.
 
 ---
 
-## TOOLING (▲ = new at `-66`)
+## TOOLING (▲ = new at `-67`)
 - **RUN THE GATE AS:** `GATE_ROSTER_WHO=big-wealthTensor-NN nohup ~/Scripts/gate-selfcheck.sh >
   /tmp/gate.log 2>&1 &`, then **two** polls of ~170 s. Grep the verdict line `GATE SELF-CHECK:`
-  and `CANNOT VERIFY` expecting `0`. **Do not `grep -c "G-AL"`** — it returns 1 on a green run.
-- **WRAP SEQUENCE:** `gh_sha: PENDING` → commit → `--stamp` → commit → push → `--emit`. `--emit`
-  does not stamp and refuses `PENDING`. **Never set `gate_passed` true to make it print.**
-- **▲ CORRECTION, AND IT COST `-66` TWO EXTRA ROUNDS: `--emit` WAS NEVER REFUSING OVER
-  `gate_passed`.** Handoffs since `-58` have said *"`--emit` will refuse on `gate_passed != true`,
-  which has been the standing state."* It refuses on **`REQUIRED`**, which is
-  `['project', 'session_n', 'gh_repo', 'branch', 'gh_sha', 'updated', 'live_theme', 'phase',
-  'gate_passed', 'next_at_bat']` (`handoff_gate.py:50`) — and **this file has never carried
-  `session_n`, `gh_repo`, `branch`, `live_theme`, `phase` or `next_at_bat`.** `-66` added all six;
-  `--emit` then printed **`OK -- handoff is complete, stamped, and matches a clean tree.`**
-  **The lesson is `-64`'s, one level out: a session that EXPECTS a refusal will not read the
-  refusal.** The message names its own six fields every time it fires. Nobody read it, because
-  everybody already knew why it was refusing. **Read the failure text, do not recall it.**
-- **EDITED A PAPER? REGENERATE THE BOARD BEFORE THE GATE** (`board.py … --check` → *"matches
-  measured reality (66 criteria)"*). `-66` edited no paper; the 66 did not move.
-- **▲ `dx` + long-running work: `nohup … &` inside a `dx` call survives**, but **`print(flush=True)`
-  is not enough — the log stayed at 0 bytes for minutes.** Check liveness with
-  `ps aux | grep -c "[w]t117b"` (the bracket trick; and remember `grep -c` **exits 1 on a count
-  of zero**, which is a correct zero — assert the printed number, not `$?`).
-- **▲ `pdftotext` is on darwin and handles every NBER/arXiv PDF tried** (13 of 13 that fetched).
-  NBER working-paper PDFs follow `https://www.nber.org/system/files/working_papers/wNNNNN/wNNNNN.pdf`
-  and fetch cleanly with a browser `User-Agent`.
-- **▲ When a full text is unreachable, that is a RESULT to record, not a gap to paper over.**
-  `SCOUT-001` §6 names Bastani & Waldenström (2023), lists the three routes tried, marks it
-  **✓◐**, and states in terms that **it carries no weight in any absence claim**.
-- **▲ NAME YOUR PATCH SCRIPT IN A FREE `wtNNN` TAG.** Tags now run to **`wt119`; `wt120` is free.**
-- **A BATCHED PATCH SCRIPT BEATS N EDITS** — `wt119` is the newest worked example (whole-paragraph
-  anchor, `assert count == 1`, `.bak` first, `--dry`, **plus an idempotence guard** so a re-run
-  refuses rather than double-applies).
-- **EXTEND ANCHORS TO PARAGRAPH BOUNDARIES** in wrapped prose, not sentence boundaries.
-- **`awk 'length>100'` COUNTS BYTES** — κ, ρ, —, × are multi-byte. Measure characters in Python.
-- **▲ USE ABSOLUTE LOCAL PATHS IN EVERY `cat X | dx --put`** — held again; zero cwd losses this
-  session by writing every local artefact to `/home/claude/wt/` and never relying on `cd`.
+  and `CANNOT VERIFY` expecting `0`. **Do not `grep -c "G-AL"`** — returns 1 on a green run.
+- **WRAP SEQUENCE:** `gh_sha: PENDING` → commit → `--stamp` → commit → push → `--emit` → **PASTE
+  INTO CHAT.** That last step is a step, not a courtesy — card `1217560480809492`.
+- **`--emit` refuses on `REQUIRED`**, which is `[project, session_n, gh_repo, branch, gh_sha,
+  updated, live_theme, phase, gate_passed, next_at_bat]` (`handoff_gate.py:50`). It was **never**
+  refusing over `gate_passed`; handoffs since `-58` said so and were wrong. **Read the failure
+  text, do not recall it.**
+- **EDITED A PAPER? REGENERATE THE BOARD BEFORE THE GATE:** `./scripts/regen-board.sh --check` →
+  *"matches measured reality (66 criteria)"*. **The wrapper is the only supported invocation** —
+  bare `board.py` silently produces a degraded board.
+- **ANY ABSTRACT EDIT:** `python3 scripts/check_abstract_size.py <PATH> --print` (takes a PATH).
+  Paper II is at **244 words / 1478 chars**; Paper IV at 238/1585.
+- **▲ `| tail` MASKS `$?` AND IT WILL BITE YOU ON PYTEST.** `-67` ran
+  `pytest … 2>&1 | tail -8`, got `PYTEST_RC=0`, and the printed summary said **`1 failed`**.
+  **Assert the printed number, always.** (Same family: `grep -c` exits 1 on a count of zero,
+  which is a correct zero.)
+- **▲ NAME YOUR PATCH SCRIPT IN A FREE `wtNNN` TAG. Tags now run to `wt123`; `wt124` is free.**
+- **▲ AND CHECK YOUR IDENTIFIER NAMES AGAINST THE GUARDED NAMESPACES, not just your prose
+  strings.** `scripts/` is policed by `test_reg002_sec5_e4_extension_label.py` for a per-script
+  local exhibit label; naming a constant after it reds the suite. See §THE TELL (3).
+- **A BATCHED PATCH SCRIPT BEATS N EDITS** — `wt123` is the newest example: whole-paragraph
+  anchors, `assert count == 1` for EVERY anchor before any write, `.bak` first, `--dry`,
+  idempotence guard **that is normalised and asserted**, character-width check, glyph guard.
+- **A CENSUS MUST REPORT WHAT IT EXCLUDES** — `wt122` names its roots, prints its exclusions,
+  states its hazard in advance, and carries a control per probe. Copy it, it is cheap.
+- **`pdftotext` is on darwin** and handled 13 of 13 PDFs that fetched. NBER PDFs live at
+  `https://www.nber.org/system/files/working_papers/wNNNNN/wNNNNN.pdf` with a browser `User-Agent`.
+- **▲ CROSSREF IS FREE, INSTANT, AND SETTLES `to re-check` FLAGS.**
+  `https://api.crossref.org/works/<DOI>` returns issue and pagination as JSON. `-67` closed a
+  standing flag and found a wrong issue number in two manuscripts in about ninety seconds.
+  **A bibliographic flag that survives five reference passes is usually one nobody costed.**
 - **`dx` chokes on multiline / apostrophe-bearing command strings.** Write locally, `--put`, run
-  there. `COMMITMSG.txt` → `--put` → `git commit -F`. **Also true of `lessons.py add --text`:**
-  keep it one line and apostrophe-free.
-- **`lessons.py use` / `record-outcome` can hang past 4 min** — one per `dx` call at 300 s, never
-  chained with `&&`. `add` is fast and auto-pushes. *(All four calls this session returned in
-  seconds — the hang is intermittent, not reliable.)*
-- **Asana `create_tasks` silently drops `projects`** — **it did NOT this session** (both cards
-  landed in State Machine on the first call, verified with `get_task opt_fields=projects.name`).
-  **Keep verifying anyway**; a flake that stops flaking is not a flake that is fixed.
+  there. `COMMITMSG.txt` → `--put` → `git commit -F`. Also true of `lessons.py add --text`.
+  **For appending to a doc: `--put` to `/tmp/x.md`, then `cat /tmp/x.md >> docs/FILE.md`.**
+- **USE ABSOLUTE LOCAL PATHS IN EVERY `cat X | dx --put`** — held again, zero cwd losses.
+- **`lessons.py use`/`record-outcome` can hang past 4 min** — one per `dx` call at 300 s, never
+  chained with `&&`. All returned in seconds this session; the hang is intermittent.
+- **Asana `create_tasks` silently drops `projects`** — it did NOT this session (two cards, both
+  landed first try, verified with `get_task opt_fields=projects.name`). ▲ **It DOES reject
+  `assignee: null`** with a validation error; omit the key instead of nulling it.
 
 ---
 
 ## THE SELF-REVIEW TRIAD, answered in writing
-1. **Captured everything for a zero-memory future Opus?** Yes. A 17.5 KB scouting note carrying
-   the verdict, the evidence at source, the method failures and the named hole; two `LEDGER`
-   entries; four committed instruments each with a docstring saying *why*; `.bak` beside both
-   touched docs; three lessons banked global/project; three Asana cards (one closed, two filed).
-2. **Learned the hard way and not yet written down?** Now written: the predicate-control rule
-   (`WT-101`, banked global), the sum-gate rule (banked global), and the settled prior-art fact
-   (banked `wealth-tensor` so no future session re-runs this search). The `wt117b` non-completion
-   is disclosed above rather than buried.
+1. **Captured everything for a zero-memory future Opus?** Yes. Two `LEDGER` entries; two committed
+   instruments whose docstrings say *why* and record what the census changed about the card's own
+   instructions; `.bak` beside both touched manuscripts; four lessons banked; three cards, one
+   closed with the full measurement in its comment.
+2. **Learned the hard way and not yet written down?** Now written: the count-hypothesis rule
+   (`WT-104`, banked global), the normalised-and-asserted idempotence guard (banked global), the
+   guarded-namespace rule and the two-codepoint glyph (banked global), and the project fact that
+   the `r = 1` cap is in no manuscript (banked `wealth-tensor`, so no future session goes looking).
 3. **The ONE thing that makes the next session's life easier, added THIS pass?**
-   **The predicate positive control.** Every project that ever publishes a zero-hit table needs
-   it, `REFERENCE-POLICY`'s five passes do not contain it, and it is the only reason this
-   session's verdict is `KNOWN` rather than a confident, clean, wrong `CLEAN`. Card
-   `1217556161163494` proposes it as that document's **sixth pass**. Runner-up: `SCOUT-*.md` now
-   has a worked example — verdict in one markable sentence, what a positive would have looked
-   like *declared in the code*, and the hole named in its own section.
+   **`wt122`'s shape: a census that states, in a docstring, the specific hazard it exists to find
+   — and then reports a ZERO as a result rather than as a clean bill of health.** `wt120` had the
+   exclusions and the normalisation; `wt122` adds the part that mattered, which is that the
+   instruction being executed is itself a claim to be measured. Runner-up: the Crossref line in
+   TOOLING — ninety seconds to close a flag five passes had deferred.
 
 ---
 
 ## JASON-SIZED, not yours to decide
-- **(a) `DECISION-001` — CLOSED FOR GOOD.** A was ruled, and the re-allocation test has now run
-  and returned `KNOWN`. **There is no follow-up Jason moment on this axis.** `-65` said the next
-  one would arrive *after* the search; the search says it does not arrive.
-- **(b) Paper IV's title and abstract leading clause — ✅ RULED AND APPLIED, 2026-08-17**
-  (`WT-102`, `scripts/wt121_paperIV_narrow.py`). Jason ruled **narrow**. Title and abstract ¶1
-  now read *"one atomic unit **at the household, firm and sovereign scales**"* — type identity at
-  three named scales, not a ladder running up through them. Abstract **248 → 238 words**; the
-  *"sooner than an earlier draft claimed"* conduct narration **deleted rather than defended**
-  (`WT-098`), because a leading clause that no longer promises a ladder needs no clause walking
-  one back. **AND IT WAS NEVER PURELY A TASTE QUESTION:** `E1` issued the narrowing as a **FAIL
-  remedy**, `E3` certified it `APPLIED` while quoting an abstract text that **exists nowhere in
-  the corpus**, and `E6` §6 caught that. Five sessions filed a live registered remedy under
-  "Jason-sized". Read `WT-102`.
+- **(a) `DECISION-001`** — closed for good. No follow-up on this axis.
+- **(b) Paper IV's framing** — ✅ ruled and applied 2026-08-17 (`WT-102`).
 - **(c) `P7` is still ONE BOOLEAN** for a criterion that is per-paper with a two-pass counter.
-  Adding rows moves the 66, so it wants its own at-bat. **NOW THE ONLY OPEN JASON ITEM** — and
-  note it is really a board-schema task with a Jason ruling attached, not a judgement call.
+  Adding rows moves the 66, so it wants its own at-bat. **STILL THE ONLY OPEN JASON ITEM** — and
+  on inspection it is really a **board-schema task with a ruling attached** rather than a judgement
+  call, so **propose the schema and Jason can ratify it in one line.**
+  ▲ **And when you do, look at whether ANY criterion should track credit and reference marks.**
+  `-67` rewrote a related-work section, upgraded two reference marks and corrected a bibliographic
+  error in two manuscripts, and **the board did not move by one criterion.** Twice now (`-66b` saw
+  it with Paper IV's title). That is either fine or a hole, and nobody has said which out loud.
 
 ## AT WRAP
 `~/Scripts/charter-read.sh wealthTensor-NN` **immediately** before the gate; the gate detached
-**with `GATE_ROSTER_WHO` set**; `python3 -m pytest tests/ -q` and **say the number**; `roster
-leave --who` once; and paste a handoff better than this one into the chat as the **last act**.
+**with `GATE_ROSTER_WHO` set**; `python3 -m pytest tests/ -q` **and say the number** (and do not
+let `| tail` tell you it passed); `roster leave --who` once; and **paste a handoff better than
+this one into the chat as the last act.** 🥎
