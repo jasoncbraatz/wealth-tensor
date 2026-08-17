@@ -3296,3 +3296,36 @@ without spelling it. *A warning about a landmine is not exempt from the landmine
 > reported four `*** UNSAFE ***` anchors — **an instrument that searches the tree it lives in
 > manufactures its own collisions**, the same shape as `-66`'s `NO_LOSS_OFFSET` firing on *"without
 > loss of generality."* Read a census's self-hits before believing its refusals.
+
+---
+
+## WT-105 · FACT · 2026-08-17 · wealthTensor-68
+
+**PAPER II's SECOND INDEPENDENT READ (P7 PASS 4): TWO FINDINGS, BOTH REPAIRED, AND THE
+TRAJECTORY IS 9 → 2.** `II-13`: §3.1's table stated no configuration for its flow rows (they run
+at ρ = 1, `redistribution.py:89`'s default) — the exact species of repaired `II-12`, one section
+over; repaired with a one-sentence table note. `II-14`: *"a change of six parts in a million"*
+for 0.076542 → 0.076536 is exact read absolutely and wrong by ~13× read ppm-relative (~78 ppm);
+repaired by writing the number, `6 × 10⁻⁶`. Instrument: `scripts/wt124_paperII_p7pass4_edits.py`
+(`.bak-wt68-p7` kept; idempotence guard fired, exit 2 on re-run). Both §3.1 B&M quotations were
+re-verified **character-exact against the preprint's full text** (`ar5iv` for
+`cond-mat/0002374`; the local PDF had not survived). Card `1217561330623702` **decided at (a)**:
+the abstract owes no B&M concession — it claims no priority, its quantitative content is the
+paper's own (`WT-103`), the credit sits one click away in §1's contribution 2, and 244/250 words
+cannot hold a citation that abstracts do not carry anyway. Falsifier that reopens it: a referee
+reading the abstract as a priority claim. Suite 1078/0 before and after; board 66 before and
+after. **Consecutive-zero count stays 0; the next Paper II read is the first with a live chance
+of being a zero.** REVIEW-008 is the document of record.
+
+## WT-106 · METHOD · 2026-08-17 · wealthTensor-68
+
+**A MAGNITUDE WRITTEN AS PROSE HAS TWO READINGS, AND WHEN THEY DIFFER MATERIALLY THE PHRASE IS A
+DEFECT EVEN IF ONE READING IS EXACT.** "Six parts in a million" for an absolute change of
+6 × 10⁻⁶ in a quantity of order 0.077: the absolute reading is exact, the conventional relative
+reading is off by an order of magnitude, and nothing in the sentence tells a reader which was
+meant. The repair is always available and always shorter than the argument: **write the number.**
+Same family as `-62`'s line-wrap trap and `-67`'s two-codepoint μ — representations that render
+plausibly and resolve differently. It survived one full independent read (`-64`, verbatim in
+`.bak-wt64-p7`) because a number-checking pass checks numbers, not the prose that frames them.
+Corollary used this pass: when the local PDF is gone, `ar5iv.labs.arxiv.org/html/<id>` serves
+full text where the `/abs` page truncates, so a verbatim quote check costs one fetch.

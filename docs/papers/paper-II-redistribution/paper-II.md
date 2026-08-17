@@ -166,6 +166,9 @@ unequally, and §3.3 removes a quarter of κ at no measurable cost.
 | flow, *r* = 0.100 | 0.596 | 0.0102 | 0.481 | yes |
 | flow, *r* = 1.000 | 0.125 | 0.1026 | 0.138 | yes |
 
+*The flow rows are assessed at full realisation, ρ = 1 — §2.3's mark-to-market case and the
+implementation's default; §3.2 is the sweep that lowers it.*
+
 At a matched rate the two bases sit roughly an order of magnitude apart in κ, at every rate
 tested. The budget is visible in the third column and is not a fitted relationship:
 
@@ -189,7 +192,7 @@ more telling comparison is what each does to the variance of the log multiplier:
 the process rather than its outcome. Write that multiplier, normalised by aggregate growth, as
 *a*(η) — a different object from §2.1's wage *a*, with which it unhappily shares a letter — so the
 quantity is Var[log *a*]. Unlevied, Var[log *a*] = 0.076542. Under the
-**stock** levy at that budget it is **0.076536** — a change of six parts in a million, which is to
+**stock** levy at that budget it is **0.076536** — a change of 6 × 10⁻⁶, which is to
 say none at all. Under the **flow** levy it is **0.051189**, a third lower. A levy on stock rescales
 what a holder has and leaves the process that got them there exactly as it found it; a levy on flow
 reaches into the multiplicative term itself. The stock base truncates the outcome, the flow base
