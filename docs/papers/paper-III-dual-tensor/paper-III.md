@@ -34,8 +34,8 @@ conditional-conservatism measures.
 The framework's sharpest prediction, recognition lag ordered by GAAP asset class, was
 pre-registered, tested on 688 EDGAR-derived events in two pre-declared sectors, and **failed**
 (Jonckheere–Terpstra z = −0.290, −0.095; power 0.95–1.00). The repair follows from the theorem, not
-the failure: **disclosed useful lives supply δ from outside the series**, restoring φ for every
-class but goodwill, where at δ = 0 the parameter is absent.
+the failure: **disclosed useful lives supply δ from outside the series**, restoring φ for the two
+amortised classes; at δ = 0 goodwill's parameter is absent.
 
 **Keywords:** identification · conditional conservatism · reporting lag · impairment ·
 pre-registration · asset life · deferred information
@@ -816,7 +816,7 @@ elimination can load onto absorption parameters, and their own proposals — a m
 the two processes, or an estimated cutoff at which the rate constants exchange — share that shape.
 An outside determination of one root releases the other, and the scale with it.
 
-For three of the four classes, the standards already supply that outside determination. Finite-lived
+For two of the four classes, the standards already supply that outside determination. Finite-lived
 intangibles and depreciable property carry **disclosed useful lives and amortisation schedules** —
 an estimate of the physical decay rate, made by the firm, audited, published, and *not* derived from
 the series whose timeliness is in question. Pinning δ rather than estimating it jointly is precisely
@@ -850,8 +850,10 @@ can be run on industry-median lives rather than firm-specific ones, at the cost 
 sign of any residual endogeneity is toward finding *less* timeliness variation than exists, not
 more.
 
-**The class the repair cannot rescue is goodwill**, and the reason is not a difficulty of
-measurement.
+**The repair does not reach the two unamortised classes, and it fails them for different reasons.**
+Indefinite-lived intangibles are tested for impairment rather than amortised (ASC 350-30-35-15), so
+no life is disclosed and there is nothing to pin δ to — a gap in the evidence, and one a standard
+could close. **Goodwill's is not a difficulty of measurement.**
 
 ### 4.8 · The goodwill limit, and what it is a limit on
 
@@ -1900,9 +1902,12 @@ of bad news is not, so the bound is one-sided for a reason internal to the model
 physical layer that only degrades. That assumption is not by itself sufficient — degradation at a
 stochastic rate around a booked rate produces a two-signed reporting error, which is Jin and Myers'
 case again, long tails and no skew. What makes the wedge one-signed is a second condition, that
-reported value may fall and may not rise: no upward revaluation of property, plant and equipment, no
-impairment reversal for goodwill or indefinite-lived intangibles. **That condition is conditional
-conservatism, it is Basu's object, and §2 uses it as machinery rather than contributing it.** An
+reported value may fall and may not rise: under US GAAP, the regime this paper's sample files
+in, no upward revaluation of property, plant and equipment, and no impairment reversal for
+goodwill or indefinite-lived intangibles. IAS 36 requires reversal for non-goodwill assets and
+IAS 16 permits revaluation, so the condition is one-signed for these filers and is not general.
+**That condition is conditional conservatism, it is Basu's object, and §2 uses it as machinery
+rather than contributing it.** An
 earlier draft of this section cited Basu as an obstacle to be scoped around. He is not the obstacle;
 he is the part of the mechanism this programme had not noticed it was standing on. §2's claim is
 correspondingly restricted to degradation on which conservatism has nothing further to bite —
@@ -2253,27 +2258,30 @@ The sentence this licenses, and the paper will not need to say it twice: *the co
 coefficient is a numeraire; every result reported here is invariant to it across twelve orders of
 magnitude, while every currency-denominated quantity scales with it exactly linearly.*
 
-### A.2.4 · Λ is not a constant that wobbles; it is a sawtooth
+### A.2.4 · λ is not a constant that wobbles; it is a sawtooth
 
-A freely-varying Λ that is never pinned would forbid nothing, and a quantity that forbids nothing
+*Throughout this section the object is **λ = C/E**, the dimensionless ratio of §A.2.1 — not the
+dimensional **Λ = η·C/E** swept in §A.2.3. The numeraire enters nothing below.*
+
+A freely-varying λ that is never pinned would forbid nothing, and a quantity that forbids nothing
 is the free parameter this programme has refused three times in other costumes. So the claim is not
-that Λ *varies*. It is that Λ varies **in a specific parameterised shape**, and the shape is a
+that λ *varies*. It is that λ varies **in a specific parameterised shape**, and the shape is a
 prediction.
 
 At φ = 0.3 over 400 periods, with the recognition mechanism live:
 
 | | value |
 |---|---|
-| mean Λ | 1.136838 |
-| minimum Λ | 1.000000 |
-| maximum Λ | 1.245384 |
+| mean λ | 1.136838 |
+| minimum λ | 1.000000 |
+| maximum λ | 1.245384 |
 | recognition events | 16 |
-| Λ = 1 exactly at every recognition event | **yes, all 16** |
+| λ = 1 exactly at every recognition event | **yes, all 16** |
 
-**Λ equals its physical value only at the instants the claim layer snaps to the physical one, and
-overstates it by ~14% on average in between.** Floor pinned at unity by construction of the
+**λ equals its physical value only at the instants the claim layer snaps to the physical one, and
+overstates it by ~14% across the run.** Floor pinned at unity by construction of the
 recognition event; ceiling set by observability; mean determined by φ. That is a shaped variable, not a
-free one — and it is the picture of the assertion that Λ's drift *is* the accumulated deferred
+free one — and it is the picture of the assertion that λ's drift *is* the accumulated deferred
 information.
 
 ---

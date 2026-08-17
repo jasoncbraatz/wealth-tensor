@@ -2506,3 +2506,49 @@ finding got sharper because the write-up was verified against the bytes rather t
 *(Same class as `WT-089` — a fact correctly stated in `docs/` and indexed under nothing — inverted:
 here the fact was correctly stated in `docs/` and indexed under *reassurance*, which is worse,
 because a reader who finds it stops looking.)*
+
+---
+
+## WT-091 · METHOD · 2026-08-17 · wealthTensor-63
+
+**A BACKLOG DRAIN MEASURES THE BACKLOG. IT CANNOT MEASURE THE PAPER — AND THE TWO READ IDENTICALLY
+ON THE BOARD.**
+
+`REVIEW-005` drained thirty-two backlog items and found five about Paper IV, all repaired, none
+blocked on Jason. That made Paper IV read as *"the shortest live path to a closed criterion anywhere
+on this project"* — one clean pass from `P7`'s first zero. **Paper IV was then read independently
+for the first time and returned six new findings**, including a fifty-year-old aggregation result
+cited backwards (`IV-6`: Hildenbrand and Grandmont are the *dispersion* school; the paper had them
+restricting heterogeneity, with the representative agent as their limiting case) and three named
+sources with no reference entry, one of them a `REG-013` seed.
+
+**The transferable half.** Pass 1's *"Paper IV — five findings"* was never a property of Paper IV.
+It was the count of items that a backlog assembled for other purposes happened to contain about
+Paper IV. A convergence counter fed by a drain measures **what previous readers already noticed**,
+and reports it in the same units as **what is there** — so a paper that nobody read looks exactly
+like a paper that came back clean. `-62` was right that a counter cannot start over an unscored
+backlog; the missing half is that **it cannot start over a drained one either.** A `P7` pass is
+only a pass if the manuscript was read end to end asking `P7`'s question.
+
+**Corroborating instance in the same session, one file over.** Paper III §A.2.1 opens with an
+explicit notation block — *"two different objects have been sharing one symbol … **λ** is
+dimensionless, **this is the object §A.2.4 reports as a sawtooth** … Conflating them is easy and
+this paper has done it before"* — and §A.2.4 then uses `Λ` ten times and `λ` zero times. Present in
+every `.bak` back to `pre-wt110-c21`. Six passes, four review documents and one end-to-end test had
+not caught it, **because no pass had read §A.2.4**; the α and SDG threads had each entered the
+appendix, taken their sentence, and left.
+
+**And the repair-introduces-defect rate is now measurable: two regressions from seven repairs.**
+`IV-8` is a defect created by `IV-3`'s repair (a repair that fixed a count introduced an unresolvable
+"the second"), caught one session later. `III-1`'s first form took `P1a` red inside its own session.
+Both were caught only by diffing against the `.bak` chain rather than reading the repaired text as
+given. **`.bak`-then-assert is not belt-and-braces on this corpus; it is the only thing between it
+and a repair that costs more than the defect did.**
+
+*Cost to find: one diff of `REVIEW-005`'s claimed counts against the hunks in the file it claimed to
+have edited.* §0 says eight repairs, §1 documents seven; the Paper IV diff has five hunks and four
+items, because `IV-2` produced two. No undocumented edit exists — the manuscripts are auditable —
+but eleven live is ten and twenty-one dismissed is twenty-two. **The count that was wrong was the
+one nobody had a reason to add up**, which is the same shape as `WT-090`: a number inside a
+document's own accounting arrives with the document's authority and gets less scrutiny than the
+claims it is counting.

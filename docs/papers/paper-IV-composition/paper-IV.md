@@ -78,8 +78,9 @@ granularity, and no standing international series for energy intensity. A theory
 per-entity state vector was, in 1956, not a theory anyone could take data to. **Two of those three
 constraints are datable and have lapsed:** machine-readable structured filings became mandatory in
 the United States over a phase-in ending in 2011, and energy intensity of GDP is now published
-annually as a United Nations Sustainable Development Goal indicator (7.3.1). **The second has no
-lapse to report.** The SDG series is a national aggregate; there is no counterpart giving energy
+annually as a United Nations Sustainable Development Goal indicator (7.3.1). **The input-output
+energy table has no lapse to report.** The SDG series is a national aggregate; there is no
+counterpart giving energy
 input at the granularity the filings give claims, which is one reason §4.3 finds the composed state
 largely unmeasured rather than merely unassembled — and why the claim that firm-level panels of
 *both* are public and free, which an earlier draft made here, is not made.
@@ -90,7 +91,7 @@ is left out, because a claim about hardware dates a paper and a claim about what
 populated with does not. The data constraint is the stronger half of the argument and it is the
 half with an expiry date one can cite.
 
-This is also the paper's posture toward everything it disagrees with, and §6 states it as a
+This is also the paper's posture toward everything it disagrees with, and §7 states it as a
 method rather than leaving it as a habit: the disagreement is never that a predecessor was wrong.
 It is that a predecessor was solving a differently-constrained problem, and the constraints moved.
 
@@ -119,7 +120,7 @@ It is that a predecessor was solving a differently-constrained problem, and the 
 
 **What this paper does not contain.**
 
-No new code and no new simulation. Papers II and III carry the computational results and their
+No new model code and no new simulation. Papers II and III carry the computational results and their
 test suites; this paper cites them as established and adds one measurement of its own, on the
 literature rather than on the model. Where a number appears below without a citation to II or III
 it is from `REG-013` and is reproducible by the command in §10.
@@ -201,10 +202,11 @@ same two components appear, the same question is asked of them — what does the
 observe? — and the answer at each scale is a *quantitative* one that the paper for that scale
 reports. Paper II's κ,
 the share of aggregate wealth actually moved per assessment, is a composition quantity: it is
-defined at the sovereign scale and it is a fold over household-scale liabilities. Paper III's φ ⊙ δ
-is a composition quantity: it is defined at the firm scale and is *written* as diagonal over asset
-classes — a form the next paragraph reports as tested and rejected, which changes what the link
-carries and not whether there is one.
+defined at the sovereign scale and it is a fold over household-scale liabilities. Paper III's
+φ ⊙ δ — observability times the physical decay rate — is a composition quantity: it is defined at
+the firm scale and is *written* as diagonal over asset classes — a form the paragraph after next
+reports as tested and rejected, which changes what the link carries and not whether there is
+one.
 
 **An earlier draft of this section claimed more than three instances of one question, and the
 corpus's first end-to-end test took the surplus away.** It said the three scales made *a chain
@@ -293,8 +295,10 @@ stocks is measuring the thing that does.
 production function, recover a technology; estimate an aggregate consumption function, recover a
 propensity; estimate an aggregate demand curve, recover an elasticity. SMD says the object being
 estimated need not have inherited any of the structure the inference requires. The response to
-SMD in practice has been to restrict preference heterogeneity until the aggregate is
-well-behaved — Hildenbrand and Grandmont, and the representative agent as the limiting case — which
+SMD in practice has been to impose distributional restrictions on the population until the
+aggregate is well-behaved — Hildenbrand and Grandmont, where it is sufficient *dispersion* of
+household characteristics that does the work, and the representative agent as the degenerate case
+at the other end — which
 is a legitimate research strategy and is also an admission that the structure is imposed rather
 than inherited.
 
@@ -506,7 +510,7 @@ fixed in advance, before anybody knew which one it would return.
 **A fourth paper, on price formation, that was written and is not being published.** The largest
 entry, and it cost the most. A complete draft existed — roughly 7,400 words, references verified —
 arguing that supply and demand are not independent equations. It is not in this corpus. Had the
-route worked, this paper would be the fifth in a series rather than the third, and §5 above would
+route worked, this paper would be the fourth in a series rather than the third, and §5 above would
 be a citation rather than a section.
 
 **Its first framing: attacking the diagram.** The original claim was that partitioning agents into
@@ -649,6 +653,8 @@ in the sessions that introduced them to Papers II or III.*
 
 **Aggregation**
 
+Aumann, R. J. (1964). Markets with a continuum of traders. *Econometrica*, 32(1–2), 39–50.
+
 Debreu, G. (1974). Excess demand functions. *Journal of Mathematical Economics*, 1(1), 15–21.
 
 Grandmont, J.-M. (1992). Transformations of the commodity space, behavioral heterogeneity, and the
@@ -668,6 +674,9 @@ Sonnenschein, H. (1973). Do Walras' identity and continuity characterize the cla
 excess demand functions? *Journal of Economic Theory*, 6(4), 345–354.
 
 **Capital, and the constraints that expired**
+
+Piketty, T. (2013/2014). *Capital in the Twenty-First Century* (A. Goldhammer, Trans.). Belknap
+Press of Harvard University Press. ✓
 
 Robinson, J. (1953). The production function and the theory of capital. *The Review of Economic
 Studies*, 21(2), 81–106.
@@ -713,6 +722,9 @@ affects its distribution. *The European Physical Journal B*, 17(1), 167–170. �
 
 Drăgulescu, A., & Yakovenko, V. M. (2000). Statistical mechanics of money. *The European Physical
 Journal B*, 17(4), 723–729. ✓
+
+Chatterjee, A., & Chakrabarti, B. K. (2007). Kinetic exchange models for income and wealth
+distributions. *The European Physical Journal B*, 60(2), 135–149. ✓
 
 Yakovenko, V. M., & Rosser, J. B. (2009). Colloquium: Statistical mechanics of money, wealth, and
 income. *Reviews of Modern Physics*, 81(4), 1703–1725. ✓
