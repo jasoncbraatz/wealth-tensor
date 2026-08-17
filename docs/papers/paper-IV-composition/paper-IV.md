@@ -75,11 +75,14 @@ being settled.
 **The reason was that the scalar was the only object anyone could populate.** There was no
 firm-level panel in machine-readable form, no national input-output energy table at usable
 granularity, and no standing international series for energy intensity. A theory that requires a
-per-entity state vector was, in 1956, not a theory anyone could take data to. Those three
-constraints are datable and all three have lapsed: machine-readable structured filings became
-mandatory in the United States over a phase-in ending in 2011; energy intensity of GDP is now
-published annually as a United Nations Sustainable Development Goal indicator (7.3.1); and
-firm-level panels of both are public and free.
+per-entity state vector was, in 1956, not a theory anyone could take data to. **Two of those three
+constraints are datable and have lapsed:** machine-readable structured filings became mandatory in
+the United States over a phase-in ending in 2011, and energy intensity of GDP is now published
+annually as a United Nations Sustainable Development Goal indicator (7.3.1). **The second has no
+lapse to report.** The SDG series is a national aggregate; there is no counterpart giving energy
+input at the granularity the filings give claims, which is one reason §4.3 finds the composed state
+largely unmeasured rather than merely unassembled — and why the claim that firm-level panels of
+*both* are public and free, which an earlier draft made here, is not made.
 
 Note what is deliberately *not* argued here. The parallel claim about computation — that models of
 that era had to be analytically solvable because numerical solution was unavailable — is true and
@@ -127,12 +130,15 @@ it is from `REG-013` and is reproducible by the command in §10.
 
 ### 2.1 · The three propositions, cited not restated
 
-Paper III states the framework's propositions with their domains and defends the coupling once.
+Paper III states the framework's propositions with their domains (§A.1.2) and defends the coupling
+once.
 They are named here because §3 composes them and §4 bounds them, and re-arguing them would be the
 duplication ADR-001's decomposition exists to avoid.
 
 - **P1 · Composition.** A holding's value is a composite of a physical component and a claim
-  component, and the two obey different laws.
+  component, and the two obey different laws. *(Domain, carried rather than cited because it is the
+  one that bites here: units having a physical referent — silent on purely contractual objects whose
+  referent is another claim.)*
 - **P2 · Decay.** The physical component degrades whether or not the degradation is recorded.
 - **P3 · Atomism.** Measured aggregates are folds over units, and no aggregate is more fundamental
   than its constituents.
@@ -167,7 +173,9 @@ physical component that degrades at some rate and a claim component recorded at 
 Nothing here is metaphorical; a roof has a service life and a mortgage has an amortisation
 schedule, and they are different numbers. **Paper III §2 is that holding**, before anything is
 summed: its physical layer degrades at an effective 0.02 per period and its claim layer
-recognises at α = 0.05, and §3.1 reports what the distance between those two rates costs. The
+recognises at α = 0.05 — the model's swept calibration, which Paper III §5.4 goes on to
+measure at 0.408 per year on its registered sample and reports as low by an order of magnitude —
+and §3.1 reports what the distance between those two rates costs. The
 household scale's quantitative answer is Paper III's, read before §4 indexes the holding by
 asset class.
 
@@ -450,8 +458,11 @@ is mistaken," and it is falsifiable in a way that the received-view complaint is
 establishes that production is constrained by energy and materials and that the constraint is not
 a detail. What it has generally not had is an accounting-shaped object: a per-entity state that a
 balance sheet could carry. Paper III's decomposition is that object, and the coupling Λ it defines
-has an inverse that is already published as a United Nations indicator, which is the strongest
-available evidence that the quantity is not an invention of the framework.
+has the dimensions of a quantity the United Nations already reports the inverse of (SDG 7.3.1).
+Paper III §A.2.2 makes that claim and bounds it in the same breath — the correspondence is
+dimensional, and *"emphatically not"* that the indicator measures Λ⁻¹. It is therefore evidence
+that the dimension is not this framework's coinage, and not evidence that the coupling has been
+measured.
 
 **Stock-flow-consistent macroeconomics** — Godley and Lavoie, and the surveys of Caverzasi and
 Godin and of Nikiforos and Zezza — insists that the accounting close, and builds models in which it

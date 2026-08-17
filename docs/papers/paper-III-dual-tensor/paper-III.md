@@ -26,9 +26,10 @@ firm-level series) the identified set is a continuum, a factor of **1.67** in th
 the whole unit interval.
 
 The corollary is cross-sectional: **classes are ordered by (1 − φ) ⊙ δ ⊘ (α − δ), not by φ**.
-Across the four GAAP classes, δ leverage is **2.58** times the level at which recovery fails, and
-the composite **inverts** the intended ranking, Kendall τ = −1; drawing δ independently, the
-ordering survives in **11.5%** of 4,000 ladders. This constrains cross-sectional use of the
+Across the four GAAP classes, δ leverage sits at **2.58** against the **0.61** at which recovery
+becomes less likely than not — **4.2 times** it — and the composite **inverts** the intended
+ranking, Kendall τ = −1 at the calibrated recognition rate and −0.67 at the measured one; drawing δ
+independently, the ordering survives in **11.5%** of 4,000 ladders. This constrains cross-sectional use of the
 conditional-conservatism measures.
 
 The framework's sharpest prediction, recognition lag ordered by GAAP asset class, was
@@ -1225,9 +1226,9 @@ pinned against a ceiling the instrument itself imposed.
 
 **This diagnosis was not permitted to rescue the result.** A second, **separately numbered**
 registration (PRE-002) was written with a different onset instrument (peak-to-charge), a
-label-permutation negative control, a power curve to be reported whatever happened, α tightened to
-0.025 for the second look, and — decisively — an explicit **stopping rule** stating in advance that
-there would be no third instrument.
+label-permutation negative control, a power curve to be reported whatever happened, the
+significance level tightened to 0.025 for the second look, and — decisively — an explicit
+**stopping rule** stating in advance that there would be no third instrument.
 
 ### 5.3 · The second instrument worked, and the prediction failed anyway
 
