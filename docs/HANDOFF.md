@@ -3,7 +3,7 @@ project: wealth-tensor
 session_n: 67
 gh_repo: jasoncbraatz/wealth-tensor
 branch: main
-gh_sha: PENDING
+gh_sha: 9fe02f077f4b33eac7ef2682896244b004fa8337
 updated: 2026-08-17
 session: wealthTensor-67
 live_theme: "The two mandatory citations placed — and one of the card's two placement rules turned out to have no site in any manuscript, so the citation went where the paper actually claims something instead of where the instruction said."
