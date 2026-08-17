@@ -26,10 +26,9 @@ firm-level series) the identified set is a continuum, a factor of **1.67** in th
 the whole unit interval.
 
 The corollary is cross-sectional: **classes are ordered by (1 − φ) ⊙ δ ⊘ (α − δ), not by φ**.
-Across the four GAAP classes, δ leverage sits at **2.58** against the **0.61** at which recovery
-becomes less likely than not — **4.2 times** it — and the composite **inverts** the intended
-ranking, Kendall τ = −1 at the calibrated recognition rate and −0.67 at the measured one; drawing δ
-independently, the ordering survives in **11.5%** of 4,000 ladders. This constrains cross-sectional use of the
+Across the four GAAP classes, δ leverage is **4.2** times the level at which recovery fails, and
+the composite **inverts** the intended ranking, Kendall τ = −1 at the calibrated rate; drawing δ
+independently, the ordering survives in **11.5%** of 4,000 ladders. This constrains cross-sectional
 conditional-conservatism measures.
 
 The framework's sharpest prediction, recognition lag ordered by GAAP asset class, was

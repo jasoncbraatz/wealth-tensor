@@ -231,7 +231,19 @@ nothing.
   end of your replacement — otherwise the following clause lands with a leading space.
 - `roster claim` needs `--who` AND `--resource`. `lessons.py use <id> --task <tag>` — id positional.
 - `gate-selfcheck.sh` takes 5–6 min; the cloud `Bash` tool caps at 2 min and a foreground call dies
-  at 8m20s. **Detach, then poll with two `sleep`s.**
+  at 8m20s. **Detach, then poll with two `sleep`s** — and this is new and it matters:
+  **`GATE_ROSTER_WHO=big-wealthTensor-<NN> nohup ~/Scripts/gate-selfcheck.sh > /tmp/gate.log 2>&1 &`.**
+  A detached run has no session tag, so `G-AL` returns `CANNOT VERIFY` **and `G-AL#board` never
+  runs.** `-62`'s first gate showed one FAIL (the permanent `~/Scripts` red) and looked normal; the
+  same gate with `GATE_ROSTER_WHO` set showed **two**, and the second was a stale board caused by
+  this session's own edit. Six sessions of handoffs prescribe detaching and none mentions the
+  variable. `charter-read.sh` stamping is **not** sufficient — the gate reads `GATE_ROSTER_WHO` or
+  `$SESSION_STATE/current`, and a detached `dx` shell has neither.
+- **ANY EDIT TO ANY ABSTRACT: run `python3 scripts/check_abstract_size.py <paper> --print` in the
+  same breath.** All three abstracts sit within three words of the hard 250-word ceiling — II 249,
+  IV 248, III 248 after this session (247 before it). `-62`'s first `III-1` wording hit **268** and
+  took `P1a` and `P1l` red without a word of warning; the checker is silent on success and on
+  failure, so `echo rc=$?` or pass `--print`.
 
 ---
 ## 6 · ORIENT-THEN-GO

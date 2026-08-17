@@ -100,8 +100,10 @@ fits the logistic and reports that recovery *"crosses one half at a leverage-to-
 leverage-to-budget ratio, not a multiple of the 0.61 failure level** — and it recomputes from §4.4's
 own printed per-rung numbers, leverage (0.81 + 0.98 + 1.79)/3 = 1.193 against budget
 (0.69 + 0.41 + 0.29)/3 = 0.463, ratio **2.576**. The multiple is 2.576 / 0.61 = **4.2×**. A referee
-with the printed table and a calculator finds this in two minutes. **Repaired**, in the abstract,
-with both numbers on the page.
+with the printed table and a calculator finds this in two minutes. **Repaired**, in the abstract:
+*"δ leverage is **4.2** times the level at which recovery fails"* — the number corrected in place,
+at zero word cost. `A#10`'s condition rides along in the same sentence (*"Kendall τ = −1 at the
+calibrated rate"*). **The 0.61 anchor and the −0.67 stay in §4.4, and §7 says why.**
 
 **`III-2` · α is overloaded, at exactly one sentence, and that sentence is arithmetically
 inviting.** `α` is the recognition rate throughout, calibrated at **0.05**. §5.2 reads *"α tightened
@@ -248,6 +250,45 @@ at-bat.** Carded.
 document, no registration and no board row was edited. `RESULT-END-TO-END-001-E2-blind-pass.md` is
 **fixed by its own §5 and was not touched**; this document scores it from outside, which is what §5
 contemplates.
+
+---
+
+## 7 · THE THING THIS PASS BROKE, AND THE CONSTRAINT IT EXPOSED
+
+**A `P7` repair took the board red, and the gate caught it — on the second run.**
+`III-1`'s first form spelled the correction out in full (*"δ leverage sits at **2.58** against the
+**0.61** at which recovery becomes less likely than not — **4.2 times** it — … τ = −1 at the
+calibrated recognition rate and −0.67 at the measured one"*). Correct, and **twenty-one words over
+budget.** `P1a` — *abstract 150–250 words and ≤ 1920 characters, arXiv's hard metadata ceiling* —
+went **UNMET at 268 words**, taking `P1l` with it, and the board dropped 52 → 50 without anybody
+saying so. Retightened to the shipped form: **248 words, 1575 characters**, `P1a` and `P1l` green,
+board back to 52.
+
+**The constraint, and it is the finding rather than the incident.** Paper III's abstract stood at
+**247 of 250 words** before this pass — *three words of slack against an external ceiling that
+cannot be negotiated.* Paper IV is at 248, Paper II at 249. **Every abstract in the corpus is within
+three words of a hard limit**, which means **every future abstract correction must be paid for out
+of another sentence**, and a session that does not know this will discover it the way this one did.
+Here the bill was *"This constrains cross-sectional use of the conditional-conservatism measures"* →
+*"This constrains cross-sectional conditional-conservatism measures"*, three words, no meaning lost.
+**The next correction may not find three words that cheap.** `A#10`'s full form — the −0.67 at the
+measured rate — is one of the things that did not fit, and it is why the abstract now carries the
+condition without the second number.
+
+**What this argues for, teed up rather than done:** a deliberate compression pass on all three
+abstracts, run *before* the next round of corrections rather than under one. Fifteen words of
+recovered slack across three files would cost an hour and would stop the ceiling from silently
+rationing the corpus's honesty. **Note the direction of that pressure: the ceiling makes it cheaper
+to leave a claim unqualified than to qualify it.** That is exactly the wrong incentive for a corpus
+whose whole method is stating the awkward part out loud.
+
+**And the process half.** The first gate run reported `G-AL` as `CANNOT VERIFY: no current session
+tag` and passed everything else, showing one FAIL — the familiar, permanent `~/Scripts DIRTY(2)`.
+**`G-AL#board` never ran, and the stale board was invisible.** Re-run with `GATE_ROSTER_WHO` set, the
+same gate returned **two** FAILs and the second was this one. Every handoff on this project for six
+sessions has said *"detach the gate, it takes 5–6 minutes"* — and none has said that detaching it
+drops `G-AL` unless the tag is carried in. **A red you expect hid a red you did not**, which is the
+`-61` warning about weather-versus-signal arriving with a worked example.
 
 *Coffee status: ☕ the backlog that three legs read and nobody scored turned out to hold eleven live
 defects and twenty-one clean bills — and the sharpest one in the corpus was written by a teammate
