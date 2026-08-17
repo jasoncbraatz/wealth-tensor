@@ -3,25 +3,25 @@ project: wealth-tensor
 session_n: 66
 gh_repo: jasoncbraatz/wealth-tensor
 branch: main
-gh_sha: 2b355e9fe77106c93dae2a069366576ff5df700a
+gh_sha: PENDING
 updated: 2026-08-17
 session: wealthTensor-66
-live_theme: "The prior-art search that six sessions filed behind a decision, run at last — verdict KNOWN, option C collapses on its headline, and Jason's Kelly bet on A is confirmed."
-phase: "Manuscript repair under a settled thesis — Papers II/III/IV coaching and editing toward CLEARED FOR LIFTOFF. No open Jason-sized decision except Paper IV's title clause."
+live_theme: "The prior-art search that six sessions filed behind a decision, run at last — verdict KNOWN, option C collapses on its headline, Jason's Kelly bet on A is confirmed, and Paper IV narrowed on his ruling."
+phase: "Manuscript repair under a settled thesis — Papers II/III/IV coaching and editing toward CLEARED FOR LIFTOFF. Paper IV's framing ruled and applied; the only open Jason item is P7's board schema."
 gate_passed: true
 gate_version: "2.59"
 next_at_bat: "Paper II's two MANDATORY citations from SCOUT-001 — Bouchaud & Mezard (2000) wherever the stock-vs-flow tail contrast is made, and Benhabib, Bisin & Zhu (2011) Sec 4.1 wherever the r=1 cap appears. Card 1217556375636027. Both read in full at source; exact quotes and DOIs on the card. Grep tests/ and scripts/ first (WT-094) and census before you patch (WT-099)."
 blockers: []
 drift_flags: []
 parking_lot: []
-definition_of_done: "Three preprints (II, III, IV) each at ready-to-submit per ADR-001 clauses, every number regenerated from committed scripts, convergence reached (two consecutive zero-finding review passes per paper), Jason's own-hand pass complete — then the batch declared, once."
+definition_of_done: "CLEARED FOR LIFTOFF (Jason's ruling, 2026-08-16): Papers II, III and IV done with their coaching and editing, the corpus audited as ONE thing, the python scripts done with every number regenerating from a committed one, and ONE well-designed deliverable that visualises the work — then Jason reads it, does whatever minor re-arranging document design reveals, and clears it. At that moment Claude is finished on wealth-tensor. POSTING IS NOT IN SCOPE: Voice Box Jasonizing, Jason's own-hand rewrite, the endorsement ask and submission are SUCCESSOR projects. A session driving toward 'posted' is driving past the end of the road. The deliverable is a PDF **and a recipe**: RECIPE.md paint-by-numbers (every font, size, leading, margin, package version), a preflight that FAILS on a substituted font rather than approximating, vendored/checksummed fonts, and a rebuild that reproduces the committed page count and per-page text hash — because Jason does the layout and visualisation analysis exactly ONCE."
 
 ---
 # wealth-tensor — HANDOFF
 
 **ORIENT: read `docs/CO-AUTHOR-CHARTER.md` first. THE CHARTER WINS over anything in this file.**
 
-## `-66` IN ONE LINE
+## `-66` / `-66b` IN ONE LINE
 **THE LITERATURE SEARCH RAN, AND THE ANSWER IS `KNOWN`.** Bouchaud & Mézard (2000) already
 derive the Pareto tail exponent in closed form in a **flow** tax rate, a **stock** tax rate and
 the **per-capita rebate fraction of each** — and report the ranking more strongly than
@@ -33,6 +33,14 @@ right. Six sessions carried this as *"blocked, never run"*; it cost **one at-bat
 absence predicate **could not fire at all**, was dark across eleven economics full texts, and I
 was one step from writing that up as a **clean absence** — which is the answer that would have
 *re-opened* C. See §THE TELL.
+
+**THEN JASON RULED ON PAPER IV AND THE SESSION RE-OPENED (`-66b`).** Title and abstract ¶1
+**narrowed** to *"one atomic unit at the household, firm and sovereign scales"* (`WT-102`,
+`wt121_paperIV_narrow.py`). Abstract 248 → 238 words, suite still **1078/0**, board still 66.
+**The oldest Jason item is closed — and the census run before the patch found it was never purely
+a taste question: `E1` issued the narrowing as a FAIL remedy, and `E3` certified it applied while
+quoting an abstract text that exists nowhere in the corpus.** `E6` §6 caught the false
+certification; nobody connected it to the Jason item it had created. Read `WT-102`.
 
 ---
 
@@ -80,8 +88,8 @@ your handoff. It costs nothing.**
 
 ## WHAT `-66` DID, so you do not re-derive it
 
-**ONE at-bat. No manuscript touched.** The output is a scouting note, two ledger entries, four
-committed instruments and a tick.
+**ONE at-bat, then Jason ruled and `-66b` did the Paper IV narrowing.** The output is a scouting
+note, three ledger entries, six committed instruments, a tick and one manuscript edit.
 
 ### A · The verdict: `KNOWN` (`WT-100`)
 **Bouchaud, J.-P. & Mézard, M. (2000), *Physica A* 282, 536–545, eqs (11)–(13).** Their wealth
@@ -291,11 +299,19 @@ then re-run — a few minutes, not an at-bat.
 - **(a) `DECISION-001` — CLOSED FOR GOOD.** A was ruled, and the re-allocation test has now run
   and returned `KNOWN`. **There is no follow-up Jason moment on this axis.** `-65` said the next
   one would arrive *after* the search; the search says it does not arrive.
-- **(b) Paper IV's title and abstract leading clause** still read *"from the household to the
-  sovereign"*. Narrow it, or ratify the appended demotion as sufficient. **NOW THE ONLY OPEN
-  JASON ITEM, and it has been the oldest for several sessions.**
+- **(b) Paper IV's title and abstract leading clause — ✅ RULED AND APPLIED, 2026-08-17**
+  (`WT-102`, `scripts/wt121_paperIV_narrow.py`). Jason ruled **narrow**. Title and abstract ¶1
+  now read *"one atomic unit **at the household, firm and sovereign scales**"* — type identity at
+  three named scales, not a ladder running up through them. Abstract **248 → 238 words**; the
+  *"sooner than an earlier draft claimed"* conduct narration **deleted rather than defended**
+  (`WT-098`), because a leading clause that no longer promises a ladder needs no clause walking
+  one back. **AND IT WAS NEVER PURELY A TASTE QUESTION:** `E1` issued the narrowing as a **FAIL
+  remedy**, `E3` certified it `APPLIED` while quoting an abstract text that **exists nowhere in
+  the corpus**, and `E6` §6 caught that. Five sessions filed a live registered remedy under
+  "Jason-sized". Read `WT-102`.
 - **(c) `P7` is still ONE BOOLEAN** for a criterion that is per-paper with a two-pass counter.
-  Adding rows moves the 66, so it wants its own at-bat.
+  Adding rows moves the 66, so it wants its own at-bat. **NOW THE ONLY OPEN JASON ITEM** — and
+  note it is really a board-schema task with a Jason ruling attached, not a judgement call.
 
 ## AT WRAP
 `~/Scripts/charter-read.sh wealthTensor-NN` **immediately** before the gate; the gate detached

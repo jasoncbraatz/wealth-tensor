@@ -3058,3 +3058,88 @@ it.*
 *Companion to `-65`'s `WT-096` tell — "the fix for `WT-092` has `WT-092`; ask the question of your
 own repair, and answer it by **firing** the repair, not by reading it." Here the repair was an
 absence predicate, and the only way to fire it was to hand it a document that had to set it off.*
+
+---
+
+## WT-102 · FACT · 2026-08-17 · wealthTensor-66b
+
+### Paper IV narrowed — and the item was never Jason-sized in the way five sessions filed it
+
+**Jason ruled**, 2026-08-17, on the oldest open Jason item: narrow Paper IV's title and abstract
+leading clause. Applied in `scripts/wt121_paperIV_narrow.py`.
+
+| | before | after |
+|---|---|---|
+| **title** | *…one atomic unit **from the household to the sovereign*** | *…one atomic unit **at the household, firm and sovereign scales*** |
+| **abstract ¶1** | *the same atomic **state** composes from the household to the sovereign — and states exactly where composition stops — **sooner than an earlier draft claimed**, because the corpus's end-to-end test found…* | *the same atomic **state** has one type at the household, firm and sovereign scales — and on one limit its own end-to-end test imposed: those scales share **one question, not one structure**.* |
+
+**Abstract 248 → 238 words, 1666 → 1585 chars.** Ten words returned, not spent. Suite **1078
+passed, 0 failed**; board still **66 criteria**.
+
+**THE REASONING, because "narrower" is not self-justifying.** The phrase was *denotatively true
+and connotatively overclaiming*, which is the worst available position. Extensive states add
+(§2.2) and `E1` never touched that — so *"from the household to the sovereign"* is defensible on
+its face. But nobody reads *"from X to the Y"* as **type identity**; they read it as a **ladder**,
+a derivation running up through scales. **A ladder is exactly what `E1` rejected**: ρ and φ are
+not one object seen twice, a lag and a loss are different operators, and Paper II has no parameter
+playing α's part. The defence — *"we meant the state, not the chain"* — reads as a retreat even
+when it is correct.
+
+What survived is the **better** claim anyway: one *type* at three *named* scales. Type identity is
+what makes SMD the framework's **boundary** rather than its opponent, which is the title's first
+clause's whole point. **The ladder framing was competing with the paper's own thesis.**
+
+**AND THE DEMOTION WAS ACHIEVED BY DELETING THE ASSERTION, NOT BY ARGUING WITH IT** (`WT-098`,
+one day old, now applied to a second case). The abstract's structure was: big claim in the main
+clause, retraction in a dash, conduct narration in a second dash. Once the leading clause stops
+promising a ladder, **the clause that walked the ladder back has nothing left to do**, and it goes
+— taking one `G-COACH-3` conduct-narration hit with it. `-65` learned this measuring twelve Paper
+II candidates, every one of which blew the ceiling because it *added* an explanatory clause. Same
+shape, different paper.
+
+### THE PART THAT IS NOT ABOUT PROSE: this was a REMEDY, open since `E1`, falsely certified by `E3`
+
+`END-TO-END-001` leg `E1` **required** the narrowing as its FAIL remedy: *"the abstract's 'the same
+atomic unit composes from the household to the sovereign' narrowed to the scales actually joined."*
+
+`RESULT-…-E3.md` §6.1 reported it **`APPLIED HERE`** and quoted the repaired text in quotation
+marks: *"the same atomic **state** composes by addition wherever it is summed."* **`E6` §6
+established that string occurs nowhere in the corpus.** Diffed against `paper-IV.md.bak-wt57-e3`,
+`E3`'s actual edit was `unit` → `**state**` plus the *appended* narration clause. **The substance
+was appended; the phrase the remedy names was never touched.**
+
+So the item spent five sessions on the Jason ledger as a matter of *taste* when a *registered
+remedy* was outstanding underneath it. `-57` teed it up as Jason-sized; `E2` re-recorded the title
+as Jason-sized; nobody noticed the abstract carried a live FAIL remedy that had been marked done.
+**A false certification does not merely fail to fix the defect — it re-files the defect under a
+category that stops anyone from fixing it.** `E3` converted an executable remedy into a matter of
+opinion, and matters of opinion wait for Jason.
+
+**`E3`'s phantom wording was NOT adopted**, and the reason is worth recording: *"wherever it is
+summed"* drops the scales entirely, and it was never ratified by anyone. **Adopting a sentence
+that only ever existed inside a false certification would be a strange way to repair a false
+certification.** The addition mechanism it names is already carried by the very next abstract
+paragraph and by the title's first clause.
+
+### The census, run before the patch (`WT-099`), and what it changed
+`scripts/wt120_scale_census.py`, over **300 live files** across `docs/`, `tests/`, `scripts/`,
+`src/`, with the manuscripts **normalised before matching** because they are hard-wrapped and the
+phrase straddles a newline (`-62`'s trap, which runs both ways).
+
+- **16 occurrences of the ladder phrase in 9 files — but only 2 in `paper-IV.md`.** The other
+  fourteen are in `END-TO-END-001.md` and the `RESULT-…-E1/E2/E3/E6` documents, which are
+  **records of what the paper said at the time**. Rewriting them would falsify the history of what
+  past sessions did — the same reason a patch script's own quoted anchors are left alone. The
+  census reports them as a **separate category** rather than dropping them silently.
+- **The named hazard came back clean.** `PIN-001`'s SHA guard was widened by `-65` to
+  `glob("docs/papers/*/paper-*.md")`. The census asked, *before any edit*, whether a content SHA
+  is pinned against `paper-IV.md`: **zero**. Predicted the suite would stay green; it did
+  (1078/0). **The value was not the zero — it was knowing the zero before writing, so that a red
+  would have meant "update the registry in this commit" rather than "revert".**
+- Post-patch re-run as verification: **`paper-IV.md` no longer appears under `LADDER_PHRASE` or
+  `DRAFT_NARRATION` at all.**
+
+*Measured, not assumed, per the `-65` rule about thresholds: the new title is 106 characters and
+the body wraps at 100 — but titles are headings and exempt, and `paper-I.md`'s title is **115**.
+The patch script checks replacement prose widths in **characters**, since `—` is multi-byte and
+`awk 'length>100'` would have refused a legal line.*

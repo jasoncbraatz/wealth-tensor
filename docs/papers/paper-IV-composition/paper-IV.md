@@ -1,4 +1,4 @@
-# The tensor composes, the behaviour does not: one atomic unit from the household to the sovereign
+# The tensor composes, the behaviour does not: one atomic unit at the household, firm and sovereign scales
 
 **Jason C. Braatz**
 *Independent researcher*
@@ -16,9 +16,8 @@ jason@braatzresearch.com
 
 Three literatures describe wealth and do not read each other: biophysical economics, stock-flow
 consistent macroeconomics, and kinetic-exchange econophysics. This paper joins them on one claim —
-the same atomic **state** composes from the household to the sovereign — and states exactly
-where composition stops — sooner than an earlier draft claimed, because the corpus's end-to-end
-test found the sovereign and firm scales share **one question, not one structure**.
+the same atomic **state** has one type at the household, firm and sovereign scales — and on one
+limit its own end-to-end test imposed: those scales share **one question, not one structure**.
 
 The unit is an **extensive state**, and extensive states add. **Behavioural maps do not**, and the
 theorem saying so is Sonnenschein–Mantel–Debreu. SMD is therefore not an objection to composition
