@@ -3,7 +3,7 @@ project: wealth-tensor
 session_n: 85
 gh_repo: jasoncbraatz/wealth-tensor
 branch: main
-gh_sha: 5182d05227384f36787e854765e953667e0fa5fa
+gh_sha: PENDING
 updated: 2026-08-18
 session: wealthTensor-85
 live_theme: "THE CENSUS IS RUN AND IT LANDED ON THE SAMPLE'S LOWER BOUND, WHICH IS THE FINDING. -84 read twelve rows by hand and got k=5 of 12, Wilson 95% [25, 88] of 129. -85 swept all 129 by machine and got K = 25 — INSIDE the interval, exactly ON its lower bound. That is not the sample having been unlucky high; it is what a pattern sweep MUST return, and one row proves it: 7e1c612368, the fourth row -84 filed as LOCATED, is not one. Its evidence was `grep -n WT-059`, a genuine read, of the artefact the row names — which REVIEW-024's own pattern list excludes in a parenthetical. The commissioned post-condition and the commissioned pattern set contradicted each other. Bending D1 until it caught a grep -n would have been a rescued control, so the real second failure mode got its own detector (D2, under-coverage: the sentence names two artefacts, the evidence opened one) — and D2 IMMEDIATELY caught f43958893d, the mirror row on the same sentence, which had read WT-062 and never WT-059. Neither half had read the other. A pattern sweep can only find the shapes someone has already read: D2 exists because a human read the row first. So the census is a FLOOR under the sample, not a replacement for it, and [25, 88] is not narrowed."
@@ -272,6 +272,25 @@ be made once, by Jason, then applied.
 - **(f) The PAN history purge.**
 - **(g) lessons.py's contributor stamp** still does not resolve from the roster; 1534 of 2099 global
   leaves read 'unknown' and an unstamped leaf can never reach 'trusted'.
+
+---
+
+## WHICH OPEN LANE THIS WAS (the gate's CONTOUR question, answered)
+
+`docs/CHECKLIST.md`'s first OPEN lane in dependency order is **P13** (the arXiv-ready PDF), and
+this pass did not touch it. That is deliberate drift and it is **guard work**, so per the gate's
+own instruction: **the claim the guard protects is P7's.**
+
+P7 closes a paper when **two consecutive fresh-eyes passes yield zero substantive findings**. A
+zero-finding pass is evidence only if the checks that found nothing were capable of finding
+something — and `docs/promises-adjudicated.tsv` is the file that records whether they were. -83
+found one row that had checked the wrong artefact; -84 measured the rate at 5 of 12; -85 put a
+floor of 25 of 129 under it and repaired all 25. **Until that ledger discriminates, a zero-finding
+pass and an unread paper produce the same number**, and P7 cannot be closed honestly on either.
+
+P6 ("every number regenerates from a COMMITTED script") is the second beneficiary: three of this
+pass's repairs (`d35227f459`, `91e98bf51b`, `680347614f`) are exactly regeneration claims whose
+adjudicator had listed the file rather than opened the script that regenerates it.
 
 ---
 
