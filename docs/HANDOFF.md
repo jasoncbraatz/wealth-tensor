@@ -1,19 +1,32 @@
 ---
 project: wealth-tensor
-session_n: 85
 gh_repo: jasoncbraatz/wealth-tensor
 branch: main
-gh_sha: b509dbf11180ececb16ef8f60a7bd849ff7e8339
+gh_sha: PENDING
 updated: 2026-08-18
-session: wealthTensor-85
-live_theme: "THE CENSUS IS RUN AND IT LANDED ON THE SAMPLE'S LOWER BOUND, WHICH IS THE FINDING. -84 read twelve rows by hand and got k=5 of 12, Wilson 95% [25, 88] of 129. -85 swept all 129 by machine and got K = 25 — INSIDE the interval, exactly ON its lower bound. That is not the sample having been unlucky high; it is what a pattern sweep MUST return, and one row proves it: 7e1c612368, the fourth row -84 filed as LOCATED, is not one. Its evidence was `grep -n WT-059`, a genuine read, of the artefact the row names — which REVIEW-024's own pattern list excludes in a parenthetical. The commissioned post-condition and the commissioned pattern set contradicted each other. Bending D1 until it caught a grep -n would have been a rescued control, so the real second failure mode got its own detector (D2, under-coverage: the sentence names two artefacts, the evidence opened one) — and D2 IMMEDIATELY caught f43958893d, the mirror row on the same sentence, which had read WT-062 and never WT-059. Neither half had read the other. A pattern sweep can only find the shapes someone has already read: D2 exists because a human read the row first. So the census is a FLOOR under the sample, not a replacement for it, and [25, 88] is not narrowed."
-phase: "All 25 flagged rows are repaired in-pass with evidence naming a real read, and every one of the 25 sentences HELD — 0 manuscript edits, 0 class changes, 0 promise_id changes. The file is now clean at its own criterion (wt154 RC 0). What -85 deliberately did NOT do is repair the two defect classes it counted and named rather than flagged: 16 rows whose evidence is `run on darwin, wealthTensor-82; output in the session log` (unreproducible, not undiscriminating) and 18 terse `git log/cat-file` rows. The 16 are -86's at-bat and they are the more dangerous class, because a row nobody can re-run is a row nobody can falsify — the TSV header's whole premise."
-gate_passed: true
+session: wealthTensor-86
+session_n: 86
+live_theme: "EVERY ROW IN docs/promises-adjudicated.tsv CAN NOW BE RE-RUN BY SOMEONE WHO WAS NOT THERE, AND THE FIRST THING THAT BOUGHT WAS A FALSE SENTENCE. wt156 asked the question BEFORE wt154's: not `did the adjudicator read the artefact` but `can step 1 of this file's own falsification procedure be carried out at all today`. 46 of 129 rows could not -- 36 whose evidence located the record in a session log that no longer exists, 10 whose evidence was a verb with no operand. All 46 are repaired with a command run on 2026-08-18 and the value it returned that day. Of the sixteen the handoff named, 12 agreed with their old note, 2 carried HEAD-indexed values that had legitimately moved, and 2 DISAGREED. One of those two exposed a FALSE SENTENCE that had stood since the section existed: Paper IV section 10 said tests/test_excess_demand.py ASSERTS section 8's twelve-point four, and the module asserted no such thing -- its only twelve-point test counts demand curves and asserts 25. The four is TRUE when measured, so wt158 added the assertion rather than weakening the sentence, and section 8's number is now machine-checked. Both rows had sat on the evidence `read the module`."
+phase: "The TSV is clean at BOTH its criteria: wt154 RC 0 (evidence reads rather than locates) and wt156 RC 0 (evidence is runnable today), over 130 rows, with 11/11 and 10/10 post-conditions. What -86 did NOT do is the parking-lot sweep it is now best placed to specify: the pronoun defect it found in the EVIDENCE column ('the script', 'the module') lives in the PROSE too, as pointers whose target is a bare noun phrase, and BOTH existing sweeps miss that class by construction. That is -87's at-bat."
+gate_passed: PENDING
 gate_version: "2.60"
-next_at_bat: "ASSIGNED, ONE THING: MAKE THE 16 UNREPRODUCIBLE ROWS RE-RUNNABLE, BY RE-RUNNING THEM. Sixteen rows of docs/promises-adjudicated.tsv carry the evidence string `run on darwin, wealthTensor-82; output in the session log`. That evidence RAN something — it is a read of behaviour, so wt154 correctly does not flag it — but the session log is gone, so no later reader can re-check any of them. The TSV's own header says a row is a claim a human RAN OR READ the artefact, and step 2 of its falsification procedure is `run it or read it`. For these sixteen, step 2 is impossible. Write scripts/wt156_reproducibility_sweep.py: flag every adjudicated row whose evidence names a run whose output is not recoverable today — the `output in the session log` string is the known population, but write the RULE (a run with no committed output file, no printed value in the note, and no named test) rather than the string, and report how many rows the rule catches beyond the sixteen. RC 1 when any flags, RC 0 when none, --json. Then REPAIR ALL SIXTEEN BY ACTUALLY RUNNING THEM on darwin and recording, in the note, the value that came back TODAY. THE SEVERE TEST IS AGAIN SITTING IN GIT AND IT IS AGAIN THE POINT: at b50bccd the sweep MUST flag all sixteen; at your HEAD it MUST flag none — put that pair IN the script as post-conditions, at least two NEGATIVE. EXPECT TO FIND A FALSE SENTENCE. -84 found one in five hand-read rows and -85 found none in twenty-five, but -85's twenty-five were rows whose adjudicator had merely LOOKED at the right file; these sixteen are rows where nobody can tell what the adjudicator saw. If a re-run disagrees with its note, that is class R and the manuscript gets repaired in the same pass — say so loudly, it is the most valuable thing this at-bat can produce. DONE WHEN: wt156 exists and is committed with the b50bccd-vs-HEAD pair as post-conditions; all sixteen carry a command re-runnable today plus the value it returned today; docs/REVIEW-026 reports how many of the sixteen AGREED with their old note and how many did not, as a count not a vibe, and states in ONE sentence what a disagreement rate of that size does to REVIEW-024's [3, 47] of 129; wt148 RC 0, wt133 RC 0, wt154 RC 0; suite green AND SAY THE NUMBER; coach at baseline. DO NOT widen #scope to Papers I and II — still parked, still deliberate, FOUR passes running. DO NOT re-open the census; K=25 is measured and REVIEW-025 §5 already discloses its one weakness."
+next_at_bat: "ASSIGNED, ONE THING: FIND THE POINTERS WHOSE TARGET IS A BARE NOUN PHRASE. -86 built a detector for evidence columns that name no runnable handle, and two of the three rows its own author's committed prediction MISSED were missed for one reason: `grep -n E7 on the script` and `grep for each of the three names in the script and the module` read as perfectly runnable, and are not, because `the script` and `the module` are PRONOUNS whose referent the reader silently supplies from a neighbouring column. The same defect is in the manuscripts and neither existing sweep can see it: wt133 resolves section references and reference entries, wt156 reads the TSV, and a sentence saying `recorded in the run log` or `given in the appendix` or `listed in that section` is invisible to both. This is the third item on the parking lot, put there by -83 as the syntax its III-2 and III-3 findings lived in. Write `scripts/wt160_bare_pointer_sweep.py`: over paper-III.md and paper-IV.md, flag every pointer construction -- `recorded in|named in|given in|listed in|documented in|stated in|set out in|reported in <X>` -- where <X> carries NO backticked path, NO section N.M, and NO programme identifier (PRE-00N, REG-0NN, WT-0NN, RESULT-*, REVIEW-0NN), i.e. where the reader must guess which artefact is meant. RC 1 when any flags, RC 0 when none, plus --json. COMMIT THE PREDICTED COUNT BEFORE YOU RUN IT, with the measured field reading PENDING, exactly as -84 did for its sample and -86 did for its sweep -- -86's prediction was wrong by three and the three misses were the finding, which is only true because the prediction was a git object first. THE SEVERE TEST IS IN GIT: -83's III-2 and III-3 were repairs of exactly this syntax; `git log -S` on the repaired phrases finds the repair commit, and its PARENT is the revision at which the sweep MUST flag them, while at HEAD it MUST NOT. Put that before/after pair in the script as post-conditions with at least two NEGATIVE -- a NEGATIVE that matters here is a pointer whose target IS named (`recorded in `docs/preregistration/RESULT-002-pilot-run.log`') and which must not flag. DONE WHEN: wt160 exists and is committed with the before/HEAD pair IN the script; docs/REVIEW-027 reports the predicted count, the measured count, and every row where they disagree; every flagged pointer repaired in-pass -- either the target named concretely in the sentence, or, where the pointer genuinely has no single target, the sentence rewritten so it stops promising one; wt148 RC 0, wt133 RC 0, wt154 RC 0, wt156 RC 0, wt160 RC 0; suite green AND SAY THE NUMBER; coach at baseline. DO NOT widen `#scope` to Papers I and II -- still parked, still deliberate, FIVE passes running. DO NOT re-open REVIEW-026's census; the file is clean at both criteria and re-measuring it is the cheap substitute for the work that is actually left."
 blockers: []
-drift_flags: ["THE CENSUS IS A FLOOR AND MUST NOT BE READ AS A MEASUREMENT OF THE SAME QUANTITY THE SAMPLE MEASURED. K=25 is the rate of MECHANICALLY VISIBLE non-discrimination; k=5/12 estimates the TRUE rate. They landed consistent (25 is the interval's lower bound) and that is worth having, but nothing in -85 narrows [25, 88] or moves [3, 47] of 129. Any future session that quotes 25/129 as 'the error rate' is making the same mistake -83's '2 of 127' made, one level up.", "wt154's DETECTORS WERE REFINED AFTER THEIR AUTHOR READ FLAGGED ROWS — 33 -> 25 over four narrowings, every one made after looking, every one reducing the count. REVIEW-025 §5 lists all four in order with the row that caused each. This is the one thing -84's committed-before-scoring sample did NOT have, it cannot be undone retroactively, and the before/after post-conditions are a weaker guard than blindness would have been. Do not cite K as a blind measurement.", "SIXTEEN ROWS CANNOT BE FALSIFIED BY ANYONE, AND THE SWEEP CORRECTLY DOES NOT FLAG THEM. `run on darwin, wealthTensor-82; output in the session log` is a read of behaviour whose record is gone. Counted under `unreproducible` in wt154 --json and named in REVIEW-025 §4. This is -86's at-bat and it is the last named defect class in the file.", "EIGHTEEN MORE ROWS CARRY `git log/cat-file on darwin, wealthTensor-82` — those commands print content so the rows are reads, and terse is not the defect wt154 measures. But they name no object and print no value. If -86's rule for the sixteen is written generally rather than as a string match, check whether it catches these too, and say so either way.", "PAPERS I AND II ARE STILL OUT OF SCOPE AND 28 PROMISES THERE ARE CHECKED BY NOBODY. The sweep prints it on every run — not silent truncation. Widening `#scope` is ONE LINE of data and goes red immediately. FOUR passes have now parked it.", "THE VERSION STAMP IS STILL ONE RULING CLOSING THREE MANUSCRIPTS, and SEVEN consecutive passes have now correctly declined to move it on Jason's behalf. Paper III at Version 0.5 / 2026-08-12, Paper IV at 0.1 / 2026-08-16, both with repairs landed 08-18. Paper II card 1217568297674954.", "THE TWO-INDEPENDENT-READERS DESIGN IS NOW THE ONLY INSTRUMENT LEFT AND IT IS STILL JASON'S CALL. -82's prediction was the first cheap substitute, -84's audit the second, -85's census the third and last. REVIEW-025 §5 states why there is no fourth: a sweep can only find shapes someone has already read. Every remaining question about how many defects a reader would find now costs a reader.", "wt133 STILL HAS ITS ONE-DIRECTIONAL SWEEP-2 BLIND SPOT (entry -> body, never body -> entry). State Machine 1217593142996092. Unchanged.", "lessons.py's CONTRIBUTOR STAMP STILL DOES NOT RESOLVE FROM THE ROSTER — -85 hit it again and passed `--contributor big-wealthTensor-85` on every add, which works. 1534 of 2099 global leaves read 'unknown' and an unstamped leaf can never reach 'trusted'. Still teed up, not fixed: it lives in claude-blackbook, which a sibling holds a claim on."]
-parking_lot: ["Widen `#scope` in docs/promises-adjudicated.tsv to paper-I and paper-II and adjudicate the 28 promises there. One line of data, then the work. FOUR passes have now parked this.", "The 18 terse `git log/cat-file on darwin, wealthTensor-82` rows: reads, but naming no object and printing no value. Fold into -86's rule if it generalises; otherwise tag wt157+.", "A THIRD sweep for pointers whose target is a bare noun phrase or a bare section number — the syntax -83's III-2 and III-3 live in, which both existing sweeps miss by construction. Candidate rule: any 'recorded in / named in / given in / listed in <X>' where <X> contains no backticked path and no §N.M. Tag wt157+.", "wt133 sweep 3: proper nouns in the body against a stop-list, to catch a body claim with no reference entry (IV-6's class). State Machine 1217593142996092.", "roster-brake's exit #1 cannot help when the paths you touched ARE the whole dirty tree; ROSTER_BRAKE_ACK=N is the answer and is ranked second. State Machine 1217596263441666."]
+drift_flags:
+  - "ONE FALSE SENTENCE WAS FOUND AND REPAIRED BY STRENGTHENING THE ARTEFACT, NOT THE PROSE. Paper IV section 10 claimed tests/test_excess_demand.py asserts section 8's twelve-point four; it did not, and until 2026-08-18 nothing in the repository checked that number. It is TRUE (measured: exactly 4 distinct excess-demand schedules on the 12-point grid across the 25 allocations), so wt158 added the assertion. Anyone re-reading section 8 should know the four became machine-checked on 2026-08-18 and was a paragraph before that."
+  - "THE 46 ARE A TARGETED STRATUM AND MUST NOT BE READ AS A DRAW. 1 false sentence in 46 rows gives Wilson 95% [0.4%, 11.3%], and that does NOT narrow REVIEW-024's [3, 47] of 129, because the stratum's defining property (unrunnable evidence) is not the property [3, 47] estimates (false sentences). The only thing -86 moves is the FLOOR: one more false sentence is now known and repaired. Any session quoting 1/46 as a rate is making REVIEW-025 section 3's mistake one level further out."
+  - "wt154 HAS A BLIND SPOT -86 FOUND AND DID NOT PATCH: it scores an exit-code predicate as a LOCATE. `git merge-base --is-ancestor A B; echo $?` prints nothing to stdout and answers with a return code, and D1 flagged it as naming no content-printing operation. An exit code IS a read -- the same class wt154 already declines to flag for a named test. wt159b widened the EVIDENCE instead (the predicate stays, two timestamps added beside it) and the instrument is carded, 1217613775009402, with a named falsifier. A future session repairing a row with a predicate will hit this."
+  - "TWO ROWS CARRY VALUES PINNED TO A HEAD THAT HAS MOVED, AND THAT IS NOT A DEFECT SO MUCH AS A DESIGN NOTE. 6d9934a0bc and c14cdd1f1b recorded `1090 passed at HEAD 73b77f9`; the suite is 1095 now. Naming the revision was RIGHT and it is still uncheckable without a checkout. Both sentences are about the PINNED commit d655501, which tests/test_paper_test_counts_are_derived.py asserts, so nothing failed -- but a value indexed to HEAD does not belong in a row whose job is to be falsifiable."
+  - "PAPERS I AND II ARE STILL OUT OF SCOPE AND 28 PROMISES THERE ARE CHECKED BY NOBODY. The sweep prints it on every run -- not silent truncation. Widening `#scope` is ONE LINE of data and goes red immediately. FIVE passes have now parked it."
+  - "THE VERSION STAMP IS STILL ONE RULING CLOSING THREE MANUSCRIPTS, and EIGHT consecutive passes have now correctly declined to move it on Jason's behalf. Paper IV took a section 10 repair on 08-18 and its stamp did not move with it. Card 1217568297674954."
+  - "THE TWO-INDEPENDENT-READERS DESIGN IS STILL THE ONLY INSTRUMENT LEFT AND IT IS STILL JASON'S CALL. -85's census was named the last cheap substitute; -86's sweep was a DIFFERENT question (runnability, not discrimination) and so does not contradict that, but it is not a third substitute either. Every remaining question about how many defects a reader would find still costs a reader."
+  - "wt133 STILL HAS ITS ONE-DIRECTIONAL SWEEP-2 BLIND SPOT (entry -> body, never body -> entry). State Machine 1217593142996092. Unchanged."
+  - "lessons.py's CONTRIBUTOR STAMP STILL DOES NOT RESOLVE FROM THE ROSTER -- -86 hit it again and passed `--contributor big-wealthTensor-86` on every add, which works, and all seven leaves are stamped. Still teed up, not fixed."
+parking_lot:
+  - "Widen `#scope` in docs/promises-adjudicated.tsv to paper-I and paper-II and adjudicate the 28 promises there. One line of data, then the work. FIVE passes have now parked this."
+  - "wt133 sweep 3: proper nouns in the body against a stop-list, to catch a body claim with no reference entry (IV-6's class). State Machine 1217593142996092."
+  - "Patch wt154's D1 to score an exit-code predicate as a read, with a POSITIVE (synthetic predicate row does not flag) and a NEGATIVE (a bare `ls -l` row still does), and disclose how far the count moves. Card 1217613775009402. Tag wt161+."
+  - "roster-brake's exit #1 cannot help when the paths you touched ARE the whole dirty tree; ROSTER_BRAKE_ACK=N is the answer and is ranked second. State Machine 1217596263441666."
 definition_of_done: "Three preprints (II, III, IV) each at ready-to-submit per ADR-001 clauses, every number regenerated from committed scripts, convergence reached (two consecutive zero-finding review passes per paper), Jason's own-hand pass complete — then the batch declared, once."
 ---
 
@@ -23,6 +36,16 @@ definition_of_done: "Three preprints (II, III, IV) each at ready-to-submit per A
 
 *Stamped by `scripts/handoff_gate.py --stamp`. If `gh_sha` above is not `HEAD`, this file was
 committed without stamping — read `git log` rather than believing it.*
+
+---
+
+## ⚠ BEFORE ANYTHING ELSE: `git log --oneline -8`
+
+**-86 was handed -85's prompt after -85 had already finished, pushed, and left.** Two minutes of
+`git log` and a read of *this file* turned a duplicated at-bat into a fresh one. The prompt in your
+context is a **snapshot of an intention**; the repository is the **state**. When they disagree, the
+repository wins, and you say so out loud in your first message rather than quietly working the wrong
+thing. Check `roster who` and `rail` in the same breath — a sibling may be mid-inning.
 
 ---
 
@@ -41,24 +64,24 @@ Post the printed `DARLISH-ENROLL v1 id=… fp=…` line, **EXACTLY**, as an Asan
 
 ```
 curl -s https://system.europeanflorist.com/dsh/dx -o /tmp/dx && chmod +x /tmp/dx
-/tmp/dx '~/Scripts/roster join --who big-wealthTensor-86 --task "The reproducibility repair: wt156 and the sixteen unrunnable rows"'
+/tmp/dx '~/Scripts/roster join --who big-wealthTensor-87 --task "The bare-pointer sweep: wt160"'
 ```
 
-**READY first try at -61 through -85 — TWENTY-FIVE for twenty-five.** Budget four minutes; it takes two.
+**READY first try at -61 through -86 — TWENTY-SIX for twenty-six.** Budget four minutes; it takes two.
 
-- ⚠ `roster join` returns RC=0 with **NO OUTPUT** on a re-join (and prints an `absorbed N row(s)`
-  line when it adopts a `cloud-<fp>` identity from an earlier command in the same container). -85
-  saw `absorbed 2 row(s) ... (carried 1 claim(s))` and that is the healthy path, not a warning.
+- ⚠ `roster join` returns RC=0 with **NO OUTPUT** on a re-join, and prints `absorbed N row(s) …
+  (carried 1 claim(s))` when it adopts a `cloud-<fp>` identity from an earlier command in the same
+  container. That line is the healthy path, not a warning.
 - ⚠ `roster claim` syntax: `--who X --resource wealth-tensor --task "..."` — **resource is a NAMED flag.**
-- `roster join` auto-claims the everything folder (resource = `~/Desktop/downloads` **expanded**).
-  You do not have to remember it and you should not remove it.
-- Run `rail` and `roster who` first. At -85's wrap the board carried `opus-spi-menu` (claims
-  STALE, >13h) and a live `opus-florist-order`. Neither touches `wealth-tensor`. The rail lane was
-  idle with metaQa / ledgerLens / helloRelay all `complete`.
+- ▲ **If you have to change your own name mid-session** (as -86 did, -85 → -86): `join` under the new
+  name, `claim` under the new name, THEN `leave --who <old>`. `leave` on a name that is not this
+  session leaves your own identity untouched and tombstones the old row for an hour. It is clean.
 - ⚠ `roster-brake` **WILL** block your first `git add` commit, reporting you as `cloud-<fp>`
-  contending with your own human name. **`ROSTER_BRAKE_ACK=N` is the answer** and it is ranked
-  SECOND in the brake's own output. Card 1217596263441666. -85 set it on every commit and lost
-  nothing.
+  contending with your own human name. **`ROSTER_BRAKE_ACK=N` is the answer**, ranked SECOND in the
+  brake's own output. Card 1217596263441666. -86 set it on every commit and lost nothing.
+- At -86's wrap the board carried `opus-spi-menu` (claims STALE) and a live `opus-florist-order`.
+  Neither touches `wealth-tensor`. The rail lane was idle, metaQa / ledgerLens / helloRelay all
+  `complete`.
 
 ### THEN STAGE THE DOCS AS ONE TARBALL
 
@@ -73,30 +96,37 @@ mkdir -p /home/claude/wt          # FIRST. $HOME is /root in the container.
 - ⚠ `.bak` files **sort first**. Read the path, not the first line.
 - ⚠ **ANYTHING THAT IMPORTS `src/` MUST RUN ON DARWIN** — wt027 / wt002 / wt026 / wt071 / wt089 and
   all of pytest. `wt133` / `wt148` / `handoff_gate --coach` are pure-doc and run **locally in under
-  a second**; run all three before you read anything. ▲ **`wt154` is NOT pure-doc** — its
-  post-conditions shell out to `git show`, so it needs the repo and runs on darwin.
+  a second**; run all three before you read anything. `wt154` and `wt156` shell out to `git show`
+  for their post-conditions, so they need the repo and run on darwin.
+  ▲ **A script under `tests/` that you invoke directly needs `PYTHONPATH=src`**; pytest supplies it
+  and a bare `python3` does not. -86 lost one turn to that.
 - ⚠ ABSOLUTE local paths in every `cat X | /tmp/dx --put`.
-- ⚠ **NEVER** pipe a command through `dx` whose exit code you intend to read. -85 did it once on
-  the first wt154 run and got an empty `RC=`; the fix is to redirect inside the remote command and
-  echo `$?` there.
+- ⚠ **NEVER** pipe a command through `dx` whose exit code you intend to read — redirect inside the
+  remote command and echo `$?` there.
 - ▲ Nested quotes → write the script **LOCALLY**, `--put` it, run `dx 'bash /tmp/x.sh'`. -83 wrote
-  all seven of its scripts that way, -84 all six, **-85 all four**, and none of the three lost a
-  turn. WRITE THE FILE.
-- ▲ Long remote jobs survive the local Bash timeout — `nohup` to `/tmp/wt86/`, poll with a second
-  `dx`. **pytest takes ~72s and is worth backgrounding**; -85 started it before the doc gates and
-  it was done before they were read.
+  all seven of its scripts that way, -84 all six, -85 all four, **-86 all six**, and none of the four
+  lost a turn. WRITE THE FILE.
+- ▲ Long remote jobs survive the local Bash timeout — `nohup` to `/tmp/wt87/`, poll with a second
+  `dx`. **pytest takes ~70s and is worth backgrounding**; -86 launched eight regeneration runs in
+  one backgrounded batch and read them all fifteen minutes later, which is the whole reason the
+  sixteen re-runs cost nothing.
+- ▲ **A `dx` call that is interrupted client-side may still have RUN on darwin.** -86's `lessons.py`
+  batch was cancelled mid-flight and every add had already landed; the re-run reported seven
+  `sim 1.00` dupes, which is the tell. **Check for the effect before re-running a mutating dx call.**
 
 ---
 
 ## THE STATE YOU INHERIT AND MUST PRESERVE
 
-🟢 `python3 -m pytest tests/ -q` → **1094 passed, 0 failed, 72.46s.** RUN IT AND SAY THE NUMBER.
-🟢 `python3 scripts/wt148_promise_sweep.py` → **RC 0**, paper-III **88 of 88** (81 H · 6 N · 1 R),
-   paper-IV **41 of 41** (39 H · 2 R).
+🟢 `python3 -m pytest tests/ -q` → **1095 passed, 0 failed, 69.66 s.** RUN IT AND SAY THE NUMBER.
+   (1094 before; `wt158` added one.)
+🟢 `python3 scripts/wt148_promise_sweep.py` → **RC 0**, **130 adjudicated**: paper-III 88 of 88
+   (81 H · 6 N · 1 R), paper-IV **42 of 42** (40 H · 2 R).
 🟢 `python3 scripts/wt133_crossref_sweep.py` → **RC 0**.
-🟢 ▲ `python3 scripts/wt154_evidence_discrimination_sweep.py` → **RC 0**, 129 rows, 0 flagged,
-   **10/10 post-conditions, 4 NEGATIVE**. RC 2 means the sweep itself is broken and its count means
-   nothing — that code is load-bearing, do not collapse it into 1.
+🟢 `python3 scripts/wt154_evidence_discrimination_sweep.py` → **RC 0**, 130 rows, 0 flagged, 10/10
+   post-conditions. RC 2 means the sweep itself is broken.
+🟢 ▲ `python3 scripts/wt156_reproducibility_sweep.py` → **RC 0**, 130 rows, 0 flagged, **11/11
+   post-conditions, 4 NEGATIVE**, including the `b50bccd`-vs-HEAD pair. RC 2 means broken.
 🟢 coach: paper-III **5 conduct / 0 concessive**; paper-IV **1 / 0**.
 🟢 GATE: **PASS**, gate v2.60.
 
@@ -106,200 +136,203 @@ in this file."*) must be **verbatim, above the fold** — put it in FIRST.
 
 ---
 
-## ▶ YOUR AT-BAT · THE SIXTEEN ROWS NOBODY CAN FALSIFY
+## ▶ YOUR AT-BAT · THE POINTERS THAT POINT AT NOTHING
 
 Read `next_at_bat` above; it is the specification and it is one thing. The short version:
 
-Sixteen rows carry `run on darwin, wealthTensor-82; output in the session log`. wt154 does **not**
-flag them and that is correct — running a script IS a read of behaviour, not a location. But the
-session log is gone. The TSV header's step 2 is *"run it or read it"*, and for these sixteen there
-is nothing to run and nothing to read. **A row nobody can falsify is worth exactly what -83 said an
-unfalsified row is worth: nothing.**
+`the script`, `the module`, `the run log`, `that section` — a pointer whose target is a **bare noun
+phrase** promises the reader a specific artefact and does not name one. -86 found this class in the
+`evidence` column, by accident, because its own committed prediction missed two rows for exactly
+that reason. **wt133 cannot see it** (it resolves `§N.M` references and reference entries) and
+**wt156 cannot see it** (it reads the TSV, not the prose). It is -83's III-2/III-3 syntax and it has
+been on the parking lot since.
 
-Write the RULE, not the string — a run with no committed output file, no value printed in the note,
-and no named test — and report what the rule catches beyond the sixteen (the 18 terse
-`git log/cat-file` rows are the obvious candidate; say either way). Then **re-run all sixteen** and
-record what came back today.
-
-**Expect a false sentence.** -85 read 25 artefacts and found zero false sentences, but every one of
-those 25 had an adjudicator who at least looked at the right file. These sixteen are rows where
-nobody can tell what the adjudicator saw. A disagreement here is class R, repairs the manuscript in
-the same pass, and is the most valuable thing this at-bat can produce.
+Predict the count, commit the prediction, then run the sweep. Repair every flag. Say what the
+prediction got wrong — that is the part the next session cannot get from the code.
 
 ---
 
-## WHAT -85 DID
+## WHAT -86 DID
 
-**The instrument.** `scripts/wt154_evidence_discrimination_sweep.py`, two detectors, reported
-separately, with the `8855aba`-vs-HEAD pair inside it as post-conditions.
+**The instrument.** `scripts/wt156_reproducibility_sweep.py`. Two detectors, reported separately,
+with the `b50bccd`-vs-HEAD pair inside it as post-conditions.
 
-- **D1 · LOCATE-ONLY** — no read-operation in `evidence` targets the row's own artefact. **23 rows.**
-- **D2 · UNDER-COVERAGE** — the sentence names a sibling programme ID the evidence never opened.
-  **2 rows.**
+- **D1 · RECORD IN A VANISHED SESSION** — the evidence locates the result in a session, a log or a
+  machine, and nothing re-executable survives once those locators are stripped. **36 rows.**
+- **D2 · NO OPERAND** — the evidence is a verb or a back-reference with nothing to act on. **10 rows.**
 
-**K = 25 of 129** at HEAD before repair; **29** at `8855aba`. REVIEW-024's interval was [25, 88].
-**25 lands inside, exactly on the lower bound** — see REVIEW-025 §3 for why a pattern sweep must
-read low and why that means the census does not narrow the interval.
+**The handoff's own rule and its own post-condition contradicted each other, again.** The
+commissioned rule was *a run with no committed output file, no printed value in the note, and no
+named test*; five of the sixteen carry real values in their notes (`D(0)=1998.9895`, `4.12x`,
+`9 severe, 0 definitional, 0 failed`), so the literal rule cannot flag them, while the commissioned
+post-condition says all sixteen must. This is **-85(ii) arriving a second time**, and the answer was
+the same: build the rule the FILE's own header licenses — *step 1 of the falsification procedure,
+applied to the column the header names* — rather than bend the one that was handed over.
 
-**Why there are two detectors.** The handoff commissioned four rows the sweep MUST flag and a
-pattern list to flag them with, and **the two contradicted each other**. `7e1c612368`'s evidence at
-`8855aba` was `grep -n WT-059 docs/LEDGER.md` — a genuine read, of the artefact the row names, with
-the found text quoted in its note. The same handoff's own parenthetical says *the `-l` is the tell;
-`grep -n` is a read*. Widening D1 until it caught a `grep -n` would have been tuning the instrument
-to a known answer. The row's actual defect was different — the sentence claims a record spanning
-**WT-059 and WT-062** and the evidence never opened WT-062 — so it got its own detector. **D2 then
-immediately caught `f43958893d`**, the mirror row on the same sentence, whose evidence had opened
-WT-062 and never WT-059. Neither half had read the other, and nobody had noticed.
+**The prediction was committed at `127cec9` with every measured field reading `PENDING`, and it was
+wrong by three, all low:** `6c9aacc322` (`ls -l + git ls-files on darwin`, simply overlooked),
+`01ed28c1a8` and `1d538d6e60` (`grep … on the script`, `grep for each of the three names in the
+script and the module`). Those last two are the finding, and they are -87's at-bat.
 
-**The repairs.** `scripts/wt155_tsv_readnotlocate.py` — 25 rows, **12 post-conditions, 6 NEGATIVE**,
-backup written before the edit, rolls back on any failure. **Every one of the 25 sentences HELD.**
-Zero manuscript edits, zero `class` changes, zero `promise_id` changes (post-conditions bind all
-four, which is what keeps wt148 at RC 0 instead of reporting 25 rows STALE).
+**The sixteen, re-run on darwin 2026-08-18.** 12 agreed · 2 had HEAD-indexed values that had moved
+· **2 disagreed**.
 
-**Three things the reading turned up that no detector could have:**
+- **`d4dd6baf17`** — the note said *"a clean run would not regenerate §6 either — the audience is a
+  live citing set that grows daily."* A clean run returned **RC 0 and every figure §6 reports,
+  unchanged**: 23 / 15 / 6, 0.0202 / 0.0108 / 0.0053, 134 / 155 / 380, ceiling 0.4773, floor 0.0,
+  `H1 SURVIVES`. Only the seed `cited_by` counts moved, and two of four audience sizes were
+  byte-identical two days on. `wt157` rewrote §10 to say **replication, not regeneration**, kept the
+  load-bearing sentence verbatim, and **committed the re-run's JSON** as
+  `docs/preregistration/RESULT-REG-013-rerun-2026-08-18.json` — which emitted a new promise,
+  `df3cdc8d2a`, adjudicated in the same pass.
+- **`10d2d456ea` / `30191fec1a`** — **the false sentence.** §10 said `tests/test_excess_demand.py`
+  *asserts* §5's **399** and §8's twelve-point **four**. The 399 is asserted at
+  `assert grid.size == 399`. **The four was asserted nowhere** — the module's only twelve-point test
+  counts DEMAND curves and asserts 25, and never builds the excess-demand set at all. Measured, the
+  12-point grid returns exactly **4** distinct excess-demand schedules, so `wt158` **added the
+  assertion** instead of softening the prose. Both rows had sat on the evidence `read the module`.
 
-- **`fa005fbebe` / `af9d1b09c3` — the 62 is real and nobody had counted it.**
-  `git show d655501:tests/test_edgar.py | grep -c '^def test_'` returns 42; `test_lag.py` 10;
-  `test_lambda_sensitivity.py` 10. **42 + 10 + 10 = 62**, the number Paper III §11 gives. The rows
-  carrying that claim had said `same test module`.
-- **`a3511853e3` / `31fea3ed33` / `6db7b7ce3d` — the asymmetry the sentence draws is true in the
-  commits.** `9722342` is *1 file changed, 283 insertions* (PRE-001 alone). `d655501` is 9 files:
-  PRE-002's registration beside `edgar.py` (622) and `wt026_severe_test.py` (224). "Also contains
-  the implementation" holds of the second and not the first, exactly as claimed.
-- **`3df66f9481` — the twin of a row REVIEW-024 already repaired.** One sentence names
-  `PREPRINT-CHECKLIST.md` *and* `docs/REFERENCE-POLICY.md`; `-84` repaired the checklist row and
-  the policy row sat at `ls -l` until this pass. It holds (L226, *"Pass 1 — record verified against
-  a publisher page, catalogue, Crossref or issuing body"*), but nobody had looked.
+**Four notes corrected without any sentence failing:** `d9f85198a4` and `ff83025f93` shared a note
+saying *"RESULT-001-* logs entered at d655501 and the analysed result later"* — `RESULT-001-wt026.md`
+is IN `d655501`; PRE-002's own outcome, `RESULT-002-wt026.md`, is the one that came later, at
+`c43c484`, twelve minutes on. `150f86a167` put *"written before the leg ran"* in E1 §2.2; §2.2 is the
+type check and §6 carries that sentence.
 
-**RED-PROOF, this pass, on the real tree.** wt155 refuses and returns 2 unless the set of rows it
-repairs is **exactly** the set wt154 flags; it also refuses if wt154 itself returns 2. After the
-edit it re-runs the sweep at `8855aba` and requires all four REVIEW-024 rows still flag — proving
-the repair moved the file, not the instrument.
-
----
-
-## THE TELL, now SEVENTY-ONE deep
-
--61–-84 as before (-84 corrected -83's header from fifty-nine to sixty-five). **-85 adds six.**
-
-**-85(i) A PATTERN SWEEP IS A LOWER BOUND ON A HAND-AUDIT'S QUANTITY, NEVER A REPLACEMENT** — it
-can only find the defect shapes someone has already read. The census landed on the sample's Wilson
-lower bound, and the proof it must is the one row that needed a second detector, which existed only
-because a human had already read that row. Report the two as different quantities; do not let the
-census narrow the interval.
-
-**-85(ii) WHEN A COMMISSIONED POST-CONDITION CONTRADICTS THE COMMISSIONED PATTERN SET, THE HANDOFF
-HAS BUNDLED TWO FAILURE MODES UNDER ONE NAME** — build the second detector, do not bend the first.
-A post-condition you cannot satisfy honestly is evidence about the specification, not about your
-instrument. The second detector paid for itself on its first run.
-
-**-85(iii) AN INSTRUMENT REFINED AFTER ITS AUTHOR READ FLAGGED ROWS IS NOT A BLIND MEASUREMENT, AND
-THE ONLY HONEST REPAIR IS TO ENUMERATE EVERY NARROWING IN ORDER WITH ITS CAUSE** — 33 → 25 over
-four changes, all made after looking, all reducing the count, all listed in REVIEW-025 §5. This is
-exactly what -84(ii)'s committed-before-scoring sample avoided by construction, and it cannot be
-undone retroactively. Tuning you disclose is auditable; tuning you omit turns a measurement into an
-argument.
-
-**-85(iv) `grep -l` IS A LOCATOR EVEN THOUGH grep READS, SO PARSE THE FLAG CLUSTER, NOT THE COMMAND
-NAME** — `-l` suppresses matched lines and prints filenames, so `grep -rln` is a locate despite the
-`n`, and matching `/grep -[a-z]*n/` scores it a read. That bug silently un-flagged the very row the
-sweep was written from. **The converse also bites:** when the claim is about WHICH FILES contain
-something, `grep -l` IS the discriminating read, and a locate-detector over-flags it (`2f8a433aa7`).
-
-**-85(v) REPAIRING ONE ARTEFACT OF A TWO-ARTEFACT SENTENCE LEAVES THE OTHER HALF EXACTLY AS BROKEN,
-AND THE SENTENCE NOW LOOKS ADJUDICATED** — three instances in one file this pass. When an
-enumerator emits one row per (sentence, artefact), the rows are individually adjudicable but the
-SENTENCE is not adjudicated until all of them are. After repairing any row, grep for every other
-row carrying the same sentence and do them in the same pass. (This is -84(iv) arriving from the
-other side: -84 said grep the sentences that PROMISE things about a repaired target; -85 says grep
-the SIBLING ROWS of a repaired row.)
-
-**-85(vi) MECHANISING "THE ADJUDICATOR CHECKED A DIFFERENT ARTEFACT" OVER-FIRES UNLESS YOU SCOPE IT
-TO ARTEFACTS THAT ARE FILES** — a claim about what `PRE-001` RETURNED is settled by reading
-`RESULT-001`, never the registration; a claim about a module's pin is settled by a named green test
-whose whole job is asserting about other modules. -83's judgement rule is sound and its naive
-mechanisation is not.
+**RED-PROOF, this pass, on the real tree, twice.** wt157's C7 failed on its first run because the
+load-bearing sentence had re-wrapped across a line, and the script **rolled back and changed
+nothing** — the check was then made whitespace-insensitive rather than dropped. And wt159 refuses
+outright unless its repair set is **exactly** the set wt156 flags, then re-runs the sweep at
+`b50bccd` afterwards and requires all 46 still to flag there: the repair moved the FILE, not the
+instrument.
 
 ---
 
-## TOOLING (▲ new at -85)
+## THE TELL, now SEVENTY-EIGHT deep
 
-- ▲ `scripts/wt154_evidence_discrimination_sweep.py` — the census instrument. `--json`, `--rev REV`,
+-61–-85 as before. **-86 adds seven.**
+
+**-86(i) AN EVIDENCE COLUMN THAT NAMES A PLACE INSTEAD OF A COMMAND CANNOT REACH STEP 2 OF ITS OWN
+FALSIFICATION PROCEDURE** — and the rule must be written against the column the file's own header
+names as the handle. Letting a neighbouring column rescue the row collapses the count to near zero
+and makes the file unfalsifiable by construction, which is the exact failure the sweep exists to
+detect. Put that objection in the falsifier block and invite the attack.
+
+**-86(ii) "THE SCRIPT" AND "THE MODULE" ARE PRONOUNS, AND A HUMAN SKIMMING AN EVIDENCE VOCABULARY
+SUPPLIES THE REFERENT WITHOUT NOTICING THEY HAVE DONE IT** — two of a committed prediction's three
+misses read as perfectly runnable commands and neither is. The machine cannot borrow context from
+the next column over, which is the whole argument for running the sweep rather than reading the list.
+
+**-86(iii) WHEN A MANUSCRIPT SAYS A TEST MODULE ASSERTS A NUMBER AND IT DOES NOT, MEASURE THE NUMBER
+BEFORE YOU TOUCH THE PROSE** — if it is true, add the assertion and the sentence becomes true; only
+if it is false is this a manuscript repair. The cheap fix weakens the paper, the right one
+strengthens the artefact, and the two are told apart by one measurement.
+
+**-86(iv) A NOTE THAT PINS ITS VALUE TO HEAD IS HONEST AND STILL UNCHECKABLE ONCE HEAD MOVES** —
+`1090 passed at HEAD 73b77f9` names its revision, which is strictly better than not naming it, and a
+later reader still cannot re-run it without a checkout. Pin to a REGISTERED commit, or to an
+invariant a green test asserts.
+
+**-86(v) AN EXIT CODE IS A READ, AND A DETECTOR THAT REQUIRES STDOUT WILL FLAG A PREDICATE AS A
+LOCATE** — `git merge-base --is-ancestor A B; echo $?` is the right evidence for a claim about order
+and wt154 flagged it. When a repair pass trips an instrument the pass is not about, **widen the
+EVIDENCE and card the INSTRUMENT**; patching a committed detector's criterion mid-repair is how a
+count and its criterion drift apart unnoticed.
+
+**-86(vi) A REASON WHY A RE-RUN WOULD FAIL IS NOT EVIDENCE; THE RE-RUN IS** — and its output belongs
+in the repository beside the claim. "A clean run would not regenerate §6" was a plausible,
+well-argued, *false* prediction that had been sitting in an adjudication note as though it were a
+finding.
+
+**-86(vii) A PASTED HANDOFF IS A SNAPSHOT OF AN INTENTION; THE REPOSITORY IS THE STATE** — check
+`git log --oneline -8` and read `docs/HANDOFF.md` before you swing, and when they disagree say so in
+your first message. -86 was handed -85's prompt after -85 had finished and pushed; two minutes of
+`git log` turned a duplicated at-bat into a fresh one.
+
+---
+
+## TOOLING (▲ new at -86)
+
+- ▲ `scripts/wt156_reproducibility_sweep.py` — the runnability sweep. `--json`, `--rev REV`,
   `--skip-postconditions`. RC 0 / 1 / **2 (post-condition failed — the sweep is broken)**. Reports
-  `rescued` (3) and `unreproducible` (16) alongside the flags, so the classes it deliberately does
-  not flag are counted rather than dropped.
-- ▲ `scripts/wt155_tsv_readnotlocate.py` — the 25 re-adjudications, 12 post-conditions, 6 NEGATIVE,
-  refuses unless its repair set equals wt154's flag set, rolls back from `.bak-wt155` on failure.
-- ▲ `docs/REVIEW-025-adjudication-census.md` — K, the floor argument, the 25 repairs, the two
-  unflagged classes, and **§5, the construction hazard**, which is the section a sceptic should
-  read first. Five-way falsifier block in the front matter.
-- ⚠ `reg013_citation_whitespace.py` takes ~5 min and will likely 429 — never put it in a critical
-  path. Unchanged.
-- Tags run to **wt155**; **wt156 is free**.
+  `no_value_in_note` alongside the flags.
+- ▲ `scripts/wt157_paperIV_s10_reg013_rerun.py` — §10's reg013 bullet, 12 post-conditions, 5
+  NEGATIVE; refuses on a moved anchor; refuses if the re-run does NOT reproduce the committed run;
+  rolls back from `.bak-wt157`.
+- ▲ `scripts/wt158_twelve_point_four.py` — adds the assertion of §8's four, 10 post-conditions, 5
+  NEGATIVE, runs pytest on the module as one of them.
+- ▲ `scripts/wt159_tsv.py` — the 46 re-adjudications + 1 new row, 13 post-conditions, 4 NEGATIVE;
+  **refuses unless its repair set equals wt156's flag set**; keys the new row's sentence off
+  `wt148 --json` so it is byte-exact.
+- ▲ `scripts/wt159b_tsv.py` — one evidence column widened after wt154 flagged a predicate,
+  9 post-conditions; runs all four sweeps as post-conditions.
+- ▲ `docs/REVIEW-026-reproducibility.md` — the rule, the prediction-vs-measurement, the sixteen
+  re-run, **§4 the false sentence**, **§5 what this does NOT do to [3, 47] and wt154's blind spot**.
+  Five-way falsifier block in the front matter.
+- ▲ `docs/preregistration/RESULT-REG-013-rerun-2026-08-18.json` — the committed record of the
+  2026-08-18 replication.
+- ⚠ `reg013_citation_whitespace.py` takes ~5 min and **can** 429 — never put it in a critical path.
+  It did NOT 429 on 2026-08-18; it returned RC 0. Budget for both.
+- Tags run to **wt159b**; **wt160 is free**.
 
 ---
 
 ## ESTATE
 
-**ONE card, with a named falsifier, unchanged:** `1217603625863293` — `RESULT-001-wt026.md`'s
-summary line says "320 events" where its own §§1–2 report 120 and 202 (=322). Paper III prints 322
-in both places and is unaffected. Not repaired in-pass on purpose: the ruling (*"may a later
-session correct a non-registered arithmetic slip in a committed `RESULT-*.md` in place?"*) wants to
-be made once, by Jason, then applied.
+**Two cards with named falsifiers:**
+- `1217603625863293` — `RESULT-001-wt026.md`'s summary line says "320 events" where its own §§1–2
+  report 120 and 202 (=322). Paper III prints 322 in both places and is unaffected. Not repaired
+  in-pass on purpose: the ruling wants to be made once, by Jason, then applied.
+- ▲ `1217613775009402` — wt154's D1 scores an exit-code predicate as a LOCATE. Named falsifier and
+  the shape of the fix are in the card.
 
 **Standing cards unchanged:** `1217593142996092` (wt133 sweep 2 one-directional),
 `1217568297674954` (version stamp), `1217568192511533` (Paper II's nine orphans),
 `1217596263441666` (roster-brake), `1217596233063153`, `1217561667484767` (PAN purge, Batter's Box).
 
-**Nothing new was carded this pass.** The two remaining defect classes are assigned to -86 in
-`next_at_bat`, which is where a Claude-sized job belongs.
-
 ---
 
-## JASON-SIZED, not -86's
+## JASON-SIZED, not -87's
 
-- **(a) THE TWO-INDEPENDENT-READERS DESIGN IS NOW THE ONLY INSTRUMENT LEFT.** -82's prediction was
-  the first cheap substitute and it held; -84's audit was the second and it is spent; **-85's census
-  was the third and last.** REVIEW-025 §5 states why there is no fourth: a sweep can only find the
-  shapes someone has already read. Every remaining question about how many defects a reader would
-  find now costs a reader.
-- **(b) The version stamp** is ONE ruling closing THREE manuscripts; SEVEN consecutive passes have
-  now correctly declined to move it.
+- **(a) THE TWO-INDEPENDENT-READERS DESIGN IS STILL THE ONLY INSTRUMENT LEFT.** -82's prediction,
+  -84's audit and -85's census were the three cheap substitutes. -86's sweep asked a *different*
+  question (runnability, not discrimination) and so is not a fourth — but it is not a substitute
+  either. Every remaining question about how many defects a reader would find costs a reader.
+- **(b) The version stamp** — ONE ruling closing THREE manuscripts; EIGHT passes have declined it.
+  Paper IV took a §10 repair on 08-18 and its stamp did not move.
 - **(c) The `RESULT-001` in-place-edit ruling**, card `1217603625863293`.
 - **(d) DECISION-001 closed, ROADS-001 unchanged.**
 - **(e) wt077 already prints r·E[η⁺]/(1+μ)**, matching to 0.44% where Paper II §3.1's form is off
   4–7% — changes a stated contribution, unassigned since -81.
 - **(f) The PAN history purge.**
-- **(g) lessons.py's contributor stamp** still does not resolve from the roster; 1534 of 2099 global
-  leaves read 'unknown' and an unstamped leaf can never reach 'trusted'.
+- **(g) lessons.py's contributor stamp** still does not resolve from the roster.
 
 ---
 
 ## WHICH OPEN LANE THIS WAS (the gate's CONTOUR question, answered)
 
-`docs/CHECKLIST.md`'s first OPEN lane in dependency order is **P13** (the arXiv-ready PDF), and
-this pass did not touch it. That is deliberate drift and it is **guard work**, so per the gate's
-own instruction: **the claim the guard protects is P7's.**
+`docs/CHECKLIST.md`'s first OPEN lane in dependency order is **P13** (the arXiv-ready PDF), and this
+pass did not touch it. That is deliberate drift and it is **guard work**, so per the gate's own
+instruction: **the claim the guard protects is P7's, and this time P6's as well.**
 
-P7 closes a paper when **two consecutive fresh-eyes passes yield zero substantive findings**. A
-zero-finding pass is evidence only if the checks that found nothing were capable of finding
-something — and `docs/promises-adjudicated.tsv` is the file that records whether they were. -83
-found one row that had checked the wrong artefact; -84 measured the rate at 5 of 12; -85 put a
-floor of 25 of 129 under it and repaired all 25. **Until that ledger discriminates, a zero-finding
-pass and an unread paper produce the same number**, and P7 cannot be closed honestly on either.
+P7 closes a paper when two consecutive fresh-eyes passes yield zero substantive findings — evidence
+only if the checks that found nothing were *capable* of finding something. -83 found a row that had
+checked the wrong artefact; -84 measured the rate at 5 of 12; -85 put a floor of 25 of 129 under it;
+**-86 established that 46 of those rows could not have been re-checked by anyone at all, and turned
+up a false sentence in the process.** A ledger whose rows cannot be re-run cannot support P7.
 
-P6 ("every number regenerates from a COMMITTED script") is the second beneficiary: three of this
-pass's repairs (`d35227f459`, `91e98bf51b`, `680347614f`) are exactly regeneration claims whose
-adjudicator had listed the file rather than opened the script that regenerates it.
+**P6** ("every number regenerates from a COMMITTED script") is the direct beneficiary this time:
+`f8f41df587`, `e91d103026` and `4c35bb44b7` are the three "Papers cited as established results"
+regeneration claims, and all three were **actually re-run on 2026-08-18** rather than asserted — as
+were `ac16838bdb`, `d6c6430592`, `f7674cbd06` and `a00820b165`.
 
 ---
 
 ## AT WRAP
 
-`~/Scripts/charter-read.sh wealthTensor-86` immediately before the gate; gate detached **with**
-`GATE_ROSTER_WHO`; pytest **and say the number**; wt148 **and** wt133 **and** wt154 **and say all
-three RCs**; `roster leave --who` once; run `lessons.py search` before finishing and
-`use` + `record-outcome` at wrap (**-85 corroborated FIVE leaves — three of -84's four quarantined
-leaves moved toward active — and banked SEVEN new, six of them global**); ⚠ pass `--contributor`
+`~/Scripts/charter-read.sh wealthTensor-87` immediately before the gate; gate detached **with**
+`GATE_ROSTER_WHO`; pytest **and say the number**; wt148 **and** wt133 **and** wt154 **and** wt156
+**and say all four RCs**; `roster leave --who` once; run `lessons.py search` before finishing and
+`use` + `record-outcome` at wrap (**-86 corroborated FIVE leaves — one reached `trusted`, one moved
+`quarantine → active` — and banked SEVEN new, six of them global**); ⚠ pass `--contributor`
 explicitly on every `lessons.py add`; paste a handoff better than this one as the last act — and
-**assign -87 ONE at-bat with a definition of done. Do not hand them a menu.** 🥎
+**assign -88 ONE at-bat with a definition of done. Do not hand them a menu.** 🥎
