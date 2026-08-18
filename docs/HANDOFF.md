@@ -197,10 +197,26 @@ one-to-one onto the sentence's 2 + 1 + 3 breakdown). `wt027_report.py`'s **five 
   **1217568297674954** (the corpus-level version stamp), **1217568192511533** (Paper II's nine
   sweep-2 orphans), **1217561667484767** (the PAN history purge, Batter's Box).
 
-⚠ **`~/Scripts/gate-selfcheck.sh` will exit 1 on `~/Desktop/downloads/SESSION-creditSentinel-1-20260818.md`.**
-It belongs to `opus-spi-menu`, which was live for all of `-81` and all of `-82`. **DO NOT COMMIT
-IT.** Card 1217586882284748 carries the escalation and two fixes; the narrow one is still the
-recommendation.
+⚠ **`~/Scripts/gate-selfcheck.sh` WILL exit 1 on `~/Desktop/downloads/SESSION-creditSentinel-1-20260818.md`.**
+THIRD consecutive gate. **DO NOT COMMIT IT.** `-82`'s gate failed on this one file and nothing
+else — every other check green, `G-AD` through `G-AJ` included.
+
+`-82` also **withdrew `-81`'s recommended fix and replaced it**, because the gate's own message
+says why it cannot work: the slug is `creditSentinel-1` and the only other live session is named
+`opus-spi-menu`. Matching `SESSION-<slug>` against roster session NAMES fails here, and no string
+rule fixes it. The gate names the real answer itself — *"the sibling owes a `roster claim`"*. So
+make the claim automatic instead of remembered: a session writing `SESSION-<X>-<date>.md` into the
+everything folder should, in the same breath, run
+`~/Scripts/roster claim --who <session> --resource darwin-everything-meta --task "SESSION-<X> notes"`.
+Best home is `roster join` itself. Then `G-H#22c`'s existing attribution path works unchanged with
+no fuzzy matching at all, and it closes the whole class rather than one filename pattern.
+
+**`-82` did not implement it**, for one reason and it is the right one: `~/Scripts/roster` was live
+in `opus-spi-menu`'s hands (three claims, joined ~5 h earlier), and editing the roster tool
+underneath a running sibling is the exact thing the roster exists to prevent. **`-83`: if
+`roster who` shows the everything folder quiet, land it — the full spec is the second comment on
+card 1217586882284748.** It is a few lines and it retires a blocker that has now cost three
+sessions.
 
 ---
 ## JASON-SIZED, not `-83`'s
