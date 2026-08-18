@@ -1,18 +1,18 @@
 ---
 project: wealth-tensor
-session_n: 73
+session_n: 74
 gh_repo: jasoncbraatz/wealth-tensor
 branch: main
-gh_sha: 58f7f5bb05d32932d5f1332c1a79f28f3a1d1e11
+gh_sha: PENDING
 updated: 2026-08-18
-session: wealthTensor-73
-live_theme: "Paper III's first independent read, taken as assigned. SEVEN findings, thirteen edits, one carded — the largest single-pass haul in the project, on the only manuscript in the definition of done that had never been reviewed. Three are WT-117's species exactly (a universal falsified by its own list four lines below it). Four are a NEW species the project now has a name and a script for: a cross-reference is a quantifier over a SECTION, it is falsified only against text hundreds of lines away, and a reviewer physically cannot hold that in their head. Two twenty-line sweeps found three of them. The manuscript's own References section documents four verification passes, one of them literally 'every entry checked against the body', and one of these sat through all four."
-phase: "Manuscript repair under a settled thesis. Paper III is now read once and its counter opens at 7. Paper II's counter runs 9 → 2 → 4 → 3 across six passes and has not converged. The review method is still outrunning the manuscripts, and the instrument set now has three axes: quantifiers (wt130), cross-references (two loops, twenty lines, unwritten as a committed script), and census-and-guard (wt128/wt129)."
+session: wealthTensor-74
+live_theme: "Paper II's fifth independent read, taken as assigned. FOUR findings, seven edits, two carded — and the instrument this pass adds is four words: RUN THE PAPER'S OWN COMMANDS. Paper II's §7 names two regeneration scripts; six independent reads had reasoned about them and none had executed them, and one prior pass wrote 'No overclaim ... but that is reasoning about the script, not a run of it' and was wrong on the first half. Eleven minutes of wall-clock produced two of the four findings and moved eight cleared rows from inference to measurement. Also closed queue item 4, three sessions deferred: the two cross-reference sweeps are now wt133, a committed instrument with a load-bearing exit code, and its first estate-wide run went red on PAPER IV."
+phase: "Manuscript repair under a settled thesis. Paper II's counter runs 9 → 2 → 4 → 3 → 4 across seven passes and has not converged; Paper III's opens at 7, one pass deep. The instrument set now has FOUR axes: quantifiers (wt130), cross-references (wt133, committed this session, RC-1 today), census-and-guard (wt128/wt129/wt132), and the new one — execute the manuscript's own regeneration commands before reading a word of it."
 gate_passed: true
 gate_version: "2.60"
-next_at_bat: "ASSIGNED, not offered: PAPER II'S FIFTH INDEPENDENT READ — the first half of the consecutive-zero pair the definition of done requires. -70's rule is back in force and this is it. RUN THE TWO CROSS-REFERENCE SWEEPS FIRST (REVIEW-013 §3 gives both, twenty lines each): Paper II carries ~40 §x.y references and NOBODY HAS EVER CHECKED ONE, and its References section has never been read for anything but quantifier counts — seven sessions deferred. THEN the wt130 sweep (155 tokens on 118 lines), THEN read it whole. DONE WHEN: both sweeps run and recorded in REVIEW-014 with their counts; Paper II read end-to-end; every finding repaired in-pass or carded with a named falsifier; REVIEW-014 exists with its own cleared list AND its own not-checked list; suite green, board re-checked, coach at Paper II's baseline of 2 conduct / 0 concessive. A ZERO IS THE OUTCOME THIS PROJECT NEEDS and would be the first half of the pair — say so plainly if you get one, and do not manufacture a finding to avoid it. Blocked? take the first startable item in the queue and say which, in ONE LINE, at the top of your handoff."
+next_at_bat: "ASSIGNED, not offered: RESOLVE wt133'S RED ON PAPER IV, THEN GIVE PAPER IV ITS NEXT INDEPENDENT READ. `python3 scripts/wt133_crossref_sweep.py` exits 1 today and names exactly one site: paper-IV.md L179's bare `§3.1`. The passage's subject is Paper III throughout ('Paper III §2 is that holding', 'Paper III §5.4 goes on to measure'), Paper IV's own §3 has NO subsections — and the very next line does the same thing with a bare '§4', which is WORSE, because Paper IV HAS a §4 and a reader resolves it locally and silently to the wrong section. Fix both, add any genuine class-A dismissals to docs/crossref-dismissed.tsv WITH THEIR REASON, and get wt133 to RC 0. THEN read Paper IV end-to-end — and RUN ITS REGENERATION COMMANDS FIRST (§10), which nobody has ever done for Paper IV. DONE WHEN: wt133 exits 0 across all four manuscripts; Paper IV's §10 commands are executed and every number in the paper checked against their output, with the count of cells verified recorded; Paper IV read end-to-end; every finding repaired in-pass or carded with a named falsifier; REVIEW-015 exists with its own coverage claim, cleared list and not-checked list; suite green, board re-checked, coach at Paper IV's baseline of 1 conduct / 0 concessive. A ZERO IS A RESULT — say so plainly if you get one and do not manufacture a finding."
 blockers: []
-drift_flags: ["-72 set -70's 'Paper II returns findings → next session is Paper II again' rule aside for ONE session so Paper III could be read. That is discharged: Paper III has now had a pass. The rule is back in force and -74 is Paper II. Do not set it aside a second time without a manuscript in definition_of_done that has zero reads — and there is no longer one.", "The queue's old item 1, 'Paper I's first P7 pass', remains demoted to 13: Paper I is NOT in definition_of_done and Paper II §7 calls it 'since superseded by its own internal referee'. Carried unchanged from -71 and -72, still correct.", "PAPER III'S COUNTER OPENS AT 7 AND THE PAIR IS UNSTARTED. Paper III needs two consecutive zero-finding passes and has had one pass finding seven. Nothing about that is alarming on a first read of 2,694 lines, but do not let the queue forget it: definition_of_done requires the pair for II, III AND IV."]
+drift_flags: ["-70's rule ('Paper II returns findings → next session is Paper II again') is being set aside for -75, DELIBERATELY, and here is the reason in one line: wt133 exits 1 on PAPER IV right now, and a committed instrument that is red is a higher-priority object than the next pass on any manuscript — a red left standing teaches the next five sessions to ignore the exit code. -76 goes back to Paper II unless -75 finds a reason in writing.", "PAPER II'S COUNTER IS 9 → 2 → 4 → 3 → 4 AND IS NOT CONVERGING. Five independent reads, and the fifth found as many as the third. Read that as information about the METHOD, not about the paper: each pass has used a NEW instrument (quantifier sweep, blast-radius census, cross-reference sweep, run-the-commands) and each new instrument has found things the previous ones structurally could not. The pair the definition of done wants may not be reachable until the instrument set stops growing — which is itself a finding worth stating to Jason.", "The queue's old item 1, 'Paper I's first P7 pass', remains demoted: Paper I is NOT in definition_of_done and Paper II §7 calls it 'since superseded by its own internal referee'. Carried unchanged from -71 through -74.", "wt133's sweep-2 orphan lists for Papers I, III and IV were PRINTED and NOT ADJUDICATED. Only Paper II's was read. Paper IV shows Mas-Colell, Robinson, Sraffa uncited; Paper I shows its two companion self-citations. Do not read the RC as covering these — sweep 2 does not set the exit code, deliberately, because its false-positive class C (surname-is-also-a-noun) is irreducible."]
 parking_lot: []
 definition_of_done: "Three preprints (II, III, IV) each at ready-to-submit per ADR-001 clauses, every number regenerated from committed scripts, convergence reached (two consecutive zero-finding review passes per paper), Jason's own-hand pass complete — then the batch declared, once."
 
@@ -21,305 +21,276 @@ definition_of_done: "Three preprints (II, III, IV) each at ready-to-submit per A
 
 **ORIENT: read `docs/CO-AUTHOR-CHARTER.md` first. THE CHARTER WINS over anything in this file.**
 
-## `-73` IN ONE LINE
+## `-74` IN ONE LINE
 
-**Took the assigned at-bat as ordered: Paper III's first independent `P7` read.** Ran `wt130`
-first, read all 2,694 lines, and then ran two cross-reference sweeps that took twenty lines each
-and found three findings a careful read cannot find. **Seven findings, thirteen edits (`wt131`),
-one carded with a falsifier.** Paper III's counter opens at **7**.
+**Took the assigned at-bat as ordered: Paper II's fifth independent `P7` read.** Ran both
+cross-reference sweeps and `wt130` before reading a word, then read all 547 lines. **Four findings,
+seven edits (`wt132`), two carded.** Paper II's counter goes to **4**.
 
-**The new instrument is the deliverable and it is not a script yet.** `wt130` mechanised the
-quantifier. The class it does *not* reach is the **cross-reference** — and `§N.M` is a quantifier
-too, over a section, falsifiable only against text hundreds of lines away. Four of seven findings
-are that shape. Two loops close them and both are in `REVIEW-013` §3, ready to lift.
+**Then it did the thing six passes had not: typed the commands the paper gives its readers.**
+§7 names `wt030_report.py` and `wt077_tail_index.py`. Running them took eleven minutes, produced
+**two of the four findings**, and moved **eight** of `REVIEW-014`'s cleared rows from *inference*
+to *measurement*. `-70` had written the not-checked item that says exactly this — *"that is
+reasoning about the script, not a run of it"* — and then concluded *"No overclaim"* from the
+reasoning. It was an overclaim.
 
-Suite **1078 passed, 0 failed** (67.2 s). Board **66 criteria, `docs/CHECKLIST.md` unmodified —
-the board did not move, for the fourth consecutive session.** Coach **RC 0, all four at baseline**
-(III = 5/0). Abstract and title **byte-identical**, asserted in `wt131`'s guards.
+**And it closed queue item 4.** The two cross-reference loops are now
+`scripts/wt133_crossref_sweep.py`, with a committed dismissals file so its **exit code means
+something**. First estate-wide run: Papers I, II and III clean; **Paper IV red.**
+
+Suite **1078 passed, 0 failed** (66.9 s). Board **66 criteria, `docs/CHECKLIST.md` unmodified —
+the board did not move, for the fifth consecutive session.** Coach **RC 0, all four at baseline**
+(II = 2/0). Abstract **byte-identical**, asserted in `wt132`'s guards.
 
 ---
 
 ## READ FIRST, in this order
 
-1. **`docs/REVIEW-013-P7-paperIII-pass1.md`** — the pass of record. **§2's `III-3` is the one to
-   read even if you skip everything else**: §11, the data-and-code statement, scoped the whole
-   repository's provenance to *"§A.2 and §2"* four times and labelled a script *"Regenerate §2"* —
-   and §2 carries no table and no measured number, while **§6.1 writes the same scope correctly,
-   twice, 500 lines upstream.** §3 is a **27-row CLEARED list** with every read-forward verdict
-   spelled out, §4 is the **NOT-CHECKED list and your brief is written from it**, and Appendix A is
-   the full 668-row enumeration you can diff against a fresh run.
-2. **`docs/LEDGER.md` `WT-120`** — the tell, and the two loops. **This is the thing to carry into
-   Paper II**, because Paper II has ~40 cross-references and nobody has ever checked one.
-   `WT-119` is the findings; `WT-121` is what it costs to go *through* a registered freeze rather
-   than around it, and it costs two commits.
-3. **`scripts/wt131_paperIII_p7pass1_edits.py`** — `wt129`'s guard honesty plus a thirteen-anchor
-   census that came back clean first try. Its docstring is the finding list. **`wt131b` is the new
-   exemplar: an amendment to a frozen section, with the digest read out of git rather than typed.**
+1. **`docs/REVIEW-014-P7-paperII-pass7.md`** — the pass of record. **§2's `II-23` is the one to
+   read even if you skip everything else**, because it is a defect *and* a defect in the guard
+   that was supposed to catch it: §3.3 says *"a lumpier assessment is very slightly stronger"*,
+   the sweep is **U-shaped** with an interior minimum at *P* = 30, and the test pinning the
+   sentence swept `p <= 20` — one point short of the turn — while its docstring generalised.
+   §1 is the coverage claim with three counts, §3 is a **27-row cleared list** that says which
+   rows were upgraded from inference to measurement and which are loose-but-true, §4 is the
+   **not-checked list and your brief is written from it.**
+2. **`scripts/wt133_crossref_sweep.py` — RUN IT FIRST, BEFORE YOU READ ANYTHING.** It is the
+   instrument `-73` designed and `-74` committed, it takes four seconds, and **it is red.** Its
+   docstring carries the three false-positive classes so a flag costs you seconds, not minutes.
+   `docs/crossref-dismissed.tsv` is the audit surface: every row is a claim you can delete to
+   re-open.
+3. **`docs/LEDGER.md` `WT-122`** — this pass in one entry, including what the guard cost. `wt132`
+   **aborted on its first run** because a needle was written with backticks and the file has none;
+   nothing was written, because the guards run **before** the backups. That ordering is `wt129`'s
+   (`WT-118`) and it is why a bad needle is a thirty-second correction instead of a `git checkout`.
 
 ---
 
 ## YOUR AT-BAT — ASSIGNED. Do not choose.
 
-> # ▶ `-74`, YOUR AT-BAT IS: **PAPER II'S FIFTH INDEPENDENT READ.**
->
-> **Start here. You do not need to read the rest of this file to begin.** ~45 min.
->
-> **`-70`'s rule is back in force and this is it.** `-72` set it aside for one session because
-> Paper III was in `definition_of_done` with zero reads. Paper III has now had a pass. There is no
-> longer a manuscript in the definition of done with zero reads, so there is no longer a reason to
-> set the rule aside, and **this is the first half of the consecutive-zero pair the definition of
-> done requires.**
->
-> **RUN THE TWO CROSS-REFERENCE SWEEPS BEFORE THE QUANTIFIER SWEEP.** Both are in `REVIEW-013`
-> §3 and each is about twenty lines:
->
-> 1. **Every `§N.M` in the body against the heading list.** Paper III came back **zero
->    unresolved** in ninety seconds, and a clean result is worth having in writing. **Paper II
->    carries ~40 `§x.y` references and not one has ever been checked** — this has been queue item
->    4 for two sessions.
-> 2. **Every reference entry's *"cited in §N.M"* against that section's text, by surname.** Paper
->    III: 33 entries, 41 claims, 7 flagged, **6 legitimate false positives, 1 real** (`III-5`, a
->    reference crediting §4.4 for a result that is §3.2's, which sat through the References
->    section's own four documented verification passes). Expect the same ratio and take it: the
->    false-positive classes are named in `REVIEW-013` §3 so you can dismiss them in seconds.
->
-> **THEN `python3 scripts/wt130_quantifier_sweep.py paper-II --md`** — 155 tokens on 118 lines —
-> **and then read it whole.** The sweeps are two classes of sentence; they are a floor, not a
-> ceiling.
->
-> **A ZERO IS THE OUTCOME THIS PROJECT NEEDS.** Paper II's counter runs 9 → 2 → 4 → 3 and the
-> definition of done wants two consecutive zeros. If you find nothing, **say so plainly and do not
-> manufacture a finding to avoid an uncomfortable-looking result** — that is the single way this
-> at-bat can be failed. Equally, do not *aim* for zero: `-72` found three where five passes had
-> found none.
+**Resolve `wt133`'s red on Paper IV, then give Paper IV its next independent read.**
 
-### WHY PAPER II AND NOT PAPER III AGAIN, since III's counter opens at 7
+Step one is four seconds of running and probably twenty minutes of fixing:
 
-Because seven findings on a **first** read of a 2,694-line manuscript is the expected number, not
-an alarm, and because a second Paper III pass now would be reading text that is four hours old.
-Paper III's pair is unstarted and stays unstarted for one session; Paper II's is the one that can
-actually close. **If you disagree on reading this, run Paper III's second read and say so in ONE
-LINE.** The one outcome that must not happen is both sessions deferring.
+```
+python3 scripts/wt133_crossref_sweep.py     # exits 1; names paper-IV.md L179
+```
+
+**What it names, and what it does not.** L179 carries a bare `§3.1` inside a passage whose subject
+is Paper III in every surrounding sentence, and Paper IV's own §3 has no subsections — so the
+reference resolves to nothing and the sweep sees it. **The line after it is the one the sweep
+cannot see**: *"read before §4 indexes the holding by asset class"* — Paper IV **has** a §4, so
+that reference resolves **locally and silently to the wrong section**, and no mechanical check
+will ever flag it. Read L175–L182 whole before you touch either. That asymmetry is the lesson:
+the sweep finds the references that resolve to *nothing*; only a reader finds the ones that
+resolve to the *wrong thing*.
+
+Then Paper IV end-to-end — **and run §10's regeneration commands before you read the prose.** No
+session has ever done this for Paper IV. On Paper II it produced half the findings.
+
+### WHY PAPER IV AND NOT PAPER II AGAIN, since `-70`'s rule says Paper II
+
+Because a committed instrument is standing red, and that outranks the next pass on any manuscript.
+A red exit code left alone for one session is a red exit code everybody stops reading. `-70`'s rule
+is set aside for **one** session, exactly as `-72` set it aside for Paper III's first read, and it
+comes back in force at `-76`. **If you disagree on reading this, run Paper II's sixth read and say
+so in ONE LINE at the top of your handoff.** The one outcome that must not happen is both sessions
+deferring, and `wt133` staying red is the specific way that would happen here.
 
 ### THE QUEUE BEHIND IT — context, not a menu. Do not shop here.
 
 **Reading this list is not a decision you are being asked to make.**
 
-1. **Paper III's second read** — counter at 7, one pass deep, pair unstarted.
-2. **Paper IV §1–§3, re-read against `wt125`'s OWN output** (~15 min). `-69` read §1–§3 against
-   `wt121` then patched them; **nobody has read them against `wt125`.**
-3. **`REFERENCE-POLICY`'s eighth pass** — card `1217556161163494`. `-73` read Paper III's
-   References for **where** each entry claims to be cited and found `III-5`/`III-6`; it did **not**
-   read them for **what** the sources say. That is still the single most-deferred item.
-4. **Make the two cross-reference sweeps a committed script** — `wt132`, the natural sibling of
-   `wt130`. `-73` ran them ad hoc and wrote them down in `REVIEW-013` §3 rather than committing
-   them, which is exactly the mistake `WT-116` was banked to prevent (*"a procedure that lives in
-   a ledger entry is a procedure the next session re-derives"*). **`-73` would rank this above
-   items 5–12 and is naming it plainly rather than hiding it in a queue: the loops exist, they are
-   forty lines total, and they are the difference between a finding and a class of findings.**
-5. **`III-8`** — card `1217567136996151`, filed today. §11 names a regeneration command for §3,
-   §A.2.3, §A.2.4 and §5 and **none for §4**, against a front-matter claim covering *every*
-   computational result. **The card carries its own falsifier — run it first, the card may be
-   wrong.**
+1. **Paper II's sixth read** — counter at 4 and not converging; pair unstarted. Back in force
+   at `-76`.
+2. **Paper III's second read** — counter at 7, one pass deep, pair unstarted.
+3. **`REFERENCE-POLICY`'s eighth pass** — card `1217556161163494`. **Now the single most-deferred
+   item in the project.** Both `-73` and `-74` swept references for **where** each entry claims to
+   be cited; neither read them for **what** the sources say. `wt133` mechanises the first question
+   permanently, which means the second one is now the *only* part of that card a Claude can still
+   add value on.
+4. **`III-8`** — card `1217567136996151`. §11 names no regeneration command for Paper III's §4.
+   **`-74`'s instrument is the answer to this card**: run Paper III's §11 commands and see which
+   of §4's numbers appear. The card carries its own falsifier — it may be wrong.
+5. **`II-25`** — card `1217568297674954`, filed today. **All four** manuscripts' `Version X.Y,
+   DATE` front-matter stamps predate their own claim-changing commits; Paper II's revision history
+   says of v0.2 *"No result, number, claim or citation changed"* with **twelve** commits behind it.
+   Step 1 is a Claude-sized test that goes red on all four today; step 2 is one ruling from Jason.
 6. **P6's remaining two thirds** (`P1n`/`P5n` are `P3n` repointed, ~30 min, mechanical).
-7. **The ρ = 0 test UNDER-asserts** — card `1217547799559841`. Read the card first: tightening the
-   float tolerance to `==` hands the next machine a red suite. Assert the **structural** property.
-8. **The U+00B5 guard** — card `1217561398864561`. Five patch scripts now carry an in-script glyph
-   guard; the tree-wide one is still missing.
-9. **The `CONDUCT_ALLOWED_SECTIONS` gap** — card `1217562682350929`. `-68` hit it; `-69` through
-   **`-73`** all avoided it only by reading the tuple first. **Six sessions have now walked around
-   the same landmine**, which is six data points that the tuple belongs where the writer looks.
-10. **A gate check that a `§N` named in `HANDOFF.md` exists in the paper it names** — card
-    `1217564707330383` (`WT-112`). ~6 lines. **Overlaps item 4 and should be done inside it.**
-11. **The duplicated Bouchaud–Mézard description** — card `1217565324215216`, filed by `-71`. §3.1
-    and §6 carry the same ~40 words about one source. Still there, still latent; the placement was
-    settled at `bf07363`, so it needs a decision, not a patch.
-12. **PASTE THE HANDOFF forcing function** — card `1217560480809492`. (`-67` through `-73` all
-    pasted. **Seven** data points, still not a fix.)
-13. **Paper II's companion reference entries** — card `1217542940968749`.
+7. **Paper II's uncited reference entries** — card `1217568192511533`, filed today. 9 of 16
+   entries do no work in the body; §6's public-finance paragraph is the one place with a cheap,
+   obviously-correct repair.
+8. **The ρ = 0 test UNDER-asserts** — card `1217547799559841`. Read the card first: tightening the
+   float tolerance to `==` hands the next machine a red suite. **`-74` measured the underlying
+   fact and it is stronger than the card assumes**: `wt115` reports `array_equal` **True** and
+   max |Δw| / mean w = **0.0**, exactly. Assert the structural property.
+9. **The U+00B5 guard** — card `1217561398864561`.
+10. **The `CONDUCT_ALLOWED_SECTIONS` gap** — card `1217562682350929`. `-68` hit it; `-69` through
+    **`-74`** all avoided it only by reading the tuple first. **Seven** sessions around one
+    landmine.
+11. **A gate check that a `§N` named in `HANDOFF.md` exists in the paper it names** — card
+    `1217564707330383` (`WT-112`). **`wt133` is now 90 % of this**; point it at `HANDOFF.md`.
+12. **The duplicated Bouchaud–Mézard description** — card `1217565324215216`. Needs a decision,
+    not a patch.
+13. **PASTE THE HANDOFF forcing function** — card `1217560480809492`. (`-67` through `-74` all
+    pasted. **Eight** data points, still not a fix.)
 14. **PAPER I'S FIRST `P7` PASS** — still demoted, still for `drift_flags`' reason.
-15. **`A3` from the PAN AAR — estate-level, STILL UNCHECKED.** Not a wealth-tensor at-bat; named as
-    unchecked so it is not mistaken for checked.
+15. **`A3` from the PAN AAR — estate-level, STILL UNCHECKED.**
 
 ---
 
-## WHAT `-73` DID, so you do not re-derive it
+## WHAT `-74` DID, so you do not re-derive it
 
-**At-bat:** Paper III read whole, lines 1–2,685, `wt130` sweep plus two cross-reference sweeps.
-**`REVIEW-013` is the document of record** — §1 is the coverage claim, §2 the findings, §3 a
-**27-row CLEARED list**, §4 the **NOT-CHECKED list**, Appendix A the 668-row enumeration.
-**7 findings, 13 edits, 1 carded.**
+**Coverage, all three sweeps run before a word of prose was read.** 46 `§N.M` references on the
+whole file / 13 distinct / **zero unresolved** — the first time Paper II's cross-references had
+*ever* been checked, three sessions on the queue. 16 reference entries swept by surname; 7 do work
+in the body, 9 do not, **zero false claims**. `wt130`: **155 tokens on 118 of 547 lines.**
 
-- **`III-1`** — §2 said *"The word **crisis** is kept **in the title**."* The title is *"Timeliness
-  and durability are not separately identified from a reported series."*
-  `paper-III.md.bak-pre-roadtwo` dates the retitling — the old title opened *"A crisis is deferred
-  information arriving at once"* — and §8.2, written after, says the crisis framing belongs to a
-  later paper and *"is not defended here."* A claim about the document's own first line, falsified
-  by the first line.
-- **`III-2`** — §A.1.3: *"the regimes in which **each proposition** fails are committed, tested
-  code."* Two bullets follow. One is P2. **The other calls itself "a separate and equally important
-  point"** and then says *"P2 still holds at φ = 1"*. P1 and P3 get nothing. `WT-117` exactly.
-- **`III-3`** — §11 scoped the repository's provenance to *"§A.2 and §2"* **four times** and
-  labelled `wt027_report.py` *"Regenerate §2."* §2 carries no measured number; that script's own
-  docstring lists three tables and they are §3.1's two and §3.2's. **§6.1 writes it correctly
-  twice.** `II-19`'s species with the right words already in the paper.
-- **`III-4`** — §7's survivals row titled *"The rectangle's **99.7%**"* while its own outcome cell
-  and §4.4 both report **0.998 / 99.8%**. **Not a rounding:** `RESULT-REG-002` §4 says 99.7% is
-  E4's figure **at α = 0.35**, and the row ran at the measured α̂ = 0.408.
-  `tests/test_ledger_provenance.py` uses the title as a lookup key in five places and they move
-  with it.
-- **`III-5`** — the Bleck and Liu entry credits *"§4.4 and §10"* and *"§4.4's volatility result."*
-  Cited in **§3.2**, §8.2 and §10, and §8.2 says so in terms.
-- **`III-6`** — the Jin and Myers entry names *"§10's **one** quotation"* and gives a sentence
-  **absent from the manuscript**, while §10 carries **five** quoted fragments from them — and the
-  entry then states the standard §10 is failing: *"a reader entitled to doubt that on a paraphrase
-  should be able to see the words."* §10 supplies exactly the paraphrase. **Repaired by restoring
-  the words to §10**, which is the smaller change and the one the entry's own rule asks for.
-  Separately, the References' fourth-pass note says the crash-risk entries carry **✓⧗** and **none
-  of them does** — repaired by **APPEND**, because that paragraph is a dated record of what the
-  pass found and what it found was afterwards discharged.
-- **`III-7`** — §4.7's *"§5's floor of 30."* §5 states no floor of 30, its one use of the word is
-  *"the materiality floor"* with no value, and §5.3's own tier cells run to **n = 21**.
-- **`III-8`, CARDED** — `1217567136996151`, with its falsifier. §11 has no regeneration command for
-  §4.
+* **`II-22`** — §7 twice scoped the manuscript's non-simulation numbers to *"the **three**
+  quadrature values"*. **E[η⁺] = 0.1073** is a fourth, in bold in §3.1, printed by the very script
+  §7 names for the exception (`E[eta+] closed form = 0.107269`). Right provenance, wrong count,
+  two sentences. **Repaired at both sites.**
+* **`II-23`** — §3.3's *"a lumpier assessment is very slightly **stronger**"*. Measured at
+  *P* = 1/2/4/10/15/20/25/**30**/40/50 → .486/.484/.480/.471/.461/.457/.452/**.451**/.458/**.469**.
+  **Interior minimum at 30; above the quoted P = 20 endpoint by P = 50** — and the turn is *inside*
+  the design, since at *P* = 50 the constant average rate requires exactly *r* = 1.00.
+  Horizon-stable at *T* = 600. **The manuscript and the test were both repaired**; the test now
+  sweeps to 50 and pins the measured shape.
+* **`II-24`** — §1's *"The process responds to four numbers"*, contradicted **five lines later** by
+  contribution 1's *"plus the realisation share of the base … a function of these alone"* and by
+  §3.2, which moves the reachable Gini **0.125 → 0.994** with all four levy coordinates held
+  fixed. `WT-117`, third instance. **Repaired to five.**
+* **`II-26`** — §3.4's *"which separates nothing"* of a **0.103** gap. Repaired with the
+  paragraph's own ceiling argument. **Named in `REVIEW-014` as the softest of the four** and the
+  row most likely to be re-litigated.
+* **`II-25` CARDED** and the reference-orphan measurement carded. Both above.
+* **Bug spray:** `wt077_tail_index.py`'s docstring named `RedistributionEconomy`; the class is
+  `RedistributiveEconomy`. And `wt133`'s **own first run** swept two manuscripts when asked for
+  one, because `"paper-II"` is a prefix of `"paper-III"` — found by running what I wrote, fixed,
+  and the reason is in a comment above the line.
 
-**`wt131c`, unasked for and worth two minutes:** `wt130` printed *"864 quantifier tokens on 668
-lines"* meaning **lines that carry a quantifier**, and that reading travelled into `-72`'s handoff,
-`LEDGER WT-116` and `docs/HANDOFF.md` as *"668 lines, the largest manuscript in the batch"* — with
-a "~50 min" budget written from it for a document **2,694 lines** long. All three print sites now
-carry the manuscript's own length beside the count. The conclusion (*read Paper III next*) was
-right for a different reason and stands.
-
-`LEDGER` `WT-119` / `WT-120` / `WT-121`. Three lessons banked (two global, one project-scoped), two
-`use`d and corroborated — **`WT-115`'s leaf graduated quarantine → active on this pass.**
-Commits `74734de` ← the amendment ← the wrap.
+`LEDGER` `WT-122`. Three lessons banked, four `use`d and corroborated. Commits `58f7f5b` ← `9af89bf`.
 
 ---
 
 ## ✅ NEW SETTLED, DO NOT REOPEN
 
-**`-73`'s seven repairs are settled AS REPAIRS.** In particular:
+**`REVIEW-014` §3's 27 cleared rows are cleared.** Three are named there as most likely to be
+re-litigated and they are named here too, so you do not spend the tokens:
 
-- **`RESULT-REG-002`'s 99.7% was NOT touched and must not be.** It is correct at its own α = 0.35
-  and is a dated result of record, quoted by `tests/test_reg002_sec5_e4_extension_label.py` and by
-  `scripts/mutation_control.py` R4b. Only the manuscript's §7 row title moved, to the number that
-  row actually produces.
-- **The Jin and Myers verification record stays.** *"verified in the published text at p. 262,
-  character for character"* is a dated fact about the source, not a claim about §10, and it was
-  left alone on purpose — same doctrine as Paper II's `END-TO-END-001` quotations.
-- **The References' fourth-pass paragraph was APPENDED to, not rewritten.** Do not tidy the
-  original sentence into agreement with the append; the sequence is the record.
-- **`REG-012` §4.7's freeze now carries TWO amendments.** `SEC_47_AT_REGISTRATION` is immutable and
-  was not touched. If you move §4.7 again, append a third — do not re-pin, do not revert on the
-  guard's account alone, and read `WT-121` for the two-commit shape first.
-- **`REVIEW-013` §3's 27 CLEARED rows are cleared.** `C19` (the 291-fold reads as 289 from the
-  printed pair — a rounding in `NOTE-001`, not an error), `C23` (§11's *"will be pinned when this
-  paper is posted"* satisfies `P1m` because the per-file pins are supplied now) and `C24`
-  (*"§4.6's question"* is loose, not false, and was deliberately not repaired) are the three most
-  likely to be re-litigated. Don't.
+* **`C23`** — §1's *"A boundary, stated once and maintained throughout"*, against §5.2, §5.7 and
+  §6 all restating it. **Loose, not false, deliberately not repaired**: *"stated once"* reads as
+  *argued once rather than defended repeatedly*, and *"and maintained throughout"* is the clause
+  that carries the recurrences.
+* **`C18`** — §3.1's *"which a stock levy reaches at rate 0.25"*. Stock at *r* = 0.250 reaches
+  **0.123**, i.e. it reaches 0.125 slightly *below* rate 0.25. **Conservative, not wrong.**
+* **`C19`** — §5.5's *"the exception is §3.1's **three** Var[log *a*] values"* is **correct as
+  written** and `II-22` does **not** touch it. That clause is about which numbers are *simulated*;
+  §7's is about which are *generated by simulation at all*. Two different sets, and only §7's was
+  wrong.
 
-**Everything else settled stays settled:** `-72`'s three Paper II repairs; the abstract deliberately
-NOT carrying `II-21`'s ρ = 1 caveat; `END-TO-END-001` and `E3`'s quotations of Paper II §7 left
-alone on purpose; `wt128` RAN and is not to be edited; Paper II §5 item 1 is `P3g`'s; the
-*"Version 0.x, <date>"* header above later content is a CONVENTION across all four manuscripts and
-is **not** rot; Paper IV's framing ruled and propagated through §10; card `1217561330623702` at
-(a); `DECISION-001` closed at A; `WT-103`; the 14 household-to-sovereign occurrences untouched on
-purpose; `REG-012` §4.7 appends Amendments; `WT-094` grep `tests/`+`scripts/` first; never delete
-"18 tests"; no re-deriving κ residuals / `III-1`'s 4.2× / E2 blind pass; `REVIEW-004` verbatim
-quotes only; `REVIEW-005` §2's `II-3` is WRONG about the code; end-to-end CLOSED.
+**The regenerated numbers are settled.** Every cell of §3.1, §3.2, §3.3 and §3.4 was reproduced
+exactly by `wt030_report.py` and `wt077_tail_index.py` on 2026-08-18. **Do not re-derive them.**
+§3.2's ρ = 0 identity is verified to the byte (`array_equal` True, max |Δw| = 0.0) and is the
+strongest claim in the paper. §7's pin `3b11f23` is verified as the last commit touching
+`redistribution.py`. The **18**-test count is verified by `grep -c "def test_"`.
+
+**`docs/crossref-dismissed.tsv`'s seven rows are adjudicated.** Paper I's §10 / §17 are
+Mas-Colell, Whinston and Green's, attributed in the same clause. Paper II's §4.1 is Benhabib et
+al.'s, disclosed in the entry. Paper III's §3.3 is `REG-003`'s — `REVIEW-013` §3's single apparent
+miss, **independently reproduced** by `wt133`. Paper IV's §5.4 / §A.1.2 / §A.2.2 all name Paper III
+in the sentence. **Paper IV's §3.1 is NOT dismissed and must not be** until somebody reads L175–182.
 
 ---
 
-## THE TELL, now NINETEEN deep
+## THE TELL, now TWENTY-THREE deep
 
-`-61` through `-70` as before. `-71`: a quantifier is contradicted downstream, never upstream — so
-read forward from it. `-72(i)`: downstream includes **four lines later**. `-72(ii)`: when a document
-names a failure mode, **grep the document for that failure mode**. `-72(iii)`: a guard has two
-failure modes and the red output cannot tell them apart — assert every invariant against the
-ORIGINAL first (`WT-118`).
+`-61`–`-70` as before. `-71`: read forward from a quantifier. `-72`: downstream includes four lines
+later · grep the document for the failure mode it names · a guard has two failure modes and red
+cannot tell them apart (`WT-118`). `-73`: a cross-reference is a quantifier over a section · a
+clean sweep is a result and belongs in the review doc · the thing that propagates is the tool's
+output *line*, not its number.
 
-**`-73(i)` — A CROSS-REFERENCE IS A QUANTIFIER OVER A SECTION, AND IT IS THE ONE A CAREFUL READ
-CANNOT CATCH.** `§N.M` is a claim about what that section contains. A reviewer reading forward from
-*"every"* holds one set in their head. A reviewer reading *"§4.4's volatility result"* has to hold a
-**different section** in their head, and cannot — so this class survives every careful read **by
-construction, not by oversight**. Four of seven findings. **Write the loop instead.** And record the
-false-positive rate honestly: 1 real in 7 flagged, and still worth its five minutes, because the
-alternative is nobody checking at all.
+**`-74`(i): RUN THE MANUSCRIPT'S OWN REGENERATION COMMAND BEFORE YOU READ THE MANUSCRIPT.**
+Reasoning about a script is not a run of it, and the difference is a finding. Six passes reasoned
+about Paper II's two commands and one of them wrote *"No overclaim"* on the strength of that
+reasoning. Eleven minutes of typing produced two findings and upgraded eight cleared rows. **If a
+paper claims reproducibility, the cheapest possible check of every number in it is to type the
+command it gives you** — and it is cheaper than reading the section those numbers are in.
 
-**`-73(ii)` — A CLEAN SWEEP IS A RESULT AND BELONGS IN THE REVIEW DOC.** The §-reference sweep came
-back **zero unresolved across the whole manuscript**. That is not a wasted ninety seconds; it is the
-first thing in this project that lets a later session skip a class of check with a reason. `-72`
-made coverage countable; a clean count is half of what countable buys you.
+**`-74`(ii): A TEST WHOSE SUBJECT STOPS WHERE ITS CLAIM STOPS CANNOT FAIL.** The periodicity test
+asserted monotonicity over `p in (1, 2, 4, 10, 20)` and its docstring generalised to all *P*. The
+assertion was true, the docstring was false, and **no run could tell them apart**, because the
+tuple ended one point before the turn. The repair is not a stronger assertion — it is a **wider
+subject**. Sweep at least one point past the last point at which the claim is known to hold, then
+pin the **shape you measured**, not the law you hoped for. `WT-092`'s question, asked of a test
+instead of a docstring.
 
-**`-73(iii)` — THE THING THAT PROPAGATES IS THE TOOL'S OUTPUT LINE, NOT THE TOOL'S NUMBER.**
-`wt130`'s *"668 lines"* was correct and its **label** was ambiguous, and the ambiguity travelled
-into three documents and a session budget before anyone opened the manuscript to check. `WT-116`
-banked the instrument; nobody banked its units. **When a script prints a count, print what it
-counts** — and when you inherit a number in a brief, the cheapest possible check is `wc -l`.
+**`-74`(iii): AN INSTRUMENT WITHOUT A DISMISSALS FILE IS A REPORT, NOT A TRIPWIRE.** `wt133`'s
+class-A false positives are **permanent** — a paper citing another paper's §5.4 will do so forever
+— so an unfiltered sweep exits 1 on day one and every day after, and within two sessions nobody
+reads the exit code. The dismissals file is what converts *"1 flagged"* into *"1 **new**
+flagged"*, and it is also the audit surface: every row is a claim you can delete to re-open.
 
 ---
 
-## TOOLING (▲ new at `-73`)
+## TOOLING (▲ new at `-74`)
 
-- ▲ **The two cross-reference loops** — `REVIEW-013` §3, twenty lines each, **not yet a committed
-  script** (queue item 4, named plainly rather than buried). (1) every `§N.M` in the body against
-  the heading list; (2) every reference entry's *"cited in §N.M"* against that section's text, by
-  surname.
-- ▲ **`scripts/wt131b_amend.py`** — the exemplar for moving a **frozen** section: reads the digest
-  out of git rather than typing it, refuses if the named commit did not move the section, and
-  refuses a licence that names the freezing registration's own outcome.
-- ▲ **`scripts/wt131c_sweep_wording.py`** — a two-minute bug-spray on `wt130`'s own output. Its
-  shape is worth copying: patch the print sites, then **run the tool and assert the counts did not
-  move**, which is the only guard that matters for a wording change.
-- **`scripts/wt130_quantifier_sweep.py`** — unchanged in behaviour, clearer in output. `--md` still
-  emits a table straight into a `REVIEW` doc; no args still gives four lines of orientation and is
-  still the cheapest move in the repo.
-- **Appending to a big doc** (unchanged, worked first try): `--put` the block to `/tmp/`, then
-  `dx 'cp X X.bak-wtNN && cat /tmp/block >> X'` — one round trip, backup first, never re-upload a
-  60 KB ledger. **And for anything with nested quotes, write the script LOCALLY and `--put` it**
-  — `-73` did every one of `wt131`, `wt131b`, `wt131c` and the lessons batch that way and paid the
-  quoting war zero times.
-- **Tags run to `wt131c`; `wt132` is free** and is the natural home for queue item 4.
-- `.bak-*` gitignored — the undo path lives on darwin, don't force-add.
+▲ **`scripts/wt133_crossref_sweep.py`** — queue item 4, closed. Both sweeps, all four manuscripts,
+`--md` for pasting into a `REVIEW`, three named false-positive classes, and a **load-bearing exit
+code** backed by `docs/crossref-dismissed.tsv`. **RC 1 today.**
+▲ **`scripts/wt132_paperII_p7pass7.py`** — the guard-honesty exemplar extended to a **test's
+assertions**: five manuscript needles asserted exactly once in the *original* before any write,
+backups before the first byte moves, abstract-section identity before and after, and a
+post-condition that **re-runs sweep 1 on the patched text**.
+▲ **The fourth axis, which is not a script:** `python3 scripts/<the command §7 names>`.
+· `wt130` (quantifiers), `wt128`/`wt129` (census-and-guard), `wt131b` (amending a frozen section)
+all unchanged. **Tags run to `wt133`; `wt134` is free.** Note `wt132` was reserved in `-73`'s
+queue for the sweeps and was spent on the patch script; **the sweeps are `wt133`.**
 
 ---
 
 ## JASON-SIZED, not yours
 
-(a) `DECISION-001` closed. (b) Paper IV framing ruled and propagated.
-
-**(c) `P7` is still ONE BOOLEAN — the only open wealth-tensor Jason item — and `-73` makes the
-argument concrete rather than adding to it.** Four sessions now: `-70` moved the board with an edit
-that changed no sentence; `-71` changed five sentences and it did not move; `-72` changed three more
-and it did not move; **`-73` changed thirteen, across seven findings, on the manuscript with the
-most criteria rows of any in the batch, and the board did not move.** The board is a working
-instrument pointed at STRUCTURE and silent on TRUTH. That is settled.
-
-`-72` put a concrete proposal under `-71`'s question and `-73` seconds it **and can now say what it
-would have caught**: a board row requiring each paper's `REVIEW` to carry a sweep whose counts match
-a fresh run measures **coverage**, not truth — the honest thing a script can know. Paper III would
-have failed that row for four months, and failing it is exactly the signal that was missing. **One
-line of yours settles it: yes add the coverage row, or no, reviewing stays narrative.**
-
-(d) The PAN history purge — Batter's Box `1217561667484767`; do NOT rewrite `claude-blackbook`
-history on your own initiative.
+(a) `DECISION-001` closed. (b) Paper IV framing ruled. (c) **`P7` is still ONE BOOLEAN — and the
+argument is now five sessions deep. `-70` moved the board with an edit that changed no sentence;
+`-71` changed five and it did not move; `-72` changed three and it did not; `-73` changed thirteen
+across seven findings and it did not; `-74` changed seven across four findings — including the
+first edit in this batch to a *test's assertions* — and it did not.** Five sessions is enough
+evidence to stop testing the proposition. `-72`'s coverage-row proposal stands, and `-74` can now
+say precisely what it would have caught: a row requiring each paper's `REVIEW` to carry a sweep
+whose counts match a fresh run measures **coverage**, not truth — and it would have failed Paper II
+for three sessions on the cross-reference sweep alone, which nobody ran until today. **One line
+from you settles it: yes add the coverage row, or no, reviewing stays narrative.**
+(d) **NEW, and it is one word: does a `P7` repair pass bump a manuscript's minor version, or does
+the stamp only move at submission?** Card `1217568297674954`. All four papers currently claim dates
+that predate their own claim-changing commits, and Paper II's revision history claims *"No result,
+number, claim or citation changed"* on top of twelve commits. A Claude writes the test either way;
+only you can pick the numbering.
+(e) **A finding about the process rather than the papers, offered because you asked for exactly
+this kind:** Paper II's counter is **9 → 2 → 4 → 3 → 4** and is not converging — but every pass has
+used a *new instrument*, and each new instrument found what the previous ones structurally could
+not. The pair the definition of done wants may be unreachable until the instrument set stops
+growing. That is not a reason to change the bar; it may be a reason to say so out loud in the
+definition of done.
+(f) The PAN history purge — Batter's Box `1217561667484767`.
 
 ---
 
 ## WHY NOT `P13`, since `charter-read.sh` asks
 
 `charter-read.sh` reports **`P13` as the first OPEN lane in dependency order** — the beautifully
-designed, arXiv-ready PDF. `-73` worked **`P7`** instead, as assigned, and the project's own
+designed, arXiv-ready PDF. `-74` worked **`P7`** instead, as assigned, and the project's own
 ordering ruling is why: **`P13` is a point-in-time capture of the corpus**, and capturing a corpus
 whose manuscripts still yield findings per read produces a beautiful PDF of prose that is about to
 change. `P7` → `P13` → `P8` is the DoD's own sequence.
 
-**`-73` retires `-72`'s version of this argument and replaces it with the measured one.** `-72`
-wrote *"Paper III is 864 quantifier tokens on 668 lines and has never been read"*; the sentence is
-now *"Paper III has been read once, at 2,694 lines, and it returned **seven** findings — three of
-them claims the manuscript makes about **itself** that are false."* Typesetting a document whose own
-front matter misdescribed its title is the strongest available form of the same mistake. `P13`
-should not move until Paper III's pair is at least started.
+**`-74` sharpens `-73`'s version of this argument rather than replacing it.** `-73` wrote that
+typesetting a document whose own front matter misdescribed its **title** is the strongest form of
+the mistake. `-74` adds the estate-wide instance: **every one of the four manuscripts currently
+carries a front-matter version stamp that predates its own claim-changing edits** (`II-25`). A
+point-in-time capture whose own point in time is wrong on all four papers is not a capture. **`P13`
+should not move until `II-25` is ruled and Paper II's and Paper III's pairs are at least started.**
 
 ---
 
@@ -327,6 +298,6 @@ should not move until Paper III's pair is at least started.
 
 `~/Scripts/charter-read.sh wealthTensor-NN` **immediately** before the gate; the gate detached
 **with `GATE_ROSTER_WHO` set**; `python3 -m pytest tests/ -q` **and say the number** (summary line,
-never `$?`, never through a pipe); `roster leave --who <you>` once; and **paste a handoff better
-than this one into the chat as the last act.** Assign `-75` ONE at-bat with a definition of done.
-Do not hand them a menu. 🥎
+never `$?`, never through a pipe); **`python3 scripts/wt133_crossref_sweep.py` and say its RC**;
+`roster leave --who <you>` once; and **paste a handoff better than this one into the chat as the
+last act.** Assign `-76` ONE at-bat with a definition of done. Do not hand them a menu. 🥎

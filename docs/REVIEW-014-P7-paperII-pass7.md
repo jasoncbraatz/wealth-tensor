@@ -15,8 +15,8 @@ claim. Two of them had never been run on this manuscript.
 
 | sweep | subject | count | flagged | real |
 |---|---|---|---|---|
-| **§N.M cross-references vs the heading list** | lines 1–547 | **46 references, 13 distinct** | 2 | **0** |
-| **Reference entries vs the body, by surname** | 24 entries, lines 1–472 | **8 cited, 16 not** | 16 | **0** (carded as a measurement) |
+| **§N.M cross-references vs the heading list** | lines 1–547 | **46 references, 13 distinct** (whole file) | 2 | **0** |
+| **Reference entries vs the body, by surname** | 16 entries, lines 1–472 | **7 cited, 9 not** | 9 | **0** (carded as a measurement) |
 | **`wt130_quantifier_sweep.py paper-II --md`** | the whole file | **155 tokens on 118 of 547 lines** | — | 3 of the 4 findings below |
 
 **Sweep 1 is a clean sweep and that is a result.** Forty-six `§`-references, thirteen distinct,
@@ -26,6 +26,14 @@ numbering may differ in the article of record. This is `-73`'s first false-posit
 (*the entry names the source's own section*), and it cost ninety seconds to dismiss. Paper II
 carried these forty-six references through six passes and queue item 4 for three sessions;
 they are now checked, and a later session may skip this class **with a reason**.
+
+**Say what you counted (`-73`(iii)).** The 46/13 above is the **whole file**, the way this pass
+first ran it by hand, and it is why two `§4.1` sites appear rather than one. The committed
+instrument, `wt133`, counts the **body only** — it stops at `## References`, because a reference
+entry naming a section is a different object from a body sentence naming one. On Paper II at
+`0124af4` that is **40 references, 12 distinct, 1 dismissed, 0 unresolved**; after this session's
+five edits, **41/12/1/0**. Both numbers are right and they count different things; a later session
+comparing them without this paragraph would find a discrepancy that is not one.
 
 **Sweep 2 found no false claim and one measurement worth carding.** Paper II's References
 section, unlike Paper III's, carries no `cited in §N.M` tags, so the sweep ran in the other
@@ -43,8 +51,15 @@ verification notes. All three embedded claims hold:
   very next clause (*"the paper would be unchanged if the institution had never existed"*).
   **Dismissed**, and recorded because it is precisely `-73`'s second false-positive class.
 
-The sixteen uncited entries are **card `1217568192511533`**, not a finding. The manuscript makes
+The nine uncited entries are **card `1217568192511533`**, not a finding. The manuscript makes
 no false statement about them.
+
+**Both sweeps are now a committed script.** `scripts/wt133_crossref_sweep.py` — queue item 4,
+three sessions deferred, closed this pass. It reproduces `-73`'s Paper III verdict independently
+(222 references, the single apparent miss at L590 being `REG-003`'s own §3.3) and it reads a
+committed dismissals file, `docs/crossref-dismissed.tsv`, so its **exit code is load-bearing**:
+RC 0 means no *new* unresolved reference, RC 1 means one has appeared. Today it exits **1**, and
+what it names is not in Paper II — see §4 item 11.
 
 **The regeneration commands were run.** No prior pass had done this. `wt030_report.py` and
 `wt077_tail_index.py` reproduce every table cell in §§3.1–3.4 exactly, and `wt115_rho_zero.py`
@@ -214,6 +229,7 @@ inference**, this pass says so and states what upgraded it.
 | C24 | §3.4's *"pinned against"* a ceiling it is *"short of"* | **Loose, not false.** The paragraph's point is that the process stopped rising before the cap; *"pinned against"* is doing rhetorical, not numeric, work. |
 | C25 | §2.1's parameters against the harness | `wt030`'s own header prints `N=800, mu=.05, sigma=.20, wage=.05, T=1200, stationary = mean of last quarter` — §2.1 verbatim. |
 | C26 | The two `✓⧗` entries and the References preamble's count | Exactly two, both naming the pre-publication version read (arXiv `cond-mat/0002374`; NBER WP 14730), per `REFERENCE-POLICY` §4. |
+| C27 | Sweep 2's *"cited"* column, re-read | **Two of the seven are soft matches and are named rather than totalled.** Gini (1912) counts as cited because *"Gini"* occurs 21 times **as the statistic**; Chakraborti & Chakrabarti counts via its co-author. `wt133`'s docstring now carries this as false-positive **class C**. |
 
 ### The three sweeps, and what they cost
 
@@ -257,6 +273,16 @@ the boundary of this document's coverage.**
    the design boundary and offers **no mechanism** for the turn. It would be a real result if
    somebody found one; this pass deliberately did not invent one.
 10. **Papers I, III and IV's version stamps.** Measured (all stale) but not repaired — `II-25`.
+11. **Paper IV §3's bare `§3.1` at L179.** Found by `wt133` on its first estate-wide run, **not
+    investigated**, and deliberately left red. The passage's subject is Paper III throughout
+    (*"Paper III §2 is that holding"*, *"Paper III §5.4 goes on to measure"*), so the bare
+    *"§3.1"* almost certainly means **Paper III's** §3.1 — but Paper IV's own §3 has no
+    subsections, so a reader resolves it locally and finds nothing. The line after it does the
+    same thing with *"§4"*, which is worse: Paper IV **has** a §4, so that one resolves locally
+    and silently to the wrong section. This is `-75`'s at-bat and it is stated as one.
+12. **Papers I, III and IV's sweep-2 orphan lists.** Printed by `wt133` (Paper I: 2, both
+    self-citations to the companion papers; Paper IV: Mas-Colell, Robinson, Sraffa) and **not
+    adjudicated**. Only Paper II's was read.
 
 ---
 
