@@ -4224,6 +4224,67 @@ Suite **1078 passed, 0 failed** (68.41 s). `wt133` **RC 0**. Tags run to `wt140`
 
 ---
 
+## WT-128 · REVIEW · 2026-08-18 · wealthTensor-80 · **Paper III's SECOND independent read — the last three cells filled, and the grid closed at 15 of 15**
+
+**`REVIEW-020-P7-paperIII-pass2.md`. NINE findings, nine repairs, zero carded. Paper III's
+counter: 7 → 9.** Three axes — `A2`, `A4`, `A5` — pointed at this manuscript for the first time.
+Nothing invented; the row is `inherited-first-application`. Ledger script
+`scripts/wt143_p7passes_row80.py`, **11 post-conditions**, `P11` a load-bearing negative.
+
+**THE COUNTER WENT UP, AND THAT IS THE MATRIX BEING RIGHT.** `docs/p7-passes.tsv` said it at
+`-76`: *the counters cannot decay while cells are still empty.* Paper III sat at **2 of 5** for
+four more sessions while three handoffs argued about why a counter would not decay. Filling the
+three cells returned **eight of the nine findings**. Only `III-11` came from an inherited axis.
+**COVERAGE** — not novelty, not residue, not depth, the three mechanisms already dead. And it is
+the first data point in the project's history not confounded by differing matrix coverage:
+`-77`/`-78`/`-79` returned 3, 2, 2 on a manuscript at 5 of 5; this pass returned 9 on one at 2 of 5.
+
+**`-79`'S EXPERIMENT RETURNS A CLEAN YES.** Seven of nine carry one of its two new shapes — five
+*promise-about-artefact*, two *deferral-with-empty-target* — on a different manuscript, at a
+different scale, found by three axes `-79` never ran. The shapes generalise.
+
+**THE THREE THAT COST THE MOST TO FIND.**
+
+**`III-9`** — §9's ninth limitation said the disclosure *"does not once, in **644** firm-years"*
+tie the standard's internal trigger to the unit it fired in, **and deferred to a §5.4 that never
+carried the number**: `644` appeared exactly once in the whole manuscript, in §9 itself.
+`RESULT-REG-008` records the opposite in bold, twice — **one** firm-year in 644 (0 of 281 JOINT,
+1 of 363 GOODWILL-ONLY). The zero is real and belongs to **281**, which is what §7's own ledger
+row already said. REG-008's P2 adjudication warns that *"an empty cell reported as 'did not fire'
+would be a phantom tag at section scale"*; the manuscript committed the mirror image.
+
+**`III-13`** — §11's *"Regenerate §5"* command reaches **neither** §5.3's sample (688/311,
+z −0.290/−0.095) **nor the one the repository commits** (695/313, z −0.223/−0.083). It re-pulls
+`companyfacts`; a pull on 2026-08-18 gives 696/313 and **the replication z crosses zero**, against
+§5.3's *"both z-statistics are negative"*. `wt026_severe_test.py` has no flag that reads
+`data/pre-002-events.json`. Nothing in the repository re-derives §5.3 from committed data — the
+688-event pull survives as run logs. Repaired in the manuscript; the `--events` path is **teed up,
+not carded**, because it changes what a registered instrument reads.
+
+**`III-17`** — §11's *"three of its additions"* is **six**, all in `tests/test_lag.py`, all
+guarding Paper III claims. The other three landed at `cc1d198` (2026-08-12) — **two days before
+the sentence was first written** and four before its last edit, whose own commit subject is
+*"made to stay fixed by derivation"*. The sentence sitting beside the two derived counts was the
+one nothing derived. `tests/test_manuscript_shas_are_instrumented.py` refused the prose SHA **and
+refused the lazy repair of pasting it into a comment**, so the fix ships an instrument:
+`tests/test_paper_iii_lag_additions_are_counted.py`, four assertions.
+
+**AND SIX §3 FIGURES WERE PRODUCED BY NOTHING (`III-12`).** §11 promises *every* simulation result
+in §A.2 and §§2–3 is produced by open code. §3.2's three full-path volatility ratios (1.56, 2.71,
+3.27), §3.1's two off-grid lags (φ = 0.9 → 1, φ = 0.1 → 24) and D(0) to four decimals were printed
+by no named command — and the full-path ratio existed nowhere in `src/`, `scripts/` or `tests/`.
+Repaired on `II-27`/`II-37`'s precedent: **the promise is made true**, `wt027_report.py` gains the
+function, a fifth column and a block `A′`, buying no extra simulation.
+
+**THE GUARDS FOUGHT THE PATCH THREE TIMES AND WERE RIGHT EVERY TIME** — TERM-001's anchor, REACH's
+declaration for `281`, and the SHA-instrumentation refusal. Each rejection improved the repair.
+
+**STATE.** Suite **1082 passed, 0 failed** (was 1078). `wt133` **RC 0**, `wt130` **RC 0**, coach
+**5 conduct / 0 concessive** at Paper III's baseline. `docs/p7-passes.tsv` AXIS MATRIX: **15 of 15
+FILLED**. `III-8`, carded at `-73` for `A4`'s absence, **discharged** (Asana 1217567136996151).
+
+---
+
 ## WT-127 · REVIEW · 2026-08-18 · wealthTensor-79 · **Paper II's NINTH independent read — the depth falsifier fired, and the third mechanism died**
 
 **`REVIEW-019-P7-paperII-pass11.md`. Two findings, three repairs, ZERO manuscript edits, zero
