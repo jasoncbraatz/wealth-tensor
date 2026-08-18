@@ -39,6 +39,19 @@ and none is optional in 2026.
       the same module, reproduced bit-for-bit — because they had a script. A number without a
       script is a number nobody has checked since the day it was typed.
 - [ ] **Related work as positioning, not survey.** State what is established, then what is new.
+- [ ] **Every reference entry's bibliographic details verified against a publisher page, a
+      library catalogue or a Crossref record — including the entries a draft left unmarked,
+      and the marks in the manuscript updated to say so.** Added 2026-08-18
+      (wealthTensor-79) after a measured gap: Paper II's References note defers exactly this
+      work to *this file* — *"The remainder are standard works whose details are to be
+      re-checked at submission per `docs/papers/PREPRINT-CHECKLIST.md`"* — and until now
+      this file carried no such item, so **ten of its sixteen entries were deferred to a
+      document that was not holding them.** That is §7's own failure mode (*"a provenance
+      claim that reads as checked and is not"*) applied to the bibliography, and it is the
+      cheaper half of a pair: `REFERENCE-POLICY` §1 states the evidentiary requirement and
+      §4 the marks, so the work is specified — what was missing was anything that would ask
+      for it at the moment it comes due. **A deferral whose target does not carry the item
+      is not a deferral; it is a dropped ball with a citation.**
 - [ ] **Prefer the STRUCTURAL fact to the CONTINGENT one — a claim about hardware, vendors, prices
       or tooling dates the paper; a claim about what the model identifies does not.** Added
       2026-08-10 (wealthTensor-04), **and it is Jason's framing, recorded in his words:** *"ten

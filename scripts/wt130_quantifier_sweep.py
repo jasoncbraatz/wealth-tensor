@@ -27,6 +27,15 @@ now says so; do not restate it as a manuscript size (wealthTensor-73, LEDGER WT-
     python3 scripts/wt130_quantifier_sweep.py                 # all four manuscripts, counts
     python3 scripts/wt130_quantifier_sweep.py paper-II        # one paper, full enumeration
     python3 scripts/wt130_quantifier_sweep.py paper-II --md   # markdown, for a REVIEW doc
+
+A SELECTOR NOTE, because the second line above was ambiguous for as long as it existed
+(wealthTensor-79, II-39). The selector was a bare substring test, and `paper-II` is a
+PREFIX of `paper-III` while `paper-I` is a prefix of all four -- so `paper-II` swept TWO
+manuscripts and `paper-I` swept FOUR, and the LAST TOTAL printed belonged to a paper the
+caller had not asked for. That is the precise delivery mechanism for the misreading banked
+at -73. A selector now matches a manuscript's STEM or its DIRECTORY NAME exactly, or a
+hyphen-delimited prefix of the directory name; anything else exits non-zero and says so,
+because a loud failure is worth more than a silent second manuscript.
 """
 import pathlib
 import re
@@ -56,6 +65,18 @@ def sweep(path):
     return rows, n
 
 
+def _selects(s, p):
+    """Does selector `s` name manuscript `p`? (wealthTensor-79, II-39.)
+
+    Exact on the stem or the directory name, or a hyphen-delimited prefix of the directory
+    name. NOT a bare substring test: `paper-II` is a prefix of `paper-III` and `paper-I` of
+    all four, so the substring form silently swept the wrong SET and printed someone else's
+    TOTAL last. `paper-II` -> stem match, one paper. `paper-II-redistribution` -> directory
+    match. `II` -> no match, and main() exits non-zero rather than sweeping two.
+    """
+    return s == p.stem or s == p.parent.name or p.parent.name.startswith(s + "-")
+
+
 def n_lines(path):
     """The manuscript's own length. Kept beside the sweep's count because the two were
     conflated once: `wt130`'s "N lines" is lines that CARRY a quantifier (wealthTensor-73,
@@ -66,7 +87,7 @@ def n_lines(path):
 def main(argv):
     md = "--md" in argv
     sel = [a for a in argv if not a.startswith("--")]
-    papers = [p for p in PAPERS if not sel or any(s in str(p) for s in sel)]
+    papers = [p for p in PAPERS if not sel or any(_selects(s, p) for s in sel)]
     if not papers:
         sys.exit(f"no manuscript matched {sel!r}; have: {[p.parent.name for p in PAPERS]}")
 

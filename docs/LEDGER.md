@@ -4221,3 +4221,82 @@ evidence here: at *r* = 1.000 the κ residual is **−4.042 % at `T` = 600 again
 `T` = 1200**, a difference larger than the precision §3.1 reports.
 
 Suite **1078 passed, 0 failed** (68.41 s). `wt133` **RC 0**. Tags run to `wt140`; `wt141` is free.
+
+---
+
+## WT-127 · REVIEW · 2026-08-18 · wealthTensor-79 · **Paper II's NINTH independent read — the depth falsifier fired, and the third mechanism died**
+
+**`REVIEW-019-P7-paperII-pass11.md`. Two findings, three repairs, ZERO manuscript edits, zero
+carded. Counter: 9 → 2 → 4 → 3 → 4 → 5 → 3 → 2 → 2.** Third consecutive frozen-instrument pass;
+`A6` parked as ordered; nothing invented. Patch `scripts/wt141_paperII_p7pass11.py`, **22
+post-conditions**, first try.
+
+**THE RESULT IS THE COLUMN, NOT THE COUNT.** `-78` proposed **depth of application** as what
+remains after new-instruments and repair-residue were both refuted, derived a falsifier from it,
+and handed it over: a ninth read at the same depth should find *materially fewer than two*, and
+**two or more from sites `-78` already opened** would kill it. **`2 of 2` from opened sites.**
+`II-37` sits at the two commands `A5` enumerated and `A4` ran — and `A4`'s second question, the
+one that produced `II-35`, was pointed at that exact sentence. `II-38` is **item 7 on `-78`'s own
+not-checked list**, deferred on its label by the session that banked the lesson *"resolving that a
+named artefact exists is not applying an axis to it"*, one section later in the same document.
+
+**`II-37`** — §7 promises `wt030_report.py` regenerates every §3 number save five closed-form
+quantities; §1's contribution 5 promises it more strongly, exempting only the Gini ceiling.
+§3.1's four κ residuals (−4.3 / −4.6 / −5.7 % tabulated, −6.8 % at *r* = 0.010) are §3 numbers,
+are not closed-form, and were printed by **neither** named command. `-78`'s own `II-35` is the
+proof this is not merely unproven but *wrong*: recomputing them from the output that IS printed
+gives −4.352 / −4.912 / −6.777, off by up to **1.05 percentage points**. Third member of a family
+worked twice already (`II-27`, `II-31`, both `-76`). Repaired by `II-27`'s precedent — **make the
+promise TRUE** — `wt030_report.py` now prints all seven flow residuals from the unrounded κ,
+reusing the MAIN TABLE's runs (no extra simulation, asserted) with **E[η⁺] IMPORTED from
+`wt077_tail_index`** so the two commands §7 names cannot fork on the constant `II-36` had already
+been wrong about once.
+
+**`II-38`** — the References note defers the details of the ten unmarked entries to
+`docs/papers/PREPRINT-CHECKLIST.md`. **That file carried no reference item at all** — §A
+apparatus, §B reproducibility, §C venue, §D pre-registration, references nowhere — since
+`f1ceac74`, 2026-08-10. §7's own *"nothing in the repository was watching"*, applied to the
+bibliography. Repaired in the checklist; the manuscript sentence is now true, unedited.
+
+**`II-39`, found and repaired but DELIBERATELY NOT COUNTED** — `wt130_quantifier_sweep.py`'s
+documented single-paper invocation `... paper-II` swept **two** manuscripts, because `paper-II` is
+a **prefix of `paper-III`**; `paper-I` swept four. The last `TOTAL:` a reader sees was Paper III's
+*"870 tokens on 673 lines"* — the exact string of the misreading banked at `-73`, whose delivery
+mechanism this is, still armed six sessions later. Selector now matches stem or directory name
+exactly, or a hyphen-delimited prefix; a bare `II` **fails loudly**. Not counted because the
+instrument is reviewing apparatus and Paper II names it nowhere — and the falsifier's verdict is
+2 either way.
+
+**THREE MECHANISMS PROPOSED, THREE DEAD, EACH KILLED BY THE SESSION THAT INHERITED IT.**
+new instruments (`-71`, `-77`) · repair residue (`-77` proposed, `-78` refuted 0 of 2) · depth of
+application (`-78` proposed, `-79` refuted 2 of 2). The frozen counts read **3, 2, 2** — the decay
+stopped. What is left is the reading `-78` pre-committed to and earned the right to have stated:
+**Paper II's `P7` counter is measuring the reviewers rather than the paper.**
+
+**Two observations that sharpen it.** Both of this pass's findings are **sentences about
+artefacts**, not artefacts — a provenance promise and a deferral, neither a wrong number; that
+population is larger, because every artefact reference is a claim. And **severity has decayed even
+though the count has not**: `-73` found wrong values in a results table, `-78` a 1-pp derivation
+error and a fourth-decimal constant, `-79` two true-sounding sentences repairable **without
+touching the manuscript at all** — the first pass in this project's history with zero manuscript
+edits.
+
+**`-79`'s ruling request, narrower than `-78`'s.** `-78` recommended leaving the DoD's bar alone
+because depth made a zero reachable; **that ground is gone.** `-79` does not propose changing the
+*number* — it proposes changing what a pass **counts**: only findings that require a manuscript
+edit. Under that rule `-79` scores **0** and `-78` scores **1**, and the counter measures the
+document rather than its apparatus. **NOT APPLIED** — `docs/p7-passes.tsv` row 9 is on the current
+rule and `-78`'s row is byte-identical. Jason's to rule.
+
+**Also cleared, so nobody re-derives them (REVIEW-019 §3, sixteen rows, three live candidates dead
+on contact):** §1's *"within 7 % at every rate tabulated"* is true under **both** scopings (5.749 %
+tabulated, 6.831 % full sweep) even though `-78` defended it with a non-tabulated rate; §3.1's
+*"a stock levy reaches [0.125] at rate 0.25"* is a threshold claim and 0.123 satisfies it; the
+κ order-of-magnitude claim holds at all seven rates (10.01 → 9.75); `transfer_error` exists;
+`seed=0` is the default; `REFERENCE-POLICY` §4 **is** the pre-publication rule; `RESULT-END-TO-END-001-E1.md`
+**does** record all three things §3.2 says it does; and the sibling guard
+`test_excess_demand_is_monotone_...` survives being read for its arithmetic the way `II-36` was
+found. All 39 tabulated §3 values reproduce.
+
+Suite **1078 passed, 0 failed** (72.10 s). `wt133` **RC 0**. `paper-II.md` **unchanged, 565 lines**.
+Tags run to `wt142`; `wt143` is free.
