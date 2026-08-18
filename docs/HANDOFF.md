@@ -244,6 +244,18 @@ that is Jason's call, not a reviewer's. The manuscript is now true either way; t
 would make the original promise true. **If you take it, register the change before you code it —
 that is §6.2's own discipline and this repository's standing rule.**
 
+**`gate-selfcheck.sh` EXITS 1 AT THIS WRAP AND IT IS NOT THIS REPO'S FAULT — read this before you
+panic.** The single issue is `~/Desktop/downloads: 1 uncommitted change — ??
+SESSION-creditSentinel-1-20260818.md`. That file belongs to a **live sibling** (`opus-spi-menu`,
+joined three hours earlier, already claiming `n8n-stack`, `strike-zone` and `claude-blackbook`).
+`-80` did **not** commit it: committing another session's unfinished wrap note to make a gate go
+green buys the green light by stealing the sibling's wrap, and that is the wrong lesson to bank.
+The same run got the *other* sibling collision exactly right — *"`~/repos/claude-blackbook`: LIVE
+roster claim by `opus-spi-menu` … Do NOT commit it"* — so the mechanism exists; it just has no
+claim to match on for the everything folder, which nobody ever claims. Diagnosis, proposed fix and
+a falsifier are on **State Machine `1217586882284748`**. Everything in *this* repo is committed and
+pushed; `handoff_gate.py --emit` says **HANDOFF OK**.
+
 ## JASON-SIZED, not `-81`'s
 
 * **(a)** `DECISION-001` closed.
