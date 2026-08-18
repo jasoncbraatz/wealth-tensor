@@ -1343,14 +1343,16 @@ questions it was never asked. Two were registered in `REG-003`, committed and pu
 instrument existed, and both returned. Neither is a re-test of §5.1's prediction and neither may be
 read as one.
 
-**The sample rebuilt to within one per cent, which is itself worth one line.** `companyfacts` serves
+**The sample rebuilt at 99.0% agreement, which is itself worth one line.** `companyfacts` serves
 each firm's latest view of its own history, so a re-pull is not the original pull. Rebuilt: **695
 events across 313 firms** against 688 across 311, with three of four tier counts identical in the
 pilot and
-censoring at 7.7% against 7.8%. The firm count is read back out of the committed
-`data/pre-002-events.json`; an earlier revision of this sentence said 307, which would have made
-the rebuild *fail* the one-per-cent reconciliation the sentence exists to assert. The registered reconciliation rule, fixed before the count was
-known, admits this as the registered sample.
+censoring at 7.7% against 7.8%. Those firm counts are per-universe sums — 122 + 191 against
+121 + 190. Read as a **union** out of the committed `data/pre-002-events.json` the count is
+**307**, six registrants having changed SIC between 2013 and 2024 and so entering both universes,
+and that union is the *n* of the one-event-per-firm sensitivity below. The registered
+reconciliation rule, fixed before the count was known, is 95% agreement in total *n* with no tier
+moving by more than 20%; at 99.0% and 1.4% it admits this as the registered sample.
 
 **The peak-to-charge recognition rate is 0.41 per year on both known biases' inflating side, and the calibration was low by an order
 of magnitude.**
@@ -1482,8 +1484,8 @@ pass. Designing one is §6.2's business and it is unfinished work, not a conclus
 the framework made, at one level of aggregation, with one bridge, and lost.* Any surviving version
 must state its measurable and its bridge before it is tested again.
 
-Three post-hoc conjectures about where the conjunction broke are recorded in the repository's
-working notes. They are excluded from this paper's argument deliberately: **each arrived after the
+Three post-hoc conjectures about where the conjunction broke are recorded in
+`docs/preregistration/RESULT-002-wt026.md` §4. They are excluded from this paper's argument deliberately: **each arrived after the
 number, none is evidence for anything, and any of them that is ever tested must be registered from
 scratch.** One is worth naming here only because it generalises into a discipline rather than a
 defence, and that is §6.2.
@@ -1578,7 +1580,7 @@ with what would have killed each.
 | **The lag's shape leaves a trace in the reported series** | best admissible constant-hazard mimic, five disclosed lives x four φ | a mimic reproducing the measured shape to machine precision — the shape would not be identified at any precision | residue **3.9 × 10⁻⁴** per quarter at a ten-year life, **4.1 × 10⁻³** at a three-year one |
 | **The T = 0 mass is invisible in the reported series** | conditioning on T ≥ 1 against a compensating φ, five lives x three φ | any series moving after the substitution | held to **5 × 10⁻¹⁶** — and the same conditioning moves α_eff by **6%** |
 | **A decreasing-hazard lag is NOT mimicked by a constant one** | k = 0.5 witness at matched δ and φ | the metric fitting a world with no steady state as easily as the measured one | **5.4 × 10⁻³**, a **14×** separation |
-| **Three recognition rates are three quantities** | series match vs. deferral match vs. event-date MLE across the asserted rectangle | the three agreeing everywhere, making the distinction empty | agree to **7 × 10⁻⁴** at twenty years, **15%** apart at three |
+| **Three recognition rates are three quantities** | series match vs. deferral match vs. event-date MLE across the asserted rectangle | the three agreeing everywhere, making the distinction empty | agree to **5 × 10⁻⁴** at twenty years, **15%** apart at three |
 | **The framework's guards can fail** | audit of the guards themselves | a guard that could not fail passing silently | **six found and retired**, before publication, recorded in `METHOD-001` |
 | **The departure from diagonality is not an artefact of tier 0's tag list** | §5.4's permutation re-derived with the omitted element restored, both arms on one crawl | the lift moving with the tag list, which would make it a property of the instrument | **4.01× → 4.01×** and **2.01× → 2.10×**; every cell not involving tier 0 identical to two decimals |
 | **Testing another asset first REDUCES the goodwill charge** | the single-step measurement run against a published worked example | the sequenced and goodwill-first branches agreeing, which would make the ordering inert | a \$850 prior charge converts a \$700 goodwill impairment to **\$0**; the offset is one-for-one inside the region |
@@ -1710,7 +1712,8 @@ Bleck and Liu — is retained in §§3.2 and 10, where it does honest work as de
 attribution rather than as a claim this paper can support.
 
 The crash paper is a later paper in this corpus, written with a price line and after the reading
-queue in §10 is discharged. **A framing that has to be argued for in the paper that introduces a
+list in `docs/papers/paper-III-dual-tensor/POSITIONING-002-second-pass.md` §6 — which that file
+still marks undischarged — is discharged. **A framing that has to be argued for in the paper that introduces a
 theorem is a framing that will be argued about instead of the theorem.**
 
 ---
