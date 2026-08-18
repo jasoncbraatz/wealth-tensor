@@ -3,7 +3,7 @@ project: wealth-tensor
 session_n: 83
 gh_repo: jasoncbraatz/wealth-tensor
 branch: main
-gh_sha: 7a6588e0ab6fc6abb356558edbe7da793f7c0caa
+gh_sha: ae3557b4de222232912c82551a6af626cd7ba01f
 updated: 2026-08-18
 session: wealthTensor-83
 live_theme: "THE PREDICTION HELD, AND THE THING THAT CAUGHT THE ONE SURVIVOR WAS THE LEDGER'S OWN FALSIFICATION PROCEDURE. -82 replaced eleven passes of sampling with one enumeration: 127 promises, adjudicated against the artefacts, 2 failed — and it wrote a prediction its own pass could not settle, that the next reader-pass would return materially fewer than 5-of-9 promise-shaped findings. -83 ran the ordinary pass. FOUR findings, 1 OF 4 PROMISE-SHAPED against -80's and -81's 5 of 9. THE PREDICTION HELD, and enumeration is the first of five proposed mechanisms to survive its own next pass — four died one pass after being proposed, each explained by the pass whose number it explained. The shape moved the way the mechanism says: deferral-with-empty-target held at 2, exactly where -80 and -81 had it, while the promise column collapsed 5 to 1. WHAT THE ONE SURVIVOR MEANS IS THE REAL FINDING. III-1 names data/pre-002-events.json and wt148 EMITTED that exact (sentence, artefact) pair — so it is neither branch (a) an instrument gap nor branch (b) a mis-defined class. Row 93662b4195 was adjudicated H against a DIFFERENT artefact from the one its sentence names, found a number that agreed, and stopped. THE ADJUDICATIONS ARE AN ARTEFACT TOO. '2 of 127' is true only if the other 125 rows are, and nobody has measured how often they are."
