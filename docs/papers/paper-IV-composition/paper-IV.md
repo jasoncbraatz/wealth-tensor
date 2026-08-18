@@ -124,8 +124,10 @@ It is that a predecessor was solving a differently-constrained problem, and the 
 No new model code and no new simulation. Papers II and III carry the computational results and their
 test suites; this paper cites them as established and adds one measurement of its own, on the
 literature rather than on the model. Numbers appearing below without a citation to II or III come
-from two places and §10 names the command for each: §6's are `REG-013`'s, and §5's and §8's are the
-output of the fourth paper's apparatus, which is still in this repository and still runs.
+from two places and §10 names the record for each: §6's are `REG-013`'s, and its record is the
+committed output of that run rather than a command, because the instrument re-queries a live
+database; §5's and §8's are the output of the fourth paper's apparatus, which is still in this
+repository and still runs.
 
 ---
 
