@@ -3,7 +3,7 @@ project: wealth-tensor
 session_n: 78
 gh_repo: jasoncbraatz/wealth-tensor
 branch: main
-gh_sha: PENDING
+gh_sha: 3a11f1dd44223498ce5480a42a8aa57a89698cec
 updated: 2026-08-18
 session: wealthTensor-78
 live_theme: "THE SECOND FROZEN PASS IS THE CONTROL FOR -77's OWN MECHANISM, AND THE MECHANISM DOES NOT SURVIVE. Paper II's eighth independent P7 read, five inherited axes, nothing invented, A6 still parked. TWO findings — the FIRST DECAYING COUNT in the project's history — and the per-finding residue column -77 asked for reads 0 OF 2. Neither finding touches text -77 wrote; one of them blames to 3b11f23, the very commit §7 pins, which means it was in the tree for ALL EIGHT reads and every one of them missed it, including the two that ran A5 at the very file it lives in. So the counter is explained by neither new instruments (-77 killed that) nor repair residue (-78 kills this). What is left is DEPTH OF APPLICATION — and unlike residue, it leaves a zero REACHABLE, because an axis exhausted at its own sites stays exhausted."
