@@ -4088,3 +4088,63 @@ attempted with a frozen instrument set** — which is now a measured statement a
 than an impression about the papers.
 
 ---
+
+---
+
+## WT-125 · METHOD · 2026-08-18
+**The frozen-instrument pass returned three, not zero — and the control disagrees with the story the project has been telling itself.**
+
+`wealthTensor-77`. Paper II's **seventh** independent `P7` read, and the first in this
+project's history run with the instrument set **held still**: `docs/p7-passes.tsv`'s matrix
+read Paper II **5 of 5 axes** before the pass began, so `A1`–`A5` were all run and **nothing
+was invented**. `REVIEW-017`. Counter: 9 → 2 → 4 → 3 → 4 → 5 → **3**.
+
+**Three findings, three repairs (`wt137`), zero carded.**
+
+* **`II-32`** — §7's opening sentence (written at `-76`) says §3.4's Gini ceiling
+  (*N*−1)/*N* = 0.99875 *"is printed by no command here"*; **seven lines below**, §7's
+  regeneration bullet excepts only the *four* closed-form quantities, and **§1's contribution 5**
+  excepts nothing at all. Confirmed: `0.99875` appears **zero** times in either named command's
+  stdout. `II-27`'s shape at `II-27`'s own site, one pass later — and the residue of `-76`'s own
+  `II-31`, which landed at two sites of four. **Repaired by moving the prose**, the inverse of
+  `II-27`, because §7's intro is the sentence that is *right*.
+* **`II-33`** — §3.4 says the unopposed process reads 0.994 *"short of the 0.99875 ceiling"* and,
+  twelve lines later, that a gap of 0.103 has an *"upper edge [that] is the saturation ceiling
+  itself."* Falsified by its own arithmetic (0.994 − 0.891 = 0.103; 0.99875 − 0.891 = 0.10775).
+  **The section whose entire contribution is separating "saturated" from "at the ceiling"
+  conflates them in its own summary.**
+* **`II-34`** — §5.5 offers `test_the_result_is_not_a_lucky_seed` as the sole mitigation for *"one
+  seed per reported figure"*. Every reported figure is at *T* = 1200; that test runs at
+  **`T` = 600**, and §3.4 says in the paper's own words that the Gini — the statistic the band is
+  on — is **not** horizon-stable. **Measured before asserted:** both bands hold at *T* = 1200
+  (stock 0.4318–0.4451, flow 0.3867–0.3957). Claim true, guard short → **repair the promise**.
+  Guard honesty proven at the new horizon in both directions. **Test count held at 18.**
+
+**THE METHOD RESULT, AND IT IS THE ENTRY.** The standing explanation for seven sessions of
+non-decaying counters was *"each pass brought a new instrument."* `-76` made that a three-data-point
+claim. **`-77` is the control and it returned three anyway.** Two of seven ledger rows now cut
+against the anecdote (`-71`, `-77`), and `-77`'s is the stronger because the freeze was deliberate.
+
+**The alternative mechanism, offered as testable rather than asserted: a repair pass creates
+surface.** Two of `-77`'s three findings (`II-32`, `II-33`) are residue of `-76`'s repairs and
+re-derivations. If that holds generally, **two consecutive zero-finding passes may be unreachable
+by construction while any pass still repairs anything** — the first zero needs a predecessor that
+changed nothing. `-78` inherits four edits and no new axis, so its count tests exactly this.
+
+**And `filled is not exhausted` is now two-for-two.** `-76`'s `II-27` came from a cell `-74` had
+filled; `-77`'s `II-34` came from a cell `-76` had filled — `A5` pointed at the artefact §5 names
+rather than only the ones §7 names. Every re-entry of a "filled" cell has paid.
+
+*Cleared and worth as much as a finding:* §7 names the failure mode *"a sentence whose truth changes
+… which nothing in the repository was watching"* — so the 18-test count was checked for a watchdog
+and **has one** (`test_paper_test_counts_are_derived.py`, `assert live == 18`). A live `A2` candidate
+killed by the repository. Two more live candidates died on inspection and are recorded in
+`REVIEW-017` §3 (`D16`, `D17`) rather than manufactured into findings.
+
+*Estate, closed not carded:* `-76`'s teed-up `G-AL` observation is **FALSIFIED**. The three-line diff
+is **empty** — `G-AL` prints in both invocations. `-76` also read the exit codes backwards: with
+`GATE_ROSTER_WHO` set the gate exits **1**, not 0, because `G-AL` correctly fires with a named
+remedy. The gate is healthier than the note claimed; the note is deleted and nothing was filed.
+
+Suite **1078 passed, 0 failed** (68.24 s). `wt133` **RC 0**. Coach **RC 0**, Paper II at baseline
+**2 / 0**, before and after. Tags run to **`wt138`**; `wt139` is free.

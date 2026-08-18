@@ -86,7 +86,8 @@ came from.
    condensed economy also stops rising, and a drift test scores total condensation as bounded
    (§3.4).
 5. A **reproducible artefact**: every number below is regenerated from a public repository by
-   the two commands §7 names, and the claims are held in place by the 18 tests in
+   the two commands §7 names — save §3.4's Gini ceiling, which is arithmetic in *N* and is
+   printed by neither — and the claims are held in place by the 18 tests in
    `tests/test_redistribution.py`, one of which exists specifically to make overclaiming fail
    loudly — alongside a second, in a companion module of the same suite, that does the same
    office for the companion price-formation manuscript (§7).
@@ -316,8 +317,9 @@ drift test was measuring the ceiling.
 The criterion now requires a settled Gini **and** a top decile below 0.90 — and it is the
 second condition that does all of the separating. Across §3.1's full rate sweep — wider than the
 six rows tabulated there — the bounded runs' Gini spans 0.000–0.891 against the condensed run's
-0.994 — a gap of 0.103 whose upper edge is the saturation ceiling itself, so any Gini threshold
-would have to be drawn inside it and redrawn for every *N*; their top
+0.994 — a gap of 0.103 whose upper edge is a *saturated reading* and not the 0.99875 ceiling it
+falls short of, so any Gini threshold would have to be drawn inside it and redrawn for every
+*N*; their top
 decile spans 0.100–0.861 against 1.000, clearing the 0.90 threshold with 0.039 to spare. The
 top-share statistic is also horizon-stable where the Gini is not.
 
@@ -378,8 +380,9 @@ criterion fails loudly instead of quietly re-scoring condensation as success.
    quantities §7 names: §3.1's E[η⁺] and its three Var[log *a*] values, which are quadrature,
    and §3.4's Gini ceiling, which is arithmetic in *N*. Seed-robustness is asserted
    separately rather than averaged
-   in: `test_the_result_is_not_a_lucky_seed` holds two configurations inside a stated band
-   across five seeds. The qualitative separations are large relative to that band, but the
+   in: `test_the_result_is_not_a_lucky_seed` holds two configurations inside their stated
+   bands across five seeds, at the reported *T* = 1200 as well as at the suite's *T* = 600.
+   The qualitative separations are large relative to those bands, but the
    third decimal is not defended.
 6. **Growth shocks are Gaussian and i.i.d. across agents and time.** Heavy tails and
    autocorrelation both plausibly matter and neither is explored.
@@ -445,7 +448,8 @@ ceiling (*N*−1)/*N* = 0.99875, which is arithmetic in *N* and is printed by no
 - **Regenerate every number in §3:** `python3 scripts/wt030_report.py` — except §3.1's four
   closed-form quantities: E[η⁺] = 0.1073 and the three Var[log *a*] values, which are quadrature
   over the multiplier's distribution rather than
-  simulation output and come from `python3 scripts/wt077_tail_index.py`. The two commands are named
+  simulation output and come from `python3 scripts/wt077_tail_index.py`, and except §3.4's Gini
+  ceiling, which is arithmetic in *N* and is printed by neither. The two commands are named
   separately because a single command named for numbers it does not produce is a provenance claim
   that reads as checked and is not.
 - **Test suite:** `python3 -m pytest tests/ -q` runs the whole repository; the **18** tests in

@@ -34,6 +34,7 @@ wealthTensor-73	paper-III	7	new+inherited-first-application	scripts/wt130_quanti
 wealthTensor-74	paper-II	4	new+inherited-first-application	A4 run-the-manuscript's-own-regeneration-commands (non-script, originates here); plus scripts/wt133_crossref_sweep.py (A3 scripted here, first on paper-II)	2 of 4	REVIEW-014: "Those runs are what produced findings II-22 and II-23." OVERLAPS with the same document's "3 of the 4 findings below" credited to wt130 — 3+2 > 4, so at least one finding is credited twice. Do not sum.
 wealthTensor-75	paper-IV	6	new+inherited-first-application	A5 grep-each-module-against-its-paired-script (non-script, originates here); plus wt133 and A4, both first on paper-IV	NOT-STATED	REVIEW-015 credits the reader row with all "6 findings" and gives no per-finding instrument split. IV-2(a) is credited to the A5 grep, IV-2(c) to the executed commands, and IV-1's second half explicitly to the reader alone ("only a reader finds the ones that resolve to the wrong thing").
 wealthTensor-76	paper-II	5	inherited-first-application	A5 grep-each-module-against-its-paired-script + run every command §7 names (-75's axis, first on paper-II)	2 of 5	REVIEW-016 §1.2. II-27 from diffing the named command's output against §3; II-30 from grepping the file §7 names. II-28, II-29 and II-31 came from reading.
+wealthTensor-77	paper-II	3	none	— (all five axes inherited; Paper II was 5 of 5 before this pass and the handoff forbade a sixth while Paper III has three empty cells)	0 of 3	REVIEW-017. THE CONTROL ROW. First pass in the project run with the instrument set held still, and it returned THREE, not zero. Two of the three (II-32, II-33) are residue of -76's own repairs; one (II-34) is A5 pointed at §5 instead of §7 — a cell -76 had already filled. See REVIEW-017 §5: a repair pass creates surface, which is a reason for a non-zero count that has nothing to do with new instruments.
 #
 # ================= THE AXIS MATRIX — 5 AXES x 3 MANUSCRIPTS = 15 CELLS =================
 # Derived from the rows above plus REVIEW-009..016. A cell is FILLED if that axis has been applied
@@ -55,7 +56,16 @@ wealthTensor-76	paper-II	5	inherited-first-application	A5 grep-each-module-again
 #   from here their counters CAN decay and a zero would mean something. PAPER III IS AT 2/5 and
 #   its counter is not yet measuring the manuscript — it is measuring the toolkit.
 #
-# THE CAVEAT THAT KEEPS THIS HONEST: FILLED IS NOT EXHAUSTED. -76's II-27 came out of A4, a cell
-# -74 had ALREADY filled on Paper II — because -74 ran the commands and did not diff their output
-# against §3 cell by cell. A filled cell is a floor, not a certificate. Read this matrix as "which
-# axes have never been pointed at this manuscript", never as "which axes are done with it".
+# THE CAVEAT THAT KEEPS THIS HONEST: FILLED IS NOT EXHAUSTED, AND IT IS NOW TWO-FOR-TWO.
+# -76's II-27 came out of A4, a cell -74 had ALREADY filled on Paper II — because -74 ran the
+# commands and did not diff their output against §3 cell by cell. -77's II-34 came out of A5, a
+# cell -76 had already filled — because -76 ran A5 against the artefacts §7 names and the
+# manuscript names one in §5 too. EVERY TIME A "FILLED" CELL HAS BEEN RE-ENTERED IT HAS PAID.
+# A filled cell is a floor, not a certificate. Read this matrix as "which axes have never been
+# pointed at this manuscript", never as "which axes are done with it".
+#
+# WHAT -77 ADDS THAT NO OTHER ROW COULD: it is the CONTROL. `none` in new_instrument, three
+# findings out. Two of seven rows now cut against the new-instrument anecdote (-71, -77), and
+# -77's is the stronger because it was assigned a frozen set deliberately. REVIEW-017 §5 offers
+# the alternative mechanism — a repair pass creates surface for the next pass to read — and it
+# is testable at -78, which inherits four edits and nothing else new.

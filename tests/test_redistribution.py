@@ -249,9 +249,19 @@ def test_the_result_is_not_a_finite_size_artifact():
 
 
 def test_the_result_is_not_a_lucky_seed():
+    """wealthTensor-77, II-34. Paper II S5.5 offers THIS test as the mitigation for "one seed
+    per reported figure" -- and every reported figure is at T = 1200 while econ() runs at
+    T = 600. S3.4 says in the paper's own words that the top share "is also horizon-stable
+    where the Gini is not", and the band below is on the Gini, so a band checked only at half
+    the reported horizon did not reach the numbers it was offered for. Both horizons now.
+    Measured before asserted: at T = 1200 the two configurations read 0.4318-0.4451 and
+    0.3867-0.3957, inside the bands the T = 600 version already used.
+    """
     for base, rate, lo, hi in (("stock", 0.025, 0.35, 0.55), ("flow", 0.25, 0.30, 0.50)):
-        gs = [stationary_gini(econ(base=base, rate=rate, seed=s)) for s in range(5)]
-        assert all(lo < g < hi for g in gs)
+        for horizon in (T, 1200):
+            gs = [stationary_gini(RedistributiveEconomy(base=base, rate=rate, seed=s).run(horizon))
+                  for s in range(5)]
+            assert all(lo < g < hi for g in gs), f"{base} r={rate} T={horizon}: {gs}"
 
 
 # ------------------------------------------------------------------------------ plumbing
