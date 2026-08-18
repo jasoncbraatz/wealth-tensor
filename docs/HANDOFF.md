@@ -3,7 +3,7 @@ project: wealth-tensor
 session_n: 85
 gh_repo: jasoncbraatz/wealth-tensor
 branch: main
-gh_sha: PENDING
+gh_sha: 5182d05227384f36787e854765e953667e0fa5fa
 updated: 2026-08-18
 session: wealthTensor-85
 live_theme: "THE CENSUS IS RUN AND IT LANDED ON THE SAMPLE'S LOWER BOUND, WHICH IS THE FINDING. -84 read twelve rows by hand and got k=5 of 12, Wilson 95% [25, 88] of 129. -85 swept all 129 by machine and got K = 25 — INSIDE the interval, exactly ON its lower bound. That is not the sample having been unlucky high; it is what a pattern sweep MUST return, and one row proves it: 7e1c612368, the fourth row -84 filed as LOCATED, is not one. Its evidence was `grep -n WT-059`, a genuine read, of the artefact the row names — which REVIEW-024's own pattern list excludes in a parenthetical. The commissioned post-condition and the commissioned pattern set contradicted each other. Bending D1 until it caught a grep -n would have been a rescued control, so the real second failure mode got its own detector (D2, under-coverage: the sentence names two artefacts, the evidence opened one) — and D2 IMMEDIATELY caught f43958893d, the mirror row on the same sentence, which had read WT-062 and never WT-059. Neither half had read the other. A pattern sweep can only find the shapes someone has already read: D2 exists because a human read the row first. So the census is a FLOOR under the sample, not a replacement for it, and [25, 88] is not narrowed."
