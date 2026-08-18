@@ -19,6 +19,8 @@ definition_of_done: "Three preprints (II, III, IV) each at ready-to-submit per A
 
 # wealth-tensor — HANDOFF
 
+**ORIENT: read `docs/CO-AUTHOR-CHARTER.md` first. THE CHARTER WINS over anything in this file.**
+
 *Stamped by `scripts/handoff_gate.py --stamp`. If `gh_sha` above is not `HEAD`, this file was
 committed without stamping — read `git log` rather than believing it.*
 
