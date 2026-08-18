@@ -49,9 +49,11 @@ takes two.
 
 - ⚠ `roster join` returns RC=0 with **no output** on a re-join.
 - ⚠ `roster claim` syntax: `--who X --resource wealth-tensor --task "..."` — **resource is a NAMED flag.**
-- ▲ **NEW at -83: `roster join` now auto-claims `darwin-everything-meta`.** You do not have to
-  remember it and you should not remove it — see §ESTATE. Your session note in the everything
-  folder is now attributable, which is what killed three consecutive gates.
+- ▲ **NEW at -83: `roster join` now auto-claims the everything folder** (resource =
+  `~/Desktop/downloads`, expanded — the string `gate-selfcheck.sh` resolves, NOT a friendly
+  label; see §ESTATE for why that distinction cost a turn). You do not have to remember it and
+  you should not remove it. Your session note in the everything folder is now attributable,
+  which is what killed four consecutive gates.
 - Run `~/Scripts/rail` and `~/Scripts/roster who` before you touch anything. `opus-spi-menu` was
   live through -81, -82 and -83; at -83's wrap all three of its claims read STALE (>4h).
 
@@ -198,8 +200,11 @@ block properly or you will report a false positive. Forty-six of §7's forty-sev
 - **-83(v) · A SHARED-STATE CONVENTION THAT MUST BE REMEMBERED WILL BLOCK SOMEBODY ELSE'S WRAP, NOT
   YOURS — so the party who pays never learns and the party who forgets never notices.** Automate the
   convention at the only moment the forgetful party is guaranteed to act.
+- **-83(vi) · TEST A FIX AGAINST THE THING IT IS SUPPOSED TO UNBLOCK, NOT AGAINST ITS OWN
+  DESCRIPTION.** A fix whose post-conditions all describe the FIX rather than the SYMPTOM can pass
+  completely and change nothing. Six green post-conditions, and the gate failed identically.
 
-Six leaves banked (five global), four corroborated — one promoted quarantine → active.
+Seven leaves banked (six global), four corroborated — one promoted quarantine → active.
 
 ---
 
@@ -228,15 +233,37 @@ file; 120 + 202 = 322. Not repaired in-pass on purpose — it is a committed res
 registered run, and editing one to fix a summary slip wants its own ruling rather than a
 reader-pass's initiative. **Paper III is unaffected: it prints 322 in both places it prints it.**
 
-**▲ THE THREE-SESSION GATE BLOCKER IS RETIRED.** State Machine **1217586882284748** — the spec was
-its second-to-last comment and -82 declined to land it only because `~/Scripts/roster` was live in a
-sibling's hands. At -83 the everything folder was unclaimed and every sibling claim read STALE, so
-it landed: **`roster join` now auto-claims `darwin-everything-meta`**, written atomically
-(`tempfile` + `os.replace`) so a sibling invoking `roster` mid-write sees the old file or the new
-one, never a partial. Backup at `~/Scripts/roster.bak-wealthTensor-83`. **6/6 post-conditions, 3
-NEGATIVE, including the card's own falsifier run in-pass** — join a throwaway, the claim appears;
-release it, it is gone; the wrapping session and the sibling are untouched. Fails safe: no claim,
-and the file blocks exactly as it does today.
+**▲ THE FOUR-SESSION GATE BLOCKER IS RETIRED — AND THE FIX AS SPECIFIED WOULD NOT HAVE WORKED.**
+State Machine **1217586882284748**. -82 declined to land it only because `~/Scripts/roster` was
+live in a sibling's hands; at -83 the everything folder was unclaimed and every sibling claim read
+STALE, so it landed. `~/Scripts` @ **73fe7ed**.
+
+**Read this part even if you never touch the roster, because the mistake is the transferable bit.**
+The card specifies the fix by NAME: file a roster claim on `darwin-everything-meta`. That is what
+the first cut did, atomically (`tempfile` + `os.replace`), with **6/6 post-conditions, 3 NEGATIVE**,
+including the card's own falsifier. **It would have shipped doing nothing.**
+`gate-selfcheck.sh`'s `_roster_other_claimant()` matches a claim's `resource` against
+`basename(repo)` OR the repo's absolute path **and nothing else** — so a friendly label is a claim
+the gate cannot see. Every one of those six post-conditions described the FIX (does a claim appear?
+is it attributed? does releasing it work?) and none described the SYMPTOM (does the gate stop
+blocking?). **It was caught by running the gate**, which still failed on the same file with the
+same message. `EVERYTHING_FOLDER` is now `os.path.expanduser("~/Desktop/downloads")`.
+
+The auto-claim adds one row to every joined session, which broke six of
+`roster-ghost-drill.sh`'s row-count expectations. Bumping a control's numbers to make it pass is
+the rescued-control move, so it did not ship alone: three new assertions pin the extra row to the
+resource BY NAME (one positive, two CONTROL), and the drill **LIFTS** the constant out of `roster`
+rather than retyping it. Drill goes 15 checks / 7 controls -> **18 / 9**, all green.
+
+**Verified end to end, which is the only reason it is called closed:**
+
+```
+before:  FAIL  ~/Desktop/downloads   DIRTY(1)   ... reported as YOURS
+after:   warn  ~/Desktop/downloads   DIRTY(1,claimed:opus-spi-menu)
+GATE SELF-CHECK: PASS
+```
+
+Backups: `roster.bak-wealthTensor-83{,b}`, `roster-ghost-drill.sh.bak-wealthTensor-83{,b}`.
 
 **Standing cards, unchanged:** 1217593142996092 (wt133 sweep 2 one-directional), 1217568297674954
 (version stamp), 1217568192511533 (Paper II's nine orphans), 1217596263441666 (roster-brake exit #1),
