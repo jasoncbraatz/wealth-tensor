@@ -41,6 +41,21 @@ def test_but_the_curves_themselves_are_not_invariant():
     assert len(curves) == 25
 
 
+def test_the_twelve_point_grid_returns_the_four_schedules_section_8_reports():
+    """Paper IV §8's abandoned approach, asserted rather than remembered.
+
+    §8 reports that §5's identity was first measured on a 12-point grid spanning the full range
+    of reservation prices and returned FOUR distinct excess-demand schedules rather than one --
+    two grid endpoints x two holding states. Until wealthTensor-86 the manuscript said that four
+    was ASSERTED by this module, and it was not: the twelve-point test above counts DEMAND curves
+    (25) and never builds the excess-demand set at all. The number is asserted here, so §8's
+    figure is checked by the suite rather than carried in a paragraph.
+    """
+    grid = np.linspace(M.min(), M.max(), 12)
+    excess = {tuple(mk.excess_demand(float(p)) for p in grid) for mk in allocations()}
+    assert len(excess) == 4
+
+
 def test_excess_demand_is_identically_invariant_to_the_allocation():
     """The sharper form of the claim, and the one the paper leads with.
 

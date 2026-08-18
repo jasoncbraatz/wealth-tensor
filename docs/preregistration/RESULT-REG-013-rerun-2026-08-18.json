@@ -1,0 +1,289 @@
+{
+  "n_max": 4000,
+  "clusters": {
+    "T": {
+      "seeds_asked": 7,
+      "seeds_resolved": 7,
+      "audience": 4000,
+      "cap_bound": true,
+      "under_powered": false
+    },
+    "S": {
+      "seeds_asked": 6,
+      "seeds_resolved": 6,
+      "audience": 1139,
+      "cap_bound": false,
+      "under_powered": false
+    },
+    "K": {
+      "seeds_asked": 6,
+      "seeds_resolved": 6,
+      "audience": 1383,
+      "cap_bound": false,
+      "under_powered": false
+    },
+    "X": {
+      "seeds_asked": 6,
+      "seeds_resolved": 6,
+      "audience": 4000,
+      "cap_bound": true,
+      "under_powered": false
+    }
+  },
+  "seeds": {
+    "T": [
+      {
+        "asked": "The Entropy Law and the Economic Process",
+        "year": 1971,
+        "resolved": "W4301267015",
+        "as": "The Entropy Law and the Economic Process",
+        "cited_by": 4840
+      },
+      {
+        "asked": "The Economic Growth Engine",
+        "year": 2009,
+        "resolved": "W599717221",
+        "as": "The Economic Growth Engine: How Energy and Work Drive Material Prosperity",
+        "cited_by": 259
+      },
+      {
+        "asked": "Accounting for growth: the role of physical work",
+        "year": 2005,
+        "resolved": "W1999991401",
+        "as": "Accounting for growth: the role of physical work",
+        "cited_by": 386
+      },
+      {
+        "asked": "Energy and the Wealth of Nations",
+        "year": 2012,
+        "resolved": "W2784652317",
+        "as": "Energy and the Wealth of Nations : Understanding the Biophysical Economy",
+        "cited_by": 251
+      },
+      {
+        "asked": "Environmental Accounting: Emergy and Environmental Decision Making",
+        "year": 1996,
+        "resolved": "W2057002878",
+        "as": "Environmental accounting: EMERGY and environmental decision making",
+        "cited_by": 2125
+      },
+      {
+        "asked": "Steady-State Economics",
+        "year": 1977,
+        "resolved": "W578084117",
+        "as": "Steady-state economics: The economics of biophysical equilibrium and moral growth",
+        "cited_by": 304
+      },
+      {
+        "asked": "The Second Law of Economics",
+        "year": 2011,
+        "resolved": "W2494434296",
+        "as": "The Second Law of Economics",
+        "cited_by": 109
+      }
+    ],
+    "S": [
+      {
+        "asked": "Monetary Economics: An Integrated Approach to Credit, Money, Income, Production and Wealth",
+        "year": 2007,
+        "resolved": "W3142658434",
+        "as": "Monetary Economics: An Integrated Approach to Credit, Money, Income, Production and Wealth",
+        "cited_by": 586
+      },
+      {
+        "asked": "Post-Keynesian stock-flow-consistent modelling: a survey",
+        "year": 2015,
+        "resolved": "W2063101294",
+        "as": "Post-Keynesian stock-flow-consistent modelling: a survey",
+        "cited_by": 163
+      },
+      {
+        "asked": "Stock-flow consistent macroeconomic models: a survey",
+        "year": 2017,
+        "resolved": "W2619187398",
+        "as": "STOCK\u2010FLOW CONSISTENT MACROECONOMIC MODELS: A SURVEY",
+        "cited_by": 140
+      },
+      {
+        "asked": "Seven unsustainable processes",
+        "year": 1999,
+        "resolved": "W3121836316",
+        "as": "Seven Unsustainable Processes: Medium-Term Prospects and Policies for the United States and the World",
+        "cited_by": 83
+      },
+      {
+        "asked": "Post-Keynesian Economics: New Foundations",
+        "year": 2014,
+        "resolved": "W3122322896",
+        "as": "Post-Keynesian economics: new foundations",
+        "cited_by": 353
+      },
+      {
+        "asked": "Keynesian theorising during hard times",
+        "year": 2005,
+        "resolved": "W2100379291",
+        "as": "Keynesian theorising during hard times: stock-flow consistent models as an unexplored \u2018frontier\u2019 of Keynesian macroeconomics",
+        "cited_by": 79
+      }
+    ],
+    "K": [
+      {
+        "asked": "Statistical mechanics of money",
+        "year": 2000,
+        "resolved": "W2035169993",
+        "as": "Statistical mechanics of money",
+        "cited_by": 547
+      },
+      {
+        "asked": "Statistical mechanics of money: how saving propensity affects its distribution",
+        "year": 2000,
+        "resolved": "W1978341896",
+        "as": "Statistical mechanics of money: how saving propensity affects its distribution",
+        "cited_by": 426
+      },
+      {
+        "asked": "Wealth condensation in a simple model of economy",
+        "year": 2000,
+        "resolved": "W2098353707",
+        "as": "Wealth condensation in a simple model of economy",
+        "cited_by": 573
+      },
+      {
+        "asked": "Kinetic exchange models for income and wealth distributions",
+        "year": 2007,
+        "resolved": "W2143240768",
+        "as": "Kinetic exchange models for income and wealth distributions",
+        "cited_by": 173
+      },
+      {
+        "asked": "Colloquium: Statistical mechanics of money, wealth, and income",
+        "year": 2009,
+        "resolved": "W2031849821",
+        "as": "<i>Colloquium</i>: Statistical mechanics of money, wealth, and income",
+        "cited_by": 501
+      },
+      {
+        "asked": "Statistical model with a standard Gamma distribution",
+        "year": 2004,
+        "resolved": "W2601333143",
+        "as": "Statistical model with a standard Gamma distribution",
+        "cited_by": 10
+      }
+    ],
+    "X": [
+      {
+        "asked": "A Programmable Dual-RNA-Guided DNA Endonuclease in Adaptive Bacterial Immunity",
+        "year": 2012,
+        "resolved": "W2045435533",
+        "as": "A Programmable Dual-RNA\u2013Guided DNA Endonuclease in Adaptive Bacterial Immunity",
+        "cited_by": 17509
+      },
+      {
+        "asked": "Multiplex Genome Engineering Using CRISPR/Cas Systems",
+        "year": 2013,
+        "resolved": "W2064815984",
+        "as": "Multiplex Genome Engineering Using CRISPR/Cas Systems",
+        "cited_by": 15892
+      },
+      {
+        "asked": "RNA-Guided Human Genome Engineering via Cas9",
+        "year": 2013,
+        "resolved": "W2003171404",
+        "as": "RNA-Guided Human Genome Engineering via Cas9",
+        "cited_by": 9470
+      },
+      {
+        "asked": "The new frontier of genome engineering with CRISPR-Cas9",
+        "year": 2014,
+        "resolved": "W2050480410",
+        "as": "The new frontier of genome engineering with CRISPR-Cas9",
+        "cited_by": 7069
+      },
+      {
+        "asked": "Genome engineering using the CRISPR-Cas9 system",
+        "year": 2013,
+        "resolved": "W1977709885",
+        "as": "Genome engineering using the CRISPR-Cas9 system",
+        "cited_by": 11859
+      },
+      {
+        "asked": "Programmable editing of a target base in genomic DNA without double-stranded DNA cleavage",
+        "year": 2016,
+        "resolved": "W2336828812",
+        "as": "Programmable editing of a target base in genomic DNA without double-stranded DNA cleavage",
+        "cited_by": 5558
+      }
+    ]
+  },
+  "pairs": {
+    "T,X": {
+      "overlap": 0.0,
+      "intersection": 0,
+      "min_size": 4000,
+      "role": "floor"
+    },
+    "S,X": {
+      "overlap": 0.0,
+      "intersection": 0,
+      "min_size": 1139,
+      "role": "floor"
+    },
+    "K,X": {
+      "overlap": 0.0,
+      "intersection": 0,
+      "min_size": 1383,
+      "role": "floor"
+    },
+    "T,S": {
+      "overlap": 0.02019315188762072,
+      "intersection": 23,
+      "min_size": 1139,
+      "z": 0.04230690648142758,
+      "verdict": "WHITESPACE",
+      "role": "target"
+    },
+    "T,K": {
+      "overlap": 0.010845986984815618,
+      "intersection": 15,
+      "min_size": 1383,
+      "z": 0.02272355299554183,
+      "verdict": "WHITESPACE",
+      "role": "target"
+    },
+    "S,K": {
+      "overlap": 0.0052677787532923615,
+      "intersection": 6,
+      "min_size": 1139,
+      "z": 0.011036584299502845,
+      "verdict": "WHITESPACE",
+      "role": "target"
+    }
+  },
+  "ceiling": {
+    "T": {
+      "overlap": 0.16813048933500627,
+      "intersection": 134,
+      "min_size": 797,
+      "even_seeds": 4,
+      "odd_seeds": 3
+    },
+    "S": {
+      "overlap": 0.5201342281879194,
+      "intersection": 155,
+      "min_size": 298,
+      "even_seeds": 3,
+      "odd_seeds": 3
+    },
+    "K": {
+      "overlap": 0.7436399217221135,
+      "intersection": 380,
+      "min_size": 511,
+      "even_seeds": 3,
+      "odd_seeds": 3
+    }
+  },
+  "P_ceiling": 0.47730154641501304,
+  "F_floor": 0.0,
+  "void": false,
+  "H1": "SURVIVES"
+}
