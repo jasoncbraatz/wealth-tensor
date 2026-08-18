@@ -3,7 +3,7 @@ project: wealth-tensor
 session_n: 82
 gh_repo: jasoncbraatz/wealth-tensor
 branch: main
-gh_sha: 75ab2b997ae48298ddf86f745ba145d00afb03fb
+gh_sha: 14272ecafc3549b148202ae7a7b86b02a7beb5e4
 updated: 2026-08-18
 session: wealthTensor-82
 live_theme: "THE CLASS WAS ENUMERABLE, IT WAS ENUMERATED, AND IT CAME OUT AT 2 OF 127. Eleven reader-passes sampled one defect shape and told four different stories about the sampling rate; every story was proposed by the pass whose own number it explained and killed by the next pass. -80 and -81 stopped theorising long enough to MEASURE something instead: 5 of 9 and 5 of 9 findings, two manuscripts, two reviewers, one shape — a sentence whose subject is a named artefact, asserting what it does for a reader, where it does not. -82 built scripts/wt148_promise_sweep.py, emitted every (sentence, named artefact) pair in the corpus, and adjudicated all 127 in scope by RUNNING OR READING the artefact. TWO FAILED. Both were real, both had survived eleven passes, and both are ones a reader structurally could not catch: one needs a five-minute network run to fail (paper-IV §10's `Regenerate §6` command exits 1 on HTTP 429 and could not regenerate §6 even at RC 0), one needs reading a 93-line log to the end and noticing an ABSENCE (paper-III §11 promised a per-tier drop accounting that has never existed in any artefact, and told the reader to run a check on it). NEITHER POLE OF THE FALSIFIER: not reviewer noise, not an inexhaustible corpus. The class is drainable and it is drained on III and IV. What -82 leaves is the first prediction in twelve rows that can be WRONG in a stated way, and the mechanical branch to run if it is."
