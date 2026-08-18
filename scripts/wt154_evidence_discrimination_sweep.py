@@ -78,8 +78,8 @@ reported under `unreproducible` in --json and named in REVIEW-025 §4, but it do
 flag, because widening this sweep's criterion to cover it would make the census
 incomparable with REVIEW-024's sample, which scored on discrimination alone.
 
-18 rows carry `git log/cat-file on darwin, wealthTensor-82`. `git log` and `git cat-file`
-print content — commit messages, dates, paths touched, blob bodies — so they are reads.
+18 rows carry `git log/cat-file on darwin, wealthTensor-82`. `git log`, `git show` and
+`git cat-file` print content — commit messages, dates, paths touched, blob bodies — so they are reads.
 The rows are terse, but terse is not the defect this sweep measures.
 
 EXIT CODES (load-bearing)
@@ -159,7 +159,8 @@ GREP = re.compile(r"\bgrep\b(?:\s+-(?P<flags>[A-Za-z]+))?", re.I)
 # print only names, sizes and dates, so they are absent by construction.
 READ_OPS = (
     r"\bread\b", r"\bsed\s+-n", r"\bhead\s+-", r"\btail\s+-", r"\bcat\b",
-    r"\bcat-file\b", r"\bgit\s+log\b", r"\bwc\s+-", r"\bshasum\b",
+    r"\bcat-file\b", r"\bgit\s+log\b", r"\bgit\s+show\b", r"\bwc\s+-",
+    r"\bshasum\b",
     r"\bpython3?\s", r"\bwt\d{2,3}\b", r"tests?/test_", r"\brun on darwin\b", r"§",
 )
 FILEISH = re.compile(r"[\w./-]+\.(?:py|md|json|tsv|log|txt)\b")
