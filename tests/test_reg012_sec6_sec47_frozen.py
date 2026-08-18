@@ -125,6 +125,20 @@ AMENDMENTS: tuple[Amendment, ...] = (
         ),
         digest_after="69374513a57f699498da7568afb4ad6ad0af9c97ef4f7b4814a46d5fd375e7ad",
     ),
+    Amendment(
+        sha="74734de",
+        licence=(
+            "wealthTensor-73's first independent read of Paper III (wt131, III-7). "
+            "Section 4.7 attributed its floor of 30 to Paper III's own section 5, which "
+            "states no floor of 30 anywhere and whose published tier cells run as low "
+            "as 21; the floor is REG-009 section 3b's inherited THIN line. The clause "
+            "now names the floor without attributing it, so the sentence claims only "
+            "what a reader can check. Licensed by a review of the manuscript against "
+            "itself, not by any measurement of the band count's edge phase; nothing "
+            "here reads REG-012's result or its branch."
+        ),
+        digest_after="8608601162cb03efef17083c5250faf1e9d4dfa7ec99bfb087b74190ce7df3c3",
+    ),
 )
 
 #: SHA-256 of §4.7 as the working tree carries it now. Moves only with an `AMENDMENTS`

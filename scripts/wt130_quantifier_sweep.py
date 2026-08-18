@@ -19,6 +19,11 @@ one question: does anything below this sentence belong to the set it just counte
 is it in it? Both II-17 and II-18 (wealthTensor-71) and all three of II-19/II-20/II-21
 (wealthTensor-72) fell out of exactly that, after surviving four to five prior passes.
 
+A COUNTING NOTE, because the first reading of this output was wrong and travelled three
+documents deep. "N lines" means LINES THAT CARRY A QUANTIFIER, never manuscript length --
+Paper III is 864 tokens on 668 such lines and is 2,685 lines long. Every print site below
+now says so; do not restate it as a manuscript size (wealthTensor-73, LEDGER WT-119 §1).
+
     python3 scripts/wt130_quantifier_sweep.py                 # all four manuscripts, counts
     python3 scripts/wt130_quantifier_sweep.py paper-II        # one paper, full enumeration
     python3 scripts/wt130_quantifier_sweep.py paper-II --md   # markdown, for a REVIEW doc
@@ -51,6 +56,13 @@ def sweep(path):
     return rows, n
 
 
+def n_lines(path):
+    """The manuscript's own length. Kept beside the sweep's count because the two were
+    conflated once: `wt130`'s "N lines" is lines that CARRY a quantifier (wealthTensor-73,
+    LEDGER WT-119 §1)."""
+    return len(path.read_text(encoding="utf-8").splitlines())
+
+
 def main(argv):
     md = "--md" in argv
     sel = [a for a in argv if not a.startswith("--")]
@@ -62,15 +74,18 @@ def main(argv):
         rows, n = sweep(p)
         rel = p.relative_to(ROOT)
         if len(papers) > 1 and not sel:
-            print(f"{p.parent.name:28s} {len(rows):4d} lines  {n:4d} quantifier tokens")
+            print(f"{p.parent.name:28s} {n:4d} quantifier tokens on "
+                  f"{len(rows):4d} of its {n_lines(p):5d} lines")
             continue
-        head = f"{rel} — {n} quantifier tokens on {len(rows)} lines"
+        head = (f"{rel} — {n} quantifier tokens on {len(rows)} lines that carry one, "
+                f"of {n_lines(p)} in the manuscript")
         print(f"**{head}**\n" if md else f"{head}\n{'=' * len(head)}")
         for ln, toks, text in rows:
             t = ",".join(toks)
             body = text[:150]
             print(f"| {ln} | `{t}` | {body} |" if md else f"{ln:5d} [{t}]  {body}")
-        print(f"\nTOTAL: {n} tokens / {len(rows)} lines")
+        print(f"\nTOTAL: {n} tokens on {len(rows)} lines that carry one; "
+              f"the manuscript is {n_lines(p)} lines long")
     return 0
 
 

@@ -3759,3 +3759,132 @@ absence predicate passes vacuously on a missing file*) rotated 180°: `-49` cove
 passes when it should not; this covers a guard that fails when nothing is wrong.
 
 ---
+
+## WT-119 · REVIEW · 2026-08-18 · wealthTensor-73 · **Paper III's first independent read**
+
+### Seven findings on a 2,685-line manuscript nobody had reviewed, and three of them are WT-117 again
+
+`REVIEW-013` is the pass of record. Paper III had received **zero** independent reads while
+Papers II and IV had six and three between them, which is why `-72` set aside `-70`'s
+"Paper II again" rule for one session. The sweep (`wt130`) enumerated **864 quantifier tokens on
+668 lines**; the manuscript was then read whole, 1–2,685.
+
+**Three are `WT-117`'s species exactly** — a claim about a set, falsified by the set:
+
+- **III-1.** §2: *"The word **crisis** is kept **in the title**."* The title is *"Timeliness and
+  durability are not separately identified from a reported series."*
+  `paper-III.md.bak-pre-roadtwo` dates the retitling — the old title opened *"A crisis is deferred
+  information arriving at once"* — and §8.2, written after, says the crisis framing belongs to a
+  later paper and *"is not defended here."* The note outlived the title it described.
+- **III-2.** §A.1.3: *"the regimes in which **each proposition** fails are committed, tested code."*
+  Two bullets follow. One is P2. The other is the φ = 1 switch-off, **which the bullet itself calls
+  "a separate and equally important point"** and which then says *"P2 still holds at φ = 1."*
+  P1 and P3 get nothing. The universal is carved out by its own list, four lines below it.
+- **III-3.** §11 scopes the repository's provenance to *"§A.2 and §2"* **four times** and labels
+  `wt027_report.py` *"Regenerate §2."* §2 carries no table and no measured number; that script's
+  own docstring lists three tables and they are §3.1's two and §3.2's. **§6.1 writes the same scope
+  correctly, twice**, as *"§A.2 and §§2–3."* `II-19`'s species with the right words 500 lines
+  upstream in the same paper.
+
+The other four are cross-reference and count defects of the same family:
+
+- **III-4.** §7's survivals row is titled *"The rectangle's **99.7%**"* while its own outcome cell
+  and §4.4 both report **0.998 / 99.8%**. 99.7% is not a rounding: `RESULT-REG-002` §4 says it is
+  E4's figure **at α = 0.35**, and the row ran at the measured α̂ = 0.408. A number imported across
+  a recognition rate into a title, with no other occurrence in the manuscript to reconcile it.
+- **III-5.** The Bleck and Liu entry credits *"§4.4 and §10"* and *"§4.4's volatility result."*
+  They are cited in **§3.2**, §8.2 and §10 — and §8.2 says so in terms, *"retained in §§3.2 and 10."*
+- **III-6.** The Jin and Myers entry names *"§10's **one** quotation"* and gives a sentence
+  **absent from the manuscript**, while §10 carries five quoted fragments from them — and the entry
+  then states the standard §10 is failing: *"a reader entitled to doubt that on a paraphrase should
+  be able to see the words."* §10 supplies exactly the paraphrase. Repaired by **restoring the
+  words**, which is the smaller change and the one the entry's own rule asks for. Separately, the
+  References' fourth-pass note says the crash-risk entries carry **✓⧗** and **none of them does**;
+  repaired by **append**, because the note is a dated record of what that pass found and what it
+  found was afterwards discharged.
+- **III-7.** §4.7's *"§5's floor of 30."* §5 states no floor of 30, its one use of the word is
+  *"the materiality floor"* with no value, and its own published tier cells run to **n = 21**. The
+  number is `REG-009`'s inherited `THIN` line.
+- **III-8, CARDED** with a falsifier: §11 names a regeneration command for §3, §A.2.3, §A.2.4 and
+  §5 and **none for §4**, which holds the paper's largest body of measured numbers — against a
+  front-matter claim that *"**every** computational result is produced by committed code in the
+  repository named in the data-availability statement."* III-3 repaired §11's label and establishes
+  nothing about §4.
+
+`wt131` · 13 edits, all guarded, census clean first try. Suite **1078 passed**. Coach RC 0,
+Paper III at its **5/0** baseline. Board unmoved at 66 criteria. Abstract and title byte-identical.
+
+---
+
+## WT-120 · TELL · 2026-08-18 · **fourth instance of WT-115** · wealthTensor-73
+
+### A CROSS-REFERENCE IS A QUANTIFIER OVER A SECTION, AND IT IS CHECKED THE SAME WAY AND BY A SCRIPT
+
+`WT-115` said quantifiers are contradicted downstream. `WT-117` said downstream includes four lines
+later. This is the third turn of the same screw and it is the one that mechanises:
+
+> **`§N.M` is a claim about what §N.M contains, and a claim about what a section contains is
+> falsifiable by reading that section — which a script can do and attention cannot.**
+
+Four of `-73`'s seven findings are this shape. III-3, III-5 and III-7 each name a section that does
+not carry what is attributed to it, and none of them is discoverable by reading the sentence they
+sit in: each reads perfectly, and each is wrong only against a section hundreds of lines away.
+
+**Two sweeps, both cheap, both re-runnable, and the ratio is worth recording honestly.**
+
+1. **Every `§N.M` in the body against the heading list.** Paper III: **zero unresolved** out of the
+   whole manuscript. A clean result, and it took ninety seconds. The one apparent miss — §4.4's
+   *"REG-003 §3.3"* — is `REG-003`'s own §3.3 and is the right one, which is the false-positive
+   class this sweep produces.
+2. **Every reference entry's *"cited in §N.M"* against that section's text**, by surname. Paper III:
+   33 entries, 41 section claims, **7 flagged, 6 legitimate, 1 real**. The six are of two kinds —
+   four name the *source's* own section (Sims's §5, Ball et al.'s §4.4) and two make a claim *about*
+   a section rather than asserting a citation *in* it. One in seven is a real defect and the sweep
+   is still worth its five minutes, because the alternative is that nobody checks at all: this
+   manuscript's References section documents **four verification passes**, one of which is literally
+   *"every entry checked against the body — does this reference do any work?"*, and III-5 sat through
+   all four.
+
+**The general rule, and it is not about accounting.** A reviewer reading forward from a quantifier
+holds one set in their head. A reviewer reading a cross-reference has to hold a *different section*
+in their head, and cannot — so the class survives every careful read by construction, not by
+oversight. Write the sweep instead. `wt130` is the quantifier instrument; the two loops above are
+twenty lines and belong beside it.
+
+---
+
+## WT-121 · METHOD · 2026-08-18 · **a freeze that fired, and the freeze was right** · wealthTensor-73
+
+### WHEN A REGISTERED FREEZE GOES RED, THE COST OF GOING THROUGH IT IS TWO COMMITS AND THE COST OF GOING AROUND IT IS THE FREEZE
+
+`-73`'s smallest finding, III-7, moved one clause of Paper III §4.7 — which `REG-012` §6 freezes,
+and `tests/test_reg012_sec6_sec47_frozen.py` went red on it. That test's own docstring predicted
+the moment: *"a session facing that choice under time pressure will disable it."*
+
+**It was not disabled and it was not reverted.** The edit is the file's reading (b) — a review of
+the manuscript against itself, not an outcome of `REG-012` — so `wt131b` appended an `Amendment`
+naming the commit that moved §4.7, the licence, and the digest §4.7 landed on, **taken out of git
+rather than typed**. `SEC_47_AT_REGISTRATION` untouched. Seven tests in that file green.
+
+**Three things this cost, recorded so the next session budgets them instead of flinching:**
+
+1. **Two commits, not one.** The `Amendment` must name a commit that *already moved* §4.7 — the
+   chain test checks `digest_at(sha^) != digest_at(sha)` — so the manuscript commits first and the
+   amendment second. `-65`'s ruling already sanctions this in the red message: *"name that commit
+   in the Amendment rather than back-dating anything."*
+2. **The census must include the freezes, and `-73`'s did not.** `wt131`'s census counted every
+   text anchor and every blast-radius site it knew about, and still missed this, because a freeze
+   is not a *string* in the file — it is a digest in a test. **A section-level census asks "what
+   text quotes this?"; it also has to ask "what hashes this?"** Two greps: `grep -rl "§4\.7" tests/`
+   and `grep -rn "sha256\|digest" tests/ | grep -i paper`.
+3. **The suite found it in 67 seconds.** Which is the argument for running the suite before writing
+   the review doc rather than after: the cost of discovering a freeze from a red test is one
+   turnaround, and the cost of discovering it from the gate is the wrap.
+
+**And the guard was right on the merits, not merely procedurally.** A bare hash would have said
+"you violated `REG-012`." The two-constant design said instead: *which of the two readings is this,
+and write down the answer.* The answer took four sentences and is now the thing `-74` reads if §4.7
+moves again. A freeze with no representation for a legitimate edit is a freeze that must be either
+violated or switched off; this one had the representation, and it was used for the second time.
+
+---
