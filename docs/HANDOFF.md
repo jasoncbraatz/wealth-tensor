@@ -3,7 +3,7 @@ project: wealth-tensor
 session_n: 84
 gh_repo: jasoncbraatz/wealth-tensor
 branch: main
-gh_sha: PENDING-STAMP
+gh_sha: e3dfb4e3137de2dd7a09d785ccc6b604fc6a3d2f
 updated: 2026-08-18
 session: wealthTensor-84
 live_theme: "THE LEDGER THAT AUDITS THE MANUSCRIPTS HAS NOW BEEN AUDITED, AND IT IS WORSE THAN THE ONE ROW -83 FOUND. -83 falsified ONE targeted row of docs/promises-adjudicated.tsv and it was false, which is a numerator with no denominator. -84 drew TWELVE at random, seed 20260818, and COMMITTED THE TWELVE IDS BEFORE READING ANY OF THEM (c13df88, k PENDING). k = 5 OF 12. Wilson 95% [0.19, 0.68] — between 25 and 88 of the 129 rows do not check what they claim to check. ONE of the five carried a false SENTENCE, so '2 of 127' becomes [3, 47] of 129, as an interval. THE FOUR OTHERS SHARE A SHAPE -83's RULE DOES NOT NAME: the adjudicator LOCATED the artefact instead of READING it. 'ls -l' returning 'present, 134 lines' is a true note and is equally true of a checklist that prescribes nothing. THREE OF THE FOUR TRACE TO ONE SESSION — wealthTensor-82, the pass that BUILT the enumeration, adjudicating part of its own output by directory listing. The false sentence is the fifth: Paper IV §1 promised '§10 names the command for each' and §10 says, in bold, 'Those files, not a command, are the record of §6' — §10 was repaired at -82 and §1's promise ABOUT §10 was not."
