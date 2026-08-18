@@ -3,7 +3,7 @@ project: wealth-tensor
 session_n: 79
 gh_repo: jasoncbraatz/wealth-tensor
 branch: main
-gh_sha: PENDING
+gh_sha: 78b58e04dd39555b705b44ab6f5d7f62bcbd91f9
 updated: 2026-08-18
 session: wealthTensor-79
 live_theme: "THE DEPTH FALSIFIER FIRED, AND THE THIRD MECHANISM IS DEAD. Paper II's ninth independent P7 read, five inherited axes, nothing invented, A6 still parked. TWO findings — and the column -78 asked for reads 2 OF 2 FROM SITES -78 HAD ALREADY OPENED. One of them is item 7 on -78's OWN not-checked list, deferred on its label by the very session that banked 'resolving that a named artefact exists is not applying an axis to it'. So the counter is explained by neither new instruments (-77 killed that), nor repair residue (-78 killed that), nor depth of application (-79 kills this). What is left is the reading -78 pre-committed to and earned the right to have stated: PAPER II'S P7 COUNTER IS MEASURING THE REVIEWERS RATHER THAN THE PAPER. But severity HAS decayed even though the count has not — this is the first pass in the project's history with ZERO MANUSCRIPT EDITS, because both findings were sentences that could be made true instead of changed."
