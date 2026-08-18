@@ -4148,3 +4148,76 @@ remedy. The gate is healthier than the note claimed; the note is deleted and not
 
 Suite **1078 passed, 0 failed** (68.24 s). `wt133` **RC 0**. Coach **RC 0**, Paper II at baseline
 **2 / 0**, before and after. Tags run to **`wt138`**; `wt139` is free.
+
+---
+
+## WT-126 · METHOD · 2026-08-18
+**The second frozen pass is the control for `-77`'s own mechanism, and the mechanism does not survive: 0 of 2 findings are residue. What is left is depth of application — and unlike residue, it leaves a zero reachable.**
+
+`wealthTensor-78`. Paper II's **eighth** independent `P7` read, instrument set **frozen again**,
+`A6` left parked as ordered. `REVIEW-018`. Counter: 9 → 2 → 4 → 3 → 4 → 5 → 3 → **2** — the
+**first decaying count in the project's history**.
+
+**Two findings, two repairs (`wt139`, 18 post-conditions), zero carded. Ledger row: `wt140`.**
+
+* **`II-35`** — §3.1's three κ residuals (*"−4.4 %, −4.9 %, −6.8 % at r = 1.000, 0.100, 0.025"*)
+  are computed from the **four-decimal κ values `wt030_report.py` displays**, not from κ. All
+  three reproduce exactly from the rounded display; two are wrong by **0.33 and 1.05 percentage
+  points**. Measured unrounded at the reported *T* = 1200: **−4.344 %, −4.568 %, −5.749 %**. At
+  *r* = 0.025 the display quantum is **±2 % of κ itself** — wider than the spread the sentence
+  reports. The **−6.8 % is real but belongs to *r* = 0.010**, a row not in this table, so the
+  *"4–7 %"* range was **scoped to the full sweep rather than deleted**. *"Monotone in the rate"*
+  made exact in the same edit (flat 1.000→0.500, monotone below). §1's independent *"within 7 %"*
+  is TRUE at full precision and was **deliberately left untouched** — the distinguishing phrase
+  was greped flattened first and the count came back **one** site, not two (`-77(ii)` applied).
+* **`II-36`** — `tests/test_redistribution.py:195-196`, the guard for the manuscript's **only
+  named closed-form scalar**, asserted `ceiling == approx(0.10734, abs=1e-4)` with the inline
+  comment `# 0.10734...`. The closed form is **0.1072689396**: the constant is wrong in the
+  **fourth decimal** and the guard passed on **71.1 % of its tolerance budget**, so tightening
+  `abs` to `1e-5` would have gone **red against a correct implementation**. Paper II's own §4
+  failure mode — *"it survived initial review because it looked like a convergence check"* —
+  inside the guard that exists to prevent it. Repaired **1 000× tighter** plus
+  `round(ceiling, 4) == 0.1073`, exactly what §3.1 and §7 print. **Test count held at 18.**
+
+**THE RESIDUE COLUMN, WHICH IS THE ENTRY.** `-77` proposed *a repair pass creates surface* and
+made `-78` the experiment: four manuscript edits, one test edit, no new axis, and a per-finding
+residue column. **The answer is 0 of 2.** `II-35` blames to `2b3e24b5` (2026-08-17); `II-36` to
+**`3b11f236` (2026-08-05) — the very commit §7 pins**, which means that defect was in the tree for
+**every one of Paper II's eight reads** and was missed by all of them, including the two that ran
+`A5` at the very file it lives in.
+
+**So three rows now cut against the original anecdote (`-71`, `-77`, `-78`) and `-78` cuts against
+`-77`'s replacement too.** What remains is neither breadth of toolkit nor residue: it is **DEPTH
+OF APPLICATION**. `A5`'s site list has included `tests/test_redistribution.py` at `-76`, `-77` and
+`-78`; three passes opened that file and `-77` edited a test inside it, while a wrong constant sat
+on line 196 one line below a comment restating it. **The axis was pointed at the right file and
+nobody read the arithmetic.**
+
+**AND THIS IS THE READING THAT MAKES A ZERO REACHABLE.** `-77`'s mechanism, generalised, made two
+consecutive zeros unreachable *by construction* — the first zero would need a predecessor that
+changed nothing, which no productive pass can be. Depth has no such property: an axis **can** be
+exhausted at its own sites, and once exhausted it stays exhausted. `-78` is also the first row
+where the count actually **fell** under a frozen set, which is the only evidence so far that
+exhaustion is happening at all.
+
+**`-78`'s answer to the question `-77` raised for Jason: leave the DoD's bar alone.** The reason
+offered for changing it — residue makes consecutive zeros structurally unreachable — is not
+supported by this pass. That is a recommendation on a methodological question and Jason's to
+overrule. The falsifier is cheap and `-79` holds it: a ninth read at the same depth should find
+**materially fewer than two**, and if it finds two or more from sites `-78` already opened, the
+counter is measuring the reviewers rather than the paper.
+
+**Also cleared, and recorded so nobody re-derives them:** §7's pin `3b11f23` **is** watched
+(`test_pin001_code_state.py`'s `LATEST_TOUCH`) — a live candidate dead on contact; the top-decile
+ceiling is used as a *level* test not a drift test, so §3.4's own rule does not bite; §3.1's
+6 × 10⁻⁶ is **quadrature**, which §5.5 excepts by name; and `wt077`'s κ column is the *analytic*
+*r*·E[η⁺]/(1+μ), a different object from `wt030`'s simulated κ. Seventeen cleared rows in
+`REVIEW-018` §3, four of them live candidates that died on inspection and were **not** manufactured.
+
+**Teed up, not chased:** `wt077` already prints *r*·E[η⁺]/(1+μ) — labelled `predicted` — and it
+matches the simulation to **0.44 %** where §3.1's cruder form is off by 4–7 %. Adopting it would
+change a stated contribution, so it is Jason-sized. And the `T` = 600 / `T` = 1200 lead gained new
+evidence here: at *r* = 1.000 the κ residual is **−4.042 % at `T` = 600 against −4.344 % at
+`T` = 1200**, a difference larger than the precision §3.1 reports.
+
+Suite **1078 passed, 0 failed** (68.41 s). `wt133` **RC 0**. Tags run to `wt140`; `wt141` is free.

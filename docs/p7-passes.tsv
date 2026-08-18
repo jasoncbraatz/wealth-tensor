@@ -27,6 +27,18 @@
 # it is not a guess. Two of six rows are NOT-STATED, and that is itself the first finding this file
 # produced: the project has been asserting instrument-attribution it never recorded.
 #
+#
+# THE RESIDUE COLUMN (born wealthTensor-78, and it is not a TSV column — it lives in the review
+# documents' front matter as `residue_of_previous_pass`, because only two rows can carry it).
+# -77 asked whether a pass's findings are residue of its predecessor's repairs. -77: 2 of 3 YES.
+# -78: 0 of 2. The mechanism does not generalise on two data points, and -78's second finding
+# had been in the tree since 2026-08-05 — through every P7 read this paper has had.
+#
+# READ THE new_instrument COLUMN AND THE findings COLUMN TOGETHER, AND DO NOT STOP AT ROW 7.
+# Three rows now carry `none` or its equivalent: -71 (4 findings), -77 (3), -78 (2). The anecdote
+# that a new instrument is what produces findings is refuted three times. But -78 is the first
+# row where the count actually FELL under a frozen set, which is the only evidence so far that
+# the axes can be exhausted at all.
 # session	paper	findings	new_instrument	instrument_name	findings_from_new_axis	notes
 wealthTensor-71	paper-II	4	none	—	0 of 4	REVIEW-011: "Instrument: one reader, whole document, no grep-first." A1's METHOD was produced here but never run as an instrument; wt130 lands at -72. THE ROW THAT CUTS AGAINST THE ANECDOTE: no new axis, four findings anyway.
 wealthTensor-72	paper-II	3	new	scripts/wt130_quantifier_sweep.py; plus A2 grep-the-document-for-the-failure-mode-it-names (non-script, originates here)	3 of 3	REVIEW-012: "Three of the 117 fell." All three credited to the sweep. II-19 is ALSO the A2 exemplar, so the two attributions overlap and cannot be summed.
@@ -69,3 +81,4 @@ wealthTensor-77	paper-II	3	none	— (all five axes inherited; Paper II was 5 of 
 # -77's is the stronger because it was assigned a frozen set deliberately. REVIEW-017 §5 offers
 # the alternative mechanism — a repair pass creates surface for the next pass to read — and it
 # is testable at -78, which inherits four edits and nothing else new.
+wealthTensor-78	paper-II	2	none	— (all five axes inherited; Paper II was 5 of 5 before this pass, A6 left parked as ordered)	0 of 2	REVIEW-018. THE SECOND FROZEN ROW, AND THE CONTROL FOR -77's OWN MECHANISM. -77 proposed that a repair pass creates the next pass's findings and made -78 the experiment by handing it four manuscript edits and one test edit. RESIDUE: 0 of 2. II-35 blames to 2b3e24b5 (2026-08-17), II-36 to 3b11f236 (2026-08-05) — the very commit §7 pins, present for ALL EIGHT reads. Neither new instruments nor repair residue explains the counter; REVIEW-018 §5 argues DEPTH OF APPLICATION, which unlike residue leaves a zero REACHABLE. First DECAYING count in the project's history (3 -> 2).

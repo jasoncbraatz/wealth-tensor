@@ -192,8 +192,14 @@ def test_reallocation_intensity_is_what_the_base_caps():
     z = mu / sigma
     Phi = 0.5 * (1.0 + erf(z / sqrt(2.0)))
     phi = exp(-0.5 * z * z) / sqrt(2.0 * pi)
-    ceiling = mu * Phi + sigma * phi                    # 0.10734...
-    assert ceiling == pytest.approx(0.10734, abs=1e-4)
+    ceiling = mu * Phi + sigma * phi                    # 0.1072689396...
+    # wealthTensor-78 (II-36): this asserted 0.10734 at abs=1e-4 from 3b11f23 until
+    # 2026-08-18. The closed form is 0.1072689396; the old constant was wrong in the
+    # FOURTH decimal and passed on 71 % of its tolerance budget, so tightening abs to
+    # 1e-5 would have gone red against a CORRECT implementation. The manuscript quotes
+    # this scalar to four decimals (0.1073), so the guard now pins it far tighter.
+    assert ceiling == pytest.approx(0.1072689396, abs=1e-7)
+    assert round(ceiling, 4) == 0.1073          # exactly what SEC 3.1 and SEC 7 print
 
     flow_max = econ(base="flow", rate=1.0)["kappa"]
     assert flow_max == pytest.approx(ceiling, rel=0.10)

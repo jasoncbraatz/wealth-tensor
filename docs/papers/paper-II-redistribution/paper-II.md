@@ -181,10 +181,14 @@ tested. The budget is visible in the third column and is not a fitted relationsh
 - for a **flow** base, κ = *r*·E[η⁺], where E[η⁺] is the *gross positive* growth rate — because a
   levy cannot rebate a loss. In closed form,
   **E[η⁺] = μΦ(μ/σ) + σφ(μ/σ) = 0.1073** for the parameters above. The simulated κ runs
-  **4–7 % below** that form at every rate tabulated, and the residual is monotone in the
-  rate — −4.4 %, −4.9 %, −6.8 % at *r* = 1.000, 0.100, 0.025 — which makes it a
-  denominator convention rather than noise: the implementation measures κ against
-  post-growth wealth. The test suite asserts agreement within 10 %.
+  **4–7 % below** that form across the full rate sweep behind the table — −4.3 %, −4.6 %,
+  −5.7 % at the three flow rates tabulated here (*r* = 1.000, 0.100, 0.025), reaching
+  −6.8 % at the sweep's lowest rate, *r* = 0.010. The residual is flat between *r* = 1.000
+  and *r* = 0.500 and widens monotonically below it, which makes it a denominator
+  convention rather than noise: the implementation measures κ against post-growth wealth.
+  *These residuals are computed from the unrounded κ rather than from the four-decimal
+  values the table displays; at *r* = 0.025 that display quantum is ±2 % of κ itself, which
+  is wider than the spread being reported.* The test suite asserts agreement within 10 %.
 
 So a **confiscatory** levy on flow has approximately the compressive budget of a **10 % levy on
 stock**. The base is not a detail of implementation. It sets a ceiling, and the rate — the
