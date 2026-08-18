@@ -4455,3 +4455,88 @@ defaulted `--out` to `RESULT-REG-003-run.json` **at the repository root**, while
 Running it for `IV-1` dropped an untracked 8.9 kB artefact in the root, which `git add -A` then
 staged. Default repointed to `data/reg-003-run.json`; the file `git mv`d there so the run record
 survives at the right path. Nothing reads it — it had no readers to break.
+
+---
+
+## WT-130 · METHOD · 2026-08-18 · wealthTensor-82 · **The promise class ENUMERATED — eleven passes sampled it, one grep exhausted it at 2 of 127**
+
+**The assigned at-bat was not a twelfth read, and it was not taken as one.** No manuscript was
+read end to end in this pass. Eleven ledger rows say a reader-pass finds 2–9 findings forever and
+four mechanisms proposed to explain that rate are dead, each killed by the pass after the one that
+proposed it. What survived was a **measurement, not a story**: `-80` and `-81` independently scored
+**5 of 9** findings, two manuscripts, two reviewers, as one shape — *a sentence whose subject is a
+named file, command, test or commit, asserting what it does for a reader, where it does not.* A
+shape two reviewers agree on is a shape a grep can enumerate.
+
+**`scripts/wt148_promise_sweep.py`** emits every **(sentence, named artefact)** pair across the
+four manuscripts — backticked paths and globs, bare filenames, script tags (`wt091`), test names,
+`REG-`/`PRE-`/`ADR-`/`METHOD-`/`END-TO-END-`/`RESULT-`/`WT-` ids, 7–40 char SHAs, and `python3 …`
+commands. **`docs/promises-adjudicated.tsv`** carries one row per promise, naming *the command run
+or the file read* and what it showed. The id is a hash of (paper, artefact, sentence), so deleting
+a row goes RED and **rewording the sentence reports the row STALE** — an audit the
+`crossref-dismissed.tsv` pattern did not have.
+
+**127 promises emitted in scope, 127 adjudicated, 2 failed.** Nine commands run on darwin, twelve
+SHAs resolved, thirty-one paths existence-checked, both `RESULT-002` run logs read end to end, ten
+registration and result documents read at the cited section. Paper I and Paper II are **out of
+scope by data, not by omission**: `#scope` lives in the TSV, the sweep prints their 28 unchecked
+promises on every run, and widening it is one line that goes red immediately.
+
+**`III-1` · §11 promised a per-tier drop accounting that has never existed anywhere.** The bullet
+said the attrition to the 688 events was in the run logs *"by universe and by tier"* and then told
+the reader to *check that attrition does not differ systematically by tier, since differential
+attrition is the one selection channel capable of manufacturing the reported null.* Both logs carry
+a flat ten-bucket table per universe and **no per-tier attrition at all**; the only tier-keyed
+bucket, `ambiguous_tier` (57 in the pilot), counts charges whose tier could not be *resolved*. The
+instrument settles it: `edgar.py` declares a flat `DROP_BUCKETS` tuple and every increment is
+`drops["<bucket>"] += n` — **no tier key anywhere, so nothing ever recorded it.** This is the
+sharpest instance of the class in the corpus: the sentence does not describe an artefact, it hands
+the reader a task the artefact cannot support, on the paper's own account of the channel that could
+manufacture its null. Repaired by `wt149` (10/10 post-conditions, 2 NEGATIVE) — claim narrowed to
+what the logs bear, the absence stated positively as a fact about the counter, and the
+label-permutation control that *does* answer the question named in its place with its null quoted
+from the log. `test_defensive_count.py` green: no hedge added.
+
+**`IV-1` · the repair was already written ONE MANUSCRIPT OVER, and did not cross.** §10 carried
+`- Regenerate §6: python3 scripts/reg013_citation_whitespace.py`. Run on darwin it **exits 1** on
+`HTTP 429` from `api.openalex.org` inside the ceiling control — and a clean run would not
+regenerate §6 either, because a cluster's audience is a live citing set that grows daily. §6's
+7 801 and 43 048 are the record of one pull on 2026-08-16, committed at `5efe626` as
+`RESULT-REG-013-run.json` / `-run.log`, **neither of which §10 named.** Paper III §11 has carried
+the identical repair since `-80` — *"those logs, not a command, are the record of §5.3"* — and
+Paper IV's twin then survived two whole-manuscript reader-passes, one of which ran six of §10's own
+commands. Repaired by `wt150` (10/10, 3 NEGATIVE, including that §1's *"§10 names the command for
+each"* stays true).
+
+**THE FALSIFIER, ANSWERED, AND THE FIRST PREDICTION IN TWELVE ROWS THAT CAN BE WRONG.** The at-bat
+set it both ways: drain the class and the next reader-pass finds materially fewer than 5-of-9; find
+nothing and the 5/2/2 was reviewer attention. **Neither pole — 2 of 127, both missed by eleven
+passes.** So `-83`'s reader-pass should find materially fewer than 5-of-9 promise-shaped findings,
+and if it does not, the disambiguation is mechanical and runs *before* any theorising: findings that
+**name an artefact** mean this sweep has a bug (fix the instrument, do not write a ledger row);
+findings that **name none** — `IV-6`'s *"the Austrian account of the cycle"* shape — mean the class
+was mis-defined as *artefact-naming* and the next instrument is the one that catches a promise whose
+subject is a bare noun phrase. `wt148`'s docstring states that blind spot itself, so a green run is
+never read as more than it is.
+
+**RED-PROOFED against the real tree, three legs, sha256-identical after restore:** delete a row
+→ RC 1 with the orphaned promise listed · reword a promise → RC 1 with the row reported STALE ·
+rename an artefact → RC 1 with the fabricated path emitted. All three restored to RC 0 and the
+manifest of four manuscripts plus the TSV matches byte for byte.
+
+**BUG SPRAY · `wt133` had gone eight sessions with no guard.** Its exit code is load-bearing and
+its only trigger was a line of ritual in each handoff — *"run wt133 AND SAY ITS RC"* — which is
+`WT-116` recurring: *a procedure that lives in a document is a procedure the next session
+re-derives, or forgets.* `tests/test_manuscript_sweeps_are_green.py` now binds **both** sweeps to
+the suite, plus a structural check that every TSV row has a non-empty evidence column, so a tick
+with nothing behind it fails. Both sweeps are pure-document and run in well under a second.
+
+**Suite 1094 passed, 0 failed** (1090 + this row's four). `wt133` **RC 0**, paper-IV **0
+unresolved, 28 of 28 cited**. `wt148` **RC 0**. Coach at baseline: paper-IV **1 conduct / 0
+concessive**, paper-III **5**. Tags run to `wt150`; **`wt151` is free.**
+
+**JASON-SIZED, unchanged:** the version stamp is still one ruling closing three manuscripts, and
+four consecutive passes have now correctly declined to move it. `REVIEW-021` §5's two-readers
+design is still the only way to separate *the paper has n defects left* from *a reviewer finds n*,
+and `-82` was explicitly not authorised to spend it — but `-82`'s prediction in `REVIEW-022` §5 is
+a cheaper partial substitute, because it is falsifiable by the ordinary next pass at no extra cost.

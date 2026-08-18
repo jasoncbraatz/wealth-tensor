@@ -2042,11 +2042,17 @@ public data.
   and `data/pre-002-riskset.json`, SHA-256 **`60627429d937bc42b9cf96a1be4bcfb78d198948a3212ac8f8c5e4412a436cce`**.
   Charges in that file run **2012 Q2 – 2026 Q2** and onsets
   **2010 Q1 – 2026 Q1**; the 2013–2024 window selects registrants, not events.
-- **Drop accounting for §5**, as required by the registrations: the per-bucket attrition from
-  candidate charges to the 688 analysed events, by universe and by tier, is in the run logs at
-  `docs/preregistration/RESULT-002-*-run.log`. **A reader should check that attrition does not
-  differ systematically by tier, since differential attrition is the one selection channel capable
-  of manufacturing the reported null.** It is reported there whether or not it flatters the result.
+- **Drop accounting for §5**, as required by the registrations: the attrition from candidate
+  charges to the 688 analysed events is in the run logs at
+  `docs/preregistration/RESULT-002-*-run.log`, one log per universe, counted per drop bucket. It
+  is reported there whether or not it flatters the result. **The count is per bucket and not per
+  tier.** `edgar.py`'s `drops` counter is keyed by bucket alone, so *does attrition differ
+  systematically by tier?* — the one selection channel capable of manufacturing the reported null
+  — is not answerable from these logs. What the registrations put in its place is the
+  label-permutation control printed in the same logs, which permutes the tier labels while
+  holding the lag distribution fixed; in the pilot its null runs at mean **+0.007**, standard
+  deviation **1.025** over 1 000 draws, against an observed *z* of **−0.290**. This bullet
+  promised a per-tier breakdown until wealthTensor-82.
 
 Two tests are worth naming because of what they forbid rather than what they check.
 `test_pre001_constants_are_what_was_registered` fails if any registered constant is edited, so a
