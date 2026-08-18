@@ -3,7 +3,7 @@ project: wealth-tensor
 session_n: 73
 gh_repo: jasoncbraatz/wealth-tensor
 branch: main
-gh_sha: 67cfea0354395d15dd85bb1d54332b2b7d3a5aca
+gh_sha: 58f7f5bb05d32932d5f1332c1a79f28f3a1d1e11
 updated: 2026-08-18
 session: wealthTensor-73
 live_theme: "Paper III's first independent read, taken as assigned. SEVEN findings, thirteen edits, one carded — the largest single-pass haul in the project, on the only manuscript in the definition of done that had never been reviewed. Three are WT-117's species exactly (a universal falsified by its own list four lines below it). Four are a NEW species the project now has a name and a script for: a cross-reference is a quantifier over a SECTION, it is falsified only against text hundreds of lines away, and a reviewer physically cannot hold that in their head. Two twenty-line sweeps found three of them. The manuscript's own References section documents four verification passes, one of them literally 'every entry checked against the body', and one of these sat through all four."
