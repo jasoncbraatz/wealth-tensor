@@ -3931,3 +3931,94 @@ written, because the guards run before the backups.** That ordering is `wt129`'s
 it is the whole reason a failed needle is a thirty-second correction instead of a `git checkout`.
 
 ---
+
+## `WT-123` · Paper IV's independent `P7` read — the sweep found one, the reader found five (`wealthTensor-75`, 2026-08-18)
+
+**Assigned, taken as ordered:** resolve `wt133`'s red on Paper IV, then read Paper IV end to end.
+`wt133` now exits **0** across all four manuscripts. **Six findings, eight edits, one dismissals
+row, two carded.** Suite **1078 passed, 0 failed** (66.75 s). Coach RC 0, Paper IV at baseline
+1 / 0. Board unmodified — **sixth** consecutive session.
+
+**THE HEADLINE IS THE ASYMMETRY, AND IT IS WHY BOTH INSTRUMENTS ARE NEEDED.** `wt133` flagged
+exactly one site: `paper-IV.md` L179's bare `§3.1`, which resolves to nothing because Paper IV's §3
+has no subsections. **The line beneath it did the same thing with a bare `§4`, and no mechanical
+check will ever flag it**, because Paper IV *has* a §4 — so the reference resolves **locally,
+silently, and to the wrong section**, dropping a reader who follows it into an argument about SMD
+instead of Paper III's class index. A sweep finds references that resolve to *nothing*. Only a
+reader finds the ones that resolve to the *wrong thing*, and the second class fails quietly in both
+directions: the tool is silent and the reader is confident.
+
+**`-74`'S LESSON PAID A SECOND TIME, AND BIGGER.** Run the manuscript's own regeneration commands
+before reading it. Nobody had ever run Paper IV's. Doing so produced **60 verified cells** — and
+three of the six findings came directly out of it:
+
+* **`IV-2`** — §10 misroutes a replicator three ways. It pairs `lambda_sensitivity.py` with
+  `wt027_report.py`, which imports only from `lag.py`; it names **no command at all** for the
+  4.12× / 2.02× diagonality rejection, the borrowed result Paper IV cites *three times* and leans on
+  hardest; and both §10 and §1 claim every non-II/III number "is from `REG-013`", which is false of
+  **every number in §5 and §8**. **The kicker: all eighteen of those numbers regenerate today,
+  exactly, from `tests/test_excess_demand.py` and `scripts/wt071_refuter.py`** — the surviving
+  apparatus of the dead fourth paper. The manuscript was sitting on a working reproduction of its
+  own worked instance and telling readers it did not exist.
+* **`IV-4`** — §6's floor said *"not one work in any of the three economics audiences also cites a
+  CRISPR seed"*, measured against **4 000 of 43 048** citing works — **9.3 %**. And the disclosure
+  is asymmetric: §6 gives the biophysical cap its exact magnitude (4 000 of 7 801, 51 %) and gives
+  the floor's cap no number at all, five and a half times tighter. The direction argument survives
+  intact; the quantifier and the silence did not. **Found while checking it:** neither 7 801 nor
+  43 048 is produced by any committed command — the instrument stops paging at `N_MAX` and never
+  reads `meta.count` — so the two figures carrying §6's honesty about what it could not see are the
+  only figures in §6 a replicator cannot check. §6 now says so.
+* **`IV-5`** — §10's non-circularity rationale, *"a paper cannot cite the commit that adds the
+  paper"*, describes a choice that was not available: `git show --stat 5efe626` puts
+  **`paper-IV.md`, +646 lines**, in that very commit. True of Papers II and III, vacuous here, and
+  it tells a reader the pin predates the manuscript. Replaced with the stronger true statement —
+  the instrument and the paper entered the repository together, so the pin is **exact**.
+
+**THE OTHER THREE.**
+
+* **`IV-1`** — the two bare cross-document references above. Repaired to *"Paper III §3.1"* and
+  *"that paper's §4"*, the second copying the pattern the manuscript already uses correctly four
+  lines earlier at L221 (*"that document's §2"*). One row added to `docs/crossref-dismissed.tsv`.
+* **`IV-3`** — §9.6's *"The three named here are the ones whose results the corpus actually uses"*,
+  contradicted by **four** places in its own manuscript: contribution 1, the whole of §4, §7's
+  paragraph headed *"And on the aggregation literature specifically"*, and an **eight-entry
+  Aggregation block** opening the reference list. **`WT-117`'s fourth instance.** Repaired to what
+  is true and stronger: the three named are the three the paper *joins*; the aggregation literature
+  is used as a **limit**.
+* **`IV-6`, the softest and named as such** — §8 opens by declaring a test applied to *"every
+  entry"* (*had this route worked, which sentence would be different?*) and adds that *"an
+  abandonment that could not have cost anything is an advertisement, not a disclosure"*. Six lines
+  down, the superposition entry announces it was rejected *"before it reached a draft"* and never
+  answers the test. **`-72`'s lesson, used a second time and paying a second time: when a document
+  names a failure mode, grep the document for that failure mode.**
+
+**CARDED.** `1217574341282011` (new) — `reg013` must record each cluster's uncapped `meta.count`,
+**and the same commit must move §10's pin**, because §10 pins that file as *"the last commit
+touching"* it and editing the instrument falsifies the pin in the same stroke. That booby trap is
+the entire reason this is a card and not a bug-spray fix. `1217568297674954` — fifth data point:
+Paper IV's stamp still reads "Version 0.1, 2026-08-16" with **eight claim-changing edits made
+2026-08-18**, and the session that made it wrong knew it and had no rule to follow.
+`1217568192511533` — commented, not duplicated: Paper IV's three uncited entries (Mas-Colell,
+Robinson, Sraffa), with the note that Robinson and Sraffa read less like uncited entries than like
+§1.1's Cambridge-controversy sentence being one clause short.
+
+**THREE NOT-CHECKED ITEMS WERE CLOSED INSTEAD OF WRITTEN DOWN**, and the swap is preserved in
+`REVIEW-015` §4 so it is auditable. The seed-order audit against `REG-013` §3.1 — the highest-value
+item on the draft list — **came back clean: all 25 seeds appear in the instrument in exactly the
+registered order**, which is what the split-half control's index parity depends on and what nobody
+had ever verified. `wt026_severe_test.py` was run to RC 0 **before** `IV-2` was allowed to name it
+in §10, because a data-availability section naming a command that fails is a worse defect than the
+one it replaced. And §6's *z* was read out of `REG-013` §4 rather than inferred from three matching
+decimals — **z = (O − F)/(P − F)**, which equals `O/P` here **only because the floor came back at
+exactly zero**, so `IV-4`'s question about the floor is not cosmetic. *A not-checked list is a
+promise about the next session's cost; an item closeable in four minutes should be closed.*
+
+**AND THE INSTRUMENT'S OWN GUARD FAILED FIRST, WHICH IS THE POINT OF HAVING IT.** `wt134` aborted
+on its first run: the References post-condition used `wt132`'s `section()` helper, whose regex
+requires a following `## ` — and References is the **last** section, so the guard could never pass.
+Nothing was written, because the guards run before the backups. `wt129`'s ordering (`WT-118`),
+third session running, third clean save. **A guard that cannot pass and a guard that cannot fail are
+the same bug wearing different clothes** — `wt132` fixed the second on a test's assertions and
+`wt134` tripped the first on its own post-condition, in consecutive sessions.
+
+---

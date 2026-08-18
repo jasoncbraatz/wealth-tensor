@@ -122,8 +122,9 @@ It is that a predecessor was solving a differently-constrained problem, and the 
 
 No new model code and no new simulation. Papers II and III carry the computational results and their
 test suites; this paper cites them as established and adds one measurement of its own, on the
-literature rather than on the model. Where a number appears below without a citation to II or III
-it is from `REG-013` and is reproducible by the command in §10.
+literature rather than on the model. Numbers appearing below without a citation to II or III come
+from two places and §10 names the command for each: §6's are `REG-013`'s, and §5's and §8's are the
+output of the fourth paper's apparatus, which is still in this repository and still runs.
 
 ---
 
@@ -176,9 +177,9 @@ schedule, and they are different numbers. **Paper III §2 is that holding**, bef
 summed: its physical layer degrades at an effective 0.02 per period and its claim layer
 recognises at α = 0.05 — the model's swept calibration, which Paper III §5.4 goes on to
 measure at 0.408 per year on its registered sample and reports as low by an order of magnitude —
-and §3.1 reports what the distance between those two rates costs. The
-household scale's quantitative answer is Paper III's, read before §4 indexes the holding by
-asset class.
+and Paper III §3.1 reports what the distance between those two rates costs. The
+household scale's quantitative answer is Paper III's, read before that paper's §4 indexes the
+holding by asset class.
 
 **Firm.** A balance sheet is holdings of the household's kind, summed and reported. Paper III's
 result is that this reporting is a filter: a share φ of each true change passes through at once
@@ -401,8 +402,8 @@ half, it cannot see anything, and the registration voids the run below 0.20. It 
 **0.477** pooled.
 
 **The floor** is each literature against six highly-cited CRISPR papers — unrelated to economics by
-construction. It came back at **exactly zero**: not one work in any of the three economics
-audiences also cites a CRISPR seed.
+construction. It came back at **exactly zero**: of the 4 000 most-cited works citing a CRISPR
+seed, not one is in any of the three economics audiences.
 
 **The three pairs**, positioned on that floor-to-ceiling scale:
 
@@ -430,8 +431,12 @@ stricter one.*
 
 A second qualification runs the same way. The biophysical audience was capped at 4 000 of 7 801 by
 descending citation count, so a bridging work in its tail is invisible here, which suppresses both
-biophysical overlaps. The floor's cap does the opposite and costs nothing, since a floor of exactly
-zero is the strictest value available.
+biophysical overlaps. The floor's cap is tighter still — 4 000 of 43 048, 9.3 per cent — and it
+does the opposite and costs nothing: a cap can only remove intersections, so the measured floor is a
+lower bound on the true one, and a floor of exactly zero is the strictest value available. Both
+true-audience sizes are `RESULT-REG-013` §2's. The instrument stops retrieving at the cap and does
+not print them, which makes them the two numbers in this section that §10's command does not
+regenerate.
 
 **And what the measurement does not establish, stated in the registration before the numbers
 existed:** an unoccupied intersection is not thereby a fertile one. This section establishes that
@@ -561,7 +566,9 @@ before it reached a draft. Superposition denotes genuine indeterminacy prior to 
 these agents hold a definite reservation price at all times; the role is a sign function. The cost
 of using it would have been a reviewer noting that quantum mechanics had been invoked to describe a
 piecewise-constant function, in a research area already carrying reputational damage from loose
-physics metaphor — and the metaphor undersells a claim that is exactly stateable without it.
+physics metaphor — and the metaphor undersells a claim that is exactly stateable without it. Had
+it been sound, §5's account of what an agent's role *is* would read differently, which is what earns
+it a place under this section's test despite its never having reached a draft.
 
 **Reporting a partial invariance that was a tie convention.** §5's identity was first measured on a
 12-point grid spanning the full range of reservation prices and returned **four** distinct
@@ -613,7 +620,9 @@ model — and worse, makes the paper's centrepiece a fifty-year-old theorem the 
    endowment. That is the special case; the general one is where SMD lives.
 6. **The three-literature framing is a choice, not a partition.** Ecological economics, industrial
    ecology, national accounting theory and the aggregation literature proper all have claims on
-   this territory. The three named here are the ones whose results the corpus actually uses.
+   this territory. The three named here are the three this paper *joins*. The aggregation
+   literature is used, and heavily — §4 takes SMD as the boundary of the composition claim — but it
+   is used as a limit rather than joined, which is why §7 treats it under a heading of its own.
 7. **Nothing here is normative.** The corpus characterises what is measurable and what composes.
    It does not say what should be measured, taxed, recorded or done.
 8. **The whitespace measurement is about occupancy, not fertility.** `REG-013` can establish that
@@ -635,13 +644,22 @@ scripts.
 - **Regenerate §6:** `python3 scripts/reg013_citation_whitespace.py`
 - **Test suite:** `python3 -m pytest tests/ -q`
 - **Papers cited as established results:** Paper II (`src/wealth_tensor/redistribution.py`,
-  regenerated by `scripts/wt030_report.py`); Paper III (`src/wealth_tensor/lag.py` and
-  `src/wealth_tensor/lambda_sensitivity.py`, regenerated by `scripts/wt027_report.py`)
+  regenerated by `scripts/wt030_report.py`); Paper III (`src/wealth_tensor/lag.py`, regenerated by
+  `scripts/wt027_report.py`, and `src/wealth_tensor/lambda_sensitivity.py`, regenerated by
+  `scripts/wt002_lambda_report.py`). The diagonality rejection cited in §3, §4.4 and §9 comes from
+  neither: it is Paper III §5.4's, and its command is `python3 scripts/wt026_severe_test.py
+  --universe pilot --onset peak`, with `--universe replication` for the second arm.
+- **Regenerate §5 and §8:** `python3 -m pytest tests/test_excess_demand.py -q` for §5's schedule
+  counts on the 399 interior grid points, its 500-point monotonicity sweep, and the twelve-point
+  tie convention §8 records; `python3 scripts/wt071_refuter.py` for §5's crossing-height identity
+  across all 25 allocations and for §8's *N*-dependence table and its control. This is the
+  surviving apparatus of the fourth paper §8 describes. It is in this repository, and every number
+  §5 and §8 report was re-run from it.
 - **Commit for the results reported here:** **5efe626** — the last commit touching
   `scripts/reg013_citation_whitespace.py`, and therefore the state of the instrument that produced
-  every number in §6. The same non-circularity that governs Papers II and III applies: a paper
-  cannot cite the commit that adds the paper, so what is pinned is the code, which is what a
-  replicator needs and is verifiable today.
+  every number in §6. It is also the commit that first added this manuscript: the instrument and
+  the paper entered the repository together, so the pin is exact rather than approximate. What is
+  pinned is the state of the code, which is what a replicator needs and is verifiable today.
 
 Two tests in the suite exist specifically to make overclaiming fail loudly —
 `test_excess_demand_is_monotone_here_so_this_is_not_an_SMD_result`, which forbids §5's instance
