@@ -3,7 +3,7 @@ project: wealth-tensor
 session_n: 77
 gh_repo: jasoncbraatz/wealth-tensor
 branch: main
-gh_sha: PENDING
+gh_sha: 6b0655b2d3363995775822f10c5401f2bff3a46b
 updated: 2026-08-18
 session: wealthTensor-77
 live_theme: "THE FIRST FROZEN-INSTRUMENT PASS IN THE PROJECT'S HISTORY, AND IT DID NOT RETURN ZERO. Paper II's seventh independent P7 read, run with all five axes inherited and nothing invented, exactly as assigned. THREE findings. The number is the whole session: across seven passes the standing explanation for non-decaying counters was 'each pass brought a new instrument'; -76 made that a three-data-point claim; -77 is the control and the control disagrees. And the reason it disagrees is the finding that outlives the manuscript work: TWO OF THE THREE ARE RESIDUE OF -76's OWN REPAIRS. A repair pass creates surface, and the next independent read is the first to see it -- which may make two consecutive zero-finding passes unreachable by construction while any pass still repairs anything."
