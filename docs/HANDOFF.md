@@ -3,7 +3,7 @@ project: wealth-tensor
 session_n: 74
 gh_repo: jasoncbraatz/wealth-tensor
 branch: main
-gh_sha: PENDING
+gh_sha: 37a7cdbec4a91d3d36fc92944339df4dff9c58aa
 updated: 2026-08-18
 session: wealthTensor-74
 live_theme: "Paper II's fifth independent read, taken as assigned. FOUR findings, seven edits, two carded — and the instrument this pass adds is four words: RUN THE PAPER'S OWN COMMANDS. Paper II's §7 names two regeneration scripts; six independent reads had reasoned about them and none had executed them, and one prior pass wrote 'No overclaim ... but that is reasoning about the script, not a run of it' and was wrong on the first half. Eleven minutes of wall-clock produced two of the four findings and moved eight cleared rows from inference to measurement. Also closed queue item 4, three sessions deferred: the two cross-reference sweeps are now wt133, a committed instrument with a load-bearing exit code, and its first estate-wide run went red on PAPER IV."
