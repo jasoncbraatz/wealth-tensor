@@ -8,7 +8,7 @@ session: wealthTensor-86
 session_n: 86
 live_theme: "EVERY ROW IN docs/promises-adjudicated.tsv CAN NOW BE RE-RUN BY SOMEONE WHO WAS NOT THERE, AND THE FIRST THING THAT BOUGHT WAS A FALSE SENTENCE. wt156 asked the question BEFORE wt154's: not `did the adjudicator read the artefact` but `can step 1 of this file's own falsification procedure be carried out at all today`. 46 of 129 rows could not -- 36 whose evidence located the record in a session log that no longer exists, 10 whose evidence was a verb with no operand. All 46 are repaired with a command run on 2026-08-18 and the value it returned that day. Of the sixteen the handoff named, 12 agreed with their old note, 2 carried HEAD-indexed values that had legitimately moved, and 2 DISAGREED. One of those two exposed a FALSE SENTENCE that had stood since the section existed: Paper IV section 10 said tests/test_excess_demand.py ASSERTS section 8's twelve-point four, and the module asserted no such thing -- its only twelve-point test counts demand curves and asserts 25. The four is TRUE when measured, so wt158 added the assertion rather than weakening the sentence, and section 8's number is now machine-checked. Both rows had sat on the evidence `read the module`."
 phase: "The TSV is clean at BOTH its criteria: wt154 RC 0 (evidence reads rather than locates) and wt156 RC 0 (evidence is runnable today), over 130 rows, with 11/11 and 10/10 post-conditions. What -86 did NOT do is the parking-lot sweep it is now best placed to specify: the pronoun defect it found in the EVIDENCE column ('the script', 'the module') lives in the PROSE too, as pointers whose target is a bare noun phrase, and BOTH existing sweeps miss that class by construction. That is -87's at-bat."
-gate_passed: PENDING
+gate_passed: true
 gate_version: "2.60"
 next_at_bat: "ASSIGNED, ONE THING: FIND THE POINTERS WHOSE TARGET IS A BARE NOUN PHRASE. -86 built a detector for evidence columns that name no runnable handle, and two of the three rows its own author's committed prediction MISSED were missed for one reason: `grep -n E7 on the script` and `grep for each of the three names in the script and the module` read as perfectly runnable, and are not, because `the script` and `the module` are PRONOUNS whose referent the reader silently supplies from a neighbouring column. The same defect is in the manuscripts and neither existing sweep can see it: wt133 resolves section references and reference entries, wt156 reads the TSV, and a sentence saying `recorded in the run log` or `given in the appendix` or `listed in that section` is invisible to both. This is the third item on the parking lot, put there by -83 as the syntax its III-2 and III-3 findings lived in. Write `scripts/wt160_bare_pointer_sweep.py`: over paper-III.md and paper-IV.md, flag every pointer construction -- `recorded in|named in|given in|listed in|documented in|stated in|set out in|reported in <X>` -- where <X> carries NO backticked path, NO section N.M, and NO programme identifier (PRE-00N, REG-0NN, WT-0NN, RESULT-*, REVIEW-0NN), i.e. where the reader must guess which artefact is meant. RC 1 when any flags, RC 0 when none, plus --json. COMMIT THE PREDICTED COUNT BEFORE YOU RUN IT, with the measured field reading PENDING, exactly as -84 did for its sample and -86 did for its sweep -- -86's prediction was wrong by three and the three misses were the finding, which is only true because the prediction was a git object first. THE SEVERE TEST IS IN GIT: -83's III-2 and III-3 were repairs of exactly this syntax; `git log -S` on the repaired phrases finds the repair commit, and its PARENT is the revision at which the sweep MUST flag them, while at HEAD it MUST NOT. Put that before/after pair in the script as post-conditions with at least two NEGATIVE -- a NEGATIVE that matters here is a pointer whose target IS named (`recorded in `docs/preregistration/RESULT-002-pilot-run.log`') and which must not flag. DONE WHEN: wt160 exists and is committed with the before/HEAD pair IN the script; docs/REVIEW-027 reports the predicted count, the measured count, and every row where they disagree; every flagged pointer repaired in-pass -- either the target named concretely in the sentence, or, where the pointer genuinely has no single target, the sentence rewritten so it stops promising one; wt148 RC 0, wt133 RC 0, wt154 RC 0, wt156 RC 0, wt160 RC 0; suite green AND SAY THE NUMBER; coach at baseline. DO NOT widen `#scope` to Papers I and II -- still parked, still deliberate, FIVE passes running. DO NOT re-open REVIEW-026's census; the file is clean at both criteria and re-measuring it is the cheap substitute for the work that is actually left."
 blockers: []
@@ -336,3 +336,30 @@ were `ac16838bdb`, `d6c6430592`, `f7674cbd06` and `a00820b165`.
 `quarantine → active` — and banked SEVEN new, six of them global**); ⚠ pass `--contributor`
 explicitly on every `lessons.py add`; paste a handoff better than this one as the last act — and
 **assign -88 ONE at-bat with a definition of done. Do not hand them a menu.** 🥎
+
+---
+
+## THE SELF-REVIEW TRIAD, ANSWERED IN WRITING (gate v2.60, G-A / G-B / G-G)
+
+**1 · Did we capture everything for a zero-memory future Opus?** Yes, and the test is that every
+claim in this handoff has a command beside it. The four scripts (`wt156`–`wt159b`) carry their own
+rationale in their docstrings, their own post-conditions, and their own rollback; `REVIEW-026`
+carries the prediction, the measurement, the disagreement between them, and a five-way falsifier
+block. **Undo path:** every edit has a `.bak-wt15N` beside it and every step is a separate commit —
+`714898e` is the repairs, `0d559be` the review, `2a3dbb6` this handoff. Reverting `714898e` restores
+all 46 rows, §10's old bullet and the un-asserted §8, and `wt156` goes red again, which is the
+correct signal.
+
+**2 · What did we learn the hard way that is not yet written down?** All seven are banked in
+`claude-blackbook` (six global, one project-scoped, all stamped `--contributor big-wealthTensor-86`)
+and restated as **-86(i)–(vii)** above. The two that cost the most tool calls: a script under
+`tests/` invoked directly needs `PYTHONPATH=src`, and **an interrupted `dx` call may already have
+run on darwin** — check for the effect before re-running a mutating one.
+
+**3 · What ONE thing makes the next Opus's life easier, and did we add it THIS pass?** Added, this
+pass: **`wt156` turns "can anyone re-check this ledger?" from a judgement call into an exit code.**
+Before it, the only way to know whether a row was falsifiable was to try to falsify it; now it is
+`RC 0` or `RC 1`, with the `b50bccd`-vs-HEAD pair inside the script so the answer cannot be got by
+moving the instrument. -87 inherits a ledger where every one of 130 rows names a command that runs
+today — and, because the at-bat is specified against a defect class this pass *discovered rather
+than inherited*, they start at a high-water mark instead of a menu.
