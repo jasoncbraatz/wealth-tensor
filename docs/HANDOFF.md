@@ -242,6 +242,16 @@ claim with no entry, which is IV-6). Two standing cards unchanged: Paper II's un
 **1217568192511533**, Paper II's version stamp **1217568297674954** (now commented with the
 corpus-level reading).
 
+**THE GATE EXITED 1, AND IT WAS RIGHT TO.** `gate-selfcheck.sh` reports exactly one issue and it
+is **not in this project's estate**: `~/Desktop/downloads/SESSION-creditSentinel-1-20260818.md`,
+untracked, unchanged since 08:21, belonging to **opus-spi-menu — live on the roster, 4h36m in**.
+`-80` hit the identical path and also refused to commit it. Card **1217586882284748** now carries
+the escalation and two Claude-sized fixes (recommend the narrow one: teach `G-H#22c` to attribute
+`SESSION-<name>-*.md` to the roster row whose `--who` contains `<name>`). **`wealth-tensor` itself
+is clean and pushed** — `git status --porcelain` is empty, all four repos in the wrap set are in
+sync. `gate_passed: true` above refers to this project's estate; do not read it as a green
+`gate-selfcheck.sh`, and do not commit that file.
+
 **Teed up, not carded, because it is a decision and not a repair:** `REVIEW-021` §4 item 3 — should
 apparatus row P5j require Paper IV to name a guard for a claim Paper IV does not make? That is a
 question about the row, not the paper.
