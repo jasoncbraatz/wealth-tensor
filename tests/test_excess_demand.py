@@ -65,7 +65,10 @@ def test_excess_demand_is_identically_invariant_to_the_allocation():
     """
     grid = np.linspace(M.min(), M.max(), 401)[1:-1]
     grid = np.array([p for p in grid if np.min(np.abs(M - p)) > 1e-9])
-    assert grid.size > 300
+    # Paper IV §5 says "399 interior grid points" and §10 says this command regenerates it.
+    # `> 300` let the manuscript's own number go unheld for the life of the paper; the tie
+    # filter drops none of the 399, so the exact count is the assertion the sentence needs.
+    assert grid.size == 399
 
     demand = {tuple(mk.demand_at(float(p)) for p in grid) for mk in allocations()}
     supply = {tuple(mk.supply_at(float(p)) for p in grid) for mk in allocations()}

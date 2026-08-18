@@ -1,0 +1,464 @@
+{
+ "branch": "REGISTERED SAMPLE",
+ "A": {
+  "pilot": {
+   "label": "pilot",
+   "n": 247,
+   "d": 228,
+   "S": 1496,
+   "alpha_q": 0.13225058004640372,
+   "se_q": 0.008158819553018691,
+   "alpha_yr": 0.43300748180054227,
+   "ci_yr": [
+    0.39004269266881886,
+    0.4736614766202232
+   ],
+   "regime": "R1",
+   "meaning": "entire disclosed rectangle inside the domain"
+  },
+  "replication": {
+   "label": "replication",
+   "n": 448,
+   "d": 385,
+   "S": 2886,
+   "alpha_q": 0.11770100886579028,
+   "se_q": 0.0056345302126931205,
+   "alpha_yr": 0.3940132469579125,
+   "ci_yr": [
+    0.3630984380981892,
+    0.42378872008513335
+   ],
+   "regime": "R1",
+   "meaning": "entire disclosed rectangle inside the domain"
+  },
+  "pooled": {
+   "label": "POOLED (both universes)",
+   "n": 695,
+   "d": 613,
+   "S": 4382,
+   "alpha_q": 0.12272272272272272,
+   "se_q": 0.004642620503033181,
+   "alpha_yr": 0.407692103409537,
+   "ci_yr": [
+    0.38273230624695886,
+    0.43188718258127534
+   ],
+   "regime": "R1",
+   "meaning": "entire disclosed rectangle inside the domain"
+  },
+  "sensitivities": {
+   "annual-attributed charges excluded": {
+    "label": "  \u00b7 annual-attributed charges excluded",
+    "n": 415,
+    "d": 361,
+    "S": 2678,
+    "alpha_q": 0.11878907535373479,
+    "se_q": 0.005868982805749403,
+    "alpha_yr": 0.39699697559028846,
+    "ci_yr": [
+     0.36488899599395386,
+     0.4278718755029933
+    ],
+    "regime": "R1",
+    "meaning": "entire disclosed rectangle inside the domain"
+   },
+   "right-censored events excluded": {
+    "label": "  \u00b7 right-censored events excluded",
+    "n": 613,
+    "d": 613,
+    "S": 3254,
+    "alpha_q": 0.15852081717093355,
+    "se_q": 0.005873240074872333,
+    "alpha_yr": 0.49861249576282274,
+    "ci_yr": [
+     0.470608148083002,
+     0.525490815430441
+    ],
+    "regime": "R1",
+    "meaning": "entire disclosed rectangle inside the domain"
+   },
+   "one event per firm (largest charge)": {
+    "label": "  \u00b7 one event per firm (largest charge)",
+    "n": 307,
+    "d": 272,
+    "S": 1910,
+    "alpha_q": 0.12465627864344637,
+    "se_q": 0.007071621642037089,
+    "alpha_yr": 0.4128967506845117,
+    "ci_yr": [
+     0.374818921168925,
+     0.4492081079850433
+    ],
+    "regime": "R1",
+    "meaning": "entire disclosed rectangle inside the domain"
+   }
+  },
+  "weibull": {
+   "k": 1.21,
+   "q": 0.9213424092985028,
+   "nll": 1844.1953239907639,
+   "k_ci": [
+    1.135,
+    1.285
+   ],
+   "k_ci_excludes_1": true
+  },
+  "hazard": [
+   {
+    "t": 0,
+    "n_risk": 695,
+    "d": 0,
+    "h": 0.0
+   },
+   {
+    "t": 1,
+    "n_risk": 695,
+    "d": 175,
+    "h": 0.2517985611510791
+   },
+   {
+    "t": 2,
+    "n_risk": 520,
+    "d": 44,
+    "h": 0.08461538461538462
+   },
+   {
+    "t": 3,
+    "n_risk": 476,
+    "d": 49,
+    "h": 0.10294117647058823
+   },
+   {
+    "t": 4,
+    "n_risk": 427,
+    "d": 53,
+    "h": 0.12412177985948478
+   },
+   {
+    "t": 5,
+    "n_risk": 374,
+    "d": 61,
+    "h": 0.16310160427807488
+   },
+   {
+    "t": 6,
+    "n_risk": 313,
+    "d": 33,
+    "h": 0.10543130990415335
+   },
+   {
+    "t": 7,
+    "n_risk": 280,
+    "d": 32,
+    "h": 0.11428571428571428
+   },
+   {
+    "t": 8,
+    "n_risk": 241,
+    "d": 30,
+    "h": 0.12448132780082988
+   },
+   {
+    "t": 9,
+    "n_risk": 201,
+    "d": 30,
+    "h": 0.14925373134328357
+   },
+   {
+    "t": 10,
+    "n_risk": 166,
+    "d": 21,
+    "h": 0.12650602409638553
+   },
+   {
+    "t": 11,
+    "n_risk": 136,
+    "d": 11,
+    "h": 0.08088235294117647
+   },
+   {
+    "t": 12,
+    "n_risk": 118,
+    "d": 17,
+    "h": 0.1440677966101695
+   },
+   {
+    "t": 13,
+    "n_risk": 97,
+    "d": 16,
+    "h": 0.16494845360824742
+   },
+   {
+    "t": 14,
+    "n_risk": 74,
+    "d": 10,
+    "h": 0.13513513513513514
+   },
+   {
+    "t": 15,
+    "n_risk": 60,
+    "d": 9,
+    "h": 0.15
+   },
+   {
+    "t": 16,
+    "n_risk": 47,
+    "d": 10,
+    "h": 0.2127659574468085
+   },
+   {
+    "t": 17,
+    "n_risk": 33,
+    "d": 4,
+    "h": 0.12121212121212122
+   },
+   {
+    "t": 18,
+    "n_risk": 24,
+    "d": 3,
+    "h": 0.125
+   },
+   {
+    "t": 19,
+    "n_risk": 18,
+    "d": 5,
+    "h": 0.2777777777777778
+   }
+  ]
+ },
+ "B": {
+  "multi_tier_firms": 93,
+  "pilot": {
+   "n_fq": 215,
+   "n_co": 30,
+   "null_mean": 7.2772,
+   "ci": [
+    3,
+    12
+   ],
+   "p_two_sided": 0.00019998000199980003,
+   "direction": "ABOVE",
+   "cells": [
+    {
+     "pair": "PP&E \u00d7 finite-lived intangible",
+     "p": 1.0,
+     "obs": 0,
+     "exp": 0.0319
+    },
+    {
+     "pair": "PP&E \u00d7 indefinite-lived intangible",
+     "p": 0.6055394460553944,
+     "obs": 1,
+     "exp": 0.3178
+    },
+    {
+     "pair": "PP&E \u00d7 goodwill",
+     "p": 0.0005999400059994001,
+     "obs": 5,
+     "exp": 1.149
+    },
+    {
+     "pair": "finite-lived intangible \u00d7 indefinite-lived intangible",
+     "p": 0.004999500049995001,
+     "obs": 4,
+     "exp": 0.7421
+    },
+    {
+     "pair": "finite-lived intangible \u00d7 goodwill",
+     "p": 0.0013998600139986002,
+     "obs": 8,
+     "exp": 2.4043
+    },
+    {
+     "pair": "indefinite-lived intangible \u00d7 goodwill",
+     "p": 0.00019998000199980003,
+     "obs": 16,
+     "exp": 2.7463
+    }
+   ],
+   "holm": [
+    {
+     "pair": "indefinite-lived intangible \u00d7 goodwill",
+     "p": 0.00019998000199980003,
+     "p_holm": 0.0011998800119988001
+    },
+    {
+     "pair": "PP&E \u00d7 goodwill",
+     "p": 0.0005999400059994001,
+     "p_holm": 0.0029997000299970002
+    },
+    {
+     "pair": "finite-lived intangible \u00d7 goodwill",
+     "p": 0.0013998600139986002,
+     "p_holm": 0.005599440055994401
+    },
+    {
+     "pair": "finite-lived intangible \u00d7 indefinite-lived intangible",
+     "p": 0.004999500049995001,
+     "p_holm": 0.014998500149985002
+    },
+    {
+     "pair": "PP&E \u00d7 indefinite-lived intangible",
+     "p": 0.6055394460553944,
+     "p_holm": 1.0
+    },
+    {
+     "pair": "PP&E \u00d7 finite-lived intangible",
+     "p": 1.0,
+     "p_holm": 1.0
+    }
+   ],
+   "power": {
+    "0.05": 1.0,
+    "0.1": 1.0,
+    "0.2": 1.0,
+    "0.4": 1.0
+   }
+  },
+  "replication": {
+   "n_fq": 399,
+   "n_co": 44,
+   "null_mean": 21.796,
+   "ci": [
+    15,
+    29
+   ],
+   "p_two_sided": 0.00019998000199980003,
+   "direction": "ABOVE",
+   "cells": [
+    {
+     "pair": "PP&E \u00d7 finite-lived intangible",
+     "p": 1.0,
+     "obs": 1,
+     "exp": 0.739
+    },
+    {
+     "pair": "PP&E \u00d7 indefinite-lived intangible",
+     "p": 1.0,
+     "obs": 0,
+     "exp": 0.2787
+    },
+    {
+     "pair": "PP&E \u00d7 goodwill",
+     "p": 0.0029997000299970002,
+     "obs": 5,
+     "exp": 1.2394
+    },
+    {
+     "pair": "finite-lived intangible \u00d7 indefinite-lived intangible",
+     "p": 0.0013998600139986002,
+     "obs": 9,
+     "exp": 3.6891
+    },
+    {
+     "pair": "finite-lived intangible \u00d7 goodwill",
+     "p": 0.00019998000199980003,
+     "obs": 23,
+     "exp": 10.3565
+    },
+    {
+     "pair": "indefinite-lived intangible \u00d7 goodwill",
+     "p": 0.00039996000399960006,
+     "obs": 16,
+     "exp": 6.6459
+    }
+   ],
+   "holm": [
+    {
+     "pair": "finite-lived intangible \u00d7 goodwill",
+     "p": 0.00019998000199980003,
+     "p_holm": 0.0011998800119988001
+    },
+    {
+     "pair": "indefinite-lived intangible \u00d7 goodwill",
+     "p": 0.00039996000399960006,
+     "p_holm": 0.001999800019998
+    },
+    {
+     "pair": "finite-lived intangible \u00d7 indefinite-lived intangible",
+     "p": 0.0013998600139986002,
+     "p_holm": 0.005599440055994401
+    },
+    {
+     "pair": "PP&E \u00d7 goodwill",
+     "p": 0.0029997000299970002,
+     "p_holm": 0.008999100089991
+    },
+    {
+     "pair": "PP&E \u00d7 finite-lived intangible",
+     "p": 1.0,
+     "p_holm": 1.0
+    },
+    {
+     "pair": "PP&E \u00d7 indefinite-lived intangible",
+     "p": 1.0,
+     "p_holm": 1.0
+    }
+   ],
+   "power": {
+    "0.05": 1.0,
+    "0.1": 1.0,
+    "0.2": 1.0,
+    "0.4": 1.0
+   }
+  },
+  "verdict": [
+   "ABOVE",
+   "ABOVE"
+  ]
+ },
+ "C": {
+  "PP&E": {
+   "n": 55,
+   "median": 0.029236835088137146,
+   "iqr": [
+    0.014666213947522306,
+    0.10885352286773795
+   ],
+   "sd_log": 1.9895644731131312,
+   "sd_log_ci": [
+    1.02312656393809,
+    2.9529476769320206
+   ]
+  },
+  "finite-lived intangible": {
+   "n": 136,
+   "median": 0.06058662065440083,
+   "iqr": [
+    0.020346415259811446,
+    0.2307235571322275
+   ],
+   "sd_log": 1.4243251574454536,
+   "sd_log_ci": [
+    1.2844412957196338,
+    1.55596171720029
+   ]
+  },
+  "indefinite-lived intangible": {
+   "n": 81,
+   "median": 0.0473208910295003,
+   "iqr": [
+    0.019860596450184613,
+    0.13240572963564812
+   ],
+   "sd_log": 1.235999309010408,
+   "sd_log_ci": [
+    0.9945609570607017,
+    1.486376038192391
+   ]
+  },
+  "goodwill": {
+   "n": 423,
+   "median": 0.07731671956922649,
+   "iqr": [
+    0.028862137454623567,
+    0.20089053639349333
+   ],
+   "sd_log": 1.5132934074850826,
+   "sd_log_ci": [
+    1.2509576942935965,
+    1.820349755340878
+   ]
+  }
+ }
+}

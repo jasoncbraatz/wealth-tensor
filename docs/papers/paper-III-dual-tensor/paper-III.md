@@ -1987,6 +1987,12 @@ public data.
   zero, §5.3's observation that both statistics are negative is a fact about the analysed sample
   rather than about any re-pull. Nothing in this repository re-derives §5.3's figures from
   committed data, and this bullet implied otherwise until wealthTensor-80.
+- **Regenerate §5.4:** `python3 scripts/wt089_recognition_and_offdiagonal.py`. §5.4 asks two
+  questions of §5.3's sample that it was not collected for, and neither is answered by the command
+  above: `wt026_severe_test.py` is §5.3's instrument and prints nothing about the recognition rate
+  or the off-diagonal. This command re-pulls `companyfacts` as §5.3's does, so it reproduces the
+  instrument and not the sample; its own §2 reconciles the rebuild against `RESULT-002` before it
+  computes a statistic.
 - **Test suite:** `python3 -m pytest tests/ -q` runs the whole repository; at the pinned commit
   **d655501** — the state that produced every result in §A.2 and §§2–3 — that suite held **100** tests,
   of which the **62** in `tests/test_edgar.py`, `tests/test_lag.py` and

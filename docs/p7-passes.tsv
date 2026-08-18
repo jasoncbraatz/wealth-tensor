@@ -80,13 +80,30 @@ wealthTensor-77	paper-II	3	none	— (all five axes inherited; Paper II was 5 of 
 #   a counter would not decay. -80 filled the three cells and the counter went 7 -> 9, with 8 of
 #   the 9 coming from the newly-filled cells. COVERAGE, not novelty, not residue, not depth.
 #
-# WHAT IS NOW ASKABLE THAT WAS NOT:
-#   Every manuscript is at 5/5, so the NEXT read of ANY of them is the first in this project's
-#   history with nowhere left to be structurally blind. That is the condition under which a low
-#   count means something. If Paper III's third read returns a number near Paper II's 2, coverage
-#   explains the whole history and the counters can start measuring documents. If it returns nine
-#   again, it does not — and the reading -78 pre-committed to, that the counter measures the
-#   REVIEWERS, is the one left standing. Either way the next pass is worth more than the last six.
+# WHAT WAS ASKED HERE AT -80, AND THE ANSWER -81 BROUGHT BACK:
+#   -80 wrote: "Every manuscript is at 5/5, so the NEXT read of ANY of them is the first in this
+#   project's history with nowhere left to be structurally blind... If it returns nine again,
+#   [coverage] does not [explain the history] — and the reading -78 pre-committed to, that the
+#   counter measures the REVIEWERS, is the one left standing."
+#   IT RETURNED NINE. -81 read Paper IV on a closed grid, filled no cell, and found nine, all
+#   nine from filled cells. COVERAGE IS DEAD by the test -80 itself specified, in the words -80
+#   itself wrote. Do not re-litigate this: the prediction was pre-committed and the run answered it.
+#
+# FOUR MECHANISMS, FOUR REFUTATIONS, ALWAYS BY THE VERY NEXT PASS:
+#   new instruments   -> -71, -77.      repair residue -> -78.
+#   depth of applic.  -> -79.           coverage       -> -81.
+#   EVERY ONE was proposed by the pass whose own number it explained. That regularity is now the
+#   most robust thing in this file, and it is a fact about the REVIEWERS, not the manuscripts.
+#   -78's reading is what is left standing, and REVIEW-021 section 5 states its weakness in the
+#   same breath: it survives because it predicts nothing, which is not the same as being right.
+#
+# SO WHAT IS ASKABLE NOW: STOP PROPOSING MECHANISMS FROM THE PASS THAT PRODUCED THE NUMBER.
+#   Four attempts, four deaths, one shape. The next pass that finds a number and explains it in
+#   the same document is the fifth. What has NOT been tried: two independent readers on the SAME
+#   manuscript at the SAME coverage in the same window, which is the only design that separates
+#   "the paper has n defects left" from "a reviewer finds n". That is Jason's to authorise -- it
+#   costs two sessions to buy one data point -- and it is the first proposal in eleven rows that
+#   is not a story a single pass told about itself.
 #
 # THE CAVEAT THAT KEEPS THIS HONEST: FILLED IS NOT EXHAUSTED, AND IT IS NOW THREE-FOR-THREE.
 # -76's II-27 came out of A4, a cell -74 had ALREADY filled on Paper II — because -74 ran the
@@ -106,3 +123,4 @@ wealthTensor-77	paper-II	3	none	— (all five axes inherited; Paper II was 5 of 
 wealthTensor-78	paper-II	2	none	— (all five axes inherited; Paper II was 5 of 5 before this pass, A6 left parked as ordered)	0 of 2	REVIEW-018. THE SECOND FROZEN ROW, AND THE CONTROL FOR -77's OWN MECHANISM. -77 proposed that a repair pass creates the next pass's findings and made -78 the experiment by handing it four manuscript edits and one test edit. RESIDUE: 0 of 2. II-35 blames to 2b3e24b5 (2026-08-17), II-36 to 3b11f236 (2026-08-05) — the very commit §7 pins, present for ALL EIGHT reads. Neither new instruments nor repair residue explains the counter; REVIEW-018 §5 argues DEPTH OF APPLICATION, which unlike residue leaves a zero REACHABLE. First DECAYING count in the project's history (3 -> 2).
 wealthTensor-79	paper-II	2	none	— (all five axes inherited; Paper II was 5 of 5 before this pass, A6 left parked as ordered)	0 of 2	REVIEW-019. THE THIRD FROZEN ROW, AND THE FALSIFIER -78 HANDED IT. -78 argued the counter measures how much of each axis has been SPENT and predicted that a ninth read at the same depth would find materially fewer than two. IT FOUND TWO, AND BOTH FROM SITES -78 HAD ALREADY OPENED: II-37 at the two commands A5 enumerated and A4 ran, II-38 at item 7 of REVIEW-018 §4's own not-checked list. RESIDUE: 0 of 2 (II-37 -> 58f7f5bb/-74 and 6b0655b2/-77; II-38 -> f1ceac74, 2026-08-10). Depth of application is refuted. FIRST PASS IN THE PROJECT WITH ZERO MANUSCRIPT EDITS: both repairs made an existing sentence true instead of changing it. A third defect (II-39, a prefix collision in wt130's selector) was found and repaired but is DELIBERATELY NOT COUNTED -- it is in the reviewing apparatus, which Paper II names nowhere.
 wealthTensor-80	paper-III	9	inherited-first-application	A2 grep-the-document-for-the-failure-mode-it-names (originates -72) + A4 run-the-manuscript's-own-regeneration-commands (originates -74) + A5 grep-each-module-against-its-paired-script (originates -75) — ALL THREE first on paper-III, and the matrix closes at 15 of 15	8 of 9	REVIEW-020. THE COVERAGE ROW, AND THE FIRST UNCONFOUNDED DATA POINT THE PROJECT HAS HAD. Every previous comparison of finding counts was made across passes at DIFFERENT matrix coverage. -77/-78/-79 froze the instrument set and returned 3, 2, 2 on a manuscript at 5 of 5. This pass filled THREE cells at once on a manuscript at 2 of 5 and returned NINE, eight of them from the three new cells; only III-11 came from an inherited axis (A1's read-forward). No instrument was invented -- which is why the row is `inherited-first-application` and not `new`, and why it refutes nothing about the new-instrument anecdote. It completes the grid. SHAPES: -79 asked whether its two new shapes were Paper II's own texture; 7 of 9 carry one (5 promise-about-artefact, 2 deferral-with-empty-target) on a different manuscript found by three axes -79 never ran, so they generalise. MANUSCRIPT EDITS: 7 of 9, so -79's proposed narrower rule would score this pass 7 against its own 0 -- the SAME separation the current rule gives (9 against 2). NOT APPLIED; this row is on the current rule.
+wealthTensor-81	paper-IV	9	none	— (all five axes inherited; the grid closed at -80, so NO cell could be filled. THE FIRST PASS IN THIS PROJECT'S HISTORY RUN ON A CLOSED MATRIX, which is the condition -80's coverage reading had to be tested in and the reason this at-bat existed.)	0 of 9	REVIEW-021. THE FALSIFIER ROW, AND COVERAGE IS DEAD. -80 proposed COVERAGE OF THE AXIS MATRIX and made the prediction explicit: a pass with nowhere left to be structurally blind should return MATERIALLY FEWER THAN NINE. This pass had a closed grid, filled no cell, and returned NINE -- 9 of 9 from cells that were already filled, on a manuscript that was at 5 of 5 before and after. That is the FOURTH mechanism refuted by the pass immediately after the pass that proposed it (new instruments -71/-77, residue -77/-78, depth -78/-79, coverage -80/-81), and REVIEW-021 section 5 argues the four-for-four is the finding rather than any of the four: every mechanism was proposed by the pass whose own number it explained, and every one died next pass. -78's reading -- the counter measures the REVIEWERS -- is what is left, and REVIEW-021 says out loud that it survives partly because it predicts nothing. RESIDUE 2 of 9: IV-1 and IV-3 blame to 7ca35c7 (-75) and were ADDED by the edit that repaired the defect -75's own global lesson describes; the other seven blame to 5efe626, present since 2026-08-16 through three prior reads. MEASUREMENT, not mechanism: naming a defect class does not exhaust it in the site where it was named, even for the pass that named it -- four of nine are in the section -75 wrote its lesson FROM. SHAPES REPLICATE EXACTLY: 5 promise-about-artefact / 2 deferral-with-empty-target / 2 neither, the SAME split -80 found on Paper III, now on a third manuscript by a different reviewer -- two data points became a property of the corpus. MANUSCRIPT EDITS: 9 of 9, so -79's proposed narrower rule scores this pass 9 as well; the two rules agree here and separated -79 and -80 by the same margin. NOT APPLIED; this row is on the current rule.

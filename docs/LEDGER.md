@@ -4361,3 +4361,90 @@ found. All 39 tabulated §3 values reproduce.
 
 Suite **1078 passed, 0 failed** (72.10 s). `wt133` **RC 0**. `paper-II.md` **unchanged, 565 lines**.
 Tags run to `wt142`; `wt143` is free.
+
+---
+
+## WT-129 · REVIEW · 2026-08-18 · wealthTensor-81 · **Paper IV's SECOND independent read — the first pass on a closed grid, and the fourth mechanism died**
+
+**Nine findings, nine repairs, zero carded.** Paper IV 6 → **9**. Document of record:
+`docs/REVIEW-021-P7-paperIV-pass2.md`. Patch: `scripts/wt144_paperIV_p7pass2.py` (15
+post-conditions). Sibling repair: `scripts/wt145_paperIII_sec54_command.py` (5). Ledger row:
+`scripts/wt146_p7passes_row81.py` (12). Manuscript read end to end, 766 lines; 796 after repair.
+
+**THE ASSIGNED FALSIFIER FIRED, AND COVERAGE IS DEAD.** `-80` proposed COVERAGE OF THE AXIS MATRIX
+and specified the test itself: *a pass with nowhere left to be structurally blind should return
+materially fewer than nine.* This pass ran on a **closed** grid (15 of 15, closed at `-80`), filled
+no cell, and returned **nine** — **9 of 9 from cells already filled**. That is the fourth mechanism
+refuted by the pass immediately after the one that proposed it: new instruments (`-71`, `-77`),
+repair residue (`-78`), depth of application (`-79`), coverage (`-81`). **The four-for-four is the
+result, not any of the four** — every mechanism was proposed by the pass whose own number it
+explained, and every one died next pass. `-78`'s reading is what is left, and `REVIEW-021` §5 says
+its weakness out loud: it survives because it predicts nothing.
+
+**THE HEADLINE FINDING.** §10 named `wt026_severe_test.py --universe pilot --onset peak` as the
+command for the diagonality rejection. **Both arms were run.** Neither prints 4.12×, 2.02×,
+*p* = 0.0002, or the word *independence* — `wt026` is Paper III **§5.3's** instrument. The real one
+is `scripts/wt089_recognition_and_offdiagonal.py`, which prints all of it plus the `π = 0.05 →
+power 1.00` §3 quotes, verified here for the first time. Paper II §7 states the rule that was
+broken: *"a single command named for numbers it does not produce is a provenance claim that reads
+as checked and is not."* **The ROOT was repaired in Paper III**, which has never named a command
+for §5.4 at all — `wt145` adds the bullet, so the inheritance cannot repeat. Not counted as a
+Paper IV finding (cf. `-79`'s II-39).
+
+**THE OTHER EIGHT.** §10's preamble contradicting its own bullets and §1 · the one `src/` module
+this paper's results depend on (`excess_demand.py`) named nowhere, with **399** and §8's
+twelve-point **four** asserted by nothing · *"Two tests in the suite"* as an exhaustive count that
+is wrong by a wide margin, one of the two guarding a claim this paper does not make · §8's *"It is
+not in this corpus"* about a 7,367-word file in `docs/papers/paper-I-price-formation/` that is the
+only place §8's own *roughly 7,400 words* is checkable · §7's fourth relocation naming no author,
+no work and no constraint, in the paragraph arguing that naming the constraint is what makes a
+relocation checkable · Robinson, Sraffa and Mas-Colell listed and cited nowhere, `wt133`-flagged
+since `-74` and adjudicated by nobody, two of them the works §1.1's argument rests on · §8's
+REG-001 entry not answering §8's own stated test · and the paper measuring one absence, asserting
+three, and not saying so in §9.
+
+**RESIDUE 2 of 9, AND THE TWO ARE THE MEASUREMENT.** `IV-1` and `IV-3` blame to `7ca35c7` (`-75`).
+At `5efe626` §10 had **no** diagonality clause and **no** *"Regenerate §5 and §8"* bullet; `-75`
+wrote both, in the same edit that repaired the defect `-75`'s own global lesson describes —
+*"A DATA-AVAILABILITY SECTION IS A LIST OF PROMISES, SO CHECK EVERY PAIRING BY GREP AND EVERY
+COMMAND BY RUNNING IT."* Four of nine are in that section. **Naming a defect class does not
+exhaust it in the site where it was named, even for the pass that named it.** The other 7 of 9
+blame to `5efe626` — present since 2026-08-16, through two scoped reads and one full one.
+
+**THE SHAPES REPLICATE EXACTLY.** `-80` found **5 promise-about-artefact / 2 deferral / 2 neither**
+on Paper III and asked for a third manuscript. This pass found **5 / 2 / 2** on Paper IV. Two data
+points became a property of the corpus: **its characteristic defect is not a wrong number, it is a
+true-sounding sentence about an artefact that the artefact does not bear out.** Every value this
+pass checked against a live run matched — `reg013`, `wt071`, `wt027`, `wt089`, `test_excess_demand`
+— sixteen cleared items in `REVIEW-021` §3. The corpus checks its numbers and does not check its
+sentences about its machinery.
+
+**GUARDS ADDED, so three of the nine cannot return.**
+`tests/test_paper_iv_tie_convention_is_counted.py` asserts §8's four, asserts that dropping the two
+grid endpoints collapses it to one (the witness for §8's *explanation*, not just its value), and
+asserts the neighbouring 25 so the lazy repair is red. `tests/test_paper_iv_named_guards.py`
+forbids the exhaustive count and two near-miss phrasings, holds apparatus row P5j, checks every
+guard the paper names exists, and checks the repaired sentence's own evidence is real so the repair
+cannot rot into its own phantom. `tests/test_excess_demand.py`'s `assert grid.size > 300` is now
+`== 399`, which is the manuscript's own number.
+
+**Promises made TRUE, not withdrawn**, on the `-76`/`-79` precedent (II-27, II-37): every unheld
+promise in §10 was repaired by making the repository bear it out.
+
+**FOUR NEW TELLS** (`REVIEW-021` §6, and one is a warning about reading predecessors' lessons):
+run the command, because the paper is quoting something it never ran · the pass that names a defect
+class is the pass most likely to leave more of it in the same paragraph · a count over a set the
+repository can enumerate is a defect waiting for a grep · **a guard satisfied by a sibling's
+artefact is green and blind** (apparatus row P5h demanded a module path and a sibling's satisfied
+it) · and when a paper advertises that it measured its absence, go find the absences it did not.
+
+**Suite 1090 passed, 0 failed.** `wt133` **RC 0**, paper-IV **0 unresolved, 28 of 28 cited**
+(was 25 of 28). Coach **1 conduct / 0 concessive** for Paper IV — baseline held across ten edits.
+`docs/crossref-dismissed.tsv` gains `paper-IV 5.3`. Tags run to `wt146`; **`wt147` is free.**
+
+**JASON-SIZED, unchanged or newly sharpened:** the version stamp is now a **corpus-level** decision,
+not a per-paper one — Papers II, III and IV all carry a stamp older than their repairs. And
+`REVIEW-021` §5 makes the first proposal in eleven rows that is not a story a pass told about
+itself: **two independent readers on the same manuscript at the same coverage in the same window**,
+the only design that separates *the paper has n defects left* from *a reviewer finds n*. It costs
+two sessions to buy one data point, which is why it is Jason's call and not a pass's.

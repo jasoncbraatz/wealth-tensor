@@ -67,8 +67,9 @@ The distinction is worth stating exactly, because the soft version of the conces
 more than it needs to. A *benign* simplification drops detail and preserves structure: refine it
 and the numbers move. A *structural* one collapses a distinction the theory needs: refine it and
 the conclusions move. Capital as a malleable scalar is the second kind, and the Cambridge
-controversy was fought over precisely that — Samuelson (1966) conceded that with reswitching
-available the marginal-productivity account cannot be recovered from an aggregate capital measure.
+controversy — opened by Robinson (1953), and given the reswitching apparatus by Sraffa (1960) —
+was fought over precisely that: Samuelson (1966) conceded that with reswitching available the
+marginal-productivity account cannot be recovered from an aggregate capital measure.
 The scalar survived anyway, and it survived for a reason that had nothing to do with the argument
 being settled.
 
@@ -452,8 +453,7 @@ reader than performing it silently four times.
 
 **The move: relocation.** The disagreement is never *you are wrong*. It is *you are a differently
 constrained case*. Piketty is not measuring the wrong thing; he is measuring a different layer.
-Solow's scalar was not an error; it was the only object anyone could populate. The Austrian account
-of the cycle names a different cause and describes the same architecture. SMD is not an opposing
+Solow's scalar was not an error; it was the only object anyone could populate. SMD is not an opposing
 result; it is this framework's own boundary, proved by the mainstream fifty years before the
 framework existed.
 
@@ -491,8 +491,9 @@ a statement kinetic exchange can absorb directly, and its mechanism κ is the so
 quantity that literature likes.
 
 **And on the aggregation literature specifically.** SMD is treated in §4 at length and is not
-re-argued here. The relation is complementarity: SMD is the theorem for the map, this framework is
-the claim for the state, and neither implies the other.
+re-argued here; its textbook statement is Mas-Colell, Whinston and Green (1995). The relation is
+complementarity: SMD is the theorem for the map, this framework is the claim for the state, and
+neither implies the other.
 
 ---
 
@@ -516,7 +517,10 @@ fixed in advance, before anybody knew which one it would return.
 
 **A fourth paper, on price formation, that was written and is not being published.** The largest
 entry, and it cost the most. A complete draft existed — roughly 7,400 words, references verified —
-arguing that supply and demand are not independent equations. It is not in this corpus. Had the
+arguing that supply and demand are not independent equations. It is not published and is not one
+of the papers this corpus joins; the draft itself is in the repository, superseded and marked so,
+at `docs/papers/paper-I-price-formation/paper-I.md` — which is the only place the word count above
+is checkable. Had the
 route worked, this paper would be the fourth in a series rather than the third, and §5 above would
 be a citation rather than a section.
 
@@ -559,6 +563,9 @@ pressure, a pre-registration (`REG-001`) was written to test whether the identit
 second setting where the incumbent apparatus could not follow. The instrument was mis-specified in
 four ways and the run produced no usable answer in either direction. It is recorded here as an
 instrument dead end — which is what it is — and not as a result, because it never became one.
+Under this section's own test: had it returned, §5's identity would be reported as holding beyond
+the single-good case, and §9's fifth limitation — that the zero-income-effect restriction is the
+load-bearing one — would be a narrower claim than it now is.
 
 **A superposition framing for agent role.** Proposed to soften the critique: the agent is "in
 superposition" between buyer and seller until the price is observed. Rejected on technical grounds
@@ -628,14 +635,25 @@ model — and worse, makes the paper's centrepiece a fifty-year-old theorem the 
 8. **The whitespace measurement is about occupancy, not fertility.** `REG-013` can establish that
    an intersection is unoccupied. That it is worth occupying is what the argument has to earn, and
    the measurement cannot help with it.
+9. **One of this paper's absences is measured and the rest are asserted, and §6's own standard is
+   why that is worth stating.** §6 exists because *an absence found by searching is a property of
+   the search*, and it measures the absence that motivates the paper. Three others are not
+   measured: §1.1's *the input-output energy table has no lapse to report*, which is load-bearing
+   for §4.3's *largely unmeasured rather than merely unassembled*; and §7's two
+   within-literature absences, *has generally not had* an accounting-shaped object and *has mostly
+   not had* a base. None of the three is known to be false. The point is that they stand on the
+   evidentiary footing §6 was built to escape, and a reader is entitled to know which of this
+   paper's absences were measured and which were looked for.
 
 ---
 
 ## 10 · Data and code availability
 
 This paper's own contribution is one measurement, on the citation graph rather than on a model.
-Everything else it reports is cited from Paper II or Paper III and is regenerated by those papers'
-scripts.
+Numbers reported without a citation to Paper II or Paper III come from **two** places, which is
+what §1 says: §6's are `REG-013`'s, and §5's and §8's are the surviving apparatus of the fourth
+paper §8 describes. Everything else is cited from Paper II or Paper III and is regenerated by
+those papers' scripts.
 
 - **Repository:** `https://github.com/jasoncbraatz/wealth-tensor` (public)
 - **Pre-registration:** `docs/preregistration/REG-013-citation-graph-whitespace.md`, committed in
@@ -647,25 +665,37 @@ scripts.
   regenerated by `scripts/wt030_report.py`); Paper III (`src/wealth_tensor/lag.py`, regenerated by
   `scripts/wt027_report.py`, and `src/wealth_tensor/lambda_sensitivity.py`, regenerated by
   `scripts/wt002_lambda_report.py`). The diagonality rejection cited in §3, §4.4 and §9 comes from
-  neither: it is Paper III §5.4's, and its command is `python3 scripts/wt026_severe_test.py
-  --universe pilot --onset peak`, with `--universe replication` for the second arm.
+  neither: it is Paper III §5.4's, and its command is `python3
+  scripts/wt089_recognition_and_offdiagonal.py`, which runs both universes in one pass and prints
+  the 4.12× and 2.02× lifts, their *p* = 0.0002 and the power curve §3 quotes. `python3
+  scripts/wt026_severe_test.py --universe pilot --onset peak` is Paper III §5.3's command, it
+  answers a different question, and it prints none of those numbers; this bullet named it until
+  wealthTensor-81.
 - **Regenerate §5 and §8:** `python3 -m pytest tests/test_excess_demand.py -q` for §5's schedule
   counts on the 399 interior grid points, its 500-point monotonicity sweep, and the twelve-point
   tie convention §8 records; `python3 scripts/wt071_refuter.py` for §5's crossing-height identity
-  across all 25 allocations and for §8's *N*-dependence table and its control. This is the
-  surviving apparatus of the fourth paper §8 describes. It is in this repository, and every number
-  §5 and §8 report was re-run from it.
+  across all 25 allocations and for §8's *N*-dependence table and its control. The module under
+  both is `src/wealth_tensor/excess_demand.py` — this paper's only `src/` dependency that is not a
+  sibling's, and the one this bullet named neither until wealthTensor-81. This is the surviving
+  apparatus of the fourth paper §8 describes. It is in this repository, and every number §5 and §8
+  report was re-run from it. §5's **399** interior grid points and §8's twelve-point **four** are
+  *asserted* by `tests/test_excess_demand.py` rather than printed by it, so that command's output
+  is a verdict and not a table.
 - **Commit for the results reported here:** **5efe626** — the last commit touching
   `scripts/reg013_citation_whitespace.py`, and therefore the state of the instrument that produced
   every number in §6. It is also the commit that first added this manuscript: the instrument and
   the paper entered the repository together, so the pin is exact rather than approximate. What is
   pinned is the state of the code, which is what a replicator needs and is verifiable today.
 
-Two tests in the suite exist specifically to make overclaiming fail loudly —
-`test_excess_demand_is_monotone_here_so_this_is_not_an_SMD_result`, which forbids §5's instance
-being sold as an SMD result, and `test_a_flat_gini_does_not_mean_a_bounded_one`, which forbids a
-saturating statistic being read as convergence. A test suite that constrains the author is a
-different object from one that flatters him.
+Two of the suite's overclaim-forbidding tests are named here, and the suite holds more than two:
+`test_the_forbidden_claim_is_red` appears in two registration modules and Paper III names a third,
+`test_pre001_constants_are_what_was_registered`.
+`test_excess_demand_is_monotone_here_so_this_is_not_an_SMD_result` forbids §5's instance being sold
+as an SMD result, which is this paper's own claim.
+`test_a_flat_gini_does_not_mean_a_bounded_one` forbids a saturating statistic being read as
+convergence, which is **Paper II's** claim and not this one's — this paper reports no Gini — and it
+is named here because §3's sovereign scale rests on the result it guards. A test suite that
+constrains the author is a different object from one that flatters him.
 
 The repository's `docs/` directory is deliberately public and is the project's working notebook,
 including the pre-registration whose prediction failed and the result document recording that a
