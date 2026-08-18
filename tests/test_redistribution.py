@@ -125,6 +125,12 @@ def test_a_flow_levy_is_powerless_when_gains_are_unrealised():
     """
     unrealised = econ(base="flow", rate=1.0, realization=0.0)
     nothing = econ()
+    # wealthTensor-76. §3.2 claims the two paths agree AGENT BY AGENT and calls the identity
+    # structural -- "stronger than calling it a near-match". Until now the only committed
+    # check WAS a near-match: abs=0.01 on one summary statistic. The manuscript's strongest
+    # sentence in §3.2 was pinned by nothing able to see what it claims. GUARD HONESTY --
+    # this line passes at rho = 0.00 and fails at rho = 0.10, 0.25 and 1.00, both verified.
+    assert np.array_equal(unrealised["wealth"], nothing["wealth"])
     assert stationary_gini(unrealised) == pytest.approx(stationary_gini(nothing), abs=0.01)
     assert top_share(unrealised) > 0.95
     assert not is_bounded(unrealised)

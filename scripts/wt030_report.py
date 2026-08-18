@@ -27,6 +27,6 @@ for th in (0.0,0.25,0.5,1.0,2.0,5.0,20.0):
     g,k,t,b = row(base="stock", rate=0.025, threshold=th)
     print(f"  thr={th:5.2f}x  Gini={g:.3f}  kappa={k:.4f}  bounded={b}")
 print("\nPERIODICITY (stock, rate*P held constant at 0.02/period)")
-for P in (1,2,4,10,20,50):
+for P in (1,2,4,10,20,30,50):
     g,k,t,b = row(base="stock", rate=min(1.0,0.02*P), periodicity=P)
     print(f"  every {P:3d} periods at r={min(1.0,0.02*P):.2f}  Gini={g:.3f}  bounded={b}")

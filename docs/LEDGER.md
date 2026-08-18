@@ -4022,3 +4022,69 @@ the same bug wearing different clothes** — `wt132` fixed the second on a test'
 `wt134` tripped the first on its own post-condition, in consecutive sessions.
 
 ---
+
+## `WT-124` · Paper II's SIXTH `P7` read — five findings, five repairs, and §7 caught committing the failure mode §7 names
+
+**`wealthTensor-76`, 2026-08-18.** The at-bat was assigned, not chosen: `-70`'s rule back in force,
+Paper II, and **bring `-75`'s new axis to it**. It was brought, and it paid inside twelve minutes —
+**two of the five findings came from the grep-and-run half alone**, before a word of prose.
+
+**`II-27`, and it is the one to read.** §7 promises *"Regenerate every number in §3:
+`python3 scripts/wt030_report.py`"*. That script's periodicity sweep is `P ∈ (1,2,4,10,20,50)` and
+its printed span is **0.030**. §3.3 quotes **0.451 at *P* = 30** and a whole-sweep span of
+**0.035** — both TRUE (measured 0.4507 and 0.0353 at *T* = 1200) and **neither in the output of the
+command §7 names for them**. Both were written by `wealthTensor-74`, from a *test's* sweep, **in the
+same pass that edited §7 twice**, whose own docstring records that the regeneration command "prints
+the P = 50 row". And **§7 names this exact failure mode four lines above the defect**: *"a single
+command named for numbers it does not produce is a provenance claim that reads as checked and is
+not."* That is `-72`'s standing lesson — when a document names a failure mode, grep the document for
+it — **paying out on the very document that coined it.** Repaired by making the promise TRUE:
+`P = 30` joins the sweep, and `wt135`'s fourth post-condition **re-runs the patched command and
+demands the row**.
+
+**`II-28`.** §3.2 says the ρ = 0 identity holds *"agent by agent rather than merely on the summary
+statistics"* and that saying so is *"stronger than calling it a near-match"*. The only committed
+check — the test file's self-described **HEADLINE** — was `pytest.approx(abs=0.01)` on the Gini plus
+`top_share > 0.95`: **a near-match on one summary statistic, which is precisely what the manuscript
+declares itself stronger than.** The claim is true (`np.array_equal` on the 800-vector, max abs diff
+**0.0**) and is now asserted. Guard honesty verified in both directions *before* the line was
+written: passes at ρ = 0.00, fails at ρ = 0.10 / 0.25 / 1.00.
+
+**`II-29` / `II-30` / `II-31`** — §5.5 still scopes the non-simulation numbers to "**three** Var[log
+*a*] values" while citing, in the same sentence, the §7 that `-74` moved to **four**; §7's second
+overclaiming guard is said to be *"in the same suite"* four lines under a bullet naming
+`tests/test_redistribution.py`, and it lives in `tests/test_excess_demand.py` (§1's contribution 5
+already says it correctly — *"a companion module of the same suite"* — so the repair copies the
+manuscript's own pattern); and §7's enumeration of its non-simulation numbers is **still one short**,
+missing §3.4's (N−1)/N = 0.99875. `II-31` is **named as the softest** in `REVIEW-016` §2 rather than
+sold at the price of the others.
+
+**A CLEARED ROW WORTH AS MUCH AS A FINDING.** `IV-5` — *"a paper cannot cite the commit that adds
+the paper"*, which `-75` found FALSE in Paper IV — **is TRUE in Paper II.** `git log --diff-filter=A`
+puts `paper-II.md` in **`d655501`**, disjoint from the pinned **`3b11f23`**, which touches only
+`redistribution.py` and its test file. The sentence does not generalise, and **Paper I carries it
+verbatim at L568 and remains the untested third instance** — one command away, and written into
+`REVIEW-016` §4 rather than left implied.
+
+**Coverage:** 554 lines read end to end · `wt133` **RC 0** (41 refs, 0 unresolved) · `wt130` 160
+quantifier tokens on 123 lines · coach **RC 0** at Paper II's baseline **2 / 0**, before and after ·
+suite **1078 passed, 0 failed** · `test_redistribution.py` **18 passed**, so §7's, the abstract's and
+§1's shared count survives the patch · **39 numbers regenerated cell by cell**, including all seven
+flow rates behind contribution 2's "within 7 %" rather than the three §3.1 quotes.
+
+**FOUR NOT-CHECKED ITEMS WERE CLOSED AT DRAFTING** rather than written down (`-75`(iv)): the commit
+pin, the `IV-5` generalisation, the seven-rate residual sweep, and the ρ = 0 identity — the last of
+which stopped being a not-checked item by becoming `II-28`. Five remain, in `REVIEW-016` §4.
+
+**CARDED:** nothing new. `1217568297674954` gains its **sixth and sharpest data point** — Paper II's
+stamp reads *"Version 0.2, 2026-08-11"* while its own References note dates a re-verification
+**2026-08-17**, so unlike Paper IV **the contradiction is visible without leaving the page**.
+`1217568192511533` and `1217556161163494` untouched and re-cited in `REVIEW-016` §4.
+
+**THE PROCESS FINDING GETS ITS THIRD DATA POINT.** Paper II: **9 → 2 → 4 → 3 → 4 → 5**. One new
+instrument this pass; two of five findings came from it and could not have come from anything else.
+**The two consecutive zero-finding passes the definition of done wants have never once been
+attempted with a frozen instrument set** — which is now a measured statement about the method rather
+than an impression about the papers.
+
+---
