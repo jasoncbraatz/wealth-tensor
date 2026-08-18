@@ -159,9 +159,10 @@ price decline of a specified magnitude from a peak, and in accounting ASC 250 �
 and Error Corrections* — reserves the word for the repair of an **error**, which a change in
 estimate driven by later information is not. An earlier draft of this paper used *correction* for
 the event thirty times and would have asserted, in the technical register of the standard §5 is
-built on, that the prior statements required retrospective restatement. The word **crisis** is kept
-in the title and for the phenomenon the paper is *about*; the systemic, country-level sense used in
-the banking-crisis literature is not intended anywhere here.
+built on, that the prior statements required retrospective restatement. The word **crisis** is used
+for the phenomenon §2 models and for nothing wider. It is **not** in the title, which names the
+identification result; §8.2 gives the framing it belongs to and the paper that will carry it. The
+systemic, country-level sense used in the banking-crisis literature is not intended anywhere here.
 
 Throughout: E₀ = 100, d = 0.05, m = 0.6 (effective decay 0.02 per period), α = 0.05, θ = 0.25, 400
 periods. Where the filter is examined in isolation the recognition mechanism is disabled (θ = ∞),
@@ -825,7 +826,7 @@ the 291-fold improvement quoted in §4.2. A design that uses disclosed useful li
 the sample §5 already collected — **151 property events across 98 firms** on the tier-0 tag list
 §5.4 repaired, against 55 across 38 on the list as first collected, with 110 of the 151 joining to
 a disclosed life. Across the one-year life bands that design requires, those 110 events occupy
-sixteen bands and **exactly one clears §5's floor of 30** — thirty-six events from twenty firms
+sixteen bands and **exactly one clears the registered floor of 30** — thirty-six events from twenty firms
 at a five-year life — with none clearing on firms rather than events. Filling the coverage §5's
 two cycles leave between them — the seven intervening cycles, run — raises the join to **133
 of the 151** and leaves the same single band clearing: the second band reaches twenty-seven against
@@ -1554,7 +1555,7 @@ with what would have killed each.
 | **Lumpy defers more than slow at an identical mean rate** | compound-Poisson decline, 2,000 paths, mean rate matched exactly | the ratio at or below 1, which would license reading "unscheduled" as "slow" | **1.30×** (se 0.002), a δ-equivalent of 0.0123 — above the crossing rate |
 | **The design's validity region has a fitted boundary** | logistic of failure on log(leverage / budget), 4,000 ladders | a slope indistinguishable from zero | slope **+1.58**, z = **+19.5**; the same fit on a permuted outcome gives z = 0.23 |
 | **The *asserted* rectangle lies outside the model's domain *at the calibrated rate*** | useful lives spanning disclosure practice against α = 0.05, and the 683 disclosed pairs against the measured rate | any part of it admitting a steady-state deferral measure | **0%** admissible at α = 0.05; **all** of the asserted rectangle and **0.974** of the disclosed pairs at the measured α̂ = 0.408 |
-| **The rectangle's 99.7% is a property of the assumed support, not of the disclosure** | §4.4's first rung evaluated on 683 disclosed firm-year pairs across 577 firms, against the same test on the asserted rectangle at the same rate | the two agreeing within the clustered interval, which would have made the rectangle an adequate stand-in for the disclosure | rises in **0.659** of admissible pairs [**0.621**, **0.696**] against **0.998** on the rectangle; only **0.139** of the pairs fall inside it |
+| **The rectangle's 99.8% is a property of the assumed support, not of the disclosure** | §4.4's first rung evaluated on 683 disclosed firm-year pairs across 577 firms, against the same test on the asserted rectangle at the same rate | the two agreeing within the clustered interval, which would have made the rectangle an adequate stand-in for the disclosure | rises in **0.659** of admissible pairs [**0.621**, **0.696**] against **0.998** on the rectangle; only **0.139** of the pairs fall inside it |
 | **The peak-to-charge recognition rate is an order of magnitude above the calibration** | censored geometric MLE on 695 registered events, two universes, three sensitivities, four truncations | any cut returning a rate near the swept 0.05 | **α̂ = 0.408/yr** [0.383, 0.432], on both known biases' inflating side; range **0.327–0.499** across every cut including the unregistered robustness, none containing 0.05 |
 | **The constant hazard the model assumes is rejected** | discrete Weibull fitted, not assumed, with a profile interval | k̂ = 1, which would have left α a constant | **k̂ = 1.210** [1.135, 1.285]; the hazard rises with the age of the gap |
 | **The closed form survives an age-dependent hazard** | general form against an age-structured simulation carrying the gap as cohorts, no closed form in the loop | departure beyond §4.3's published transient bound | held to **2 × 10⁻¹³** against a 2 × 10⁻⁴ bound; the same simulation **rejects** α ← 1/E[T] at 2 × 10⁻³ |
@@ -1866,7 +1867,8 @@ differences follow from the same page rather than from a defence of it. Their ca
 tails rather than crashes, entering kurtosis as a control variable against which their agency-driven
 crash results are then identified. And it has no accounting layer of any kind; the working paper
 contains no occurrence of *goodwill*, *intangible*, *impair*, *GAAP*, *book value* or *historic
-cost*. The operating asset neither depreciates nor is reinvested in by declared assumption, and the
+cost*. The operating asset neither depreciates nor is reinvested in — "For simplicity, we ignore
+depreciation and reinvestment" — by declared assumption, and the
 footnote attached to that assumption concedes only depreciation "according to a pre-defined
 schedule" — which, being common knowledge, enters value and price identically and opens no wedge at
 all.
@@ -1952,19 +1954,20 @@ and are claimed as nothing more than that.
 
 ## 11 · Data and code availability
 
-Every simulation result in §A.2 and §2 is produced by open code. The severe test in §5 uses only
+Every simulation result in §A.2 and §§2–3 is produced by open code. The severe test in §5 uses only
 public data.
 
 - **Repository:** `https://github.com/jasoncbraatz/wealth-tensor` (public)
 - **Modules:** `src/wealth_tensor/lag.py` · `src/wealth_tensor/lambda_sensitivity.py` ·
   `src/wealth_tensor/edgar.py`
-- **Regenerate §2 (and §A.2.4):** `python3 scripts/wt027_report.py`
+- **Regenerate §3 (and §A.2.4):** `python3 scripts/wt027_report.py` — its three tables are
+  §3.1's two and §3.2's. §2 states the model and reports no simulation result.
 - **Regenerate §A.2.3:** `python3 scripts/wt002_lambda_report.py`
 - **Regenerate §5:**
   `python3 scripts/wt026_severe_test.py --universe pilot --onset peak` and
   `--universe replication --onset peak`
 - **Test suite:** `python3 -m pytest tests/ -q` runs the whole repository; at the pinned commit
-  **d655501** — the state that produced every result in §A.2 and §2 — that suite held **100** tests,
+  **d655501** — the state that produced every result in §A.2 and §§2–3 — that suite held **100** tests,
   of which the **62** in `tests/test_edgar.py`, `tests/test_lag.py` and
   `tests/test_lambda_sensitivity.py` are the ones that hold this paper's claims in place. The
   remaining 38 hold a companion paper's claims and are named here only because a suite total is a
@@ -1977,7 +1980,7 @@ public data.
   closed form D(φ) = (1 − φ)·D(0) and its accompanying negative claim that the lag is *not* linear,
   and one asserting the algebraic collapse §4 publishes — which had no test until an
   audit found the published form using the entropy rate where it meant the effective decay.
-- **Hardware:** none required. Every figure in §A.2 and §2 regenerates on a commodity CPU in seconds.
+- **Hardware:** none required. Every figure in §A.2 and §§2–3 regenerates on a commodity CPU in seconds.
   The fits reported in §4 use two thousand synthetic firms at four hundred gradient steps
   in double precision; a larger reference fit of ten thousand firms at three hundred steps
   completed in **76 seconds on two 2.8 GHz cores**, a machine chosen deliberately so the figure is
@@ -2094,8 +2097,10 @@ specific by the refusal.
 ### A.1.3 · The propositions are deniable, and this repository proves it
 
 The claim that these are empirical rather than definitional is cheap to make and is usually made
-by assertion. Here it is demonstrated, because the regimes in which each proposition fails are
-committed, tested code rather than thought experiments:
+by assertion. Here it is demonstrated for **one** of the three, because the regime in which P2
+fails is committed, tested code rather than a thought experiment. P1 and P3 are argued deniable
+in §A.1.1 and §A.1.4 and are not demonstrated in code, and the second item below is the
+mechanism's own switch-off rather than a proposition:
 
 - **P2 fails at complete maintenance.** Effective decay is the entropy rate *net of maintenance*,
   so a fully maintained asset has no dynamics at all and the model collapses to an identity. This
@@ -2381,7 +2386,7 @@ familiar.)*
 Bleck, A., & Liu, X. (2007). Market transparency and the accounting regime. *Journal of Accounting
 Research*, 45(2), 229–256. ✓ *(Read in full text; the copy consulted carries the journal's own title
 page — vol. 45 no. 2, May 2007, DOI 10.1111/j.1475-679X.2007.00231.x — so it is the typeset article
-and not a pre-publication version. §4.4 and §10 both cite it against this paper: it states §4.4's
+and not a pre-publication version. §3.2 and §10 both cite it against this paper: it states §3.2's
 volatility result nineteen years earlier.)*
 
 Bushman, R. M., & Williams, C. D. (2015). Delayed expected loss recognition and the risk profile of
@@ -2571,7 +2576,7 @@ intensity measured in terms of primary energy and GDP.* Reported as World Bank s
 Energy Progress Report* by the IEA, IRENA, UNSD, the World Bank and the WHO. ✓
 
 Jin, L., & Myers, S. C. (2006). R² around the world: New theory and new tests. *Journal of
-Financial Economics*, 79(2), 257–292. ✓ *(**Read at source**, typeset article. §10's one quotation —
+Financial Economics*, 79(2), 257–292. ✓ *(**Read at source**, typeset article. The sentence §10 quotes for the no-physical-layer reading —
 "For simplicity, we ignore depreciation and reinvestment" — is verified in the published text at
 **p. 262**, character for character; an earlier revision of this entry recorded it as checked only
 against NBER Working Paper 10453 and flagged the risk that the referee process had altered it. It
@@ -2671,6 +2676,10 @@ describe, so that correcting an entry cannot leave a summary of it behind.*
    that the crash-risk papers had been read in pre-publication and untypeset versions and cited as
    though they were the published articles. Hence **✓⧗**, and hence the single surviving quotation in
    §10 being attributed to the working paper it was actually read in rather than to the journal.
+   **That finding was later discharged for the crash-risk entries, and is recorded here rather than
+   rewritten:** Jin and Myers was afterwards read in the typeset article and its quoted sentence
+   verified at p. 262 unchanged, so those entries carry **✓**. **✓⧗** now marks three entries,
+   cited in §§4.4, 4.6 and 4.9.
 
 **The order is the lesson.** A clean bibliographic pass is not evidence of a correct citation; it is
 evidence of a correct *bibliography*. The two are different documents that happen to share a page.

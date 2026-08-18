@@ -191,11 +191,11 @@ LEDGER = [
     # row above can say `all of the asserted rectangle` without implying `all of the
     # disclosure`.
     ("rectangle lies outside", "0.974", "0.9736", R9, TABLE),
-    ("99.7% is a property of the assumed support", "0.659", "0.6586", R9, TABLE),
-    ("99.7% is a property of the assumed support", "0.621", "0.6211", R9, TABLE),
-    ("99.7% is a property of the assumed support", "0.696", "0.6964", R9, TABLE),
-    ("99.7% is a property of the assumed support", "0.998", "0.9980", R9, TABLE),
-    ("99.7% is a property of the assumed support", "0.139", "0.1391", R9, TABLE),
+    ("99.8% is a property of the assumed support", "0.659", "0.6586", R9, TABLE),
+    ("99.8% is a property of the assumed support", "0.621", "0.6211", R9, TABLE),
+    ("99.8% is a property of the assumed support", "0.696", "0.6964", R9, TABLE),
+    ("99.8% is a property of the assumed support", "0.998", "0.9980", R9, TABLE),
+    ("99.8% is a property of the assumed support", "0.139", "0.1391", R9, TABLE),
 ]
 
 # --------------------------------------------------------------------------------------
