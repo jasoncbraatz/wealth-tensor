@@ -3,16 +3,16 @@ project: wealth-tensor
 session_n: 76
 gh_repo: jasoncbraatz/wealth-tensor
 branch: main
-gh_sha: a808f082d3e8f8fb61d35c330e7087cae2cd3572
+gh_sha: PENDING
 updated: 2026-08-18
 session: wealthTensor-76
 live_theme: "Paper II's sixth independent P7 read, taken as assigned, with -75's new axis brought to it as ordered. FIVE findings, five repairs, nothing new carded. The pass has one shape and it is worth stating first: section 7 of Paper II contains, in its own prose, the sentence 'a single command named for numbers it does not produce is a provenance claim that reads as checked and is not' -- and FOUR LINES BELOW IT, promises that wt030_report.py regenerates every number in section 3, when two numbers in 3.3 come from a TEST's sweep and are absent from that command's output. The document coined the rule and broke it within one screen. Then the reading half paid three more, the sharpest being section 3.2's claim that its identity holds 'agent by agent' and is 'stronger than calling it a near-match' -- pinned, until today, by a near-match on one summary statistic."
 phase: "Manuscript repair under a settled thesis. Paper II 9-2-4-3-4-5 across SIX reads, still not converging, pair unstarted; Paper III opens at 7, one pass deep, 2694 lines, the biggest unexplored surface; Paper IV at 6. The instrument set has FIVE axes and every pass that added one found what the previous passes structurally could not -- now a three-data-point claim, not an impression."
 gate_passed: true
 gate_version: "2.60"
-next_at_bat: "ASSIGNED, not offered: PAPER II'S SEVENTH INDEPENDENT P7 READ. -70's rule holds mechanically -- Paper II returned FIVE findings, so it does not release. Bring the axis Paper II has never had: THE DOCSTRINGS. Section 7 hands a replicator `tests/test_redistribution.py` as the artefact that holds this paper's claims in place; that file contains EIGHTEEN test docstrings plus a module docstring, all of them prose, NONE of them asserted by anything, and exactly ONE has ever been audited against the manuscript -- at -65, and only because DECISION-001 forced it, where the docstring was found still making a claim the manuscript had already retracted ('kappa is the mechanism'). Nineteen unchecked prose claims inside the object the paper points at. DONE WHEN: every docstring in tests/test_redistribution.py, plus the two named guards' docstrings wherever they live, is read against the manuscript's CURRENT text and each recorded agrees/contradicts/stale, BEFORE a word of prose; wt133 and wt130 run first and their counts are the coverage claim; Paper II read end-to-end, all 554 lines; every finding repaired in-pass or carded with a named falsifier; REVIEW-017 exists with its own coverage claim, its own cleared list AND its own not-checked list; suite green, board re-checked, coach at Paper II's baseline of 2 conduct / 0 concessive. A ZERO IS A RESULT -- say so plainly if you get one and do not manufacture a finding to make the pass look like work."
+next_at_bat: "ASSIGNED, not offered: PAPER II'S SEVENTH INDEPENDENT P7 READ, AND IT IS THE FIRST FROZEN-INSTRUMENT PASS IN THIS PROJECT'S HISTORY. -70's rule holds mechanically -- Paper II returned FIVE findings, so it does not release. But -76's rider work changed WHAT the pass should be, and this is the important part: docs/p7-passes.tsv's axis matrix says PAPER II IS AT 5 OF 5 AXES. Every instrument this project has ever invented has now been pointed at Paper II. So DO NOT INVENT A SIXTH -- the rider's part 3 forbids it while cells are empty, and Paper II has none. Run all five, invent nothing, and record `new_instrument: none`. THAT IS THE ENTIRE POINT: across ~10 reads corpus-wide no paper has produced even ONE zero, and every pass has been confounded by a fresh axis. A zero from a frozen instrument set is the first zero that would MEAN anything, and it is the only kind the definition of done can honestly count. DONE WHEN: all five axes run against Paper II BEFORE prose, each with its count recorded -- A1 wt130, A2 grep the document for the failure mode it names, A3 wt133, A4 run wt030_report.py and wt077_tail_index.py and diff their output against every number in section 3, A5 grep every module section 7 names against its paired script; Paper II read end-to-end, all 554 lines; every finding repaired in-pass or carded with a named falsifier; REVIEW-017 exists with its own coverage claim, its own cleared list AND its own not-checked list, and its front matter carries new_instrument/instrument_name/findings_from_new_instrument; docs/p7-passes.tsv gains its row; suite green, board re-checked, coach at Paper II's baseline of 2 conduct / 0 concessive. A ZERO IS THE OUTCOME THIS PROJECT NEEDS AND THIS IS THE FIRST PASS THAT CAN PRODUCE AN HONEST ONE -- say so plainly if you get it, and do not manufacture a finding to make the pass look like work."
 blockers: []
-drift_flags: ["-70's RULE HELD AND RELEASES NOTHING: Paper II returned five findings on its sixth read, so -77 is Paper II again. Two consecutive sessions have now honoured the rule without argument (-75, -76). The next session that wants to override it needs a red instrument or an equivalent, in writing, in ONE line at the top of its handoff -- unchanged from -75.", "PAPER II'S COUNTER IS 9 -> 2 -> 4 -> 3 -> 4 -> 5 AND IS STILL NOT CONVERGING, and -76 is the THIRD data point for the same reading, in its strongest form yet: -76 brought exactly ONE new instrument and TWO of its five findings came from that instrument ALONE. The pair of zero-finding passes the definition of done wants HAS NEVER ONCE BEEN ATTEMPTED WITH A FROZEN INSTRUMENT SET. That is now a measurement about the METHOD, not an impression about the papers, and it may be worth saying out loud INSIDE the definition of done.", "The queue's old item 1, 'Paper I's first P7 pass', remains demoted: Paper I is NOT in definition_of_done and Paper II section 7 calls it 'since superseded by its own internal referee'. Carried unchanged from -71 through -76. BUT -76 adds a four-minute item that touches it: Paper I L568 carries the non-circularity sentence -75 found FALSE in Paper IV and -76 found TRUE in Paper II. It is the untested third instance and it is ONE `git log --diff-filter=A` away.", "wt133's sweep-2 orphan lists are ADJUDICATED FOR PAPER IV and remain UNADJUDICATED for Papers I, II and III. Paper II's NINE uncited entries (Draagulescu, Patriarca, Yakovenko, Gabaix, Piketty, Auerbach, Kaldor, Saez, Toder) are card 1217568192511533 and were deliberately not touched by -76. Sweep 2 does not set the exit code, deliberately; do not read RC 0 as covering them.", "PAPER II's STAMP IS NOW THE SHARPEST CASE FOR CARD 1217568297674954, sharper than Paper IV's: 'Version 0.2, 2026-08-11' while its OWN References note dates a re-verification 2026-08-17, INSIDE the document. Paper IV's stamp is wrong against the git log; Paper II's is wrong against Paper II, and a reader needs no repository access to see it. Sixth data point, commented on the card, not repaired -- the ruling is Jason's and there is no rule to follow."]
+drift_flags: ["THE ANECDOTE IS NOW MEASURED AND IT WAS HALF WRONG. -75's rider landed at -76: docs/p7-passes.tsv holds all six P7 passes with a three-valued new_instrument field, and its axis matrix reads 12 OF 15 CELLS FILLED, with ALL THREE EMPTY CELLS ON PAPER III (A2, A4, A5). Two consequences, both load-bearing. (1) Paper II and Paper IV are at 5/5, so their counters can finally decay and -77 is the first frozen-instrument pass. (2) TWO OF THE SIX ROWS ARE `NOT-STATED` for findings_from_new_axis, because -73 and -75 never recorded the split they were later cited as evidence for -- the project has been asserting an attribution it did not measure. AND -71 IS THE ROW THAT CUTS AGAINST THE STORY OUTRIGHT: no new axis, four findings anyway.", "-70's RULE HELD AND RELEASES NOTHING: Paper II returned five findings on its sixth read, so -77 is Paper II again. Two consecutive sessions have now honoured the rule without argument (-75, -76). The next session that wants to override it needs a red instrument or an equivalent, in writing, in ONE line at the top of its handoff -- unchanged from -75.", "PAPER II'S COUNTER IS 9 -> 2 -> 4 -> 3 -> 4 -> 5 AND IS STILL NOT CONVERGING, and -76 is the THIRD data point for the same reading, in its strongest form yet: -76 brought exactly ONE new instrument and TWO of its five findings came from that instrument ALONE. The pair of zero-finding passes the definition of done wants HAS NEVER ONCE BEEN ATTEMPTED WITH A FROZEN INSTRUMENT SET. That is now a measurement about the METHOD, not an impression about the papers, and it may be worth saying out loud INSIDE the definition of done.", "The queue's old item 1, 'Paper I's first P7 pass', remains demoted: Paper I is NOT in definition_of_done and Paper II section 7 calls it 'since superseded by its own internal referee'. Carried unchanged from -71 through -76. BUT -76 adds a four-minute item that touches it: Paper I L568 carries the non-circularity sentence -75 found FALSE in Paper IV and -76 found TRUE in Paper II. It is the untested third instance and it is ONE `git log --diff-filter=A` away.", "wt133's sweep-2 orphan lists are ADJUDICATED FOR PAPER IV and remain UNADJUDICATED for Papers I, II and III. Paper II's NINE uncited entries (Draagulescu, Patriarca, Yakovenko, Gabaix, Piketty, Auerbach, Kaldor, Saez, Toder) are card 1217568192511533 and were deliberately not touched by -76. Sweep 2 does not set the exit code, deliberately; do not read RC 0 as covering them.", "PAPER II's STAMP IS NOW THE SHARPEST CASE FOR CARD 1217568297674954, sharper than Paper IV's: 'Version 0.2, 2026-08-11' while its OWN References note dates a re-verification 2026-08-17, INSIDE the document. Paper IV's stamp is wrong against the git log; Paper II's is wrong against Paper II, and a reader needs no repository access to see it. Sixth data point, commented on the card, not repaired -- the ruling is Jason's and there is no rule to follow."]
 parking_lot: []
 definition_of_done: "Three preprints (II, III, IV) each at ready-to-submit per ADR-001 clauses, every number regenerated from committed scripts, convergence reached (two consecutive zero-finding review passes per paper), Jason's own-hand pass complete — then the batch declared, once."
 
@@ -56,48 +56,73 @@ asserted in `wt135`'s guards.
    which also records the **four items closed at drafting** so the shrinkage is auditable.
 2. **`python3 scripts/wt133_crossref_sweep.py` — run it first, before you read anything.** Four
    seconds, **green**, and that is the state you are responsible for preserving.
-3. **`docs/LEDGER.md` `WT-124`** — this pass in one entry, including the cleared row worth as much
+3. **`docs/p7-passes.tsv`** — new at `-76`, on `-75`'s rider. Six rows, one per `P7` pass, each
+   falsifiable by one `git log --diff-filter=A`, plus the **5-axis × 3-manuscript matrix** whose
+   count reassigns your at-bat. Read the header block; it carries its own audit instructions.
+4. **`docs/LEDGER.md` `WT-124`** — this pass in one entry, including the cleared row worth as much
    as a finding (`IV-5` does **not** generalise to Paper II).
 
 ---
 
 ## YOUR AT-BAT — ASSIGNED. Do not choose.
 
-**Paper II's seventh independent `P7` read — and the new axis is THE DOCSTRINGS.**
+**Paper II's seventh independent `P7` read — and it is THE FIRST FROZEN-INSTRUMENT PASS IN THIS
+PROJECT'S HISTORY. You invent nothing.**
 
-`-70`'s rule releases nothing: Paper II returned **five**. It is Paper II again.
+`-70`'s rule releases nothing: Paper II returned **five**. It is Paper II again. But `-75`'s rider
+landed this session and it **changed what the pass should be**, which is the single most useful
+thing `-76` did.
 
-**The instrument, and it runs before prose.** §7 hands a replicator `tests/test_redistribution.py`
-as *"the ones that hold this paper's claims in place."* That file contains a module docstring and
-**eighteen test docstrings** — several of them long, several of them argumentative, **none of them
-asserted by anything**, and **exactly one has ever been audited against the manuscript**: at `-65`,
-where `test_reallocation_intensity_is_what_the_base_caps`'s docstring was found still calling κ the
-*mechanism* after the manuscript had retracted that in five places. Its own comment says it:
-*"Nothing asserts a docstring, so the retraction in the manuscript would have left the test suite
-still making the claim — the abstract-versus-body defect one file out."*
+**`docs/p7-passes.tsv`'s matrix says Paper II is at 5 of 5 axes.** Every instrument this project has
+ever invented — `A1` the quantifier read-forward, `A2` grep the document for the failure mode it
+names, `A3` the cross-reference sweep, `A4` run the manuscript's own regeneration commands, `A5`
+grep each module against its paired script — has now been pointed at Paper II. **There is no empty
+cell to fill and therefore no licence to invent a sixth.** The rider's part 3 is explicit: fill the
+empty cells for your manuscript before inventing a new axis. Paper II has none.
 
-**That was found once, by accident, because `DECISION-001` forced someone to look. Nineteen of them
-have never been read against the paper at all.**
+**So run all five, add nothing, and record `new_instrument: none`.**
 
-For each: read it against the manuscript's **current** text and record `agrees` / `contradicts` /
-`stale`. Then read the prose.
+| axis | what to run |
+|---|---|
+| `A1` | `python3 scripts/wt130_quantifier_sweep.py`, then **read forward** from every flagged line |
+| `A2` | grep Paper II for the failure modes it names in its own prose — `-76` found §7 breaking a rule it coined **four lines above itself** |
+| `A3` | `python3 scripts/wt133_crossref_sweep.py`, then read the passages **around** every flag (`-75`(i): the sweep cannot see a reference that resolves to the *wrong* thing) |
+| `A4` | run `wt030_report.py` and `wt077_tail_index.py` and **diff their output against every number in §3** — `-74` ran them, `-76` diffed them, and the diff is where `II-27` came from |
+| `A5` | grep every module §7 names against the script it is paired with; run every command it names |
 
-**Why this and not another careful read.** It is the same shape that produced `II-27` and `II-30`
-today and `IV-2` on Paper IV: **prose that a replicator is pointed at and no instrument checks.** A
-docstring is the purest form of it — unasserted prose inside the artefact the data-availability
-section names.
+**Why a frozen pass is the assignment, and it is the whole argument.** Across roughly ten reads
+corpus-wide, **no paper has produced even one zero**, and every single pass has been confounded by a
+fresh instrument. The definition of done wants **two consecutive zero-finding passes per paper**.
+A zero produced while the toolkit is still growing measures the toolkit; **a zero from a frozen
+instrument set measures the manuscript**, and it is the only kind the bar can honestly count.
+`-77` is the first session in a position to produce one.
 
-**DONE WHEN:** every docstring in `tests/test_redistribution.py` — plus the two named guards'
-docstrings wherever they live — is read against the manuscript's current text with its verdict
-recorded, **before a word of prose**; `wt133` and `wt130` run first and their counts are your
-coverage claim; Paper II read end-to-end, all 554 lines; every finding repaired in-pass or carded
-with a named falsifier; **`REVIEW-017`** exists with its own coverage claim, its own cleared list
-**and** its own not-checked list; suite green, board re-checked, coach at Paper II's baseline of
-**2 conduct / 0 concessive**.
+**THE RIDER YOU PASS ON, whatever you find.** Fill the empty cells for **your** manuscript before
+inventing a sixth axis, and **record your row in `docs/p7-passes.tsv`**. Parts 1 and 2 of `-75`'s
+rider **landed in full at `-76`** — the fields are in `REVIEW-016`'s front matter and the ledger and
+its matrix exist — so you do **not** need to re-derive any of it.
 
-**A ZERO IS THE OUTCOME THIS PROJECT NEEDS.** If you find nothing, say so plainly and do not
-manufacture a finding to make the pass look like work — that is the one way this at-bat can be
-failed. Equally do not aim for zero: `-76` found five where `-74` found four.
+**A SIXTH AXIS EXISTS AND IS DELIBERATELY PARKED, so you do not re-invent it and do not spend it
+early.** `A6`, the docstring axis: §7 hands a replicator `tests/test_redistribution.py` as *"the ones
+that hold this paper's claims in place"*, and that file carries a module docstring plus **eighteen
+test docstrings** — prose, **asserted by nothing**, of which **exactly one has ever been read against
+the manuscript** (at `-65`, only because `DECISION-001` forced it, and it was found still calling κ
+the *mechanism* after the paper had retracted that in five places: *"Nothing asserts a docstring, so
+the retraction in the manuscript would have left the test suite still making the claim"*). Nineteen
+unchecked prose claims inside the artefact the paper points at. **It is a real axis and it will find
+things — which is exactly why it must not be spent on the frozen pass.** Spend it on **Paper III**,
+where three cells are empty anyway, or on Paper II *after* the frozen pair resolves.
+
+**DONE WHEN:** all five axes run against Paper II **before a word of prose**, each with its count
+recorded; Paper II read end-to-end, all 554 lines; every finding repaired in-pass or carded with a
+named falsifier; **`REVIEW-017`** exists with its own coverage claim, its own cleared list **and**
+its own not-checked list, and its **front matter carries `new_instrument` / `instrument_name` /
+`findings_from_new_instrument`**; **`docs/p7-passes.tsv` gains its row**; suite green, board
+re-checked, coach at Paper II's baseline of **2 conduct / 0 concessive**.
+
+**A ZERO IS THE OUTCOME THIS PROJECT NEEDS, AND YOURS IS THE FIRST PASS THAT CAN PRODUCE AN HONEST
+ONE.** Say so plainly if you get it. Do not manufacture a finding to make the pass look like work —
+that is the one way this at-bat can be failed. And do not aim for zero either: `-76` found five.
 
 ### THE QUEUE BEHIND IT — context, not a menu. Do not shop here.
 
@@ -205,8 +230,12 @@ output**. Its docstring carries a `NOT DONE HERE` block per `wt134`'s pattern.
 `wt134` re-ran a sweep on the patched text; `wt135` re-runs the **artefact it edited** and greps its
 stdout for the manuscript's own number. That is the cheapest available proof that a provenance
 repair actually repaired provenance.
+▲ **`docs/p7-passes.tsv`** — `-75`'s rider, landed in full. Six rows + the 5×3 axis matrix, with its
+own falsifier command in its header block the way `docs/crossref-dismissed.tsv` carries its audit
+instructions. **`scripts/wt136_rider_review016_frontmatter.py`** put the three instrument fields into
+`REVIEW-016`'s front matter under the same guard-then-backup ordering.
 · `wt133` (**green**), `wt130`, `wt128`/`wt129`/`wt132`/`wt134`, `wt131b` all unchanged. **Tags run
-to `wt135`; `wt136` is free.**
+to `wt136`; `wt137` is free.**
 
 ---
 
@@ -225,12 +254,21 @@ stamp reads *"Version 0.2, 2026-08-11"* while its **own References note** dates 
 **2026-08-17**. Paper IV's stamp is wrong against the git log; **Paper II's is wrong against Paper
 II**, and a reader needs no repository access to see it. Second half still worth a word: if the stamp
 only moves at submission, it should **say** it is a first-draft date.
-(e) **The process finding, now with a THIRD data point and in its strongest form.** Paper II's
-counter is 9 → 2 → 4 → 3 → 4 → **5**. `-76` brought exactly **one** new instrument and **two of its
-five findings came from that instrument alone**. **The pair of consecutive zero-finding passes the
-definition of done requires has never once been attempted with a frozen instrument set.** That is a
-measurement about the method, not an impression about the papers — and it is the strongest argument
-yet for saying so *inside* the definition of done.
+(e) **THE ANECDOTE IS NOW A FILE, AND IT WAS HALF WRONG.** `docs/p7-passes.tsv` — six rows, one
+per `P7` pass, each falsifiable by one `git log --diff-filter=A`. Read it instead of another
+paragraph of narrative. Three things fell out of measuring the story six sessions had been telling:
+**the matrix reads 12 of 15 cells filled, and all three empties are Paper III** (`A2`, `A4`, `A5`) —
+which is why `-77` is Paper II's first *frozen-instrument* pass and why Paper III's counter is not
+yet measuring Paper III; **two of the six rows are `NOT-STATED`**, because `-73` and `-75` never
+recorded the instrument attribution they were later cited as evidence for; and **`-71` is a row that
+cuts against the story outright** — no new axis, four findings anyway. *And filled is not exhausted:
+`-76`'s `II-27` came out of a cell `-74` had already filled.*
+
+**(e2) ONE LINE FROM YOU, AND IT IS A CHANGE TO THE BAR, SO IT IS NOT MINE TO MAKE: should the
+definition of done require that at least ONE of the two consecutive zero-finding passes brought NO
+new axis?** Today's bar is satisfiable by two passes that looked in the same places with the same
+tools — the exact failure the new field exists to expose. Yes or no; `-77` is the first session that
+could satisfy the stricter version, so a ruling now costs nothing and lands immediately.
 (f) The PAN history purge — Batter's Box `1217561667484767`.
 
 ---
@@ -249,6 +287,34 @@ found the first case where **the document itself proves the stamp wrong without 
 reference**: Paper II dates its own bibliography work six days after the version it claims to be.
 `P13` should not move until `II-25` is ruled and Paper II's and Paper III's pairs are at least
 started.
+
+---
+
+## TEED UP, NOT CHASED — one estate observation `-76` could not close without hijacking the session
+
+**`G-AL` appears to go silent exactly when a session does what the handoff tells it to.** Observed
+twice at `-76`'s wrap, on darwin:
+
+* `~/Scripts/gate-selfcheck.sh` with **no** environment → prints
+  `=== G-AL · the session knew what DONE looks like ===` followed by
+  `WARN CANNOT VERIFY: no current session tag`.
+* `GATE_ROSTER_WHO=big-wealthTensor-76 ~/Scripts/gate-selfcheck.sh` → the output goes
+  **`G-AJ` → `GATE SELF-CHECK: PASS ✅` with no `G-AL` section printed at all.**
+
+Both runs exit 0 and both print PASS. If that reproduces, it is `G-AI`'s own species — *a gate step
+that vanishes with its instrument* — and it vanishes under the **recommended** invocation, which is
+the worst possible case for a check whose whole job is asking whether the session knew what done
+looked like. **`-76` did not chase it**: it lives in `~/Scripts`, not this repo, and diagnosing it
+would have hijacked a manuscript pass. **The one command that settles it**, and it is cheap:
+
+```
+~/Scripts/gate-selfcheck.sh > /tmp/a.out 2>&1
+GATE_ROSTER_WHO=big-wealthTensor-77 ~/Scripts/gate-selfcheck.sh > /tmp/b.out 2>&1
+diff <(grep -o '=== G-A[A-Z][^=]*' /tmp/a.out) <(grep -o '=== G-A[A-Z][^=]*' /tmp/b.out)
+```
+
+Empty diff → `-76` misread its own tail and this note should be deleted. Non-empty → file it in
+**State Machine**, not the Batter's Box: a Claude with darwin can fix it.
 
 ---
 

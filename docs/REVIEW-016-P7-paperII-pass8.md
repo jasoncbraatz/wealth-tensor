@@ -1,3 +1,18 @@
+---
+new_instrument: inherited-first-application
+instrument_name: "A5 — grep each module a data-availability section names against the script it is paired with, and run every command it names (originated wealthTensor-75 on Paper IV; Paper II had never seen it)"
+findings_from_new_instrument: 2 of 5
+# FALSIFY THIS ROW. For a script instrument:
+#   git log --diff-filter=A --format='%h %ad' --date=short -- scripts/<instrument_name>
+# an earlier session's add-commit means the row is wrong. A5 is a NON-SCRIPT axis, so its
+# falsifier is REVIEW-015 §2 IV-2: open it and find the axis described, or this row is wrong.
+# The two findings claimed: II-27 (diffing the named command's output against §3) and II-30
+# (grepping the file §7 names). II-28, II-29 and II-31 came from reading.
+# THREE VALUES, NOT TWO, AND THIS ROW IS WHY: no axis was invented here, and five findings
+# landed anyway. `new: no` would have recorded the exact opposite of what happened.
+# Ledger of all six passes: docs/p7-passes.tsv
+---
+
 # REVIEW-016 · Paper II's SIXTH independent `P7` read
 
 **Session:** `wealthTensor-76` · **Date:** 2026-08-18 · **Manuscript:** `docs/papers/paper-II-redistribution/paper-II.md`, 554 lines, read end to end
