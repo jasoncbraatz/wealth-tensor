@@ -67,22 +67,34 @@ wealthTensor-77	paper-II	3	none	— (all five axes inherited; Paper II was 5 of 
 # -------+---------------+----------------+---------------+----------------+---------------
 # II     | -72, -74      | -72 (II-19),   | -74 (wt133)   | -74, -76       | -76 (II-27,
 #        | (wt130)       | -76 (II-27)    |               |                | II-30)
-# III    | -73 (wt130)   | EMPTY          | -73 (manual)  | EMPTY (III-8   | EMPTY
-#        |               |                |               | carded for it) |
+# III    | -73 (wt130)   | -80 (III-17)   | -73 (manual)  | -80 (III-12,   | -80 (III-10,
+#        |               |                |               | III-13,III-14) | III-15,III-16)
 # IV     | -75 (wt130)   | -75 (IV-6)     | -75 (wt133)   | -75 (60 cells) | -75 (IV-2a)
 #
-# FILLED: 12 of 15.  THE THREE EMPTY CELLS ARE ALL PAPER III: A2, A4, A5.
+# FILLED: 15 of 15.  THE GRID IS CLOSED, at wealthTensor-80. III-8, carded at -73 for A4's
+# absence on this manuscript, is discharged by that cell's first application.
 #
-# WHAT THE MATRIX SAYS, AND IT EXPLAINS SIX SESSIONS OF CONFUSION IN ONE LINE:
-#   THE COUNTERS CANNOT DECAY WHILE CELLS ARE STILL EMPTY. Paper II and Paper IV are at 5/5, so
-#   from here their counters CAN decay and a zero would mean something. PAPER III IS AT 2/5 and
-#   its counter is not yet measuring the manuscript — it is measuring the toolkit.
+# WHAT THE MATRIX SAID, AND WHAT IT COST TO ACT ON IT:
+#   THE COUNTERS CANNOT DECAY WHILE CELLS ARE STILL EMPTY. That line was written at -76 and it
+#   was right. Paper III sat at 2/5 for four more sessions while three handoffs argued about why
+#   a counter would not decay. -80 filled the three cells and the counter went 7 -> 9, with 8 of
+#   the 9 coming from the newly-filled cells. COVERAGE, not novelty, not residue, not depth.
 #
-# THE CAVEAT THAT KEEPS THIS HONEST: FILLED IS NOT EXHAUSTED, AND IT IS NOW TWO-FOR-TWO.
+# WHAT IS NOW ASKABLE THAT WAS NOT:
+#   Every manuscript is at 5/5, so the NEXT read of ANY of them is the first in this project's
+#   history with nowhere left to be structurally blind. That is the condition under which a low
+#   count means something. If Paper III's third read returns a number near Paper II's 2, coverage
+#   explains the whole history and the counters can start measuring documents. If it returns nine
+#   again, it does not — and the reading -78 pre-committed to, that the counter measures the
+#   REVIEWERS, is the one left standing. Either way the next pass is worth more than the last six.
+#
+# THE CAVEAT THAT KEEPS THIS HONEST: FILLED IS NOT EXHAUSTED, AND IT IS NOW THREE-FOR-THREE.
 # -76's II-27 came out of A4, a cell -74 had ALREADY filled on Paper II — because -74 ran the
 # commands and did not diff their output against §3 cell by cell. -77's II-34 came out of A5, a
 # cell -76 had already filled — because -76 ran A5 against the artefacts §7 names and the
-# manuscript names one in §5 too. EVERY TIME A "FILLED" CELL HAS BEEN RE-ENTERED IT HAS PAID.
+# manuscript names one in §5 too. -79's II-37 came out of BOTH at once, at sites -78 had opened
+# and listed. EVERY TIME A "FILLED" CELL HAS BEEN RE-ENTERED IT HAS PAID, and the grid closing
+# at -80 does not change that: a closed grid is a floor.
 # A filled cell is a floor, not a certificate. Read this matrix as "which axes have never been
 # pointed at this manuscript", never as "which axes are done with it".
 #
@@ -93,3 +105,4 @@ wealthTensor-77	paper-II	3	none	— (all five axes inherited; Paper II was 5 of 
 # is testable at -78, which inherits four edits and nothing else new.
 wealthTensor-78	paper-II	2	none	— (all five axes inherited; Paper II was 5 of 5 before this pass, A6 left parked as ordered)	0 of 2	REVIEW-018. THE SECOND FROZEN ROW, AND THE CONTROL FOR -77's OWN MECHANISM. -77 proposed that a repair pass creates the next pass's findings and made -78 the experiment by handing it four manuscript edits and one test edit. RESIDUE: 0 of 2. II-35 blames to 2b3e24b5 (2026-08-17), II-36 to 3b11f236 (2026-08-05) — the very commit §7 pins, present for ALL EIGHT reads. Neither new instruments nor repair residue explains the counter; REVIEW-018 §5 argues DEPTH OF APPLICATION, which unlike residue leaves a zero REACHABLE. First DECAYING count in the project's history (3 -> 2).
 wealthTensor-79	paper-II	2	none	— (all five axes inherited; Paper II was 5 of 5 before this pass, A6 left parked as ordered)	0 of 2	REVIEW-019. THE THIRD FROZEN ROW, AND THE FALSIFIER -78 HANDED IT. -78 argued the counter measures how much of each axis has been SPENT and predicted that a ninth read at the same depth would find materially fewer than two. IT FOUND TWO, AND BOTH FROM SITES -78 HAD ALREADY OPENED: II-37 at the two commands A5 enumerated and A4 ran, II-38 at item 7 of REVIEW-018 §4's own not-checked list. RESIDUE: 0 of 2 (II-37 -> 58f7f5bb/-74 and 6b0655b2/-77; II-38 -> f1ceac74, 2026-08-10). Depth of application is refuted. FIRST PASS IN THE PROJECT WITH ZERO MANUSCRIPT EDITS: both repairs made an existing sentence true instead of changing it. A third defect (II-39, a prefix collision in wt130's selector) was found and repaired but is DELIBERATELY NOT COUNTED -- it is in the reviewing apparatus, which Paper II names nowhere.
+wealthTensor-80	paper-III	9	inherited-first-application	A2 grep-the-document-for-the-failure-mode-it-names (originates -72) + A4 run-the-manuscript's-own-regeneration-commands (originates -74) + A5 grep-each-module-against-its-paired-script (originates -75) — ALL THREE first on paper-III, and the matrix closes at 15 of 15	8 of 9	REVIEW-020. THE COVERAGE ROW, AND THE FIRST UNCONFOUNDED DATA POINT THE PROJECT HAS HAD. Every previous comparison of finding counts was made across passes at DIFFERENT matrix coverage. -77/-78/-79 froze the instrument set and returned 3, 2, 2 on a manuscript at 5 of 5. This pass filled THREE cells at once on a manuscript at 2 of 5 and returned NINE, eight of them from the three new cells; only III-11 came from an inherited axis (A1's read-forward). No instrument was invented -- which is why the row is `inherited-first-application` and not `new`, and why it refutes nothing about the new-instrument anecdote. It completes the grid. SHAPES: -79 asked whether its two new shapes were Paper II's own texture; 7 of 9 carry one (5 promise-about-artefact, 2 deferral-with-empty-target) on a different manuscript found by three axes -79 never ran, so they generalise. MANUSCRIPT EDITS: 7 of 9, so -79's proposed narrower rule would score this pass 7 against its own 0 -- the SAME separation the current rule gives (9 against 2). NOT APPLIED; this row is on the current rule.

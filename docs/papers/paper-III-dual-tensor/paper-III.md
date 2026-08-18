@@ -984,7 +984,8 @@ direction.
 
 **An effective rate exists and it is not a constant.** Writing α_eff(δ) = δ Π(z)/(Π(z) − 1) returns
 the published form verbatim, R = (1 − φ)δ/(α_eff − δ). But α_eff runs from **0.437** per year at a
-forty-year life to **0.476** at a three-year one — a ninth of itself across the asserted rectangle,
+forty-year life to **0.476** at a three-year one — **nine per cent** of itself across the asserted rectangle,
+nearer an eleventh than the ninth an earlier revision of this sentence claimed —
 in the direction that a faster-decaying class behaves as though recognition were faster. Across the
 four-tier ladder it moves by six parts in a thousand, which is why the magnitudes there barely move.
 **A recalibration is therefore available and is not a repair:** any comparative static that holds
@@ -1344,8 +1345,11 @@ read as one.
 
 **The sample rebuilt to within one per cent, which is itself worth one line.** `companyfacts` serves
 each firm's latest view of its own history, so a re-pull is not the original pull. Rebuilt: **695
-events across 307 firms** against 688 across 311, with three of four tier counts identical and
-censoring at 7.7% against 7.8%. The registered reconciliation rule, fixed before the count was
+events across 313 firms** against 688 across 311, with three of four tier counts identical in the
+pilot and
+censoring at 7.7% against 7.8%. The firm count is read back out of the committed
+`data/pre-002-events.json`; an earlier revision of this sentence said 307, which would have made
+the rebuild *fail* the one-per-cent reconciliation the sentence exists to assert. The registered reconciliation rule, fixed before the count was
 known, admits this as the registered sample.
 
 **The peak-to-charge recognition rate is 0.41 per year on both known biases' inflating side, and the calibration was low by an order
@@ -1432,9 +1436,10 @@ Three points across 1,833 classified firm-years measures the vocabulary of the d
 mechanism behind it. `REG-008` sharpens the instrument to the sentence and to the *named* reporting
 unit, and the separation from the placebo more than doubles — **0.103 against 0.030** — while the
 joint-versus-goodwill-only difference stays at **+0.014** (*p* 0.60) in a design that could have
-detected 0.068. The reason is countable: **no firm-year in the window writes a sentence naming a
-reporting unit, a trigger, and any of the standard's own (f)-family language**, and the two phrases
-the Codification uses for that family appear in none of the 1,925 filings. The disclosure does not
+detected 0.068. The reason is countable: **not one of the 281 firm-years taking both charges writes a sentence
+naming a reporting unit, a trigger, and any of the standard's own (f)-family language, and exactly
+one of the 644 in the mandated window does**, and the two phrases the Codification uses for that
+family appear in none of the 1,925 firm-years. The disclosure does not
 carry the quantity the decomposition needs.
 
 ---
@@ -1779,9 +1784,10 @@ theorem is a framing that will be argued about instead of the theorem.**
    asset class by 35-32, is itself two channels of opposite sign, one creating joint testing and
    one suppressing joint recognition, and §5.4 says so where the number is. The disclosure
    route that would separate them is closed twice over — by a selection argument, and by a count:
-   sharpened to the sentence and to the named reporting unit, the disclosure does not once, in 644
-   firm-years, tie the standard's own internal trigger to the unit it fired in, and §5.4 says that
-   where the numbers are. It is registered before its instrument is coded,
+   sharpened to the sentence and to the named reporting unit, the disclosure ties the standard's own
+   internal trigger to the unit it fired in **once in the 644 firm-years of the mandated window and
+   not once in the 281 that took both charges** (`RESULT-REG-008` §2.2); §7 carries the second
+   figure and §5.4 both. It is registered before its instrument is coded,
    or it is not run.
 
 ---
@@ -1960,12 +1966,27 @@ public data.
 - **Repository:** `https://github.com/jasoncbraatz/wealth-tensor` (public)
 - **Modules:** `src/wealth_tensor/lag.py` · `src/wealth_tensor/lambda_sensitivity.py` ·
   `src/wealth_tensor/edgar.py`
-- **Regenerate §3 (and §A.2.4):** `python3 scripts/wt027_report.py` — its three tables are
-  §3.1's two and §3.2's. §2 states the model and reports no simulation result.
+- **Regenerate §3 (and §A.2.4):** `python3 scripts/wt027_report.py` — **five blocks**: §3.1's
+  table, §3.1's three prose-only figures (the sigmoidal lag at φ = 0.9 and φ = 0.1, and D(0) to
+  four decimals), §3.2's table together with the full-path volatility ratios §3.2 quotes in prose,
+  the entropy-rate sweep, and §A.2.4's sawtooth. Every simulation figure §3 states, tabulated or in
+  prose, is printed by that one command. Until wealthTensor-80 six of them were printed by none,
+  and this bullet said "three tables" of a command that printed four.
+  §2 states the model and reports no simulation result.
 - **Regenerate §A.2.3:** `python3 scripts/wt002_lambda_report.py`
 - **Regenerate §5:**
   `python3 scripts/wt026_severe_test.py --universe pilot --onset peak` and
-  `--universe replication --onset peak`
+  `--universe replication --onset peak`. **That command reproduces the instrument and not the
+  sample, and the distinction is the whole of this bullet.** It re-pulls `companyfacts`, which
+  serves each firm's *latest* view of its own history. §5.3's 244 and 444 events come from the
+  original pull, whose full output is committed at
+  `docs/preregistration/RESULT-002-pilot-run.log` and `RESULT-002-replication-run.log` — those
+  logs, not a command, are the record of §5.3. The 2026-08-12 rebuild is committed as data
+  (below) and returns Jonckheere–Terpstra z = **−0.223** and **−0.083** against §5.3's −0.290 and
+  −0.095; a pull later still returns different counts again, and once the replication z crosses
+  zero, §5.3's observation that both statistics are negative is a fact about the analysed sample
+  rather than about any re-pull. Nothing in this repository re-derives §5.3's figures from
+  committed data, and this bullet implied otherwise until wealthTensor-80.
 - **Test suite:** `python3 -m pytest tests/ -q` runs the whole repository; at the pinned commit
   **d655501** — the state that produced every result in §A.2 and §§2–3 — that suite held **100** tests,
   of which the **62** in `tests/test_edgar.py`, `tests/test_lag.py` and
@@ -1974,12 +1995,16 @@ public data.
   property of the repository and not of any one paper in it. Both counts are derived from the
   repository rather than asserted, and `tests/test_paper_test_counts_are_derived.py` fails if either
   drifts. The suite at the head of the repository is much larger — it grows with every registration
-  in `docs/preregistration/`, which is why the paper-scoped count is the one quoted; three of its
-  additions
+  in `docs/preregistration/`, which is why the paper-scoped count is the one quoted; **six** of its
+  additions, all in `tests/test_lag.py`,
   guard claims this paper makes and change no model code: two for §3.1's
-  closed form D(φ) = (1 − φ)·D(0) and its accompanying negative claim that the lag is *not* linear,
-  and one asserting the algebraic collapse §4 publishes — which had no test until an
-  audit found the published form using the entropy rate where it meant the effective decay.
+  closed form D(φ) = (1 − φ)·D(0) and its accompanying negative claim that the lag is *not* linear;
+  one asserting the algebraic collapse §4 publishes — which had no test until an
+  audit found the published form using the entropy rate where it meant the effective decay; and
+  three added at commit **cc1d198** for §4.4, holding the crossing rate δ₃\*, the first-rung
+  boundary, and the absence of a steady-state deferral measure once decay outruns recognition.
+  This sentence read "three" from the day it was written, which was two days after the last three
+  landed.
 - **Hardware:** none required. Every figure in §A.2 and §§2–3 regenerates on a commodity CPU in seconds.
   The fits reported in §4 use two thousand synthetic firms at four hundred gradient steps
   in double precision; a larger reference fit of ten thousand firms at three hundred steps
@@ -2314,6 +2339,10 @@ own documentation, not recalled. **✓✎** — additionally checked against **t
 reading that copy's title page and colophon. The ✓✎ entries are the ones where doing so changed the
 citation. **✓⧗** — bibliographically verified, but the **text** consulted is a pre-publication
 version; any quotation is attributed to the version read and may not appear in the article of record.
+**⧗** *alone* — the bibliographic record is verified and the **text was not read**; the
+characterisation rests on named secondary sources, and the entry says so in its own note. Three
+entries carry it. Two entries carry **no mark at all**, each stating in its own note why it is
+unmarked, and those two are the only unmarked entries in the list.
 
 Andreou, P. C., Lambertides, N., & Magidou, M. (2023). A critique of the agency theory viewpoint of
 stock price crash risk: the opacity and overinvestment channels. *British Journal of Management*,
@@ -2652,7 +2681,7 @@ accruals is reported by Zhu as unexplained by his own mechanism, and is noted he
 reason. Nothing is quoted.)*
 
 *How this list was checked, recorded because a reference section that silently improves teaches a
-reader nothing. The per-entry findings live in the ✓, ✓✎ and ✓⧗ notes above, attached to the entries they
+reader nothing. The per-entry findings live in the ✓, ✓✎, ✓⧗ and ⧗ notes above, attached to the entries they
 describe, so that correcting an entry cannot leave a summary of it behind.*
 
 **Four passes ran, in this order, and each one found what the previous ones structurally could not.**

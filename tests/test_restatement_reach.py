@@ -141,7 +141,16 @@ REACH = {
     "0.103":  {"5.4": 1, "7": 1},
     "0.014":  {"5.4": 1, "7": 1},
     "0.068":  {"5.4": 1, "7": 1},
-    "281":    {"7": 1},
+    # wealthTensor-80 · III-9: §5.4 asserted a zero over the WRONG denominator (644, the
+    # mandated window, where REG-008 records one hit) instead of 281, the both-charges arm
+    # where the zero actually lives. Repairing it puts 281 at the site of the claim, so the
+    # figure now has the §5.4/§7 reach every other REG-007/008 number in this table has.
+    "281":    {"5.4": 1, "7": 1, "9": 1},
+    # 644 IS NOT COUNTED HERE, deliberately (wealthTensor-80). It is now restated in §5.4 and
+    # §9 -- but this file inherits §7's curation by its own stated rule, and §7's ledger row
+    # for REG-008 declares 281, not 644. Adding 644 without adding it to the ledger makes
+    # this file assert its own selection rather than the paper's, which is the drift the
+    # module exists to prevent. If §7 ever prints the window count, count it then.
 
     # --- REG-009 · the ladder inputs -------------------------------------------------
     # 0.974 is restated in §4.4 beside the calibration it corrects; the rest live in

@@ -117,7 +117,10 @@ S2_NEW = f"**This does not rescue the {phrase(RIGHT_ADJ)}, and the statistic"
 #: §4.9 -- alpha_eff's span, forty years to three: the product's own extent, whose fast
 #: edge delta = 0.333 the preceding paragraph names.
 S3_OLD = f"a ninth of itself across the {phrase(WRONG_ADJ)},"
-S3_NEW = f"a ninth of itself across the {phrase(RIGHT_ADJ)},"
+# wealthTensor-80 · III-11: "a ninth" was the wrong fraction (the move is 8.93 %, nearer an
+# eleventh). The anchor follows the corrected span; S3_OLD is unchanged, so the wrong
+# ADJECTIVE still cannot return, which is what TERM-001 guards.
+S3_NEW = f"**nine per cent** of itself across the {phrase(RIGHT_ADJ)},"
 
 #: §4.10 -- the back-reference to §4.9's span. Renamed with its referent or it points at
 #: a name the paper no longer uses.

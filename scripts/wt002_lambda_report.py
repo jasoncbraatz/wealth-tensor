@@ -5,7 +5,8 @@ from wealth_tensor.lambda_sensitivity import (sweep_coupling, invariance_report,
 rows = sweep_coupling(observable_share=0.3)
 print("LAMBDA SENSITIVITY SWEEP (phi=0.3, 400 periods, coupling 1e-6 .. 1e+6 currency/J)\n")
 print(f"{'eta':>10s} {'deferred [cur]':>16s} {'Lambda_T':>12s} {'L/eta':>10s} "
-      f"{'lag':>4s} {'vsupp':>7s} {'vconc':>7s} {'events':>7s} {'relmag':>8s}")
+      f"{'lag':>4s} {'vsupp':>7s} {'vconc':>7s} {'events':>7s} {'relmag':>8s} "
+      f"{'mean L/E':>10s} {'min L/E':>9s}")
 for r in rows:
     print(f"{r['coupling']:10.0e} {r['deferred_currency']:16.6e} {r['terminal_lambda']:12.6e} "
           f"{r['lambda_over_eta']:10.6f} {r['recognition_lag']:4d} "
@@ -24,7 +25,9 @@ for col in ("deferred_currency", "terminal_lambda"):
 def scaling_collapse() -> None:
     """The Buckingham-pi collapse, promoted out of the test suite into the report.
 
-    Paper III section 3.3 quotes these figures. Until 2026-08-10 they existed ONLY inside
+    Paper III section A.2.3 quotes these figures -- NOT section 3.3, which does not exist:
+    the manuscript's section 3 runs 3.1 and 3.2 only, and this docstring named a section that
+    had never been there (wealthTensor-80, III-16). Until 2026-08-10 they existed ONLY inside
     tests/test_lambda_sensitivity.py, which meant the paper cited numbers no regeneration
     command produced -- the exact hole PREPRINT-CHECKLIST section A was amended to close the
     same day, after WT-027's hand-transcribed table was found not to regenerate. Note the
