@@ -3,7 +3,7 @@ project: wealth-tensor
 session_n: 75
 gh_repo: jasoncbraatz/wealth-tensor
 branch: main
-gh_sha: PENDING
+gh_sha: 7ca35c7844ad52d6dd1b81261d5af1655b60b100
 updated: 2026-08-18
 session: wealthTensor-75
 live_theme: "Paper IV's independent P7 read, taken as assigned, with wt133's red cleared first. SIX findings, eight edits, two carded. The pass has one shape and it is worth stating before anything else: wt133 flagged exactly ONE site, and the line BENEATH it did the same thing invisibly, because Paper IV has a section 4 and Paper III's is the one meant -- so it resolved locally, silently, and to the wrong section. A sweep finds references that resolve to NOTHING; only a reader finds the ones that resolve to the WRONG THING. Then -74's lesson paid a second time and bigger: running Paper IV's own section 10 commands, which nobody had ever done, produced 60 verified cells and THREE of the six findings, all of them inside the data-availability section that was supposed to be the paper's promise to a replicator."
