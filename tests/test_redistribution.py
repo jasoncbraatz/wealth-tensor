@@ -206,18 +206,29 @@ def test_threshold_monotonically_weakens_compression():
 
 
 def test_periodicity_is_second_order_at_a_matched_average_rate():
-    """Levying rate*P every P periods is close to levying rate every period -- and slightly
-    stronger, because a lumpy assessment catches dispersion that has had time to accumulate.
+    """Levying rate*P every P periods is close to levying rate every period. Lumpier is
+    slightly stronger up to an INTERIOR MINIMUM near P = 30, and weaker after it -- so what
+    this test pins is the SHAPE of the sweep and its small total spread, not monotonicity.
+
+    wealthTensor-74. The previous version swept p in (1, 2, 4, 10, 20) and asserted
+    monotonicity outright. The sweep the manuscript's own regeneration command prints
+    (`scripts/wt030_report.py`) runs to P = 50, where the Gini returns ABOVE its P = 20
+    value; the assertion could not see that because its subject stopped where its claim
+    stopped. WT-092: what is the widest object this check's words claim, and what is the
+    narrowest thing it actually touches? Verified horizon-stable at T = 600 and T = 1200.
 
     Worth stating precisely: an annual 2.5% assessment is not a watered-down version of a
-    continuous one. If anything the lumpiness helps, so periodicity cannot rescue or ruin a
-    base -- it is a modifier on the effective rate, which is what makes base and rate the
-    two structural coordinates and these two the trim.
+    continuous one. Periodicity cannot rescue or ruin a base -- it is a modifier on the
+    effective rate, which is what makes base and rate the two structural coordinates and
+    these two the trim.
     """
-    gs = [stationary_gini(econ(base="stock", rate=0.02 * p, periodicity=p))
-          for p in (1, 2, 4, 10, 20)]
-    assert all(a >= b - 1e-9 for a, b in zip(gs, gs[1:]))   # monotone, lumpier is stronger
-    assert max(gs) - min(gs) < 0.25                          # but only mildly so
+    ps = (1, 2, 4, 10, 20, 30, 50)
+    gs = [stationary_gini(econ(base="stock", rate=min(1.0, 0.02 * p), periodicity=p))
+          for p in ps]
+    assert all(a >= b - 1e-9 for a, b in zip(gs[:5], gs[1:5]))  # monotone THROUGH P = 20
+    assert gs[ps.index(30)] < gs[ps.index(20)]                  # the minimum is interior
+    assert gs[ps.index(50)] > gs[ps.index(20)]                  # and the effect turns back
+    assert max(gs) - min(gs) < 0.25                             # the whole sweep is trim
 
 
 def test_the_result_is_not_a_finite_size_artifact():

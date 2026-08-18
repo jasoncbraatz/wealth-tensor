@@ -6,7 +6,7 @@ story goes in Abandoned Approaches and nothing is lost but an afternoon.
 
 SETUP, stated so the assumptions are checkable rather than buried.
 -----------------------------------------------------------------
-The levy is a pure transfer (verified to machine precision in RedistributionEconomy.run,
+The levy is a pure transfer (verified to machine precision in RedistributiveEconomy.run,
 `transfer_error`), so aggregate wealth grows at the same rate with or without it. Write the
 per-agent map for LARGE w, where the flat wage and the per-capita rebate are negligible
 relative to w -- which is exactly the regime that sets the tail:

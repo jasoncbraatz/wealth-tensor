@@ -3888,3 +3888,46 @@ moves again. A freeze with no representation for a legitimate edit is a freeze t
 violated or switched off; this one had the representation, and it was used for the second time.
 
 ---
+
+## WT-122 · REVIEW · 2026-08-18 · wealthTensor-74 · **Paper II's fifth independent read, and the first pass that ran the paper's own commands**
+
+`REVIEW-014` is the document of record. Four findings, all repaired in-pass; two carded. Seven
+edits — five manuscript, one test's **assertions**, one script docstring — through one guarded
+script, `wt132`. Suite `1078 passed`. Coach 2/0, baseline. Board unmoved for the fifth session.
+
+**The instrument this pass adds is not a script.** It is four words: *run the paper's commands.*
+Paper II's §7 names `wt030_report.py` and `wt077_tail_index.py`. Six independent reads had
+reasoned about both and executed neither; `-70`'s not-checked item 5 says so out loud, and
+concludes *"No overclaim"* from the reading. Eleven minutes of wall-clock produced **two of the
+four findings** and upgraded **eight** cleared rows from inference to measurement (`REVIEW-014`
+§3, C1–C12). It should be the first move of every manuscript pass from here.
+
+* **`II-22`** — §7 twice scoped the manuscript's non-simulation numbers to *"the three quadrature
+  values"*. **E[η⁺] = 0.1073** is a fourth, stated in bold in §3.1 and printed by the very script
+  §7 names for the exception. Right provenance, wrong count, in two sentences.
+* **`II-23`** — §3.3's *"a lumpier assessment is very slightly stronger"* is a law with an
+  **interior minimum**. Measured at *P* = 1/2/4/10/15/20/25/**30**/40/50 →
+  .486/.484/.480/.471/.461/.457/.452/**.451**/.458/**.469**; horizon-stable at *T* = 600. The
+  turn is inside the design, not past its edge — at *P* = 50 the constant average rate requires
+  exactly *r* = 1.00. **The test pinning the sentence swept `p <= 20` and could not see it.**
+* **`II-24`** — §1's *"The process responds to four numbers"*, contradicted **five lines later**
+  by contribution 1 (*"plus the realisation share of the base … a function of these alone"*) and
+  by §3.2, whose table moves the reachable Gini 0.125 → 0.994 with all four levy coordinates held
+  fixed. `WT-117` for the third time.
+* **`II-26`** — §3.4's *"which separates nothing"* of a **0.103** gap. Named in `REVIEW-014` as
+  the softest of the four and the one most likely to be re-litigated.
+* **`II-25` CARDED** — `1217568297674954`. All four manuscripts' `Version X.Y, DATE` stamps
+  predate their own claim-changing commits; Paper II's revision history says of v0.2 *"No result,
+  number, claim or citation changed"* with twelve subsequent commits behind it. **Estate-wide,
+  and above the line every reviewer starts reading at.** One ruling from Jason, one test from a
+  Claude.
+* **Second card** — `1217568192511533`. 16 of Paper II's 24 reference entries do no work in the
+  body (`REFERENCE-POLICY` pass 2). A measurement, not a finding: the manuscript states nothing
+  false about it. Recorded so nobody re-derives it.
+
+**What the guard cost, and what it bought.** `wt132` aborted on its first run — the
+`wt077_tail_index.py` needle was written with backticks and the file has none. **Nothing was
+written, because the guards run before the backups.** That ordering is `wt129`'s (`WT-118`) and
+it is the whole reason a failed needle is a thirty-second correction instead of a `git checkout`.
+
+---
