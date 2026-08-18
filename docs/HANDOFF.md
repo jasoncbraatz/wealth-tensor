@@ -1,276 +1,283 @@
 ---
 project: wealth-tensor
-session_n: 80
+session_n: 81
 gh_repo: jasoncbraatz/wealth-tensor
 branch: main
-gh_sha: 0239929a7aa8a0778fbe87a282f27458cab431de
+gh_sha: PENDING_STAMP
 updated: 2026-08-18
-session: wealthTensor-80
-live_theme: "THE GRID IS CLOSED, AND COVERAGE IS THE MECHANISM. Paper III's second independent P7 read filled the last three cells of the axis matrix — A2, A4 and A5, all three of them Paper III's — and the matrix now reads 15 of 15 FILLED. NINE findings, nine repairs, zero carded; EIGHT of the nine came out of the three newly-filled cells. Nothing was invented, so the row is `inherited-first-application` and it refutes nothing about the new-instrument anecdote: it completes the grid. This is the FIRST data point the project has had that is not confounded by differing matrix coverage — -77/-78/-79 froze the instrument set and returned 3, 2, 2 on a manuscript at 5 of 5; this pass returned 9 on one at 2 of 5. And -79's experiment returns a clean YES: seven of nine findings carry one of its two new shapes (five promise-about-artefact, two deferral-with-empty-target), on a different manuscript, found by three axes -79 never ran. The shapes generalise; they were not Paper II's texture."
-phase: "Manuscript repair under a settled thesis, with the instrument matrix COMPLETE for the first time. Paper II 9-2-4-3-4-5-3-2-2 across NINE reads, three of them frozen, counts 3/2/2 and the decay stopped. Paper III 7 -> 9 across TWO reads, now at 5 of 5 cells. Paper IV at 6 across ONE read, at 5 of 5 cells since -75 and never re-read. The instrument set is five axes; the ledger carries ten rows, three dead mechanisms, a residue result, a depth result and now a coverage result."
+session: wealthTensor-81
+live_theme: "COVERAGE IS DEAD, AND IT DIED BY THE TEST -80 ITSELF WROTE. Paper IV's second independent P7 read was the first pass in this project's history run on a CLOSED axis matrix — 15 of 15, nothing left to fill, nowhere left to be structurally blind. -80 predicted such a pass would return materially fewer than nine. It returned NINE, with 9 of 9 from cells that were already filled. That is the FOURTH mechanism refuted by the pass immediately after the pass that proposed it: new instruments (-71, -77), repair residue (-78), depth of application (-79), coverage (-81). Every one of the four was proposed by the pass whose own number it explained, and every one died next pass. THE FOUR-FOR-FOUR IS THE RESULT, not any of the four hypotheses — the passes are not measuring the manuscripts, they are theorising their own output. -78's reading is what is left standing, and REVIEW-021 §5 states its weakness in the same breath: it survives because it predicts nothing. BUT THE PASS BROUGHT BACK SOMETHING BETTER THAN A FIFTH MECHANISM — a MEASUREMENT that replicates exactly. -80 found 5 promise-about-artefact / 2 deferral-with-empty-target / 2 neither on Paper III and asked for a third manuscript. -81 found the IDENTICAL 5/2/2 on Paper IV, on a closed grid, by a different reviewer. THIS CORPUS'S CHARACTERISTIC DEFECT IS NOT A WRONG NUMBER — every value either pass checked against a live run matched — IT IS A TRUE-SOUNDING SENTENCE ABOUT AN ARTEFACT THAT THE ARTEFACT DOES NOT BEAR OUT. More than half the corpus's known defects are in one mechanically-enumerable class, and nobody has built the instrument that enumerates it."
+phase: "Manuscript repair under a settled thesis, with the instrument matrix complete and every proposed mechanism for the finding counter refuted. Paper II 9-2-4-3-4-5-3-2-2 across NINE reads (three frozen: 3, 2, 2). Paper III 7 -> 9 across TWO. Paper IV 6 -> 9 across TWO. Eleven ledger rows, four dead mechanisms, and one replicated measurement about the SHAPE of the defects rather than their number. The next instrument is derivable from that measurement for the first time."
 gate_passed: true
 gate_version: "2.60"
-next_at_bat: "ASSIGNED, not offered: PAPER IV'S SECOND INDEPENDENT P7 READ — the first pass in this project's history run on a manuscript with NOWHERE LEFT TO BE STRUCTURALLY BLIND and no cells to fill. Why Paper IV and not a third Paper III read, stated so you do not second-guess it: Paper IV is the ONLY manuscript in the corpus with exactly ONE read (-75, six findings), it has been at 5 of 5 cells since that read, and it is the DoD's bottleneck — convergence is per paper and two consecutive zero-finding passes cannot begin from one. Paper III's third read would arrive on top of nine fresh repairs and confound coverage with residue; Paper IV's second read does not. Paper II's next move is Jason's ruling, not a tenth grind. RUN ALL FIVE AXES BEFORE A WORD OF PROSE and record each count: A1 `python3 scripts/wt130_quantifier_sweep.py paper-IV` (NOTE THE SELECTOR — -79 repaired it, the old `--paper IV` form now FAILS LOUDLY on purpose); A2 grep Paper IV for the failure modes it names in its own prose and turn each back on the paper — derive the list, do not inherit -75's; A3 `python3 scripts/wt133_crossref_sweep.py`, then read around EVERY flag including sweep 2's three uncited entries (Mas-Colell, Robinson, Sraffa), which no session has adjudicated; A4 run every command Paper IV's data-availability section names and ASK BOTH QUESTIONS — do the values match, AND is there a number the paper reports that no named command produces; A5 enumerate every named artefact FROM THE WHOLE DOCUMENT, backticked and not, run every named command, READ WHAT THEY SAY, and ask -79's two questions at each: if a replicator followed this sentence what would they get, and if this defers to another document, does that document carry the item. AND YOU CARRY THE EXPERIMENT FORWARD: record, per finding, whether it is promise-about-artefact / deferral-with-empty-target / neither. -80 found 7 of 9 on Paper III; a THIRD manuscript is what turns two data points into a property of the corpus. DONE WHEN: all five axes run before prose with each count recorded; paper-IV.md read end to end, all 766 lines; every finding repaired in-pass or carded with a NAMED FALSIFIER; REVIEW-021 exists with its own coverage claim, cleared list AND not-checked list, front matter carrying new_instrument / instrument_name / findings_from_new_instrument PLUS the shape column; docs/p7-passes.tsv gains row 11 and the AXIS MATRIX still reads 15 of 15; suite green and SAY THE NUMBER, wt133 RC 0, coach at Paper IV's baseline of 1 conduct / 0 concessive. DO NOT MANUFACTURE A FINDING, AND DO NOT AIM FOR ZERO — Paper IV is one pass deep and a low number would mean nothing yet. But if it comes back LOW and honestly, say so loudly: that is the first evidence the coverage reading is right, and it is worth more than a finding."
+next_at_bat: "ASSIGNED, not offered, and it is NOT a tenth grind: BUILD THE PROMISE SWEEP, RUN IT ON ALL FOUR MANUSCRIPTS, AND ADJUDICATE EVERY PROMISE IT EMITS. Why this and not another read, stated so you do not second-guess it. Eleven rows of ledger say reader-passes find 2-9 findings forever and four mechanisms for that are dead; a twelfth reader-pass buys a twelfth row and no new information. What -80 and -81 DID establish, twice, on two manuscripts, by two reviewers, is a property of the DEFECTS rather than of the passes: 5 of 9 and 5 of 9 are PROMISE-ABOUT-ARTEFACT — a sentence whose subject is a named file, command, test or commit, asserting what that artefact will do for a reader, where the artefact does not do it. That class is MECHANICALLY ENUMERABLE and nobody has enumerated it. wt133 checks ONE narrow slice (section cross-references, and only entry->body). BUILD scripts/wt148_promise_sweep.py: for each of the four manuscripts, emit every sentence containing a named artefact (backticked path, script name, test name, `REG-*`/`RESULT-*`/`ADR-*`/`END-TO-END-*` id, 7-hex SHA, or a `python3 ...` command) TOGETHER WITH the promise it makes, as a checklist a human or a Claude must tick. Model it on wt133: an adjudication file (`docs/promises-adjudicated.tsv`, one row per promise, class + why) so that deleting a row turns the sweep red, which is how you audit the file rather than trust it. Then ADJUDICATE EVERY ROW IT EMITS on paper-IV.md and paper-III.md at minimum, by RUNNING or READING the artefact — not by reading the sentence. THE FALSIFIER, and it is the point: if this class is drainable, the sweep will find promise-shaped defects that eleven reader-passes missed, and the NEXT reader-pass should find materially fewer promise-shaped findings than 5 of 9. If the sweep emits a hundred promises and every one checks out, then the 5/2/2 was about reviewer ATTENTION and not about the corpus, and that is a real result too — say so loudly. DONE WHEN: scripts/wt148_promise_sweep.py exists, exits non-zero on an unadjudicated promise, and is red-proofed (mutate a promise, watch it go red, restore); docs/promises-adjudicated.tsv exists with a header explaining how to falsify a row; every promise emitted for paper-IV.md AND paper-III.md is adjudicated with the command that checked it; every promise that FAILS is repaired in-pass or carded with a NAMED FALSIFIER; REVIEW-022 records the emitted count per manuscript, the adjudicated count, the failure count, and answers the falsifier in one sentence; suite green AND SAY THE NUMBER; wt133 RC 0; coach at baseline. DO NOT read a manuscript end to end this pass — that is the twelfth row and it is not what you are for."
 blockers: []
-drift_flags: ["COVERAGE IS THE FOURTH MECHANISM PROPOSED AND THE FIRST THAT SURVIVED ITS OWN PASS. New instruments died at -71/-77. Repair residue died at -78 (0 of 2). Depth of application died at -79 (2 of 2 from opened sites). -80 proposes COVERAGE OF THE AXIS MATRIX and returned 9 on a manuscript at 2 of 5 while three frozen passes returned 3, 2, 2 on one at 5 of 5. IT IS NOT YET TESTED — it was proposed by the pass that produced the number, which is exactly the shape the previous three died of. THE FALSIFIER IS -81'S AT-BAT AND -80 CANNOT CONTROL IT: Paper IV is at 5 of 5 with one read. If coverage is the mechanism, a second read there should return materially fewer than nine. If it returns nine again, coverage is dead too and the reading -78 pre-committed to — the counter measures the REVIEWERS — is what is left standing with nothing else in the field.", "THE GRID IS CLOSED: 15 OF 15. Every axis has now been pointed at every manuscript at least once. That is a threshold the project has never crossed, and it is the condition under which a LOW COUNT MEANS SOMETHING for the first time. Read the matrix block in docs/p7-passes.tsv before arguing about any counter.", "FILLED IS NOT EXHAUSTED, AND IT IS NOW THREE-FOR-THREE. -76's II-27 out of a cell -74 filled; -77's II-34 out of a cell -76 filled; -79's II-37 out of BOTH at sites -78 had listed. A closed grid is a FLOOR, not a certificate. Do not read 15 of 15 as `the axes are done`.", "THE SHAPES GENERALISE. -79 named two — promise-about-artefact and deferral-with-empty-target — and asked whether they were Paper II's texture. Seven of nine on Paper III, found by three axes -79 never ran. The population is large because EVERY ARTEFACT REFERENCE IS A CLAIM, and neither A4 (which runs the artefact) nor A5 (which resolves it) reads the SENTENCE that tells a reader what the artefact will do for them. -81 gets the third manuscript.", "SEVERITY IS THE OTHER AXIS AND IT DID NOT DECAY THIS TIME. -79's two findings were repairable without touching the manuscript; SEVEN of -80's nine required a manuscript edit, including a stated zero that is a one (III-9) and a firm count that contradicted the sentence it supported (III-14). Do not read -79's severity-decay observation as a trend; it has one flat step and one reversal.", "wt133's SWEEP-2 ORPHAN LISTS REMAIN UNADJUDICATED FOR PAPERS I, II AND IV. Paper II's nine uncited entries are card 1217568192511533. PAPER IV'S THREE (Mas-Colell, Robinson, Sraffa) HAVE NEVER BEEN LOOKED AT and are now IN YOUR AT-BAT'S PATH — A3 on Paper IV means reading around every flag, and sweep 2 does not set the exit code. Do not read RC 0 as covering them. Paper III's sweep 2 is clean: 49 entries, 49 cited.", "PAPER II'S STAMP, ninth data point, card 1217568297674954. PAPER III'S STAMP IS NOW A TENTH: paper-III.md says `Version 0.5, 2026-08-12` while -80 landed nine repairs on 2026-08-18. Same defect, second manuscript, DELIBERATELY NOT REPAIRED — a version stamp is the author's to move and -80 will not move one on his behalf.", "TWO RULINGS FOR JASON, AND -80 ADDS EVIDENCE TO THE SECOND WITHOUT CHANGING THE RECOMMENDATION. (1) Does a zero-finding pass require a frozen instrument set? Three frozen passes on the board: 3, 2, 2. (2) -79 proposed counting only findings that require a MANUSCRIPT edit. Under that rule -80 scores 7 and -79 scores 0 — the SAME separation the current rule gives (9 against 2), so on this pair the change buys no resolution. What it WOULD buy is a score independent of how much reviewing apparatus a pass happened to touch, which is what -79 was after. NOT APPLIED; row 10 is on the current rule."]
+drift_flags: ["FOUR MECHANISMS, FOUR REFUTATIONS, ALWAYS BY THE VERY NEXT PASS, AND EACH PROPOSED BY THE PASS WHOSE OWN NUMBER IT EXPLAINED. new instruments (-71, -77) · repair residue (-77 proposed, -78 refuted 0 of 2) · depth of application (-78 proposed, -79 refuted 2 of 2) · coverage of the axis matrix (-80 proposed, -81 refuted: closed grid, no cell filled, NINE). If you find yourself explaining your own number in your own review document, you are the fifth. Do not. REVIEW-021 §5.", "THE MATRIX IS STILL 15 OF 15 AND IT STILL MEANS WHAT -80 SAID IT MEANS — a FLOOR, not a certificate. -81 found nine findings on a closed grid, 9 of 9 from filled cells. FILLED IS NOT EXHAUSTED is now FOUR-for-four (-76, -77, -79, -81). Do not read 15 of 15 as `the axes are done`; read it as `no axis is missing`.", "THE SHAPES REPLICATE EXACTLY AND THAT IS THE MOST ACTIONABLE THING ON THIS BOARD. 5 promise-about-artefact / 2 deferral-with-empty-target / 2 neither on Paper III (-80) and the SAME 5/2/2 on Paper IV (-81). Meanwhile EVERY value either pass checked against a live run matched — reg013, wt071, wt027, wt089, test_excess_demand, sixteen cleared items in REVIEW-021 §3. The corpus checks its numbers and does not check its sentences about its own machinery. That is what -82's at-bat is for.", "THE PASS THAT NAMES A DEFECT CLASS LEAVES MORE OF IT IN THE SAME PARAGRAPH. -75 coined the global leaf `a data-availability section is a list of promises, check every pairing by grep and every command by running it` FROM Paper IV §10 — and left FOUR more in Paper IV §10, TWO of them written by the coining edit itself. RESIDUE 2 of 9, and both are -75's. Read a predecessor's lesson as a map of where to look HARDEST, never as evidence the site is clean.", "wt133 HAS A NAMED BLIND SPOT NOW: sweep 2 runs entry -> body, so it can see an ENTRY nobody cites and CANNOT see a BODY CLAIM with no entry. IV-6 was exactly that — §7 relocated `the Austrian account of the cycle` with no author, no work, no entry, once in 766 lines. A sweep 3 (proper nouns in the body against a stop-list) is the obvious instrument and -81 did not build it. State Machine card 1217593142996092.", "PAPER IV'S THREE UNCITED ENTRIES ARE ADJUDICATED AND GONE. wt133 sweep 2 on paper-IV now reads 28 of 28 cited (was 25 of 28). Robinson (1953) and Sraffa (1960) are cited at §1.1 — they are the works §1.1's Cambridge sentence actually rests on — and Mas-Colell, Whinston and Green (1995) at §7. All three are CITE acts per REFERENCE-POLICY §1, no new evidentiary burden. PAPER I's and PAPER II's sweep-2 orphans remain: Paper II's nine are card 1217568192511533.", "THE VERSION STAMP IS NOW A CORPUS-LEVEL DECISION, NOT A PER-PAPER OBSERVATION. Paper II says one thing (card 1217568297674954), paper-III.md says Version 0.5 / 2026-08-12 with nine repairs landed 08-18, and paper-IV.md says Version 0.1 / 2026-08-16 with TEN repairs landed 08-18. Three manuscripts, same defect, DELIBERATELY NOT REPAIRED by three consecutive passes — a version stamp is the author's to move. It has stopped being three observations and is one ruling.", "THE ONLY UNTRIED DESIGN, and it is the first proposal in eleven rows that is not a story a pass told about itself: TWO INDEPENDENT READERS ON THE SAME MANUSCRIPT AT THE SAME COVERAGE IN THE SAME WINDOW. That is the only design that separates `the paper has n defects left` from `a reviewer finds n`. It costs two sessions to buy one data point, which is why it is Jason's call and not a pass's. -82 is NOT authorised to spend it."]
 parking_lot: []
 definition_of_done: "Three preprints (II, III, IV) each at ready-to-submit per ADR-001 clauses, every number regenerated from committed scripts, convergence reached (two consecutive zero-finding review passes per paper), Jason's own-hand pass complete — then the batch declared, once."
-
 ---
+
 # wealth-tensor — HANDOFF
 
-**ORIENT: read `docs/CO-AUTHOR-CHARTER.md` first. THE CHARTER WINS over anything in this file.**
-
-## `-80` IN ONE LINE
-
-**Took the assigned at-bat exactly as ordered, invented nothing, and closed the grid.** Paper III
-read end to end, all **2,694** lines. All five axes run before a word of prose. **Nine findings,
-nine repairs, nothing carded.** Paper III's counter goes **7 → 9**.
-
-**The counter went UP, and that is the matrix being right rather than the paper being worse.**
-`docs/p7-passes.tsv` said it at `-76`: *the counters cannot decay while cells are still empty.*
-Paper III was at **2 of 5**. Pointing `A2`, `A4` and `A5` at it for the first time returned
-**eight of the nine findings**. Only `III-11` came from an inherited axis.
-
-**So the fourth mechanism is COVERAGE, and it is the first one that is not obviously dead.** New
-instruments died at `-71`/`-77`. Repair residue died at `-78`. Depth of application died at `-79`.
-This pass is the first comparison the project has ever made that is **not confounded by differing
-coverage** — three frozen passes returned 3, 2, 2 at 5 of 5; this one returned 9 at 2 of 5.
-
-**And it is untested, by construction, because `-80` proposed it.** That is exactly how the
-previous three died. `-81`'s at-bat is the falsifier and `-80` cannot control it.
-
-Suite **1082 passed, 0 failed** (was 1078). `wt133` **RC 0**. `wt130` **RC 0**. Coach **RC 0**,
-Paper III at baseline **5 / 0**. Axis matrix: **15 of 15 FILLED**.
+*Stamped by `scripts/handoff_gate.py --stamp`. If `gh_sha` above is not `HEAD`, this file was
+committed without stamping — read `git log` rather than believing it.*
 
 ---
+## `-81` IN ONE LINE
 
+**Paper IV's second independent `P7` read, on the first CLOSED grid this project has ever had:
+nine findings, nine repairs, zero carded — and `-80`'s coverage hypothesis is dead by the test
+`-80` itself specified.** The pass that could fill no cell found as many as the pass that filled
+three. Four mechanisms, four refutations, always by the very next pass, always proposed by the
+pass whose own number it explained. What replaced the mechanism is better: **the 5/2/2 shape split
+replicated exactly on a third manuscript**, which makes the corpus's characteristic defect a
+mechanically-enumerable class for the first time — and `-82`'s at-bat is to enumerate it.
+
+---
 ## READ FIRST, in this order
 
-1. **`docs/REVIEW-020-P7-paperIII-pass2.md`** — the pass of record. **§5 is the one to read even
-   if you skip everything else.** §1 is the five-axis table with every count; §2 has the nine
-   findings with the **shape** column; §3 is an **eighteen-row cleared list** in which the pass's
-   one near-miss is named as **self-inflicted**; §4 is an **eight-item** not-checked list; §6 is
-   five tells.
-2. **`docs/p7-passes.tsv`** — **ten rows**, and **scroll to the AXIS MATRIX**: it now reads
-   **15 of 15 FILLED** with the paragraph explaining what that makes askable. That block is the
-   map for every future P7 argument.
-3. **`python3 scripts/wt133_crossref_sweep.py`** — four seconds, **green**, and that is the state
-   you are responsible for preserving. **Read its sweep-2 block for `paper-IV.md`** — three
-   uncited entries, and they are in your path.
-4. **`docs/LEDGER.md` `WT-128`** — this pass in one entry.
+1. **`docs/REVIEW-021-P7-paperIV-pass2.md`** — the pass of record. **§5 is the one to read even if
+   you skip everything else**: the four-for-four table, the residue result, and the honest
+   statement of why the surviving reading is weak. §1 is the five-axis table with every count; §2
+   is the nine findings with the **shape** column; §3 is a **sixteen-row cleared list** with the
+   pass's one near-miss named and rejected as padding; §4 is an **eight-item** not-checked list;
+   §6 is five tells.
+2. **`docs/p7-passes.tsv`** — **eleven rows**. Scroll past the matrix to the block headed *WHAT WAS
+   ASKED HERE AT `-80`, AND THE ANSWER `-81` BROUGHT BACK*. That block is the map for every future
+   `P7` argument, and it now records an answer instead of a question.
+3. **`python3 scripts/wt133_crossref_sweep.py`** — four seconds, **RC 0**, and `paper-IV` reads
+   **0 unresolved, 28 of 28 cited**. That is the state you inherit and must preserve.
+4. **`docs/LEDGER.md` `WT-129`** — this pass in one entry, including the bug spray at the end.
 
 ---
+## YOUR AT-BAT — ASSIGNED. Do not choose, and do not read a manuscript end to end.
 
-## YOUR AT-BAT — ASSIGNED. Do not choose.
+**BUILD THE PROMISE SWEEP.** The full statement is in `next_at_bat` above; read it, it is the
+brief. The one-paragraph version:
 
-**PAPER IV'S SECOND INDEPENDENT `P7` READ.** All five axes, before a word of prose.
-`docs/papers/paper-IV-composition/paper-IV.md`, **766 lines**, read end to end.
+Eleven rows say a reader-pass finds two to nine findings forever, and every explanation offered
+for that is dead. But `-80` and `-81` measured something the passes cannot argue with: **5 of 9
+and 5 of 9 findings, on two different manuscripts, by two different reviewers, are the same
+shape** — a sentence whose subject is a named artefact, asserting what that artefact does for a
+reader, where it does not. **That class is enumerable and nobody has enumerated it.** Build
+`scripts/wt148_promise_sweep.py`, emit every artefact-bearing sentence in all four manuscripts
+with the promise it makes, adjudicate every one on Paper IV and Paper III **by running or reading
+the artefact**, and repair what fails. Model the adjudication file on
+`docs/crossref-dismissed.tsv`: deleting a row must turn the sweep red.
 
-**Why Paper IV, so you do not re-litigate it.** It is the **only manuscript in the corpus with
-exactly one read** (`-75`, six findings). It has been at **5 of 5 cells since that read** and has
-never been re-entered. It is the **DoD's bottleneck** — convergence is *per paper* and two
-consecutive zero-finding passes cannot begin from one. And it is the **clean** test of `-80`'s
-coverage claim: Paper III's third read would land on top of nine fresh repairs and confound
-coverage with residue; Paper IV's second read does not.
-
-**The five axes.**
-
-| axis | run |
-|---|---|
-| `A1` | `python3 scripts/wt130_quantifier_sweep.py paper-IV`, then read forward. **NOTE THE SELECTOR** — `-79` repaired it; a bare `IV` or the old `--paper` form now **fails loudly on purpose**. |
-| `A2` | Derive Paper IV's **own** named failure modes from its prose and turn each back on the paper. Do **not** inherit `-75`'s list. On Paper III this axis produced `III-17` by turning an instrument's own docstring — *"a subtotal whose modules are not named is a number a reader cannot check"* — on the sentence one line below the subtotal it guards. |
-| `A3` | `python3 scripts/wt133_crossref_sweep.py`, then read around **every** flag. Paper IV: 68 §N.M refs, 17 distinct, 0 unresolved, 4 dismissed; **28 entries, 25 cited, THREE NOT** — Mas-Colell, Robinson, Sraffa, **never adjudicated by anyone**. Sweep 2 does not set the exit code. |
-| `A4` | Run every command Paper IV's data-availability section names and **ask both questions**: do the values match, **and is there a number the paper reports that no named command produces?** The second question paid three times on Paper III. |
-| `A5` | Enumerate every named artefact **from the whole document**, backticked and not — `-79` found a 22nd in Paper II that was neither, `-80` enumerated 45 in Paper III. Run every named command, **read what they say**, and ask `-79`'s two questions at each. |
-
-**AND YOU CARRY THE EXPERIMENT.** Record, per finding, whether it is **promise-about-artefact**,
-**deferral-with-empty-target**, or **neither**. `-79` named the shapes on Paper II (2 of 2);
-`-80` found **7 of 9** on Paper III. A **third** manuscript turns two data points into a property
-of the corpus.
-
-**DONE WHEN:** all five axes run before prose with each count recorded · `paper-IV.md` read end to
-end, all 766 lines · every finding repaired in-pass or **carded with a named falsifier** ·
-`REVIEW-021` exists with its own coverage claim, **cleared list AND not-checked list**, front
-matter carrying `new_instrument` / `instrument_name` / `findings_from_new_instrument` **plus the
-shape column** · `docs/p7-passes.tsv` gains **row 11** and the matrix still reads 15 of 15 ·
-suite green **and say the number** · `wt133` RC 0 · coach at Paper IV's baseline **1 conduct /
-0 concessive**.
-
-**DO NOT MANUFACTURE A FINDING. DO NOT AIM FOR ZERO** — Paper IV is one pass deep. **But if it
-comes back LOW and honestly, say so loudly**: that is the first evidence the coverage reading is
-right, and it is worth more than a finding.
+**The falsifier is the point and it cuts both ways.** If the class is drainable, this sweep finds
+promise-shaped defects eleven reader-passes missed. If it emits a hundred promises and every one
+checks out, the 5/2/2 was about reviewer *attention* and not about the corpus — **which is a real
+result, and you should say so loudly rather than manufacture a finding to avoid it.**
 
 ---
-
 ## WHY `P7` AND NOT `P13`, in writing, because `charter-read.sh` will tell you `P13` is first open
 
 `~/Scripts/charter-read.sh` reports **`P13` — the beautifully designed, arXiv-ready PDF — as the
-first OPEN lane in dependency order**, and it has reported that for eleven sessions. The board's
+first OPEN lane in dependency order**, and it has reported that for twelve sessions. The board's
 ordering is not a schedule and a project's own rulings outrank it; here is the ruling, restated so
-`-81` does not have to re-derive it or feel it is drifting.
+`-82` does not have to re-derive it or feel it is drifting.
 
 **`P13` is a point-in-time capture of the corpus *as it would present if we stopped here*.**
 Building it before `P7` converges spends the capture on a corpus that is still moving — and
 `ADR-001`'s batch ruling is explicit that the conjunction gets **exactly one** first end-to-end
-pass, so shipping early spends it. `-80` landed **nine** repairs on Paper III, seven of them
-manuscript edits including a stated zero that is a one. A PDF built yesterday would already be
-wrong today.
+pass, so shipping early spends it. `-81` landed **ten** manuscript edits on Paper IV and two on
+Paper III. A PDF built yesterday would already be wrong today.
 
 **`P7` is the lane that unblocks the rest.** `P2`, `P3`, `P5` and `P11` are all **PENDING-HUMAN**
 and all name `P7`'s fresh eyes as their judge. `P7` is the only open lane a Claude can move
-without Jason, and it is the DoD's own convergence clause. So the at-bat is `P7` on Paper IV, and
-it stays `P7` until two consecutive zero-finding passes exist per paper or Jason rules otherwise.
+without Jason, and it is the DoD's own convergence clause. **The promise sweep IS `P7` work** —
+it is the same lane with an instrument instead of a reader, which is precisely what eleven rows of
+evidence say the lane now needs.
 
 ---
+## WHAT `-81` DID, so you do not re-derive it
 
-## WHAT `-80` DID, so you do not re-derive it
+Manuscript read end to end, all 766 lines. **All five axes run before a word of prose**, each
+count recorded in `REVIEW-021` §1: A1 **203 quantifier tokens on 160 lines**; A2 **four failure
+modes derived from the paper's own prose, three of which turned up a site**; A3 **68 §N.M refs, 0
+unresolved, 28 entries, 3 uncited**; A4 **six named commands run on darwin, one producing none of
+what it is named for**; A5 **32 named artefacts enumerated, 11 files existence-checked, 0
+missing**. **Nine findings, nine repairs, zero carded.** Ten manuscript edits (IV-7 has two sites),
+so the current rule and `-79`'s proposed narrower rule both score this pass **9**.
 
-Nine findings, `III-9` … `III-17`. Shapes: **P** = promise-about-artefact, **D** =
-deferral-with-empty-target, **—** = neither. Seven required a manuscript edit.
+**IV-1 [P][promise] — §10 named a command that produces none of the numbers attributed to it.**
+*"The diagonality rejection... its command is `python3 scripts/wt026_severe_test.py --universe
+pilot --onset peak`."* **Both arms were run.** Neither prints 4.12×, 2.02×, *p* = 0.0002, any
+off-diagonal ratio, or the word *independence* — `wt026` is Paper III **§5.3's** instrument and its
+verdict in both universes is PREDICTION FAILS. The producer is
+`scripts/wt089_recognition_and_offdiagonal.py`, run here: `null mean 7.3 · [3, 12] · p = 0.0002 ·
+4.12×`, then `21.8 · [15, 29] · p = 0.0002 · 2.02×`, then `π = 0.05 → power 1.00` — which is §3's
+*"probability 1.00"*, **verified for the first time**. Paper II §7 states the rule broken: *"a
+single command named for numbers it does not produce is a provenance claim that reads as checked
+and is not."* **The ROOT was repaired in Paper III** (`wt145`), which has never named a command
+for §5.4 in any draft; not counted as a Paper IV finding, on `-79`'s II-39 precedent.
 
-* **`III-9` [D]** — §9's ninth limitation: *"the disclosure does not once, in **644** firm-years,
-  tie the standard's own internal trigger to the unit it fired in, **and §5.4 says that where the
-  numbers are**."* `644` appeared **exactly once in the manuscript**, in §9 itself; §5.4 carried
-  1,833 and 1,925 and never 644. And `RESULT-REG-008` records the opposite in bold, twice:
-  **one** firm-year in 644 (0 of 281 JOINT + 1 of 363 GOODWILL-ONLY). The zero is real and belongs
-  to **281**, which is what §7's own ledger row says. REG-008's `P2` adjudication warns that *"an
-  empty cell reported as 'did not fire' would be a phantom tag at section scale"*; the manuscript
-  committed the mirror image. Repaired in both sentences; `REACH` now declares `281` at §5.4, §7
-  and §9.
-* **`III-10` [P]** — the References key defines **✓, ✓✎, ✓⧗** and three entries carry a bare **⧗**
-  it never mentions (Fisher & McGowan, Kay, Nerlove — all *"Not read"*). Two further entries carry
-  no mark, each self-explaining. Key extended; closing note's enumeration extended.
-* **`III-11` [—]** — §4.9 called the α_eff move *"a ninth of itself"*. §4.10's own table gives
-  0.4368 → 0.4758 = **8.93 %**, nearer an **eleventh**; rounding cannot reach 11.11 % from either
-  direction. Surfaced by `A1`'s read-forward. `TERM-001`'s anchor follows the corrected span.
-* **`III-12` [P]** — §11 said `wt027_report.py`'s *"three tables"* of a command that printed
-  **four**, and §11's *"every simulation result … is produced by open code"* was false for **six**
-  §3 figures: §3.2's three full-path volatility ratios (1.56 / 2.71 / 3.27), §3.1's two off-grid
-  lags (φ = 0.9 → 1, φ = 0.1 → 24), and D(0) to four decimals. The full-path ratio existed
-  **nowhere** in `src/`, `scripts/` or `tests/`. **Repaired on `II-27`/`II-37`'s precedent — the
-  promise is made TRUE**: `full_path_volatility_ratio()`, a fifth column on table B, a block `A′`,
-  and **no extra simulation bought**. Table D relabelled `lambda`, which §A.2.4 requires.
-* **`III-13` [P]** — §11's *"Regenerate §5"* reaches **neither** §5.3's sample (688/311,
-  z −0.290/−0.095) **nor the committed one** (695/313, z −0.223/−0.083). A pull on 2026-08-18
-  gives 696/313 and **the replication z crosses zero**, against §5.3's *"both z-statistics are
-  negative"*. `wt026_severe_test.py` has no flag reading `data/pre-002-events.json`. Nothing in the
-  repository re-derives §5.3 from committed data — it survives as run logs. Repaired in the
-  manuscript; **the `--events` path is TEED UP, not carded** (§ESTATE).
-* **`III-14` [—]** — `data/pre-002-events.json`, the file §11 pins and whose SHA-256 verifies,
-  holds 695 events across **313** firms. §5.4 said **307** — which would have made the rebuild
-  **fail** the one-per-cent reconciliation the sentence exists to assert.
-* **`III-15` [P]** — `wt002_lambda_report.py` prints a **nine-name header over eleven values**;
-  the unlabelled pair is the mean/min coupling ratios §A.2.3's table reports.
-* **`III-16` [D]** — the same file's `scaling_collapse()` docstring defers to *"Paper III section
-  **3.3**"*, which does not exist (§3 runs 3.1 and 3.2). `wt133` reads manuscripts, not scripts.
-* **`III-17` [P]** — §11's *"three of its additions"* is **six**, all in `tests/test_lag.py`, all
-  guarding Paper III claims. The other three landed at **`cc1d198`** (2026-08-12) — **two days
-  before the sentence was first written** (`a74a4ca`) and four before its last edit (`bde6d65`,
-  whose subject is *"made to stay fixed by derivation"*).
+**IV-2 [—][promise] — §10's preamble contradicts §10's own bullets and §1.** *"Everything else it
+reports is cited from Paper II or Paper III"* — false for §5 and §8, per §10's own next bullet.
+§1 says **two places** and is right.
 
-**THE GUARDS FOUGHT THE PATCH THREE TIMES AND WERE RIGHT EVERY TIME.** `TERM-001`'s anchor,
-`REACH`'s declaration for `281`, and `tests/test_manuscript_shas_are_instrumented.py` — which
-refuses a SHA that lives only in prose **and refuses the lazy repair of pasting it into a
-comment**, and got an instrument out of the session instead. Expect this; it improves the repair.
+**IV-3 [P][promise] — the one `src/` module this paper's results depend on is named nowhere.**
+`src/wealth_tensor/excess_demand.py`. **Apparatus row P5h is the tell**: it demands *module paths*
+and checks `grep -q 'src/wealth_tensor/'` — green forever, satisfied by a **sibling's** module.
+Two further promises in the same bullet were unheld: **399** appeared nowhere in `tests/`, `src/`
+or any script but the patch script that wrote the sentence (the module asserted `grid.size > 300`),
+and §8's twelve-point **four** was measured by **no test in the suite**.
+
+**IV-4 [P][promise] — *"Two tests in the suite"* is an exhaustive count and it is wrong**, and the
+second guard named constrains no claim in this manuscript (Paper IV reports no Gini).
+`test_the_forbidden_claim_is_red` alone is in two registration modules; Paper III names a third;
+there is a registered class of 29 tripwires besides. **III-17's shape on a different manuscript**,
+and `test_paper_ii_does_not_claim_both_named_guards_are_in_the_counted_module` exists because
+Paper II made the neighbouring mistake at `-58`. Nothing covered Paper IV.
+
+**IV-5 [D][promise] — §8's *"It is not in this corpus"*** about a **7,367-word** file at
+`docs/papers/paper-I-price-formation/paper-I.md` that is one of the four manuscripts `wt133`
+sweeps, carries its own ⚠ SUPERSEDED banner, and is **the only place §8's own *roughly 7,400
+words* is checkable.**
+
+**IV-6 [D][deferral] — §7's fourth relocation names no author, no work and no constraint.** *"The
+Austrian account of the cycle"*, once in 766 lines, no reference entry, in the paragraph arguing
+that **naming the constraint is what makes a relocation checkable**. Removed rather than
+invented-a-citation-for; `REFERENCE-POLICY` forbids the latter. The *"four times"* counts survive —
+they count §7's four **blocks**, not the illustration list.
+
+**IV-7 [D][—] — Robinson, Sraffa and Mas-Colell listed and cited nowhere**, `wt133`-flagged on
+every run since `-74` and adjudicated by nobody. Robinson (1953) opened the Cambridge controversy
+and Sraffa (1960) is where reswitching comes from; §1.1 leans on both and credited neither. Now
+cited at §1.1 and §7. Sweep 2: **25 of 28 → 28 of 28.**
+
+**IV-8 [D][deferral] — §8 states a test and applies it to every entry but one.** The REG-001 entry
+gives no counterfactual sentence, in the section that declares one is the price of admission and
+applies it explicitly to the superposition entry.
+
+**IV-9 [D][—] — the paper measures the absence that motivates it and asserts the three that carry
+its consequence**, and §9's eight limitations did not say so. §1.1's bolded *"The input-output
+energy table has no lapse to report"* is load-bearing for §4.3. `REFERENCE-POLICY` §1 has the rule.
+§9 gains a ninth limitation.
+
+**GUARDS ADDED, so three cannot return.** `tests/test_paper_iv_tie_convention_is_counted.py`
+asserts §8's four, asserts that dropping the two grid endpoints collapses it to **one** — the
+witness for §8's *explanation*, not just its value — and asserts the neighbouring 25 so the lazy
+repair of repointing the old test goes red. `tests/test_paper_iv_named_guards.py` forbids the
+exhaustive count and two near-miss phrasings, holds apparatus row P5j, checks every guard the paper
+names exists, and checks the repaired sentence's own evidence is still real so the repair cannot
+rot into its own phantom. `test_excess_demand.py`'s `> 300` is now `== 399`.
+
+**EVERY UNHELD PROMISE WAS MADE TRUE RATHER THAN WITHDRAWN** — the `-76`/`-79` precedent (II-27,
+II-37). Expect this to be the right instinct; it was three times here.
+
+**THE GUARD FOUGHT `wt145` AND THE GUARD WAS RIGHT.** `test_defensive_count` went red on Paper III
+over **one word** — *"caveat"* — in a bullet added minutes earlier, and its failure message says
+what to do: *a finding that seems to demand new hedging demands a NARROWER CLAIM; rewrite the claim
+and delete the hedge.* `wt147` deleted it. **Do not raise a baseline to get green.**
 
 ---
-
 ## ✅ NEW SETTLED, DO NOT REOPEN
 
-All 39 tabulated §3 and §A.2 values reproduce exactly. Every commit pin and both SHA-256 digests
-§11 prints verify — `edgar.py`@`d655501`, `lag.py`@`ad779eb` (and it has exactly one commit),
-`lambda_sensitivity.py`@`b9089c7`; `9722342` is a single-file commit; `d655501` does contain
-PRE-002 *and* its instrument; `93a159b` touches `edgar.py` by +21 lines and `TIER_TAGS` is
-byte-identical there and at HEAD. §11's 100 and 62 are derived and green. §4.4's 665 admissible =
-0.974 × 683 disclosed, and "86.1 % outside" is the exact complement of §7's 0.139 inside. The
-abstract's 4.2× leverage = 2.58/0.61. §4.5's "factor of six" = 66.2/11.5. §A.1.3's 0.031 =
-100 × 0.98⁴⁰⁰. §4.9's δ₃\* movements (0.13 %, 4.3 %, factor 3.775) all check. §4.10's "five parts
-in ten thousand", its 15 %, and 0.438 ≈ 1/E[T] = 0.435 all check. **"✓⧗ now marks three entries,
-cited in §§4.4, 4.6 and 4.9" is right in every particular** — the *other* mark is `III-10`. §4.9's
-overstatement column (0.6 %, 1.2 %) is inside 4-dp rounding slop. §8's "faced four times" and
-§A.2.4's "refused three times in other costumes" are consistent. §4.2's 8 × 10⁻¹⁶ and §7's
-7 × 10⁻¹⁴ are different ledger rows. 44 of 45 enumerated artefacts resolve at the path given;
-`LEDGER.md` is cited bare, as `METHOD-001`, `REVIEW-001` and the `REG-00x` are — a convention.
+- **Coverage of the axis matrix does not explain the `P7` counter.** Closed grid, no cell filled,
+  nine findings, 9 of 9 from filled cells. `-80` pre-committed to the test; the test ran.
+- **The 5/2/2 shape split is a property of the corpus, not of Paper II or Paper III.** Three
+  manuscripts. Do not re-ask whether the shapes generalise; ask what to do about them.
+- **Paper IV's §6 is arithmetically closed and every figure in it reproduces**, against a live
+  `reg013` run: overlaps, intersections, audiences, *z*, per-literature ceilings, split-halves,
+  `P_ceiling` 0.477, `F_floor` 0.0, and the registered 0.10/0.25/0.20 rules. Sixteen cleared items
+  in `REVIEW-021` §3. **Do not re-derive them.**
+- **Paper IV's commit pins are exact and not stale.** `5efe626` is the only commit ever to touch
+  `reg013_citation_whitespace.py` **and** the commit that added the manuscript.
+- **Paper IV's reference key is clean** — one mark, `✓`, six entries, and the key defines exactly
+  that one. III-10's shape is not here; it was the first thing checked.
+- **§3's pre-registered demotion claim is true, verbatim**, in `END-TO-END-001.md` §2's E1 block,
+  written before the leg was run. The strongest thing in the manuscript.
 
 ---
+## THE TELL, now FORTY-EIGHT deep. `-61`–`-80` as before.
 
-## THE TELL, now FORTY-THREE deep. `-61`–`-79` as before.
+**`-81`(i): RUN THE COMMAND. THE PAPER IS NOT LYING TO YOU, IT IS QUOTING SOMETHING IT NEVER RAN.**
+A4's first question — *do the values match?* — cleared everything it touched, on two manuscripts.
+A4's SECOND question — *is there a number no named command produces?* — found three of nine here
+and three of nine on Paper III. The expensive half of A4 is checking the ATTRIBUTION.
 
-* **`-80(i)` · A `| head -N` ON A VERIFICATION GREP CAN MANUFACTURE A FINDING, AND THE `.bak`
-  FILES SORT FIRST.** The one near-miss of this pass was a live test reported as missing because
-  my own truncation ate the real file. **Verification greps take no `head`.** Count, then truncate.
-* **`-80(ii)` · A NUMBER THAT APPEARS EXACTLY ONCE HAS NOTHING TO DISAGREE WITH, AND THAT IS A
-  DEFECT INDEPENDENT OF WHETHER IT IS RIGHT.** `644` appeared once and was wrong. Every other
-  REG-007/008 figure is restated in §7 and would have disagreed loudly. This is
-  `test_manuscript_shas_are_instrumented.py`'s argument about SHAs, and it generalises to figures.
-* **`-80(iii)` · WHEN A WRONG NUMBER CONTRADICTS THE SENTENCE IT IS SUPPORTING, THE SENTENCE IS
-  USUALLY RIGHT.** §5.4 asserted a rebuild within one per cent and printed a firm count 1.29 %
-  away. **Read the claim against its own number before reading either against the world** — one
-  subtraction, and it found `III-14`.
-* **`-80(iv)` · FILL THE EMPTY CELL BEFORE ARGUING ABOUT THE COUNT.** Six handoffs argued about a
-  non-decaying counter while three of fifteen cells had never been touched. The matrix was built at
-  `-76` and answered it in one line; it took four more sessions to act. **Build the coverage table
-  early; it makes the argument unnecessary.**
-* **`-80(v)` · THE GUARDS ARE THE REVIEWER'S INSTRUMENT, NOT JUST THE AUTHOR'S.** Three repairs
-  were rejected on first run and every rejection was correct. **A repository whose guards fight
-  your patch is telling you what your patch forgot.**
+**`-81`(ii): THE PASS THAT NAMES A DEFECT CLASS IS THE PASS MOST LIKELY TO LEAVE MORE OF IT IN THE
+SAME PARAGRAPH.** `-75` coined the leaf from Paper IV §10 and left four more in Paper IV §10, two
+written by the coining edit. A predecessor's lesson is a map of where to look **hardest**.
+
+**`-81`(iii): A COUNT OVER A SET THE REPOSITORY CAN ENUMERATE IS A DEFECT WAITING FOR A GREP.**
+*"Two tests in the suite"*, `-80`'s *"three of its additions"* (six), *"18 tests"*, *"100"*/*"62"*.
+When a sentence states a number the repository can compute, derive it or expect it to be wrong.
+
+**`-81`(iv): A GUARD SATISFIED BY A SIBLING'S ARTEFACT IS GREEN AND BLIND.** Apparatus row P5h.
+When auditing a green row, ask **what string satisfied it**, not whether it passed.
+
+**`-81`(v): WHEN A PAPER TELLS YOU IT MEASURED ITS ABSENCE, GO FIND THE ABSENCES IT DID NOT.** §6
+is the most careful section in the manuscript and it advertises its own standard. That
+advertisement is a map: a section proud of its rigour marks the boundary of the rigour.
 
 ---
-
 ## TOOLING
 
-* **`scripts/wt143_p7passes_row80.py`** — row 10 plus the rewritten AXIS MATRIX block, **11
-  post-conditions**, idempotent. `P11` is a **negative and load-bearing**: the row must **not**
-  claim `new`, because nothing was invented. `P6` asserts `-79`'s row survived byte-identical.
-* **`tests/test_paper_iii_lag_additions_are_counted.py`** — `III-17`'s repair, made to stay fixed
-  by derivation: four assertions covering the six additions **by name**, §11 saying *six* and not
-  *three*, `cc1d198` introducing the three it names, and that commit touching **no** `src/`.
-* **`scripts/wt027_report.py`** — gains `full_path_volatility_ratio()`, block `A′`, a fifth column
-  on table B, and λ-correct labels on table D. Prints **five blocks**; the docstring says so.
-* **`scripts/wt002_lambda_report.py`** — header names all eleven columns; the docstring points at
-  §A.2.3.
-* **`docs/crossref-dismissed.tsv`** — gains `paper-III 2.2` (REG-008's own section).
-* Tags run to **`wt143`**; **`wt144` is free.**
+**▲ new at `-81`:** `scripts/wt144_paperIV_p7pass2.py` — ten manuscript edits + one test edit for
+nine findings, **15 post-conditions**, two of them NEGATIVE and load-bearing (no new SHA entered
+the manuscript; the §10 pin sentence is untouched); idempotent, re-running prints ALREADY.
+`scripts/wt145_paperIII_sec54_command.py` (5) · `scripts/wt146_p7passes_row81.py` (12, two
+NEGATIVE: the row must NOT claim a new instrument and the matrix must NOT move) ·
+`scripts/wt147_paperIII_hedge_removed.py` (5). New tests
+`tests/test_paper_iv_tie_convention_is_counted.py` and `tests/test_paper_iv_named_guards.py`.
+`scripts/wt089_recognition_and_offdiagonal.py` now writes to `data/reg-003-run.json` instead of the
+repository root. `docs/crossref-dismissed.tsv` gains `paper-IV 5.3`.
+**Tags run to `wt147`; `wt148` is free — and `wt148` is your at-bat's number.**
 
+**Unchanged and still the tools you want:** `wt130_quantifier_sweep.py <paper-stem>` (note the
+selector, `-79` repaired it) · `wt133_crossref_sweep.py` · `handoff_gate.py --coach` ·
+`wt089_recognition_and_offdiagonal.py` (REG-003, ~2 min, prints the off-diagonal) ·
+`wt071_refuter.py` (§5/§8's apparatus) · `reg013_citation_whitespace.py` (§6, live OpenAlex,
+~3 min).
+
+---
 ## ESTATE
 
-Nothing carded. **One thing teed up, deliberately, and it is not a rabbit hole — it is a decision
-you may not have the standing to make alone:** `III-13`'s real repair is an `--events` path into
-`scripts/wt026_severe_test.py` that reads `data/pre-002-events.json` instead of re-pulling EDGAR,
-named in §11 as the way to re-derive a committed sample. `-80` repaired the *manuscript* instead,
-because adding a data path to a **registered instrument** changes what that instrument reads and
-that is Jason's call, not a reviewer's. The manuscript is now true either way; the code change
-would make the original promise true. **If you take it, register the change before you code it —
-that is §6.2's own discipline and this repository's standing rule.**
+**Nothing carded from the nine findings — all nine repaired in-pass.** One State Machine card
+filed: **1217593142996092**, `wt133`'s sweep-2 blind spot (entry → body only; it cannot see a body
+claim with no entry, which is IV-6). Two standing cards unchanged: Paper II's uncited entries
+**1217568192511533**, Paper II's version stamp **1217568297674954** (now commented with the
+corpus-level reading).
 
-**`gate-selfcheck.sh` EXITS 1 AT THIS WRAP AND IT IS NOT THIS REPO'S FAULT — read this before you
-panic.** The single issue is `~/Desktop/downloads: 1 uncommitted change — ??
-SESSION-creditSentinel-1-20260818.md`. That file belongs to a **live sibling** (`opus-spi-menu`,
-joined three hours earlier, already claiming `n8n-stack`, `strike-zone` and `claude-blackbook`).
-`-80` did **not** commit it: committing another session's unfinished wrap note to make a gate go
-green buys the green light by stealing the sibling's wrap, and that is the wrong lesson to bank.
-The same run got the *other* sibling collision exactly right — *"`~/repos/claude-blackbook`: LIVE
-roster claim by `opus-spi-menu` … Do NOT commit it"* — so the mechanism exists; it just has no
-claim to match on for the everything folder, which nobody ever claims. Diagnosis, proposed fix and
-a falsifier are on **State Machine `1217586882284748`**. Everything in *this* repo is committed and
-pushed; `handoff_gate.py --emit` says **HANDOFF OK**.
+**Teed up, not carded, because it is a decision and not a repair:** `REVIEW-021` §4 item 3 — should
+apparatus row P5j require Paper IV to name a guard for a claim Paper IV does not make? That is a
+question about the row, not the paper.
 
-## JASON-SIZED, not `-81`'s
+---
+## JASON-SIZED, not `-82`'s
 
-* **(a)** `DECISION-001` closed.
-* **(b)** Paper IV framing ruled.
-* **(c)** `P7` is still ONE BOOLEAN, **eleven** sessions deep — the board has not moved once. But
-  the matrix closing at 15 of 15 is the first thing that has changed the *meaning* of a low count,
-  so a ruling now is worth more than a ruling last week.
-* **(d)** The version stamps, now **two** manuscripts: `II-25` is card `1217568297674954` (ninth
-  data point); `paper-III.md` says *Version 0.5, 2026-08-12* with nine repairs landed 2026-08-18.
-  **Deliberately not moved** — a version stamp is the author's.
-* **(e) THE RULING.** `-79` proposed counting only findings that require a **manuscript edit**.
-  `-80` adds a data point and **does not change the recommendation**: under that rule `-80` scores
-  7 and `-79` scores 0 — the **same** separation the current rule gives (9 against 2), so on this
-  pair it buys no resolution. What it *would* buy is a score independent of how much reviewing
-  apparatus a pass happened to touch. **NOT APPLIED**; row 10 is on the current rule.
-* **(f)** `wt077` already prints *r*·E[η⁺]/(1+μ), matching to **0.44 %** where §3.1's form is off
-  4–7 %. Adopting it changes a **stated contribution**.
-* **(g)** The PAN history purge — Batter's Box `1217561667484767`.
+**(a) THE ONE THAT MATTERS NOW.** Eleven rows, four dead mechanisms, and the reading left standing
+survives because it predicts nothing. **The only design that separates *the paper has n defects
+left* from *a reviewer finds n* is two independent readers on the same manuscript at the same
+coverage in the same window.** It costs two sessions to buy one data point. `-82` is not
+authorised to spend it. **Your call.**
+
+**(b) The version stamp, and it has stopped being a per-paper note.** Three manuscripts now carry a
+stamp older than their repairs: Paper II (card 1217568297674954), `paper-III.md` *Version 0.5,
+2026-08-12* against nine repairs on 08-18, `paper-IV.md` *Version 0.1, 2026-08-16* against ten
+repairs on 08-18. Three consecutive passes have declined to move one on your behalf, correctly.
+**One ruling closes all three.**
+
+**(c) `DECISION-001` is closed** and `ROADS-001` unchanged.
+
+**(d) `-79`'s narrower counting rule, third data point.** Count only findings requiring a
+manuscript edit: `-79` scores 0, `-80` scores 7, `-81` scores 9 — the same separations the current
+rule gives (2, 9, 9). It buys no resolution on any pair yet; what it *would* buy is a score
+independent of how much apparatus a pass touched. **NOT APPLIED**; row 11 is on the current rule.
+
+**(e) `wt077` already prints r·E[η⁺]/(1+μ)**, matching to 0.44 % where Paper II §3.1's form is off
+4–7 %. Changes a stated contribution. Unchanged from `-80`.
+
+**(f) The PAN history purge** — Batter's Box **1217561667484767**. Unchanged.
+
+---
+## AT WRAP (`-82`)
+
+`~/Scripts/charter-read.sh wealthTensor-82` **immediately before** the gate or `G-AL` warns · gate
+detached **WITH `GATE_ROSTER_WHO`** · `python3 -m pytest tests/ -q` **AND SAY THE NUMBER** ·
+`python3 scripts/wt133_crossref_sweep.py` **AND SAY ITS RC** · `~/Scripts/roster leave --who <you>`
+once · paste a handoff better than this one as the last act, and **assign `-83` ONE at-bat with a
+definition of done. Do not hand them a menu.** 🥎
