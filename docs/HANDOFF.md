@@ -103,6 +103,27 @@ right, and it is worth more than a finding.
 
 ---
 
+## WHY `P7` AND NOT `P13`, in writing, because `charter-read.sh` will tell you `P13` is first open
+
+`~/Scripts/charter-read.sh` reports **`P13` — the beautifully designed, arXiv-ready PDF — as the
+first OPEN lane in dependency order**, and it has reported that for eleven sessions. The board's
+ordering is not a schedule and a project's own rulings outrank it; here is the ruling, restated so
+`-81` does not have to re-derive it or feel it is drifting.
+
+**`P13` is a point-in-time capture of the corpus *as it would present if we stopped here*.**
+Building it before `P7` converges spends the capture on a corpus that is still moving — and
+`ADR-001`'s batch ruling is explicit that the conjunction gets **exactly one** first end-to-end
+pass, so shipping early spends it. `-80` landed **nine** repairs on Paper III, seven of them
+manuscript edits including a stated zero that is a one. A PDF built yesterday would already be
+wrong today.
+
+**`P7` is the lane that unblocks the rest.** `P2`, `P3`, `P5` and `P11` are all **PENDING-HUMAN**
+and all name `P7`'s fresh eyes as their judge. `P7` is the only open lane a Claude can move
+without Jason, and it is the DoD's own convergence clause. So the at-bat is `P7` on Paper IV, and
+it stays `P7` until two consecutive zero-finding passes exist per paper or Jason rules otherwise.
+
+---
+
 ## WHAT `-80` DID, so you do not re-derive it
 
 Nine findings, `III-9` … `III-17`. Shapes: **P** = promise-about-artefact, **D** =
