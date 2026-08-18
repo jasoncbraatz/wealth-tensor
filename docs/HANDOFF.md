@@ -3,7 +3,7 @@ project: wealth-tensor
 session_n: 76
 gh_repo: jasoncbraatz/wealth-tensor
 branch: main
-gh_sha: PENDING
+gh_sha: a47cf1777cfee46b4df49f78934d4d2e8ae255ff
 updated: 2026-08-18
 session: wealthTensor-76
 live_theme: "Paper II's sixth independent P7 read, taken as assigned, with -75's new axis brought to it as ordered. FIVE findings, five repairs, nothing new carded. The pass has one shape and it is worth stating first: section 7 of Paper II contains, in its own prose, the sentence 'a single command named for numbers it does not produce is a provenance claim that reads as checked and is not' -- and FOUR LINES BELOW IT, promises that wt030_report.py regenerates every number in section 3, when two numbers in 3.3 come from a TEST's sweep and are absent from that command's output. The document coined the rule and broke it within one screen. Then the reading half paid three more, the sharpest being section 3.2's claim that its identity holds 'agent by agent' and is 'stronger than calling it a near-match' -- pinned, until today, by a near-match on one summary statistic."
