@@ -602,7 +602,7 @@ def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--events", default="data/pre-002-events.json")
     ap.add_argument("--riskset", default="data/pre-002-riskset.json")
-    ap.add_argument("--out", default="RESULT-REG-003-run.json")
+    ap.add_argument("--out", default="data/reg-003-run.json")
     args = ap.parse_args()
 
     print("WT-089 · REG-003 · the recognition rate and the off-diagonal")

@@ -4448,3 +4448,10 @@ not a per-paper one — Papers II, III and IV all carry a stamp older than their
 itself: **two independent readers on the same manuscript at the same coverage in the same window**,
 the only design that separates *the paper has n defects left* from *a reviewer finds n*. It costs
 two sessions to buy one data point, which is why it is Jason's call and not a pass's.
+
+**BUG SPRAY, caught by `git add -A` at wrap.** `scripts/wt089_recognition_and_offdiagonal.py`
+defaulted `--out` to `RESULT-REG-003-run.json` **at the repository root**, while its own
+`--events` and `--riskset` default to `data/` and all twenty sibling result files live there.
+Running it for `IV-1` dropped an untracked 8.9 kB artefact in the root, which `git add -A` then
+staged. Default repointed to `data/reg-003-run.json`; the file `git mv`d there so the run record
+survives at the right path. Nothing reads it — it had no readers to break.
