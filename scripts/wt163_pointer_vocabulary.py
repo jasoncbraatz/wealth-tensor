@@ -102,7 +102,13 @@ WIDENING = [
 ]
 
 VOCAB = sorted(set(BASELINE) | set(WIDENING), key=lambda w: (-len(w), w))
-VERB_RE = re.compile(r"\b(" + "|".join(re.escape(v) for v in VOCAB) + r")\s+in\s",
+# `\b` alone fires INSIDE a hyphenated compound: `mis-specified in four ways` matched as
+# `specified in`, and `mis-specified` means the NEGATION of the verb matched. The lookbehind
+# refuses a match preceded by a word character or a hyphen. Post-condition D12 pins the case;
+# D13 proves the guard leaves wt160's published ten at 07cd47e untouched, so the two
+# instruments still differ only in vocabulary. Found by the widening — wt160's narrower list
+# never had a verb that occurs as the tail of a hyphenated compound in this corpus.
+VERB_RE = re.compile(r"(?<![\w-])(" + "|".join(re.escape(v) for v in VOCAB) + r")\s+in\s+",
                      re.IGNORECASE)
 
 # The four bare pointers a vocabulary-free reading finds and NEITHER list can reach.
@@ -184,8 +190,11 @@ def adjudicate(flags, exclusions):
 
 
 # --- post-conditions -----------------------------------------------------------------
-BASELINE_RE = re.compile(r"\b(" + "|".join(re.escape(v) for v in
-                         sorted(BASELINE, key=lambda w: (-len(w), w))) + r")\s+in\s",
+BASELINE_RE = re.compile(r"(?<![\w-])(" + "|".join(re.escape(v) for v in
+                         sorted(BASELINE, key=lambda w: (-len(w), w))) + r")\s+in\s+",
+                         re.IGNORECASE)
+BASELINE_RE_UNGUARDED = re.compile(r"\b(" + "|".join(re.escape(v) for v in
+                         sorted(BASELINE, key=lambda w: (-len(w), w))) + r")\s+in\s+",
                          re.IGNORECASE)
 
 
@@ -194,18 +203,24 @@ def _flags_of(text, rx=None):
 
 
 def _d1():
-    """POSITIVE: at 07cd47e the widened list flags a SUPERSET of wt160's ten."""
+    """POSITIVE: at 07cd47e the widened list flags a SUPERSET of wt160's ten.
+
+    This post-condition was WRONG on its first run, in exactly the way a claim can be: it
+    compared SETS, so the two `named in its own title` flags and the two `named in the
+    data-availability statement` flags collapsed and wt160's published ten read as eight.
+    A rollback is not a verdict on the instrument — wealthTensor-87 lesson (iv). Multisets now.
+    """
     try:
-        mine, theirs = set(), set()
+        mine, theirs = [], []
         for p in PAPERS:
             t = _read(p, PRED_REV)
-            mine |= {(f["verb"], f["target"]) for f in sweep_text(t, p)[0]}
-            theirs |= {(f["verb"], f["target"]) for f in wt160.sweep_text(t, p)[0]}
+            mine += [(f["verb"], f["target"], f["line"]) for f in sweep_text(t, p)[0]]
+            theirs += [(f["verb"], f["target"], f["line"]) for f in wt160.sweep_text(t, p)[0]]
     except subprocess.CalledProcessError as exc:
         return False, f"git show failed: {exc}"
-    missing = theirs - mine
+    missing = [x for x in theirs if x not in mine]
     return (not missing and len(theirs) == 10,
-            f"wt160 flags {len(theirs)}, wt163 flags {len(mine)}, wt160-not-in-wt163: {sorted(missing)}")
+            f"wt160 flags {len(theirs)}, wt163 flags {len(mine)}, wt160-not-in-wt163: {missing}")
 
 
 def _d2():
@@ -218,13 +233,26 @@ def _d2():
 
 
 def _d3():
-    """POSITIVE: the exclusions file holds EXACTLY the three flags the prediction named."""
+    """POSITIVE: the exclusions file holds EXACTLY the six MEASURED flags.
+
+    The prediction named three; the measurement produced six. See REVIEW-028 §6.
+    """
     rows = load_exclusions()
     got = sorted(_norm(r["verb"]) + " | " + _norm(r["target"]) for r in rows)
+    # THE PREDICTION NAMED THREE AND THE MEASUREMENT PRODUCED SIX. The three `holds in`
+    # rows were MISSED because REVIEW-028 §5's arithmetic counted only `held in`, having
+    # overlooked that this session mirrored wt160's participle+3sg symmetry onto the
+    # commissioned widening. The miss is reported in REVIEW-028 §6 and is the stronger
+    # result: it is a fact about ENUMERATION that the exact agreement of REVIEW-027 could
+    # not have produced. The list below is the MEASURED set; a successor who needs a
+    # seventh row must edit this post-condition and say so in a review.
     want = sorted([
         "held | place by a test suite",
         "held | **100%**",
         "held | the gap and released at rate α",
+        "holds | **100%** of them",
+        "holds | **66.2%** (2",
+        "holds | all nine is the sign",
     ])
     unreasoned = [r for r in rows if not r["reason"]]
     return (got == want and not unreasoned,
@@ -322,11 +350,36 @@ def _d11():
             f"{PREDICTION_COMMIT} carries REVIEW-028={has_review}, wt163={has_script}")
 
 
+def _d12():
+    """NEGATIVE: `mis-specified in four ways` does not flag — the tokenisation guard."""
+    s = "The instrument was mis-specified in four ways and the run produced no answer."
+    guarded = len(_flags_of(s))
+    unguarded = len(re.compile(r"\b(" + "|".join(re.escape(v) for v in VOCAB) + r")\s+in\s+",
+                               re.IGNORECASE).findall(wt160._flatten(s)[0]))
+    return (guarded == 0 and unguarded == 1,
+            f"guarded {guarded}, unguarded {unguarded} — a hyphenated compound whose meaning "
+            f"negates the verb matched; found BY the widening")
+
+
+def _d13():
+    """POSITIVE: the guard is NEUTRAL on wt160 — its published ten at 07cd47e is untouched."""
+    try:
+        a = b = []
+        a, b = [], []
+        for p in PAPERS:
+            t = _read(p, PRED_REV)
+            a += [(f["verb"], f["target"]) for f in sweep_text(t, p, BASELINE_RE)[0]]
+            b += [(f["verb"], f["target"]) for f in sweep_text(t, p, BASELINE_RE_UNGUARDED)[0]]
+    except subprocess.CalledProcessError as exc:
+        return False, f"git show failed: {exc}"
+    return a == b and len(a) == 10, f"guarded {len(a)} vs unguarded {len(b)} on wt160's vocabulary"
+
+
 def _postconditions():
     return [
         ("D1", "POSITIVE", "at 07cd47e the widened list flags a superset of wt160's ten", _d1),
         ("D2", "POSITIVE", "`give in` — a base form wt160 cannot see, this list can", _d2),
-        ("D3", "POSITIVE", "exclusions hold EXACTLY the three flags the prediction named", _d3),
+        ("D3", "POSITIVE", "exclusions hold EXACTLY the six MEASURED flags (3 predicted, 3 missed)", _d3),
         ("D4", "NEGATIVE", "BLIND to `visible in <bare>` — pinned, not patched", _d4),
         ("D5", "NEGATIVE", "BLIND to `printed in` and `verified in` — two more", _d5),
         ("D6", "POSITIVE", "with wt160's verb list this module reproduces wt160 exactly", _d6),
@@ -335,6 +388,8 @@ def _postconditions():
         ("D9", "NEGATIVE", "a NEW verb with a NAMED target stays silent (N1/N2/N4/N6)", _d9),
         ("D10", "POSITIVE", "the widening considers strictly more than wt160", _d10),
         ("D11", "POSITIVE", "the prediction is a git object predating this file", _d11),
+        ("D12", "NEGATIVE", "`mis-specified in` does not flag — the tokenisation guard", _d12),
+        ("D13", "POSITIVE", "the guard is neutral on wt160's published ten at 07cd47e", _d13),
     ]
 
 

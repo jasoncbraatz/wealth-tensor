@@ -722,8 +722,8 @@ fourth paper died to its own referees. It is part of the record rather than an a
 ## References
 
 *Bibliographic details are to be verified against live sources before submission, per
-`docs/papers/PREPRINT-CHECKLIST.md` and `docs/REFERENCE-POLICY.md`. Entries marked ✓ were verified
-in the sessions that introduced them to Papers II or III.*
+`docs/papers/PREPRINT-CHECKLIST.md` and `docs/REFERENCE-POLICY.md`. Entries marked ✓ were verified against the sources the mark table in
+`docs/REFERENCE-POLICY.md` requires.*
 
 **Aggregation**
 

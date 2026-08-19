@@ -94,7 +94,13 @@ VERBS = [
     "named", "names",
     "given", "gives",
 ]
-VERB_RE = re.compile(r"\b(" + "|".join(VERBS) + r")\s+in\s+", re.IGNORECASE)
+# `\b` alone fires INSIDE a hyphenated compound — `mis-specified in` matches as `specified
+# in`, and the compound means the NEGATION of the verb matched. Found at wealthTensor-88 BY
+# the widened vocabulary of `wt163`, which is the only reason it surfaced: no verb on the
+# eight occurs as the tail of a hyphenated compound in this corpus, so the defect was latent
+# here and live there. wt163's post-condition D13 proves this guard leaves the ten flags
+# published in REVIEW-027 untouched, and C12 below pins the case directly.
+VERB_RE = re.compile(r"(?<![\w-])(" + "|".join(VERBS) + r")\s+in\s+", re.IGNORECASE)
 
 # --- the NAMED-target tests (N1..N6) ------------------------------------------------
 RE_BACKTICK = re.compile(r"`[^`]+`")
@@ -279,6 +285,11 @@ def _postconditions():
         _c9)
     add("C10", "NEGATIVE", f"at {REPAIR_COMMIT} Paper III no longer flags it",
         _c10)
+    add("C12", "NEGATIVE", "a hyphenated compound whose meaning negates the verb does not flag",
+        lambda: (len(_flags_of(
+            "The instrument was mis-specified in four ways and produced no answer.")) == 0,
+            "the tokenisation guard; found at wealthTensor-88 by wt163's widened vocabulary"))
+
     add("C11", "NEGATIVE", "III-3 is OUT OF CLASS: its target is a section reference",
         lambda: (len(_flags_of(III3_BEFORE)) == 0,
                  "the commissioned two-legged severe test has one satisfiable leg"))

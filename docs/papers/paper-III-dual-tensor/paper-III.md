@@ -622,7 +622,7 @@ magnitudes. It ordered **lag**: how long a class takes. And the lag statistic do
 | 3 · goodwill | **36** | 22 |
 
 Monotone under both, and the falling-δ ladder makes the ordering *steeper* rather than flattening
-it. The reason is visible in the parameter sweep: lag falls in φ at every δ, and rises as δ falls at
+it. The reason is that the two monotonicities compound: lag falls in φ at every δ, and rises as δ falls at
 every φ, so on a ladder where both move the way the standards say they do, **the two effects add.**
 Across 400 randomly drawn admissible ladders the lag ordering holds in **100%** of them, against
 1.9% for the magnitude measure. **Part of that margin belongs to the ladder rather than to the
@@ -1213,8 +1213,8 @@ with each other. The Jonckheere–Terpstra statistic sums the pairwise Mann–Wh
 tier ordering carrying no information returns z near zero from either direction — which is what happened,
 twice, in opposite directions. The pilot retained 120 events across 72 firms and gave Jonckheere–Terpstra
 **z = −0.177** (one-sided p = 0.570), with goodwill's median lag sitting *below* PP&E's — 4.0
-quarters against 5.0, the reverse of the predicted ordering. The replication universe, declared in
-the registration before the pilot was run, retained 202 events across 106 firms and gave
+quarters against 5.0, the reverse of the predicted ordering. The replication universe, declared in `PRE-001` §4.2
+before the pilot was run, retained 202 events across 106 firms and gave
 **z = +0.634** (p = 0.263), with goodwill and PP&E tied at 3.0. A weak negative and a weak positive,
 neither significant: the signature of a measurement carrying no information about the ordering
 rather than of an effect in either direction.
@@ -2055,7 +2055,8 @@ public data.
   tier.** `edgar.py`'s `drops` counter is keyed by bucket alone, so *does attrition differ
   systematically by tier?* — the one selection channel capable of manufacturing the reported null
   — is not answerable from these logs. What the registrations put in its place is the
-  label-permutation control printed in the same logs, which permutes the tier labels while
+  label-permutation control printed in those same run logs
+(`docs/preregistration/RESULT-002-*-run.log`), which permutes the tier labels while
   holding the lag distribution fixed; in the pilot its null runs at mean **+0.007**, standard
   deviation **1.025** over 1 000 draws, against an observed *z* of **−0.290**. This bullet
   promised a per-tier breakdown until wealthTensor-82.

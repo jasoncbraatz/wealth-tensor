@@ -7,9 +7,17 @@
 # This file cannot grow silently: wt163 post-condition D3 refuses to pass unless these rows are
 # EXACTLY the three named in docs/REVIEW-028-pointer-vocabulary.md §5 — which were predicted at
 # commit c89f764, BEFORE wt163 existed and before any widened sweep was run. A successor who
-# needs a fourth row must edit D3 and say so in a review.
+# needs a seventh row must edit D3 and say so in a review.
+#
+# THE PREDICTION NAMED THREE ROWS AND THE MEASUREMENT PRODUCED SIX. The three `holds in` rows
+# were MISSED: REVIEW-028 §5's arithmetic counted only `held in`, having overlooked that this
+# session mirrored wt160's participle+3sg symmetry onto the commissioned widening. The miss is
+# the stronger result and is reported in REVIEW-028 §6 rather than quietly absorbed here.
 #
 # file	verb	target	reason
 III	held	place by a test suite	idiom: "held in place" locates nothing; the reader is not sent anywhere
 III	held	**100%**	a statistic, not a location — "the lag ordering held in 100% of ladders"
 III	held	the gap and released at rate α	physical: unrecognised value is held in the model's gap, not content in a document
+III	holds	**100%** of them	a statistic: "the lag ordering holds in 100% of them" is a proportion of ladders
+III	holds	**66.2%** (2	a statistic: the same measure under independently drawn δ
+III	holds	all nine is the sign	a quantified scope — nine (α, δ) settings — not a document the reader is sent to
