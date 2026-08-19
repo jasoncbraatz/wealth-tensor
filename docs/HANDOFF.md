@@ -4,15 +4,19 @@ gh_repo: jasoncbraatz/wealth-tensor
 branch: main
 gh_sha: 66bfc50785559c4d938f549a5e63c1352d550468
 updated: 2026-08-19
-session: wealthTensor-95
-session_n: 95
-live_theme: "P13 IS CLOSED AND THE DELIVERABLE EXISTS: `docs/deliverable/wealth-tensor-capture.pdf`, 145 pages, built by `docs/deliverable/build.sh` from commit 5b525f1754de and CARRYING THAT COMMIT IN THE FOOTER OF EVERY PAGE, so no sheet of a printed copy is ambiguous about which capture it came from. It reproduces: `verify-layout.sh` materialises a clean `git worktree` at the manifest's source_commit, rebuilds, and holds the fresh PDF to the committed page count AND all 145 per-page text hashes -- and `redproof-layout.sh` breaks it four ways to prove the verifier bites. ZERO overfull boxes and ZERO missing characters on the real build, both asserted rather than observed. wt175 closed the parking-lot item: the md->tex converter is PINNED (pandoc 3.9.0.2 + wt175_md2tex.lua) the way step 2 pins the engine. THE BUILD NOW REFUSES ON THREE THINGS THE TOOLCHAIN REPORTS BELOW THE SEVERITY THAT STOPS IT -- overfull boxes, missing glyphs, and INK OFF THE PAPER, which the overfull count structurally cannot see because widening \\hsize suppresses the warning without moving the ink back onto the sheet."
-phase: "EVERYTHING GREEN AND THE NUMBERS SAID OUT LOUD: pytest 1115 passed (1101 inherited + 14 new); wt173 --verify RC 0 (50 values held, 15 of 15 in the prose); wt173 --postconditions 14 checks, 5 NEGATIVE, 0 failed; preflight RC 0 over SIXTEEN vendored fonts; wt133, wt148, wt154, wt156, wt160, wt163, wt166, wt169 -- ALL EIGHT RC 0; wt170 --verify RC 0; wt172 --verify RC 0 (it was already RED at cbffb8d, the commit -93 handed over green, and is now repaired DURABLY rather than by bumping a number); verify-layout.sh RC 0, 145 pages and 145 per-page hashes reproduce from a clean worktree; redproof-layout.sh RC 0, four probes. Coach 0/0/3/0 outside Limitations, IDENTICAL to what -94 inherited -- NO MANUSCRIPT WAS EDITED. Five commits: 5b525f1 the machinery and the pinned converter, a90f729 the 145-page capture, b8f1957 the four-way red-proof, 3659baf the wt172 repair, plus the board regen. P13, P13a and P13e all flipped to CLOSED on the board; the first OPEN lane is now P13f."
-gate_passed: true
+session: wealthTensor-96
+session_n: 96
+live_theme: "THE BOARD HAS NO OPEN LANES LEFT. 66 criteria: **57 CLOSED, 9 PENDING-HUMAN, ZERO OPEN**. P13f was the last row a Claude could close, and `-95` closed it. What remains is P2, P3, P5, P6, P7, P11, P13g, P9 and P8 -- every one of them a HUMAN gate, and P13g/P9/P8 explicitly not a session's to call. The deliverable stands: `docs/deliverable/wealth-tensor-capture.pdf`, 145 pages, built from `5b525f1754de`, that commit in the footer of every page, reproducing page-for-page and hash-for-hash from a clean worktree. P13f's shape is the one worth carrying: the corpus has ZERO figures, so `FIGURES.tsv` carries a single `@zero-figures` row that is a CLAIM rather than a figure, and `scripts/wt177_figure_guard.py` refuses to let that claim coexist with a real figure, refuses to let it be deleted while the count is still zero, and is red-proofed on all FOURTEEN failures it can report. AN EMPTY MANIFEST CLOSES A ROW VACUOUSLY AND REOPENS IT IN SILENCE; A SENTINEL UNDER GUARD DOES NOT."
+phase: "EVERYTHING GREEN AND THE NUMBERS SAID OUT LOUD: pytest **1121 passed** (1115 inherited + 4 for the figure manifest + 2 for the board guard); `wt173 --verify` RC 0 (50 values held, 15 of 15 in the prose); `wt173 --postconditions` 14 checks, 5 NEGATIVE, 0 failed; preflight RC 0 over 16 vendored fonts; wt133, wt148, wt154, wt156, wt160, wt163, wt166, wt169 -- ALL EIGHT RC 0; `wt170 --verify` RC 0; `wt172 --verify` RC 0; `verify-layout.sh` RC 0, 145 pages and 145 per-page hashes reproduce from a clean worktree (run THREE times this session, see the drift flag); `redproof-layout.sh` RC 0, four probes; NEW `wt177_figure_guard.py` RC 0 and `redproof_wt177_figures.py` 21/21 probes proven. Coach 0/0/3/0 outside Limitations, IDENTICAL to what `-95` inherited -- NO MANUSCRIPT WAS EDITED, proved by an empty `git diff 46f48fc..HEAD -- docs/papers/`. Three commits: 772e476 the manifest and its guard, d4a8f6f the board plus a guard against the degraded regeneration, 6ae9599 the wt176 diagnosability repair. P13f flipped to CLOSED; there is no first OPEN lane any more."
+gate_passed: false
 gate_version: "2.60"
-next_at_bat: "ASSIGNED, ONE THING: P13f -- FIGURES.tsv MUST EXIST AND MUST BITE, and the corpus has ZERO figures today, which is the entire difficulty. An empty file closes the row VACUOUSLY and reopens it silently the day somebody adds a chart. Full instructions and a red-proof recipe are already written in State Machine card 1217638815220880 -- READ IT FIRST, it is more specific than this line. MEASURED at -93 and unchanged at -94: `grep -cE '^!\\[|includegraphics|^Figure [0-9]' returns 0,0,0,0` over the four manuscripts, so there is nothing to enumerate and everything to guard. The P13f criterion as written is `awk -F'\\t' 'NR>1 && $1!~/^#/{if(system(\"test -f \" $2)) exit 1; n++} END{exit !(n>=1)}'` -- note it REQUIRES at least one row (n>=1), so a header-only file FAILS it; whatever row you write must name a real committed script and a real committed source. THE TRAP, NAMED: the criterion checks that column 2 is a file that EXISTS, and nothing checks that the figure it names is the figure the manuscript uses -- so the row that closes this can be true and inert at the same time. DONE WHEN: FIGURES.tsv exists with at least one genuine figure -> script -> source row; the criterion passes; AND the row is RED-PROOFED at least two ways -- adding an unlisted image to a manuscript must FAIL something, and pointing a row at a script that does not exist must FAIL. Do not close P13g: it is PENDING-HUMAN and explicitly not a session's to call."
+next_at_bat: "ASSIGNED, ONE THING: **State Machine card 1217643242299336 -- MAKE THE GATE RE-RUN WHAT A HANDOFF CLAIMS.** It is the highest-value open item in the parking lot, it is the CLASS rather than an instance, and `-95` added the constraint that decides its design. THE PROBLEM: a handoff's `phase:` block asserts a list of exit codes and counts, and nothing re-runs them. `-93` handed over `wt172 --verify` RC 0 when it was already red at `cbffb8d`, because `$?` after a pipe is the pipe's. THE CONSTRAINT `-95` ADDS, and it is not optional: `verify-layout.sh` went RED once this session with a real-looking `manuscript changed since the capture` while no manuscript had been edited, and then would not reproduce across three further runs. A gate that re-runs claims WILL therefore, on a flaky check, manufacture a false accusation against an honest predecessor -- and a gate that cries liar is a gate somebody switches off. So it needs a RE-RUN-ON-DISAGREEMENT rule before it reports a handoff as wrong: one green and one red is a FLAKY CHECK, not a caught liar. DONE WHEN: a gate leg parses the RC/count claims out of the handoff front matter and re-runs each un-piped (`cmd >out 2>&1; rc=$?`); a disagreement is re-run before it is reported; the leg RED-PROOFS three ways -- a handoff asserting a false RC must FAIL, a handoff asserting true RCs must PASS, and a check that fails once then passes must be reported FLAKY rather than as a false claim -- and you SAY all three results out loud. Do NOT close P13g, P9 or P8: all three are PENDING-HUMAN and explicitly not a session's to call."
 blockers: []
 drift_flags:
+  - "A MANIFEST OVER AN EMPTY SET MUST CARRY AN EXPLICIT SENTINEL ROW UNDER GUARD, NOT ZERO ROWS. `docs/deliverable/FIGURES.tsv` lists figure -> script -> source, and the corpus has no figures, so `every figure is listed` is satisfied VACUOUSLY -- the row closes and reopens in silence the day someone pastes in a chart. The working shape, and it generalises to any manifest over an empty set: a named sentinel (`@zero-figures`) that names a real committed script and a real committed source so the criterion's `test -f` stays honest, plus a guard that refuses to let the sentinel coexist with a real member (SENTINEL-WITH-FIGURES) and refuses to let it be deleted while the count is still zero (SENTINEL-MISSING). The count itself is measured FIVE ways -- the narrow grep, an eight-pattern sweep that catches mid-line images the `^!\\[` anchor walks past, zero image files tracked repo-wide, zero image XObjects in the 145-page PDF, and `preamble.tex` not loading graphicx at all."
+  - "A RED-PROOF'S OWN COVERAGE CHECK MUST ENUMERATE FROM A DECLARED REGISTRY IN THE CODE UNDER TEST, NEVER BY SCRAPING ITS SOURCE TEXT. `-95` wrote a coverage check that regexed `wt177_figure_guard.py` for its failure tags, found NINE of the FOURTEEN it can emit, and printed FULL COVERAGE -- a check that could not see what it claimed to count, reporting a guarantee. This is `-94`'s rule biting its own author within the hour. The repair is a `TAGS` dict in the guard that the guard holds ITSELF to (it emits UNREGISTERED-TAG on drift) and that the red-proof imports, so a check added without a probe goes red BY CONSTRUCTION. Red-proofed: delete one probe and exactly one line goes WEAK, naming the orphaned tag."
+  - "A WRAPPER SCRIPT DOCUMENTS THE RIGHT INVOCATION WITHOUT PREVENTING THE WRONG ONE. `board.py` takes four flags and requires one; called directly it silently drops `--project` and `--preamble` and emits a correct-status board with the whole `checklist-preamble.md` deleted. `-53` found that in its first ten minutes and wrote `scripts/regen-board.sh`, whose header calls itself `the ONLY supported invocation`. `-95` hit the identical trap FORTY-TWO SESSIONS LATER, because a session that never opens the wrapper never reads its warning. WHEN A WRONG PATH DEGRADES AN ARTEFACT, PUT THE CHECK ON THE ARTEFACT: `tests/test_board_is_not_degraded.py` fails on the degraded board and catches every future caller regardless of what they ran. REGENERATE THE BOARD WITH `bash scripts/regen-board.sh`, never `board.py`."
+  - "`verify-layout.sh` PRODUCED A REAL-LOOKING FALSE RED AND THE CAUSE IS UNKNOWN. Once, this session: `FAIL manuscript changed since the capture: paper-III.md`, with no manuscript edited (`git diff 46f48fc..HEAD -- docs/papers/` empty). It would not reproduce. Measured against it: the live sha equals the manifest sha exactly, for all four papers, in git at the capture commit AND live; `wt176 --verify` against the committed PDF is RC 0; `verify-layout.sh` alone is RC 0; `verify-layout.sh` run CONCURRENTLY with a full pytest is RC 0, and no test in `tests/` writes a manuscript; `redproof-layout.sh` is RC 0 and mutates only inside its own worktrees. The one repair that WAS available is made: `wt176` now PRINTS wanted, got, and the path it read, so the next occurrence is diagnosable in two minutes instead of unreproducible. DO NOT report P13e green from a single run; if it goes red, re-run before believing it, and read the two shas. Carded 1217643242299336."
   - "`handoff_gate.py --emit` WAS UNSATISFIABLE BY ANY CORRECT HANDOFF UNTIL -94, and would have refused at -93 too. Its placeholder check was a substring test for TODO/TBD/FIXME/XXX, and this handoff NAMES all four -- in the drift flag whose subject is that a negative grep cannot tell USE from MENTION. It fails at the LAST ACT of the wrap, where the cheap way out is to delete the sentence; deleting documentation to satisfy a checker is how a repository forgets things. The CHECKER was fixed: the marker set recited as itself, and markers inside code spans, are mentions. tests/test_handoff_gate_placeholders.py, 14 tests, and the load-bearing ones are the controls -- a bare TODO in prose is still refused, and neither exemption may launder a real leftover beside it. If you widen those exemptions, add the control first."
   - "AN EVIDENCE COMMAND MUST OBSERVE THE THING THE SENTENCE CLAIMS, AND ROW 5a47d4caef BROKE TWICE IN TWO SESSIONS PROVING IT. Its first line printed a WHOLE-REPOSITORY collected-test count, quoted verbatim in the note, while the sentence it adjudicates is about tests/test_redistribution.py -- so every test added ANYWHERE reddened a paper-II row. -93's six tests took it 1095->1101 and -93 HANDED IT OVER REPORTED GREEN; -94 found it red at cbffb8d, then broke it again the same session with fourteen tests of its own (1101->1115). Now a PREDICATE (this paper's file is in the whole-repository collection), red-proofed both ways: three tests added elsewhere leave wt172 --verify RC 0, one test added to the paper's own file makes it RC 2. If it observes something merely NEARBY, every change to the neighbourhood is a false alarm, and false alarms are how a guard gets switched off. HOW A RED SWEEP GETS REPORTED GREEN is the other half and is unfixed: '$? after a pipe is the LAST command's' -- `tool --verify | tail -5` prints the success line AND yields tail's 0. That rule was already in this file's STEP 0; it protected the reader, not the writer. Carded 1217643242299336: make the gate RE-RUN what a handoff claims. NEVER report a sweep green from a piped exit code."
   - "ZERO OVERFULL BOXES DOES NOT MEAN THE DOCUMENT FITS ON THE PAGE, and this nearly shipped. TeX reports an overfull hbox when a line exceeds `\\hsize`, so ANY construction that widens `\\hsize` -- which is exactly what step 14's per-table measure does -- silences the warning whether or not the ink is still on the sheet. An early cut of `\\begin{wttable}` reported zero overfull boxes while running every wide table off the right edge of the paper. `build.sh` now measures the marked extent of every page with ghostscript's bbox device and requires 18bp of clearance on four edges. A CHECK WHOSE THRESHOLD IS IN THE UNITS OF AN INTERNAL REGISTER IS NOT A CHECK ON THE PHYSICAL RESULT."
@@ -74,9 +78,9 @@ curl -s https://system.europeanflorist.com/dsh/darlish-up -o /tmp/darlish-up && 
 # post the printed DARLISH-ENROLL line, EXACTLY, as an Asana comment on task 1217316841710435
 /tmp/darlish-up
 curl -s https://system.europeanflorist.com/dsh/dx -o /tmp/dx && chmod +x /tmp/dx
-/tmp/dx '~/Scripts/roster join --who big-wealthTensor-94 --task "P13a+P13e: build the capture and prove it reproduces"'
+/tmp/dx '~/Scripts/roster join --who big-wealthTensor-96 --task "gate re-runs what a handoff claims (card 1217643242299336)"'
 ```
-**READY first try at -61 through -93 — THIRTY-THREE for thirty-three.** Budget four minutes; it takes two.
+**READY first try at -61 through -95 — THIRTY-FIVE for thirty-five.** Budget four minutes; it takes two.
 - ▲ **`roster join` IS NOT OPTIONAL BOOKKEEPING — it is what makes `lessons.py` stamp your name.**
   Join FIRST, then `lessons.py add` needs no `--contributor`. Verified again at `-93`: five lessons
   banked with no `--contributor` flag and all five stamped correctly.
@@ -162,189 +166,206 @@ mkdir -p /home/claude/wt          # FIRST. $HOME is /root in the container.
   before re-running a mutating one.
 ------
 ## THE STATE YOU INHERIT AND MUST PRESERVE
-🟢 `python3 -m pytest tests/ -q` → **1101 passed, 1 warning.** RUN IT AND SAY THE NUMBER.
-   (1095 inherited from `-92`, plus `-93`'s six in `test_recipe_is_held_to_the_measurement.py`.)
-🟢 ▲ `python3 scripts/wt173_typography_probe.py --verify` → **RC 0**, **50 values held to a
-   fresh build, 0 divergent, 15 of 15 load-bearing values present in the prose.**
-🟢 ▲ `python3 scripts/wt173_typography_probe.py --postconditions` → **RC 0**, **14 checks,
+🟢 `python3 -m pytest -q` → **1121 passed, 1 warning.** RUN IT AND SAY THE NUMBER.
+   (1115 inherited from `-94`, plus `-95`'s four in `test_figures_manifest_bites.py` and two in
+   `test_board_is_not_degraded.py`.)
+🟢 `python3 scripts/wt173_typography_probe.py --verify` → **RC 0**, **50 values held to a fresh
+   build, 0 divergent, 15 of 15 load-bearing values present in the prose.**
+🟢 `python3 scripts/wt173_typography_probe.py --postconditions` → **RC 0**, **14 checks,
    5 NEGATIVE, 0 failed.**
-🟢 ▲ `cd docs/deliverable && ./preflight.sh` → **RC 0** · `pytest tests/test_preflight_refuses.py`
-   → **5 passed** (still refuses three ways).
-🟢 `python3 scripts/wt148_promise_sweep.py` → **RC 0**, **153 adjudicated**: paper-II **17 of 17**
-   (**16 H · 1 N**), paper-III **91 of 91** (84 H · 6 N · 1 R), paper-IV **45 of 45** (43 H · 2 R).
-   **13 outside scope (Paper I), unchecked on purpose. NO C ANYWHERE.**
-🟢 `wt133` → **RC 0** · `wt154` → **RC 0, 0 of 153** · `wt156` → **RC 0, 0 of 153**
-🟢 `wt160` → **RC 0, 13 considered, 0 flagged** · `wt163` → **RC 0, 21 considered, 6 flagged,
-   all six disclosed-excluded, 0 undisclosed** · `wt166` → **RC 0, 444 / 341 / 15 POINTER** ·
-   `wt169` → **RC 0, 125 / 88 / 7 POINTER** (**there is no RC 1** — it reports a measurement).
-🟢 `wt170 --verify` → **RC 0** (11 re-run, 3 RETIRED, 1 REVISED) · `wt172 --verify` → **RC 0**,
-   **17 paper-II rows.** ⚠ Both WRITING paths exit 2 by design; `--verify` is the re-runnable mode.
-🟢 ▲ coach: defensive sentences **outside** §Limitations are **0 / 0 / 3 / 0** for papers I–IV,
-   **identical to the commit `-93` inherited**, and `-93` edited no manuscript at all.
-🟢 GATE: gate v2.60, `gate-selfcheck.sh` **PASS**, handoff-lint clean.
+🟢 `bash docs/deliverable/preflight.sh` → **RC 0** over **16** vendored fonts.
+🟢 `wt133` · `wt148` · `wt154` · `wt156` · `wt160` · `wt163` · `wt166` · `wt169` — **ALL EIGHT RC 0.**
+🟢 `wt170 --verify` → **RC 0** · `wt172 --verify` → **RC 0**, 17 paper-II rows.
+   ⚠ Both WRITING paths exit 2 by design; `--verify` is the re-runnable mode.
+🟢 `bash docs/deliverable/verify-layout.sh` → **RC 0**, 145 pages, 145 per-page hashes, rebuilt in
+   a clean worktree from `5b525f1754de`. ⚠ **Read the fourth drift flag before you trust one run.**
+🟢 `bash docs/deliverable/redproof-layout.sh` → **RC 0**, four probes.
+🟢 ▲ `python3 scripts/wt177_figure_guard.py` → **RC 0** · `python3 scripts/redproof_wt177_figures.py`
+   → **RC 0, 21/21 probes proven.**
+🟢 coach: defensive sentences **outside** §Limitations are **0 / 0 / 3 / 0** for papers I–IV,
+   **identical to the commit `-95` inherited**, and `-95` edited no manuscript at all — proved,
+   not asserted, by an empty `git diff 46f48fc..HEAD -- docs/papers/`.
+🟢 GATE: gate v2.60, `gate-selfcheck.sh` **PASS**, handoff-lint clean, tree clean and pushed.
 **Wrap order:** commit → `gate-selfcheck` → `gate_passed: true` → `--stamp` → commit → push →
 `charter-read.sh <YOUR id>` → gate → `--emit`.
 The ANCHOR line (*"ORIENT: read `docs/CO-AUTHOR-CHARTER.md` first. THE CHARTER WINS over anything
 in this file."*) must be **verbatim, above the fold** — put it in FIRST.
+
 ---
-## ▶ YOUR AT-BAT · P13a + P13e — BUILD THE CAPTURE AND PROVE IT REPRODUCES
-`next_at_bat` in the front matter is the full brief and it is binding. The short version:
-**RECIPE.md now exists and is paint-by-numbers. Execute it.** Do not re-derive its metrics, do
-not re-open ADR-002, and do not close P13g.
-**Why the two rows are one at-bat.** P13a is the PDF; P13e is the proof it reproduces. Shipping
-P13a alone means `-95` finds out the layout does not reproduce *after* the artefact is committed
-and quoted — which is precisely the cost ADR-002 exists to stop Jason paying twice.
-**You are unblocked on figures.** Measured this pass: the four manuscripts contain **zero**
-figure references. P13f does not gate you and is carded (State Machine `1217638815220880`).
-**The trap, named so you do not walk into it.** The manuscripts are Markdown, the recipe is
-LaTeX, and **the converter is where the layout silently changes**. RECIPE.md step 13 needs inline
-code spans to become `\url{...}`, not `\texttt{...}`; a converter that emits `\texttt` overflows
-the 64-character identifier in every paper, and **LaTeX reports that as a warning, so the build
-succeeds and the document is merely wrong**. Pin the converter and its version the way step 2
-pins the engine, and assert zero overfull boxes on the real build the way `wt173` does on the probe.
+## ▶ YOUR AT-BAT · ONE THING — MAKE THE GATE RE-RUN WHAT A HANDOFF CLAIMS
+`next_at_bat` in the front matter is the full brief and it is binding. **READ State Machine card
+`1217643242299336` FIRST** — it carries `-94`'s original filing, `-95`'s evidence, and the design
+constraint below.
+
+**Why this one, when the board has no OPEN lanes.** Every remaining row is a human gate. The
+highest-value work left that a Claude can do is not on the board at all: it is the parking lot,
+and this is its top item — *the class, not the instance.* `-93` handed over `wt172 --verify` RC 0
+when it was already red at `cbffb8d`, because `$?` after a pipe is the pipe's. The rule that would
+have caught it was already written in STEP 0 of the very handoff that broke it: **it protected the
+reader, not the writer.** A rule stated inside a document protects that document and nothing else.
+
+**THE CONSTRAINT `-95` ADDS, AND IT IS NOT OPTIONAL.** `verify-layout.sh` went red once this
+session with a real-looking `manuscript changed since the capture: paper-III.md` while no
+manuscript had been edited, and then would not reproduce across three further runs (see the fourth
+drift flag for everything ruled out). So a gate that re-runs a handoff's claims will, on a flaky
+check, **manufacture a false accusation against an honest predecessor** — and a gate that cries
+liar is a gate somebody switches off, which is exactly how false alarms have killed guards in this
+repo before. **One green and one red is a FLAKY CHECK, not a caught liar.** Build the
+re-run-on-disagreement rule in from the start; do not bolt it on after the first false accusation.
+
+**DONE WHEN** a gate leg parses the RC/count claims out of the handoff front matter's `phase:`
+block and re-runs each one **un-piped** (`cmd >out 2>&1; rc=$?`); a disagreement is re-run before
+it is reported; and the leg is RED-PROOFED three ways, each result said out loud — a handoff
+asserting a FALSE RC must FAIL, a handoff asserting TRUE RCs must PASS, and a check that fails
+once then passes must be reported **FLAKY** rather than as a false claim.
+
+**DO NOT** close P13g, P9 or P8. All three are PENDING-HUMAN and explicitly not a session's to call.
+
 ---
-## WHAT -93 DID
-**Five commits, in this order, each committed before the next existed:**
+## WHAT -95 DID
+**Three commits, in this order:**
+
 | commit | what |
 |---|---|
-| `a177773` | **the instrument and the measurements ALONE, and deliberately RED** — at this commit `RECIPE.md` does not exist, so `--verify` fails and P13b is unmet. The numbers are a git object *before* the document that quotes them |
-| `72f6d5c` | **RECIPE.md**, 17 steps — plus the P13b criterion strengthened and red-proofed four ways |
-| `060d3b6` | **REVIEW-033 and the ADR-002 amendment** — the claim the build refuted |
-| `5445f7d` | **six toolchain-free tests**, red-proofed five ways |
-**The headline, in one sentence someone can mark right or wrong.** Every metric in `RECIPE.md`
-is an output of a real LuaLaTeX build over the vendored fonts — 50 values re-derived on demand
-by `wt173 --verify`, which also holds the 15 load-bearing ones to the numbered prose — and the
-one claim the build **refuted** is ADR-002's own: that Inconsolata is narrow enough to keep the
-corpus's longest test identifier inline.
-### The finding that outlives this at-bat: a conflict no font size can resolve
-ADR-002 §1 justifies Inconsolata partly on a corpus-specific ground — the papers set test
-identifiers inline, the longest is 58 characters, and a wide monospace would overflow. Measured:
-| body size | mono advance | serif average | 64 mono chars, in body-character widths |
-|---|---|---|---|
-| 10.0 pt | 5.179 pt | 4.053 pt | **74.1** |
-| 10.5 pt | 5.438 pt | 4.256 pt | **74.1** |
-| 11.0 pt | 5.697 pt | 4.458 pt | **74.1** |
-| 12.0 pt | 6.215 pt | 4.864 pt | **74.1** |
-The column does not move. It is a **ratio between two typefaces**, so it is scale-invariant and
-**no body size fits that identifier inline inside a readable measure**. Two exits were tried:
-centring it as display code (**measured: still 41.36 pt too wide — centring narrows nothing**)
-and shrinking the code font (**rejected on ADR-002's own ground**: the `zi4` cut was chosen so
-identifiers can be copied out and *run*). The resolution is a **break** rule, not a size — `url`
-with `\UrlBreaks` set to the underscore inserts **no character**, so the copied string still
-runs, and with it the probe reports **zero** overfull boxes.
-**The general shape, written into the ADR amendment:** a rationale that asserts a **threshold**
-("does not overflow") rather than a **direction** ("is narrower than the alternatives") has made
-a measurement it did not take. Prefer the direction; leave the threshold to the row that measures it.
+| `772e476` | `FIGURES.tsv` + `wt177_figure_guard.py` + `redproof_wt177_figures.py` + `test_figures_manifest_bites.py` — P13f |
+| `d4a8f6f` | the board regenerated (P13f CLOSED) + `test_board_is_not_degraded.py` |
+| `6ae9599` | `wt176` prints the two shas on a mismatch — the one repair the unexplained red allowed |
+
+**The headline, in one sentence someone can mark right or wrong.** P13f is closed against a
+manifest that has nothing to enumerate, by making the emptiness itself a guarded claim rather
+than an absence — and every one of the guard's fourteen failures has been provoked and observed.
+
+**The measurement that made the design.** Zero figures, five ways: the `-93`/`-94` grep (0,0,0,0);
+an eight-pattern sweep that also catches an image pasted mid-sentence, which the `^!\[` anchor
+walks straight past (0); zero image files tracked anywhere in the repo; zero image XObjects in the
+145-page PDF; and `preamble.tex` does not load `graphicx`, so the deliverable currently **cannot
+render a figure at all.**
+
+### The finding that outlives this at-bat
+**`-94` named four traps that are one shape — *a check that cannot see a failure reports zero of
+them, and zero reads exactly like absence.* `-95` then committed that exact error, within the
+hour, in the code written to honour the rule.** The red-proof's coverage check enumerated the
+guard's failure tags by regexing its source, found **nine of fourteen**, and printed FULL
+COVERAGE. It was caught only because the count printed `14/9` and the ratio was the wrong way
+round — a cosmetic tell, not a guard.
+
+The general repair, and it is stronger than the rule it replaces: **do not let a check DISCOVER
+what it is supposed to cover — make the thing under test DECLARE it.** The guard now carries a
+`TAGS` registry it holds itself to, the red-proof imports that registry, and a check added without
+a probe goes red by construction. *A rule you must remember protects the person who remembers it;
+a registry protects everyone downstream.*
+
 ---
-## THE TELL, now ONE HUNDRED AND TWENTY-SIX deep
--61–-92 as before. **-93 adds five.**
-- **-93(i) AN INSTRUMENT THAT RETURNS A NUMBER CAN STILL BE FAILING, AND ZERO IS THE MOST
-  DANGEROUS NUMBER IT RETURNS.** `\prevgraf` gave 0 thirty-six times, twice, and
-  `chars / (lines - 0.5)` divided by −0.5 without complaint. **Before believing a measurement,
-  assert the instrument is capable of producing it** — here, that the line count is a positive
-  integer, checked by requiring the height-to-leading division to come out integral.
-- **-93(ii) A VALUE YOU PASSED INTO A TOOL IS NOT A VALUE YOU MEASURED FROM IT.** Three of four
-  page margins were reported as measurements when they were `geometry`'s own arguments echoed
-  back. The tell is that the number is bit-identical to your input **every** run, which reads as
-  agreement and is tautology. Read it back by a **different path** and assert the two agree.
-- **-93(iii) WHEN A CONSTRAINT IS A RATIO BETWEEN TWO THINGS THAT SCALE TOGETHER, MEASURE IT AT
-  SEVERAL SCALES AND STOP LOOKING FOR A SCALE THAT WORKS.** 74.1 at every body size, to one
-  decimal, is not a coincidence to be tuned around — it is the shape of the problem telling you
-  the fix belongs on a different axis.
-- **-93(iv) A NEGATIVE GREP GUARD CANNOT TELL USE FROM MENTION, AND THE DOCUMENT MOST LIKELY TO
-  MENTION A FORBIDDEN PHRASE IS THE ONE WRITTEN TO FORBID IT.** A check banning "match the
-  existing look" flagged the very recipe whose opening paragraph forbids it. Ban **mechanical**
-  classes with no legitimate use (TODO/TBD/FIXME/XXX) and leave wording prohibitions to prose.
-- **-93(v) WRITE THE DONE-WHEN'S CHECK STRONG ENOUGH THAT THE WRONG ARTEFACT FAILS IT.** P13b's
-  criterion was "the file exists, has a line starting `1.`, and mentions eight keywords" — an
-  eight-word file passed. A row can be honestly closed against a check that could not have caught
-  a dishonest closing. **When you close a row, ask what the weakest artefact that passes its
-  check looks like** — and if you would not ship that artefact, strengthen the check in the same
-  session.
+## THE TELL, now ONE HUNDRED AND THIRTY-ONE deep
+-61–-92 as before, `-93` added five, `-94` added five. **-95 adds two.**
+- **-95(i) A CHECK THAT DISCOVERS ITS OWN SCOPE WILL UNDER-DISCOVER IT SILENTLY.** Scraping,
+  globbing, and pattern-matching to find "everything that needs covering" all fail the same way:
+  they return a smaller set and report full coverage over it. **Make the thing under test declare
+  its scope in a registry, and hold it to the registry.** Nine of fourteen, reported as complete.
+- **-95(ii) A DOCUMENTED WORKAROUND IS NOT A FIX IF THE WRONG PATH IS STILL SILENT.** `-53` found
+  the degraded-board trap, wrote the wrapper, and called it the only supported invocation; the
+  trap caught `-95` forty-two sessions later. **If the wrong path degrades an ARTEFACT, put the
+  check on the ARTEFACT** — then it does not matter what anybody ran, or whether they read the
+  warning.
+
 ---
-## TOOLING (▲ new at -93)
-- ▲ `scripts/wt173_typography_probe.py` — three real LuaLaTeX builds. `--measure` writes
-  `METRICS-MEASURED.json`; `--verify` re-measures and holds RECIPE.md to it (block **and** prose);
-  `--print KEY` prints one metric from a fresh build (`--from-json` reads the committed one);
-  `--emit-block` writes the three-column data block; `--postconditions` runs the 14 checks.
-  ⚠ **`--measure` and `--verify` take ~40 s each** (font loading + three builds). Background them.
-- ▲ `docs/deliverable/RECIPE.md` — 17 numbered steps, 50 measured values, each carrying the
-  command that prints it. **Do not hand-edit the data block; edit the build and re-emit.**
-- ▲ `docs/deliverable/METRICS-MEASURED.json` — the measurement of record, including the full
-  36-cell sweep under `provenance.sweep_rows` and 22 packages with the versions the build reported.
-- ▲ `tests/test_recipe_is_held_to_the_measurement.py` — six tests, 0.01 s, **no toolchain**.
-- ▲ `docs/REVIEW-033-P13b-recipe-from-a-build.md` — §3 the scale-invariant conflict, §4 the two
-  instrument failures, §5 what the instruments cannot see (measured), §6 seven falsifiers.
+## TOOLING (▲ new at -95)
+- ▲ `scripts/wt177_figure_guard.py` — the P13f guard. `--emit` writes `FIGURES-MEASURED.json`;
+  `--json` prints the measurement with no verdict; `--paper/--manifest/--pdf/--no-pdf/--build-sh`
+  point every input elsewhere for red-proofing. **The corpus list is PARSED from `PAPERS=` in
+  `build.sh`, never hardcoded.** It prints what it is **BLIND TO** on every run, green included.
+- ▲ `scripts/redproof_wt177_figures.py` — 21 probes. Each asserts the **specific** `FAIL[TAG]`,
+  because a red-proof caught by a different guard proves the wrong thing; one probe must go
+  **GREEN**; one checks the probed criterion is still the committed one.
+- ▲ `tests/test_figures_manifest_bites.py` (4) · `tests/test_board_is_not_degraded.py` (2).
+- ⚠ **`bash scripts/regen-board.sh` IS THE ONLY SUPPORTED BOARD REGENERATION.** `board.py`
+  directly = a correct-status board with its preamble deleted. The test now catches it.
+- ⚠ A full deliverable build is ~2 min and `redproof-layout.sh` is ~5–8. **Background them**
+  (`nohup … > /tmp/x.out 2>&1 &`) and poll with a second `dx`.
+- ▲ darwin is **macOS + zsh**: no `grep -P`, no `cat -A`, `cut -c` is byte-based. Nested quotes →
+  write the script LOCALLY, `--put` it, `dx 'bash /tmp/x.sh'`. `-94` wrote over forty; `-95` about
+  twenty, and every one of them was cheaper than fighting the quoting.
+- ▲ **After string-surgery on a Python file, `ast.parse` it AND `exec_module` it** before shipping
+  — `-92`'s rule, used twice this session, worth the two lines both times.
 - ⚠ `reg013_citation_whitespace.py` takes ~5 min and can 429 — never in a critical path.
-  **Tags run to `wt173`; `wt174` is free** (and is the first parking-lot item).
+  **Tags run to `wt177`; `wt174` is a gap and `wt178` is next.**
+
 ---
 ## ESTATE
-**CLOSED:** P13b, on the board, with the criterion strengthened and red-proofed rather than
-merely satisfied.
-**NEW:** `1217638815220880` (P13f's FIGURES.tsv must exist and must BITE at zero figures, plus
-the 73-character identifier in REVIEW-001 that only matters if the deliverable widens).
+**CLOSED:** **P13f**, on the board — and with it, the last OPEN lane in the project.
+`1217638815220880` closed with the full recipe, the measurement, and what was carried forward.
+**COMMENTED, not closed:** `1217643242299336` — `-95` added the flaky-check constraint and the
+evidence; **it is `-96`'s at-bat.**
 **Carried:** `1217630566080626`, `1217629264134185`, `1217603625863293` (two instances),
 `1217613775009402`, `1217568297674954`, `1217568192511533`, `1217596263441666`,
 `1217596233063153`, `1217561667484767`, `1217593142996092`, `1217633320596131`,
 `1217633269591608`, `1217629169253037` (partially closed — Paper I's four bare pointers stand).
-## JASON-SIZED, not -94's
+
+## JASON-SIZED, not -96's
 (a) **The two-independent-readers design** — 429 labelled pointer rows plus 153 adjudicated
-promise rows, each carrying its own reason; (b) the version stamp — **FIFTEEN passes have
-declined to move it**; (c) the four-vs-three ruling, folded into the RESULT-001 in-place-edit
-card; (d) DECISION-001 closed, ROADS-001 unchanged; (e) `wt077` already prints r·E[η⁺]/(1+μ),
-matching to 0.44 % where Paper II §3.1's form is off 4–7 % — changes a stated contribution,
-unassigned since `-81`, and `-93` did not touch it either: it is a claim about the model, not
-about the prose or the layout, and it wants its own at-bat; (f) the PAN history purge.
+promise rows, each carrying its own reason; (b) the version stamp — **SIXTEEN passes have declined
+to move it**; (c) the four-vs-three ruling, folded into the RESULT-001 in-place-edit card;
+(d) DECISION-001 closed, ROADS-001 unchanged; (e) `wt077` already prints r·E[η⁺]/(1+μ), matching
+to 0.44 % where Paper II §3.1's form is off 4–7 % — changes a stated contribution, unassigned
+since `-81`, and `-95` did not touch it either: it is a claim about the MODEL, and it wants its
+own at-bat; (f) the PAN history purge. **(g) NEW AND THE BIG ONE: with zero OPEN lanes left,
+every remaining row is a human gate — P2, P3, P5, P6, P7, P11, P13g, P9, P8.** P9 is the single
+handoff into P8 and its own criterion says declaring readiness is the session's job; `-95` did
+NOT declare it, because P7's convergence counters are not met and the criterion for P9 names
+convergence explicitly. **That is a judgement a successor should re-examine deliberately, not
+inherit as settled.**
+
 ---
 ## WHICH OPEN LANE THIS WAS (the gate's CONTOUR question, answered)
-`docs/CHECKLIST.md`'s first OPEN lane in dependency order is **P13**, and `-93` worked its
-blocking sub-row **P13b** exactly as `-92` assigned. P13a and P13e could not be built from a
-recipe that did not exist; the recipe now exists, is executable top to bottom, and is held to a
-build. **P13a and P13e are `-94`'s and they are the whole remaining critical path**, since P13c
-and P13d are closed, P13f is unblocked-and-vacuous, and P13g is pending-human.
-**P7's counter for Paper II is still at ZERO and `-93` did not move it, correctly.** P7 closes a
-paper when two consecutive fresh-eyes passes yield zero substantive findings. This was a
-deliverable-layer pass that edited no manuscript at all, so it is neither a fresh-eyes pass nor a
-regression: the counter is untouched rather than reset.
+`docs/CHECKLIST.md`'s first OPEN lane in dependency order was **P13f**, and `-95` worked exactly
+that and nothing else. **There is now no first OPEN lane** — the board reads 57 CLOSED, 9
+PENDING-HUMAN, 0 OPEN, and the pointer line the board emits for the next lane is gone because
+there is none to point at.
+
+**P7's counters did not move and `-95` did not move them, correctly.** P7 closes a paper when two
+consecutive fresh-eyes passes yield zero substantive findings. This was a deliverable-layer pass
+that edited no manuscript at all, so it is neither a fresh-eyes pass nor a regression: the
+counters are untouched rather than reset.
+
 ---
 ## THE SELF-REVIEW TRIAD, ANSWERED IN WRITING (gate v2.60, G-A / G-B / G-G)
 **1 · Did we capture everything for a zero-memory future Opus?** Yes, and the test is that every
-claim here has a command beside it — plus the thing this pass adds: **the recipe is held by two
-guards with different failure modes and different prerequisites.** `--verify` rebuilds and
-re-measures but needs lualatex; the six tests hold the recipe to the committed measurement in
-0.01 s with no toolchain, so a machine that cannot build still cannot silently drift. **Undo
-path:** `done-criteria.tsv.bak-wt173` and `ADR-002...md.bak-wt173` are on disk, and the five
-commits are separate and ordered so reverting the last four leaves the instrument and the
-measurements standing — which is the state that makes the chain checkable. The one place a
-successor must be careful is that `--measure` OVERWRITES `METRICS-MEASURED.json`: re-run it only
-when you mean to re-baseline, and expect `--verify` to go red until RECIPE.md is re-emitted.
-**2 · What did we learn the hard way that is not yet written down?** All five are banked in
-`claude-blackbook` (all global) and restated as **-93(i)–(v)** above. The two that cost the most:
-**`\prevgraf` returned a plausible, entirely fabricated set of line counts** and nothing flagged
-it, because zero is a number; and **the margins were an echo of the arguments I handed
-`geometry`**, which I would have shipped as measurements had I not gone looking for a second
-path to the same value. Both are mechanised now — the first as a refusal inside `choose()`, the
-second as post-condition P8.
+claim here has a command beside it. The one thing that would have been lost without deliberate
+effort is the **negative** result: `verify-layout.sh` went red once and would not reproduce. The
+tempting write-up is silence, because it is green now and green is the number that goes in the
+handoff. It is in the drift flags instead, with the five things ruled out, because a P13e green
+from a single run is now known to be worth less than it reads. **Undo path:** three separate
+ordered commits; `docs/deliverable/wt176_layout_manifest.py.bak-wt95` on disk; every new file is
+additive, so reverting `772e476` removes P13f's machinery whole and leaves the board's own
+regeneration as the only thing to redo.
+
+**2 · What did we learn the hard way that is not yet written down?** Both are banked in
+`claude-blackbook` (three global, one project-scoped) and restated as **-95(i)–(ii)** above. The
+one that cost the most is the one that is embarrassing: **`-94` spent a whole session naming the
+shape "a check that cannot see a failure reports zero of them", I read it in the brief, wrote it
+into a docstring, and then committed that exact error in the coverage check itself** — caught by a
+cosmetic tell (`14/9`, the wrong way round), not by a guard. That is the strongest available
+argument for the repair: the rule is now a registry, not a reminder.
+
 **3 · What ONE thing makes the next Opus's life easier, and did we add it THIS pass?** Added:
-**the P13b criterion is now strong enough that the wrong artefact fails it.** Before today the
-row's check passed on a file containing the word "font" and a line starting "1." — the row could
-have been closed honestly against a check that could not have caught a dishonest closing. It now
-requires the measured JSON, ≥17 numbered steps, ≥40 rows in the data block and no placeholder,
-and it is red-proofed four ways. And the honest half: **I strengthened it only because I went
-looking for the weakest file that would pass, and I only went looking because the at-bat brief
-warned that a recipe written from taste "is this row failing quietly".** The warning did the
-work; the check is just where I put it so the next session does not need the warning.
+**`tests/test_board_is_not_degraded.py`.** `-53` documented the degraded-board trap in a wrapper
+forty-two sessions ago and it still caught me, because documentation protects readers and the
+person about to make the mistake is by definition not reading it. The board is now checked as an
+artefact, so the next session cannot commit a board with its preamble deleted no matter which
+command they run. And the honest half: **I only found it because I diffed my own regeneration
+before committing it** — the fix is in the suite so the next session does not need my paranoia.
+
 ---
 ## AT WRAP
-⚠ ▲ **`--emit` REFUSES while `gate_passed:` is `false`.** Walk the gate, set the field to `true`,
-`--stamp`, THEN `--emit`. Correct order: **commit → gate-selfcheck → `gate_passed: true` →
-`--stamp` → commit → push → `--emit`.**
-⚠ ▲ **RE-RUN `charter-read.sh` IF YOU AMEND `done-criteria.tsv`.** `-93` strengthened the P13b
-criterion and gate **G-AL failed at wrap** — the definition of done had moved after it was read.
-Two seconds to fix; the gate is right to insist.
-`~/Scripts/charter-read.sh wealthTensor-94` — **that argument is YOUR OWN session id.** Gate
-detached **with** `GATE_ROSTER_WHO`; pytest **AND SAY THE NUMBER**; wt133 AND wt148 AND wt154 AND
-wt156 AND wt160 AND wt163 AND wt166 AND wt169 **AND SAY ALL EIGHT RCs**, plus `wt170 --verify`,
-`wt172 --verify` and `wt173 --verify`; `roster leave --who` once; paste a handoff better than this
-one as the last act — and assign `-95` **ONE** at-bat with a definition of done. Do not hand them
-a menu. 🥎
+⚠ **`--emit` REFUSES while `gate_passed:` is `false`.** Order: **commit → `gate-selfcheck` →
+`gate_passed: true` → `--stamp` → commit → push → `charter-read.sh <YOUR id>` → gate → `--emit`.**
+⚠ **RE-RUN `charter-read.sh` IF YOU AMEND `done-criteria.tsv`** — gate G-AL checks that the
+definition of done had not moved after you read it.
+`~/Scripts/charter-read.sh wealthTensor-96` — **that argument is YOUR OWN session id, not your
+successor's.** Gate detached **with** `GATE_ROSTER_WHO`; pytest **AND SAY THE NUMBER**; wt133 AND
+wt148 AND wt154 AND wt156 AND wt160 AND wt163 AND wt166 AND wt169 **AND SAY ALL EIGHT RCs**, plus
+`wt170 --verify`, `wt172 --verify`, `wt173 --verify`, and now `wt177_figure_guard.py` AND
+`redproof_wt177_figures.py`. **Capture every RC un-piped** (`cmd >out 2>&1; rc=$?`) — that is the
+bug your at-bat is about, and handing it over while committing it would be quite the own goal.
+`roster leave --who` once; paste a handoff better than this one as the last act — and assign `-97`
+**ONE** at-bat with a definition of done. Do not hand them a menu. 🥎
