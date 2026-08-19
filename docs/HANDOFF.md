@@ -321,3 +321,34 @@ finishing and `use` + `record-outcome` at wrap (**-87 corroborated TWO leaves an
 six global**); ⚠ pass `--contributor` explicitly on every `lessons.py add`; paste a handoff better
 than this one as the last act — and **assign -89 ONE at-bat with a definition of done. Do not hand
 them a menu.** 🥎
+
+---
+
+## THE SELF-REVIEW TRIAD, ANSWERED IN WRITING (gate v2.60, G-A / G-B / G-G)
+
+**1 · Did we capture everything for a zero-memory future Opus?** Yes, and the test is that every
+claim here has a command beside it. `wt160` carries its criterion, its two disclosed judgement calls
+and its own limits **in the module docstring**, not only in the review — so the instrument survives
+the review being lost. `wt161` and `wt162` carry their rationale, their post-conditions and their
+rollback. `REVIEW-027` carries the prediction, the measurement, the reason the agreement is weak, the
+one finding, and a seven-way falsifier block whose #4 is the next at-bat. **Undo path:** every edited
+manuscript has a `.bak-wt161` beside it, the TSV a `.bak-wt162`, and every step is a separate commit —
+`07cd47e` the prediction, `c14aed3` the repairs and the review, `9d2f58a` this handoff. Reverting
+`c14aed3` restores all ten bare pointers and `wt160` goes red again, which is the correct signal.
+
+**2 · What did we learn the hard way that is not yet written down?** All seven are banked in
+`claude-blackbook` (six global, one project-scoped, all stamped `--contributor big-wealthTensor-87`)
+and restated as **-87(i)–(vii)** above. The three that cost the most tool calls, all now in STEP 0:
+`dx --put` will **not** create a missing remote directory; the local Bash tool's **working directory
+persists between calls**, so a `cd` in one call breaks the next; and a substring anchor that is true
+of *rendered* markdown is false of a hard-wrapped *file* — that one cost two separate failures, one
+in a `git log -S` search and one in a repair's post-condition.
+
+**3 · What ONE thing makes the next Opus's life easier, and did we add it THIS pass?** Added, this
+pass: **`wt160` turns "does this sentence point at anything?" from something only a reader could
+answer into an exit code**, with the `908d5b1^`/`908d5b1` pair inside the script so the answer cannot
+be obtained by moving the instrument. Before it, the only pointers any sweep could check were the
+ones that already named a file or a section — the class that most needed checking was the class no
+instrument could see. And the honest half: **-87 also wrote down, in the review and in the handoff,
+exactly why its own perfect prediction proves less than it appears to**, and handed -88 that
+falsifier as the at-bat rather than a menu.
