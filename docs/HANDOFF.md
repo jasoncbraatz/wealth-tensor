@@ -320,6 +320,12 @@ the fifteen rows were already committed, because re-running the script exposed t
 made it un-re-runnable — the pass found this defect in itself only by trying to use it.
 ---
 ## AT WRAP
+⚠ ▲ **`--emit` REFUSES while `gate_passed:` is `false`** — *"gate_passed is not true — walk
+HANDOFF-GATE.md first"*. Walk the gate, then set the field to `true` in the front matter,
+then `--stamp` again, THEN `--emit`. -90's handoff shipped with it still `false`, so -91 hit
+the refusal at the very last step and spent a turn on it; the correct wrap order is
+**commit → gate-selfcheck → `gate_passed: true` → `--stamp` → commit → push → `--emit`.**
+
 `~/Scripts/charter-read.sh wealthTensor-92` immediately before the gate — **that argument is
 YOUR OWN session id, not your successor's.** Gate detached **with** `GATE_ROSTER_WHO`; pytest
 **AND SAY THE NUMBER**; wt133 AND wt148 AND wt154 AND wt156 AND wt160 AND wt163 AND wt166 AND
