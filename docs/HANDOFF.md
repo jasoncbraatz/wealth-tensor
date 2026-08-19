@@ -2,7 +2,7 @@
 project: wealth-tensor
 gh_repo: jasoncbraatz/wealth-tensor
 branch: main
-gh_sha: 66b72b27ee68cf99bc8558e25c3b5b5ef6bb42f6
+gh_sha: 827d5e8530dad6271fd7b3e01b5a7ab9eaab836c
 updated: 2026-08-19
 session: wealthTensor-91
 session_n: 91
