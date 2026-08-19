@@ -8,7 +8,7 @@ jason@braatzresearch.com
 
 **Declaration of interest.** The author is employed by a company building accounting software for very small businesses. This work was conducted independently, on personal time, and without company funding, data or direction.
 
-**Use of AI assistance.** Anthropic Claude Opus 5, at high reasoning effort, was used throughout as a research and drafting assistant: literature retrieval, adversarial review, code review and prose drafting. All claims, results and final text are the author's, and every computational result is produced by committed code in the repository named in the data-availability statement.
+**Use of AI assistance.** Anthropic Claude Opus 5, at high reasoning effort, was used throughout as a research and drafting assistant: literature retrieval, adversarial review, code review and prose drafting. All claims, results and final text are the author's, and every computational result is produced by committed code in the repository named in §11.
 
 ---
 
@@ -998,7 +998,7 @@ channels in advance and they oppose: a lower R₂ lowers K and pushes the crossi
 transform pushes it up. They very nearly cancel — the shape moves δ₃\* by **0.13%**, from 0.00755
 to 0.00754, and goodwill's tabulated rate stays a factor of 3.8 inside it. The *level* moves it by
 4.3%, from §4.4's 0.00789 at the calibration to 0.00755 at the measured rate, and moves something
-else besides, which §4.4 now states in the table where it belongs.
+else besides, which §4.4's tier table now states.
 
 **One thing the shape does not do is break the exchange.** An age-dependent world sits 5 × 10⁻⁴
 from its own constant-hazard match in the reported series — four orders of magnitude below the
@@ -1548,7 +1548,7 @@ with what would have killed each.
 | **Returns kill the two-point exchange** | mirror rebuilt with its own asset, return series compared | the two worlds' returns agreeing, which would leave §4.6's question open the other way | books agree to **7 × 10⁻¹⁶**, returns differ by **α − δ = 0.0300 every period** |
 | **Returns cannot touch the scale continuum** | the nine-member family regenerated, return series compared across it | any member emitting a different return series | **2 × 10⁻¹⁶ — bit for bit identical** across a family spanning φ ∈ [0, 1] |
 | **News, not returns, restores identification** | regression on lag, return-implied path and its first difference, σ = 0.15 | recovery failing, or the σ = 0 design being well conditioned | α, E₀, φ recovered to **10⁻¹⁶**; cond(X) **11.8** at σ = 0.15 against **4 × 10¹⁶** at σ = 0 |
-| **The repair's strength is the asset's, not the analyst's** | σ swept 12×, T swept 32×, at nine (α, δ) settings | the panel buying the root-T rate, or the σ and T channels agreeing | T: 50→200 buys **1.22×** where root-T buys 2.00×, 400→1600 buys **1.00×** — regime-independent; the σ exponents are not, and are given in the two rows above |
+| **The repair's strength is the asset's, not the analyst's** | σ swept 12×, T swept 32×, at nine (α, δ) settings | the panel buying the root-T rate, or the σ and T channels agreeing | T: 50→200 buys **1.22×** where root-T buys 2.00×, 400→1600 buys **1.00×** — regime-independent; the σ exponents are not, and §4.7 gives both ranges |
 | **Neither degradation exponent is a model constant** | both re-fitted over nine (α, δ) settings on the GAAP ladder | the nine agreeing to within fitting error, which would license quoting a number | collinearity spans **−1.07 to −0.38**, se(φ̂) **−0.78 to −0.09** — *the check that removed two numbers from §4.7* |
 | **The response to news flattens as decay slows** | |exponent| ranked against δ(α − δ) | no rank relationship, which would make the spread noise | Spearman **+0.92**; at δ = 0.002 the exponent is **−0.09**, and the level is **4.7×** worse than the best regime at matched σ |
 | **The goodwill limit needs a motionless asset, not a slow one** | δ = 0 rerun with the asset's value allowed to move | the gap staying zero once news is on, which would make the limit about δ | gap **0.204** against an exact 0.0, and φ recovered to **3 × 10⁻¹⁵** — *the check that rewrote §4.8* |
@@ -1605,7 +1605,10 @@ audit found six that could not have failed, and that they are named.
 ## 8 · Abandoned approaches
 
 *Every route below was actually taken and then abandoned. The section is placed in the body, not an
-appendix, for the reason given in the companion papers of this programme.*
+appendix, and for the reason Papers I, II and IV each state at the head of theirs: a
+result reported without the routes that failed is a result the reader cannot calibrate —
+they are shown the one path that worked and left to assume it was the only one
+considered.*
 
 **"First principles" as undeniable truths.** The original formulation asserted the framework's
 foundations were undeniable. Abandoned on the argument of §A.1.1: an undeniable axiom is a
@@ -2369,8 +2372,8 @@ CRSP–Compustat–Execucomp sample and the CRSP-wide figure is 23%, a distincti
 make and the body does.)*
 
 Basu, S. (1997). The conservatism principle and the asymmetric timeliness of earnings. *Journal of
-Accounting and Economics*, 24(1), 3–37. ✓ *(Cited for the asymmetric-timeliness result named in its
-own title. **Read at source**; the volume, year and page range are confirmed against the typeset
+Accounting and Economics*, 24(1), 3–37. ✓ *(Cited for the asymmetric-timeliness result its title carries verbatim — *the asymmetric
+timeliness of earnings*. **Read at source**; the volume, year and page range are confirmed against the typeset
 article, which earlier revisions of this entry could not obtain. Nothing is quoted from it.)*
 
 Ball, R., Kothari, S. P., & Nikolaev, V. V. (2013). Econometrics of the Basu asymmetric timeliness
@@ -2397,7 +2400,7 @@ the author's own copy, and no text is quoted.)*
 
 Beaver, W. H., & Ryan, S. G. (2000). Biases and lags in book value and their effects on the ability
 of the book-to-market ratio to predict book return on equity. *Journal of Accounting Research*,
-38(1), 127–148. ✓ *(Cited for the bias/lag decomposition named in its own title. §10 identifies this
+38(1), 127–148. ✓ *(Cited for the bias/lag decomposition its title carries verbatim — *biases and lags in book value*. §10 identifies this
 as the closest prior art to §4's filter, so the entry is load-bearing against this paper rather than
 for it. **Read at source**; §4.7 quotes their method — regressing the ratio "on the current and six
 lagged security returns with fixed firm and time effects" — from **p. 128**. The sentence recurs at
@@ -2526,7 +2529,7 @@ Little, J. D. C. (1961). A proof for the queuing formula: L = λW. *Operations R
 383–387. ✓ *(§4.9 cites it for the distribution-free stationary identity — average number in system
 equals arrival rate times average time in system — and, more to the point, for what that identity
 requires: a constant arrival rate. This model never has one, which is why its deferral measure is a
-transform of the lag rather than its mean. Characterised from the result named in the title;
+transform of the lag rather than its mean. Characterised from the result its title carries — *L = λW*;
 nothing is quoted.)*
 
 Marshall, A. W., & Proschan, F. (1972). Classes of distributions applicable in replacement with

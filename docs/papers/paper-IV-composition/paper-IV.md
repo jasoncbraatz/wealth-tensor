@@ -8,7 +8,7 @@ jason@braatzresearch.com
 
 **Declaration of interest.** The author is employed by a company building accounting software for very small businesses. This work was conducted independently, on personal time, and without company funding, data or direction.
 
-**Use of AI assistance.** Anthropic Claude Opus 5, at high reasoning effort, was used throughout as a research and drafting assistant: literature retrieval, adversarial review, code review and prose drafting. All claims, results and final text are the author's, and every computational result is produced by committed code in the repository named in the data-availability statement.
+**Use of AI assistance.** Anthropic Claude Opus 5, at high reasoning effort, was used throughout as a research and drafting assistant: literature retrieval, adversarial review, code review and prose drafting. All claims, results and final text are the author's, and every computational result is produced by committed code in the repository named in §10.
 
 ---
 
@@ -394,7 +394,7 @@ existed). The design's whole content is that a low co-citation rate between two 
 **uninformative on its own** — sociology and semiconductor lithography do not cite each other
 either. What makes a number here mean something is a scale with both ends fixed in the same run.
 
-**The instrument.** Each literature is defined by seed works named in the registration, and its
+**The instrument.** Each literature is defined by seed works named in `REG-013`, and its
 *audience* is the set of works citing at least one seed, taken from OpenAlex. For two literatures
 the statistic is the overlap coefficient — the share of the smaller audience that also reads the
 other. Twenty-five of twenty-five seeds resolved.
@@ -441,7 +441,7 @@ true-audience sizes are `RESULT-REG-013` §2's. The instrument stops retrieving 
 not print them, which makes them the two numbers in this section that §10's command does not
 regenerate.
 
-**And what the measurement does not establish, stated in the registration before the numbers
+**And what the measurement does not establish, stated in `REG-013` before the numbers
 existed:** an unoccupied intersection is not thereby a fertile one. This section establishes that
 the three literatures do not read each other. That there is something worth finding where they
 meet is what §§3–5 have to earn on their own.

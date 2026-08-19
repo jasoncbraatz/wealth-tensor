@@ -74,18 +74,59 @@ The three predicted in Paper IV: `named in the data-availability statement` (fro
 matter); `named in the registration` (§2 instrument); `stated in the registration` (§2
 close).
 
-**MEASURED: PENDING.** This section is committed with the field reading PENDING, exactly
+**MEASURED: was PENDING at `07cd47e`; §4 fills it.** This section was committed with the field
+reading PENDING and the table above already frozen, exactly
 as -84 did for its sample and -86 did for its sweep. -86's prediction was wrong by three
 and *the three misses were the finding* — which is only true because the prediction was a
 git object first.
 
 ## 4 · MEASURED
 
-*PENDING — filled in the commit after the sweep runs.*
+`python3 scripts/wt160_bare_pointer_sweep.py` — RC 1, all eleven post-conditions holding,
+six of them NEGATIVE.
 
-## 5 · Where predicted and measured disagree
+| | considered | predicted | **measured** |
+|---|---:|---:|---:|
+| `paper-III.md` | 16 | 7 | **7** |
+| `paper-IV.md` | 3 | 3 | **3** |
+| **TOTAL** | **19** | **10** | **10** |
 
-*PENDING.*
+The ten, in file order:
+
+| # | file | line | pointer | what the reader had to supply |
+|---|---|---:|---|---|
+| 1 | III | 11 | `named in the data-availability statement` | which section that is |
+| 2 | III | 1001 | `states in the table where it belongs` | which table |
+| 3 | III | 1551 | `given in the two rows above` | which rows — **and they are the wrong ones** |
+| 4 | III | 1608 | `given in the companion papers of this programme` | which paper, which section |
+| 5 | III | 2372 | `named in its own title` | the phrase itself |
+| 6 | III | 2400 | `named in its own title` | the phrase itself |
+| 7 | III | 2529 | `named in the title` | the phrase itself |
+| 8 | IV | 11 | `named in the data-availability statement` | which section |
+| 9 | IV | 397 | `named in the registration` | which registration |
+| 10 | IV | 444 | `stated in the registration before the numbers existed` | which registration |
+
+## 5 · Where predicted and measured disagree — and why the agreement is the weaker result
+
+**They do not disagree. Ten predicted, ten measured, and the same ten.** The considered
+count agrees too, at nineteen.
+
+That is a worse outcome than -86's, and it is worth being precise about why. -86 predicted
+43 and measured 46, and **the three misses were the finding** — they exposed a class
+(pronoun targets) the author had read straight past. An exact agreement exposes nothing.
+Worse, the prediction and the sweep share a blind spot **by construction**: the prediction
+was made by pulling every occurrence of *the same verb vocabulary the script uses* out of
+both manuscripts with whitespace flattened, and adjudicating each window by hand. So the
+agreement is evidence that **N1–N6 are applicable by a human without ambiguity** — which is
+worth having, since a criterion two readers apply differently is not a criterion — and it is
+**no evidence at all** that the vocabulary is the right vocabulary. A pointer verb outside
+the eight is invisible to the prediction and to the sweep alike.
+
+That is falsifier #4 in §8, and it is the live attack on this pass. `held in`, `found in`,
+`described in`, `specified in`, `covered in` are all pointer verbs in ordinary English, and
+none of them was run.
+
+**One thing the sweep did find that no reader had:** flag 3. See §7.
 
 ## 6 · The severe test in git, and the leg of it that is not satisfiable
 
@@ -104,9 +145,60 @@ before `in`, and the target **is** a section reference, so N2 excludes it. III-3
 by a reader. **C11 pins that limit as a NEGATIVE post-condition.** Widening a criterion so
 that a post-condition passes is the opposite of a severe test.
 
-## 7 · Repairs
+## 7 · Repairs — `wt161` (13 post-conditions, 4 NEGATIVE) and `wt162` (12, 4 NEGATIVE)
 
-*PENDING.*
+All ten repaired in-pass, in the two sanctioned modes: **four pointers re-targeted** so the
+target is named, and **six constructions removed outright** so the sentence stops promising a
+target at all. `wt160`'s considered count therefore falls from 19 to 13, and its flagged
+count to zero.
+
+### 7.1 · The one that was not merely vague
+
+Paper III §7's ledger row *"The repair's strength is the asset's, not the analyst's"* read:
+
+> …regime-independent; the σ exponents are not, and **are given in the two rows above**.
+
+The two rows above it are *"Returns cannot touch the scale continuum"* and *"News, not
+returns, restores identification"*. **Neither carries an exponent in σ.** The σ exponents are
+two rows **below** — *"Neither degradation exponent is a model constant"* (collinearity spans
+−1.07 to −0.38, se(φ̂) −0.78 to −0.09) and *"The response to news flattens as decay slows"* —
+and §4.7 states both ranges in prose. The pointer resolved to the wrong place: **the III-2
+class exactly, found this time by a machine rather than by a reader.** Repaired to
+*"and §4.7 gives both ranges"*, with post-condition D3 asserting §4.7 still states both.
+
+This is the answer to -83's open question about whether an instrument for this class would
+ever earn its keep. One defect is not a rate, and §8's falsifier 5 still stands.
+
+### 7.2 · The other nine
+
+| # | repair | mode |
+|---|---|---|
+| 1, 8 | `named in §11` (III) / `named in §10` (IV) | re-targeted |
+| 2 | `which §4.4's tier table now states` | construction removed |
+| 4 | the companions' own sentence stated inline — *"a result reported without the routes that failed is a result the reader cannot calibrate"* — instead of pointed at | construction removed |
+| 5, 6, 7 | the title's phrase quoted (*the asymmetric timeliness of earnings*; *biases and lags in book value*; *L = λW*) | construction removed |
+| 9, 10 | `named in \`REG-013\`` / `stated in \`REG-013\`` | re-targeted |
+
+### 7.3 · RED-PROOF, and the two post-conditions that were wrong
+
+`wt161` refuses to touch anything unless `wt160`'s flag set is EXACTLY the ten it is written
+against, and after repairing it re-runs `wt160` at `07cd47e` — the pre-repair commit — and
+requires all ten to flag **there** still. The repair moves the file, not the instrument.
+
+**Its first run rolled back on three post-conditions, and two of the three were the
+post-condition's error rather than the repair's.** D1 asserted 19 constructions would remain
+considered; 13 do, because six repairs removed the construction rather than re-targeting it —
+a mode the criterion sanctions and the post-condition had not been written to expect. D6's
+anchor spanned a line break in `paper-IV.md` and so was never found. **D13 was right**: `wt148`
+went non-zero, because naming `REG-013` in two sentences **emitted two promises**, which is the
+repair working, not failing. Those two are adjudicated by `wt162` against evidence that is run
+inside the script itself (E7, E8) — the seed titles matched verbatim against `REG-013` with
+whitespace flattened (T 7/7, S 5/6, K 5/6, X 0/6, with every zero and every miss explained in
+the note), and the registration's own fertility disclaimer alongside the two add-dates that
+put `REG-013` in the repository sixteen minutes before the numbers.
+
+A repair that makes prose checkable **adds** rows to the adjudication file. That is the cost
+of the criterion and it is the right cost.
 
 ## 8 · Falsifier block — how to attack this pass
 
@@ -123,6 +215,9 @@ that a post-condition passes is the opposite of a severe test.
 5. **C9 proves only that one historical sentence flags.** One recovered defect is not a
    detection rate. This sweep has never been shown to catch a bare pointer nobody had
    already found by hand — until §4's measured flags are adjudicated, that remains true.
-6. **The class is not the population.** Nothing here narrows REVIEW-024's [3, 47]; a bare
+6. **One recovered defect is not a detection rate.** §7.1 is one wrong pointer in ten flags in
+   two manuscripts. Nothing here estimates how many more of its kind exist, and a bare pointer
+   that happened to resolve correctly was repaired without anyone learning anything.
+7. **The class is not the population.** Nothing here narrows REVIEW-024's [3, 47]; a bare
    pointer is not a false sentence, and a repaired bare pointer may still say something
    false about its newly-named target.
