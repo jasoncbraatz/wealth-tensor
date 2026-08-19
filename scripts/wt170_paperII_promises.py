@@ -38,7 +38,16 @@ EXIT CODES: 0 = fifteen rows added and every post-condition holds - 2 = refused,
 post-condition failed and the TSV was rolled back to its pre-run bytes.
 
 USAGE
-    python3 scripts/wt170_paperII_promises.py
+    python3 scripts/wt170_paperII_promises.py            # write the fifteen rows (one-shot)
+    python3 scripts/wt170_paperII_promises.py --verify   # re-run all fifteen COMMITTED evidence
+                                                         # cells and hold them to their quotations
+
+WHY `--verify` EXISTS. The writing path refuses on a second invocation - it will not write a
+twin - so without this mode the fifteen evidence commands would have been checked once, on the
+day they were written, and never again. That is the defect this whole file exists to attack, one
+level up. `--verify` reads the evidence column OUT OF THE COMMITTED TSV (not out of `EV` below),
+runs it, and requires the stdout to equal the note's quotation character for character. It is
+re-runnable forever and it is what REVIEW-031 falsifier 2 names.
 """
 from __future__ import annotations
 
@@ -132,9 +141,10 @@ QUOTED["c138f0078e"] = (
 )
 CLS["c138f0078e"] = "H"
 NOTE["c138f0078e"] = (
-    "prints the test's three asserts, read out of the function body rather than located by name: "
-    "'assert drift < 0.02', 'assert top_share(res) > 0.95' and 'assert not is_bounded(res)'. The "
-    "third is the one the sentence promises. A criterion simplified back to a drift test alone "
+    "prints \"['assert drift < 0.02                     # flat by a drift test...', 'assert "
+    "top_share(res) > 0.95            # ...and completely condensed', 'assert not "
+    "is_bounded(res)']\" -- the test's three asserts, read out of the function body rather than "
+    "located by name. The third is the one the sentence promises. A criterion simplified back to a drift test alone "
     "returns True for the unopposed run, and 'assert not is_bounded(res)' then FAILS -- so the "
     "simplification 'fails loudly' instead of 'quietly re-scoring condensation as success'. The "
     "first two are what make the third discriminating: they establish that the run it is asserted "
@@ -174,9 +184,9 @@ QUOTED["95e60baa81"] = (
 )
 CLS["95e60baa81"] = "H"
 NOTE["95e60baa81"] = (
-    "prints 'regenerating command imports it: True', 'paper suite imports it: True' and the "
-    "module's seven top-level names ['gini', 'RedistributiveEconomy', 'stationary_gini', "
-    "'top_share', 'is_bounded', 'reachable_frontier', 'sweep']. The bullet is a provenance claim -- "
+    "prints 'regenerating command imports it: True', 'paper suite imports it: True' and "
+    "\"module defines: ['gini', 'RedistributiveEconomy', 'stationary_gini', 'top_share', "
+    "'is_bounded', 'reachable_frontier', 'sweep']\". The bullet is a provenance claim -- "
     "that THIS module is the paper's -- and it is checked by reading what depends on it rather "
     "than by finding the file: scripts/wt030_report.py, the command the next bullet names for "
     "regenerating section 3, imports from wealth_tensor.redistribution, and so does "
@@ -235,8 +245,10 @@ QUOTED["1cbe31f16c"] = (
 )
 CLS["1cbe31f16c"] = "H"
 NOTE["1cbe31f16c"] = (
-    "prints ['E[eta+] closed form = 0.107269   quadrature = 0.107269'] and the four Var[log a] "
-    "lines the command emits. The clause this row carries is that section 3.1's closed-form "
+    "prints \"['E[eta+] closed form = 0.107269   quadrature = 0.107269']\" and \"['unlevied "
+    "Var[log a] = 0.076542', 'stock r=0.10: Var[log a] = 0.076536   (kappa=0.10000)', 'flow  "
+    "r=0.10: Var[log a] = 0.073276   (kappa=0.01022)', 'flow  r=1.00: Var[log a] = 0.051189   "
+    "(kappa=0.10216)']\". The clause this row carries is that section 3.1's closed-form "
     "quantities 'come from python3 scripts/wt077_tail_index.py', and they do: the command prints "
     "E[eta+] = 0.107269, which is section 3.1's 0.1073 at the paper's precision, and it prints the "
     "three values section 3.1 quotes -- unlevied 0.076542, stock 0.076536 and flow 0.051189. It "
@@ -310,7 +322,9 @@ QUOTED["cd94f1a9bc"] = (
 CLS["cd94f1a9bc"] = "H"
 NOTE["cd94f1a9bc"] = (
     "prints 'test_a_flat_gini_does_not_mean_a_bounded_one in tests/test_redistribution.py: True', "
-    "'same name in tests/test_excess_demand.py: False' and the test's three asserts. The NEGATIVE "
+    "'same name in tests/test_excess_demand.py: False' and \"its asserts: ['assert drift < 0.02  "
+    "                   # flat by a drift test...', 'assert top_share(res) > 0.95            # "
+    "...and completely condensed', 'assert not is_bounded(res)']\". The NEGATIVE "
     "line is the discriminating one: the bullet places this test in the paper's own module and the "
     "second of the pair 'in a companion module of the same suite', so a reading that found the "
     "same name in both files would falsify the contrast the bullet draws. It is in one and not the "
@@ -426,8 +440,9 @@ QUOTED["54c1c5fb27"] = (
 )
 CLS["54c1c5fb27"] = "N"
 NOTE["54c1c5fb27"] = (
-    "prints 'git cat-file -t 0002374 -> fatal: Not a valid object name 0002374' and the manuscript "
-    "line the token stands in. THE ARTEFACT IS AN INSTRUMENT MIS-PARSE, NOT A REPOSITORY OBJECT. "
+    "prints 'git cat-file -t 0002374 -> fatal: Not a valid object name 0002374' and \"the token "
+    "as it stands in the manuscript: ['issue as 282(3). Text consulted: arXiv `cond-mat/0002374`, "
+    "read in full. The quotations in \u00a73.1 are']\". THE ARTEFACT IS AN INSTRUMENT MIS-PARSE, NOT A REPOSITORY OBJECT. "
     "wt148's sha rule matches any 7-40 character hex run containing a digit, and '0002374' is the "
     "numeric half of the arXiv identifier cond-mat/0002374; git refuses it. The sentence therefore "
     "asserts nothing about any artefact of this repository that could fail: 'read in full' is a "
@@ -469,7 +484,46 @@ def pending_now(lines):
             if p["paper"] in IN_SCOPE and p["pid"] not in have}
 
 
+def verify():
+    """Re-run every committed evidence cell for the fifteen rows and hold it to its quotation."""
+    full_tsv = os.path.join(REPO, TSV)
+    rows = {}
+    for ln in open(full_tsv, encoding="utf-8").read().splitlines():
+        if ln.startswith("#") or "\t" not in ln:
+            continue
+        f = ln.split("\t")
+        if len(f) >= 6 and f[1] in EV:
+            rows[f[1]] = f
+    missing = sorted(set(EV) - set(rows))
+    if missing:
+        return die(f"{len(missing)} of the fifteen rows are not in {TSV}: {missing}")
+
+    ok_all = True
+    print(f"=== {TAG} --verify: fifteen committed evidence cells, re-run ===")
+    for pid in PIDS:
+        f = rows[pid]
+        cell_matches_source = f[4] == EV[pid]
+        cls_ok = f[3] == CLS[pid]
+        r = sh(f[4], shell=True)
+        out_ok = r.returncode == 0 and r.stdout.strip() == QUOTED[pid]
+        quoted_in_note = all(l in f[5] for l in QUOTED[pid].split("\n") if l.strip())
+        ok = cell_matches_source and cls_ok and out_ok and quoted_in_note
+        ok_all &= ok
+        detail = ("stdout matches its quotation" if ok else
+                  f"cell==source:{cell_matches_source} class:{f[3]}=={CLS[pid]} "
+                  f"rc:{r.returncode} got:{r.stdout.strip()[:100]!r}")
+        print(f"  [{'ok  ' if ok else 'FAIL'}] {pid} {f[3]}  {detail}")
+    print(f"\n{len(PIDS)} rows verified against their committed evidence.")
+    if not ok_all:
+        print(f"{TAG}: a committed row no longer shows what its note says it shows.",
+              file=sys.stderr)
+        return 2
+    return 0
+
+
 def main():
+    if "--verify" in sys.argv[1:]:
+        return verify()
     full_tsv = os.path.join(REPO, TSV)
     before_lines = open(full_tsv, encoding="utf-8").read().splitlines()
     before_hash = hashlib.sha256("\n".join(before_lines).encode()).hexdigest()
@@ -600,6 +654,12 @@ def main():
          "paper-I is NOT in scope - the brief narrowed this pass to the three shipping papers and "
          "widening further would double the work for a manuscript nobody is submitting",
          "paper-I" not in scope, f"scope = {scope}"),
+        ("N28b", "NEGATIVE",
+         "every note quotes EVERY line of its command's stdout verbatim - a note that quotes the "
+         "first line and paraphrases the rest reads as checked and is not (this fired on five of "
+         "the fifteen notes when --verify was first written, in this same pass)",
+         all(all(l in NOTE[pid] for l in QUOTED[pid].split("\n") if l.strip())
+             for pid in PIDS), "fifteen for fifteen"),
         ("N28", "NEGATIVE",
          "no new note is a bare locate - none says only that the artefact is present",
          not any(c.strip().lower().startswith(("present", "exists", "the file exists"))
