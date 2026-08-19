@@ -6,17 +6,17 @@ gh_sha: 11226ed3d7094439a9afc75bc97420f5a8fdc605
 updated: 2026-08-19
 session: wealthTensor-98
 session_n: 98
-live_theme: "THE MANIFEST P13e RESTS ON IS NOW CHECKABLE BY ANYTHING THAT CAN RUN PYTHON. Three guards could notice a hand-edited LAYOUT-MANIFEST.json and all three needed lualatex, pandoc and a clean worktree -- so CI could not, a fresh clone could not, the container could not, and no session that had not run preflight could. `-97` built the cheap half: the manifest is held to itself, to FONTS.tsv row for row, to the manuscripts on disk in both directions, to the committed PDF bytes and to the commit it names, in 0.07s with the standard library and git. Its scope is DECLARED -- a key added to the manifest without a check added to the guard turns it RED rather than arriving unexamined, which is `-95`'s nine-of-fourteen defect run backwards. THE BOARD IS UNCHANGED -- 57 CLOSED, 9 PENDING-HUMAN, ZERO OPEN, every remaining row a human gate."
-phase: "EVERY NUMBER HERE WAS RE-DERIVED BY THE GATE'S CLAIM RE-RUNNER, NOT QUOTED: `pytest` 1156 passed (1148 inherited from `-96`, plus 8 in the new tests/test_layout_manifest_is_self_consistent.py); NEW `wt179_manifest_guard.py` RC 0 over 10 checks, 145 pages and 16 fonts and 4 manuscripts described, in 0.07s with no toolchain; NEW `redproof_wt179_manifest.py` RC 0, 33 probes, 26 of 26 declared tags proven, and the coverage line proven non-vacuous by deleting a probe (exactly one WEAK); the guard proven RC 0 in 0.047s in a FRESH CLONE with nothing built and no preflight run, and its 8 tests green there in 1.11s; `wt173 --verify` RC 0; `wt173 --postconditions` RC 0 over 14 checks with 5 NEGATIVE and 0 failed; `preflight` RC 0 over 16 vendored fonts; `wt133` and `wt148` and `wt154` and `wt156` and `wt160` and `wt163` and `wt166` and `wt169` -- ALL EIGHT RC 0; `wt170 --verify` RC 0; `wt172 --verify` RC 0 over 17 paper-II rows; `verify-layout.sh` RC 0, 145 pages rebuilt in a clean worktree; `redproof-layout.sh` RC 0, four probes; `wt177_figure_guard.py` RC 0; `redproof_wt177_figures.py` RC 0 over 21 probes; `redproof_wt178_claims.py` RC 0 over 17 declared tags; G-CLAIMS run over the committed handoff -- 25 claims declared, 25 re-run un-piped, 25 agreed, exit code captured with rc=$?; `defensive paper-I` and `defensive paper-II` and `defensive paper-III` and `defensive paper-IV` -- 0/0/3/0 sentences outside Limitations, UNCHANGED and NO MANUSCRIPT EDITED (`git diff 16635df..HEAD -- docs/papers/` empty); gate v2.61 PASS, tree clean and pushed."
+live_theme: "THE THREE CLAIMS THAT WERE HELD TO AN EXIT CODE NOW CARRY A NUMBER, AND THE NUMBER IS DERIVED RATHER THAN DECLARED. `verify-layout.sh`, `redproof-layout.sh` and `wt170 --verify` are three of the twenty-six most expensive checks in this repository and TWO OF THEM GUARD THE DELIVERABLE; until now an exit code was the whole of each one, and an exit code stays 0 while the corpus moves underneath it -- which is exactly how `-96` shipped `pytest` 1121 for a suite of 1148. Each now prints ONE stable line carrying a count it MEASURED: 145 pages compared, derived from the freshly rebuilt PDF and cross-checked inside the script against a second independent read; 4 probe verdicts, tallied at the moment each is printed so a probe that dies before reporting LOWERS the number; 11 promise rows re-run against their committed evidence. THE MATRIX BEHIND THEM IS THE POINT -- `redproof_wt180_counts.py` proves each count DERIVED by moving the real corpus (a page out of the PDF, a probe call site out of the script, a row retired out of the adjudication file) and proves the leg BITES a wrong one on the FALSE-CLAIM TAG, with a CONTROL beside every bite requiring that tag to be SILENT on the clean case. AND THE THING THIS SESSION FOUND BY LOOKING ONCE MORE SOMEWHERE IT HAD NOT LOOKED: `docs/p7-passes.tsv` ENDS AT `-83`. FIFTEEN SESSIONS HAVE PASSED WITHOUT A SINGLE FRESH-EYES READ OF A MANUSCRIPT, while the definition of done asks for two consecutive ZERO-finding passes per paper and no paper has ever had one. The board is unchanged -- 57 CLOSED, 9 PENDING-HUMAN, ZERO OPEN -- but the DoD is not the board, and the DoD is where the work is."
+phase: "EVERY NUMBER HERE WAS RE-DERIVED BY THE GATE'S CLAIM RE-RUNNER, NOT QUOTED: `pytest` 1167 passed (1156 inherited from `-97`, plus 11 in the new tests/test_the_three_counts_are_derived.py); THE THREE COUNTED-BY-NOTHING CLAIMS NOW CARRY A NUMBER AND THE GATE RE-RAN ALL THREE -- `verify-layout.sh` RC 0 with 145 pages compared against the manifest, derived from the freshly rebuilt PDF and cross-checked inside the script against a second independent pypdf read; `redproof-layout.sh` RC 0 with 4 probes reported, tallied at the moment each verdict is printed so a probe that dies before reporting lowers the number; `wt170 --verify` RC 0 with 11 of fifteen rows verified against their committed evidence, 3 retired to committed successors and 1 re-evidenced in place; NEW `redproof_wt180_counts.py` RC 0 with 12 of 12 declared probes proven over a declared CLAIMS x TAGS matrix -- REGISTERED, DERIVED, BITES and CONTROL for each of the three, every bite asserted on the FALSE-CLAIM tag and every control requiring that tag to be silent on the clean case; `wt173 --verify` RC 0; `wt173 --postconditions` RC 0 over 14 checks with 5 NEGATIVE and 0 failed; `preflight` RC 0 over 16 vendored fonts; `wt133` and `wt148` and `wt154` and `wt156` and `wt160` and `wt163` and `wt166` and `wt169` -- ALL EIGHT RC 0; `wt172 --verify` RC 0 over 17 paper-II rows; `wt177_figure_guard.py` RC 0; `redproof_wt177_figures.py` RC 0 over 21 probes; `wt179_manifest_guard.py` RC 0 over 10 checks with no toolchain; `redproof_wt179_manifest.py` RC 0 with 26 of 26 declared tags proven; `redproof_wt178_claims.py` RC 0 over 17 declared tags; G-CLAIMS run over the committed handoff -- 26 claims declared, 26 re-run un-piped, 26 agreed, exit code captured with rc=$?; `defensive paper-I` and `defensive paper-II` and `defensive paper-III` and `defensive paper-IV` -- 0/0/3/0 sentences outside Limitations, UNCHANGED and NO MANUSCRIPT EDITED (`git diff 54ceeac..HEAD -- docs/papers/` empty); gate v2.61 PASS, tree clean and pushed."
 gate_passed: true
 gate_version: "2.61"
-next_at_bat: "ASSIGNED, ONE THING: **give the three counted-by-nothing claims a number, and register it.** `-96` named the residue and `-97` did not close it: of the 25 entries in the `claims:` block, THREE print no count for the gate to hold them to -- `verify-layout.sh`, `redproof-layout.sh` and `wt170 --verify` -- and their `note:` fields say so out loud. That is the weak half of every one of them: an RC stays 0 while the world moves underneath it, which is exactly how `-96` shipped `pytest` 1121 for a suite of 1148. `verify-layout.sh` already knows it verified 145 pages, `redproof-layout.sh` already knows it ran four probes, and `wt170 --verify` already knows how many promise rows it adjudicated; none of the three says the number in a form a `count_re` can capture. THE SHAPE: make each print one stable line carrying its count, register `count` and `count_re` for all three, and prove the number BITES -- a red-proof that runs each command against a corpus with one more or one fewer member and shows the claims leg reporting FALSE-CLAIM, asserted by that TAG and not by exit status. Do NOT hand-write the number into the script from what you measured today; derive it from what the run actually did, or you have built `-92`'s tautology -- a value you passed in is not a value you measured. DONE WHEN: all three claims carry a `count` and a `count_re` with exactly one group; `--claims-all` re-runs 25 claims and agrees on all three counts; a red-proof shows each of the three counts caught wrong, tagged FALSE-CLAIM; the `phase:` prose states the three numbers; and `pytest`'s count moves with any tests you add. Then the full sweep, numbers said. Do NOT close P13g, P9 or P8 -- all three PENDING-HUMAN and explicitly not a session's to call."
+next_at_bat: "ASSIGNED, ONE THING: **run P7 pass 12 on paper-II, and append its row to the ledger.** NOT another instrument. `docs/p7-passes.tsv` -- the file this project built precisely so that claims about its own review process would be measured rather than told -- ENDS AT `wealthTensor-83`. Fifteen sessions have gone by without one fresh-eyes read of a manuscript, while `definition_of_done` asks for TWO CONSECUTIVE ZERO-FINDING PASSES PER PAPER and no paper has ever had one. Last reads: paper-II at `-79` (2 findings), paper-IV at `-81` (9), paper-III at `-83` (4). Paper II is the closest thing to convergence this corpus has -- 3, 2, 2 across three frozen-instrument passes -- so it is the read that can actually END something. THE SHAPE: read paper-II with fresh eyes under the CHARTER (coach model, not marksman); every finding arrives WITH ITS REPAIR in the order STEELMAN > REPLACE > CUT > TEE-UP, never as a filed objection and NEVER as a new hedge pasted into the manuscript -- ABSORB is the illegal move and the defensive-sentence count is the checkable invariant. A ZERO-FINDING PASS IS A CELEBRATED RESULT, not a failure to find work; it is literally half of what done means here. But it must be an honest zero: `docs/p7-passes.tsv`'s header tells you how to falsify your own row, and five proposed mechanisms for the finding counter have died one pass after being proposed (new instruments, residue, depth, coverage; only enumeration survives) -- so do NOT propose a sixth and do not credit findings to an axis you did not run. DONE WHEN: docs/REVIEW-034-P7-paperII-pass12.md exists with a numbered finding list and its front matter filled in the shape REVIEW-019 uses (new_instrument, instrument_name, findings_from_new_axis, residue_of_previous_pass) plus its own falsifier block; one row appended to docs/p7-passes.tsv that survives that falsifier; every finding carries a landed repair or a carded tee-up; `defensive_count.py` is NON-INCREASING on paper-II (0 outside Limitations, and it must stay 0); and `--claims-all` re-runs 26 claims and agrees. Do NOT close P7 -- it is PENDING-HUMAN and the convergence verdict is Jason's, not a session's; you run the pass, you do not score it. Do NOT close P13g, P9 or P8 either."
 blockers: []
 claims:
   - id: pytest
     cmd: python3 -m pytest -q
     rc: 0
-    count: 1156
+    count: 1167
     count_re: ([0-9]+) passed
     note: about 70s -- the number IS the claim, not decoration
   - id: wt173 --verify
@@ -61,7 +61,9 @@ claims:
   - id: wt170 --verify
     cmd: python3 scripts/wt170_paperII_promises.py --verify
     rc: 0
-    note: the WRITING path exits 2 by design; --verify is the re-runnable mode
+    count: 11
+    count_re: ([0-9]+) of [0-9]+ rows verified
+    note: DERIVED from what the run re-ran -- 11 live rows of fifteen, 3 retired to committed successors, 1 re-evidenced. The WRITING path exits 2 by design; --verify is the re-runnable mode
   - id: wt172 --verify
     cmd: python3 scripts/wt172_tsv.py --verify
     rc: 0
@@ -71,13 +73,17 @@ claims:
   - id: verify-layout.sh
     cmd: bash docs/deliverable/verify-layout.sh
     rc: 0
+    count: 145
+    count_re: wt176: ([0-9]+) pages compared
     slow: true
-    note: needs lualatex, pandoc and a worktree; prints no count to hold it to
+    note: needs lualatex, pandoc and a worktree. The count is wt176's, printed un-piped inside this run and DERIVED from the freshly built PDF; the script cross-checks it against a second, independent pypdf read and dies if they disagree
   - id: redproof-layout.sh
     cmd: bash docs/deliverable/redproof-layout.sh
     rc: 0
+    count: 4
+    count_re: redproof-layout: ([0-9]+) probes reported
     slow: true
-    note: 5-8 minutes, four probes, and it prints no count either
+    note: 5-8 minutes, four probes. The count is verdicts REPORTED, tallied in say(), so a probe that dies before reporting LOWERS it -- there is deliberately no declared total to print back
   - id: wt177_figure_guard.py
     cmd: python3 scripts/wt177_figure_guard.py
     rc: 0
@@ -125,7 +131,15 @@ claims:
     count: 17
     count_re: ([0-9]+) of [0-9]+ declared tags proven
     note: the red-proof for this leg -- it holds ITSELF to a claim like everything else
+  - id: redproof_wt180_counts.py
+    cmd: python3 scripts/redproof_wt180_counts.py
+    rc: 0
+    count: 12
+    count_re: ([0-9]+) of [0-9]+ declared probes proven
+    note: the CLAIMS x TAGS matrix for the three counts above -- REGISTERED, DERIVED, BITES, CONTROL, proven cheaply by moving the real corpora rather than by rebuilding them
 drift_flags:
+  - "THE REVIEW LEDGER STOPPED AT `-83` AND FIFTEEN SESSIONS DID NOT NOTICE, BECAUSE EVERY ONE OF THEM WAS LOOKING AT THE BOARD. `docs/CHECKLIST.md` has read 57 CLOSED / 9 PENDING-HUMAN / ZERO OPEN for four sessions running, and each of `-95` `-96` `-97` `-98` read that, concluded correctly that no lane was open, and went to the infrastructure parking lot. THE BOARD IS NOT THE DEFINITION OF DONE. `definition_of_done` in this very front matter asks for three preprints at ready-to-submit AND convergence -- TWO CONSECUTIVE ZERO-FINDING P7 PASSES PER PAPER -- and `docs/p7-passes.tsv`, the ledger this project built so that exactly this claim would be measured rather than told, has its last row at `wealthTensor-83`. Paper II was last read at `-79`, paper-IV at `-81`, paper-III at `-83`. NO PAPER HAS EVER HAD A ZERO-FINDING PASS, so convergence is not one pass away for any of them; it is at minimum two per paper, six reads, and the counter has never gone below two. THE GENERAL SHAPE, and it is the expensive one: when a project has a board AND a definition of done, a session that consults only the board will find the board says nothing is open, and will build tools. Tools are cheap to justify and impossible to finish. CONSULT THE DoD FIRST; the board is a subset of it."
+  - "A COUNT IS ONLY A MEASUREMENT IF SOMETHING CHEAP CAN MOVE IT, AND THAT IS WHY THE RED-PROOF COSTS SECONDS INSTEAD OF EIGHT MINUTES. The three claims closed here are guarded by four lualatex builds and fifteen re-executed evidence cells; a red-proof that had to RUN them to see whether their numbers move would be a red-proof that runs in no CI, no fresh clone and no container -- which is `-97`'s wt179 lesson pointed at its author's successor. So each number was given a CHEAP SEAM through which the real world can be moved: wt176 prints the pages it compared BEFORE the verdict branch (so a PDF one page short says 144 rather than losing the line to an early return); the probe tally lives in a sourced `probe-tally.sh` (so it can be driven with three verdicts or seven in milliseconds, and the REAL script can be run with its probe BODY stubbed to prove the wiring and with one call site deleted to prove the number falls); and `wt170 --verify` is importable, so the adjudication corpus can be handed a retirement in a temp file. WHAT THE SEAMS DO NOT PROVE is that the real commands print those lines on a real run -- only `--claims-all` at wrap proves that, and BOTH docstrings say so. Do not delete one half because the other is green."
   - "THE 25-SECOND BOARD TIMEOUT WAS STILL LIVE IN THE GATE ITSELF, WHICH IS THE HALF THAT MATTERS. `-96` measured `board.py`'s default `BOARD_CHECK_TIMEOUT` (25s) against P13e's criterion (`verify-layout.sh`, 16s idle -- a 1.6x margin), watched a CLOSED lane come back CANNOT VERIFY from concurrent load alone, and repaired `regen-board.sh`. It said in its own traps that `gate-selfcheck`'s board check was NOT covered, and that is the worse half: the gate runs at WRAP, at the exact moment this handoff tells you to background a twelve-minute `--claims-all`. `-97` fixed it at the artefact -- `gate-selfcheck.sh` now runs the board `--check` with `BOARD_CHECK_TIMEOUT` defaulted to 300 inside the command substitution's own subshell, so it neither leaks to the caller nor overrides an explicit value. Proven three ways: default 300, no leak, caller's 7 still wins. THE GENERAL SHAPE: when a wrapper is repaired and the CALLER is not, the hole moves to whoever did not read the wrapper -- fix every invocation of a shared engine, not the one you were standing in."
   - "THE MANIFEST NOW HAS A CHEAP GUARD AND IT DELIBERATELY DOES NOT REPLACE THE EXPENSIVE ONE. `scripts/wt179_manifest_guard.py` holds `LAYOUT-MANIFEST.json` to itself, to `FONTS.tsv` row for row, to the manuscripts on disk in both directions, to the committed PDF's bytes and to the commit it names -- 10 checks, 0.07s, standard library plus `git`. It CANNOT tell whether the manifest describes reality; only `verify-layout.sh`'s rebuild can, and both module docstrings say so. That division is the one `test_recipe_is_held_to_the_measurement.py` already documents for RECIPE.md, and the reason is the same: without the cheap half, the expensive half is the only half, which in practice means nothing runs in CI, in a fresh clone, or in the container. If you change the manifest you must still run BOTH."
   - "THE BOARD'S CHECK TIMEOUT WAS A KNIFE EDGE AND IT DOWNGRADED A CLOSED LANE UNDER LOAD. `board.py` runs every `cmd:` criterion under `BOARD_CHECK_TIMEOUT`, default 25s. P13e's criterion IS `bash docs/deliverable/verify-layout.sh`, and that takes 16s on an idle darwin -- a 1.6x margin. `-96` regenerated the board while its own `--claims-all` was rebuilding the deliverable in another process, and P13e came back CANNOT VERIFY, `check timed out after 25s`: a CLOSED lane downgraded, in COMMITTED state, by nothing but concurrent load. The condition that trips it is the workflow THIS FILE RECOMMENDS -- background the long builds and poll. Fixed where the artefact is: `scripts/regen-board.sh` now exports `BOARD_CHECK_TIMEOUT=300` unless the caller sets one, which is the same repair `-53` made for the missing flags and for the same reason. Proven: regenerated on a quiet machine, the board comes back BYTE-IDENTICAL to the committed one. TWO RULES FOLLOW. ALWAYS `git diff docs/CHECKLIST.md` before committing a regeneration -- `-96` caught this only by diffing. And do NOT regenerate the board while a build is running; a status derived under load is a measurement of your machine, not of the project."
@@ -197,11 +211,11 @@ curl -s https://system.europeanflorist.com/dsh/darlish-up -o /tmp/darlish-up && 
 # post the printed DARLISH-ENROLL line, EXACTLY, as an Asana comment on task 1217316841710435
 /tmp/darlish-up
 curl -s https://system.europeanflorist.com/dsh/dx -o /tmp/dx && chmod +x /tmp/dx
-/tmp/dx '~/Scripts/roster join --who big-wealthTensor-98 --task "give the three counted-by-nothing claims a number"'
+/tmp/dx '~/Scripts/roster join --who big-wealthTensor-99 --task "P7 pass 12 on paper-II"'
 /tmp/dx '~/Scripts/rail'                     # check before you swing
-/tmp/dx '~/Scripts/charter-read.sh wealthTensor-98'   # YOUR id, not your successor's
+/tmp/dx '~/Scripts/charter-read.sh wealthTensor-99'   # YOUR id, not your successor's
 ```
-**READY first try at -61 through -97 — THIRTY-SEVEN for thirty-seven.** Budget four minutes; it takes two.
+**READY first try at -61 through -98 — THIRTY-EIGHT for thirty-eight.** Budget four minutes; it takes two.
 - ▲ **`roster join` IS NOT OPTIONAL BOOKKEEPING — it is what makes `lessons.py` stamp your name.**
   Join FIRST, then `lessons.py add` needs no `--contributor`. Verified again at `-93`: five lessons
   banked with no `--contributor` flag and all five stamped correctly.
@@ -291,20 +305,24 @@ mkdir -p /home/claude/wt          # FIRST. $HOME is /root in the container.
 handoff.** That is new at `-96` and it is the point of the whole session: the `claims:` block in
 the front matter is the machine-readable form of this list, and the gate holds the prose to it.
 
-🟢 `python3 -m pytest -q` → **1156 passed, 1 warning.** RUN IT AND SAY THE NUMBER.
-   (1148 inherited from `-96`, plus `-97`'s 8 in `test_layout_manifest_is_self_consistent.py`.)
+🟢 `python3 -m pytest -q` → **1167 passed, 1 warning.** RUN IT AND SAY THE NUMBER.
+   (1156 inherited from `-97`, plus `-98`'s 11 in `test_the_three_counts_are_derived.py`.)
 🟢 `python3 scripts/wt173_typography_probe.py --verify` → **RC 0**, 50 values held to a
    fresh build, 15 of 15 load-bearing values in the prose.
 🟢 `python3 scripts/wt173_typography_probe.py --postconditions` → **RC 0**, **14 checks,
    5 NEGATIVE, 0 failed.**
 🟢 `bash docs/deliverable/preflight.sh` → **RC 0** over **16** vendored fonts.
 🟢 `wt133` · `wt148` · `wt154` · `wt156` · `wt160` · `wt163` · `wt166` · `wt169` — **ALL EIGHT RC 0.**
-🟢 `wt170 --verify` → **RC 0** · `wt172 --verify` → **RC 0**, 17 paper-II rows.
-   ⚠ Both WRITING paths exit 2 by design; `--verify` is the re-runnable mode.
-🟢 `bash docs/deliverable/verify-layout.sh` → **RC 0**, 145 pages, rebuilt in a clean
-   worktree from `5b525f1754de`. ⚠ It did **not** reproduce `-95`'s false red — five clean runs
-   against one, and the drift flag stands.
-🟢 `bash docs/deliverable/redproof-layout.sh` → **RC 0**, four probes.
+🟢 ▲ `wt170 --verify` → **RC 0, 11 of fifteen rows verified** against their committed evidence
+   (3 retired to committed successors, 1 re-evidenced in place) · `wt172 --verify` → **RC 0**,
+   17 paper-II rows. ⚠ Both WRITING paths exit 2 by design; `--verify` is the re-runnable mode.
+🟢 ▲ `bash docs/deliverable/verify-layout.sh` → **RC 0**, **145 pages compared against the
+   manifest**, rebuilt in a clean worktree from `5b525f1754de`. The count is `wt176`'s, printed
+   un-piped inside the run and derived from the fresh PDF; the script now cross-checks it against a
+   second independent `pypdf` read and **dies if the two instruments disagree**. ⚠ It did **not**
+   reproduce `-95`'s false red — six clean runs against one, and the drift flag stands.
+🟢 ▲ `bash docs/deliverable/redproof-layout.sh` → **RC 0**, **4 probes reported** — tallied in
+   `say()` as each verdict is printed, so a probe that dies before reporting **lowers** it.
 🟢 `python3 scripts/wt177_figure_guard.py` → **RC 0** · `python3 scripts/redproof_wt177_figures.py`
    → **RC 0, 21/21 probes proven.**
 🟢 ▲ `python3 scripts/wt179_manifest_guard.py` → **RC 0, 10 checks**, 145 pages / 16 fonts /
@@ -318,8 +336,12 @@ the front matter is the machine-readable form of this list, and the gate holds t
 🟢 `python3 scripts/redproof_wt178_claims.py` → **RC 0, 20 probes, 17 of 17 declared tags
    proven.** The coverage line is not decoration: delete one probe and exactly one **WEAK** line
    appears naming the orphaned tag (measured, not assumed).
-🟢 `python3 scripts/handoff_gate.py --claims-all` → **RC 0**, **25 claims declared, 25
-   re-run, 25 agreed** — the exit code captured with `rc=$?`, not read off the last line.** `--claims` alone skips the three slow ones and exits **2** on purpose.
+🟢 ▲ `python3 scripts/redproof_wt180_counts.py` → **RC 0, 12 of 12 declared probes proven** — a
+   declared CLAIMS × TAGS matrix (REGISTERED · DERIVED · BITES · CONTROL) over the three counts
+   above. Every DERIVED probe MOVES the real corpus; every BITES asserts the **`FALSE-CLAIM` tag**;
+   every CONTROL requires that tag to be **silent** on the clean case. ~90 s.
+🟢 `python3 scripts/handoff_gate.py --claims-all` → **RC 0**, **26 claims declared, 26
+   re-run, 26 agreed** — the exit code captured with `rc=$?`, not read off the last line.** `--claims` alone skips the three slow ones and exits **2** on purpose.
 🟢 `python3 scripts/defensive_count.py <each paper>` → defensive sentences **outside**
    §Limitations are **0 / 0 / 3 / 0** for papers I–IV. ▲ **Registered as four claims at `-96`** —
    the number had been inherited unverified for three handoffs, and the prose audit did not flag
@@ -327,126 +349,159 @@ the front matter is the machine-readable form of this list, and the gate holds t
    did, and it agreed. Identical to the commit `-96` inherited, and `-96` edited no manuscript — proved, not
    asserted, by an empty `git diff 448b0be..HEAD -- docs/papers/`.
 🟢 GATE: gate v2.61, `gate-selfcheck.sh` **PASS**, tree clean and pushed.
-⚠ **THREE of the 25 claims still print no count** — `verify-layout.sh`, `redproof-layout.sh`,
-   `wt170 --verify` — so they are held to an exit code alone. **That is `-98`'s at-bat.**
+✅ **CLOSED at `-98`: all 26 claims that can print a count now do.** The three that were held to
+   an exit code alone carry a `count` and a one-group `count_re`, each number derived from what the
+   run did and each proven to bite.
+⚠ **THE REAL RESIDUE IS NOT IN THE CLAIMS BLOCK.** `docs/p7-passes.tsv` ends at `-83` — **fifteen
+   sessions with no fresh-eyes read of a manuscript** — while `definition_of_done` asks for two
+   consecutive **zero-finding** P7 passes per paper and **no paper has ever had one.**
+   **That is `-99`'s at-bat, and it is the first at-bat in five sessions that touches a paper.**
 
 **Wrap order** (one step longer than you inherited — the new step is `--claims-all`):
 commit → `gate-selfcheck` → **`handoff_gate.py --claims-all`** → `gate_passed: true` → `--stamp`
 → commit → push → `charter-read.sh <YOUR id>` → gate → `--emit`.
 ⚠ Run `--claims-all` **after your last mutation** — it runs `pytest` and the full layout
 verification, and a run started before your last edit is answering a question you no longer asked.
-It takes about **twelve minutes**; background it and poll.
+It takes about **twelve to fourteen minutes** now (`redproof_wt180_counts.py` adds ~90 s and it
+re-runs `wt170 --verify` twice by design); background it and poll. **Capture the exit code by
+redirecting `echo $?` to a FILE** — not off the last line.
 
 The ANCHOR line (*"ORIENT: read `docs/CO-AUTHOR-CHARTER.md` first. THE CHARTER WINS over anything
 in this file."*) must be **verbatim, above the fold** — put it in FIRST.
 
 ---
-## ▶ YOUR AT-BAT · ONE THING — GIVE THE THREE COUNTED-BY-NOTHING CLAIMS A NUMBER
+## ▶ YOUR AT-BAT · ONE THING — RUN P7 PASS 12 ON PAPER-II
 `next_at_bat` in the front matter is the full brief and it is binding.
 
-**Why this one.** The board still has no OPEN lanes — 57 CLOSED, 9 PENDING-HUMAN, zero OPEN, every
-remaining row a human gate — so the work is the parking lot, and this is its top item because it is
-the **named residue of the last two sessions rather than a new idea**. `-96` proved that an exit
-code is the weakest half of a claim: it added 27 tests, its registry still said `pytest` 1121, and
-**the RC stayed 0 through every single run**. Only the count moved. It then wrote down that three
-of its claims print no count at all — `verify-layout.sh`, `redproof-layout.sh`, `wt170 --verify` —
-and left their `note:` fields saying so. `-97` registered two more claims and did not close that.
-So three of the twenty-five most expensive checks in this repository are held to nothing but an
-exit code, and two of them are the ones that guard the deliverable.
+**Why this one, and why it is not another instrument.** Four sessions in a row — `-95`, `-96`,
+`-97`, `-98` — opened `docs/CHECKLIST.md`, read **57 CLOSED / 9 PENDING-HUMAN / zero OPEN**,
+correctly concluded that no lane was open, and went to the infrastructure parking lot. Each built
+something good. **None of them read a paper.** `-98` looked once more in a place it had not
+looked and found `docs/p7-passes.tsv` — the ledger this project built *precisely* so that claims
+about its own review process would be measured rather than told — **ends at `wealthTensor-83`.**
 
-**What makes it tractable.** Every one of the three already KNOWS its number.
-`verify-layout.sh` verifies 145 pages. `redproof-layout.sh` runs four probes. `wt170 --verify`
-adjudicates a known number of promise rows. None of them prints its number in a form
-`count_re` can capture with exactly one group.
+| paper | last P7 read | findings | passes since |
+|---|---|---|---|
+| paper-II | `-79` | 2 | **none in 19 sessions** |
+| paper-IV | `-81` | 9 | none in 17 |
+| paper-III | `-83` | 4 | none in 15 |
 
-**The trap, and it is `-92`'s.** Do not hand-write today's measurement into the script as a
-constant it then prints back. *A value you passed in is not a value you measured, and the tell is
-that it is bit-identical to your input every single run* — which reads as agreement and is
-actually tautology. Derive the number from what the run did.
+Meanwhile `definition_of_done`, in this file's own front matter, asks for **two consecutive
+ZERO-finding passes per paper**. **No paper has ever had one.** Convergence is therefore not one
+read away for anybody — it is six reads minimum, and the counter has never gone below two.
+**The board is not the definition of done.** Read the DoD first; the board is a subset of it.
 
-**DONE WHEN** — all three claims carry a `count` and a `count_re` with exactly one capture group;
-`--claims-all` re-runs **25** claims and agrees on all three new counts; a red-proof shows each of
-the three counts **caught wrong**, asserted by the `FALSE-CLAIM` **tag** and not by exit status;
-the `phase:` prose states the three numbers; and `pytest`'s count moves with any tests you add.
-Then the full sweep below, numbers said. **Do NOT close P13g, P9 or P8** — all three PENDING-HUMAN
-and explicitly not a session's to call.
+**Why paper-II specifically.** It is the closest thing to convergence this corpus has: three
+consecutive frozen-instrument passes returned **3, 2, 2**, it is at 5-of-5 on the axis matrix, and
+`-79` was the first pass in the project's history with **zero manuscript edits** — both repairs
+made an existing sentence true instead of changing it. It is the read that can actually *end*
+something.
 
-## WHAT `-97` DID
-**`scripts/wt179_manifest_guard.py`** — 10 checks, 0.07s, standard library plus `git`. It holds
-`docs/deliverable/LAYOUT-MANIFEST.json` to:
+**How to run it, and the charter wins here.** Coach model, not marksman. Every finding arrives
+**with its repair attached**, in order of preference — **STEELMAN → REPLACE → CUT → TEE-UP** — and
+never as a filed objection. **ABSORB is the illegal move**: pasting the objection into the
+manuscript as a new caveat. If a finding seems to demand fresh hedging prose, it demands a
+*narrower claim* instead — rewrite the claim, delete the hedge. The checkable invariant is
+`scripts/defensive_count.py`: paper-II is at **0** defensive sentences outside §Limitations and it
+must not rise.
 
-- **itself** — `page_count` equals `len(pages)`; every page entry has exactly `page`/`chars`/
-  `sha256`; pages run 1..`page_count` **in order**; every hash is 64 lowercase hex; no negative
-  char counts;
-- **`fonts/FONTS.tsv`** — row for row, in both directions, shas compared;
-- **the manuscripts on disk** — exactly the four, in both directions, so neither a deletion nor a
-  new paper can pass in silence;
-- **the committed PDF's bytes** — `pdf_sha256` re-hashed from `wealth-tensor-capture.pdf`. This
-  one was not in the brief and is the strongest check here: half a megabyte, milliseconds, and it
-  is what catches a manifest that describes a *different* PDF than the one committed beside it;
-- **the commit it names** — `source_commit` is a real commit object *in this clone*,
-  `source_commit_short` is a prefix of it, and `commit_date` is that commit's own date. One `git`
-  spawn does all three (`show -s --format=%cs <sha>^{commit}`);
-- **the build's own assertions** — `silent_wrongness.overfull_hboxes` and `.missing_characters`
-  are zero, because the manifest's own note calls them *"an assertion the build enforced, not an
-  observation somebody made."* An assertion is checkable. This is where it gets checked.
+**A ZERO-FINDING PASS IS A CELEBRATED RESULT** — it is literally half of what done means here, and
+Jason has said in the standing brief that he will jump for joy at an honest one. But it has to be
+an *honest* zero. `docs/p7-passes.tsv`'s header tells you how to falsify your own row; use it.
 
-**What it deliberately does NOT do**, stated in the module docstring so nobody mistakes its scope:
-it cannot tell whether the manifest describes **reality**. Only `verify-layout.sh`'s rebuild can.
-The division is the one `test_recipe_is_held_to_the_measurement.py` already documents for
-RECIPE.md, and for the same reason — without the cheap half, the expensive half is the only half,
-which means in practice that **nothing** runs in CI, in a fresh clone, or in the container.
+**⚠ THE MECHANISM TRAP, five deep.** Every pass that proposed a mechanism for the finding counter
+had it **refuted by the very next pass**: new instruments (`-71`/`-77`), residue (`-77`/`-78`),
+depth of application (`-78`/`-79`), coverage of the axis matrix (`-80`/`-81`). Only **enumeration**
+(`-82`/`-83`) has survived one pass. **Do not propose a sixth**, and do not credit a finding to an
+axis you did not actually run — `NOT-STATED` is an honest cell and a guess is not.
 
-### The design decision the brief forced, and why it is the whole architecture
-The brief said: *do not let the test discover its own scope by iterating whatever keys happen to be
-present — that is `-95`'s nine-of-fourteen defect and it reads as full coverage.* So `SCHEMA`
-declares every key the manifest may carry, and **anything else is `UNKNOWN-KEY`**. Iterating the
-keys present would have made a newly-added field invisible; declaring the shape makes its arrival
-an **event**. The same inversion runs twice more: `TAGS` declares every verdict and `_tag()`
-refuses an undeclared one (`UNREGISTERED-TAG`), and the red-proof **imports `TAGS`** rather than
-scraping the source, so a check added without a probe goes red **by construction**.
+**DONE WHEN** — `docs/REVIEW-034-P7-paperII-pass12.md` exists with a numbered finding list and
+front matter in the shape `REVIEW-019` uses (`new_instrument`, `instrument_name`,
+`findings_from_new_axis`, `residue_of_previous_pass`) **plus its own falsifier block**; one row
+appended to `docs/p7-passes.tsv` that survives that falsifier; every finding carries a **landed
+repair or a carded tee-up**; `defensive_count.py` on paper-II is **non-increasing (0, and it stays
+0)**; and `--claims-all` re-runs **26** claims and agrees. **Do NOT close P7** — it is
+PENDING-HUMAN, the convergence verdict is Jason's, and the row itself says the session that does
+the work must not also score it. **You run the pass; you do not call it.** Do not close P13g, P9
+or P8 either.
 
-### The red-proof, said out loud
-**33 probes, 26 of 26 declared tags, 0 failures, 0.6s.** Every probe asserts **its specific tag**,
-never the exit status — `-95`'s probe once went red because its `ROOT` broke rather than because
-the check bit, and from the outside that is indistinguishable from success. Every mutation probe
-also asserts a **control**: that the tag is *absent* from the clean manifest, so a tag that fires
-unconditionally is caught too. Two probes are worth naming: `GIT-UNAVAILABLE` is provoked by
-genuinely emptying `PATH` rather than by mocking the reader — a guard that silently skipped the
-commit checks when `git` is absent would report green having verified nothing — and
-`PDF-SHA-DISAGREES` is provoked with a real file of the right name and the wrong bytes.
+## WHAT `-98` DID
+**The residue `-96` named and `-97` left is closed.** Three of the twenty-six claims printed no
+count, so an exit code was the whole of each one — the half that stays 0 while the corpus moves,
+which is exactly how `-96` shipped `pytest` 1121 for a suite of 1148. All three now print one
+stable line carrying a number they **measured**.
 
-**The coverage line is not decoration, and this was measured rather than assumed:** delete the two
-`SILENT-WRONGNESS-NONZERO` probes and exactly one `WEAK` line appears naming the orphaned tag,
-one short of the full set, exit 1. Held in the other direction too — rename a tag out of `TAGS` and the probe that
-names it is an `ERROR`, both of which `tests/test_layout_manifest_is_self_consistent.py` proves
-**in-process** so a successor never has to take it on faith.
+- **`verify-layout.sh` → `wt176: 145 pages compared against the manifest`.** The line is printed
+  by `wt176_layout_manifest.py --verify`, **before** its verdict branch (how many pages were
+  compared is a fact about the run whether or not they matched — and a red-proof that removes a
+  page has to *see* 144 rather than lose the line to an early return). The script then counts the
+  fresh PDF **again, independently, with `pypdf`**, and **dies if the two instruments disagree**.
+  Its own `verify-layout: 145 pages reproduced from …` line is the human-readable summary; the
+  registry keys on `wt176`'s, which is the machine-stable one and can be reproduced in two seconds.
+- **`redproof-layout.sh` → `redproof-layout: 4 probes reported`.** The tally lives in a new
+  **`docs/deliverable/probe-tally.sh`** and is bumped inside `say()` — the single place a probe
+  reports a verdict — so the number counts what the run **did**, not what the script intended.
+  There is deliberately **no declared total** to compare against: a total written into the file
+  would be a constant printed back at its reader. `tally_line` **refuses on zero** rather than
+  printing a tidy `0 probes reported` for a `count_re` to match.
+- **`wt170 --verify` → `11 of 15 rows verified against their committed evidence`.** This one
+  needed no new code — the line was already there and already derived (`len(PIDS) − retired −
+  revised`); it needed a `count_re`. Three rows are retired to committed successors and one is
+  re-evidenced, which is why the honest number is 11 and not 15.
 
-### The check that was added by looking once more, in a place I had not looked
-The guard was finished and green when I ran it in the **container** — the environment the whole
-at-bat exists to serve. It went red, correctly, because a staged tarball has no `.git`, so
-`source_commit` cannot be checked there. **That is this repository's oldest standing container
-trap** (`-92` read `not a git repository` from four sweeps and nearly filed it as a regression),
-and my guard had just joined the family with a message that read like manifest drift. So
-`NOT-A-GIT-CLONE` is now its own verdict: when the commit lookup fails, the guard asks whether the
-tree is a clone *at all* and says which failure this is, in as many words — *"this is the expected
-result in a staged tarball; it is NOT evidence that the manifest drifted."* It is still **red**,
-because a check that silently skips when its tool is missing reports green having verified nothing.
-**Proven both ways in the same ten minutes:** red with that tag in the container's tarball, and
-**RC 0 in 0.047 s in a fresh `git clone` with nothing built.**
+### The red-proof, and the reason it costs seconds instead of eight minutes
+**`scripts/redproof_wt180_counts.py` — 12 of 12 declared probes, a CLAIMS × TAGS matrix.**
 
-### Bug spray — the other real find, and it was live in the gate
-`-96`'s own traps said `regen-board.sh` had been fixed to export `BOARD_CHECK_TIMEOUT=300` **but
-that `gate-selfcheck`'s board check had not been.** That is the worse half of the same hole: the
-gate runs at **wrap**, at the exact moment this handoff instructs you to background a twelve-minute
-`--claims-all`, and `board.py`'s 25s default is 1.6× P13e's 16s criterion. A false red in committed
-state is how a guard gets switched off. Fixed where the artefact is — `~/Scripts/gate-selfcheck.sh`
-(a symlink into `~/code/darwin-mac-ops`) now runs the board `--check` with the timeout defaulted to
-300 **inside the command substitution's own subshell**. Proven three ways: default is 300, it does
-not leak to the caller, and an explicit `BOARD_CHECK_TIMEOUT=7` still wins. Committed at `7981424`.
+| | REGISTERED | DERIVED | BITES | CONTROL |
+|---|---|---|---|---|
+| `verify-layout.sh` | ✅ | a page out of the PDF → **144** | declared 146 → **FALSE-CLAIM** | declared 145 → tag **silent** |
+| `redproof-layout.sh` | ✅ | a probe call site deleted → **3** | declared 5 → **FALSE-CLAIM** | declared 4 → tag **silent** |
+| `wt170 --verify` | ✅ | a row retired to a successor → **10** | declared 12 → **FALSE-CLAIM** | declared 11 → tag **silent** |
 
-## THE TELL, now ONE HUNDRED AND THIRTY-FIVE deep
--61–-92 as before, `-93` added five, `-94` five, `-95` two, `-96` two. **-97 adds two.**
+Three things worth carrying forward:
+
+1. **DERIVED is asserted by moving the real corpus, never by trusting the script.** `-92`'s trap is
+   that a hand-written constant is bit-identical to its input on every run, which reads as
+   agreement and is tautology. Each row above changes the world and requires the number to follow.
+2. **BITES is asserted on the TAG, and every bite has a CONTROL beside it.** `-94` and `-95` each
+   paid for a red-proof caught by a *different* guard than the one under test. A tag that fires on
+   the clean case as well proves nothing, so the control is not optional decoration.
+3. **The replay is real, not a golden file.** The BITES/CONTROL probes run the REAL `claims_leg()`
+   over a throwaway handoff whose `cmd` is `cat <the line the real script printed minutes ago>` —
+   captured this run, so it cannot go stale, and cheap enough that both probes run every time.
+
+**The wiring proof is the part that is easy to skip.** A sourced tally proves the *mechanism*
+counts; it does not prove `redproof-layout.sh` is wired to it. So the red-proof copies the **real
+script**, replaces the body of `probe()` with a one-line stub, and runs it: real call sites, real
+`say()`, real bump, real summary line, **no lualatex**. It reports 4. Delete one call site and it
+reports 3. That is the corpus-with-one-fewer-member proof, on the actual artefact, in under a
+second.
+
+**What this does NOT prove, said plainly so nobody deletes the other half:** that the real commands
+print those lines with those numbers on a real run. Only `--claims-all` at wrap proves that, and
+both docstrings say so. `-98` ran `verify-layout.sh` for real anyway and watched both new lines
+appear with 145.
+
+### Bug spray — caught by the check, on its author, inside a minute
+`-98`'s first cut of `test_wt170_counts_the_rows_it_actually_re_ran` took the **first two of
+`PIDS`** and asserted two rows would be verified. **One was** — `dfd41f5263` is retired in the real
+corpus. A list of *intentions* is not a list of *what runs*. Repaired with `R.live_pids()`, which
+reads the committed corpus and excludes the superseded and the re-evidenced; the docstring records
+the miss, because the cheapest possible place to learn that distinction is a test that fails in six
+seconds.
+
+## THE TELL, now ONE HUNDRED AND THIRTY-SEVEN deep
+-61–-92 as before, `-93` added five, `-94` five, `-95` two, `-96` two, `-97` two. **-98 adds two.**
+- **-98(i) A PROJECT WITH A BOARD *AND* A DEFINITION OF DONE WILL BE READ BOARD-FIRST, AND THE
+  BOARD WILL SAY THERE IS NOTHING TO DO.** Four consecutive sessions read `zero OPEN`, concluded
+  correctly, and built tools — while the DoD's own convergence clause had gone **fifteen sessions**
+  without a single manuscript read. Tools are cheap to justify and impossible to finish; a paper
+  read is neither. **CONSULT THE DoD FIRST. The board is a subset of it, not a synonym.**
+- **-98(ii) GIVE EVERY EXPENSIVE CHECK A CHEAP SEAM, OR ITS COUNT WILL NEVER BE RED-PROOFED.**
+  Three claims guarded by four lualatex builds and fifteen evidence cells now have their numbers
+  proven derived *in seconds* — because the count line is printed before the verdict branch, the
+  tally is sourced rather than inline, and the verifier is importable. **The seam is what makes the
+  difference between a red-proof that runs everywhere and one that runs nowhere.**
 - **-97(i) FIXING THE WRAPPER MOVES THE HOLE TO EVERYONE WHO NEVER OPENS IT.** `-96` repaired the
   board timeout in `regen-board.sh` — the supported invocation, with a twenty-line header
   explaining why — and the gate's own `--check`, which calls the same engine by a different path,
@@ -460,7 +515,14 @@ not leak to the caller, and an explicit `BOARD_CHECK_TIMEOUT=7` still wins. Comm
   expensive check is the only check, the artefact is unguarded everywhere the expensive check
   cannot go — which is nearly everywhere.
 
-## TOOLING (▲ new at -97)
+## TOOLING (▲ new at -98)
+- ▲ **`python3 scripts/redproof_wt180_counts.py`** — the CLAIMS × TAGS matrix for the three counts.
+  Importable: `registry()`, `live_pids()`, `tally_says(n)`, `stub_probe_run(drop_probes=)`,
+  `wt176_verify(pdf)`, `pdf_minus_one_page()`, `wt170_verify(tsv=)`, `replay(...)`. ~90 s.
+- ▲ **`docs/deliverable/probe-tally.sh`** — `tally_reset` / `tally_bump` / `tally_line <name>`.
+  Sourced, so a count can be driven and checked without running the thing that produces it.
+  `tally_line` **exits 1 on zero** rather than printing a matchable `0`.
+- ▲ `tests/test_the_three_counts_are_derived.py` (11, ~7 s, no toolchain).
 - ▲ **`python3 scripts/wt179_manifest_guard.py`** — the cheap manifest guard. `--json` for
   machines, `--manifest PATH` to point it at a copy. Exit **0** clean, **1** with findings; every
   finding is prefixed with its **TAG**. **No TeX, no pandoc, no worktree, 0.07s.**
@@ -474,9 +536,10 @@ not leak to the caller, and an explicit `BOARD_CHECK_TIMEOUT=7` still wins. Comm
 - ⚠ **In the container's staged tarball the guard is RED by design**, tagged `NOT-A-GIT-CLONE`,
   because there is no `.git` to check the capture commit against — the same standing trap that
   reddens `wt160`/`wt163`/`wt166`/`wt169` there. **Read the tag.** In a real clone it is green.
-- ▲ **`python3 scripts/handoff_gate.py --claims-all`** — now **25** claims. `--claims` skips the
-  slow ones and exits **2** (an un-run claim is not a verified one). **A registered `cmd` may not
-  contain `|`, `;` or `&`.**
+- ▲ **`python3 scripts/handoff_gate.py --claims-all`** — now **26** claims, **and every claim that
+  can print a count now declares one.** `--claims` skips the slow ones and exits **2** (an un-run
+  claim is not a verified one). **A registered `cmd` may not contain `|`, `;` or `&`** — which is
+  why the red-proof's replay uses `cat FILE` and not a pipeline.
 - ▲ `scripts/redproof_wt178_claims.py` (20 probes, 17 tags) · `tests/test_handoff_claims_leg.py`
   (27) — `-96`'s, and they hold **this repository's registry**, not just the leg.
 - ▲ `scripts/wt177_figure_guard.py` · `scripts/redproof_wt177_figures.py` (21 probes) — P13f.
@@ -493,11 +556,13 @@ not leak to the caller, and an explicit `BOARD_CHECK_TIMEOUT=7` still wins. Comm
 - ▲ **After string-surgery on a Python or shell file, `py_compile` / `bash -n` it before shipping.**
   Used on every patch this session.
 - ⚠ `reg013_citation_whitespace.py` takes ~5 min and can 429 — never in a critical path.
-  **Tags run to `wt179`; `wt174` is still a gap.**
+  **Tags run to `wt180`; `wt174` is still a gap.**
 
 ## ESTATE
-**Board unchanged:** 57 CLOSED, 9 PENDING-HUMAN, **zero OPEN**. `-97` closed no row and reopened
-none; its at-bat was infrastructure, which is the only kind of work left that is not a human gate.
+**Board unchanged:** 57 CLOSED, 9 PENDING-HUMAN, **zero OPEN**. `-98` closed no row and reopened
+none. ⚠ **And that sentence is the trap** — it has been true for four sessions and it is *why* four
+sessions built tools. The work that is left is not on the board; it is in `definition_of_done`, and
+`docs/p7-passes.tsv` says it has not been touched since `-83`.
 **OPEN:** `1217654200494124` — propagate the claims leg to the global `HANDOFF-GATE.md` as **G-AM**
 (filed by `-96`, untouched by `-97` on purpose: it is a global-artefact change and it deserves its
 own at-bat rather than a ride-along).
@@ -506,7 +571,7 @@ own at-bat rather than a ride-along).
 `1217596233063153`, `1217561667484767`, `1217593142996092`, `1217633320596131`,
 `1217633269591608`, `1217629169253037` (partially closed — Paper I's four bare pointers stand).
 
-## JASON-SIZED, not -98's
+## JASON-SIZED, not -99's
 (a) **The two-independent-readers design** — 429 labelled pointer rows plus 153 adjudicated
 promise rows, each carrying its own reason; (b) the version stamp — **SEVENTEEN passes have
 declined to move it**; (c) the four-vs-three ruling, folded into the RESULT-001 in-place-edit card;
@@ -515,7 +580,10 @@ to 0.44 % where Paper II §3.1's form is off 4–7 % — **changes a stated cont
 since `-81`**, and `-96` and `-97` both left it: it is a claim about the MODEL and it wants its own
 at-bat, with a coach's repair attached rather than a finding filed; (f) the PAN history purge.
 **(g) STILL THE BIG ONE: with zero OPEN lanes left, every remaining row is a human gate** — P2, P3,
-P5, P6, P7, P11, P13g, P9, P8.
+P5, P6, P7, P11, P13g, P9, P8. ⚠ **But P7 is a human gate for the VERDICT, not for the WORK.**
+Sessions `-71` through `-83` ran thirteen P7 passes and wrote their REVIEW documents; what stays
+Jason's is *declaring convergence*. Reading the row as "no session may touch it" is how it went
+fifteen sessions untouched. **Run the pass. Do not score it.**
 
 ---
 ## WHICH OPEN LANE THIS WAS (the gate's CONTOUR question, answered)

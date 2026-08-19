@@ -161,6 +161,19 @@ def main():
         m, ph, fails = cmp_verify(a.verify)
         print("  manifest : %d pages, source_commit %s" % (m["page_count"], m["source_commit_short"]))
         print("  rebuild  : %d pages" % len(ph))
+        # THE MACHINE-STABLE COUNT LINE (wealthTensor-98). `verify-layout.sh` runs this
+        # command UN-PIPED, so this line lands in ITS stdout -- which is where the handoff's
+        # `claims:` registry reads the number from. Until now that claim was held to an exit
+        # code and nothing else, and an exit code stays 0 while the world moves underneath
+        # it: that is exactly how `-96` shipped `pytest` 1121 for a suite of 1148.
+        # DERIVED, NEVER PASSED IN. len(ph) is the number of pages THIS RUN extracted text
+        # from and hashed; it is not read from the manifest, so a rebuild that comes back a
+        # page short says 144 here rather than repeating 145 back at its reader.
+        # PRINTED BEFORE THE VERDICT BRANCH ON PURPOSE. How many pages were compared is a
+        # fact about the run whether or not they matched, and the red-proof that removes a
+        # page from the PDF has to SEE the number move rather than lose the line to an
+        # early return. See scripts/redproof_wt180_counts.py.
+        print("  wt176: %d pages compared against the manifest" % len(ph))
         if fails:
             print("\nLAYOUT DID NOT REPRODUCE:")
             for f in fails:

@@ -62,10 +62,34 @@ FRESH="$WT/src/docs/deliverable/wealth-tensor-capture.pdf"
 [ -f "$FRESH" ] || die "the rebuild produced no PDF."
 
 echo "== comparing against the committed manifest"
-python3 "$HERE/wt176_layout_manifest.py" --verify "$FRESH"
+# Redirected to a FILE and then cat'd, never piped: `tool --verify | tee log` yields tee's
+# status, which is the -93 defect this repository has now paid for twice. The log is kept
+# because the count below is cross-checked against what wt176 said.
+python3 "$HERE/wt176_layout_manifest.py" --verify "$FRESH" > "$WT/verify.log" 2>&1
 RC=$?
+cat "$WT/verify.log"
 [ $RC -eq 0 ] || die "the layout did not reproduce (see above)."
+
+# ------------------------------------------------------------------ THE NUMBER THIS RUN IS HELD TO
+# wealthTensor-98. This script used to print no count at all, so its whole claim was an exit
+# code -- the weakest half, and the half that stays 0 while the corpus moves. The number is
+# DERIVED from the artefact this run just built, and derived TWICE, independently: wt176
+# counts the pages it hashed, and pypdf is asked again here from scratch. A value handed to
+# a script and printed back is not a measurement (`-92`'s tautology); two instruments that
+# have to agree is one.
+PAGES="$(python3 -c 'import sys, pypdf; print(len(pypdf.PdfReader(sys.argv[1]).pages))' "$FRESH")" \
+  || die "could not count the pages of the rebuilt PDF."
+case "$PAGES" in
+  ''|*[!0-9]*) die "the rebuilt PDF's page count came back as '$PAGES', which is not a number.";;
+esac
+SAID="$(sed -n 's/^ *wt176: \([0-9][0-9]*\) pages compared.*/\1/p' "$WT/verify.log")"
+[ -n "$SAID" ] || die "wt176 printed no 'pages compared' line -- the count this claim is held to
+        has gone missing, and a claim held to a line that is not there is held to nothing."
+[ "$SAID" = "$PAGES" ] || die "two independent counts of the rebuilt PDF disagree: wt176 says
+        '$SAID', a fresh pypdf read of the same file says '$PAGES'. One of the two instruments
+        is broken; do not believe either number until you know which."
 
 echo
 echo "P13e PASS — the committed capture rebuilds, page for page, from ${COMMIT:0:12}."
+echo "verify-layout: $PAGES pages reproduced from ${COMMIT:0:12}"
 exit 0

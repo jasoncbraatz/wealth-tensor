@@ -42,7 +42,14 @@ MANIFEST="$HERE/LAYOUT-MANIFEST.json"
 [ -f "$MANIFEST" ] || { echo "no LAYOUT-MANIFEST.json to red-proof" >&2; exit 2; }
 COMMIT="$(python3 -c "import json;print(json.load(open('$MANIFEST'))['source_commit'])")"
 FAIL=0
-say() { printf '  %-8s %s\n' "$1" "$2"; }
+
+# THE COUNT THIS RUN IS HELD TO (wealthTensor-98). Every verdict goes through say(), and
+# say() is the only place a probe reports one, so bumping the tally HERE counts what the run
+# actually did rather than what the script intended. See docs/deliverable/probe-tally.sh for
+# why the mechanism lives in a sourced file (so it can be red-proofed without four builds).
+. "$HERE/probe-tally.sh"
+tally_reset
+say() { tally_bump; printf '  %-8s %s\n' "$1" "$2"; }
 
 # $1 = label, $2 = pass|bite, $3 = shell run inside the worktree's deliverable dir
 probe() {
@@ -111,6 +118,8 @@ probe "RP1a fnt" bite "$(subst LibertinusSerifDisplay-Regular.otf)"
 probe "RP1b fnt" bite "$(subst LibertinusSerif-Semibold.otf)"
 probe "RP2 char" bite "$(onechar)"
 
+echo
+tally_line "redproof-layout" || FAIL=1
 echo
 if [ "$FAIL" -eq 0 ]; then
   echo "RED-PROOF PASS — the verifier reproduces an untouched build and bites every breakage."
