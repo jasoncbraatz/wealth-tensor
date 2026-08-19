@@ -48,6 +48,17 @@ day they were written, and never again. That is the defect this whole file exist
 level up. `--verify` reads the evidence column OUT OF THE COMMITTED TSV (not out of `EV` below),
 runs it, and requires the stdout to equal the note's quotation character for character. It is
 re-runnable forever and it is what REVIEW-031 falsifier 2 names.
+
+AMENDED AT `wealthTensor-92`. `wt171` repaired three of the sentences these fifteen rows are
+keyed on, which re-keyed their `promise_id`s and deleted their rows. `--verify` now forgives a
+missing pid if and only if a `#superseded` line in the TSV names a successor that is itself
+adjudicated; see `verify()`'s docstring for why refusing outright was the wrong default, and
+`wt172` F9 for the proof that the forgiveness cannot be forged. A second ledger kind,
+`#reevidenced`, covers the other half of the same problem: `5a47d4caef`'s sentence was NOT
+edited, so its `promise_id` held, but its evidence command quoted LINE NUMBERS of the
+manuscript and `wt171` moved them. That row's evidence was replaced in place, and this
+function honours the replacement only when the committed cell genuinely differs from the one
+frozen below - `wt172` F15.
 """
 from __future__ import annotations
 
@@ -485,23 +496,69 @@ def pending_now(lines):
 
 
 def verify():
-    """Re-run every committed evidence cell for the fifteen rows and hold it to its quotation."""
+    """Re-run every committed evidence cell for the fifteen rows and hold it to its quotation.
+
+    RETIREMENT (added by `wealthTensor-92`/`wt172`, and the reason is worth stating). A row
+    keyed on a sentence disappears the moment that sentence is repaired: `promise_id` is a
+    hash of the sentence, so a repair deletes the old row and mints a new one. Refusing
+    outright on a missing pid -- which is what this function did -- made every adjudicated
+    sentence in the corpus *harder to repair than to leave alone*, because repairing it
+    turned a green guard red. That is an incentive pointed the wrong way.
+
+    So a missing pid is now forgiven on exactly one condition: `docs/promises-adjudicated.tsv`
+    carries a `#superseded<TAB>old<TAB>new<TAB>tag<TAB>reason` line naming a successor, AND
+    that successor is itself an adjudicated row in the same file. The check is a REDIRECTION,
+    not a bypass -- `wt172` post-condition F9 fabricates a supersession pointing at a pid that
+    does not exist and proves this function still refuses on it.
+    """
     full_tsv = os.path.join(REPO, TSV)
-    rows = {}
+    rows, all_ids, superseded, reevidenced = {}, set(), {}, set()
     for ln in open(full_tsv, encoding="utf-8").read().splitlines():
-        if ln.startswith("#") or "\t" not in ln:
+        if "\t" not in ln:
             continue
         f = ln.split("\t")
-        if len(f) >= 6 and f[1] in EV:
+        if f[0] == "#superseded" and len(f) >= 3:
+            superseded[f[1].strip()] = f[2].strip()
+            continue
+        if f[0] == "#reevidenced" and len(f) >= 2:
+            reevidenced.add(f[1].strip())
+            continue
+        if ln.startswith("#") or len(f) < 6:
+            continue
+        all_ids.add(f[1])
+        if f[1] in EV:
             rows[f[1]] = f
-    missing = sorted(set(EV) - set(rows))
-    if missing:
-        return die(f"{len(missing)} of the fifteen rows are not in {TSV}: {missing}")
 
-    ok_all = True
+    retired, orphaned = {}, []
+    for pid in sorted(set(EV) - set(rows)):
+        heir = superseded.get(pid)
+        if heir and heir in all_ids:
+            retired[pid] = heir
+        else:
+            orphaned.append(pid)
+    if orphaned:
+        return die(f"{len(orphaned)} of the fifteen rows are not in {TSV} and no "
+                   f"#superseded line names a living successor for them: {orphaned}")
+
+    ok_all, revised = True, []
     print(f"=== {TAG} --verify: fifteen committed evidence cells, re-run ===")
     for pid in PIDS:
+        if pid in retired:
+            print(f"  [RETIRED] {pid} {CLS[pid]}  superseded by {retired[pid]}, which is "
+                  f"adjudicated in {TSV}")
+            continue
         f = rows[pid]
+        # RE-EVIDENCED (wealthTensor-92). A row whose SENTENCE was never edited keeps its
+        # promise_id, but its evidence can still be invalidated by an edit elsewhere in the
+        # manuscript -- 5a47d4caef's command quoted LINE NUMBERS, and wt171 moved them. The
+        # forgiveness is honoured ONLY when the committed cell actually differs from this
+        # file's frozen one, so a `#reevidenced` line cannot excuse a row whose unchanged
+        # command has genuinely started failing. wt172 F15 proves that.
+        if pid in reevidenced and f[4] != EV[pid]:
+            revised.append(pid)
+            print(f"  [REVISED] {pid} {f[3]}  evidence replaced by a later pass; "
+                  f"re-verified by wt172 --verify, not here")
+            continue
         cell_matches_source = f[4] == EV[pid]
         cls_ok = f[3] == CLS[pid]
         r = sh(f[4], shell=True)
@@ -513,7 +570,9 @@ def verify():
                   f"cell==source:{cell_matches_source} class:{f[3]}=={CLS[pid]} "
                   f"rc:{r.returncode} got:{r.stdout.strip()[:100]!r}")
         print(f"  [{'ok  ' if ok else 'FAIL'}] {pid} {f[3]}  {detail}")
-    print(f"\n{len(PIDS)} rows verified against their committed evidence.")
+    print(f"\n{len(PIDS) - len(retired) - len(revised)} of {len(PIDS)} rows verified "
+          f"against their committed evidence; {len(retired)} retired by a later repair, "
+          f"each with a committed successor; {len(revised)} re-evidenced in place.")
     if not ok_all:
         print(f"{TAG}: a committed row no longer shows what its note says it shows.",
               file=sys.stderr)
