@@ -1,0 +1,388 @@
+# docs/pointer-groundtruth.tsv — THE LABELLED GROUND TRUTH for the bare-pointer class.
+#
+# WHAT THIS IS. Every `<token> in <target>` construction in paper-III.md and paper-IV.md at
+# revision 07cd47e whose TARGET is BARE under wt160's named-target tests N1-N6 — 341 rows, of
+# 444 constructions in all (282 here from Paper III, 59 from Paper IV). Those are REVIEW-028
+# section 3's and section 6.4's numbers, reproduced row for row by scripts/wt166_pointer_groundtruth.py,
+# which imports wt160's own _flatten, _target_window and _is_named rather than re-implementing them.
+#
+# WHY IT EXISTS. REVIEW-028 established that the count wt160 and wt163 return is a property of
+# the VERB LIST. Its section 8 falsifier 5 named the one attack that could still rescue the
+# enumeration — carve out a defensible sub-class of bare targets STRUCTURALLY, with no verb list —
+# and observed that nobody had run it because nobody had the labels. Without labels there is no
+# truth set, so no proposed detector can be scored at all. These are the labels.
+#
+# HOW IT WAS BUILT. All 341 rows were READ, in context, by wealthTensor-89. No verb list was
+# consulted while labelling: a ground truth built with a word list cannot score a word list.
+# The adjudication rule is REVIEW-028 section 3's, fixed before this reading and unchanged:
+#
+#   POINTER iff (a) the construction asserts that some content is LOCATED IN a document,
+#   artefact, run or record — the reader is being asked to go there to check — AND (b) the
+#   target as written carries no handle a reader could follow.
+#
+# Clause (b) holds for all 341 by construction, since N1-N6 are silent on every row. So the
+# labelling decides clause (a) alone, 341 times.
+#
+# COLUMNS.  file · line · token · target · label · confidence · reason
+#   (file, line, token, target) is the KEY. It is unique across all 341 rows and every component
+#   is recomputed from 07cd47e, so the labels cannot drift from the corpus: wt166 REFUSES (exit 2)
+#   if the recomputed key set differs from this file's by a single row.
+#   `line` is the source line of the FLATTENED text's match, as wt160 reports it.
+#   `confidence` is FIRM or SOFT. SOFT marks a row this session judges could defensibly go the
+#   other way, and it is not decoration: wt166 scores every candidate test THREE times — against
+#   the labels as written (PRIMARY, 15 pointers), against FIRM pointers only (STRICT, 11), and
+#   against PRIMARY plus every SOFT NOT-POINTER (LOOSE, 51) — so no verdict in REVIEW-029 rests
+#   on a judgement call. There are 36 SOFT NOT-POINTER rows.
+#
+# THE ONE ROW REVIEW-028 MISSED. `III 1261 are in the run logs` is a bare pointer under this rule
+# and it is NOT among REVIEW-028 section 4's fourteen. Its verb is the COPULA. REVIEW-028's own
+# vocabulary-free reading filtered the corpus's 264 tokens at step 2 by keeping "every token that
+# could locate content in an artefact" — and `are` does not look like a locating verb even though
+# it does the locating work. That is REVIEW-028 section 8 falsifier 1, fired, and it means the
+# vocabulary-free reading had a covert vocabulary after all. See REVIEW-029 section 5.
+#
+# THE LABELS ARE AT 07cd47e AND DO NOT MOVE WHEN THE MANUSCRIPTS ARE REPAIRED. wt164 repaired
+# four of these rows at HEAD and wt167 repairs a fifth; wt166 always reads 07cd47e, so a repair
+# cannot silently invalidate the ground truth. That is deliberate.
+file	line	token	target	label	confidence	reason
+III	11	code	the repository named in the data-availability statement	NOT-POINTER	SOFT	the target names its own locating site ('named in the data-availability statement'); the pointer work in this sentence is row 001's
+III	11	named	the data-availability statement	POINTER	FIRM	asserts the repository is named somewhere and the naming site is a bare noun phrase; REVIEW-028 row 1
+III	31	survives	**11.5%** of 4	NOT-POINTER	FIRM	quantitative: 'in 11.5% of 4,000 ladders' is a proportion, not a location
+III	35	events	two pre-declared sectors	NOT-POINTER	FIRM	'events in two pre-declared sectors' is a sampling population, not a document
+III	83	survives	**11.5%** of ladders even when no durability ordering is imposed at all	NOT-POINTER	FIRM	quantitative: a survival proportion over ladders
+III	87	declared	advance	NOT-POINTER	FIRM	temporal: 'declared in advance' fixes a time, not a place
+III	101	analogues	pharmacokinetics and compartmental identifiability	NOT-POINTER	FIRM	'analogues in pharmacokinetics' names a field of study, not an artefact
+III	117	declared	advance	NOT-POINTER	FIRM	temporal: 'declared in advance'
+III	125	is	the body and in the abstract	NOT-POINTER	SOFT	self-locating within this document: 'the body' is this paper's own division, reachable without being sent
+III	125	and	the abstract	NOT-POINTER	SOFT	self-locating: 'the abstract' is this paper's own division
+III	126	not	*Abandoned Approaches*	NOT-POINTER	FIRM	'*Abandoned Approaches*' is an italicised section title of this paper — a handle N1-N6 do not model
+III	147	accumulates	the gap and is recognised only at rate α per period	NOT-POINTER	FIRM	'accumulates in the gap' is the model's own state variable, not a document
+III	158	and	accounting ASC 250	NOT-POINTER	FIRM	'in accounting ASC 250' names a standard and a discipline, not a location in this corpus
+III	159	change	estimate driven by later information is not	NOT-POINTER	FIRM	'a change in estimate' is a term of art from ASC 250
+III	165	used	the banking-crisis literature is not intended anywhere here	NOT-POINTER	SOFT	'used in the banking-crisis literature' attributes a usage to a body of literature; no single artefact is offered to open
+III	168	examined	isolation the recognition mechanism is disabled (θ = ∞	NOT-POINTER	FIRM	manner: 'examined in isolation' describes how the filter is analysed
+III	206	sigmoidal	(1 − φ	NOT-POINTER	FIRM	mathematical: 'sigmoidal in (1 - phi)' is functional dependence
+III	208	linear	unobservability while the *delay* in delivering it is not	NOT-POINTER	FIRM	mathematical: 'linear in unobservability'
+III	216	events	400 periods	NOT-POINTER	FIRM	temporal/quantitative: 'events in 400 periods' counts over a horizon
+III	224	live	different worlds	NOT-POINTER	FIRM	figurative: 'live in different worlds' — REVIEW-028 6.4's own example
+III	234	only	the regime where the model has nothing to say	NOT-POINTER	FIRM	'right only in the regime' delimits a parameter region
+III	253	it	2007	NOT-POINTER	FIRM	temporal: 'stated it in 2007'; the citation itself is elsewhere
+III	254	prices	the short term	NOT-POINTER	FIRM	temporal, inside a quotation: 'stabilizes asset prices in the short term'
+III	292	line	vectors	NOT-POINTER	FIRM	notational: 'one line in vectors' describes a representation
+III	297	diagonal	class space	NOT-POINTER	FIRM	mathematical: 'diagonal in class space'
+III	301	false	detail	NOT-POINTER	FIRM	manner: 'false in detail'
+III	309	examined	isolation	NOT-POINTER	FIRM	manner: 'examined in isolation'
+III	316	solves	closed form	NOT-POINTER	FIRM	manner: 'solves in closed form'
+III	338	model	which reporting lag attenuates a physical signal will multiply a timeliness parameter	NOT-POINTER	FIRM	' in which' heads a relative clause; there is no target noun phrase
+III	343	than	place of it	NOT-POINTER	FIRM	idiomatic: 'rather than in place of it'
+III	348	anywhere	this paper	NOT-POINTER	SOFT	'anywhere in this paper' is self-referential to the document in hand; nothing external to open
+III	366	down	1910 for the daughter activity of a radioactive decay chain (Bateman	NOT-POINTER	FIRM	temporal: 'written down in 1910', with the citation supplied immediately after
+III	383	form	which **every systematic coefficient is a symmetric function of β and γ**	NOT-POINTER	FIRM	' in which' heads a relative clause
+III	391	bites	pharmacokinetics and not in radiochemistry	NOT-POINTER	FIRM	'bites in pharmacokinetics' names a field — REVIEW-028 6.4's own example
+III	391	not	radiochemistry	NOT-POINTER	FIRM	'not in radiochemistry' names a field
+III	403	already	place does not rescue identification	NOT-POINTER	FIRM	idiomatic: 'already in place'
+III	412	assumption	between implies an intermediate φ	NOT-POINTER	FIRM	idiomatic: 'every assumption in between'
+III	457	one	which the books outrun the asset	NOT-POINTER	FIRM	' in which' heads a relative clause
+III	470	boundary	quantities the design already declares	NOT-POINTER	FIRM	'boundary in quantities' states what the boundary is expressed in, a respect not a place
+III	489	differing	observability and in nothing else	NOT-POINTER	FIRM	respect: 'differing in observability'
+III	489	and	nothing else	NOT-POINTER	FIRM	respect: 'and in nothing else'
+III	525	ordering	**11.5%** of them and exactly reverses it in **1.1%**	NOT-POINTER	FIRM	quantitative: 'in 11.5% of them'
+III	526	it	**1.1%**	NOT-POINTER	FIRM	quantitative: 'in 1.1%'
+III	533	drawn	quantities the design already declares	NOT-POINTER	FIRM	'drawn in quantities the design already declares' states the units of a boundary
+III	536	logistic	log(leverage / budget	NOT-POINTER	FIRM	mathematical: 'a logistic in log(leverage / budget)'
+III	542	edge	its own top rung	NOT-POINTER	FIRM	figurative: 'a knife edge in its own top rung'
+III	549	than	eighty-seven years	NOT-POINTER	FIRM	temporal: 'no faster than in eighty-seven years'
+III	553	measurable	the same direction	NOT-POINTER	FIRM	manner: 'measurable in the same direction'
+III	555	delivered	rare jumps	NOT-POINTER	FIRM	manner: 'delivered in rare jumps'
+III	573	rises	65.9% of them**	NOT-POINTER	FIRM	quantitative: 'rises in 65.9% of them'
+III	590	registered	advance	NOT-POINTER	FIRM	temporal: 'registered in advance'
+III	625	visible	the parameter sweep	POINTER	FIRM	offers 'the parameter sweep' as where the reason can be seen, and names no sweep; REVIEW-028 row 11, repaired by wt164
+III	625	falls	φ at every δ	NOT-POINTER	FIRM	mathematical: 'lag falls in phi at every delta'
+III	627	holds	**100%** of them	NOT-POINTER	FIRM	quantitative: 'holds in 100% of them'
+III	630	holds	**66.2%** (2	NOT-POINTER	FIRM	quantitative: 'holds in 66.2%'
+III	631	robust	that ratio rather than in the way a figure of 100% suggests	NOT-POINTER	FIRM	respect: 'robust in that ratio'
+III	632	than	the way a figure of 100% suggests	NOT-POINTER	FIRM	manner: 'in the way a figure of 100% suggests'
+III	638	change	physical value	NOT-POINTER	FIRM	'the change in physical value' is an of-relation naming a quantity
+III	655	differ	construction and share an input	NOT-POINTER	FIRM	respect: 'differ in construction'
+III	658	only	product with an asset-life parameter	NOT-POINTER	FIRM	mathematical: 'only in product with an asset-life parameter'
+III	661	arbitrarily	practice	NOT-POINTER	FIRM	manner: 'differ arbitrarily in practice'
+III	689	nothing	the series to recover it from	NOT-POINTER	FIRM	'nothing in the series' locates information in a data object under discussion, not a document to open
+III	700	asset	it to carry one	NOT-POINTER	FIRM	'no capitalised asset in it' is about a model firm's balance sheet
+III	701	recoverable	their own setting	NOT-POINTER	FIRM	'recoverable in their own setting' names a modelling context, not an artefact
+III	706	conservatism	practice and makes no claim of the econometric kind	NOT-POINTER	FIRM	manner: 'detecting conservatism in practice'
+III	709	counterpart	their model	NOT-POINTER	FIRM	'no counterpart in their model' locates a parameter in a model, not content in a document
+III	729	visible	the theorem's own statement	NOT-POINTER	SOFT	self-locating: the theorem is stated immediately above; REVIEW-028 marginal M1
+III	736	differ	return by α − δ in every period	NOT-POINTER	FIRM	respect: 'differ in return by alpha - delta'
+III	740	degeneracy	the unobserved physical scale	NOT-POINTER	FIRM	'a degeneracy in the unobserved physical scale' names what the degeneracy is in, a respect
+III	757	laws	σ	NOT-POINTER	FIRM	mathematical: 'power laws in sigma'
+III	758	visible	the mean by σ = 0.025	NOT-POINTER	FIRM	statistical: 'visible in the mean by sigma = 0.025' locates an effect in a statistic
+III	761	holds	all nine is the sign	NOT-POINTER	FIRM	'holds in all nine' quantifies over nine settings named in the preceding sentence; wt163 disclosed exclusion
+III	776	term	the estimating equation	NOT-POINTER	FIRM	'every term in the estimating equation' locates terms in a displayed equation, self-locating
+III	784	requires	order to run at all	NOT-POINTER	FIRM	idiomatic: 'requires in order to run at all'
+III	788	corner	which every term above is worst is a quiet asset whose book	NOT-POINTER	FIRM	' in which' heads a relative clause
+III	794	than	sequence	NOT-POINTER	FIRM	manner: 'rather than in sequence'
+III	823	is	question	NOT-POINTER	FIRM	idiomatic: 'is in question'
+III	843	exogenous	the strong sense	NOT-POINTER	FIRM	respect: 'exogenous in the strong sense'
+III	856	gap	the evidence	NOT-POINTER	FIRM	'a gap in the evidence' is a figure of speech about missing disclosure
+III	876	and	the direction that favours *slow* decay	NOT-POINTER	FIRM	'in the direction that favours slow decay' names a sign, not a place
+III	880	reason	econometrics	NOT-POINTER	FIRM	'the plainest reason in econometrics' names a discipline
+III	918	sits	the gap over *s*+1 … *s*+*T*	NOT-POINTER	FIRM	'sits in the gap over s+1 ... s+T' is the model's own state variable and a time range
+III	932	anywhere	the loop	NOT-POINTER	FIRM	'no closed form anywhere in the loop' locates absence in an algorithm, not a document
+III	959	moves	both directions	NOT-POINTER	FIRM	'moves in both directions' names a sign
+III	964	registered	advance from the standard reliability bound for a distribution that is new-better-	NOT-POINTER	FIRM	temporal: 'registered in advance'
+III	965	than-used	expectation (Marshall and Proschan	NOT-POINTER	FIRM	'new-better-than-used in expectation' is a term of art with its citation attached
+III	979	visible	the transform	NOT-POINTER	SOFT	self-locating: the transform is the displayed equation in the same paragraph; REVIEW-028 marginal M2
+III	997	channels	advance and they oppose	NOT-POINTER	FIRM	temporal: 'named the two channels in advance'
+III	1001	states	the table where it belongs	POINTER	FIRM	offers 'the table where it belongs' as where 4.4 now states something, and names no table; REVIEW-028 row 2
+III	1004	match	the reported series	NOT-POINTER	FIRM	'sits 5e-4 from its own match in the reported series' is a numerical distance measured on a series
+III	1033	trace	the series	NOT-POINTER	FIRM	'leave a trace in the series' locates a signal in a data object, not content in a document
+III	1045	answer	one figure	NOT-POINTER	FIRM	'the whole answer in one figure' means a single number, not a plate to look up
+III	1064	part	ten thousand the reported series is a better instrument for the shape	NOT-POINTER	FIRM	quantitative: 'at one part in ten thousand'
+III	1073	world	which this model is well-posed from one in which it has no	NOT-POINTER	FIRM	' in which' heads a relative clause
+III	1074	one	which it has no steady state at all	NOT-POINTER	FIRM	' in which' heads a relative clause
+III	1075	sense	which [1.135	NOT-POINTER	FIRM	'the sense in which' heads a relative clause
+III	1081	not	tension	NOT-POINTER	FIRM	idiomatic: 'are not in tension'
+III	1088	monotone	the observation window	NOT-POINTER	FIRM	mathematical: 'not monotone in the observation window'
+III	1093	meagre	it and their approximation error "cannot	NOT-POINTER	FIRM	topological: 'meagre in it' is a technical predicate about a lag space, with its citation attached
+III	1098	live	this paper and they are three different quantities	NOT-POINTER	SOFT	'three recognition rates now live in this paper' is self-referential to the document in hand
+III	1111	parts	ten thousand** at a twenty-year life and part company at a three-year	NOT-POINTER	FIRM	quantitative: 'agree to five parts in ten thousand'
+III	1112	move	opposite directions from α̂	NOT-POINTER	FIRM	'move in opposite directions' names a sign
+III	1127	part	ten thousand per quarter that audited financial statements do not carry for	NOT-POINTER	FIRM	quantitative: 'one part in ten thousand per quarter'
+III	1134	registered	advance were wrong	NOT-POINTER	FIRM	temporal: 'registered in advance'
+III	1136	distributions	lag space and from the classical ill-conditioning of exponential sums	NOT-POINTER	FIRM	'rational lag distributions in lag space' locates objects in a mathematical space
+III	1138	parts	ten thousand with rates bearing no relation to the truth (Lanczos	NOT-POINTER	FIRM	quantitative: 'to a few parts in ten thousand'
+III	1141	do	the limit	NOT-POINTER	FIRM	'what a family can do in the limit' is an asymptotic regime
+III	1174	predicted	advance to be monotone in lag	NOT-POINTER	FIRM	temporal: 'predicted in advance'
+III	1174	monotone	lag	NOT-POINTER	FIRM	mathematical: 'monotone in lag'
+III	1183	event	this test is a recognised impairment	NOT-POINTER	FIRM	'every event in this test' quantifies over the test's own sample
+III	1195	shipped	the same commit (d655501	NOT-POINTER	SOFT	substantively named by commit SHA (d655501) inside the window's own parenthesis; REVIEW-028 marginal M7, an N1-N6 gap
+III	1211	null	both universes	NOT-POINTER	FIRM	'returned a null in both universes' names the two samples the test ran on
+III	1216	declared	the registration before the pilot was run	POINTER	FIRM	offers 'the registration' as where the universe was declared and names no registration; REVIEW-028 row 12, repaired by wt164
+III	1220	effect	either direction	NOT-POINTER	FIRM	'an effect in either direction' names a sign
+III	1234	stating	advance that there would be no third instrument	NOT-POINTER	FIRM	temporal: 'stating in advance'
+III	1261	are	the run logs	POINTER	FIRM	offers 'the run logs' as where four sensitivity analyses sit and names no log; a bare pointer REVIEW-028's fourteen does NOT contain — its verb is the copula 'are'
+III	1277	four	the replication and the second-least in the pilot	NOT-POINTER	FIRM	'least censoring of the four in the replication' names a sample, not a document
+III	1278	second-least	the pilot	NOT-POINTER	FIRM	'second-least in the pilot' names a sample
+III	1287	spread	both universes	NOT-POINTER	FIRM	'unit spread in both universes' names the two samples
+III	1299	probability	retail and with certainty in computer services	NOT-POINTER	FIRM	quantitative/sectoral: 'with 95% probability in retail'
+III	1300	certainty	computer services	NOT-POINTER	FIRM	sectoral: 'with certainty in computer services' names a sample sector
+III	1308	error	the onset attenuates a true gradient	NOT-POINTER	FIRM	'measurement error in the onset' names where an error sits in a variable
+III	1323	effect	the units the test measured	NOT-POINTER	FIRM	'named that effect in the units the test measured' names a unit system, a respect
+III	1328	ordering	both universes	NOT-POINTER	FIRM	'ordering in both universes' names the two samples
+III	1330	lag	both universes	NOT-POINTER	FIRM	'the longest median lag in both universes' names the two samples
+III	1333	appears	5.7% of firm-clustered resamples in the pilot and 5.8% in the replication**	NOT-POINTER	FIRM	quantitative: 'appears in 5.7% of firm-clustered resamples'
+III	1333	resamples	the pilot and 5.8% in the replication**	NOT-POINTER	FIRM	quantitative: 'in the pilot and 5.8% in the replication'
+III	1348	identical	the pilot and censoring at 7.7% against 7.8%	NOT-POINTER	FIRM	'three of four tier counts identical in the pilot' compares samples
+III	1354	agreement	total *n* with no tier moving by more than 20%	NOT-POINTER	FIRM	'95% agreement in total n' names the respect the agreement is measured in
+III	1366	lands	the same regime	NOT-POINTER	FIRM	'every cut lands in the same regime' names a parameter region
+III	1369	Weibull	Nakagawa and Osaki's (1975	NOT-POINTER	FIRM	'a discrete Weibull in Nakagawa and Osaki's (1975) parameterisation' names a parameterisation, with the citation attached
+III	1390	recognition	one class does not force recognition in another	NOT-POINTER	FIRM	'recognition in one class' locates an event in an asset class, not in a document
+III	1390	recognition	another	NOT-POINTER	FIRM	'recognition in another' locates an event in an asset class
+III	1392	land		NOT-POINTER	FIRM	'which quarters they land in' — stranded preposition, the target window is empty
+III	1402	intangibles	retail (5.83×	NOT-POINTER	FIRM	sectoral: 'in retail (5.83x)'
+III	1403	intangibles	computer services (2.22×	NOT-POINTER	FIRM	sectoral: 'in computer services (2.22x)'
+III	1428	sign	either sector	NOT-POINTER	FIRM	'no consistent sign in either sector' names the two samples
+III	1444	appear	none of the 1	NOT-POINTER	FIRM	'appear in none of the 1,925 firm-years' is a count over a sample
+III	1455	filing	2013–2024	NOT-POINTER	FIRM	temporal: 'registrants filing in 2013-2024'
+III	1460	held	place by a test suite	NOT-POINTER	FIRM	idiomatic: 'held in place by a test suite'; wt163 disclosed exclusion
+III	1510	quantity	the model was matched to a quantity in the world that shares	NOT-POINTER	FIRM	'a quantity in the model' locates a variable in a model
+III	1510	quantity	the world that shares its name and not its meaning	NOT-POINTER	FIRM	'a quantity in the world' locates a variable in the world
+III	1537	unbalanced	that direction	NOT-POINTER	FIRM	'unbalanced in that direction' names a sign
+III	1551	given	the two rows above	POINTER	SOFT	offers 'the two rows above' as where a value is given; self-locating within the same table, which makes it the softest of REVIEW-028's ten (row 3)
+III	1558	recovered	**1.9%**	NOT-POINTER	FIRM	quantitative: 'recovered in 1.9%'
+III	1559	held	**100%**	NOT-POINTER	FIRM	quantitative: 'held in 100%'; wt163 disclosed exclusion
+III	1561	edge	its top rung**	NOT-POINTER	FIRM	figurative: 'a knife edge in its top rung'
+III	1565	rises	**0.659** of admissible pairs [**0.621**	NOT-POINTER	FIRM	quantitative: 'rises in 0.659 of admissible pairs'
+III	1568	form	the loop	NOT-POINTER	FIRM	'no closed form in the loop' locates absence in an algorithm
+III	1572	land		NOT-POINTER	FIRM	'which quarters each class's impairments land in' — stranded preposition, empty window
+III	1580	trace	the reported series**	NOT-POINTER	FIRM	'leaves a trace in the reported series' locates a signal in a data object
+III	1581	invisible	the reported series**	NOT-POINTER	FIRM	'invisible in the reported series' locates a signal in a data object
+III	1587	visible	entity-level filings**	NOT-POINTER	FIRM	'not visible in entity-level filings' names a class of filings as a data source, not one artefact to open
+III	1588	fixed	advance so that the sign could not be chosen afterwards	NOT-POINTER	FIRM	temporal: 'fixed in advance'
+III	1589	trigger	one sentence	NOT-POINTER	FIRM	'name a unit and a trigger in one sentence' is a co-occurrence criterion over filings
+III	1595	check	that row was written to confirm it and refused	NOT-POINTER	SOFT	'the check in that row' is self-locating: 'that row' is the table row immediately at hand
+III	1607	placed	the body	NOT-POINTER	SOFT	self-locating: 'placed in the body' is this paper's own division
+III	1608	given	the companion papers of this programme	POINTER	FIRM	offers 'the companion papers of this programme' as where a reason is given and names no paper; REVIEW-028 row 4
+III	1623	here	full rather than quietly replaced	NOT-POINTER	FIRM	manner: 'retained here in full'
+III	1629	belongs	this section	NOT-POINTER	SOFT	self-locating: 'belongs in this section' is the section in hand
+III	1632	and	the abstract	NOT-POINTER	SOFT	self-locating: 'in the body, and in the abstract' are this paper's own divisions
+III	1635	registered	advance	NOT-POINTER	FIRM	temporal: 'registered in advance'
+III	1667	efficient-markets	its plainest form	NOT-POINTER	FIRM	'efficient-markets in its plainest form' names a version of an argument
+III	1677	not	competition	NOT-POINTER	FIRM	idiomatic: 'not in competition'
+III	1681	anywhere	this work	NOT-POINTER	SOFT	'not measured anywhere in this work' is self-referential to the document in hand
+III	1689	residue	the world**	NOT-POINTER	FIRM	'identify that residue in the world' names the world, not a document
+III	1696	argument	this section	NOT-POINTER	SOFT	self-locating: 'the argument in this section' is the section in hand
+III	1704	everything	this paper	NOT-POINTER	SOFT	'survives everything in this paper' is self-referential to the document in hand
+III	1714	paper	this corpus	NOT-POINTER	FIRM	'a later paper in this corpus' places a paper in a corpus; the reading list it defers to is backticked in the same sentence
+III	1716	for	the paper that introduces a theorem is a framing that will be	NOT-POINTER	FIRM	'argued for in the paper that introduces a theorem' is a generic hypothetical paper, not one to open
+III	1765	heterogeneity	entropy rates across industries	NOT-POINTER	FIRM	'heterogeneity in entropy rates' names the respect heterogeneity is measured in
+III	1776	recognition	one asset class does not force recognition in another	NOT-POINTER	FIRM	'recognition in one asset class' locates an event in an asset class
+III	1777	recognition	another	NOT-POINTER	FIRM	'recognition in another' locates an event in an asset class
+III	1781	it	both universes in the same direction	NOT-POINTER	FIRM	'rejects it in both universes' names the two samples
+III	1781	universes	the same direction	NOT-POINTER	FIRM	'in the same direction' names a sign
+III	1791	fired	**once in the 644 firm-years of the mandated window and not once	NOT-POINTER	FIRM	quantitative: 'once in the 644 firm-years'; the result document is backticked in the same sentence
+III	1791	once	the 644 firm-years of the mandated window and not once in the	NOT-POINTER	FIRM	quantitative: 'not once in the 281 that took both charges'
+III	1806	authority	the biophysical tradition this work draws on	NOT-POINTER	FIRM	'the most-cited authority in the biophysical tradition' names a tradition, not an artefact
+III	1815	not	question	NOT-POINTER	FIRM	idiomatic: 'not in question'
+III	1826	liquidated	the bust	NOT-POINTER	FIRM	temporal/economic: 'liquidated in the bust' names a phase of a cycle
+III	1830	describe	their own vocabulary	NOT-POINTER	FIRM	'describe in their own vocabulary' names a manner of description
+III	1857	acts	shareholders' interest	NOT-POINTER	FIRM	'acts in shareholders' interest' is idiomatic, inside a quotation
+III	1866	down	2004	NOT-POINTER	FIRM	temporal: 'written down in 2004'
+III	1879	reinvested		NOT-POINTER	FIRM	'neither depreciates nor is reinvested in' — stranded preposition, empty window
+III	1891	concentrates	the least reliable accrual components	NOT-POINTER	FIRM	'concentrates in the least reliable accrual components' locates an effect in a data partition
+III	1893	absent	non-current operating *liability* accruals	NOT-POINTER	FIRM	'absent in non-current operating liability accruals' locates absence in a data partition
+III	1899	firm-years	1950 to 27% in 2019	NOT-POINTER	FIRM	temporal: 'firm-years in 1950 to 27% in 2019'
+III	1902	particularly	the period after Sarbanes–Oxley	NOT-POINTER	FIRM	temporal: 'in the period after Sarbanes-Oxley'
+III	1903	dissipation	their own abstract	NOT-POINTER	SOFT	'report the same dissipation in their own abstract' points at a cited work's abstract; the work is named in the same sentence, so the reader has a handle
+III	1932	and	prose	NOT-POINTER	FIRM	manner: 'nineteen years earlier and in prose'
+III	1933	prices	the short term	NOT-POINTER	FIRM	temporal, inside a quotation: 'in the short term'
+III	1956	volume	which she and her critics argue it out directly is listed beside	NOT-POINTER	FIRM	'the volume in which she and her critics argue' heads a relative clause and the volume is listed in the entry
+III	1958	are	the room	NOT-POINTER	FIRM	figurative: 'when its objections are in the room'
+III	1974	quotes	prose	NOT-POINTER	FIRM	manner: 'quotes in prose'
+III	1975	or	prose	NOT-POINTER	FIRM	manner: 'tabulated or in prose'
+III	2002	claims	place	NOT-POINTER	FIRM	idiomatic: 'hold this paper's claims in place'
+III	2004	paper	it	NOT-POINTER	FIRM	'any one paper in it' places a paper in the repository, a partitive
+III	2017	CPU	seconds	NOT-POINTER	FIRM	temporal: 'regenerates on a commodity CPU in seconds'
+III	2018	steps	double precision	NOT-POINTER	FIRM	'gradient steps in double precision' names an arithmetic mode
+III	2020	completed	**76 seconds on two 2.8 GHz cores**	NOT-POINTER	FIRM	temporal: 'completed in 76 seconds on two 2.8 GHz cores'
+III	2029	are	the same directory	NOT-POINTER	SOFT	'the same directory' is anaphoric to the backticked registration path in the preceding clause, so a reader has a handle; formally bare only because wt160's window stops at the clause boundary
+III	2046	Charges	that file run **2012 Q2 – 2026 Q2** and onsets **2010 Q1	NOT-POINTER	FIRM	temporal: 'charges in that file run 2012 Q2 - 2026 Q2'
+III	2054	put	its place is the label-permutation control printed in the same logs	NOT-POINTER	FIRM	idiomatic: 'put in its place'; the pointer work in this sentence is row 203's
+III	2055	printed	the same logs	POINTER	FIRM	offers 'the same logs' as where the control is printed and names no log; REVIEW-028 row 13, repaired by wt164
+III	2076	retained	full	NOT-POINTER	FIRM	manner: 'retained in full'
+III	2106	appears	every growth model from Solow forward	NOT-POINTER	FIRM	'appears in every growth model from Solow forward' quantifies over a literature
+III	2140	regime	which P2 fails is committed	NOT-POINTER	FIRM	'the regime in which P2 fails' heads a relative clause
+III	2142	demonstrated	code	NOT-POINTER	FIRM	'not demonstrated in code' names a medium of demonstration, not a file to open
+III	2147	regime	which "no store is inert" is simply not true	NOT-POINTER	FIRM	'the regime in which' heads a relative clause
+III	2167	held	the gap and released at rate α	NOT-POINTER	FIRM	'held in the gap and released at rate alpha' is the model's own state variable
+III	2195	symbol	this programme's working notes	NOT-POINTER	SOFT	'this programme's working notes' are given as the MOTIVE for stating notation, not as the location of evidence; the reader is not sent there — the softest NOT-POINTER in this file, since it is the exact target-shape of the III-2 defect that founded the class
+III	2200	expressed	the same numeraire	NOT-POINTER	FIRM	'expressed in the same numeraire' names a unit system
+III	2210	measured	different units	NOT-POINTER	FIRM	'measured in different units' names a unit system
+III	2210	exists	any unit of wealth	NOT-POINTER	FIRM	'exists in any unit of wealth' quantifies over unit systems
+III	2237	stock	currency over a physical stock in joules	NOT-POINTER	FIRM	'a claim stock in currency' names a unit
+III	2237	stock	joules	NOT-POINTER	FIRM	'a physical stock in joules' names a unit
+III	2240	is	no position to commit it a second time in its own defence	NOT-POINTER	FIRM	idiomatic: 'is in no position to'
+III	2240	time	its own defence	NOT-POINTER	FIRM	idiomatic: 'a second time in its own defence'
+III	2243	stake	this framework tracks a quantity of that dimension against a global target	NOT-POINTER	FIRM	'no stake in this framework' is idiomatic
+III	2247	availability	principle*	NOT-POINTER	FIRM	'availability in principle' is a modal qualifier
+III	2247	measurement	fact	NOT-POINTER	FIRM	'measurement in fact' is a modal qualifier
+III	2250	conclusion	this paper depends on the coupling's value	NOT-POINTER	SOFT	'no conclusion in this paper' is self-referential to the document in hand
+III	2253	working	is invented"*	NOT-POINTER	FIRM	'the dimension you are working in' — stranded preposition inside a quoted objection
+III	2260	dressed	units**	NOT-POINTER	FIRM	'dressed in units' names a unit system
+III	2261	layer	joules at scale E₀	NOT-POINTER	FIRM	'the physical layer in joules' names a unit
+III	2261	layer	currency	NOT-POINTER	FIRM	'the claim layer in currency' names a unit
+III	2282	module	which nothing depends on a parameter *because the parameter is never used*	NOT-POINTER	FIRM	'a module in which' heads a relative clause about a hypothetical module
+III	2295	differing	energy scale (1 J against 6.02 × 10²³ J	NOT-POINTER	FIRM	respect: 'differing in energy scale'
+III	2312	times	other costumes	NOT-POINTER	FIRM	figurative: 'refused three times in other costumes'
+III	2338	copy	the author's possession	NOT-POINTER	FIRM	'the copy in the author's possession' defines which edition was consulted; the reader cannot and need not go there
+III	2345	dual-dated	the other direction	NOT-POINTER	FIRM	'dual-dated in the other direction' names a convention, defined in the same sentence
+III	2356	appear	the article of record	NOT-POINTER	FIRM	'may not appear in the article of record' names a class of version, not one artefact
+III	2358	so	its own note	NOT-POINTER	SOFT	self-locating: 'its own note' is the note printed in the same reference entry; REVIEW-028 marginal M5's class
+III	2359	stating	its own note why it is unmarked	NOT-POINTER	SOFT	self-locating: 'its own note' is printed in the same entry
+III	2360	entries	the list	NOT-POINTER	SOFT	self-locating: 'the list' is this reference list
+III	2372	named	its own title	POINTER	SOFT	offers 'its own title' as where a result is named; the title is printed in the same entry, which makes it self-locating and the softest of REVIEW-028's ten (row 5)
+III	2388	paper	*The Accounting Review*	NOT-POINTER	FIRM	'the different 2013 paper in *The Accounting Review*' names a journal, and the paper is identified by handle in the same clause
+III	2392	occurring	the theory of radioactive transformations	NOT-POINTER	FIRM	part of a cited work's title: 'occurring in the theory of radioactive transformations'
+III	2398	lags	book value and their effects on the ability of the book-to-market ratio	NOT-POINTER	FIRM	part of a cited work's title: 'Biases and lags in book value'
+III	2400	named	its own title	POINTER	SOFT	offers 'its own title' as where a decomposition is named; self-locating in the same entry (REVIEW-028 row 6)
+III	2423	quoted	the paper in the form used here	NOT-POINTER	SOFT	'quoted in the paper in the form used here' — 'the paper' is the reference entry's own subject; REVIEW-028 marginal M5
+III	2423	paper	the form used here	NOT-POINTER	FIRM	'in the form used here' names a form of statement, not a place
+III	2427	result	the form a reader may find more familiar	NOT-POINTER	FIRM	'in the form a reader may find more familiar' names a form of statement
+III	2431	Read	full text	NOT-POINTER	FIRM	'Read in full text' describes the reading, not a location; the copy is identified by DOI in the same note
+III	2441	elsewhere	the literature	NOT-POINTER	FIRM	'elsewhere in the literature' names a body of literature
+III	2455	concentrations	the one compartment body model as a function of time with first-order	NOT-POINTER	FIRM	part of a cited work's title: 'concentrations in the one compartment body model'
+III	2469	knowledge	society	NOT-POINTER	FIRM	part of a cited work's title: 'The use of knowledge in society'
+III	2476	flip-flop	population pharmacokinetic analyses	NOT-POINTER	FIRM	part of a cited work's title: 'The influence of flip-flop in population pharmacokinetic analyses'
+III	2484	pagination	the deposit consulted	NOT-POINTER	FIRM	'without internal pagination in the deposit consulted' describes the copy consulted, identified in the same entry
+III	2486	conservatism	financial accounting data	NOT-POINTER	FIRM	part of a cited work's title: 'Identifying conditional conservatism in financial accounting data'
+III	2489	read	full for the decomposition	NOT-POINTER	FIRM	manner: 'read in full for the decomposition'
+III	2490	unreliably	that copy	NOT-POINTER	FIRM	'rendered unreliably in that copy' describes the copy named in the preceding clause
+III	2500	read	full	NOT-POINTER	FIRM	manner: 'read in full'
+III	2526	number	system equals arrival rate times average time in system	NOT-POINTER	FIRM	'average number in system' is a queueing-theory term of art
+III	2527	time	system	NOT-POINTER	FIRM	'average time in system' is a queueing-theory term of art
+III	2529	named	the title	POINTER	SOFT	offers 'the title' as where a result is named; the title is printed in the same entry, so self-locating (REVIEW-028 row 7)
+III	2532	applicable	replacement with renewal theory implications	NOT-POINTER	FIRM	part of a cited work's title: 'applicable in replacement with renewal theory implications'
+III	2564	read	full	NOT-POINTER	FIRM	manner: 'read in full'
+III	2570	errors	equation (5	NOT-POINTER	FIRM	'two typesetting errors in equation (5)' locates errors in an equation named by number in the same clause
+III	2580	occur	the article	NOT-POINTER	FIRM	'does not occur in the article' reports a word count over the cited article, which the entry names
+III	2580	throughout	the empirical sense of detecting conservatism in data	NOT-POINTER	FIRM	'used throughout in the empirical sense' names a sense of a word
+III	2581	conservatism	data	NOT-POINTER	FIRM	'detecting conservatism in data' names a medium of detection
+III	2585	meagre	it and that their approximation error "cannot	NOT-POINTER	FIRM	topological: 'meagre in it', quoted with its section and page
+III	2596	Read	full	NOT-POINTER	FIRM	manner: 'Read in full'
+III	2606	coefficient	β ↔ γ	NOT-POINTER	FIRM	mathematical: 'symmetry of every systematic coefficient in beta <-> gamma'
+III	2618	measured	terms of primary energy and GDP	NOT-POINTER	FIRM	part of a cited work's title: 'Energy intensity measured in terms of primary energy and GDP'
+III	2624	verified	the published text at **p	NOT-POINTER	SOFT	substantively named by page number (p. 262) inside the window; REVIEW-028 marginal M6, an N1-N6 gap
+III	2648	published	print 2009	NOT-POINTER	FIRM	temporal: 'first published in print 2009'
+III	2664	Capital	the Twenty-First Century* (A	NOT-POINTER	FIRM	part of a cited work's title: '*Capital in the Twenty-First Century*'
+III	2677	printed	the United States under a Britons Publishing Company	NOT-POINTER	FIRM	'printed in the United States' names a place of printing, a bibliographic fact
+III	2681	appeared	1926”	NOT-POINTER	FIRM	temporal, inside a quotation: 'first appeared in 1926'
+III	2682	is	the 1926 title	NOT-POINTER	FIRM	'the term is in the 1926 title' locates a term in a title dated in the same sentence
+III	2685	not	the author's library	NOT-POINTER	FIRM	'not in the author's library' reports the absence of a physical copy
+III	2685	made	the text	NOT-POINTER	SOFT	'no claim of priority is made in the text' is self-referential to this paper's own body
+III	2688	present	one ranking	NOT-POINTER	FIRM	part of a cited work's title: 'when ties are present in one ranking'
+III	2692	concentrates	the components Richardson	NOT-POINTER	FIRM	'concentrates in the components Richardson et al rank least reliable' locates an effect in a data partition
+III	2699	live	the ✓	NOT-POINTER	SOFT	self-locating: 'the check-mark notes above', attached to the entries they describe in this same list
+III	2713	and	one case an author's surname matched a different scholar entirely	NOT-POINTER	FIRM	'in one case' is a partitive over cases
+III	2720	read	pre-publication and untypeset versions and cited as though they were the published	NOT-POINTER	FIRM	'read in pre-publication and untypeset versions' names a class of version
+III	2722	read	rather than to the journal	NOT-POINTER	FIRM	'the working paper it was actually read in' — stranded preposition heading a relative clause
+III	2724	read	the typeset article and its quoted sentence verified at p	NOT-POINTER	FIRM	'read in the typeset article' names a class of version; the page is cited in the same clause
+III	2735	present	the author's library were being cited as the wrong object**	NOT-POINTER	FIRM	'books present in the author's library' reports physical possession
+IV	11	code	the repository named in the data-availability statement	NOT-POINTER	SOFT	the target names its own locating site ('named in the data-availability statement'); the pointer work is row 283's
+IV	11	named	the data-availability statement	POINTER	FIRM	offers 'the data-availability statement' as where the repository is named; REVIEW-028 row 8
+IV	25	aggregates	order to recover behaviour is estimating the half that does not survive	NOT-POINTER	FIRM	idiomatic: 'aggregates in order to recover behaviour'
+IV	36	works	the world cite both a stock-flow-consistent and a kinetic-exchange seed	NOT-POINTER	FIRM	'six works in the world' quantifies over a population of works
+IV	77	panel	machine-readable form	NOT-POINTER	FIRM	'no firm-level panel in machine-readable form' names a format
+IV	80	mandatory	the United States over a phase-in ending in 2011	NOT-POINTER	FIRM	'mandatory in the United States' names a jurisdiction
+IV	81	ending	2011	NOT-POINTER	FIRM	temporal: 'a phase-in ending in 2011'
+IV	117	established	the same run	NOT-POINTER	FIRM	'both ends of its scale established in the same run' — 'the same run' is fixed by REG-013 named in the same sentence; REVIEW-028 marginal M3
+IV	129	still	this repository and still runs	NOT-POINTER	SOFT	'still in this repository and still runs' — the sentence explicitly delegates the record to Section 10, which is named in it, and 'this repository' is the container in hand
+IV	195	diagonal	class space**	NOT-POINTER	FIRM	mathematical: 'diagonal in class space'
+IV	219	stand	the relation the word *chain* asserts	NOT-POINTER	FIRM	'stand in the relation the word chain asserts' is idiomatic
+IV	235	rejected	both universes in the same direction	NOT-POINTER	FIRM	'rejected in both universes' names the two samples
+IV	235	universes	the same direction	NOT-POINTER	FIRM	'in the same direction' names a sign
+IV	240	rejection	the section that makes the claim rather than only in its limitations	NOT-POINTER	SOFT	self-locating: 'the section that makes the claim' is a division of this paper
+IV	241	only	its limitations	NOT-POINTER	SOFT	self-locating: 'its limitations' is this paper's own limitations section
+IV	245	recognition	one class relates to recognition in another	NOT-POINTER	FIRM	'recognition in one class' locates an event in an asset class
+IV	246	recognition	another	NOT-POINTER	FIRM	'recognition in another' locates an event in an asset class
+IV	264	aggregation	economics says the opposite	NOT-POINTER	FIRM	'the best-established result about aggregation in economics' names a discipline
+IV	273	answerable	one distinction	NOT-POINTER	FIRM	'answerable in one distinction' names a means of answering
+IV	287	not	tension	NOT-POINTER	FIRM	idiomatic: 'not in tension'
+IV	294	aggregates	order to recover behaviour is measuring the thing that does not survive	NOT-POINTER	FIRM	idiomatic: 'aggregates in order to recover behaviour'
+IV	295	aggregates	order to recover stocks is measuring the thing that does	NOT-POINTER	FIRM	idiomatic: 'aggregates in order to recover stocks'
+IV	300	aggregates	order to do behavioural inference	NOT-POINTER	FIRM	idiomatic: 'aggregates in order to do behavioural inference'
+IV	304	SMD	practice has been to impose distributional restrictions on the population until the	NOT-POINTER	FIRM	'the response to SMD in practice' names a manner
+IV	315	corpus	one sentence	NOT-POINTER	FIRM	'the thesis of this corpus in one sentence' names a compression, not a place
+IV	333	firm-quarter	both universes	NOT-POINTER	FIRM	'in both universes' names the two samples
+IV	365	units	the wrong hands	NOT-POINTER	FIRM	figurative: 'units in the wrong hands'
+IV	368	jobs	one picture	NOT-POINTER	FIRM	'two jobs in one picture' names a figure at hand, doing two things
+IV	370	smuggled	state information	NOT-POINTER	FIRM	'smuggled in state information' is a phrasal verb, not a location
+IV	378	belong	the same paper**	NOT-POINTER	SOFT	self-locating: 'they belong in the same paper' is this paper
+IV	395	fixed	the same run	NOT-POINTER	FIRM	'both ends fixed in the same run' names a run defined in the same passage; REVIEW-028 marginal M3's class
+IV	397	named	the registration	POINTER	FIRM	offers 'the registration' as where seed works are named and names no registration; REVIEW-028 row 9
+IV	402	split	half by seed index and measured against itself	NOT-POINTER	FIRM	'split in half by seed index' describes a partition
+IV	409	is	any of the three economics audiences	NOT-POINTER	FIRM	'not one is in any of the three economics audiences' is set membership over a sample
+IV	420	works	the world cite both a stock-flow-consistent seed and a kinetic-exchange seed	NOT-POINTER	FIRM	'six works in the world' quantifies over a population of works
+IV	436	work	its tail is invisible here	NOT-POINTER	FIRM	'a bridging work in its tail' locates a work in a citation distribution
+IV	444	stated	the registration before the numbers existed	POINTER	FIRM	offers 'the registration' as where something was stated before the numbers existed; REVIEW-028 row 10
+IV	453	Everything	this section is one move	NOT-POINTER	SOFT	self-locating: 'Everything in this section' is the section in hand
+IV	464	enemy	any of the three	NOT-POINTER	FIRM	'an enemy in any of the three' is idiomatic, over three literatures
+IV	475	it	the same breath	NOT-POINTER	FIRM	idiomatic: 'bounds it in the same breath'; the section is cited by number in the same sentence
+IV	481	models	which it does	NOT-POINTER	FIRM	'builds models in which it does' heads a relative clause
+IV	484	closes	claims can still be open in the thing the claims are against	NOT-POINTER	FIRM	'a model whose accounting closes in claims' names the respect closure holds in
+IV	484	open	the thing the claims are against	NOT-POINTER	FIRM	'open in the thing the claims are against' names a respect
+IV	505	sentence	this paper would be different	NOT-POINTER	SOFT	self-referential: 'which sentence in this paper would be different'
+IV	513	deferred	one and discarded in the other	NOT-POINTER	FIRM	'deferred in one and discarded in the other' names two scales under comparison
+IV	513	discarded	the other	NOT-POINTER	FIRM	'discarded in the other' names the second scale
+IV	518	fixed	advance	NOT-POINTER	FIRM	temporal: 'fixed in advance'
+IV	523	is	the repository	NOT-POINTER	SOFT	'the draft itself is in the repository' — the path is given in backticks one clause later in the same sentence; formally bare only because wt160's twelve-word window stops at the comma
+IV	537	atomism	the act	NOT-POINTER	FIRM	idiomatic: 'catches atomism in the act'
+IV	551	false	the formalism the paper cited	NOT-POINTER	FIRM	'false in the formalism the paper cited' names a formal system
+IV	553	folds	exactly the sense excess demand is	NOT-POINTER	FIRM	'folds in exactly the sense excess demand is' names a sense
+IV	565	mis-specified	four ways and the run produced no usable answer in either direction	NOT-POINTER	FIRM	respect: 'mis-specified in four ways' — the hyphenated compound wt163's tokenisation guard was built for
+IV	566	answer	either direction	NOT-POINTER	FIRM	'no usable answer in either direction' names a sign
+IV	585	inequalities	the two counts then disagree about a single agent whose holding status	NOT-POINTER	FIRM	'the strict inequalities in the two counts' locates a condition in two computations described in the same passage
+IV	685	universes	one pass and prints the 4.12× and 2.02× lifts	NOT-POINTER	FIRM	'runs both universes in one pass' names a manner of execution; the command is backticked in the same sentence
+IV	696	is	this repository	NOT-POINTER	SOFT	'It is in this repository' — the subject is the backticked module path named two clauses earlier, and 'this repository' is the container in hand
+IV	707	appears	two registration modules and Paper III names a third	NOT-POINTER	FIRM	'appears in two registration modules' is a count, not a location; REVIEW-028 marginal M4
+IV	725	verified	the sessions that introduced them to Papers II or III	POINTER	FIRM	offers 'the sessions that introduced them' as where entries were verified; sessions are not openable artefacts. REVIEW-028 row 14, repaired by wt164
+IV	752	Capital	the Twenty-First Century* (A	NOT-POINTER	FIRM	part of a cited work's title: '*Capital in the Twenty-First Century*'
