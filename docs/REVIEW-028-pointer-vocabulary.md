@@ -160,14 +160,154 @@ review missed, C is 13 or fewer and the gap narrows.
 
 ---
 
-## 6 · MEASURED
+## 6 · MEASURED — and the prediction MISSED, which is the stronger outcome
 
-*PENDING — written after `wt163` is committed and run.*
+`wt163` was committed unrun at `ae06184`, after the prediction at `c89f764` and before any
+widened sweep existed. Measured at `07cd47e`:
+
+| | vocabulary | how chosen | **flags** |
+|---|---|---|---|
+| **A** `wt160` | 16 surface forms | a priori, `wealthTensor-87` | **10** |
+| **B** `wt163` | ~50 surface forms | a priori, the `-87` handoff | **17** first run, **16** after §6.2 |
+| **C** the hand | none — the corpus's own 264 tokens | §3 | **14** |
+
+**B's ten wt160 flags are wt160's ten, verbatim** (post-condition D1, comparing multisets).
+**B found ZERO real bare pointers wt160 missed.** Every one of B's six additions is a FALSE
+POSITIVE, disclosed with its reason in `docs/pointer-exclusions.tsv`.
+
+### 6.1 · The miss: predicted 13, measured 17
+
+§5 predicted **13** — the ten plus three `held in` false positives. The measurement returned
+**17**. **The prediction missed four, and it missed them in the enumeration, which is precisely
+the faculty this review was built to test.**
+
+Three of the four are `holds in`: `holds in **100%** of them`, `holds in **66.2%**`, `holds in
+all nine is the sign`. The handoff commissioned `held in`; this session mirrored `wt160`'s
+participle **and 3sg-present** symmetry onto every commissioned verb — a defensible design
+choice, made in the open in `wt163`'s `WIDENING` list — and then wrote §5's arithmetic counting
+only the participle. **The author of the word list could not predict what his own word list
+would flag.** If the person who wrote the vocabulary cannot enumerate its consequences over a
+3,550-line corpus, the proposition that a vocabulary is a way of finding bare pointers is in
+serious trouble, and that is the finding.
+
+This is `wealthTensor-87` lesson (i) collecting: an exact agreement built from a shared
+vocabulary is weak, and a MISS is informative. REVIEW-027 could not have produced this
+information, because its prediction and its detector were the same sixteen forms.
+
+### 6.2 · The fourth miss was better than a miss: a tokenisation defect
+
+The fourth was `specified in four ways` — from **`The instrument was mis-specified in four
+ways`**. `\b` matches inside the hyphenated compound, so the matcher read `specified in` out of
+a word whose meaning is the **negation** of the verb matched. The lookbehind `(?<![\w-])` fixes
+it; `wt163` D12 pins the case, and **D13 proves the guard leaves `wt160`'s published ten at
+`07cd47e` untouched (10 → 10)**, which is why it was applied to `wt160` as well and pinned there
+as C12. The defect was latent in `wt160` for its whole life and could not fire, because none of
+its eight verbs occurs as the tail of a hyphenated compound in this corpus. **A wider vocabulary
+did not find a bare pointer; it found a bug in the instrument.** That is a real return on the
+widening, and it is not the return the widening was commissioned to produce.
+
+### 6.3 · The verdict, in one sentence someone can mark right or wrong
+
+> **The count of ten is a property of the WORD LIST, not of the corpus: two independently chosen
+> a priori vocabularies — sixteen surface forms and roughly fifty — return the SAME ten real
+> bare pointers at `07cd47e`, while a reading that consults no list at all returns fourteen; the
+> widening's only additions are six false positives, so tripling the vocabulary moved the count
+> of real findings by exactly zero and the count of noise by six.**
+
+**10 and 14 are the two numbers that settle it.** 16 is the third, and it is the one that shows
+widening is not the repair: the gap between what the lists find (10) and what is there (14) did
+not close by a single sentence, and 6 of the 16 flags a successor would have to read are noise.
+
+### 6.4 · Why the verb list cannot simply be deleted
+
+The obvious inference — drop the verb half and flag every bare target — is wrong, and §3
+measures how wrong: **341 of the corpus's 444 `<token> in <target>` constructions have a bare
+target**. `bites in pharmacokinetics` and `live in different worlds` are among them. The
+criterion is irreducibly two-part. **The enumeration cannot be closed by a word list and cannot
+be closed by deleting the word list either** — which is why `wt164` repairs by hand and
+`wt163` records its own blindness as a post-condition rather than growing to cover it.
+
+---
 
 ## 7 · What was repaired
 
-*PENDING.*
+`wt164` (`scripts/wt164_offlist_pointers_repaired.py`, 8 post-conditions, 3 NEGATIVE) repaired
+all four off-list bare pointers, in the two sanctioned modes of `docs/CO-AUTHOR-CHARTER.md` §2:
+
+| | mode | before | after |
+|---|---|---|---|
+| R1 | **remove** | `The reason is visible in the parameter sweep:` | `The reason is that the two monotonicities compound:` |
+| R2 | **re-target** | `declared in the registration before the pilot was run` | ``declared in `PRE-001` §4.2 before the pilot was run`` |
+| R3 | **re-target** | `printed in the same logs` | ``printed in those same run logs (`docs/preregistration/RESULT-002-*-run.log`)`` |
+| R4 | **remove** | `verified in the sessions that introduced them to Papers II or III` | ``verified against the sources the mark table in `docs/REFERENCE-POLICY.md` requires`` |
+
+R1 removes rather than re-targets because **there is no artefact to name**: no committed object
+in this repository holds the (φ, δ) sweep the sentence gestured at. Naming one would have been
+worse than the gesture. R4 likewise: *sessions* are not openable, and the mark table that
+actually defines the tick is.
+
+**`wt164`'s E4 is the post-condition that carries the review's claim.** It requires `wt163`'s
+flag set to be **bit-identical** before and after all four repairs — and it is, 6 → 6. An
+instrument that noticed these repairs would be an instrument that could have found the defects.
+Neither could. That silence is the result, mechanised.
+
+### 7.1 · The three promises the repairs emitted, adjudicated in the same pass
+
+Naming an artefact emits a promise, and `wt148` went red with three of them the moment `wt164`
+landed — `wealthTensor-87` lesson (iii), budgeted for this time. `wt165_tsv.py` (13
+post-conditions, 4 NEGATIVE) adjudicates all three **H**, keys each sentence off `wt148 --json`
+so the text is byte-exact, and runs all three evidence commands inside itself.
+
+**One of the three nearly went in on evidence that refuted it.** The first `PRE-001` evidence
+command ran `git log --diff-filter=A` over the registration AND the pilot log **in one
+invocation**. That prints two dates newest-first and attributes neither to a file, and read
+naively it appeared to show the pilot log entering the repository 35 minutes BEFORE the
+registration — i.e. to falsify "before the pilot was run". Split per file it shows the truth:
+`9722342` at 17:11:01 added `PRE-001` alone; `d655501` at 17:46:52 added the pilot's run log
+together with PRE-002 and the RESULT-001 documents. **A `git log` over several paths yields
+dates you cannot attribute**, and an evidence column that cannot attribute its own output is
+worse than none, because it reads as diligence. `wt165`'s F3 and F4 require the per-file form.
+
+### 7.2 · Three post-conditions of this session's own were wrong
+
+Counting `wealthTensor-87`'s two, that makes five in two sessions, and none of the five was a
+verdict on the repair it guarded.
+
+- **`wt163` D1** compared **sets**, so the two `named in its own title` flags and the two `named
+  in the data-availability statement` flags collapsed and `wt160`'s published ten read as
+  **eight**. Multisets now.
+- **`wt163` D3** pinned the exclusions file to the three rows the prediction named. The
+  measurement produced six. Disclosed in §6.1 and in the file's own header rather than absorbed.
+- **`wt164` E8** asserted "line-count drift is exactly the three added wraps" and failed at +1,
+  because three of the four anchors **already spanned a line break**, so replacing a two-line
+  span with a two-line span is net zero. Replaced with a wrap-independent check — flatten the
+  pre-repair text, apply the four substitutions, require byte-equality with the flattened
+  post-repair text — which is strictly stronger and which the first version should have been.
+  `wealthTensor-87` lesson (vii), earned again by the same mechanism.
+
+---
 
 ## 8 · Falsifiers
 
-*PENDING.*
+1. **Find a real bare pointer at `07cd47e` that §4's fourteen does not contain.** Then C is not a
+   denominator and the 10-vs-14 gap is understated, not overstated. The enumeration in §3 is
+   reproducible in one command: take every token before ` in `, read the 264.
+2. **Show that one of rows 11–14 carries a handle this review missed.** Then C is 13 or fewer.
+   R1 is the softest — someone may hold that "the parameter sweep" is recoverable from §4.4's
+   own table; the repair removes the question rather than defending it.
+3. **Show that one of the six exclusions is a real pointer.** `holds in all nine is the sign` is
+   the softest: "all nine" is nine (α, δ) settings named in the preceding sentence, and a reader
+   who thinks that sentence is doing pointer work should say so and the row comes out.
+4. **Widen the vocabulary again and find a real pointer.** This review predicts you will not,
+   and predicts the marginal return is false positives. `visible`, `declared`, `printed`,
+   `verified` are now known — adding *them* is not a test, it is fitting.
+5. **Attack §6.4's 341.** If a defensible sub-class of bare targets can be carved out
+   structurally — without a verb list — the enumeration problem is soluble and this review's
+   pessimism is wrong. That is the single most valuable attack available on this file.
+6. **Attack the design itself:** C was produced by the same reader who wrote B's arithmetic.
+   The two-independent-readers instrument remains the only real answer, and it remains unbuilt
+   and Jason-sized. §6.1's miss is evidence the single reader is fallible in exactly the way
+   that design exists to catch.
+7. **Attack the tokenisation guard.** `(?<![\w-])` also refuses a match after an underscore or a
+   digit. If some legitimate construction begins that way, the guard has cost a flag; D13 shows
+   it costs none at `07cd47e`, and says nothing about any other revision.
