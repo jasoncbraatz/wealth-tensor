@@ -363,9 +363,7 @@ def emit():
     if sh("git", "status", "--porcelain"):
         problems.append("working tree is dirty -- commit before emitting")
     body = text.split("---", 2)[-1]
-    for placeholder in ("TODO", "TBD", "FIXME", "<fill", "XXX"):
-        if placeholder in body:
-            problems.append(f"placeholder {placeholder!r} left in the handoff body")
+    problems += placeholders_left(body)
     problems += anchors()
     print("\ncoach metrics (G-COACH-2, G-COACH-3):")
     _, coach_problems = coach()
@@ -377,6 +375,44 @@ def emit():
         return 1
     print("HANDOFF OK: frontmatter complete, sha matches HEAD, tree clean, no placeholders.")
     return 0
+
+
+
+PLACEHOLDERS = ("TODO", "TBD", "FIXME", "<fill", "XXX")
+
+
+def placeholders_left(body):
+    """Placeholder markers actually LEFT in the handoff, not merely named by it.
+
+    A NEGATIVE GREP CANNOT TELL USE FROM MENTION -- and this gate's own handoff has said
+    so, in as many words, since wealthTensor-54, in the drift flag about RECIPE.md's banned
+    wording. The flag was right and this check was the counter-example: the sentence
+    "...classes with no legitimate use (TODO/TBD/FIXME/XXX) and leave wording prohibitions
+    to prose" has sat in the handoff body since at least cbffb8d, and it made `--emit`
+    refuse a handoff whose only offence was DOCUMENTING THE MARKERS. Found at
+    wealthTensor-94, at the last act of the wrap, which is exactly where a checker nobody
+    can satisfy does the most damage: the cheap way out is to delete the sentence, and
+    deleting documentation to satisfy a checker is how a repository forgets things.
+
+    Two mentions are recognised and skipped, both narrow on purpose:
+
+      1. THE MARKER SET RECITED AS ITSELF -- "TODO/TBD/FIXME/XXX". A slash-joined run of
+         two or more markers is an enumeration of the vocabulary, never a placeholder; no
+         real leftover looks like that.
+      2. A MARKER INSIDE A CODE SPAN -- `TODO`. Backticks are how this corpus quotes a
+         token it is talking ABOUT rather than using.
+
+    Everything else still counts, including a bare TODO in prose, which is the case the
+    check exists for. If a future handoff needs to discuss a marker outside both forms,
+    widen this deliberately and say so here -- do not reword the handoff.
+    """
+    RECITAL = re.compile(r"\b(?:%s)(?:/(?:%s))+\b"
+                         % ("|".join(re.escape(p) for p in PLACEHOLDERS if p.isalpha()),
+                            "|".join(re.escape(p) for p in PLACEHOLDERS if p.isalpha())))
+    scrubbed = RECITAL.sub("", body)
+    scrubbed = re.sub(r"`[^`\n]*`", "", scrubbed)
+    return [f"placeholder {p!r} left in the handoff body"
+            for p in PLACEHOLDERS if p in scrubbed]
 
 
 def stamp():
