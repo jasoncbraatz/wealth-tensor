@@ -564,8 +564,22 @@ none. ⚠ **And that sentence is the trap** — it has been true for four sessio
 sessions built tools. The work that is left is not on the board; it is in `definition_of_done`, and
 `docs/p7-passes.tsv` says it has not been touched since `-83`.
 **OPEN:** `1217654200494124` — propagate the claims leg to the global `HANDOFF-GATE.md` as **G-AM**
-(filed by `-96`, untouched by `-97` on purpose: it is a global-artefact change and it deserves its
-own at-bat rather than a ride-along).
+(filed by `-96`, untouched by `-97` and `-98` on purpose: it is a global-artefact change and it
+deserves its own at-bat rather than a ride-along).
+**▲ FILED BY `-98`: `1217660747249042`** — `bb-writers-audit` calls a **negative control** a
+Batter's Box writer. `braatzio-plan/v3/tools/tenancy-scan.py:207` names BB's gid in a test-vector
+row whose own comment reads *"an Asana gid is 16 digits and must NEVER flag"*; the auditor's
+`classify()` finds no POST near the gid, falls to `UNKNOWN`, and `UNKNOWN` is **fail-closed to
+writer** — which is correct and must not be relaxed. **Mention-vs-use again**, the same class
+`-94` banked for the placeholder check. The repair is ONE positive ratification in
+`bb-writers-allowlist.json`, with its reason. **NOT fixed by `-98` on purpose:** both files sit in
+repos under a LIVE roster claim by `opus-acmeLedger-29`, who authored the file in its own at-bat
+this hour. A teed-up card, not a race — that is the roster working, not a finding dropped.
+⚠ **This is the only remaining `gate-selfcheck` failure on darwin**, and it is not wealth-tensor's.
+⚠ **RUN THE GATE AS `GATE_ROSTER_WHO=<your roster id> bash ~/Scripts/gate-selfcheck.sh`.** Without
+it, G-AL reads the *last* charter stamp in the shared ledger — which at `-98`'s wrap belonged to a
+SIBLING (`acmeLedger-29`) — and reports that YOUR definition of done moved. Two of `-98`'s four
+initial failures were that, and both vanished when the variable was set.
 **Carried:** `1217630566080626`, `1217629264134185`, `1217603625863293` (two instances),
 `1217613775009402`, `1217568297674954`, `1217568192511533`, `1217596263441666`,
 `1217596233063153`, `1217561667484767`, `1217593142996092`, `1217633320596131`,
