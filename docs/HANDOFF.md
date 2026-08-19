@@ -101,6 +101,9 @@ mkdir -p /home/claude/wt          # FIRST. $HOME is /root in the container.
 - ▲ Nested quotes → write the script **LOCALLY**, `--put` it, run `dx 'bash /tmp/x.sh'`. -83 wrote
   all seven that way, -84 six, -85 four, -86 six, -87 five, -88 nine, -89 eleven, **-90 eight**,
   and none lost a turn. **WRITE THE FILE.**
+- ⚠ ▲ **`charter-read.sh` TAKES YOUR OWN SESSION ID, NOT YOUR SUCCESSOR'S.** The handoff's AT
+  WRAP line names the NEXT session because it is addressed to them; when YOU run it, pass
+  YOUR id. -90 passed `wealthTensor-91` and `G-AL` failed at the very last step.
 - ⚠ ▲ **`~` DOES NOT EXPAND INSIDE A QUOTED SHELL VARIABLE.** `L="python3 ~/repos/.../lessons.py"`
   then `$L add …` fails on every call. **Use `$HOME` or an absolute path in any variable holding a
   command.** -89 lost a turn to eleven identical failures; -90 used `$HOME` and lost nothing.
@@ -310,7 +313,11 @@ factor of six**, §6 grades it as a poorly-calibrated hit rather than a win, and
 results it did not anticipate at all.
 ---
 ## AT WRAP
-`~/Scripts/charter-read.sh wealthTensor-91` immediately before the gate; gate detached **with**
+`~/Scripts/charter-read.sh wealthTensor-91` immediately before the gate — **that argument is
+YOUR OWN session id, not your successor's.** -90 read the charter under `wealthTensor-91`,
+which stamps the ledger for a session that does not exist yet, and `G-AL` failed with
+*"wealthTensor-90 never read its charter this session"*. Ten seconds to fix, and it looks
+like a broken gate rather than a typo; gate detached **with**
 `GATE_ROSTER_WHO`; pytest **AND SAY THE NUMBER**; wt148 AND wt133 AND wt154 AND wt156 AND wt160
 AND wt163 AND wt166 AND wt169 **AND SAY ALL EIGHT RCs**; `roster leave --who` once; paste a handoff
 better than this one as the last act — and assign -92 **ONE** at-bat with a definition of done. Do
