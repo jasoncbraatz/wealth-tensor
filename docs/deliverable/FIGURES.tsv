@@ -1,0 +1,36 @@
+figure	script	source
+# docs/deliverable/FIGURES.tsv — P13f. figure <TAB> script <TAB> source.
+#
+# EVERY figure in the deliverable is produced by a COMMITTED script from COMMITTED
+# numbers, and is listed here. No model-generated imagery, no hand-drawn imagery: a
+# chart in an economics paper has to BE the data. This is P6's rule pointed at the
+# pictures.
+#
+# THE CORPUS HAS ZERO FIGURES TODAY. Measured, not assumed, over the four manuscripts
+# named by PAPERS= in build.sh: eight reference patterns find nothing, no image file is
+# tracked anywhere in the repository, the built 145-page PDF carries zero image
+# XObjects, and preamble.tex does not even load graphicx — the deliverable currently
+# cannot render a figure at all.
+#
+# So this file has no figure rows, and an empty file is exactly the trap: it would close
+# P13f VACUOUSLY and reopen it in SILENCE the day someone pastes in the first chart. The
+# @zero-figures row below is therefore not a figure — it is a CLAIM, and the claim is
+# under guard:
+#
+#   scripts/wt177_figure_guard.py   refuses @zero-figures the moment a manuscript
+#                                   references a figure (SENTINEL-WITH-FIGURES), refuses
+#                                   its removal while the count is still zero
+#                                   (SENTINEL-MISSING), refuses an unlisted figure
+#                                   (UNLISTED-FIGURE), a row whose script or source does
+#                                   not exist (ROW-SCRIPT-MISSING / ROW-SOURCE-MISSING),
+#                                   and a row nothing uses (ORPHAN-ROW).
+#   tests/test_figures_manifest_bites.py   binds all of that to the suite, so it runs
+#                                   without anyone remembering to run it.
+#
+# WHEN THE FIRST FIGURE LANDS: add its row, DELETE the @zero-figures row, and re-emit the
+# receipt with `python3 scripts/wt177_figure_guard.py --emit`. The guard will not let you
+# do three of those four and call it done.
+#
+# FORMAT: three tab-separated fields. No blank lines — the P13f criterion's awk runs
+# `test -f ""` on one and fails with nothing to explain why; the guard refuses it first.
+@zero-figures	scripts/wt177_figure_guard.py	docs/deliverable/FIGURES-MEASURED.json

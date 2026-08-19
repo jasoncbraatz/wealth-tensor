@@ -1,0 +1,53 @@
+{
+  "_": "P13f. Written by scripts/wt177_figure_guard.py --emit. Do not hand-edit: the guard re-measures on every run and tests/test_figures_manifest_bites.py holds this file to what it finds.",
+  "guard_version": "wt177/2",
+  "manifest": "docs/deliverable/FIGURES.tsv",
+  "corpus_source": "PAPERS= in docs/deliverable/build.sh (parsed, not hardcoded)",
+  "manuscripts": [
+    {
+      "path": "docs/papers/paper-I-price-formation/paper-I.md",
+      "sha256": "bcfa9af3405caf2ccb4cc2af6c1ae8b5bc8c1ff648d81d07fb8d638ca8f895b6",
+      "figure_references": 0
+    },
+    {
+      "path": "docs/papers/paper-II-redistribution/paper-II.md",
+      "sha256": "d357f2410b95605d4a3fffcbacd36e2f4224857768ea7f42870be07a9847a3ed",
+      "figure_references": 0
+    },
+    {
+      "path": "docs/papers/paper-III-dual-tensor/paper-III.md",
+      "sha256": "1ee2285b68f1bec438d79114bc897d2d31891d5f0dd2ac7da6cebaf88b1f2ddd",
+      "figure_references": 0
+    },
+    {
+      "path": "docs/papers/paper-IV-composition/paper-IV.md",
+      "sha256": "78f16fa1f215d37b8ad87de812d49dff95b3c0f3e9580f6471a5a96477ed9d2f",
+      "figure_references": 0
+    }
+  ],
+  "figure_references_total": 0,
+  "figure_references": [],
+  "pdf": {
+    "path": "docs/deliverable/wealth-tensor-capture.pdf",
+    "sha256": "97475645329929114c1393d5f5868b8a10ab7c140bff498aafe50268b5bf0016",
+    "image_xobjects": 0,
+    "observed_by": "regex:0 pdfimages:0"
+  },
+  "patterns": [
+    "md-image",
+    "includegraphics",
+    "html-img",
+    "image-file",
+    "figure-env",
+    "tikz",
+    "pgfplots-axis",
+    "caption-line"
+  ],
+  "blind_to": [
+    "documents outside the PAPERS= list (review docs, ADRs)",
+    "figures injected by wt175_md2tex.lua or preamble.tex macros",
+    "images inside a compressed /ObjStm when pdfimages is unavailable",
+    "vector art drawn with PDF operators rather than an image XObject",
+    "whether a listed script actually produces its figure (that is P6's job)"
+  ]
+}
