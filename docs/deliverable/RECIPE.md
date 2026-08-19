@@ -7,7 +7,13 @@ ADR-002 deliberately left unset — size, leading, measure, margins, display-mat
 and it supplies them as **values measured from a real build** — never as an instruction to
 imitate a layout that already exists, and never as a word where a number belongs.
 
-Execute steps 1 to 17 top to bottom. Every number below appears in
+Execute steps 1 to 17 top to bottom.
+
+**The files that execute it**, all in this directory: `preamble.tex` (steps 3-16 as
+LaTeX, block by block), `wt175_md2tex.lua` (the pinned converter's behaviour),
+`build.sh` (steps 1, 2 and 17, and the refusals), `TABLE-WIDTHS.tsv` (step 14's
+per-table measures), `wt176_layout_manifest.py` and `verify-layout.sh` (P13e). Every
+one of them cites the step it implements. Every number below appears in
 `docs/deliverable/METRICS-MEASURED.json` and is re-derivable by one command, named beside it.
 There is no step here that requires you to judge anything.
 
@@ -67,6 +73,16 @@ wrong, and the second one cannot be fixed by choosing differently.**
    the `Path=` font loading below require LuaTeX or XeTeX, and `microtype`'s full feature set
    requires LuaTeX. Build with `latexmk -lualatex`.
 
+   **Converter: `pandoc` 3.9.0.2, through `wt175_md2tex.lua`.** The manuscripts are
+   Markdown and this recipe is LaTeX, so something converts them, and *that* is where the
+   layout silently changes -- a different pandoc can emit a different table environment or
+   a different escape and move every page boundary after it. `build.sh` refuses on a
+   version mismatch exactly as it refuses on the wrong TeX Live year. The filter pins the
+   three behaviours the corpus depends on: inline code spans become `\url{...}` and never
+   `\texttt{...}` (step 13); the seven characters no vendored face carries are routed to
+   mathematics or to the vendored mark font (step 6a); and every table is given its own
+   measure (step 14).
+
 3. **Document class:** `\documentclass[11pt,letterpaper]{article}`, single column.
 
 4. **Body font size is 11.0 pt.** Set it explicitly with `\fontsize{11}{14}\selectfont` rather
@@ -97,6 +113,34 @@ wrong, and the second one cannot be fixed by choosing differently.**
      Scale           = MatchLowercase ]
    \setmathfont{LibertinusMath-Regular.otf}[ Path = ./fonts/ ]
    ```
+
+   **6a. Seven characters in the corpus are carried by no Libertinus or Inconsolata
+   face, and LaTeX sets nothing for an absent glyph.** It reports `Missing character:` in
+   the log and exits 0, so the loss is invisible. Measured over the four manuscripts, the
+   corpus uses 75 distinct non-ASCII characters and these seven are not in the faces that
+   would be asked to set them:
+
+   | character | count | where it goes |
+   |---|---|---|
+   | U+2299 `⊙` | 12 | mathematics: `\odot` out of LibertinusMath |
+   | U+1D4A9 `𝒩` | 1 | mathematics: `\mathcal{N}` out of LibertinusMath |
+   | U+1D62 `ᵢ` | 40 | mathematics: a subscript |
+   | U+2713 `✓` | 95 | the vendored mark font |
+   | U+29D7 `⧗` | 17 | the vendored mark font |
+   | U+270E `✎` | 13 | the vendored mark font |
+   | U+26A0 `⚠` | 1 | the vendored mark font |
+
+   The last four are the citation-verification notation the References sections define in
+   their own prose, so `FreeSerif.otf` is vendored into `./fonts/` and checksummed in
+   `FONTS.tsv` under the same discipline as the other fifteen -- a sixteenth row, not a
+   sixteenth rule. Body text never selects it; only `\wtmark` does.
+
+   `ᵢ` is the one to remember. It is present in LibertinusSerif-Regular and -Bold and
+   **absent from -Italic and -BoldItalic**, and the corpus writes it as an index on an
+   emphasised variable (`*mᵢ*`) -- which is the italic case. A coverage probe run against
+   the default face reports it present. **A glyph probe must test every face the document
+   can select, not the face it starts in**: the first probe run at wealthTensor-94 tested
+   one face and found six; the true number is seven.
 
 7. **The measure is 289.08 pt** (4.0 in). Measured on real corpus prose, that measure carries
    **65.37** characters per line — inside the 62–68 band of §0.
@@ -151,11 +195,44 @@ wrong, and the second one cannot be fixed by choosing differently.**
     ADR-002 chose this cut. With this step in force the probe build produces **zero** overfull
     boxes.
 
+    **Amended at wealthTensor-94, from the real build.** `\do\_` alone was written for
+    identifiers, and not every code span is one. The corpus also carries repository URLs
+    (`https://github.com/jasoncbraatz/wealth-tensor`, 47 characters with no underscore
+    anywhere) and bare 64-character git SHAs with no break opportunity of any kind; they
+    overflowed the measure by 30.76pt and 62.81pt. It also carries 18 spans that contain
+    whitespace, and "it can break at its spaces" is not enough -- one holds a
+    44-character path token, and `\texttt` cannot break inside a token, which cost another
+    88.98pt. So: `xurl` is loaded, adding break opportunities **without inserting a
+    character**, which is the property this step actually asks for and the reason pandoc's
+    own generated preamble reaches for the same package; and a span containing whitespace
+    has each of its tokens set through `\url` inside a `\ttfamily` group, so the same
+    guarantee covers command lines. The general shape, and it is the ADR-002 shape with
+    the object changed: **a rule written for one kind of object silently claims the kinds
+    it never met.**
+
 14. **Tables:** `booktabs` only — `\toprule`, `\midrule`, `\bottomrule`. No vertical rules and
     no `\hline`. Table and figure spacing is the class default, confirmed by the build:
     `\floatsep` 12.0pt plus 2.0pt minus 2.0pt, `\textfloatsep` 20.0pt plus 2.0pt minus 4.0pt,
     `\intextsep` 12.0pt plus 2.0pt minus 2.0pt, `\abovecaptionskip` 10.0pt,
     `\belowcaptionskip` 0.0pt.
+
+    **Each table gets its own measure, and 23 of the 30 do not need one.** A nine-column
+    table is not a four-inch object: six tables overflow the body measure, the worst by
+    143.65pt. Step 8 leaves 162.6075pt of margin on each side for them not to have to, so
+    a table wider than the measure is centred on the page and grows symmetrically into
+    that margin -- the **body** measure, which every metric in this file is about, never
+    moves. Tabular matter is set at 10.0pt on 12.0pt; step 13's prohibition on shrinking
+    type is about the code font, where a reader copies identifiers out of the PDF.
+
+    A **uniform** wide measure is the wrong repair and the rendered page said so: pandoc
+    gives any table with a long cell a set of `p{}` columns that are fractions of the
+    table's measure, so one width for all of them stretches a two-column table to the same
+    width as a nine-column one and opens a canyon down its middle. Each table's measure is
+    instead derived from what the engine reported about that table (`./build.sh --retune`,
+    which iterates to a fixed point because widening a table rewraps its columns) and
+    **committed to `TABLE-WIDTHS.tsv`**, one row per table, carrying the deficit in points
+    that forced it. An ordinary build, and every `verify-layout.sh`, is then a single
+    deterministic pass over a reviewed file rather than a re-derivation.
 
 15. **Figure placement.** Every figure is `[tb]` — top or bottom of a page, never `[h]` and
     never `[H]`. A figure locked in place mid-column breaks the baseline grid of step 9 and
@@ -175,9 +252,33 @@ wrong, and the second one cannot be fixed by choosing differently.**
     clean. Whether the result satisfies economics house style is **P13g**, which is
     pending-human and is explicitly not closed by the session that builds the layout.
 
+    **Measured at wealthTensor-94: `bibtex` is a no-op on this corpus.** The four
+    manuscripts contain zero `\cite` commands and the repository contains no `.bib` file --
+    every paper carries a hand-written References section. natbib is loaded exactly as
+    specified above and the pair compiles clean; there is simply nothing for `bibtex` to
+    process. `LAYOUT-MANIFEST.json` records this as `bibtex.ran: false` rather than
+    passing over it, so the day a `\cite` appears a successor knows the leg has never been
+    exercised.
+
 17. **Build and verify.** `latexmk -lualatex` twice for cross-references, then `bibtex`, then
     twice more. Then run `python3 scripts/wt173_typography_probe.py --verify` and require exit
     0: it re-measures from a fresh build and holds every value in this file to it.
+
+    `./build.sh` runs all of that and **refuses on three things the toolchain reports at a
+    severity below the one that stops it**:
+
+    1. **`Overfull \hbox`** -- text physically outside the measure. A warning.
+    2. **`Missing character:`** -- an absent glyph, for which LaTeX sets nothing. A warning.
+       126 marks would have vanished from a build that exited 0.
+    3. **Ink outside the paper.** *Zero overfull boxes does not mean the document fits on
+       the page.* An overfull box is reported when a line exceeds `\hsize`, so any
+       construction that WIDENS `\hsize` -- which is exactly what step 14's per-table
+       measure does -- silences the warning whether or not the result is still on the
+       sheet. An early cut of that environment reported zero overfull boxes while running
+       every wide table off the right edge of the paper. `build.sh` therefore measures the
+       marked extent of every page with ghostscript's bbox device and requires 18bp of
+       clearance on all four edges. **A check that cannot see a failure reports zero of
+       them, and zero reads exactly like absence.**
 
 ---
 

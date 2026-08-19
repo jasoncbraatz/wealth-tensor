@@ -1,0 +1,284 @@
+% docs/deliverable/preamble.tex
+% ---------------------------------------------------------------------------------------
+% THE EXECUTION OF docs/deliverable/RECIPE.md. Every block carries the recipe step it
+% implements. RECIPE.md is the source of truth and this file is not free to disagree with
+% it: `scripts/wt173_typography_probe.py --verify` holds the recipe to a fresh build, and
+% `docs/deliverable/verify-layout.sh` holds THIS document's page count and per-page text
+% hash. Do not edit a value here -- edit the recipe, re-measure, then bring this file to it.
+% ---------------------------------------------------------------------------------------
+
+% ---- RECIPE step 3 · document class ---------------------------------------------------
+\documentclass[11pt,letterpaper]{article}
+
+% ---- RECIPE step 6 · fonts BY PATH, never by family name ------------------------------
+% A Path= load either finds that exact file or errors out. A family-NAME load asks the
+% operating system, which is helpful, which is the problem (preflight.sh, header).
+\usepackage{fontspec}
+\usepackage{unicode-math}
+\setmainfont{LibertinusSerif-Regular.otf}[
+  Path            = ./fonts/ ,
+  ItalicFont      = LibertinusSerif-Italic.otf ,
+  BoldFont        = LibertinusSerif-Bold.otf ,
+  BoldItalicFont  = LibertinusSerif-BoldItalic.otf ]
+\setsansfont{LibertinusSans-Regular.otf}[
+  Path            = ./fonts/ ,
+  ItalicFont      = LibertinusSans-Italic.otf ,
+  BoldFont        = LibertinusSans-Bold.otf ]
+\setmonofont{Inconsolatazi4-Regular.otf}[
+  Path            = ./fonts/ ,
+  BoldFont        = Inconsolatazi4-Bold.otf ,
+  Scale           = MatchLowercase ]
+\setmathfont{LibertinusMath-Regular.otf}[ Path = ./fonts/ ]
+
+% Display cut of the serif -- the title scale of step 11, and nothing else.
+\newfontfamily\wtdisplayfont{LibertinusSerifDisplay-Regular.otf}[ Path = ./fonts/ ]
+
+% ---- wt175 · THE FOUR MARKS NO LIBERTINUS FACE CARRIES --------------------------------
+% MEASURED at wealthTensor-94, not assumed: the corpus uses 75 distinct non-ASCII
+% characters and SIX are absent from LibertinusSerif-Regular. Two are mathematics and are
+% set in math mode out of LibertinusMath, which has them (U+2299 CIRCLED DOT OPERATOR,
+% U+1D4A9 SCRIPT CAPITAL N). The other four --
+%     U+2713 CHECK MARK      95x        U+29D7 BLACK HOURGLASS   17x
+%     U+270E LOWER RIGHT PENCIL 13x     U+26A0 WARNING SIGN       1x
+% -- are carried by NONE of the fifteen fonts this deliverable had vendored, and they are
+% not decoration: they are the citation-verification notation the References sections
+% DEFINE in their own prose (paper-I lines 593-595). LaTeX reports an absent glyph as
+% "Missing character:" in the log and then sets NOTHING, so all 126 marks would have
+% disappeared out of a build that exited 0. That is the overfull-box disease in a second
+% organ, and build.sh now fails the build on both.
+%
+% The repair KEEPS ADR-002's discipline rather than re-opening it: FreeSerif.otf is
+% vendored into ./fonts/ and checksummed in FONTS.tsv exactly like the other fifteen, and
+% loaded by Path. Nothing here asks the operating system for a font.
+% Declared with ONE cut in every shape on purpose: the four marks are symbols, they have
+% no bold or italic design, and a mark inside a bold heading would otherwise raise
+% "Font shape undefined" and fall back silently. Saying it explicitly costs nothing and
+% vendors three fewer megabytes than shipping the Bold and Italic cuts to be ignored.
+\newfontfamily\wtmarksfont{FreeSerif.otf}[ Path = ./fonts/ ,
+  BoldFont = FreeSerif.otf , ItalicFont = FreeSerif.otf , BoldItalicFont = FreeSerif.otf ]
+\newcommand{\wtmark}[1]{{\wtmarksfont #1}}
+
+% ---- RECIPE step 8 · page geometry ----------------------------------------------------
+% US Letter 614.295pt x 794.97pt. Left and right margins 162.6075pt, top 72.27pt; the
+% bottom comes out at 92.7pt and exceeds the top ON PURPOSE -- the block is optically
+% centred rather than geometrically centred.
+\usepackage[letterpaper,
+  textwidth=289.08pt, textheight=630.0pt,
+  left=162.6075pt, top=72.27pt, heightrounded=false]{geometry}
+
+% ---- RECIPE steps 4, 5, 9, 12 · body size, leading, grid, display maths ---------------
+% 11.0pt on 14.0pt, set EXPLICITLY rather than inherited, so the leading is not the class's
+% guess (step 4's own words). textheight 630.0pt is exactly 45 leadings, so the block
+% closes flush on the baseline grid. The display skips of step 12 are declared HERE, inside
+% \normalsize, because that is where LaTeX resets them -- setting them once at the top level
+% would be silently undone by the first \small in a table.
+\makeatletter
+\renewcommand\normalsize{%
+  \@setfontsize\normalsize{11.0}{14.0}%
+  \abovedisplayskip      11.0pt \@plus 3.0pt \@minus 6.0pt
+  \abovedisplayshortskip \z@    \@plus 3.0pt
+  \belowdisplayshortskip 6.5pt  \@plus 3.5pt \@minus 3.0pt
+  \belowdisplayskip      11.0pt \@plus 3.0pt \@minus 6.0pt
+  \let\@listi\@listI}
+\makeatother
+\normalsize
+\setlength{\parindent}{17.0pt}
+\setlength{\parskip}{0.0pt plus 1.0pt}
+
+% ---- RECIPE step 10 · microtype, loaded AFTER the fonts -------------------------------
+% This is what makes the measured characters-per-line of step 7 reproducible. Without it
+% the paragraphs break differently and the layout hashes do not reproduce.
+\usepackage{microtype}
+
+% ---- RECIPE step 13 · inline code identifiers -----------------------------------------
+% At this measure an inline monospace run fits 55 characters; the corpus's longest
+% identifier is 64. \url breaks it at its underscores and INSERTS NO CHARACTER, so what a
+% reader copies out of the PDF is still what runs. Not solved by centring (measured: still
+% 41.36pt too wide) and not by shrinking the code font, which defeats why ADR-002 chose
+% this cut. wt175_md2tex.lua is what routes identifiers here instead of to \texttt.
+\usepackage{url}
+\urlstyle{tt}
+\def\UrlBreaks{\do\_}
+% AMENDED AT wealthTensor-94, FROM THE REAL BUILD, AND RECIPE.md step 13 CARRIES THE SAME
+% AMENDMENT. `\do\_` alone was written for IDENTIFIERS and the corpus's code spans are not
+% all identifiers: measured on the four manuscripts, the spans also contain repository URLs
+% (`https://github.com/jasoncbraatz/wealth-tensor`, 47 characters, no underscore anywhere)
+% and bare 64-character git SHAs (no break opportunity of any kind). Those overflowed the
+% measure by 30.8pt and 62.8pt respectively. xurl adds break opportunities without INSERTING
+% A CHARACTER, which is the property step 13 actually asks for -- what a reader copies out of
+% the PDF still runs -- so it satisfies the step's stated reason rather than only its letter.
+% It is also the package pandoc's own generated preamble reaches for, for this exact reason.
+\usepackage{xurl}
+
+% ---- RECIPE step 14 · tables ----------------------------------------------------------
+% booktabs only: \toprule, \midrule, \bottomrule. No vertical rules and no \hline.
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{calc}
+\setlength{\floatsep}{12.0pt plus 2.0pt minus 2.0pt}
+\setlength{\textfloatsep}{20.0pt plus 2.0pt minus 4.0pt}
+\setlength{\intextsep}{12.0pt plus 2.0pt minus 2.0pt}
+\setlength{\abovecaptionskip}{10.0pt}
+\setlength{\belowcaptionskip}{0.0pt}
+
+% ---- what pandoc's LaTeX writer assumes its template provides -----------------------
+% This preamble replaces pandoc's default template, so the handful of macros that template
+% defines have to be defined here or the build dies on an undefined control sequence.
+% \real comes from calc, loaded above, and is what pandoc's longtable column widths use.
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\providecommand{\texorpdfstring}[2]{#1}
+% Pandoc wraps every UNCAPTIONED longtable in `{\def\LTcaptype{none} ... }` and its own
+% generated preamble answers that with a DUMMY COUNTER, not with the caption package:
+% `\newcounter{none} % for unnumbered tables`. Without it, longtable's machinery reaches
+% \refstepcounter{none} and the build dies with "No counter 'none' defined" -- on all
+% thirty tables. Taken verbatim from `pandoc -s -t latex` on a one-row table, which is the
+% only authority on what pandoc's output needs.
+\newcounter{none}
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% four footnotes in the corpus; this is pandoc's own provision for footnotes in a longtable
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+
+% ---- line breaking at a 289.08pt measure ----------------------------------------------
+% A four-inch measure is narrow, and a short paragraph of long unbreakable tokens (an author
+% block: "Jason C. Braatz Independent researcher jason@braatzresearch.com") can leave TeX no
+% break it will accept, at which point it sets an OVERFULL line -- text physically outside
+% the measure. \emergencystretch gives the line breaker a third pass with extra
+% stretchability, so it produces a LOOSE line instead of a protruding one.
+%
+% This is not a way of hiding the overfull count build.sh asserts. It changes what TeX DOES:
+% the text now fits the measure and the badness is reported as an underfull box instead,
+% which build.sh counts and prints and deliberately does not fail on -- a loose line is
+% ugly, a protruding line is wrong, and only one of those is a layout defect.
+\setlength{\emergencystretch}{3em}
+\tolerance=2000
+
+% ---- RECIPE step 16 · references ------------------------------------------------------
+% natbib author-date over chicago.bst. MEASURED at wealthTensor-94: the four manuscripts
+% contain ZERO \cite commands and the repository contains no .bib file -- every paper
+% carries a hand-written "## References" section. natbib is loaded exactly as the recipe
+% specifies, and bibtex is a NO-OP on this corpus. Recorded in LAYOUT-MANIFEST.json as a
+% measurement rather than worked around.
+\usepackage[authoryear,round]{natbib}
+
+% ---- the manuscripts number themselves --------------------------------------------------
+% MEASURED, from the rendered page: every heading in the corpus already carries its own
+% number ("## 2 · The model", "### 2.1 · The process"), so LaTeX's counter produced
+% "14  2 · The model" and "14.1  2.1 · The process" -- two numbering schemes disagreeing
+% with each other on the same line, and the LaTeX one wrong because the four papers are
+% concatenated. Pandoc's own generated preamble does exactly this, for exactly this reason.
+\setcounter{secnumdepth}{-\maxdimen}
+
+% ---- RECIPE step 11 · headings, on the 1.18 scale -------------------------------------
+% Title 17.5/20.0 (Libertinus Serif Display); section 13.0/15.0; subsection 12.0/14.0;
+% subsubsection 11.0/14.0, Libertinus Serif Bold. Vertical skips are whole and half
+% multiples of the 14.0pt leading, so a heading cannot push the rest of a page off the
+% grid of step 9.
+\makeatletter
+\renewcommand\section{\@startsection{section}{1}{\z@}%
+  {-21.0pt \@plus -2.0pt \@minus -2.0pt}{7.0pt}%
+  {\normalfont\fontsize{13.0}{15.0}\selectfont\bfseries\raggedright}}
+\renewcommand\subsection{\@startsection{subsection}{2}{\z@}%
+  {-14.0pt \@plus -2.0pt \@minus -2.0pt}{3.5pt}%
+  {\normalfont\fontsize{12.0}{14.0}\selectfont\bfseries\raggedright}}
+\renewcommand\subsubsection{\@startsection{subsubsection}{3}{\z@}%
+  {-14.0pt \@plus -2.0pt \@minus -2.0pt}{3.5pt}%
+  {\normalfont\fontsize{11.0}{14.0}\selectfont\bfseries\raggedright}}
+\renewcommand\paragraph{\@startsection{paragraph}{4}{\z@}%
+  {14.0pt \@plus 2.0pt \@minus 2.0pt}{-0.5em}%
+  {\normalfont\fontsize{11.0}{14.0}\selectfont\bfseries}}
+\makeatother
+
+% ---- P13a · the stamp values, written by build.sh, never by hand ----------------------
+% build.sh generates wt-stamp.tex containing \wtcommit and \wtbuilt. \wtbuilt is the
+% COMMIT's date, not the wall clock: a build timestamp would change the footer on every
+% page on every rebuild, which would change every per-page text hash, which would make
+% LAYOUT-MANIFEST.json unreproducible BY CONSTRUCTION. The stamp has to be a function of
+% the commit alone or it defeats the row it exists to satisfy.
+\input{wt-stamp.tex}
+
+% ---- P13a · THE COMMIT STAMP, VISIBLY ON THE PAGE -------------------------------------
+% P13a asks for "a point-in-time capture that CANNOT BE CONFUSED WITH A LATER ONE". The
+% commit therefore appears on the title page AND in the footer of EVERY page, so no single
+% sheet of a printed copy is ambiguous about which capture it came from. \wtcommit and
+% \wtbuilt are injected by build.sh from `git rev-parse HEAD`; they are never typed by hand.
+%
+% ps@plain is redefined as well as the new style, deliberately: \maketitle, \part and
+% longtable's first page all issue \thispagestyle{plain}, and a page that escaped the stamp
+% would be exactly the ambiguity this row exists to prevent.
+\makeatletter
+\newcommand{\wt@footline}{%
+  \parbox{\textwidth}{\centering\normalfont\fontsize{8.0}{10.0}\selectfont
+    wealth-tensor capture\quad\textbullet\quad\texttt{\wtcommit}%
+    \quad\textbullet\quad\wtbuilt\quad\textbullet\quad\thepage}}
+\newcommand{\ps@wtcapture}{%
+  \renewcommand{\@oddhead}{}\renewcommand{\@evenhead}{}%
+  \renewcommand{\@oddfoot}{\wt@footline}\renewcommand{\@evenfoot}{\wt@footline}}
+\renewcommand{\ps@plain}{\ps@wtcapture}
+\makeatother
+\pagestyle{wtcapture}
+
+% ---- the paper title block (the title scale of step 11) -------------------------------
+\newcommand{\wtpapertitle}[1]{%
+  {\wtdisplayfont\fontsize{17.5}{20.0}\selectfont\raggedright #1\par}%
+  \nopagebreak\vspace{14.0pt}}
+
+% ---- wide tables, ONE WIDTH PER TABLE --------------------------------------------------
+% A nine-column table cannot live inside a 289.08pt measure, and step 8 leaves 162.6075pt of
+% margin on each side for it not to have to. But a UNIFORM wide measure is the wrong repair
+% and the rendered page said so: pandoc gives a table with any long cell a set of
+% p{}-columns that are FRACTIONS OF \linewidth, so widening \linewidth for every table
+% stretches a narrow two-column table to the same 460pt as a nine-column one and opens a
+% canyon down its middle. Wide is not the same as needing to be wide.
+%
+% So each table gets its OWN measure, defaulting to the body measure and widened only where
+% the build proved it necessary. docs/deliverable/TABLE-WIDTHS.tsv is that record: it is
+% COMMITTED, it names each table and the overfull amount that forced its width, and build.sh
+% reads it rather than re-deriving it -- so the widths are a reviewable input to the build
+% and not an emergent property of it. `./build.sh --retune` regenerates it.
+%
+% THE GLUE IS THE SUBTLE PART AND IT WAS WRONG ONCE. \hsize is widened per table, but its
+% ORIGIN is still the text block's left edge -- so giving \LTleft and \LTright equal rigid
+% parts centres the table about a point half the overhang to the RIGHT of where the reader's
+% eye expects, and pushes a full-width table clean off the right edge of the paper. \LTleft
+% must carry the WHOLE overhang as its rigid part, with the fill doing the centring:
+%     \LTleft = -(tablewidth - textwidth) plus 1fill ,   \LTright = 0pt plus 1fill
+% Then a body-width table lands exactly on the text block (measured: ink 161.99-450.01bp
+% against a text block of 162.0-450.0bp) and a widened one is centred on the page (measured:
+% 76.84-535.77bp on a 612bp sheet). Both measured with ghostscript's bbox device, because
+% THE OVERFULL COUNT CANNOT SEE THIS FAILURE -- widening \hsize silences the warning whether
+% or not the ink is still on the paper. That is why build.sh also asserts page bounds.
+%
+% Tabular matter is set at 10.0/12.0 rather than the body's 11.0/14.0. That is ordinary in
+% economics typesetting, and step 13's prohibition on shrinking type is about the CODE font,
+% where a reader copies identifiers out of the PDF, and does not reach here.
+\makeatletter
+\newlength{\wt@tablewidth}
+% build.sh writes wt-tablewidths.tex from the committed TSV; absent, every table is body width
+\InputIfFileExists{wt-tablewidths.tex}{}{}
+% #1 = stable table id, #2 = its column count (the tuner needs it: a cell that overflows a
+% p-column by x needs the TABLE widened by about x times the number of columns).
+\newenvironment{wttable}[2]
+  {\par\addvspace{7.0pt}\begingroup
+   \ifcsname wt@tw@#1\endcsname
+     \setlength{\wt@tablewidth}{\csname wt@tw@#1\endcsname}%
+   \else
+     \setlength{\wt@tablewidth}{\textwidth}%
+   \fi
+   \def\wt@tid{#1}% an environment's END part cannot see #1; save it while still in scope
+   \typeout{WT-TABLE-BEGIN:#1:#2:\the\wt@tablewidth}%
+   % A table that reaches the width cap and still does not fit steps its type down instead;
+   % that is the last resort and TABLE-WIDTHS.tsv records which tables took it.
+   \ifcsname wt@ts@#1\endcsname \csname wt@ts@#1\endcsname
+   \else \fontsize{10.0}{12.0}\selectfont \fi
+   \setlength{\hsize}{\wt@tablewidth}%
+   \setlength{\linewidth}{\wt@tablewidth}%
+   \setlength{\columnwidth}{\wt@tablewidth}%
+   \LTleft=-\dimexpr\wt@tablewidth-\textwidth\relax plus 1fill\relax
+   \LTright=0pt plus 1fill\relax}
+  {\typeout{WT-TABLE-END:\wt@tid}\endgroup\addvspace{7.0pt}\par}
+\makeatother

@@ -22,3 +22,12 @@ LibertinusSerif-Regular.otf	libertinus-fonts	eaca0213ab907e36524aa61130ed5b8faa8
 LibertinusSerif-Semibold.otf	libertinus-fonts	27985deb13136c759dfc5079fb2dd1487c789096c3dce03b096a06fd137d1b9d	fonts/opentype/public/libertinus-fonts/LibertinusSerif-Semibold.otf	291640
 LibertinusSerif-SemiboldItalic.otf	libertinus-fonts	bff1ec3eb69e0dfd51e3f3b43340bae4e894dd7faaf0cc9b4c67720113fa83ee	fonts/opentype/public/libertinus-fonts/LibertinusSerif-SemiboldItalic.otf	343148
 LibertinusSerifDisplay-Regular.otf	libertinus-fonts	a7fd8f01dbeb26f941050364eb98aea9ded576e5ee2147028ceab1573c982a63	fonts/opentype/public/libertinus-fonts/LibertinusSerifDisplay-Regular.otf	263688
+# wealthTensor-94 (wt175): FreeSerif is vendored for FOUR CHARACTERS and nothing else --
+# U+2713 CHECK MARK, U+29D7 BLACK HOURGLASS, U+270E PENCIL, U+26A0 WARNING SIGN. They are
+# the citation-verification notation the References sections define in their own prose,
+# they occur 126 times, and MEASURED against every one of the fifteen faces above they are
+# carried by none of them. LaTeX sets nothing for an absent glyph and reports it as a log
+# warning, so all 126 would have been silently absent from a build that exited 0.
+# This ADDS a row under ADR-002's discipline (vendored, by path, verified by checksum);
+# it does not re-open the decision. The body text never selects it -- only \wtmark does.
+FreeSerif.otf	gnu-freefont	aab33b5d0efd450d3ac3153b176f542315e171db79e494aa287cd940ae16231b	fonts/opentype/public/gnu-freefont/FreeSerif.otf	2047320

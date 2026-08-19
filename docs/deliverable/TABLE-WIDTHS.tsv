@@ -1,0 +1,16 @@
+# docs/deliverable/TABLE-WIDTHS.tsv
+# ONE MEASURE PER TABLE, derived by `build.sh --retune` from what the engine
+# actually reported, and COMMITTED so that an ordinary build -- and every
+# verify -- is a single deterministic pass over a reviewed file rather than a
+# re-derivation. A table absent from this list is set at the body measure
+# (289.08pt) at 10.0/12.0. Column 5 is the deficit, in points, that forced the
+# width in column 2, so every row carries the measurement that justifies it.
+# Do not hand-edit: run ./build.sh --retune.
+table_id	width	size_pt	leading_pt	deficit_pt	why
+paper-I-price-formation-t1	303.5pt	10.0	12.0	13.38	table overflowed by 13.38pt
+paper-III-dual-tensor-t10	319.0pt	10.0	12.0	28.71	table overflowed by 28.71pt
+paper-III-dual-tensor-t15	301.5pt	10.0	12.0	11.47	a cell overflowed its column by 1.91pt across 6 columns
+paper-III-dual-tensor-t18	308.5pt	10.0	12.0	18.42	a cell overflowed its column by 4.60pt across 4 columns
+paper-III-dual-tensor-t2	396.5pt	10.0	12.0	106.49	table overflowed by 106.49pt
+paper-III-dual-tensor-t4	456.0pt	10.0	12.0	165.70	a cell overflowed its column by 18.41pt across 9 columns
+paper-III-dual-tensor-t5	308.5pt	10.0	12.0	18.36	table overflowed by 18.36pt
