@@ -1,0 +1,15 @@
+# docs/pointer-exclusions.tsv — flags of wt163 adjudicated NOT-A-POINTER, with the reason.
+#
+# A widened verb vocabulary buys false positives. Repairing good prose to satisfy a detector is
+# the ABSORB move docs/CO-AUTHOR-CHARTER.md §2 forbids, so a false positive is DISCLOSED here
+# instead of being written out of the manuscript.
+#
+# This file cannot grow silently: wt163 post-condition D3 refuses to pass unless these rows are
+# EXACTLY the three named in docs/REVIEW-028-pointer-vocabulary.md §5 — which were predicted at
+# commit c89f764, BEFORE wt163 existed and before any widened sweep was run. A successor who
+# needs a fourth row must edit D3 and say so in a review.
+#
+# file	verb	target	reason
+III	held	place by a test suite	idiom: "held in place" locates nothing; the reader is not sent anywhere
+III	held	**100%**	a statistic, not a location — "the lag ordering held in 100% of ladders"
+III	held	the gap and released at rate α	physical: unrecognised value is held in the model's gap, not content in a document
