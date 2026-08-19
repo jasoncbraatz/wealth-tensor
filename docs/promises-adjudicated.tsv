@@ -21,7 +21,7 @@
 #
 # SCOPE. The line below is the gate. Adding a manuscript stem to it turns the sweep red until every
 # promise that manuscript emits carries a row. Widening scope is a data edit, deliberately.
-#scope	paper-III	paper-IV
+#scope	paper-II	paper-III	paper-IV
 #
 # paper<TAB>promise_id<TAB>artefact<TAB>class<TAB>evidence<TAB>note<TAB>sentence
 paper-III	bb9fba4abf	PRE-002	H	python3 scripts/wt089_recognition_and_offdiagonal.py (RC 0) §3 A1	POOLED n=695 d=613 alpha_yr=0.4077 [0.3827,0.4319] -> the paper's 0.408 [0.383,0.432], and PRE-002 is the instrument that dates the events	**That made the recognition rate, not the ordering, the quantity to establish first — and §5.4 establishes it.** On the registered sample the recognition rate PRE-002's instrument identifies is **α̂ = 0.408 per year**, 95% interval [0.383, 0.432], on both known biases' inflating side: the calibration used here is low by an order of magnitude, and the asserted rectangle lies inside the domain at the measured rate and across its 95% interval, where **0.974** of the 683 disclosed pairs are admissible and **0.959** at the interval's lower bound.
