@@ -2,7 +2,7 @@
 project: wealth-tensor
 gh_repo: jasoncbraatz/wealth-tensor
 branch: main
-gh_sha: e0679aed0d2d8423fb1dc98438bcdd26555d33eb
+gh_sha: PENDING
 updated: 2026-08-19
 session: wealthTensor-93
 session_n: 93
@@ -280,6 +280,15 @@ done-when written into the closing comment.
 four stand** and Paper I is outside `#scope`.
 **NEW:** `1217633320596131` (`wt160`/`wt163`/`wt166` read two manuscripts of four) and
 `1217633269591608` (the verbatim standard binds 17 of 153; `wt173`).
+**BUG SPRAY, outside this repo, cleared at wrap because a gate FAIL is a blocker.** (1) Three
+sibling session notes were sitting untracked in the everything folder — `HANDOFF-floristDeputize-1`,
+`HANDOFF-ipadTravel-2`, `SESSION-creditSentinel-1-20260818` — reported against `-92` because no
+live roster claim covered the repo. Committed verbatim, unedited: the everything folder is a cache,
+and a handoff left in a cache is a handoff waiting to be lost. (2) G-AE was red on
+`com.braatz.vnc-autores`, a launchd job that existed nowhere but darwin. Banked to
+`~/repos/darwin-remote-access/launchagents/` — its own project repo — rather than to `~/Scripts`
+beside `vnc-autores.sh`, because a live `rail-runner` held the Scripts claim. Census now reads
+**0 unbacked**. Neither job was reloaded and neither plist was edited.
 **Carried:** `1217630566080626`, `1217629264134185`, `1217603625863293` (two instances),
 `1217613775009402`, `1217568297674954`, `1217568192511533`, `1217596263441666`,
 `1217596233063153`, `1217561667484767`, `1217593142996092`.
