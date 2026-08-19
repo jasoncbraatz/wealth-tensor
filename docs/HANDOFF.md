@@ -7,7 +7,7 @@ updated: 2026-08-19
 session: wealthTensor-97
 session_n: 97
 live_theme: "THE HANDOFF NOW RE-RUNS ITS OWN CLAIMS. `-93` asserted `wt172 --verify` RC 0 while that command returned 2 at the exact commit it handed over, because `$?` after a pipe is the pipe's -- and the rule against piping was ALREADY in STEP 0 of the handoff it broke. A rule stated inside a document protects that document's READER, never its writer; only a check closes that. `-96` built it: the front matter carries a `claims:` registry, `handoff_gate.py --claims-all` RE-RUNS every entry un-piped, and a disagreement is re-run before it is reported, because `-95` proved a flaky check will otherwise manufacture a false accusation against an honest predecessor. It caught its own author inside the hour: `pytest` stayed RC 0 while its count went 1121 -> 1148, and the leg refused the stale number three times before calling it false. THE BOARD IS UNCHANGED -- 57 CLOSED, 9 PENDING-HUMAN, ZERO OPEN, every remaining row a human gate."
-phase: "THE GATE NOW RE-RUNS WHAT THE HANDOFF CLAIMS, AND EVERY NUMBER HERE WAS RE-DERIVED BY IT RATHER THAN QUOTED: `pytest` 1148 passed (1121 inherited from `-95`, plus 27 in the new tests/test_handoff_claims_leg.py); `wt173 --verify` RC 0; `wt173 --postconditions` RC 0 over 14 checks with 5 NEGATIVE and 0 failed; `preflight` RC 0 over 16 vendored fonts; `wt133` and `wt148` and `wt154` and `wt156` and `wt160` and `wt163` and `wt166` and `wt169` -- ALL EIGHT RC 0; `wt170 --verify` RC 0; `wt172 --verify` RC 0 over 17 paper-II rows; `verify-layout.sh` RC 0, 145 pages rebuilt in a clean worktree, and it did NOT reproduce `-95`'s false red; `redproof-layout.sh` RC 0, four probes; `wt177_figure_guard.py` RC 0; `redproof_wt177_figures.py` RC 0 over 21 probes; NEW `redproof_wt178_claims.py` RC 0, 20 probes, 17 of 17 declared tags covered, and the coverage check proven non-vacuous by deleting one probe; G-CLAIMS run over the committed handoff -- 19 claims declared, 19 re-run un-piped, 19 agreed; coach 0/0/3/0 outside Limitations, IDENTICAL to what `-96` inherited and NO MANUSCRIPT EDITED; gate v2.61 PASS, tree clean and pushed."
+phase: "THE GATE NOW RE-RUNS WHAT THE HANDOFF CLAIMS, AND EVERY NUMBER HERE WAS RE-DERIVED BY IT RATHER THAN QUOTED: `pytest` 1148 passed (1121 inherited from `-95`, plus 27 in the new tests/test_handoff_claims_leg.py); `wt173 --verify` RC 0; `wt173 --postconditions` RC 0 over 14 checks with 5 NEGATIVE and 0 failed; `preflight` RC 0 over 16 vendored fonts; `wt133` and `wt148` and `wt154` and `wt156` and `wt160` and `wt163` and `wt166` and `wt169` -- ALL EIGHT RC 0; `wt170 --verify` RC 0; `wt172 --verify` RC 0 over 17 paper-II rows; `verify-layout.sh` RC 0, 145 pages rebuilt in a clean worktree, and it did NOT reproduce `-95`'s false red; `redproof-layout.sh` RC 0, four probes; `wt177_figure_guard.py` RC 0; `redproof_wt177_figures.py` RC 0 over 21 probes; NEW `redproof_wt178_claims.py` RC 0, 20 probes, 17 of 17 declared tags covered, and the coverage check proven non-vacuous by deleting one probe; G-CLAIMS run over the committed handoff -- 19 claims declared, 19 re-run un-piped, 19 agreed; `defensive paper-I` and `defensive paper-II` and `defensive paper-III` and `defensive paper-IV` -- 0/0/3/0 sentences outside Limitations, now MEASURED and registered rather than inherited, and IDENTICAL to what `-96` inherited and NO MANUSCRIPT EDITED; gate v2.61 PASS, tree clean and pushed."
 gate_passed: true
 gate_version: "2.61"
 next_at_bat: "ASSIGNED, ONE THING: **a toolchain-free guard on `docs/deliverable/LAYOUT-MANIFEST.json`.** It is the top item in the parking lot and it is a named hole, not a nicety: `verify-layout.sh`, `redproof-layout.sh` and `wt173 --verify` ALL need lualatex, pandoc and a git worktree, so NOTHING in CI, in a fresh clone, in the container, or in any session that has not run preflight can catch a hand-edited manifest. A file nothing cheap can check is a file that drifts, and P13e's whole claim rests on it. THE SHAPE, and `-96` just built one of these so copy it: the manifest DECLARES what it contains, and the test holds it to its own declaration -- `page_count` equals `len(pages)`, the fonts listed match `FONTS.tsv` row for row, the manuscripts listed are exactly the four on disk, every per-page hash is well-formed and there are `page_count` of them, and the capture commit named in the manifest is an object in this clone. Do NOT let the test discover its own scope by iterating whatever keys happen to be present -- that is `-95`'s nine-of-fourteen defect, and it reads as full coverage. DONE WHEN: `tests/test_layout_manifest_is_self_consistent.py` runs with NO toolchain in under a second and passes on the committed manifest; a red-proof provokes EVERY failure it can report, each asserted by its specific tag rather than by exit status alone, and says the count out loud; the new guard is REGISTERED in the `claims:` block so the gate re-runs it; and `pytest`'s count claim moves with it. Do NOT close P13g, P9 or P8 -- all three PENDING-HUMAN and explicitly not a session's to call."
@@ -86,6 +86,27 @@ claims:
     rc: 0
     count: 21
     count_re: ([0-9]+)/[0-9]+ probes proven
+  - id: defensive paper-I
+    cmd: python3 scripts/defensive_count.py docs/papers/paper-I-price-formation/paper-I.md
+    rc: 0
+    count: 0
+    count_re: ([0-9]+) defensive sentence\(s\) outside
+  - id: defensive paper-II
+    cmd: python3 scripts/defensive_count.py docs/papers/paper-II-redistribution/paper-II.md
+    rc: 0
+    count: 0
+    count_re: ([0-9]+) defensive sentence\(s\) outside
+  - id: defensive paper-III
+    cmd: python3 scripts/defensive_count.py docs/papers/paper-III-dual-tensor/paper-III.md
+    rc: 0
+    count: 3
+    count_re: ([0-9]+) defensive sentence\(s\) outside
+  - id: defensive paper-IV
+    cmd: python3 scripts/defensive_count.py docs/papers/paper-IV-composition/paper-IV.md
+    rc: 0
+    count: 0
+    count_re: ([0-9]+) defensive sentence\(s\) outside
+    note: the 0/0/3/0 the phase block states -- inherited unverified for three handoffs until -96 measured it
   - id: redproof_wt178_claims.py
     cmd: python3 scripts/redproof_wt178_claims.py
     rc: 0
@@ -277,8 +298,11 @@ the front matter is the machine-readable form of this list, and the gate holds t
    appears naming the orphaned tag (measured, not assumed).
 🟢 ▲ `python3 scripts/handoff_gate.py --claims-all` → **RC 0**, **19 claims declared, 19
    re-run, 19 agreed.** `--claims` alone skips the three slow ones and exits **2** on purpose.
-🟢 coach: defensive sentences **outside** §Limitations are **0 / 0 / 3 / 0** for papers I–IV,
-   identical to the commit `-96` inherited, and `-96` edited no manuscript at all — proved, not
+🟢 `python3 scripts/defensive_count.py <each paper>` → defensive sentences **outside**
+   §Limitations are **0 / 0 / 3 / 0** for papers I–IV. ▲ **Registered as four claims at `-96`** —
+   the number had been inherited unverified for three handoffs, and the prose audit did not flag
+   it because it is neither an `RC n` nor an `N passed`. Measuring it was the last thing `-96`
+   did, and it agreed. Identical to the commit `-96` inherited, and `-96` edited no manuscript — proved, not
    asserted, by an empty `git diff 448b0be..HEAD -- docs/papers/`.
 🟢 GATE: gate v2.61, `gate-selfcheck.sh` **PASS**, tree clean and pushed.
 
