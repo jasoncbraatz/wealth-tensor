@@ -1,0 +1,776 @@
+{
+  "_": "P13e. Written by wt176_layout_manifest.py --emit. Do not hand-edit: verify-layout.sh rebuilds from source_commit in a clean worktree and holds the PDF to every value below.",
+  "source_commit": "5b525f1754de91413098680fea0403ef3e135443",
+  "source_commit_short": "5b525f1754de",
+  "commit_date": "2026-08-19",
+  "pdf": "wealth-tensor-capture.pdf",
+  "pdf_sha256": "97475645329929114c1393d5f5868b8a10ab7c140bff498aafe50268b5bf0016",
+  "page_count": 145,
+  "pages": [
+    {
+      "page": 1,
+      "chars": 781,
+      "sha256": "c0e62f1aab84a1831d75acb9e26911cbd922869b085f5d1e38bd8ecc857307a5"
+    },
+    {
+      "page": 2,
+      "chars": 1473,
+      "sha256": "a7ebfc67d2ab7e2e82490c800a03da28a37d298743deee8dd3fe9560a127ea04"
+    },
+    {
+      "page": 3,
+      "chars": 2112,
+      "sha256": "25656efe09ee626b682906878a64ab193dd764e0adbbcfbe19742e10695e8d37"
+    },
+    {
+      "page": 4,
+      "chars": 2520,
+      "sha256": "91fc7ab615a6686003519071dcd21bfc4f49773ba1311604debcbfbede06b615"
+    },
+    {
+      "page": 5,
+      "chars": 2535,
+      "sha256": "d7205feb25e1c9cbdb33c76e26b4dbb01350bae60e83e735f78c67c25166285f"
+    },
+    {
+      "page": 6,
+      "chars": 2039,
+      "sha256": "e51dc0c2c8624f24194a3a72e21673cf7547997e7c0b3e914055a97521821ba6"
+    },
+    {
+      "page": 7,
+      "chars": 1843,
+      "sha256": "f38970f5ae573c93b6d53290f443094e95bf0507dce824e92051f78361b7be7f"
+    },
+    {
+      "page": 8,
+      "chars": 2083,
+      "sha256": "b24522f80b8bbce21a2ba2e65ba9418ab31a7302626ccc3f35eb82f4856dbb0e"
+    },
+    {
+      "page": 9,
+      "chars": 2144,
+      "sha256": "767eaf351b296d2fecc0d4e071db7e05e597a15899396a37a8981e858d11d1b0"
+    },
+    {
+      "page": 10,
+      "chars": 2786,
+      "sha256": "a1b094a10cf4333854370b981538232e3e44df223fc02c36e93e8f55f6a4c669"
+    },
+    {
+      "page": 11,
+      "chars": 1887,
+      "sha256": "c3fbe04ca6e1dda7ac7b0c9863fb7c4a06f49fe1efe1b6d5ace7767a0b5c8fdd"
+    },
+    {
+      "page": 12,
+      "chars": 1902,
+      "sha256": "a4381f8b788e981f8efc9410d50a1a5cd150fb9115a0580b50adc020baa59422"
+    },
+    {
+      "page": 13,
+      "chars": 2377,
+      "sha256": "84736bf6f952a4fc68d9d38460bba4051569855c3ed159dcf91c3ae4ee764963"
+    },
+    {
+      "page": 14,
+      "chars": 2510,
+      "sha256": "83fdce2c4e05023f2029c849197df1f738b3e3a16b84e524a5f43507118826a3"
+    },
+    {
+      "page": 15,
+      "chars": 2418,
+      "sha256": "356860f5130b5c9e007c711c69f5179e0b96b831e57d7b85930ffd49765d469b"
+    },
+    {
+      "page": 16,
+      "chars": 2491,
+      "sha256": "da6e0155bffa0f581f6d23c131047b0b0cc06fb941c28198b272c4746f340fd5"
+    },
+    {
+      "page": 17,
+      "chars": 2307,
+      "sha256": "207877cceeeee5cb21b04ed50f2443fa307f87a8115f8b4b815978bd3237f8f9"
+    },
+    {
+      "page": 18,
+      "chars": 2383,
+      "sha256": "e507bbc4fdf891b2a862f06174bb960a25cbe1639a9933c86890cc466cb6e9cf"
+    },
+    {
+      "page": 19,
+      "chars": 2764,
+      "sha256": "f10497d53c2011cd62e3adfb06fba1ce5267e16912ebfaf7eb48d46a9a2c320c"
+    },
+    {
+      "page": 20,
+      "chars": 2447,
+      "sha256": "9241ddf28eab48fe845bdad629f5dfbb740aa82b8151b0884892d01a256b9845"
+    },
+    {
+      "page": 21,
+      "chars": 2349,
+      "sha256": "39cd494934fbdd801ca035967a6647fe27037450fd57d120e38ef36a75b39fe7"
+    },
+    {
+      "page": 22,
+      "chars": 686,
+      "sha256": "361fe313408d67452b216266fdfe60bf6d0c5e666b1a64cab6a3e634f15c0566"
+    },
+    {
+      "page": 23,
+      "chars": 2087,
+      "sha256": "b25e9755c702c29f82b627fdb359e4e18c4418ef17cb210ccee88bd98dcbe604"
+    },
+    {
+      "page": 24,
+      "chars": 2412,
+      "sha256": "d5ec97c97fc51cf731667251529ef6519e3d57277144b282854528a9e088c732"
+    },
+    {
+      "page": 25,
+      "chars": 2320,
+      "sha256": "3c91aa39aec9fe5cc603dafb851a621ebf3d70102647d53ce1ed9d0244814350"
+    },
+    {
+      "page": 26,
+      "chars": 1834,
+      "sha256": "0940bdea76ed471443c9dd9b34d8881a802428d47b27400138287108529ef4c8"
+    },
+    {
+      "page": 27,
+      "chars": 1942,
+      "sha256": "107d0a008052537c669fd1cfebde91089400a96fa750e61800390d0b2a5a6b0d"
+    },
+    {
+      "page": 28,
+      "chars": 2754,
+      "sha256": "08758df68eed55a11679cbf260ed202c3c6d69890f04664ce6b30a9c38c8397e"
+    },
+    {
+      "page": 29,
+      "chars": 2422,
+      "sha256": "a8421288ff63677c6b8ee08f81c004f6a5514f14fb28dacb91e2beac09070723"
+    },
+    {
+      "page": 30,
+      "chars": 2717,
+      "sha256": "83e3334f10fa997f0aed28e3826967e263e21a01d02637636282af06b26481b1"
+    },
+    {
+      "page": 31,
+      "chars": 2635,
+      "sha256": "4bb0b74362ef75e220a242596cde57f1f9ee405f203938ec87b43bc79feceaee"
+    },
+    {
+      "page": 32,
+      "chars": 2277,
+      "sha256": "926bedfbaee26a0df6ba7665b03a3423302b7b0d86814c60b820be9685359a34"
+    },
+    {
+      "page": 33,
+      "chars": 2240,
+      "sha256": "7f981948cf99725e0d07ff2db37a9f613324b67931421347c93c6effe2c67533"
+    },
+    {
+      "page": 34,
+      "chars": 2811,
+      "sha256": "42c99a2659f0d8ebfdd6d9b209f6c956d675ae9946a610ef1edb1e6ed3b00a9b"
+    },
+    {
+      "page": 35,
+      "chars": 2230,
+      "sha256": "15ab0e673dd461f0320f862c62b6925e5676bb9ea60132b78e4ae0495a1f3b9f"
+    },
+    {
+      "page": 36,
+      "chars": 2278,
+      "sha256": "6d496ec6fc4c14692335e988007e28dde1ccaf3a8d2c0525b2e99f629447e062"
+    },
+    {
+      "page": 37,
+      "chars": 2522,
+      "sha256": "1d1f738a2faa0d7cc440b1ed5384289b722f25afcff547707bed7e85bb085d39"
+    },
+    {
+      "page": 38,
+      "chars": 816,
+      "sha256": "d4006d7d8c680ffe5f305980cc3c00857260a45f439f45da4a7a2b99713d78ac"
+    },
+    {
+      "page": 39,
+      "chars": 2061,
+      "sha256": "b8dc124260012168ce31f51c446fda41448f60e0eaa5a103db97c4761002d09a"
+    },
+    {
+      "page": 40,
+      "chars": 2444,
+      "sha256": "da1f207189c3d0d38296aa8c36a549a9840f101dcfd633388a361cfe896a78b0"
+    },
+    {
+      "page": 41,
+      "chars": 2611,
+      "sha256": "723d6170cb7209578e29e954e99c7bc49f698f2ed1e04045ce42504d7d75af93"
+    },
+    {
+      "page": 42,
+      "chars": 2152,
+      "sha256": "5dba0cf5f09e4688e638a97875cd77ffa2787460fd129776d3b2746c59dc8200"
+    },
+    {
+      "page": 43,
+      "chars": 2393,
+      "sha256": "0fc9ed3656f43374e0c6deca32dfc06289eccb7912ff83acb48d19dfb1672957"
+    },
+    {
+      "page": 44,
+      "chars": 1744,
+      "sha256": "20cb0008902d0a0609ed34798d0c0025ff283103f1d56322ca5e25c635537519"
+    },
+    {
+      "page": 45,
+      "chars": 2090,
+      "sha256": "e517a4f63e6b01d7a5a82973ce05666ea50555a025ce5aba87438d7f1060648b"
+    },
+    {
+      "page": 46,
+      "chars": 2362,
+      "sha256": "9548fff7af922f5d1220db750d7ac8d3d283aa1757be788b539ef2e98d8fcc8f"
+    },
+    {
+      "page": 47,
+      "chars": 2118,
+      "sha256": "1749c9deb81bfa8907bac4f86858957867acf54a990b52390a7261a7a8153c85"
+    },
+    {
+      "page": 48,
+      "chars": 2460,
+      "sha256": "3dfded36fe096ee3ac2e364407532e275656f5bd3f38fc4c5392bc75c5282ef3"
+    },
+    {
+      "page": 49,
+      "chars": 2817,
+      "sha256": "03ce5bd118722f756e4bc900b5b3449e11d5ee43f2f6aa7a570e339cd3d2508d"
+    },
+    {
+      "page": 50,
+      "chars": 2722,
+      "sha256": "acf07cb847c0df24773795dccd49c8562ed893f6a6d29f0e043b712eb4321154"
+    },
+    {
+      "page": 51,
+      "chars": 2454,
+      "sha256": "c46a07a7914dc69edcd706b0dd761140386c973b9416e9042e143f372e3f4c39"
+    },
+    {
+      "page": 52,
+      "chars": 1863,
+      "sha256": "53ca595bd15baf528353d86d69a450ff264fc8e939b831329f12758da34ab34a"
+    },
+    {
+      "page": 53,
+      "chars": 2618,
+      "sha256": "94528a94f617a1d932dcabc9f205b218640a3638a6662d81df84dc37e6d07f8c"
+    },
+    {
+      "page": 54,
+      "chars": 2547,
+      "sha256": "917683bb88f3a5f7b5428cec34501c38aaf3b53f996d0af01f42a355c67d042c"
+    },
+    {
+      "page": 55,
+      "chars": 2915,
+      "sha256": "05c8070df5e464c10d1cabceacd6ffb6502860b7e2b9a568798dd2bfd83e320c"
+    },
+    {
+      "page": 56,
+      "chars": 2270,
+      "sha256": "9d0f46ba96f5ed114be8ad451ed3cecafa6e81816b88180f620903fba87242ab"
+    },
+    {
+      "page": 57,
+      "chars": 2671,
+      "sha256": "2d26c84f55d9179ccf44d6cfc7fe277f400b48353d416352132db65927b53b67"
+    },
+    {
+      "page": 58,
+      "chars": 2838,
+      "sha256": "606c281dccda184a25cf89dfc4fcf9b50607cf9f3b35898f17696966914b53e0"
+    },
+    {
+      "page": 59,
+      "chars": 2647,
+      "sha256": "eae75446f903d7b398b3fb6fb773872efbb9bb5f421bb7de23cc617351251236"
+    },
+    {
+      "page": 60,
+      "chars": 2934,
+      "sha256": "74a6572df3c932d7fdc92037697e4695ad4cf9de2ab3482ed885157489ed4b8b"
+    },
+    {
+      "page": 61,
+      "chars": 2873,
+      "sha256": "7f73e5727c1dc7b61cbcc2bc360bee4cadc8170549e3a9df592e04f570a6e24c"
+    },
+    {
+      "page": 62,
+      "chars": 2886,
+      "sha256": "29656eaee776838e4b6a8c8800e5d689e0716ed488f0fcdb782522157cc42b56"
+    },
+    {
+      "page": 63,
+      "chars": 2757,
+      "sha256": "9d4c935c12a50bcb554625948e7ace3ce00fbb63eb04d6132875a878a3fa45ba"
+    },
+    {
+      "page": 64,
+      "chars": 2563,
+      "sha256": "3f2dabb77d085ecc2aebb9b956a1356a95eaa0417aef644cc93832e9a8038bdc"
+    },
+    {
+      "page": 65,
+      "chars": 2855,
+      "sha256": "768b4313cb829f0cb8256742be5cb225281e0b0f336fee9ac5d3a04de3516544"
+    },
+    {
+      "page": 66,
+      "chars": 2502,
+      "sha256": "5ab1c2d6eef782bb2e4172ecfd67ac5ba36a58383845ef08b3a05ee265e2fcd2"
+    },
+    {
+      "page": 67,
+      "chars": 2777,
+      "sha256": "c1dded80ea709d0be055165fd1c2d8709deae8306c50b9c167fdc8e8864f3db9"
+    },
+    {
+      "page": 68,
+      "chars": 2314,
+      "sha256": "45ed72dc4ce30dec00e13cc9f57baf8f3b7e8bd8f86d57630cce74cc2b92ddb1"
+    },
+    {
+      "page": 69,
+      "chars": 2697,
+      "sha256": "89470011eeeb1a77ebbdcda2dc846d1fadf02a8c2341a65fac03f21309f361b3"
+    },
+    {
+      "page": 70,
+      "chars": 2504,
+      "sha256": "b9fae2914ca296f8b90b88675a8b2f2d75e7b39b2d0fd8a7011c4704575c0c93"
+    },
+    {
+      "page": 71,
+      "chars": 2333,
+      "sha256": "654af58321f193f8a9e7bcf51d4a31234c789174f57f24e843667fc11bc4bd14"
+    },
+    {
+      "page": 72,
+      "chars": 2517,
+      "sha256": "f652a8af2fe2e6ebda150d4cec529ef4c6ac90e1e54d12ca8785de1a185d44c0"
+    },
+    {
+      "page": 73,
+      "chars": 2542,
+      "sha256": "4b5252f9491083fc4b4334385147d244a17d2214d8466e609f01a69411f35d63"
+    },
+    {
+      "page": 74,
+      "chars": 1796,
+      "sha256": "9341ab2f79cc789ddd0e3a91dab364795a30eb0b35f7a0fb22273fce14c41c47"
+    },
+    {
+      "page": 75,
+      "chars": 2063,
+      "sha256": "138e448817af8f6d785c989bcf3ca0c5d2ddccfd88413e5e04611d3531d157cd"
+    },
+    {
+      "page": 76,
+      "chars": 2604,
+      "sha256": "5739b5d5ec4bfcc9339746d691e51a14ebbc1d113a74f94298a5c418aa4a1f9c"
+    },
+    {
+      "page": 77,
+      "chars": 2854,
+      "sha256": "8464d26d16452e045796ece91f80ccaa3ee8007a2a8b74d9c5a762932f296e03"
+    },
+    {
+      "page": 78,
+      "chars": 2502,
+      "sha256": "fa96501af025f9532cfeb7e6293c4b8ab5888c7c6f2a46a3b96383d2b6b294e0"
+    },
+    {
+      "page": 79,
+      "chars": 2629,
+      "sha256": "48c3d3d5118d755c4f8d3a590861b860598310259bcc8565a7499faddb436619"
+    },
+    {
+      "page": 80,
+      "chars": 2645,
+      "sha256": "7465d0231c723f673f5d743b5ee986d6482cd0cf6cfcfc22cb5f042bc6ce9fb6"
+    },
+    {
+      "page": 81,
+      "chars": 2430,
+      "sha256": "1bd4fdbbbde391bb4a0adc14d5e111afc69ecf009bd66ba4d103abdee2c2cec3"
+    },
+    {
+      "page": 82,
+      "chars": 1507,
+      "sha256": "1a7d6846cefa8fedff9de17c50189b9ef42a22e68d124ae455d3339c29ea4d81"
+    },
+    {
+      "page": 83,
+      "chars": 1524,
+      "sha256": "8ac79b5ffd3d089df902f7995440497c3e254f70203fd2377ff5cd51bbce7cfc"
+    },
+    {
+      "page": 84,
+      "chars": 1866,
+      "sha256": "291e21756f600cf826f5af3f0aac3487cd410881a0b8e42f193a3f1d9f0e88c0"
+    },
+    {
+      "page": 85,
+      "chars": 2056,
+      "sha256": "b39cac73c9d0be391f4b03ae76a0d03f5eb1d62e72c6773c6a24b636f12251d2"
+    },
+    {
+      "page": 86,
+      "chars": 1905,
+      "sha256": "b2b193694f4e50748aa8e456a7d030caf4bd876101ad071886552035b357942c"
+    },
+    {
+      "page": 87,
+      "chars": 1729,
+      "sha256": "1c233d9dd50eff3cc6d07b897dbfe0cd8906ccf21bb2ecd7f51f3aaa678e796d"
+    },
+    {
+      "page": 88,
+      "chars": 1518,
+      "sha256": "b7bb442d36a606ac1efd33944f6a6719ac1683ca80b9ddaffa45378195a5a723"
+    },
+    {
+      "page": 89,
+      "chars": 1848,
+      "sha256": "bae5f9f78aa3fc00c2d0b4b589bc16144de73281629b48c23f25f9c58e2da932"
+    },
+    {
+      "page": 90,
+      "chars": 2479,
+      "sha256": "f0d6f15d73731e74694ff0c7714c2fda39174471333af94a23ca51442c754768"
+    },
+    {
+      "page": 91,
+      "chars": 2701,
+      "sha256": "dcba4b1ba53d19c7bb9b049b570988ebfc0078b985c1284c2f8dfe4fddc0bfd1"
+    },
+    {
+      "page": 92,
+      "chars": 2713,
+      "sha256": "f0022581c841cc5c5fbb5f538130d45d3bec6246e06b52a247e028c9c9daa5a4"
+    },
+    {
+      "page": 93,
+      "chars": 2282,
+      "sha256": "f19222e9c82ba10bfdf33406dccb1d78939d8cca8441bd4ac59c42011e7c28d2"
+    },
+    {
+      "page": 94,
+      "chars": 2507,
+      "sha256": "4cf4c14bbfd63edd5d2ba2af1912df0767da841dc4c2b667c42f1906fbcb2720"
+    },
+    {
+      "page": 95,
+      "chars": 2211,
+      "sha256": "9c5058ea71ad0a6a99558ffca05bfd93a87a918842733c6c66cd3bd3d4697683"
+    },
+    {
+      "page": 96,
+      "chars": 2679,
+      "sha256": "2761526f6dc4ec6efd504f2a70e291700d3d89193364143c3ce4a60c180d2351"
+    },
+    {
+      "page": 97,
+      "chars": 2625,
+      "sha256": "a461523a670220df9c78885a352b6227b2b701d8c90bf3c86cd5c3889503f73a"
+    },
+    {
+      "page": 98,
+      "chars": 2852,
+      "sha256": "5c15f9a6052104c00a1ee831da96d3f09c3f25127734d241ed6dffc549a6f774"
+    },
+    {
+      "page": 99,
+      "chars": 2776,
+      "sha256": "d18972861e94f6287faaec47d1fed95b41f5cc9514b345020babf1fbadc7b016"
+    },
+    {
+      "page": 100,
+      "chars": 2532,
+      "sha256": "d9ae53f202a57f053d440caed9eb719dc9ea5a30332ed37ec22dcbde6102e04b"
+    },
+    {
+      "page": 101,
+      "chars": 2458,
+      "sha256": "09d23588f8f195d4dbbe7c9cba047de0d98f1b21b2e41f53d286cdccdca4a5cd"
+    },
+    {
+      "page": 102,
+      "chars": 2516,
+      "sha256": "0bc610e593352931dd204b069c3135b1500e1df0843b20fea276e780262e0cd4"
+    },
+    {
+      "page": 103,
+      "chars": 2503,
+      "sha256": "e970db64a3423b3f8aa0a4ecfa5a3908f27c63f42161298efbcc4be2621d4849"
+    },
+    {
+      "page": 104,
+      "chars": 2376,
+      "sha256": "b2abc6d68249fc0e9c848ac026d81c92f186763dcd7590f59146af0836d60b75"
+    },
+    {
+      "page": 105,
+      "chars": 2143,
+      "sha256": "6c1273e69e7f3bb402be9028d9fad18d1977aef468525c26db68acc6cdbd9823"
+    },
+    {
+      "page": 106,
+      "chars": 2514,
+      "sha256": "57268f1df4cab4ac9ce0a738d1ef03e2dc3a7e4a757f3a244f9996a3b6981b4e"
+    },
+    {
+      "page": 107,
+      "chars": 2288,
+      "sha256": "cc7129c42ede8476d81a7fa6c68571347024552cdc090b7b951f608bf2bd9c8a"
+    },
+    {
+      "page": 108,
+      "chars": 2618,
+      "sha256": "71a350aba846a4c09a1de72f64c6da628f1906a0ff646636d5c0e22b6b29081b"
+    },
+    {
+      "page": 109,
+      "chars": 2106,
+      "sha256": "2188bf2a1477ae6ed301523a94dcacf7dc18885aee2f52e052d689cf3e4f5436"
+    },
+    {
+      "page": 110,
+      "chars": 2364,
+      "sha256": "7754777309c3ff812040c35536f3780525c54bb7b2537110b088886b854dc665"
+    },
+    {
+      "page": 111,
+      "chars": 2168,
+      "sha256": "f8b1eb1d3e2a7f5f54f75c2f746d633b14f0f4f7675ba89b15b4cbe63455d3fc"
+    },
+    {
+      "page": 112,
+      "chars": 2950,
+      "sha256": "06dfb56930bf31d1b9b60d09b1f6da93944dee7b2310970df0f07fd2cb3d30fa"
+    },
+    {
+      "page": 113,
+      "chars": 2899,
+      "sha256": "73161392ad909da22d124e1ddec428174a88346ce9a8a9e8da0cd98052fa829e"
+    },
+    {
+      "page": 114,
+      "chars": 2793,
+      "sha256": "597c43b674bd7f882c898b3aaa0f78da4fcd15d4c54c9435382cca5c3b8a793e"
+    },
+    {
+      "page": 115,
+      "chars": 2808,
+      "sha256": "61907ad4e02026df447c2cae37ec8325f741d1433fdc2379d44cb8af712d541f"
+    },
+    {
+      "page": 116,
+      "chars": 2960,
+      "sha256": "17c18daecf243a0a7174b672136cf7a67253d4d73384930e58c543a5e17abf71"
+    },
+    {
+      "page": 117,
+      "chars": 2827,
+      "sha256": "14f62f7f4e7f0244ba6e8816bfd04e2c23f6de19ebda85b170e566ff0debc311"
+    },
+    {
+      "page": 118,
+      "chars": 2888,
+      "sha256": "01002b7f8c505462b9aee4252809bd5be272b7dd6056dd90cf9b905a1e1b5f4d"
+    },
+    {
+      "page": 119,
+      "chars": 2852,
+      "sha256": "bee371bed1a81514e96f6c5ca6a293ea8063ac49c0373ce71131d09f5e177470"
+    },
+    {
+      "page": 120,
+      "chars": 2784,
+      "sha256": "6a4c096e825eb6eda960d74ef74a8f5323aa1c9a8674e9108a9363f81864c8b2"
+    },
+    {
+      "page": 121,
+      "chars": 2573,
+      "sha256": "4fdaf9c8dcd840e9ecf0f01593875aefabfd76806287ace260abff183446a4da"
+    },
+    {
+      "page": 122,
+      "chars": 1651,
+      "sha256": "aecd656b40072bab58f4d9111a2a1384521faa66c2cd920fde4a1395576820f0"
+    },
+    {
+      "page": 123,
+      "chars": 2023,
+      "sha256": "b42ad0e81bdcea47ff94501fd214d885b66266d4a56f164c21dda62a1208b854"
+    },
+    {
+      "page": 124,
+      "chars": 2342,
+      "sha256": "a944782e196449e9efdeff83c4b8d472f2c15ed53ccf3e76fd1380395adb3f86"
+    },
+    {
+      "page": 125,
+      "chars": 2641,
+      "sha256": "bac03db12146301b4bc5079869f9aac5b38a9acf99eec81e392831c909e67c48"
+    },
+    {
+      "page": 126,
+      "chars": 2183,
+      "sha256": "08a40684e0eba33ba15f9721aaf87279deb32587b05f7f6e60cad7184d335d0d"
+    },
+    {
+      "page": 127,
+      "chars": 2259,
+      "sha256": "d7b7d749edea577e1b7823974f675cceae66f7511409e5f2d77b6d2be70e1cbc"
+    },
+    {
+      "page": 128,
+      "chars": 2740,
+      "sha256": "eac3819d9c852f6c7f4906f4fbc842467ffc36e302bd2b8968c5ec4d61f6df8e"
+    },
+    {
+      "page": 129,
+      "chars": 2838,
+      "sha256": "925b9f9d3859c20159ae45dc0eb985793f9bb23912823f0f0010eb6442c160f6"
+    },
+    {
+      "page": 130,
+      "chars": 2131,
+      "sha256": "070a66059954eaaa4d9e547b6f6aa0232bb4a33068278a05052bec828019abe0"
+    },
+    {
+      "page": 131,
+      "chars": 2414,
+      "sha256": "3dcfe96833127bb1ff016535f2ac3d6d5fd422c76a3a6276be0c66b8a0ab3873"
+    },
+    {
+      "page": 132,
+      "chars": 2325,
+      "sha256": "07648fcfc4361b0cccf7b460dbbd7c16ac0ac010e7932246dadc18351f8799fa"
+    },
+    {
+      "page": 133,
+      "chars": 2425,
+      "sha256": "8f66a8c47344cf160da6d39c36657e3146d87b22431e4bbd438eb82cc02ed6fc"
+    },
+    {
+      "page": 134,
+      "chars": 2234,
+      "sha256": "271b6911a14b739e9b4f834b3686b08b61a4b12e70dc16915a9d8e5c5d4d3105"
+    },
+    {
+      "page": 135,
+      "chars": 2400,
+      "sha256": "8c6d798322bc16cf4fbdd9bc90fec5c290e49e956985931c6ef61110736b6470"
+    },
+    {
+      "page": 136,
+      "chars": 2523,
+      "sha256": "e5017ae54ce32b9b387ce557a5da2f531ae664010935a0d6ccc5d24cf3c9856b"
+    },
+    {
+      "page": 137,
+      "chars": 2726,
+      "sha256": "95e03f68b7c7a14cf425746c11968de9adcbf447aed051101df6b35f85da5bbd"
+    },
+    {
+      "page": 138,
+      "chars": 2641,
+      "sha256": "e7ffdb1e2dccb20a6fbd4a39a92d56ba78c345bb5e2c81cbef51c875f29127ab"
+    },
+    {
+      "page": 139,
+      "chars": 2432,
+      "sha256": "318dfc0812148aad399ca58205744292f66599c7c80ce97ff6c500ad7fd13e5e"
+    },
+    {
+      "page": 140,
+      "chars": 2610,
+      "sha256": "0d64d922f836306a8195034d6bfc5e1675bee03abf9bd3d0337a86b99ea00ac6"
+    },
+    {
+      "page": 141,
+      "chars": 2172,
+      "sha256": "0e10c1a4a38172f98b22d615dd6fb035ce289fa1e9ca1cf8d41b9a380c525d11"
+    },
+    {
+      "page": 142,
+      "chars": 2558,
+      "sha256": "ea71802ee3724dd6fcc62ed4cc4994585ee0df0094543e43b863db3a30bd95a8"
+    },
+    {
+      "page": 143,
+      "chars": 2206,
+      "sha256": "61732a325afc351f5a958a45b7f61ec5ddc6f718d455442d027eab2c9f2a0cfb"
+    },
+    {
+      "page": 144,
+      "chars": 2197,
+      "sha256": "ca96c4873dd49cc19b3e27565117f063546564fad790357f741b809c46bc9a1c"
+    },
+    {
+      "page": 145,
+      "chars": 813,
+      "sha256": "341d9512c765389a934a4492ce7925051bc389a0a5ffb9a4480cd609d81ae99b"
+    }
+  ],
+  "pins": {
+    "engine": "lualatex",
+    "texlive_year": "2026",
+    "pandoc": "3.9.0.2",
+    "text_extractor": "pypdf",
+    "text_extractor_version": "6.10.2"
+  },
+  "silent_wrongness": {
+    "overfull_hboxes": 0,
+    "missing_characters": 0,
+    "_": "Both are LaTeX WARNINGS and both are fatal in build.sh. Zero here is an assertion the build enforced, not an observation somebody made."
+  },
+  "bibtex": {
+    "ran": false,
+    "_": "MEASURED at wealthTensor-94: the four manuscripts contain zero \\cite commands and the repository contains no .bib file -- each paper carries a hand-written References section. RECIPE step 16's natbib/chicago pair is loaded as specified and compiles clean; bibtex has nothing to process on this corpus. Recorded rather than worked around: the day a \\cite appears, this field is how a successor knows the leg was never exercised."
+  },
+  "fonts": {
+    "FreeSerif.otf": "aab33b5d0efd450d3ac3153b176f542315e171db79e494aa287cd940ae16231b",
+    "InconsolataN-Bold.otf": "6a63f52d84c893332ce89e19dbd3accbb13bb249639b5e26addbd0affdef6695",
+    "InconsolataN-Regular.otf": "07a966abe1d6500b93d18eb207c6718dcaa79e59b61014d4bce87ae140b175d8",
+    "Inconsolatazi4-Bold.otf": "515b21ca6b972d929b7362dda30548764f7541eb31cba0dabbb666433cd6552f",
+    "Inconsolatazi4-Regular.otf": "fa4d0728e461e228e4c3b706cc0836f72cb146852a757127c92647d8c405b638",
+    "LibertinusMath-Regular.otf": "e81bd44acbb7119c8f00128b36fecc5d980e10d2450a226ba52402ccf4da9d32",
+    "LibertinusSans-Bold.otf": "6d321e921ae278afb3e81f7a1df4b65816b92928e838f3d11fc1abfe4c15715f",
+    "LibertinusSans-Italic.otf": "cd74ad255b2f04939196bb280bd3856285f25fe44eab9eb350e704b425dba4d5",
+    "LibertinusSans-Regular.otf": "41b60a752ab3b0eb1b1a689272b1502f165b2ed95d097194c2f56bc2009fa66e",
+    "LibertinusSerif-Bold.otf": "cec426e3a1a8029d9525355208c8daaf00d82df7e89aa8ec5ce0ad1a91b77f74",
+    "LibertinusSerif-BoldItalic.otf": "f6e08d6ac1b208ecc41f6fe58cd4ea2e4cd4d19c99c9d932e828a7992c7d16bf",
+    "LibertinusSerif-Italic.otf": "6b91c901e9a843f5c011a81d0ee07c4af23895c2e78d4a8a1cee094e81bedac2",
+    "LibertinusSerif-Regular.otf": "eaca0213ab907e36524aa61130ed5b8faa8c0b0f54e74bf84b7c87e85ba25df7",
+    "LibertinusSerif-Semibold.otf": "27985deb13136c759dfc5079fb2dd1487c789096c3dce03b096a06fd137d1b9d",
+    "LibertinusSerif-SemiboldItalic.otf": "bff1ec3eb69e0dfd51e3f3b43340bae4e894dd7faaf0cc9b4c67720113fa83ee",
+    "LibertinusSerifDisplay-Regular.otf": "a7fd8f01dbeb26f941050364eb98aea9ded576e5ee2147028ceab1573c982a63"
+  },
+  "manuscripts": {
+    "docs/papers/paper-I-price-formation/paper-I.md": "bcfa9af3405caf2ccb4cc2af6c1ae8b5bc8c1ff648d81d07fb8d638ca8f895b6",
+    "docs/papers/paper-II-redistribution/paper-II.md": "d357f2410b95605d4a3fffcbacd36e2f4224857768ea7f42870be07a9847a3ed",
+    "docs/papers/paper-III-dual-tensor/paper-III.md": "1ee2285b68f1bec438d79114bc897d2d31891d5f0dd2ac7da6cebaf88b1f2ddd",
+    "docs/papers/paper-IV-composition/paper-IV.md": "78f16fa1f215d37b8ad87de812d49dff95b3c0f3e9580f6471a5a96477ed9d2f"
+  }
+}
