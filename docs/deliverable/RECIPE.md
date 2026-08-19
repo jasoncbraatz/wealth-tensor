@@ -4,8 +4,8 @@
 typeface, the engine and the font-loading discipline. **They are not this document's to
 re-open, and they are not the build session's either.** This file supplies the metrics
 ADR-002 deliberately left unset — size, leading, measure, margins, display-maths spacing —
-and it supplies them as **values measured from a real build**, never as "match the existing
-look".
+and it supplies them as **values measured from a real build** — never as an instruction to
+imitate a layout that already exists, and never as a word where a number belongs.
 
 Execute steps 1 to 17 top to bottom. Every number below appears in
 `docs/deliverable/METRICS-MEASURED.json` and is re-derivable by one command, named beside it.
@@ -183,60 +183,62 @@ wrong, and the second one cannot be fixed by choosing differently.**
 
 ## The measured values
 
-Machine-written by `--emit-block`; held to a fresh build by `--verify`. Do not hand-edit —
-edit the build and re-emit.
+Machine-written by `--emit-block`; held to a fresh build by `--verify`. Column three is the
+command that prints that value from a fresh build, so every number here carries its own
+provenance. Do not hand-edit — edit the build and re-emit.
 
 ```wt173-measured
-engine.engine	lualatex
-engine.texlive_year	2026
-body.size_pt	11.0
-body.leading_pt	14.0
-body.leading_ratio	1.2727
-body.measure_pt	289.08
-body.measure_in	4.0
-body.chars_per_line	65.37
-body.xheight_pt	4.741
-body.capheight_pt	7.117
-body.alphabet_pt	133.98
-page.paperwidth_pt	614.295
-page.paperheight_pt	794.97
-page.textwidth_pt	289.08
-page.textheight_pt	630.0
-page.margin_left_pt	162.6075
-page.margin_right_pt	162.6075
-page.margin_top_pt	72.27
-page.margin_bottom_pt	92.7
-page.baseline_grid_lines	45
-page.probe_overfull_hboxes	0
-page.margin_left_measured_pt	162.6075
-page.margin_top_measured_pt	72.27
-page.margin_bottom_measured_pt	92.7
-display_maths.abovedisplayskip	11.0pt plus 3.0pt minus 6.0pt
-display_maths.belowdisplayskip	11.0pt plus 3.0pt minus 6.0pt
-display_maths.abovedisplayshortskip	0.0pt plus 3.0pt
-display_maths.belowdisplayshortskip	6.5pt plus 3.5pt minus 3.0pt
-monospace.advance_pt	5.1631
-monospace.max_inline_identifier_chars	55
-monospace.corpus_longest_identifier_chars	64
-monospace.longest_fits_inline	False
-headings.title.size_pt	17.5
-headings.title.leading_pt	20.0
-headings.section.size_pt	13.0
-headings.section.leading_pt	15.0
-headings.subsection.size_pt	12.0
-headings.subsection.leading_pt	14.0
-headings.subsubsection.size_pt	11.0
-headings.subsubsection.leading_pt	14.0
-vertical_spacing.parindent	17.0pt
-vertical_spacing.parskip	0.0pt plus 1.0pt
-vertical_spacing.floatsep	12.0pt plus 2.0pt minus 2.0pt
-vertical_spacing.textfloatsep	20.0pt plus 2.0pt minus 4.0pt
-vertical_spacing.intextsep	12.0pt plus 2.0pt minus 2.0pt
-vertical_spacing.abovecaptionskip	10.0pt
-vertical_spacing.belowcaptionskip	0.0pt
-references.bst	chicago.bst
-references.package	natbib[authoryear,round]
-references.natbib_bibitem_format_ok	True
+# key	value	the command that prints this value from a fresh build
+engine.engine	lualatex	python3 scripts/wt173_typography_probe.py --print engine.engine
+engine.texlive_year	2026	python3 scripts/wt173_typography_probe.py --print engine.texlive_year
+body.size_pt	11.0	python3 scripts/wt173_typography_probe.py --print body.size_pt
+body.leading_pt	14.0	python3 scripts/wt173_typography_probe.py --print body.leading_pt
+body.leading_ratio	1.2727	python3 scripts/wt173_typography_probe.py --print body.leading_ratio
+body.measure_pt	289.08	python3 scripts/wt173_typography_probe.py --print body.measure_pt
+body.measure_in	4.0	python3 scripts/wt173_typography_probe.py --print body.measure_in
+body.chars_per_line	65.37	python3 scripts/wt173_typography_probe.py --print body.chars_per_line
+body.xheight_pt	4.741	python3 scripts/wt173_typography_probe.py --print body.xheight_pt
+body.capheight_pt	7.117	python3 scripts/wt173_typography_probe.py --print body.capheight_pt
+body.alphabet_pt	133.98	python3 scripts/wt173_typography_probe.py --print body.alphabet_pt
+page.paperwidth_pt	614.295	python3 scripts/wt173_typography_probe.py --print page.paperwidth_pt
+page.paperheight_pt	794.97	python3 scripts/wt173_typography_probe.py --print page.paperheight_pt
+page.textwidth_pt	289.08	python3 scripts/wt173_typography_probe.py --print page.textwidth_pt
+page.textheight_pt	630.0	python3 scripts/wt173_typography_probe.py --print page.textheight_pt
+page.margin_left_pt	162.6075	python3 scripts/wt173_typography_probe.py --print page.margin_left_pt
+page.margin_right_pt	162.6075	python3 scripts/wt173_typography_probe.py --print page.margin_right_pt
+page.margin_top_pt	72.27	python3 scripts/wt173_typography_probe.py --print page.margin_top_pt
+page.margin_bottom_pt	92.7	python3 scripts/wt173_typography_probe.py --print page.margin_bottom_pt
+page.baseline_grid_lines	45	python3 scripts/wt173_typography_probe.py --print page.baseline_grid_lines
+page.probe_overfull_hboxes	0	python3 scripts/wt173_typography_probe.py --print page.probe_overfull_hboxes
+page.margin_left_measured_pt	162.6075	python3 scripts/wt173_typography_probe.py --print page.margin_left_measured_pt
+page.margin_top_measured_pt	72.27	python3 scripts/wt173_typography_probe.py --print page.margin_top_measured_pt
+page.margin_bottom_measured_pt	92.7	python3 scripts/wt173_typography_probe.py --print page.margin_bottom_measured_pt
+display_maths.abovedisplayskip	11.0pt plus 3.0pt minus 6.0pt	python3 scripts/wt173_typography_probe.py --print display_maths.abovedisplayskip
+display_maths.belowdisplayskip	11.0pt plus 3.0pt minus 6.0pt	python3 scripts/wt173_typography_probe.py --print display_maths.belowdisplayskip
+display_maths.abovedisplayshortskip	0.0pt plus 3.0pt	python3 scripts/wt173_typography_probe.py --print display_maths.abovedisplayshortskip
+display_maths.belowdisplayshortskip	6.5pt plus 3.5pt minus 3.0pt	python3 scripts/wt173_typography_probe.py --print display_maths.belowdisplayshortskip
+monospace.advance_pt	5.1631	python3 scripts/wt173_typography_probe.py --print monospace.advance_pt
+monospace.max_inline_identifier_chars	55	python3 scripts/wt173_typography_probe.py --print monospace.max_inline_identifier_chars
+monospace.corpus_longest_identifier_chars	64	python3 scripts/wt173_typography_probe.py --print monospace.corpus_longest_identifier_chars
+monospace.longest_fits_inline	False	python3 scripts/wt173_typography_probe.py --print monospace.longest_fits_inline
+headings.title.size_pt	17.5	python3 scripts/wt173_typography_probe.py --print headings.title.size_pt
+headings.title.leading_pt	20.0	python3 scripts/wt173_typography_probe.py --print headings.title.leading_pt
+headings.section.size_pt	13.0	python3 scripts/wt173_typography_probe.py --print headings.section.size_pt
+headings.section.leading_pt	15.0	python3 scripts/wt173_typography_probe.py --print headings.section.leading_pt
+headings.subsection.size_pt	12.0	python3 scripts/wt173_typography_probe.py --print headings.subsection.size_pt
+headings.subsection.leading_pt	14.0	python3 scripts/wt173_typography_probe.py --print headings.subsection.leading_pt
+headings.subsubsection.size_pt	11.0	python3 scripts/wt173_typography_probe.py --print headings.subsubsection.size_pt
+headings.subsubsection.leading_pt	14.0	python3 scripts/wt173_typography_probe.py --print headings.subsubsection.leading_pt
+vertical_spacing.parindent	17.0pt	python3 scripts/wt173_typography_probe.py --print vertical_spacing.parindent
+vertical_spacing.parskip	0.0pt plus 1.0pt	python3 scripts/wt173_typography_probe.py --print vertical_spacing.parskip
+vertical_spacing.floatsep	12.0pt plus 2.0pt minus 2.0pt	python3 scripts/wt173_typography_probe.py --print vertical_spacing.floatsep
+vertical_spacing.textfloatsep	20.0pt plus 2.0pt minus 4.0pt	python3 scripts/wt173_typography_probe.py --print vertical_spacing.textfloatsep
+vertical_spacing.intextsep	12.0pt plus 2.0pt minus 2.0pt	python3 scripts/wt173_typography_probe.py --print vertical_spacing.intextsep
+vertical_spacing.abovecaptionskip	10.0pt	python3 scripts/wt173_typography_probe.py --print vertical_spacing.abovecaptionskip
+vertical_spacing.belowcaptionskip	0.0pt	python3 scripts/wt173_typography_probe.py --print vertical_spacing.belowcaptionskip
+references.bst	chicago.bst	python3 scripts/wt173_typography_probe.py --print references.bst
+references.package	natbib[authoryear,round]	python3 scripts/wt173_typography_probe.py --print references.package
+references.natbib_bibitem_format_ok	True	python3 scripts/wt173_typography_probe.py --print references.natbib_bibitem_format_ok
 ```
 
 ---

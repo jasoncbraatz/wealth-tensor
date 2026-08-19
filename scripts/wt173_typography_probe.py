@@ -571,8 +571,8 @@ def recipe_values():
     d = {}
     for line in m.group(1).splitlines():
         if line.strip() and not line.startswith("#"):
-            k, v = line.split("\t", 1)
-            d[k.strip()] = v.strip()
+            f = line.split("\t")
+            d[f[0].strip()] = f[1].strip()
     return d
 
 def verify():
@@ -612,8 +612,8 @@ def _verify_against(recipe_text, fm):
     stated, bad = {}, []
     for line in m.group(1).splitlines():
         if line.strip() and not line.startswith("#"):
-            k, v = line.split("\t", 1)
-            stated[k.strip()] = v.strip()
+            f = line.split("\t")
+            stated[f[0].strip()] = f[1].strip()
     for k, want in stated.items():
         if k not in fm or str(fm[k]) != want:
             bad.append(k)
@@ -722,8 +722,9 @@ def main():
         with open(JSONOUT, encoding="utf-8") as fh:
             fm = flat(json.load(fh))
         print("```wt173-measured")
+        print("# key\tvalue\tthe command that prints this value from a fresh build")
         for k in BLOCK_KEYS:
-            print("%s\t%s" % (k, fm[k]))
+            print("%s\t%s\tpython3 scripts/wt173_typography_probe.py --print %s" % (k, fm[k], k))
         print("```")
         return 0
     if a.postconditions:
