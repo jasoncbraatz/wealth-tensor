@@ -70,7 +70,7 @@ looks identical from the outside.** That single measurement decided most of what
 
 **Why Inconsolata specifically**, and this is corpus-specific rather than taste: the papers cite
 test identifiers inline, and the longest is
-`test_excess_demand_is_monotone_here_so_this_is_not_an_SMD_result` — **58 characters**. A wide
+`test_excess_demand_is_monotone_here_so_this_is_not_an_SMD_result` — **64 characters**. A wide
 monospace overflows the measure and forces either a shrunken code size or an ugly break. Inconsolata
 is narrow, OFL, already in the TeX tree, and the `zi4` cut has upright quotes, which matters
 because those identifiers will be copied out of the PDF and run.
@@ -135,3 +135,31 @@ Chicago author-date style (`P13g`).
   the cost this ADR exists to make visible before someone pays it casually.
 - Repository grows by 3.7 MB of binary. Accepted: it is the price of *"the same font"* being a
   fact rather than a hope.
+
+## Amendment · 2026-08-19 · wealthTensor-93 (`wt173`)
+
+**The decision above stands. Two facts in its §1 rationale did not survive being measured.**
+
+1. **The identifier is 64 characters, not 58.** Corrected in place above. The number was
+   never measured; `scripts/wt173_typography_probe.py` now derives it from the four
+   manuscripts rather than quoting it, so it cannot drift again.
+
+2. **"Does not overflow the measure" is false, and no font size makes it true.** Measured
+   from a real LuaLaTeX build over the vendored fonts: 64 Inconsolata characters occupy the
+   width of **74.1 Libertinus body characters**, and that ratio is *identical* at 10, 10.5,
+   11 and 12 pt — it is a property of the two typefaces, not of the size. Any measure wide
+   enough to hold that identifier inline therefore carries ~74 characters per line, above
+   even Bringhurst's outer limit. Setting it as centred display code does not help either:
+   measured, a `center` box is still 41.36 pt too wide, because centring narrows nothing.
+
+**What this does NOT change.** Inconsolata remains the right cut for exactly the reasons §1
+gives — OFL, already in the tree, upright quotes so identifiers copy out and run, and
+narrower than the alternatives. Being *narrower* was the real argument; *narrow enough* was
+the overreach. The residue is handled by `RECIPE.md` step 13, which lets long identifiers
+break at their underscores with a zero-width break that inserts no character. With that step
+in force the probe build produces zero overfull boxes.
+
+**The general shape, for whoever writes the next ADR here:** a rationale that states a
+threshold ("does not overflow") rather than a direction ("is narrower than the alternatives")
+has made a measurement it did not take. Prefer the direction; leave the threshold to the row
+that measures it.
