@@ -7,7 +7,7 @@ updated: 2026-08-19
 session: wealthTensor-98
 session_n: 98
 live_theme: "THE MANIFEST P13e RESTS ON IS NOW CHECKABLE BY ANYTHING THAT CAN RUN PYTHON. Three guards could notice a hand-edited LAYOUT-MANIFEST.json and all three needed lualatex, pandoc and a clean worktree -- so CI could not, a fresh clone could not, the container could not, and no session that had not run preflight could. `-97` built the cheap half: the manifest is held to itself, to FONTS.tsv row for row, to the manuscripts on disk in both directions, to the committed PDF bytes and to the commit it names, in 0.07s with the standard library and git. Its scope is DECLARED -- a key added to the manifest without a check added to the guard turns it RED rather than arriving unexamined, which is `-95`'s nine-of-fourteen defect run backwards. THE BOARD IS UNCHANGED -- 57 CLOSED, 9 PENDING-HUMAN, ZERO OPEN, every remaining row a human gate."
-phase: "EVERY NUMBER HERE WAS RE-DERIVED BY `handoff_gate.py --claims-all`, NOT QUOTED: `pytest` 1156 passed (1148 inherited from `-96`, plus 8 in the new tests/test_layout_manifest_is_self_consistent.py); NEW `wt179_manifest_guard.py` RC 0 over 10 checks, 145 pages and 16 fonts and 4 manuscripts described, in 0.07s with no toolchain; NEW `redproof_wt179_manifest.py` RC 0, 32 probes, 25 of 25 declared tags proven, and the coverage line proven non-vacuous by deleting a probe (exactly one WEAK, 24 of 25); `wt173 --verify` RC 0; `wt173 --postconditions` RC 0 over 14 checks with 5 NEGATIVE and 0 failed; `preflight` RC 0 over 16 vendored fonts; `wt133` and `wt148` and `wt154` and `wt156` and `wt160` and `wt163` and `wt166` and `wt169` -- ALL EIGHT RC 0; `wt170 --verify` RC 0; `wt172 --verify` RC 0 over 17 paper-II rows; `verify-layout.sh` RC 0, 145 pages rebuilt in a clean worktree; `redproof-layout.sh` RC 0, four probes; `wt177_figure_guard.py` RC 0; `redproof_wt177_figures.py` RC 0 over 21 probes; `redproof_wt178_claims.py` RC 0 over 17 declared tags; G-CLAIMS run over the committed handoff -- 25 claims declared, 25 re-run un-piped, 25 agreed, exit code captured with rc=$?; `defensive paper-I` and `defensive paper-II` and `defensive paper-III` and `defensive paper-IV` -- 0/0/3/0 sentences outside Limitations, UNCHANGED and NO MANUSCRIPT EDITED (`git diff 16635df..HEAD -- docs/papers/` empty); gate v2.61 PASS, tree clean and pushed."
+phase: "EVERY NUMBER HERE WAS RE-DERIVED BY THE GATE'S CLAIM RE-RUNNER, NOT QUOTED: `pytest` 1156 passed (1148 inherited from `-96`, plus 8 in the new tests/test_layout_manifest_is_self_consistent.py); NEW `wt179_manifest_guard.py` RC 0 over 10 checks, 145 pages and 16 fonts and 4 manuscripts described, in 0.07s with no toolchain; NEW `redproof_wt179_manifest.py` RC 0, 33 probes, 26 of 26 declared tags proven, and the coverage line proven non-vacuous by deleting a probe (exactly one WEAK); the guard proven RC 0 in 0.047s in a FRESH CLONE with nothing built and no preflight run, and its 8 tests green there in 1.11s; `wt173 --verify` RC 0; `wt173 --postconditions` RC 0 over 14 checks with 5 NEGATIVE and 0 failed; `preflight` RC 0 over 16 vendored fonts; `wt133` and `wt148` and `wt154` and `wt156` and `wt160` and `wt163` and `wt166` and `wt169` -- ALL EIGHT RC 0; `wt170 --verify` RC 0; `wt172 --verify` RC 0 over 17 paper-II rows; `verify-layout.sh` RC 0, 145 pages rebuilt in a clean worktree; `redproof-layout.sh` RC 0, four probes; `wt177_figure_guard.py` RC 0; `redproof_wt177_figures.py` RC 0 over 21 probes; `redproof_wt178_claims.py` RC 0 over 17 declared tags; G-CLAIMS run over the committed handoff -- 25 claims declared, 25 re-run un-piped, 25 agreed, exit code captured with rc=$?; `defensive paper-I` and `defensive paper-II` and `defensive paper-III` and `defensive paper-IV` -- 0/0/3/0 sentences outside Limitations, UNCHANGED and NO MANUSCRIPT EDITED (`git diff 16635df..HEAD -- docs/papers/` empty); gate v2.61 PASS, tree clean and pushed."
 gate_passed: false
 gate_version: "2.61"
 next_at_bat: "ASSIGNED, ONE THING: **give the three counted-by-nothing claims a number, and register it.** `-96` named the residue and `-97` did not close it: of the 25 entries in the `claims:` block, THREE print no count for the gate to hold them to -- `verify-layout.sh`, `redproof-layout.sh` and `wt170 --verify` -- and their `note:` fields say so out loud. That is the weak half of every one of them: an RC stays 0 while the world moves underneath it, which is exactly how `-96` shipped `pytest` 1121 for a suite of 1148. `verify-layout.sh` already knows it verified 145 pages, `redproof-layout.sh` already knows it ran four probes, and `wt170 --verify` already knows how many promise rows it adjudicated; none of the three says the number in a form a `count_re` can capture. THE SHAPE: make each print one stable line carrying its count, register `count` and `count_re` for all three, and prove the number BITES -- a red-proof that runs each command against a corpus with one more or one fewer member and shows the claims leg reporting FALSE-CLAIM, asserted by that TAG and not by exit status. Do NOT hand-write the number into the script from what you measured today; derive it from what the run actually did, or you have built `-92`'s tautology -- a value you passed in is not a value you measured. DONE WHEN: all three claims carry a `count` and a `count_re` with exactly one group; `--claims-all` re-runs 25 claims and agrees on all three counts; a red-proof shows each of the three counts caught wrong, tagged FALSE-CLAIM; the `phase:` prose states the three numbers; and `pytest`'s count moves with any tests you add. Then the full sweep, numbers said. Do NOT close P13g, P9 or P8 -- all three PENDING-HUMAN and explicitly not a session's to call."
@@ -116,9 +116,9 @@ claims:
   - id: redproof_wt179_manifest.py
     cmd: python3 scripts/redproof_wt179_manifest.py
     rc: 0
-    count: 25
+    count: 26
     count_re: ([0-9]+) of [0-9]+ declared tags proven
-    note: 32 probes; the count is the TAGS registry it covers, not the probe total
+    note: 33 probes; the count is the TAGS registry it covers, not the probe total
   - id: redproof_wt178_claims.py
     cmd: python3 scripts/redproof_wt178_claims.py
     rc: 0
@@ -309,9 +309,12 @@ the front matter is the machine-readable form of this list, and the gate holds t
    → **RC 0, 21/21 probes proven.**
 🟢 ▲ `python3 scripts/wt179_manifest_guard.py` → **RC 0, 10 checks**, 145 pages / 16 fonts /
    4 manuscripts described, in **0.07 s with no toolchain** — the whole point of it.
-🟢 ▲ `python3 scripts/redproof_wt179_manifest.py` → **RC 0, 32 probes, 25 of 25 declared tags
+🟢 ▲ `python3 scripts/redproof_wt179_manifest.py` → **RC 0, 33 probes, 26 of 26 declared tags
    proven.** Delete the two `SILENT-WRONGNESS-NONZERO` probes and exactly one **WEAK** line
-   appears, `24 of 25`, exit 1 — measured, not assumed.
+   appears, exit 1 — measured, not assumed.
+🟢 ▲ **In a FRESH CLONE** (`git clone`, nothing built, no preflight): guard **RC 0 in 0.047 s**,
+   `test_layout_manifest_is_self_consistent.py` **8 passed in 1.11 s**. That is the claim the
+   at-bat was about, proven rather than argued.
 🟢 `python3 scripts/redproof_wt178_claims.py` → **RC 0, 20 probes, 17 of 17 declared tags
    proven.** The coverage line is not decoration: delete one probe and exactly one **WEAK** line
    appears naming the orphaned tag (measured, not assumed).
@@ -404,7 +407,7 @@ refuses an undeclared one (`UNREGISTERED-TAG`), and the red-proof **imports `TAG
 scraping the source, so a check added without a probe goes red **by construction**.
 
 ### The red-proof, said out loud
-**32 probes, 25 of 25 declared tags, 0 failures, 0.6s.** Every probe asserts **its specific tag**,
+**33 probes, 26 of 26 declared tags, 0 failures, 0.6s.** Every probe asserts **its specific tag**,
 never the exit status — `-95`'s probe once went red because its `ROOT` broke rather than because
 the check bit, and from the outside that is indistinguishable from success. Every mutation probe
 also asserts a **control**: that the tag is *absent* from the clean manifest, so a tag that fires
@@ -415,11 +418,24 @@ commit checks when `git` is absent would report green having verified nothing �
 
 **The coverage line is not decoration, and this was measured rather than assumed:** delete the two
 `SILENT-WRONGNESS-NONZERO` probes and exactly one `WEAK` line appears naming the orphaned tag,
-`24 of 25`, exit 1. Held in the other direction too — rename a tag out of `TAGS` and the probe that
+one short of the full set, exit 1. Held in the other direction too — rename a tag out of `TAGS` and the probe that
 names it is an `ERROR`, both of which `tests/test_layout_manifest_is_self_consistent.py` proves
 **in-process** so a successor never has to take it on faith.
 
-### Bug spray — the one real find, and it was live in the gate
+### The check that was added by looking once more, in a place I had not looked
+The guard was finished and green when I ran it in the **container** — the environment the whole
+at-bat exists to serve. It went red, correctly, because a staged tarball has no `.git`, so
+`source_commit` cannot be checked there. **That is this repository's oldest standing container
+trap** (`-92` read `not a git repository` from four sweeps and nearly filed it as a regression),
+and my guard had just joined the family with a message that read like manifest drift. So
+`NOT-A-GIT-CLONE` is now its own verdict: when the commit lookup fails, the guard asks whether the
+tree is a clone *at all* and says which failure this is, in as many words — *"this is the expected
+result in a staged tarball; it is NOT evidence that the manifest drifted."* It is still **red**,
+because a check that silently skips when its tool is missing reports green having verified nothing.
+**Proven both ways in the same ten minutes:** red with that tag in the container's tarball, and
+**RC 0 in 0.047 s in a fresh `git clone` with nothing built.**
+
+### Bug spray — the other real find, and it was live in the gate
 `-96`'s own traps said `regen-board.sh` had been fixed to export `BOARD_CHECK_TIMEOUT=300` **but
 that `gate-selfcheck`'s board check had not been.** That is the worse half of the same hole: the
 gate runs at **wrap**, at the exact moment this handoff instructs you to background a twelve-minute
@@ -448,13 +464,16 @@ not leak to the caller, and an explicit `BOARD_CHECK_TIMEOUT=7` still wins. Comm
 - ▲ **`python3 scripts/wt179_manifest_guard.py`** — the cheap manifest guard. `--json` for
   machines, `--manifest PATH` to point it at a copy. Exit **0** clean, **1** with findings; every
   finding is prefixed with its **TAG**. **No TeX, no pandoc, no worktree, 0.07s.**
-- ▲ `scripts/redproof_wt179_manifest.py` — 32 probes over the real `check_all()`, each asserted by
+- ▲ `scripts/redproof_wt179_manifest.py` — 33 probes over the real `check_all()`, each asserted by
   its tag **and** by a control proving that tag is silent on the clean manifest. Coverage is
   enumerated from `wt179_manifest_guard.TAGS`, never scraped.
 - ▲ `tests/test_layout_manifest_is_self_consistent.py` (8, **0.96s**, no toolchain) — the guard
   green over the committed manifest, the red-proof re-run, the CLI proven to go red on a hand-edit,
   `SCHEMA` bound to the committed manifest's actual key set, and the coverage report proven
   non-vacuous **in both directions** in-process.
+- ⚠ **In the container's staged tarball the guard is RED by design**, tagged `NOT-A-GIT-CLONE`,
+  because there is no `.git` to check the capture commit against — the same standing trap that
+  reddens `wt160`/`wt163`/`wt166`/`wt169` there. **Read the tag.** In a real clone it is green.
 - ▲ **`python3 scripts/handoff_gate.py --claims-all`** — now **25** claims. `--claims` skips the
   slow ones and exits **2** (an un-run claim is not a verified one). **A registered `cmd` may not
   contain `|`, `;` or `&`.**

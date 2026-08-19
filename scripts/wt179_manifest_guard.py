@@ -75,6 +75,7 @@ TAGS = {
     "BAD-COMMIT-SHA": "source_commit is not a 40-character lowercase hex sha",
     "COMMIT-SHORT-DISAGREES": "source_commit_short is not a prefix of source_commit",
     "COMMIT-MISSING": "source_commit is not a commit object in this clone",
+    "NOT-A-GIT-CLONE": "the tree under test is not a git clone, so the commit checks cannot run",
     "COMMIT-DATE-DISAGREES": "commit_date is not the commit date of source_commit",
     "GIT-UNAVAILABLE": "git could not be run, so the commit checks did not happen",
     "PDF-MISSING": "the captured PDF the manifest names is not on disk",
@@ -307,6 +308,16 @@ def check_commit(m, git_root):
     except (OSError, subprocess.SubprocessError) as exc:
         return out + [_tag("GIT-UNAVAILABLE", "the commit checks did not run: %s" % exc)]
     if seen.returncode != 0:
+        # WHICH failure is this? `-95` paid a session for a red whose text nobody read, and
+        # the standing container trap in this repo's handoff is that a staged tarball has no
+        # `.git`, so EVERY git-shelling check goes red there for a reason that is not drift.
+        # Say so in the tag rather than making the next reader diff hashes for ten minutes.
+        inside = subprocess.run(["git", "-C", str(git_root), "rev-parse", "--git-dir"],
+                                capture_output=True, text=True, timeout=30)
+        if inside.returncode != 0:
+            return out + [_tag("NOT-A-GIT-CLONE", "%s is not a git clone, so the capture commit "
+                               "cannot be checked here. This is the expected result in a staged "
+                               "tarball; it is NOT evidence that the manifest drifted." % git_root)]
         return out + [_tag("COMMIT-MISSING", "%s is not a commit object in %s -- the capture "
                            "names a commit this clone has never seen" % (sha, git_root))]
     got = seen.stdout.strip()

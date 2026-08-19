@@ -149,6 +149,12 @@ def main() -> int:
     probe("a capture date the commit does not carry", "COMMIT-DATE-DISAGREES",
           lambda m: m.__setitem__("commit_date", "1999-01-01"))
 
+    # A tree that is not a clone at all -- the container's staged tarball, exactly. It must be
+    # distinguishable from a manifest that names a commit nobody has, or the standing trap in
+    # this repo's handoff ("the tarball has no .git") reads as drift.
+    with tempfile.TemporaryDirectory() as tmp:
+        probe("a tree that is not a git clone", "NOT-A-GIT-CLONE", None, git_root=tmp)
+
     # GIT-UNAVAILABLE: provoked for real by taking git off PATH, not by mocking the reader.
     # A guard that silently skips the commit checks when git is absent would report green
     # on a machine that verified nothing; this proves it goes red instead.
