@@ -19,8 +19,19 @@
 # of under the artefact. This wrapper puts it under the artefact.
 #
 # Reversible by construction: it writes one generated file that git can restore.
+#
+# THE CHECK TIMEOUT IS PART OF THE SUPPORTED INVOCATION (wealthTensor-96, measured).
+# board.py runs every `cmd:` criterion under BOARD_CHECK_TIMEOUT, default 25s. P13e's
+# criterion IS `bash docs/deliverable/verify-layout.sh`, which takes 16s on an idle darwin --
+# a 1.6x margin. Regenerate while a build is backgrounded in another process (which is the
+# workflow this repo's handoff explicitly recommends) and P13e comes back CANNOT VERIFY, a
+# CLOSED lane downgraded in COMMITTED state by nothing but load. -96 hit exactly that and
+# caught it only by diffing the board before committing it. A false alarm in committed state
+# is how a guard gets switched off, so the timeout moves here, where the artefact is.
+# An explicit BOARD_CHECK_TIMEOUT in the environment still wins.
 set -euo pipefail
 cd "$(dirname "$0")/.."
+export BOARD_CHECK_TIMEOUT="${BOARD_CHECK_TIMEOUT:-300}"
 python3 "${HOME}/Scripts/handoff-kit/board.py" \
     --criteria docs/done-criteria.tsv \
     --project wealth-tensor \
