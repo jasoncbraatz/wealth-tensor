@@ -1,0 +1,145 @@
+# docs/pointer-groundtruth-I-II.tsv — THE HELD-OUT LABELLED GROUND TRUTH for the bare-pointer class.
+#
+# WHAT THIS IS. Every `<token> in <target>` construction in paper-I.md and paper-II.md at revision
+# 83db4d5 whose TARGET is BARE under wt160's named-target tests N1-N6 — 88 rows, of 125
+# constructions in all (44 here from Paper I, 44 from Paper II). It is the SISTER FILE to
+# docs/pointer-groundtruth.tsv, which holds the same thing for Papers III and IV at 07cd47e, and it
+# exists for one reason: PAPERS I AND II ARE HELD-OUT TEXT. Nothing in wt160's N1-N6, in wt166's
+# DOC_NOUNS or CLAIM_NOUNS, in any verb list this programme has used, or in the candidate tests
+# T1-T6 was written against a single sentence of them.
+#
+# WHY IT EXISTS. REVIEW-029 measured two numbers on the corpus they were built against and could
+# not do otherwise without contaminating it: T5's recall of 1.0000 (the document-noun test, whose
+# noun list was written by the session that had just read the labels) and T6's failure (a test
+# invented AFTER reading those labels). Its section 8 falsifiers 4 and 5 name running them on
+# held-out text as the outstanding work. These are the held-out labels. See REVIEW-030.
+#
+# HOW IT WAS BUILT. All 88 rows were READ, in context, by wealthTensor-90, and labelled by
+# REVIEW-028 section 3's rule, fixed before this reading and unchanged:
+#
+#   POINTER iff (a) the construction asserts that some content is LOCATED IN a document,
+#   artefact, run or record — the reader is being asked to go there to check — AND (b) the
+#   target as written carries no handle a reader could follow.
+#
+# Clause (b) holds for all 88 by construction, since N1-N6 are silent on every row. So the
+# labelling decides clause (a) alone, 88 times. No verb list, no DOC_NOUNS, no CLAIM_NOUNS and no
+# candidate test's OUTPUT was consulted while labelling.
+#
+# DISCLOSED CONTAMINATION, because the honest version of "held-out" has to say what the labeller
+# had already read. wealthTensor-90 read scripts/wt166_pointer_groundtruth.py in full — including
+# the DOC_NOUNS list — while orienting, BEFORE labelling. The labels were made from the rule and
+# the sentences, and no row was checked against DOC_NOUNS at labelling time; but the labeller was
+# not ignorant of the list and this file will not pretend otherwise. REVIEW-030 section 8
+# falsifier 1 states the attack this leaves open and how to run it. The protocol repair — read the
+# corpus BEFORE the instrument — is carded for the next held-out exercise.
+#
+# COLUMNS.  file · line · token · target · label · confidence · reason
+#   (file, line, token, target) is the KEY. It is unique across all 88 rows and every component is
+#   recomputed from 83db4d5, so the labels cannot drift from the corpus: wt169 REFUSES (exit 2) if
+#   the recomputed key set differs from this file's by a single row.
+#   `line` is the source line of the FLATTENED text's match, as wt160 reports it.
+#   `confidence` is FIRM or SOFT, and is not decoration: wt169 scores every candidate THREE times —
+#   against the labels as written (PRIMARY, 7 pointers), against FIRM pointers only (STRICT, 4),
+#   and against PRIMARY plus every SOFT NOT-POINTER (LOOSE, 16) — so no verdict in REVIEW-030 rests
+#   on a judgement call. There are 9 SOFT NOT-POINTER rows.
+#
+# THE SEVEN. Four are FIRM: `I 35 Fixed in the code and the tests`, `I 460 and in the test`,
+# `II 11 named in the data-availability statement` (the same construction Paper III carries, and
+# the only one of the seven whose target holds a DOC_NOUNS word), and
+# `II 132 precision in the implementation`. Three are SOFT: `I 95 elsewhere in this programme`,
+# `I 319 asserted in the test suite`, `II 177 visible in the third column`.
+#
+# THESE MANUSCRIPTS ARE OUT OF SCOPE FOR REPAIR. wealthTensor-90's at-bat is to MEASURE, and a
+# repair pass on Papers I and II is a different piece of work with a different risk profile. The
+# seven are REPORTED in REVIEW-030 section 5.1 and carded; not one word of either manuscript was
+# changed by the session that wrote this file. The labels are pinned to 83db4d5 and do not move
+# when a later session repairs them.
+file	line	token	target	label	confidence	reason
+I	15	wrong	> instructive ways teaches more than its own corrected successor	NOT-POINTER	FIRM	manner: 'wrong in instructive ways' describes how a paper was wrong
+I	26	false	this paper's own model	NOT-POINTER	FIRM	scope of a truth-value: 'false in this paper's own model' names the setting the claim fails in, not a place to look
+I	35	Fixed	the code and the tests	POINTER	FIRM	asserts a fix is located in the code and the tests; neither is named and no file is given
+I	42	Coase	> indivisible-goods markets is a precondition of any successor draft	NOT-POINTER	FIRM	'Coase in indivisible-goods markets' names a subject area of a literature
+I	62	appears	Cournot competition	NOT-POINTER	FIRM	'appears in Cournot competition' names a model class, not an artefact
+I	76	diagram	economics and the last one most readers ever see	NOT-POINTER	FIRM	'the first diagram in economics' names a discipline
+I	81	that	the simplest exchange setting the two schedules are not primitives at all	NOT-POINTER	FIRM	'in the simplest exchange setting' delimits a model setting
+I	95	elsewhere	this programme	POINTER	SOFT	asserts a proposition is stated elsewhere in the programme and the target is a bare corpus-wide gesture; the handle [III, §2.2] arrives in the NEXT sentence, which is why SOFT
+I	97	domain	the companion paper on the dual tensor [III	NOT-POINTER	FIRM	the target as the reader sees it is 'the companion paper on the dual tensor [III, §2.2]' — a followable handle; the twelve-word window's clause-boundary rule cuts at the comma so N2 never sees the section reference (a WINDOW artefact, reported in REVIEW-030 §5.2)
+I	100	claimed	either direction	NOT-POINTER	FIRM	'claimed in either direction' names a direction of logical support
+I	102	performed	one line	NOT-POINTER	FIRM	manner/extent: 'performed in one line'
+I	115	not	the diagram's accuracy but in the independence its perturbation assumes	NOT-POINTER	FIRM	locates a conceptual failure, not content: 'not in the diagram's accuracy'
+I	116	but	the independence its perturbation assumes	NOT-POINTER	FIRM	same construction as the row above; conceptual location
+I	193	appears	both counts with opposite signs and leaves	NOT-POINTER	FIRM	mathematical: the allocation appears in two counting terms of an identity
+I	246	both	lockstep and moves the crossing not at all	NOT-POINTER	FIRM	manner: 'moves both in lockstep'
+I	246	not	the picture	NOT-POINTER	FIRM	conceptual location: 'the failure is not in the picture'
+I	247	is	the operation performed on the picture**	NOT-POINTER	FIRM	COPULA, and not a pointer: 'it is in the operation performed on the picture' locates a conceptual failure
+I	268	volume	mug-exchange experiments is persistently below the Coase prediction	NOT-POINTER	FIRM	'volume in mug-exchange experiments' names an experimental setting
+I	269	markets	induced-value tokens run by the same subjects hit the predicted volume	NOT-POINTER	FIRM	'markets in induced-value tokens' names a market type
+I	308	warn	the same breath that uniqueness "need not hold in more general settings	NOT-POINTER	FIRM	idiomatic: 'warn in the same breath'
+I	309	hold	more general settings in which wealth effects are present"	NOT-POINTER	FIRM	scope of a theorem: 'need not hold in more general settings'
+I	309	settings	which wealth effects are present"	NOT-POINTER	FIRM	' in which' heads a relative clause; there is no target noun phrase
+I	315	fail	quasi-linear one-consumer economies and that neither property implies the other	NOT-POINTER	FIRM	'fail in quasi-linear one-consumer economies' names a model class
+I	319	asserted	the test suite deliberately	POINTER	SOFT	asserts the monotonicity is asserted in a bare 'the test suite'; the specific test is named immediately after the dash, OUTSIDE the target, which is why SOFT
+I	366	converged	47	NOT-POINTER	FIRM	quantitative: 'converged in 47' counts iterations
+I	400	itself	proportion as the market gets more competitive	NOT-POINTER	FIRM	manner: 'slowing itself in proportion'
+I	426	sentence	this paper would be different	NOT-POINTER	SOFT	self-referential to the document in hand: 'which sentence in this paper would be different?' sends the reader nowhere
+I	435	failure	the *operation* instead	NOT-POINTER	FIRM	conceptual location: 'locates the failure in the *operation*'
+I	455	inequalities	the demand and supply counts then disagree about a single agent	NOT-POINTER	FIRM	mathematical: 'the strict inequalities in the demand and supply counts'
+I	460	and	the test	POINTER	FIRM	asserts the grid exclusion is implemented in the regeneration script and in the test; neither artefact is named
+I	484	stated	Limitation 1 rather than demonstrated	NOT-POINTER	FIRM	'Limitation 1' is a NUMBERED division of this paper — a followable handle N1-N6 do not model (the named-division gap, cf. REVIEW-028 §4 M6/M7)
+I	487	economy	the narrowest available sense	NOT-POINTER	FIRM	manner: 'an exchange economy in the narrowest available sense'
+I	510	difference	the unit-demand case	NOT-POINTER	FIRM	'the difference in the unit-demand case' names a case of the model
+I	512	construction	one specific operation rather than in the construction as a whole	NOT-POINTER	FIRM	conceptual location: 'in one specific operation rather than in the construction as a whole'
+I	512	than	the construction as a whole	NOT-POINTER	FIRM	same construction as the row above
+I	554	results	this paper are produced by open code	NOT-POINTER	FIRM	'results in this paper' modifies WHICH results are meant; nothing is being located for checking
+I	580	entries	which this paper's central claim was found to be one step weaker	NOT-POINTER	FIRM	' in which' heads a relative clause
+I	581	recorded	full	NOT-POINTER	FIRM	manner/extent: 'recorded in full'
+I	587	copy	the author's possession	NOT-POINTER	SOFT	locates a physical copy in a person's possession; not content in a document, artefact, run or record, though it is uncheckable in the same way — hence SOFT
+I	625	completed	1877	NOT-POINTER	FIRM	temporal: 'completed in 1877'
+I	668	changes	supply and demand	NOT-POINTER	FIRM	part of a cited work's TITLE ('How markets slowly digest changes in supply and demand')
+I	709	completed	1877	NOT-POINTER	FIRM	temporal: 'completed in 1877'
+I	710	work	the body	NOT-POINTER	SOFT	self-locating: 'the body' is this paper's own division, reachable without being sent
+I	711	mentioned	any form	NOT-POINTER	FIRM	manner: 'never mentioned in any form'
+II	11	code	the repository named in the data-availability statement	NOT-POINTER	SOFT	the target names its own locating site ('named in the data-availability statement'); the pointer work in this sentence is the next row's
+II	11	named	the data-availability statement	POINTER	FIRM	asserts the repository is named somewhere and the naming site is a bare noun phrase; identical to REVIEW-028 row 1 in Paper III
+II	16	passages	which the paper graded its own conduct are removed	NOT-POINTER	FIRM	' in which' heads a relative clause
+II	28	magnitude	κ	NOT-POINTER	FIRM	mathematical: 'an order of magnitude in kappa'
+II	52	negligible	comparison	NOT-POINTER	FIRM	idiomatic: 'negligible in comparison'
+II	59	term	the process	NOT-POINTER	FIRM	mathematical: 'a term in the process' is a term of a stochastic differential
+II	89	arithmetic	*N* and is printed by neither	NOT-POINTER	FIRM	mathematical: 'arithmetic in N'
+II	98	named	this paper for exactly one reason	NOT-POINTER	SOFT	self-referential: 'Zakat is named in this paper' asserts naming inside the document in hand
+II	115	it	the absence of a levy	NOT-POINTER	FIRM	'in the absence of a levy' names a regime of the model
+II	130	capita	the same period	NOT-POINTER	FIRM	temporal: 'redistributed per capita in the same period'
+II	132	precision	the implementation rather than assumed	POINTER	FIRM	asserts a verification is carried out in 'the implementation'; the artefact is bare and no file or test is named
+II	176	apart	κ	NOT-POINTER	FIRM	mathematical: 'an order of magnitude apart in kappa'
+II	177	visible	the third column and is not a fitted relationship	POINTER	SOFT	asserts the budget is visible in a bare 'the third column'; the table is the one immediately above, which makes it followable in context — hence SOFT (cf. REVIEW-028's 'given in the two rows above')
+II	198	differ	budget	NOT-POINTER	FIRM	respect: 'do not merely differ in budget'
+II	208	invisible	the statistic normally reported	NOT-POINTER	FIRM	'invisible in the statistic normally reported' says what a statistic fails to show, not where content sits
+II	214	exponent	closed form in all four coordinates	NOT-POINTER	FIRM	manner: 'give the exponent in closed form'
+II	214	form	all four coordinates	NOT-POINTER	FIRM	mathematical scope: 'in all four coordinates'
+II	229	cost	compression	NOT-POINTER	FIRM	respect: 'at no measurable cost in compression'
+II	240	is	the next section	NOT-POINTER	SOFT	COPULA and locating, but self-locating: 'the next section' is this paper's own division, reachable without being sent — hence SOFT
+II	262	dispersion	its base**	NOT-POINTER	FIRM	statistical: 'the dispersion in its base'
+II	291	monotone	*P*	NOT-POINTER	FIRM	mathematical: 'not monotone in P'
+II	349	here	full rather than quietly replaced by its successor	NOT-POINTER	FIRM	manner/extent: 'retained here in full'
+II	370	and	the world it is not	NOT-POINTER	FIRM	'in the world' means in reality, not in a document
+II	379	applies	full force and is not answered here	NOT-POINTER	FIRM	manner: 'applies in full force'
+II	385	arithmetic	*N*	NOT-POINTER	FIRM	mathematical: 'arithmetic in N'
+II	401	standard	kinetic exchange (Chakrabarti	NOT-POINTER	FIRM	attributes standardness to a literature and names that literature inside the target
+II	403	works	that literature are prior to this paper's central contrast	NOT-POINTER	FIRM	'two works in that literature' identifies a set of works, not a place to look
+II	407	each	one wealth balance and give the stationary Pareto exponent in closed form	NOT-POINTER	FIRM	structural: the redistribution sits in one wealth-balance equation
+II	407	exponent	closed form in all four coordinates	NOT-POINTER	FIRM	manner: 'in closed form'
+II	407	form	all four coordinates	NOT-POINTER	FIRM	mathematical scope: 'in all four coordinates'
+II	410	coordinate	their solution rather than an extension awaiting one	NOT-POINTER	FIRM	structural: 'a coordinate in their solution' is a degree of freedom of a model
+II	413	rising	both the estate tax and the capital income tax	NOT-POINTER	FIRM	mathematical: 'rising in both the estate tax and the capital income tax' is monotonicity in a parameter
+II	445	results	this paper are produced by open code and no proprietary or restricted	NOT-POINTER	FIRM	'results in this paper' modifies WHICH results are meant
+II	448	arithmetic	*N* and is printed by no command here	NOT-POINTER	FIRM	mathematical: 'arithmetic in N'
+II	456	arithmetic	*N* and is printed by neither	NOT-POINTER	FIRM	mathematical: 'arithmetic in N'
+II	460	claims	place	NOT-POINTER	FIRM	idiomatic: 'hold this paper's claims in place'
+II	475	nothing	the repository was watching	NOT-POINTER	SOFT	a NEGATIVE existential over an artefact: asserts nothing in the repository was watching, rather than that content is located there; uncheckable in the same way, hence SOFT
+II	504	read	full	NOT-POINTER	FIRM	manner/extent: 'read in full'
+II	505	verbatim	the article of record	NOT-POINTER	SOFT	'the article of record' is the very entry this provenance note annotates and is fully cited two lines above; hedged non-location, hence SOFT
+II	528	policy	economies with finitely lived agents	NOT-POINTER	FIRM	part of a cited work's TITLE
+II	531	read	full	NOT-POINTER	FIRM	manner/extent: 'read in full'
+II	532	differ	the article of record	NOT-POINTER	SOFT	same class as the other 'article of record' provenance note: the entry is cited in place
+II	535	laws	economics and finance	NOT-POINTER	FIRM	part of a cited work's TITLE ('Power laws in economics and finance')
+II	539	Capital	the Twenty-First Century*	NOT-POINTER	FIRM	part of a book TITLE ('Capital in the Twenty-First Century')
