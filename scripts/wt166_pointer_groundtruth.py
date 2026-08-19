@@ -337,9 +337,19 @@ def _postconditions(rows, labels, variants, results):
     add("F7", "NEGATIVE", "T4 (section position) does not reach twice the base rate in precision",
         lambda: _f7(results, variants))
 
-    add("F8", "POSITIVE", "STRICT and LOOSE agree with PRIMARY on the verdict — no judgement "
-                          "call in the labels changes it",
+    add("F8", "POSITIVE", "PRIMARY and STRICT agree: no pre-registered candidate clears under "
+                          "either — the verdict does not turn on the four SOFT pointers",
         lambda: _f8(results))
+
+    add("F14", "POSITIVE", "under LOOSE exactly one pre-registered candidate clears, and it is "
+                           "T5 — the LIST-BOUND one disqualified in advance. F8's FIRST form "
+                           "asserted all three variants agree and was WRONG (REVIEW-029 §7)",
+        lambda: _f14(results))
+
+    add("F15", "NEGATIVE", "LOOSE is not an independent test of T5: the SOFT NOT-POINTER rows it "
+                           "promotes are overwhelmingly document-noun rows, which is what T5 "
+                           "selects on",
+        lambda: _f15(rows, labels, variants))
 
     add("F9", "NEGATIVE", "the revision pin is LIVE: recomputing at HEAD does NOT give the "
                           "07cd47e key set (wt164 and wt167 repaired five of these rows)",
@@ -401,9 +411,33 @@ def _f7(results, variants):
 
 
 def _f8(results):
-    verdicts = {v: any(r["prereg"] and r["score"]["clears"] for r in results[v])
+    verdicts = {v: sorted(r["id"] for r in results[v] if r["prereg"] and r["score"]["clears"])
                 for v in ("PRIMARY", "STRICT", "LOOSE")}
-    return len(set(verdicts.values())) == 1, f"{verdicts}"
+    return verdicts["PRIMARY"] == verdicts["STRICT"] == [], f"{verdicts}"
+
+
+def _f14(results):
+    """The surprise, pinned. Under LOOSE the verdict FLIPS, and only for T5.
+
+    F8's first form asserted PRIMARY, STRICT and LOOSE all agree. They do not. That
+    assertion was a prediction about the measurement, the measurement refuted it, and the
+    honest repair is to pin what was measured rather than to relax the bar or drop the
+    variant — REVIEW-028 §7.2's rule, which cost that session three post-conditions.
+    """
+    cleared = sorted(r["id"] for r in results["LOOSE"] if r["prereg"] and r["score"]["clears"])
+    t5 = next(r for r in results["LOOSE"] if r["id"] == "T5")
+    return cleared == ["T5"], (f"LOOSE clears {cleared}; T5 precision "
+                               f"{t5['score']['precision']:.4f}, recall {t5['score']['recall']:.4f}")
+
+
+def _f15(rows, labels, variants):
+    """Why T5's LOOSE win deflates, stated as a number rather than as a rhetorical move."""
+    soft_np = {(r["file"], int(r["line"]), r["token"], r["target"])
+               for r in labels if r["label"] == "NOT-POINTER" and r["confidence"] == "SOFT"}
+    hit = sum(1 for r in rows if key(r) in soft_np and t5_document_head_noun(r))
+    return hit >= 0.75 * len(soft_np), (f"T5 flags {hit} of the {len(soft_np)} SOFT NOT-POINTER "
+                                        f"rows LOOSE promotes to positives "
+                                        f"({hit/len(soft_np):.0%}) — near-circular")
 
 
 def _f9():

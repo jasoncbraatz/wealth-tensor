@@ -1258,8 +1258,7 @@ firms.
 | 3 · goodwill | 262 | 5.0 | 1.0–10.0 | 6.46 |
 
 Jonckheere–Terpstra **z = −0.095**, permutation p = **0.520**. median(t₃) − median(t₀) = **0.0
-quarters**, CI [−4.0, +2.5]. Four registered sensitivity analyses per universe are in the run logs;
-none reverses the verdict.
+quarters**, CI [−4.0, +2.5]. The registered sensitivity analyses per universe are in the run logs (`docs/preregistration/RESULT-002-*-run.log`); none reverses the verdict.
 
 **The instrument was demonstrably better this time, and that is what makes the null bite:**
 
