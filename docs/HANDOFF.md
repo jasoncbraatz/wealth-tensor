@@ -4,21 +4,103 @@ gh_repo: jasoncbraatz/wealth-tensor
 branch: main
 gh_sha: a67fa96ed5059811a1eccc63bea5ac5a633b5d48
 updated: 2026-08-19
-session: wealthTensor-96
-session_n: 96
-live_theme: "THE BOARD HAS NO OPEN LANES LEFT. 66 criteria: **57 CLOSED, 9 PENDING-HUMAN, ZERO OPEN**. P13f was the last row a Claude could close, and `-95` closed it. What remains is P2, P3, P5, P6, P7, P11, P13g, P9 and P8 -- every one of them a HUMAN gate, and P13g/P9/P8 explicitly not a session's to call. The deliverable stands: `docs/deliverable/wealth-tensor-capture.pdf`, 145 pages, built from `5b525f1754de`, that commit in the footer of every page, reproducing page-for-page and hash-for-hash from a clean worktree. P13f's shape is the one worth carrying: the corpus has ZERO figures, so `FIGURES.tsv` carries a single `@zero-figures` row that is a CLAIM rather than a figure, and `scripts/wt177_figure_guard.py` refuses to let that claim coexist with a real figure, refuses to let it be deleted while the count is still zero, and is red-proofed on all FOURTEEN failures it can report. AN EMPTY MANIFEST CLOSES A ROW VACUOUSLY AND REOPENS IT IN SILENCE; A SENTINEL UNDER GUARD DOES NOT."
-phase: "EVERYTHING GREEN AND THE NUMBERS SAID OUT LOUD: pytest **1121 passed** (1115 inherited + 4 for the figure manifest + 2 for the board guard); `wt173 --verify` RC 0 (50 values held, 15 of 15 in the prose); `wt173 --postconditions` 14 checks, 5 NEGATIVE, 0 failed; preflight RC 0 over 16 vendored fonts; wt133, wt148, wt154, wt156, wt160, wt163, wt166, wt169 -- ALL EIGHT RC 0; `wt170 --verify` RC 0; `wt172 --verify` RC 0; `verify-layout.sh` RC 0, 145 pages and 145 per-page hashes reproduce from a clean worktree (run THREE times this session, see the drift flag); `redproof-layout.sh` RC 0, four probes; NEW `wt177_figure_guard.py` RC 0 and `redproof_wt177_figures.py` 21/21 probes proven. Coach 0/0/3/0 outside Limitations, IDENTICAL to what `-95` inherited -- NO MANUSCRIPT WAS EDITED, proved by an empty `git diff 46f48fc..HEAD -- docs/papers/`. Three commits: 772e476 the manifest and its guard, d4a8f6f the board plus a guard against the degraded regeneration, 6ae9599 the wt176 diagnosability repair. P13f flipped to CLOSED; there is no first OPEN lane any more."
-gate_passed: true
-gate_version: "2.60"
-next_at_bat: "ASSIGNED, ONE THING: **State Machine card 1217643242299336 -- MAKE THE GATE RE-RUN WHAT A HANDOFF CLAIMS.** It is the highest-value open item in the parking lot, it is the CLASS rather than an instance, and `-95` added the constraint that decides its design. THE PROBLEM: a handoff's `phase:` block asserts a list of exit codes and counts, and nothing re-runs them. `-93` handed over `wt172 --verify` RC 0 when it was already red at `cbffb8d`, because `$?` after a pipe is the pipe's. THE CONSTRAINT `-95` ADDS, and it is not optional: `verify-layout.sh` went RED once this session with a real-looking `manuscript changed since the capture` while no manuscript had been edited, and then would not reproduce across three further runs. A gate that re-runs claims WILL therefore, on a flaky check, manufacture a false accusation against an honest predecessor -- and a gate that cries liar is a gate somebody switches off. So it needs a RE-RUN-ON-DISAGREEMENT rule before it reports a handoff as wrong: one green and one red is a FLAKY CHECK, not a caught liar. DONE WHEN: a gate leg parses the RC/count claims out of the handoff front matter and re-runs each un-piped (`cmd >out 2>&1; rc=$?`); a disagreement is re-run before it is reported; the leg RED-PROOFS three ways -- a handoff asserting a false RC must FAIL, a handoff asserting true RCs must PASS, and a check that fails once then passes must be reported FLAKY rather than as a false claim -- and you SAY all three results out loud. Do NOT close P13g, P9 or P8: all three are PENDING-HUMAN and explicitly not a session's to call."
+session: wealthTensor-97
+session_n: 97
+live_theme: "THE HANDOFF NOW RE-RUNS ITS OWN CLAIMS. `-93` asserted `wt172 --verify` RC 0 while that command returned 2 at the exact commit it handed over, because `$?` after a pipe is the pipe's -- and the rule against piping was ALREADY in STEP 0 of the handoff it broke. A rule stated inside a document protects that document's READER, never its writer; only a check closes that. `-96` built it: the front matter carries a `claims:` registry, `handoff_gate.py --claims-all` RE-RUNS every entry un-piped, and a disagreement is re-run before it is reported, because `-95` proved a flaky check will otherwise manufacture a false accusation against an honest predecessor. It caught its own author inside the hour: `pytest` stayed RC 0 while its count went 1121 -> 1148, and the leg refused the stale number three times before calling it false. THE BOARD IS UNCHANGED -- 57 CLOSED, 9 PENDING-HUMAN, ZERO OPEN, every remaining row a human gate."
+phase: "THE GATE NOW RE-RUNS WHAT THE HANDOFF CLAIMS, AND EVERY NUMBER HERE WAS RE-DERIVED BY IT RATHER THAN QUOTED: `pytest` 1148 passed (1121 inherited from `-95`, plus 27 in the new tests/test_handoff_claims_leg.py); `wt173 --verify` RC 0; `wt173 --postconditions` RC 0 over 14 checks with 5 NEGATIVE and 0 failed; `preflight` RC 0 over 16 vendored fonts; `wt133` and `wt148` and `wt154` and `wt156` and `wt160` and `wt163` and `wt166` and `wt169` -- ALL EIGHT RC 0; `wt170 --verify` RC 0; `wt172 --verify` RC 0 over 17 paper-II rows; `verify-layout.sh` RC 0, 145 pages rebuilt in a clean worktree, and it did NOT reproduce `-95`'s false red; `redproof-layout.sh` RC 0, four probes; `wt177_figure_guard.py` RC 0; `redproof_wt177_figures.py` RC 0 over 21 probes; NEW `redproof_wt178_claims.py` RC 0, 20 probes, 17 of 17 declared tags covered, and the coverage check proven non-vacuous by deleting one probe; G-CLAIMS run over the committed handoff -- 19 claims declared, 19 re-run un-piped, 19 agreed; coach 0/0/3/0 outside Limitations, IDENTICAL to what `-96` inherited and NO MANUSCRIPT EDITED; gate v2.61 PASS, tree clean and pushed."
+gate_passed: false
+gate_version: "2.61"
+next_at_bat: "ASSIGNED, ONE THING: **a toolchain-free guard on `docs/deliverable/LAYOUT-MANIFEST.json`.** It is the top item in the parking lot and it is a named hole, not a nicety: `verify-layout.sh`, `redproof-layout.sh` and `wt173 --verify` ALL need lualatex, pandoc and a git worktree, so NOTHING in CI, in a fresh clone, in the container, or in any session that has not run preflight can catch a hand-edited manifest. A file nothing cheap can check is a file that drifts, and P13e's whole claim rests on it. THE SHAPE, and `-96` just built one of these so copy it: the manifest DECLARES what it contains, and the test holds it to its own declaration -- `page_count` equals `len(pages)`, the fonts listed match `FONTS.tsv` row for row, the manuscripts listed are exactly the four on disk, every per-page hash is well-formed and there are `page_count` of them, and the capture commit named in the manifest is an object in this clone. Do NOT let the test discover its own scope by iterating whatever keys happen to be present -- that is `-95`'s nine-of-fourteen defect, and it reads as full coverage. DONE WHEN: `tests/test_layout_manifest_is_self_consistent.py` runs with NO toolchain in under a second and passes on the committed manifest; a red-proof provokes EVERY failure it can report, each asserted by its specific tag rather than by exit status alone, and says the count out loud; the new guard is REGISTERED in the `claims:` block so the gate re-runs it; and `pytest`'s count claim moves with it. Do NOT close P13g, P9 or P8 -- all three PENDING-HUMAN and explicitly not a session's to call."
 blockers: []
+claims:
+  - id: pytest
+    cmd: python3 -m pytest -q
+    rc: 0
+    count: 1148
+    count_re: ([0-9]+) passed
+    note: about 70s -- the number IS the claim, not decoration
+  - id: wt173 --verify
+    cmd: python3 scripts/wt173_typography_probe.py --verify
+    rc: 0
+    slow: true
+    note: rebuilds with lualatex, so it cannot run in CI or a fresh clone
+  - id: wt173 --postconditions
+    cmd: python3 scripts/wt173_typography_probe.py --postconditions
+    rc: 0
+    count: 14
+    count_re: postconditions: ([0-9]+) check
+  - id: preflight
+    cmd: bash docs/deliverable/preflight.sh
+    rc: 0
+    count: 16
+    count_re: ([0-9]+) font file
+  - id: wt133
+    cmd: python3 scripts/wt133_crossref_sweep.py
+    rc: 0
+  - id: wt148
+    cmd: python3 scripts/wt148_promise_sweep.py
+    rc: 0
+  - id: wt154
+    cmd: python3 scripts/wt154_evidence_discrimination_sweep.py
+    rc: 0
+  - id: wt156
+    cmd: python3 scripts/wt156_reproducibility_sweep.py
+    rc: 0
+  - id: wt160
+    cmd: python3 scripts/wt160_bare_pointer_sweep.py
+    rc: 0
+  - id: wt163
+    cmd: python3 scripts/wt163_pointer_vocabulary.py
+    rc: 0
+  - id: wt166
+    cmd: python3 scripts/wt166_pointer_groundtruth.py
+    rc: 0
+  - id: wt169
+    cmd: python3 scripts/wt169_pointer_groundtruth_heldout.py
+    rc: 0
+  - id: wt170 --verify
+    cmd: python3 scripts/wt170_paperII_promises.py --verify
+    rc: 0
+    note: the WRITING path exits 2 by design; --verify is the re-runnable mode
+  - id: wt172 --verify
+    cmd: python3 scripts/wt172_tsv.py --verify
+    rc: 0
+    count: 17
+    count_re: ([0-9]+) paper-II rows
+    note: the claim -93 handed over green while it was red -- the reason this leg exists
+  - id: verify-layout.sh
+    cmd: bash docs/deliverable/verify-layout.sh
+    rc: 0
+    slow: true
+    note: needs lualatex, pandoc and a worktree; prints no count to hold it to
+  - id: redproof-layout.sh
+    cmd: bash docs/deliverable/redproof-layout.sh
+    rc: 0
+    slow: true
+    note: 5-8 minutes, four probes, and it prints no count either
+  - id: wt177_figure_guard.py
+    cmd: python3 scripts/wt177_figure_guard.py
+    rc: 0
+  - id: redproof_wt177_figures.py
+    cmd: python3 scripts/redproof_wt177_figures.py
+    rc: 0
+    count: 21
+    count_re: ([0-9]+)/[0-9]+ probes proven
+  - id: redproof_wt178_claims.py
+    cmd: python3 scripts/redproof_wt178_claims.py
+    rc: 0
+    count: 17
+    count_re: ([0-9]+) of [0-9]+ declared tags proven
+    note: the red-proof for this leg -- it holds ITSELF to a claim like everything else
 drift_flags:
+  - "THE HANDOFF'S CLAIMS ARE NOW A MACHINE-READABLE REGISTRY AND THE GATE RE-RUNS THEM. The frontmatter carries a `claims:` block (id / cmd / rc / count / count_re / slow / note) and `python3 scripts/handoff_gate.py --claims-all` re-runs every entry UN-PIPED before the wrap. `--claims` alone skips the ones marked slow and exits 2, because an un-run claim is not a verified one. TWO THINGS A SUCCESSOR MUST KNOW. (a) `--emit` enforces only the STATIC half -- that every RC or count the `phase:` prose asserts is DECLARED by a claim -- because re-running the sweeps inside `--emit` would double the cost of every wrap and a slow gate is a switched-off gate. THE RE-RUN IS A STEP YOU TAKE, and the wrap order names it. (b) The prose is read as an AUDIT of the registry, never as the work list: an assertion no claim declares turns the leg RED (UNREGISTERED-CLAIM) instead of quietly shrinking what gets run. If you add a sweep to `phase:`, declare it, or the gate will tell you exactly what to paste."
+  - "AN EXIT CODE IS THE WEAKEST HALF OF A CLAIM, AND THIS WAS PROVEN LIVE RATHER THAN ARGUED. `-96` added 27 tests, and its own registry still said `pytest` 1121. The RC stayed 0 through every run -- the pipe defect that started this whole card would have reported GREEN -- and only the COUNT moved, 1121 to 1148. The leg re-ran it three times and then refused it. SO: when you register a claim, register a COUNT wherever the command prints one, with a `count_re` that captures exactly one group. Three of the nineteen claims print no number to hold them to (`verify-layout.sh`, `redproof-layout.sh`, `wt170 --verify`) and their `note` says so out loud; making those printable is free value for whoever needs it."
   - "A MANIFEST OVER AN EMPTY SET MUST CARRY AN EXPLICIT SENTINEL ROW UNDER GUARD, NOT ZERO ROWS. `docs/deliverable/FIGURES.tsv` lists figure -> script -> source, and the corpus has no figures, so `every figure is listed` is satisfied VACUOUSLY -- the row closes and reopens in silence the day someone pastes in a chart. The working shape, and it generalises to any manifest over an empty set: a named sentinel (`@zero-figures`) that names a real committed script and a real committed source so the criterion's `test -f` stays honest, plus a guard that refuses to let the sentinel coexist with a real member (SENTINEL-WITH-FIGURES) and refuses to let it be deleted while the count is still zero (SENTINEL-MISSING). The count itself is measured FIVE ways -- the narrow grep, an eight-pattern sweep that catches mid-line images the `^!\\[` anchor walks past, zero image files tracked repo-wide, zero image XObjects in the 145-page PDF, and `preamble.tex` not loading graphicx at all."
   - "A RED-PROOF'S OWN COVERAGE CHECK MUST ENUMERATE FROM A DECLARED REGISTRY IN THE CODE UNDER TEST, NEVER BY SCRAPING ITS SOURCE TEXT. `-95` wrote a coverage check that regexed `wt177_figure_guard.py` for its failure tags, found NINE of the FOURTEEN it can emit, and printed FULL COVERAGE -- a check that could not see what it claimed to count, reporting a guarantee. This is `-94`'s rule biting its own author within the hour. The repair is a `TAGS` dict in the guard that the guard holds ITSELF to (it emits UNREGISTERED-TAG on drift) and that the red-proof imports, so a check added without a probe goes red BY CONSTRUCTION. Red-proofed: delete one probe and exactly one line goes WEAK, naming the orphaned tag."
   - "A WRAPPER SCRIPT DOCUMENTS THE RIGHT INVOCATION WITHOUT PREVENTING THE WRONG ONE. `board.py` takes four flags and requires one; called directly it silently drops `--project` and `--preamble` and emits a correct-status board with the whole `checklist-preamble.md` deleted. `-53` found that in its first ten minutes and wrote `scripts/regen-board.sh`, whose header calls itself `the ONLY supported invocation`. `-95` hit the identical trap FORTY-TWO SESSIONS LATER, because a session that never opens the wrapper never reads its warning. WHEN A WRONG PATH DEGRADES AN ARTEFACT, PUT THE CHECK ON THE ARTEFACT: `tests/test_board_is_not_degraded.py` fails on the degraded board and catches every future caller regardless of what they ran. REGENERATE THE BOARD WITH `bash scripts/regen-board.sh`, never `board.py`."
   - "`verify-layout.sh` PRODUCED A REAL-LOOKING FALSE RED AND THE CAUSE IS UNKNOWN. Once, this session: `FAIL manuscript changed since the capture: paper-III.md`, with no manuscript edited (`git diff 46f48fc..HEAD -- docs/papers/` empty). It would not reproduce. Measured against it: the live sha equals the manifest sha exactly, for all four papers, in git at the capture commit AND live; `wt176 --verify` against the committed PDF is RC 0; `verify-layout.sh` alone is RC 0; `verify-layout.sh` run CONCURRENTLY with a full pytest is RC 0, and no test in `tests/` writes a manuscript; `redproof-layout.sh` is RC 0 and mutates only inside its own worktrees. The one repair that WAS available is made: `wt176` now PRINTS wanted, got, and the path it read, so the next occurrence is diagnosable in two minutes instead of unreproducible. DO NOT report P13e green from a single run; if it goes red, re-run before believing it, and read the two shas. Carded 1217643242299336."
   - "`handoff_gate.py --emit` WAS UNSATISFIABLE BY ANY CORRECT HANDOFF UNTIL -94, and would have refused at -93 too. Its placeholder check was a substring test for TODO/TBD/FIXME/XXX, and this handoff NAMES all four -- in the drift flag whose subject is that a negative grep cannot tell USE from MENTION. It fails at the LAST ACT of the wrap, where the cheap way out is to delete the sentence; deleting documentation to satisfy a checker is how a repository forgets things. The CHECKER was fixed: the marker set recited as itself, and markers inside code spans, are mentions. tests/test_handoff_gate_placeholders.py, 14 tests, and the load-bearing ones are the controls -- a bare TODO in prose is still refused, and neither exemption may launder a real leftover beside it. If you widen those exemptions, add the control first."
-  - "AN EVIDENCE COMMAND MUST OBSERVE THE THING THE SENTENCE CLAIMS, AND ROW 5a47d4caef BROKE TWICE IN TWO SESSIONS PROVING IT. Its first line printed a WHOLE-REPOSITORY collected-test count, quoted verbatim in the note, while the sentence it adjudicates is about tests/test_redistribution.py -- so every test added ANYWHERE reddened a paper-II row. -93's six tests took it 1095->1101 and -93 HANDED IT OVER REPORTED GREEN; -94 found it red at cbffb8d, then broke it again the same session with fourteen tests of its own (1101->1115). Now a PREDICATE (this paper's file is in the whole-repository collection), red-proofed both ways: three tests added elsewhere leave wt172 --verify RC 0, one test added to the paper's own file makes it RC 2. If it observes something merely NEARBY, every change to the neighbourhood is a false alarm, and false alarms are how a guard gets switched off. HOW A RED SWEEP GETS REPORTED GREEN is the other half and is unfixed: '$? after a pipe is the LAST command's' -- `tool --verify | tail -5` prints the success line AND yields tail's 0. That rule was already in this file's STEP 0; it protected the reader, not the writer. Carded 1217643242299336: make the gate RE-RUN what a handoff claims. NEVER report a sweep green from a piped exit code."
+  - "AN EVIDENCE COMMAND MUST OBSERVE THE THING THE SENTENCE CLAIMS, AND ROW 5a47d4caef BROKE TWICE IN TWO SESSIONS PROVING IT. Its first line printed a WHOLE-REPOSITORY collected-test count, quoted verbatim in the note, while the sentence it adjudicates is about tests/test_redistribution.py -- so every test added ANYWHERE reddened a paper-II row. -93's six tests took it 1095->1101 and -93 HANDED IT OVER REPORTED GREEN; -94 found it red at cbffb8d, then broke it again the same session with fourteen tests of its own (1101->1115). Now a PREDICATE (this paper's file is in the whole-repository collection), red-proofed both ways: three tests added elsewhere leave wt172 --verify RC 0, one test added to the paper's own file makes it RC 2. If it observes something merely NEARBY, every change to the neighbourhood is a false alarm, and false alarms are how a guard gets switched off. HOW A RED SWEEP GETS REPORTED GREEN is the other half and is unfixed: '$? after a pipe is the LAST command's' -- `tool --verify | tail -5` prints the success line AND yields tail's 0. That rule was already in this file's STEP 0; it protected the reader, not the writer. CLOSED at `-96`: card 1217643242299336 is done and the gate now re-runs the claims itself (`--claims-all`). NEVER report a sweep green from a piped exit code -- and note that the leg REFUSES to register a command containing a pipe, a semicolon or an ampersand, so the defect cannot be re-imported through the registry built to catch it."
   - "ZERO OVERFULL BOXES DOES NOT MEAN THE DOCUMENT FITS ON THE PAGE, and this nearly shipped. TeX reports an overfull hbox when a line exceeds `\\hsize`, so ANY construction that widens `\\hsize` -- which is exactly what step 14's per-table measure does -- silences the warning whether or not the ink is still on the sheet. An early cut of `\\begin{wttable}` reported zero overfull boxes while running every wide table off the right edge of the paper. `build.sh` now measures the marked extent of every page with ghostscript's bbox device and requires 18bp of clearance on four edges. A CHECK WHOSE THRESHOLD IS IN THE UNITS OF AN INTERNAL REGISTER IS NOT A CHECK ON THE PHYSICAL RESULT."
   - "A RED-PROOF CAUGHT BY A DIFFERENT GUARD THAN THE ONE UNDER TEST PROVES THE WRONG THING, AND FROM THE OUTSIDE IT IS INDISTINGUISHABLE FROM SUCCESS. The first font red-proof swapped in a heavier cut; the BUILD refused it on overfull boxes; the probe went green; and the per-page hash -- the thing actually under test -- was never reached. `redproof-layout.sh` now runs RP1a (a different cut of the SAME design, with FONTS.tsv rewritten so preflight is content too, leaving only the hash to notice: caught it, 141 pages against 145) AND RP1b (the coarse swap, refused by the build). WHEN A PROBE GOES GREEN, CHECK WHICH CHECK STOPPED IT."
   - "A BUILD DIRECTORY IS STATE. A refactor of `build.sh` deleted the block that ASSEMBLES `main.tex` and the build KEPT SUCCEEDING -- every check green, right page count -- because `build/` still held the previous run's copy. It surfaced the first time the document was built in a clean worktree, which is the argument in `verify-layout.sh`'s header for why P13e rebuilds in one rather than in place. `build.sh` now `rm`s `main.tex` and asserts it was regenerated. Do not conclude anything from an in-place rebuild."
@@ -47,9 +129,10 @@ drift_flags:
   - "PAPER I IS NOT IN THE DEFINITION OF DONE and its 13 promises are deliberately unchecked. `wt170`'s N27 FAILS THE RUN if a session widens `#scope` to `paper-I`. Its FOUR bare pointers (card 1217629169253037) also stand, and that card is now PARTIALLY closed -- Paper II's three are done."
   - "`wt154`'s PREDICATE BLIND SPOT unchanged, card 1217613775009402. `wt133`'s SWEEP-2 BLIND SPOT unchanged, State Machine 1217593142996092."
 parking_lot:
-  - "State Machine 1217643681032027 (the durable re-evidence of row 5a47d4caef) IS DONE, closed at -94 in the same session it was filed, because the fragility bit again within the hour. 1217643242299336 (a gate that re-runs the sweeps a handoff claims green) is OPEN and is the one that matters: it is the class, not the instance."
+  - "State Machine 1217654200494124 -- PROPAGATE THE CLAIM RE-RUNNER TO THE GLOBAL `HANDOFF-GATE.md` AS G-AM. The defect it catches is not this repository's: every project's handoff asserts exit codes in the same voice, and `$?` after a pipe is the pipe's everywhere. `-96` built and red-proofed the mechanism here and deliberately did NOT propagate it in the same at-bat -- that file is 212KB, sat at v2.61 the same day, and the edit needs a version bump, a changelog entry and a grep-verified sweep of every `G-A -> G-AL` range reference. The card carries the design constraints to carry over and the G-AI question (wire a mechanical check, or write the leg and SAY that wealth-tensor is its only mechanical implementation -- a doc-only leg that pretends to be mechanical is worse than one that admits it)."
+  - "BOTH OF THE GATE CARDS ARE NOW CLOSED. 1217643681032027 (the durable re-evidence of row 5a47d4caef) closed at -94 in the session it was filed. 1217643242299336 (a gate that re-runs the sweeps a handoff claims green) closed at -96: the leg is built, red-proofed three ways, and running green over 19 declared claims. What is left of that thread is its PROPAGATION, filed as 1217654200494124 and ranked first in the context list -- the class is solved here and unsolved everywhere else."
   - "`wt177`: the front matter of each paper is set with markdown hard breaks by `build.sh`, so the author block no longer becomes one justified paragraph that hyphenates an e-mail address into 'jason@braatzre-search.com'. It still carries a first-line `\\parindent`, which reads slightly oddly on a three-line address block. Cosmetic, unmeasured, and the only thing about the rendered pages `-94` looked at and did not fix."
-  - "`redproof-layout.sh` and `verify-layout.sh` BOTH need lualatex, pandoc AND a git worktree, so neither runs in the container or in CI -- the same division `wt173 --verify` already has, and for the same reason. There is no toolchain-free guard on the manifest at all today: nothing catches a hand-edited `LAYOUT-MANIFEST.json` without a full rebuild. A cheap test that the manifest is SELF-CONSISTENT (page_count equals len(pages), fonts listed match `FONTS.tsv`, manuscripts listed match the four on disk) would run in milliseconds and is not written."
+  - "**THIS IS `-97`'S AT-BAT** -- `redproof-layout.sh` and `verify-layout.sh` BOTH need lualatex, pandoc AND a git worktree, so neither runs in the container or in CI -- the same division `wt173 --verify` already has, and for the same reason. There is no toolchain-free guard on the manifest at all today: nothing catches a hand-edited `LAYOUT-MANIFEST.json` without a full rebuild. A cheap test that the manifest is SELF-CONSISTENT (page_count equals len(pages), fonts listed match `FONTS.tsv`, manuscripts listed match the four on disk) would run in milliseconds and is not written. See `next_at_bat` for the full brief and the done-when."
   - "The capture INCLUDES Paper I, carrying its own SUPERSEDED banner, because P13 asks for the corpus as it would present if we stopped here and a capture that quietly dropped the paper its own internal referee rejected would not be one. If the deliverable is ever narrowed to the three papers in the definition of done, `wt173 --measure` must be re-run: `monospace.corpus_longest_identifier_chars` is measured across all four."
   - "P13f: FIGURES.tsv must exist and must BITE even though the corpus has ZERO figures today -- an empty file closes the row vacuously and reopens it silently the day someone adds a chart. Full instructions and a red-proof recipe in State Machine 1217638815220880."
   - "If the deliverable is ever widened beyond the four papers to include the REVIEW documents, re-run `wt173 --measure`: `monospace.max_inline_identifier_chars` is measured against the papers only, and REVIEW-001 carries a 73-character identifier where the papers' longest is 64."
@@ -78,9 +161,11 @@ curl -s https://system.europeanflorist.com/dsh/darlish-up -o /tmp/darlish-up && 
 # post the printed DARLISH-ENROLL line, EXACTLY, as an Asana comment on task 1217316841710435
 /tmp/darlish-up
 curl -s https://system.europeanflorist.com/dsh/dx -o /tmp/dx && chmod +x /tmp/dx
-/tmp/dx '~/Scripts/roster join --who big-wealthTensor-96 --task "gate re-runs what a handoff claims (card 1217643242299336)"'
+/tmp/dx '~/Scripts/roster join --who big-wealthTensor-97 --task "toolchain-free guard on LAYOUT-MANIFEST.json"'
+/tmp/dx '~/Scripts/rail'                     # check before you swing
+/tmp/dx '~/Scripts/charter-read.sh wealthTensor-97'   # YOUR id, not your successor's
 ```
-**READY first try at -61 through -95 — THIRTY-FIVE for thirty-five.** Budget four minutes; it takes two.
+**READY first try at -61 through -96 — THIRTY-SIX for thirty-six.** Budget four minutes; it takes two.
 - ▲ **`roster join` IS NOT OPTIONAL BOOKKEEPING — it is what makes `lessons.py` stamp your name.**
   Join FIRST, then `lessons.py add` needs no `--contributor`. Verified again at `-93`: five lessons
   banked with no `--contributor` flag and all five stamped correctly.
@@ -166,142 +251,185 @@ mkdir -p /home/claude/wt          # FIRST. $HOME is /root in the container.
   before re-running a mutating one.
 ------
 ## THE STATE YOU INHERIT AND MUST PRESERVE
-🟢 `python3 -m pytest -q` → **1121 passed, 1 warning.** RUN IT AND SAY THE NUMBER.
-   (1115 inherited from `-94`, plus `-95`'s four in `test_figures_manifest_bites.py` and two in
-   `test_board_is_not_degraded.py`.)
-🟢 `python3 scripts/wt173_typography_probe.py --verify` → **RC 0**, **50 values held to a fresh
-   build, 0 divergent, 15 of 15 load-bearing values present in the prose.**
+**Every line below was RE-RUN by `handoff_gate.py --claims-all`, not quoted from the last
+handoff.** That is new at `-96` and it is the point of the whole session: the `claims:` block in
+the front matter is the machine-readable form of this list, and the gate holds the prose to it.
+
+🟢 `python3 -m pytest -q` → **1148 passed, 1 warning.** RUN IT AND SAY THE NUMBER.
+   (1121 inherited from `-95`, plus `-96`'s 27 in `test_handoff_claims_leg.py`.)
+🟢 `python3 scripts/wt173_typography_probe.py --verify` → **RC 0**, 50 values held to a
+   fresh build, 15 of 15 load-bearing values in the prose.
 🟢 `python3 scripts/wt173_typography_probe.py --postconditions` → **RC 0**, **14 checks,
    5 NEGATIVE, 0 failed.**
 🟢 `bash docs/deliverable/preflight.sh` → **RC 0** over **16** vendored fonts.
 🟢 `wt133` · `wt148` · `wt154` · `wt156` · `wt160` · `wt163` · `wt166` · `wt169` — **ALL EIGHT RC 0.**
 🟢 `wt170 --verify` → **RC 0** · `wt172 --verify` → **RC 0**, 17 paper-II rows.
    ⚠ Both WRITING paths exit 2 by design; `--verify` is the re-runnable mode.
-🟢 `bash docs/deliverable/verify-layout.sh` → **RC 0**, 145 pages, 145 per-page hashes, rebuilt in
-   a clean worktree from `5b525f1754de`. ⚠ **Read the fourth drift flag before you trust one run.**
+🟢 `bash docs/deliverable/verify-layout.sh` → **RC 0**, 145 pages, rebuilt in a clean
+   worktree from `5b525f1754de`. ⚠ It did **not** reproduce `-95`'s false red — five clean runs
+   against one, and the drift flag stands.
 🟢 `bash docs/deliverable/redproof-layout.sh` → **RC 0**, four probes.
-🟢 ▲ `python3 scripts/wt177_figure_guard.py` → **RC 0** · `python3 scripts/redproof_wt177_figures.py`
+🟢 `python3 scripts/wt177_figure_guard.py` → **RC 0** · `python3 scripts/redproof_wt177_figures.py`
    → **RC 0, 21/21 probes proven.**
+🟢 ▲ `python3 scripts/redproof_wt178_claims.py` → **RC 0, 20 probes, 17 of 17 declared tags
+   proven.** The coverage line is not decoration: delete one probe and exactly one **WEAK** line
+   appears naming the orphaned tag (measured, not assumed).
+🟢 ▲ `python3 scripts/handoff_gate.py --claims-all` → **RC 0**, **19 claims declared, 19
+   re-run, 19 agreed.** `--claims` alone skips the three slow ones and exits **2** on purpose.
 🟢 coach: defensive sentences **outside** §Limitations are **0 / 0 / 3 / 0** for papers I–IV,
-   **identical to the commit `-95` inherited**, and `-95` edited no manuscript at all — proved,
-   not asserted, by an empty `git diff 46f48fc..HEAD -- docs/papers/`.
-🟢 GATE: gate v2.60, `gate-selfcheck.sh` **PASS**, handoff-lint clean, tree clean and pushed.
-**Wrap order:** commit → `gate-selfcheck` → `gate_passed: true` → `--stamp` → commit → push →
-`charter-read.sh <YOUR id>` → gate → `--emit`.
+   identical to the commit `-96` inherited, and `-96` edited no manuscript at all — proved, not
+   asserted, by an empty `git diff 448b0be..HEAD -- docs/papers/`.
+🟢 GATE: gate v2.61, `gate-selfcheck.sh` **PASS**, tree clean and pushed.
+
+**Wrap order** (one step longer than you inherited — the new step is `--claims-all`):
+commit → `gate-selfcheck` → **`handoff_gate.py --claims-all`** → `gate_passed: true` → `--stamp`
+→ commit → push → `charter-read.sh <YOUR id>` → gate → `--emit`.
+⚠ Run `--claims-all` **after your last mutation** — it runs `pytest` and the full layout
+verification, and a run started before your last edit is answering a question you no longer asked.
+It takes about **twelve minutes**; background it and poll.
+
 The ANCHOR line (*"ORIENT: read `docs/CO-AUTHOR-CHARTER.md` first. THE CHARTER WINS over anything
 in this file."*) must be **verbatim, above the fold** — put it in FIRST.
 
 ---
-## ▶ YOUR AT-BAT · ONE THING — MAKE THE GATE RE-RUN WHAT A HANDOFF CLAIMS
-`next_at_bat` in the front matter is the full brief and it is binding. **READ State Machine card
-`1217643242299336` FIRST** — it carries `-94`'s original filing, `-95`'s evidence, and the design
-constraint below.
+## ▶ YOUR AT-BAT · ONE THING — A TOOLCHAIN-FREE GUARD ON `LAYOUT-MANIFEST.json`
+`next_at_bat` in the front matter is the full brief and it is binding.
 
-**Why this one, when the board has no OPEN lanes.** Every remaining row is a human gate. The
-highest-value work left that a Claude can do is not on the board at all: it is the parking lot,
-and this is its top item — *the class, not the instance.* `-93` handed over `wt172 --verify` RC 0
-when it was already red at `cbffb8d`, because `$?` after a pipe is the pipe's. The rule that would
-have caught it was already written in STEP 0 of the very handoff that broke it: **it protected the
-reader, not the writer.** A rule stated inside a document protects that document and nothing else.
+**Why this one.** The board still has no OPEN lanes — 57 CLOSED, 9 PENDING-HUMAN, zero OPEN, and
+every remaining row is a human gate. So the work is the parking lot again, and with the gate card
+closed this is its top item. It is a **named hole**, not a nicety: `verify-layout.sh`,
+`redproof-layout.sh` and `wt173 --verify` all need lualatex, pandoc and a git worktree, so
+**nothing** in CI, in a fresh clone, in the container, or in any session that has not run preflight
+can notice a hand-edited `LAYOUT-MANIFEST.json`. P13e's entire claim rests on that file, and a file
+nothing cheap can check is a file that drifts.
 
-**THE CONSTRAINT `-95` ADDS, AND IT IS NOT OPTIONAL.** `verify-layout.sh` went red once this
-session with a real-looking `manuscript changed since the capture: paper-III.md` while no
-manuscript had been edited, and then would not reproduce across three further runs (see the fourth
-drift flag for everything ruled out). So a gate that re-runs a handoff's claims will, on a flaky
-check, **manufacture a false accusation against an honest predecessor** — and a gate that cries
-liar is a gate somebody switches off, which is exactly how false alarms have killed guards in this
-repo before. **One green and one red is a FLAKY CHECK, not a caught liar.** Build the
-re-run-on-disagreement rule in from the start; do not bolt it on after the first false accusation.
+**The shape, and `-96` just built one of these — copy it.** The manifest DECLARES what it contains;
+the test holds it to its own declaration. `page_count` equals `len(pages)`; the fonts listed match
+`FONTS.tsv` row for row; the manuscripts listed are exactly the four on disk; every per-page hash
+is well-formed and there are `page_count` of them; the capture commit named in the manifest is an
+object in this clone. **Do not let the test discover its own scope** by iterating whatever keys
+happen to be present — that is `-95`'s nine-of-fourteen defect and it reads as full coverage.
 
-**DONE WHEN** a gate leg parses the RC/count claims out of the handoff front matter's `phase:`
-block and re-runs each one **un-piped** (`cmd >out 2>&1; rc=$?`); a disagreement is re-run before
-it is reported; and the leg is RED-PROOFED three ways, each result said out loud — a handoff
-asserting a FALSE RC must FAIL, a handoff asserting TRUE RCs must PASS, and a check that fails
-once then passes must be reported **FLAKY** rather than as a false claim.
+**DONE WHEN** `tests/test_layout_manifest_is_self_consistent.py` runs with **no toolchain** in
+under a second and passes on the committed manifest; a red-proof provokes **every** failure it can
+report, each asserted by its **specific tag** rather than by exit status alone, and says the count
+out loud; the new guard is **registered in the `claims:` block** so the gate re-runs it; and
+`pytest`'s count claim moves with it.
 
 **DO NOT** close P13g, P9 or P8. All three are PENDING-HUMAN and explicitly not a session's to call.
 
----
-## WHAT -95 DID
-**Three commits, in this order:**
+**Ranked context, NOT a menu** — you have one assignment; this is here so you know what you are
+not doing. (1) `1217654200494124`, propagating the claim re-runner to the global `HANDOFF-GATE.md`
+as G-AM — real value, but it is a 212KB shared file another project's sessions edit the same day,
+and it wants its own at-bat. (2) `wt174`, generalising `wt172 --verify` to the whole TSV
+(`1217633269591608`). (3) widening `wt160.PAPERS` to all four manuscripts (`1217633320596131`).
+(4) making `verify-layout.sh` and `redproof-layout.sh` print a count, so their claims can carry one.
+
+**A guess at `-98`'s assignment, free, because the thinking is already done:** whichever of (1) or
+(2) you did not take. If your at-bat lands early, do NOT start a second one — write the handoff.
+
+## WHAT -96 DID
+**One at-bat, three commits, and the gate caught its own author inside the hour.**
 
 | commit | what |
 |---|---|
-| `772e476` | `FIGURES.tsv` + `wt177_figure_guard.py` + `redproof_wt177_figures.py` + `test_figures_manifest_bites.py` — P13f |
-| `d4a8f6f` | the board regenerated (P13f CLOSED) + `test_board_is_not_degraded.py` |
-| `6ae9599` | `wt176` prints the two shas on a mismatch — the one repair the unexplained red allowed |
+| `f69555e` | `G-CLAIMS` in `scripts/handoff_gate.py` + `--claims` / `--claims-all` |
+| `b6a2ca1` | `scripts/redproof_wt178_claims.py` — 20 probes, 17 of 17 declared tags |
+| `3b67ff0` | `tests/test_handoff_claims_leg.py` — 27 toolchain-free tests, 0.06s |
+| *(this one)* | the `claims:` registry and the handoff for `-97` |
 
-**The headline, in one sentence someone can mark right or wrong.** P13f is closed against a
-manifest that has nothing to enumerate, by making the emptiness itself a guarded claim rather
-than an absence — and every one of the guard's fourteen failures has been provoked and observed.
+**The headline, in one sentence someone can mark right or wrong.** A handoff can no longer assert
+an exit code or a count that nothing re-derives: the front matter declares its claims, the gate
+re-runs each one un-piped, and a claim the registry omits turns the gate red rather than silently
+leaving the work list.
 
-**The measurement that made the design.** Zero figures, five ways: the `-93`/`-94` grep (0,0,0,0);
-an eight-pattern sweep that also catches an image pasted mid-sentence, which the `^!\[` anchor
-walks straight past (0); zero image files tracked anywhere in the repo; zero image XObjects in the
-145-page PDF; and `preamble.tex` does not load `graphicx`, so the deliverable currently **cannot
-render a figure at all.**
+**The three red-proofs the card demanded, said out loud.** A handoff asserting **TRUE** RCs
+**PASSES** (exit 0). A handoff asserting a **FALSE** RC **FAILS** (exit 1, tag `FALSE-CLAIM`) — and
+it was run **three** times before it was called false, asserted against the probe's own counter
+file rather than inferred from the output. A check that **fails once then passes** is reported
+**`FLAKY`** (exit 2), and the words `FALSE-CLAIM` appear nowhere in that run.
+
+### The design decision `-95`'s two findings forced
+The obvious build is a regex over the `phase:` prose that finds the claims and runs them. **That
+build is `-95`'s nine-of-fourteen defect with a new subject:** an assertion the regex cannot parse
+silently leaves the work list, and the leg prints a clean board over a shrunken set. So the handoff
+**DECLARES** its claims in a registry and the leg holds it to the registry — and the prose is read
+only in the **negative** direction, as an audit of the declaration. *Same regex, opposite failure
+mode.* Proven non-vacuous on the real file: delete the `wt172 --verify` declaration and the leg
+names the exact orphaned assertion.
+
+The same rule is applied to the leg's own verdicts. `CLAIM_TAGS` is a declared registry of every
+tag it can emit; `_tag()` is the single emission point and returns `UNREGISTERED-TAG` for anything
+not in it; the red-proof **imports** that dict and prints `WEAK` for any tag it has no probe for.
+Delete one probe and exactly one WEAK line appears. A verdict added without a probe goes red by
+construction.
 
 ### The finding that outlives this at-bat
-**`-94` named four traps that are one shape — *a check that cannot see a failure reports zero of
-them, and zero reads exactly like absence.* `-95` then committed that exact error, within the
-hour, in the code written to honour the rule.** The red-proof's coverage check enumerated the
-guard's failure tags by regexing its source, found **nine of fourteen**, and printed FULL
-COVERAGE. It was caught only because the count printed `14/9` and the ratio was the wrong way
-round — a cosmetic tell, not a guard.
+**An exit code is the weakest half of a claim, and this was proven live rather than argued.**
+`-96` added 27 tests and its own registry still said `pytest` 1121. **The RC stayed 0 through every
+run** — the pipe defect that started this entire card would have reported green — and only the
+**count** moved, 1121 to 1148. The leg asked three times, got the same answer three times, and
+refused it. *Register a count wherever the command prints one.* Three of the nineteen claims print
+no number at all, and their `note` fields say so rather than pretending.
 
-The general repair, and it is stronger than the rule it replaces: **do not let a check DISCOVER
-what it is supposed to cover — make the thing under test DECLARE it.** The guard now carries a
-`TAGS` registry it holds itself to, the red-proof imports that registry, and a check added without
-a probe goes red by construction. *A rule you must remember protects the person who remembers it;
-a registry protects everyone downstream.*
+## THE TELL, now ONE HUNDRED AND THIRTY-THREE deep
+-61–-92 as before, `-93` added five, `-94` five, `-95` two. **-96 adds two.**
+- **-96(i) A CHECK MAY READ PROSE AS AN AUDIT OF A DECLARATION, NEVER AS ITS WORK LIST.** Same
+  regex, opposite failure mode. Scraped, an assertion the parser cannot see silently **leaves**
+  the work list and the check reports full coverage over a smaller set; used as an audit of a
+  registry the thing under test **declares**, that same unparsed assertion turns the check
+  **red**. This is `-95(i)` with the direction of the arrow named, and the build order follows
+  from it: **the declaration first, the parser second.**
+- **-96(ii) AN EXIT CODE IS THE WEAKEST HALF OF A CLAIM; THE COUNT IS WHAT MOVES.** A sweep that
+  keeps passing while the world changes underneath it reports RC 0 forever. `pytest` went
+  1121 → 1148 without its exit code flinching. **Hold a command to the number it prints**, and
+  when it prints none, say so in the record instead of accepting the weaker claim in silence.
 
----
-## THE TELL, now ONE HUNDRED AND THIRTY-ONE deep
--61–-92 as before, `-93` added five, `-94` added five. **-95 adds two.**
-- **-95(i) A CHECK THAT DISCOVERS ITS OWN SCOPE WILL UNDER-DISCOVER IT SILENTLY.** Scraping,
-  globbing, and pattern-matching to find "everything that needs covering" all fail the same way:
-  they return a smaller set and report full coverage over it. **Make the thing under test declare
-  its scope in a registry, and hold it to the registry.** Nine of fourteen, reported as complete.
-- **-95(ii) A DOCUMENTED WORKAROUND IS NOT A FIX IF THE WRONG PATH IS STILL SILENT.** `-53` found
-  the degraded-board trap, wrote the wrapper, and called it the only supported invocation; the
-  trap caught `-95` forty-two sessions later. **If the wrong path degrades an ARTEFACT, put the
-  check on the ARTEFACT** — then it does not matter what anybody ran, or whether they read the
-  warning.
-
----
-## TOOLING (▲ new at -95)
-- ▲ `scripts/wt177_figure_guard.py` — the P13f guard. `--emit` writes `FIGURES-MEASURED.json`;
-  `--json` prints the measurement with no verdict; `--paper/--manifest/--pdf/--no-pdf/--build-sh`
-  point every input elsewhere for red-proofing. **The corpus list is PARSED from `PAPERS=` in
-  `build.sh`, never hardcoded.** It prints what it is **BLIND TO** on every run, green included.
-- ▲ `scripts/redproof_wt177_figures.py` — 21 probes. Each asserts the **specific** `FAIL[TAG]`,
-  because a red-proof caught by a different guard proves the wrong thing; one probe must go
-  **GREEN**; one checks the probed criterion is still the committed one.
-- ▲ `tests/test_figures_manifest_bites.py` (4) · `tests/test_board_is_not_degraded.py` (2).
+## TOOLING (▲ new at -96)
+- ▲ **`python3 scripts/handoff_gate.py --claims-all`** — re-runs every entry in the front
+  matter's `claims:` block, un-piped, and refuses the handoff on a disagreement that survives
+  three attempts. `--claims` skips the slow ones and exits **2** (an un-run claim is not a verified
+  one). Exit codes are the file's existing tri-state: **0** pass, **1** blocker, **2** cannot
+  verify. **A registered `cmd` may not contain `|`, `;` or `&`** — the defect the leg exists to
+  catch may not be re-imported through the registry built to catch it.
+- ▲ `scripts/redproof_wt178_claims.py` — 20 probes over the **real** `claims_leg()`, each
+  asserting its **specific tag**, plus a coverage check that imports `CLAIM_TAGS` from the code
+  under test rather than scraping it.
+- ▲ `tests/test_handoff_claims_leg.py` (27, 0.06s, no toolchain) — these hold **this
+  repository's registry**, not the leg: every registered command names a file that exists, none
+  can mask an exit code, every asserted count is observable, and the prose audit is non-vacuous.
+- ▲ `scripts/wt177_figure_guard.py` · `scripts/redproof_wt177_figures.py` (21 probes) — P13f,
+  from `-95`. The corpus list is PARSED from `PAPERS=` in `build.sh`, never hardcoded.
 - ⚠ **`bash scripts/regen-board.sh` IS THE ONLY SUPPORTED BOARD REGENERATION.** `board.py`
-  directly = a correct-status board with its preamble deleted. The test now catches it.
-- ⚠ A full deliverable build is ~2 min and `redproof-layout.sh` is ~5–8. **Background them**
-  (`nohup … > /tmp/x.out 2>&1 &`) and poll with a second `dx`.
+  directly = a correct-status board with its preamble deleted. `test_board_is_not_degraded.py`
+  catches it now regardless of what anybody ran.
+- ⚠ A full deliverable build is ~2 min, `redproof-layout.sh` ~5–8, and **`--claims-all` is ~12**.
+  Background them (`nohup … > /tmp/x.out 2>&1 &`) and poll with a second `dx`. The leg flushes
+  each line as it goes, so polling the file actually shows progress.
 - ▲ darwin is **macOS + zsh**: no `grep -P`, no `cat -A`, `cut -c` is byte-based. Nested quotes →
-  write the script LOCALLY, `--put` it, `dx 'bash /tmp/x.sh'`. `-94` wrote over forty; `-95` about
-  twenty, and every one of them was cheaper than fighting the quoting.
-- ▲ **After string-surgery on a Python file, `ast.parse` it AND `exec_module` it** before shipping
-  — `-92`'s rule, used twice this session, worth the two lines both times.
+  write the script LOCALLY, `--put` it, `dx 'bash /tmp/x.sh'`. `-94` wrote over forty, `-95` about
+  twenty, `-96` a dozen — and `-96` lost one turn to a heredoc that tried to smuggle a quote
+  through `\x27`, which is exactly the thing this line has been telling you not to do.
+- ▲ **After string-surgery on a Python file, `py_compile` it before shipping.** Used on every
+  patch this session. Two seconds, and it caught nothing — which is what a cheap guard looks like
+  when it is working.
 - ⚠ `reg013_citation_whitespace.py` takes ~5 min and can 429 — never in a critical path.
-  **Tags run to `wt177`; `wt174` is a gap and `wt178` is next.**
+  **Tags run to `wt178`; `wt174` is still a gap and `wt179` is next.**
 
----
 ## ESTATE
-**CLOSED:** **P13f**, on the board — and with it, the last OPEN lane in the project.
-`1217638815220880` closed with the full recipe, the measurement, and what was carried forward.
-**COMMENTED, not closed:** `1217643242299336` — `-95` added the flaky-check constraint and the
-evidence; **it is `-96`'s at-bat.**
+**CLOSED:** `1217643242299336` — the gate that re-runs what a handoff claims. Built, red-proofed
+three ways, running green over 19 declared claims, and the closing comment carries the design
+argument and every number.
+**FILED:** `1217654200494124` — propagate the leg to the global `HANDOFF-GATE.md` as **G-AM**,
+with the constraints to carry over and the G-AI question about whether a doc-only leg is honest.
+**Board unchanged:** 57 CLOSED, 9 PENDING-HUMAN, **zero OPEN**. `-96` closed no row and reopened
+none; its at-bat was infrastructure, which is the only kind of work left that is not a human gate.
 **Carried:** `1217630566080626`, `1217629264134185`, `1217603625863293` (two instances),
 `1217613775009402`, `1217568297674954`, `1217568192511533`, `1217596263441666`,
 `1217596233063153`, `1217561667484767`, `1217593142996092`, `1217633320596131`,
 `1217633269591608`, `1217629169253037` (partially closed — Paper I's four bare pointers stand).
 
-## JASON-SIZED, not -96's
+## JASON-SIZED, not -97's
 (a) **The two-independent-readers design** — 429 labelled pointer rows plus 153 adjudicated
 promise rows, each carrying its own reason; (b) the version stamp — **SIXTEEN passes have declined
 to move it**; (c) the four-vs-three ruling, folded into the RESULT-001 in-place-edit card;
@@ -317,55 +445,14 @@ inherit as settled.**
 
 ---
 ## WHICH OPEN LANE THIS WAS (the gate's CONTOUR question, answered)
-`docs/CHECKLIST.md`'s first OPEN lane in dependency order was **P13f**, and `-95` worked exactly
-that and nothing else. **There is now no first OPEN lane** — the board reads 57 CLOSED, 9
-PENDING-HUMAN, 0 OPEN, and the pointer line the board emits for the next lane is gone because
-there is none to point at.
+**None, and that is the honest answer rather than a dodge.** `docs/CHECKLIST.md` has had no OPEN
+lane since `-95` closed P13f; every remaining row is a human gate, and P13g, P9 and P8 are
+explicitly not a session's to call. `-96` therefore worked the parking lot's top item, which is
+where the highest-value Claude-doable work now lives. **A successor should keep asking the
+question** — a lane can reopen, and `test_board_is_not_degraded.py` plus `charter-read.sh` are
+what would tell you. Regenerate with `bash scripts/regen-board.sh`, never `board.py`.
 
-**P7's counters did not move and `-95` did not move them, correctly.** P7 closes a paper when two
-consecutive fresh-eyes passes yield zero substantive findings. This was a deliverable-layer pass
-that edited no manuscript at all, so it is neither a fresh-eyes pass nor a regression: the
-counters are untouched rather than reset.
-
----
-## THE SELF-REVIEW TRIAD, ANSWERED IN WRITING (gate v2.60, G-A / G-B / G-G)
-**1 · Did we capture everything for a zero-memory future Opus?** Yes, and the test is that every
-claim here has a command beside it. The one thing that would have been lost without deliberate
-effort is the **negative** result: `verify-layout.sh` went red once and would not reproduce. The
-tempting write-up is silence, because it is green now and green is the number that goes in the
-handoff. It is in the drift flags instead, with the five things ruled out, because a P13e green
-from a single run is now known to be worth less than it reads. **Undo path:** three separate
-ordered commits; `docs/deliverable/wt176_layout_manifest.py.bak-wt95` on disk; every new file is
-additive, so reverting `772e476` removes P13f's machinery whole and leaves the board's own
-regeneration as the only thing to redo.
-
-**2 · What did we learn the hard way that is not yet written down?** Both are banked in
-`claude-blackbook` (three global, one project-scoped) and restated as **-95(i)–(ii)** above. The
-one that cost the most is the one that is embarrassing: **`-94` spent a whole session naming the
-shape "a check that cannot see a failure reports zero of them", I read it in the brief, wrote it
-into a docstring, and then committed that exact error in the coverage check itself** — caught by a
-cosmetic tell (`14/9`, the wrong way round), not by a guard. That is the strongest available
-argument for the repair: the rule is now a registry, not a reminder.
-
-**3 · What ONE thing makes the next Opus's life easier, and did we add it THIS pass?** Added:
-**`tests/test_board_is_not_degraded.py`.** `-53` documented the degraded-board trap in a wrapper
-forty-two sessions ago and it still caught me, because documentation protects readers and the
-person about to make the mistake is by definition not reading it. The board is now checked as an
-artefact, so the next session cannot commit a board with its preamble deleted no matter which
-command they run. And the honest half: **I only found it because I diffed my own regeneration
-before committing it** — the fix is in the suite so the next session does not need my paranoia.
-
----
-## AT WRAP
-⚠ **`--emit` REFUSES while `gate_passed:` is `false`.** Order: **commit → `gate-selfcheck` →
-`gate_passed: true` → `--stamp` → commit → push → `charter-read.sh <YOUR id>` → gate → `--emit`.**
-⚠ **RE-RUN `charter-read.sh` IF YOU AMEND `done-criteria.tsv`** — gate G-AL checks that the
-definition of done had not moved after you read it.
-`~/Scripts/charter-read.sh wealthTensor-96` — **that argument is YOUR OWN session id, not your
-successor's.** Gate detached **with** `GATE_ROSTER_WHO`; pytest **AND SAY THE NUMBER**; wt133 AND
-wt148 AND wt154 AND wt156 AND wt160 AND wt163 AND wt166 AND wt169 **AND SAY ALL EIGHT RCs**, plus
-`wt170 --verify`, `wt172 --verify`, `wt173 --verify`, and now `wt177_figure_guard.py` AND
-`redproof_wt177_figures.py`. **Capture every RC un-piped** (`cmd >out 2>&1; rc=$?`) — that is the
-bug your at-bat is about, and handing it over while committing it would be quite the own goal.
-`roster leave --who` once; paste a handoff better than this one as the last act — and assign `-97`
-**ONE** at-bat with a definition of done. Do not hand them a menu. 🥎
+**One judgement `-96` did not make and is not settled:** P9 is the single handoff into P8, and its
+own criterion says declaring readiness is the session's job. `-95` did not declare it because P7's
+convergence counters are unmet and P9's criterion names convergence explicitly. `-96` did not
+revisit that. **Re-examine it deliberately; do not inherit it as settled.**
