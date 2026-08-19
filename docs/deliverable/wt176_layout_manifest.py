@@ -128,7 +128,14 @@ def cmp_verify(fresh_pdf):
     for p, want in m["manuscripts"].items():
         got = sha256_file(os.path.join(REPO, p))
         if got != want:
-            fails.append("manuscript changed since the capture: %s" % p)
+            # PRINT BOTH SHAS. -95 hit this failure once, could not reproduce it, and could
+            # not diagnose it either -- because the message named the file and nothing else.
+            # A guard that reports a mismatch without reporting the mismatch turns a
+            # two-minute answer into an open card. See Asana 1217643242299336.
+            fails.append("manuscript changed since the capture: %s\n"
+                         "          wanted %s\n"
+                         "          got    %s  (read from %s)"
+                         % (p, want, got, os.path.join(REPO, p)))
     return m, ph, fails
 
 
