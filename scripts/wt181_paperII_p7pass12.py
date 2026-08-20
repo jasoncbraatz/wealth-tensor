@@ -56,6 +56,10 @@ red-proof the number without re-running the verdict - and E4 exposes section_of(
 ROLLBACK: paper-II.md is copied to paper-II.md.bak-wt181 before the first byte moves and
 restored if any post-condition fails. A rollback is not a verdict on the repair.
 
+--verify re-runs the MEASUREMENTS against the repaired tree and patches nothing, so this
+pass's central facts stay checkable after the anchors are gone. It is what sits in the gate's
+claim list; the patching path cannot, because a patch script is a one-shot by construction.
+
 EXIT: 0 = repaired and every post-condition holds - 1 = rolled back - 2 = refused before writing.
 """
 from __future__ import annotations
@@ -289,5 +293,55 @@ def main():
     return 0
 
 
+def verify():
+    """--verify: re-run this pass's MEASUREMENTS against the repaired tree, patching nothing.
+
+    A patch script is a one-shot: run it twice and the anchors are gone. That leaves the most
+    load-bearing thing a P7 pass produces -- the measurement that justified an edit -- checkable
+    exactly once, on the day it was made. This mode is the cheap seam. It re-derives II-40's
+    locator, II-42's horizon spread and its true-reading control, and asserts the repaired §7
+    clause still says what the ledger row claims it says. It runs in seconds and needs no
+    toolchain, so it can sit in the gate's claim list where the patch itself cannot."""
+    t = _read(PII)
+    checks = []
+
+    secs = section_of(t, "0.035")
+    print("  [meas] V1  subsections whose body contains 0.035: %s" % (secs,))
+    checks.append(("V1 II-40 stays repaired: 0.035 lives in 3.3 and nowhere else",
+                   secs == ["3.3"]))
+
+    checks.append(("V2 §7 points the periodicity span at §3.3",
+                   len(re.findall(r"§3\.3's 0\.035 periodicity span", t)) == 1))
+    for s in GONE:
+        checks.append(("V2 NEGATIVE still gone: %r" % s, s not in t))
+
+    rows, worse, pairs = measure_horizons()
+    wg = max(dg for _, _, dg, _ in rows)
+    wt = max(dt for _, _, _, dt in rows)
+    print("  [meas] V3  top decile moves MORE than the Gini in %d of %d config-seed pairs; "
+          "worst spread Gini %.4f, top decile %.4f" % (worse, pairs, wg, wt))
+    checks.append(("V3 II-42 still holds: the top decile is the LESS stable statistic",
+                   worse > pairs / 2))
+    checks.append(("V3 and its worst spread still exceeds the Gini's", wt > wg))
+
+    sep = separation_by_horizon()
+    for h, cond, bnd in sep:
+        print("  [meas] V4  T=%-5d condensed top10 %.4f   worst bounded top10 %.4f"
+              % (h, cond, bnd))
+    checks.append(("V4 the true reading holds: 0.90 separates at every horizon tested",
+                   all(bnd < 0.90 <= cond for _, cond, bnd in sep)))
+
+    rc, out = _defensive(PII)
+    checks.append(("V5 defensive_count RC 0 and paper-II still 0 outside §Limitations",
+                   rc == 0 and "0 defensive sentence(s) outside" in out))
+
+    bad = [c for c, ok in checks if not ok]
+    for c, ok in checks:
+        print("  [%s] %s" % ("ok  " if ok else "FAIL", c))
+    print("\nwt181 --verify: %d checks, %d NEGATIVE, %d failed"
+          % (len(checks), sum(1 for c, _ in checks if "NEGATIVE" in c), len(bad)))
+    return 1 if bad else 0
+
+
 if __name__ == "__main__":
-    sys.exit(main())
+    sys.exit(verify() if "--verify" in sys.argv[1:] else main())

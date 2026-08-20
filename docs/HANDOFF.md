@@ -2,15 +2,15 @@
 project: wealth-tensor
 gh_repo: jasoncbraatz/wealth-tensor
 branch: main
-gh_sha: c9c90332ec8ebe553a82379da509bc8f43a5139e
-updated: 2026-08-19
-session: wealthTensor-98
-session_n: 98
-live_theme: "THE THREE CLAIMS THAT WERE HELD TO AN EXIT CODE NOW CARRY A NUMBER, AND THE NUMBER IS DERIVED RATHER THAN DECLARED. `verify-layout.sh`, `redproof-layout.sh` and `wt170 --verify` are three of the twenty-six most expensive checks in this repository and TWO OF THEM GUARD THE DELIVERABLE; until now an exit code was the whole of each one, and an exit code stays 0 while the corpus moves underneath it -- which is exactly how `-96` shipped `pytest` 1121 for a suite of 1148. Each now prints ONE stable line carrying a count it MEASURED: 145 pages compared, derived from the freshly rebuilt PDF and cross-checked inside the script against a second independent read; 4 probe verdicts, tallied at the moment each is printed so a probe that dies before reporting LOWERS the number; 11 promise rows re-run against their committed evidence. THE MATRIX BEHIND THEM IS THE POINT -- `redproof_wt180_counts.py` proves each count DERIVED by moving the real corpus (a page out of the PDF, a probe call site out of the script, a row retired out of the adjudication file) and proves the leg BITES a wrong one on the FALSE-CLAIM TAG, with a CONTROL beside every bite requiring that tag to be SILENT on the clean case. AND THE THING THIS SESSION FOUND BY LOOKING ONCE MORE SOMEWHERE IT HAD NOT LOOKED: `docs/p7-passes.tsv` ENDS AT `-83`. FIFTEEN SESSIONS HAVE PASSED WITHOUT A SINGLE FRESH-EYES READ OF A MANUSCRIPT, while the definition of done asks for two consecutive ZERO-finding passes per paper and no paper has ever had one. The board is unchanged -- 57 CLOSED, 9 PENDING-HUMAN, ZERO OPEN -- but the DoD is not the board, and the DoD is where the work is."
-phase: "EVERY NUMBER HERE WAS RE-DERIVED BY THE GATE'S CLAIM RE-RUNNER, NOT QUOTED: `pytest` 1167 passed (1156 inherited from `-97`, plus 11 in the new tests/test_the_three_counts_are_derived.py); THE THREE COUNTED-BY-NOTHING CLAIMS NOW CARRY A NUMBER AND THE GATE RE-RAN ALL THREE -- `verify-layout.sh` RC 0 with 145 pages compared against the manifest, derived from the freshly rebuilt PDF and cross-checked inside the script against a second independent pypdf read; `redproof-layout.sh` RC 0 with 4 probes reported, tallied at the moment each verdict is printed so a probe that dies before reporting lowers the number; `wt170 --verify` RC 0 with 11 of fifteen rows verified against their committed evidence, 3 retired to committed successors and 1 re-evidenced in place; NEW `redproof_wt180_counts.py` RC 0 with 12 of 12 declared probes proven over a declared CLAIMS x TAGS matrix -- REGISTERED, DERIVED, BITES and CONTROL for each of the three, every bite asserted on the FALSE-CLAIM tag and every control requiring that tag to be silent on the clean case; `wt173 --verify` RC 0; `wt173 --postconditions` RC 0 over 14 checks with 5 NEGATIVE and 0 failed; `preflight` RC 0 over 16 vendored fonts; `wt133` and `wt148` and `wt154` and `wt156` and `wt160` and `wt163` and `wt166` and `wt169` -- ALL EIGHT RC 0; `wt172 --verify` RC 0 over 17 paper-II rows; `wt177_figure_guard.py` RC 0; `redproof_wt177_figures.py` RC 0 over 21 probes; `wt179_manifest_guard.py` RC 0 over 10 checks with no toolchain; `redproof_wt179_manifest.py` RC 0 with 26 of 26 declared tags proven; `redproof_wt178_claims.py` RC 0 over 17 declared tags; G-CLAIMS run over the committed handoff -- 26 claims declared, 26 re-run un-piped, 26 agreed, exit code captured with rc=$?; `defensive paper-I` and `defensive paper-II` and `defensive paper-III` and `defensive paper-IV` -- 0/0/3/0 sentences outside Limitations, UNCHANGED and NO MANUSCRIPT EDITED (`git diff 54ceeac..HEAD -- docs/papers/` empty); gate v2.61 PASS, tree clean and pushed."
+gh_sha: PENDING
+updated: 2026-08-20
+session: wealthTensor-99
+session_n: 99
+live_theme: "THE LEDGER MOVED, AND WHAT IT COST TO LEAVE A NAMED CHECK UNRUN. `docs/p7-passes.tsv` had its last row at `wealthTensor-83` and twenty sessions went by with no fresh-eyes read of any manuscript. Paper II got its TWELFTH `P7` read here and returned THREE findings on a frozen instrument set. The headline is `II-42`: section 3.4 has claimed since Paper II's FIRST independent read that the top-share statistic is also horizon-stable where the Gini is not; `-74` flagged it NOT MEASURED five passes ago AND NAMED THE EXACT CHECK, nobody ran it, and it is FALSE -- the top decile is the LESS stable statistic in 14 of 18 config-seed pairs, worst spread 0.1706 against 0.0496. CUT, not hedged. The other two are both inside the six lines the one intervening repair pass wrote, and `wt133_crossref_sweep` is GREEN on one of them because the section it points at RESOLVES -- A RESOLVING CROSS-REFERENCE IS NOT A CORRECT ONE, which is a class the sweep has never been able to see. RESIDUE 2 of 3, the highest any row carries, AND NO SIXTH MECHANISM IS PROPOSED: residue died at `-78`, and this row's largest finding survived nine reads. The board went RED on `P13e` the instant the prose moved -- the layout capture pins the manuscript sha256 -- and that is the guard working, not a regression. CONSECUTIVE-ZERO COUNT, ALL THREE MANUSCRIPTS: 0, 0, 0."
+phase: "EVERY NUMBER HERE WAS RE-DERIVED BY THE GATE'S CLAIM RE-RUNNER, NOT QUOTED: `pytest` 1167 passed; `wt181 --verify` RC 0 over 9 checks, 3 NEGATIVE -- the P7 pass 12 seam, re-deriving section 3.3 as the 0.035 span's only home, the 14-of-18 horizon spread that killed section 3.4's sentence, and the control that the 0.90 criterion separates at 600, 1200 and 2400; `verify-layout.sh` RC 0 with 145 pages compared, REBUILT IN A CLEAN WORKTREE FROM THE COMMIT THAT CARRIES THE REPAIR; `redproof-layout.sh` RC 0 with 4 probes reported; `wt170 --verify` RC 0 with 11 of 15 rows verified; `redproof_wt180_counts.py` RC 0 over 12 of 12 declared probes; `wt173 --verify` RC 0; `wt173 --postconditions` RC 0 over 14 checks with 5 NEGATIVE; `preflight` RC 0 over 16 fonts; `wt133` and `wt148` and `wt154` and `wt156` and `wt160` and `wt163` and `wt166` and `wt169` -- ALL EIGHT RC 0, and `wt148` now reads 154 adjudicated with 0 unadjudicated and 0 STALE after the promise re-key this repair forced; `wt172 --verify` RC 0 over 18 paper-II rows; `wt177_figure_guard.py` RC 0; `redproof_wt177_figures.py` 21/21; `wt179_manifest_guard.py` RC 0 over 10 checks; `redproof_wt179_manifest.py` 26 of 26 tags; `redproof_wt178_claims.py` 17/17; `defensive` paper-I/II/III/IV = 0/0/3/0 outside Limitations -- UNCHANGED, and paper-II moved by TWO EDITS whose delta is +0 (G-COACH-3 holds, proved with `--against`); gate v2.61 PASS, tree clean and pushed."
 gate_passed: true
 gate_version: "2.61"
-next_at_bat: "ASSIGNED, ONE THING: **run P7 pass 12 on paper-II, and append its row to the ledger.** NOT another instrument. `docs/p7-passes.tsv` -- the file this project built precisely so that claims about its own review process would be measured rather than told -- ENDS AT `wealthTensor-83`. Fifteen sessions have gone by without one fresh-eyes read of a manuscript, while `definition_of_done` asks for TWO CONSECUTIVE ZERO-FINDING PASSES PER PAPER and no paper has ever had one. Last reads: paper-II at `-79` (2 findings), paper-IV at `-81` (9), paper-III at `-83` (4). Paper II is the closest thing to convergence this corpus has -- 3, 2, 2 across three frozen-instrument passes -- so it is the read that can actually END something. THE SHAPE: read paper-II with fresh eyes under the CHARTER (coach model, not marksman); every finding arrives WITH ITS REPAIR in the order STEELMAN > REPLACE > CUT > TEE-UP, never as a filed objection and NEVER as a new hedge pasted into the manuscript -- ABSORB is the illegal move and the defensive-sentence count is the checkable invariant. A ZERO-FINDING PASS IS A CELEBRATED RESULT, not a failure to find work; it is literally half of what done means here. But it must be an honest zero: `docs/p7-passes.tsv`'s header tells you how to falsify your own row, and five proposed mechanisms for the finding counter have died one pass after being proposed (new instruments, residue, depth, coverage; only enumeration survives) -- so do NOT propose a sixth and do not credit findings to an axis you did not run. DONE WHEN: docs/REVIEW-034-P7-paperII-pass12.md exists with a numbered finding list and its front matter filled in the shape REVIEW-019 uses (new_instrument, instrument_name, findings_from_new_axis, residue_of_previous_pass) plus its own falsifier block; one row appended to docs/p7-passes.tsv that survives that falsifier; every finding carries a landed repair or a carded tee-up; `defensive_count.py` is NON-INCREASING on paper-II (0 outside Limitations, and it must stay 0); and `--claims-all` re-runs 26 claims and agrees. Do NOT close P7 -- it is PENDING-HUMAN and the convergence verdict is Jason's, not a session's; you run the pass, you do not score it. Do NOT close P13g, P9 or P8 either."
+next_at_bat: "ASSIGNED, ONE THING: **run the next P7 read on PAPER-IV, and append its row to `docs/p7-passes.tsv`.** NOT another instrument, and NOT paper-II again. Paper IV was last read at `wealthTensor-81` and returned NINE findings; that was 2026-08-18 and it is now the STALEST manuscript in the corpus AND the one whose last count was highest. Paper III is next-stalest at `-83` (4 findings). Paper II was read at `-99` (3 findings) and is deliberately NOT yours: reading it back-to-back would be leg one of the two-independent-readers design, which `docs/p7-passes.tsv` says costs two sessions to buy one data point and is JASON'S to authorise. THE SHAPE, and the CHARTER wins over this file: coach model, not marksman. Every finding arrives WITH ITS REPAIR in the order STEELMAN > REPLACE > CUT > TEE-UP, never as a filed objection and NEVER as a new hedge pasted into the manuscript -- ABSORB is the illegal move and `scripts/defensive_count.py --against` is the checkable invariant (paper-IV is at 0 outside Limitations and must stay 0). A ZERO-FINDING PASS IS A CELEBRATED RESULT and it is literally half of what done means here -- but an HONEST zero: the ledger header tells you how to falsify your own row. FIVE MECHANISMS FOR THE FINDING COUNTER HAVE BEEN PROPOSED AND FOUR DIED ONE PASS LATER (new instruments, residue, depth, coverage; only enumeration lives). DO NOT PROPOSE A SIXTH, and do not credit a finding to an axis you did not run -- NOT-STATED is honest, a guess is not. `-99` had a 2-of-3 residue row sitting there begging to be a mechanism and declined; do the same. DONE WHEN: `docs/REVIEW-035-P7-paperIV-passN.md` exists (derive N from the ledger and the existing filenames -- and see the TEE-UPS section, because the paper-IV filenames currently carry TWO INCOMPATIBLE CONVENTIONS and picking one is part of this at-bat) with a numbered finding list and front matter in `REVIEW-034`'s shape (`new_instrument`, `instrument_name`, `findings_from_new_axis`, `residue_of_previous_pass`) PLUS its own falsifier block; ONE row appended to `docs/p7-passes.tsv` that survives that falsifier; every finding carries a landed repair or a carded tee-up; `defensive_count.py --against` shows +0 on paper-IV; and `--claims-all` re-runs 27 claims and agrees. ⚠ IF YOU EDIT THE MANUSCRIPT, TWO THINGS GO RED AND BOTH ARE YOURS TO CLOSE IN THE SAME SESSION: `wt148` reports STALE promise rows (re-key them, see `-99`'s commit), and `P13e` goes UNMET because the layout capture pins the manuscript sha256 (commit the repair FIRST, then `bash docs/deliverable/build.sh`, then `verify-layout.sh`, then `regen-board.sh`, then commit the recapture -- `-99` did exactly this and the two commits are the worked example). Do NOT close P7 -- it is PENDING-HUMAN, the convergence verdict is Jason's, and the ledger itself says the session doing the work must not score it. You run the pass; you do not call it. Do NOT close P13g, P9 or P8 either."
 blockers: []
 claims:
   - id: pytest
@@ -67,7 +67,7 @@ claims:
   - id: wt172 --verify
     cmd: python3 scripts/wt172_tsv.py --verify
     rc: 0
-    count: 17
+    count: 18
     count_re: ([0-9]+) paper-II rows
     note: the claim -93 handed over green while it was red -- the reason this leg exists
   - id: verify-layout.sh
@@ -137,6 +137,12 @@ claims:
     count: 12
     count_re: ([0-9]+) of [0-9]+ declared probes proven
     note: the CLAIMS x TAGS matrix for the three counts above -- REGISTERED, DERIVED, BITES, CONTROL, proven cheaply by moving the real corpora rather than by rebuilding them
+  - id: wt181 --verify
+    cmd: python3 scripts/wt181_paperII_p7pass12.py --verify
+    rc: 0
+    count: 9
+    count_re: ([0-9]+) checks, [0-9]+ NEGATIVE
+    note: the P7 pass 12 SEAM. The patch path is a one-shot -- run it twice and the anchors are gone -- so --verify re-derives the MEASUREMENTS instead: II-40's section locator, II-42's 14-of-18 horizon spread and its true-reading control. Seconds, no toolchain
 drift_flags:
   - "THE REVIEW LEDGER STOPPED AT `-83` AND FIFTEEN SESSIONS DID NOT NOTICE, BECAUSE EVERY ONE OF THEM WAS LOOKING AT THE BOARD. `docs/CHECKLIST.md` has read 57 CLOSED / 9 PENDING-HUMAN / ZERO OPEN for four sessions running, and each of `-95` `-96` `-97` `-98` read that, concluded correctly that no lane was open, and went to the infrastructure parking lot. THE BOARD IS NOT THE DEFINITION OF DONE. `definition_of_done` in this very front matter asks for three preprints at ready-to-submit AND convergence -- TWO CONSECUTIVE ZERO-FINDING P7 PASSES PER PAPER -- and `docs/p7-passes.tsv`, the ledger this project built so that exactly this claim would be measured rather than told, has its last row at `wealthTensor-83`. Paper II was last read at `-79`, paper-IV at `-81`, paper-III at `-83`. NO PAPER HAS EVER HAD A ZERO-FINDING PASS, so convergence is not one pass away for any of them; it is at minimum two per paper, six reads, and the counter has never gone below two. THE GENERAL SHAPE, and it is the expensive one: when a project has a board AND a definition of done, a session that consults only the board will find the board says nothing is open, and will build tools. Tools are cheap to justify and impossible to finish. CONSULT THE DoD FIRST; the board is a subset of it."
   - "A COUNT IS ONLY A MEASUREMENT IF SOMETHING CHEAP CAN MOVE IT, AND THAT IS WHY THE RED-PROOF COSTS SECONDS INSTEAD OF EIGHT MINUTES. The three claims closed here are guarded by four lualatex builds and fifteen re-executed evidence cells; a red-proof that had to RUN them to see whether their numbers move would be a red-proof that runs in no CI, no fresh clone and no container -- which is `-97`'s wt179 lesson pointed at its author's successor. So each number was given a CHEAP SEAM through which the real world can be moved: wt176 prints the pages it compared BEFORE the verdict branch (so a PDF one page short says 144 rather than losing the line to an early return); the probe tally lives in a sourced `probe-tally.sh` (so it can be driven with three verdicts or seven in milliseconds, and the REAL script can be run with its probe BODY stubbed to prove the wiring and with one call site deleted to prove the number falls); and `wt170 --verify` is importable, so the adjudication corpus can be handed a retirement in a temp file. WHAT THE SEAMS DO NOT PROVE is that the real commands print those lines on a real run -- only `--claims-all` at wrap proves that, and BOTH docstrings say so. Do not delete one half because the other is green."
@@ -201,7 +207,7 @@ definition_of_done: "Three preprints (II, III, IV) each at ready-to-submit per A
 *Stamped by `scripts/handoff_gate.py --stamp`. If `gh_sha` above is not `HEAD`, this file was
 committed without stamping — read `git log` rather than believing it.*
 ---
-## STEP 0 · BRIDGE-BUG ACK, then transport (zero bridge calls)
+## STEP 0 · transport (zero bridge calls)
 The bridge rotates every ~27–33 min (`claude-code#81248`). **DARLISH DOES NOT USE IT.** Asana /
 Gmail / Twilio MCP tools **are** bridge-bound: if one vanishes mid-turn it self-heals in ~1 s,
 retry next turn, **NEVER declare "can't continue" over it.** Never restart the Claude app for a
@@ -211,406 +217,292 @@ curl -s https://system.europeanflorist.com/dsh/darlish-up -o /tmp/darlish-up && 
 # post the printed DARLISH-ENROLL line, EXACTLY, as an Asana comment on task 1217316841710435
 /tmp/darlish-up
 curl -s https://system.europeanflorist.com/dsh/dx -o /tmp/dx && chmod +x /tmp/dx
-/tmp/dx '~/Scripts/roster join --who big-wealthTensor-99 --task "P7 pass 12 on paper-II"'
-/tmp/dx '~/Scripts/rail'                     # check before you swing
-/tmp/dx '~/Scripts/charter-read.sh wealthTensor-99'   # YOUR id, not your successor's
+/tmp/dx '~/Scripts/roster join --who big-wealthTensor-100 --task "P7 read on paper-IV"'
+/tmp/dx '~/Scripts/roster claim --who big-wealthTensor-100 --resource ~/repos/wealth-tensor --task "P7 paper-IV"'
+/tmp/dx '~/Scripts/rail'                                     # check before you swing
+/tmp/dx '~/Scripts/charter-read.sh wealthTensor-100'         # YOUR id, not your successor's
+/tmp/dx 'python3 ~/repos/claude-blackbook/lessons.py search "P7 review pass paper-IV" --scope global,wealth-tensor'
 ```
-**READY first try at -61 through -98 — THIRTY-EIGHT for thirty-eight.** Budget four minutes; it takes two.
-- ▲ **`roster join` IS NOT OPTIONAL BOOKKEEPING — it is what makes `lessons.py` stamp your name.**
-  Join FIRST, then `lessons.py add` needs no `--contributor`. Verified again at `-93`: five lessons
-  banked with no `--contributor` flag and all five stamped correctly.
-- ⚠ `roster join` returns RC=0 with **NO OUTPUT** on a re-join, and prints `absorbed N row(s) …`
-  when it adopts a `cloud-<fp>` identity. That line is the healthy path.
-- ⚠ `roster claim` syntax: `--who X --resource wealth-tensor --task "..."` — **resource is a NAMED flag.**
-- ▲ **Changing your own name mid-session:** `join` new → `claim` new → `leave --who <old>`.
-- ⚠ `roster-brake` **WILL** block your first `git add` commit. **`ROSTER_BRAKE_ACK=N` is the
-  answer**, ranked SECOND. Card `1217596263441666`. `-88` through `-92` set it on every commit and
-  lost nothing.
-- ▲ **SIBLING SESSIONS SHARE DARWIN'S WORKING TREE.** At `-93`'s wrap the rail was idle and no sibling held a wealth-tensor claim; at `-92`'s wrap `ipadTravel-1` held claims on
-  `Scripts` (dmode only), `darwin-mac-ops` and the everything folder. Banking lessons went through
-  cleanly (`lessons.py` commits its own paths). **Stage PATHS, never `-A`, in any repo you do not
-  own for the session.** Run `roster who` and `rail` before you touch anything.
-### THEN STAGE THE DOCS AS ONE TARBALL
-```
-mkdir -p /home/claude/wt          # FIRST. $HOME is /root in the container.
-/tmp/dx 'mkdir -p /tmp/wt94'
-/tmp/dx 'cd ~/repos/wealth-tensor && git pull --ff-only && tar czf /tmp/wt-docs.tgz docs scripts tests'
-/tmp/dx --get /tmp/wt-docs.tgz /home/claude/wt/wt-docs.tgz
-```
-- ⚠ ▲ **THE STAGED TARBALL HAS NO `.git`.** Every post-condition that shells out to `git show`
-  FAILS locally — `wt160`, `wt163`, `wt166`, `wt169` all return RC 2 in the container and RC 0 on
-  darwin. That is the container, not a regression. `-92` read `[FAIL] C9 … not a git repository`
-  and nearly filed it. **Read the failure text before believing the exit code.**
-- ⚠ ▲ **NEVER NAME A LOCAL SCRATCH SCRIPT AFTER A STDLIB MODULE.** `-90` wrote a throwaway
-  `enum.py` and every subsequent `python3` in that directory died — including `import json`.
-  Same trap: `json.py`, `types.py`, `string.py`, `code.py`, `test.py`, `io.py`, `random.py`.
-  **Rename the file; do not debug the import.**
-- ⚠ **`/tmp/dx --put` will NOT create a missing remote directory.** `mkdir -p` on darwin FIRST.
-- ⚠ Stage `tests/` **too**. `.bak` files **sort first** — read the path, not the first line.
-- ⚠ **The local Bash tool's working directory PERSISTS between calls.** Lead with
-  `cd /home/claude/wt &&` or use absolute paths.
-- ⚠ **ANYTHING THAT IMPORTS `src/` MUST RUN ON DARWIN** — all of pytest, and `wt030_report.py`
-  and `wt077_tail_index.py`, which several evidence commands shell out to. `wt133` / `wt148` /
-  `handoff_gate --coach` are pure-doc and run **locally in under a second**, which is how `-92`
-  dry-ran the whole promise delta before touching darwin at all.
-- ▲ A script under `tests/` invoked directly needs `PYTHONPATH=src`.
-- ⚠ **NEVER** pipe a command through `dx` whose exit code you intend to read — `$?` after a pipe is
-  the *last* command's. Redirect inside the remote command and echo `$?` there.
-- ▲ ⚠ **PROBE EVERY EVIDENCE COMMAND BEFORE YOU QUOTE IT** (`-91`'s time-saver, used again and it
-  paid twice at `-92`). Write the commands into one local `evdefs.py`, `--put` it, run a five-line
-  probe that prints `repr(stdout)` for each, and only then write the notes. `-92`'s probe caught a
-  `pytest` line reading `'1 passed in 0.18s'` — **a duration in stdout cannot be held to a verbatim
-  quotation on a later run**, which is the exact property the guard exists to enforce. One turn.
-- ▲ Nested quotes → write the script **LOCALLY**, `--put` it, run `dx 'bash /tmp/x.sh'`. `-83` wrote
-  seven that way, `-88` nine, `-89` eleven, `-90` eight, `-91` twelve, `-92` nine, `-93` fourteen, **`-94` over forty.**
-  **WRITE THE FILE.**
-- ⚠ ▲ **DO NOT BUILD A PYTHON SOURCE FILE BY STRING-SURGERY ON ITS OWN TEXT WITHOUT RE-EXEC'ING IT.**
-  `-92` cut a block with `s.index('X')` … `s.index('# ---', start)` and silently deleted the `EV`
-  dict thirty lines below, then shipped it to darwin and burned a three-minute run on
-  `NameError: name 'EV' is not defined`. **After every surgical edit, `exec()` the result and
-  assert the dicts you expect are present with the sizes you expect.** Two lines.
-- ⚠ ▲ **`dx` RUNS YOUR COMMAND UNDER ZSH ON DARWIN; `board.py` RUNS A `cmd:` CRITERION UNDER
-  `bash -c`.** `-93` tested a new done-criteria row with `eval "$(...)"` through `dx`, got
-  `unmatched "` twice, and nearly rewrote a criterion that was already correct. **Test a
-  criterion the way the board runs it: `bash -c "$CMD"`.**
-- ⚠ ▲ **`"\t"` IN A PYTHON STRING IS A REAL TAB, AND `docs/done-criteria.tsv` IS TAB-SEPARATED.**
-  `-93` wrote a shell command containing `grep -c "\t"` into a criterion cell and silently split
-  the row into five fields. It still parsed and still looked right in a terminal; the NEXT edit
-  failed an assertion instead of the data failing a test. **Assert the field count of the row you
-  rewrote, in the same script — and take the `.bak` first, which is what made it a two-minute
-  restore.**
-- ▲ **A `lualatex` probe run is ~40 s and three of them is ~2 min — background it.** `-93` ran
-  `--measure` six times before it was right. `nohup ... > /tmp/wt94/out 2>&1 &` and poll.
-- ⚠ ▲ **`\prevgraf` RETURNS 0 UNDER LuaTeX IN BOTH PLACES YOU WOULD TRY IT** — on the page the
-  output routine resets it mid-paragraph, and inside a `\vbox` it is never set at all. It does not
-  error; it returns a NUMBER, so a chars-per-line calculation divides by it happily and produces a
-  confident fabricated measure. `-93` got 36 zeroes, twice. **Count lines by box geometry instead**
-  (`\lineskiplimit=-\maxdimen`, open with `\strut`, height == strut + (lines−1)×baselineskip) and
-  **refuse when the division is not integral** — an instrument that cannot produce an integer line
-  count is not measuring lines.
-- ⚠ ▲ **`charter-read.sh` TAKES YOUR OWN SESSION ID, NOT YOUR SUCCESSOR'S.** When YOU run it, pass
-  **YOUR** id. ▲ **AND RE-RUN IT IF YOU AMEND `done-criteria.tsv`** — `-93` strengthened the P13b
-  criterion and gate G-AL failed at wrap because the definition of done had moved after it was
-  read. Re-reading is the fix and takes two seconds; the gate is right to insist.
-- ⚠ ▲ **`~` DOES NOT EXPAND INSIDE A QUOTED SHELL VARIABLE.** Use `$HOME` or an absolute path.
-- ▲ Long remote jobs survive the local Bash timeout — `nohup` to `/tmp/wt94/`, poll with a second
-  `dx`. **pytest takes ~70 s and is worth backgrounding.** ⚠ Launch it AFTER your last mutation and
-  read the run you started last. ▲ `tests/test_manuscript_sweeps_are_green.py` reads the TSV, so a
-  TSV write invalidates a pytest run started before it.
-- ▲ **A `dx` call interrupted client-side may still have RUN on darwin.** Check for the effect
-  before re-running a mutating one.
+**READY first try at `-61` through `-99` — THIRTY-NINE for thirty-nine.** Budget four minutes; it
+takes two.
+⚠ That last line is **not optional**. `-98` skipped student-in and `-99` did not; the search is
+what surfaced `-63`'s backlog-drain leaf before a word of the pass was written.
+⚠ `roster claim` needs `--resource` (a NAMED flag), not `--repo`. `ROSTER_BRAKE_ACK=<n files>` on
+commits.
+⚠ **RUN THE GATE AS `GATE_ROSTER_WHO=big-wealthTensor-100 bash ~/Scripts/gate-selfcheck.sh`.**
+Without it, `G-AL` reads the LAST charter stamp in the shared ledger — which may belong to a
+sibling — and tells you YOUR definition of done moved. Jason often runs 2–3 sessions at once;
+`roster who` before you believe any cross-repo complaint.
+
+**Working notes on the transport, all earned:**
+- ▲ Long remote jobs survive the local Bash timeout — `nohup` to `/tmp/`, poll with a second `dx`,
+  and **capture the exit code by redirecting `echo $?` to a FILE**, never off the last line.
+  **`pytest` takes ~78 s and is worth backgrounding.** ⚠ Launch it AFTER your last mutation.
+- ▲ `tests/test_manuscript_sweeps_are_green.py` reads the promise TSV and
+  `tests/test_the_three_counts_are_derived.py` reads the layout manifest, so **a TSV write or a
+  manuscript edit invalidates a pytest run started before it.**
+- ▲ **`dx` exit 3 = never reached darwin** (nothing ran, safe to re-run) · **4 = dropped AFTER the
+  command started** (check state before re-running; no blind retry loops).
+- ⚠ **NESTED QUOTES: write the script LOCALLY, `--put` it, then `dx 'python3 /tmp/x.py'`.**
+  `-99` ignored this for ONE `git commit -F -` heredoc and the commit message landed mangled —
+  apostrophes eaten, truncated mid-sentence — and had to be `--amend`ed from a `--put` file.
+  **Follow it on the FIRST file, not the third.** The rule costs nothing and it is now
+  three sessions' worth of evidence.
+
 ------
 ## THE STATE YOU INHERIT AND MUST PRESERVE
-**Every line below was RE-RUN by `handoff_gate.py --claims-all`, not quoted from the last
-handoff.** That is new at `-96` and it is the point of the whole session: the `claims:` block in
-the front matter is the machine-readable form of this list, and the gate holds the prose to it.
+**Every line below was RE-RUN by `handoff_gate.py --claims-all`, not quoted from the last handoff.**
 
 🟢 `python3 -m pytest -q` → **1167 passed, 1 warning.** RUN IT AND SAY THE NUMBER.
-   (1156 inherited from `-97`, plus `-98`'s 11 in `test_the_three_counts_are_derived.py`.)
-🟢 `python3 scripts/wt173_typography_probe.py --verify` → **RC 0**, 50 values held to a
-   fresh build, 15 of 15 load-bearing values in the prose.
-🟢 `python3 scripts/wt173_typography_probe.py --postconditions` → **RC 0**, **14 checks,
-   5 NEGATIVE, 0 failed.**
+🟢 ▲ **NEW** `python3 scripts/wt181_paperII_p7pass12.py --verify` → **RC 0, 9 checks, 3 NEGATIVE.**
+   The `P7` pass 12 seam — re-derives §3.3 as the 0.035 span's only home, the **14 of 18**
+   horizon spread that killed §3.4's sentence, and the control that the 0.90 criterion separates
+   at *T* = 600, 1200 and 2400. Seconds, no toolchain.
+🟢 `wt173 --verify` → **RC 0** · `wt173 --postconditions` → **RC 0, 14 checks, 5 NEGATIVE.**
 🟢 `bash docs/deliverable/preflight.sh` → **RC 0** over **16** vendored fonts.
 🟢 `wt133` · `wt148` · `wt154` · `wt156` · `wt160` · `wt163` · `wt166` · `wt169` — **ALL EIGHT RC 0.**
-🟢 ▲ `wt170 --verify` → **RC 0, 11 of fifteen rows verified** against their committed evidence
-   (3 retired to committed successors, 1 re-evidenced in place) · `wt172 --verify` → **RC 0**,
-   17 paper-II rows. ⚠ Both WRITING paths exit 2 by design; `--verify` is the re-runnable mode.
-🟢 ▲ `bash docs/deliverable/verify-layout.sh` → **RC 0**, **145 pages compared against the
-   manifest**, rebuilt in a clean worktree from `5b525f1754de`. The count is `wt176`'s, printed
-   un-piped inside the run and derived from the fresh PDF; the script now cross-checks it against a
-   second independent `pypdf` read and **dies if the two instruments disagree**. ⚠ It did **not**
-   reproduce `-95`'s false red — six clean runs against one, and the drift flag stands.
-🟢 ▲ `bash docs/deliverable/redproof-layout.sh` → **RC 0**, **4 probes reported** — tallied in
-   `say()` as each verdict is printed, so a probe that dies before reporting **lowers** it.
-🟢 `python3 scripts/wt177_figure_guard.py` → **RC 0** · `python3 scripts/redproof_wt177_figures.py`
-   → **RC 0, 21/21 probes proven.**
-🟢 ▲ `python3 scripts/wt179_manifest_guard.py` → **RC 0, 10 checks**, 145 pages / 16 fonts /
-   4 manuscripts described, in **0.07 s with no toolchain** — the whole point of it.
-🟢 ▲ `python3 scripts/redproof_wt179_manifest.py` → **RC 0, 33 probes, 26 of 26 declared tags
-   proven.** Delete the two `SILENT-WRONGNESS-NONZERO` probes and exactly one **WEAK** line
-   appears, exit 1 — measured, not assumed.
-🟢 ▲ **In a FRESH CLONE** (`git clone`, nothing built, no preflight): guard **RC 0 in 0.047 s**,
-   `test_layout_manifest_is_self_consistent.py` **8 passed in 1.11 s**. That is the claim the
-   at-bat was about, proven rather than argued.
-🟢 `python3 scripts/redproof_wt178_claims.py` → **RC 0, 20 probes, 17 of 17 declared tags
-   proven.** The coverage line is not decoration: delete one probe and exactly one **WEAK** line
-   appears naming the orphaned tag (measured, not assumed).
-🟢 ▲ `python3 scripts/redproof_wt180_counts.py` → **RC 0, 12 of 12 declared probes proven** — a
-   declared CLAIMS × TAGS matrix (REGISTERED · DERIVED · BITES · CONTROL) over the three counts
-   above. Every DERIVED probe MOVES the real corpus; every BITES asserts the **`FALSE-CLAIM` tag**;
-   every CONTROL requires that tag to be **silent** on the clean case. ~90 s.
-🟢 `python3 scripts/handoff_gate.py --claims-all` → **RC 0**, **26 claims declared, 26
-   re-run, 26 agreed** — the exit code captured with `rc=$?`, not read off the last line.** `--claims` alone skips the three slow ones and exits **2** on purpose.
-🟢 `python3 scripts/defensive_count.py <each paper>` → defensive sentences **outside**
-   §Limitations are **0 / 0 / 3 / 0** for papers I–IV. ▲ **Registered as four claims at `-96`** —
-   the number had been inherited unverified for three handoffs, and the prose audit did not flag
-   it because it is neither an `RC n` nor an `N passed`. Measuring it was the last thing `-96`
-   did, and it agreed. Identical to the commit `-96` inherited, and `-96` edited no manuscript — proved, not
-   asserted, by an empty `git diff 448b0be..HEAD -- docs/papers/`.
+   ▲ `wt148` now reads **167 promises emitted, 154 adjudicated, 0 unadjudicated, 0 STALE** — three
+   rows moved at `-99` (two re-keys and one MINTED, see below).
+🟢 `wt170 --verify` → **RC 0, 11 of 15 rows** · `wt172 --verify` → **RC 0**, **18** paper-II rows — seventeen inherited plus the one `-99` minted.
+   ⚠ Both WRITING paths exit 2 by design; `--verify` is the re-runnable mode.
+🟢 ▲ `bash docs/deliverable/verify-layout.sh` → **RC 0**, **145 pages compared**, rebuilt in a
+   clean worktree from **`8df6d40b2791`** — the commit that carries `-99`'s prose repair, not the
+   one before it.
+🟢 `bash docs/deliverable/redproof-layout.sh` → **RC 0**, **4 probes reported.**
+🟢 `wt177_figure_guard.py` RC 0 · `redproof_wt177_figures.py` **21/21** ·
+   `wt179_manifest_guard.py` **RC 0, 10 checks** · `redproof_wt179_manifest.py` **26 of 26 tags** ·
+   `redproof_wt178_claims.py` **17/17** · `redproof_wt180_counts.py` **12 of 12 declared probes**.
+🟢 `handoff_gate.py --claims-all` → **RC 0**, **27 claims declared, 27 re-run un-piped, 27 agreed.**
+   `--claims` alone skips the slow ones and exits **2** on purpose.
+🟢 `defensive_count.py <each paper>` → **0 / 0 / 3 / 0** outside §Limitations for papers I–IV.
+   ▲ **paper-II moved by TWO edits at `-99` and the delta is +0**, proved with `--against` rather
+   than by re-quoting the level. G-COACH-3 holds.
 🟢 GATE: gate v2.61, `gate-selfcheck.sh` **PASS**, tree clean and pushed.
-✅ **CLOSED at `-98`: all 26 claims that can print a count now do.** The three that were held to
-   an exit code alone carry a `count` and a one-group `count_re`, each number derived from what the
-   run did and each proven to bite.
-⚠ **THE REAL RESIDUE IS NOT IN THE CLAIMS BLOCK.** `docs/p7-passes.tsv` ends at `-83` — **fifteen
-   sessions with no fresh-eyes read of a manuscript** — while `definition_of_done` asks for two
-   consecutive **zero-finding** P7 passes per paper and **no paper has ever had one.**
-   **That is `-99`'s at-bat, and it is the first at-bat in five sessions that touches a paper.**
 
-**Wrap order** (one step longer than you inherited — the new step is `--claims-all`):
-commit → `gate-selfcheck` → **`handoff_gate.py --claims-all`** → `gate_passed: true` → `--stamp`
-→ commit → push → `charter-read.sh <YOUR id>` → gate → `--emit`.
+**Board:** 57 CLOSED, 9 PENDING-HUMAN, **zero OPEN** — unchanged. `P13e` went **UNMET** mid-session
+and was **restored in the same session**; see WHAT `-99` DID.
+
+**Wrap order:** commit → `GATE_ROSTER_WHO=<you> gate-selfcheck` → `handoff_gate.py --claims-all`
+→ `gate_passed: true` → `--stamp` → commit → push → `charter-read.sh <YOUR id>` → gate → `--emit`
+→ `roster leave --who <you>`.
 ⚠ Run `--claims-all` **after your last mutation** — it runs `pytest` and the full layout
-verification, and a run started before your last edit is answering a question you no longer asked.
-It takes about **twelve to fourteen minutes** now (`redproof_wt180_counts.py` adds ~90 s and it
-re-runs `wt170 --verify` twice by design); background it and poll. **Capture the exit code by
-redirecting `echo $?` to a FILE** — not off the last line.
+verification, and a run started before your last edit answers a question you no longer asked. It
+takes **twelve to fourteen minutes**; background it and poll.
 
-The ANCHOR line (*"ORIENT: read `docs/CO-AUTHOR-CHARTER.md` first. THE CHARTER WINS over anything
-in this file."*) must be **verbatim, above the fold** — put it in FIRST.
+The ANCHOR line (*"ORIENT: read `docs/CO-AUTHOR-CHARTER.md` first…"*) must be **verbatim, above the
+fold** — put it in FIRST.
 
 ---
-## ▶ YOUR AT-BAT · ONE THING — RUN P7 PASS 12 ON PAPER-II
-`next_at_bat` in the front matter is the full brief and it is binding.
+## ▶ YOUR AT-BAT · ONE THING — THE NEXT P7 READ ON PAPER-IV
+`next_at_bat` in the front matter is the full brief and it is binding. What follows is why.
 
-**Why this one, and why it is not another instrument.** Four sessions in a row — `-95`, `-96`,
-`-97`, `-98` — opened `docs/CHECKLIST.md`, read **57 CLOSED / 9 PENDING-HUMAN / zero OPEN**,
-correctly concluded that no lane was open, and went to the infrastructure parking lot. Each built
-something good. **None of them read a paper.** `-98` looked once more in a place it had not
-looked and found `docs/p7-passes.tsv` — the ledger this project built *precisely* so that claims
-about its own review process would be measured rather than told — **ends at `wealthTensor-83`.**
+**THE BOARD IS NOT THE DEFINITION OF DONE, and this is the second handoff in a row that has to say
+so.** `docs/CHECKLIST.md` reads 57 CLOSED / 9 PENDING-HUMAN / **zero OPEN** and has for five
+sessions. `-95` `-96` `-97` `-98` each read that, concluded correctly that no lane was open, and
+built infrastructure. `definition_of_done` — in this file's own front matter — asks for **two
+consecutive zero-finding review passes per paper.** Here is the actual state of that clause:
 
-| paper | last P7 read | findings | passes since |
-|---|---|---|---|
-| paper-II | `-79` | 2 | **none in 19 sessions** |
-| paper-IV | `-81` | 9 | none in 17 |
-| paper-III | `-83` | 4 | none in 15 |
-
-Meanwhile `definition_of_done`, in this file's own front matter, asks for **two consecutive
-ZERO-finding passes per paper**. **No paper has ever had one.** Convergence is therefore not one
-read away for anybody — it is six reads minimum, and the counter has never gone below two.
-**The board is not the definition of done.** Read the DoD first; the board is a subset of it.
-
-**Why paper-II specifically.** It is the closest thing to convergence this corpus has: three
-consecutive frozen-instrument passes returned **3, 2, 2**, it is at 5-of-5 on the axis matrix, and
-`-79` was the first pass in the project's history with **zero manuscript edits** — both repairs
-made an existing sentence true instead of changing it. It is the read that can actually *end*
-something.
-
-**How to run it, and the charter wins here.** Coach model, not marksman. Every finding arrives
-**with its repair attached**, in order of preference — **STEELMAN → REPLACE → CUT → TEE-UP** — and
-never as a filed objection. **ABSORB is the illegal move**: pasting the objection into the
-manuscript as a new caveat. If a finding seems to demand fresh hedging prose, it demands a
-*narrower claim* instead — rewrite the claim, delete the hedge. The checkable invariant is
-`scripts/defensive_count.py`: paper-II is at **0** defensive sentences outside §Limitations and it
-must not rise.
-
-**A ZERO-FINDING PASS IS A CELEBRATED RESULT** — it is literally half of what done means here, and
-Jason has said in the standing brief that he will jump for joy at an honest one. But it has to be
-an *honest* zero. `docs/p7-passes.tsv`'s header tells you how to falsify your own row; use it.
-
-**⚠ THE MECHANISM TRAP, five deep.** Every pass that proposed a mechanism for the finding counter
-had it **refuted by the very next pass**: new instruments (`-71`/`-77`), residue (`-77`/`-78`),
-depth of application (`-78`/`-79`), coverage of the axis matrix (`-80`/`-81`). Only **enumeration**
-(`-82`/`-83`) has survived one pass. **Do not propose a sixth**, and do not credit a finding to an
-axis you did not actually run — `NOT-STATED` is an honest cell and a guess is not.
-
-**DONE WHEN** — `docs/REVIEW-034-P7-paperII-pass12.md` exists with a numbered finding list and
-front matter in the shape `REVIEW-019` uses (`new_instrument`, `instrument_name`,
-`findings_from_new_axis`, `residue_of_previous_pass`) **plus its own falsifier block**; one row
-appended to `docs/p7-passes.tsv` that survives that falsifier; every finding carries a **landed
-repair or a carded tee-up**; `defensive_count.py` on paper-II is **non-increasing (0, and it stays
-0)**; and `--claims-all` re-runs **26** claims and agrees. **Do NOT close P7** — it is
-PENDING-HUMAN, the convergence verdict is Jason's, and the row itself says the session that does
-the work must not also score it. **You run the pass; you do not call it.** Do not close P13g, P9
-or P8 either.
-
-## WHAT `-98` DID
-**The residue `-96` named and `-97` left is closed.** Three of the twenty-six claims printed no
-count, so an exit code was the whole of each one — the half that stays 0 while the corpus moves,
-which is exactly how `-96` shipped `pytest` 1121 for a suite of 1148. All three now print one
-stable line carrying a number they **measured**.
-
-- **`verify-layout.sh` → `wt176: 145 pages compared against the manifest`.** The line is printed
-  by `wt176_layout_manifest.py --verify`, **before** its verdict branch (how many pages were
-  compared is a fact about the run whether or not they matched — and a red-proof that removes a
-  page has to *see* 144 rather than lose the line to an early return). The script then counts the
-  fresh PDF **again, independently, with `pypdf`**, and **dies if the two instruments disagree**.
-  Its own `verify-layout: 145 pages reproduced from …` line is the human-readable summary; the
-  registry keys on `wt176`'s, which is the machine-stable one and can be reproduced in two seconds.
-- **`redproof-layout.sh` → `redproof-layout: 4 probes reported`.** The tally lives in a new
-  **`docs/deliverable/probe-tally.sh`** and is bumped inside `say()` — the single place a probe
-  reports a verdict — so the number counts what the run **did**, not what the script intended.
-  There is deliberately **no declared total** to compare against: a total written into the file
-  would be a constant printed back at its reader. `tally_line` **refuses on zero** rather than
-  printing a tidy `0 probes reported` for a `count_re` to match.
-- **`wt170 --verify` → `11 of 15 rows verified against their committed evidence`.** This one
-  needed no new code — the line was already there and already derived (`len(PIDS) − retired −
-  revised`); it needed a `count_re`. Three rows are retired to committed successors and one is
-  re-evidenced, which is why the honest number is 11 and not 15.
-
-### The red-proof, and the reason it costs seconds instead of eight minutes
-**`scripts/redproof_wt180_counts.py` — 12 of 12 declared probes, a CLAIMS × TAGS matrix.**
-
-| | REGISTERED | DERIVED | BITES | CONTROL |
+| manuscript | last read | findings | sessions since | consecutive zeros |
 |---|---|---|---|---|
-| `verify-layout.sh` | ✅ | a page out of the PDF → **144** | declared 146 → **FALSE-CLAIM** | declared 145 → tag **silent** |
-| `redproof-layout.sh` | ✅ | a probe call site deleted → **3** | declared 5 → **FALSE-CLAIM** | declared 4 → tag **silent** |
-| `wt170 --verify` | ✅ | a row retired to a successor → **10** | declared 12 → **FALSE-CLAIM** | declared 11 → tag **silent** |
+| **paper-IV** | `-81` | **9** | **19** | **0** |
+| paper-III | `-83` | 4 | 17 | 0 |
+| paper-II | `-99` | 3 | 1 | 0 |
 
-Three things worth carrying forward:
+**No paper has ever had a zero-finding pass.** Convergence is at minimum six more reads. Paper IV
+is the stalest AND its last count was the highest, which is why it is yours.
 
-1. **DERIVED is asserted by moving the real corpus, never by trusting the script.** `-92`'s trap is
-   that a hand-written constant is bit-identical to its input on every run, which reads as
-   agreement and is tautology. Each row above changes the world and requires the number to follow.
-2. **BITES is asserted on the TAG, and every bite has a CONTROL beside it.** `-94` and `-95` each
-   paid for a red-proof caught by a *different* guard than the one under test. A tag that fires on
-   the clean case as well proves nothing, so the control is not optional decoration.
-3. **The replay is real, not a golden file.** The BITES/CONTROL probes run the REAL `claims_leg()`
-   over a throwaway handoff whose `cmd` is `cat <the line the real script printed minutes ago>` —
-   captured this run, so it cannot go stale, and cheap enough that both probes run every time.
+**Paper II is deliberately NOT yours.** Reading it back-to-back would be leg one of the
+two-independent-readers design, and `docs/p7-passes.tsv` says in its own header that this costs two
+sessions to buy one data point and is **Jason's to authorise.** Do not spend it by accident.
 
-**The wiring proof is the part that is easy to skip.** A sourced tally proves the *mechanism*
-counts; it does not prove `redproof-layout.sh` is wired to it. So the red-proof copies the **real
-script**, replaces the body of `probe()` with a one-line stub, and runs it: real call sites, real
-`say()`, real bump, real summary line, **no lualatex**. It reports 4. Delete one call site and it
-reports 3. That is the corpus-with-one-fewer-member proof, on the actual artefact, in under a
-second.
+**WHAT A GOOD PASS LOOKS LIKE, from twelve of them.** Run all five axes *before you write a word of
+prose about them* — `wt130_quantifier_sweep.py paper-IV` (A1), grep the paper for the failure modes
+it names in its own prose (A2, and REVIEW-021 §1 has paper-IV's list — **inherit it, do not
+re-derive**), `wt133_crossref_sweep.py` (A3), run every command §N names and diff the output against
+the tables (A4), and enumerate every backticked artefact and read it (A5). Then read the manuscript
+end to end. **Then** decide what is a finding.
 
-**What this does NOT prove, said plainly so nobody deletes the other half:** that the real commands
-print those lines with those numbers on a real run. Only `--claims-all` at wrap proves that, and
-both docstrings say so. `-98` ran `verify-layout.sh` for real anyway and watched both new lines
-appear with 145.
+**AND READ THE PREVIOUS REVIEW'S "WHAT WAS NOT CHECKED" SECTION AS A STOCK, NOT A COURTESY.** That
+is `-99`'s single most transferable finding: `II-42` came off `-74`'s not-checked list, where it had
+sat for **five passes** with its target, its method and its negative control already written down.
+When it was finally run it falsified a manuscript sentence that had survived **nine** `P7` reads.
+REVIEW-021 §4 is paper-IV's equivalent list. Open it first.
 
-### Bug spray — caught by the check, on its author, inside a minute
-`-98`'s first cut of `test_wt170_counts_the_rows_it_actually_re_ran` took the **first two of
-`PIDS`** and asserted two rows would be verified. **One was** — `dfd41f5263` is retired in the real
-corpus. A list of *intentions* is not a list of *what runs*. Repaired with `R.live_pids()`, which
-reads the committed corpus and excludes the superseded and the re-evidenced; the docstring records
-the miss, because the cheapest possible place to learn that distinction is a test that fails in six
-seconds.
+---
+## WHAT `-99` DID
+**Paper II's TWELFTH independent `P7` read.** `scripts/wt181_paperII_p7pass12.py`, **24
+post-conditions, 8 NEGATIVE, RC 0**, two manuscript edits, net −1 line, zero carded.
+Full document: `docs/REVIEW-034-P7-paperII-pass12.md`. Ledger row: `docs/p7-passes.tsv`.
+Counter: 9 → 2 → 4 → 3 → 4 → 5 → 3 → 2 → 2 → **3**.
 
-## THE TELL, now ONE HUNDRED AND THIRTY-SEVEN deep
--61–-92 as before, `-93` added five, `-94` five, `-95` two, `-96` two, `-97` two. **-98 adds two.**
-- **-98(i) A PROJECT WITH A BOARD *AND* A DEFINITION OF DONE WILL BE READ BOARD-FIRST, AND THE
-  BOARD WILL SAY THERE IS NOTHING TO DO.** Four consecutive sessions read `zero OPEN`, concluded
-  correctly, and built tools — while the DoD's own convergence clause had gone **fifteen sessions**
-  without a single manuscript read. Tools are cheap to justify and impossible to finish; a paper
-  read is neither. **CONSULT THE DoD FIRST. The board is a subset of it, not a synonym.**
-- **-98(ii) GIVE EVERY EXPENSIVE CHECK A CHEAP SEAM, OR ITS COUNT WILL NEVER BE RED-PROOFED.**
-  Three claims guarded by four lualatex builds and fifteen evidence cells now have their numbers
-  proven derived *in seconds* — because the count line is printed before the verdict branch, the
-  tally is sourced rather than inline, and the verifier is importable. **The seam is what makes the
-  difference between a red-proof that runs everywhere and one that runs nowhere.**
-- **-97(i) FIXING THE WRAPPER MOVES THE HOLE TO EVERYONE WHO NEVER OPENS IT.** `-96` repaired the
-  board timeout in `regen-board.sh` — the supported invocation, with a twenty-line header
-  explaining why — and the gate's own `--check`, which calls the same engine by a different path,
-  kept the 25s default. The wrapper documents the right call without preventing the wrong one
-  (that is `-95`'s lesson); repairing **only** the wrapper leaves the defect sitting with whoever
-  did not read it. **When you fix a shared engine's invocation, grep for every caller.**
-- **-97(ii) A CHEAP CHECK IS NOT A WEAK CHECK — IT IS THE ONLY ONE THAT EVER RUNS.** Three guards
-  covered `LAYOUT-MANIFEST.json` and all three needed lualatex, pandoc and a worktree, so its real
-  coverage in CI, in a fresh clone, and in every container session was **zero**. The 0.07s guard
-  catches strictly less than the rebuild and catches it **everywhere and always**. When the
-  expensive check is the only check, the artefact is unguarded everywhere the expensive check
-  cannot go — which is nearly everywhere.
+**`II-42` · §3.4's horizon claim is FALSE · CUT.** *"The top-share statistic is also horizon-stable
+where the Gini is not"* has been in the manuscript since Paper II's **first** independent read
+(`2b3e24b5`). `-74` flagged it **NOT MEASURED**, named the exact check and called it *"a natural
+`wt133`"*. Five passes went by. Measured at `wt181` E5: across *T* = 600/1200/2400, six
+configurations × three seeds, **the top decile's spread exceeds the Gini's in 14 of 18 config-seed
+pairs**, worst **0.1706** against **0.0496** — 3.4×. Cut rather than replaced, because the sentence
+has two readings that disagree (REVIEW-008's `II-14` shape), stating the true one costs three
+numbers §7 would then have to account for, and the sentence in front of it already carries the
+separation **and** its 0.039 margin. The true reading is kept **measured** in REVIEW-034 §2.3.
 
-## TOOLING (▲ new at -98)
-- ▲ **`python3 scripts/redproof_wt180_counts.py`** — the CLAIMS × TAGS matrix for the three counts.
-  Importable: `registry()`, `live_pids()`, `tally_says(n)`, `stub_probe_run(drop_probes=)`,
-  `wt176_verify(pdf)`, `pdf_minus_one_page()`, `wt170_verify(tsv=)`, `replay(...)`. ~90 s.
-- ▲ **`docs/deliverable/probe-tally.sh`** — `tally_reset` / `tally_bump` / `tally_line <name>`.
-  Sourced, so a count can be driven and checked without running the thing that produces it.
-  `tally_line` **exits 1 on zero** rather than printing a matchable `0`.
-- ▲ `tests/test_the_three_counts_are_derived.py` (11, ~7 s, no toolchain).
-- ▲ **`python3 scripts/wt179_manifest_guard.py`** — the cheap manifest guard. `--json` for
-  machines, `--manifest PATH` to point it at a copy. Exit **0** clean, **1** with findings; every
-  finding is prefixed with its **TAG**. **No TeX, no pandoc, no worktree, 0.07s.**
-- ▲ `scripts/redproof_wt179_manifest.py` — 33 probes over the real `check_all()`, each asserted by
-  its tag **and** by a control proving that tag is silent on the clean manifest. Coverage is
-  enumerated from `wt179_manifest_guard.TAGS`, never scraped.
-- ▲ `tests/test_layout_manifest_is_self_consistent.py` (8, **0.96s**, no toolchain) — the guard
-  green over the committed manifest, the red-proof re-run, the CLI proven to go red on a hand-edit,
-  `SCHEMA` bound to the committed manifest's actual key set, and the coverage report proven
-  non-vacuous **in both directions** in-process.
-- ⚠ **In the container's staged tarball the guard is RED by design**, tagged `NOT-A-GIT-CLONE`,
-  because there is no `.git` to check the capture commit against — the same standing trap that
-  reddens `wt160`/`wt163`/`wt166`/`wt169` there. **Read the tag.** In a real clone it is green.
-- ▲ **`python3 scripts/handoff_gate.py --claims-all`** — now **26** claims, **and every claim that
-  can print a count now declares one.** `--claims` skips the slow ones and exits **2** (an un-run
-  claim is not a verified one). **A registered `cmd` may not contain `|`, `;` or `&`** — which is
-  why the red-proof's replay uses `cat FILE` and not a pipeline.
-- ▲ `scripts/redproof_wt178_claims.py` (20 probes, 17 tags) · `tests/test_handoff_claims_leg.py`
-  (27) — `-96`'s, and they hold **this repository's registry**, not just the leg.
-- ▲ `scripts/wt177_figure_guard.py` · `scripts/redproof_wt177_figures.py` (21 probes) — P13f.
-- ⚠ **`bash scripts/regen-board.sh` IS THE ONLY SUPPORTED BOARD REGENERATION.** It exports
-  `BOARD_CHECK_TIMEOUT=300`, and as of `-97` **so does `gate-selfcheck`'s own board check.**
-  **Diff the board before you commit it** — that is still the only thing that caught `-96`'s
-  downgrade, and do not regenerate while anything is building.
-- ⚠ A full deliverable build is ~2 min, `redproof-layout.sh` ~5–8, and **`--claims-all` is ~12**.
-  Background them (`nohup … > /tmp/x.out 2>&1 &`), poll with a second `dx`, and capture the exit
-  code with **`rc=$?`** — never off the last line.
-- ▲ darwin is **macOS + zsh**: no `grep -P`, `cut -c` is byte-based. Nested quotes → write the
-  script **LOCALLY**, `--put` it, `dx 'bash /tmp/x.sh'`. `-97` wrote eight and smuggled zero
-  quotes; the rule works when you follow it on the first file rather than the third.
-- ▲ **After string-surgery on a Python or shell file, `py_compile` / `bash -n` it before shipping.**
-  Used on every patch this session.
+**`II-40` and `II-41` · both inside the six lines `-92` wrote.** §7's exception clause points the
+0.035 periodicity span at **§3.2** (it is in **§3.3**) and calls 0.039 a *"difference of numbers
+both commands do print"* eleven words after declaring one of its two inputs unprinted. One edit
+repairs both.
+
+**THE CLASS WORTH STEALING: A RESOLVING CROSS-REFERENCE IS NOT A CORRECT ONE.**
+`wt133_crossref_sweep` is **green** on `II-40`, because §3.2 exists. `A3` asks whether a pointer
+*resolves* and has never asked whether it is *right*. `wt181` exposes `section_of()` as the seam
+that separates the two questions for one number. **Generalising it — every `§N.M` reference that
+carries a NUMBER must have that number inside that section — is a real at-bat and is NOT claimed
+here.** It is the highest-value item in TEE-UPS below.
+
+**`P13e` WENT RED AND CAME BACK, IN THE SAME SESSION.** The layout capture pins each manuscript's
+sha256, so a prose repair invalidates it: `test_wt176_prints_the_pages_it_compared…` and
+`test_the_sweep_exits_zero[promise]` both failed the moment the bytes moved, and the board
+regenerated `P13e` as **UNMET**. That is the guard working. The fix is a two-commit dance and it is
+**the worked example for your session** if you edit paper-IV:
+`8df6d40` commits the repair RED and says so in its message → `bash docs/deliverable/build.sh` →
+`verify-layout.sh` (rebuilds from a clean worktree at that commit) → `regen-board.sh` → `bbae6aa`
+commits the recapture. **The rebuild needs a `source_commit` that CONTAINS the repair**, which is
+why the red commit has to exist first.
+
+**THE PROMISE TSV MOVED, AND ONE ROW WAS MINTED RATHER THAN RE-KEYED.** `promise_id` hashes
+(paper, artefact, sentence), so editing a sentence re-keys it and `wt148` reports the old row STALE.
+`b9dea67210 → fbd08a63f6` and `5f6d5c4fb9 → c6f855de23` are re-keys with the evidence carried
+**byte-identical** — and that identity is the argument that they are re-keys and not
+re-adjudications. `7ed9443301` is **new**: the repaired clause names `wt030_report.py`, and a repair
+that names an artefact **emits a promise**. Its evidence carries a negative control (`wt030` prints
+0.486/0.451/0.994/0.891/0.861 and does **not** print 0.90), which is the whole reason the clause
+could stop calling the 0.039 margin a difference of printed numbers.
+
+**NO SIXTH MECHANISM WAS PROPOSED, AND DECLINING WAS THE HARD PART.** Residue is **2 of 3** — the
+highest fraction any row carries — and the story writes itself: the one intervening session edited
+six lines without re-reading, and two of three findings are in them. Repair residue was proposed at
+`-77` and **refuted at `-78`**. One row does not revive it, and this row carries its own
+counter-evidence: `II-42` blames to Paper II's first read and survived nine of them. **A mechanism
+that explains two findings and cannot touch the largest of the three is not a mechanism.**
+
+---
+## THE TELL, now ONE HUNDRED AND THIRTY-NINE deep
+`-61`–`-97` as before, `-98` added two. **`-99` adds two.**
+- **`-99`(i) A NOT-CHECKED LIST IS A STOCK, AND ITS OLDEST ENTRY IS ITS MOST VALUABLE.** `II-42`
+  sat on `-74`'s list for five passes with its **target, method and negative control already
+  written**, and when finally run it falsified a sentence nine `P7` reads had read past. The lists
+  at the end of every REVIEW document are not a courtesy to the next session; they are the cheapest
+  unspent work in the repository, because someone already did the thinking. **Open the previous
+  review's §4 before you open the manuscript.**
+- **`-99`(ii) A GUARD THAT ASKS WHETHER A POINTER *RESOLVES* IS GREEN ON A POINTER THAT IS
+  *WRONG*.** `wt133` reports **0 unresolved** on a §7 clause that sends the reader to §3.2 for a
+  number that lives in §3.3, because §3.2 exists. The sweep is not broken — it answers a narrower
+  question than its name suggests, and three sessions read its green line as coverage it never
+  claimed. **When a check goes green over a defect, ask what question it actually asks**, and write
+  the answer next to the green line. Same family as `-98`(ii)'s cheap seam and `-94`'s
+  mention-vs-use.
+
+## TOOLING (▲ new at `-99`)
+- ▲ **`python3 scripts/wt181_paperII_p7pass12.py --verify`** — 9 checks, 3 NEGATIVE, seconds, no
+  toolchain. Importable seams: `section_of(text, needle)` (which `### N.M` subsection actually
+  contains a string — bounded at the next heading of ANY level), `measure_horizons()`,
+  `separation_by_horizon()`. **This is the pattern for every future P7 patch script:** the patching
+  path is a one-shot and cannot go in the claim list, so give it a `--verify` that re-derives the
+  MEASUREMENTS. Without it a pass's central fact is checkable exactly once, on the day it was made.
+- ⚠ **`section_of()`'s first cut was WRONG and it failed closed** — it ended the last `### N.M` at
+  end-of-file, swallowing §4–§7 into "3.4", so it reported the §7 *pointer* as an occurrence of the
+  thing it points at. The repair rolled back untouched and the bug is recorded in the committed
+  docstring rather than quietly fixed. **A locator whose ranges are wrong returns the one answer
+  that cannot falsify anything.**
+- ⚠ **`bash scripts/regen-board.sh` IS THE ONLY SUPPORTED BOARD REGENERATION**, never `board.py`,
+  never while anything is building, and **diff it before you commit it.** At `-99` the diff was the
+  thing that made `P13e` going red legible instead of alarming.
+- ⚠ A full deliverable build is ~2 min, `verify-layout.sh` ~3, `redproof-layout.sh` ~5–8, and
+  **`--claims-all` is ~12–14.** Background them and capture the exit code to a FILE.
+- ▲ darwin is **macOS + zsh**: no `grep -P`, `cut -c` is byte-based. **Nested quotes → write the
+  script LOCALLY, `--put` it, `dx 'python3 /tmp/x.py'`.** See STEP 0 for what `-99` paid for
+  ignoring this once.
 - ⚠ `reg013_citation_whitespace.py` takes ~5 min and can 429 — never in a critical path.
-  **Tags run to `wt180`; `wt174` is still a gap.**
+  **Tags run to `wt181`; `wt174` is still a gap.**
+
+## TEE-UPS — carded work `-99` found and did NOT do, with enough context to start at its high-water mark
+1. **GENERALISE THE RESOLVING-vs-CORRECT CHECK. Highest value here.** `A3` (`wt133`) reports
+   `0 unresolved` on paper-II while a `§N.M` pointer sends the reader to the wrong section. The
+   checkable rule: **a cross-reference that carries a NUMBER must have that number inside the
+   section it names.** `wt181.section_of()` is a working locator for exactly one number; the general
+   sweep would run over all four manuscripts and is a natural `wt182`. It needs a NEGATIVE control
+   (a pointer known-correct must stay silent) and it must not fire on a number that legitimately
+   appears in two sections. **This is a new axis (A7) and would make its row `new`** — which is
+   fine, as long as the row says so.
+2. **PAPER-IV'S REVIEW FILENAMES CARRY TWO INCOMPATIBLE CONVENTIONS, and one of them is wrong.**
+   `REVIEW-015-P7-paperIV-pass3.md` is titled *"Paper IV's independent P7 read"*;
+   `REVIEW-021-P7-paperIV-pass2.md`, written SIX SESSIONS LATER, is titled *"Paper IV's SECOND
+   independent P7 read"*. So `pass3` counts project-wide passes and `pass2` counts per-manuscript
+   independent reads — and paper-II's files (`pass8`…`pass12`) use a third. **Pick one, say which
+   in the new file, and do NOT rename the committed files** — twelve documents cite them by name and
+   a rename breaks every pointer. Record the mapping instead.
+3. **BOUCHAUD & MÉZARD'S TWO VERBATIM QUOTATIONS IN PAPER II §3.1, STILL NOT READ AGAINST SOURCE.**
+   Flagged at `-74`, again at `-77`, again at `-99`. **THREE PASSES DEFERRED.** It is now the oldest
+   unrun named check on paper-II, and `-99`'s lesson is exactly what those turn out to be worth.
+   `REFERENCE-POLICY` §4 governs it; the entry names arXiv `cond-mat/0002374` as the text consulted.
+4. **THE GENERAL FORM OF `II-34`, still a question rather than a finding.** 16 of the 18 tests reach
+   the model through `econ()` at *T* = 600 while every reported figure is at *T* = 1200, and §7 calls
+   those 18 *"the ones that hold this paper's claims in place."* `II-42` **strengthens** the lead:
+   the top decile moves up to 0.17 between horizons. `-99` checked that **no current assertion
+   breaks** — the three `top_share(res) > 0.95` lines are one-sided on the condensed side, which
+   only strengthens with *T* — so it stays a question. Someone should answer it.
+5. **`A6`, the docstring axis — PARKED, NOT SPENT.** Nineteen unasserted prose claims in
+   `tests/test_redistribution.py`, and `test_periodicity_is_second_order_at_a_matched_average_rate`'s
+   *"Verified horizon-stable at T = 600 and T = 1200"* is one of them — **the same words as `II-42`,
+   in the apparatus rather than the manuscript.** Highest-value docstring of the nineteen.
+6. **The nine uncited reference entries** (`wt133` sweep 2, card `1217568192511533`) and **the zakat
+   citation gap** (flagged by the paper's own closing note, fourth pass running). Both untouched.
 
 ## ESTATE
-**Board unchanged:** 57 CLOSED, 9 PENDING-HUMAN, **zero OPEN**. `-98` closed no row and reopened
-none. ⚠ **And that sentence is the trap** — it has been true for four sessions and it is *why* four
-sessions built tools. The work that is left is not on the board; it is in `definition_of_done`, and
-`docs/p7-passes.tsv` says it has not been touched since `-83`.
-**OPEN:** `1217654200494124` — propagate the claims leg to the global `HANDOFF-GATE.md` as **G-AM**
-(filed by `-96`, untouched by `-97` and `-98` on purpose: it is a global-artefact change and it
-deserves its own at-bat rather than a ride-along).
-**▲ FILED BY `-98`: `1217660747249042`** — `bb-writers-audit` calls a **negative control** a
-Batter's Box writer. `braatzio-plan/v3/tools/tenancy-scan.py:207` names BB's gid in a test-vector
-row whose own comment reads *"an Asana gid is 16 digits and must NEVER flag"*; the auditor's
-`classify()` finds no POST near the gid, falls to `UNKNOWN`, and `UNKNOWN` is **fail-closed to
-writer** — which is correct and must not be relaxed. **Mention-vs-use again**, the same class
-`-94` banked for the placeholder check. The repair is ONE positive ratification in
-`bb-writers-allowlist.json`, with its reason. **NOT fixed by `-98` on purpose:** both files sit in
-repos under a LIVE roster claim by `opus-acmeLedger-29`, who authored the file in its own at-bat
-this hour. A teed-up card, not a race — that is the roster working, not a finding dropped.
-⚠ **This is the only remaining `gate-selfcheck` failure on darwin**, and it is not wealth-tensor's.
-⚠ **RUN THE GATE AS `GATE_ROSTER_WHO=<your roster id> bash ~/Scripts/gate-selfcheck.sh`.** Without
-it, G-AL reads the *last* charter stamp in the shared ledger — which at `-98`'s wrap belonged to a
-SIBLING (`acmeLedger-29`) — and reports that YOUR definition of done moved. Two of `-98`'s four
-initial failures were that, and both vanished when the variable was set.
+**OPEN:** `1217654200494124` — propagate the claims leg to the global `HANDOFF-GATE.md` as `G-AM`
+(filed by `-96`; it is a global-artefact change and deserves its own at-bat, not a ride-along).
 **Carried:** `1217630566080626`, `1217629264134185`, `1217603625863293` (two instances),
 `1217613775009402`, `1217568297674954`, `1217568192511533`, `1217596263441666`,
 `1217596233063153`, `1217561667484767`, `1217593142996092`, `1217633320596131`,
-`1217633269591608`, `1217629169253037` (partially closed — Paper I's four bare pointers stand).
+`1217633269591608`, `1217629169253037` (partially closed — Paper I's four bare pointers stand),
+`1217660747249042` (`bb-writers-audit`, repaired at `claude-blackbook` by `-98`).
+⚠ `-99` filed **no** new card: everything it found either landed a repair or is in TEE-UPS above,
+with enough context that the next session starts at this session's high-water mark.
 
-## JASON-SIZED, not -99's
-(a) **The two-independent-readers design** — 429 labelled pointer rows plus 153 adjudicated
-promise rows, each carrying its own reason; (b) the version stamp — **SEVENTEEN passes have
-declined to move it**; (c) the four-vs-three ruling, folded into the RESULT-001 in-place-edit card;
-(d) DECISION-001 closed, ROADS-001 unchanged; (e) `wt077` already prints r·E[η⁺]/(1+μ), matching
-to 0.44 % where Paper II §3.1's form is off 4–7 % — **changes a stated contribution, unassigned
-since `-81`**, and `-96` and `-97` both left it: it is a claim about the MODEL and it wants its own
-at-bat, with a coach's repair attached rather than a finding filed; (f) the PAN history purge.
-**(g) STILL THE BIG ONE: with zero OPEN lanes left, every remaining row is a human gate** — P2, P3,
-P5, P6, P7, P11, P13g, P9, P8. ⚠ **But P7 is a human gate for the VERDICT, not for the WORK.**
-Sessions `-71` through `-83` ran thirteen P7 passes and wrote their REVIEW documents; what stays
-Jason's is *declaring convergence*. Reading the row as "no session may touch it" is how it went
-fifteen sessions untouched. **Run the pass. Do not score it.**
+## JASON-SIZED, not `-100`'s
+(a) **The two-independent-readers design** — the only experiment that separates *"the paper has n
+defects left"* from *"a reviewer finds n"*, and the first proposal in twelve rows that is not a
+story a single pass told about itself. It costs two sessions to buy one data point. `-99` came out
+of paper-II with the counter at 3 and a 2-of-3 residue row, which is the cleanest setup this has
+ever had — **and it is still not a session's to spend.**
+(b) The version stamp — **EIGHTEEN passes have declined to move it.**
+(c) `wt077` already prints κ = *r*·E[η⁺]/(1+μ), matching to 0.44 % where Paper II §3.1's form is off
+4–7 % — **changes a stated contribution, unassigned since `-81`.** `-99` re-opened it and closed it
+again as a died-on-contact candidate (REVIEW-034 §3.2: REVIEW-004 already gives the exact form with
+the wage term and REVIEW-011 adjudicated the sentence), **so it is no longer a defect — it is a
+choice about how much of the closed form to put in the manuscript**, and that is a claim about the
+MODEL that wants its own at-bat with a coach's repair attached.
+(d) DECISION-001 closed, ROADS-001 unchanged. (e) The PAN history purge.
+**(f) P7 IS A HUMAN GATE FOR THE VERDICT, NOT FOR THE WORK.** Sessions `-71` through `-99` ran
+fourteen `P7` passes and wrote their REVIEW documents; what stays Jason's is **declaring
+convergence**. Reading the row as *"no session may touch it"* is how it went twenty sessions
+untouched. **Run the pass. Do not score it.**
 
 ---
 ## WHICH OPEN LANE THIS WAS (the gate's CONTOUR question, answered)
-**None, and that is the honest answer rather than a dodge.** `docs/CHECKLIST.md` has had no OPEN
-lane since `-95` closed P13f; every remaining row is a human gate, and P13g, P9 and P8 are
-explicitly not a session's to call. `-97` therefore worked the parking lot's top item, which is
-where the highest-value Claude-doable work now lives — and it is not a coincidence that the item
-was *"the artefact P13e rests on has no cheap check."* **A successor should keep asking the
-question**; a lane can reopen, and `test_board_is_not_degraded.py` plus `charter-read.sh` are what
-would tell you. Regenerate with `bash scripts/regen-board.sh`, never `board.py`.
+**`P7`, and for the first time in five sessions that is not a dodge.** `docs/CHECKLIST.md` has had
+no OPEN lane since `-95` closed `P13f`, and every remaining row is a human gate — but `P7`'s row is
+a gate on the **verdict**, and its **work** is a session's. `-99` ran the work and did not score it:
+`P7` is untouched at PENDING-HUMAN, and `docs/p7-passes.tsv` carries the twelfth row with the
+consecutive-zero count stated at **0**.
+**`P13e` reopened and re-closed inside the session** — the only board movement, and it was caused
+by the at-bat rather than by drift.
+A successor should keep asking the question; `test_board_is_not_degraded.py` and `charter-read.sh`
+are what would tell you a lane reopened. Regenerate with `bash scripts/regen-board.sh`, never
+`board.py`.
 
-**One judgement still not settled, now for the third handoff running:** P9 is the single handoff
-into P8, and its own criterion says declaring readiness is the session's job. `-95` did not declare
-it because P7's convergence counters are unmet and P9's criterion names convergence explicitly.
-`-96` did not revisit it; neither did `-97`. **Re-examine it deliberately; do not inherit it as
-settled** — three sessions of not-revisiting is how an unexamined judgement becomes a fact.
+**The judgement still not settled, now for the fourth handoff running:** `P9` is the single handoff
+into `P8`, and its own criterion says declaring readiness is the session's job. `-95` did not
+declare it because `P7`'s convergence counters are unmet and `P9`'s criterion names convergence
+explicitly. `-96`, `-97`, `-98` and `-99` did not revisit it. **The counters are still unmet — all
+three papers sit at zero consecutive zero-finding passes — so the reason still holds.** But
+re-examine it deliberately rather than inheriting it: four sessions of not-revisiting is how an
+unexamined judgement becomes a fact.

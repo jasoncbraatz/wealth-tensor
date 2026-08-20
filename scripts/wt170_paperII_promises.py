@@ -531,7 +531,21 @@ def verify():
 
     retired, orphaned = {}, []
     for pid in sorted(set(EV) - set(rows)):
-        heir = superseded.get(pid)
+        # wealthTensor-99: FOLLOW THE CHAIN, NOT ONE HOP. -92 re-keyed c9a565b3fe -> b9dea67210;
+        # -99 repaired the SAME sentence again and re-keyed b9dea67210 -> fbd08a63f6, so the
+        # original pid's living heir was two supersessions away and the one-hop lookup called it
+        # ORPHANED and refused. ANY sentence repaired twice reproduces this, so the repair is
+        # transitive resolution here rather than a rewritten ledger line: pointing the old
+        # #superseded line straight at the newest heir would erase the intermediate step, which is
+        # exactly the history this ledger exists to carry. Cycle-guarded by `seen`, so a ledger
+        # that ever points a chain back at itself terminates and reports orphaned rather than
+        # hanging. wt172 F9's fabricated supersession still refuses: the walk stops when the heir
+        # is neither adjudicated nor itself superseded, and the `heir in all_ids` test below is
+        # unchanged -- the forgiveness is still a REDIRECTION and still cannot be forged.
+        heir, seen = superseded.get(pid), {pid}
+        while heir and heir not in all_ids and heir in superseded and heir not in seen:
+            seen.add(heir)
+            heir = superseded[heir]
         if heir and heir in all_ids:
             retired[pid] = heir
         else:
