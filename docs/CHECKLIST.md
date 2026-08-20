@@ -49,7 +49,7 @@ never asked. The 61 probes already built are an asset; they are not a destinatio
 | **P13b** | deliverable | ✅ CLOSED | 1/1 |
 | **P13c** | deliverable | ✅ CLOSED | 1/1 |
 | **P13d** | deliverable | ✅ CLOSED | 1/1 |
-| **P13e** | deliverable | 🔨 OPEN | 0/1 |
+| **P13e** | deliverable | ✅ CLOSED | 1/1 |
 | **P13f** | deliverable | ✅ CLOSED | 1/1 |
 | **P13g** | deliverable | 🧍 PENDING-HUMAN | 0/1 |
 | **P9** | corpus | 🧍 PENDING-HUMAN | 0/1 |
@@ -96,8 +96,6 @@ never asked. The 61 probes already built are an asset; they are not a destinatio
 | **P5l** | paper-IV | ✅ CLOSED | 1/1 |
 | **P5m** | paper-IV | ✅ CLOSED | 1/1 |
 
-**The first OPEN lane in dependency order is `P13e`** — which is where the board points, not a schedule; a project's own ordering rulings outrank it. Work it, or say in your handoff why you worked something else.
-
 ## Every criterion, and how it was measured
 
 - [x] P1 · Paper III measured against its ADR-001 DoD clause + PREPRINT-CHECKLIST A, gap by gap, results recorded as P1x sub-rows in this file — **MET** _(file states it)_
@@ -120,7 +118,7 @@ never asked. The 61 probes already built are an asset; they are not a destinatio
 - [x] P13b · RECIPE.md is PAINT-BY-NUMBERS: a numbered checklist naming every font family, weight, size and leading; every margin, measure and vertical space; the TeX engine and every package with its version; figure-placement rules; and the reference style — as VALUES, never as 'match the existing look'. Written for a session with no memory of this project to execute top to bottom with no judgement call and nothing to debug. The typeface, engine and font-loading discipline are ALREADY DECIDED in ADR-002 and are not the build session's to re-open; RECIPE.md implements them and supplies the METRICS ADR-002 deliberately left unset (size, leading, measure, margins, display-maths spacing), measured from the build rather than guessed — **MET** _(check passed)_
 - [x] P13c · A PREFLIGHT that FAILS LOUDLY on a missing or substituted font, tool or version — no fallback, no nearest match. This is the row that exists because TeX does not fail on a missing font, it SUBSTITUTES: the build succeeds, the metrics change, and the document is merely 'close'. Refusing to build is the feature. IMPLEMENTED in -54: docs/deliverable/preflight.sh, red-proofed by tests/test_preflight_refuses.py, which breaks it three ways (modified font, missing font, unpinned TeX Live) and requires a refusal each time — **MET** _(check passed)_
 - [x] P13d · Every font the recipe names is VENDORED into the repository, or — where the licence forbids redistribution — pinned by exact name and version with a checksum the preflight verifies. 'The same font' has to be a fact on disk, not a hope about the next machine. IMPLEMENTED in -54: 15 Libertinus + Inconsolata OTFs vendored from TeX Live 2026 with their SIL OFL files and a sha256 per file. Fonts were pinned EARLY on purpose -- a font is a dependency, not a layout decision, and ADR-002 records why that does not contradict P13 being last — **MET** _(check passed)_
-- [ ] P13e · THE LAYOUT IS REPRODUCIBLE, PROVED NOT PROMISED: rebuilding reproduces the committed page count and the per-page text hash in LAYOUT-MANIFEST.json. A substituted font moves the reflow, a moved reflow shifts a page boundary, and a shifted boundary breaks the hash — so this row detects the exact failure that would cost Jason his layout analysis twice. A build that merely LOOKS right cannot pass it — **UNMET** _(rc=1)_
+- [x] P13e · THE LAYOUT IS REPRODUCIBLE, PROVED NOT PROMISED: rebuilding reproduces the committed page count and the per-page text hash in LAYOUT-MANIFEST.json. A substituted font moves the reflow, a moved reflow shifts a page boundary, and a shifted boundary breaks the hash — so this row detects the exact failure that would cost Jason his layout analysis twice. A build that merely LOOKS right cannot pass it — **MET** _(check passed)_
 - [x] P13f · Every figure is produced by a COMMITTED script from COMMITTED numbers, listed in FIGURES.tsv as figure -> script -> source. No model-generated and no hand-drawn imagery: charts in an economics paper have to be the data, and this is the same rule as P6 pointed at the pictures — **MET** _(check passed)_
 - [ ] P13g · The manuscript presents to ECONOMICS convention — Chicago author-date references and the house layout an arXiv q-fin / econ.GN reader expects — so that the successor project starts from something that already looks the part — **PENDING-HUMAN** _(judgement about house style, and deliberately not automated: a reference-style linter would pass a document that is technically Chicago and reads wrong. Jason or a fresh-eyes pass calls it. Do NOT close this from the session that built the layout.)_
 - [ ] P9 · Liftoff declared ONCE, when the papers are converged, the corpus is audited whole, the scripts are done and the deliverable is built (never ask Jason to trigger anything) — **PENDING-HUMAN** _(declaring readiness is the session's job. RESCOPED 2026-08-16 (Jason's ruling): this said 'the batch declared when all three are terminal... never ask Jason to trigger a SUBMISSION'. There is no submission in this project. It is the single handoff into P8 -- said once, then stop.)_
