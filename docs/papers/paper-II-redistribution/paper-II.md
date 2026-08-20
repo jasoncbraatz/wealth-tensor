@@ -325,8 +325,7 @@ six rows tabulated there — the bounded runs' Gini spans 0.000–0.891 against 
 0.994 — a gap of 0.103 whose upper edge is a *saturated reading* and not the 0.99875 ceiling it
 falls short of, so any Gini threshold would have to be drawn inside it and redrawn for every
 *N*; their top
-decile spans 0.100–0.861 against 1.000, clearing the 0.90 threshold with 0.039 to spare. The
-top-share statistic is also horizon-stable where the Gini is not.
+decile spans 0.100–0.861 against 1.000, clearing the 0.90 threshold with 0.039 to spare.
 
 **The general rule, which is not confined to this model: a summary statistic with a hard ceiling
 cannot distinguish "converged" from "saturated."** Before using one as a convergence criterion,
@@ -456,8 +455,9 @@ simulation, save the four closed-form quantities the next bullet names and §3.4
   simulation output and come from `python3 scripts/wt077_tail_index.py`, and except five
   quantities neither command prints in any precision: §3.4's Gini ceiling (*N*−1)/*N* = 0.99875,
   which is arithmetic in *N*; §3.4's 0.90 top-decile criterion, which is a chosen threshold and
-  not an output; and three differences of numbers both commands do print — §3.2's 0.035
-  periodicity span, and §3.4's 0.103 Gini gap and 0.039 top-decile margin. The two commands are named
+  not an output; §3.3's 0.035 periodicity span and §3.4's 0.103 Gini gap, each a difference of two
+  values `wt030_report.py` prints; and §3.4's 0.039 top-decile margin, the distance from that
+  command's printed 0.861 to the 0.90 threshold above. The two commands are named
   separately because a single command named for numbers it does not produce is a provenance claim
   that reads as checked and is not.
 - **Test suite:** `python3 -m pytest tests/ -q` runs the whole repository; the **18** tests in
