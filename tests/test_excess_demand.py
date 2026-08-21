@@ -156,3 +156,52 @@ def test_loss_aversion_below_one_is_rejected():
 def test_allocation_must_match_stock():
     with pytest.raises(ValueError, match="allocation does not match"):
         Market(M, S, holders=np.zeros(M.size, dtype=bool))
+
+
+def test_the_monotone_sweep_endpoints_and_single_crossing_are_what_section_5_reports():
+    """Paper IV §5's three unheld numbers, asserted here (wealthTensor-100, IV-10).
+
+    §5 reports the 500-point sweep as "zero monotonicity violations ... running from +249 to
+    -150 with one sign change".  `test_excess_demand_is_monotone_here_so_this_is_not_an_SMD_result`
+    asserts only the monotonicity; the endpoints and the single crossing were printed by
+    `scripts/wt018_report.py` -- which Paper IV named nowhere until wealthTensor-100 -- and
+    asserted by nothing.  Naming the script in §10 makes them reproducible; this test holds them.
+
+    AND THE CONTROL IS THE INTERESTING HALF, because the first version of it was WRONG and the
+    module said so.  That version asserted the endpoints are (N - 1) - S and -S by derivation,
+    and predicted (299, -100) at S = 100.  The module returned (300, -100).  The 500-point grid
+    is CLOSED -- both endpoints are data points, `M.min()` and `M.max()` -- and those are exactly
+    the points `test_excess_demand_is_identically_invariant_to_the_allocation` excludes, because
+    the strict inequalities in demand_at/supply_at disagree there about a single agent whose
+    holding status varies by allocation.  That is §8's tie convention, met in §5.
+
+    So the endpoint reading is NOT guaranteed to equal §5's identity #{i : m_i > p} - S.  At the
+    paper's configuration (S = 150) it does, at both ends, and that agreement is a MEASURED fact
+    -- which is what the negative control below establishes by finding a stock where it fails.
+    """
+    mk = Market(M, S, rng=np.random.default_rng(3))
+    grid = np.linspace(M.min(), M.max(), 500)
+    zs = [mk.excess_demand(float(p)) for p in grid]
+
+    assert len(zs) == 500
+    assert sum(1 for a, b in zip(zs, zs[1:]) if a < b) == 0                 # zero violations
+    assert (zs[0], zs[-1]) == (249, -150)                                   # the endpoints §5 prints
+    assert sum(1 for a, b in zip(zs, zs[1:]) if (a > 0) != (b > 0)) == 1    # one sign change
+
+    # At THIS configuration the closed-grid endpoints agree with §5's identity at both ends.
+    identity = (int(np.sum(M > grid[0])) - S, int(np.sum(M > grid[-1])) - S)
+    assert (zs[0], zs[-1]) == identity
+
+    # NEGATIVE CONTROL: the agreement above is a measurement, not an algebraic necessity. At
+    # S = 180, the same population and the same closed grid, the lower endpoint reads one above
+    # the identity -- the tie §8 describes, resolving the other way.
+    other = Market(M, 180, rng=np.random.default_rng(3))
+    z2 = [other.excess_demand(float(p)) for p in grid]
+    id2 = (int(np.sum(M > grid[0])) - 180, int(np.sum(M > grid[-1])) - 180)
+    assert (z2[0], z2[-1]) == (220, -179)
+    assert (z2[0], z2[-1]) != id2
+
+    # And the interior grid, where §5's identity IS asserted, is untouched by the tie.
+    interior = grid[1:-1]
+    zi = [mk.excess_demand(float(p)) for p in interior]
+    assert all(z == int(np.sum(M > p)) - S for z, p in zip(zi, interior))
