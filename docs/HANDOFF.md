@@ -2,7 +2,7 @@
 project: wealth-tensor
 gh_repo: jasoncbraatz/wealth-tensor
 branch: main
-gh_sha: 299b3219dc97f23613a9dafcf2886fcbb36d0c10
+gh_sha: dda73e82239b88be724dc85b391798aeed1751ad
 updated: 2026-08-21
 session: wealthTensor-101
 session_n: 101
@@ -285,6 +285,18 @@ sibling — and tells you YOUR definition of done moved. Jason often runs 2–3 
 `roster who` before you believe any cross-repo complaint. At `-101` a sibling (`cloud-OlTGfXay`)
 held `claude-blackbook` and `strike-zone` the whole session and nothing collided, because both
 sides claimed.
+
+▲ **AND THAT INSTRUCTION DID NOT WORK UNTIL `-101` FIXED IT — read the new G-AL line.**
+`charter-read.sh` WRITES the stamp under the SLUG (`wealthTensor-101.log`); `G-AL` was handed
+`big-wealthTensor-101` and looked for `big-wealthTensor-101.log`, which never exists. It missed
+every tier-prefixed session's own stamp, fell through to a warm-ledger scan, graded the session
+against whichever sibling `find` returned first, and printed **`ok`** while naming that file.
+**The step that exists to stop you working toward someone else's finish line was grading you
+against someone else's ledger.** Fixed in `darwin-mac-ops` `d0e4fd2`, proven both directions,
+with two controls added to `gate-charter-drill.sh` and red-proofed. **What you should now see is
+NOTHING under G-AL** — success is silent, and a printed `(stamped in <other>.log)` line means it
+borrowed a sibling's stamp, which is still accepted by design. That design question is carded at
+State Machine `1217721634749933`, not yours.
 
 **Working notes on the transport, all earned:**
 
