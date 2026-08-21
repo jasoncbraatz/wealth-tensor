@@ -225,6 +225,8 @@ is checkable against.
 
 **FALSIFIER:** `wc -w docs/papers/paper-I-price-formation/paper-I.md`.
 
+> **CORRECTION, wealthTensor-100 (2026-08-21).** The word count stated above is wrong. `docs/papers/paper-I-price-formation/paper-I.md` is **7 527** words, not 7,367, and has been since `623a117` on 2026-08-10 — before Paper IV existed and at `c3b1b31`, the commit this pass read. This finding's own falsifier is `wc -w`, and `wc -w` has never returned 7,367. `docs/promises-adjudicated.tsv` row `cbd18be550` carries the right number, so the TSV and this document disagreed for nineteen sessions and no pass compared them. The FINDING stands — the count is checkable only against the file §8 said was not there, which is exactly what IV-5 claims — but the number supporting it did not. The original text above is left unrewritten; wealthTensor-100 moved the manuscript's *roughly 7,400* to *roughly 7,500* as part of IV-12 and recorded the apparatus half in `REVIEW-035` §4 item 1, NOT COUNTED as a manuscript finding under the `-79`/II-39 precedent.
+
 ### IV-6 · §7's fourth relocation names no work, no author and no constraint, in the section whose method is naming the constraint. **[D]** **[deferral]**
 
 §7's move paragraph relocated four predecessors: *Piketty*, *Solow's scalar*, **"The Austrian
