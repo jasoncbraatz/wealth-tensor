@@ -206,3 +206,63 @@ wealthTensor-99	paper-II	3	none	— (all five axes inherited; Paper II was 5 of 
 #   and no pass compared them. Repaired by a marked correction, NOT COUNTED as a finding (the -79
 #   II-39 precedent: it is in the reviewing apparatus, which Paper IV names nowhere).
 wealthTensor-100	paper-IV	4	inherited-first-application	A3' -- the CORRECTNESS question behind A3 (does the referent carry what the pointer says?), NON-SCRIPT, originates wealthTensor-99 on paper-II (II-40, REVIEW-034), first application to paper-IV. No A1-A5 cell filled -- the grid closed at -80 and A6 stays parked. scripts/wt182_paperIV_p7pass3.py (20 post-conditions, 6 NEGATIVE) and scripts/wt183_paperIV_promises.py (15, 4 NEGATIVE) are the PATCHES of record, not instruments.	1 of 4	REVIEW-035. PAPER IV'S THIRD INDEPENDENT READ, nineteen sessions after its second, and the manuscript grew 766 -> 812 lines in between under five edits by sessions that did not read it. IV-10 IS THE HEADLINE: section 5's '+249 to -150 with one sign change' is produced by NO command section 10 named and asserted by NO test, while scripts/wt018_report.py prints all four numbers as a table and is named nowhere in 812 lines. Repaired twice over -- section 10 names it, and a new test holds the endpoints WITH a negative control at S=180 where the closed-grid endpoint departs from section 5's own identity, which is section 8's tie convention met in section 5 and is the pass's best CLEARED item. IV-11 is the new axis's only finding and it is inside -81's own added limitation. IV-12 cuts a 'two places' census that section 8's word count falsifies -- IV-4's shape in IV-4's own section, one pass later -- and moves 'roughly 7,400' to 7,500 against wc -w's 7 527. IV-13 answers REVIEW-021's IV-8 falsifier: the class survived two entries away. RESIDUE 2 of 4 (IV-11 and IV-12's section-10 site both blame to 14631bfa/-81; IV-10 to 7ca35c78/-75; IV-13 to 5efe626/-53) AND NO MECHANISM IS PROPOSED FROM IT -- the two residue findings are the two that cost least. SHAPES 2 promise / 2 deferral / 0 neither against the 5/2/2 -80 and -81 both found; n=4 and this row claims only what it counted. MANUSCRIPT EDITS 4 of 4, so -79's narrower rule scores this pass 4 as well; the two rules agree. defensive_count --against the pre-edit file: 0 -> 0 (+0). NOT COUNTED, and named in REVIEW-035 section 4 item 1: REVIEW-021's own 7,367 is wrong (apparatus, -79 II-39 precedent). CONSECUTIVE-ZERO COUNT AFTER THIS PASS: 0. The pass does not score P7; that is PENDING-HUMAN.
+#
+# wealthTensor-101 · PAPER III'S FOURTH INDEPENDENT READ, EIGHTEEN SESSIONS AFTER ITS THIRD, AND
+#   ALL THREE FINDINGS CAME OUT OF ONE COMMAND THE PAPER DOES NOT NAME.  §4.10 is titled "the price
+#   of admission is four significant figures" -- the paper's answer to its own title.  Its five-row
+#   table, its search floor and its comparison against the event-date interval are all printed by
+#   scripts/wt091_lag_shape_identifiability.py, which is registered against REG-005, was committed
+#   74 minutes AFTER the registration it obeys, and QUOTES THE MANUSCRIPT in its own docstring.
+#   §11 -- Data and code availability, which gives a runnable Regenerate bullet for §3, §A.2.3, §5,
+#   §5.4 and §A.2.4 -- named no command for it, and the manuscript named that script only as the
+#   bare token `wt091` inside a clause about chronology.  Running it took six minutes.
+#
+#   A4'S COVERAGE IS BOUNDED BY THE MANUSCRIPT'S HONESTY ABOUT ITS OWN TOOLCHAIN, AND THAT IS THE
+#   LOOP III-6 CLOSES.  A4 is defined as running the manuscript's own NAMED commands, so a command
+#   the manuscript does not name is invisible to the axis by construction -- and -80, -83 and -73
+#   each ran A4 correctly and each stopped short of §4.10.  What kept them short is one accurate
+#   sentence: §11 opens "Every simulation result in §A.2 and §§2-3 is produced by open code", which
+#   is a FLOOR, and three passes read it as a CEILING.  The next A4 target on every manuscript is
+#   the difference between the sections that report a computed figure and the sections
+#   §Data-and-code covers.  On paper-III that difference was §4, and §4 is nine subsections long.
+#
+#   RESIDUE 0 OF 3 -- THE CLEANEST IN THE LEDGER -- AND NO MECHANISM IS PROPOSED FROM IT.  git blame
+#   at 74934b9 puts ALL THREE sites on 42ca3773, the 2026-08-12 commit that added §4.10 whole,
+#   BEFORE paper-III had had a single P7 read.  Not one blames to -73, -80 or -83.  Five mechanisms
+#   have been proposed across fifteen rows and only enumeration (-82/-83) survived its own next
+#   pass; -99 declined a 2-of-3 residue row and -100 declined a 2-of-4.  A clean number on n = 3 is
+#   the same error with a friendlier face, and this row declines it too.  NO SIXTH.
+#
+#   THE NEW INSTRUMENT IS -100'S BIGGEST TEE-UP, BUILT: scripts/wt184_pointer_correctness.py
+#   mechanises A3'.  wt133 has printed "0 unresolved" on this manuscript for twenty sessions and is
+#   right every time; wt184 asks whether the referent CARRIES what the pointer says.  III-5 is its
+#   finding: §4.10 attributes the reference width 0.150 to §5.4 twice, and §5.4 carries the interval
+#   [1.135, 1.285] but never its width -- while RESULT-REG-005 and wt091 both attribute the number
+#   to REG-003.  THREE OF ITS NEGATIVE CONTROLS FAILED ON THEIR FIRST RUN AND EVERY FAILURE WAS A
+#   REAL BUG: a section number read as a numeric claim (which would have flagged all 244 references),
+#   a line-at-a-time reader that saw ONE quoted phrase in a hard-wrapped 2,741-line manuscript
+#   (Rule 2 was VACUOUSLY CLEAN), and a markdown table row read as one clause across six cells.
+#   A control you were sure of is not a control -- -100 said so and this pass is the second witness.
+#
+#   III-7 IS THE ABSORB TRAP INVERTED.  §4.10 said the 10^-3 identified set "reaches k = 0.50".  The
+#   REGISTERED sweep reaches 0.60 -- the paper's own table two paragraphs above says [0.60, 1.87] and
+#   its own parenthetical says 0.50 comes from the unregistered [0.2, 3.0] extension.  wt091 makes
+#   the paper's argument itself with the registered number.  The repair is one word and one number:
+#   "the registered sweep's set reaches k = 0.60".  0.60 < 1 carries the decreasing-hazard argument
+#   unchanged, and the claim stops leaning on an unregistered sweep.  A FINDING THAT LOOKED LIKE IT
+#   DEMANDED A CAVEAT DEMANDED A NARROWER CLAIM, AND THE NARROWER CLAIM IS THE STRONGER ONE.
+#
+#   THE PATCH SCRIPT'S OWN LESSON, BANKED BECAUSE IT COST A ROLLBACK.  wt185's first cut
+#   DOUBLE-APPLIED its inserting edit and shipped the §11 bullet TWICE while all fourteen of its
+#   post-conditions passed -- because every one asked whether a string was PRESENT and none asked
+#   HOW MANY TIMES.  An INSERTING edit keeps its own anchor in the output, so "have I run already?"
+#   cannot be answered by looking for the anchor.  Every edit now carries an idempotency MARKER and
+#   an exactly-once post-condition.  A POST-CONDITION THAT CANNOT FAIL ON A DOUBLE APPLICATION IS
+#   NOT A POST-CONDITION.
+#
+#   AND THE GUARD THAT WENT RED WAS RIGHT AND WAS NOT FIGHTING THE REPAIR.  test_restatement_reach
+#   pins per-figure per-section restatement COUNTS; III-5 moved §4.10's 1.135/1.285 from 1 to 3 and
+#   the guard failed with the section and both counts printed.  Its docstring had stated that bargain
+#   in advance.  wt187 reads the new counts out of the manuscript with the guard's OWN counting
+#   function rather than transcribing them from the failure message -- re-check, do not re-key.
+wealthTensor-101	paper-III	3	new	wt184 -- scripts/wt184_pointer_correctness.py, A3' MECHANISED and -100's biggest tee-up built. The AXIS is inherited (A3' originates wealthTensor-99 on paper-II, first applied to paper-IV BY HAND at -100); the INSTRUMENT is new and did not exist at the parent commit 74934b9. Two rules -- a figure attributed to a section must be IN it, a phrase quoted from a section must be in it with markdown emphasis stripped from BOTH sides -- a negative control document, section bounding at the next heading of ANY level, 28 post-conditions of which 9 are NEGATIVE. No A1-A5 cell filled: the grid closed at 15 of 15 at -80 and A6 stays parked. scripts/wt185_paperIII_p7pass4.py (19 post-conditions, 8 NEGATIVE, idempotent), scripts/wt186_paperIII_promises.py (11, 8 NEGATIVE) and scripts/wt187_restatement_counts.py (6, 4 NEGATIVE, idempotent) are the PATCHES of record, not instruments.	1 of 3	REVIEW-036. THREE FINDINGS, THREE REPAIRS, ALL LANDED IN-PASS, plus one apparatus item carded with a named falsifier. III-6 IS THE HEADLINE and it is -100's IV-10 family arriving on paper-III with a different cause: not a missing artefact but a §Data-and-code section whose own scope sentence let three reads stop short of §4.10. III-5 is wt184's finding, the first time -99's 'a resolving cross-reference is not a correct one' class has been caught by a script rather than an eye. III-7 is A4 proper: an unregistered number carrying a registered argument, repaired to the registered one, which is stronger. RESIDUE 0 of 4 sites / 0 of 3 findings -- all three blame to 42ca3773, the commit that added §4.10 before paper-III's first read -- AND NO MECHANISM IS PROPOSED FROM IT. SHAPES 1 promise / 1 deferral / 1 neither against -80's 5/2/2 and -83's 1/2/1 on this manuscript; n=3 and this row claims only what it counted. MANUSCRIPT EDITS 3 of 3 findings over 4 sites, so -79's narrower rule scores this pass 3 as well and the two rules agree. defensive_count --against the pre-edit file: 3 -> 3 (+0) outside §Limitations, G-COACH-3 holds. CARDED, NOT COUNTED: RESULT-REG-005 line 60 carries III-7's slip too, against its own §2 table -- committed result document for a registered run, the -83 RESULT-001 precedent, State Machine. CONSECUTIVE-ZERO COUNT AFTER THIS PASS: 0. The pass does not score P7; that is PENDING-HUMAN.
