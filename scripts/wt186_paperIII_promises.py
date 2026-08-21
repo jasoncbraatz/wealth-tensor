@@ -60,16 +60,21 @@ def main():
     lines = original.split("\n")
 
     present = {l.split("\t")[1] for l in lines if l.startswith("paper-") and l.count("\t") >= 2}
-    for r in ROWS:
-        if r[1] in present:
-            print("wt186: row %s already present — nothing to do." % r[1])
-            return 0
+    already = all(r[1] in present for r in ROWS)
 
+    # IDEMPOTENT, AND STILL AUDIBLE. An early `return 0` here would make this script print
+    # NOTHING a `count_re` could hold it to on every run after the first -- which is exactly
+    # the run the wrap's `--claims-all` makes. So the already-applied path re-derives the rows,
+    # checks them against the file on disk, and prints the same summary as the writing path.
     new_rows = ["\t".join(list(r) + [sentence_for(r[1])]) for r in ROWS]
-    while lines and lines[-1] == "":
-        lines.pop()
-    text = "\n".join(lines + new_rows) + "\n"
-    TSV.write_text(text)
+    if already:
+        text = original
+        print("wt186: all %d rows already present — verifying, not rewriting." % len(ROWS))
+    else:
+        while lines and lines[-1] == "":
+            lines.pop()
+        text = "\n".join(lines + new_rows) + "\n"
+        TSV.write_text(text)
 
     checks = []
     for i, r in enumerate(ROWS):
@@ -86,7 +91,8 @@ def main():
                    len([l for l in text.split("\n") if l.startswith("paper-")]), True))
     checks.append(("Q9 exactly four rows were added",
                    len([l for l in text.split("\n") if l.startswith("paper-")]) ==
-                   len([l for l in original.split("\n") if l.startswith("paper-")]) + 4, True))
+                   len([l for l in original.split("\n") if l.startswith("paper-")])
+                   + (0 if already else 4), True))
     checks.append(("Q10 no row carries a literal TAB inside a cell",
                    all("\t\t" not in l for l in new_rows), True))
     checks.append(("Q11 the scope line is untouched",
@@ -95,12 +101,15 @@ def main():
     for label, cond, isneg in checks:
         print("  [%s] %s%s" % ("PASS" if cond else "FAIL", "(NEGATIVE) " if isneg else "", label))
     neg = sum(1 for _, _, n in checks if n)
-    print("wt186: %d rows written, 0 superseded, %d post-conditions, %d NEGATIVE"
-          % (len(ROWS), len(checks), neg))
+    print("wt186: %d rows %s, 0 superseded, %d post-conditions, %d NEGATIVE"
+          % (len(ROWS), "verified" if already else "written", len(checks), neg))
 
     if any(not c for _, c, _ in checks):
-        TSV.write_text(original)
-        print("ROLLED BACK — the TSV is at its pre-run bytes.")
+        if not already:
+            TSV.write_text(original)
+            print("ROLLED BACK — the TSV is at its pre-run bytes.")
+        else:
+            print("VERIFICATION FAILED against the committed TSV — nothing was written.")
         return 2
     return 0
 

@@ -273,11 +273,16 @@ UNION: §2.1 and §2.2 together hold 0.4137 -- a sentence naming TWO sections is
 against the UNION of their bodies, which is the weaker test and is not flagged.
 """
 
+RESULTS = []
+
+
 def postconditions():
     import tempfile, os
     ok = True
+    RESULTS.clear()
     def chk(label, cond, negative=False):
         nonlocal ok
+        RESULTS.append(bool(negative))
         tag = 'NEGATIVE' if negative else 'positive'
         print(f"  [{'PASS' if cond else 'FAIL'}] ({tag}) {label}")
         if not cond:
@@ -353,12 +358,19 @@ def postconditions():
             line_only > 1, negative=True)
         chk("paper-III: RULE 1 adjudicates a non-zero number of figures",
             st3['num_checked'] > 0)
-        chk("paper-III: wt133's headline count is reproduced (244 refs seen)",
-            st3['refs'] == 244)
+        # NOT PINNED TO A LITERAL. This read 244 before wealthTensor-101 and 247 after, because
+        # wt185's §11 repair cites §4.10 three more times -- a hard 244 would have turned the
+        # instrument red on the repair it found. What must hold is that the parse reaches the
+        # whole manuscript, so the floor is wt133's pre-repair count and the check is one-sided.
+        chk("paper-III: the parse reaches the whole manuscript (>= wt133's 244 refs)",
+            st3['refs'] >= 244)
         chk("paper-III: zero unresolved, agreeing with wt133",
             st3['unresolved'] == 0)
 
-    print(f"\n post-conditions: {'ALL PASS' if ok else 'FAILURE'}")
+    # THE COUNT IS THE CLAIM, NOT THE VERDICT. A registry entry can only hold this script to
+    # something that MOVES, and "ALL PASS" does not move when a check is deleted. Print both.
+    print(" post-conditions: %d checks, %d NEGATIVE" % (len(RESULTS), sum(RESULTS)))
+    print(" post-conditions: %s" % ("ALL PASS" if ok else "FAILURE"))
     return 0 if ok else 1
 
 if __name__ == '__main__':
