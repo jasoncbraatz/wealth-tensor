@@ -193,6 +193,7 @@ def postconditions():
          p[p.index("## 10 · Data"):].count("may be") == 0),
     ]
     bad = 0
+    print(f"wt182 · post-conditions: {len(checks)} checks, 6 NEGATIVE")
     for name, ok in checks:
         print(f"  {'PASS' if ok else 'FAIL'}  {name}")
         bad += 0 if ok else 1
@@ -202,7 +203,6 @@ def postconditions():
 if __name__ == "__main__":
     print("wt182 · applying")
     apply_all()
-    print("wt182 · post-conditions (20 checks, 6 NEGATIVE)")
     n = postconditions()
     if n:
         sys.exit(f"wt182: {n} post-condition(s) FAILED")

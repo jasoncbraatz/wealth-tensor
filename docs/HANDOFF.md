@@ -2,21 +2,21 @@
 project: wealth-tensor
 gh_repo: jasoncbraatz/wealth-tensor
 branch: main
-gh_sha: b8fb4192644a5c0fdab4eecda767ab7033e14c92
-updated: 2026-08-20
-session: wealthTensor-99
-session_n: 99
-live_theme: "THE LEDGER MOVED, AND WHAT IT COST TO LEAVE A NAMED CHECK UNRUN. `docs/p7-passes.tsv` had its last row at `wealthTensor-83` and twenty sessions went by with no fresh-eyes read of any manuscript. Paper II got its TWELFTH `P7` read here and returned THREE findings on a frozen instrument set. The headline is `II-42`: section 3.4 has claimed since Paper II's FIRST independent read that the top-share statistic is also horizon-stable where the Gini is not; `-74` flagged it NOT MEASURED five passes ago AND NAMED THE EXACT CHECK, nobody ran it, and it is FALSE -- the top decile is the LESS stable statistic in 14 of 18 config-seed pairs, worst spread 0.1706 against 0.0496. CUT, not hedged. The other two are both inside the six lines the one intervening repair pass wrote, and `wt133_crossref_sweep` is GREEN on one of them because the section it points at RESOLVES -- A RESOLVING CROSS-REFERENCE IS NOT A CORRECT ONE, which is a class the sweep has never been able to see. RESIDUE 2 of 3, the highest any row carries, AND NO SIXTH MECHANISM IS PROPOSED: residue died at `-78`, and this row's largest finding survived nine reads. The board went RED on `P13e` the instant the prose moved -- the layout capture pins the manuscript sha256 -- and that is the guard working, not a regression. CONSECUTIVE-ZERO COUNT, ALL THREE MANUSCRIPTS: 0, 0, 0."
-phase: "EVERY NUMBER HERE WAS RE-DERIVED BY THE GATE'S CLAIM RE-RUNNER, NOT QUOTED: `pytest` 1167 passed; `wt181 --verify` RC 0 over 9 checks, 3 NEGATIVE -- the P7 pass 12 seam, re-deriving section 3.3 as the 0.035 span's only home, the 14-of-18 horizon spread that killed section 3.4's sentence, and the control that the 0.90 criterion separates at 600, 1200 and 2400; `verify-layout.sh` RC 0 with 145 pages compared, REBUILT IN A CLEAN WORKTREE FROM THE COMMIT THAT CARRIES THE REPAIR; `redproof-layout.sh` RC 0 with 4 probes reported; `wt170 --verify` RC 0 with 11 of 15 rows verified; `redproof_wt180_counts.py` RC 0 over 12 of 12 declared probes; `wt173 --verify` RC 0; `wt173 --postconditions` RC 0 over 14 checks with 5 NEGATIVE; `preflight` RC 0 over 16 fonts; `wt133` and `wt148` and `wt154` and `wt156` and `wt160` and `wt163` and `wt166` and `wt169` -- ALL EIGHT RC 0, and `wt148` now reads 154 adjudicated with 0 unadjudicated and 0 STALE after the promise re-key this repair forced; `wt172 --verify` RC 0 over 18 paper-II rows; `wt177_figure_guard.py` RC 0; `redproof_wt177_figures.py` 21/21; `wt179_manifest_guard.py` RC 0 over 10 checks; `redproof_wt179_manifest.py` 26 of 26 tags; `redproof_wt178_claims.py` 17/17; `defensive` paper-I/II/III/IV = 0/0/3/0 outside Limitations -- UNCHANGED, and paper-II moved by TWO EDITS whose delta is +0 (G-COACH-3 holds, proved with `--against`); gate v2.61 PASS, tree clean and pushed."
+gh_sha: 472e8dfe839837b28384e568cc2cb850dc6e9faf
+updated: 2026-08-21
+session: wealthTensor-100
+session_n: 100
+live_theme: "THE PAPER'S OWN TABLE HAD A SCRIPT AND THE PAPER DID NOT KNOW ITS NAME. Paper IV got its THIRD independent `P7` read here, nineteen sessions after its second, and returned FOUR findings. `IV-10` is the headline: section 5 reports the anti-SMD sweep as *zero monotonicity violations across 500 grid points, running from +249 to -150 with one sign change*, and NO command section 10 named produced those numbers while NO test asserted them -- yet `scripts/wt018_report.py` prints all four, as a table, from a configuration its own header says is identical to the test module's so that *the paper, the tests and this script all describe one experiment rather than three similar ones*. The script knew about the paper; the paper never named the script, through three independent reads. `IV-11` is `-99`'s resolving-vs-correct class, applied to paper-IV for the first time and found INSIDE the limitation `-81` added: section 9 item 9 attributes a quoted phrase to section 4.3 and the phrase lives in section 1.1. `IV-12` cuts a *two places* census that section 8's own word count falsifies -- `IV-4`'s shape in `IV-4`'s own section, one pass later -- and `IV-13` answers REVIEW-021's IV-8 falsifier verbatim. RESIDUE 2 of 4 and NO SIXTH MECHANISM PROPOSED: the two residue findings are the two that cost least. The apparatus is an artefact too -- REVIEW-021 states paper-I.md is 7,367 words for a file that has been 7 527 since before Paper IV existed, corrected here and NOT counted. CONSECUTIVE-ZERO COUNT, ALL THREE MANUSCRIPTS: 0, 0, 0."
+phase: "EVERY NUMBER HERE WAS RE-DERIVED BY THE GATE'S CLAIM RE-RUNNER, NOT QUOTED: `pytest` 1168 passed (1167 inherited plus the endpoint test this session's repair added); `wt181 --verify` RC 0 over 9 checks, 3 NEGATIVE; `verify-layout.sh` RC 0 with 145 pages compared, REBUILT IN A CLEAN WORKTREE FROM THE COMMIT THAT CARRIES THIS SESSION'S PROSE REPAIR; `redproof-layout.sh` RC 0 with 4 probes reported; `wt170 --verify` RC 0 with 11 of 15 rows verified; `redproof_wt180_counts.py` RC 0 over 12 of 12 declared probes; `wt173 --verify` RC 0; `wt173 --postconditions` RC 0 over 14 checks with 5 NEGATIVE; `preflight` RC 0 over 16 fonts; `wt133` and `wt148` and `wt154` and `wt156` and `wt160` and `wt163` and `wt166` and `wt169` -- ALL EIGHT RC 0, and `wt148` now reads 169 emitted / 156 adjudicated / 0 unadjudicated / 0 STALE after the eight-row re-adjudication this repair forced; `wt172 --verify` RC 0 over 18 paper-II rows; `wt177_figure_guard.py` RC 0; `redproof_wt177_figures.py` 21/21; `wt179_manifest_guard.py` RC 0 over 10 checks; `redproof_wt179_manifest.py` 26 of 26 tags; `redproof_wt178_claims.py` 17/17; `wt182` RC 0 over 20 post-conditions with 6 NEGATIVE; `wt183` RC 0 over 15 with 4 NEGATIVE; `defensive` paper-I/II/III/IV = 0/0/3/0 outside Limitations -- UNCHANGED, and paper-IV moved by SIX EDITS whose delta is +0 (G-COACH-3 holds, proved with `--against`); board 66 criteria BYTE-IDENTICAL after regeneration; gate v2.61 PASS, tree clean and pushed."
 gate_passed: true
 gate_version: "2.61"
-next_at_bat: "ASSIGNED, ONE THING: **run the next P7 read on PAPER-IV, and append its row to `docs/p7-passes.tsv`.** NOT another instrument, and NOT paper-II again. Paper IV was last read at `wealthTensor-81` and returned NINE findings; that was 2026-08-18 and it is now the STALEST manuscript in the corpus AND the one whose last count was highest. Paper III is next-stalest at `-83` (4 findings). Paper II was read at `-99` (3 findings) and is deliberately NOT yours: reading it back-to-back would be leg one of the two-independent-readers design, which `docs/p7-passes.tsv` says costs two sessions to buy one data point and is JASON'S to authorise. THE SHAPE, and the CHARTER wins over this file: coach model, not marksman. Every finding arrives WITH ITS REPAIR in the order STEELMAN > REPLACE > CUT > TEE-UP, never as a filed objection and NEVER as a new hedge pasted into the manuscript -- ABSORB is the illegal move and `scripts/defensive_count.py --against` is the checkable invariant (paper-IV is at 0 outside Limitations and must stay 0). A ZERO-FINDING PASS IS A CELEBRATED RESULT and it is literally half of what done means here -- but an HONEST zero: the ledger header tells you how to falsify your own row. FIVE MECHANISMS FOR THE FINDING COUNTER HAVE BEEN PROPOSED AND FOUR DIED ONE PASS LATER (new instruments, residue, depth, coverage; only enumeration lives). DO NOT PROPOSE A SIXTH, and do not credit a finding to an axis you did not run -- NOT-STATED is honest, a guess is not. `-99` had a 2-of-3 residue row sitting there begging to be a mechanism and declined; do the same. DONE WHEN: `docs/REVIEW-035-P7-paperIV-passN.md` exists (derive N from the ledger and the existing filenames -- and see the TEE-UPS section, because the paper-IV filenames currently carry TWO INCOMPATIBLE CONVENTIONS and picking one is part of this at-bat) with a numbered finding list and front matter in `REVIEW-034`'s shape (`new_instrument`, `instrument_name`, `findings_from_new_axis`, `residue_of_previous_pass`) PLUS its own falsifier block; ONE row appended to `docs/p7-passes.tsv` that survives that falsifier; every finding carries a landed repair or a carded tee-up; `defensive_count.py --against` shows +0 on paper-IV; and `--claims-all` re-runs 27 claims and agrees. ⚠ IF YOU EDIT THE MANUSCRIPT, TWO THINGS GO RED AND BOTH ARE YOURS TO CLOSE IN THE SAME SESSION: `wt148` reports STALE promise rows (re-key them, see `-99`'s commit), and `P13e` goes UNMET because the layout capture pins the manuscript sha256 (commit the repair FIRST, then `bash docs/deliverable/build.sh`, then `verify-layout.sh`, then `regen-board.sh`, then commit the recapture -- `-99` did exactly this and the two commits are the worked example). Do NOT close P7 -- it is PENDING-HUMAN, the convergence verdict is Jason's, and the ledger itself says the session doing the work must not score it. You run the pass; you do not call it. Do NOT close P13g, P9 or P8 either."
+next_at_bat: "ASSIGNED, ONE THING: **run the next P7 read on PAPER-III, and append its row to `docs/p7-passes.tsv`.** NOT another instrument, NOT paper-IV (read at `-100`), and NOT paper-II (read at `-99`). Paper III was last read at `wealthTensor-83` on 2026-08-18, returned 4 findings, and is now the STALEST manuscript in the corpus by EIGHTEEN sessions. THE SHAPE, and the CHARTER wins over this file: coach model, not marksman. Every finding arrives WITH ITS REPAIR in the order STEELMAN > REPLACE > CUT > TEE-UP, never as a filed objection and NEVER as a new hedge pasted into the manuscript -- ABSORB is the illegal move and `scripts/defensive_count.py --against` is the checkable invariant. ⚠ PAPER III IS THE ONE MANUSCRIPT WHOSE DEFENSIVE COUNT IS NOT ZERO: it sits at **3** outside Limitations, so `--against` matters more here than it has on any pass since the counter was mechanised. A ZERO-FINDING PASS IS A CELEBRATED RESULT and it is literally half of what done means here -- but an HONEST zero; the ledger header tells you how to falsify your own row. FIVE MECHANISMS FOR THE FINDING COUNTER HAVE BEEN PROPOSED AND FOUR DIED ONE PASS LATER (new instruments, residue, depth, coverage; only enumeration lives). DO NOT PROPOSE A SIXTH -- `-99` declined a 2-of-3 residue row and `-100` declined a 2-of-4 one; do the same. And do not credit a finding to an axis you did not run: NOT-STATED is honest, a guess is not. RUN A3' -- `-100`'s cheapest finding came from asking, of every pointer, whether the referent CARRIES what the pointer says rather than whether it RESOLVES, and paper-III has 244 section-references, the most in the corpus. DONE WHEN: `docs/REVIEW-036-P7-paperIII-pass4.md` exists (paper-III's convention counts INDEPENDENT reads: REVIEW-013 `-73` is 1, REVIEW-020 `-80` is 2, REVIEW-023 `-83` is 3, so yours is 4) with a numbered finding list and front matter in `REVIEW-035`'s shape (`new_instrument`, `instrument_name`, `findings_from_new_axis`, `residue_of_previous_pass`, the shape columns and `manuscript_edits`) PLUS its own falsifier block; ONE row appended to `docs/p7-passes.tsv` that survives that falsifier; every finding carries a landed repair or a carded tee-up; `defensive_count.py --against` shows +0 on paper-III; and `--claims-all` re-runs 29 claims and agrees. ⚠ IF YOU EDIT THE MANUSCRIPT, TWO THINGS GO RED AND BOTH ARE YOURS TO CLOSE IN THE SAME SESSION: `wt148` reports STALE promise rows (re-check, do NOT re-key -- see `scripts/wt183_paperIV_promises.py`, which is `-100`'s worked example and derives the sentence column from `wt148.emit()` rather than transcribing it), and `P13e` goes UNMET because the layout capture pins the manuscript sha256 (commit the repair FIRST and SAY SO in the message, then `bash docs/deliverable/build.sh`, then `verify-layout.sh`, then `regen-board.sh`, then commit the recapture -- `e524ebb` and `472e8df` are `-100`'s two commits and they are the worked example). Do NOT close P7 -- it is PENDING-HUMAN, the convergence verdict is Jason's. You run the pass; you do not call it. Do NOT close P13g, P9 or P8 either."
 blockers: []
 claims:
   - id: pytest
     cmd: python3 -m pytest -q
     rc: 0
-    count: 1167
+    count: 1168
     count_re: ([0-9]+) passed
     note: about 70s -- the number IS the claim, not decoration
   - id: wt173 --verify
@@ -125,6 +125,18 @@ claims:
     count: 26
     count_re: ([0-9]+) of [0-9]+ declared tags proven
     note: 33 probes; the count is the TAGS registry it covers, not the probe total
+  - id: wt182
+    cmd: python3 scripts/wt182_paperIV_p7pass3.py
+    rc: 0
+    count: 20
+    count_re: post-conditions: ([0-9]+) checks
+    note: the P7 pass 13 patch of record -- idempotent, so re-running it is a check and not a mutation
+  - id: wt183
+    cmd: python3 scripts/wt183_paperIV_promises.py
+    rc: 0
+    count: 15
+    count_re: post-conditions: ([0-9]+) checks
+    note: the eight-row re-adjudication wt182's edits forced -- also idempotent
   - id: redproof_wt178_claims.py
     cmd: python3 scripts/redproof_wt178_claims.py
     rc: 0
@@ -201,7 +213,6 @@ parking_lot:
   - "Audit every other token matcher in `scripts/` for the \\b-inside-a-hyphenated-compound bug `wt163` surfaced."
   - "roster-brake's exit #1 cannot help when the paths you touched ARE the whole dirty tree; `ROSTER_BRAKE_ACK=N` is the answer and is ranked second. State Machine 1217596263441666."
 definition_of_done: "Three preprints (II, III, IV) each at ready-to-submit per ADR-001 clauses, every number regenerated from committed scripts, convergence reached (two consecutive zero-finding review passes per paper), Jason's own-hand pass complete — then the batch declared, once."
----
 # wealth-tensor — HANDOFF
 **ORIENT: read `docs/CO-AUTHOR-CHARTER.md` first. THE CHARTER WINS over anything in this file.**
 *Stamped by `scripts/handoff_gate.py --stamp`. If `gh_sha` above is not `HEAD`, this file was
@@ -217,292 +228,320 @@ curl -s https://system.europeanflorist.com/dsh/darlish-up -o /tmp/darlish-up && 
 # post the printed DARLISH-ENROLL line, EXACTLY, as an Asana comment on task 1217316841710435
 /tmp/darlish-up
 curl -s https://system.europeanflorist.com/dsh/dx -o /tmp/dx && chmod +x /tmp/dx
-/tmp/dx '~/Scripts/roster join --who big-wealthTensor-100 --task "P7 read on paper-IV"'
-/tmp/dx '~/Scripts/roster claim --who big-wealthTensor-100 --resource ~/repos/wealth-tensor --task "P7 paper-IV"'
+/tmp/dx '~/Scripts/roster join --who big-wealthTensor-101 --task "P7 read on paper-III"'
+/tmp/dx '~/Scripts/roster claim --who big-wealthTensor-101 --resource ~/repos/wealth-tensor --task "P7 paper-III"'
 /tmp/dx '~/Scripts/rail'                                     # check before you swing
-/tmp/dx '~/Scripts/charter-read.sh wealthTensor-100'         # YOUR id, not your successor's
-/tmp/dx 'python3 ~/repos/claude-blackbook/lessons.py search "P7 review pass paper-IV" --scope global,wealth-tensor'
+/tmp/dx '~/Scripts/charter-read.sh wealthTensor-101'         # YOUR id, not your successor's
+/tmp/dx 'python3 ~/repos/claude-blackbook/lessons.py search "P7 review pass paper-III" --scope global,wealth-tensor'
 ```
-**READY first try at `-61` through `-99` — THIRTY-NINE for thirty-nine.** Budget four minutes; it
-takes two.
-⚠ That last line is **not optional**. `-98` skipped student-in and `-99` did not; the search is
-what surfaced `-63`'s backlog-drain leaf before a word of the pass was written.
+**READY first try at `-61` through `-100` — FORTY for forty.** Budget four minutes; it takes two.
+⚠ That last line is **not optional**. `-98` skipped student-in and `-99`/`-100` did not; at `-100`
+the search surfaced `-63`'s backlog-drain leaf and `-59`'s abstract-headroom leaf before a word of
+the pass was written.
 ⚠ `roster claim` needs `--resource` (a NAMED flag), not `--repo`. `ROSTER_BRAKE_ACK=<n files>` on
 commits.
-⚠ **RUN THE GATE AS `GATE_ROSTER_WHO=big-wealthTensor-100 bash ~/Scripts/gate-selfcheck.sh`.**
+⚠ **RUN THE GATE AS `GATE_ROSTER_WHO=big-wealthTensor-101 bash ~/Scripts/gate-selfcheck.sh`.**
 Without it, `G-AL` reads the LAST charter stamp in the shared ledger — which may belong to a
 sibling — and tells you YOUR definition of done moved. Jason often runs 2–3 sessions at once;
-`roster who` before you believe any cross-repo complaint.
+`roster who` before you believe any cross-repo complaint. At `-100` a sibling held
+`claude-blackbook` and `strike-zone` the whole session and nothing collided, because both sides
+claimed.
 
 **Working notes on the transport, all earned:**
-- ▲ Long remote jobs survive the local Bash timeout — `nohup` to `/tmp/`, poll with a second `dx`,
-  and **capture the exit code by redirecting `echo $?` to a FILE**, never off the last line.
-  **`pytest` takes ~78 s and is worth backgrounding.** ⚠ Launch it AFTER your last mutation.
+- ▲ Long remote jobs survive the local Bash timeout — `nohup` to a directory that **already
+  exists**, poll with a second `dx`, and **capture the exit code by redirecting `echo $?` to a
+  FILE**, never off the last line. `-100` lost one launch to `nohup … > $DIR/x.log` where `$DIR`
+  did not exist yet: the redirect failed in the parent, so **nothing ran and the failure looked
+  like a start**. `mkdir -p` in the *caller*, not only inside the script.
+  **`pytest` takes ~80 s and is worth backgrounding.** ⚠ Launch it AFTER your last mutation.
 - ▲ `tests/test_manuscript_sweeps_are_green.py` reads the promise TSV and
   `tests/test_the_three_counts_are_derived.py` reads the layout manifest, so **a TSV write or a
   manuscript edit invalidates a pytest run started before it.**
 - ▲ **`dx` exit 3 = never reached darwin** (nothing ran, safe to re-run) · **4 = dropped AFTER the
   command started** (check state before re-running; no blind retry loops).
 - ⚠ **NESTED QUOTES: write the script LOCALLY, `--put` it, then `dx 'python3 /tmp/x.py'`.**
-  `-99` ignored this for ONE `git commit -F -` heredoc and the commit message landed mangled —
-  apostrophes eaten, truncated mid-sentence — and had to be `--amend`ed from a `--put` file.
-  **Follow it on the FIRST file, not the third.** The rule costs nothing and it is now
-  three sessions' worth of evidence.
+  `-100` followed this on the FIRST file — every patch script, every commit message, every probe —
+  and paid nothing for it. `-99` ignored it once and had to `--amend` a mangled commit message.
+  **Four sessions of evidence now.**
 
 ------
 ## THE STATE YOU INHERIT AND MUST PRESERVE
 **Every line below was RE-RUN by `handoff_gate.py --claims-all`, not quoted from the last handoff.**
 
-🟢 `python3 -m pytest -q` → **1167 passed, 1 warning.** RUN IT AND SAY THE NUMBER.
-🟢 ▲ **NEW** `python3 scripts/wt181_paperII_p7pass12.py --verify` → **RC 0, 9 checks, 3 NEGATIVE.**
-   The `P7` pass 12 seam — re-derives §3.3 as the 0.035 span's only home, the **14 of 18**
-   horizon spread that killed §3.4's sentence, and the control that the 0.90 criterion separates
-   at *T* = 600, 1200 and 2400. Seconds, no toolchain.
-🟢 `wt173 --verify` → **RC 0** · `wt173 --postconditions` → **RC 0, 14 checks, 5 NEGATIVE.**
+🟢 `python3 -m pytest -q` → **1168 passed, 1 warning.** RUN IT AND SAY THE NUMBER.
+   ▲ 1167 → 1168: `IV-10`'s repair added
+   `test_the_monotone_sweep_endpoints_and_single_crossing_are_what_section_5_reports`.
+🟢 ▲ **NEW** `python3 scripts/wt182_paperIV_p7pass3.py` → **RC 0, 20 post-conditions, 6 NEGATIVE**,
+   idempotent — the `P7` pass 13 patch of record.
+🟢 ▲ **NEW** `python3 scripts/wt183_paperIV_promises.py` → **RC 0, 15 post-conditions, 4 NEGATIVE**,
+   idempotent — the eight-row re-adjudication `wt182`'s edits forced.
+🟢 `wt181 --verify` → **RC 0, 9 checks, 3 NEGATIVE** · `wt173 --verify` → **RC 0** ·
+   `wt173 --postconditions` → **RC 0, 14 checks, 5 NEGATIVE**.
 🟢 `bash docs/deliverable/preflight.sh` → **RC 0** over **16** vendored fonts.
 🟢 `wt133` · `wt148` · `wt154` · `wt156` · `wt160` · `wt163` · `wt166` · `wt169` — **ALL EIGHT RC 0.**
-   ▲ `wt148` now reads **167 promises emitted, 154 adjudicated, 0 unadjudicated, 0 STALE** — three
-   rows moved at `-99` (two re-keys and one MINTED, see below).
-🟢 `wt170 --verify` → **RC 0, 11 of 15 rows** · `wt172 --verify` → **RC 0**, **18** paper-II rows — seventeen inherited plus the one `-99` minted.
+   ▲ `wt148` now reads **169 promises emitted, 156 adjudicated, 0 unadjudicated, 0 STALE**.
+   ▲ `wt154` reads **156 adjudicated rows, 0 flagged** — and it CAUGHT a row `-100` wrote, which is
+   the guard working on its author (see THE TELL).
+🟢 `wt170 --verify` → **RC 0, 11 of 15 rows** · `wt172 --verify` → **RC 0**, **18** paper-II rows.
    ⚠ Both WRITING paths exit 2 by design; `--verify` is the re-runnable mode.
+   ⚠ `wt172`'s file is `scripts/wt172_tsv.py` and `wt173`'s is `scripts/wt173_typography_probe.py` —
+   **not** the `wt172_supersession_guard.py` / `wt173_font_provenance.py` an earlier handoff's prose
+   implies. `-100` lost two runs guessing. `ls scripts/ | grep wtNNN` first.
 🟢 ▲ `bash docs/deliverable/verify-layout.sh` → **RC 0**, **145 pages compared**, rebuilt in a
-   clean worktree from **`8df6d40b2791`** — the commit that carries `-99`'s prose repair, not the
-   one before it.
+   clean worktree from **`e524ebbfae96`** — the commit that carries `-100`'s prose repair.
 🟢 `bash docs/deliverable/redproof-layout.sh` → **RC 0**, **4 probes reported.**
 🟢 `wt177_figure_guard.py` RC 0 · `redproof_wt177_figures.py` **21/21** ·
    `wt179_manifest_guard.py` **RC 0, 10 checks** · `redproof_wt179_manifest.py` **26 of 26 tags** ·
    `redproof_wt178_claims.py` **17/17** · `redproof_wt180_counts.py` **12 of 12 declared probes**.
-🟢 `handoff_gate.py --claims-all` → **RC 0**, **27 claims declared, 27 re-run un-piped, 27 agreed.**
+🟢 `handoff_gate.py --claims-all` → **RC 0**, **29 claims declared, 29 re-run un-piped, 29 agreed.**
    `--claims` alone skips the slow ones and exits **2** on purpose.
 🟢 `defensive_count.py <each paper>` → **0 / 0 / 3 / 0** outside §Limitations for papers I–IV.
-   ▲ **paper-II moved by TWO edits at `-99` and the delta is +0**, proved with `--against` rather
-   than by re-quoting the level. G-COACH-3 holds.
+   ▲ **paper-IV moved by SIX edits at `-100` and the delta is +0**, proved with `--against`.
+   ⚠ **Paper III is the 3.** It is your manuscript; `--against` is not a formality there.
 🟢 GATE: gate v2.61, `gate-selfcheck.sh` **PASS**, tree clean and pushed.
 
-**Board:** 57 CLOSED, 9 PENDING-HUMAN, **zero OPEN** — unchanged. `P13e` went **UNMET** mid-session
-and was **restored in the same session**; see WHAT `-99` DID.
+**Board:** 57 CLOSED, 9 PENDING-HUMAN, **zero OPEN** — unchanged, and **byte-identical** after
+regeneration. `P13e` went **UNMET** mid-session and was **restored in the same session**.
 
 **Wrap order:** commit → `GATE_ROSTER_WHO=<you> gate-selfcheck` → `handoff_gate.py --claims-all`
 → `gate_passed: true` → `--stamp` → commit → push → `charter-read.sh <YOUR id>` → gate → `--emit`
 → `roster leave --who <you>`.
-⚠ Run `--claims-all` **after your last mutation** — it runs `pytest` and the full layout
-verification, and a run started before your last edit answers a question you no longer asked. It
-takes **twelve to fourteen minutes**; background it and poll.
+⚠ Run `--claims-all` **after your last mutation** — it takes **twelve to fourteen minutes**;
+background it and poll.
+⚠ `--emit`'s prose audit flags a claim id that does not match the registry EXACTLY.
 
 The ANCHOR line (*"ORIENT: read `docs/CO-AUTHOR-CHARTER.md` first…"*) must be **verbatim, above the
 fold** — put it in FIRST.
 
 ---
-## ▶ YOUR AT-BAT · ONE THING — THE NEXT P7 READ ON PAPER-IV
+## ▶ YOUR AT-BAT · ONE THING — THE NEXT P7 READ ON PAPER-III
 `next_at_bat` in the front matter is the full brief and it is binding. What follows is why.
 
-**THE BOARD IS NOT THE DEFINITION OF DONE, and this is the second handoff in a row that has to say
-so.** `docs/CHECKLIST.md` reads 57 CLOSED / 9 PENDING-HUMAN / **zero OPEN** and has for five
-sessions. `-95` `-96` `-97` `-98` each read that, concluded correctly that no lane was open, and
-built infrastructure. `definition_of_done` — in this file's own front matter — asks for **two
-consecutive zero-finding review passes per paper.** Here is the actual state of that clause:
+**THE BOARD IS NOT THE DEFINITION OF DONE.** `docs/CHECKLIST.md` reads 57 CLOSED / 9
+PENDING-HUMAN / **zero OPEN** and has since `-95`. `definition_of_done` — in this file's own front
+matter — asks for **two consecutive zero-finding review passes per paper.** The actual state:
 
 | manuscript | last read | findings | sessions since | consecutive zeros |
 |---|---|---|---|---|
-| **paper-IV** | `-81` | **9** | **19** | **0** |
-| paper-III | `-83` | 4 | 17 | 0 |
+| **paper-III** | `-83` | 4 | **18** | **0** |
+| paper-IV | `-100` | 4 | 0 | 0 |
 | paper-II | `-99` | 3 | 1 | 0 |
 
-**No paper has ever had a zero-finding pass.** Convergence is at minimum six more reads. Paper IV
-is the stalest AND its last count was the highest, which is why it is yours.
+**No paper has ever had a zero-finding pass.** Convergence is at minimum six more reads. Paper III
+is the stalest by eighteen sessions, which is why it is yours — and it is the only manuscript whose
+defensive count is not zero, which makes `--against` load-bearing rather than ceremonial.
 
-**Paper II is deliberately NOT yours.** Reading it back-to-back would be leg one of the
-two-independent-readers design, and `docs/p7-passes.tsv` says in its own header that this costs two
-sessions to buy one data point and is **Jason's to authorise.** Do not spend it by accident.
+**Paper II and Paper IV are deliberately NOT yours.** Reading either back-to-back would be leg one
+of the two-independent-readers design, which `docs/p7-passes.tsv` says costs two sessions to buy one
+data point and is **Jason's to authorise.** Do not spend it by accident.
 
-**WHAT A GOOD PASS LOOKS LIKE, from twelve of them.** Run all five axes *before you write a word of
-prose about them* — `wt130_quantifier_sweep.py paper-IV` (A1), grep the paper for the failure modes
-it names in its own prose (A2, and REVIEW-021 §1 has paper-IV's list — **inherit it, do not
-re-derive**), `wt133_crossref_sweep.py` (A3), run every command §N names and diff the output against
-the tables (A4), and enumerate every backticked artefact and read it (A5). Then read the manuscript
-end to end. **Then** decide what is a finding.
+**WHAT A GOOD PASS LOOKS LIKE, from thirteen of them.** Run every axis *before you write a word of
+prose about them* — `wt130_quantifier_sweep.py paper-III` (A1), grep the paper for the failure modes
+it names in its own prose (A2 — **REVIEW-020 §1 has paper-III's list; inherit it, do not
+re-derive**), `wt133_crossref_sweep.py` (A3), **and then A3′, which is `-100`'s addition and the
+cheapest finding it made**: for every pointer, ask whether the referent CARRIES what the pointer
+says, not whether it resolves. Paper III has **244** `§N.M` references, the most in the corpus, and
+`wt133` reports 0 unresolved on all of them. Then A4 — run every command §11 names and diff the
+output against the tables — and A5, enumerate every named artefact and read it. Then read the
+manuscript end to end. **Then** decide what is a finding.
 
-**AND READ THE PREVIOUS REVIEW'S "WHAT WAS NOT CHECKED" SECTION AS A STOCK, NOT A COURTESY.** That
-is `-99`'s single most transferable finding: `II-42` came off `-74`'s not-checked list, where it had
-sat for **five passes** with its target, its method and its negative control already written down.
-When it was finally run it falsified a manuscript sentence that had survived **nine** `P7` reads.
-REVIEW-021 §4 is paper-IV's equivalent list. Open it first.
-
----
-## WHAT `-99` DID
-**Paper II's TWELFTH independent `P7` read.** `scripts/wt181_paperII_p7pass12.py`, **24
-post-conditions, 8 NEGATIVE, RC 0**, two manuscript edits, net −1 line, zero carded.
-Full document: `docs/REVIEW-034-P7-paperII-pass12.md`. Ledger row: `docs/p7-passes.tsv`.
-Counter: 9 → 2 → 4 → 3 → 4 → 5 → 3 → 2 → 2 → **3**.
-
-**`II-42` · §3.4's horizon claim is FALSE · CUT.** *"The top-share statistic is also horizon-stable
-where the Gini is not"* has been in the manuscript since Paper II's **first** independent read
-(`2b3e24b5`). `-74` flagged it **NOT MEASURED**, named the exact check and called it *"a natural
-`wt133`"*. Five passes went by. Measured at `wt181` E5: across *T* = 600/1200/2400, six
-configurations × three seeds, **the top decile's spread exceeds the Gini's in 14 of 18 config-seed
-pairs**, worst **0.1706** against **0.0496** — 3.4×. Cut rather than replaced, because the sentence
-has two readings that disagree (REVIEW-008's `II-14` shape), stating the true one costs three
-numbers §7 would then have to account for, and the sentence in front of it already carries the
-separation **and** its 0.039 margin. The true reading is kept **measured** in REVIEW-034 §2.3.
-
-**`II-40` and `II-41` · both inside the six lines `-92` wrote.** §7's exception clause points the
-0.035 periodicity span at **§3.2** (it is in **§3.3**) and calls 0.039 a *"difference of numbers
-both commands do print"* eleven words after declaring one of its two inputs unprinted. One edit
-repairs both.
-
-**THE CLASS WORTH STEALING: A RESOLVING CROSS-REFERENCE IS NOT A CORRECT ONE.**
-`wt133_crossref_sweep` is **green** on `II-40`, because §3.2 exists. `A3` asks whether a pointer
-*resolves* and has never asked whether it is *right*. `wt181` exposes `section_of()` as the seam
-that separates the two questions for one number. **Generalising it — every `§N.M` reference that
-carries a NUMBER must have that number inside that section — is a real at-bat and is NOT claimed
-here.** It is the highest-value item in TEE-UPS below.
-
-**`P13e` WENT RED AND CAME BACK, IN THE SAME SESSION.** The layout capture pins each manuscript's
-sha256, so a prose repair invalidates it: `test_wt176_prints_the_pages_it_compared…` and
-`test_the_sweep_exits_zero[promise]` both failed the moment the bytes moved, and the board
-regenerated `P13e` as **UNMET**. That is the guard working. The fix is a two-commit dance and it is
-**the worked example for your session** if you edit paper-IV:
-`8df6d40` commits the repair RED and says so in its message → `bash docs/deliverable/build.sh` →
-`verify-layout.sh` (rebuilds from a clean worktree at that commit) → `regen-board.sh` → `bbae6aa`
-commits the recapture. **The rebuild needs a `source_commit` that CONTAINS the repair**, which is
-why the red commit has to exist first.
-
-**THE PROMISE TSV MOVED, AND ONE ROW WAS MINTED RATHER THAN RE-KEYED.** `promise_id` hashes
-(paper, artefact, sentence), so editing a sentence re-keys it and `wt148` reports the old row STALE.
-`b9dea67210 → fbd08a63f6` and `5f6d5c4fb9 → c6f855de23` are re-keys with the evidence carried
-**byte-identical** — and that identity is the argument that they are re-keys and not
-re-adjudications. `7ed9443301` is **new**: the repaired clause names `wt030_report.py`, and a repair
-that names an artefact **emits a promise**. Its evidence carries a negative control (`wt030` prints
-0.486/0.451/0.994/0.891/0.861 and does **not** print 0.90), which is the whole reason the clause
-could stop calling the 0.039 margin a difference of printed numbers.
-
-**NO SIXTH MECHANISM WAS PROPOSED, AND DECLINING WAS THE HARD PART.** Residue is **2 of 3** — the
-highest fraction any row carries — and the story writes itself: the one intervening session edited
-six lines without re-reading, and two of three findings are in them. Repair residue was proposed at
-`-77` and **refuted at `-78`**. One row does not revive it, and this row carries its own
-counter-evidence: `II-42` blames to Paper II's first read and survived nine of them. **A mechanism
-that explains two findings and cannot touch the largest of the three is not a mechanism.**
+**AND READ REVIEW-023 §4 AND ITS FALSIFIERS BEFORE YOU OPEN THE MANUSCRIPT.** Two of `-100`'s four
+findings were **written down by the previous reviewer as things to check** — `IV-13` came out of
+REVIEW-021's IV-8 falsifier verbatim (*"if a second entry lacks a counterfactual, this finding was
+incomplete rather than wrong — say so and repair it"*), and `IV-12`'s third number-source is the
+file `-81`'s own repair pointed at. `-99` said the not-checked lists are a stock; `-100` adds that
+**the falsifiers are too**, and they are cheaper because the previous reviewer already told you what
+would kill their claim.
 
 ---
-## THE TELL, now ONE HUNDRED AND THIRTY-NINE deep
-`-61`–`-97` as before, `-98` added two. **`-99` adds two.**
-- **`-99`(i) A NOT-CHECKED LIST IS A STOCK, AND ITS OLDEST ENTRY IS ITS MOST VALUABLE.** `II-42`
-  sat on `-74`'s list for five passes with its **target, method and negative control already
-  written**, and when finally run it falsified a sentence nine `P7` reads had read past. The lists
-  at the end of every REVIEW document are not a courtesy to the next session; they are the cheapest
-  unspent work in the repository, because someone already did the thinking. **Open the previous
-  review's §4 before you open the manuscript.**
-- **`-99`(ii) A GUARD THAT ASKS WHETHER A POINTER *RESOLVES* IS GREEN ON A POINTER THAT IS
-  *WRONG*.** `wt133` reports **0 unresolved** on a §7 clause that sends the reader to §3.2 for a
-  number that lives in §3.3, because §3.2 exists. The sweep is not broken — it answers a narrower
-  question than its name suggests, and three sessions read its green line as coverage it never
-  claimed. **When a check goes green over a defect, ask what question it actually asks**, and write
-  the answer next to the green line. Same family as `-98`(ii)'s cheap seam and `-94`'s
-  mention-vs-use.
+## WHAT `-100` DID
+**Paper IV's THIRD independent `P7` read**, nineteen sessions after its second.
+`scripts/wt182_paperIV_p7pass3.py` (**20 post-conditions, 6 NEGATIVE, RC 0**, idempotent) and
+`scripts/wt183_paperIV_promises.py` (**15, 4 NEGATIVE, RC 0**). Six manuscript edits for four
+findings, zero carded. Full document: `docs/REVIEW-035-P7-paperIV-pass3.md`. Ledger row appended.
 
-## TOOLING (▲ new at `-99`)
-- ▲ **`python3 scripts/wt181_paperII_p7pass12.py --verify`** — 9 checks, 3 NEGATIVE, seconds, no
-  toolchain. Importable seams: `section_of(text, needle)` (which `### N.M` subsection actually
-  contains a string — bounded at the next heading of ANY level), `measure_horizons()`,
-  `separation_by_horizon()`. **This is the pattern for every future P7 patch script:** the patching
-  path is a one-shot and cannot go in the claim list, so give it a `--verify` that re-derives the
-  MEASUREMENTS. Without it a pass's central fact is checkable exactly once, on the day it was made.
-- ⚠ **`section_of()`'s first cut was WRONG and it failed closed** — it ended the last `### N.M` at
-  end-of-file, swallowing §4–§7 into "3.4", so it reported the §7 *pointer* as an occurrence of the
-  thing it points at. The repair rolled back untouched and the bug is recorded in the committed
-  docstring rather than quietly fixed. **A locator whose ranges are wrong returns the one answer
-  that cannot falsify anything.**
+**`IV-10` · §5 reports three numbers no named command produces, and the script that prints them is
+named nowhere.** §5's *"zero monotonicity violations across 500 grid points, running from **+249**
+to **−150** with one sign change"*. The test module asserts **only** the monotonicity; §10's own
+list of what it asserts-rather-than-prints names 399 and four and stops. And
+`scripts/wt018_report.py` §E prints `grid points 500 / monotonicity violations 0 / z at grid min /
+max 249 / -150 / sign changes 1`, and §B prints §5's whole table — from a configuration its header
+says is *"identical to `tests/test_excess_demand.py` so the paper, the tests and this script all
+describe one experiment rather than three similar ones."* `grep -c wt018 paper-IV.md` was **0**.
+Repaired twice over: §10 names it, and a new test holds all four numbers.
+
+**`IV-11` · `-99`'s class, on a second manuscript, inside `-81`'s own repair.** §9 item 9 —
+added by `-81` as IV-9's repair — attributes *"largely unmeasured rather than merely unassembled"*
+to **§4.3**. The phrase is in **§1.1**; §4.3 says *"very largely not being measured"*. `wt133` is
+green because §4.3 resolves. Repaired by attribution, no word of §1.1 or §4.3 moved.
+
+**`IV-12` · a census that has now been wrong twice in one section.** §1 and §10 both say the
+paper's uncited numbers come from *"two places"*. §8's *roughly 7,400 words* for the dead fourth
+paper is a third, and it is `-81`'s **own** IV-5 repair that made it checkable. Repaired by CUT —
+both sections drop the count and name the record for each, third included. And `wc -w` returns
+**7 527**, so the manuscript now says *roughly 7,500*.
+
+**`IV-13` · REVIEW-021's IV-8 falsifier, answered.** §8 declares its test applies to **every**
+entry; *"Its first framing: attacking the diagram"* names a cost to the project and no sentence in
+this paper. Steelmanned with the counterfactual §8 asks for. **The finding was incomplete, not
+wrong** — which is exactly what `-81` wrote down as the way to find out.
+
+**THE APPARATUS IS AN ARTEFACT TOO, AND NOW IT IS THE REVIEW DOCUMENTS.** `REVIEW-021` §2 IV-5
+states `paper-I.md` is *"7,367 words"*. The file has been **7 527** since `623a117` on 2026-08-10 —
+before Paper IV existed, and at `c3b1b31`, the commit `-81` read. IV-5's own falsifier is `wc -w`,
+and `wc -w` has never returned 7,367. `docs/promises-adjudicated.tsv` row `cbd18be550` carried the
+right number all along, **so the TSV and the review document disagreed for nineteen sessions and no
+pass compared them.** Repaired by a MARKED correction appended to REVIEW-021 (the historical text is
+not rewritten) and **NOT COUNTED** as a finding, under the `-79`/`II-39` precedent. `-83` showed the
+adjudications are an artefact; this shows the review documents are one, **and nobody has measured
+their error rate either.**
+
+**NO SIXTH MECHANISM WAS PROPOSED.** Residue is **2 of 4** and the story writes itself again — but
+the two residue findings are the two that cost **least**. `IV-10`, the largest, blames to `7ca35c78`
+(`-75`, Paper IV's FIRST independent read) and survived two more reads; `IV-13`'s site is `5efe626`,
+the commit that added the manuscript, and it has survived **all five** reads of it. `-99` declined a
+2-of-3 row; this declines a 2-of-4 one.
+
+**THE FILENAME CONVENTION IS RULED AND TEE-UP 2 IS CLOSED.** `passN` on a paper-IV review filename
+counts **INDEPENDENT reads**, because that is the unit the definition of done counts. Mapping table
+in `REVIEW-035` §0. **No committed file was renamed** — twelve documents cite them by REVIEW number.
+
+---
+## THE TELL, now ONE HUNDRED AND FORTY-THREE deep
+`-61`–`-98` as before, `-99` added two. **`-100` adds four, and two of them are about its own
+instruments rather than the manuscript.**
+- **`-100`(i) LOOK FOR THE ARTEFACT THAT KNOWS ABOUT THE MANUSCRIPT.** `wt018_report.py`'s own
+  configuration block says it exists so that *"the paper, the tests and this script all describe one
+  experiment rather than three similar ones."* It was written to be the paper's table and the paper
+  never learned its name, through five reads. **Grep the repository for the paper's numbers before
+  concluding no command produces them** — the usual failure is not that the artefact is missing, it
+  is that the manuscript does not know it exists.
+- **`-100`(ii) A NEGATIVE CONTROL THAT FAILS IS DOING ITS JOB, AND A CONTROL YOU WERE SURE OF IS NOT
+  A CONTROL.** `IV-10`'s new test first asserted the endpoints follow from `(N−1) − S` and predicted
+  `(299, −100)` at `S = 100`. The module returned `(300, −100)`. The derivation was wrong: the
+  500-point grid is CLOSED, its endpoints are data points, and those are exactly the points the
+  identity test **excludes** as §8's tie convention. What the failure bought is the best CLEARED
+  item in the pass — §5's numbers are right, and their being right is a **measured** fact, now held
+  with the `S = 180` disagreement as its control.
+- **`-100`(iii) STRIP THE MARKUP BEFORE YOU CALL A QUOTATION MISSING.** A verbatim-quotation check
+  against Paper III reported *"emphatically not"* ABSENT from §A.2.2. It is present, as
+  `emphatically **not**`. One false MISS, caught by reading the target instead of trusting the tool.
+  Same family as `-99`'s locator trap: **the pointer was fine and the instrument was wrong.**
+- **`-100`(iv) THE GUARD BIT ITS OWN AUTHOR, IN THE SAME SESSION.** `wt154` flagged a
+  promises-TSV row `-100` had just written — `D1: every read in the evidence is scoped to a
+  different file` — because its evidence grepped the *manuscript* for a claim about a *module*.
+  That is REVIEW-024's lesson (`-84`) working on a row written eighteen sessions later. **Run the
+  discrimination sweeps after you write adjudications, not only after you edit prose.**
+
+## TOOLING (▲ new at `-100`)
+- ▲ **`python3 scripts/wt182_paperIV_p7pass3.py`** — the pass-13 patch of record. Pre-conditions
+  assert the ORIGINAL text before any byte moves; 20 post-conditions, 6 NEGATIVE; **idempotent**, so
+  a successor can re-run it as a check rather than a mutation. One post-condition failed on the
+  first run because its search string spanned a line break — **it failed CLOSED and the paper was
+  not touched.** Copy the shape.
+- ▲ **`python3 scripts/wt183_paperIV_promises.py`** — the re-adjudication pattern, and the thing to
+  steal from it: **the seventh column is DERIVED from `wt148.emit()`, never transcribed.** The first
+  cut wrote six-column rows and `wt156` caught it (`malformed row (6 cols)`). It also writes the
+  `#superseded` ledger lines so `wt170`'s chain walk can follow a re-key.
+- ⚠ **`wt172` is `scripts/wt172_tsv.py`; `wt173` is `scripts/wt173_typography_probe.py`.** Prose in
+  older handoffs implies other names. `ls scripts/ | grep wtNNN` before you invoke.
+- ⚠ **`defensive_count.py` requires a PATH argument.** `python3 scripts/defensive_count.py` alone
+  prints usage and exits **0**, which reads exactly like a pass. Always pass the manuscript, and
+  always pass `--against` the pre-edit backup.
 - ⚠ **`bash scripts/regen-board.sh` IS THE ONLY SUPPORTED BOARD REGENERATION**, never `board.py`,
-  never while anything is building, and **diff it before you commit it.** At `-99` the diff was the
-  thing that made `P13e` going red legible instead of alarming.
+  never while anything is building, and **diff it before you commit it.** At `-100` the diff was
+  empty, which is what a pass that opens no lane should look like.
 - ⚠ A full deliverable build is ~2 min, `verify-layout.sh` ~3, `redproof-layout.sh` ~5–8, and
   **`--claims-all` is ~12–14.** Background them and capture the exit code to a FILE.
 - ▲ darwin is **macOS + zsh**: no `grep -P`, `cut -c` is byte-based. **Nested quotes → write the
-  script LOCALLY, `--put` it, `dx 'python3 /tmp/x.py'`.** See STEP 0 for what `-99` paid for
-  ignoring this once.
+  script LOCALLY, `--put` it, `dx 'python3 /tmp/x.py'`.**
 - ⚠ `reg013_citation_whitespace.py` takes ~5 min and can 429 — never in a critical path.
-  **Tags run to `wt181`; `wt174` is still a gap.**
+  **Tags run to `wt183`; `wt174` is still a gap.**
 
-## TEE-UPS — carded work `-99` found and did NOT do, with enough context to start at its high-water mark
-1. **GENERALISE THE RESOLVING-vs-CORRECT CHECK. Highest value here.** `A3` (`wt133`) reports
-   `0 unresolved` on paper-II while a `§N.M` pointer sends the reader to the wrong section. The
-   checkable rule: **a cross-reference that carries a NUMBER must have that number inside the
-   section it names.** `wt181.section_of()` is a working locator for exactly one number; the general
-   sweep would run over all four manuscripts and is a natural `wt182`. It needs a NEGATIVE control
-   (a pointer known-correct must stay silent) and it must not fire on a number that legitimately
-   appears in two sections. **This is a new axis (A7) and would make its row `new`** — which is
-   fine, as long as the row says so.
-2. **PAPER-IV'S REVIEW FILENAMES CARRY TWO INCOMPATIBLE CONVENTIONS, and one of them is wrong.**
-   `REVIEW-015-P7-paperIV-pass3.md` is titled *"Paper IV's independent P7 read"*;
-   `REVIEW-021-P7-paperIV-pass2.md`, written SIX SESSIONS LATER, is titled *"Paper IV's SECOND
-   independent P7 read"*. So `pass3` counts project-wide passes and `pass2` counts per-manuscript
-   independent reads — and paper-II's files (`pass8`…`pass12`) use a third. **Pick one, say which
-   in the new file, and do NOT rename the committed files** — twelve documents cite them by name and
-   a rename breaks every pointer. Record the mapping instead.
-3. **BOUCHAUD & MÉZARD'S TWO VERBATIM QUOTATIONS IN PAPER II §3.1, STILL NOT READ AGAINST SOURCE.**
-   Flagged at `-74`, again at `-77`, again at `-99`. **THREE PASSES DEFERRED.** It is now the oldest
-   unrun named check on paper-II, and `-99`'s lesson is exactly what those turn out to be worth.
-   `REFERENCE-POLICY` §4 governs it; the entry names arXiv `cond-mat/0002374` as the text consulted.
-4. **THE GENERAL FORM OF `II-34`, still a question rather than a finding.** 16 of the 18 tests reach
-   the model through `econ()` at *T* = 600 while every reported figure is at *T* = 1200, and §7 calls
-   those 18 *"the ones that hold this paper's claims in place."* `II-42` **strengthens** the lead:
-   the top decile moves up to 0.17 between horizons. `-99` checked that **no current assertion
-   breaks** — the three `top_share(res) > 0.95` lines are one-sided on the condensed side, which
-   only strengthens with *T* — so it stays a question. Someone should answer it.
-5. **`A6`, the docstring axis — PARKED, NOT SPENT.** Nineteen unasserted prose claims in
-   `tests/test_redistribution.py`, and `test_periodicity_is_second_order_at_a_matched_average_rate`'s
-   *"Verified horizon-stable at T = 600 and T = 1200"* is one of them — **the same words as `II-42`,
-   in the apparatus rather than the manuscript.** Highest-value docstring of the nineteen.
-6. **The nine uncited reference entries** (`wt133` sweep 2, card `1217568192511533`) and **the zakat
-   citation gap** (flagged by the paper's own closing note, fourth pass running). Both untouched.
+## TEE-UPS — carded work `-100` found and did NOT do, with enough context to start at its high-water mark
+1. **GENERALISE THE RESOLVING-vs-CORRECT CHECK INTO A SCRIPT. Still the highest value here, and now
+   two manuscripts deep.** `-99` found it on paper-II (II-40), `-100` found it on paper-IV (IV-11)
+   **by hand**. The checkable rules are now two, not one: *a cross-reference that carries a NUMBER
+   must have that number inside the section it names*, and *a QUOTED PHRASE attributed to a section
+   must appear in that section, with markdown emphasis stripped*. `wt181.section_of()` is a working
+   locator. Needs a NEGATIVE control, must not fire on a number that legitimately appears twice, and
+   **must bound subsection ranges at the next heading of ANY level** (`-99`'s trap) **and normalise
+   `**` and `*` before comparing** (`-100`'s). A natural `wt184`. It would make its row `new`.
+2. **§9 ITEM 9's CENSUS, "Three others are not measured", MAY UNDERCOUNT.** §7 makes a
+   within-literature absence claim about the THIRD literature too — stock-flow consistency's
+   *"stocks are financial"* and *"a physical stock degrades on a schedule the financial accounting
+   does not record"* — in different words from the two the limitation quotes. `IV-4`'s shape a third
+   time if it counts. `-100` did NOT count it because it is not checkable in under a minute, which
+   is this project's own bar. **Rule on it or build the check; do not just re-notice it.**
+3. **§7's PIKETTY RELOCATION RECORDS NO CONSTRAINT AND NO LAPSE**, which is the standard §7 states
+   two paragraphs later and the exact reason `-81` cut the Austrian clause (`IV-6`). It survives in
+   the paragraph `IV-6` edited. Same reason as (2): it turns on whether *"a different layer"* is
+   *"a differently constrained case"*, which is taste rather than a check.
+4. **BOUCHAUD & MÉZARD'S TWO VERBATIM QUOTATIONS IN PAPER II §3.1, STILL NOT READ AGAINST SOURCE.**
+   Flagged at `-74`, `-77`, `-99` and now `-100`. **FOUR PASSES DEFERRED.** `-99`'s II-42 is what a
+   four-pass-old named check turns out to be worth. **`-100` adds a cheap first step:** the
+   quotation checker is already written down in tee-up 1, and running it on those two quotations is
+   minutes, not a session.
+5. **THE GENERAL FORM OF II-34** — 16 of 18 tests run at *T* = 600 while every reported figure is
+   *T* = 1200 — unchanged from `-99`. Still a question, not a defect.
+6. **`A6`, THE DOCSTRING AXIS — PARKED, NOT SPENT.** Nineteen unasserted prose claims in
+   `tests/`. Unchanged.
+7. **NINE UNCITED REFERENCE ENTRIES ON PAPER II** (card `1217568192511533`) and the zakat citation
+   gap — fifth pass carrying it. Paper IV is at **28 of 28 cited**; paper-II is at **7 of 16**.
+   `wt133` prints the nine names on every run.
+8. **`wt133` SWEEP-3 IS STILL UNBUILT.** A body proper noun with no reference entry is invisible to
+   both sweeps — named after `IV-6` at `-81`, unbuilt through two more passes. It is the other half
+   of tee-up 1's gap.
 
 ## ESTATE
 **OPEN:** `1217654200494124` — propagate the claims leg to the global `HANDOFF-GATE.md` as `G-AM`
-(filed by `-96`; it is a global-artefact change and deserves its own at-bat, not a ride-along).
+(filed by `-96`; a global-artefact change deserving its own at-bat, not a ride-along).
 **Carried:** `1217630566080626`, `1217629264134185`, `1217603625863293` (two instances),
 `1217613775009402`, `1217568297674954`, `1217568192511533`, `1217596263441666`,
 `1217596233063153`, `1217561667484767`, `1217593142996092`, `1217633320596131`,
 `1217633269591608`, `1217629169253037` (partially closed — Paper I's four bare pointers stand),
 `1217660747249042` (`bb-writers-audit`, repaired at `claude-blackbook` by `-98`).
-⚠ `-99` filed **no** new card: everything it found either landed a repair or is in TEE-UPS above,
+⚠ `-100` filed **no** new card: everything it found either landed a repair or is in TEE-UPS above,
 with enough context that the next session starts at this session's high-water mark.
 
-## JASON-SIZED, not `-100`'s
+## JASON-SIZED, not `-101`'s
 (a) **The two-independent-readers design** — the only experiment that separates *"the paper has n
-defects left"* from *"a reviewer finds n"*, and the first proposal in twelve rows that is not a
-story a single pass told about itself. It costs two sessions to buy one data point. `-99` came out
-of paper-II with the counter at 3 and a 2-of-3 residue row, which is the cleanest setup this has
-ever had — **and it is still not a session's to spend.**
-(b) The version stamp — **EIGHTEEN passes have declined to move it.**
+defects left"* from *"a reviewer finds n"*. It costs two sessions to buy one data point. Three
+manuscripts have now been read within two sessions of each other (`-99` paper-II, `-100` paper-IV,
+and `-101` will do paper-III), **which is the closest this project has ever been to being able to
+run it cheaply** — a fourth session could re-read any one of the three at matched coverage inside
+the same window. Still not a session's to spend.
+(b) The version stamp — **NINETEEN passes have declined to move it.** All three manuscripts are now
+in that state and it has been a corpus-level decision since `-81`.
 (c) `wt077` already prints κ = *r*·E[η⁺]/(1+μ), matching to 0.44 % where Paper II §3.1's form is off
-4–7 % — **changes a stated contribution, unassigned since `-81`.** `-99` re-opened it and closed it
-again as a died-on-contact candidate (REVIEW-034 §3.2: REVIEW-004 already gives the exact form with
-the wage term and REVIEW-011 adjudicated the sentence), **so it is no longer a defect — it is a
-choice about how much of the closed form to put in the manuscript**, and that is a claim about the
-MODEL that wants its own at-bat with a coach's repair attached.
+4–7 % — a choice about how much of the closed form to put in the manuscript, wanting its own at-bat.
 (d) DECISION-001 closed, ROADS-001 unchanged. (e) The PAN history purge.
-**(f) P7 IS A HUMAN GATE FOR THE VERDICT, NOT FOR THE WORK.** Sessions `-71` through `-99` ran
-fourteen `P7` passes and wrote their REVIEW documents; what stays Jason's is **declaring
+**(f) P7 IS A HUMAN GATE FOR THE VERDICT, NOT FOR THE WORK.** Sessions `-71` through `-100` ran
+fifteen `P7` passes and wrote their REVIEW documents; what stays Jason's is **declaring
 convergence**. Reading the row as *"no session may touch it"* is how it went twenty sessions
 untouched. **Run the pass. Do not score it.**
+(g) **AND THE ONE JASON HAS BEEN WAITING A HUNDRED SESSIONS FOR, SAID PLAINLY: THIS PASS WAS NOT A
+ZERO.** Four findings on a manuscript nineteen sessions cold, all four repaired, and the honest
+read of the ledger is that no manuscript is close to a zero yet. The counter has run 9, 2, 4, 3, 4,
+5, 3, 2, 2, 9, 9, 4, 3, 4 across fourteen passes and has never once reached zero.
 
 ---
 ## WHICH OPEN LANE THIS WAS (the gate's CONTOUR question, answered)
-**`P7`, and for the first time in five sessions that is not a dodge.** `docs/CHECKLIST.md` has had
-no OPEN lane since `-95` closed `P13f`, and every remaining row is a human gate — but `P7`'s row is
-a gate on the **verdict**, and its **work** is a session's. `-99` ran the work and did not score it:
-`P7` is untouched at PENDING-HUMAN, and `docs/p7-passes.tsv` carries the twelfth row with the
+**`P7`, and for the second session running that is not a dodge.** `docs/CHECKLIST.md` has had no
+OPEN lane since `-95` closed `P13f`, and every remaining row is a human gate — but `P7`'s row is a
+gate on the **verdict**, and its **work** is a session's. `-100` ran the work and did not score it:
+`P7` is untouched at PENDING-HUMAN, and `docs/p7-passes.tsv` carries the thirteenth row with the
 consecutive-zero count stated at **0**.
 **`P13e` reopened and re-closed inside the session** — the only board movement, and it was caused
-by the at-bat rather than by drift.
+by the at-bat rather than by drift. The board regenerated **byte-identical**.
 A successor should keep asking the question; `test_board_is_not_degraded.py` and `charter-read.sh`
 are what would tell you a lane reopened. Regenerate with `bash scripts/regen-board.sh`, never
 `board.py`.
 
-**The judgement still not settled, now for the fourth handoff running:** `P9` is the single handoff
+**The judgement still not settled, now for the fifth handoff running:** `P9` is the single handoff
 into `P8`, and its own criterion says declaring readiness is the session's job. `-95` did not
 declare it because `P7`'s convergence counters are unmet and `P9`'s criterion names convergence
-explicitly. `-96`, `-97`, `-98` and `-99` did not revisit it. **The counters are still unmet — all
-three papers sit at zero consecutive zero-finding passes — so the reason still holds.** But
-re-examine it deliberately rather than inheriting it: four sessions of not-revisiting is how an
-unexamined judgement becomes a fact.
+explicitly. `-96` through `-100` did not revisit it. **The counters are still unmet — all three
+papers sit at zero consecutive zero-finding passes — so the reason still holds.** But re-examine it
+deliberately rather than inheriting it: five sessions of not-revisiting is how an unexamined
+judgement becomes a fact.

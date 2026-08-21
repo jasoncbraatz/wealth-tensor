@@ -132,6 +132,7 @@ def main():
     if bad:
         print(r.stdout[-2500:])
         sys.exit(2)
+    print(f"wt183 · post-conditions: {len(checks)} checks, 4 NEGATIVE")
     print("wt183: RC 0")
 
 
