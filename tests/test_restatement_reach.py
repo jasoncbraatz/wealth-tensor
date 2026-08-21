@@ -115,8 +115,10 @@ REACH = {
     "0.327":  {"4.4": 2, "5.4": 1, "7": 1},
     "0.499":  {"5.4": 1, "7": 1},
     "1.210":  {"4.9": 1, "5.4": 1, "7": 1},
-    "1.135":  {"4.10": 1, "4.9": 2, "5.4": 1, "7": 1},
-    "1.285":  {"4.10": 1, "4.9": 2, "5.4": 1, "7": 1},
+    "1.135":  {"4.10": 3, "4.9": 2, "5.4": 1, "7": 1},  # 4.10 was 1 until wealthTensor-101: wt185 III-5 replaced two bare
+                                             # "§5.4's 0.150" attributions with the interval that width belongs to.
+    "1.285":  {"4.10": 3, "4.9": 2, "5.4": 1, "7": 1},  # 4.10 was 1 until wealthTensor-101: wt185 III-5 replaced two bare
+                                             # "§5.4's 0.150" attributions with the interval that width belongs to.
     # the off-diagonal headline: §5.4 reports it, §7 restates it, §9 leans on it
     "4.12":   {"5.4": 1, "7": 1, "9": 1},
     "2.02":   {"5.4": 1, "7": 1, "9": 1},

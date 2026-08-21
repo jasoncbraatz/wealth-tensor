@@ -1049,7 +1049,7 @@ worlds are the same series.
 The same statement made from the other side is the set of shapes a series of given precision cannot
 separate from the measured one, fitting the remaining three parameters freely at each shape:
 
-| precision of the reported series | shapes it cannot separate from k̂ = 1.21 | width | against §5.4's 0.150 |
+| precision of the reported series | shapes it cannot separate from k̂ = 1.21 | width | against the 0.150 width of §5.4's [1.135, 1.285] |
 |---|---|---|---|
 | 10⁻⁶ per quarter | 1.21 alone | 0.00 | — |
 | **10⁻⁴** | **[1.16, 1.26]** | **0.100** | **0.67 ×** |
@@ -1062,12 +1062,14 @@ unchanged. The search's own floor at the true shape is 2.7 × 10⁻⁸, thirty-s
 finest tolerance reported, so the top row measures the model and not the optimiser.)*
 
 **At one part in ten thousand the reported series is a better instrument for the shape than the event
-dates are** — an interval of 0.100 against §5.4's 0.150 from hand-collected impairment lags. At one
+dates are** — an interval of 0.100 against the 0.150 width of §5.4's [1.135, 1.285], from
+hand-collected impairment lags. At one
 part in a thousand it is an order of magnitude worse. The identification is real and it is
 expensive.
 
 **And what lies inside the interval matters more than how wide it is.** At one part in a thousand the
-set reaches **k = 0.50**, below one, a *decreasing* hazard — and §4.9's tail condition says a
+registered sweep's set reaches **k = 0.60**, below one, a *decreasing* hazard — and §4.9's
+tail condition says a
 decreasing-hazard lag admits no steady-state deferral measure at any positive decay rate, because its
 generating function diverges inside the disc the transform is evaluated on. A series matched to a
 tenth of a per cent per quarter **cannot separate the world in which this model is well-posed from
@@ -1979,6 +1981,13 @@ public data.
   and this bullet said "three tables" of a command that printed four.
   §2 states the model and reports no simulation result.
 - **Regenerate §A.2.3:** `python3 scripts/wt002_lambda_report.py`
+- **Regenerate §4.10:** `python3 scripts/wt091_lag_shape_identifiability.py` — ladders I, P,
+  W, S and N exactly as registered in
+  `docs/preregistration/REG-005-p3-lag-shape-identifiability.md`, committed at **6f0e7be**
+  before that script existed. It prints §4.10's precision table, the identified set at every
+  reported precision, the search's own floor at the fitted shape, and the profile at the
+  constant hazard. Minutes on a commodity CPU. Until wealthTensor-101 this section named no
+  command for §4.10 and the manuscript named that script only as the bare token `wt091`.
 - **Regenerate §5:**
   `python3 scripts/wt026_severe_test.py --universe pilot --onset peak` and
   `--universe replication --onset peak`. **That command reproduces the instrument and not the
