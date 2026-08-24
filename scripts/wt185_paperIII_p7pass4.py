@@ -121,8 +121,13 @@ def postconditions(text: str):
     for tag, _, _, marker in EDITS:
         a(("exactly-once: %s's marker appears once, not twice" % tag,
            text.count(marker) == 1, True))
-    a(("§11 carries exactly five Regenerate bullets (four before this pass), not six",
-       text.count("- **Regenerate ") == 5, True))
+    # A GLOBAL COUNT IS A LOOSE PROXY FOR DOUBLE-APPLICATION and churns on honest growth:
+    # wealthTensor-104 added four Regenerate bullets to §11 repairing SHIP-LIST SL-7, and
+    # this check went red on a manuscript that had gained provenance, not lost integrity.
+    # Distinctness is the tighter subject -- it forbids a duplicated bullet from ANY pass.
+    _bullets = [l for l in text.split("\n") if l.startswith("- **Regenerate ")]
+    a(("§11's Regenerate bullets are all distinct — no bullet applied twice",
+       len(_bullets) == len(set(_bullets)), True))
     a(("the manuscript did not shrink", len(text) > 0, False))
     return P
 

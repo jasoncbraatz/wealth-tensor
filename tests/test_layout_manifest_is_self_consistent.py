@@ -2,7 +2,7 @@
 
 WHY THIS EXISTS
 ---------------
-`docs/deliverable/LAYOUT-MANIFEST.json` carries P13e's entire claim -- 145 pages, their
+`docs/deliverable/LAYOUT-MANIFEST.json` carries P13e's entire claim -- 147 pages, their
 hashes, the fonts, the manuscripts, the commit the capture came from. Until this file, the
 only three things that could notice a hand-edit were `verify-layout.sh`,
 `redproof-layout.sh` and `wt173 --verify`, and ALL THREE need lualatex, pandoc and a clean
@@ -77,7 +77,7 @@ def test_it_needs_no_toolchain_and_is_cheap_enough_to_always_run() -> None:
     assert report["checks_run"] == len(G.CHECKS) == 10, (
         "the number of checks moved. That is allowed -- but the handoff registers this "
         "count, so move the claim in the same commit.")
-    assert (report["pages"], report["fonts"], report["manuscripts"]) == (145, 16, 4)
+    assert (report["pages"], report["fonts"], report["manuscripts"]) == (147, 16, 4)
 
 
 def test_every_declared_failure_has_been_seen_red() -> None:
