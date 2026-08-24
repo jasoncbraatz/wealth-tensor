@@ -28,8 +28,8 @@ therefore not separately identified, and where the asset's physical scale is uno
 firm-level series) the identified set is a continuum, a factor of **1.67** in that scale spanning
 the whole unit interval.
 
-The corollary is cross-sectional: **classes are ordered by (1 − φ) ⊙ δ ⊘ (α − δ) — both operators
-elementwise across classes — not by φ**.
+The corollary is cross-sectional: **classes are ordered by (1 − φ) ⊙ δ ⊘ (α − δ), elementwise,
+not by φ**.
 Across the four GAAP classes, δ leverage is **4.2** times the level at which recovery fails, and
 the composite **inverts** the intended ranking, Kendall τ = −1 at the calibrated rate; drawing δ
 independently, the ordering survives in **11.5%** of 4,000 ladders. This constrains cross-sectional
