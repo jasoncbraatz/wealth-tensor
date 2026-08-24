@@ -45,7 +45,7 @@ SUPERSEDES = [
 ROWS = [
  ("paper-II", "5524790d1f", "python3 scripts/wt030_report.py", "H",
   "python3 -c \"import subprocess;o=subprocess.check_output(['python3','scripts/wt030_report.py'],text=True);print('prints the section 3 values the clause says it prints:',{n:(n in o) for n in ('0.443','0.222','0.812','0.596','0.125','0.994','0.486','0.451','0.469','0.770','0.891','0.861','0.100','0.336','0.193','0.734','0.481','0.138','0.395','0.444')});print('does NOT print the six exceptions:',{n:(n in o) for n in ('0.99875','0.035','0.103','0.039','0.000006')});print('prints the 0.90 criterion:', '0.90 ' in o or '0.9000' in o)\"",
-  "prints all twenty section 3 values True, all five greppable exceptions False, and 'prints the 0.90 criterion: False'. The clause's positive half holds and its negative half holds in the repaired SIX-item form: 0.99875, 0.90, 0.035, 0.103 and 0.039 are absent, and so is 0.000006 -- the sixth, which is II-43. Superseding fbd08a63f6, whose sentence gained that item.",
+  "prints \"prints the section 3 values the clause says it prints: {'0.443': True, '0.222': True, '0.812': True, '0.596': True, '0.125': True, '0.994': True, '0.486': True, '0.451': True, '0.469': True, '0.770': True, '0.891': True, '0.861': True, '0.100': True, '0.336': True, '0.193': True, '0.734': True, '0.481': True, '0.138': True, '0.395': True, '0.444': True}\" and \"does NOT print the six exceptions: {'0.99875': False, '0.035': False, '0.103': False, '0.039': False, '0.000006': False}\" and 'prints the 0.90 criterion: False'. The clause's positive half holds and its negative half holds in the repaired SIX-item form -- 0.000006 is the sixth, which is II-43. Superseding fbd08a63f6, whose sentence gained that item.",
   ),
  ("paper-II", "9893969707", "python3 scripts/wt077_tail_index.py", "H",
   "python3 -c \"import subprocess;o=subprocess.check_output(['python3','scripts/wt077_tail_index.py'],text=True).split(chr(10));print([l.strip() for l in o if 'closed form' in l]);print([l.strip() for l in o if 'Var[log a] =' in l])\"",
@@ -84,10 +84,16 @@ def main():
     sup_lines = ["#superseded\t%s\t%s\t%s\t%s" % (o, n, who, note)
                  for _lbl, o, n, who, note in SUPERSEDES]
     new_rows = ["\t".join(list(r) + [sentence_for(r[1])]) for r in ROWS]
-
     # IDEMPOTENT AND STILL AUDIBLE (-101's rule): the already-applied path re-derives every
     # row, verifies it against the file on disk, and prints the SAME summary line, so a
     # count_re can hold this script to a number on the second run as well as the first.
+    # A ROW THAT EXISTS WITH A DIFFERENT BODY MUST BE REWRITTEN, NOT LEFT ALONE.
+    # wt172 --verify holds every paper-II row's note to the VERBATIM stdout of its own evidence
+    # cell, and it caught this row's first note paraphrasing instead of quoting. An
+    # already-present check keyed on the promise_id alone would have made that unfixable by
+    # re-running the script, so `already` means present AND byte-identical.
+    by_pid = {l.split("\t")[1]: l for l in lines if l.startswith("paper-")}
+    already = already and all(by_pid.get(r[1]) == row for r, row in zip(ROWS, new_rows))
     if already:
         text = original
         print("wt189: all %d rows already present - verifying, not rewriting." % len(ROWS))
@@ -96,8 +102,9 @@ def main():
             lines.pop()
         # supersede lines go beside the ones already there, rows at the end
         idx = max(i for i, l in enumerate(lines) if l.startswith("#superseded\t"))
+        _mine = {r[1] for r in ROWS}
         kept = [l for l in lines
-                if not (l.startswith("paper-") and l.split("\t")[1] in RETIRED)]
+                if not (l.startswith("paper-") and l.split("\t")[1] in (RETIRED | _mine))]
         idx = max(i for i, l in enumerate(kept) if l.startswith("#superseded\t"))
         merged = kept[:idx + 1] + sup_lines + kept[idx + 1:] + new_rows
         text = "\n".join(merged) + "\n"
@@ -127,9 +134,18 @@ def main():
     checks.append(("Q10 promise_ids are unique across the whole file",
                    len({l.split("\t")[1] for l in text.split("\n") if l.startswith("paper-")}) ==
                    len([l for l in text.split("\n") if l.startswith("paper-")]), True))
-    checks.append(("Q11 net +1 live row: four added, three retired",
-                   len(live) == len([l for l in original.split("\n") if l.startswith("paper-")])
-                   + (0 if already else 1), True))
+    # Q11 ASSUMED THIS SCRIPT ONLY EVER APPENDS. It does not: since wt172 caught a paraphrased
+    # note, the write path also REWRITES a row of its own that is present with a different body,
+    # and on that path the net change is 0, not +1. Derived from the actual before-state instead
+    # of a hard-coded delta -- the same narrowing wt183's Q10 needed for the same reason.
+    _orig_live = [l for l in original.split("\n") if l.startswith("paper-")]
+    _orig_pids = {l.split("\t")[1] for l in _orig_live}
+    _expected = (len(_orig_live)
+                 - len(RETIRED & _orig_pids)
+                 - len({r[1] for r in ROWS} & _orig_pids)
+                 + len(ROWS))
+    checks.append(("Q11 live-row count is what the row set implies (%d)" % _expected,
+                   len(live) == _expected, True))
     checks.append(("Q12 no row carries an empty cell",
                    all("\t\t" not in l for l in new_rows), True))
     checks.append(("Q13 the scope line is untouched",

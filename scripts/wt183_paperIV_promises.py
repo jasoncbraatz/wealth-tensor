@@ -113,7 +113,19 @@ def main():
     checks = [("Q%02d row %s present" % (i + 1, r[1]), ("\t" + r[1] + "\t") in t) for i, r in enumerate(ROWS)]
     checks += [("Q09 NEGATIVE: no retired pid survives as a row",
                 not any(("\t" + o + "\t") in t.split("#superseded")[0] for o in RETIRED))]
-    checks += [("Q10 six #superseded lines", t.count("#superseded\t") == 6 + 5)]  # 5 pre-existing
+    # Q10 WAS A WHOLE-FILE CONSTANT AND IT WENT RED ON SOMEBODY ELSE'S CORRECT EDIT.
+    # It read `t.count("#superseded\t") == 6 + 5`, hard-coding "5 pre-existing" -- so the FIRST
+    # later session to retire a row legitimately turned this guard red for a reason that has
+    # nothing to do with wt183. wealthTensor-102's wt189 retired three paper-II rows and took the
+    # total to 14. The guard was RIGHT that something moved and WRONG about whose job it was.
+    # Narrowed to the six lines wt183 is actually responsible for, each named, plus a one-sided
+    # floor so the count can still only ever be too LOW. (wt187 pattern: derive, do not re-key.)
+    _sup = [l for l in t.split("\n") if l.startswith("#superseded\t")]
+    checks += [("Q10 each of wt183's own six #superseded lines is present exactly once",
+                all(len([l for l in _sup if l.split("\t")[1] == o and l.split("\t")[2] == new]) == 1
+                    for o, (new, _why) in RETIRED.items()))]
+    checks += [("Q10b NEGATIVE: the file carries at least wt183's six plus the five it inherited",
+                len(_sup) >= 6 + 5)]
     checks += [("Q11 NEGATIVE: no duplicate promise_id",
                 len({l.split("\t")[1] for l in t.split("\n") if l.startswith("paper-")}) ==
                 len([l for l in t.split("\n") if l.startswith("paper-")]))]

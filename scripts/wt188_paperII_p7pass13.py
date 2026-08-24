@@ -155,12 +155,25 @@ chk("wt184 RULE 1 body contains no possessive/apostrophe logic",
     "'s" not in rule1 and '’' not in rule1 and 'possess' not in rule1.lower())
 chk("wt184 contains no possessive logic ANYWHERE outside quote normalisation",
     src.count("possess") == 0)
-# the tee-up that says otherwise, in all three places it is written
+# THE TEE-UP THAT SAYS OTHERWISE, COUNTED AT THE PARENT COMMIT AND NOT ON DISK.
+# The first cut counted the phrase in the WORKING TREE, which is a state this very session
+# then moved: REVIEW-037 and the new HANDOFF quote the wrong claim in order to correct it, so
+# the count went 3 -> 7 and the check went red on its own write-up. Exactly the E4 defect in a
+# second costume: AN ASSERTION ABOUT A PRE-EXISTING DOCUMENT STATE MUST BE ANCHORED TO
+# SOMETHING THIS SESSION CANNOT MOVE. `73e1966` is wealthTensor-101's own stamped commit.
+PARENT = '73e1966'
 tee = 0
 for f in ('docs/REVIEW-036-P7-paperIII-pass4.md', 'docs/HANDOFF.md'):
-    tee += (REPO / f).read_text().count('possessive form')
-chk("the claim 'the possessive form Rule 1 already uses' is written 3 times (%d)" % tee,
-    tee == 3)
+    rc, out, _ = sh('git show %s:%s' % (PARENT, f))
+    if rc != 0:
+        FAILED.append('cannot read %s at %s' % (f, PARENT))
+        continue
+    tee += out.count('possessive form')
+chk("at %s the claim 'the possessive form Rule 1 already uses' is written 3 times (%d)"
+    % (PARENT, tee), tee == 3)
+chk("and it is written MORE times in the working tree now, because this pass quotes it to correct it",
+    sum((REPO / f).read_text().count('possessive form')
+        for f in ('docs/REVIEW-036-P7-paperIII-pass4.md', 'docs/HANDOFF.md')) > tee, negative=True)
 
 print("== E3 · wt184 mis-buckets an author-attributed foreign pointer ==")
 chk("paper-II: wt184 reports exactly 1 unresolved", st2['unresolved'] == 1)
