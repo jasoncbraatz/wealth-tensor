@@ -1,751 +1,756 @@
 {
   "_": "P13e. Written by wt176_layout_manifest.py --emit. Do not hand-edit: verify-layout.sh rebuilds from source_commit in a clean worktree and holds the PDF to every value below.",
-  "source_commit": "0d8497560ce64752ce704a70613c7be56f425afa",
-  "source_commit_short": "0d8497560ce6",
+  "source_commit": "ce9c53ce973176237569b4ebfa71f0606471e447",
+  "source_commit_short": "ce9c53ce9731",
   "commit_date": "2026-08-24",
   "pdf": "wealth-tensor-capture.pdf",
-  "pdf_sha256": "87304669306c329e976d6e7c5d5a029b69a9dd6ad3d1e897767105a7e6bd7aaa",
-  "page_count": 148,
+  "pdf_sha256": "3fe49349923a52e0cb1a2c0adbe749c79f4397808b367d8ef28d1a322e6fed9c",
+  "page_count": 149,
   "pages": [
     {
       "page": 1,
       "chars": 781,
-      "sha256": "f7df1938564480d29a6481430f35a7503abfb3cfbcd6687c7c021b41eee5027c"
+      "sha256": "01a43377f24de4d3a457d44d6c8f89441d9299cacbabeffddd333512833fdbb0"
     },
     {
       "page": 2,
       "chars": 1473,
-      "sha256": "ef0fc00e219400d7b6a485e02155d6f7224a2c63270da557bc11a6bf373bf1d2"
+      "sha256": "f3fc166bdba93483adee60595f02905dc0f01836d55c45ff4595f02988995777"
     },
     {
       "page": 3,
       "chars": 2112,
-      "sha256": "e9908757fdc1ae900c09c558b5efdbe1eb18e83213e05a243764bec6e8e38997"
+      "sha256": "cb846b28b73a601cbe0a497574c41ef638c6c0ec328384baf058288dab55ce17"
     },
     {
       "page": 4,
       "chars": 2520,
-      "sha256": "022645e617ba04328f2bd09eb47545af47f129b1c1fdad3c817faa1976f3d474"
+      "sha256": "faad496f230cbed10589741a2408e5652611b18f2fb56df7a9614277a63c7de9"
     },
     {
       "page": 5,
       "chars": 2535,
-      "sha256": "a6192725fa3418ab85ecca851c5cd0c5a845e744fcb3e6d665b882a923e776e9"
+      "sha256": "39de6ab8a92257ba8245d4b575a1ff28302b405760d970dfd7f57d7aed05782d"
     },
     {
       "page": 6,
       "chars": 2039,
-      "sha256": "20983f11b3092655989b6e241e85d6eba531618091351c5b5380ae9cc278b62e"
+      "sha256": "06e6239f5d910e22d57377cba5846726852597eca4a5c08badfe87ddc1fd42bc"
     },
     {
       "page": 7,
       "chars": 1843,
-      "sha256": "fad5d54b22cf9b0820b60bc0bfb3636d7ce1542cc5a8dafda01c133d0090b7ec"
+      "sha256": "fea5a18fc723cced93f2a443daca8880c2cd4067640e0eb3facec2862b2485ac"
     },
     {
       "page": 8,
       "chars": 2083,
-      "sha256": "01462048eaee8ec118aea4511fead2b50f01858b3240cb2cb7245a65e8c0eee1"
+      "sha256": "56385ce07d9ddf38d2124286c934adbf4e7f028a4e8771808f7fcbc7389dd743"
     },
     {
       "page": 9,
       "chars": 2144,
-      "sha256": "daa91fc731ad142954b1c89c0579e55c1a60df233a8832f01772c2a0fa0af952"
+      "sha256": "796763e259673447e3f7c1846f86e98b38e48a5148edb242bc611a0195dc62f7"
     },
     {
       "page": 10,
       "chars": 2786,
-      "sha256": "3a95218a41dccbb5bf45d4c38046d78e886745d5dfb2f51d3de95b86b0aaf8a1"
+      "sha256": "9ac1f76833ff6d35cc5e5ad9872bffa94f93b36105816d29ba0473746c3875c1"
     },
     {
       "page": 11,
       "chars": 1887,
-      "sha256": "2cb78f216fdc6ef450fcfa398c0cfb8f46484789d4d001839943091dc1e8f469"
+      "sha256": "8be3c3179453349b4ec1598da1d066d64a4e4f80398203ff61b57de8b431f784"
     },
     {
       "page": 12,
       "chars": 1902,
-      "sha256": "83288638be0a6fc6fc86ed003cfaba882f4f5ca2b5e614f7451e5a2740ccb125"
+      "sha256": "94aa9da2e7748892efb149585676e745524b40758dc7923b989a7f046f471ae5"
     },
     {
       "page": 13,
       "chars": 2377,
-      "sha256": "235db24d917c0de860f3fce6b0120f59e83f68897023cc8a8a4f6d18612d25cb"
+      "sha256": "ddd0a104a9a0e10f2eafaf592eccb0d93b564a18b6c75fc6ce9a03a5887ed134"
     },
     {
       "page": 14,
       "chars": 2510,
-      "sha256": "b2018f5b05213ac4eddf1aca5e79c31d77f318800657ccd86ea4e1939558c3d7"
+      "sha256": "d2789cde3e02de0614deaf2deeae7d884a2fa4cb7cec5e76475a0f99a4748222"
     },
     {
       "page": 15,
       "chars": 2418,
-      "sha256": "14029deeeca5e3fc4c3926b3054cebb1e39ef3141bb22595edd29bb7409e9841"
+      "sha256": "909af9dcc9100e604041da95a3d237c4e0bb30d5e7207db07259595ebbcd32ba"
     },
     {
       "page": 16,
       "chars": 2491,
-      "sha256": "8ce727727da8d2c34993fb9876324753c125b9f5bb77e27f5efa8dcadbab68bd"
+      "sha256": "8aaba9c2d42449cf1db0e8df9b8c20f51fafe9db7eaa845fcf94f1f75733b419"
     },
     {
       "page": 17,
       "chars": 2307,
-      "sha256": "ee9886f540fe9ea9383e9ad8c08127785039e69f33ba6a148c5f78adca91f4fe"
+      "sha256": "c410da54d1d3e8468426ae4d21b6916a713d81c85a5db4ef4883f5dc92bc5135"
     },
     {
       "page": 18,
       "chars": 2383,
-      "sha256": "91e6eaf2318ff7ab7a0bc71818710f5c9ca274bd08ba5f1ac80b72ae70b6654f"
+      "sha256": "3cc1aed2efa52ee3b0a38783baaebeff8300e4ea5e0a25984df47ad1b4842a66"
     },
     {
       "page": 19,
       "chars": 2764,
-      "sha256": "0fb409e989b595dbaf30f14511ce1e45f10024282bf85edc11e1316d6b4b90f1"
+      "sha256": "3f906001432648b91a31666c40ca29b1d3744c119e0db27884e29513ee586164"
     },
     {
       "page": 20,
       "chars": 2447,
-      "sha256": "edad8a6901a867ebcc1afbebe973a0fb2808863dec065e9f04e5571490241bd1"
+      "sha256": "35e157e86f6787ea5006c713d926b5b56321b157c935e56a4dbb1d34ca2213f8"
     },
     {
       "page": 21,
       "chars": 2349,
-      "sha256": "be35dd420ace2bd05a3eecd178f2d28b88fc7e93d5a0ccc53a27880971bc00b4"
+      "sha256": "c29a0673e9c11aad8c8ceef2af2c7b9816e2b3fdad001a01b68747a90ba63cbf"
     },
     {
       "page": 22,
       "chars": 686,
-      "sha256": "2232471d6699411648b34388323660b2dc6f2ef42625f25a85440114e2aa42ae"
+      "sha256": "771b962a40cc8ab66f9ee820e510844672869ee23353759ef7c165a3050e0b6b"
     },
     {
       "page": 23,
       "chars": 2021,
-      "sha256": "a148bb6392025cd97e130ef1ed3972b297d6f66ce73f184a6d49019871045ee8"
+      "sha256": "98afc772e85cb2b1c05661d398e5150089ef8470eca2dffea9b026aad2f028cd"
     },
     {
       "page": 24,
       "chars": 2524,
-      "sha256": "441075aaa5fce6831fec8788481c3df35e67a77eb5e4051c6eb0cbca0cf9f37b"
+      "sha256": "32fe7baf1b2bb1cf1b6eab93e63d9c93849f56a870486ddf88acaa1166bfb99b"
     },
     {
       "page": 25,
-      "chars": 2480,
-      "sha256": "a4e4ed6c331b977edf28b65702b644f31fbe35e35411d7412327b0c1c04b85f8"
+      "chars": 2479,
+      "sha256": "34051cc180f5bd19509eab2aa72aa5fa6469509b032b7aad28e2473f9fa79d43"
     },
     {
       "page": 26,
       "chars": 1633,
-      "sha256": "5ffe185567b9c8575b025233d43c71ba927ab3d96f95eaab97fe2b28b8e8d01e"
+      "sha256": "6fdb61fac1195e45bf74a874e48c6358fbcce1c23a497e482e20078046cec3ad"
     },
     {
       "page": 27,
       "chars": 2114,
-      "sha256": "13fd0c155b4ace76f6f6ea6e903b2c78530d5f11cc3a61d030816519fe442cec"
+      "sha256": "137410684d91fb8bfe8d479ed1f4a41c526723533bde8abf8af94f5fd319e61a"
     },
     {
       "page": 28,
       "chars": 2457,
-      "sha256": "9e720d6d3026838032bec356fddd18b88d6cfc8072e56d434e8684f2daa7d517"
+      "sha256": "0efdb07134b206b512c8f084b47e7e056f0c57ba2c595d1fa4259c606f6a89f6"
     },
     {
       "page": 29,
       "chars": 2727,
-      "sha256": "73b8c113824afbc16848b6156b0e8fd18f17cbea6ac22e4257e585df745aff8f"
+      "sha256": "2c245d0758308ebe6bcbb60ca9b537da9088c74c62f3731881da5267cb8abdb1"
     },
     {
       "page": 30,
       "chars": 2470,
-      "sha256": "8e1c59f63816165b1dc7aa531f7c3dcb2911997b8f65b76ae1b808ef2ad31ed1"
+      "sha256": "de226c9415cd612a44981476d97af1b64923339458f3d4ea56e658ff04e1473c"
     },
     {
       "page": 31,
       "chars": 2648,
-      "sha256": "3548aecd915650110c4ad8a5f50fbd2e075e2fa75cfcb21258d4ea3846d3057f"
+      "sha256": "3c3dff520d167879c2c83a4c0a4d8280d9d6683a1c2bd0f5d760108f172451f3"
     },
     {
       "page": 32,
-      "chars": 2438,
-      "sha256": "62bb1601053d6deb308f62d1665fa5a59454275383304c29b5d564b1b2032e04"
+      "chars": 2462,
+      "sha256": "16fe124029cfc3c8d6f60c574334e4ee3180a0e9fc68e9cbc9ae7a646e4a7794"
     },
     {
       "page": 33,
       "chars": 2309,
-      "sha256": "b17e500a352e9486b2d71435269a8d726850a5b45088d6905f63df39a4987d86"
+      "sha256": "81d0d96c313bfb50b7a9276cb3b784eb0badc8bdf5218215915e0d0feb71bdf1"
     },
     {
       "page": 34,
       "chars": 2460,
-      "sha256": "92fefc6a36fe17195ce3b1e57e287074b073ec1710ce082d9340144d4f9ce0a5"
+      "sha256": "204e3fc80f548f9d0c4161a1ef30452b289f39320256486c6c3c26093ac7d633"
     },
     {
       "page": 35,
       "chars": 2490,
-      "sha256": "b6780e0db9a92e2632c87d78abaac904e144815eef312220adfb8f8e3cde4daa"
+      "sha256": "361151e2de0bc55d335f501d3ab9e36a58a91bb206d74f8e26fd40652cc20432"
     },
     {
       "page": 36,
       "chars": 2515,
-      "sha256": "6eb2eeca077c0fc070f3c0b20bfb71865e19fb8468a75afbff31631520d22b34"
+      "sha256": "f85ceaa85d2e4ba418bb646a84bf6601e2ce16913d780d39ca8941fec8d1d0e8"
     },
     {
       "page": 37,
       "chars": 2428,
-      "sha256": "f8728496b7e82040a55ed7f1ce23ac5f4463e0a00836446efffc6df39733b101"
+      "sha256": "fb261a33abd50b4641660a43a6eba3f2df226984c8520866a121e93fc4468d30"
     },
     {
       "page": 38,
       "chars": 1926,
-      "sha256": "537b29ca267d71bb3b072df1a5fb29aef8b697a9c03376897cf8f138f719d0d6"
+      "sha256": "696889d45969e9ff21a9d0dc0d30fa42b2264739b99ad4ee52c1723b33f97358"
     },
     {
       "page": 39,
-      "chars": 2004,
-      "sha256": "3d7b8d159c2d9469ad6636c683aead086e7a7856b0ca838df94ee1d55a42d4e3"
+      "chars": 2000,
+      "sha256": "67f00d1b132a2c498bda20c87cea2dc97d3126576ca5615d568b6d10851c26d1"
     },
     {
       "page": 40,
-      "chars": 2354,
-      "sha256": "e69815029068139f115ebc90cdd8243504a774210db731eba83eaae0b1a89be8"
+      "chars": 2367,
+      "sha256": "270a50e2418dd9be167a98fd117df10a9424c26575274ebe5e525d5836ac289a"
     },
     {
       "page": 41,
-      "chars": 2688,
-      "sha256": "3b6af41d90745afc7d6fdf76321ef8ea3607553fbd49786518561840f7f82836"
+      "chars": 2710,
+      "sha256": "21bcdc0a5ed1de10928fd16ed6233e8afbd4f20452944a44f8f22724f676d3c9"
     },
     {
       "page": 42,
-      "chars": 2452,
-      "sha256": "8161043d172fad24560a23908507fa558f8737d2b90b11e5d680c2e313c63254"
+      "chars": 2477,
+      "sha256": "9bef4116651c7c2d3b9278992bebd1581a1d165e7098e1962c4d8fa7781f1547"
     },
     {
       "page": 43,
-      "chars": 2274,
-      "sha256": "1cdf5109b7cbacd883457dd35490b6ee5d32334381a1806046604d72497797f5"
+      "chars": 2221,
+      "sha256": "8f602ed1ba8f239a7609cc5e968fbed9f2285ae014c2fa5181111bbcc7df36a1"
     },
     {
       "page": 44,
-      "chars": 2311,
-      "sha256": "618d0bc25d421d3e022553fa483098ef9a4d94d1fcb2b003c36294dcceaa1010"
+      "chars": 2388,
+      "sha256": "3a67e1da84aaddfe87181a737347fc649fa66360cb6363056e95c02cf578a6e4"
     },
     {
       "page": 45,
       "chars": 1921,
-      "sha256": "78ea341ef5dac23da1cbdf3a365ef0366e5843feb1632158b46dc5ea010e5395"
+      "sha256": "97f7d515fcecc3433dfdfadd5e717570a40f9accf5f6d2da6bcc190a3ba5a0a3"
     },
     {
       "page": 46,
       "chars": 2187,
-      "sha256": "500181601b817a8d06b4b34d1db4eb558fd496677156bb1e2030a9ce62b7d9b1"
+      "sha256": "489995f45b778cf3e68a27bcd50291a6c17d1aabba428762534299c8e2d086f1"
     },
     {
       "page": 47,
       "chars": 2139,
-      "sha256": "d010c3c709a85250c90e692445976ac50f594546dc98a4576247675284870c62"
+      "sha256": "e0d191f2ddddc39042585990a43d7eb4cc233e5645a147ab58922e6b03a101a5"
     },
     {
       "page": 48,
       "chars": 2146,
-      "sha256": "0f17aa3df2e4e1a44ad37ee167847767b378b69ecc404ad20621327eb7d616a0"
+      "sha256": "c8529ead17d895ead8ff386ee5944409e1cd78288ff7daad50d40f9f0ecdc369"
     },
     {
       "page": 49,
       "chars": 2499,
-      "sha256": "8882574be7cbadb888e59d8c054c4d23e8f0e56216b9c312f69e5c71192a0989"
+      "sha256": "47741da5a8cd44573c462694797a501169c4cdfda49f55e04f33a781d2df6de0"
     },
     {
       "page": 50,
       "chars": 2818,
-      "sha256": "b90669c1bdc36956faa161f8714873a08ccc54985e603ae178fb24b6a92c0778"
+      "sha256": "221803d35b2afad0903d94082695e575fad15ad3afd374ece2e4e7876132b418"
     },
     {
       "page": 51,
       "chars": 2761,
-      "sha256": "2397e1a797fed6bc84078aff8f80055bbe59ac3e30f2ae146e2a7f7f3f61c50a"
+      "sha256": "40580dfe3691a3821ce48914c3ad14e06dc8223efdbc96a6945570685e845b30"
     },
     {
       "page": 52,
       "chars": 2493,
-      "sha256": "b62ecaa1b1605a7b2c02548ac090cb6d0dfbd4d6508bd6dc94617e8c9f4a4623"
+      "sha256": "bd98a982bea2090f95ee6ba628b16ff19aeb7fb6145dd1e15832705a41add067"
     },
     {
       "page": 53,
-      "chars": 1696,
-      "sha256": "e2e307cc027cd36cee8efe8820333bf9cda6b4d9a71fa45a048b93d664af4ba9"
+      "chars": 1907,
+      "sha256": "b4da3530a2e07fdddc3dc372fafde39df0753494741c9d145f5c6f2c0ea09f03"
     },
     {
       "page": 54,
-      "chars": 2670,
-      "sha256": "54957d398d91d4aee42c1300970c8f85e8939c5613892745aeca6788d34bded6"
+      "chars": 2521,
+      "sha256": "663153e2dfec4be5ace351dfc7f68e196b0421d697f4faff71c46f023cb9f856"
     },
     {
       "page": 55,
-      "chars": 2706,
-      "sha256": "87f760d632b0d42dce60d349fddcc60b1c00a4850e404588b8633a673513bc3a"
+      "chars": 2532,
+      "sha256": "c3e0ac79d3e9a9f4c69415e8b4b35eca64ddd52538cacec8d057366b21d9647e"
     },
     {
       "page": 56,
-      "chars": 2857,
-      "sha256": "f2cdc4193ce80a9a2f2af852989d88c6f44c9b97425946efb44982fc1de29ae3"
+      "chars": 2922,
+      "sha256": "f0b6493901b3de07dd277faac77b5208c41b82af876fb2194ff5eb649707463f"
     },
     {
       "page": 57,
-      "chars": 2246,
-      "sha256": "402d13322b9e30476ac6124d1f3c327984b7a8625d72d769db6011ba8ceaf8eb"
+      "chars": 2355,
+      "sha256": "ed382526c96b49c3b3741515095fc20eb8d30247a49345e6385893f45fd0b427"
     },
     {
       "page": 58,
-      "chars": 2671,
-      "sha256": "4599ed5be2224c3010982d4d1c7ac158de8e275d30754514bddc210d13ea1910"
+      "chars": 2645,
+      "sha256": "f3a62790d07ad460ea43bac59239734c85370cc2cf6c5167ff14f7b726bd3c0a"
     },
     {
       "page": 59,
-      "chars": 2838,
-      "sha256": "9875c7ad7a8f6b33da5090c541b89c187d69150bfa4e50358d44e0765c8d9bdf"
+      "chars": 2843,
+      "sha256": "4e697c0ca68750584197076660bc43ba06842b485e7312c8e2e51f6028d705b3"
     },
     {
       "page": 60,
-      "chars": 2647,
-      "sha256": "f730ce2afa8474aec89651726ec569bf2cfaec3c0e8498516e4b4297c5b89b88"
+      "chars": 2642,
+      "sha256": "39f295a970e73149fca9c2e471753d666df6d3cb2e55001dd0aaa9a374cc7b6c"
     },
     {
       "page": 61,
-      "chars": 2881,
-      "sha256": "ea7cc295525443103237e39d166d017a4fa9ea6e9844e55ffd46bd5d8cf39b2d"
+      "chars": 2903,
+      "sha256": "c6422708c2337698e3f44411bd5ee57644050c76abaca51d96e9612836967730"
     },
     {
       "page": 62,
-      "chars": 2913,
-      "sha256": "38b29df92a20878718cbe799efbd97f15b05e5347c886f9c03f681f3ad947d32"
+      "chars": 2926,
+      "sha256": "67d4fe7aa513eaf18e08aef21e7621a29468a799e68d902c8c04afe3c9b029f8"
     },
     {
       "page": 63,
-      "chars": 2890,
-      "sha256": "35e0d8c49b411a1fe7dff0082b6db53d219b4af5a7422900ff9573646007d06c"
+      "chars": 2891,
+      "sha256": "1d287200eccb18245ec4dbd1b4aec73ff4b2681e0646cc6ef78fc7874fd93442"
     },
     {
       "page": 64,
-      "chars": 2758,
-      "sha256": "f0fa2d6dbea937169ca4fe41e87e1bac88a4a8101f0e7003d646716db316526f"
+      "chars": 2741,
+      "sha256": "6d7133a7e3bd0aee50b65e2c4950a49752ff972a8611a50b35cde76ed4876bd6"
     },
     {
       "page": 65,
-      "chars": 2551,
-      "sha256": "794c588b205c53f2f6db6afdc5b08b9ce7ee68d0b9031a71e86d96a9baecbbbd"
+      "chars": 2680,
+      "sha256": "8143d9a801d55d1052b7e910fa9fea7a9340ab9323b06e5b5961ba334d3dfa3d"
     },
     {
       "page": 66,
-      "chars": 2874,
-      "sha256": "e79ba0974bbfe3e71629e5fc9d22152479c180d078681a66c966a01bcfc39a83"
+      "chars": 2769,
+      "sha256": "e2c942ecb24a98411453eaf65221013bcfa730979571d59c5109530cd9668903"
     },
     {
       "page": 67,
-      "chars": 2561,
-      "sha256": "5319d93e54d098f1d66f5f3fccf5590079cf959604a41dcb63cf3aa2cae4da04"
+      "chars": 2550,
+      "sha256": "29a6388ddb2617ccdbd4b2c8f223a0d7aa97588bfcd795bedbec44ad87c24489"
     },
     {
       "page": 68,
-      "chars": 2768,
-      "sha256": "6b55af4e2c128bca7b6e61bf46eb3ae8b68c04e688f7ec9d74ea9e352653e37d"
+      "chars": 2921,
+      "sha256": "866daabfb4ddbb098f949c8f9075c5b1cf6fbb4223c9f245c661aaad6d1ce245"
     },
     {
       "page": 69,
-      "chars": 2252,
-      "sha256": "c4643648a5edee9180b66ff5227ec44c1a86b36f60716d14a1d3030de6d7c8e5"
+      "chars": 2158,
+      "sha256": "c5294001f8ba3f591d684b231503269e9f96a50ef4d83eb7e645eb61e2e1f0bd"
     },
     {
       "page": 70,
-      "chars": 2847,
-      "sha256": "8ea3b98a609bfe66f95024f72b76d0ffbb3b5f2fb8c52403fa63cdc451e629e1"
+      "chars": 2851,
+      "sha256": "db4f6c9fb598ccada0f8e00bfcd8e917c8c705bbff3afa0970d26173ffa8376d"
     },
     {
       "page": 71,
       "chars": 2435,
-      "sha256": "3ec6cefd3d349928bd704363d3a70931c250bc4a68b662acae72835c430b2a13"
+      "sha256": "7cfecad4f2a89e835555b8b871afd979bb6889aa191bdeec9ca1ff4cc4a1eb68"
     },
     {
       "page": 72,
-      "chars": 2413,
-      "sha256": "bcf711eea42f76942bffb36d3526e26a2ee6dd3afcb7513c28dc1696a79974ca"
+      "chars": 2378,
+      "sha256": "bd39db78077c0be5cb1c85b489aecd0e792278c5d82cae6cad803f65367465b9"
     },
     {
       "page": 73,
-      "chars": 2314,
-      "sha256": "c1f9fd2c0ec3841aab699c384a87f779949ed32b74c0d3bc33aca6cf5041b1e9"
+      "chars": 2286,
+      "sha256": "206e31f2a9f689f46c6e3325a30a617b736332532c8470c47e66ff74d9523c73"
     },
     {
       "page": 74,
-      "chars": 2745,
-      "sha256": "0eac657aea044507542865cc96d2cf69ad332f51172c7ef32985f07c3b2a8e35"
+      "chars": 2747,
+      "sha256": "854adae61e92cf92f51598cb7dcccfa8ef74b67122c70dc68093adf6581c10ce"
     },
     {
       "page": 75,
-      "chars": 1621,
-      "sha256": "253d90a090f70f1af554ad4080d26b9d8876007b276d9b3643bbeb24c280abcf"
+      "chars": 1639,
+      "sha256": "27618fe73e970a005db815268835d872618b94071abb670b0ce581e85bdbd1ab"
     },
     {
       "page": 76,
-      "chars": 1986,
-      "sha256": "54618886c3a881f56982420aada57a4c6107410dcf5dae3547164e5b3f3f0a6a"
+      "chars": 1860,
+      "sha256": "fe0275c4bb2a9d8ae7240515de72a28d890baf436ba95e1fab03c60082155bdc"
     },
     {
       "page": 77,
-      "chars": 2527,
-      "sha256": "555526cc3b469fbacc01c85bac924f4e92a9b7e684b4af9090252313fd838357"
+      "chars": 2568,
+      "sha256": "91a415c51ed62350130bce3c5841ea93b96e31d071ae3bf49fbdeac6e3081241"
     },
     {
       "page": 78,
-      "chars": 2835,
-      "sha256": "e43928e043fe15e77ebc8766893687085a85bb3827957826dbb97c2a098aa481"
+      "chars": 2750,
+      "sha256": "46f53b9bc58dcfb4d71a3a3276ec79611da48b63ebaa5c19de11993b60808c4f"
     },
     {
       "page": 79,
-      "chars": 2567,
-      "sha256": "58fa33a2624cad8a526a0a9cef9a5ce27bf07a8802784fa3100775bd8abf4395"
+      "chars": 2528,
+      "sha256": "c061c9ae9c4707472b21f4e1e87268e73ad2c9dcd41f268953d86f3ff07b4282"
     },
     {
       "page": 80,
-      "chars": 2896,
-      "sha256": "c6c3d9d30573f3c9cb7e63e31226e7efb1252e3d73f5699764abb18710dd1a27"
+      "chars": 2908,
+      "sha256": "5b73379913261dacfdc79f84656a9a372db79dc43d5aa7770b0a03ee5372c114"
     },
     {
       "page": 81,
-      "chars": 2343,
-      "sha256": "9c4d2e68e5c99ddbbe0d0e1bae47974503a5fc1c262e845dbf2a77417fc42b0e"
+      "chars": 2437,
+      "sha256": "53da85ae7cb812265ba618fc1f1c6bfa370ed4e8f5d0039f3b17a5c8a41662df"
     },
     {
       "page": 82,
-      "chars": 2371,
-      "sha256": "fad64316583b4541108a332587f866a89f4b398189db57fa5c2a0f6a90c25f81"
+      "chars": 2320,
+      "sha256": "89a78b55b965fb98d9dfaea9e2d17ce38b02945d03160eb698e0be779ab19a93"
     },
     {
       "page": 83,
-      "chars": 1766,
-      "sha256": "c6a7d2dd5e1ac4ca05b99a8bae9bd06cfb4ac35aebc9921947e6e98d8b230b70"
+      "chars": 1847,
+      "sha256": "f47dbef9151fa2874852b669616932bfcf83f0ad2aaf5a8bf8f24d63521c601f"
     },
     {
       "page": 84,
-      "chars": 1634,
-      "sha256": "8155d25faf69981b620f723071e456fad3f9abdf4d9254c4945fd552d73b5045"
+      "chars": 1566,
+      "sha256": "3cb15da7c96b8a7d5da83c4eaecea130e5d1483b7ce760dd2347d7c89e361e93"
     },
     {
       "page": 85,
-      "chars": 1725,
-      "sha256": "6e36fe56d56b4759a45e11067fd5604e70c11e35e4a0b083de42a6e50c41b1dd"
+      "chars": 1607,
+      "sha256": "c8341bfec7ea1df2f39872986cd15aef65a94394e5d1c5ca39174d7cb5caaec0"
     },
     {
       "page": 86,
-      "chars": 2174,
-      "sha256": "19602ce4ea0557abd52868fbb169ccab960c1e8b13cb1fa8204b5a9fba5f4f45"
+      "chars": 1769,
+      "sha256": "2774eeebfeadf27c64b96a910ebc62ee170a9860bf73833287a201dfa49fb501"
     },
     {
       "page": 87,
-      "chars": 1826,
-      "sha256": "870894090de601ee06a3a0f79886ed81eb2f63e3b1ce23cf80ca28479f5171ed"
+      "chars": 2003,
+      "sha256": "0256b0a4b06e5d08a4dcfaa4cacc22dc8326e8b1350661e27d0e634b1eb88980"
     },
     {
       "page": 88,
-      "chars": 1513,
-      "sha256": "c8ba84581922a244cda7ddf57738a4244be588b126b39f911848f42fff78b85b"
+      "chars": 1621,
+      "sha256": "9a58ed3ba79d7f7f9e39f48eba7db82fb18c9447bb268df4b32672fe2725eebd"
     },
     {
       "page": 89,
-      "chars": 1912,
-      "sha256": "490759dd208cfcb8caef14febe947c760bfd9f12c13b678f26f0b465f5d8656c"
+      "chars": 1638,
+      "sha256": "61f3b22d9da8e43adb1747c22e89d76169f9161891c0a006532ca62218638974"
     },
     {
       "page": 90,
-      "chars": 1738,
-      "sha256": "07be1f3d8b25c995e57d4a90af18e98c1a4366b1b17ee23e9100304ab0539c0b"
+      "chars": 1848,
+      "sha256": "552dc8796ebd52e115a54d0e49db617c5bec8840733b1d504717cee6626ed6ff"
     },
     {
       "page": 91,
-      "chars": 2530,
-      "sha256": "1194c3a01b5e31d555ba63afd9ba84809313d587b0205556f719f4f8583c2912"
+      "chars": 1860,
+      "sha256": "688b7e897cb00bc07e8ab3c1c84e1469ef95ff951d4abbaa0372806dd92427ec"
     },
     {
       "page": 92,
-      "chars": 2735,
-      "sha256": "872a0e95d7e3be1b67c191cfc0b001690b1119dda7ecff0d09f463c210e962a7"
+      "chars": 2764,
+      "sha256": "9900cb517ee3a77e3304f34766866c3f694a63415fb0e8633e4b5a9a0d74be61"
     },
     {
       "page": 93,
-      "chars": 2505,
-      "sha256": "e819e3f6f13ea5df26cf86afd58d78d946cc5bbaa35e89eed7da0116e0d88518"
+      "chars": 2630,
+      "sha256": "d542018a74c2725a1a5120ba5ddcf261a006cd4b0ec9843d82e39bae829e19c8"
     },
     {
       "page": 94,
-      "chars": 2397,
-      "sha256": "72f0514c23a8a61f18315bb040b167fcd6ea2bbafcd51832665a2d4bc0b845e9"
+      "chars": 2762,
+      "sha256": "9d08292a4c7e6986224fdfbee53853452d91533f2b7e2f1965e1fe7b1edebec9"
     },
     {
       "page": 95,
-      "chars": 2591,
-      "sha256": "7773c27d7fd2d0df19bdb52fd1612b0407dead188afa92436fab6573c5f41fd1"
+      "chars": 2304,
+      "sha256": "98e47ebce840d160c33461acae0318d7567fd32afd65da90db7aeef573521258"
     },
     {
       "page": 96,
-      "chars": 2376,
-      "sha256": "7d8821e8fabc020e7d606dcec3c9cdb5634b65e6e900fec75c6f72449e742aae"
+      "chars": 2237,
+      "sha256": "a8562d0a3e857fa68752e458093959461b78af041d2d3d7ea31baeed8db02f57"
     },
     {
       "page": 97,
-      "chars": 2461,
-      "sha256": "08842be951d89abcbd815664b7951f8ff9f275b2cc199e02f4faee5dc964b3a8"
+      "chars": 2439,
+      "sha256": "264da3a7c837fb0c2564805245e1b86f9fa41e603bd8dd73afea65e138b0e199"
     },
     {
       "page": 98,
-      "chars": 2765,
-      "sha256": "4552e939f6ff4eef6b637f35144b8f75f1e4cdc18850366423b089f1d4460f22"
+      "chars": 2725,
+      "sha256": "51f63e29366ce5d1aeedba0d6e3b99e071f07e52defa5625e373b577bbf400e3"
     },
     {
       "page": 99,
-      "chars": 2770,
-      "sha256": "4056f68924838f25654f7f6beb5b592724c36c48b277b486229eac7f772f1d95"
+      "chars": 2686,
+      "sha256": "83936ce7cf3c48bcf837d2cf5a26397d603d0b235f7f5f518b8e8e750c137f81"
     },
     {
       "page": 100,
-      "chars": 2701,
-      "sha256": "01cbe2178f3f61ec5b4ed5cbfb40ef63ecd5ceb966bca68ad6544220dfc34c83"
+      "chars": 2741,
+      "sha256": "7bd067a3585f828f7e9027edfb8f76c170dcf0cd088006cb99208e1a8395946b"
     },
     {
       "page": 101,
-      "chars": 2522,
-      "sha256": "4c1e650c3a55d89042b972d09c1c85eee330817fd5b09452e3d987cafeb778f0"
+      "chars": 2865,
+      "sha256": "ed3abc15afe00732bb07fab656e68af9ff6eb39eac66697710ea280089adf4a3"
     },
     {
       "page": 102,
-      "chars": 2473,
-      "sha256": "e39c8cb783c180ff0fc11372d11f3689bcd005f198b36581b53486d83fe9001c"
+      "chars": 2362,
+      "sha256": "d5904b9126702d7d0c8983bab5731de38f394708e2cdfa065e89683a00679a65"
     },
     {
       "page": 103,
-      "chars": 2542,
-      "sha256": "1405cdfc386646386f8900c795d9e5257972c2f716e3feb47f70a2d68f01df42"
+      "chars": 2573,
+      "sha256": "bfb8e529b55b82eba182654f2013a84052c0762f619d10697867c233c9a54fab"
     },
     {
       "page": 104,
-      "chars": 2552,
-      "sha256": "58f36090b416ad26ea6968f1071f4aa26ace74d90b5733cb20b062ed46c033cf"
+      "chars": 2526,
+      "sha256": "7a45bf79685e74986740e4aa5dd2b86e9b7835c4662b162cc709f5119c5486fe"
     },
     {
       "page": 105,
-      "chars": 2459,
-      "sha256": "dc5d7b84831cceeca13977758af63b7c3612134ec9c14db831a422b02c9692bf"
+      "chars": 2505,
+      "sha256": "115e26992d8c33cfb707d019f86fd869f58fef9d38256a0d04675e4d1fe1cd27"
     },
     {
       "page": 106,
-      "chars": 2346,
-      "sha256": "66f0f53e9b799319de8a3d6b4a3c8c4c64a07c1dc08711d954e0ea0a3f3dc78c"
+      "chars": 2511,
+      "sha256": "14b90e967d41c525b2dab697be02e46e4d024f1a83c39df02683543c927ceb0b"
     },
     {
       "page": 107,
-      "chars": 2380,
-      "sha256": "2602d9ed98fda80e97b40f13adf10e824f632a06ebef0a6d6634244fac82d468"
+      "chars": 2490,
+      "sha256": "63cb4840840866a40525e34315163c741fff464bc468155365f9786052a91999"
     },
     {
       "page": 108,
-      "chars": 2260,
-      "sha256": "b0d00513c415b555180d989829bbf2e0d1b7f3cd43f652decbec427d50e3e163"
+      "chars": 2030,
+      "sha256": "eeff257586b300f6c0e9269cc85c2eaf77512281a35c9f4033ae15afbf08c7e3"
     },
     {
       "page": 109,
-      "chars": 2356,
-      "sha256": "e16ce3769a2bea41703cc011688ec4aca070d4e147b62e342986506100058bc0"
+      "chars": 2646,
+      "sha256": "2afef7e3dc73d59deee242c75b936c2439c02a2db80c0a0192dcd114b2427d05"
     },
     {
       "page": 110,
-      "chars": 2366,
-      "sha256": "6edfd5dc6f5ae8d3fee3b533bf8f611d2facb21bb03470804be99015fd78c2a2"
+      "chars": 2165,
+      "sha256": "39ea09c2d670948d6c9d0a928b39bc3f1a118ed86d3218635c4a6d1827397656"
     },
     {
       "page": 111,
-      "chars": 2699,
-      "sha256": "6c1a5aa39889f981119009095ac2c5fcacfc6c063b2f6d28c1ae42974682b8f1"
+      "chars": 2687,
+      "sha256": "82e7cc0ff467d4af073e811af5dae688b7dc438ac6eb188b8177fec61d9b2fa5"
     },
     {
       "page": 112,
-      "chars": 1956,
-      "sha256": "4eecbd1ba80d2ead13bac7e2b17067fda09e10208a7a87b4be436c5a59bccd6e"
+      "chars": 1874,
+      "sha256": "c5377a24d065911b2f9130fbf449488f84d6f16b1138f5398de0693ce026cf86"
     },
     {
       "page": 113,
-      "chars": 1882,
-      "sha256": "1bbd3e8c5538f19a29b0ac56c73316b9ec327b6a131f35aeccdcc8540f51a239"
+      "chars": 2150,
+      "sha256": "3afafbee3d8bfc5a8c269f567c8eba625b39394e095a7669e2667b0469ea3916"
     },
     {
       "page": 114,
-      "chars": 2875,
-      "sha256": "3e561b23ef2a7d384308d84b8ae8666db8ccd5d28c6c317b16a03581bd1be897"
+      "chars": 2452,
+      "sha256": "0db09eb88721e197324722cc76d6b61045689f9d7faa5a6562ef4c1102c29cf1"
     },
     {
       "page": 115,
-      "chars": 2960,
-      "sha256": "6afe7e9425ecf0ed43425fd96f7ee372cb0ce4a4216c69f31897b357453ba039"
+      "chars": 2976,
+      "sha256": "b56bfd34cbcac2d2fbb645efc47ba6150dcb7bf9726673159d9fd7d65ee36815"
     },
     {
       "page": 116,
-      "chars": 2868,
-      "sha256": "bedda76f8e69b5f6c6af18847827db46a64d8bf62d4b81bfd90cbd5b8bf82aa0"
+      "chars": 2880,
+      "sha256": "83c05e5b95d4d4c8f0c4517146888664889aa2d46940958fe4701fd5ec170125"
     },
     {
       "page": 117,
-      "chars": 2781,
-      "sha256": "8c48f1ea6a6d8fe3a43f608d04d86445395343cb574b1820a6b855709818b212"
+      "chars": 2765,
+      "sha256": "ba18d40a101e855f3ae1270967f9a91274c1615c998c9111d0483259b99a95a4"
     },
     {
       "page": 118,
-      "chars": 2885,
-      "sha256": "7fe6f590f3aca27d24eec124e5a33fd22786ba0f70e86e720a3060a57b5a14db"
+      "chars": 2881,
+      "sha256": "84e75ee832c90af7e81f471322ba98866aade482f86f83ba930a8301c98ed34f"
     },
     {
       "page": 119,
-      "chars": 2897,
-      "sha256": "e3566444dd45fb7acb9bf732a019ee729104c4c32784340ce79dc6bdc235719a"
+      "chars": 2914,
+      "sha256": "6ec2090f9301b9842082fab51ccc98b9f074fddae7de4b2fbc7fab1b0991f8d3"
     },
     {
       "page": 120,
-      "chars": 2893,
-      "sha256": "b5ef7581e087e6b2e698052429413fe6f58d79cd0af55aa7014756985a2a6395"
+      "chars": 2863,
+      "sha256": "bdb19f5537175724e379d3742363dab607092c697f9708ad674ab1d8432aa930"
     },
     {
       "page": 121,
-      "chars": 2825,
-      "sha256": "89eca0a050052cfb1401ddfd92edbe704b08136915d10256398ce22e2288e4ab"
+      "chars": 2832,
+      "sha256": "9a52997dfda9e76c1abf07a4da29a7216d4542d40bf467a549963b79973b98cd"
     },
     {
       "page": 122,
-      "chars": 2819,
-      "sha256": "6b881f1e25ec9ebbafd43dd16f47bae1bcee18ab17ebc01bcbd5e2eb0d356b0f"
+      "chars": 2858,
+      "sha256": "82f5047e1549b43e9e37101e679e693865385820f0d67f6aa19a993a600dca60"
     },
     {
       "page": 123,
-      "chars": 2657,
-      "sha256": "9c689b5905353f00012efe2e3bc846850a5a37f39ec1f2699d0ac8ba8b96003e"
+      "chars": 2772,
+      "sha256": "9c02eeb45ac54851d8b259a13f0aa9e14e03aff27cef233ef9e257cd568e1516"
     },
     {
       "page": 124,
-      "chars": 2535,
-      "sha256": "306600081372a4cf0ff43250f73cb0b61bfff32fb86a30579d98505fedbee8d2"
+      "chars": 2582,
+      "sha256": "6987e1420cffa99d0e6d444c88c8048cb49148a647eed3e17716e922565633fa"
     },
     {
       "page": 125,
-      "chars": 2099,
-      "sha256": "5441de09af50145cca6a53f1c49756fc65b3a64110f2952731e04e62a9bf425c"
+      "chars": 1125,
+      "sha256": "8ea15325de24d125132576f83107b575afbc1e3990c0ad2d51499d368a81fec7"
     },
     {
       "page": 126,
-      "chars": 2221,
-      "sha256": "9f6a735abe16cf93842a16c2e2432611f81cd2c7cb3e8601dea63f7601a3870d"
+      "chars": 2099,
+      "sha256": "c320d7e2ae74968f20b07d079126c79c99c95cad5e9d4638b6d383e1c7c62cb9"
     },
     {
       "page": 127,
-      "chars": 2664,
-      "sha256": "a12af7460fe07b0fe147255040f897fa46cbb57d89f3c953bd46daf13fb93bbf"
+      "chars": 2221,
+      "sha256": "d29f16250b0a35e90db2e58de19f35d9cd984eb47ea8b52be1fc46deaf95b376"
     },
     {
       "page": 128,
-      "chars": 2388,
-      "sha256": "32a11aa42eb1f0cf7a4f91345b60080ac852134b5d83f16570ccc06d0c8a0f92"
+      "chars": 2664,
+      "sha256": "213baf4aaebdab94b1e47c194957c5246ee28239203725fd30eab76f7a853ac1"
     },
     {
       "page": 129,
-      "chars": 2070,
-      "sha256": "d829c83cdf13c2296c786197052080d9d4efc7cc428d8d55708da2a97720d020"
+      "chars": 2388,
+      "sha256": "3d1a774e07c5283f8b3de230d7896b9206dcf1c11f61f0541761860d582cce45"
     },
     {
       "page": 130,
-      "chars": 2715,
-      "sha256": "de5b082f9c0cf898c4f1da500b1b1cb9bfff95228b0cef2bac8a51d090f012aa"
+      "chars": 2070,
+      "sha256": "a5038fe815cd0b2075ba782e4004607c26645a9f2768ab8cbe4b5f34cda1335c"
     },
     {
       "page": 131,
-      "chars": 2841,
-      "sha256": "9275f09a2ccd035e2cf4b2a9456c4fbcff22541f0c409af2d1fd9a5952989b56"
+      "chars": 2737,
+      "sha256": "5e5c590d081a14ccd0ec91ed46b3b2a9ca125447ffde740894461371618154b0"
     },
     {
       "page": 132,
-      "chars": 2323,
-      "sha256": "9d4b16303f1420551f8171f6a591769e9dfd33b2ef5f83888b15aea54d5fd581"
+      "chars": 2891,
+      "sha256": "12ae1e5141ccfe4c1265f6d4631d3bdb392b900b5160f8a799e74a89eba75e47"
     },
     {
       "page": 133,
-      "chars": 2201,
-      "sha256": "4d3f2b17217fe3dd3721f959e8cec9e6845a279e8df384681ef46ca41fe17fec"
+      "chars": 2381,
+      "sha256": "7232ccb029df33c7c5baf20fc047e11cb7228ee49cfc07afcc690b3aa9c00d20"
     },
     {
       "page": 134,
-      "chars": 2404,
-      "sha256": "ea817e87bd239798a39d367314d334bd0d6ebdc25d7dad07e2056674e3be14d0"
+      "chars": 2261,
+      "sha256": "870924e42e92162a63806113dc50821ba0262a178dedc44a5a82944024a541dc"
     },
     {
       "page": 135,
-      "chars": 2386,
-      "sha256": "62ee82411bf811cfcc6bea67294c1ddcbc721f2007568ec9a7fcc1606408d497"
+      "chars": 2423,
+      "sha256": "b501aa7f6c10fce282e3d3a2793f2a76279d2dc3e0cf4bd5e3cfcd759a52da9c"
     },
     {
       "page": 136,
-      "chars": 2137,
-      "sha256": "1d80d9aef3c9234530603ddb88d42b239df1ef6d17e54ceba38d12e199a287e2"
+      "chars": 2319,
+      "sha256": "49edbeb9a2c0af653fdf63e948548418b4833b1a62d82a58b2195a0a88674749"
     },
     {
       "page": 137,
-      "chars": 2497,
-      "sha256": "a175ad9975a3d795be6a18e54b0f876c449c06472d85b3c682a1116ecfa239d5"
+      "chars": 2184,
+      "sha256": "d8963924005334deaadcdc9c4b10d743beb67ec4a538dbf6461551f3dff9f877"
     },
     {
       "page": 138,
-      "chars": 2721,
-      "sha256": "3acc37db22ab07791ba091342620edf59def1c7a555c29a01ab966b3f431a273"
+      "chars": 2451,
+      "sha256": "2a351fe326a65b4f1670ff7bc171367721a03956732bb9df6be9eb7ce517756e"
     },
     {
       "page": 139,
-      "chars": 2559,
-      "sha256": "7226d25bc2c72c957c1a4e5087fb6d4fa8991cbb30ec68f8052677e0e9ce9805"
+      "chars": 2739,
+      "sha256": "6b85b63eea94ce153b3cbbb6e516365ebb44d8c1b1d27a95011b3ae9f6e2aae3"
     },
     {
       "page": 140,
-      "chars": 2602,
-      "sha256": "349422766d7d9fb5821d82d5bcec8056d3c202bddfe304c2c3260c5594326a88"
+      "chars": 2542,
+      "sha256": "a3f64032bbbffc437edbd30090ad9bae0b1679fb169711d8fe7978527ace4e04"
     },
     {
       "page": 141,
-      "chars": 2794,
-      "sha256": "3806cbea2b0a34a538be9a913acd2a3a0d52738e3d09e45566c9759c9d0d5579"
+      "chars": 2554,
+      "sha256": "61d4d722504b924d5777237d636d32e607e2cfd1ab2c2cf88d8ec622fc3efa88"
     },
     {
       "page": 142,
-      "chars": 2407,
-      "sha256": "40b6715284f908ab77b00b9aa6e494a7a682bccef1f251142077bbba0d367844"
+      "chars": 2789,
+      "sha256": "9f7d7bf61e77b8c4db76a70bfa19ac30376e3a364f979b37cb5ae51c723e8e58"
     },
     {
       "page": 143,
-      "chars": 2220,
-      "sha256": "b277fcbbc73f8a5008233df244fa8a4c472e796de2947af07c6217a195dcc822"
+      "chars": 2399,
+      "sha256": "2bf9c9d54309e5d3e68556a6357a588de923f6c3d7c2faccba5ff1ed81de1c33"
     },
     {
       "page": 144,
-      "chars": 2419,
-      "sha256": "a8703beab0c86b345406dcf823e932708b89510e25d18e9c01a1895951dbf68d"
+      "chars": 2318,
+      "sha256": "2124972d778d0e6243d0c386b25d6489a7c16748a68fe935090793e3fd644748"
     },
     {
       "page": 145,
-      "chars": 2470,
-      "sha256": "db2bcfb8bd0799e4ef30197954e7e242f9bb89c1608887490a962012512cd3f6"
+      "chars": 2434,
+      "sha256": "db02b0ce9122ea26cbffec5fc56cfffa4cccdacbca6a67f6b38af10511912989"
     },
     {
       "page": 146,
-      "chars": 2219,
-      "sha256": "765a2d5d3782b08f7c0f43962e1bea1d10888b7621526a44bbe0b8cefc233d9e"
+      "chars": 2481,
+      "sha256": "af5a92f197c0feb927c6b55ff106940f186f575d4a2dc8d228682bab0890dcfc"
     },
     {
       "page": 147,
-      "chars": 2231,
-      "sha256": "7b6ebd73740992d280771d4f0c16e95f355ba5c643bea48960770c603239d69b"
+      "chars": 2209,
+      "sha256": "671efb1ac69bbac55a38c6af28a97e997a7b92291e78c41f8b3ebe7b08179af0"
     },
     {
       "page": 148,
-      "chars": 527,
-      "sha256": "bec5885929690819c200ac12fda682826450674857310891e6746d0c8d384c48"
+      "chars": 2213,
+      "sha256": "306f3a23d71d2d2e125eb18644a8782c444a43d66bae77b372ba87fbe3a53493"
+    },
+    {
+      "page": 149,
+      "chars": 374,
+      "sha256": "b9f07788e939f687d3386eb71f8c0044f07fb7b27af0ff6dd9a412583d87f2f9"
     }
   ],
   "pins": {
@@ -784,8 +789,8 @@
   },
   "manuscripts": {
     "docs/papers/paper-I-price-formation/paper-I.md": "bcfa9af3405caf2ccb4cc2af6c1ae8b5bc8c1ff648d81d07fb8d638ca8f895b6",
-    "docs/papers/paper-II-redistribution/paper-II.md": "4b0aba574d63167784632d4bf053a66ca9b6e60bd013ab11bb49b4ed9df18739",
-    "docs/papers/paper-III-dual-tensor/paper-III.md": "eef2f265abb759c2760836a5c115e366c205347e9752a23b313d633f4aa68c6e",
-    "docs/papers/paper-IV-composition/paper-IV.md": "30692bbb917a0727a320318b33cd8ebbf89afa523dfbf7ab674438b330f4fc26"
+    "docs/papers/paper-II-redistribution/paper-II.md": "d653680e9d4be0b88960e9e473b13120182d06400da0020478baa1b8977a6dc0",
+    "docs/papers/paper-III-dual-tensor/paper-III.md": "a32d0680e8f5c9663c95bab7c5bd1fab2506f28e451d4e37b869ab323975856b",
+    "docs/papers/paper-IV-composition/paper-IV.md": "bdaa209995d54c536e3ce1e1624177b9c1f015cb417b58b29d6a5e2c5523a16a"
   }
 }

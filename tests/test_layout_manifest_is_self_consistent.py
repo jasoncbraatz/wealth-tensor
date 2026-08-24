@@ -81,8 +81,9 @@ def test_it_needs_no_toolchain_and_is_cheap_enough_to_always_run() -> None:
     # legitimately gains or loses prose, and it must move in the same commit as the rebuild
     # that moved it, alongside the handoff's verify-layout claim. 145 -> 147 at
     # wealthTensor-104 (Pass B), 147 -> 148 at wealthTensor-105 (Pass C's 24 structural
-    # repairs). The fonts and manuscripts are the ones that should not drift quietly.
-    assert (report["pages"], report["fonts"], report["manuscripts"]) == (148, 16, 4)
+    # repairs), 148 -> 149 in the same session when its own verification pass repaired
+    # ten defects in those repairs. The fonts and manuscripts should not drift quietly.
+    assert (report["pages"], report["fonts"], report["manuscripts"]) == (149, 16, 4)
 
 
 def test_every_declared_failure_has_been_seen_red() -> None:

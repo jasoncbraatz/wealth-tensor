@@ -73,7 +73,7 @@ claims:
   - id: verify-layout.sh
     cmd: bash docs/deliverable/verify-layout.sh
     rc: 0
-    count: 148
+    count: 149
     count_re: wt176: ([0-9]+) pages compared
     slow: true
     note: needs lualatex, pandoc and a worktree. The count is wt176's, printed un-piped inside this run and DERIVED from the freshly built PDF; the script cross-checks it against a second, independent pypdf read and dies if they disagree
