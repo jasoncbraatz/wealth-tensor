@@ -116,78 +116,197 @@ that simply did not run an available check, and never said it did, has an **S3**
 **Ambiguity resolves UPWARD, once.** If two readers disagree S1-vs-S2, it is S1 — both block, so
 the cost of the rule is zero and it removes the argument.
 
+
 ---
 
-## 3 · THE BOUNDED PLAN — three passes, named, with a hard stop
+## 2.5 · THE COHERENCE CLASS — the axis § 2 was missing
+
+**Jason's ruling, 2026-08-24, second amendment.** §§ 2.1–2.4 grade **truth**: is the statement false,
+is it unsupported, is it merely imprecise. **A manuscript can pass all of that and still read like a
+lab notebook**, and a lab notebook is not something a human can rewrite from without wasting hours.
+
+**THE DEFECT CLASS THAT MOTIVATED THIS AMENDMENT IS ENTIRELY TRUE STATEMENTS.** A long build leaves
+scar tissue in the prose: the aside recording that a test went sideways, the antithesis realisation
+that a suspected result did not appear, the sentence that made sense in the session that wrote it.
+**Every one of those is true, so every one scores S3 under § 2 and ships** — which is exactly
+backwards. They are not errors. They are *seams*, and a published paper has none.
+
+**C-class findings block the ship. They are found and repaired in PASS D, never on the S1/S2 ship
+list**, because they are a different kind of work: § 2 is checked sentence by sentence, and
+coherence is only visible from thirty thousand feet.
+
+### The named C-class defect types
+
+| type | what it looks like | the repair |
+|---|---|---|
+| **C-a · antithesis residue** | *"We expected the threshold to matter here; it does not."* True, and written as an in-line aside where the reader trips on it. | Integrate into the claim it qualifies, promote to a Limitations bullet, or move to an appendix. **Never delete a negative result** — it is often the most honest thing in the paper. |
+| **C-b · scaffolding voice** | *"as noted above"*, *"this was originally"*, *"the pass that added this"* — process narration that outlived its process. | Cut, or restate as a claim about the work rather than about the working. |
+| **C-c · orphan** | A paragraph, table, or figure nothing references and no later claim depends on. | Anchor it to the claim it serves, or cut it. An orphan that survives is a reader's dead end. |
+| **C-d · fold problem** | A result stated before the definition or the method it rests on; a term first used two sections after it is defined. | Reorder. **This is the one that most directly costs Jason hours**, because he cannot re-voice a paragraph that is in the wrong place without first discovering it is in the wrong place. |
+| **C-e · apparatus leak** | The manuscript points at a REVIEW doc, a `wt###` script, a session number, or `p7-passes.tsv` as if the reader had them. | Repoint at the paper's own §, or at a committed artefact the reader can actually fetch. |
+| **C-f · register drift** | Two sections that read as if written by two people, because they were written eighteen sessions apart. | Flag it and leave it. **Re-voicing is JASON'S pass, not a session's** — a session that "harmonises the voice" has spent his hours for him and probably lost something. **Flagging is the repair.** |
+| **C-g · unplaced evidence** | A table or figure with no anchor sentence telling the reader what to see in it. | Add the anchor sentence. Every piece of evidence gets one. |
+
+> **C-f IS DELIBERATELY THE ONE THAT DOES NOT GET FIXED.** The line between *structural* work (a
+> session's job) and *voice* work (Jason's) is the whole point of this amendment, and a session that
+> crosses it is doing damage that looks like help.
+
+### 2.6 · The C-class tie-breaker
+
+**Ask: would a reader who has never seen this repository notice?** If the seam is only visible to
+someone who knows the build history, it is **C-b** at most and probably nothing. If a first-time
+reader stumbles, it is a C-class finding. **When in doubt, read the paragraph out loud starting from
+the section heading above it** — fold problems and orphans are audible in a way they are not visible.
+
+---
+
+## 3 · THE BOUNDED PLAN — four passes, and a RATCHET rather than a countdown
+
+### 3.0 · THE RATCHET — read this before the pass descriptions
+
+**NO SESSION MAY STOP BECAUSE ITS NUMBER CAME UP.** *"I am `-105`, therefore I stop"* is a failure,
+not compliance, and it is the specific behaviour this clause exists to forbid.
+
+**EVERY PASS OWNS ITS SUCCESSOR'S PRECONDITIONS.** A pass is not finished when it has done its own
+work; it is finished when **the next pass can start and finish**. The question at the end of every
+session is not *"did I complete my list?"* but:
+
+> **"What does the NEXT pass need in hand, and have I put it there?"**
+
+Concretely: Pass B does not close by repairing the last S1 — it closes by confirming Pass C can
+verify without discovering scope Pass B left implicit. Pass C does not close by going green — it
+closes by handing Pass D a manuscript whose structure is settled enough to be read at thirty
+thousand feet. **Pass D does not close by finishing a checklist — it closes when Jason can start
+rewriting without hitting a false start.**
+
+**IF A PASS CANNOT MEET ITS SUCCESSOR'S PRECONDITIONS, IT SAYS SO LOUDLY AND HANDS OVER THE
+REMAINDER.** That is a normal outcome and costs one extra session. It is **never** a reason to
+declare done, and it is **never** a reason to keep polishing past the point of usefulness.
 
 ### PASS A — `wealthTensor-103` · make the end countable
 
-**The only pass permitted to add to the blocking set.** Its whole job is to convert an open-ended
-process into a finite list.
+**The only pass permitted to add to the blocking set.** It may not repair anything: scoring and
+repairing in the same hand is how a rubric gets bent around a fix that was easy.
 
-1. **Retrospectively score every finding in the sixteen `p7-passes.tsv` rows** and their REVIEW
-   docs against § 2. The rubric is already committed and must not be edited during this step.
-2. **Adjudicate `wt184`'s 44 Rule-1 flags on paper-III** — read them *before* touching the rule
-   (`III-5` came out of that flag set, so the prior that most are false is not a licence to
-   skip them). **Any flag ruled TRUE is an S1 by definition** and goes on the ship list.
-3. **Triage all nine carried tee-ups** into S1/S2 (ship list) or S3/idea (`POST-SHIP.md`).
-4. **Emit `docs/SHIP-LIST.md`** — every open S1 and S2 across all three manuscripts, numbered,
-   each with the repair it needs. **Then close it and freeze it.**
-5. **Report the count and the severity distribution across all sixteen passes**, which is the
-   measurement this project has been owed for eight sessions: is severity falling while the
-   count is flat?
+1. **Retrospectively score** every finding in all sixteen `p7-passes.tsv` rows against § 2. The
+   rubric is committed and **must not be edited while you score**.
+2. **Adjudicate `wt184`'s 44 Rule-1 flags** on paper-III — read them **before** touching the rule
+   (`III-5` came out of that set). **Any flag ruled TRUE is an S1** and goes on the ship list.
+3. **Triage the nine carried tee-ups** into S1/S2 (ship list) or S3/idea (`docs/POST-SHIP.md`).
+4. **INVENTORY THE C-CLASS — count, do not repair.** Sweep all three manuscripts for C-a through
+   C-g and **report a count per type per paper.** This is what makes Pass D's size known *before*
+   Pass D starts, and it is the difference between a plan and a hope. **A rough count beats an
+   elegant absence of one.**
+5. **Emit `docs/SHIP-LIST.md`** — every open S1 and S2, numbered, each naming its repair — then
+   **close and freeze it.**
+6. **Report the severity distribution across all sixteen passes.** *Is severity falling while the
+   count is flat?*
 
-**DONE WHEN** `docs/SHIP-LIST.md` exists, is closed, and every one of its entries names a repair.
+**SUCCESSOR PRECONDITION (§ 3.0):** Pass B can start iff every ship-list entry names a repair
+specific enough to execute without re-deriving the finding.
 
-> ⚠ **PASS A MAY NOT REPAIR ANYTHING.** Scoring and repairing in the same pass is how a rubric
-> gets bent around a repair that was easy. Pass A produces a list; Pass B spends it.
+### PASS B — `-104` · clear the truth list
 
-### PASS B — `-104` (and `-105` only if the list demands it) · clear the list
+Every S1 and S2 repaired in the charter's order (**STEELMAN → REPLACE → CUT → TEE-UP**), with
+`defensive_count.py --against` at **+0** on every manuscript. **No new looking.** If a repair
+reveals an adjacent S1 you had to touch, repair and append it — **the only permitted growth of the
+list**, logged with the repair that surfaced it.
 
-Every S1 and S2 on the ship list repaired, in the charter's order
-(**STEELMAN → REPLACE → CUT → TEE-UP**), with `defensive_count.py --against` at **+0** on every
-manuscript. **No new looking.** If a repair reveals an adjacent S1 — a genuinely broken thing you
-had to touch — it may be repaired and appended, and **that is the only permitted growth of the
-list**, logged in `SHIP-LIST.md` with the repair that surfaced it.
+**SUCCESSOR PRECONDITION:** Pass C can start iff the ship list is CLOSED, `pytest` is green, and
+every guard the repairs reddened has been closed **in the same session that reddened it**.
 
-**DONE WHEN** every ship-list entry is CLOSED, `pytest` green, all guards green,
-`--claims-all` agrees.
+### PASS C — `-105` · verify the truth, and settle the structure
 
-### PASS C — the ship pass · verify against the frozen list only, then declare
-
-1. One final read per manuscript **against the frozen instrument set only** — running the
-   checkers, not hunting for new classes of defect. A finding here is **S1/S2 only**; S3
-   observations go straight to POST-SHIP without discussion.
+1. One read per manuscript **against the frozen instrument set only** — running the checkers, not
+   hunting new classes. Findings here are S1/S2 only; S3 goes straight to POST-SHIP.
 2. All guards green, `--claims-all` agrees, deliverables rebuilt, layout verified.
-3. Write **`docs/SHIP-STATEMENT.md`** (§ 4).
-4. Tag `v1.0-preprint`. Close `P7`. Hand `P8`/`P11` to Jason.
+3. **SETTLE THE STRUCTURE.** Fix C-d (fold problems) and C-c (orphans) — the two C-types that
+   change what *exists and in what order*, as opposed to how it reads. **They are done here, not in
+   Pass D, because Pass D's thirty-thousand-foot read is worthless on a document whose sections are
+   still moving.**
 
-### 3.4 · THE HARD STOP
+**SUCCESSOR PRECONDITION:** Pass D can start iff no section will move again.
 
-**If Pass B has not cleared the ship list by the end of `-106`, the work stops and Jason rules**
-on shipping with the remainder open and disclosed in § 4.3. **The stop is not a failure state.**
-It exists so that "a few more passes" is a commitment with an enforcement mechanism rather than an
-intention, which is the exact failure the retired criterion demonstrated over sixteen sessions.
+### PASS D — `-106` · the coherence pass · **THE ONE THAT PRODUCES JASON'S INPUT**
+
+**This pass has one reader in mind and it is Jason, about to spend a large number of hours
+rewriting.** Its job is to make sure those hours are not a false start.
+
+1. **Clear the remaining C-class** — C-a (antithesis residue), C-b (scaffolding voice), C-e
+   (apparatus leaks), C-g (unplaced evidence). **FLAG C-f (register drift); do not fix it.**
+2. **Read each manuscript end to end at thirty thousand feet**, once, in one sitting, asking only:
+   *does this read as one connected paper?* Not sentence-by-sentence — that is Passes B and C, and
+   they are done.
+3. **Emit `docs/FIGURE-PLAN.md`** (§ 4.3). **This is the deliverable Jason's layout work runs on.**
+4. **Emit `docs/SHIP-STATEMENT.md`** (§ 4.2).
+5. Rebuild, verify layout, tag `v1.0-preprint`, close `P7`.
+
+**SUCCESSOR PRECONDITION — and the last one, because the successor is Jason:** he can open any of
+the three manuscripts, start rewriting at paragraph one in his own voice, and **never discover that
+a paragraph should not exist, sits in the wrong place, or is missing the chart that would carry it.**
+
+### 3.5 · WHEN THE RATCHET STALLS
+
+If a pass cannot meet its successor's precondition, **it hands over the remainder and says so in
+one loud paragraph at the top of its handoff.** One extra session is the normal cost.
+
+**Jason rules — and it is a ruling, never an automatic stop — when the ratchet stalls TWICE ON THE
+SAME PRECONDITION.** Two sessions failing at the same gate is evidence the gate is wrong or the
+scope was mis-estimated, and both are decisions a human makes. **A single stall is just work.**
 
 ---
 
 ## 4 · WHAT SHIPPING PRODUCES
 
-**4.1 · The three manuscripts**, rebuilt, layout-verified, at ready-to-submit per ADR-001.
+**THE END PRODUCT IS NOT "A CORRECT MANUSCRIPT". IT IS A MANUSCRIPT JASON CAN REWRITE FROM.**
+Those are different bars and the second is higher. Correctness is necessary and it is not
+sufficient: a paper can be free of S1 and S2 and still cost its author a wasted weekend, because
+the seams only show up once you are three hours into re-voicing it.
 
-**4.2 · `docs/SHIP-STATEMENT.md`** — the honest provenance record, and the artefact this whole
-apparatus was actually building:
+**4.1 · Three manuscripts that are STRUCTURALLY FINAL.** Rebuilt, layout-verified, at
+ready-to-submit per ADR-001, **and**:
 
-* how many independent review passes each manuscript received, and by what axes;
-* the frozen instrument list, with what each one checks;
-* the total findings raised and repaired, by severity;
-* **what is known-imperfect and shipping anyway** — the S3 list, in full.
+* **no section will move again** — the order is settled (Pass C);
+* **no paragraph exists that should not** — orphans resolved (Pass C);
+* **no scar tissue** — antithesis residue integrated or promoted, scaffolding voice gone (Pass D);
+* **every table and figure carries an anchor sentence** saying what the reader should see in it;
+* **the voice is NOT harmonised** — that is Jason's pass, and C-f is flagged, not fixed.
 
-**4.3 · A short "known limitations of this review" note in each paper.** Two or three sentences,
-naming what was checked mechanically, what was checked by hand, and what was not checked. **This
-is a strength, not an apology** — it is the same discipline that produced `II-43`, which exists
-only because §7 enumerated instead of gesturing. **A paper that says what it did not check is
-more trustworthy than one that is silent, and this corpus has earned the right to say it.**
+> **THE TEST, STATED SO IT CAN BE FAILED:** Jason opens the file, starts rewriting at paragraph
+> one, and **never discovers that a paragraph should not exist, sits in the wrong place, or is
+> missing the chart that would carry it.** If he does, Pass D did not finish — regardless of what
+> its checklist said.
+
+**4.2 · `docs/SHIP-STATEMENT.md`** — the provenance record this whole apparatus was building:
+passes per manuscript and by what axes; the frozen instrument list; findings raised and repaired by
+severity; the C-class counts before and after; **and what is known-imperfect and shipping anyway.**
+
+**4.3 · `docs/FIGURE-PLAN.md` — THE ARTEFACT JASON'S LAYOUT WORK RUNS ON.**
+
+**Measured at `-102`: the four manuscripts carry ZERO figure captions and roughly 230 markdown
+table rows between them (paper-III alone has 157).** So this is not *"where do the existing charts
+go"* — **there are no charts.** The real question is *which of these tables wants to be a picture,
+and what would it show.* A blank page is a bad place to start a large piece of design work; this
+file is the running start.
+
+For **every** table and every proposed figure, one row:
+
+| column | what it answers |
+|---|---|
+| **id / location** | which § it currently lives in |
+| **what it shows** | in one sentence, in reader's terms |
+| **which claim it carries** | the specific sentence that fails without it — **if none, it is a C-c orphan, not a figure** |
+| **must follow** | the earliest point in the paper where the reader has enough to read it |
+| **load-bearing or supporting** | does an argument break without it, or does it merely help |
+| **chart candidate** | the table is fine as a table · **or** the shape it wants (a sweep is a line, a comparison across four coordinates is a small-multiple, a distribution is not a bar chart) and **why that shape** |
+
+**A session may PROPOSE chart forms and must NOT build them.** Jason decides what gets drawn, where
+it sits, and what is above the fold. **The plan is the deliverable; the drawing is his.**
+
+**4.4 · A short "known limitations of this review" note in each paper.** Two or three sentences on
+what was checked mechanically, what by hand, and what not at all. **This is a strength, not an
+apology** — the same discipline that produced `II-43`, which exists only because §7 enumerated
+instead of gesturing.
 
 ---
 
@@ -203,12 +322,16 @@ more trustworthy than one that is silent, and this corpus has earned the right t
 | L6 | **The infinite polish.** "A few more passes" with no enforcement. | § 3.4's hard stop at `-106`, with an explicit ship-with-remainder-disclosed path. |
 | L7 | **Scope-and-repair in one hand.** The session that scores also repairs, and grades its own homework. | Pass A may not repair; Pass B may not re-score. |
 | L8 | **Silent imperfection.** Shipping while quietly knowing about S3s. | § 4.3 publishes them **in the papers**. |
+| L9 | **Truth-only grading.** A paper free of S1 and S2 that still reads as a lab notebook — every seam is a TRUE statement, so every seam scored S3 and shipped. | § 2.5's **C-class**, blocking, with seven named defect types and a Pass that owns them. |
+| L10 | **Stopping on a number.** *"I am `-105`, therefore I stop."* The countdown taught the exact behaviour it was meant to prevent. | § 3.0's **ratchet** — every pass owns its SUCCESSOR'S preconditions; Jason rules only on a **twice-stalled** gate, never on a session number. |
+| L11 | **A session re-voicing the papers.** "Harmonising" spends Jason's hours for him and usually loses something. | **C-f is flagged, never fixed.** The structural/voice line is drawn in § 2.5 and restated in § 4.1. |
 
 ---
 
 ## 6 · THE STAMP
 
 * **Ruled by:** Jason, 2026-08-24, in session `wealthTensor-102`.
+* **AMENDED the same day, same session, by Jason:** § 2.5 (the coherence class), § 3.0 (the ratchet, replacing the `-106` hard stop), § 3's fourth pass, § 4's restated end product and `FIGURE-PLAN.md`, and loopholes L9–L11. **The amendment RAISED the bar** — correct is no longer sufficient; structurally final is the bar.
 * **Freeze commit:** recorded at the top of `docs/POST-SHIP.md` — that file's first line is the
   authority, so "frozen at" is **checkable rather than asserted**.
 * **Supersedes:** the convergence clause of `docs/HANDOFF.md`'s `definition_of_done` and the `P7`
