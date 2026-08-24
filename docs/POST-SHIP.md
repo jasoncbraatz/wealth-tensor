@@ -1,6 +1,13 @@
 # POST-SHIP — everything that does NOT block the ship
 
-**FREEZE COMMIT: `64d79bf7c9d76480c64c0f68f1e4563db92bf87f` (`wealthTensor-102`, 2026-08-24).**
+**FREEZE DECLARED AT: `f7afa4fa34a98d29265918c0dbf09430ca63fc99`** — the commit that added `docs/DEFINITION-OF-DONE-SHIP.md`.
+**TREE STATE FROZEN: `64d79bf7c9d76480c64c0f68f1e4563db92bf87f`**, its parent — the corpus as it stood when the ruling was made.
+*(`wealthTensor-102`, 2026-08-24. Both are named because ONE OF THEM IS THE ANSWER TO A
+DIFFERENT QUESTION: `f7afa4fa34a98d29265918c0dbf09430ca63fc99` is what you diff against to see what the freeze changed, `64d79bf7c9d76480c64c0f68f1e4563db92bf87f` is
+what you diff against to see what has happened since. `-102`'s freeze commit message
+claimed this file carried "this commit's own sha", which no commit can do — it recorded the
+PARENT. Repaired here rather than left as a small false statement in the log, which is an S1
+under the very rubric that commit introduced.)*
 *This line is the authority for "frozen at". `docs/DEFINITION-OF-DONE-SHIP.md` § 1 points here
 rather than restating a sha, so the freeze is **checkable rather than asserted**.*
 
