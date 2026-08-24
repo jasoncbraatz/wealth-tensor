@@ -4,13 +4,13 @@ gh_repo: jasoncbraatz/wealth-tensor
 branch: main
 gh_sha: ce39ab47cd127c5eaa778bef3c39f948329adc5b
 updated: 2026-08-24
-session: wealthTensor-104
-session_n: 104
-live_theme: "THE SHIP LIST IS CLOSED AND THE MANUSCRIPTS ARE TRUE. All nine entries repaired in one pass -- six S1, three S2 -- and the list did NOT grow: the one permitted growth was available and not needed. What the pass actually cost was not the nine repairs; it was the FOUR GUARDS THEY REDDENED, and that is the finding. Every repair to a manuscript in this repository is also an edit to something that watches the manuscript, and the watchers are pinned to LINE WRAPS and to GLOBAL COUNTS rather than to claims. wt182 reported three intact repairs as absent because SL-9 reflowed a paragraph. wt185 went red because SL-7 legitimately added four bullets to a section it had counted. Both are the SIXTH AND SEVENTH instances of this repo's standing tell -- THE GUARD WAS WRONG ABOUT THE FILE, NOT THE FILE WRONG -- and both were closed by a TIGHTER SUBJECT: flatten the whitespace on the already-applied side, and assert the bullets are DISTINCT instead of counting them. THE PART WORTH CARRYING: a repair pass on a heavily-guarded corpus is TWO jobs, and the second one is not optional -- ten wt148 promises minted, two superseded rows retired, one restatement count declared, one layout baseline moved 145 -> 147 pages. Budget it as the work, not as fallout."
-phase: "EVERY NUMBER HERE WAS RE-DERIVED BY THE GATE'S CLAIM RE-RUNNER, NOT QUOTED. `pytest` 1168 passed; `verify-layout.sh` RC 0 with 147 pages compared and all 147 per-page hashes reproducing from a clean worktree of 1e1e2a5; `wt182` RC 0 over 20 post-conditions; `wt185` RC 0 over 19; `wt183` 16; `wt186` 11; `wt187` 6; `wt184` RC 0 over 28 post-conditions with 9 NEGATIVE; `wt188` 63/20; `wt189` 19/11; `wt190` 10/4; `wt191` 26/12; `wt191b` 11/5; `wt192` 25/11; `wt192b` 12/6; `wt192c` 13/8; `wt181 --verify` RC 0 over 9 checks with 3 NEGATIVE; `wt133` `wt148` `wt154` `wt156` `wt160` `wt163` `wt166` `wt169` -- ALL EIGHT RC 0; `wt170 --verify` RC 0 with 11 of 15 rows verified; `wt172 --verify` RC 0 over 19 paper-II rows; `wt173 --verify` RC 0 with 50 values held to the build and 0 divergent, 15 of 15 load-bearing values present in the prose, and `wt173 --postconditions` RC 0 over 14 checks -- both after a re-measure, because Pass B's prose moved the body characters-per-line from 65.37 to 65.4, still inside RECIPE section 0's 62-68 band, so nothing was retuned; `preflight` RC 0 over 16 fonts; `wt177_figure_guard.py` RC 0; `redproof_wt177_figures.py` 21/21; `wt179_manifest_guard.py` RC 0 over 10; `redproof_wt179_manifest.py` 26 of 26 tags; `redproof_wt178_claims.py` 17/17; `redproof_wt180_counts.py` 12 of 12; `redproof-layout.sh` RC 0 with 4 probes. `defensive_count.py --against 7c5b6fb` reads **+0 on all three manuscripts** and the LEVELS are unchanged at paper-I/II/III/IV = 0/0/3/0 outside Limitations -- ALL THREE MANUSCRIPTS WERE EDITED THIS PASS and the invariant held. `wt133` sweep 2 now reports paper-II 15 entries, 15 cited, 0 not (was 16, 7, 9). `wt148` reports 0 unadjudicated and 0 stale on all three in-scope manuscripts. Board 66 criteria BYTE-IDENTICAL after `bash scripts/regen-board.sh` -- FIFTH consecutive empty diff, and correct: Pass B closes no lane, because P7 closes at Pass D. `wt192c` RC 0 over 13 post-conditions with 8 NEGATIVE -- its R9 had been pinned to a count of mentions inside the handoff, a file every successor rewrites, and now reads two separate files, one of them durable. Gate v2.61 PASS, tree clean and pushed. THE PASS-B PATCH SCRIPTS ARE DELIBERATELY NOT REGISTERED CLAIMS: every one of them is idempotent and goes QUIET on a second run, and the wrap only ever runs a command a second time, so registering one would register a no-op. Each was run twice and its stdout diffed at the time it was written; they are named in the body of this file, not in the phase block."
+session: wealthTensor-105
+session_n: 105
+live_theme: "THE FOURTEEN CAME BACK AS TWENTY-FOUR, AND THE REASON IS NOT THAT PASS A COUNTED BADLY. REVIEW-038 section 4 is a COUNT per type per paper, its own heading says 'Counted, not repaired', and exactly ONE of the fourteen carries a location anywhere in the corpus. The handoff into this session promised 'they are already found, you are not searching' -- so Pass C's first half-day was the search Pass A had already done once, redone, and the answer came back 24. REVIEW-038 section 4.4 had half-predicted that in writing. THE PART WORTH CARRYING PAST THIS CORPUS: the pass that COUNTS has each item in front of it at the moment it increments, so the list is nearly free to the counter and expensive to everyone after -- a count is a size estimate, an enumeration is a work order, and a handoff promising the second while carrying the first costs its successor the whole search. docs/REVIEW-039-passC-structural-settlement.md is the list REVIEW-038 was not. AND THE SECOND FINDING, WHICH IS THE STANDING TELL INVERTED: for the first time in ten instances, TWICE in one session, THE GUARD WAS RIGHT AND THE PROSE WAS WRONG -- wt160/wt163 caught a bare pointer Pass C's own gloss had written, and check_abstract_size caught a seven-word gloss pushing paper-III's abstract over the 250-word bar, taking two board lanes OPEN with it. Both repaired in the PROSE. The rule that survives both directions: ASK WHICH ONE IS WRONG BEFORE YOU TOUCH EITHER, and when it is the guard, the fix is a TIGHTER SUBJECT, never a weaker one. Two guards were also wrong about the file (wt182's reword case, teed up by -104 and hit here; wt188's pinned count of 11) and both were closed by a tighter subject in the session that reddened them."
+phase: "EVERY NUMBER HERE WAS RE-DERIVED BY THE GATE'S CLAIM RE-RUNNER, NOT QUOTED. pytest 1168 passed; verify-layout.sh RC 0 with 148 pages compared and all 148 per-page hashes reproducing from a clean worktree of 0d84975; wt182 RC 0 over 20 post-conditions; wt185 RC 0 over 19; wt183 16; wt186 11; wt187 6; wt184 RC 0 over 28 post-conditions with 9 NEGATIVE; wt188 63/20; wt189 19/11; wt190 10/4; wt191 26/12; wt191b 11/5; wt192 25/11; wt192b 12/6; wt192c 13/8; wt181 --verify RC 0 over 9 checks with 3 NEGATIVE; wt133 wt148 wt154 wt156 wt160 wt163 wt166 wt169 -- ALL EIGHT RC 0; wt170 --verify RC 0 with 11 of 15 rows verified; wt172 --verify RC 0 over 19 paper-II rows; wt173 --verify RC 0 with 50 values held to the build and 0 divergent, 15 of 15 load-bearing values present in the prose, and wt173 --postconditions RC 0 over 14 checks -- both after a re-measure, because Pass C's prose moved the body characters-per-line from 65.4 to 65.43, still inside RECIPE section 0's 62-68 band, so nothing was retuned and RECIPE.md moved at BOTH of its two sites; preflight RC 0 over 16 fonts; wt177_figure_guard.py RC 0; redproof_wt177_figures.py 21/21; wt179_manifest_guard.py RC 0 over 10; redproof_wt179_manifest.py 26 of 26 tags; redproof_wt178_claims.py 17/17; redproof_wt180_counts.py 12 of 12; redproof-layout.sh RC 0 with 4 probes. defensive_count.py --against reads +0 on all four manuscripts and the LEVELS are unchanged at paper-I/II/III/IV = 0/0/3/0 outside Limitations -- ALL THREE IN-SCOPE MANUSCRIPTS WERE EDITED THIS PASS and the invariant held. wt148 reports 0 unadjudicated and 0 stale on all three in-scope manuscripts, after five promises were re-minted and four rows retired with lineage markers, every evidence command RE-RUN before its row was written. Board 66 criteria BYTE-IDENTICAL after bash scripts/regen-board.sh -- SIXTH consecutive empty diff, and correct: Pass C closes no lane, because P7 closes at Pass D. Gate PASS, tree clean and pushed. THE PASS-C PATCH SCRIPTS (wt200, wt201, wt202, wt202b) ARE DELIBERATELY NOT REGISTERED CLAIMS: every one is idempotent and goes QUIET on a second run, and the wrap only ever runs a command a second time, so registering one would register a no-op. Each was run twice and its stdout diffed; they are named in the body of this file, not in the phase block."
 gate_passed: true
 gate_version: "2.61"
-next_at_bat: "ASSIGNED, ONE THING -- **PASS C of the ship plan: VERIFY THE TRUTH, AND SETTLE THE STRUCTURE.** Read `docs/DEFINITION-OF-DONE-SHIP.md` section 3 Pass C; it wins over this line and the charter wins over it. TWO HALVES, AND THE SECOND ONE IS THE HALF THAT MOVES THE PROJECT. (1) ONE READ PER MANUSCRIPT AGAINST THE FROZEN INSTRUMENT SET ONLY -- run the checkers, do not hunt new classes. Findings are S1/S2 only and go on no list: an S1 or S2 you find is repaired in the same session under section 1.2s successor rule, and S3 goes straight to POST-SHIP.md. (2) SETTLE THE STRUCTURE: fix the **13 C-d fold problems** (paper-II 2, paper-III 7, paper-IV 4) and the **1 C-c orphan** (paper-IV line 327), counted per type per paper in `REVIEW-038` section 4. FOURTEEN ITEMS, BOUNDED, AND THEY ARE THE ONLY C-TYPES THAT CHANGE WHAT EXISTS AND IN WHAT ORDER -- which is why they are yours and not Pass Ds: Pass Ds thirty-thousand-foot read is worthless on a document whose sections are still moving. FIND THEM BY THEIR QUOTED TEXT, NOT BY LINE NUMBER: Pass B added ~35 lines to paper-III section 11, 4 to paper-IV section 10 and one revision line to each front matter, so every line number in REVIEW-038 has moved. NOTHING WAS REORDERED, so the fourteen items are unchanged in identity and in section. FORBIDDEN: building a new instrument (section 1.1), re-scoring anything, and touching C-a, C-b, C-e, C-g or C-f -- C-f is FLAGGED AND NEVER FIXED because re-voicing is Jasons pass. DONE WHEN: all fourteen structural items resolved with their commits, every frozen checker RC 0, `--claims-all` agrees, deliverables rebuilt and layout verified at whatever the new page count is, and **NO SECTION WILL MOVE AGAIN** -- that last one is Pass Ds precondition and section 3.0 says you do not close until you meet it. Do NOT close P7, P13g, P9 or P8."
+next_at_bat: "ASSIGNED, ONE THING -- PASS D of the ship plan: THE COHERENCE PASS, AND THE ONE THAT PRODUCES JASON'S INPUT. Read docs/DEFINITION-OF-DONE-SHIP.md section 3 Pass D; it wins over this line and the charter wins over it. Read docs/REVIEW-039-passC-structural-settlement.md before you plan -- its section 6 states what you inherit so you do not discover it. THE STRUCTURE IS SETTLED: Pass C repaired 24 items and no section will move under you. FIVE THINGS. (1) Clear the remaining C-class: 15 hard C-e, 61 C-b, 5 C-a = 81 repairs, and FLAG the 8 C-f without ever fixing them. (2) Read each manuscript end to end at thirty thousand feet, once, in one sitting, asking only whether it reads as one connected paper. (3) EMIT docs/FIGURE-PLAN.md -- THIS IS THE DELIVERABLE JASON'S LAYOUT WORK RUNS ON. The corpus carries ZERO figure captions and roughly 230 markdown table rows, 157 in paper-III, so the question is not where the charts go, it is which of these tables wants to be a picture and what it would show. YOU MAY PROPOSE CHART FORMS AND MUST NOT BUILD THEM. (4) EMIT docs/SHIP-STATEMENT.md per section 4.2. (5) Rebuild, verify layout, tag v1.0-preprint, close P7. THREE THINGS MAKE 81 SMALLER: C-b clusters -- half of paper-III's 32 are in its References section, so read that as ONE job; the HARD C-e is a delete-on-sight list of fifteen and paper-II has zero, while the other 53 are committed artefacts a reader can fetch and stripping them deletes the provenance promise the whole apparatus exists to keep; and C-g is ZERO across 23 tables with C-c done, so you have no anchor sentences to write. FORBIDDEN: building a new instrument (section 1.1 -- a false-positive reduction is a repair and IS allowed), re-scoring anything, touching C-f at all, and drawing any figure. YOUR SUCCESSOR IS JASON and his precondition is that he can open any manuscript, start rewriting at paragraph one in his own voice, and NEVER discover that a paragraph should not exist, sits in the wrong place, or is missing the chart that would carry it. Ask it in those words, per manuscript. Section 3.0 is a RATCHET, not a countdown: you may not stop because your number came up. P7 IS yours to close; do NOT close P13g, P9 or P8."
 blockers: []
 claims:
   - id: pytest
@@ -73,7 +73,7 @@ claims:
   - id: verify-layout.sh
     cmd: bash docs/deliverable/verify-layout.sh
     rc: 0
-    count: 147
+    count: 148
     count_re: wt176: ([0-9]+) pages compared
     slow: true
     note: needs lualatex, pandoc and a worktree. The count is wt176's, printed un-piped inside this run and DERIVED from the freshly built PDF; the script cross-checks it against a second, independent pypdf read and dies if they disagree
@@ -316,6 +316,16 @@ definition_of_done: "SEE docs/DEFINITION-OF-DONE-SHIP.md — IT IS THE SSOT AND 
 *Stamped by `scripts/handoff_gate.py --stamp`. If `gh_sha` above is not `HEAD`, this file was
 committed without stamping — read `git log` rather than believing it.*
 
+⚠ **READ `docs/DEFINITION-OF-DONE-SHIP.md` — it is the DoD and it WINS over this file and over
+`CHECKLIST.md`** (the charter still wins over it). **Your at-bat is its Pass D.**
+
+⚠ **`docs/SHIP-LIST.md` IS CLOSED AND EVERY ENTRY IS MARKED REPAIRED.** History, not work.
+
+⚠ **YOUR CENSUS IS `docs/REVIEW-038-passA-retrospective-scoring.md` § 4 — AND READ
+`docs/REVIEW-039-passC-structural-settlement.md` BEFORE YOU PLAN.** `-039` is the file `-038`
+was not: an item-by-item enumeration, with the reason for every ruling. Its § 6 states what you
+inherit **so that you do not discover it.**
+
 ---
 
 ## STEP 0 · transport (zero bridge calls)
@@ -330,292 +340,308 @@ curl -s https://system.europeanflorist.com/dsh/darlish-up -o /tmp/darlish-up && 
 # post the printed DARLISH-ENROLL line, EXACTLY, as an Asana comment on task 1217316841710435
 /tmp/darlish-up
 curl -s https://system.europeanflorist.com/dsh/dx -o /tmp/dx && chmod +x /tmp/dx
-/tmp/dx '~/Scripts/roster join --who big-wealthTensor-105 --task "Pass C: verify the truth, settle the structure"'
-/tmp/dx '~/Scripts/roster claim --who big-wealthTensor-105 --resource ~/repos/wealth-tensor --task "Pass C"'
+/tmp/dx '~/Scripts/roster join --who big-wealthTensor-106 --task "Pass D: the coherence pass"'
+/tmp/dx '~/Scripts/roster claim --who big-wealthTensor-106 --resource ~/repos/wealth-tensor --task "Pass D"'
 /tmp/dx '~/Scripts/rail'                                # check before you swing
-/tmp/dx '~/Scripts/charter-read.sh wealthTensor-105'    # YOUR id, not your successor's
-/tmp/dx 'python3 ~/repos/claude-blackbook/lessons.py search "fold problem orphan section order manuscript structure" --scope global,wealth-tensor'
+/tmp/dx '~/Scripts/charter-read.sh wealthTensor-106'    # YOUR id, not your successor's
+/tmp/dx 'python3 ~/repos/claude-blackbook/lessons.py search "scaffolding voice antithesis residue coherence figure plan" --scope global,wealth-tensor'
 ```
 
-READY first try at `-61` through `-104` — **FORTY-FOUR for forty-four.** Budget four minutes; it
+READY first try at `-61` through `-105` — **FORTY-FIVE for forty-five.** Budget four minutes; it
 takes two.
 
-⚠ `roster claim` needs `--resource` (a NAMED flag), not `--repo`. `ROSTER_BRAKE_ACK=<n files>` on
-commits — but the CLEAN exit when a sibling has staged work in a shared repo is
-`git commit --only <your path>`, and `-104` used it in `claude-blackbook` where `opus-mcpMirror-03`
-had four files staged.
+⚠ `roster claim` needs `--resource` (a NAMED flag), not `--repo`. When a SIBLING has staged work in
+a shared repo the clean exit is `git commit --only <your path>`, NOT `ROSTER_BRAKE_ACK`.
 
 ⚠ `--put` PATHS MUST BE QUOTED: `dx --put '~/path'`. Unquoted, your local shell expands `~` to
 `/root` and dx refuses before bytes move.
 
-⚠ **RUN THE GATE AS `GATE_ROSTER_WHO=big-wealthTensor-105 bash ~/Scripts/gate-selfcheck.sh`.**
+⚠ **RUN THE GATE AS `GATE_ROSTER_WHO=big-wealthTensor-106 bash ~/Scripts/gate-selfcheck.sh`.**
 
-⚠ **NEW AT `-104`, AND IT COST A COMMIT AMEND: BACKTICKS IN A `git commit -m` MESSAGE SENT THROUGH
-`dx` ARE COMMAND-SUBSTITUTED BY DARWIN'S ZSH.** The word disappears from the log and the commit
-still succeeds. Write the message to a local file, `--put` it, `git commit -F` it, and read it back
-with `git log -1 --format=%B` before you push.
+⚠ **BACKTICKS IN A `git commit -m` MESSAGE SENT THROUGH `dx` ARE COMMAND-SUBSTITUTED BY DARWIN'S
+ZSH.** The word disappears and the commit still succeeds. Write the message to a local file,
+`--put` it, `git commit -F` it, read it back with `git log -1 --format=%B`. **`-105` avoided this
+by writing commit messages with NO backticks at all** — cheaper than remembering the rule.
+
+⚠ **A THREE-SHELL QUOTING CHAIN (cloud bash → dx → darwin zsh → python heredoc) WILL EAT YOUR
+PATCH.** `-105` lost two round trips to it. **Write the patch to a local file, `--put` it into
+`scripts/`, and run it by name.** Every non-trivial edit this session was made that way.
 
 ---
 
 ## THE STATE YOU INHERIT — every line RE-RUN by `--claims-all`, not quoted
 
 🟢 `pytest` **1168 passed** · `--claims-all` RC 0 — every declared claim re-run un-piped and AGREED
-🟢 **`docs/SHIP-LIST.md` IS CLOSED AND EVERY ONE OF ITS NINE ENTRIES IS MARKED REPAIRED** with the
-   commit that repaired it (`1e1e2a5`). **The list did not grow.** The one permitted growth (an
-   adjacent S1 at a site being repaired) was available and was not needed.
-🟢 **ALL THREE MANUSCRIPTS WERE EDITED AND `defensive_count.py --against 7c5b6fb` READS +0 ON EVERY
-   ONE.** Levels unchanged: paper-I/II/III/IV = **0/0/3/0** outside §Limitations.
-🟢 `wt133` sweep 2 · paper-II **15 entries, 15 cited, 0 not** (was 16, 7, 9 — that was `SL-8`)
-🟢 `wt148` · **0 unadjudicated and 0 stale** across all three in-scope manuscripts. Ten rows added,
-   every one with its evidence RE-RUN in the session that wrote it; two superseded rows deleted with
-   `#superseded` lineage markers, which is the convention this file already followed.
-🟢 **THE CAPTURE IS REBUILT AND THE LAYOUT BASELINE IS 147 PAGES**, not 145. Zero overfull boxes,
-   zero missing characters, and `verify-layout.sh` reproduces all 147 per-page hashes from a clean
-   worktree of `1e1e2a5`. Anything you find still saying 145 is stale — except HANDOFF's RP1a drift
-   flag, which RECORDS a past red-proof run (`141 pages against 145`) and is deliberately untouched.
-🟢 `wt182` 20/… · `wt185` 19/… · `wt183` 16/4 · `wt186` 11 · `wt187` 6 · `wt181 --verify` 9 checks
-🟢 `wt184 --postconditions` 28/9 · `wt188` 63/20 · `wt189` 19/11 · `wt190` 10/4 · `wt191` 26/12 ·
-   `wt191b` 11/5 · `wt192` 25/11 · `wt192b` 12/6 · `wt192c` 13/8
-🟢 `wt133` · `wt148` · `wt154` · `wt156` · `wt160` · `wt163` · `wt166` · `wt169` — ALL EIGHT RC 0
-🟢 `redproof_wt177` 21/21 · `wt178` 17/17 · `wt179` 26/26 · `wt180` 12/12 · `redproof-layout` 4 probes
-🟢 board 66 criteria **BYTE-IDENTICAL** after `bash scripts/regen-board.sh` — **fifth consecutive**
-   empty diff, and correct: Pass B closes no lane, because `P7` closes at Pass D.
-🟢 **`wt173` WAS RE-MEASURED, NOT SILENCED.** Pass B's prose moved `body.chars_per_line`
-   65.37 → **65.4** — still inside § 0's 62–68 band, so nothing was retuned. `--measure`
-   rewrites `METRICS-MEASURED.json` and **does not touch `RECIPE.md`**; `--verify` holds the
-   recipe to the build in TWO places, the data block a script reads and the numbered step a
-   human reads, and BOTH had to move. Now 50 values held, 0 divergent, 15 of 15 in the prose.
-🟢 gate **v2.61 PASS**, tree clean and pushed
-🟢 `docs/POST-SHIP.md` carries a `From wealthTensor-104 (Pass B)` block that states **WHAT PASS C
-   INHERITS FROM PASS B** — read it before you plan, it is written so you do not discover it.
+🟢 **THE STRUCTURE IS SETTLED. 24 items repaired across three manuscripts** — enumerated in
+   `docs/REVIEW-039-passC-structural-settlement.md` § 1. **NO SECTION WILL MOVE AGAIN**, asked and
+   answered per manuscript in `-039` § 5, in § 3.0's own words.
+🟢 **TWO S1s FOUND BY PASS C'S READ AND REPAIRED IN-SESSION** (§ 1.2's successor rule, not the
+   frozen ship list): paper-III's `§ 4.6's question`, which resolves to a section containing no
+   question, at BOTH sites; and § 1's promise that `§§ 2–7` do not depend on Appendix A, which
+   § 7's own ledger breaks. `SHIP-LIST.md` did not reopen and did not grow.
+🟢 **A THIRD DEFECT WAS CAUGHT BY THE PROMISE LEDGER BEFORE IT COULD LAND** — see THE TRAPS.
+🟢 `wt148` **0 unadjudicated, 0 stale**, all three in-scope manuscripts. Five promises re-minted,
+   four rows retired with lineage markers, **every evidence command RE-RUN before its row.**
+🟢 `defensive_count.py --against`: **G-COACH-3 holds on all four manuscripts.** Levels unchanged,
+   paper-I/II/III/IV = **0/0/3/0** outside § Limitations. **All three were edited this pass.**
+🟢 **THE LAYOUT BASELINE IS 148 PAGES**, not 147. 0 overfull boxes, 0 missing characters, and
+   `verify-layout` reproduces all 148 per-page hashes from a clean worktree of `0d84975`.
+🟢 `wt173 --verify` **50 held / 0 divergent / 15 of 15 in the prose**, after a `--measure`: Pass C's
+   prose moved `body.chars_per_line` **65.4 → 65.43**, still inside RECIPE § 0's 62–68 band, so
+   **nothing was retuned.** `RECIPE.md` moved at BOTH sites. `--postconditions` RC 0 over 14.
+🟢 `wt182` 20 · `wt185` 19 · `wt183` 16/4 · `wt186` 11 · `wt187` 6 · `wt181 --verify` 9 · `wt184` 28/9
+🟢 `wt188` **63/20** · `wt189` 19/11 · `wt190` 10/4 · `wt191` 26/12 · `wt191b` 11/5 · `wt192` 25/11 ·
+   `wt192b` 12/6 · `wt192c` 13/8 · `wt133` `wt148` `wt154` `wt156` `wt160` `wt163` `wt166` `wt169`
+   — **ALL EIGHT RC 0**
+🟢 board 66 criteria **BYTE-IDENTICAL** — **SIXTH** consecutive empty diff, and correct: Pass C
+   closes no lane, because `P7` closes at **your** pass. Two lanes went OPEN mid-session and both
+   were real; see THE TRAPS.
+🟢 gate PASS, `--emit` HANDOFF OK, tree clean and pushed
 
-🟡 TWO GATE WARNINGS, **NEITHER OF THEM THIS REPO'S**, and neither blocks you:
-   `claude-blackbook` DIRTY(4) — a sibling's staged work, claimed by `opus-mcpMirror-03`; leave it.
-   `G-T#44` n8n-spine crontab drift — carded SM `1217795659362669` by `-103`, with the reason it did
-   not fire the refresh blind (it `--commit`s the LIVE box INTO the vault, so if the live side is
-   wrong it destroys the signal). Still true. Do not let either block your wrap.
+🟡 **TWO WARNINGS, NEITHER THIS REPO'S**, and neither blocks you. `claude-blackbook` may report
+   DIRTY — a sibling's staged work; leave it. `G-T#44` n8n-spine crontab drift — carded SM
+   `1217795659362669` by `-103`, with the reason it did not fire the refresh blind (it `--commit`s
+   the LIVE box INTO the vault). Still true.
 
 ---
 
-## ▶ YOUR AT-BAT · ONE THING — **PASS C: VERIFY THE TRUTH, AND SETTLE THE STRUCTURE**
+## ▶ YOUR AT-BAT · ONE THING — **PASS D: THE COHERENCE PASS, AND THE ONE THAT PRODUCES JASON'S INPUT**
 
-**Read `docs/DEFINITION-OF-DONE-SHIP.md` § 3 Pass C.** It wins over this file; the charter wins over
-it. Two halves, and the second one is the half that moves the project.
+**Read `docs/DEFINITION-OF-DONE-SHIP.md` § 3 Pass D.** It wins over this file; the charter wins
+over it. **This pass has ONE READER IN MIND AND IT IS JASON, about to spend a large number of hours
+rewriting. Its whole job is to make sure those hours are not a false start.**
 
-**(1) ONE READ PER MANUSCRIPT AGAINST THE FROZEN INSTRUMENT SET ONLY.** Run the checkers; do not
-hunt new classes. Findings here are S1/S2 only — repair them in the same session — and S3 goes
-straight to `docs/POST-SHIP.md`. Deliverables rebuilt, layout verified, all guards green.
+**The structure is settled — that was Pass C's product and it is in your hands.** Nothing you read
+is going to move under you.
 
-**(2) SETTLE THE STRUCTURE — and this is the countable part.** Fix the **13 C-d fold problems**
-(paper-II 2, paper-III 7, paper-IV 4) and the **1 C-c orphan** (paper-IV line 327). Fourteen items,
-counted per type per paper in `docs/REVIEW-038-passA-retrospective-scoring.md` § 4. These are the
-two C-types that change *what exists and in what order*, which is why they are yours: **Pass D's
-thirty-thousand-foot read is worthless on a document whose sections are still moving.**
+**FIVE THINGS, and the third is the one that decides whether this pass finished.**
 
-### Three things that make fourteen smaller than it sounds
+1. **CLEAR THE REMAINING C-CLASS.** 15 hard C-e, 61 C-b, 5 C-a — **81 repairs**, census in
+   `REVIEW-038` § 4 and § 4.1. **FLAG the 8 C-f and NEVER fix them.**
+2. **READ EACH MANUSCRIPT END TO END AT THIRTY THOUSAND FEET, once, in one sitting**, asking only:
+   *does this read as one connected paper?* Not sentence by sentence — Passes B and C did that and
+   they are done.
+3. **EMIT `docs/FIGURE-PLAN.md`** (§ 4.3). **THIS IS THE DELIVERABLE JASON'S LAYOUT WORK RUNS ON**,
+   and it is the reason this pass exists. **The corpus carries ZERO figure captions and roughly 230
+   markdown table rows, 157 of them in paper-III.** So the question is not where the charts go —
+   **there are no charts.** It is *which of these tables wants to be a picture, and what would it
+   show.* One row per table and per proposed figure, with the six columns § 4.3 names.
+   **YOU MAY PROPOSE CHART FORMS AND MUST NOT BUILD THEM. The plan is the deliverable; the drawing
+   is his.**
+4. **EMIT `docs/SHIP-STATEMENT.md`** (§ 4.2) — passes per manuscript and by what axes, the frozen
+   instrument list, findings raised and repaired by severity, the C-class counts before and after,
+   **and what is known-imperfect and shipping anyway.** POST-SHIP.md's *"Measurement answered"*
+   block is the most interesting thing this apparatus knows about itself; it belongs here.
+5. **Rebuild, verify layout, tag `v1.0-preprint`, close `P7`.**
 
-1. **THEY ARE ALREADY FOUND.** Pass A counted them and named them. You are not searching; you are
-   reordering. `REVIEW-038` § 4 is the census and it is evidence, not a hypothesis.
-2. **FIND THEM BY QUOTED TEXT, NOT BY LINE NUMBER.** Pass B added ~35 lines to paper-III § 11, four
-   to paper-IV § 10, and one revision line to each front matter, and cut one paper-II reference
-   entry. Every line number in `REVIEW-038` has moved. **Nothing was reordered**, so the fourteen
-   items are unchanged in identity and in which § they live in — only their offsets moved.
-3. **THE MANUSCRIPTS ARE HARD-WRAPPED AND CARRY MARKDOWN EMPHASIS INSIDE VALUES.** A fold problem is
-   a paragraph, so its anchor spans line breaks by construction. **Grep the concept, or flatten the
-   whitespace first** — `" ".join(text.split())` — which is exactly the repair `-104` had to make to
-   `wt182` after its own repairs reflowed a paragraph.
+### THE THREE THINGS THAT MAKE 81 SMALLER THAN IT SOUNDS
+
+1. **C-b IS THE MASS AND IT CLUSTERS.** Roughly half of paper-III's 32 are in the **References
+   section** — dated verification notes, *"an earlier draft of this entry recorded…"*, a to-do
+   addressed to a future work session. **Read paper-III's References as ONE JOB**, not as 16.
+2. **THE HARD C-e IS A DELETE-ON-SIGHT LIST OF FIFTEEN AND PAPER-II HAS ZERO OF THEM.** Session
+   numbers, `REVIEW` docs, `LEDGER` ticket ids. **The other 53 are NOT leaks** — a
+   `scripts/wt###.py` in a § Data-and-code section is a committed artefact a reader can fetch, and
+   § 2.5's own repair clause says so. **Strip those and you delete the provenance promise the whole
+   S1/S2 apparatus exists to keep.** `REVIEW-038` § 4.1 has the census; `POST-SHIP.md` states
+   per-site that Pass B and Pass C added **zero** hard C-e, so you do not re-take it.
+3. **C-g IS ZERO ACROSS 23 TABLES and C-c IS DONE.** Every table already carries an anchor
+   sentence. **You have no anchor sentences to write** — which is exactly what makes § 4.3's
+   figure plan a design question rather than a repair.
 
 ### DONE WHEN
 
-All fourteen structural items resolved, each with its commit · every frozen checker RC 0 ·
-`--claims-all` agrees · deliverables rebuilt and layout verified at whatever the new page count is ·
-every guard your reordering reddened closed **IN THE SAME SESSION THAT REDDENED IT** ·
-and **NO SECTION WILL MOVE AGAIN.**
+All 81 C-class repairs landed with their commits · 8 C-f flagged and untouched · `FIGURE-PLAN.md`
+and `SHIP-STATEMENT.md` emitted · every frozen checker RC 0 · `--claims-all` agrees · deliverables
+rebuilt and layout verified at whatever the new page count is · every guard your edits reddened
+closed **IN THE SAME SESSION THAT REDDENED IT** · `v1.0-preprint` tagged · `P7` closed.
 
 ### FORBIDDEN THIS PASS
 
-Building a new instrument (§ 1.1 — a false-positive reduction is a repair and IS allowed; new
-*looking* is not) · re-scoring anything · touching **C-a, C-b, C-e or C-g** (those are Pass D's) ·
-touching **C-f at all**, ever — register drift is **FLAGGED AND NEVER FIXED**, because re-voicing is
-Jason's pass and a session that harmonises the voice has spent his hours for him.
+Building a new instrument (§ 1.1 — a FALSE-POSITIVE reduction is a repair and IS allowed; NEW
+LOOKING is not) · re-scoring anything · **touching C-f AT ALL, ever** — register drift is FLAGGED
+AND NEVER FIXED, because re-voicing is Jason's pass and a session that harmonises the voice has
+spent his hours for him · **drawing any figure.**
 
-### ⚠ YOUR SUCCESSOR PRECONDITION — you do not close until you meet it (§ 3.0)
+### ⚠ YOUR SUCCESSOR PRECONDITION — and it is the last one, because the successor is JASON
 
-**Pass D can start iff NO SECTION WILL MOVE AGAIN.** Ask it at the end in those words, per
-manuscript. If a section still might move, say so LOUDLY and hand over the remainder — one extra
-session is the NORMAL cost, and Jason rules only when the ratchet stalls TWICE on the SAME
-precondition. **You may not stop because your number came up.** § 3.0 is a ratchet, not a countdown.
+> **He can open any of the three manuscripts, start rewriting at paragraph one in his own voice,
+> and NEVER discover that a paragraph should not exist, sits in the wrong place, or is missing the
+> chart that would carry it.**
 
-**Do NOT close `P7`, `P13g`, `P9` or `P8` — all PENDING-HUMAN, all Jason's.**
+**Ask it in those words, per manuscript, at the end.** If you cannot answer yes, say so LOUDLY and
+hand over the remainder — one extra session is the NORMAL cost, and Jason rules only when the
+ratchet stalls TWICE on the SAME precondition. **§ 3.0 is a RATCHET, NOT A COUNTDOWN: you may not
+stop because your number came up.**
 
----
-
-## WHAT `-104` DID — Pass B, and the bill the nine repairs did not show
-
-**The nine repairs, in the charter's order, all in `1e1e2a5`:**
-
-| | what it was | what landed |
-|---|---|---|
-| `SL-1` | `0.333` attributed to § 5.4, whose rate is `0.408` | **STEELMAN.** The clause no longer points at `0.333`; § 5.4's rate is named explicitly, *with* PRE-002's `peak-to-charge` qualifier, because `REG-003 §7`'s guard caught the first cut attaching a measurement of α̂ to a bare *recognition rate*. Arithmetic untouched. |
-| `SL-2` | `§4.4's 0.00789`, a value § 4.4 does not carry | **REPLACE.** *"from 0.00789 at the calibration — §4.4's closed form evaluated there —"*. `wt090` prints `reproduces §4.4's published 0.00789 at alpha=0.05`, so the new attribution is the true one. |
-| `SL-3/4/5` | three stale version stamps, 21 / 36 / 19 commits past their dates | **REPLACE.** v0.3 / v0.6 / v0.2, all `2026-08-24`, one class-level revision line each. No ruling from Jason had landed and none was asked for. No finding enumeration in a manuscript — charter § 3.3. |
-| `SL-6` | a word count that is 7 367 or 7 527 depending on the locale | **STEELMAN.** § 10 names the command **and** the locale and states what a non-UTF-8 GNU `wc` returns; § 8 points at § 10. *"roughly 7,500"* kept, as Pass A required. |
-| `SL-7` | § 11's scope narrower than the front matter's promise | **STEELMAN.** Scope widened to name § 4; four **Regenerate** bullets covering §§ 4.2, 4.4, 4.5, 4.6, 4.7, 4.8 and 4.9. |
-| `SL-8` | nine of sixteen paper-II reference entries never cited | **STEELMAN × 8, CUT × 1.** Eight cited at the sentence that relies on them (copying `-81`'s `IV-7`); Piketty cut, because no sentence relies on it and padding the body to justify an entry is the move Pass A forbade. |
-| `SL-9` | an exhaustive census of the paper's own unmeasured absences | **REPLACE, at BOTH sites.** The item asserted its census twice — in its lede and in its enumeration — and a repair landing at one leaves the document asserting both things. |
-
-**AND THE PART THAT WAS NOT ON THE LIST, WHICH IS THE FINDING.** Nine repairs, none of them large,
-reddened **four guards** and minted **ten promises**:
-
-- `TERM-001` · the first cut of `SL-7`'s bullet wrote *"disclosed rectangle"* about a rectangle the
-  paper ASSERTS. **The guard was right and the sentence was wrong** — the only one of the four where
-  that was the direction.
-- `REG-003 §7` · caught `SL-1`'s missing `peak-to-charge` qualifier. Also right, also a real fix.
-- `test_restatement_reach` · § 4.9 now prints α̂ once where it printed it never, because that IS
-  `SL-1`'s repair. **DECLARED** rather than excused — a tighter pin. (`wt187` then re-derived the
-  same declaration from the manuscript independently and agreed.)
-- `wt148` · seven new promises on paper-III, three churned on paper-IV, two superseded rows retired.
-  **Every evidence command was RUN before its row was written**, by a script that refuses to append
-  a row whose evidence does not check out.
-- `wt182` and `wt185` · both wrong about the file. See the traps.
-- the layout baseline · 145 → 147 pages. Three places asserted 145; all three moved.
-
-**Scripts, all idempotent, all run twice with their stdout diffed:** `wt193` (SL-1/2) · `wt194`
-(SL-3/4/5) · `wt195` (SL-6) · `wt196` (SL-9) · `wt197` (SL-7) · `wt198` (SL-8) · `wt199` (the
-restatement declaration) · `wt200`/`wt201` (promise evidence and sentences) · `wt202` (the ten rows)
-· `wt203` (SHIP-LIST closed) · `wt204` (POST-SHIP) · `wt205` (147 pages) · `wt206` (the two patch
-guards) · `wt207` (`wt192c` R9) · `wt208` (RECIPE's two halves). **None is a registered claim, deliberately:** they go QUIET on a second run, and the wrap
-only ever runs a command a second time.
+**Do NOT close `P13g`, `P9` or `P8` — all PENDING-HUMAN, all Jason's.** `P7` IS yours to close.
 
 ---
 
-## THE TRAPS — and the headline has not changed, it has doubled
+## WHAT `-105` DID — Pass C, and the finding that outranks the twenty-four repairs
 
-⚠ **SEVENTH AND EIGHTH TIME RUNNING: A RED GUARD WAS WRONG ABOUT THE FILE, NOT THE FILE WRONG.**
-`wt182` reported three intact repairs as absent because `SL-9` reflowed one paragraph; it recognised
-its own landed edits by exact **line-wrapped** strings. `wt185` went red because `SL-7` legitimately
-added four bullets to a section whose bullets it **counted**. **CHECK WHETHER THE GUARD IS WRONG
-BEFORE YOU LOOSEN IT — and the fix is a TIGHTER SUBJECT, never a weaker one.** Both fixes kept their
-post-condition counts (20 and 19) exactly where they were.
+### THE FINDING: A COUNT IS A SIZE ESTIMATE; AN ENUMERATION IS A WORK ORDER
 
-⚠ **FLATTEN WHITESPACE ON THE ALREADY-APPLIED SIDE ONLY.** `wt182`'s repair flattened both sides
-first, and a SECOND, unrelated edit went red instantly: an `old` string is very often a substring of
-its own `new` once the newlines go, so the guard could no longer tell before from after. A guard
-that cannot tell before from after is worse than one that churns.
+**The handoff into this session said: *"THEY ARE ALREADY FOUND. Pass A counted them and named them.
+You are not searching; you are reordering."* HALF OF THAT WAS TRUE.** `REVIEW-038` § 4 is a **count
+per type per paper**, and its own § 4 heading says *"Counted, not repaired."* **Exactly one of the
+fourteen carries a location anywhere in the corpus** — the paper-IV orphan. The other thirteen
+existed as a number in a table.
 
-⚠ **A GLOBAL COUNT IS A LOOSE PROXY FOR "MY INSERT APPLIED ONCE".** It churns on every later
-legitimate addition. Assert **distinctness** of the inserted items instead — it catches a duplicate
-from ANY pass and is immune to honest growth.
+**So Pass C's first half-day was the search Pass A had already done once, redone.** And the answer
+came back **24, not 14** — which `REVIEW-038` § 4.4 had half-predicted in writing: *"Pass C should
+expect to find fold problems this sweep missed and should not treat 13 as a ceiling."* It was right.
 
-⚠ **A GUARD PINNED TO A COUNT OF MENTIONS INSIDE `docs/HANDOFF.md` IS PINNED TO A MOVING
-SUBJECT, AND `wt192c`'s R9 WAS THE THIRD COSTUME OF IT.** It asserted the `wt184` card gid
-*"still resolves in both places"* and measured that as `handoff.count(gid) >= 2` — two
-MENTIONS in one file, one of them inside the at-bat text every successor is REQUIRED to
-replace. `-104`'s rewrite dropped it to one and the claim went red on a card that is not
-orphaned. Repaired to read TWO FILES — the handoff's parking lot AND `docs/POST-SHIP.md` —
-so it fires on an orphan and not on an ordinary handoff rewrite.
+**THE PART WORTH CARRYING PAST THIS CORPUS: the pass that COUNTS has each item in front of it at
+the moment it increments, so the list is nearly free to the counter and expensive to everyone
+after.** A rough count genuinely does beat an elegant absence of one. What it does not beat is a
+rough LIST. **If a future pass is ever told to count something, it should be told to name them too.**
 
-⚠ **`wt173` MUST BE RE-MEASURED WHENEVER THE MANUSCRIPTS GAIN PROSE, AND `--measure` ONLY
-DOES HALF THE JOB.** It rewrites `METRICS-MEASURED.json`; `RECIPE.md` carries the same value
-twice — in its data block and in its numbered step — and `--verify` checks both. Budget
-`--measure` (a lualatex rebuild, minutes) plus a two-line `RECIPE.md` edit into any pass that
-adds prose. **Do not widen § 0's band to make a value come out**; the band is a CHOICE and the
-value is a measurement.
+### THE TWENTY-FOUR — the shape, not the list; `REVIEW-039` § 1 is the list
 
-⚠ **BEFORE REGISTERING ANY CLAIM, NAME WHAT COULD MOVE THIS VALUE FOR A REASON UNRELATED TO WHAT YOU
-ARE CHECKING — and `docs/HANDOFF.md` MOVES EVERY SESSION, BY DESIGN.** Never assert its content.
+| | count | census said | what they were |
+|---|---|---|---|
+| paper-II | 4 | 2 C-d | § 2.4 *What is measured* was an incomplete definition slot — the `bounded` verdict column and `Var[log a]` both arrived after the tables that use them; one paragraph stood in front of its own evidence |
+| paper-III | 11 | 7 C-d | the lag statistic defined 460 lines after it is tabulated; ⊘ used in the abstract and defined nowhere; α̂ and the Weibull fit leaned on from § 4 with no estimator named; § 2's domain restriction and one-signed condition living in § 10 |
+| paper-IV | 9 | 4 C-d, 1 C-c | *"the fourth paper"* with no antecedent; α used before it is named; a fold patched with *"the paragraph after next"*; § 6's `z` and its bar defined after the table that reports them; three undefined terms carrying real weight — **the ladder, Λ, and Paper I** |
 
-⚠ **THE MANUSCRIPTS ARE HARD-WRAPPED AND CARRY MARKDOWN EMPHASIS INSIDE VALUES.** You will hit this
-on every C-d fold problem, because a fold problem is a paragraph. Grep the concept, or strip
-emphasis and line-joins first.
+### THE JUDGEMENT CALL, NAMED SO YOU CAN OVERRULE IT
 
-⚠ **RUN EVERY PATCH SCRIPT TWICE AND DIFF THE STDOUT.** The second run is the test, costs nothing,
-and is the ONLY run `--claims-all` ever performs. An idempotent script that goes QUIET on its second
-run **cannot** be a registered claim, for the same reason.
+**Four folds are forward dependencies from § 4 onto § 5.4's empirical fit.** The maximal reading of
+§ 2.5's *"Reorder"* moves § 4.9 and § 4.10 after § 5.4. **It was considered and not done.** § 4 is
+the identification theory and those subsections are about what the closed form assumes; moving them
+renumbers everything the corpus and the instrument set point at, to relocate paragraphs that are
+thematically home. **What made a first-time reader stumble was never the forward pointer — a long
+paper may point forward — it was that the pointer arrived carrying an unevaluable number and an
+undefined term.** So the DEFINITION moved forward instead, in each case.
 
-⚠ **NAMING AN ARTEFACT IN A MANUSCRIPT MINTS A `wt148` PROMISE.** Adding provenance costs one row
-per artefact, and each row needs its evidence RE-RUN before it can honestly be written. Prefer
-naming *what* a command prints over *restating the value* — a value restated in § 11 is a second
-copy that can drift, and `test_restatement_reach` will make you declare it.
+**THIS IS A DECISION, NOT AN OMISSION, and it is why `-039` § 5 can answer your precondition yes.**
+If your thirty-thousand-foot read finds the § 4 → § 5.4 dependency still costs the reader, **that
+is a section move and it is Jason's ruling, not a fifth session doing it quietly.**
 
-⚠ **BACKTICKS IN A COMMIT MESSAGE SENT THROUGH `dx` ARE COMMAND-SUBSTITUTED BY DARWIN'S ZSH.** The
-word vanishes and the commit succeeds. File + `--put` + `git commit -F`, then read it back.
+---
 
-⚠ **`wc -w` IS LOCALE-DEPENDENT ON GNU AND LOCALE-INDEPENDENT ON MACOS.** `SL-6` could not be
-reproduced on darwin at all. A check this project runs on darwin can be green there and red for a
-reader on Linux.
+## THE TRAPS — the headline is unchanged and it has now run BOTH WAYS
+
+⚠ **NINTH AND TENTH TIME: A RED GUARD WAS WRONG ABOUT THE FILE, NOT THE FILE WRONG.**
+  `wt182` failed its IV-12a **precondition** at 0 occurrences **with every one of its edits
+  intact**, because its idempotence test recognises a landed repair by the whole wrapped paragraph.
+  `-104` flattened whitespace here — which fixed the REFLOW case, left the REWORD case, and **teed
+  it up in its own handoff.** `-105` hit it. `wt188` pinned the literal count **11** of `wt184`
+  RULE-1 flags on paper-II when the finding was that **every** flag is a co-occurrence false
+  positive. Both closed by a TIGHTER subject, in the session that reddened them.
+
+⚠ **AND FOR THE FIRST TIME IN TEN, IT RAN THE OTHER WAY — TWICE. THE GUARD WAS RIGHT AND THE PROSE
+  WAS WRONG.** `wt160`/`wt163` flagged a bare pointer that Pass C's own new gloss had written
+  (*"names in this paper"*). `check_abstract_size` went red because a seven-word operator gloss
+  pushed paper-III's abstract to **254 words**, over PREPRINT-CHECKLIST § A's 250 bar, taking board
+  lanes `P1a` and `P1l` OPEN with it. **Both were repaired in the PROSE, not in the guard.**
+  **THE RULE THAT SURVIVES BOTH DIRECTIONS: ASK WHICH ONE IS WRONG BEFORE YOU TOUCH EITHER — and
+  when it is the guard, the fix is a TIGHTER SUBJECT, never a weaker one.**
+
+⚠ **THE PROMISE LEDGER CAUGHT A DEFECT BEFORE IT COULD BECOME AN S1, AND THAT IS THE MOST USEFUL
+  THING THIS SESSION LEARNED.** paper-IV's new `z` gloss first read *"the overlap divided by the
+  pooled ceiling."* `REG-013` § 4 defines **z = (O − F)/(P − F)**. The two agree **only because
+  this run's floor came out at exactly 0.000** — true of the numbers, false of the construction.
+  **It was caught by WRITING THE wt148 ROW, which forced the registration to be re-read.**
+  **THE ROW IS PART OF THE REPAIR, NOT BOOKKEEPING THAT FOLLOWS IT.**
+
+⚠ **A REPAIR THAT SILENTLY DELETES AN ATTRIBUTION HAS NOT REPAIRED ANYTHING.** Rewriting § 4.4's
+  and § 4.9's sentences to add the sample and the estimator dropped the words *PRE-002's
+  instrument* — trading provenance for legibility without saying so. **Caught because the promise
+  count fell.** Both rewritten to carry BOTH.
+
+⚠ **PREFER DROPPING A RESTATED VALUE TO DECLARING IT.** A restated `n = 695` in § 4.4 made
+  `test_restatement_reach` demand a declaration. The reader needed the **estimator**, not the n, so
+  the number came out and the declaration was never needed. **A restated value is a second copy
+  that can drift; a named estimator is not.**
+
+⚠ **`wt093_edits_scope001.py` IS NOT IDEMPOTENT AGAINST AN EDITED `NEW`.** It replaces its ANCHOR
+  with `NEW`, and `NEW` ends with the ANCHOR — so re-running it after `NEW` changes **inserts a
+  second copy of the steelman.** `-105` did exactly that and caught it on the count assertion in
+  the guard that imports it. **EVERY `*_edits_*.py` IN THIS REPOSITORY HAS THAT PROPERTY.** If you
+  edit one of those constants, do not re-run the script — repair the file directly.
+
+⚠ **A SECTION-FREEZE AMENDMENT NEEDS A COMMIT THAT ALREADY EXISTS.** `test_reg012_sec6_sec47_frozen`
+  requires the named commit to have moved § 4.7 to the claimed digest, both checkable in git — so
+  **the edit commits FIRST and the amendment follows in its own commit**, which the guard's own
+  message blesses. The § 4.4 tripwire is different: its pin is a digest of the working tree, so
+  **re-pin it in the SAME commit** and write the reading (CARRYING SENTENCE vs ARGUMENT REOPENED)
+  **at the pin**, where the next reader will find it.
+
+⚠ **THE BUILD STAMPS FROM A COMMIT, SO ALL MANUSCRIPT EDITS MUST BE COMMITTED BEFORE YOU BUILD.**
+  `-105` built three times: once too early, once after a late abstract repair, once to verify.
+  **Budget the last build for after the last byte moves.**
+
+⚠ `wt173` **MUST BE RE-MEASURED WHENEVER THE MANUSCRIPTS GAIN PROSE, AND `--measure` ONLY DOES HALF
+  THE JOB**: it rewrites `METRICS-MEASURED.json`; `RECIPE.md` carries the same value TWICE — the
+  data block a script reads and the numbered step a human reads — and `--verify` checks both.
+  **DO NOT widen § 0's 62–68 band to make a value come out. The band is a CHOICE, the value a
+  MEASUREMENT.**
+
+⚠ **NAMING AN ARTEFACT IN A MANUSCRIPT MINTS A wt148 PROMISE**, and each row needs its evidence
+  RE-RUN. **Rewording a sentence that already names one re-keys the row and strands the old one as
+  STALE** — five re-minted and four retired this pass, from nine prose edits.
+
+⚠ **RUN EVERY PATCH SCRIPT TWICE AND DIFF THE STDOUT.** An idempotent script that goes QUIET on its
+  second run cannot be a registered claim, because the wrap only ever runs it a second time.
+
+⚠ **IF YOU ADD A SWEEP TO `phase:`, DECLARE IT IN `claims:`** — the detector fires on a BACKTICKED
+  TOKEN NEXT TO A NUMBER. De-backtick, or use the registered id verbatim.
+
+⚠ **A GATE THAT PRINTS "CANNOT VERIFY" OVER THE NETWORK CAN TURN ONE ASANA TIMEOUT INTO THREE
+  APPARENT BLOCKERS.** RE-RUN ONCE AND READ THE TRACEBACKS BEFORE THE SUMMARY LINE. (Exit 2 is
+  still NOT a pass.)
 
 ⚠ `echo $?` AFTER A PIPE IS THE PIPE'S EXIT CODE. Redirect to a FILE, then `echo $?`, then tail.
 
 ⚠ **FINDING IDS ARE NOT UNIQUE ACROSS THE LEDGER.** `III-1` names three findings, `IV-1` names two.
-ALWAYS cite `<pass>/<id>`. `REVIEW-038` § 1.2.
+  Always cite `<pass>/<id>`. `REVIEW-038` § 1.2.
 
 ⚠ `git diff docs/CHECKLIST.md` BEFORE committing it; regenerate with `bash scripts/regen-board.sh`,
-NEVER `board.py`, and never while anything is building.
+  **NEVER `board.py`**, and never while anything is building.
 
-▲ darwin is macOS + zsh: no `grep -P`. `dx` exit **3** = never reached darwin (safe to re-run) ·
-**4** = dropped after it started (check state before re-running).
+▲ darwin is macOS + zsh: no `grep -P`, no `cat -A`. `dx` exit **3** = never reached darwin (safe to
+  re-run) · **4** = dropped after the command started (check state first; no blind retry).
+
+---
+
+## TEE-UPS — what `-105` found and did NOT do
+
+- **THE REMAINING LINE-WRAPPED ANCHORS IN THE OTHER `wt###_p7pass*.py` SCRIPTS.** `wt182` now has
+  `LANDED` markers; **`wt181`, `wt185`, `wt188` and `wt192*` all still recognise their own edits by
+  literal text** and will break the same way the next time someone reflows those paragraphs. The
+  pattern to copy is nine lines, in `wt182`. `-104` teed this up, `-105` did `wt182` and `wt188`.
+- **THREE LOW-CONFIDENCE STRUCTURAL ITEMS, deliberately not repaired**, each with its reason in
+  `POST-SHIP.md`: paper-III § A.2.3's two unmatched table-row labels; paper-II § 3.2's *"connects
+  outward"* bridge paragraph, which on a second reading is closer to **C-a** than C-c and is
+  therefore **YOURS**; and paper-IV § 5's heading, which is a title decision and Jason's.
+- **A FOLD-PROBLEM DETECTOR IS IMAGINABLE AND IS A NEW INSTRUMENT** (§ 1.1 — after the ship). It
+  would have found five of the twenty-four mechanically by comparing first-USE section against
+  first-DEFINITION section. **It would not have found the ones that mattered most**, which are
+  folds in the ARGUMENT rather than in the notation. In `POST-SHIP.md` with that caveat attached.
+- **A locale-pinning guard and a per-section reference-reachability sweep** — both in
+  `POST-SHIP.md`, both new instruments, both blocked by § 1.1 until the corpus ships.
 
 ---
 
 ## THE WRAP ORDER
 
-commit → `GATE_ROSTER_WHO=<you> gate-selfcheck` → `--claims-all` (12–14 min, **AFTER** your last
-mutation) → `gate_passed: true` → `--stamp` → commit ONLY `docs/HANDOFF.md` → push →
-`charter-read.sh wealthTensor-105` → gate → `--emit` → `roster leave --who`.
+commit → `GATE_ROSTER_WHO=<you> bash ~/Scripts/gate-selfcheck.sh` → `--claims-all` (12–14 min,
+AFTER your last mutation) → `gate_passed: true` → `--stamp` → commit ONLY `docs/HANDOFF.md` → push
+→ `charter-read.sh wealthTensor-106` → gate → `--emit` → `roster leave --who`.
 
 ⚠ `--stamp` BEFORE the final commit means `gh_sha` lags; `--check` returns RC 1 with *"code advanced
-past the handoff"* until you stamp. That is expected, not a defect.
+past the handoff"* until you stamp. **That is expected, not a defect.**
 
-⚠ If you add a sweep to `phase:`, DECLARE IT in `claims:` or the leg goes UNREGISTERED-CLAIM; write
-`count_re:` UNQUOTED and paren-free.
-
----
-
-## WHERE THIS IS HEADED — `-104` re-sized it from inside the repairs
-
-**PASS C · `-105` · yours.** 14 structural items. Precondition for D: **no section will move again.**
-
-**PASS D · `-106` · the coherence pass, and THE ONE THAT PRODUCES JASON'S INPUT.** Inherits **81
-repairs**: 15 hard C-e, 61 C-b, 5 C-a — plus **8 C-f to FLAG AND NEVER FIX**. Paper-III is 55% of
-it, and roughly half its C-b clusters in the References section: read that as one job. Emits
-`docs/FIGURE-PLAN.md` and `docs/SHIP-STATEMENT.md`, tags `v1.0-preprint`, closes `P7`.
-
-⚠ **C-e SPLITS 15 HARD / 53 SOFT AND THE SPLIT IS LOAD-BEARING.** A `scripts/wt###.py` named in a
-§ Data-and-code section is a **COMMITTED ARTEFACT THE READER CAN FETCH**, not a leak — § 2.5's own
-repair clause says so. Strip those and you delete the provenance promise the whole S1/S2 apparatus
-exists to keep. The HARD 15 (session numbers, `REVIEW` docs, LEDGER ticket ids) are the
-delete-on-sight list, and paper-II has ZERO of them. `REVIEW-038` § 4.1 has the census.
-
-⚠ **PASS B ADDED ZERO HARD C-e.** Every artefact named in the four new § 11 bullets and the one new
-§ 10 bullet is a committed `scripts/wt###.py`. No session number, no `REVIEW` doc, no
-`p7-passes.tsv` reference. The census does not grow from Pass B — `docs/POST-SHIP.md` states this
-per site, in a table, so Pass D does not have to re-take it.
-
-⚠ **C-g IS ZERO across 23 tables** — every table already carries an anchor sentence. **C-c is ONE.**
-Both earned; do not re-verify from scratch.
-
----
-
-## TEE-UPS — what `-104` found and did NOT do
-
-- **`wt182`'s remaining line-wrapped anchors.** Only the three that broke were repaired. The rest of
-  its `EDITS` list is still matched on exact wrapped strings and will break the same way the next
-  time somebody reflows one of those paragraphs. The general repair is to flatten the
-  already-applied side for every entry, which is ten minutes and was out of Pass B's scope.
-- **The same shape lives in every `wt###_p7pass*.py` patch of record.** `wt181`, `wt185`, `wt188`
-  and `wt192*` all recognise their own edits by literal text. `-104` repaired the two that fired.
-- **`wt192c`'s R6 and R11 still read the LIVE `docs/HANDOFF.md`.** R9 was the one that fired;
-  the other two are genuine durable negatives (a doc must not promise an automatic stop at a
-  session number) and were left alone deliberately. Re-read them if either ever goes red —
-  the question is always whether the subject moves for a reason unrelated to the check.
-- **A locale-pinning guard** and **a per-section reference-reachability sweep** — both in
-  `docs/POST-SHIP.md`, both new instruments, both blocked by § 1.1 until the corpus ships.
+**AT WRAP: paste a handoff better than this one as the last act, and — since your successor is
+JASON — say what he opens first, and what he will find there.**
 
 ---
 
 ## WHICH OPEN LANE THIS WAS (the gate's CONTOUR question, answered)
 
-`P7`. Pass B of the four-pass ship plan. **It closes at Pass D, not here**, which is why the board's
-66 criteria are byte-identical for a fifth consecutive session and why that is the correct result
-rather than a missed lane.
+**`P7`.** Pass C is its third of four passes, and Pass C closes no lane by design — `P7` closes at
+Pass D, which is your at-bat. The board's *"first OPEN lane in dependency order"* pointer moved
+twice mid-session (`P1a`, then `P13e`) and both were real signals from Pass C's own edits; both
+were closed before the wrap and the board is byte-identical again.
