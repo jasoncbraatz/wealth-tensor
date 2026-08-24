@@ -2,7 +2,7 @@
 project: wealth-tensor
 gh_repo: jasoncbraatz/wealth-tensor
 branch: main
-gh_sha: 3d86af2557e6d73beab6938ea4aa2f3e3522df51
+gh_sha: f3bdfab01182d573fa76e10c36ac6e6836584153
 updated: 2026-08-24
 session: wealthTensor-105
 session_n: 105
@@ -398,10 +398,22 @@ PATCH.** `-105` lost two round trips to it. **Write the patch to a local file, `
    were real; see THE TRAPS.
 🟢 gate PASS, `--emit` HANDOFF OK, tree clean and pushed
 
-🟡 **TWO WARNINGS, NEITHER THIS REPO'S**, and neither blocks you. `claude-blackbook` may report
-   DIRTY — a sibling's staged work; leave it. `G-T#44` n8n-spine crontab drift — carded SM
-   `1217795659362669` by `-103`, with the reason it did not fire the refresh blind (it `--commit`s
-   the LIVE box INTO the vault). Still true.
+🟡 **THE GATE ENDS ON ONE FAIL AND IT IS NOT THIS REPO'S — read this before you think it is yours.**
+   `G-V#3` card-lint reports a NEW stale reference: `HANDOFF-acmeLedger-37.md` points at Asana card
+   `1217799669049200`, closed 2026-08-24T21:08Z, after that doc was last touched. **`roster who`
+   shows `opus-acmeLedger-38` LIVE, joined 58 minutes earlier, with its task string reading
+   *"card 1217799669049200 docker bounding"* — the live sibling closed the card it is working, and
+   its own wrap gate will reconcile its own handoff.** `-105` did NOT touch that file (another
+   session's in-flight artifact) and did NOT run `card-lint.py --update-baseline`, because
+   baselining it away would delete the exact signal `-38` needs. **It was not carded either: a card
+   would page a session that is already holding the thing.** If you still see it, check `roster who`
+   first — if `-38` is gone and the reference is still stale, THEN it is a real orphan and yours to
+   reconcile. **`wealth-tensor`'s own gate legs are all green: tree clean, pushed, nothing unpushed.**
+
+🟡 **TWO OLDER WARNINGS, ALSO NOT THIS REPO'S.** `claude-blackbook` may report DIRTY — a sibling's
+   staged work; leave it. `G-T#44` n8n-spine crontab drift — carded SM `1217795659362669` by `-103`,
+   with the reason it did not fire the refresh blind (it `--commit`s the LIVE box INTO the vault).
+   Still true.
 
 ---
 
