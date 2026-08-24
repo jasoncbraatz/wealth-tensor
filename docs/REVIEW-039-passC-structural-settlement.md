@@ -54,9 +54,9 @@ the reason is in § 3.
 | # | type | the fold | repair |
 |---|---|---|---|
 | III-1 | C-d | The **lag statistic** is tabulated in § 3.1 and reasoned about through § 4; its construction (a cross-correlation of ΔE and ΔC) is stated only in § 4.5, ~460 lines later, and delivered there as a gotcha. | **REORDER.** § 3.1 states the construction before its own table. § 4.5 keeps the consequence — *ΔE is what no filing reports* — which is the finding. |
-| III-2 | C-c | **⊘** appears three times in the abstract and § 1 and is defined nowhere; ⊙ is defined at § 4.1 and § 4.3 silently abandons ⊘ for prose. | **ANCHOR.** § 4.1 defines both operators; the abstract's first use carries *"both operators elementwise across classes"*. |
-| III-3 | C-d | § 4.4 leans on **α̂ = 0.408** — sample, estimator and censoring rule all in § 5.4, ~800 lines on. | **REORDER of the definition.** § 4.4 names the registered sample (695 impairment events), the interval, the twenty-quarter censoring and the censored geometric MLE at first use. PRE-002's attribution retained — see § 4. |
-| III-3b | C-c | *"the unregistered adverse cut"* has no referent until § 5.4. | **ANCHOR.** Glossed in place as a refit of the same sample with the 175 one-quarter events dropped. |
+| III-2 | C-c | **⊘** appears three times in the abstract and § 1 and is defined nowhere; ⊙ is defined at § 4.1 and § 4.3 silently abandons ⊘ for prose. | **ANCHOR, then REPLACE at the abstract.** § 4.1 defines both operators and § 1's first use glosses both in place. **The abstract carries the operator no longer**: a gloss long enough to define it broke the 250-word ceiling (§ 7), and an abstract must stand alone, so it uses § 4.3's own prose form — *"(1 − φ) ⊙ δ, divided elementwise by (α − δ)"*. |
+| III-3 | C-d | § 4.4 leans on **α̂ = 0.408** — sample, estimator and censoring rule all in § 5.4, ~800 lines on. | **REORDER of the definition, at the second attempt.** The reader's FIRST contact is § 4.4's own table header, so the gloss sits immediately above the table: the censored geometric MLE, the registered sample, the onset-to-charge interval, the twenty-quarter censoring. **It restates no value** — the table prints them — and the later sentence keeps the PRE-002 qualifier `REG-003` § 7 requires. See § 7. |
+| III-3b | C-c | *"the unregistered adverse cut"* has no referent until § 5.4. | **ANCHOR, above the table, for the same reason.** A refit of the same sample with the 175 one-quarter events dropped, aimed at the doubt `REG-003` § 3.3 registered. The **unregistered** label stays at the site reporting 0.327, which `REG-004` § 6 requires. |
 | III-4 | C-d | § 4.9 **opens** on § 5.4's discrete-Weibull fit — k̂, its profile interval and its truncation robustness — before the reader has the sample or the family. | **REORDER of the definition.** The fit is named before its result, and *"a constant hazard is k = 1"* makes the rejection legible in place. |
 | III-5 | C-d | § 2's domain restriction — the model predicts nothing where a loss is estimable — is stated in § 10, while § 5.1 points at *"§ 10's restriction"* 740 lines earlier. | **REORDER.** The restriction is stated in § 2 with the model. § 10 keeps the Basu credit and points back rather than restating. |
 | III-6 | C-c | § 3.1's column *"inter-period smoothing"* is defined nowhere; § 3.2's near-identical column is called *"inter-event smoothing"*. | **ANCHOR.** Both are `variance_suppression` under two regimes, verified in `src/wealth_tensor/lag.py`. § 3.1 now says so and defines the statistic once. |
@@ -70,11 +70,11 @@ the reason is in § 3.
 |---|---|---|---|
 | IV-1 | C-d | § 1 says *"the fourth paper's apparatus"* with a definite article; the fourth paper is introduced in § 8, seven sections later. § 10 handles the same reference correctly. | **REORDER.** § 1 names it — *a fourth paper on price formation, written, refereed against itself and not published, for the reasons § 8 gives*. |
 | IV-2 | C-d | § 3's Household paragraph reports **α = 0.05**, a measured counterpart and a verdict, before the Firm paragraph defines what α names. | **REORDER of the definition.** α glossed at first use as the release rate of a change incurred but not recorded. |
-| IV-3 | C-d | § 3 announces a rejection *"the paragraph after next"* reports, with an unrelated paragraph wedged between — a fold patched with a pointer rather than fixed. | **REORDER.** The `END-TO-END-001` demotion paragraph moved ahead of *"Note what this is"*, which it sets up; the pointer is now *"the next paragraph"*. |
+| IV-3 | C-d | § 3 announces a rejection *"the paragraph after next"* reports, with an unrelated paragraph wedged between — a fold patched with a pointer rather than fixed. | **REORDER, at the second attempt.** The `END-TO-END-001` demotion paragraph now **closes** § 3, after the claim it qualifies. Moving it to the FRONT — the first cut — put *"which is what this section now claims and no more"* one paragraph before the sentence stating the claim. The pointer is now *"the next paragraph"* and resolves to the rejection. See § 7. |
 | IV-4 | C-d | § 6's table carries a **position *z*** column and is judged against a 0.10 bar; neither is defined until after the table. | **REORDER.** Both stated before the table, with the undecided band, which § 6's own qualification paragraph needs. **The first draft of this repair was WRONG and was caught by its own wt148 row** — see § 2. |
 | IV-5 | C-d | § 6's floor rests on a 4 000-work audience cap disclosed two paragraphs later. | **REORDER.** The truncation is disclosed where audiences are defined. |
 | IV-6 | **C-c** | **The one orphan the census named.** *"Paper III's ladder results"* — used once, defined nowhere, and the sole evidence for its limitation. | **ANCHOR.** Given its content in place, from paper-III § 4.3: a cross-class ranking reads the product φ ⊙ δ, so it recovers a ranking of φ only where δ is constant across the classes ranked. |
-| IV-7 | C-c | **Λ** carries § 7's only concrete contact with the biophysical literature and is defined nowhere in this manuscript. | **ANCHOR.** Glossed as energy per unit of recorded economic stock. |
+| IV-7 | C-c | **Λ** carries § 7's only concrete contact with the biophysical literature and is defined nowhere in this manuscript. | **ANCHOR, at the second attempt.** *"The claim measure carried per unit of physical measure, in currency per joule"* — Appendix A's own definition. **The first cut glossed Λ⁻¹ and would have shipped a false statement**; § 7 has the whole story. |
 | IV-8 | C-c | § 4.1's objection — staged as the strongest thing anyone will say — turns on *"your own Paper I"*, a document this manuscript never identifies and the References never list. | **ANCHOR.** Recast onto the corpus's own price-formation paper, which § 8 records. |
 | IV-9 | C-c | § 5's heading promises *"the volume"*; the word appears nowhere in the section. | **ANCHOR.** The quantity coordinate is named as the volume traded at the crossing. |
 
@@ -97,10 +97,18 @@ lesson.
 **S1-b · a promise the manuscript breaks two sections later.** paper-III § 1 said *"Nothing in
 §§ 2–7 depends on"* Appendix A. **§ 7's survival ledger carries two rows whose entire content is a
 claim about η, which is defined only in Appendix A.** Repaired by making the promise true rather
-than by moving the appendix: *"No result in §§ 2–6 depends on it… § 7's survival ledger records the
-appendix's own checks alongside the rest, and §§ 9 and 10 name the propositions where they bound
-what may be claimed."* P1–P3 are also named at that first use, so § 9's and § 10's uses have an
-antecedent.
+than by moving the appendix. **The first cut moved the boundary to §§ 2–6 without checking § 6,
+which is false in the same way** — § 6.1's demotion accounting has bullets whose entire content is
+a claim about § A.2. It now reads: *"No result in §§ 2–5 depends on it… § 6 accounts for the
+appendix alongside the body when it states what the demotion leaves standing, § 7's survival ledger
+records the appendix's own checks, and § 9 names P1's domain where it bounds what may be claimed."*
+P1–P3 are named at that first use, so the later uses have an antecedent.
+
+**S1-c · an enumeration that is wrong, pre-existing, and the second site of an old repair.**
+paper-II § 1 promised *"the five quantities § 7 enumerates, which no command prints."* **§ 7
+enumerates SIX.** This is `II-43`'s defect — DoD § 2's own worked example of the class, *"five
+quantities where there are six"* — repaired at § 7 and left standing at § 1. **A repair landing at
+one of two sites, which is the exact lesson `SL-9` exists to teach.** Corrected to six.
 
 **A third defect was caught by the promise ledger before it could become an S1, and it is the most
 useful thing in this file.** IV-4's first draft wrote *z* as *"the overlap divided by the pooled
@@ -202,3 +210,74 @@ only ever runs a command a second time, so registering an idempotent no-op regis
    `POST-SHIP.md` under this session's block, with the reason for each.
 5. **paper-II's § 2.4 is now the definition slot for four quantities and one criterion.** If Pass D
    moves anything in § 2.4, § 3.1's table stops being self-supporting.
+
+---
+
+## 7 · THE VERIFICATION OF THIS PASS'S OWN REPAIRS — and why it is the bigger finding
+
+**Pass C ran an adversarial verification over its own twenty-four repairs before wrapping**,
+checking every claim in § 1 against the manuscripts rather than against the commit message.
+**IT RETURNED THIRTEEN FINDINGS AND TEN WERE THIS PASS'S OWN.**
+
+**THE STRUCTURAL POINT, WHICH IS THE ONE TO CARRY: DoD § 3's Pass A MAY NOT REPAIR, and § 5's `L7`
+names the reason — *"the session that scores also repairs, and grades its own homework."* THE SAME
+ASYMMETRY APPLIES ONE STEP LATER AND THE PLAN DOES NOT SAY SO. A pass that repairs and then reports
+on its repairs is grading its own homework too**, and the ten findings below are what that cost,
+measured. The cheap fix is what this session did: **a verification pass with the repairs' own claims
+in hand and instructions to REFUTE them.**
+
+### The three that would have shipped as false statements
+
+1. **paper-IV § 7 defined Λ backwards.** The gloss read *"the energy required per unit of recorded
+   economic stock."* **That is Λ⁻¹.** Appendix A: *"Λ = η·C/E is dimensional, carrying units of
+   currency per joule"* — the claim measure per unit of physical measure. The sentence was also
+   self-contradicting, since it goes on to say the UN reports **the inverse of** it and SDG 7.3.1
+   *is* energy intensity. **A gloss written to remove a reader's dead end had put a wrong definition
+   in its place, and REVIEW-039's own row repeated it.**
+2. **paper-III § 10 pointed at the wrong one of the two conditions it had just handed to § 2.** It
+   said *"§ 2's second condition"* for the one-signed wedge; § 2 orders that one **first**.
+   **The repair created the class of defect it was repairing.**
+3. **paper-II § 1's *"five quantities"* against § 7's six** — S1-c above. Pre-existing, and found
+   only because the verifier was reading § 1 and § 7 in one sitting, which is precisely what
+   `RESULT-SCOPE-001` says nothing in this repository could otherwise do.
+
+### The one that means a fold was never repaired at all
+
+**§ 4.4's estimator gloss went in a hundred lines BELOW the table whose two measured columns are
+where a reader FIRST meets α̂ = 0.408 and the unregistered adverse cut.** The repair was written
+against the first *prose* mention and the table is not prose.
+
+> **FIXING A FOLD AT THE WRONG SITE LEAVES THE FOLD, AND EVERY CHECKER STILL GOES GREEN, BECAUSE
+> NOTHING IN THIS REPOSITORY MEASURES WHERE A READER FIRST MEETS A VALUE.**
+
+The repair now sits immediately above the table and **restates no value** — the table prints them.
+Three guards then fired in order, and all three were right: `REG-003` § 7 (a measurement of α̂ may
+not attach to a bare *recognition rate*), `REG-004` § 6 (every unregistered cut carries its label at
+the site reporting it), and `test_restatement_reach` (the counts moved). **The repair that satisfies
+all three is the original sentence plus a gloss above the table** — which is how one wt148 row came
+back from the dead: reverting § 4.4's sentence to its committed text made `bb9fba4abf` valid again,
+so it was **restored with its own id** rather than re-keyed, with the reason written into its note.
+
+### The rest, briefly
+
+* **paper-IV § 3's reorder put the conclusion before the claim.** The demotion paragraph closes with
+  *"which is what this section now claims and no more"*; moving it to the FRONT put that one
+  paragraph ahead of *"Note what this is: three instances of one question."* It now **closes** § 3.
+* **paper-III § 4.7's replacement anchor** claimed the section *"opened with"* a question. § 4.7
+  opens with an assertion. **A dangling reference had been replaced by a weaker form of itself.**
+  The sentence is now self-contained.
+* **The § 1 appendix promise moved §§ 2–7 → §§ 2–6 without checking § 6**, which accounts for § A.2
+  in its demotion bullets. Now §§ 2–5, naming what §§ 6, 7 and 9 actually do with the appendix — and
+  no longer saying *"the propositions"* plural where only P1 appears outside the appendix.
+* **§ 2 had restated § 10's Jin-and-Myers clause** rather than pointing at it, and **paper-II § 3.4
+  had gone on restating the criterion § 2.4 now defines.** Both trimmed to a single site.
+* **The abstract dropped ⊘ entirely.** A gloss long enough to define it crossed
+  PREPRINT-CHECKLIST § A's 250-word ceiling, and **an abstract has to stand alone**, so it uses
+  § 4.3's own prose form.
+
+### One finding left deliberately unrepaired, because it is not this pass's type
+
+**paper-II carries the Bouchaud–Mézard credit in full at BOTH § 3.1 and § 6, and § 6 opens by saying
+those works are *"cited here rather than restated."*** That is a **C-b duplication** and C-b is Pass
+D's. `II-4` made § 1 accurate about where the credit lives; it did not resolve the duplication and
+was not entitled to. **Pass D: this is a real one, and § 6's own opening sentence is the witness.**

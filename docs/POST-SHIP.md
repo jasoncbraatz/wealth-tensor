@@ -223,3 +223,18 @@ command, and there are nineteen of them. **Pass D should read those sites with a
 than re-sweeping three manuscripts.
 
 **C-f was not touched anywhere.** No sentence was re-voiced.
+
+### Added by Pass C's own verification (`REVIEW-039` § 7)
+
+- **A FIRST-CONTACT SWEEP — the instrument that would have caught this pass's worst repair.** For
+  every reported value in a manuscript, find where a reader **first** encounters it, counting
+  **table headers and figure captions, not only prose**, and report any gloss or definition that
+  arrives after that point. Pass C repaired a fold by writing the estimator gloss a hundred lines
+  below the table whose column headers carry the value — **the fold survived and every checker
+  stayed green, because nothing here measures first contact.** New instrument; after the ship.
+- **A REPAIR-VERIFICATION STEP IN THE PLAN ITSELF.** DoD § 5's `L7` closes *scope-and-repair in one
+  hand* at Pass A. **It does not close report-and-repair in one hand at Passes B, C and D**, and
+  Pass C's own verification found ten defects in its own repairs, three of them false statements.
+  This is a **change to `DEFINITION-OF-DONE-SHIP.md`, so it is Jason's ruling, not a session's** —
+  recorded here rather than made. The cheap version needs no rule change and every pass can just do
+  it: hand a verifier the repair list and the manuscripts, and tell it to REFUTE.
