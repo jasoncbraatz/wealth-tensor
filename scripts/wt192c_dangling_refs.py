@@ -99,8 +99,12 @@ H102 = _p.stdout if _p.returncode == 0 else ""
 chk("R7 the ESTATE card said what it actually was, at 7b5e114", "It is STEP 2\n  of Pass A" in H102)
 chk("R8 tee-up 1 pointed at the at-bat instead of impersonating it, at 7b5e114",
     "FOLDED INTO YOUR AT-BAT AS STEP 2" in H102)
-chk("R9 NEGATIVE: the wt184 card gid still resolves in both places",
-    h.count("1217774684736450") >= 2, True)
+# R9 was `h.count(gid) >= 2` until wealthTensor-104 -- two MENTIONS in one file that every
+# successor rewrites, which is the wt188 shape in a third costume. It now reads TWO FILES,
+# one of them durable, so it fires on an orphaned card and not on an ordinary handoff rewrite.
+POSTSHIP = (REPO / "docs/POST-SHIP.md").read_text(encoding="utf-8")
+chk("R9 NEGATIVE: the wt184 card gid still resolves in the handoff AND in POST-SHIP",
+    "1217774684736450" in h and "1217774684736450" in POSTSHIP, True)
 chk("R10 NEGATIVE: at 7b5e114 the handoff named Pass A as the at-bat",
     "PASS A of the ship plan" in H102 or "PASS A OF THE SHIP PLAN" in H102, True)
 chk("R11 NEGATIVE: no doc still promises an automatic stop at a session number",

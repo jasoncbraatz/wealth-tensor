@@ -143,7 +143,7 @@ wrong, and the second one cannot be fixed by choosing differently.**
    one face and found six; the true number is seven.
 
 7. **The measure is 289.08 pt** (4.0 in). Measured on real corpus prose, that measure carries
-   **65.37** characters per line — inside the 62–68 band of §0.
+   **65.4** characters per line — inside the 62–68 band of §0.
 
 8. **Page geometry.** US Letter, 614.295 pt × 794.97 pt. Left and right margins are
    **162.6075 pt** each, the top margin is **72.27 pt**, the bottom margin is **92.7 pt**. The
@@ -297,7 +297,7 @@ body.leading_pt	14.0	python3 scripts/wt173_typography_probe.py --print body.lead
 body.leading_ratio	1.2727	python3 scripts/wt173_typography_probe.py --print body.leading_ratio
 body.measure_pt	289.08	python3 scripts/wt173_typography_probe.py --print body.measure_pt
 body.measure_in	4.0	python3 scripts/wt173_typography_probe.py --print body.measure_in
-body.chars_per_line	65.37	python3 scripts/wt173_typography_probe.py --print body.chars_per_line
+body.chars_per_line	65.4	python3 scripts/wt173_typography_probe.py --print body.chars_per_line
 body.xheight_pt	4.741	python3 scripts/wt173_typography_probe.py --print body.xheight_pt
 body.capheight_pt	7.117	python3 scripts/wt173_typography_probe.py --print body.capheight_pt
 body.alphabet_pt	133.98	python3 scripts/wt173_typography_probe.py --print body.alphabet_pt
