@@ -207,20 +207,6 @@ base of a levy — stock or flow — is the question of *which component of the 
 state the assessing layer can see*, and at zero realisation a confiscatory levy on flow is
 statistically indistinguishable from no levy at all.
 
-**An earlier draft of this section claimed more than three instances of one question, and the
-corpus's first end-to-end test took the surplus away.** It said the three scales made *a chain
-rather than three analogies*. `END-TO-END-001` leg `E1` asked whether the sovereign and firm scales
-stand in the relation the word *chain* asserts — whether Paper II's realisation share ρ and Paper
-III's observability share φ are the same object seen twice — and they are not. What Paper III's
-filter does not recognise is **deferred**, held in an unrecognised gap and released at rate α;
-what Paper II's base does not recognise is **never assessed**. A lag and a loss are different
-operators, and Paper II has no parameter that plays α's part. So what joins the scales is the
-question, the fact that each scale answers it quantitatively, and the addition of §2.2 — which is
-what this section now claims and no more. The demotion was written into that document's §2
-**before** the leg was run,
-precisely so that it could not be renegotiated afterwards; `docs/RESULT-END-TO-END-001-E1.md`
-records the run and the reasoning.
-
 **Note what this is: three instances of one question, asked at three scales.** At each step the
 same two components appear, the same question is asked of them — what does the measuring layer
 observe? — and the answer at each scale is a *quantitative* one that the paper for that scale
@@ -256,6 +242,20 @@ part that runs against the paper's convenience, **Paper III's design cannot sepa
 coupling from the sequencing the standards impose** (ASC 350-20-35-31 and 35-32 order the tests),
 so this paper may not read the rejection as evidence that the underlying degradations are coupled.
 It inherits a measured departure with an unidentified cause, and §9 says so.
+**An earlier draft of this section claimed more than three instances of one question, and the
+corpus's first end-to-end test took the surplus away.** It said the three scales made *a chain
+rather than three analogies*. `END-TO-END-001` leg `E1` asked whether the sovereign and firm scales
+stand in the relation the word *chain* asserts — whether Paper II's realisation share ρ and Paper
+III's observability share φ are the same object seen twice — and they are not. What Paper III's
+filter does not recognise is **deferred**, held in an unrecognised gap and released at rate α;
+what Paper II's base does not recognise is **never assessed**. A lag and a loss are different
+operators, and Paper II has no parameter that plays α's part. So what joins the scales is the
+question, the fact that each scale answers it quantitatively, and the addition of §2.2 — which is
+what this section now claims and no more. The demotion was written into that document's §2
+**before** the leg was run,
+precisely so that it could not be renegotiated afterwards; `docs/RESULT-END-TO-END-001-E1.md`
+records the run and the reasoning.
+
 
 ---
 
@@ -485,8 +485,8 @@ is mistaken," and it is falsifiable in a way that the received-view complaint is
 establishes that production is constrained by energy and materials and that the constraint is not
 a detail. What it has generally not had is an accounting-shaped object: a per-entity state that a
 balance sheet could carry. Paper III's decomposition is that object, and the coupling Λ it
-defines — the energy required per unit of recorded economic stock — has the dimensions of a
-quantity the United Nations already reports the inverse of (SDG 7.3.1).
+defines — the claim measure carried per unit of physical measure, in currency per joule — has the
+dimensions of a quantity the United Nations already reports the inverse of (SDG 7.3.1).
 Paper III §A.2.2 makes that claim and bounds it in the same breath — the correspondence is
 dimensional, and *"emphatically not"* that the indicator measures Λ⁻¹. It is therefore evidence
 that the dimension is not this framework's coinage, and not evidence that the coupling has been

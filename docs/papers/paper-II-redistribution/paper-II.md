@@ -89,7 +89,7 @@ came from.
    condensed economy also stops rising, and a drift test scores total condensation as bounded
    (§3.4).
 5. A **reproducible artefact**: every number below is regenerated from a public repository by
-   the two commands §7 names — save the five quantities §7 enumerates, which no command
+   the two commands §7 names — save the six quantities §7 enumerates, which no command
    prints — and the claims are held in place by the 18 tests in
    `tests/test_redistribution.py`, one of which exists specifically to make overclaiming fail
    loudly — alongside a second, in a companion module of the same suite, that does the same
@@ -332,8 +332,8 @@ rising — not because it reached a stationary distribution but because it ran o
 0.99875 ceiling it is pinned against — while its top decile holds 1.000 of everything. The
 drift test was measuring the ceiling.
 
-The criterion now requires a settled Gini **and** a top decile below 0.90 — and it is the
-second condition that does all of the separating. Across §3.1's full rate sweep — wider than the
+§2.4's criterion pairs the settled Gini with a top decile below 0.90 for exactly this reason,
+and it is the second condition that does all of the separating. Across §3.1's full rate sweep — wider than the
 six rows tabulated there — the bounded runs' Gini spans 0.000–0.891 against the condensed run's
 0.994 — a gap of 0.103 whose upper edge is a *saturated reading* and not the 0.99875 ceiling it
 falls short of, so any Gini threshold would have to be drawn inside it and redrawn for every

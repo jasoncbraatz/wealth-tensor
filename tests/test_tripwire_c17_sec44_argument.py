@@ -72,7 +72,16 @@ CONSTRAINT = (
 #: repair moved the DEFINITION forward, not the section.
 #: An earlier draft of this repair also restated n = 695 here; it was dropped rather than
 #: declared, because a restated value is a second copy that can drift.
-SEC_44_MASKED_SHA256 = "fe021b7f84ae0235a28ab0e692a0d0d9ee07b649a906f273d993906fe5bc050e"
+#: RE-PINNED AGAIN at wealthTensor-105, by that session's own adversarial verification, and
+#: the reading is still CARRYING SENTENCE. The first cut put the estimator gloss a hundred
+#: lines BELOW the table whose two measured columns are where a reader first meets the
+#: value -- so it had not repaired the fold at all. The gloss moved to immediately above
+#: the table and restates NO number (the table prints them); the sentence introducing
+#: alpha-hat reverted, byte for byte, to the text REG-003 section 7's own guard requires,
+#: with PRE-002's qualifier intact; and the unregistered label came back to the site that
+#: reports 0.327, which REG-004 section 6 requires. The ARGUMENT is untouched throughout:
+#: same rectangle, same domain, same admissible shares, same runs.
+SEC_44_MASKED_SHA256 = "fd56b1fb6f521c4f1e261ff3d98a27f2ff2583af49c8ec0708055f3ec9441002"
 
 #: Sanity floor on the extractor, so a heading-regex change cannot silently pin "".
 SEC_44_MIN_LINES = 100

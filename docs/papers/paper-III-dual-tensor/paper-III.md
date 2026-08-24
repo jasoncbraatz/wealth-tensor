@@ -28,8 +28,8 @@ therefore not separately identified, and where the asset's physical scale is uno
 firm-level series) the identified set is a continuum, a factor of **1.67** in that scale spanning
 the whole unit interval.
 
-The corollary is cross-sectional: **classes are ordered by (1 − φ) ⊙ δ ⊘ (α − δ), elementwise,
-not by φ**.
+The corollary is cross-sectional: **classes are ordered by (1 − φ) ⊙ δ, divided elementwise by
+(α − δ), not by φ**.
 Across the four GAAP classes, δ leverage is **4.2** times the level at which recovery fails, and
 the composite **inverts** the intended ranking, Kendall τ = −1 at the calibrated rate; drawing δ
 independently, the ordering survives in **11.5%** of 4,000 ladders. This constrains cross-sectional
@@ -81,7 +81,8 @@ identified from reported numbers.
 That constraint is not a property of this framework. It is a property of the object every
 conditional-conservatism measure takes as input, and its cross-sectional form is sharp enough to
 be uncomfortable: indexing asset classes, the ranking a reader can compute is the ranking of
-**(1 − φ) ⊙ δ ⊘ (α − δ)**, so a comparison across classes with different asset lives is not a
+**(1 − φ) ⊙ δ ⊘ (α − δ)** — with ⊙ the Hadamard product and ⊘ elementwise division, both across
+classes — so a comparison across classes with different asset lives is not a
 comparison of timeliness. Across the four GAAP classes, with the decay rates the standards themselves imply, the
 composite does not blur the intended ranking — it **inverts** it — and the ordering the design
 imposed survives in **11.5%** of ladders even when no durability ordering is imposed at all.
@@ -133,9 +134,10 @@ this paper has no claim on a reader's seriousness if it takes that route.
 
 The framework the filter was built inside — three propositions about the composition of wealth
 (**P1** composition, **P2** decay, **P3** atomism) and the coupling they oblige — is set out in
-**Appendix A**. No result in §§2–6 depends on it, which is the point of putting it there; §7's
-survival ledger records the appendix's own checks alongside the rest, and §§9 and 10 name the
-propositions where they bound what may be claimed.
+**Appendix A**. No result in §§2–5 depends on it, which is the point of putting it there. §6
+accounts for the appendix alongside the body when it states what the demotion leaves standing,
+§7's survival ledger records the appendix's own checks, and §9 names P1's domain where it bounds
+what may be claimed.
 
 ---
 
@@ -180,9 +182,8 @@ section.** The first makes the wedge one-signed: reported value may fall and may
 US GAAP — the regime this paper's sample files in — there is no upward revaluation of property,
 plant and equipment and no impairment reversal for goodwill or indefinite-lived intangibles. IAS
 36 requires reversal for non-goodwill assets and IAS 16 permits revaluation, so the condition
-holds for these filers and is not general; a physical layer that only degrades is not by itself
-enough, because degradation at a stochastic rate around a booked rate produces a two-signed
-reporting error and no skew. The second restricts the domain: the claim above is restricted to
+holds for these filers and is not general, and a physical layer that only degrades is not by
+itself enough to produce it. §10 gives the reason. The second restricts the domain: the claim above is restricted to
 degradation on which conservatism has nothing further to bite — carrying no impairment trigger,
 no estimable expected loss and no observable event to key recognition to. **Where a loss is
 estimable, recognition is faster than the market and this model predicts nothing.** §10 gives the
@@ -506,6 +507,14 @@ same ladder, because a class is placed on a schedule precisely when its decline 
 enough to schedule. Goodwill sits at the end of both: least observable, and with no degradation
 schedule at all.
 
+**Two of the table's columns are evaluated at rates §5.4 measures rather than at the calibration,
+and both are worth having in hand before the table is read.** The **measured** rate is the censored
+geometric maximum-likelihood estimate of the recognition rate PRE-002's instrument identifies, on
+the registered sample, each event carrying the interval from the onset of deterioration to the
+charge and right-censored at twenty quarters. The **unregistered adverse cut** is that same
+estimate refit with the 175 events charged one quarter after the peak dropped — aimed at the doubt
+REG-003 §3.3 registered in advance, which is what makes it the adverse one.
+
 | tier | φ | 1 − φ | δ | (1 − φ)δ | **R** at α = 0.05, the calibration | **R** at α̂ = 0.408, measured (§5.4) | **R** at α̂ = 0.327, the unregistered adverse cut | R at a common δ |
 |---|---|---|---|---|---|---|---|---|
 | 0 · property, plant and equipment | 0.80 | 0.20 | 0.030 | 0.00600 | **0.3000** | **0.0159** | **0.0202** | 0.1333 |
@@ -610,16 +619,11 @@ calibrated here **the entire asserted rectangle lies outside the domain**: every
 enough to appear in a filing implies a decay rate at or above the recognition rate. Half of the
 rectangle is admissible only at α ≈ 0.19, and all of it above α = 0.33. **That made the recognition
 rate, not the ordering, the quantity to establish first — and §5.4 establishes it.** On the
-registered sample of impairment events — each carrying the interval from the onset of
-deterioration to the charge, right-censored at twenty quarters — the censored geometric
-maximum-likelihood estimate of the recognition rate PRE-002's instrument identifies is
-**α̂ = 0.408 per year**,
+registered sample the recognition rate PRE-002's instrument identifies is **α̂ = 0.408 per year**,
 95% interval [0.383, 0.432], on both known biases' inflating side: the calibration used here is low by an order of magnitude, and the
 asserted rectangle lies inside the domain at the measured rate and across its 95% interval, where
 **0.974** of the 683 disclosed pairs are admissible and **0.959** at the interval's lower bound. At
-the adverse cut — a refit of the same sample with the 175 events charged one quarter after the
-peak dropped, unregistered and aimed at the doubt REG-003 §3.3 registered in advance, giving
-**0.327** — the rectangle's own fastest disclosed rate of
+the unregistered adverse cut above, **0.327**, the rectangle's own fastest disclosed rate of
 0.3333 is no longer cleared, and **0.814** of the pairs remain admissible. The domain restriction is
 a property of the calibration and not of the disclosure, and what its remaining margin turns on is
 the onset bridge rather than the sample.
@@ -782,8 +786,8 @@ forces c = 1. Regressing the reported series on its own lag, the return-implied 
 first difference recovers α, E₀ and φ to 10⁻¹⁶ at a return volatility of 0.15, against a design
 matrix that is exactly singular at zero volatility.
 
-**So the question this section opened with — whether anything outside the reported series restores
-φ — answers yes, and the price is a rate rather than a proof.** Identification does
+**So the answer is yes — something outside the reported series does restore φ — and the price is a
+rate rather than a proof.** Identification does
 not switch on at the first innovation; it fades in. Over a twelvefold range of return volatility both
 the design's collinearity and the standard error on φ̂ degrade as power laws in σ, with
 weak-identification bias visible in the mean by σ = 0.025. **Neither exponent is a constant of the
@@ -1951,7 +1955,7 @@ quantity of good news insiders can absorb is unbounded because they can capture 
 of bad news is not, so the bound is one-sided for a reason internal to the model. §2 assumes a
 physical layer that only degrades. That assumption is not by itself sufficient — degradation at a
 stochastic rate around a booked rate produces a two-signed reporting error, which is Jin and Myers'
-case again, long tails and no skew. What makes the wedge one-signed is §2's second condition,
+case again, long tails and no skew. What makes the wedge one-signed is §2's first condition,
 that reported value may fall and may not rise. **That condition is conditional conservatism, it is
 Basu's object, and §2 uses it as machinery rather than contributing it.** An
 earlier draft of this section cited Basu as an obstacle to be scoped around. He is not the obstacle;
