@@ -2,7 +2,7 @@
 project: wealth-tensor
 gh_repo: jasoncbraatz/wealth-tensor
 branch: main
-gh_sha: 04f31dabccdfae03ee2e0b33a736e3f30ed76d25
+gh_sha: d6865b0bbb9299751946804c60290e2719e0ee0d
 updated: 2026-08-24
 session: wealthTensor-105
 session_n: 105
@@ -413,6 +413,15 @@ PATCH.** `-105` lost two round trips to it. **Write the patch to a local file, `
    would page a session that is already holding the thing.** If you still see it, check `roster who`
    first — if `-38` is gone and the reference is still stale, THEN it is a real orphan and yours to
    reconcile. **`wealth-tensor`'s own gate legs are all green: tree clean, pushed, nothing unpushed.**
+
+🟡 **AND ONE MORE, WHICH `-105` CARDED RATHER THAN FIXED.** The wrap gate reported
+   `claude-blackbook` DIRTY(6) as **MINE**, because `G-H#22c` *"could not attribute every path by
+   filename."* **All six were `opus-acmeLedger-37`'s leaves, staged by `-38`'s `record-outcome` and
+   left in the index** — every one says so in its own `contributor:` front-matter field, which the
+   check does not read. **Do not commit a sibling's staged work to make the gate go green.** The
+   repair is a tighter subject — attribute a dirty path under `lessons/` by reading the leaf — and
+   it is carded to State Machine `1217804787201829`, not fixed here, because `gate-selfcheck.sh` is
+   shared estate infrastructure and three sessions were live against it.
 
 🟡 **TWO OLDER WARNINGS, ALSO NOT THIS REPO'S.** `claude-blackbook` may report DIRTY — a sibling's
    staged work; leave it. `G-T#44` n8n-spine crontab drift — carded SM `1217795659362669` by `-103`,
