@@ -212,7 +212,8 @@ It does not record whether the mechanism producing next period's distribution wa
 
 **This contrast is not new, and the credit belongs precisely.** Bouchaud and Mézard (2000) carry a
 flow levy, a stock levy and the per-capita redistribution of each in a single wealth balance, and
-give the stationary Pareto exponent in closed form in all four coordinates. They write that exponent
+give the stationary Pareto exponent in closed form in all four of their own tax parameters — a
+rate and a redistributed fraction for each base. They write that exponent
 μ — a different object from §2.1's growth drift μ, with which it unhappily shares a letter, and the
 second such collision this paper has had to disclose. Their ranking is the one measured here, and
 they state it more strongly: income taxes *"tend to reduce the inequalities of wealth (i.e., lead to
@@ -404,10 +405,13 @@ stationary wealth distributions has been examined from several directions. **Two
 literature are prior to this paper's central contrast, and are cited here rather than restated.**
 
 **Bouchaud and Mézard (2000)** carry a flow levy, a stock levy and the per-capita redistribution of
-each in one wealth balance and give the stationary Pareto exponent in closed form in all four
-coordinates, together with the stock-versus-flow ranking (§3.1). The contrast between the two bases
+each in one wealth balance and give the stationary Pareto exponent in closed form in all four of
+their own tax parameters — a rate and a redistributed fraction for each base — together with the
+stock-versus-flow ranking (§3.1). The contrast between the two bases
 — in terms of what each does to the shape of the stationary distribution — is theirs, and the
-per-capita rebate fraction is a coordinate in their solution rather than an extension awaiting one.
+per-capita rebate fraction is a parameter in their solution rather than an extension awaiting one.
+Their solution is continuous-time and carries neither a periodicity nor a threshold, so §3.3's two
+trim coordinates are outside it.
 
 **Benhabib, Bisin and Zhu (2011)** supply three further results that bound what is left. Their
 Proposition 3 has the tail index rising in both the estate tax and the capital income tax, so the
@@ -452,12 +456,13 @@ simulation, save the four closed-form quantities the next bullet names and §3.4
 - **Regenerate every number in §3:** `python3 scripts/wt030_report.py` — except §3.1's four
   closed-form quantities: E[η⁺] = 0.1073 and the three Var[log *a*] values, which are quadrature
   over the multiplier's distribution rather than
-  simulation output and come from `python3 scripts/wt077_tail_index.py`, and except five
+  simulation output and come from `python3 scripts/wt077_tail_index.py`, and except six
   quantities neither command prints in any precision: §3.4's Gini ceiling (*N*−1)/*N* = 0.99875,
   which is arithmetic in *N*; §3.4's 0.90 top-decile criterion, which is a chosen threshold and
   not an output; §3.3's 0.035 periodicity span and §3.4's 0.103 Gini gap, each a difference of two
-  values `wt030_report.py` prints; and §3.4's 0.039 top-decile margin, the distance from that
-  command's printed 0.861 to the 0.90 threshold above. The two commands are named
+  values `wt030_report.py` prints; §3.4's 0.039 top-decile margin, the distance from that
+  command's printed 0.861 to the 0.90 threshold above; and §3.1's 6 × 10⁻⁶ change in
+  Var[log *a*], the difference of two values `wt077_tail_index.py` prints. The two commands are named
   separately because a single command named for numbers it does not produce is a provenance claim
   that reads as checked and is not.
 - **Test suite:** `python3 -m pytest tests/ -q` runs the whole repository; the **18** tests in
