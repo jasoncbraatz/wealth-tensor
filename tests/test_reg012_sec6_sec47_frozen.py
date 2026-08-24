@@ -161,6 +161,25 @@ AMENDMENTS: tuple[Amendment, ...] = (
         ),
         digest_after="bdf7fcbb13eae1418cff5b4b9164eadab4b719bfad937093375711ae60724cf6",
     ),
+    Amendment(
+        sha="8fcb6a8",
+        licence=(
+            "wealthTensor-105, the adversarial verification of its own Pass C repairs. The "
+            "amendment above replaced a dangling reference to a question section 4.6 does "
+            "not ask with the clause 'the question this section opened with'. SECTION 4.7 "
+            "DOES NOT OPEN WITH A QUESTION -- it opens with an assertion, 'the way out is "
+            "visible in the theorem's own statement' -- so the repair had replaced one "
+            "unresolvable anchor with a weaker form of the same defect. The sentence is now "
+            "self-contained and names its own subject: 'So the answer is yes -- something "
+            "outside the reported series does restore phi.' Licensed by a review of the "
+            "manuscript against itself under the ship definition of done, and by nothing "
+            "else. NOTHING HERE READS REG-012's RESULT OR ITS BRANCH: the edit concerns a "
+            "sentence's referent, not the band count's edge phase, and would have been made "
+            "identically had REG-012 never run. Reading (b). The edit landed in the commit "
+            "named above rather than in this one, per the guard's own instruction."
+        ),
+        digest_after="1a33d57b021f45bd2ab029cbcb4569c3d75f67a7d61112357c6b131649e0169d",
+    ),
 )
 
 #: SHA-256 of §4.7 as the working tree carries it now. Moves only with an `AMENDMENTS`
