@@ -50,3 +50,58 @@ tagged, and it should be long. **A long POST-SHIP is a sign the freeze worked.**
 - **Was severity falling while the count stayed flat?** Pass A measures this across all sixteen
   ledger rows. Whatever it finds, the ANSWER belongs in `SHIP-STATEMENT.md` — it is the most
   interesting thing this apparatus knows about itself.
+
+---
+
+# TRIAGED BY PASS A (`wealthTensor-103`, 2026-08-24)
+
+**`docs/SHIP-LIST.md` is CLOSED.** Everything below was ruled non-blocking by Pass A against
+`DEFINITION-OF-DONE-SHIP.md` § 2, with its reason. **Nothing here blocks, and nothing here is an
+at-bat until the corpus ships.** The evidence is `docs/REVIEW-038-passA-retrospective-scoring.md`.
+
+## Tee-ups ruled S3 — real, non-blocking, shipping disclosed
+
+- **The zakat citation gap** (tee-up 9, **fifth pass carrying it**). Paper-II's own closing note
+  flags it: *"One citation is deliberately absent and is flagged rather than faked… The paper's
+  argument does not depend on it."* **The paper discloses the gap and scopes it as non-load-bearing
+  — the DoD § 2's S3 case in its own words.** Ruled S3 so it is not re-noticed a sixth time.
+  *One live thread for Jason at posting, not for a session:* the note promises a primary source
+  *"at submission"*, and posting a preprint is arguably that. **His call, not a blocker.**
+- **`A6`, the docstring axis** (tee-up 6, sixth pass). **DoD § 2 names `A6` as its own S3
+  example** — *"a docstring that does not assert what its test verifies"* — which settles it
+  without argument. `-102`'s five-seed table at *T* = 1200 remains the best evidence for the
+  highest-value one and is still not asserted in the docstring's own terms. Cheapest item here.
+
+## The `wt184` false-positive reduction — a REPAIR, permitted, not built
+
+DoD § 1.1's narrow exception allows it; Pass A had no mandate to build it and did not.
+**`REVIEW-038` § 3.3 carries the full spec, measured against a complete adjudication of all
+forty-four flags — the proposed rule returns 2 of 44 and both are the two TRUE ones.** Three
+changes: require an attribution token (possessive or verb) rather than paragraph co-occurrence;
+exclude `[A-Z]{2,}-\d{3}` and `wealthTensor-\d+` before harvesting numerals; extend `FOREIGN` to
+`<DOC-ID> §N.M`. **All three reduce false positives. None makes the instrument look at anything
+new.** Card SM `1217774684736450`.
+
+## Two instrument defects recorded by Pass A, uncounted and unbuilt
+
+- **`wt184` and `wt133` still disagree** on an author-attributed citation (`their §4.1`), recorded
+  at `-102` and unchanged. Folded into the `FOREIGN` repair above.
+- **`p7-passes.tsv` finding ids are not unique across the ledger.** `III-1` names three different
+  findings and `IV-1` names two, because each pass restarts its own numbering. **Any future
+  aggregation must key on `<pass>/<id>`.** `REVIEW-038` § 1.2 is the first document to say so, and
+  it silently loses findings if you do not.
+
+## The C-class soft tail — a gloss pass, not a leak
+
+**53 of the 68 counted C-e items are committed artefacts a reader can actually fetch** —
+`scripts/wt###.py`, `PRE-`/`REG-`/`RESULT-` documents, commit hashes, `docs/` paths — named without
+a gloss at first use. **`REVIEW-038` § 4.1 has the census.** The hard 15 belong to Pass D; **this
+soft tail is a one-clause-at-first-use readability pass and it can wait for Jason's own rewrite**,
+which is where voice decisions belong anyway.
+
+## Measurement answered, for `SHIP-STATEMENT.md`
+
+**"Was severity falling while the count stayed flat?" — NO, and neither was.** 70 findings,
+**53 S1 (75.7 %), 16 S2, one single S3.** The last six passes returned nineteen S1s against the
+first five passes' twenty-one, on a corpus already repaired forty-five times. **`REVIEW-038` § 1
+has the thirds table and what it settles.** This was the last open question on this list.
