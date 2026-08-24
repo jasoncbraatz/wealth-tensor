@@ -35,7 +35,16 @@ if newtsv != orig:
     T.write_text(newtsv)
 t = T.read_text()
 chk("C1 exactly one P7 row was rewritten", hit == 1)
-chk("C2 the P7 row now points at the ship DoD", NEW_TEXT in t)
+# C2 PINNED ONE AMENDMENT'S EXACT SENTENCE. Jason amended the DoD hours later, wt192b rewrote
+# the P7 criterion, and C2 went red for a change that was CORRECT -- the third time this session
+# a guard has been wrong about a moving subject. wt192b OWNS the criterion's wording now. What
+# wt191 is durably responsible for is that the row POINTS AT THE DOCUMENT AT ALL, which stays
+# true across this amendment and every future one.
+_p7 = [l for l in t.split("\n") if l.startswith("P7\t")][0]
+chk("C2 the P7 row points at docs/DEFINITION-OF-DONE-SHIP.md",
+    "docs/DEFINITION-OF-DONE-SHIP.md" in _p7)
+chk("C2b NEGATIVE: and it does so in the CRITERION column, where the board renders it",
+    "docs/DEFINITION-OF-DONE-SHIP.md" in _p7.split("\t")[2], True)
 chk("C3 NEGATIVE: the retired convergence wording is GONE from the criteria", OLD_TEXT not in t, True)
 chk("C4 the P7 row still has four columns", all(l.count("\t") == 3 for l in t.split("\n") if l.startswith("P7\t")))
 # C5 ASSUMED THIS WAS THE FIRST APPLICATION. On the second run orig == t, so ZERO lines differ
@@ -52,24 +61,25 @@ chk("C6 P7 is still manual: (PENDING-HUMAN, not auto-closable)",
 # ---------- 2 · HANDOFF definition_of_done ----------
 H = REPO / "docs/HANDOFF.md"
 ho = H.read_text()
-OLD_DOD = ('definition_of_done: "Three preprints (II, III, IV) each at ready-to-submit per ADR-001 clauses, '
- 'every number regenerated from committed scripts, convergence reached (two consecutive zero-finding review '
- 'passes per paper), Jason\'s own-hand pass complete — then the batch declared, once."')
-NEW_DOD = ('definition_of_done: "SEE docs/DEFINITION-OF-DONE-SHIP.md — IT IS THE SSOT AND IT WINS OVER THIS LINE. '
- 'Three preprints (II, III, IV) each at ready-to-submit per ADR-001 clauses, every number regenerated from '
- 'committed scripts, ZERO OPEN S1 AND ZERO OPEN S2 on the FROZEN docs/SHIP-LIST.md (the convergence clause — two '
- 'consecutive zero-finding passes per paper — was RETIRED by Jason at -102 after sixteen passes produced zero '
- 'zeros; it had no termination proof and it rewarded not looking), docs/SHIP-STATEMENT.md written, Jason\'s '
- 'own-hand pass complete — then the batch declared, once. HARD STOP: if the ship list is not clear by the end of '
- '-106, the work stops and Jason rules on shipping with the remainder disclosed."')
-assert ho.count(OLD_DOD) == 1 or ho.count(NEW_DOD) == 1, "DoD field not matched"
-if OLD_DOD in ho:
-    ho = ho.replace(OLD_DOD, NEW_DOD, 1)
+# THE FIELD'S WORDING IS NOT wt191'S TO OWN ANY MORE. Its first cut asserted one exact string
+# and then a second, and Jason's amendment replaced both -- the FOURTH moving-subject failure in
+# this script alone. wt191 installs the pointer ONCE if it is absent and thereafter verifies only
+# the DURABLE contract: the field names the document and no longer asserts the retired clause.
+NEEDLE = "DEFINITION-OF-DONE-SHIP.md"
+BOOTSTRAP = ('definition_of_done: "SEE docs/DEFINITION-OF-DONE-SHIP.md — IT IS THE SSOT AND IT '
+             'WINS OVER THIS LINE."')
+_dod = [l for l in ho.split("\n") if l.startswith("definition_of_done:")]
+assert len(_dod) == 1, "definition_of_done must appear exactly once, found %d" % len(_dod)
+if NEEDLE not in _dod[0]:
+    ho = ho.replace(_dod[0], BOOTSTRAP, 1)
     H.write_text(ho)
 h = H.read_text()
-chk("C7 HANDOFF's definition_of_done points at the ship DoD", "DEFINITION-OF-DONE-SHIP.md — IT IS THE SSOT" in h)
+_dodline = [l for l in h.split("\n") if l.startswith("definition_of_done:")][0]
+chk("C7 HANDOFF's definition_of_done names the ship DoD document", NEEDLE in _dodline)
 chk("C8 NEGATIVE: the retired convergence clause is no longer asserted as the DoD",
-    "convergence reached (two consecutive zero-finding review" not in h, True)
+    "convergence reached (two consecutive zero-finding review" not in _dodline, True)
+chk("C8b NEGATIVE: and the field defers rather than restating the rule in its own words",
+    "SSOT" in _dodline or "SEE docs/" in _dodline, True)
 chk("C9 definition_of_done is still exactly one line",
     len([l for l in h.split("\n") if l.startswith("definition_of_done:")]) == 1)
 
@@ -109,16 +119,25 @@ chk("C13 the DoD points at POST-SHIP for the freeze rather than restating a sha"
 d = (REPO / "docs/DEFINITION-OF-DONE-SHIP.md").read_text()
 chk("C14 all eight loopholes L1-L8 are named", all(("| L%d |" % i) in d for i in range(1, 9)))
 chk("C15 the three severity classes are defined", all(s in d for s in ("### S1 ·", "### S2 ·", "### S3 ·")))
-chk("C16 the hard stop names a session", "-106" in d)
+# C16 CHECKED FOR "-106" AS THE HARD STOP. The amendment REMOVED the hard stop and -106 is now
+# merely Pass D's session number, so this check would have kept passing while meaning something
+# completely different -- the most dangerous failure mode for a guard: green and irrelevant.
+# Replaced with the durable question: does the DoD say WHEN A HUMAN DECIDES?
+chk("C16 the DoD defines when Jason rules rather than when a session stops",
+    "Jason rules" in d and "stalls" in d)
+chk("C16b NEGATIVE: and it no longer promises an automatic stop at a session number",
+    "### 3.4 · THE HARD STOP" not in d, True)
 chk("C17 NEGATIVE: the rubric is committed BEFORE any retrospective scoring",
     "committed at the freeze, **ahead of Pass A's retrospective audit**" in d, True)
 chk("C18 NEGATIVE: the charter still wins over this document",
     "CO-AUTHOR-CHARTER.md` still wins over this file" in d, True)
 chk("C19 NEGATIVE: carding is explicitly NOT a way to close a blocker",
     "Carding is not a third option" in d, True)
-chk("C20 Pass A is forbidden from repairing", "PASS A MAY NOT REPAIR ANYTHING" in d)
+# C20 pinned one phrasing of a rule wt192's section 3 rewrote. The CONSTRAINT is wt191's durable
+# concern; the SENTENCE is wt192's. Matched on the concept.
+chk("C20 Pass A is forbidden from repairing", "may not repair" in d.lower())
 
-print("\n post-conditions: %d checks, %d NEGATIVE" % (23, NEG))
+print("\n post-conditions: %d checks, %d NEGATIVE" % (26, NEG))
 if FAILED:
     print(" FAILURE"); [print("   FAILED:", f) for f in FAILED]; sys.exit(1)
 print(" ALL PASS")

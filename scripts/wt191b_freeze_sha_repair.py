@@ -9,13 +9,21 @@ def chk(l, c, n=False):
     if not c: FAILED.append(l)
 
 def sh(a): return subprocess.run(a, capture_output=True, text=True, cwd=REPO).stdout.strip()
-decl = sh(["git", "log", "--format=%H", "-1", "--", "docs/DEFINITION-OF-DONE-SHIP.md"])
+# `git log -1` RETURNS THE LATEST COMMIT TOUCHING THE FILE, WHICH MOVES EVERY TIME THE DoD IS
+# AMENDED -- and Jason amended it the same day, so this pointed at the AMENDMENT and tried to
+# re-stamp the freeze. The freeze is the commit that ADDED the document and it cannot move:
+# --diff-filter=A, oldest-last, take the last line.
+_adds = sh(["git", "log", "--diff-filter=A", "--format=%H", "--", "docs/DEFINITION-OF-DONE-SHIP.md"])
+decl = _adds.split("\n")[-1].strip()
 parent = sh(["git", "rev-parse", decl + "^"])
 chk("F1 the declaring commit resolves", len(decl) == 40)
 chk("F2 its parent resolves", len(parent) == 40)
 chk("F3 NEGATIVE: they are different commits", decl != parent, True)
 chk("F4 the declaring commit is the one that ADDED the DoD document",
     "docs/DEFINITION-OF-DONE-SHIP.md" in sh(["git", "show", "--name-only", "--format=", decl]))
+chk("F4b NEGATIVE: it is the ADDING commit, not merely the latest one to touch the file",
+    decl != sh(["git", "log", "--format=%H", "-1", "--", "docs/DEFINITION-OF-DONE-SHIP.md"])
+    or len(_adds.split("\n")) == 1, True)
 
 OLD = "**FREEZE COMMIT: `%s` (`wealthTensor-102`, 2026-08-24).**" % parent
 NEW = ("**FREEZE DECLARED AT: `%s`** — the commit that added `docs/DEFINITION-OF-DONE-SHIP.md`.\n"
@@ -40,7 +48,7 @@ chk("F9 line 3 still leads with a sha, so the file's first lines remain the auth
     decl in t.split("\n")[2])
 chk("F10 NEGATIVE: nothing else in the file moved",
     t.count("Nothing in this file blocks shipping") == 1, True)
-print("\n post-conditions: %d checks, %d NEGATIVE" % (10, NEG))
+print("\n post-conditions: %d checks, %d NEGATIVE" % (11, NEG))
 if FAILED:
     print(" FAILURE"); [print("   FAILED:", f) for f in FAILED]; sys.exit(1)
 print(" ALL PASS")
