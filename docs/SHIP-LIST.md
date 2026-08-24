@@ -11,6 +11,29 @@ it. That is the only permitted growth, and it is not a licence to look.
 
 **Nine entries. Six S1, three S2. Zero carried S3** — every S3 is in `POST-SHIP.md`.
 
+---
+
+## ✅ CLOSED AT `wealthTensor-104` (PASS B), 2026-08-24 — ALL NINE REPAIRED IN `1e1e2a5`
+
+**Every entry below carries a `REPAIRED` line naming what landed.** The list did not grow: the
+one permitted growth (DoD § 3, Pass B) was not needed — no repair revealed an adjacent S1 at its
+own site. Two things Pass B found that are NOT on this list and are in `POST-SHIP.md` instead,
+which is § 1.2 working rather than failing:
+
+- `wc -w` on **macOS returns 7 527 in every locale**, so `SL-6`'s defect is invisible on darwin
+  and reproduces only under GNU `coreutils`. The repair names the locale for that reason.
+- `paper-I` is outside `#scope` in `docs/promises-adjudicated.tsv`, so its 13 promises are
+  unadjudicated by design. Untouched here; widening scope is a decision, not a repair.
+
+**Guards these repairs reddened, all closed in this same session:** `TERM-001` (wording),
+`REG-003 §7` (the peak-to-charge qualifier), `test_restatement_reach` (§ 4.9 DECLARED for α̂ —
+a tighter pin, not a weaker one), and `wt148`'s promise sweep (10 rows adjudicated `H` with
+their evidence re-run here, 2 superseded rows dropped with lineage markers).
+
+**`defensive_count.py --against 7c5b6fb` reads +0 on all three manuscripts.**
+
+---
+
 **LINE NUMBERS BELOW ARE AS OF `7b5e114`**, the commit this pass read, with manuscript digests
 `paper-II 2bf75ee73f092e2e115cf731796444b5` · `paper-III 0f6dd399d031ab6bafaffae813da1407` ·
 `paper-IV f9474da72f15555ea7d1aad0f58c21b4`. **Pass B's own repairs will move them**, so every entry
@@ -38,6 +61,14 @@ sentence at line 593 already has the correct phrasing to borrow: *"the rectangle
 disclosed rate of 0.3333."* State § 5.4's rate as `0.408` explicitly if the comparison is wanted.
 **Not a number change — an attribution change. The arithmetic in the sentence is correct.**
 
+
+**REPAIRED** `1e1e2a5` · `scripts/wt193_sl1_sl2_attribution.py`. The relative clause no longer points at
+`0.333`: the sentence now reads *"outside the rectangle, whose own fastest disclosed rate is 0.333 —
+and above §5.4's measured peak-to-charge recognition rate of 0.408 per year as well."* The
+comparison Pass A said was wanted is kept and made true; **the arithmetic was not touched.** The
+qualifier is not decoration — `REG-003 §7` forbids attaching a measurement of α̂ to an unqualified
+*recognition rate*, and its guard caught the first draft of this repair doing exactly that.
+
 ### `SL-2` · paper-III § 4.9 — `§4.4's 0.00789`, a value § 4.4 does not contain
 
 **Site:** `docs/papers/paper-III-dual-tensor/paper-III.md` line 1000.
@@ -53,6 +84,11 @@ is wanted, say it is this section's own evaluation of § 4.4's closed form `δ�
 the calibration value to § 4.4's tier table so the pointer becomes true.
 **Arithmetic checked and correct:** (0.00789 − 0.00755)/0.00789 = 4.31 %, the 4.3 % stated.
 **This is `III-5`'s shape (`-101`) recurring in a second site. Both live sites are in § 4.9.**
+
+
+**REPAIRED** `1e1e2a5` · same script. The possessive is gone: *"from 0.00789 at the calibration —
+§4.4's closed form evaluated there — to 0.00755 at the measured rate"*. `wt090` prints
+`reproduces §4.4's published 0.00789 at alpha=0.05`, so the new attribution is the true one.
 
 ### `SL-3` · paper-II front matter — a version stamp and a revision note that 21 commits have overtaken
 
@@ -72,12 +108,22 @@ that is conduct-narration and charter § 3.3 forbids it.
 **Checkable after repair:** `git log --since=<the new stamped date>` returns 0 commits before the
 repair commit itself.
 
+
+**REPAIRED** `1e1e2a5` · `scripts/wt194_version_stamps.py`. **Version 0.3, 2026-08-24**, and one
+class-level line appended to the existing revision history. No ruling from Jason had landed, so the
+bump was made rather than waited for. `git log --since=2026-08-24 -- <the file>` returned 0 commits
+before the repair commit itself.
+
 ### `SL-4` · paper-III front matter — same defect, 36 commits
 
 **Site:** `docs/papers/paper-III-dual-tensor/paper-III.md` line 7. **Text:** *"Version 0.5,
 2026-08-12."*
 **Measured:** **36 commits** since that date; last touched 2026-08-21.
 **THE REPAIR:** as `SL-3`.
+
+
+**REPAIRED** `1e1e2a5` · same script. **Version 0.6, 2026-08-24**, plus a *Revision note* (this
+paper carried no revision history at all). Same class-level wording as `SL-3`.
 
 ### `SL-5` · paper-IV front matter — same defect, 19 commits
 
@@ -89,6 +135,9 @@ statement in a manuscript, so it is an S1 and it is on this list. **If Jason wan
 version numbering himself, that is the written ruling that closes `SL-3`, `SL-4` and `SL-5`
 together** — DoD § 2 allows an S1 to close by ruling as well as by repair.
 **THE REPAIR:** as `SL-3`.
+
+
+**REPAIRED** `1e1e2a5` · same script. **Version 0.2, 2026-08-24**, plus a *Revision note*.
 
 ### `SL-6` · paper-IV § 8 — a word count that is 7 367 or 7 527 depending on the locale, declared checkable
 
@@ -110,6 +159,15 @@ held. It had not held for every reader.
 **THE REPAIR:** name the command *and* its locale in § 10 beside the other regeneration bullets —
 `LC_ALL=C.UTF-8 wc -w docs/papers/paper-I-price-formation/paper-I.md` → 7 527 — and keep *"roughly
 7,500."* **Do not restate the number without naming how it is counted; that is the defect.**
+
+
+**REPAIRED** `1e1e2a5` · `scripts/wt195_wordcount_locale.py`. § 10 gains a **Regenerate §8's word
+count** bullet naming the command *and* the locale —
+`LC_ALL=C.UTF-8 wc -w docs/papers/paper-I-price-formation/paper-I.md` → **7,527** — and states that
+the same bytes return **7,367** under GNU `wc` in a non-UTF-8 locale. § 8 now points at § 10 instead
+of claiming the draft file is the only place the count is checkable. *"roughly 7,500"* is unchanged,
+as Pass A required. **Note for anyone re-checking on darwin: macOS `wc` returns 7 527 in every
+locale. The 7 367 reproduces under GNU `coreutils`.**
 
 ---
 
@@ -135,6 +193,17 @@ which script prints which table. Where no single command reproduces a figure, **
 existing honest pattern** — the § 5.3 bullet already says *"Nothing in this repository re-derives
 § 5.3's figures from committed data"* — rather than inventing a new disclosure form.
 
+
+**REPAIRED** `1e1e2a5` · `scripts/wt197_paperIII_sec4_provenance.py`. § 11's scope sentence now reads
+*"Every simulation result in §A.2, §§2–3 and §4 is produced by open code, and the bullets below name
+the command that prints it. Where a figure is printed by no command here, the bullet says so."*
+Four **Regenerate** bullets follow, covering §§ 4.2, 4.4, 4.5, 4.6, 4.7, 4.8 and 4.9 — `wt084`,
+`wt083`, `wt088`, `wt085`, `wt086`, `wt087` and `wt090`. **Every figure quoted in them was re-run
+before it was written down**, and all seven are adjudicated `H` in `docs/promises-adjudicated.tsv`.
+One figure has no command and the bullet says so rather than implying one: **§ 4.2's 31.7%** is
+`wt084`'s printed family restricted to a ten-per-cent opening gap, and the restriction is applied in
+the prose. That is § 11's own § 5.3 form, copied rather than reinvented.
+
 ### `SL-8` · paper-II — nine of sixteen reference entries are never cited in the body
 
 **Site:** `docs/papers/paper-II-redistribution/paper-II.md`, References.
@@ -150,6 +219,15 @@ literature and credit neither at the sentence that relies on it. This is `IV-7`'
 of the nine: cite it at the sentence that relies on it, **or cut the entry.** Both are permitted;
 padding the body to justify an entry is not.
 **Checkable after repair:** `wt133_crossref_sweep.py` reports paper-II `n of n cited, 0 not`.
+
+
+**REPAIRED** `1e1e2a5` · `scripts/wt198_paperII_citations.py`, copying `-81`'s `IV-7` repair. Eight of
+the nine are now cited at the sentence that relies on them — the three kinetic-exchange entries at
+§ 1's *"the kinetic-exchange literature has established this repeatedly"*, Gabaix at § 6's tail-index
+clause, and Kaldor, Auerbach, Toder and Viard, and Saez and Zucman at § 6's public-finance paragraph.
+**Piketty (2014) is CUT:** no sentence relies on it, the paper is positive throughout and says so,
+and padding the body to justify an entry is the move Pass A forbade. **Checked:**
+`wt133_crossref_sweep.py` sweep 2 now reports paper-II **15 entries, 15 cited, 0 not**.
 
 ### `SL-9` · paper-IV § 9 item 9 — an exhaustive count of the paper's own unmeasured absences
 
@@ -167,6 +245,13 @@ This is `II-43`'s shape (*"five quantities"* where there were six).
 support. *"Three others, named here, are not measured"* asserts the three are unmeasured without
 asserting they are all of them. **Do not attempt to verify exhaustiveness; that is POST-SHIP work
 and is already logged there.**
+
+
+**REPAIRED** `1e1e2a5` · `scripts/wt196_absence_census.py`. **Two clauses, not one** — the item asserted
+its census twice, and a repair landing at one site leaves the document asserting both things. The
+lede is now *"One of this paper's absences is measured and three others named here are asserted"*
+and the enumeration *"Three others, named here, are not measured"*. Exhaustiveness was **not**
+verified; that is POST-SHIP work and is logged there.
 
 ---
 
