@@ -139,6 +139,28 @@ AMENDMENTS: tuple[Amendment, ...] = (
         ),
         digest_after="8608601162cb03efef17083c5250faf1e9d4dfa7ec99bfb087b74190ce7df3c3",
     ),
+    Amendment(
+        sha="f44bf4b",
+        licence=(
+            "wealthTensor-105, Pass C of DEFINITION-OF-DONE-SHIP.md section 3. An S1 under "
+            "that document's section 2 -- 'a cross-reference that resolves to the wrong "
+            "place' -- found by Pass C's read against the frozen instrument set. Section "
+            "4.7 said 'So section 4.6's question answers yes'; SECTION 4.6 POSES NO "
+            "QUESTION, and there is no question mark anywhere in 4.1 through 4.6. The "
+            "clause now states the question the section is answering -- whether anything "
+            "outside the reported series restores phi -- so it claims only what a reader "
+            "can check, and the matching pointer in section 7's survival ledger was "
+            "repaired in the same commit because a repair landing at one of two sites "
+            "leaves the document asserting both (SL-9's lesson). Licensed by a review of "
+            "the manuscript against itself under the ship definition of done. NOTHING HERE "
+            "READS REG-012's RESULT OR ITS BRANCH: the edit is about a dangling reference, "
+            "not about the band count's edge phase, and it would have been made identically "
+            "had REG-012 never run. Reading (b). The edit landed in the commit named above "
+            "rather than in this one, per the guard's own instruction that the review the "
+            "same-commit rule wanted is the review, not the SHA (-65, LEDGER WT-096)."
+        ),
+        digest_after="bdf7fcbb13eae1418cff5b4b9164eadab4b719bfad937093375711ae60724cf6",
+    ),
 )
 
 #: SHA-256 of §4.7 as the working tree carries it now. Moves only with an `AMENDMENTS`
