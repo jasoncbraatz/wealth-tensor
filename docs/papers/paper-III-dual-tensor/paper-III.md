@@ -87,8 +87,7 @@ comparison of timeliness. Across the four GAAP classes, with the decay rates the
 composite does not blur the intended ranking — it **inverts** it — and the ordering the design
 imposed survives in **11.5%** of ladders even when no durability ordering is imposed at all.
 
-This programme learned that the hard way, which is the second reason the paper exists. The
-framework's sharpest empirical prediction was pre-registered, tested twice on EDGAR-derived
+The framework's sharpest empirical prediction was pre-registered, tested twice on EDGAR-derived
 impairment data with a stopping rule declared in advance, and it failed. §5 reports the failure at
 full length. §4 reports what the identification result says about that failure, and the answer is
 that it **does not explain it**. The one observable the composite spares is precisely the one the
@@ -97,8 +96,7 @@ substitute whose relation to the model was never written down. A theorem about i
 registered null, and the discovery that the two are less connected than they look, are three
 different results, and this paper reports them as three.
 
-**Contributions.** Numbered, so that a reader is not obliged to construct a smaller list than the
-one intended.
+**Contributions.**
 
 1. **An exact observational equivalence, with its proof and its reach** (§4.2). The filter's two
    roots exchange, preserving φδ, so timeliness is not recoverable from a reported series by any
@@ -127,14 +125,12 @@ one intended.
 7. **A survivals ledger** (§7), including the row that overturned this paper's own preferred reading
    of its null.
 
-**A word about §5, since its placement is deliberate.** The failed prediction is in the body and in
-the abstract. It is not in *Abandoned Approaches*. A pre-registered prediction that was tested and
-lost is a **result**; filing it under abandonments would be the softest available way to hide it, and
-this paper has no claim on a reader's seriousness if it takes that route.
+The failed prediction is in the body and in the abstract, not in *Abandoned Approaches*: a
+pre-registered prediction that was tested and lost is a **result**, and §5 reports it as one.
 
 The framework the filter was built inside — three propositions about the composition of wealth
 (**P1** composition, **P2** decay, **P3** atomism) and the coupling they oblige — is set out in
-**Appendix A**. No result in §§2–5 depends on it, which is the point of putting it there. §6
+**Appendix A**. No result in §§2–5 depends on it. §6
 accounts for the appendix alongside the body when it states what the demotion leaves standing,
 §7's survival ledger records the appendix's own checks, and §9 names P1's domain where it bounds
 what may be claimed.
@@ -160,13 +156,12 @@ When the unrecognised gap exceeds a threshold share θ of physical wealth, the d
 unsustainable and the claim layer snaps to the physical one. **That discontinuity is the crisis,
 and its magnitude is exactly the information that had been withheld.**
 
-*Terminology, fixed here and used consistently from this point.* The discrete event is called a
+*Terminology.* The discrete event is called a
 **recognition event** throughout, and where the referent is literally ASC 350 it is called an
 **impairment loss**. It is deliberately **not** called a *correction*: in finance a correction is a
 price decline of a specified magnitude from a peak, and in accounting ASC 250 — *Accounting Changes
 and Error Corrections* — reserves the word for the repair of an **error**, which a change in
-estimate driven by later information is not. An earlier draft of this paper used *correction* for
-the event thirty times and would have asserted, in the technical register of the standard §5 is
+estimate driven by later information is not. Using *correction* for the event would assert, in the technical register of the standard §5 is
 built on, that the prior statements required retrospective restatement. The word **crisis** is used
 for the phenomenon §2 models and for nothing wider. It is **not** in the title, which names the
 identification result; §8.2 gives the framing it belongs to and the paper that will carry it. The
@@ -177,8 +172,7 @@ periods. Where the filter is examined in isolation the recognition mechanism is 
 because otherwise the snap timing truncates the measurement window and the lag statistic reports
 the recognition schedule rather than the filter.
 
-**Two conditions bound what this filter models, and both belong here rather than in a later
-section.** The first makes the wedge one-signed: reported value may fall and may not rise. Under
+**Two conditions bound what this filter models.** The first makes the wedge one-signed: reported value may fall and may not rise. Under
 US GAAP — the regime this paper's sample files in — there is no upward revaluation of property,
 plant and equipment and no impairment reversal for goodwill or indefinite-lived intangibles. IAS
 36 requires reversal for non-goodwill assets and IAS 16 permits revaluation, so the condition
@@ -189,8 +183,7 @@ no estimable expected loss and no observable event to key recognition to. **Wher
 estimable, recognition is faster than the market and this model predicts nothing.** §10 gives the
 accounting literature these two conditions belong to.
 
-**φ is not a fudge factor**, and the distinction is load-bearing enough to state before any
-result. φ is the *observability of the degradation*, and it is what makes this model survive the
+**φ is not a fudge factor**, and the distinction is load-bearing. φ is the *observability of the degradation*, and it is what makes this model survive the
 objection that would otherwise kill it outright — see §8.1.
 
 ---
@@ -199,15 +192,13 @@ objection that would otherwise kill it outright — see §8.1.
 
 ### 3.1 · Lag and deferred information scale with unobservability
 
-Filter isolated, θ = ∞. Two of the three columns need their construction stated before they can
-be read. **Recognition lag** is the offset, in periods, that maximises the cross-correlation
+Filter isolated, θ = ∞. **Recognition lag** is the offset, in periods, that maximises the cross-correlation
 between ΔE and ΔC — how long the claim layer takes to track a change in physical value.
 **Smoothing** is the ratio of the standard deviation of ΔC to that of ΔE, taken over periods
 carrying no recognition event: 1.000 where the claim layer moves exactly as the asset does,
-falling as more of the movement is withheld. One statistic carries two column headings here,
-because the periods it runs over differ with the regime: with the mechanism disabled there are no
-events and it runs over every period, which is the **inter-period** column below; §3.2 turns the
-mechanism on, leaving the periods between events, and heads the same quantity **inter-event**.
+falling as more of the movement is withheld. Smoothing is measured over different periods in the two regimes: with the mechanism disabled
+there are no events and it runs over every period, the **inter-period** column below; §3.2 turns
+the mechanism on, leaving the periods between events, and heads the same quantity **inter-event**.
 
 | φ | recognition lag (periods) | inter-period smoothing | deferred information |
 |---|---|---|---|
@@ -284,7 +275,7 @@ stability, volatility actually accumulates only to hit the market at a later dat
 volatility across time and raising it overall. **What the table above adds is the parameterisation** —
 the same claim indexed by a continuous observability parameter, with the smoothing and concentration
 measured separately rather than argued. The provenance and the difference in mechanism are set out in
-§10; it is noted here because the table's headline result is nineteen years old.
+§10; the table's headline result is nineteen years old.
 
 **It is not, however, a usable empirical target.** Against filed accounting data the concentration
 statistic is unfalsifiable by construction: the asset class with no amortisation schedule has
@@ -295,10 +286,9 @@ run. The relocation result is therefore a property of the model and a candidate
 description of the world, and it is **not** offered as the replacement severe test. The framework
 does not currently have one.
 
-*Method note, because the fix mattered more than the result.* The original metric measured the
-wrong object: one number was being asked to carry two claims. Two now exist — smoothing measured
-on the periods between recognition events, concentration measured on the recognition events — because a statistic that
-answers two questions answers neither.
+*Two statistics, not one.* Smoothing is measured on the periods between recognition events and
+concentration on the recognition events, because a statistic asked to carry two claims answers
+neither.
 
 ---
 
@@ -326,8 +316,7 @@ substantive claim rather than a notational economy: **the reporting layer is dia
 in a distribution centre does not force recognition against a trademark. Each class's filter reads
 its own gap and nothing else.
 
-That claim is an assumption and it is false in detail; §9 says so and proposes the test. What
-matters here is that writing it down makes the next result expressible. Without the class index the
+That claim is an assumption and it is false in detail; §9 says so and proposes the test. Without the class index the
 identification result below is a remark about a single parameter. With it, the remark acquires a
 corollary about *rankings*, and rankings are what the empirical literature on this subject
 estimates.
@@ -385,7 +374,7 @@ at t = 400 its physical stock stands at 4 × 10⁻⁶ of the original world's, a
 above an asset that has all but evaporated. That is a recognisable kind of company. It files the
 same statements, to fourteen decimal places, as the prompt reporter of the durable asset.
 
-**The mathematics is old, and saying so costs nothing.** Subtract E(t) from the closed form and the
+**The mathematics is old.** Subtract E(t) from the closed form and the
 unrecognised gap is
 
 > G(t) = E₀ · (1 − φ) δ · S(t),  S(t) = (Aᵗ − Dᵗ)/(δ − α)
@@ -507,8 +496,8 @@ same ladder, because a class is placed on a schedule precisely when its decline 
 enough to schedule. Goodwill sits at the end of both: least observable, and with no degradation
 schedule at all.
 
-**Two of the table's columns are evaluated at rates §5.4 measures rather than at the calibration,
-and both are worth having in hand before the table is read.** The **measured** rate is the censored
+**Two of the table's columns are evaluated at rates §5.4 measures rather than at the
+calibration.** The **measured** rate is the censored
 geometric maximum-likelihood estimate of the recognition rate PRE-002's instrument identifies, on
 the registered sample, each event carrying the interval from the onset of deterioration to the
 charge and right-censored at twenty quarters. The **unregistered adverse cut** is that same
@@ -676,8 +665,7 @@ firm-level signal to the recognition of a charge — and the relation between th
 model's lag has never been written down.
 
 That is a second identification gap, upstream of the first, and it is the one that bit. The
-framework's response to it is §6.2's bridge discipline, which was written from the failure and now
-has a theorem behind it rather than a bruise.
+framework's response to it is §6.2's bridge discipline, which the registered null motivated and this section supports.
 
 ### 4.6 · The field's instruments read the same product
 
@@ -739,7 +727,7 @@ itself invariant, so no statistic computed from it separates the two worlds. Rya
 title is nearly the same as theirs, uses *identifying* in the empirical sense of detecting
 conservatism in practice and makes no claim of the econometric kind.
 
-*The notation overlap is unlucky and worth naming once:* in Dutta and Patatoukas, δ is the fraction
+*The notation overlaps:* in Dutta and Patatoukas, δ is the fraction
 of bad news recognised — this paper's φ. Here δ is the physical decay rate, and has no counterpart
 in their model.
 
@@ -749,8 +737,8 @@ exactly. Second, the magnitude-versus-timing distinction of §4.5 matters, and t
 both sides of it — Basu's coefficient is a slope on returns rather than a delay, and is closer to
 this paper's magnitude case than its timing one. Third, **the theorem is proved for the reported series
 alone**, and the returns-based measures condition on a second series. That second series does break
-the equivalence. §4.7 gives the result and its price, and the effect on this section is to narrow
-its claim rather than to qualify it: what is said here is said about a comparison of reported
+the equivalence. §4.7 gives the result and its price, and the claim of this section is
+correspondingly narrow: what is said here is said about a comparison of reported
 series, and a design holding returns is repairing the problem rather than inheriting it.
 
 What the paper claims is that the burden has moved. **A cross-sectional conservatism ranking now
@@ -899,8 +887,7 @@ At δ = 0 the physical layer does not move; ΔE = 0; the term φ ⊙ ΔE vanishe
 occurs at any φ in 400 periods. **At zero decay, φ is not ill-conditioned. It is absent from the
 dynamics.**
 
-**That limit is narrower than it looks, and saying what it rests on is worth more than the limit
-is.** The run requires two conditions, not one: δ = 0 *and* an asset whose value does not otherwise
+**That limit is narrower than it looks.** The run requires two conditions, not one: δ = 0 *and* an asset whose value does not otherwise
 move. Set δ = 0 and let the value receive news, and the gap reopens and φ is recovered exactly — to
 3 × 10⁻¹⁵ — from the reported series and returns together. **The limit belongs to a motionless asset,
 not to a slowly-decaying one.** An asset whose value never changes for any reason is not goodwill.
@@ -935,7 +922,7 @@ share from that class. That much stands and §5 pays for it. But the cause is th
 (Limitation 3), not goodwill's nature: a filter admitting stochastic degradation would speak about
 goodwill as readily as about anything else, and would find it neither the hardest class nor the
 easiest. **Which classes this model can speak about is decided by the δ ladder before any hypothesis
-about φ is entertained** — and §4.4 now states what that ladder rests on.
+about φ is entertained** — and §4.4 states what that ladder rests on.
 
 **None of this was known when the registration was written, and all of it was derivable.** §5 reports
 what was registered and what happened; §6 states what may now be claimed.
@@ -1021,8 +1008,7 @@ recognition rate of 0.408 per year as well.
 
 **An effective rate exists and it is not a constant.** Writing α_eff(δ) = δ Π(z)/(Π(z) − 1) returns
 the published form verbatim, R = (1 − φ)δ/(α_eff − δ). But α_eff runs from **0.437** per year at a
-forty-year life to **0.476** at a three-year one — **nine per cent** of itself across the asserted rectangle,
-nearer an eleventh than the ninth an earlier revision of this sentence claimed —
+forty-year life to **0.476** at a three-year one — **nine per cent** of itself across the asserted rectangle —
 in the direction that a faster-decaying class behaves as though recognition were faster. Across the
 four-tier ladder it moves by six parts in a thousand, which is why the magnitudes there barely move.
 **A recalibration is therefore available and is not a repair:** any comparative static that holds
@@ -1035,7 +1021,7 @@ channels in advance and they oppose: a lower R₂ lowers K and pushes the crossi
 transform pushes it up. They very nearly cancel — the shape moves δ₃\* by **0.13%**, from 0.00755
 to 0.00754, and goodwill's tabulated rate stays a factor of 3.8 inside it. The *level* moves it by
 4.3%, from 0.00789 at the calibration — §4.4's closed form evaluated there — to 0.00755 at the
-measured rate, and moves something else besides, which §4.4's tier table now states.
+measured rate, and moves something else besides, which §4.4's tier table states.
 
 **One thing the shape does not do is break the exchange.** An age-dependent world sits 5 × 10⁻⁴
 from its own constant-hazard match in the reported series — four orders of magnitude below the
@@ -1187,18 +1173,18 @@ none of the three, which is why the answer here had to be measured rather than c
 
 ## 5 · The severe test: registered, run twice, and lost
 
-**What §4 does and does not say about what follows.** The test reported here ordered asset classes
+**What §4 bears on here.** The test reported here ordered asset classes
 by expected timeliness. §4.4 shows that a *magnitude* reading of such a ladder is inverted by the
 composite; §4.5 shows that the *timing* reading — the one this registration used — is not. So the
 identification result is not an excuse for the null, and it is not offered as one. It bears on this
 section at one point only, and that point is §4.5's second half: the model's lag is defined against a
-physical series that no filing reports, so the instrument below measures a substitute. Read §5 as the
-record of what was predicted and what happened; §6 states what may be concluded from it.
+physical series that no filing reports, so the instrument below measures a substitute. §6 states what may be
+concluded from §5.
 
 ### 5.1 · What was predicted, and when
 
 §3 establishes a property of a model. Whether the property holds of the world is a separate
-question, and no amount of prose does the work of one empirical result. The framework's sharpest available prediction is the one that
+question. The framework's sharpest available prediction is the one that
 follows directly from §3.1:
 
 > **Recognition lag scales with the unobservability of degradation.**
@@ -1236,14 +1222,13 @@ which specifies a different *instrument* — and PRE-002's registration shipped 
 commit, so the git history still establishes that PRE-002 was registered before its outcome
 existed. What it does **not** establish is that the instrument's details — the onset rule's window,
 the tie-break direction, the materiality floor — were fixed before anyone had seen what they
-produced. On a second look, that is precisely where the remaining researcher degrees of freedom
+produced. That is precisely where the remaining researcher degrees of freedom
 live.
 
 No claim is made here that they were exploited, and the author's account is that they were not.
 The point is that this is an *account* rather than a demonstration, whereas for PRE-001 it is a
-demonstration. A reader is entitled to weight the two differently, and this programme now requires
-that a registration precede the **instrument's code**, not merely the result — a rule it did not
-have when PRE-002 was written.
+demonstration. A reader is entitled to weight the two differently. A registration that precedes the
+**instrument's code**, and not merely the result, closes this gap; PRE-002's did not.
 
 ### 5.2 · The first instrument failed, and so did its diagnosis
 
@@ -1337,8 +1322,7 @@ so they are untroubled by tier sizes of 21/34/34/155.
 **This design would have detected a one-quarter-per-tier gradient with 95% probability in retail
 and with certainty in computer services, and it found nothing.**
 
-Three qualifications belong immediately next to that sentence rather than in a limitations section,
-because without them it would be overstated:
+Three qualifications bound that sentence:
 
 1. **The power simulation assumes the onset instrument measures lag without error.** It resamples
    the observed lag distribution and adds a noiseless per-tier shift. The peak rule always finds an
@@ -1358,8 +1342,7 @@ because without them it would be overstated:
 pre-registered, replicated test found no gradient, and if a gradient of the size tested exists it
 is unlikely to have been missed twice. **What it does not support** is the stronger reading that
 the framework's own predicted effect has been ruled out, because the framework never named that
-effect in the units the test measured. Calling this *evidence of absence* — as an earlier draft of
-this section did — would contradict §6.2 in the same paper: the bridge cannot be too broken to
+effect in the units the test measured. Calling this *evidence of absence* would contradict §6.2 in the same paper: the bridge cannot be too broken to
 license a prediction and sound enough to license its refutation.
 
 **The shape of the failure, stated as sharply as the data allow.** Both z-statistics are negative,
@@ -1381,7 +1364,7 @@ questions it was never asked. Two were registered in `REG-003`, committed and pu
 instrument existed, and both returned. Neither is a re-test of §5.1's prediction and neither may be
 read as one.
 
-**The sample rebuilt at 99.0% agreement, which is itself worth one line.** `companyfacts` serves
+**The sample rebuilt at 99.0% agreement.** `companyfacts` serves
 each firm's latest view of its own history, so a re-pull is not the original pull. Rebuilt: **695
 events across 313 firms** against 688 across 311, with three of four tier counts identical in the
 pilot and
@@ -1462,8 +1445,8 @@ recognised first and reduces the reporting unit's carrying amount, and under ASC
 is subtracted from it one for one until zero or the goodwill cap binds. **Under the ordering alone
 the two charges are substitutes at the margin, and this sample shows them as complements.** Signing
 the net requires the two charges at the reporting-unit level, which US filings do not disclose;
-`REG-006` registered an entity-level test of the suppressing channel and it returned no consistent
-sign in either sector. The natural fallback is the triggering *disclosure* rather than the
+`REG-006` registered an entity-level test of the suppressing channel. **It failed as registered:
+no consistent sign in either sector.** The natural fallback is the triggering *disclosure* rather than the
 charge, and `REG-007` measures why that route does not identify either. ASC 350-20-50-2(a) compels
 a description of the facts and circumstances leading to the impairment only *for each goodwill
 impairment loss recognized*; where a test is run and nothing is charged the Codification compels
@@ -1498,7 +1481,7 @@ larger.
 simulation and held in place by a test suite. A model result is not made false by the failure of
 an empirical identification, and it is not made true by one either.
 
-**And that sentence is a problem, not a reassurance.** If nothing in §A.2 or §§2–3 was at risk, then
+**That is a problem, not a reassurance.** If nothing in §A.2 or §§2–3 was at risk, then
 nothing in §A.2 or §§2–3 was on test — and a framework that retains every claim after losing its only
 public bet is in exactly the position §6.3 accuses Odum's of occupying. The accounting is therefore:
 
@@ -1552,9 +1535,9 @@ registration.
 
 ### 6.3 · The comparison this paper is not entitled to make
 
-An earlier draft of this section argued that the framework had escaped the trap that closed on
+This paper is not entitled to the argument that the framework has escaped the trap that closed on
 Odum's emergy programme — that emergy's fatal defect was making no risky predictions, and that
-losing a registered bet therefore counted as a kind of methodological success.
+losing a registered bet therefore counts as a kind of methodological success.
 
 That argument is withdrawn, on three counts a sceptical reader would have reached first.
 It selects its own reference class: introduce a comparator that made no predictions and any loss
@@ -1590,7 +1573,7 @@ with what would have killed each.
 | **Neither degradation exponent is a model constant** | both re-fitted over nine (α, δ) settings on the GAAP ladder | the nine agreeing to within fitting error, which would license quoting a number | collinearity spans **−1.07 to −0.38**, se(φ̂) **−0.78 to −0.09** — *the check that removed two numbers from §4.7* |
 | **The response to news flattens as decay slows** | |exponent| ranked against δ(α − δ) | no rank relationship, which would make the spread noise | Spearman **+0.92**; at δ = 0.002 the exponent is **−0.09**, and the level is **4.7×** worse than the best regime at matched σ |
 | **The goodwill limit needs a motionless asset, not a slow one** | δ = 0 rerun with the asset's value allowed to move | the gap staying zero once news is on, which would make the limit about δ | gap **0.204** against an exact 0.0, and φ recovered to **3 × 10⁻¹⁵** — *the check that rewrote §4.8* |
-| **The rate gap governs readability; the decay rate does not** | each held fixed while the other is swept, 15× and 16× | the decay rate dominating, which is what §4.7 had asserted that morning | δ at fixed gap: **1.24×**, favouring slow decay. Gap at fixed δ: **6.8×**, as (α − δ)^−0.70 |
+| **The rate gap governs readability; the decay rate does not** | each held fixed while the other is swept, 15× and 16× | the decay rate dominating, which is what §4.7 had asserted before this check | δ at fixed gap: **1.24×**, favouring slow decay. Gap at fixed δ: **6.8×**, as (α − δ)^−0.70 |
 | **The two rates do different jobs** | volatility exponent re-fitted across δ at a fixed rate gap | the exponent being flat across δ, which would collapse the two findings into one | exponent spans **−0.39 to +0.16** — *a change of sign*; level spread 1.24× at σ = 0.15 against 2.16× at σ = 0.025 |
 | **R = (1 − φ)δ/(α − δ)** | closed form against simulation | departure beyond the transient bound | held to **2 × 10⁻⁴**, the bound the geometric transient predicts; **1.0** when φ is misstated by 0.1 |
 | **The ranking inverts, not just blurs** | 4,000 ladders drawn on the two qualitative facts alone | the intended ordering surviving often enough to be a design | recovered in **1.9%**; **100.0%** when δ is held common — the witness that the construction is not vacuous |
@@ -1626,16 +1609,14 @@ with what would have killed each.
 | **The disclosed trigger does not separate the two channels** | rate at which filers name the standard's own internal trigger, joint-charge against goodwill-only, inside the window where ASC 350-20-50-2(a) compels the description — against a placebo arm on whom it does not | a window-versus-placebo gap wide enough to show the measure reads events rather than accounting policy | **0.436 against 0.403** on 1,833 classified firm-years; the difference is **+0.041** (*p* 0.38) or **−0.032** (*p* 0.24) according to a coding choice fixed in advance so that the sign could not be chosen afterwards |
 | **A sharper disclosure instrument finds the quantity absent, not merely unresolved** | sentence-level co-occurrence of a registered trigger phrase with a *named* reporting unit, joint-charge against goodwill-only, inside the same mandated window and against the same placebo | a window-versus-placebo gap no wider than the keyword families', which would leave the null attributable to the instrument rather than to the filings | the separation more than doubles — **0.103 against 0.030**, where the families gave 0.436 against 0.403 — and the difference stays at **+0.014** (*p* 0.60) in a design that could have detected **0.068**; **0 of 281** joint firm-years name a unit and an (f)-family trigger in one sentence |
 
-Two rows deserve a comment.
+Two rows carry more than their cells.
 
-The row on the inversion sparing the lag statistic is the reason this section is not decoration.
-The draft that preceded this one asserted that the identification result explained the registered
-null. The check in that row was written to confirm it and refused, in every one of 400 draws, and
-the claim came out of the paper. A survivals ledger that contains only survivals is an
-advertisement; this one contains the row that cost the paper its neatest sentence.
+The row on the inversion sparing the lag statistic records that the identification result does not
+explain the registered null. The check in that row was built to show that it did and refused, in
+every one of 400 draws, and the claim it would have supported is not made.
 
-The row on the guards' own audit is the one this programme would defend hardest. The claim is not that the work was
-careful. It is that the guards were audited against the possibility of being unfalsifiable, that the
+The row on the guards' own audit states a fact of a different kind. The claim is not that the work
+was careful. It is that the guards were audited against the possibility of being unfalsifiable, that the
 audit found six that could not have failed, and that they are named.
 
 ---
@@ -1661,7 +1642,7 @@ predicts *where* the lead-versus-lag boundary falls rather than denying that lea
 
 **The over-smoothing prediction.** §3.2. The framework predicted the claim layer would be less
 volatile than the physical layer. Measured over a whole path this is **false**, and the probe
-caught it. Retained here in full rather than quietly replaced, because the shape of the failure is
+caught it. The shape of the failure is
 informative: the direction was wrong, the mechanism was right, and the corrected claim
 (relocation, with 99% of reported movement occurring inside recognition events at φ = 0) is stronger than
 the one it replaced.
@@ -1669,8 +1650,7 @@ the one it replaced.
 **The streak-onset instrument (PRE-001).** §5.2. A genuine methodological dead end and the one part
 of the severe-test story that belongs in this section: an onset rule requiring an unbroken decline
 in a firm-level signal measures that signal's volatility rather than the phenomenon, which is why
-1,047 charges were discarded and zero events were censored. *The failed prediction itself is not
-here — it is in §5, in the body, and in the abstract, because it is a result.*
+1,047 charges were discarded and zero events were censored.
 
 **Re-specifying the onset rule until it worked.** After PRE-002 also failed, a third instrument was
 available and was not built, because PRE-002's stopping rule had been registered in advance.
@@ -1694,8 +1674,8 @@ jointly; slow-decaying assets are not, and for those an independent δ is the on
 What that independent determination should be is deliberately *not* specified here — an instrument
 named in a paper before it is registered is an instrument that has escaped its registration.
 
-**Adding a free parameter to absorb an objection.** Faced four times across this programme and
-worth recording as a class, since each instance looked locally reasonable: introducing a scaling
+**Adding a free parameter to absorb an objection.** Four instances across this programme, each
+locally reasonable: introducing a scaling
 constant to rescue the dimensional argument; defining a levy's base so a companion paper's claim
 came out right; letting λ vary freely rather than in a shaped way; and, as §8.1 now concedes,
 leaning on an unmeasured φ — three refused, the fourth not. A quantity that can accommodate any
@@ -1717,7 +1697,7 @@ zero lag, zero deferred information, coupling identically 1, no recognition even
 *exactly* where the model predicts no lag, and has nothing to act on where degradation is
 undisclosed. The two are not in competition; they partition the space by φ.
 
-**That reply is not available to this paper, and the rest of this section retracts it.**
+**That reply is not available to this paper.**
 
 The partition is drawn along φ, and φ is not measured anywhere in this work — §4 concedes
 it is swept, not estimated. So "the objection holds where φ is high and the model holds where φ is
@@ -1743,8 +1723,7 @@ The model in §2 was built to say something about crises: a deferral has one ava
 arrival — so within the model a crisis is the reporting layer delivering its accumulated error at
 once, and the magnitude of the discontinuity is exactly the information that had been withheld. That
 reading survives everything in this paper. What it does not yet have is a price, an agent, an
-equilibrium, or an asymmetry that a crash-risk reader would recognise as one, and the adversarial
-review shipped beside this paper is unanimous and correct on the point.
+equilibrium, or an asymmetry that a crash-risk reader would recognise as one, and that gap is real.
 
 So the framing is not defended here and not deleted either. The material that supported it — the
 volatility-relocation result and its 2007 antecedent, the three-cell taxonomy locating the wedge in
@@ -1763,8 +1742,7 @@ theorem is a framing that will be argued about instead of the theorem.**
 
 1. **The severe test failed and this paper does not know why.** Three post-hoc explanations exist —
    the theory is wrong; the bridge was wrong; the unit of observation was wrong — and **the data do
-   not distinguish them.** The first is listed first on purpose, being the one the author has the
-   strongest incentive to list last.
+   not distinguish them.**
 2. **The unit mismatch is real, unfixed, and was unfixed by both registrations.** The impairment
    charge is asset-level; the deterioration signal used was firm-level. A firm can impair a failing
    reporting unit while consolidated revenue rises. Fixing this requires segment-level disclosures
@@ -1833,8 +1811,8 @@ theorem is a framing that will be argued about instead of the theorem.**
    sharpened to the sentence and to the named reporting unit, the disclosure ties the standard's own
    internal trigger to the unit it fired in **once in the 644 firm-years of the mandated window and
    not once in the 281 that took both charges** (`RESULT-REG-008` §2.2); §7 carries the second
-   figure and §5.4 both. It is registered before its instrument is coded,
-   or it is not run.
+   figure and §5.4 both. Any test of that route must be registered before its instrument
+   is coded.
 
 ---
 
@@ -1845,8 +1823,7 @@ present contribution is not the distinction between physical wealth and claims o
 *dynamics*: that the gap between them is an accumulating quantity with a measurable integral and a
 characteristic release.
 
-**Georgescu-Roegen is a hostile witness inside this framework's own bibliography, and the paper
-states so.** He is the most-cited authority in the biophysical
+**Georgescu-Roegen is a hostile witness inside this framework's own bibliography.** He is the most-cited authority in the biophysical
 tradition this work draws on, and he explicitly refused the physical-to-monetary reduction that a
 naive reading of Λ proposes: for him the source of economic value is the subjective enjoyment of
 life. That refusal is not answered here — it is *adopted*. Measuring the wedge between physical
@@ -1906,8 +1883,7 @@ possibility is this paper's mechanism:
 > released all at once, like a pressure vessel letting off steam."
 
 **Accumulation to a threshold and release all at once, with the agency conflict switched off, was
-written down in 2004.** No claim of priority over it is made here, and an earlier draft of this
-section made one.
+written down in 2004.** No claim of priority over it is made here.
 
 **What that case retains, and §2 removes, is an informed party.** "Saintly" qualifies capture and not
 information: the manager still observes the hidden component, and it is *investors* who "cannot see
@@ -1957,9 +1933,8 @@ physical layer that only degrades. That assumption is not by itself sufficient �
 stochastic rate around a booked rate produces a two-signed reporting error, which is Jin and Myers'
 case again, long tails and no skew. What makes the wedge one-signed is §2's first condition,
 that reported value may fall and may not rise. **That condition is conditional conservatism, it is
-Basu's object, and §2 uses it as machinery rather than contributing it.** An
-earlier draft of this section cited Basu as an obstacle to be scoped around. He is not the obstacle;
-he is the part of the mechanism this programme had not noticed it was standing on. §2's domain
+Basu's object, and §2 uses it as machinery rather than contributing it.** Basu is not an obstacle to be scoped around; he is the part of the mechanism this construction
+stands on. §2's domain
 restriction — to degradation on which conservatism has nothing further to bite — is the same point
 read from the model's side.
 
@@ -1992,8 +1967,8 @@ demarcation — that a claim earns its standing from the risk it ran — Mayo's 
 which makes that standing quantitative by asking how probable it was that the test would have
 detected the error had it been present, and the preregistration case made by Nosek and colleagues.
 Mayo's account is cited here at its origin rather than at its restatement, and the volume in which
-she and her critics argue it out directly is listed beside it, for the same reason this paper ships
-with `REVIEW-001`: an argument is easier to judge when its objections are in the room. The
+she and her critics argue it out directly is listed beside it, for the same reason this paper ships with an adversarial
+referee report on itself (§11): an argument is easier to judge when its objections are in the room. The
 registration, the negative control, the power analysis and the stopping rule are all conventional,
 and are claimed as nothing more than that.
 
@@ -2012,8 +1987,7 @@ so. The severe test in §5 uses only public data.
   table, §3.1's three prose-only figures (the sigmoidal lag at φ = 0.9 and φ = 0.1, and D(0) to
   four decimals), §3.2's table together with the full-path volatility ratios §3.2 quotes in prose,
   the entropy-rate sweep, and §A.2.4's sawtooth. Every simulation figure §3 states, tabulated or in
-  prose, is printed by that one command. Until wealthTensor-80 six of them were printed by none,
-  and this bullet said "three tables" of a command that printed four.
+  prose, is printed by that one command.
   §2 states the model and reports no simulation result.
 - **Regenerate §A.2.3:** `python3 scripts/wt002_lambda_report.py`
 - **Regenerate §4.2:** `python3 scripts/wt084_identification_closed_form.py` — the two coefficient
@@ -2048,12 +2022,11 @@ so. The severe test in §5 uses only public data.
   `docs/preregistration/REG-005-p3-lag-shape-identifiability.md`, committed at **6f0e7be**
   before that script existed. It prints §4.10's precision table, the identified set at every
   reported precision, the search's own floor at the fitted shape, and the profile at the
-  constant hazard. Minutes on a commodity CPU. Until wealthTensor-101 this section named no
-  command for §4.10 and the manuscript named that script only as the bare token `wt091`.
+  constant hazard. Minutes on a commodity CPU.
 - **Regenerate §5:**
   `python3 scripts/wt026_severe_test.py --universe pilot --onset peak` and
   `--universe replication --onset peak`. **That command reproduces the instrument and not the
-  sample, and the distinction is the whole of this bullet.** It re-pulls `companyfacts`, which
+  sample.** It re-pulls `companyfacts`, which
   serves each firm's *latest* view of its own history. §5.3's 244 and 444 events come from the
   original pull, whose full output is committed at
   `docs/preregistration/RESULT-002-pilot-run.log` and `RESULT-002-replication-run.log` — those
@@ -2062,7 +2035,7 @@ so. The severe test in §5 uses only public data.
   −0.095; a pull later still returns different counts again, and once the replication z crosses
   zero, §5.3's observation that both statistics are negative is a fact about the analysed sample
   rather than about any re-pull. Nothing in this repository re-derives §5.3's figures from
-  committed data, and this bullet implied otherwise until wealthTensor-80.
+  committed data.
 - **Regenerate §5.4:** `python3 scripts/wt089_recognition_and_offdiagonal.py`. §5.4 asks two
   questions of §5.3's sample that it was not collected for, and neither is answered by the command
   above: `wt026_severe_test.py` is §5.3's instrument and prints nothing about the recognition rate
@@ -2085,8 +2058,6 @@ so. The severe test in §5 uses only public data.
   audit found the published form using the entropy rate where it meant the effective decay; and
   three added at commit **cc1d198** for §4.4, holding the crossing rate δ₃\*, the first-rung
   boundary, and the absence of a steady-state deferral measure once decay outruns recognition.
-  This sentence read "three" from the day it was written, which was two days after the last three
-  landed.
 - **Hardware:** none required. Every figure in §A.2 and §§2–3 regenerates on a commodity CPU in seconds.
   The fits reported in §4 use two thousand synthetic firms at four hundred gradient steps
   in double precision; a larger reference fit of ten thousand firms at three hundred steps
@@ -2108,8 +2079,8 @@ so. The severe test in §5 uses only public data.
   the REG-006-corrected tier-0 tag list beside the registered one without editing it: the
   `TIER_TAGS` block that selected §5's published sample is byte-identical at **d655501** and at
   the head of the repository.
-  A submission-time head-of-repository SHA will be pinned when this paper is posted; the per-file
-  pins are what a replicator needs and are verifiable now.
+  No head-of-repository SHA is pinned; the per-file
+  pins above are what a replicator needs, and each is verifiable now.
 - **Data retrieval, pinned.** `companyfacts` serves each firm's *latest* view of its own
   history, so a re-pull is not the original pull and the sample grows with every filing —
   §5.4 reports 688 → 695 over one week. The events analysed here were retrieved on
@@ -2128,8 +2099,7 @@ so. The severe test in §5 uses only public data.
   label-permutation control printed in those same run logs
 (`docs/preregistration/RESULT-002-*-run.log`), which permutes the tier labels while
   holding the lag distribution fixed; in the pilot its null runs at mean **+0.007**, standard
-  deviation **1.025** over 1 000 draws, against an observed *z* of **−0.290**. This bullet
-  promised a per-tier breakdown until wealthTensor-82.
+  deviation **1.025** over 1 000 draws, against an observed *z* of **−0.290**.
 
 Two tests are worth naming because of what they forbid rather than what they check.
 `test_pre001_constants_are_what_was_registered` fails if any registered constant is edited, so a
@@ -2147,7 +2117,7 @@ this draft with the author's responses.
 # Appendix A · The framework the filter was built inside
 
 *Three propositions about the composition of wealth, and the coupling they oblige. This material
-motivated the filter and is retained in full: it states the domain within which §2's two layers are
+motivated the filter: it states the domain within which §2's two layers are
 the right two layers, and it carries the invariance evidence the ledger in §7 cites. It is an
 appendix rather than a section because **nothing in §§2–7 depends on it.** The identification
 result holds for any two-layer filter of the stated form, whatever one believes about the
@@ -2157,9 +2127,8 @@ composition of wealth — and a result that needs a metaphysics is weaker than o
 
 ### A.1.1 · What a first principle is, and what it is not
 
-The earlier drafts of this work appealed to "first principles" repeatedly and defined the term
-zero times. The gap was not a wording problem, and several attempts to fix it by rewording failed
-for a reason worth stating, because it is a type error and type errors do not respond to prose:
+An appeal to "first principles" is worthless without a definition of the term, and the gap is not
+a wording problem — it is a type error, and type errors do not respond to prose:
 
 **An axiom is a proposition** — truth-apt, deniable, the kind of thing that can be false. **A
 model is a structure** — it has interpretations, not a truth value. A structure cannot be promoted
@@ -2236,14 +2205,12 @@ than definitional. It is not itself a refutation, and no refutation is offered h
 
 *A companion result on the same theme is cited rather than reproduced: **Paper II** of this
 programme reports that a levy whose base cannot observe an accrual is inert regardless of its
-rate, and the evidence for it belongs to that paper. An earlier version of this aside added that
-the mechanism was **the same**. That identification is withdrawn. Put to a cross-scale check it
-does not hold: what this paper's filter fails to recognise is deferred, held in the gap and
+rate, and the evidence for it belongs to that paper. The identification of the two mechanisms that the
+shared theme invites is withdrawn. Put to a cross-scale check it does not hold: what this paper's filter fails to recognise is deferred, held in the gap and
 released at rate α, while what a levy's base fails to recognise is never assessed at all, and a
 levy has no parameter that plays α's part. The two results share the question and not the
 operator. The check, and the fact that the withdrawal was written down before it was run, are
-recorded in `docs/RESULT-END-TO-END-001-E1.md`; that this appendix still carried the withdrawn
-identification after the check had run is recorded in `docs/RESULT-END-TO-END-001-E3.md`.*
+recorded in `docs/RESULT-END-TO-END-001-E1.md`.*
 
 ### A.1.4 · Independence
 
@@ -2258,16 +2225,13 @@ denied by an identifiable school.
 
 ## A.2 · The coupling
 
-*This section is where Λ is defended. It is defended here, at full strength, on three independent
-legs, and then it is used for the rest of the paper without further apology. That is a deliberate
-posture and it is worth naming: a defence that recurs is a tell. Five defences of one quantity
-inform a referee that there are five soft places, and recruit attention to precisely the ground an
-author would rather they walked over.*
+*This section defends Λ, at full strength and on three independent legs; the rest of the paper
+then uses it without re-arguing it.*
 
 ### A.2.1 · Λ is obliged by P1, not introduced
 
-**Notation, stated before the argument because two different objects have been sharing one symbol
-in this programme's working notes.** Write **C** for the claim component and **E** for the physical
+**Notation, stated before the argument because two different objects are easily conflated under
+one symbol.** Write **C** for the claim component and **E** for the physical
 component. Then:
 
 - **λ = C/E** is **dimensionless** — a ratio of the claim measure to the physical measure once both
@@ -2277,7 +2241,7 @@ component. Then:
   conversion. This is the object the standing dimensional objection is aimed at, and the object
   §A.2.3 sweeps.
 
-Conflating them is easy and this paper has done it before. Everything below is explicit about which
+Conflating them is easy. Everything below is explicit about which
 is meant.
 
 **The entailment argument, and its actual reach.** If P1 holds, wealth is a compound of two
@@ -2294,8 +2258,7 @@ programme has previously stated: **the existence of a coupling is entailed; its 
 a scalar is an additional modelling assumption, and it is one this paper makes and does not
 prove.** What follows in §A.2.3 is a demonstration that no conclusion here depends on the scalar's
 *value*, which is a different and weaker guarantee than showing the scalar is the right object —
-and the difference is exactly the kind of thing §6.2 will show this programme has previously
-glossed over at its cost.
+and the difference is exactly the kind §6.2 is about.
 
 λ is not stable, and §A.2.4 shows what shape its instability takes.
 
@@ -2320,7 +2283,7 @@ the position that proved fatal to Odum's emergy programme — transformity coeff
 the accounting system that consumed them, and therefore unmeasurable from outside it. That is a
 claim about *availability in principle*, not about measurement in fact.
 
-**And it is a weaker leg than §A.2.3, which should be said plainly rather than left to a referee.**
+**This leg is weaker than §A.2.3's.**
 If, as §A.2.3 demonstrates, no conclusion in this paper depends on the coupling's value, then
 anchoring that value to a published statistic cannot be load-bearing for any result here. The two
 legs answer different objections — §A.2.3 answers *"your findings are an artefact of a number you
@@ -2368,8 +2331,7 @@ removing the scaling fails two.
 
 **Scaling collapse.** Two systems differing in energy scale (1 J against 6.02 × 10²³ J) *and* in
 coupling (10⁻⁶ against 42) lie on a single dimensionless curve — every diagnostic identical, pairwise
-difference **exactly 0**, at φ = 0.3 over 300 periods. (The shorter horizon is inherited from the
-verifier this figure comes from and is stated because it changes the values: at 300 periods the
+difference **exactly 0**, at φ = 0.3 over 300 periods. (The shorter horizon is stated because it changes the values: at 300 periods the
 system has had 12 recognition events rather than 16, and inter-event smoothing reads 0.6100 rather than
 0.6097. The *collapse* is horizon-independent; the numbers collapsed onto are not.)
 
@@ -2383,7 +2345,7 @@ magnitude, while every currency-denominated quantity scales with it exactly line
 dimensional **Λ = η·C/E** swept in §A.2.3. The numeraire enters nothing below.*
 
 A freely-varying λ that is never pinned would forbid nothing, and a quantity that forbids nothing
-is the free parameter this programme has refused three times in other costumes. So the claim is not
+is a free parameter. So the claim is not
 that λ *varies*. It is that λ varies **in a specific parameterised shape**, and the shape is a
 prediction.
 
@@ -2407,31 +2369,30 @@ information.
 
 ## References
 
-***The citation rule this list follows, stated because the author was inconsistent about it before this
-pass and the correction is method rather than tidiness.* The edition cited is the edition *consulted* —
-the copy in the author's possession — not the earliest printing a catalogue happens to list. Where the
-original's date does argumentative work, because the entry is a translation or because a claim about
-priority rests on it, the entry is **dual-dated** `original/consulted`. A reprint that changes no
-pagination is a *printing*, not an edition, and is not dual-dated.**
+***How to read this list.* The edition cited is the edition *consulted* — the copy in the author's
+possession — not the earliest printing a catalogue happens to list. Where the original's date does
+argumentative work, because the entry is a translation or because a claim about priority rests on
+it, the entry is **dual-dated** `original/consulted`. A reprint that changes no pagination is a
+*printing*, not an edition, and is not dual-dated. Where the copy read was a working paper or an
+accepted manuscript rather than the typeset article of record, the entry is dual-dated in the other
+direction — `consulted/published`.**
 
-***Extended on 2026-08-11 to cover the case the rule above does not reach: a text consulted in a
-pre-publication version.** Where the copy read was a working paper or accepted manuscript rather than
-the typeset article of record, the entry is dual-dated in the other direction —
-`consulted/published` — and carries **✓⧗**. The extension exists because the author had for years
-treated a downloaded working copy and the published article as the same object, which is a habit that
-survives a bibliographic check intact: the article exists, with those details, and none of that is
-evidence that the sentence quoted from it was ever printed there.*
+*Each entry carries a mark recording how far verification reached, because a bibliographic record
+and a text are different objects: a work can exist exactly as cited and still not contain the
+sentence attributed to it. Bibliographic verification was carried out on 2026-08-10, and the
+crash-risk entries were added on 2026-08-11. Per-entry findings are in the note attached to the
+entry they describe.*
 
-*Verified on 2026-08-10 (session wealthTensor-05); crash-risk entries added 2026-08-11.* **✓** —
-checked against a publisher page, a library-catalogue record, a Crossref record or the issuing body's
-own documentation, not recalled. **✓✎** — additionally checked against **the author's own copy**, by
-reading that copy's title page and colophon. The ✓✎ entries are the ones where doing so changed the
-citation. **✓⧗** — bibliographically verified, but the **text** consulted is a pre-publication
-version; any quotation is attributed to the version read and may not appear in the article of record.
-**⧗** *alone* — the bibliographic record is verified and the **text was not read**; the
-characterisation rests on named secondary sources, and the entry says so in its own note. Three
-entries carry it. Two entries carry **no mark at all**, each stating in its own note why it is
-unmarked, and those two are the only unmarked entries in the list.
+**✓** — checked against a publisher page, a library-catalogue record, a Crossref record or the
+issuing body's own documentation, not recalled. **✓✎** — additionally checked against **the
+author's own copy**, by reading that copy's title page and colophon. The ✓✎ entries are the ones
+where doing so changed the citation. **✓⧗** — bibliographically verified, but the **text**
+consulted is a pre-publication version; any quotation is attributed to the version read and may not
+appear in the article of record; three entries carry it. **⧗** *alone* — the bibliographic record
+is verified and the **text was not read**; the characterisation rests on named secondary sources,
+and the entry says so in its own note. Three entries carry it. Two entries carry **no mark at
+all**, each stating in its own note why it is unmarked, and those two are the only unmarked entries
+in the list.
 
 Andreou, P. C., Lambertides, N., & Magidou, M. (2023). A critique of the agency theory viewpoint of
 stock price crash risk: the opacity and overinvestment channels. *British Journal of Management*,
@@ -2445,13 +2406,13 @@ make and the body does.)*
 Basu, S. (1997). The conservatism principle and the asymmetric timeliness of earnings. *Journal of
 Accounting and Economics*, 24(1), 3–37. ✓ *(Cited for the asymmetric-timeliness result its title carries verbatim — *the asymmetric
 timeliness of earnings*. **Read at source**; the volume, year and page range are confirmed against the typeset
-article, which earlier revisions of this entry could not obtain. Nothing is quoted from it.)*
+article. Nothing is quoted from it.)*
 
 Ball, R., Kothari, S. P., & Nikolaev, V. V. (2013). Econometrics of the Basu asymmetric timeliness
 coefficient and accounting conservatism. *Journal of Accounting Research*, 51(5), 1071–1097. ✓
 *(§4.6 cites it for its stated expectation that firms with shorter asset maturity exhibit lower
 timely loss recognition, and for reading that dependence as the measure behaving correctly. **Read at
-source** in this revision and the characterisation held: the passage sits in their §4.4, headed
+source**, and the characterisation held: the passage sits in their §4.4, headed
 "Other Determinants of Conditional Conservatism," and the expectation is stated of "companies with
 short operating cycles, short investment cycles, or short asset maturity." The determinant reading is
 theirs and is explicit — they conclude that the measure "is unbiased under the null hypothesis of
@@ -2679,9 +2640,7 @@ model, whose reduced form is the closest economics-native analogue of this paper
 symmetry. **Not read.** The bibliographic record is verified; the reduced-form algebra attributed
 here — symmetry of every systematic coefficient in β ↔ γ, asymmetry of the disturbance — was
 derived and checked in this repository (`scripts/wt085_returns_conditioning.py`, E7) rather than
-taken from Nerlove's text, and the entry claims nothing beyond the model's structure. A session with
-library access should read the monograph, and Askari and Cummings's 1977 survey of the Nerlove
-literature, before this is upgraded.)*
+taken from Nerlove's text, and the entry claims nothing beyond the model's structure.)*
 
 Hutton, A. P., Marcus, A. J., & Tehranian, H. (2009). Opaque financial reports, R², and crash risk.
 *Journal of Financial Economics*, 94(1), 67–86. ✓ *(Nothing is quoted from the body, which was read
@@ -2696,9 +2655,7 @@ Energy Progress Report* by the IEA, IRENA, UNSD, the World Bank and the WHO. ✓
 Jin, L., & Myers, S. C. (2006). R² around the world: New theory and new tests. *Journal of
 Financial Economics*, 79(2), 257–292. ✓ *(**Read at source**, typeset article. The sentence §10 quotes for the no-physical-layer reading —
 "For simplicity, we ignore depreciation and reinvestment" — is verified in the published text at
-**p. 262**, character for character; an earlier revision of this entry recorded it as checked only
-against NBER Working Paper 10453 and flagged the risk that the referee process had altered it. It
-had not. §10 quotes the sentence because it is what establishes that the model has no physical layer,
+**p. 262**, character for character, and unchanged from NBER Working Paper 10453. §10 quotes the sentence because it is what establishes that the model has no physical layer,
 and a reader entitled to doubt that on a paraphrase should be able to see the words. Its footnote 3
 is worth reading beside §4: the authors set aside depreciation "according to a pre-defined schedule"
 as an easy extension, and it is the interaction of exactly that schedule with recognition timeliness
@@ -2712,9 +2669,8 @@ larger than the other. *Annals of Mathematical Statistics*, 18(1), 50–60. ✓
 
 Mayo, D. G. (1996). *Error and the Growth of Experimental Knowledge*. University of Chicago Press. ✓✎
 *(The copy consulted is the University of Chicago Press edition of 1996, which uses* severity *374 times
-and* severe test *232 times and is where the severity requirement is introduced. An earlier draft of
-this list cited Mayo (2018),* Statistical Inference as Severe Testing *— a later restatement the author
-has not read. Both the edition-consulted rule and the first-appearance rule select 1996, and they agree
+and* severe test *232 times and is where the severity requirement is introduced. Mayo (2018),* Statistical Inference as Severe Testing *— a later restatement — has not been
+read. Both the edition-consulted rule and the first-appearance rule select 1996, and they agree
 here because the book he read is also the origin.)*
 
 Mayo, D. G., & Spanos, A. (Eds.). (2010). *Error and Inference: Recent Exchanges on Experimental
@@ -2732,8 +2688,7 @@ Nosek, B. A., Ebersole, C. R., DeHaven, A. C., & Mellor, D. T. (2018). The prere
 Odum, H. T. (1996). *Environmental Accounting: Emergy and Environmental Decision Making*. John Wiley &
 Sons. ✓✎ *(Copy consulted gives © 1996 John Wiley & Sons, Inc., New York, ISBN 0-471-11442-1. This entry
 was re-pointed away to* Environment, Power, and Society *(Columbia, 2007) when the first library sweep
-did not find the 1996 book, then restored when it did. The sweep, not the citation, was wrong — see
-WT-062.)*
+did not find the 1996 book, then restored when it did. The sweep, not the citation, was wrong.)*
 
 Piketty, T. (2013/2014). *Capital in the Twenty-First Century* (A. Goldhammer, Trans.). Belknap Press of
 Harvard University Press. ✓ *(Original work published as* Le Capital au XXIe siècle*, Éditions du Seuil,
@@ -2768,45 +2723,3 @@ Tuna rank least reliable, including non-current operating asset accruals, and st
 option incentives and weaker monitoring. The negative loading on current operating liability
 accruals is reported by Zhu as unexplained by his own mechanism, and is noted here for the same
 reason. Nothing is quoted.)*
-
-*How this list was checked, recorded because a reference section that silently improves teaches a
-reader nothing. The per-entry findings live in the ✓, ✓✎, ✓⧗ and ⧗ notes above, attached to the entries they
-describe, so that correcting an entry cannot leave a summary of it behind.*
-
-**Four passes ran, in this order, and each one found what the previous ones structurally could not.**
-
-1. **Bibliographic.** Every entry checked against a publisher page, a library catalogue, a Crossref
-   record or the issuing body's own documentation. It asks *does this work exist with these details?*
-   and it came back clean.
-2. **Cited-in-text.** Every entry checked against the body. It asks *does this reference do any work?*
-   — and found several that did not. Some were given the work they had been listed for; the rest were
-   removed rather than retro-fitted, because a reference kept for the look of the list is exactly the
-   padding the list is supposed to be evidence against.
-3. **Provenance.** Every entry checked against the author's own copy. It asks *is this the object the
-   claim is about, and is it the one that was read?* Several entries survived passes 1 and 2 and
-   failed this one: right work, wrong edition; right argument, wrong book; and in one case an author's
-   surname matched a different scholar entirely. Two entries were corrected, reverted, and corrected
-   again as the library search improved — the citations were not wrong, the *search* was, and the
-   record of that is in `LEDGER.md` WT-059 and WT-062.
-4. **Version**, added 2026-08-11 with the crash-risk entries. It asks *is the text I quoted the text
-   of record?* — which passes 1 and 3 both leave open, the first because the article exists either
-   way and the second because a working copy on the author's own disk **is** his own copy. It found
-   that the crash-risk papers had been read in pre-publication and untypeset versions and cited as
-   though they were the published articles. Hence **✓⧗**, and hence the single surviving quotation in
-   §10 being attributed to the working paper it was actually read in rather than to the journal.
-   **That finding was later discharged for the crash-risk entries, and is recorded here rather than
-   rewritten:** Jin and Myers was afterwards read in the typeset article and its quoted sentence
-   verified at p. 262 unchanged, so those entries carry **✓**. **✓⧗** now marks three entries,
-   cited in §§4.4, 4.6 and 4.9.
-
-**The order is the lesson.** A clean bibliographic pass is not evidence of a correct citation; it is
-evidence of a correct *bibliography*. The two are different documents that happen to share a page.
-The fourth pass is the same observation one step further in: a correct citation of a work is not
-evidence that the work said the words attributed to it.
-
-*A third note, on the order these were found in, because it is the reusable part.* The bibliographic
-pass came back clean — every work exists, with those details, from a publisher or a catalogue. The
-provenance pass an hour later found that **three of the five books present in the author's library
-were being cited as the wrong object**. Both passes were correct; they answer different questions, and
-only the second one asks whether the citation points at the thing that was read. See `LEDGER.md`
-WT-059.

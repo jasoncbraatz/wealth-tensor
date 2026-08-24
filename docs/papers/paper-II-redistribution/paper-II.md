@@ -11,12 +11,8 @@ jason@braatzresearch.com
 **Use of AI assistance.** Anthropic Claude Opus 5, at high reasoning effort, was used throughout as a research and drafting assistant: literature retrieval, adversarial review, code review and prose drafting. All claims, results and final text are the author's, and every computational result is produced by committed code in the repository named in §7.
 
 
-*Revision history: **v0.1** first draft, complete and reference-verified; **v0.2** the house-style
-pass — the method disclosures (pre-registration, commit-pinning, the Abandoned Approaches section,
-the public `docs/` coda) are unchanged, and the passages in which the paper graded its own conduct
-are removed. No result, number, claim or citation changed.
-**v0.3** independent review passes; results, numbers, claims and citations were corrected
-where those passes found them wrong.*
+*Revision note: **v0.3**, this draft — independent review passes; results, numbers, claims and
+citations were corrected where those passes found them wrong.*
 
 ---
 
@@ -29,8 +25,8 @@ but by four coordinates — **base, rate, periodicity, threshold** — and asks 
 inequality below unity. First, the **base sets a ceiling the rate cannot cross**: at a matched
 rate the two bases differ by roughly an order of magnitude in κ, the levy's compressive budget,
 for which the flow base admits a closed form. The stronger prediction it was built to test —
-that a flow levy fails to oppose the multiplicative term *regardless of rate* — is **false, and
-this paper's own sweep falsified it**: the frontiers are **nested**, stock 0.000 against flow
+that a flow levy fails to oppose the multiplicative term *regardless of rate* — is **false**, and
+§3.1's rate sweep is what falsified it: the frontiers are **nested**, stock 0.000 against flow
 0.125. Second, the surviving claim is narrower and better: the decisive quantity is
 **realisation** — the share of a period's gain the base can see. At zero realisation the flow
 base is uniform, so a **100 % levy on flow leaves wealth exactly unchanged** (Gini 0.994 and
@@ -78,7 +74,7 @@ came from.
    with κ — the levy's compressive *budget*, not its mechanism — separating the bases by an
    order of magnitude, and a closed form for the flow base's κ that the simulation reproduces
    to within 7 % at every rate tabulated (§3.1). The stock-versus-flow contrast this result
-   sharpens is prior and is credited where it is used, in §3.1, and again in §6; what is new
+   sharpens is prior and is credited in §3.1 and §6; what is new
    is κ itself — the levy's budget, separated from its mechanism — and the closed form for it.
 3. The identification of **realisation as the decisive quantity**, including the limiting result
    that a confiscatory levy on flow, at zero realisation, leaves the wealth vector exactly
@@ -95,13 +91,12 @@ came from.
    loudly — alongside a second, in a companion module of the same suite, that does the same
    office for the companion price-formation manuscript (§7).
 
-**A boundary, stated once and maintained throughout.** Everything here is positive. The claims
+**A boundary.** Everything here is positive. The claims
 are properties of a model class. Where a historical institution is mentioned it is mentioned as
 a *coordinate* — an existence proof that a region of the parameter space is implementable — and
 never as a recommendation. Zakat is named in this paper for exactly one reason: it is assessed
 on stock held above a threshold across a full year rather than on income received, which places
-it somewhere specific on the base axis. That is a measurement, not an endorsement, and the paper
-would be unchanged if the institution had never existed.
+it somewhere specific on the base axis. That is a measurement, not an endorsement.
 
 ---
 
@@ -142,10 +137,8 @@ so that no result below can be an artefact of the levy quietly changing the grow
 flow levy's base. ρ = 1 is a mark-to-market levy on accruals; ρ = 0 is the pure rentier whose
 gains accrue and are never realised.
 
-ρ is not a free parameter introduced to absorb an objection. That move is available and is
-refused here on principle: a quantity that can accommodate any observation forbids nothing. ρ
-survives on two conditions, both met. It is a **stated structural property of every real tax
-system** — realisation-based taxation is not a modelling convenience but the near-universal
+ρ is not a free parameter fitted to the result. It is a **stated structural property of every
+real tax system** — realisation-based taxation is not a modelling convenience but the near-universal
 practice — and it is **swept rather than chosen**: §3.1's flow rows are stated at ρ = 1 and
 labelled as such, §3.2 sweeps the axis, and the paper's central result is a statement about the
 whole ρ axis rather than about a value of ρ chosen to make it come out right.
@@ -222,12 +215,11 @@ damps the generator — and both register as a smaller Gini, which is why the di
 in the statistic normally reported. An outcome measure records that the distribution was compressed.
 It does not record whether the mechanism producing next period's distribution was touched.
 
-**This contrast is not new, and the credit belongs precisely.** Bouchaud and Mézard (2000) carry a
+**This contrast is not new.** Bouchaud and Mézard (2000) carry a
 flow levy, a stock levy and the per-capita redistribution of each in a single wealth balance, and
 give the stationary Pareto exponent in closed form in all four of their own tax parameters — a
 rate and a redistributed fraction for each base. They write that exponent
-μ — a different object from §2.1's growth drift μ, with which it unhappily shares a letter, and the
-second such collision this paper has had to disclose. Their ranking is the one measured here, and
+μ — a different object from §2.1's growth drift μ, with which it unhappily shares a letter. Their ranking is the one measured here, and
 they state it more strongly: income taxes *"tend to reduce the inequalities of wealth (i.e., lead to
 an increase of μ), even more so if part of this tax is redistributed"*, while *"quite surprisingly,
 capital tax, if used simultaneously to income tax and not redistributed, leads to a decrease of μ"*.
@@ -237,13 +229,13 @@ for it — κ, which says how much budget a base has, and Var[log *a*], which sa
 spent it on the outcome or on the generator — in a discrete process where the two can be matched and
 separated. §6 states what that leaves.
 
-**A prediction that half-failed, reported as such.** The claim this section was built to test was
+**A prediction that half-failed.** The claim this section was built to test was
 stronger: that a levy on flow does not oppose the multiplicative term *regardless of rate*. That
 is **false as stated**, and the sweep is what falsified it. At full mark-to-market realisation a
 flow levy does bound the Gini; it is merely weak. Rate 1.00 on flow reaches Gini 0.125, which a
 stock levy reaches at rate 0.25. The reachable frontiers are **stock 0.000 < flow 0.125** — the
 bases occupy *nested* regions, not disjoint ones. The surviving claim is narrower and is in the
-next section, and it is better than the one it replaced.
+next section.
 
 ### 3.2 · Realisation is the crux
 
@@ -260,7 +252,7 @@ was doing the work all along:
 At ρ = 0 — the holder whose gains accrue but are never realised — a **100 % levy on flow leaves
 the wealth vector exactly unchanged**: Gini 0.994 against 0.994, top decile 1.000 in both, and
 the two paths agree agent by agent rather than merely on the summary statistics. The identity is
-structural, and saying so is stronger than calling it a near-match. The levy is still assessed —
+structural. The levy is still assessed —
 at ρ = 0 the flow base is not empty but is the accrued **wage**, and the assessments do fire —
 but the wage is identical for every agent, so the levy takes the same amount from each and
 returns it per capita. A uniform assessment with a uniform rebate is the identity on the wealth
@@ -270,19 +262,18 @@ That is the true "regardless of rate" result, and note what kind of statement it
 is a claim about what a base is able to **observe**, not about how hard it squeezes. A rate is an
 intensity; realisation is an *observability*, and the observability binds first.
 
-The result connects outward, and the connection is narrower than it looks. Unrealised
+Unrealised
 appreciation is wealth whose growth the assessing layer has not been asked to recognise, and what
 the ρ axis measures is how much of a period's gain that layer can see at all.
 
-**A stronger reading is available, was tested, and is withdrawn here.** An earlier version of this
-paragraph held that a levy which cannot see an accrual and a financial statement which does not
+**A stronger reading was available, was tested, and is withdrawn here.** One might hold that a levy which cannot see an accrual and a financial statement which does not
 record a degradation *are the same structure*, seen from two sides. Put to a cross-scale check
 against the companion work on the reporting layer, that identification does not hold. The share of
 a change a reporting filter fails to recognise is **deferred** — it accumulates and is released
 later at a stated rate — while the share of a gain this model's base fails to recognise is **never
 assessed at all**. Deferred arrival and non-arrival are different operators, and a shared adjective
-between them is not an equation. The check, its thresholds, and the fact that this withdrawal was
-written down before the check was run are recorded in `docs/RESULT-END-TO-END-001-E1.md`.
+between them is not an equation. The check, its thresholds, and its pre-registration — the withdrawal was registered before the
+check was run — are recorded in `docs/RESULT-END-TO-END-001-E1.md`.
 
 ### 3.3 · Periodicity and threshold are trim, not structure
 
@@ -297,8 +288,7 @@ that has had time to accumulate. The effect is not monotone in *P*, and the swee
 endpoints says so: the minimum is **interior**, 0.451 at *P* = 30, and by *P* = 50 — where holding
 the average rate at 0.02 requires the maximum rate, 1.00 — the Gini has returned to 0.469, above
 its *P* = 20 value. The whole sweep spans 0.035, which is the operative fact: an annual assessment
-is not a watered-down continuous one — which is the relevant observation for any levy assessed on
-a yearly cycle.
+is not a watered-down continuous one.
 
 **Threshold.** On the same base at *r* = 0.025, monotone and smooth, with no cliff: Gini 0.443
 at zero exemption rising to 0.770 at 20× the mean of the base. The interesting part is the
@@ -308,10 +298,9 @@ quarter. Exempting small holders removes a quarter of the assessed volume and no
 because the compression is performed by transfers at the top of the distribution.
 
 A threshold that exempts the poor is therefore not a concession that weakens the mechanism. It is
-close to free — and that is a measured coordinate, not an interpretation.
+close to free.
 
-**κ is necessary and it is not sufficient, and this paper reports both witnesses — one from each
-section.** §3.1 matches the two bases at κ ≈ 0.10 and finds them compressing unequally, 0.222
+**κ is necessary and it is not sufficient, and there is a witness on each side.** §3.1 matches the two bases at κ ≈ 0.10 and finds them compressing unequally, 0.222
 against 0.125; the threshold sweep above supplies the converse from the other side, removing a
 quarter of κ at no measurable cost in compression, 0.444 against 0.443. κ can hold while the
 outcome moves and move while the outcome holds, so **no function of κ alone reproduces §3.1's
@@ -348,7 +337,7 @@ ask what its maximum is and whether the failure mode you are trying to detect dr
 
 ## 4 · Abandoned approaches
 
-*This section is not a formality and it is not an appendix. A result reported without the routes
+*A result reported without the routes
 that failed is a result the reader cannot calibrate — they are shown the one path that worked and
 left to assume it was the only one considered. Everything here was actually attempted.*
 
@@ -359,19 +348,16 @@ favour" with "which regions bound the Gini below unity", which is a question the
 and no one can call advocacy. The cost is that the paper can no longer say anything about any
 actual institution, and it does not.
 
-**"Regardless of rate."** §3.1. The original claim was sharper and false. It is retained here in
-full rather than quietly replaced by its successor, because the shape of the failure is
+**"Regardless of rate."** §3.1. The original claim was sharper and false. The shape of the failure is
 informative: the direction was right, the mechanism was misidentified, and the surviving claim is
 the narrower one about realisation.
 
 **Defining "flow" so that the claim came out right.** Once "regardless of rate" failed, an
 obvious repair was available: redefine the flow base so that it excludes the components that
 rescued it. This was refused. A definition adjusted until the prediction survives is a free
-parameter wearing different clothing, and the standing rule of this programme is that **no free
-parameter may be added to absorb an objection.** The claim was narrowed instead.
+parameter wearing different clothing. The claim was narrowed instead.
 
-**The drift-only boundedness test.** §3.4. It survived initial review because it looked like a
-convergence check and convergence checks look like that. It was caught by asking what the
+**The drift-only boundedness test.** §3.4. It looks like a convergence check. It was caught by asking what the
 statistic's maximum was — and it is now pinned by a test named
 `test_a_flat_gini_does_not_mean_a_bounded_one`, so that any future simplification of the
 criterion fails loudly instead of quietly re-scoring condensation as success.
@@ -382,10 +368,8 @@ criterion fails loudly instead of quietly re-scoring condensation as success.
 
 1. **ρ is exogenous here, and in the world it is not.** Realisation is chosen, and it responds to
    the rate: raising a flow levy gives holders a reason to realise less. Endogenising ρ would
-   make the flow base *weaker* than reported, so this limitation runs against the paper's own
-   comfort — but it is unmodelled, and a reader should treat the ρ axis as a comparative static
-   rather than a policy response function. It is listed first on purpose, being the limitation
-   that costs the paper the most.
+   make the flow base *weaker* than reported, but it is unmodelled, and a reader should treat the ρ axis as a comparative static
+   rather than a policy response function.
 2. **This is a model-class result.** No causal claim about any historical or contemporary
    institution is made, and none is supported. No field evidence is used, required, or available.
 3. **No production, no labour supply, no portfolio choice, no behavioural response to the levy.**
@@ -414,12 +398,10 @@ criterion fails loudly instead of quietly re-scoring condensation as success.
 The condensation result is standard in kinetic exchange (Chakrabarti, Chatterjee, Chakravarty and
 the surrounding literature), where the effect of saving propensity, taxation and redistribution on
 stationary wealth distributions has been examined from several directions. **Two works in that
-literature are prior to this paper's central contrast, and are cited here rather than restated.**
+literature are prior to this paper's central contrast.**
 
-**Bouchaud and Mézard (2000)** carry a flow levy, a stock levy and the per-capita redistribution of
-each in one wealth balance and give the stationary Pareto exponent in closed form in all four of
-their own tax parameters — a rate and a redistributed fraction for each base — together with the
-stock-versus-flow ranking (§3.1). The contrast between the two bases
+**Bouchaud and Mézard (2000)**, whose wealth balance and closed-form Pareto exponent §3.1 sets
+out, are prior to the stock-versus-flow ranking used there. The contrast between the two bases
 — in terms of what each does to the shape of the stationary distribution — is theirs, and the
 per-capita rebate fraction is a parameter in their solution rather than an extension awaiting one.
 Their solution is continuous-time and carries neither a periodicity nor a threshold, so §3.3's two
@@ -427,8 +409,7 @@ trim coordinates are outside it.
 
 **Benhabib, Bisin and Zhu (2011)** supply three further results that bound what is left. Their
 Proposition 3 has the tail index rising in both the estate tax and the capital income tax, so the
-*nested* frontiers this paper reaches in §3.1 — by falsifying a sharper prediction of its own — were
-already visible in a different metric and a different model. Their Proposition 4 has tail inequality
+*nested* frontiers this paper reaches in §3.1 were already visible in a different metric and a different model. Their Proposition 4 has tail inequality
 rising with a mean-preserving spread of the return process, which is the general form of §3.1's
 finding that the flow levy reaches the dispersion of the multiplier and the stock levy does not. And
 their §4.1 notes that an economy whose multiplier is bounded below one has a stationary distribution
@@ -436,7 +417,7 @@ bounded above, with no power-law tail at all — a claim this paper does not mak
 but the first one any extension of §3.1 toward tail indices, the object Gabaix (2009) surveys,
 would meet.
 
-**What remains is narrower than the contrast, and is stated as such.** It is not that redistribution
+**What remains is narrower than the contrast.** It is not that redistribution
 opposes condensation, and it is not that the two bases act differently on the shape of the
 distribution. It is that the mechanisms sort by **observability of the base** (§3.2) rather than by
 rate or institutional form; that the budget through which they operate has a closed form (κ) rather
@@ -476,9 +457,7 @@ simulation, save the four closed-form quantities the next bullet names and §3.4
   not an output; §3.3's 0.035 periodicity span and §3.4's 0.103 Gini gap, each a difference of two
   values `wt030_report.py` prints; §3.4's 0.039 top-decile margin, the distance from that
   command's printed 0.861 to the 0.90 threshold above; and §3.1's 6 × 10⁻⁶ change in
-  Var[log *a*], the difference of two values `wt077_tail_index.py` prints. The two commands are named
-  separately because a single command named for numbers it does not produce is a provenance claim
-  that reads as checked and is not.
+  Var[log *a*], the difference of two values `wt077_tail_index.py` prints.
 - **Test suite:** `python3 -m pytest tests/ -q` runs the whole repository; the **18** tests in
   `tests/test_redistribution.py` are the ones that hold this paper's claims in place, and that
   count is the one quoted in the abstract and in §1.
@@ -486,17 +465,14 @@ simulation, save the four closed-form quantities the next bullet names and §3.4
   `test_a_flat_gini_does_not_mean_a_bounded_one`, which pins §3.4's boundedness criterion so that
   any future simplification of it fails instead of quietly re-scoring condensation as success,
   and `test_excess_demand_is_monotone_here_so_this_is_not_an_SMD_result`, which constrains this
-  programme's price-formation manuscript — since superseded by its own internal referee, and the
-  guard outlives it — in a companion module of the same suite,
+  programme's price-formation manuscript and sits in a companion module of the same suite,
   `tests/test_excess_demand.py`; it is a different companion from §3.2's work on the
-  reporting layer. A test suite that constrains its author is a different object from one that
-  flatters him, and the difference is checkable rather than asserted.
+  reporting layer.
 - **Commit for the results reported here:** **3b11f23** — the last commit touching
   `src/wealth_tensor/redistribution.py`, and therefore the state of the module that produced
-  §3's simulation output. The pin is **per file** deliberately, and an earlier draft of this
-  section shows why: it pinned the last commit touching `src/` as a whole, which is a sentence
-  whose truth changes whenever any unrelated module moves and which nothing in the repository
-  was watching. It does **not** cover the two `scripts/` commands named above, which produce §3
+  §3's simulation output. The pin is **per file** deliberately: a pin on the last commit touching `src/` as a whole is a
+  sentence whose truth changes whenever any unrelated module moves, and nothing in the repository
+  watches it. It does **not** cover the two `scripts/` commands named above, which produce §3
   numbers from outside `src/`. *A head-of-repository SHA will additionally be pinned when this
   paper is posted, and it is what covers them.*
 
@@ -523,8 +499,7 @@ standard works whose details are to be re-checked at submission per
 
 Bouchaud, J.-P., & Mézard, M. (2000). Wealth condensation in a simple model of economy. *Physica A:
 Statistical Mechanics and its Applications*, 282(3–4), 536–545. `doi:10.1016/S0378-4371(00)00205-3`
-✓⧗ *(issue and pagination checked against the Crossref record, 2026-08-17; an earlier draft gave the
-issue as 282(3). Text consulted: arXiv `cond-mat/0002374`, read in full. The quotations in §3.1 are
+✓⧗ *(issue and pagination checked against the Crossref record, 2026-08-17. Text consulted: arXiv `cond-mat/0002374`, read in full. The quotations in §3.1 are
 attributed to that preprint and may not appear verbatim in the article of record. Consulted
 2026-08-17 / published 2000.)*
 
@@ -550,7 +525,7 @@ income. *Reviews of Modern Physics*, 81(4), 1703–1725. ✓
 
 Benhabib, J., Bisin, A., & Zhu, S. (2011). The distribution of wealth and fiscal policy in economies
 with finitely lived agents. *Econometrica*, 79(1), 123–157. `doi:10.3982/ECTA8416` ✓⧗ *(page range
-checked against the Crossref record, 2026-08-17, which resolves the flag carried by earlier drafts.
+checked against the Crossref record, 2026-08-17.
 Text consulted: NBER Working Paper 14730 full text, read in full; §6's characterisation of
 Propositions 3 and 4 and of §4.1 is taken from that version and the numbering may differ in the
 article of record. Consulted 2026-08-17 / published 2011.)*
@@ -579,8 +554,6 @@ Series on Public Policy*, 1, 19–46.
 
 ---
 
-*One citation is deliberately absent and is flagged rather than faked: §1 mentions zakat as a
-coordinate on the base axis — a levy assessed on stock held above a threshold across a full year.
-A primary source for that characterisation should be added at submission. The paper's argument does
-not depend on it (the institution is a measurement, not a premise, and §1 says so), but an
-uncited institutional claim is exactly the kind of thing a referee stops on.*
+*§1's characterisation of zakat — a levy assessed on stock held above a threshold across a full
+year — is not supported here by a primary source. The paper's argument does not depend on it: the
+institution is a measurement, not a premise, and §1 says so.*

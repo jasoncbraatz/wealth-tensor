@@ -89,14 +89,13 @@ input at the granularity the filings give claims, which is one reason §4.3 find
 largely unmeasured rather than merely unassembled — and why the claim that firm-level panels of
 *both* are public and free, which an earlier draft made here, is not made.
 
-Note what is deliberately *not* argued here. The parallel claim about computation — that models of
+A parallel claim about computation — that models of
 that era had to be analytically solvable because numerical solution was unavailable — is true and
 is left out, because a claim about hardware dates a paper and a claim about what a model can be
 populated with does not. The data constraint is the stronger half of the argument and it is the
 half with an expiry date one can cite.
 
-This is also the paper's posture toward everything it disagrees with, and §7 states it as a
-method rather than leaving it as a habit: the disagreement is never that a predecessor was wrong.
+§7 states this as a method: the disagreement is never that a predecessor was wrong.
 It is that a predecessor was solving a differently-constrained problem, and the constraints moved.
 
 **Contributions.**
@@ -106,7 +105,7 @@ It is that a predecessor was solving a differently-constrained problem, and the 
    and the theorem that says so is Sonnenschein–Mantel–Debreu.** SMD is therefore not an
    objection to this framework; it is the framework's own statement of where composition stops.
    A paper claiming clean composition across scales while citing SMD as a shield would be
-   contradicting itself, and §4 exists to make sure this one does not.
+   contradicting itself.
 2. **The consequence, which is the corpus's thesis in one sentence** (§4.3): aggregation destroys
    the behavioural information macroeconomics believes it is measuring, and preserves the
    thermodynamic structure nobody is looking at, because it is not what an aggregate is usually
@@ -120,7 +119,7 @@ It is that a predecessor was solving a differently-constrained problem, and the 
    citation-graph measurement (`REG-013`) with both ends of its scale established in the same run:
    a split-half control that cannot be tuned, and an unrelated-field floor.
 5. **A stated method** (§7). The relocation move — *not wrong, differently constrained* — is used
-   deliberately and named, rather than deployed four times by accident.
+   deliberately and named.
 
 **What this paper does not contain.**
 
@@ -141,8 +140,7 @@ repository and still runs; and §8's word count for that paper is `wc -w` on its
 
 Paper III states the framework's propositions with their domains (§A.1.2) and defends the coupling
 once.
-They are named here because §3 composes them and §4 bounds them, and re-arguing them would be the
-duplication ADR-001's decomposition exists to avoid.
+They are named here because §3 composes them and §4 bounds them, and the argument for each is in Paper III.
 
 - **P1 · Composition.** A holding's value is a composite of a physical component and a claim
   component, and the two obey different laws. *(Domain, carried rather than cited because it is the
@@ -154,7 +152,7 @@ duplication ADR-001's decomposition exists to avoid.
 
 P3 is the one this paper is about, and it is worth being precise about which P3. It is the weak
 form: aggregates are folds. It is **not** the strong form — that some aggregates carry information
-no fold contains — which was tried, in this project, and did not survive (§8).
+no fold contains — which §8 reports as tested and rejected.
 
 ### 2.2 · What kind of object composes
 
@@ -214,8 +212,7 @@ reports. Paper II's κ,
 the share of aggregate wealth actually moved per assessment, is a composition quantity: it is
 defined at the sovereign scale and it is a fold over household-scale liabilities. Paper III's
 φ ⊙ δ — observability times the physical decay rate — is a composition quantity: it is defined at
-the firm scale and is *written* as diagonal over asset classes — a form the next paragraph
-reports as tested and rejected, which changes what the link carries and not whether there is
+the firm scale and is *written* as diagonal over asset classes — a form Paper III §5.4 rejects, which changes what the link carries and not whether there is
 one.
 
 And **the place where the firm-scale link could break was named, was tested, and the test rejected
@@ -228,8 +225,7 @@ reporting does *not* compose from its classes' without cross-terms. Paper III re
 injected excess of five per cent of events with probability 1.00** (Paper III §5.4; the headline
 survives that section's tag-list repair at 4.01× and 2.10×).
 
-**Three things follow, and the middle one is why this paper reports the rejection in the section
-that makes the claim rather than only in its limitations.** First, the consequence is *bounded
+**Three things follow.** First, the consequence is *bounded
 rather than open*: the Hadamard form is now an approximation whose error is measured, not an
 assumption whose status is unknown, and a measured approximation is a stronger object to build on
 than an untested premise. Second, **what the rejection costs is the reporting layer's clean
@@ -237,23 +233,19 @@ composition, not the state's.** Diagonality is a property of the *filter* — of
 one class relates to recognition in another — and never of the extensive state, which adds by
 §2.2 whatever the recording practice does. The firm-scale link is therefore degraded and
 not severed: the firm's *state* still composes from its classes' states, and it is the firm's
-*reporting* of that state that carries cross-terms the diagonal form omits. Third, and this is the
-part that runs against the paper's convenience, **Paper III's design cannot separate an economic
+*reporting* of that state that carries cross-terms the diagonal form omits. Third, **Paper III's design cannot separate an economic
 coupling from the sequencing the standards impose** (ASC 350-20-35-31 and 35-32 order the tests),
 so this paper may not read the rejection as evidence that the underlying degradations are coupled.
 It inherits a measured departure with an unidentified cause, and §9 says so.
-**An earlier draft of this section claimed more than three instances of one question, and the
-corpus's first end-to-end test took the surplus away.** It said the three scales made *a chain
-rather than three analogies*. `END-TO-END-001` leg `E1` asked whether the sovereign and firm scales
+**A stronger reading — that the three scales make *a chain rather than three analogies* — was
+registered, tested, and does not hold.** `END-TO-END-001` leg `E1` asked whether the sovereign and firm scales
 stand in the relation the word *chain* asserts — whether Paper II's realisation share ρ and Paper
 III's observability share φ are the same object seen twice — and they are not. What Paper III's
 filter does not recognise is **deferred**, held in an unrecognised gap and released at rate α;
 what Paper II's base does not recognise is **never assessed**. A lag and a loss are different
 operators, and Paper II has no parameter that plays α's part. So what joins the scales is the
-question, the fact that each scale answers it quantitatively, and the addition of §2.2 — which is
-what this section now claims and no more. The demotion was written into that document's §2
-**before** the leg was run,
-precisely so that it could not be renegotiated afterwards; `docs/RESULT-END-TO-END-001-E1.md`
+question, the fact that each scale answers it quantitatively, and the addition of §2.2 — and no more. The demotion was written into that document's §2
+**before** the leg was run; `docs/RESULT-END-TO-END-001-E1.md`
 records the run and the reasoning.
 
 
@@ -275,7 +267,7 @@ which §8 records as written and withdrawn — cites SMD approvingly, as evidenc
 doubting inherited aggregation is inside the mainstream. You cannot cite the theorem that
 aggregation destroys structure and then claim structure survives aggregation.*
 
-That is correct as far as it goes and it is the strongest thing anyone will say about this paper.
+That is correct as far as it goes.
 It is also answerable in one distinction, and the answer is not a hedge.
 
 ### 4.2 · The distinction
@@ -321,9 +313,9 @@ because it is not what an aggregate is usually built for.
 That is the thesis of this corpus in one sentence, and it is a *positive* claim about which
 measurements are informative, not a complaint about anyone's research programme.
 
-### 4.4 · The limits of the resolution, stated here rather than in §9
+### 4.4 · The limits of the resolution
 
-Three, and none of them is rhetorical.
+Three.
 
 1. **A state that composes is not thereby a state anyone can observe.** Composition is a property
    of the object; observability is a property of the measuring layer, and Papers II and III are
@@ -351,7 +343,7 @@ Three, and none of them is rhetorical.
 ## 5 · The smallest instance: the crossing height is the volume
 
 *This section carries the surviving result of a paper that was written and then not published; §8
-records why, at length, because the route matters more than the destination here.*
+records why.*
 
 Take a market for a single indivisible good. *N* agents each hold a reservation price *mᵢ*; *S*
 units exist; *H* is the set of current holders and *T* the set of the top-*S* valuers. The
@@ -367,7 +359,7 @@ the two counts with opposite signs and cancels — at every price, not merely at
 
 So the *price* coordinate of the cross reads the population and nothing else. The **quantity**
 coordinate — the volume traded at the crossing, and the height of the cross in the diagram — reads
-something quite different, and this is the part worth carrying into a paper about composition. At a clearing price strictly inside the interval,
+something quite different. At a clearing price strictly inside the interval,
 
 > *D*(*p*\*) = |*T* \ *H*|,  *S*(*p*\*) = |*H* \ *T*|,  and the two are equal.
 
@@ -384,7 +376,7 @@ here is monotone and single-crossing — zero monotonicity violations across 500
 from +249 to −150 with one sign change — because each agent demands at most one unit and there is
 no wealth channel from the endowment back into demand. Remove that restriction and income effects
 return, and income effects are exactly what SMD requires. **The two results sit at opposite ends of
-one axis, which is why they belong in the same paper**: at zero income effects the allocation
+one axis**: at zero income effects the allocation
 cancels identically and the state is all there is; with income effects the behavioural map stops
 composing and SMD is what one gets. The test suite asserts the monotonicity deliberately, under the
 name `test_excess_demand_is_monotone_here_so_this_is_not_an_SMD_result`, as a standing limit on the
@@ -434,8 +426,7 @@ Against split-half intersections of 134, 155 and 380 *within* the same three lit
 works in the world cite both a stock-flow-consistent seed and a kinetic-exchange seed.** All three
 pairs sit below the whitespace bar; the whitespace is where it was claimed to be.
 
-**One qualification, and it is the first thing a referee will find, so it is here rather than in
-§9.** Biophysical economics is on this instrument a *loose federation*: its own split-half overlap
+**One qualification.** Biophysical economics is on this instrument a *loose federation*: its own split-half overlap
 is 0.168, well below stock-flow's 0.520 and kinetic exchange's 0.744, because its seeds are
 monographs spanning four decades and three sub-traditions that do not much cite each other.
 Scoring the biophysical pairs against the pooled ceiling is therefore generous to them. Under a
@@ -464,8 +455,7 @@ meet is what §§3–5 have to earn on their own.
 
 ## 7 · Relation to existing work, and the method used to state it
 
-Everything in this section is one move, applied deliberately, and naming it is more useful to a
-reader than performing it silently four times.
+Everything in this section is one move, applied deliberately and named.
 
 **The move: relocation.** The disagreement is never *you are wrong*. It is *you are a differently
 constrained case*. Piketty is not measuring the wrong thing; he is measuring a different layer.
@@ -473,8 +463,8 @@ Solow's scalar was not an error; it was the only object anyone could populate. S
 result; it is this framework's own boundary, proved by the mainstream fifty years before the
 framework existed.
 
-Relocation is not politeness and it is not a rhetorical trick to be embarrassed about. For a claim
-that spans three literatures it is a **structural** requirement: a paper that must be read by
+For a claim
+that spans three literatures, relocation is a **structural** requirement: a paper that must be read by
 biophysical economists, stock-flow theorists and econophysicists cannot afford to make an enemy in
 any of the three, and more to the point, in each case the relocation is *true*. A predecessor
 working under a binding constraint that has since lapsed has not made an error. Recording which
@@ -516,12 +506,10 @@ neither implies the other.
 
 ## 8 · Abandoned approaches
 
-*This section is not a formality and it is not an appendix. The test applied to every entry is:
-had this route worked, which sentence in this paper would be different? An abandonment that could
-not have cost anything is an advertisement, not a disclosure.*
+*The test applied to every entry is:
+had this route worked, which sentence in this paper would be different?*
 
-**"A chain rather than three analogies."** The sentence this paper's §3 carried until the corpus's
-first end-to-end test was run against it. Had it survived, §3 would assert a structural
+**"A chain rather than three analogies."** Had it survived, §3 would assert a structural
 correspondence between the sovereign scale's realisation share and the firm scale's observability
 share, and that correspondence — not the three separate results — would have been this paper's
 central contribution. `END-TO-END-001` leg `E1` shows the two shares are not the same kind of
@@ -568,8 +556,7 @@ running it rather than by argument:
 3. **The load-bearing sentence was false in the formalism the paper cited.** *"H is not a property
    of the population"* fails under the standard unit (*mᵢ*, *hᵢ*), which makes the two schedules
    additive folds in exactly the sense excess demand is. This is Arrow–Debreu, Aumann and
-   Hildenbrand, and the same session had already established Hildenbrand (1994) as a source it
-   intended to cite.
+   Hildenbrand (1994).
 
 **And a control that controlled for the wrong thing.** The 26× contrast was measured against a
 rank-preserving perturbation. Against a *rank-scrambling* perturbation that never names the
@@ -613,8 +600,7 @@ model — and worse, makes the paper's centrepiece a fifty-year-old theorem the 
 
 ## 9 · Limitations
 
-1. **The composition claim is about a state, and the state is largely unobserved.** This runs
-   directly against the paper's own comfort: §4.2's resolution buys its consistency by narrowing
+1. **The composition claim is about a state, and the state is largely unobserved.** §4.2's resolution buys its consistency by narrowing
    the claim to the extensive state, and Papers II and III are both, in substance, demonstrations
    that measuring layers do not see the thing that matters. A composed state nobody can read is a
    weaker asset than the argument's confidence might suggest.
@@ -630,8 +616,7 @@ model — and worse, makes the paper's centrepiece a fifty-year-old theorem the 
    assumption.** Recognition events do cluster within firm-quarters — 4.12× and 2.02× the
    independence expectation, both universes, both *p* = 0.0002 (Paper III §5.4) — so the Hadamard
    form in §3 is an approximation and not an identity, and the composition claim's link at the scale
-   where accounting happens is degraded. It is degraded rather than broken for a reason this paper's own
-   §4.2 supplies and should not be allowed to sound like a rescue: diagonality is a claim about the
+   where accounting happens is degraded. It is degraded rather than broken for the reason §4.2 gives: diagonality is a claim about the
    *reporting filter*, and this paper's composition claim is about the *extensive state*, which
    adds regardless of how it is recorded. The honest cost is that **the firm's reported object no
    longer composes from its classes' reported objects without cross-terms**, which is the scale at
@@ -654,15 +639,13 @@ model — and worse, makes the paper's centrepiece a fifty-year-old theorem the 
 8. **The whitespace measurement is about occupancy, not fertility.** `REG-013` can establish that
    an intersection is unoccupied. That it is worth occupying is what the argument has to earn, and
    the measurement cannot help with it.
-9. **One of this paper's absences is measured and three others named here are asserted, and §6's
-   own standard is why that is worth stating.** §6 exists because *an absence found by searching is a property of
+9. **One of this paper's absences is measured and three others named here are asserted.** §6 exists because *an absence found by searching is a property of
    the search*, and it measures the absence that motivates the paper. Three others, named here, are
    not measured: §1.1's *the input-output energy table has no lapse to report*, which is
    load-bearing for §1.1's reading of §4.3 as *largely unmeasured rather than merely unassembled*;
    and §7's two within-literature absences, *has generally not had* an accounting-shaped object and *has mostly
    not had* a base. None of the three is known to be false. The point is that they stand on the
-   evidentiary footing §6 was built to escape, and a reader is entitled to know which of this
-   paper's absences were measured and which were looked for.
+   evidentiary footing §6 was built to escape.
 
 ---
 
@@ -693,7 +676,7 @@ scripts.
   moved. That second run is committed at
   `docs/preregistration/RESULT-REG-013-rerun-2026-08-18.json`, and it replicates §6 on the live
   graph rather than regenerating it from anything held here. Nothing in this repository re-derives
-  §6's figures from committed data, and this bullet said "regenerate" until wealthTensor-82.
+  §6's figures from committed data.
 - **Test suite:** `python3 -m pytest tests/ -q`
 - **Papers cited as established results:** Paper II (`src/wealth_tensor/redistribution.py`,
   regenerated by `scripts/wt030_report.py`); Paper III (`src/wealth_tensor/lag.py`, regenerated by
@@ -703,8 +686,7 @@ scripts.
   scripts/wt089_recognition_and_offdiagonal.py`, which runs both universes in one pass and prints
   the 4.12× and 2.02× lifts, their *p* = 0.0002 and the power curve §3 quotes. `python3
   scripts/wt026_severe_test.py --universe pilot --onset peak` is Paper III §5.3's command, it
-  answers a different question, and it prints none of those numbers; this bullet named it until
-  wealthTensor-81.
+  answers a different question, and it prints none of those numbers.
 - **Regenerate §5 and §8:** `python3 scripts/wt018_report.py` prints §5's table — the 399 interior
   grid points, the 25 demand, 25 supply and one excess-demand schedules, and the 500-point
   monotonicity sweep with **0** violations, endpoints **+249** and **−150**, and one sign change.
@@ -712,8 +694,7 @@ scripts.
   twelve-point tie convention §8 records; `python3 scripts/wt071_refuter.py` gives §5's
   crossing-height identity across all 25 allocations and §8's *N*-dependence table and its
   control. The module under all three is `src/wealth_tensor/excess_demand.py` — this paper's only
-  `src/` dependency that is not a sibling's, and the one this bullet named neither until
-  wealthTensor-81. This is the surviving apparatus of the fourth paper §8 describes. It is in this
+  `src/` dependency that is not a sibling's. This is the surviving apparatus of the fourth paper §8 describes. It is in this
   repository, and every number §5 and §8 report was re-run from it. `tests/test_excess_demand.py`
   *asserts* §5's **399** and §8's twelve-point **four** rather than printing them, so its output
   is a verdict and not a table; `wt018_report.py` is the table.
@@ -734,12 +715,11 @@ Two of the suite's overclaim-forbidding tests are named here, and the suite hold
 as an SMD result, which is this paper's own claim.
 `test_a_flat_gini_does_not_mean_a_bounded_one` forbids a saturating statistic being read as
 convergence, which is **Paper II's** claim and not this one's — this paper reports no Gini — and it
-is named here because §3's sovereign scale rests on the result it guards. A test suite that
-constrains the author is a different object from one that flatters him.
+is named here because §3's sovereign scale rests on the result it guards.
 
 The repository's `docs/` directory is deliberately public and is the project's working notebook,
 including the pre-registration whose prediction failed and the result document recording that a
-fourth paper died to its own referees. It is part of the record rather than an appendix to it.
+fourth paper died to its own referees.
 
 ---
 
