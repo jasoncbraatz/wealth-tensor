@@ -83,7 +83,22 @@ if not P.exists():
     assert "@@SHA@@" in tmpl, "template lost its placeholder"
     P.write_text(tmpl.replace("@@SHA@@", sha))
 p = P.read_text()
-chk("C11 POST-SHIP.md exists and carries the freeze sha on line 3", sha in p.split("\n")[2])
+# C11 ASSERTED THAT *CURRENT HEAD* IS ON POST-SHIP'S LINE 3. That is false the moment anything
+# else is committed, which is every session -- and it collided with wt191b, whose whole job is to
+# pin the freeze to the commit that DECLARED it rather than to whatever HEAD happens to be. Fifth
+# first-run/moving-state assumption this session. The durable statement: line 3 carries a sha that
+# git resolves AND that commit is the one that added the DoD document. wt191b OWNS that value;
+# this check only confirms it is present and real, and does not re-derive it.
+_l3 = p.split("\n")[2]
+_cand = [w.strip("`*") for w in _l3.replace("`", " ").split() if len(w.strip("`*")) == 40]
+chk("C11 POST-SHIP.md line 3 carries a resolvable 40-char sha", len(_cand) == 1
+    and subprocess.run(["git", "-C", str(REPO), "cat-file", "-e", _cand[0]]).returncode == 0)
+chk("C11b that commit is the one that ADDED the ship DoD, not whatever HEAD is today",
+    _cand and "docs/DEFINITION-OF-DONE-SHIP.md" in subprocess.run(
+        ["git", "-C", str(REPO), "show", "--name-only", "--format=", _cand[0]],
+        capture_output=True, text=True).stdout)
+chk("C11c NEGATIVE: the freeze is NOT pinned to current HEAD, which moves every session",
+    _cand and _cand[0] != sha, True)
 chk("C12 NEGATIVE: POST-SHIP does not claim to block anything",
     "Nothing in this file blocks shipping" in p, True)
 chk("C13 the DoD points at POST-SHIP for the freeze rather than restating a sha",
@@ -103,7 +118,7 @@ chk("C19 NEGATIVE: carding is explicitly NOT a way to close a blocker",
     "Carding is not a third option" in d, True)
 chk("C20 Pass A is forbidden from repairing", "PASS A MAY NOT REPAIR ANYTHING" in d)
 
-print("\n post-conditions: %d checks, %d NEGATIVE" % (21, NEG))
+print("\n post-conditions: %d checks, %d NEGATIVE" % (23, NEG))
 if FAILED:
     print(" FAILURE"); [print("   FAILED:", f) for f in FAILED]; sys.exit(1)
 print(" ALL PASS")
