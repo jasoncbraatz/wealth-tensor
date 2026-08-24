@@ -28,7 +28,8 @@ therefore not separately identified, and where the asset's physical scale is uno
 firm-level series) the identified set is a continuum, a factor of **1.67** in that scale spanning
 the whole unit interval.
 
-The corollary is cross-sectional: **classes are ordered by (1 − φ) ⊙ δ ⊘ (α − δ), not by φ**.
+The corollary is cross-sectional: **classes are ordered by (1 − φ) ⊙ δ ⊘ (α − δ) — both operators
+elementwise across classes — not by φ**.
 Across the four GAAP classes, δ leverage is **4.2** times the level at which recovery fails, and
 the composite **inverts** the intended ranking, Kendall τ = −1 at the calibrated rate; drawing δ
 independently, the ordering survives in **11.5%** of 4,000 ladders. This constrains cross-sectional
@@ -130,9 +131,11 @@ the abstract. It is not in *Abandoned Approaches*. A pre-registered prediction t
 lost is a **result**; filing it under abandonments would be the softest available way to hide it, and
 this paper has no claim on a reader's seriousness if it takes that route.
 
-The framework the filter was built inside — three propositions about the composition of wealth, and
-the coupling they oblige — is set out in **Appendix A**. Nothing in §§2–7 depends on it, which is
-the point of putting it there.
+The framework the filter was built inside — three propositions about the composition of wealth
+(**P1** composition, **P2** decay, **P3** atomism) and the coupling they oblige — is set out in
+**Appendix A**. No result in §§2–6 depends on it, which is the point of putting it there; §7's
+survival ledger records the appendix's own checks alongside the rest, and §§9 and 10 name the
+propositions where they bound what may be claimed.
 
 ---
 
@@ -172,6 +175,19 @@ periods. Where the filter is examined in isolation the recognition mechanism is 
 because otherwise the snap timing truncates the measurement window and the lag statistic reports
 the recognition schedule rather than the filter.
 
+**Two conditions bound what this filter models, and both belong here rather than in a later
+section.** The first makes the wedge one-signed: reported value may fall and may not rise. Under
+US GAAP — the regime this paper's sample files in — there is no upward revaluation of property,
+plant and equipment and no impairment reversal for goodwill or indefinite-lived intangibles. IAS
+36 requires reversal for non-goodwill assets and IAS 16 permits revaluation, so the condition
+holds for these filers and is not general; a physical layer that only degrades is not by itself
+enough, because degradation at a stochastic rate around a booked rate produces a two-signed
+reporting error and no skew. The second restricts the domain: the claim above is restricted to
+degradation on which conservatism has nothing further to bite — carrying no impairment trigger,
+no estimable expected loss and no observable event to key recognition to. **Where a loss is
+estimable, recognition is faster than the market and this model predicts nothing.** §10 gives the
+accounting literature these two conditions belong to.
+
 **φ is not a fudge factor**, and the distinction is load-bearing enough to state before any
 result. φ is the *observability of the degradation*, and it is what makes this model survive the
 objection that would otherwise kill it outright — see §8.1.
@@ -182,7 +198,15 @@ objection that would otherwise kill it outright — see §8.1.
 
 ### 3.1 · Lag and deferred information scale with unobservability
 
-Filter isolated, θ = ∞:
+Filter isolated, θ = ∞. Two of the three columns need their construction stated before they can
+be read. **Recognition lag** is the offset, in periods, that maximises the cross-correlation
+between ΔE and ΔC — how long the claim layer takes to track a change in physical value.
+**Smoothing** is the ratio of the standard deviation of ΔC to that of ΔE, taken over periods
+carrying no recognition event: 1.000 where the claim layer moves exactly as the asset does,
+falling as more of the movement is withheld. One statistic carries two column headings here,
+because the periods it runs over differ with the regime: with the mechanism disabled there are no
+events and it runs over every period, which is the **inter-period** column below; §3.2 turns the
+mechanism on, leaving the periods between events, and heads the same quantity **inter-event**.
 
 | φ | recognition lag (periods) | inter-period smoothing | deferred information |
 |---|---|---|---|
@@ -296,8 +320,8 @@ line in vectors:
 
 > **C**(t+1) = **C**(t) + **φ** ⊙ Δ**E** + **α** ⊙ **gap**(t),  **gap**(t) = **E**(t) − **C**(t)
 
-with ⊙ the Hadamard product. The elementwise form is a substantive claim rather than a notational
-economy: **the reporting layer is diagonal in class space.** A dollar of unrecognised deterioration
+with ⊙ the Hadamard product and, below, ⊘ elementwise division. The elementwise form is a
+substantive claim rather than a notational economy: **the reporting layer is diagonal in class space.** A dollar of unrecognised deterioration
 in a distribution centre does not force recognition against a trademark. Each class's filter reads
 its own gap and nothing else.
 
@@ -586,13 +610,16 @@ calibrated here **the entire asserted rectangle lies outside the domain**: every
 enough to appear in a filing implies a decay rate at or above the recognition rate. Half of the
 rectangle is admissible only at α ≈ 0.19, and all of it above α = 0.33. **That made the recognition
 rate, not the ordering, the quantity to establish first — and §5.4 establishes it.** On the
-registered sample the recognition rate PRE-002's instrument identifies is **α̂ = 0.408 per year**,
+registered sample of impairment events — each carrying the interval from the onset of
+deterioration to the charge, right-censored at twenty quarters — the censored geometric
+maximum-likelihood estimate of the recognition rate PRE-002's instrument identifies is
+**α̂ = 0.408 per year**,
 95% interval [0.383, 0.432], on both known biases' inflating side: the calibration used here is low by an order of magnitude, and the
 asserted rectangle lies inside the domain at the measured rate and across its 95% interval, where
 **0.974** of the 683 disclosed pairs are admissible and **0.959** at the interval's lower bound. At
-the unregistered cut aimed at the doubt REG-003 §3.3 registered in advance — the 175 events
-charged one
-quarter after the peak dropped, giving **0.327** — the rectangle's own fastest disclosed rate of
+the adverse cut — a refit of the same sample with the 175 events charged one quarter after the
+peak dropped, unregistered and aimed at the doubt REG-003 §3.3 registered in advance, giving
+**0.327** — the rectangle's own fastest disclosed rate of
 0.3333 is no longer cleared, and **0.814** of the pairs remain admissible. The domain restriction is
 a property of the calibration and not of the disclosure, and what its remaining margin turns on is
 the onset bridge rather than the sample.
@@ -637,8 +664,8 @@ than in the way a figure of 100% suggests.
 **The identification result does not, by itself, wreck a design ordered on lag.** Any claim that the
 registered prediction was doomed by the φδ confound is claiming more than the arithmetic gives.
 
-What wrecks it is the next line. **The model's lag statistic is a cross-correlation between ΔE and
-ΔC, and ΔE is the change in physical value, which no filing reports.** The one statistic the
+What wrecks it is the next line. **§3.1's lag statistic is a cross-correlation between ΔE and ΔC,
+and ΔE is the change in physical value, which no filing reports.** The one statistic the
 confound spares is the one that cannot be computed from public data. Any empirical instrument must
 substitute something else — §5's substituted the interval from the onset of a decline in a
 firm-level signal to the recognition of a charge — and the relation between that substitute and the
@@ -755,7 +782,8 @@ forces c = 1. Regressing the reported series on its own lag, the return-implied 
 first difference recovers α, E₀ and φ to 10⁻¹⁶ at a return volatility of 0.15, against a design
 matrix that is exactly singular at zero volatility.
 
-**So §4.6's question answers yes, and the price is a rate rather than a proof.** Identification does
+**So the question this section opened with — whether anything outside the reported series restores
+φ — answers yes, and the price is a rate rather than a proof.** Identification does
 not switch on at the first innovation; it fades in. Over a twelvefold range of return volatility both
 the design's collinearity and the standard error on φ̂ degrade as power laws in σ, with
 weak-identification bias visible in the mean by σ = 0.025. **Neither exponent is a constant of the
@@ -829,7 +857,8 @@ the 291-fold improvement quoted in §4.2. A design that uses disclosed useful li
 the sample §5 already collected — **151 property events across 98 firms** on the tier-0 tag list
 §5.4 repaired, against 55 across 38 on the list as first collected, with 110 of the 151 joining to
 a disclosed life. Across the one-year life bands that design requires, those 110 events occupy
-sixteen bands and **exactly one clears the registered floor of 30** — thirty-six events from twenty firms
+sixteen bands and **exactly one clears the registered floor of 30 — the minimum number of events
+a life band must carry before a within-band comparison is run** — thirty-six events from twenty firms
 at a five-year life — with none clearing on firms rather than events. Filling the coverage §5's
 two cycles leave between them — the seven intervening cycles, run — raises the join to **133
 of the 151** and leaves the same single band clearing: the second band reaches twenty-seven against
@@ -909,9 +938,10 @@ what was registered and what happened; §6 states what may now be claimed.
 
 ### 4.9 · The closed form does not need the constant hazard, and what it does need is a tail
 
-§5.4 measures the recognition rate PRE-002's instrument identifies and, in the same fit, rejects the
-shape the model assumes: discrete Weibull k̂ = 1.210, 95% interval [1.135, 1.285], stable under
-truncation at eight, twelve and sixteen quarters. **R = (1 − φ)δ/(α − δ) is derived by summing a
+§5.4 measures the recognition rate PRE-002's instrument identifies and, in the same fit — a
+discrete lag distribution fitted to that sample's recognition intervals — rejects the shape the
+model assumes: discrete Weibull k̂ = 1.210, 95% interval [1.135, 1.285], stable under truncation at
+eight, twelve and sixteen quarters. A constant hazard is k = 1, so the estimate rejects it upward. **R = (1 − φ)δ/(α − δ) is derived by summing a
 geometric**, and a geometric is the one lag distribution whose hazard does not depend on how long
 the gap has been open. Everything §4.3 and §4.4 read off that expression — the cross-class ranking,
 the top-rung crossing, the domain — inherits whatever the assumption was doing. REG-004 asks what it
@@ -1186,7 +1216,7 @@ unit of observation this test did not have. That yields a four-tier ordering, pr
 | 3 | goodwill | longest lag |
 
 **Every event in this test is a recognised impairment, which places the sample on the boundary
-of §10's restriction rather than inside its complement:** a charge is the moment degradation
+of §2's domain restriction rather than inside its complement:** a charge is the moment degradation
 became estimable, so §2 governs the accumulation that precedes it and the event marks where that
 accumulation ends — which is why an interval is measurable on these events and on no others.
 
@@ -1549,7 +1579,7 @@ with what would have killed each.
 | **φδ is the conserved quantity, not (1 − φ)δ** | both candidate maps run against the reported series | the two maps agreeing, which would make the check vacuous | mirror **8 × 10⁻¹⁶**, rival map **3 × 10⁻¹** — the gap is preserved by one, the filing by the other |
 | **An open initial gap does not restore identification** | mirror rebuilt at g₀ = 0.15 with the shifted map | the shifted map failing, or the g₀ = 0 map still working | shifted map **7 × 10⁻¹⁶**, naive map **5 × 10⁻²**; invariant (φ − g₀)δ held exactly |
 | **Unobserved physical scale ⇒ φ free over [0, 1]** | one-parameter family constructed and regenerated | any member of the family failing to reproduce the series, or the family collapsing to one φ | nine members spanning φ ∈ [0, 1], **all exact to 2 × 10⁻¹⁶** |
-| **Returns kill the two-point exchange** | mirror rebuilt with its own asset, return series compared | the two worlds' returns agreeing, which would leave §4.6's question open the other way | books agree to **7 × 10⁻¹⁶**, returns differ by **α − δ = 0.0300 every period** |
+| **Returns kill the two-point exchange** | mirror rebuilt with its own asset, return series compared | the two worlds' returns agreeing, which would leave §4.7's question open the other way | books agree to **7 × 10⁻¹⁶**, returns differ by **α − δ = 0.0300 every period** |
 | **Returns cannot touch the scale continuum** | the nine-member family regenerated, return series compared across it | any member emitting a different return series | **2 × 10⁻¹⁶ — bit for bit identical** across a family spanning φ ∈ [0, 1] |
 | **News, not returns, restores identification** | regression on lag, return-implied path and its first difference, σ = 0.15 | recovery failing, or the σ = 0 design being well conditioned | α, E₀, φ recovered to **10⁻¹⁶**; cond(X) **11.8** at σ = 0.15 against **4 × 10¹⁶** at σ = 0 |
 | **The repair's strength is the asset's, not the analyst's** | σ swept 12×, T swept 32×, at nine (α, δ) settings | the panel buying the root-T rate, or the σ and T channels agreeing | T: 50→200 buys **1.22×** where root-T buys 2.00×, 400→1600 buys **1.00×** — regime-independent; the σ exponents are not, and §4.7 gives both ranges |
@@ -1576,7 +1606,7 @@ with what would have killed each.
 | **The reporting layer is not diagonal** | 10,000 within-firm permutations of which quarters each class's impairments land in | co-occurrence at the independence rate, which the Hadamard form requires | **4.12×** and **2.02×**, both *p* = 0.0002, power 1.00 at a 5% injected excess |
 | **The sample rebuilds from a live endpoint** | full re-pull of both universes a week after the original | drift large enough to make the original unrecoverable | **695 events against 688**; three of four tier counts identical |
 | **Lag's 100% is partly the ladder** | 2,000 ladders, durability ordering dropped | lag holding at 100% regardless, which would have made §4.5 unconditional | **66.2%** (se 0.011) against 11.5% for the magnitude measure |
-| **Results are dimensionless** | η swept over **twelve orders of magnitude** | any dimensionless output moving with η | spread **exactly 0.0** |
+| **Results are dimensionless** | η — Appendix A's numeraire conversion, currency per joule — swept over **twelve orders of magnitude** | any dimensionless output moving with η | spread **exactly 0.0** |
 | …and not because η is unused | mutation testing | a mutant that leaves results unchanged | **every substituted vacuous witness killed its run** |
 | **Recognition frequency is driven by δ** | sweep at fixed φ | δ having no effect on event counts | 0 → 16 → 100 events |
 | **The tier instrument has no baked-in ordering** | label permutation | a non-null under randomised labels | z-mean **+0.007**, sd 1.025 |
@@ -1760,7 +1790,9 @@ theorem is a framing that will be argued about instead of the theorem.**
    preceded the theorem: `docs/notes/NOTE-001-phi-identifiability.md`. Synthetic data only. It is
    **not** evidence about §5's null, which used an entirely different, non-parametric estimator.)
 
-5. **Λ⁻¹ and SDG 7.3.1 are the same quantity dimensionally, not empirically.** The SDG series is a
+5. **Λ⁻¹ and SDG 7.3.1 are the same quantity dimensionally, not empirically.** Λ is Appendix A's
+   coupling — the claim measure per unit of physical measure, in currency per joule — so its
+   inverse has the dimensions of energy per unit of recorded output. The SDG series is a
    national aggregate over primary energy and PPP output; the model's coupling is a firm-level
    ratio between a physical capacity measure and a claim measure. The correspondence licenses "this
    dimension is one institutions already report," not "this series measures the model."
@@ -1919,18 +1951,13 @@ quantity of good news insiders can absorb is unbounded because they can capture 
 of bad news is not, so the bound is one-sided for a reason internal to the model. §2 assumes a
 physical layer that only degrades. That assumption is not by itself sufficient — degradation at a
 stochastic rate around a booked rate produces a two-signed reporting error, which is Jin and Myers'
-case again, long tails and no skew. What makes the wedge one-signed is a second condition, that
-reported value may fall and may not rise: under US GAAP, the regime this paper's sample files
-in, no upward revaluation of property, plant and equipment, and no impairment reversal for
-goodwill or indefinite-lived intangibles. IAS 36 requires reversal for non-goodwill assets and
-IAS 16 permits revaluation, so the condition is one-signed for these filers and is not general.
-**That condition is conditional conservatism, it is Basu's object, and §2 uses it as machinery
-rather than contributing it.** An
+case again, long tails and no skew. What makes the wedge one-signed is §2's second condition,
+that reported value may fall and may not rise. **That condition is conditional conservatism, it is
+Basu's object, and §2 uses it as machinery rather than contributing it.** An
 earlier draft of this section cited Basu as an obstacle to be scoped around. He is not the obstacle;
-he is the part of the mechanism this programme had not noticed it was standing on. §2's claim is
-correspondingly restricted to degradation on which conservatism has nothing further to bite —
-carrying no impairment trigger, no estimable expected loss and no observable event to key recognition
-to. Where a loss is estimable, recognition is faster than the market and §2 predicts nothing.
+he is the part of the mechanism this programme had not noticed it was standing on. §2's domain
+restriction — to degradation on which conservatism has nothing further to bite — is the same point
+read from the model's side.
 
 **The second is that the reported layer accumulating hidden deterioration and releasing it as a price
 crash is a published result, and §3.2 quantifies it rather than discovering it.** Bleck and Liu model

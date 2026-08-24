@@ -129,6 +129,25 @@ def test_the_monotone_sweep_endpoints_and_single_crossing_are_what_section_5_rep
 '''
 
 
+# The DISTINCTIVE CLAIM each repair introduced, one per tag. A repair is LANDED when its own
+# claim is present -- not when the whole surrounding paragraph still matches the wrapped
+# string this file wrote. Those are different questions, and only the first is about THIS
+# repair. wealthTensor-104 flattened whitespace here after SL-9 reflowed a paragraph, which
+# fixed the REFLOW case and left the REWORD case -- teed up there, and hit head-on at
+# wealthTensor-105 when a Pass C C-d repair gave 'the fourth paper' its antecedent inside
+# IV-12a's own sentence, leaving every edit intact and this file red. Each marker below is
+# also a postcondition subject, so 'applied' and 'passes' cannot disagree.
+# A FALSE-POSITIVE REDUCTION under DoD 1.1's narrow exception: it looks at nothing new.
+LANDED = {
+    "IV-12a": "their record named in \u00a710, one for each",
+    "IV-12b": "roughly 7,500 words",
+    "IV-13":  "Had the route worked, \u00a75 would indict the Marshallian cross",
+    "IV-11":  "for \u00a71.1's reading of \u00a74.3 as",
+    "IV-12c": "have their record named here, which",
+    "IV-10":  "`python3 scripts/wt018_report.py` prints \u00a75's table",
+}
+
+
 def _flat(s: str) -> str:
     """Whitespace-normalised. A LINE WRAP IS NOT A FACT ABOUT THE PAPER: matching a
     landed repair as an exact wrapped string makes any later reflow look like a missing
@@ -141,7 +160,9 @@ def apply_all():
     changed = []
     for tag, path, old, new in EDITS:
         txt = path.read_text()
-        if _flat(new) in _flat(txt) and old not in txt:
+        mark = LANDED.get(tag)
+        if old not in txt and (
+                _flat(new) in _flat(txt) or (mark and _flat(mark) in _flat(txt))):
             print(f"  {tag}: already applied (idempotent no-op)")
             continue
         if txt.count(old) != 1:

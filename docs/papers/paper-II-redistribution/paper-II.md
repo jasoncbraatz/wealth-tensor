@@ -78,8 +78,8 @@ came from.
    with κ — the levy's compressive *budget*, not its mechanism — separating the bases by an
    order of magnitude, and a closed form for the flow base's κ that the simulation reproduces
    to within 7 % at every rate tabulated (§3.1). The stock-versus-flow contrast this result
-   sharpens is prior and is credited in §6; what is new is κ itself — the levy's budget,
-   separated from its mechanism — and the closed form for it.
+   sharpens is prior and is credited where it is used, in §3.1, and again in §6; what is new
+   is κ itself — the levy's budget, separated from its mechanism — and the closed form for it.
 3. The identification of **realisation as the decisive quantity**, including the limiting result
    that a confiscatory levy on flow, at zero realisation, leaves the wealth vector exactly
    unchanged — its base is uniform, not absent (§3.2). This is a statement about what a base
@@ -158,6 +158,17 @@ aggregate wealth actually moved per assessment — the levy's *compressive budge
 budget and not a mechanism: §3.1 matches two levies at κ and finds them compressing
 unequally, and §3.3 removes a quarter of κ at no measurable cost.
 
+A fourth quantity is reported wherever the question is whether a levy reached the *generator* of
+the process rather than its outcome: **Var[log *a*]**, the variance of the log per-period
+multiplier normalised by aggregate growth — written *a*(η), a different object from §2.1's wage
+*a*, with which it unhappily shares a letter. It is a property of the process that produces next
+period's distribution, where the three statistics above are properties of this period's.
+
+**Bounded** is the verdict the tables below carry, and it is a criterion rather than a
+statistic: a run is bounded when its Gini has settled over the final quarter of the path **and**
+its top decile sits below 0.90. The second condition is the one that does the separating, and
+§3.4 is the result that establishes why a settled Gini alone will not.
+
 ---
 
 ## 3 · Results
@@ -201,10 +212,8 @@ ceiling its base has already fixed.
 
 **The two bases do not merely differ in budget. They act on different objects.** Matched at
 κ ≈ 0.10, the two levies compress the cross-section unequally — Gini 0.222 against 0.125 — but the
-more telling comparison is what each does to the variance of the log multiplier: the generator of
-the process rather than its outcome. Write that multiplier, normalised by aggregate growth, as
-*a*(η) — a different object from §2.1's wage *a*, with which it unhappily shares a letter — so the
-quantity is Var[log *a*]. Unlevied, Var[log *a*] = 0.076542. Under the
+more telling comparison is what each does to §2.4's fourth quantity, Var[log *a*] — the
+generator of the process rather than its outcome. Unlevied, Var[log *a*] = 0.076542. Under the
 **stock** levy at that budget it is **0.076536** — a change of 6 × 10⁻⁶, which is to
 say none at all. Under the **flow** levy it is **0.051189**, a third lower. A levy on stock rescales
 what a holder has and leaves the process that got them there exactly as it found it; a levy on flow
@@ -227,15 +236,6 @@ compression per unit of budget. What this section adds is not the contrast but t
 for it — κ, which says how much budget a base has, and Var[log *a*], which says whether the levy
 spent it on the outcome or on the generator — in a discrete process where the two can be matched and
 separated. §6 states what that leaves.
-
-**κ is necessary and it is not sufficient, and this paper reports both witnesses.** The
-paragraph above matches the two levies at κ ≈ 0.10 and finds them compressing unequally, 0.222
-against 0.125. §3.3 supplies the converse from the other side: a threshold at 0.25× the mean
-removes a quarter of κ at no measurable cost in compression, 0.444 against 0.443. κ can hold
-while the outcome moves and move while the outcome holds, so **no function of κ alone
-reproduces this section's table.** κ is what a base makes available to spend — which is why the
-bases sort, and why the closed form is worth having — but what the spending buys is fixed by
-the object the levy acts on, which is the distinction the preceding paragraph draws.
 
 **A prediction that half-failed, reported as such.** The claim this section was built to test was
 stronger: that a levy on flow does not oppose the multiplicative term *regardless of rate*. That
@@ -309,6 +309,15 @@ because the compression is performed by transfers at the top of the distribution
 
 A threshold that exempts the poor is therefore not a concession that weakens the mechanism. It is
 close to free — and that is a measured coordinate, not an interpretation.
+
+**κ is necessary and it is not sufficient, and this paper reports both witnesses — one from each
+section.** §3.1 matches the two bases at κ ≈ 0.10 and finds them compressing unequally, 0.222
+against 0.125; the threshold sweep above supplies the converse from the other side, removing a
+quarter of κ at no measurable cost in compression, 0.444 against 0.443. κ can hold while the
+outcome moves and move while the outcome holds, so **no function of κ alone reproduces §3.1's
+table.** κ is what a base makes available to spend — which is why the bases sort, and why the
+closed form is worth having — but what the spending buys is fixed by the object the levy acts
+on, which is the distinction §3.1's two-witness comparison draws.
 
 ### 3.4 · A methodological result: saturating statistics cannot detect convergence
 

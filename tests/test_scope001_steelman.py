@@ -61,6 +61,14 @@ def _section(text: str, start: str, end: str) -> str:
     return text[i:j]
 
 
+
+def _flat(s: str) -> str:
+    """Whitespace-normalised. These assertions read POST-repair prose only, so flattening
+    cannot make a before look like an after -- the failure mode wealthTensor-104 hit in
+    wt182. Added at -105, where "\u00a72's domain restriction" fell across a line break and a
+    landed repair read as absent."""
+    return " ".join(s.split())
+
 def test_the_steelman_is_in_the_manuscript_exactly_once(paper):
     assert paper.count(STEELMAN) == 1, (
         "the SCOPE-001 steelman is missing from paper III or duplicated. It is the whole "
@@ -79,12 +87,26 @@ def test_the_steelman_is_in_section_5_and_not_in_section_10(paper):
     )
 
 
-def test_section_10s_restriction_is_untouched(paper):
+def test_the_restriction_is_stated_with_the_model_and_is_unweakened(paper):
+    """The restriction must SURVIVE, unweakened, and sit where the model is stated.
+
+    It lived in §10 until wealthTensor-105, and this guard pinned it there because that is
+    where it was. Pass C ruled the location a C-d fold -- §5.1 pointed at it across 740 lines,
+    and it is a statement of §2's domain, not a concession to a rival literature -- and moved
+    it into §2. THE SUBJECT OF THIS CHECK WAS NEVER THE SECTION NUMBER: it is that the
+    restriction exists, is not softened, and is reachable from the sentence that leans on it.
+    Pinning it to §10 made a legitimate move look like a deletion.
+    """
+    two = _section(paper, "\n## 2 · ", "\n## 3 · ")
+    assert "no observable event to key recognition" in _flat(two), (
+        "the SCOPE-001 restriction has left §2. It is the half of the pair the steelman leans "
+        "on; weakening or deleting it converts a steelman into the scope creep SCOPE-001 refused."
+    )
+    assert "recognition is faster than the market and this model predicts nothing" in _flat(two)
     ten = _section(paper, "\n## 10 · ", "\n## 11 · ")
-    assert "no observable event to key recognition" in ten
-    assert "recognition is faster than the market and §2 predicts nothing" in ten, (
-        "§10's restriction is the half of the pair the repair deliberately leaves alone. "
-        "Weakening it would convert a steelman into the scope creep SCOPE-001 refused."
+    assert "§2's domain restriction" in _flat(ten), (
+        "§10 must still NAME the restriction it credits to Basu, or the Basu paragraph is "
+        "crediting an object the reader cannot find."
     )
 
 

@@ -33,7 +33,7 @@ ANCHOR = (
 
 NEW = (
     "**Every event in this test is a recognised impairment, which places the sample on the boundary\n"
-    "of §10's restriction rather than inside its complement:** a charge is the moment degradation\n"
+    "of §2's domain restriction rather than inside its complement:** a charge is the moment degradation\n"
     "became estimable, so §2 governs the accumulation that precedes it and the event marks where that\n"
     "accumulation ends — which is why an interval is measurable on these events and on no others.\n"
     "\n"
@@ -43,7 +43,7 @@ NEW = (
 
 def main() -> int:
     apply_edits(
-        [(PAPER, ANCHOR, NEW, "§5.1 · the sample is the boundary of §10's restriction")],
+        [(PAPER, ANCHOR, NEW, "§5.1 · the sample is the boundary of §2's domain restriction")],
         expect_structure={},
     )
     return 0

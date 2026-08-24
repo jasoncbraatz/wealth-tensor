@@ -160,3 +160,66 @@ regenerated and `verify-layout.sh` reproduces at the new count. Any doc still sa
 - **A reference-entry reachability sweep run per-section rather than per-document.** `wt133` sweep 2
   answers *is this entry cited anywhere*; it cannot answer *is it cited at the sentence that relies
   on it*, which is the actual `IV-7`/`SL-8` standard and was applied by hand both times.
+
+---
+
+## From `wealthTensor-105` (Pass C)
+
+**Nothing here blocks. Nothing here is an at-bat until the corpus ships.**
+The enumeration of what Pass C repaired is `docs/REVIEW-039-passC-structural-settlement.md`.
+
+### The headline, because § 3.5 asks for it out loud
+
+**THE FOURTEEN CAME BACK AS TWENTY-FOUR — and not because Pass A counted badly.** `REVIEW-038`
+§ 4 is a **count**, and only one of the fourteen carries a location anywhere in the corpus (the
+paper-IV orphan). The handoff promised *"they are already found… you are not searching"*, and half
+of that was true. **A count is a size estimate; an enumeration is a work order**, and the pass that
+counts has each item in front of it at the moment it increments — so the list is nearly free to the
+counter and expensive to everybody after. `REVIEW-038` § 4.4 half-predicted this and was right: 13
+was not a ceiling.
+
+### Three LOW-confidence structural items found and deliberately NOT repaired
+
+- **paper-III § A.2.3's invariance table** carries two rows — *relative event magnitude* and
+  *mean / min / terminal coupling ratio* — that name no statistic § 3 has reported. The table's own
+  preamble covers the intent (*"the diagnostics below are the same statistics § 3.2 reports, under
+  this paper's names"*), and the claim being read off that table is that every spread is 0.0, which
+  a reader can check without the row labels. **A gloss pass, not a structural defect.**
+- **paper-II § 3.2's *"the result connects outward"* bridge paragraph** promises an outward
+  connection that the very next paragraph withdraws. Read once more against § 2.5 it is closer to
+  **C-a antithesis residue** than to C-c, and C-a is Pass D's. Left for Pass D with that reading
+  attached rather than cut by a pass that does not own the type.
+- **paper-IV § 5's heading** promises *"the volume"*. Pass C anchored the term inside the section
+  rather than touching the heading; whether the heading is the right one is a title decision, which
+  is Jason's.
+
+### Ideas that arrived with the repairs
+
+- **A fold-problem detector is imaginable and would be a NEW INSTRUMENT** (§ 1.1 — after the ship).
+  The shape: for every symbol and defined term, compare the section of first USE against the section
+  of first DEFINITION, and report the pairs more than one section apart. It would have found
+  III-1 (the lag statistic), III-2 (⊘), III-7 (η, Λ, P1), IV-2 (α) and IV-7 (Λ) mechanically. It
+  would **not** have found the ones that matter most — II-1's incomplete definition slot, II-3's
+  paragraph standing in front of its own evidence, IV-3's *"the paragraph after next"* — because
+  those are folds in the ARGUMENT, not in the notation. **Useful, and not a substitute for the read.**
+- **`wt093_edits_scope001.py` is not idempotent against an edited `NEW`.** It replaces its ANCHOR
+  with `NEW`, and `NEW` ends with the ANCHOR, so re-running it after `NEW` changes inserts a second
+  copy of the steelman. `-105` did exactly that and caught it on the count assertion in the guard
+  that imports it. The general shape is worth a line: **an insert-above-anchor patch is idempotent
+  only while its inserted text is frozen**, and every one of this repository's `*_edits_*.py`
+  scripts has that property. Not a defect today; a trap for whoever edits one of those constants.
+
+### What Pass D inherits, so it is not discovered
+
+**Pass C added ZERO hard C-e.** No session number, no `REVIEW` document, no `p7-passes.tsv`
+reference, no `LEDGER` ticket id was introduced into any manuscript. The artefacts named this pass
+are `PRE-002`, `REG-003`, `REG-013` and `src/wealth_tensor/lag.py` — all committed, all fetchable,
+and all already inside `REVIEW-038` § 4.1's SOFT census. **The delete-on-sight 15 is unchanged.**
+
+**C-b may have grown and was not re-counted.** Definitional glosses such as paper-III § 3.1's *"Two
+of the three columns need their construction stated before they can be read"* narrate the document
+while doing necessary work. `git diff 1618d6a..HEAD -- docs/papers/` names every edit site in one
+command, and there are nineteen of them. **Pass D should read those sites with a C-b eye** rather
+than re-sweeping three manuscripts.
+
+**C-f was not touched anywhere.** No sentence was re-voiced.

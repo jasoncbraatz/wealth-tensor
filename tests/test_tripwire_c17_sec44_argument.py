@@ -54,8 +54,25 @@ CONSTRAINT = (
     "and may not reopen the argument"
 )
 
-#: SHA-256 of §4.4 with every numeric literal masked, at `a1fef70`.
-SEC_44_MASKED_SHA256 = "21d1684e2132888662f7a01b710a8cb53ef361aecdda2b0ba243eb47c20d6a7b"
+#: SHA-256 of §4.4 with every numeric literal masked.
+#:
+#: RE-PINNED at wealthTensor-105 (Pass C), and the reading is CARRYING SENTENCE, not
+#: ARGUMENT REOPENED. Two sentences gained provenance and nothing else moved:
+#:   * the sentence introducing α̂ now names the estimator (a censored geometric maximum
+#:     likelihood on the registered sample's onset-to-charge intervals, right-censored at
+#:     twenty quarters) at the point a reader first meets the value, instead of leaving it
+#:     to §5.4 eight hundred lines on. PRE-002 keeps the attribution it had.
+#:   * "the unregistered adverse cut" is glossed in place as a refit of the same sample with
+#:     the 175 one-quarter events dropped; it had no referent in this manuscript until §5.4.
+#: §4.4's argument is unchanged: the calibrated α still puts the whole asserted rectangle
+#: outside the domain, the measured rate still puts it inside across the 95% interval, and
+#: the admissible shares are the same numbers from the same runs. Nothing was added to the
+#: argument, removed from it, or re-ordered within it. A C-d repair under
+#: DEFINITION-OF-DONE-SHIP §2.5 — the fold was that the value arrived unevaluable, and the
+#: repair moved the DEFINITION forward, not the section.
+#: An earlier draft of this repair also restated n = 695 here; it was dropped rather than
+#: declared, because a restated value is a second copy that can drift.
+SEC_44_MASKED_SHA256 = "fe021b7f84ae0235a28ab0e692a0d0d9ee07b649a906f273d993906fe5bc050e"
 
 #: Sanity floor on the extractor, so a heading-regex change cannot silently pin "".
 SEC_44_MIN_LINES = 100

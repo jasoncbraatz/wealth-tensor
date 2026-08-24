@@ -129,7 +129,8 @@ test suites; this paper cites them as established and adds one measurement of it
 literature rather than on the model. Numbers appearing below without a citation to II or III have
 their record named in §10, one for each: §6's are `REG-013`'s, and its record is the committed
 output of that run rather than a command, because the instrument re-queries a live database;
-§5's and §8's results are the output of the fourth paper's apparatus, which is still in this
+§5's and §8's results are the output of a fourth paper on price formation — written, refereed
+against itself and not published, for the reasons §8 gives — whose apparatus is still in this
 repository and still runs; and §8's word count for that paper is `wc -w` on its superseded draft.
 
 ---
@@ -181,7 +182,8 @@ physical component that degrades at some rate and a claim component recorded at 
 Nothing here is metaphorical; a roof has a service life and a mortgage has an amortisation
 schedule, and they are different numbers. **Paper III §2 is that holding**, before anything is
 summed: its physical layer degrades at an effective 0.02 per period and its claim layer
-recognises at α = 0.05 — the model's swept calibration, which Paper III §5.4 goes on to
+recognises at α = 0.05 — α being the rate at which a change already incurred but not yet
+recorded is released into the accounts, and 0.05 the model's swept calibration, which Paper III §5.4 goes on to
 measure at 0.408 per year on its registered sample and reports as low by an order of magnitude —
 and Paper III §3.1 reports what the distance between those two rates costs. The
 household scale's quantitative answer is Paper III's, read before that paper's §4 indexes the
@@ -205,17 +207,6 @@ base of a levy — stock or flow — is the question of *which component of the 
 state the assessing layer can see*, and at zero realisation a confiscatory levy on flow is
 statistically indistinguishable from no levy at all.
 
-**Note what this is: three instances of one question, asked at three scales.** At each step the
-same two components appear, the same question is asked of them — what does the measuring layer
-observe? — and the answer at each scale is a *quantitative* one that the paper for that scale
-reports. Paper II's κ,
-the share of aggregate wealth actually moved per assessment, is a composition quantity: it is
-defined at the sovereign scale and it is a fold over household-scale liabilities. Paper III's
-φ ⊙ δ — observability times the physical decay rate — is a composition quantity: it is defined at
-the firm scale and is *written* as diagonal over asset classes — a form the paragraph after next
-reports as tested and rejected, which changes what the link carries and not whether there is
-one.
-
 **An earlier draft of this section claimed more than three instances of one question, and the
 corpus's first end-to-end test took the surplus away.** It said the three scales made *a chain
 rather than three analogies*. `END-TO-END-001` leg `E1` asked whether the sovereign and firm scales
@@ -229,6 +220,17 @@ what this section now claims and no more. The demotion was written into that doc
 **before** the leg was run,
 precisely so that it could not be renegotiated afterwards; `docs/RESULT-END-TO-END-001-E1.md`
 records the run and the reasoning.
+
+**Note what this is: three instances of one question, asked at three scales.** At each step the
+same two components appear, the same question is asked of them — what does the measuring layer
+observe? — and the answer at each scale is a *quantitative* one that the paper for that scale
+reports. Paper II's κ,
+the share of aggregate wealth actually moved per assessment, is a composition quantity: it is
+defined at the sovereign scale and it is a fold over household-scale liabilities. Paper III's
+φ ⊙ δ — observability times the physical decay rate — is a composition quantity: it is defined at
+the firm scale and is *written* as diagonal over asset classes — a form the next paragraph
+reports as tested and rejected, which changes what the link carries and not whether there is
+one.
 
 And **the place where the firm-scale link could break was named, was tested, and the test rejected
 it.**
@@ -268,7 +270,8 @@ being summed. But the best-established result about aggregation in economics say
 Sonnenschein (1972, 1973), Mantel (1974) and Debreu (1974) proved that aggregate excess demand
 inherits from individually rational agents only continuity, homogeneity of degree zero and
 Walras's Law — not downward slope, not uniqueness, not stability. Aggregate demand can take
-essentially arbitrary shape. Worse: your own Paper I cites SMD approvingly, as evidence that
+essentially arbitrary shape. Worse: the price-formation paper of your own corpus — the fourth,
+which §8 records as written and withdrawn — cites SMD approvingly, as evidence that
 doubting inherited aggregation is inside the mainstream. You cannot cite the theorem that
 aggregation destroys structure and then claim structure survives aggregation.*
 
@@ -328,9 +331,12 @@ Three, and none of them is rhetorical.
    results are the reason to be sceptical that the composed state is available.
 2. **"Extensive" is doing real work and it excludes things one might want.** A rate is not
    extensive. δ, φ, α and ρ do not compose by addition; they compose, where they compose at all,
-   as *weighted* combinations whose weights are themselves state, and Paper III's ladder results
-   are what happens when one forgets this and ranks classes by a parameter rather than by a
-   product.
+   as *weighted* combinations whose weights are themselves state. Paper III's asset-class ladder
+   is what happens when one forgets this: a cross-class ranking computed from reported numbers is
+   a ranking of the *product* φ ⊙ δ, so it recovers a ranking of φ only where the decay rate δ is
+   constant across the classes being ranked — and the classes accounting standards distinguish are
+   very nearly defined by differing in δ. Ranking by the parameter can therefore invert the
+   ordering rather than blur it.
 3. **Diagonality is assumed at the firm scale, and the assumption is measurably wrong.** §3 names
    this; Paper III registered the test, ran it, and rejected independence across classes within a
    firm-quarter in both universes. The composition claim therefore has a *degraded* link at exactly
@@ -360,8 +366,8 @@ every point. The reason is a partition. At any price that is not itself a reserv
 the two counts with opposite signs and cancels — at every price, not merely at the zero.
 
 So the *price* coordinate of the cross reads the population and nothing else. The **quantity**
-coordinate reads something quite different, and this is the part worth carrying into a paper about
-composition. At a clearing price strictly inside the interval,
+coordinate — the volume traded at the crossing, and the height of the cross in the diagram — reads
+something quite different, and this is the part worth carrying into a paper about composition. At a clearing price strictly inside the interval,
 
 > *D*(*p*\*) = |*T* \ *H*|,  *S*(*p*\*) = |*H* \ *T*|,  and the two are equal.
 
@@ -400,7 +406,9 @@ either. What makes a number here mean something is a scale with both ends fixed 
 **The instrument.** Each literature is defined by seed works named in `REG-013`, and its
 *audience* is the set of works citing at least one seed, taken from OpenAlex. For two literatures
 the statistic is the overlap coefficient — the share of the smaller audience that also reads the
-other. Twenty-five of twenty-five seeds resolved.
+other. Audiences are truncated at the 4 000 most-cited works before the overlap is taken; the
+second qualification below states what each truncation costs. Twenty-five of twenty-five seeds
+resolved.
 
 **The ceiling** is each literature split in half by seed index and measured against itself. It
 cannot be tuned: if the instrument cannot see that half of econophysics is joined to the other
@@ -411,7 +419,10 @@ half, it cannot see anything, and the registration voids the run below 0.20. It 
 construction. It came back at **exactly zero**: of the 4 000 most-cited works citing a CRISPR
 seed, not one is in any of the three economics audiences.
 
-**The three pairs**, positioned on that floor-to-ceiling scale:
+**The three pairs**, positioned on that floor-to-ceiling scale. The position *z* places a pair's
+overlap on that scale — (overlap − floor) ÷ (ceiling − floor), so the floor reads 0 and the
+ceiling 1 — and `REG-013` fixed the bar in both directions before the run: *z* ≤ 0.10 is
+whitespace, *z* ≥ 0.25 is joined, and the band between them is undecided.
 
 | pair | works citing both | audience (smaller) | overlap | position *z* |
 |---|---|---|---|---|
@@ -421,7 +432,7 @@ seed, not one is in any of the three economics audiences.
 
 Against split-half intersections of 134, 155 and 380 *within* the same three literatures. **Six
 works in the world cite both a stock-flow-consistent seed and a kinetic-exchange seed.** All three
-pairs fall below the registered 0.10 bar; the whitespace is where it was claimed to be.
+pairs sit below the whitespace bar; the whitespace is where it was claimed to be.
 
 **One qualification, and it is the first thing a referee will find, so it is here rather than in
 §9.** Biophysical economics is on this instrument a *loose federation*: its own split-half overlap
@@ -473,8 +484,9 @@ is mistaken," and it is falsifiable in a way that the received-view complaint is
 **Biophysical economics** — Georgescu-Roegen, Daly, Odum, Ayres and Warr, Hall and Klitgaard —
 establishes that production is constrained by energy and materials and that the constraint is not
 a detail. What it has generally not had is an accounting-shaped object: a per-entity state that a
-balance sheet could carry. Paper III's decomposition is that object, and the coupling Λ it defines
-has the dimensions of a quantity the United Nations already reports the inverse of (SDG 7.3.1).
+balance sheet could carry. Paper III's decomposition is that object, and the coupling Λ it
+defines — the energy required per unit of recorded economic stock — has the dimensions of a
+quantity the United Nations already reports the inverse of (SDG 7.3.1).
 Paper III §A.2.2 makes that claim and bounds it in the same breath — the correspondence is
 dimensional, and *"emphatically not"* that the indicator measures Λ⁻¹. It is therefore evidence
 that the dimension is not this framework's coinage, and not evidence that the coupling has been
