@@ -2,15 +2,15 @@
 project: wealth-tensor
 gh_repo: jasoncbraatz/wealth-tensor
 branch: main
-gh_sha: 878c3a38bc4c5dba831231e932e5ee0912396ef5
+gh_sha: a75b15e2aa51e3063173e276d252547fa0c29f0e
 updated: 2026-08-24
-session: wealthTensor-102
-session_n: 102
-live_theme: "THE RUBRIC GRADED TRUTH AND THE PAPERS NEEDED TO BE READABLE. -102 wrote a ship DoD in the morning and Jason amended it the same session, and the amendment is the interesting half: the defect class he actually cares about -- the aside recording that a test went sideways, the antithesis realisation, the sentence that made sense to the session that wrote it -- IS ENTIRELY TRUE STATEMENTS, so every one scored S3 and SHIPPED. A manuscript can pass every truth check and still read like a lab notebook, and a lab notebook is not something a human can rewrite from without wasting hours. Fixed by a C-class with seven named defect types, a fourth pass that owns them, and an end product redefined as WHAT JASON CAN REWRITE FROM rather than what is correct. The -106 hard stop went too: a countdown teaches a session to stop on a NUMBER, which is the exact failure it was meant to prevent. Replaced by a ratchet -- EVERY PASS OWNS ITS SUCCESSOR'S PRECONDITIONS. And one measured fact reframed the whole final pass: the four manuscripts carry ZERO figure captions and ~230 markdown table rows, so Jason's layout work is not 'where do the charts go' -- THERE ARE NO CHARTS -- it is 'which of these tables wants to be a picture', which is what FIGURE-PLAN.md now exists to answer."
-phase: "EVERY NUMBER HERE WAS RE-DERIVED BY THE GATE'S CLAIM RE-RUNNER, NOT QUOTED: `pytest` 1168 passed; NEW `wt188` RC 0 over 63 post-conditions with 20 NEGATIVE and idempotent; NEW `wt189` RC 0 over 19 post-conditions with 11 NEGATIVE and idempotent; NEW `wt190` RC 0 over 10 post-conditions with 4 NEGATIVE and idempotent; NEW `wt191` RC 0 over 26 post-conditions with 12 NEGATIVE and idempotent; NEW `wt191b` RC 0 over 11 post-conditions with 5 NEGATIVE and idempotent; NEW `wt192` RC 0 over 25 post-conditions with 11 NEGATIVE and idempotent; NEW `wt192b` RC 0 over 12 post-conditions with 6 NEGATIVE and idempotent; NEW `wt192c` RC 0 over 13 post-conditions with 8 NEGATIVE and idempotent; `wt184` RC 0 over 28 post-conditions with 9 NEGATIVE; `wt185` RC 0 over 19 post-conditions with 8 NEGATIVE; `wt186` RC 0 over 11 post-conditions with 8 NEGATIVE; `wt187` RC 0 over 6 post-conditions with 4 NEGATIVE; `wt182` RC 0 over 20 post-conditions with 6 NEGATIVE; `wt183` RC 0 over 16 with 4 NEGATIVE; `wt181 --verify` RC 0 over 9 checks; `verify-layout.sh` RC 0 with 145 pages compared, REBUILT FROM THE COMMIT THAT CARRIES THIS SESSION'S REPAIR; `redproof-layout.sh` RC 0 with 4 probes reported; `wt170 --verify` RC 0 with 11 of 15 rows verified; `redproof_wt180_counts.py` RC 0 over 12 of 12 declared probes; `wt173 --verify` RC 0; `wt173 --postconditions` RC 0 over 14 checks with 5 NEGATIVE; `preflight` RC 0 over 16 fonts; `wt133` and `wt148` and `wt154` and `wt156` and `wt160` and `wt163` and `wt166` and `wt169` -- ALL EIGHT RC 0, and `wt148` now reads 174 emitted / 161 adjudicated / 0 unadjudicated / 0 STALE after the four-row re-adjudication this repair forced; `wt172 --verify` RC 0 over 19 paper-II rows; `wt177_figure_guard.py` RC 0; `redproof_wt177_figures.py` 21/21; `wt179_manifest_guard.py` RC 0 over 10 checks; `redproof_wt179_manifest.py` 26 of 26 tags; `redproof_wt178_claims.py` 17/17; `defensive` paper-I/II/III/IV = 0/0/3/0 outside Limitations -- UNCHANGED, and paper-II moved by FIVE SITES whose delta is +0 on a baseline of ZERO (G-COACH-3 holds, proved with `--against`); board 66 criteria BYTE-IDENTICAL after regeneration; gate v2.61 PASS, tree clean and pushed."
+session: wealthTensor-103
+session_n: 103
+live_theme: "THE COUNTER WAS FLAT AND EVERYBODY READ IT AS DIMINISHING RETURNS. IT WAS NOT. -103 scored all seventy findings from all sixteen passes against the rubric -102 committed BEFORE any scoring, and the answer is the one nobody expected: 53 are S1 -- the paper stating something FALSE -- 16 are S2, and exactly ONE in seventy is S3. The S1 share by thirds runs 87.5%, 61.9%, 76.0%: SEVERITY NEVER DECAYED EITHER. Six handoffs had explained the flat 2-9 band as the passes scraping the barrel; there was no barrel-scraping and there was no S3 tail, because the S3 tail does not exist. That vindicates Jason's ruling on a stronger ground than it was made on -- a stopping rule waiting for a zero was pointed at a stream that never degraded. AND IT EXPLAINS THE AMENDMENT PERFECTLY: sixteen passes hunting truth found truth defects at a 76% clip and walked past 156 C-class seams, because every seam is a TRUE statement. Sections 2 and 2.5 are not two halves of one instrument. They are two instruments, and only one of them had ever been run."
+phase: "EVERY NUMBER HERE WAS RE-DERIVED BY THE GATE'S CLAIM RE-RUNNER, NOT QUOTED: `pytest` 1168 passed; `wt184` RC 0 over 28 post-conditions with 9 NEGATIVE; `wt188` RC 0 over 63 with 20 NEGATIVE; `wt189` RC 0 over 19 with 11 NEGATIVE; `wt190` RC 0 over 10 with 4 NEGATIVE; `wt191` RC 0 over 26 with 12 NEGATIVE; `wt191b` RC 0 over 11 with 5 NEGATIVE; `wt192` RC 0 over 25 with 11 NEGATIVE; `wt192b` RC 0 over 12 with 6 NEGATIVE; `wt192c` RC 0 over 13 with 8 NEGATIVE; `wt185` RC 0 over 19 with 8 NEGATIVE; `wt186` RC 0 over 11 with 8 NEGATIVE; `wt187` RC 0 over 6 with 4 NEGATIVE; `wt182` RC 0 over 20 with 6 NEGATIVE; `wt183` RC 0 over 16 with 4 NEGATIVE; `wt181 --verify` RC 0 over 9 checks; `verify-layout.sh` RC 0 with 145 pages compared; `redproof-layout.sh` RC 0 with 4 probes reported; `wt170 --verify` RC 0 with 11 of 15 rows verified; `redproof_wt180_counts.py` RC 0 over 12 of 12; `wt173 --verify` RC 0; `wt173 --postconditions` RC 0 over 14 checks with 5 NEGATIVE; `preflight` RC 0 over 16 fonts; `wt133` `wt148` `wt154` `wt156` `wt160` `wt163` `wt166` `wt169` -- ALL EIGHT RC 0; `wt172 --verify` RC 0 over 19 paper-II rows; `wt177_figure_guard.py` RC 0; `redproof_wt177_figures.py` 21/21; `wt179_manifest_guard.py` RC 0 over 10 checks; `redproof_wt179_manifest.py` 26 of 26 tags; `redproof_wt178_claims.py` 17/17; `defensive` paper-I/II/III/IV = 0/0/3/0 outside Limitations -- UNCHANGED, and NO MANUSCRIPT WAS TOUCHED THIS PASS, which is the point of Pass A; board 66 criteria BYTE-IDENTICAL after regeneration (Pass A closed no lane, so an empty diff is the correct result); gate v2.61 PASS, tree clean and pushed. NEW DOCUMENTS, none of them a manuscript edit: `docs/SHIP-LIST.md` (CLOSED, 9 entries), `docs/REVIEW-038-passA-retrospective-scoring.md`, and `docs/POST-SHIP.md` extended with the triage. NO p7-passes.tsv ROW WAS ADDED and that is deliberate -- Pass A is not an independent read and claiming a seventeenth would be false."
 gate_passed: true
 gate_version: "2.61"
-next_at_bat: "ASSIGNED, ONE THING — **PASS A of the ship plan: make the end countable.** Jason RETIRED the convergence criterion at -102 (sixteen passes, zero zeros, no termination proof, and it rewarded not looking). `docs/DEFINITION-OF-DONE-SHIP.md` IS NOW THE DoD AND IT WINS OVER EVERY OTHER FILE EXCEPT THE CHARTER. READ IT BEFORE YOU DO ANYTHING ELSE -- your at-bat is its Pass A, section 3. You are the ONLY pass permitted to add to the blocking set, and you MAY NOT REPAIR ANYTHING: scoring and repairing in the same hand is how a rubric gets bent around an easy fix. FOUR STEPS. (1) RETROSPECTIVELY SCORE every finding in all sixteen p7-passes.tsv rows and their REVIEW docs against the S1/S2/S3 rubric in section 2 -- WHICH IS ALREADY COMMITTED AND MUST NOT BE EDITED WHILE YOU SCORE. S1 = the paper states something FALSE. S2 = the paper asserts something NOTHING SUPPORTS. S3 = precision and taste, which SHIPS disclosed. Ambiguity resolves UPWARD once. (2) ADJUDICATE wt184s 44 Rule-1 flags on paper-III -- read them BEFORE touching the rule, because III-5 came out of that flag set and a rule tightened before its output is read can silently delete a real finding. ANY FLAG RULED TRUE IS AN S1 BY DEFINITION and goes on the ship list. -102 measured the defect: Rule 1 reads CO-OCCURRENCE as attribution, has NO possessive form anywhere in the file, and its flag set was never cut from 44 to 5 (43 at 74934b9, 44 at HEAD). REVIEW-037 section 3.1 has the whole measurement; SM 1217774684736450 has the card. (3) TRIAGE all nine carried tee-ups into S1/S2 (ship list) or S3/idea (docs/POST-SHIP.md, which already exists and already holds four of them). (4) EMIT docs/SHIP-LIST.md -- every open S1 and S2 across papers II, III and IV, numbered, each naming the repair it needs -- THEN CLOSE IT AND FREEZE IT. And REPORT THE SEVERITY DISTRIBUTION ACROSS ALL SIXTEEN PASSES, which is the measurement this project has been owed for eight sessions: IS SEVERITY FALLING WHILE THE COUNT IS FLAT? That answer belongs in SHIP-STATEMENT.md later and it is the most interesting thing this apparatus knows about itself. DONE WHEN: docs/SHIP-LIST.md exists, is CLOSED, every entry names a repair, every one of the 44 flags is ruled TRUE or FALSE with its reason and a count of each, all nine tee-ups are triaged, the severity distribution is reported, pytest is green and --claims-all agrees. FORBIDDEN THIS PASS: repairing a manuscript, building a new instrument (section 1.1 -- a FALSE-POSITIVE reduction is a repair and is allowed; new LOOKING is not), adding anything to the blocking set that was discovered after the freeze (it goes to POST-SHIP), and editing the severity rubric. If the ship list comes back LONGER THAN 15 ITEMS, do not silently expand the plan -- card it for Jason and say so, because the hard stop is -106 and he needs to know if that is at risk. Do NOT close P7, P13g, P9 or P8."
+next_at_bat: "ASSIGNED, ONE THING -- **PASS B of the ship plan: CLEAR THE TRUTH LIST.** `docs/SHIP-LIST.md` is CLOSED and FROZEN at nine entries -- six S1, three S2 -- and every entry names its repair. READ `docs/DEFINITION-OF-DONE-SHIP.md` FIRST (it wins over every file but the charter); your at-bat is its Pass B, section 3. REPAIR ALL NINE in the charter's order -- STEELMAN, REPLACE, CUT, TEE-UP -- and NEVER ABSORB as manuscript hedging. **NO NEW LOOKING.** You are not a review pass; you are a repair pass working a closed list, and section 1.2 means a finding you discover goes to docs/POST-SHIP.md, not onto the list. THE ONE PERMITTED GROWTH: if a repair reveals an adjacent S1 AT THE SITE YOU ARE REPAIRING, repair it and append it, logged with the repair that surfaced it. FOUR THINGS THAT MAKE THIS SMALLER THAN NINE SOUNDS. (1) SL-3, SL-4 and SL-5 are ONE repair repeated -- three stale version stamps, 21 / 36 / 19 commits past their own dates -- and a single written Jason ruling closes all three if he would rather own version numbering himself. (2) SL-8 and SL-7 each have a LANDED PRECEDENT IN THIS CORPUS to copy rather than invent: SL-8 is -81's IV-7 repair (cite it at the sentence that relies on it, or cut the entry), and SL-7's honest-disclosure form is already written in paper-III section 11's own section 5.3 bullet. (3) SL-1 and SL-2 are ATTRIBUTION changes, not number changes -- the arithmetic in both sentences was checked at -103 and is correct; re-point, do not recompute. (4) SL-6 must NOT be repaired by restating the number: name the command AND its locale, because `wc -w` gives 7367 under LC_ALL=C and 7527 under a UTF-8 locale on the same bytes, and a bare corrected figure just re-creates the defect for the next reader. RUN `defensive_count.py --against` ON EVERY MANUSCRIPT AND SHOW +0; SL-3's revision-history line is the one repair on this list with a real chance of raising the count, so write it as a claim about the work rather than a hedge. DONE WHEN: every ship-list entry is marked repaired with its commit, `defensive_count --against` is +0 on all three manuscripts, `pytest` is green, `--claims-all` agrees, and every guard your repairs reddened is closed IN THE SAME SESSION THAT REDDENED IT. FORBIDDEN: re-scoring anything (Pass A owns the rubric and you own the repairs -- section 1.7's split), building a new instrument, adding to the blocking set except by the one permitted growth above. YOUR SUCCESSOR PRECONDITION, and section 3.0 says you do not close until you meet it: Pass C can start iff the ship list is CLOSED, pytest is green, and no repair left implicit scope for Pass C to discover. AND READ THIS BEFORE YOU BUDGET: Pass C inherits 14 STRUCTURAL items (13 C-d fold problems, 1 C-c orphan) and Pass D inherits 81 repairs plus 8 C-f to FLAG AND NEVER FIX -- counted per type per paper in REVIEW-038 section 4. Do NOT close P7, P13g, P9 or P8."
 blockers: []
 claims:
   - id: pytest
@@ -229,6 +229,13 @@ claims:
     count_re: post-conditions: ([0-9]+) checks
     note: closes the dangling references the amendment left -- including the DoD's OWN loophole table, whose L6 row cited a section the amendment had deleted. Nothing went red and nothing could have; found by grepping for mentions of a deleted feature
 drift_flags:
+  - "A BEFORE/AFTER PAIR MUST ANCHOR **BOTH** ENDS, AND ANCHORING ONLY THE ONE THAT BURNED YOU LEAVES A GUARD THAT FIRES ON YOUR SUCCESSOR FOR DOING ITS JOB. `-102` was burned intra-session by a working-tree phrase count and anchored the BEFORE side of `wt188`'s pair to commit 73e1966 -- correctly -- while leaving the AFTER side reading the live `docs/HANDOFF.md`. Every successor is REQUIRED to rewrite that file, so the check was green for exactly ONE session and red forever after: `-103`'s handoff rewrite dropped the count 6 -> 3 and `--claims-all` went red on a check about `-102`'s own work. `wt192c` had the same shape in a second costume -- R7/R8/R10 assert the content of a completed MIGRATION of the handoff. THE TEST BEFORE REGISTERING ANY CLAIM: name the thing that could change this value for a reason unrelated to what it checks -- and DOCS/HANDOFF.MD ALWAYS CHANGES, BY DESIGN, EVERY SESSION. Both repaired at `-103`, both re-run twice byte-identical."
+  - "A FLAT DEFECT COUNTER IS NOT EVIDENCE OF DIMINISHING RETURNS UNTIL THE DEFECTS ARE SCORED, and this project spent eight sessions assuming otherwise. Sixteen passes, seventy findings, a per-pass count flat in a 2-9 band -- and the score is 53 S1 / 16 S2 / ONE S3. The S1 share by thirds is 87.5%, 61.9%, 76.0%. A flat count of SEVERE findings and a flat count of nitpicks are opposite situations and they look identical on the counter. The score costs one session and it is the only thing that separates `the reviewers are thorough` from `the artefact is still broken`."
+  - "ADJUDICATE A CHECKER'S WHOLE FLAG SET BEFORE TIGHTENING THE RULE, THEN DERIVE THE RULE FROM THE ADJUDICATION. `wt184` Rule 1's 44 flags resolved 2 TRUE / 42 FALSE, and the discriminator turned out to be GRAMMATICAL rather than a threshold: every TRUE flag is a POSSESSIVE (`section 4.4's 0.00789`) and every FALSE one is co-occurrence inside one paragraph. A rule requiring a possessive or a verb of attribution reproduces 2 of 44 and both are the true ones. Three sessions proposed narrowing this rule before anyone read its output; a rule tightened first deletes its own true positives and you never learn which."
+  - "`wc -w` IS LOCALE-DEPENDENT ON GNU COREUTILS AND THE CORPUS SHIPS A SELF-REFERENTIAL WORD COUNT. Same bytes (md5 eb56ef67162df6db0fabf50819db78f0): LC_ALL=C gives 7367, LC_ALL=C.UTF-8 gives 7527, macOS `wc -w` gives 7527, Python `str.split()` gives 7527. Paper-IV calls that number `checkable` and names no command -- so `-100`'s repair from 7,400 to 7,500 FIXED IT FOR ONE READER AND BROKE IT FOR ANOTHER. SL-6. Any self-referential measurement must name its measuring command."
+  - "FINDING IDS IN `docs/p7-passes.tsv` ARE NOT UNIQUE ACROSS THE LEDGER. Each pass restarts its own numbering, so `III-1` names three different findings (`-73`, `-83`, and `-101` which restarts at `III-5`) and `IV-1` names two (`-75`, `-81`). ALWAYS cite `<pass>/<id>`. Aggregating or de-duplicating by the bare id silently loses findings, and `-103` was the first pass to aggregate all seventy and the first to hit it."
+  - "TWO OF `-103`'S OWN VERIFICATION CHECKS WENT RED AND BOTH TIMES THE CHECK WAS WRONG, NOT THE MANUSCRIPT -- the `-102` trap landing on the session auditing it. A literal-phrase grep failed because the manuscript is HARD-WRAPPED and the phrase spans a line break; another failed because the text carries markdown emphasis inside it (`reaches **k = 0.60**`). A check pinned to a line break or to `**` is pinned to a subject that moves for reasons unrelated to what it checks. Grep the CONCEPT, or strip emphasis and joins first."
+  - "A COMMITTED SCRIPT A READER CAN FETCH IS NOT AN APPARATUS LEAK, AND COUNTING IT AS ONE WOULD HAVE PASS D DELETE THE CORPUS'S BEST FEATURE. The raw C-e sweep returned 68; the DoD section 2.5 repair clause says `or at a committed artefact the reader can actually fetch`, which a `scripts/wt###.py` named in a section Data-and-code of a paper shipping beside a public repo plainly is. Split by mechanical census: 15 HARD (session numbers, REVIEW docs, LEDGER ticket ids -- paper-II has ZERO) and 53 SOFT (fetchable but unglossed, a one-clause-at-first-use fix). REVIEW-038 section 4.1."
   - "A TEE-UP THAT NAMES THE MECHANISM TO COPY IS A CLAIM AND MUST BE RE-MEASURED BEFORE IT IS COPIED, BECAUSE A WRONG ONE IS WORSE THAN NO TEE-UP: it sends the successor looking for something that does not exist AND certifies as clean the thing it holds up as the model. `-101` wrote three times that `wt184` Rule 2 should copy `the possessive form Rule 1 already uses, which cut its own flag set from 44 to 5`. Rule 1 has NO possessive logic anywhere in the file, and its flag set was never cut to 5 -- 43 flags at `-101`'s own parent commit 74934b9 and 44 at HEAD, all forty-three unadjudicated while REVIEW-036 adjudicated Rule 2's three explicitly. What cut the count is an attribution WINDOW that fires only on markdown table rows. THE CHEAP GUARD: before acting on `X already does Y`, grep X for Y and re-run the number, in that order; and if the number is a before/after pair, reproduce BOTH ends at the commit that claimed them."
   - "A POST-CONDITION THAT ASSERTS A PRE-REPAIR STATE MUST READ THE BACKUP, NEVER THE LIVE FILE -- otherwise the check that PROVES the finding evaporates the instant the repair lands, and the patch script goes red on its own success. `wt188` asserted `section 7 says five quantities` against the live manuscript; the repair changed five to six and the check failed on the SECOND run, with the repair correctly applied. The second run is what caught it, which is the other half of `-101`'s rule: run every patch script twice AND DIFF THE STDOUT, because run two is the only run the wrap's `--claims-all` ever performs. Anchor every as-it-stood-before assertion to the .bak the script writes before its first edit, and keep a matching after-assertion on the live file."
   - "THREE CHECKS FAILED ON THEIR FIRST RUN THIS SESSION AND ALL THREE WERE WRONG ABOUT THE FILE RATHER THAN THE FILE BEING WRONG -- `-101`'s (iv), third witness, and every fix was a TIGHTER subject rather than a deleted check. (a) `wt188`'s negative control asserted the attribution window would MOVE paper-II's flag count; it does not move at all, because the window fires only on table rows and none of the eleven flagged clauses is one -- so the control was tightened into the stronger true statement, that the window is INERT on prose. (b) Two exactly-once checks counted a byte literal; the manuscript is hard-wrapped at ~100 columns and both replacements land a newline MID-PHRASE, so the fix was to count on whitespace-normalised text plus a NEGATIVE control asserting the byte-literal count misses one. (c) `wt189`'s uniqueness check counted a promise_id across the whole file, and a `#superseded` line legitimately names the NEW id in its third column -- fixed by counting among LIVE rows only. A guard that refuses and is wrong is still telling you something true about your model of the file."
@@ -276,6 +283,8 @@ drift_flags:
   - "PAPER I IS NOT IN THE DEFINITION OF DONE and its 13 promises are deliberately unchecked. `wt170`'s N27 FAILS THE RUN if a session widens `#scope` to `paper-I`. Its FOUR bare pointers (card 1217629169253037) also stand, and that card is now PARTIALLY closed -- Paper II's three are done."
   - "`wt154`'s PREDICATE BLIND SPOT unchanged, card 1217613775009402. `wt133`'s SWEEP-2 BLIND SPOT unchanged, State Machine 1217593142996092."
 parking_lot:
+  - "`wt184` FALSE-POSITIVE REDUCTION, SPEC WRITTEN AND MEASURED, DELIBERATELY NOT BUILT (DoD section 1.1 permits the repair; `-103` had no mandate). Three changes, all reductions: require an attribution token (possessive or verb) instead of paragraph co-occurrence; exclude `[A-Z]{2,}-\\d{3}` and `wealthTensor-\\d+` before harvesting numerals; extend FOREIGN to `<DOC-ID> section N.M`. Measured against a COMPLETE adjudication of all 44 flags, the proposed rule returns 2 and both are the TRUE ones. SM 1217774684736450, REVIEW-038 section 3.3."
+  - "THE C-CLASS SOFT TAIL -- 53 unglossed but fetchable pointers (`PRE-`/`REG-`/`RESULT-` codes, commit hashes, `docs/` paths, `scripts/wt###.py`). NOT a leak, a GLOSS problem: one clause at first use. Pass D owns the HARD 15; this tail can wait for Jason's own rewrite, which is where voice decisions belong. Census in REVIEW-038 section 4.1."
   - "`wt188`: sharpen `wt184` Rule 2 -- it currently accepts a quotation and a §N.M pointer CO-OCCURRING in one sentence as attribution, so all three of its paper-III flags are false positives (two are objections the paper quotes and answers, one is Bleck and Liu's phrase attributed to Bleck and Liu). The fix is a verb list (says / states / puts it / calls it / reads) or the possessive form Rule 1 already uses, which cut its own flag set from 44 to 5. Needs a NEGATIVE control in each direction."
   - "`wt192` (RENAMED at `-102`: `wt189` and `wt190` were taken by the pass-13 patch scripts): THE SCOPE-SENTENCE SWEEP. Enumerate the sections of a manuscript that report a computed figure; enumerate the sections its §Data-and-code covers; the difference is the unchecked set. This is the generalisation of BOTH `-100`'s IV-10 and `-101`'s III-6 and it is the one instrument that would have caught either without a human noticing first."
   - "Point `wt184` at paper-I. It has read paper-III only; paper-II and paper-IV are folded into the next two P7 at-bats, and paper-I is out of promise scope but not out of pointer scope."
@@ -384,297 +393,243 @@ State Machine `1217721634749933`, not yours.
 
 ## THE STATE YOU INHERIT — every line RE-RUN by `--claims-all`, not quoted
 
-🟢 `pytest` **1168 passed** · `--claims-all` RC 0 — **41 claims declared, 41 re-run un-piped, 41 AGREED**
-🟢 **NEW `wt188`** RC 0, **63 post-conditions, 20 NEGATIVE, idempotent** — the patch of record for
-   Paper II pass 13: A3′'s held-out test, A4's §3 census, the periodicity seed sweep, five edits
-🟢 **NEW `wt189`** RC 0, 19 post-conditions, 11 NEGATIVE, idempotent — 4 promise rows, 3 superseded
-🟢 **NEW `wt190`** RC 0, 10 post-conditions, 4 NEGATIVE, idempotent — the ledger append as a script
-🟢 **NEW `wt191`** RC 0, 26, 12 NEG · **NEW `wt191b`** RC 0, 11, 5 NEG — the ship-DoD wiring and the
-   freeze-sha repair, both idempotent, both DERIVING their shas from git rather than keying them
-🟢 **NEW `wt192`** RC 0, 25, 11 NEG · **NEW `wt192b`** RC 0, 12, 6 NEG · **NEW `wt192c`** RC 0, 13, 8 NEG — Jason's SECOND amendment
-   (the C-class and the ratchet), and the board criterion that carries it. Both idempotent.
-🟣 **THE DEFINITION OF DONE CHANGED — `docs/DEFINITION-OF-DONE-SHIP.md` IS THE SSOT AND IT WINS
-   OVER THIS FILE.** Jason retired the convergence criterion on 2026-08-24. `docs/POST-SHIP.md`
-   carries the freeze and already holds four deferred items. **`docs/SHIP-LIST.md` does not exist
-   yet, and creating it is your at-bat.**
-🟢 `wt184` RC 0, 28, 9 NEG · `wt185` RC 0, 19, 8 NEG · `wt186` RC 0, 11, 8 NEG · `wt187` RC 0, 6, 4 NEG
-🟢 `wt182` RC 0, 20, 6 NEG · `wt183` RC 0, **16**, 4 NEG · `wt181`/`wt170`/`wt172`/`wt173 --verify` ALL RC 0
-🟢 `wt133` · `wt148` · `wt154` · `wt156` · `wt160` · `wt163` · `wt166` · `wt169` — **ALL EIGHT RC 0**
-   `wt148` now **174 emitted / 161 adjudicated / 0 unadjudicated / 0 STALE** after `wt189`
-🟢 `verify-layout.sh` RC 0, **145 pages**, rebuilt from `4478f2571b83` — the commit carrying the repair
-🟢 redproof-layout · `redproof_wt177` 21/21 · `wt178` 17/17 · `wt179` 26/26 · `wt180` 12/12
-🟢 **defensive 0/0/3/0 outside §Limitations — paper-II moved by FIVE SITES and the delta is +0**,
-   proved with `--against`. G-COACH-3 holds on a manuscript whose baseline is **ZERO**. The 3 is paper III's.
-🟢 `regen-board.sh` RC 0 — `CHECKLIST.md` diff **EMPTY**, third consecutive session to produce that
-   empty diff deliberately: 57 CLOSED / 9 PENDING-HUMAN / ZERO OPEN
-🟢 gate v2.61, `--emit` HANDOFF OK, tree clean and pushed at `c25eaee`
-🟢 **G-AE is CLEAN this session** — 40 repo-backed, **0 unbacked**. `-101`'s one warning
-   (`com.braatz.travel-mode-rearm`) is gone; a sibling closed it. Card `1217718124672320` can be checked.
-🟡 `~/repos/claude-blackbook` carries **2 uncommitted files with a LIVE roster claim by
-   `cloud-dpDPkYUo`** — NOT yours. `lessons.py` auto-commits only its own leaf, and it did; the
-   sibling's two files are untouched. **Do not commit them.** `roster who` before you go near it.
+🟢 `pytest` 1168 passed · `--claims-all` RC 0 — 41 claims declared, 41 re-run un-piped, 41 AGREED
+🟢 **`docs/SHIP-LIST.md` EXISTS, IS CLOSED AND IS FROZEN — nine entries, six S1 and three S2, each
+   naming its repair.** That file is your at-bat. `docs/REVIEW-038-passA-retrospective-scoring.md`
+   is the evidence behind every entry.
+🟢 **NO MANUSCRIPT WAS TOUCHED THIS PASS.** `defensive` I/II/III/IV = 0/0/3/0 outside §Limitations,
+   unchanged, because Pass A may not repair. Three manuscript digests are recorded at the top of
+   `SHIP-LIST.md` so you can prove nothing moved under you.
+🟢 **NO `p7-passes.tsv` ROW WAS ADDED**, deliberately. Pass A is not an independent read and
+   claiming a seventeenth would be a false row in the one ledger built to stop false rows.
+🟢 board 66 criteria BYTE-IDENTICAL after `bash scripts/regen-board.sh` — **fourth consecutive**
+   empty diff, and correct: Pass A closed no lane.
+🟢 `wt184` RC 0 (28 post-conditions, 9 NEGATIVE), and **its 44 Rule-1 flags are now adjudicated**
+🟢 `wt188` 63/20 · `wt189` 19/11 · `wt190` 10/4 · `wt191` 26/12 · `wt191b` 11/5 · `wt192` 25/11 ·
+   `wt192b` 12/6 · `wt192c` 13/8 — all idempotent, all byte-identical on a second run
+🟢 `wt185` · `wt186` · `wt187` · `wt182` · `wt183` 16/4 · `wt181 --verify` 9 checks
+🟢 `wt133` · `wt148` · `wt154` · `wt156` · `wt160` · `wt163` · `wt166` · `wt169` — ALL EIGHT RC 0
+🟢 verify-layout RC 0, 145 pages · redproof_wt177 21/21 · wt178 17/17 · wt179 26/26 · wt180 12/12
+🟢 gate v2.61 PASS on wealth-tensor, `--emit` HANDOFF OK, tree clean and pushed
+🟢 **THE TWO ISSUES `-102` HANDED FORWARD ARE BOTH CLEAN.** G-V#3's four stale `acmeLedger` docs are
+   gone and **G-AD reports 120 ratified writers / 0 unratified** — the `cqi: weekly trend` job was
+   rerouted. SM `1217793699434587` and `1217793594411582` can be closed.
+🟡 **ONE NEW GATE WARNING, and it is not wealth-tensor's** — G-T#44, the n8n-spine crontab has
+   drifted from its vaulted snapshot. **CARDED, SM `1217795659362669`, with the reason `-103` did
+   not just fire the refresh: the fix `--commit`s the LIVE box's crontab INTO the vault, so if the
+   live side is the wrong side it destroys the signal instead of resolving it. Diff first.**
+   Do NOT let it block your wrap.
 
 ---
 
-## ▶ YOUR AT-BAT · ONE THING — **PASS A OF THE SHIP PLAN: MAKE THE END COUNTABLE**
+## ▶ YOUR AT-BAT · ONE THING — **PASS B: CLEAR THE TRUTH LIST**
 
-**READ `docs/DEFINITION-OF-DONE-SHIP.md` BEFORE ANYTHING ELSE — AND NOTE IT WAS AMENDED TWICE ON
-2026-08-24.** The second amendment (§ 2.5, § 3.0, § 4) is the one that changes what you do:
-**the end product is not a CORRECT manuscript, it is one JASON CAN REWRITE FROM**, and no session
-may stop because its number came up. Jason retired the convergence
-criterion on 2026-08-24. That document is the DoD now and **it wins over every other file except
-the charter** — including this one, including `CHECKLIST.md`'s `P7` row. Your at-bat is its
-**Pass A**, § 3.
+**Read `docs/DEFINITION-OF-DONE-SHIP.md` first — it wins over this file and over `CHECKLIST.md`;
+only `CO-AUTHOR-CHARTER.md` wins over it.** Your at-bat is its § 3, Pass B.
 
-**Why it was retired, in one paragraph, so you do not re-litigate it:** sixteen passes, zero
-zero-finding passes. Paper II's last eight reads sit flat in a 2–5 band. At `-102` one tee-up was
-retired and one was added — **net change to the backlog: zero.** A stopping rule that terminates
-only when a backlog empties, attached to a process whose backlog is stationary, has no termination
-proof. Worse, **a zero-finding pass is purchasable by reading carelessly**, so the rule spent
-sixteen sessions in a tug-of-war with the charter. The charter won every time. That is why the
-counter never fell, and it is a credit to every pass that ran.
+**Repair all nine entries in `docs/SHIP-LIST.md`**, in the charter's order — **STEELMAN → REPLACE →
+CUT → TEE-UP** — and never ABSORB as manuscript hedging. `defensive_count.py --against` must read
+**+0** on every manuscript.
 
-**YOU ARE THE ONLY PASS PERMITTED TO ADD TO THE BLOCKING SET, AND YOU MAY NOT REPAIR ANYTHING.**
-Scoring and repairing in the same hand is how a rubric gets bent around a fix that was easy.
+> **NO NEW LOOKING. You are not a review pass.** DoD § 1.2: a finding you discover goes to
+> `docs/POST-SHIP.md`, never onto the list. **The one permitted growth:** a repair that reveals an
+> adjacent S1 *at the site you are repairing* — repair it, append it, log it with the repair that
+> surfaced it.
 
-**FOUR STEPS:**
+### Four things that make nine smaller than it sounds
 
-1. **SCORE RETROSPECTIVELY.** Every finding in all sixteen `p7-passes.tsv` rows and their REVIEW
-   docs, against the **S1/S2/S3 rubric in § 2 — which is already committed and must not be edited
-   while you score** (that is loophole L5, and it is closed on purpose).
-   **S1** = the paper states something **false**. **S2** = the paper asserts something **nothing
-   supports**. **S3** = precision and taste, which **ships, disclosed**. Ambiguity resolves
-   **upward, once** — both S1 and S2 block, so the rule costs nothing and ends the argument.
-2. **ADJUDICATE `wt184`'s 44 Rule-1 flags on paper-III.** Read them **before** touching the rule:
-   `III-5` came out of that flag set, and a rule tightened before its current output is read can
-   silently delete a real finding. **Any flag ruled TRUE is an S1 by definition.** `-102`'s
-   measurement is in `REVIEW-037` § 3.1 — Rule 1 reads **co-occurrence as attribution**, has **no
-   possessive form anywhere in the file**, and its flag set was **never** cut from 44 to 5 (43 at
-   `74934b9`, 44 at HEAD, all forty-three unadjudicated). Card: SM `1217774684736450`.
-3. **TRIAGE the nine carried tee-ups** into S1/S2 (ship list) or S3/idea (`docs/POST-SHIP.md`,
-   which already exists and already holds four of them).
-4. **INVENTORY THE C-CLASS — COUNT, DO NOT REPAIR.** ⚠ **NEW, AND IT IS WHY THE DoD WAS AMENDED
-   HOURS AFTER IT WAS WRITTEN.** § 2.5 adds a **coherence** class the truth rubric could not see:
-   antithesis residue (C-a), scaffolding voice (C-b), orphans (C-c), fold problems (C-d),
-   apparatus leaks (C-e), register drift (C-f), unplaced evidence (C-g). **Every one of them is a
-   TRUE statement**, which is precisely why they all scored S3 and would have shipped. Sweep all
-   three manuscripts and **report a count per type per paper.** That count is what makes Passes C
-   and D *sized* instead of hoped-for. **A rough count beats an elegant absence of one** — you are
-   not repairing these and you are not expected to catch every instance.
-5. **EMIT `docs/SHIP-LIST.md`** — every open S1 and S2 across papers II, III and IV, numbered,
-   **each naming the repair it needs** — **then close it and freeze it.**
+1. **`SL-3`/`SL-4`/`SL-5` are one repair, three times** — stale version stamps, **21 / 36 / 19
+   commits** past their own dates. **One written Jason ruling closes all three** if he would rather
+   own version numbering himself; DoD § 2 allows an S1 to close by ruling as well as by repair.
+2. **`SL-7` and `SL-8` each have a landed precedent IN THIS CORPUS.** `SL-8` is `-81`'s `IV-7`
+   repair — cite it at the sentence that relies on it, or cut the entry. `SL-7`'s honest-disclosure
+   form is **already written** in paper-III § 11's own § 5.3 bullet. **Read the precedent before
+   inventing a form.**
+3. **`SL-1` and `SL-2` are attribution changes, not number changes.** The arithmetic in both
+   sentences was checked this session and is correct. **Re-point; do not recompute.**
+4. **`SL-6` must not be repaired by restating the number.** `wc -w` gives **7367** under `LC_ALL=C`
+   and **7527** under a UTF-8 locale, on the same bytes. Name the command *and* the locale. A bare
+   corrected figure re-creates the defect for the next reader.
 
-6. **REPORT THE SEVERITY DISTRIBUTION ACROSS ALL SIXTEEN PASSES.** *Is severity falling while the
-count is flat?* This project has been owed that measurement for eight sessions, it is the reason
-Jason ruled the way he did, and the answer belongs in `SHIP-STATEMENT.md`. **It is the most
-interesting thing this apparatus knows about itself.**
+### DONE WHEN
 
-**DONE WHEN:** `docs/SHIP-LIST.md` exists, is CLOSED, and every entry names a repair; every one of
-the 44 flags is ruled TRUE or FALSE **with its reason** and a count of each; all nine tee-ups are
-triaged; the severity distribution is reported; `pytest` green and `--claims-all` agrees.
+Every ship-list entry marked repaired with its commit · `defensive_count --against` **+0** on all
+three manuscripts · `pytest` green · `--claims-all` agrees · **every guard your repairs reddened
+closed in the same session that reddened it.**
 
-**FORBIDDEN THIS PASS:** repairing a manuscript · building a new instrument (§ 1.1 — a
-**false-positive reduction is a repair** and is allowed; **new looking is not**) · adding anything
-to the blocking set that was discovered after the freeze (it goes to POST-SHIP) · editing the
-rubric.
+### FORBIDDEN THIS PASS
 
-⚠ **YOU MAY NOT STOP BECAUSE YOUR NUMBER CAME UP, AND NEITHER MAY ANYONE AFTER YOU.** § 3.0 is a
-**ratchet, not a countdown**: *"I am `-103`, therefore I stop"* is a failure, not compliance. **Your
-pass closes when PASS B CAN START AND FINISH** — which means every ship-list entry names a repair
-specific enough to execute **without re-deriving the finding**. Ask the ratchet question at the end:
-***"what does the next pass need in hand, and have I put it there?"***
+Re-scoring anything (DoD § 5's `L7` — Pass A owns the rubric, Pass B owns the repairs, and neither
+grades its own homework) · building a new instrument · growing the blocking set except by the one
+permitted growth above.
 
-⚠ **IF THE SHIP LIST OR THE C-CLASS COUNT COMES BACK BIG, SAY SO LOUDLY — DO NOT SILENTLY EXPAND
-THE PLAN AND DO NOT QUIETLY SHRINK THE SCOPE.** Hand over the remainder and name it. One extra
-session is the **normal** cost and costs nothing but a session. Jason rules only when the ratchet
-stalls **twice on the same precondition**; a single stall is just work.
+### ⚠ YOUR SUCCESSOR PRECONDITION — you do not close until you meet it (§ 3.0)
 
-**Do NOT close P7, P13g, P9 or P8** — all PENDING-HUMAN, all Jason's.
+> **Pass C can start iff the ship list is CLOSED, `pytest` is green, and no repair left implicit
+> scope for Pass C to discover.**
+
+**AND BUDGET FOR WHAT YOU ARE FEEDING, because `-103` measured it so you would not have to guess:**
+Pass C inherits **14 structural items** (13 C-d fold problems, 1 C-c orphan). Pass D inherits **81
+repairs** — 15 hard C-e, 61 C-b, 5 C-a — **plus 8 C-f to FLAG AND NEVER FIX.** Per type per paper
+in `REVIEW-038` § 4. **Paper-III is 55 % of the coherence work by itself.**
 
 ---
 
-## WHAT `-102` DID — Paper II's thirteenth independent read
+## WHAT `-103` DID — Pass A, and the measurement eight sessions were owed
 
-**Two findings, two repairs, zero carded.** Counter **9, 2, 4, 3, 4, 5, 3, 2, 2, 3, 2** —
-**2 ties the lowest this manuscript has ever recorded** and it has still never reached zero.
-Consecutive-zero count after the pass: **0**. Full document: `docs/REVIEW-037-P7-paperII-pass13.md`,
-ledger row 16.
+**THE HEADLINE, AND IT INVERTS SIX HANDOFFS' WORTH OF ASSUMPTION.** Seventy findings across sixteen
+passes were scored against the rubric `-102` committed *before* any scoring:
 
-* **`II-44` (A5) · the paper credited Bouchaud & Mézard with two coordinates they do not model.**
-  §3.1 and §6 said they *"give the stationary Pareto exponent in closed form in all four
-  coordinates"*. In this manuscript's own defined vocabulary — Abstract, §1, §2.2 — the four
-  coordinates are **base, rate, periodicity, threshold**. Their solution is continuous-time and
-  carries neither: their four are φ_I, φ_C, f_I, f_C. **The over-credit handed §3.3 to a
-  twenty-six-year-old closed form.** STEELMAN, three sites; the third retires the paper's **third**
-  word-collision — the only one of three it never disclosed, one sentence after the disclosure of
-  the second.
-* **`II-43` (A4's second question, run on paper-II for the first time) · §7 enumerated "five
-  quantities neither command prints" and there are SIX.** §3.1's **6 × 10⁻⁶** change in Var[log *a*]
-  is a difference of two values `wt077_tail_index.py` prints. §7's own named failure mode — *"a
-  single command named for numbers it does not produce"* — one level up, in the clause written to
-  enumerate exactly this. REPLACE.
-* **TEE-UP 5 RETIRED CLEAN after five deferrals.** Both Bouchaud & Mézard quotations verify word for
-  word against arXiv `cond-mat/0002374`. **Opening the source to check the quotations is what
-  produced II-44** — the check was worth more than the thing it was written to check.
-* **A STRENGTH, MEASURED AND BANKED.** §3.3's interior minimum, at the **reported** horizon
-  *T* = 1200 across five seeds: argmin **P = 30 on five of five**, spans 0.0319–0.0426 against the
-  paper's 0.035. The claim §5 declines to defend at the third decimal **holds** at the third decimal.
-  That is the `II-34` question answered for **one** figure and one only.
-* **NO SIXTH MECHANISM.** Residue **0 of 2**, and both findings came off checks a previous pass
-  NAMED and left unrun. That looks like a mechanism. It is declined on the same grounds `-101`
-  declined a 0-of-3: **a clean number on n = 2 is the same error with a friendlier face.**
----
-
-## THE TELL, now ONE HUNDRED AND FIFTY deep
-
-**`-101`(i) · AN AXIS THAT RUNS "THE MANUSCRIPT'S OWN NAMED COMMANDS" IS BOUNDED BY THE
-MANUSCRIPT'S HONESTY ABOUT ITS OWN TOOLCHAIN.** A4 is *defined* as running what the paper names, so
-a command the paper does not name is invisible to the axis **by construction**. `-73`, `-80` and
-`-83` each ran A4 correctly on paper-III and each stopped short of §4.10. What kept them short is
-one accurate sentence: §11 opens *"Every simulation result in §A.2 and §§2–3 is produced by open
-code"* — which is a **FLOOR**, and three passes read it as a **CEILING**. **The general move, and
-it is the next A4 target on every manuscript: enumerate the sections that report a computed figure,
-enumerate the sections §Data-and-code covers, and read the difference.** On paper-III the
-difference was §4, and §4 is nine subsections long.
-
-**`-101`(ii) · A NEGATIVE CONTROL THAT FAILS ON ITS FIRST RUN IS DOING ITS JOB — AND THIS IS THE
-SECOND WITNESS IN TWO SESSIONS.** `-100` said it about a decorative assertion. `wt184` had **three**
-controls fail on their first run and every failure was a real bug, two of which would have made the
-axis worthless *while looking green*: a section number read as a numeric claim (unfixed, all 244 of
-paper-III's references become findings), a line-at-a-time reader that saw **ONE** quoted phrase in a
-hard-wrapped 2,741-line manuscript (**Rule 2 was VACUOUSLY CLEAN**), and a markdown table row read
-as one clause across six cells. **A checker that returns zero on a corpus that should have exercised
-it is a bug report about the checker, not a result about the corpus.**
-
-**`-101`(iii) · A POST-CONDITION THAT CANNOT FAIL ON A DOUBLE APPLICATION IS NOT A POST-CONDITION.**
-`wt185`'s first cut **double-applied** its inserting edit and shipped the §11 bullet **twice**,
-while **all fourteen** of its post-conditions passed — because every one asked whether a string was
-PRESENT and none asked HOW MANY TIMES. An INSERTING edit keeps its own anchor in the output, so
-*"have I run already?"* cannot be answered by looking for the anchor. Every edit now carries an
-idempotency **MARKER** and an **exactly-once** check. **Run every patch script twice before you
-believe it.**
-
-**`-101`(iv) · WHEN A GUARD REFUSES TO WRITE, CHECK WHETHER IT IS WRONG ABOUT THE FILE BEFORE YOU
-LOOSEN IT.** `wt187` asserted `text.count("NOT_COUNTED = {") == 1` and refused. The file has TWO
-matches because `RESULT_NOT_COUNTED` contains the string. The assertion was wrong about the file
-rather than the file being wrong — **which is the correct direction for a guard to fail**, and the
-fix was a tighter pattern, not a deleted check.
-
-**`-102`(i) · THE HELD-OUT TEST RETURNED A RESULT ABOUT THE TOOL, AND THAT WAS ALWAYS ONE OF THE TWO
-ACCEPTABLE OUTCOMES.** `-101` built `wt184`, pointed it at one manuscript, and set up its first
-paper-II run as a held-out test saying *either outcome is a result*. The outcome: **11 flags, 11
-false positives, 0 findings, and four defects in the instrument.** A pass that reports its own new
-axis as having found nothing — and then measures *why* — is not a wasted pass; it is the only kind of
-pass that can retire a bad instrument before three more sessions build on it.
-
-**`-102`(ii) · A TEE-UP THAT NAMES THE MECHANISM TO COPY IS A CLAIM, AND A WRONG ONE IS WORSE THAN
-NO TEE-UP.** It sends the successor hunting something that does not exist **and** certifies as clean
-the thing it holds up as the model. `-101`'s tee-up 1 was wrong in both halves — no possessive, and a
-flag set that was never cut. **Before acting on "X already does Y", grep X for Y and re-run the
-number, in that order.**
-
-**`-102`(iii) · A NOT-CHECKED ITEM CAN CARRY MORE THAN THE THING IT WAS WRITTEN FOR.** Tee-up 5 asked
-whether two quotations were verbatim. They are. But opening the source put the sentence *beside*
-them in view, and that sentence is `II-44` — a bigger finding than the one the check was written to
-find. `-99` proved a not-checked list is a stock of unspent work; `-100` proved the falsifiers are
-too; **this is the third witness, and it is the first where the unspent item paid out on something
-other than its own subject.**
-
-**`-102`(iv) · A POST-CONDITION THAT ASSERTS A PRE-REPAIR STATE MUST READ THE BACKUP.** Assert
-*"§7 says five"* against the live file and the check that proves your finding **evaporates the
-instant you fix it** — the patch script goes red on its own success, on the second run, which is the
-only run `--claims-all` ever performs. Anchor before-assertions to the `.bak`; keep a matching
-after-assertion on the live file.
-
----
-
-## TOOLING (▲ new at `-102`)
-
-| artefact | what it is | state |
+| | n | share |
 |---|---|---|
-| ▲ `scripts/wt188_paperII_p7pass13.py` | patch of record for pass 13: A3′'s held-out test on paper-II, A4's §3 census, the periodicity seed sweep, the five manuscript edits | **RC 0, 63 post-conditions, 20 NEGATIVE, idempotent** — byte-identical stdout on two consecutive runs |
-| ▲ `scripts/wt189_paperII_promises.py` | re-adjudicates the 4 promises §7's repair moved: 3 `#superseded` re-keys with evidence RE-RUN, 1 genuinely new | **RC 0, 19 post-conditions, 11 NEGATIVE, idempotent** |
-| ▲ `scripts/wt190_ledger_row_pass13.py` | the ledger append as a script, not a hand edit — seven columns, no empty cell, header untouched | **RC 0, 10 post-conditions, 4 NEGATIVE, idempotent** |
-| `scripts/wt184_pointer_correctness.py` | A3′ mechanised at `-101`. **RC 0 and its Rule 1 is broken — see the at-bat.** | RC 0, 28 post-conditions, 9 NEGATIVE |
-| `scripts/defensive_count.py --against` | G-COACH-3 mechanised. Its lexicon deliberately **excludes scope words**, so narrowing a claim is the legal repair and a scope sentence is not a hedge | paper-II 0 → 0 (+0) |
+| **S1** — the paper states something FALSE | **53** | **75.7 %** |
+| **S2** — asserts something nothing supports | 16 | 22.9 % |
+| **S3** — precision and taste | **1** | **1.4 %** |
 
-**`--claims-all` CAUGHT THREE FALSE CLAIMS AT THE WRAP AND ALL THREE WERE MINE.** They are the
-reason the leg exists and each is a different flavour of the same mistake — **an assertion pinned to
-a state the asserting session itself moves.** `wt188` counted the phrase *"possessive form"* in the
-WORKING TREE, and REVIEW-037 and this file quote it in order to correct it, so the count went 3 → 7
-and the check went red **on its own write-up**; it is now counted at `73e1966`, a commit this
-session cannot move. `wt183`'s `Q10` hard-coded `#superseded == 6 + 5` — a WHOLE-FILE constant — so
-the first later session to retire a row correctly turned somebody else's guard red; narrowed to
-wt183's own six, each named, plus a one-sided floor. And `wt172 --verify` refused `wt189`'s first
-note because it **paraphrased** the evidence command's stdout instead of quoting it — the guard was
-right, the note now quotes all three lines verbatim, and `wt189` learned to **REWRITE** a row of its
-own that is present with a different body rather than call it already-applied.
+**S1 share by thirds: 87.5 % → 61.9 % → 76.0 %. Severity never fell.** The last six passes returned
+**nineteen** S1s against the first five passes' twenty-one — on a corpus already repaired forty-five
+times. **`-102`, the sixteenth read, found two findings and both were S1.**
 
-**A SUPERSEDED PROMISE ROW MUST BE DELETED, NOT LEFT BESIDE ITS REPLACEMENT.** `wt148` reports a row
-whose sentence no longer exists verbatim as **STALE** and exits 1 — correctly, because the check it
-records no longer applies to anything. `wt189`'s first cut wrote the `#superseded` lines and kept the
-old rows; wt148 went to 0 unadjudicated and stayed **RC 1**. The convention this file already uses
-(`b9dea67210`, `5f6d5c4fb9`) is **delete the row, keep the `#superseded` line.**
+**So the flat counter was never diminishing returns.** And **the S3 tail everybody assumed was
+accumulating does not exist — one S3 in seventy.** The apparatus was never producing nitpicks.
+That is a compliment to sixteen passes, and it is exactly **why § 2.5's amendment was necessary**:
+the rubric graded truth, the axes hunted truth, the passes found truth defects at a 76 % clip, and
+**every C-class seam was invisible to all sixteen of them because every seam is a true statement.**
+
+**THE 44 FLAGS: 2 TRUE, 42 FALSE.** Both TRUE are S1, both are in paper-III § 4.9, and both are
+`III-5`'s family — a *possessive* attribution of a number to a section carrying something else.
+`§4.4's 0.00789` names a value that occurs **once in 2 750 lines, in that sentence**. The 42 FALSE
+sort into three named mechanisms and the false-positive-reduction spec is written and **measured
+against the full adjudication** — it returns 2 of 44 and both are the true ones. **Not built:
+§ 1.1.**
+
+**THE C-CLASS: 156 counted**, per type per paper. **Two results worth stating positively: C-g is
+ZERO across 23 tables — every table already carries an anchor sentence, so Pass D has none to write
+— and C-c is ONE.** Those are earned, and they are the payoff of sixteen cross-reference passes.
+
+**TWO GUARDS REPAIRED AT WRAP, and the story is better than the fix.** `--claims-all` went red on
+`wt188` and `wt192c`. **Neither manuscript had moved** — both guards read the live `docs/HANDOFF.md`
+and asserted text that `-103` was *required* to replace. `-102` had already been burned by exactly
+this shape and anchored one end of `wt188`'s before/after pair to a commit; the other end stayed on
+the working tree, so the repair lasted one session. Both ends now read a commit; 63/63 and 13/13,
+each re-run twice with byte-identical stdout.
+
+**BUG SPRAY, off the at-bat but on the path:** `lessons.py`'s leaf
+`2026-08-16-perfection-done-domains-research-papers-anything` was still prescribing **the retired
+convergence criterion** as the definition of done for research projects — the exact rule Jason
+killed for having no termination proof and for rewarding not looking. **A future Claude searching
+"definition of done" was being handed the refuted rule by the corpus that refuted it.** Curated in
+place, same id so nothing dangles, keeping the half that still holds and recording what refuted it.
 
 ---
 
-## TEE-UPS — carded work `-102` found and did NOT do, with enough context to start at its high-water mark
+## THE TELL, now ONE HUNDRED AND FIFTY-SIX deep
 
-1. **FOLDED INTO YOUR AT-BAT AS STEP 2** — `wt184` Rule 1's 44 unadjudicated paper-III flags,
-   then the rule. State Machine `1217774684736450`, with all four measured defects written
-   out. **It is no longer the whole at-bat**; Pass A is larger. Read it there, not here.
-2. **THE SCOPE-SENTENCE SWEEP as a script.** Still unbuilt, and now **three** witnesses:
-   `-100`'s IV-10, `-101`'s III-6, and `-102`'s II-43 — which is the same shape reached through
-   A4's second question rather than a missing artefact. **Enumerate the sections that report a
-   computed figure, enumerate the sections §Data-and-code covers, read the difference.** On paper-II
-   `-102` did it by hand and the difference was one number.
-3. **`wt133` sweep-3 still unbuilt** — a body proper noun with no reference entry is invisible to
-   both sweeps. Named after IV-6 at `-81`, unbuilt through **FOUR** passes. SM `1217593142996092`.
-4. **Nine uncited reference entries on Paper II** (card `1217568192511533`), **seventh** pass
-   carrying it. paper-IV 28/28, paper-III 49/49, **paper-II 7 of 16.**
-5. **The general form of `II-34`.** `-102` answered it for §3.3's periodicity figure and that figure
-   only: five seeds at *T* = 1200, argmin stable. **Seventeen of the eighteen tests are still
-   checked at *T* = 600 while every reported figure is at *T* = 1200.** Question, not finding.
-6. **`A6`, the docstring axis — PARKED, NOT SPENT.** Nineteen unasserted prose claims in
-   `tests/test_redistribution.py`, **sixth** pass. `-99` named
-   `test_periodicity_is_second_order_at_a_matched_average_rate`'s *"Verified horizon-stable at
-   T = 600 and T = 1200"* as the highest-value one — **and `-102`'s seed table is now the evidence
-   for it, still not asserted in the docstring's own terms.** Cheapest of the ten.
-7. **Paper-IV §9 item 9's census may undercount** — rule on it or build the check, don't re-notice it.
-8. **Paper-IV §7's Piketty relocation records no constraint and no lapse.** Taste, not a check.
-9. **The zakat citation gap**, flagged by Paper II's own closing note. **Fifth** pass running.
-10. **§3.1's *"4–7 %"* band.** −6.831 % is inside 7 %; it is an under-claim, not an error. **Named
-    here so it is not re-noticed a third time** — `-99` killed it once and `-102` killed it again.
+**`-103`(i) · A FLAT COUNTER IS NOT EVIDENCE UNTIL THE DEFECTS ARE SCORED.** Eight sessions read a
+flat 2–9 band as the barrel being scraped. It was 76 % S1 throughout. **A flat count of severe
+findings and a flat count of nitpicks are opposite situations that look identical on the counter**,
+and one session of scoring is the only thing that separates them.
+
+**`-103`(ii) · THE DISCRIMINATOR IN A NATURAL-LANGUAGE CHECKER IS USUALLY A GRAMMATICAL RELATION,
+NOT A THRESHOLD.** `wt184` Rule 1 over-fired 42 times out of 44 and the whole difference is the
+possessive. **Three sessions proposed narrowing the rule before anyone read its output** — and one
+of them, `-101`, described a mechanism the file did not contain. Read the flags, *then* write the
+rule.
+
+**`-103`(iii) · A SELF-REFERENTIAL MEASUREMENT MUST NAME ITS MEASURING COMMAND.** `wc -w` is
+locale-dependent: 7 367 vs 7 527 on identical bytes. **`-100`'s repair of that sentence fixed it for
+one reader and broke it for another**, which is the sharpest possible statement of why the number
+alone is not the claim.
+
+**`-103`(iv) · THE `-102` TRAP CAUGHT THE SESSION AUDITING IT, TWICE.** Two verification greps went
+red and **both times the check was wrong, not the manuscript** — one pinned to a line break in a
+hard-wrapped file, one pinned to `**` around the value. Fourth witness. **Grep the concept.**
+
+**`-103`(vi) · A GUARD THAT READS `docs/HANDOFF.md` IS GREEN FOR EXACTLY ONE SESSION.** Two claims
+went red at wrap and **neither manuscript had moved** — `wt188` and `wt192c` both asserted the
+content of the handoff, which every successor is *required* to rewrite. `-102` had already been
+burned by this intra-session and anchored the BEFORE side of `wt188`'s pair to a commit; it left the
+AFTER side on the working tree, so the fix survived one session and then fired on the pass that
+inherited it. **Sixth time in a row that a red guard was wrong about the file rather than the file
+being wrong.** Both ends now read a commit. **Before registering a claim, ask what could move this
+value for an unrelated reason — and `docs/HANDOFF.md` moves every session, by design.**
+
+**`-103`(v) · A COUNT THAT WOULD MAKE THE NEXT PASS DO THE WRONG THING MUST BE SPLIT BEFORE IT IS
+REPORTED.** The raw C-e sweep said 68 apparatus leaks. Reported raw, Pass D would have stripped the
+`scripts/wt###.py` pointers out of the § Data-and-code sections — **deleting the provenance promise
+the entire S1/S2 apparatus exists to keep.** Split by mechanical census into 15 hard and 53 soft.
+**An inventory is for sizing someone else's work, so it owes them the distinction that changes what
+they do.**
+
+---
+
+## TOOLING (▲ new at `-103`)
+
+▲ **`docs/SHIP-LIST.md`** — the frozen blocking set. Nine entries. **Find an entry by its quoted
+  text, not its line number**: Pass B's own repairs will move the numbers, and the file says so.
+▲ **`docs/REVIEW-038-passA-retrospective-scoring.md`** — the severity table, the per-pass
+  breakdown, the full 44-flag adjudication with mechanisms, and the C-class census.
+▲ **`docs/POST-SHIP.md`** — now carries the triage of seven tee-ups plus the `wt184` reduction spec.
+▲ **`wt188` and `wt192c` repaired** — both had post-conditions pinned to the live `docs/HANDOFF.md`.
+  A false-positive reduction, which § 1.1 permits explicitly. `.bak-wt103` of each is on disk and
+  the previous version is in git.
+- Everything else is unchanged from `-102`. **No instrument was built this pass** (§ 1.1).
+
+---
+
+## TEE-UPS — what `-103` found and did NOT do
+
+**All nine carried tee-ups are TRIAGED and none is carried forward as a tee-up.** Two became ship
+list entries (`SL-8`, `SL-9`); seven are in `POST-SHIP.md` with their reasons. `REVIEW-038` § 5 is
+the table. **Do not re-triage them** — that is the loop this pass existed to end.
+
+What remains genuinely open and is nobody's at-bat until the corpus ships:
+
+1. **The `wt184` false-positive reduction.** Spec written and measured; **not built**, § 1.1.
+   SM `1217774684736450`.
+2. **The C-class soft tail** — 53 unglossed but fetchable pointers. A gloss pass, not a leak.
+3. **G-T#44, the n8n-spine crontab drift.** SM `1217795659362669`. **Not this repo's**, and the
+   card says why firing the refresh blind is the wrong move.
 
 ---
 
 ## ESTATE
 
-- **Carded this session:** `wt184` Rule 1 — State Machine `1217774684736450`. **It is STEP 2
-  of Pass A, not the whole at-bat** — Jason's amendment made the at-bat larger than this card.
-- **Carried:** `docs/preregistration/RESULT-REG-005.md` line 60 (`-101`'s card) — committed result
-  document for a registered run, **State Machine**, behind the same Jason ruling as `-83`'s RESULT-001.
-- **Carried:** `com.braatz.travel-mode-rearm`, SM `1217718124672320` — **G-AE is clean this session**,
-  so this may already be done; check before re-reporting it.
+- **Carded this session:** G-T#44 crontab drift — State Machine `1217795659362669`.
+- **CLOSEABLE — verified clean at `-103`'s gate run:** SM `1217793699434587` (G-V#3 stale
+  acmeLedger docs) and `1217793594411582` (G-AD Batter's Box writer). **Both read clean.**
+- **Carried:** `docs/preregistration/RESULT-REG-005.md` line 60 (`-101`'s card) — a committed
+  result document for a registered run, **State Machine**, behind the same Jason ruling as `-83`'s
+  RESULT-001. **Not on the ship list: it is not a manuscript.**
 - **Carried:** `verify-layout.sh`'s one unreproducible false red, card `1217643242299336` — do NOT
   report P13e green from a single run; if it goes red, re-run before believing it.
+- **Lessons banked:** four global, one project-scoped, plus one **curation** of the refuted
+  convergence leaf. Three leaves corroborated under task `wt103-passA`; one promoted
+  quarantine → active.
 
 ---
 
-## JASON-SIZED, not `-103`'s
+## JASON-SIZED, not `-104`'s
 
-- **P7's convergence verdict.** Sixteen passes, and the counter has never once reached zero on any
-  manuscript. Paper II now sits at **2**, tying its own floor. The DoD asks for two consecutive
-  zeros per paper — six clean reads minimum from here. **Whether that bar is the right bar is yours.**
-- **Editing a committed registered result document** to fix a slip (RESULT-REG-005, and `-83`'s
-  RESULT-001 before it). Two queued behind the same ruling.
-- **The two-independent-readers design** — two sessions to buy one data point. Still yours to authorise.
+- **THE VERSION STAMPS (`SL-3`/`SL-4`/`SL-5`).** Pass B can bump them, and will unless you say
+  otherwise. **If you would rather own version numbering yourself, one written line closes all
+  three** and Pass B skips them.
+- **The zakat citation.** Paper-II's own note promises a primary source *"at submission."* Ruled
+  **S3** and moved to POST-SHIP because the paper discloses it and the argument does not depend on
+  it — **but posting a preprint is arguably that submission, and the call is yours, at posting.**
+- **Editing a committed registered result document** (RESULT-REG-005, and `-83`'s RESULT-001).
+  Two queued behind the same ruling.
+- **The two-independent-readers design** — two sessions to buy one data point. Still yours.
+- **P8, your own-hand rewrite**, is what Pass D is building toward. **`FIGURE-PLAN.md` is the
+  artefact it runs on** and Pass D emits it: 23 tables, zero figures, and the question is which
+  table wants to be a picture.
 
 ---
 
 ## WHICH OPEN LANE THIS WAS (the gate's CONTOUR question, answered)
 
-**P7 · corpus · PENDING-HUMAN.** `-102` ran one of the reads P7's convergence criterion counts and
-did **not** score the lane. `docs/CHECKLIST.md` regenerated **byte-identical** — 57 CLOSED /
-9 PENDING-HUMAN / ZERO OPEN — the **third consecutive** session to produce that empty diff
-deliberately rather than by accident.
+**P7 · corpus · PENDING-HUMAN.** `-103` ran Pass A of the ship plan and did **not** score the lane.
+`docs/CHECKLIST.md` regenerated **byte-identical** — 57 CLOSED / 9 PENDING-HUMAN / ZERO OPEN — the
+**fourth consecutive** session to produce that empty diff deliberately. **Pass A is on the path to
+P7's stated criterion**: zero OPEN S1 and zero OPEN S2 on a frozen `SHIP-LIST.md` cannot be measured
+until the list exists, and now it does.
