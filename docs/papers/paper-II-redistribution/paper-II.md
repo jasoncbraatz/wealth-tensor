@@ -4,7 +4,7 @@
 *Independent researcher*
 jason@braatzresearch.com
 
-**Draft — not yet submitted.** Version 0.2, 2026-08-11.
+**Draft — not yet submitted.** Version 0.3, 2026-08-24.
 
 **Declaration of interest.** The author is employed by a company building accounting software for very small businesses. This work was conducted independently, on personal time, and without company funding, data or direction.
 
@@ -14,7 +14,9 @@ jason@braatzresearch.com
 *Revision history: **v0.1** first draft, complete and reference-verified; **v0.2** the house-style
 pass — the method disclosures (pre-registration, commit-pinning, the Abandoned Approaches section,
 the public `docs/` coda) are unchanged, and the passages in which the paper graded its own conduct
-are removed. No result, number, claim or citation changed.*
+are removed. No result, number, claim or citation changed.
+**v0.3** independent review passes; results, numbers, claims and citations were corrected
+where those passes found them wrong.*
 
 ---
 
@@ -51,7 +53,8 @@ A multiplicative wealth process with a positive mean growth rate condenses. This
 pathology of any particular model; it is what multiplicative processes do. The variance of
 log-wealth grows without bound, an additive wage becomes negligible in comparison, and the
 wealth share of the top holder tends to one. The kinetic-exchange literature has established
-this repeatedly and by several routes.
+this repeatedly and by several routes (Drăgulescu and Yakovenko, 2000; Patriarca, Chakraborti and
+Kaski, 2004; Yakovenko and Rosser, 2009).
 
 The observation that motivates this paper is the contrapositive, and it is not often stated
 plainly: **every wealth distribution that is not condensed is being opposed by something.**
@@ -421,7 +424,8 @@ rising with a mean-preserving spread of the return process, which is the general
 finding that the flow levy reaches the dispersion of the multiplier and the stock levy does not. And
 their §4.1 notes that an economy whose multiplier is bounded below one has a stationary distribution
 bounded above, with no power-law tail at all — a claim this paper does not make and does not need,
-but the first one any extension of §3.1 toward tail indices would meet.
+but the first one any extension of §3.1 toward tail indices, the object Gabaix (2009) surveys,
+would meet.
 
 **What remains is narrower than the contrast, and is stated as such.** It is not that redistribution
 opposes condensation, and it is not that the two bases act differently on the shape of the
@@ -436,8 +440,9 @@ at matched compressive **budget** rather than at matched rate; and the process i
 Kesten-type recursion with an explicit per-period budget identity rather than a continuous-time
 mean-field one.
 
-The realisation result touches the public-finance literature on realisation-based versus
-mark-to-market taxation from an unfamiliar angle: not from the incentive or valuation side, but
+The realisation result touches the public-finance literature on the choice of base (Kaldor, 1955)
+and on realisation-based versus mark-to-market taxation (Auerbach, 1991; Toder and Viard, 2016;
+Saez and Zucman, 2019) from an unfamiliar angle: not from the incentive or valuation side, but
 as a statement about the information available to the assessing layer. On the stock-versus-flow
 axis, the paper is silent about optimal taxation and deliberately so; it characterises reachable
 regions, not desirable ones.
@@ -544,8 +549,6 @@ article of record. Consulted 2026-08-17 / published 2011.)*
 Gabaix, X. (2009). Power laws in economics and finance. *Annual Review of Economics*, 1, 255–294.
 
 Gini, C. (1912). *Variabilità e Mutabilità*. Tipografia di P. Cuppini.
-
-Piketty, T. (2014). *Capital in the Twenty-First Century*. Harvard University Press.
 
 **Public finance: base, realisation, and mark-to-market**
 

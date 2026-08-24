@@ -105,8 +105,11 @@ REACH = {
     "0.011":  {"4.5": 1, "7": 1},
 
     # --- REG-003: the widest reach in the paper, and the reason this file exists -------
-    # α̂ = 0.408 is load-bearing in five sections at once.
-    "0.408":  {"4.10": 5, "4.4": 2, "5.4": 1, "7": 2, "9": 1},
+    # α̂ = 0.408 is load-bearing in six sections at once. §4.9's copy is the youngest:
+    # wealthTensor-104 repaired SHIP-LIST SL-1 there, where a relative clause had called
+    # the rectangle's own fastest rate (0.333) "§5.4's measured rate". The repair names
+    # §5.4's rate instead of mis-pointing at it, so the section prints α̂ once.
+    "0.408":  {"4.10": 5, "4.4": 2, "4.9": 1, "5.4": 1, "7": 2, "9": 1},
     "0.383":  {"4.4": 1, "5.4": 1, "7": 1},
     "0.432":  {"4.4": 1, "5.4": 1, "7": 1},
     # wealthTensor-41 · T3 put REG-003's registered adverse cut into §4.4 twice — once as

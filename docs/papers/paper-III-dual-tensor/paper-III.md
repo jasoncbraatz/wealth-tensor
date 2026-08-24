@@ -4,11 +4,14 @@
 *Independent researcher*
 jason@braatzresearch.com
 
-**Draft — not yet submitted.** Version 0.5, 2026-08-12.
+**Draft — not yet submitted.** Version 0.6, 2026-08-24.
 
 **Declaration of interest.** The author is employed by a company building accounting software for very small businesses. This work was conducted independently, on personal time, and without company funding, data or direction.
 
 **Use of AI assistance.** Anthropic Claude Opus 5, at high reasoning effort, was used throughout as a research and drafting assistant: literature retrieval, adversarial review, code review and prose drafting. All claims, results and final text are the author's, and every computational result is produced by committed code in the repository named in §11.
+
+*Revision note: **v0.6**, this draft — independent review passes; results, numbers, claims and
+citations were corrected where those passes found them wrong.*
 
 ---
 
@@ -979,8 +982,8 @@ ASC 350-30-50 disclosure actually spans it reaches **43.9%**, at the three-year 
 those routinely carries. The mechanism is visible in the transform: zᵃ with z > 1 weights the tail,
 and the tail is what a constant hazard gets wrong. This is not an artefact of approaching a
 singularity — the constant-hazard form's pole sits at 0.435 per year, a 2.3-year life, outside the
-rectangle whose fastest rate is 0.333, which is §5.4's measured rate arriving from the other
-direction.
+rectangle, whose own fastest disclosed rate is 0.333 — and above §5.4's measured peak-to-charge
+recognition rate of 0.408 per year as well.
 
 **An effective rate exists and it is not a constant.** Writing α_eff(δ) = δ Π(z)/(Π(z) − 1) returns
 the published form verbatim, R = (1 − φ)δ/(α_eff − δ). But α_eff runs from **0.437** per year at a
@@ -997,8 +1000,8 @@ cross-section of asset lives misstates one end of it.
 channels in advance and they oppose: a lower R₂ lowers K and pushes the crossing down, a flatter
 transform pushes it up. They very nearly cancel — the shape moves δ₃\* by **0.13%**, from 0.00755
 to 0.00754, and goodwill's tabulated rate stays a factor of 3.8 inside it. The *level* moves it by
-4.3%, from §4.4's 0.00789 at the calibration to 0.00755 at the measured rate, and moves something
-else besides, which §4.4's tier table now states.
+4.3%, from 0.00789 at the calibration — §4.4's closed form evaluated there — to 0.00755 at the
+measured rate, and moves something else besides, which §4.4's tier table now states.
 
 **One thing the shape does not do is break the exchange.** An age-dependent world sits 5 × 10⁻⁴
 from its own constant-hazard match in the reported series — four orders of magnitude below the
@@ -1967,8 +1970,9 @@ and are claimed as nothing more than that.
 
 ## 11 · Data and code availability
 
-Every simulation result in §A.2 and §§2–3 is produced by open code. The severe test in §5 uses only
-public data.
+Every simulation result in §A.2, §§2–3 and §4 is produced by open code, and the bullets below
+name the command that prints it. Where a figure is printed by no command here, the bullet says
+so. The severe test in §5 uses only public data.
 
 - **Repository:** `https://github.com/jasoncbraatz/wealth-tensor` (public)
 - **Modules:** `src/wealth_tensor/lag.py` · `src/wealth_tensor/lambda_sensitivity.py` ·
@@ -1981,6 +1985,33 @@ public data.
   and this bullet said "three tables" of a command that printed four.
   §2 states the model and reports no simulation result.
 - **Regenerate §A.2.3:** `python3 scripts/wt002_lambda_report.py`
+- **Regenerate §4.2:** `python3 scripts/wt084_identification_closed_form.py` — the two coefficient
+  equations, the mirror agreeing to **2 × 10⁻¹⁶** where the rival map fails by fourteen orders of
+  magnitude, and §4.2's one-parameter family: the factor of **1.67** in the unobserved physical
+  scale, the implied φ at each assumed scale, and the **51%** opening gap the φ = 0 end requires.
+  The **31.7%** share is printed by no command here: it is that same family restricted to opening
+  gaps within ten per cent, and the restriction is applied in §4.2's prose rather than in the script.
+- **Regenerate §4.4 and §4.5:** `python3 scripts/wt083_tier_ladder_antialignment.py` prints §4.4's
+  four-tier ladder at the calibration — φ, δ, (1 − φ)δ and **R** both simulated and in closed form —
+  with both Kendall τ and the log-decomposition §4.4 reads the step direction from. `python3
+  scripts/wt088_disclosed_ladder.py` prints §4.4's crossing rate **δ₃\* = 0.007895**, the asserted
+  rectangle's admissible shares, and §4.5's ladder statistics under both draws — the lag ordering
+  and the magnitude measure, with the durability ordering imposed and dropped, at each ladder count
+  §4.5 quotes. The tier table's two measured-rate columns are printed by neither: they are §4.4's
+  own R = (1 − φ)δ/(α − δ) evaluated at §5.4's α̂ and at the adverse cut, over the φ and δ the first
+  columns carry.
+- **Regenerate §4.6, §4.7 and §4.8:** `python3 scripts/wt085_returns_conditioning.py` is §4.6's run:
+  returns break the root swap, and the scale continuum survives them because a return is a ratio.
+  `python3 scripts/wt086_exponent_robustness.py` re-fits §4.7's two exponents across nine regimes,
+  which is why §4.7 quotes neither as a constant of the problem. `python3
+  scripts/wt087_goodwill_gradient.py` prints §4.7's δ-sweep at a fixed root gap — the volatility
+  exponent from **−0.386** at a property-like rate to **+0.163** at a goodwill-like one — and §4.8's
+  arithmetic, the level moving by **6.81×** as (α − δ)^−0.700.
+- **Regenerate §4.9:** `python3 scripts/wt090_age_dependent_alpha.py` prints the constant-hazard
+  pole at **0.435** per year, the overstatement column across the disclosed lives — **0.55%** at a
+  forty-year life to **43.87%** at a three-year one — α_eff across that same rectangle, and δ₃\* at
+  both shapes, **0.00755** published and **0.00754** measured, beside the **0.00789** §4.4's closed
+  form returns at the calibration.
 - **Regenerate §4.10:** `python3 scripts/wt091_lag_shape_identifiability.py` — ladders I, P,
   W, S and N exactly as registered in
   `docs/preregistration/REG-005-p3-lag-shape-identifiability.md`, committed at **6f0e7be**
