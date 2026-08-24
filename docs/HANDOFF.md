@@ -264,7 +264,7 @@ parking_lot:
   - "Patch `wt154`'s D1 to score an exit-code predicate as a read, with a POSITIVE and a NEGATIVE, and disclose how far the count moves. Card 1217613775009402."
   - "Audit every other token matcher in `scripts/` for the \\b-inside-a-hyphenated-compound bug `wt163` surfaced."
   - "roster-brake's exit #1 cannot help when the paths you touched ARE the whole dirty tree; `ROSTER_BRAKE_ACK=N` is the answer and is ranked second. State Machine 1217596263441666."
-definition_of_done: "Three preprints (II, III, IV) each at ready-to-submit per ADR-001 clauses, every number regenerated from committed scripts, convergence reached (two consecutive zero-finding review passes per paper), Jason's own-hand pass complete — then the batch declared, once."
+definition_of_done: "SEE docs/DEFINITION-OF-DONE-SHIP.md — IT IS THE SSOT AND IT WINS OVER THIS LINE. Three preprints (II, III, IV) each at ready-to-submit per ADR-001 clauses, every number regenerated from committed scripts, ZERO OPEN S1 AND ZERO OPEN S2 on the FROZEN docs/SHIP-LIST.md (the convergence clause — two consecutive zero-finding passes per paper — was RETIRED by Jason at -102 after sixteen passes produced zero zeros; it had no termination proof and it rewarded not looking), docs/SHIP-STATEMENT.md written, Jason's own-hand pass complete — then the batch declared, once. HARD STOP: if the ship list is not clear by the end of -106, the work stops and Jason rules on shipping with the remainder disclosed."
 # wealth-tensor — HANDOFF
 **ORIENT: read `docs/CO-AUTHOR-CHARTER.md` first. THE CHARTER WINS over anything in this file.**
 *Stamped by `scripts/handoff_gate.py --stamp`. If `gh_sha` above is not `HEAD`, this file was
