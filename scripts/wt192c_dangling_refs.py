@@ -87,13 +87,22 @@ if h != H.read_text():
 h = H.read_text()
 chk("R6 the ESTATE card no longer claims to BE the at-bat",
     "That is the at-bat." not in h)
-chk("R7 the ESTATE card says what it actually is now", "It is STEP 2\n  of Pass A" in h)
-chk("R8 tee-up 1 points at the at-bat instead of impersonating it",
-    "FOLDED INTO YOUR AT-BAT AS STEP 2" in h)
+# wealthTensor-103: R7, R8 and R10 assert the CONTENT OF docs/HANDOFF.md, which every successor
+# session is REQUIRED to rewrite -- so this migration's post-conditions were green for exactly one
+# session and red forever after. They are records of a COMPLETED migration, not live guards, so they
+# now read the commit the migration landed in. R6, R9 and R11 stay pointed at the LIVE file, because
+# those three are durable negatives that a future handoff really could violate.
+import subprocess as _sp
+_p = _sp.run(["git", "-C", str(REPO), "show", "7b5e114:docs/HANDOFF.md"],
+             capture_output=True, text=True)
+H102 = _p.stdout if _p.returncode == 0 else ""
+chk("R7 the ESTATE card said what it actually was, at 7b5e114", "It is STEP 2\n  of Pass A" in H102)
+chk("R8 tee-up 1 pointed at the at-bat instead of impersonating it, at 7b5e114",
+    "FOLDED INTO YOUR AT-BAT AS STEP 2" in H102)
 chk("R9 NEGATIVE: the wt184 card gid still resolves in both places",
     h.count("1217774684736450") >= 2, True)
-chk("R10 NEGATIVE: the handoff still names Pass A as the at-bat",
-    "PASS A of the ship plan" in h or "PASS A OF THE SHIP PLAN" in h, True)
+chk("R10 NEGATIVE: at 7b5e114 the handoff named Pass A as the at-bat",
+    "PASS A of the ship plan" in H102 or "PASS A OF THE SHIP PLAN" in H102, True)
 chk("R11 NEGATIVE: no doc still promises an automatic stop at a session number",
     "hard stop at `-106`" not in d and "hard stop at -106" not in h.replace(
         "wt191 had written \"a hard stop at -106\"", ""), True)

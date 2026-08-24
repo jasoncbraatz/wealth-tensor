@@ -171,9 +171,22 @@ for f in ('docs/REVIEW-036-P7-paperIII-pass4.md', 'docs/HANDOFF.md'):
     tee += out.count('possessive form')
 chk("at %s the claim 'the possessive form Rule 1 already uses' is written 3 times (%d)"
     % (PARENT, tee), tee == 3)
-chk("and it is written MORE times in the working tree now, because this pass quotes it to correct it",
-    sum((REPO / f).read_text().count('possessive form')
-        for f in ('docs/REVIEW-036-P7-paperIII-pass4.md', 'docs/HANDOFF.md')) > tee, negative=True)
+# wealthTensor-103: THE AFTER SIDE WAS STILL FLOATING. -102 anchored the BEFORE side to a commit
+# (above) and left this half reading the LIVE working tree -- including docs/HANDOFF.md, which every
+# successor session is REQUIRED to rewrite. It was green for exactly one session and red forever
+# after: -103 replaced the handoff body and the count fell 6 -> 3, failing a check about -102's work.
+# A BEFORE/AFTER PAIR MUST ANCHOR **BOTH** ENDS; anchoring only the one you were burned by leaves a
+# guard that fires on your successor for doing its job. Both ends now read a commit.
+AFTER = '7b5e114'
+after = 0
+for f in ('docs/REVIEW-036-P7-paperIII-pass4.md', 'docs/HANDOFF.md'):
+    rc, out, _ = sh('git show %s:%s' % (AFTER, f))
+    if rc != 0:
+        FAILED.append('cannot read %s at %s' % (f, AFTER))
+        continue
+    after += out.count('possessive form')
+chk("and at %s it is written MORE times (%d), because that pass quotes it to correct it"
+    % (AFTER, after), after > tee, negative=True)
 
 print("== E3 · wt184 mis-buckets an author-attributed foreign pointer ==")
 chk("paper-II: wt184 reports exactly 1 unresolved", st2['unresolved'] == 1)
