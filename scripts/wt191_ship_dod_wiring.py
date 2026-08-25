@@ -55,8 +55,16 @@ chk("C5 NEGATIVE: every criterion row OTHER than P7 is byte-identical",
     all(a == b for a, b in zip(orig.split("\n"), t.split("\n")) if not a.startswith("P7\t")), True)
 chk("C5b NEGATIVE: and the file still has the same number of rows",
     len(orig.split("\n")) == len(t.split("\n")), True)
-chk("C6 P7 is still manual: (PENDING-HUMAN, not auto-closable)",
-    [l for l in t.split("\n") if l.startswith("P7\t")][0].split("\t")[3].startswith("manual:"))
+# -106: WIDENED FROM A STATUS TO A WIRING CLAIM. This asserted "P7 is still manual:", which is
+# true only while the four-pass plan is running -- and DoD section 3, Pass D, item 5 is "close
+# P7". What C6 was always about is that P7's check answers to the DoD and not to the retired
+# convergence clause, which holds on both sides of the ship: manual: while the plan runs, and a
+# cmd: over the DoD's own ship conditions once it has.
+_p7 = [l for l in t.split("\n") if l.startswith("P7\t")][0].split("\t")[3]
+chk("C6 P7's check is wired to the DoD, not to the retired convergence clause",
+    ("DEFINITION-OF-DONE-SHIP" in _p7) and
+    (_p7.startswith("manual:") or
+     (_p7.startswith("cmd:") and "SHIP-LIST.md" in _p7 and "FIGURE-PLAN.md" in _p7)))
 
 # ---------- 2 · HANDOFF definition_of_done ----------
 H = REPO / "docs/HANDOFF.md"

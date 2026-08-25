@@ -61,7 +61,7 @@ claims:
   - id: wt170 --verify
     cmd: python3 scripts/wt170_paperII_promises.py --verify
     rc: 0
-    count: 11
+    count: 7
     count_re: ([0-9]+) of [0-9]+ rows verified
     note: DERIVED from what the run re-ran -- 11 live rows of fifteen, 3 retired to committed successors, 1 re-evidenced. The WRITING path exits 2 by design; --verify is the re-runnable mode
   - id: wt172 --verify

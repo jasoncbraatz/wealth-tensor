@@ -35,7 +35,12 @@ for i, l in enumerate(lines):
         c[3] = c[3].replace(
             "three named passes, and a hard stop at -106.",
             "and four named passes.")
-        if ADD.strip() not in c[3]:
+        # -106: DO NOT RE-APPEND ONCE P7 HAS SHIPPED. This block appended ADD whenever it was
+        # absent from the cell -- and after Pass D closed P7 the cell is a shell command, so the
+        # first --claims-all after the closure appended 900 words of prose onto the end of it.
+        # A patch script must recognise a legitimately-changed successor state, which is the
+        # LANDED-marker rule -105 established for wt182. The marker here is the cmd: prefix.
+        if ADD.strip() not in c[3] and not c[3].startswith("cmd:"):
             c[3] = c[3] + ADD
         lines[i] = "\t".join(c)
 new = "\n".join(lines)
@@ -57,7 +62,10 @@ chk("B8 NEGATIVE: every non-P7 row is byte-identical",
     all(a == b for a, b in zip(orig.split("\n"), t.split("\n")) if not a.startswith("P7\t")), True)
 chk("B9 NEGATIVE: the file still has the same number of rows",
     len(orig.split("\n")) == len(t.split("\n")), True)
-chk("B10 P7 is still manual/PENDING-HUMAN", row.split("\t")[3].startswith("manual:"))
+# -106: same widening as wt191's C6, and for the same reason.
+chk("B10 P7's check answers to the DoD -- manual while the plan runs, cmd once it has shipped",
+    row.split("\t")[3].startswith("manual:") or
+    (row.split("\t")[3].startswith("cmd:") and "SHIP-LIST.md" in row))
 chk("B11 NEGATIVE: the note records that the amendment RAISED the bar",
     "NOT A CORRECT MANUSCRIPT" in row, True)
 print("\n post-conditions: %d checks, %d NEGATIVE" % (12, NEG))
