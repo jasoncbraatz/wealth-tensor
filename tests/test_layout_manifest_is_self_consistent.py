@@ -82,8 +82,15 @@ def test_it_needs_no_toolchain_and_is_cheap_enough_to_always_run() -> None:
     # that moved it, alongside the handoff's verify-layout claim. 145 -> 147 at
     # wealthTensor-104 (Pass B), 147 -> 148 at wealthTensor-105 (Pass C's 24 structural
     # repairs), 148 -> 149 in the same session when its own verification pass repaired
-    # ten defects in those repairs. The fonts and manuscripts should not drift quietly.
-    assert (report["pages"], report["fonts"], report["manuscripts"]) == (149, 16, 4)
+    # ten defects in those repairs, and 149 -> 144 at wealthTensor-106 (Pass D's 149 C-class
+    # repairs). PASS D IS THE FIRST PASS TO MOVE THIS NUMBER DOWN, and that is the expected
+    # direction for a coherence pass: nothing was added, and the corpus lost five pages of
+    # scaffolding -- a 556-word session log at the foot of paper-III's references, fifteen
+    # hard apparatus leaks, and a hundred and thirty clauses of process narration. 144 -> 145
+    # in the same session when the section 4.4 known-limitations note was added to each paper,
+    # which is the only prose Pass D ADDED and the only page it put back.
+    # The fonts and manuscripts should not drift quietly.
+    assert (report["pages"], report["fonts"], report["manuscripts"]) == (145, 16, 4)
 
 
 def test_every_declared_failure_has_been_seen_red() -> None:
