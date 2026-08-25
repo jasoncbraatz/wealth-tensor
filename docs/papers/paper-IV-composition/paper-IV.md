@@ -718,6 +718,15 @@ as an SMD result, which is this paper's own claim.
 convergence, which is **Paper II's** claim and not this one's — this paper reports no Gini — and it
 is named here because §3's sovereign scale rests on the result it guards.
 
+**Known limitations of this review.** This paper contributes one measurement of its own, and it
+is pre-registered, run against a floor and a ceiling fixed in the same run, and replicated on the
+live graph a day later; §6 states both truncations and what each costs. Everything else here is
+cited from Papers II and III, so it inherits their checks and no more — a reader who rejects either
+should reject the corresponding link. The joins between the three scales, the cross-paper
+references and the relocation claims of §7 were checked by reading rather than by any instrument.
+What was not checked at all: three of the four absences this paper asserts, which §9's ninth
+limitation names one by one and declines to defend on the footing §6 was built to escape.
+
 The repository's `docs/` directory is deliberately public and is the project's working notebook,
 including the pre-registration whose prediction failed and the result document recording that a
 fourth paper died to its own referees.

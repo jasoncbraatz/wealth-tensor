@@ -2108,6 +2108,16 @@ registration cannot be amended by stealth. Companion modules in this programme c
 `test_a_flat_gini_does_not_mean_a_bounded_one`, both of which exist solely to make overclaiming
 fail loudly.
 
+**Known limitations of this review.** The model results are checked mechanically — the closed
+forms against simulation, the exchange against its mirror, the invariances against a numeraire
+sweep, and all of it against a test suite that fails if a registered constant is edited. The
+empirical results rest on one pull of a live endpoint, committed rather than re-fetched, and §11
+says plainly that nothing here re-derives §5.3's figures from committed data. The reference list,
+the cross-references and the section pointers were checked by repeated independent reads rather
+than by any instrument, and the per-entry marks record how far each verification reached. What was
+not checked at all: whether attrition differs systematically by tier, which §11's drop accounting
+cannot answer and which is the one selection channel capable of manufacturing the reported null.
+
 The repository's `docs/` directory is public and holds the registrations, the run logs, the failed
 result, the reasoning that led to the stopping rule, and an internal adversarial referee report on
 this draft with the author's responses.
