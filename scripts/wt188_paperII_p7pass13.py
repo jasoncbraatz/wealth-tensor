@@ -328,6 +328,16 @@ EDITS = [
      "values `wt030_report.py` prints; §3.4's 0.039 top-decile margin, the distance from that\n  command's printed 0.861 to the 0.90 threshold above; and §3.1's 6 × 10⁻⁶ change in\n  Var[log *a*], the difference of two values `wt077_tail_index.py` prints."),
 ]
 
+# LANDED (wealthTensor-106).  A later pass may legitimately REPLACE the text this repair
+# left behind, and then neither the anchor nor the replacement is present and the script
+# refuses on its own success.  A LANDED marker is the DISTINCTIVE CLAIM the site carries
+# after that later repair, so `applied` and `passes` cannot disagree.  II-44b's §6
+# restatement was cut to a pointer by Pass D as a C-b duplication (REVIEW-039 § 7 names it),
+# leaving the full credit at §3.1 where II-44a repaired it.
+LANDED = {
+    "II-44b": "are prior to the stock-versus-flow ranking used there.",
+}
+
 print("== E6 · the manuscript edits ==")
 before = P2.read_text()
 print("     paper-II sha256 before: %s" % hashlib.sha256(before.encode()).hexdigest()[:16])
@@ -338,7 +348,8 @@ for tag, old, new in EDITS:
     if n_old == 1 and n_new == 0:
         after = after.replace(old, new, 1)
         applied.append(tag)
-    elif n_old == 0 and n_new == 1:
+    elif n_old == 0 and (n_new == 1 or
+                         (tag in LANDED and after.count(LANDED[tag]) == 1)):
         pass                                   # already landed; idempotent
     else:
         print("     REFUSED %s: anchor count old=%d new=%d" % (tag, n_old, n_new))
@@ -376,12 +387,24 @@ if '--apply' in sys.argv or after == before:
     # INSIDE the phrase, so a byte-literal count reads 1 where the prose reads 2.  The fix
     # is a TIGHTER check -- count on whitespace-normalised text -- not a deleted one.
     flat = re.sub(r'\s+', ' ', cur)
-    chk("'all four of their own tax parameters' occurs EXACTLY twice (whitespace-normalised)",
-        flat.count("all four of their own tax parameters") == 2)
-    chk("'a rate and a redistributed fraction for each base' occurs EXACTLY twice",
-        flat.count("a rate and a redistributed fraction for each base") == 2)
-    chk("a byte-literal count would MISS one of them (that is why this is normalised)",
-        cur.count("all four of their own tax parameters") == 1, negative=True)
+    # -106: COUNTED AND PRINTED, NOT PINNED.  Two was the number of sites that restated the
+    # credit, never the finding; Pass D cut the §6 restatement to a pointer as a C-b
+    # duplication, and a guard that pinned two would have forbidden that repair.  What II-44
+    # actually holds is that WHEREVER the credit is stated it names their own tax parameters,
+    # and that the wrong form is gone -- the NEGATIVE check below, which is unchanged.
+    n_par = flat.count("all four of their own tax parameters")
+    n_fra = flat.count("a rate and a redistributed fraction for each base")
+    print("     >> II-44 corrected credit, occurrences: 'their own tax parameters' %d, "
+          "'a rate and a redistributed fraction for each base' %d" % (n_par, n_fra))
+    chk("'all four of their own tax parameters' occurs AT LEAST once (whitespace-normalised)",
+        n_par >= 1)
+    chk("'a rate and a redistributed fraction for each base' occurs AT LEAST once",
+        n_fra >= 1)
+    # The normalisation must be shown NON-VACUOUS, and after Pass D the surviving §3.1 site
+    # wraps inside the SECOND phrase rather than the first -- so the proof moves with it.
+    chk("a byte-literal count MISSES the wrapped phrase entirely -- that is why this is "
+        "normalised",
+        cur.count("a rate and a redistributed fraction for each base") < n_fra, negative=True)
     chk("the §6 rebate sentence says 'parameter', EXACTLY once",
         cur.count("rebate fraction is a parameter in their solution") == 1)
     chk("the §6 rebate sentence no longer says 'coordinate'",

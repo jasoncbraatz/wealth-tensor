@@ -27,11 +27,26 @@ import wt148_promise_sweep as wt148
 PAPER_III = ROOT / "docs/papers/paper-III-dual-tensor/paper-III.md"
 
 
+def retired_pids() -> set:
+    """Pids the ledger has RETIRED — the promise ceased to exist because the sentence that
+    made it was deleted.  wt170 already honours `#superseded` (a reworded sentence with a
+    living heir); this is its sibling for a sentence with no heir, and it is the only reason
+    a pid in ROWS may legitimately be absent from wt148's emission."""
+    out = set()
+    for line in (ROOT / TSV).read_text(encoding="utf-8").splitlines():
+        f = line.split("\t")
+        if f and f[0] == "#retired" and len(f) >= 2:
+            out.add(f[1].strip())
+    return out
+
+
 def sentence_for(pid: str) -> str:
     """The SEVENTH column is derived from wt148's own emitter, never transcribed."""
     for e in wt148.emit(PAPER_III):
         if e["pid"] == pid:
             return e["sentence"]
+    if pid in retired_pids():
+        return None
     sys.exit("PRECONDITION FAILED: wt148 emits no promise %s for paper-III" % pid)
 
 
@@ -60,16 +75,20 @@ def main():
     lines = original.split("\n")
 
     present = {l.split("\t")[1] for l in lines if l.startswith("paper-") and l.count("\t") >= 2}
-    already = all(r[1] in present for r in ROWS)
+    # -106: a RETIRED promise leaves the ledger without leaving this script's ROWS list.
+    # Drop those rows here rather than at the write, so `already` is computed over the rows
+    # that can still exist.
+    live = [r for r in ROWS if sentence_for(r[1]) is not None]
+    already = all(r[1] in present for r in live)
 
     # IDEMPOTENT, AND STILL AUDIBLE. An early `return 0` here would make this script print
     # NOTHING a `count_re` could hold it to on every run after the first -- which is exactly
     # the run the wrap's `--claims-all` makes. So the already-applied path re-derives the rows,
     # checks them against the file on disk, and prints the same summary as the writing path.
-    new_rows = ["\t".join(list(r) + [sentence_for(r[1])]) for r in ROWS]
+    new_rows = ["\t".join(list(r) + [sentence_for(r[1])]) for r in live]
     if already:
         text = original
-        print("wt186: all %d rows already present — verifying, not rewriting." % len(ROWS))
+        print("wt186: all %d rows already present — verifying, not rewriting." % len(live))
     else:
         while lines and lines[-1] == "":
             lines.pop()
