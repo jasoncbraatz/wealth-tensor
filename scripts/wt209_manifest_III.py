@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 EDITS = [
+('III-b52x', 'C-b', 'appendix, and for the reason Papers I, II and IV each state at the head of theirs: a\nresult reported without', 'appendix, and for the reason Papers I and II state at the head of theirs: a\nresult reported without'),
 ('III-b02', 'C-b', "This programme learned that the hard way, which is the second reason the paper exists. The\nframework's sharpest empirical prediction was pre-registered, tested twice", "The framework's sharpest empirical prediction was pre-registered, tested twice"),
 ('III-b03', 'C-b', '**Contributions.** Numbered, so that a reader is not obliged to construct a smaller list than the\none intended.', '**Contributions.**'),
 ('III-b04', 'C-b', "**A word about §5, since its placement is deliberate.** The failed prediction is in the body and in\nthe abstract. It is not in *Abandoned Approaches*. A pre-registered prediction that was tested and\nlost is a **result**; filing it under abandonments would be the softest available way to hide it, and\nthis paper has no claim on a reader's seriousness if it takes that route.", 'The failed prediction is in the body and in the abstract, not in *Abandoned Approaches*: a\npre-registered prediction that was tested and lost is a **result**, and §5 reports it as one.'),
@@ -20,7 +21,7 @@ EDITS = [
 ('III-b23', 'C-b', '§4.7 gives the result and its price, and the effect on this section is to narrow\nits claim rather than to qualify it: what is said here', '§4.7 gives the result and its price, and the claim of this section is\ncorrespondingly narrow: what is said here'),
 ('III-b24', 'C-b', '**That limit is narrower than it looks, and saying what it rests on is worth more than the limit\nis.** The run requires', '**That limit is narrower than it looks.** The run requires'),
 ('III-b25', 'C-b', '— and §4.4 now states what that ladder rests on.', '— and §4.4 states what that ladder rests on.'),
-('III-b29', 'C-b', 'of itself across the asserted rectangle,\nnearer an eleventh than the ninth an earlier revision of this sentence claimed —\n', 'of itself across the asserted rectangle —\n'),
+('III-b29', 'C-b', 'of itself across the asserted rectangle,\nnearer an eleventh than the ninth an earlier revision of this sentence claimed —\n', 'of itself across the asserted rectangle,\n'),
 ('III-b30', 'C-b', "and moves something else besides, which §4.4's tier table now states.", "and moves something else besides, which §4.4's tier table states."),
 ('III-b31', 'C-b', '**What §4 does and does not say about what follows.** The test reported here', '**What §4 bears on here.** The test reported here'),
 ('III-b32', 'C-b', 'measures a substitute. Read §5 as the\nrecord of what was predicted and what happened; §6 states what may be concluded from it.', 'measures a substitute. §6 states what may be\nconcluded from §5.'),
@@ -39,7 +40,6 @@ EDITS = [
 ('III-b51', 'C-b', "The row on the guards' own audit is the one this programme would defend hardest. The claim is not that the work was\ncareful.", "The row on the guards' own audit states a fact of a different kind. The claim is not that the work\nwas careful."),
 ('III-b53', 'C-b', 'Retained here in full rather than quietly replaced, because the shape of the failure is\ninformative:', 'The shape of the failure is\ninformative:'),
 ('III-b54', 'C-b', ' *The failed prediction itself is not\nhere — it is in §5, in the body, and in the abstract, because it is a result.*', ''),
-('III-b55', 'C-b', 'Faced four times across this programme and\nworth recording as a class, since each instance looked locally reasonable:', 'Four instances across this programme, each\nlocally reasonable:'),
 ('III-b56', 'C-b', '**That reply is not available to this paper, and the rest of this section retracts it.**', '**That reply is not available to this paper.**'),
 ('III-b58', 'C-b', 'and the adversarial\nreview shipped beside this paper is unanimous and correct on the point.\n\nSo the framing is not defended here', 'and that gap is real.\n\nSo the framing is not defended here'),
 ('III-b60', 'C-b', ' The first is listed first on purpose, being the one the author has the\n   strongest incentive to list last.', ''),
@@ -47,4 +47,5 @@ EDITS = [
 ('III-b62', 'C-b', "**Georgescu-Roegen is a hostile witness inside this framework's own bibliography, and the paper\nstates so.** He is", "**Georgescu-Roegen is a hostile witness inside this framework's own bibliography.** He is"),
 ('III-b63', 'C-b', 'No claim of priority over it is made here, and an earlier draft of this\nsection made one.', 'No claim of priority over it is made here.'),
 ('III-b64', 'C-b', 'An\nearlier draft of this section cited Basu as an obstacle to be scoped around. He is not the obstacle;\nhe is the part of the mechanism this programme had not noticed it was standing on.', 'Basu is not an obstacle to be scoped around; he is the part of the mechanism this construction\nstands on.'),
+('III-x01', 'S1', "The\n  remaining 38 hold a companion paper's claims and are named here only because", "The\n  remaining 38 hold the companion papers' claims and are named here only because"),
 ]

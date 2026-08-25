@@ -89,7 +89,7 @@ came from.
    prints — and the claims are held in place by the 18 tests in
    `tests/test_redistribution.py`, one of which exists specifically to make overclaiming fail
    loudly — alongside a second, in a companion module of the same suite, that does the same
-   office for the companion price-formation manuscript (§7).
+   office for the superseded price-formation manuscript (§7).
 
 **A boundary.** Everything here is positive. The claims
 are properties of a model class. Where a historical institution is mentioned it is mentioned as
@@ -461,11 +461,12 @@ simulation, save the four closed-form quantities the next bullet names and §3.4
 - **Test suite:** `python3 -m pytest tests/ -q` runs the whole repository; the **18** tests in
   `tests/test_redistribution.py` are the ones that hold this paper's claims in place, and that
   count is the one quoted in the abstract and in §1.
-- **The two tests that exist to make overclaiming fail loudly:**
+- **The two tests that make overclaiming fail loudly here — the suite holds others:**
   `test_a_flat_gini_does_not_mean_a_bounded_one`, which pins §3.4's boundedness criterion so that
   any future simplification of it fails instead of quietly re-scoring condensation as success,
   and `test_excess_demand_is_monotone_here_so_this_is_not_an_SMD_result`, which constrains this
-  programme's price-formation manuscript and sits in a companion module of the same suite,
+  programme's price-formation manuscript — that manuscript is superseded and withdrawn, and the
+  guard outlives it — in a companion module of the same suite,
   `tests/test_excess_demand.py`; it is a different companion from §3.2's work on the
   reporting layer.
 - **Commit for the results reported here:** **3b11f23** — the last commit touching

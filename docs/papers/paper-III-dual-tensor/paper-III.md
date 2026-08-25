@@ -1008,7 +1008,7 @@ recognition rate of 0.408 per year as well.
 
 **An effective rate exists and it is not a constant.** Writing α_eff(δ) = δ Π(z)/(Π(z) − 1) returns
 the published form verbatim, R = (1 − φ)δ/(α_eff − δ). But α_eff runs from **0.437** per year at a
-forty-year life to **0.476** at a three-year one — **nine per cent** of itself across the asserted rectangle —
+forty-year life to **0.476** at a three-year one — **nine per cent** of itself across the asserted rectangle,
 in the direction that a faster-decaying class behaves as though recognition were faster. Across the
 four-tier ladder it moves by six parts in a thousand, which is why the magnitudes there barely move.
 **A recalibration is therefore available and is not a repair:** any comparative static that holds
@@ -1624,7 +1624,7 @@ audit found six that could not have failed, and that they are named.
 ## 8 · Abandoned approaches
 
 *Every route below was actually taken and then abandoned. The section is placed in the body, not an
-appendix, and for the reason Papers I, II and IV each state at the head of theirs: a
+appendix, and for the reason Papers I and II state at the head of theirs: a
 result reported without the routes that failed is a result the reader cannot calibrate —
 they are shown the one path that worked and left to assume it was the only one
 considered.*
@@ -1674,8 +1674,8 @@ jointly; slow-decaying assets are not, and for those an independent δ is the on
 What that independent determination should be is deliberately *not* specified here — an instrument
 named in a paper before it is registered is an instrument that has escaped its registration.
 
-**Adding a free parameter to absorb an objection.** Four instances across this programme, each
-locally reasonable: introducing a scaling
+**Adding a free parameter to absorb an objection.** Faced four times across this programme and
+worth recording as a class, since each instance looked locally reasonable: introducing a scaling
 constant to rescue the dimensional argument; defining a levy's base so a companion paper's claim
 came out right; letting λ vary freely rather than in a shaped way; and, as §8.1 now concedes,
 leaning on an unmeasured φ — three refused, the fourth not. A quantity that can accommodate any
@@ -2046,7 +2046,7 @@ so. The severe test in §5 uses only public data.
   **d655501** — the state that produced every result in §A.2 and §§2–3 — that suite held **100** tests,
   of which the **62** in `tests/test_edgar.py`, `tests/test_lag.py` and
   `tests/test_lambda_sensitivity.py` are the ones that hold this paper's claims in place. The
-  remaining 38 hold a companion paper's claims and are named here only because a suite total is a
+  remaining 38 hold the companion papers' claims and are named here only because a suite total is a
   property of the repository and not of any one paper in it. Both counts are derived from the
   repository rather than asserted, and `tests/test_paper_test_counts_are_derived.py` fails if either
   drifts. The suite at the head of the repository is much larger — it grows with every registration
@@ -2345,7 +2345,7 @@ magnitude, while every currency-denominated quantity scales with it exactly line
 dimensional **Λ = η·C/E** swept in §A.2.3. The numeraire enters nothing below.*
 
 A freely-varying λ that is never pinned would forbid nothing, and a quantity that forbids nothing
-is a free parameter. So the claim is not
+is the free parameter this programme has refused three times in other costumes. So the claim is not
 that λ *varies*. It is that λ varies **in a specific parameterised shape**, and the shape is a
 prediction.
 

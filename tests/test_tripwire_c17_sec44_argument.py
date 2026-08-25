@@ -81,7 +81,14 @@ CONSTRAINT = (
 #: with PRE-002's qualifier intact; and the unregistered label came back to the site that
 #: reports 0.327, which REG-004 section 6 requires. The ARGUMENT is untouched throughout:
 #: same rectangle, same domain, same admissible shares, same runs.
-SEC_44_MASKED_SHA256 = "fd56b1fb6f521c4f1e261ff3d98a27f2ff2583af49c8ec0708055f3ec9441002"
+#: RE-PINNED AT wealthTensor-106 (Pass D). READING: CARRYING SENTENCE, and NO NUMBER MOVED
+#: -- which is why this entry is longer than its predecessors. Pass D removed one clause from
+#: the table preamble, "and both are worth having in hand before the table is read": document
+#: navigation, not a claim about the world, and the C-b shape REVIEW-039 section 6.2 hands to
+#: Pass D by name as Pass C's own residue. The rectangle, the domain, the admissible shares,
+#: the two measured columns, the crossing rate and every figure in the table are byte-identical
+#: across this edit; the masked digest moves because the mask covers numerals, not prose.
+SEC_44_MASKED_SHA256 = "faad3cb054cc5f73b61ae9f19c7fc4d6ab39420c80dff5b7a5b64f282087ec47"
 
 #: Sanity floor on the extractor, so a heading-regex change cannot silently pin "".
 SEC_44_MIN_LINES = 100

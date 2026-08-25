@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 EDITS = [
+('IV-b02x', 'C-b', 'and why the claim that firm-level panels of\n*both* are public and free, which an earlier draft made here, is not made.', 'and why no claim that firm-level panels of\n*both* are public and free is made here.'),
 ('IV-b03', 'C-b', 'Note what is deliberately *not* argued here. The parallel claim about computation', 'A parallel claim about computation'),
 ('IV-b04', 'C-b', "This is also the paper's posture toward everything it disagrees with, and §7 states it as a\nmethod rather than leaving it as a habit: the disagreement", '§7 states this as a method: the disagreement'),
 ('IV-b05', 'C-b', ' A paper claiming clean composition across scales while citing SMD as a shield would be\n   contradicting itself, and §4 exists to make sure this one does not.', ' A paper claiming clean composition across scales while citing SMD as a shield would be\n   contradicting itself.'),
@@ -34,4 +35,8 @@ EDITS = [
 ('IV-e01', 'C-e', ', and this bullet said "regenerate" until wealthTensor-82.', '.'),
 ('IV-e02', 'C-e', '; this bullet named it until\n  wealthTensor-81.', '.'),
 ('IV-e03', 'C-e', ', and the one this bullet named neither until\n  wealthTensor-81.', '.'),
+('IV-x01', 'S1', '- **P2 · Decay.** The physical component degrades whether or not the degradation is recorded.', '- **P2 · Decay.** The physical component degrades absent maintenance. No store is inert.'),
+('IV-x02', 'S1', 'and its mechanism κ is the sort of closed-form', 'and its compressive budget κ — which Paper II is\nexplicit is a budget and not a mechanism — is the sort of closed-form'),
+('IV-x03', 'S1', 'statistically indistinguishable from no levy at all.', 'leaves the wealth vector exactly unchanged, agent by agent.'),
+('IV-x04', 'S1', 'and Paper III §3.1 reports what the distance between those two rates costs. The', 'and Paper III §3.1 reports what deferring a change at those rates costs. The'),
 ]

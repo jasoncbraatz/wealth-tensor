@@ -1,29 +1,6 @@
 # -*- coding: utf-8 -*-
+_LEGEND_NEW = "***How to read this list.* The edition cited is the edition *consulted* — the copy in the author's\npossession — not the earliest printing a catalogue happens to list. Where the original's date does\nargumentative work, because the entry is a translation or because a claim about priority rests on\nit, the entry is **dual-dated** `original/consulted`. A reprint that changes no pagination is a\n*printing*, not an edition, and is not dual-dated. Where the copy read was a working paper or an\naccepted manuscript rather than the typeset article of record, the entry is dual-dated in the other\ndirection — `consulted/published`.**\n\n*Each entry carries a mark recording how far verification reached, because a bibliographic record\nand a text are different objects: a work can exist exactly as cited and still not contain the\nsentence attributed to it. Bibliographic verification was carried out on 2026-08-10, and the\ncrash-risk entries were added on 2026-08-11. Per-entry findings are in the note attached to the\nentry they describe.*\n\n**✓** — checked against a publisher page, a library-catalogue record, a Crossref record or the\nissuing body's own documentation, not recalled. **✓✎** — additionally checked against **the\nauthor's own copy**, by reading that copy's title page and colophon. The ✓✎ entries are the ones\nwhere doing so changed the citation. **✓⧗** — bibliographically verified, but the **text**\nconsulted is a pre-publication version; any quotation is attributed to the version read and may not\nappear in the article of record; three entries carry it. **⧗** *alone* — the bibliographic record\nis verified and the **text was not read**; the characterisation rests on named secondary sources,\nand the entry says so in its own note. Three entries carry it. Two entries carry **no mark at\nall**, each stating in its own note why it is unmarked, and those two are the only unmarked entries\nin the list."
 
-_LEGEND_NEW = """***How to read this list.* The edition cited is the edition *consulted* — the copy in the author's
-possession — not the earliest printing a catalogue happens to list. Where the original's date does
-argumentative work, because the entry is a translation or because a claim about priority rests on
-it, the entry is **dual-dated** `original/consulted`. A reprint that changes no pagination is a
-*printing*, not an edition, and is not dual-dated. Where the copy read was a working paper or an
-accepted manuscript rather than the typeset article of record, the entry is dual-dated in the other
-direction — `consulted/published`.**
-
-*Each entry carries a mark recording how far verification reached, because a bibliographic record
-and a text are different objects: a work can exist exactly as cited and still not contain the
-sentence attributed to it. Bibliographic verification was carried out on 2026-08-10, and the
-crash-risk entries were added on 2026-08-11. Per-entry findings are in the note attached to the
-entry they describe.*
-
-**✓** — checked against a publisher page, a library-catalogue record, a Crossref record or the
-issuing body's own documentation, not recalled. **✓✎** — additionally checked against **the
-author's own copy**, by reading that copy's title page and colophon. The ✓✎ entries are the ones
-where doing so changed the citation. **✓⧗** — bibliographically verified, but the **text**
-consulted is a pre-publication version; any quotation is attributed to the version read and may not
-appear in the article of record; three entries carry it. **⧗** *alone* — the bibliographic record
-is verified and the **text was not read**; the characterisation rests on named secondary sources,
-and the entry says so in its own note. Three entries carry it. Two entries carry **no mark at
-all**, each stating in its own note why it is unmarked, and those two are the only unmarked entries
-in the list."""
 EDITS = [
 ('IIIb-e01', 'C-e', 'for the same reason this paper ships\nwith `REVIEW-001`: an argument is easier to judge when its objections are in the room.', 'for the same reason this paper ships with an adversarial\nreferee report on itself (§11): an argument is easier to judge when its objections are in the room.'),
 ('IIIb-e02', 'C-e', ' Until wealthTensor-80 six of them were printed by none,\n  and this bullet said "three tables" of a command that printed four.', ''),
@@ -43,7 +20,6 @@ EDITS = [
 ('IIIb-b14', 'C-b', 'and the difference is exactly the kind of thing §6.2 will show this programme has previously\nglossed over at its cost.', 'and the difference is exactly the kind §6.2 is about.'),
 ('IIIb-b17', 'C-b', '**And it is a weaker leg than §A.2.3, which should be said plainly rather than left to a referee.**', "**This leg is weaker than §A.2.3's.**"),
 ('IIIb-b18', 'C-b', '(The shorter horizon is inherited from the\nverifier this figure comes from and is stated because it changes the values:', '(The shorter horizon is stated because it changes the values:'),
-('IIIb-b19', 'C-b', 'is the free parameter this programme has refused three times in other costumes. So the claim is not', 'is a free parameter. So the claim is not'),
 ('IIIb-b24', 'C-b', 'article, which earlier revisions of this entry could not obtain. Nothing is quoted from it.)*', 'article. Nothing is quoted from it.)*'),
 ('IIIb-b25', 'C-b', '**Read at\nsource** in this revision and the characterisation held:', '**Read at\nsource**, and the characterisation held:'),
 ('IIIb-b26', 'C-b', " A session with\nlibrary access should read the monograph, and Askari and Cummings's 1977 survey of the Nerlove\nliterature, before this is upgraded.", ''),

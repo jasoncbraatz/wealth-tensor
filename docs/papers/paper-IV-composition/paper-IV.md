@@ -86,8 +86,8 @@ annually as a United Nations Sustainable Development Goal indicator (7.3.1). **T
 energy table has no lapse to report.** The SDG series is a national aggregate; there is no
 counterpart giving energy
 input at the granularity the filings give claims, which is one reason §4.3 finds the composed state
-largely unmeasured rather than merely unassembled — and why the claim that firm-level panels of
-*both* are public and free, which an earlier draft made here, is not made.
+largely unmeasured rather than merely unassembled — and why no claim that firm-level panels of
+*both* are public and free is made here.
 
 A parallel claim about computation — that models of
 that era had to be analytically solvable because numerical solution was unavailable — is true and
@@ -146,7 +146,7 @@ They are named here because §3 composes them and §4 bounds them, and the argum
   component, and the two obey different laws. *(Domain, carried rather than cited because it is the
   one that bites here: units having a physical referent — silent on purely contractual objects whose
   referent is another claim.)*
-- **P2 · Decay.** The physical component degrades whether or not the degradation is recorded.
+- **P2 · Decay.** The physical component degrades absent maintenance. No store is inert.
 - **P3 · Atomism.** Measured aggregates are folds over units, and no aggregate is more fundamental
   than its constituents.
 
@@ -183,7 +183,7 @@ summed: its physical layer degrades at an effective 0.02 per period and its clai
 recognises at α = 0.05 — α being the rate at which a change already incurred but not yet
 recorded is released into the accounts, and 0.05 the model's swept calibration, which Paper III §5.4 goes on to
 measure at 0.408 per year on its registered sample and reports as low by an order of magnitude —
-and Paper III §3.1 reports what the distance between those two rates costs. The
+and Paper III §3.1 reports what deferring a change at those rates costs. The
 household scale's quantitative answer is Paper III's, read before that paper's §4 indexes the
 holding by asset class.
 
@@ -203,7 +203,7 @@ households and firms alike, and Paper II's parameter space is what happens when 
 assessed on that sum. Its central result is a composition result wearing different clothes: the
 base of a levy — stock or flow — is the question of *which component of the composed
 state the assessing layer can see*, and at zero realisation a confiscatory levy on flow is
-statistically indistinguishable from no levy at all.
+leaves the wealth vector exactly unchanged, agent by agent.
 
 **Note what this is: three instances of one question, asked at three scales.** At each step the
 same two components appear, the same question is asked of them — what does the measuring layer
@@ -494,7 +494,8 @@ tested.
 Bouchaud and Mézard, Chatterjee and Chakrabarti — has the stochastic machinery and the stationary
 distributions. What it has mostly not had is a *base*: its exchanges are of an undifferentiated
 scalar. Paper II's result is that the base is the decisive coordinate and the rate is not, which is
-a statement kinetic exchange can absorb directly, and its mechanism κ is the sort of closed-form
+a statement kinetic exchange can absorb directly, and its compressive budget κ — which Paper II is
+explicit is a budget and not a mechanism — is the sort of closed-form
 quantity that literature likes.
 
 **And on the aggregation literature specifically.** SMD is treated in §4 at length and is not
