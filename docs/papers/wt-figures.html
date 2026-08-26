@@ -1,0 +1,692 @@
+<title>Wealth Tensor Figures</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --page:#f7f6f3; --surface-1:#fcfcfb; --line:#e3e1db; --grid:#eceae4;
+  --text-primary:#0b0b0b; --text-secondary:#52514e; --text-muted:#807e79;
+  --s1:#2a78d6; --s2:#eb6834;
+  --t0:#86b6ef; --t1:#3987e5; --t2:#256abf; --t3:#104281;
+  --rule:#c9c6be; --accent:#2a78d6;
+}
+@media (prefers-color-scheme:dark){
+  :root:where(:not([data-theme="light"])){
+    --page:#131312; --surface-1:#1a1a19; --line:#33322f; --grid:#2a2a27;
+    --text-primary:#ffffff; --text-secondary:#c3c2b7; --text-muted:#8d8b82;
+    --s1:#3987e5; --s2:#d95926;
+    --t0:#cde2fb; --t1:#9ec5f4; --t2:#5598e7; --t3:#184f95;
+    --rule:#4a4945; --accent:#3987e5;
+  }
+}
+:root[data-theme="dark"]{
+  --page:#131312; --surface-1:#1a1a19; --line:#33322f; --grid:#2a2a27;
+  --text-primary:#ffffff; --text-secondary:#c3c2b7; --text-muted:#8d8b82;
+  --s1:#3987e5; --s2:#d95926;
+  --t0:#cde2fb; --t1:#9ec5f4; --t2:#5598e7; --t3:#184f95;
+  --rule:#4a4945; --accent:#3987e5;
+}
+*{box-sizing:border-box}
+body{background:var(--page);color:var(--text-primary);
+  font-family:'Source Serif 4',Georgia,'Times New Roman',serif;
+  font-size:17px;line-height:1.62;margin:0;padding:0;-webkit-font-smoothing:antialiased}
+.wrap{max-width:860px;margin:0 auto;padding:64px 28px 120px}
+header{border-bottom:1px solid var(--rule);padding-bottom:34px;margin-bottom:8px}
+h1{font-size:2.05rem;line-height:1.2;margin:0 0 .35em;font-weight:600;letter-spacing:-.012em}
+.sub{font-size:1.06rem;color:var(--text-secondary);margin:0 0 1.1em;font-style:italic}
+.meta{font-family:Inter,system-ui,sans-serif;font-size:.78rem;letter-spacing:.055em;
+  text-transform:uppercase;color:var(--text-muted);margin:0}
+.note{background:var(--surface-1);border:1px solid var(--line);border-left:3px solid var(--accent);
+  padding:18px 22px;margin:38px 0 0;font-size:.95rem;color:var(--text-secondary);border-radius:2px}
+.note strong{color:var(--text-primary)}
+figure{margin:64px 0 0;padding:0}
+.secrule{font-family:Inter,system-ui,sans-serif;font-size:.82rem;font-weight:600;letter-spacing:.11em;
+  text-transform:uppercase;color:var(--text-secondary);margin:96px 0 0;padding-bottom:12px;
+  border-bottom:2px solid var(--rule)}
+.secrule em{font-style:normal;font-weight:400;color:var(--text-muted);text-transform:none;letter-spacing:.01em;
+  font-family:'Source Serif 4',Georgia,serif;font-size:1.02rem}
+.fnum{font-family:Inter,system-ui,sans-serif;font-size:.74rem;font-weight:600;letter-spacing:.11em;
+  text-transform:uppercase;color:var(--accent);margin:0 0 .5em}
+.ftitle{font-size:1.28rem;font-weight:600;line-height:1.3;margin:0 0 .2em;letter-spacing:-.008em}
+.fclaim{font-size:1rem;color:var(--text-secondary);margin:0 0 20px;font-style:italic}
+.plot{background:var(--surface-1);border:1px solid var(--line);border-radius:3px;
+  padding:22px 20px 16px;overflow-x:auto}
+.plot svg{display:block;width:100%;height:auto;min-width:440px;overflow:visible}
+figcaption{font-size:.93rem;color:var(--text-secondary);margin-top:16px;line-height:1.58}
+figcaption b{color:var(--text-primary);font-weight:600}
+.tick text,.axlab{font-family:Inter,system-ui,sans-serif}
+.dlabel{font-family:Inter,system-ui,sans-serif;font-size:12.5px;font-weight:600}
+.legend{display:flex;gap:22px;flex-wrap:wrap;font-family:Inter,system-ui,sans-serif;
+  font-size:.8rem;color:var(--text-secondary);margin:0 0 14px;padding-left:2px}
+.legend span{display:inline-flex;align-items:center;gap:7px}
+.sw{width:15px;height:3px;border-radius:2px;display:inline-block}
+.sw.dot{width:9px;height:9px;border-radius:50%}
+details{margin-top:14px;font-family:Inter,system-ui,sans-serif;font-size:.82rem}
+summary{cursor:pointer;color:var(--text-muted);letter-spacing:.03em;padding:4px 0;
+  list-style:none;display:inline-block;border-bottom:1px dotted var(--rule)}
+summary::-webkit-details-marker{display:none}
+summary:hover{color:var(--accent)}
+table{border-collapse:collapse;width:100%;margin-top:12px;font-size:.8rem}
+th,td{text-align:right;padding:6px 10px;border-bottom:1px solid var(--line);
+  font-variant-numeric:tabular-nums}
+th:first-child,td:first-child{text-align:left}
+th{color:var(--text-muted);font-weight:500;font-size:.72rem;letter-spacing:.05em;text-transform:uppercase}
+.tip{position:fixed;pointer-events:none;background:var(--surface-1);border:1px solid var(--rule);
+  border-radius:3px;padding:8px 11px;font-family:Inter,system-ui,sans-serif;font-size:.78rem;
+  color:var(--text-primary);box-shadow:0 4px 18px rgba(0,0,0,.14);opacity:0;transition:opacity .09s;
+  z-index:50;white-space:nowrap;line-height:1.5}
+.tip.on{opacity:1}
+.tip b{font-weight:600}
+.tip .k{color:var(--text-muted);font-weight:400}
+footer{margin-top:96px;padding-top:30px;border-top:1px solid var(--rule);
+  font-family:Inter,system-ui,sans-serif;font-size:.8rem;color:var(--text-muted);line-height:1.7}
+@media (max-width:640px){.wrap{padding:40px 16px 80px}h1{font-size:1.6rem}}
+</style>
+<div class="wrap">
+
+<header>
+<h1>Wealth Tensor: the figures</h1>
+<p class="sub">Nine figures across two papers, drawn in one visual language so a decision about any one of them is a decision about all of them.</p>
+<p class="meta">Jason C. Braatz &middot; drafts v1.0 &middot; 26 August 2026</p>
+</header>
+
+<div class="note"><strong>What this page is for.</strong> These six figures carry the paper's argument
+end to end. Every one is drawn from the same palette, the same mark specs, and the same grid weight, so
+that a decision made here about <em>one</em> chart is a decision about all of them. Hover any mark for
+its value; each figure carries its own data table. Nothing here is final — the point is to have
+something specific to disagree with.</div>
+
+<h2 class="secrule">Paper III &middot; <em>Two firms file the same numbers</em></h2>
+
+<!-- ============ F1 ============ -->
+<figure>
+<p class="fnum">Figure 1 &middot; §3.2</p>
+<p class="ftitle">Two firms, one filing</p>
+<p class="fclaim">The top panel is what a reader sees. The bottom panel is what the reader is trying to learn about.</p>
+<div class="plot">
+  <div class="legend">
+    <span><i class="sw" style="background:var(--s1)"></i> (α, δ, φ) = (0.05, 0.02, 0.60)</span>
+    <span><i class="sw" style="background:var(--s2)"></i> mirror: (0.02, 0.05, 0.24)</span>
+  </div>
+  <svg id="f1" viewBox="0 0 720 420" role="img" aria-label="Reported series identical for two parameter triples; physical stock differs by a factor of 250,000"></svg>
+</div>
+<figcaption>Reported series <b>C(t)</b> (top) and physical stock <b>E(t)</b> (bottom, log scale) for a
+parameter triple and its mirror, over 400 periods. In the top panel the orange curve is drawn over the
+blue one and never separates from it: the maximum deviation anywhere on the path is <b>7 × 10⁻¹⁴</b>,
+which is double-precision arithmetic and not a modelling difference. In the bottom panel the two worlds
+end a factor of <b>250,000</b> apart. The exchange (α, δ, φ) → (δ, α, φδ/α) preserves φδ exactly, and φδ
+is all the filing contains.</figcaption>
+<details><summary>data</summary><div id="f1t"></div></details>
+</figure>
+
+<!-- ============ F2 ============ -->
+<figure>
+<p class="fnum">Figure 2 &middot; §4</p>
+<p class="ftitle">The identified set is a continuum</p>
+<p class="fclaim">A factor of 1.67 in the unobserved physical scale spans the entire unit interval of timeliness.</p>
+<div class="plot">
+  <svg id="f2" viewBox="0 0 720 300" role="img" aria-label="Timeliness phi sweeps zero to one as the assumed physical scale runs from 0.76 to 1.27, every point reproducing the same reported series"></svg>
+</div>
+<figcaption>Every point on this line reproduces <b>one fixed reported series to 2 × 10⁻¹⁶</b>. The
+reported numbers cannot distinguish a firm at φ = 0 from a firm at φ = 1; only an assumption about the
+unobserved physical scale can, and the filing does not supply one. Bounding the opening gap at ten per
+cent — a generous bound — leaves the bracketed region, still <b>31.7%</b> of the unit interval. The
+φ = 0 end requires books opening 51% above the physical asset, which is the state impairment accounting
+exists to prevent; that is the only thing in this figure that rules anything out.</figcaption>
+<details><summary>data</summary><div id="f2t"></div></details>
+</figure>
+
+<!-- ============ F3 ============ -->
+<figure>
+<p class="fnum">Figure 3 &middot; §5.2</p>
+<p class="ftitle">The design and its own observable are anti-aligned</p>
+<p class="fclaim">A confounded design returns noise. This one returns the reverse of what it ordered.</p>
+<div class="plot">
+  <div class="legend">
+    <span><i class="sw dot" style="background:var(--t0)"></i> property, plant &amp; equipment</span>
+    <span><i class="sw dot" style="background:var(--t1)"></i> finite-lived intangibles</span>
+    <span><i class="sw dot" style="background:var(--t2)"></i> indefinite-lived intangibles</span>
+    <span><i class="sw dot" style="background:var(--t3)"></i> goodwill</span>
+  </div>
+  <svg id="f3" viewBox="0 0 740 390" role="img" aria-label="Slope chart: deferral measure rises up the GAAP ladder under common decay and falls under the standards' own decay rates"></svg>
+</div>
+<figcaption>The deferral measure <b>R = (1 − φ) δ / (α − δ)</b> across the four GAAP asset classes.
+Under a common decay rate it rises monotonically up the ladder exactly as the design predicted,
+Kendall <b>τ = +1</b>. At the decay rates the standards themselves imply, it is monotone too — running
+the other way, <b>τ = −1</b>. Every line crosses. On the model's own arithmetic, the class predicted to
+defer most defers least, because it barely deteriorates and there is little to defer.</figcaption>
+<details><summary>data</summary><div id="f3t"></div></details>
+</figure>
+
+<!-- ============ F4 ============ -->
+<figure>
+<p class="fnum">Figure 4 &middot; §5.5</p>
+<p class="ftitle">The validity region, and where the GAAP ladder sits in it</p>
+<p class="fclaim">Both axes are computable before any data are collected. This is the figure to take to your own design.</p>
+<div class="plot">
+  <svg id="f4" viewBox="0 0 720 330" role="img" aria-label="Logistic failure probability against the ratio of decay leverage to design budget, crossing one half at 0.61, with the GAAP ladder at 2.58"></svg>
+</div>
+<figcaption>Probability that a timeliness-ordered cross-section <b>fails to recover its own ordering</b>,
+against the ratio of per-rung δ leverage to design budget, fitted over 4,000 draws (slope +1.58,
+se 0.081, z = +19.5; the same fit on a permuted outcome returns z = 0.23). The design reads what it
+ordered, more likely than not, only while leverage stays under about <b>three fifths</b> of budget. The
+tabulated GAAP ladder sits at <b>2.58</b>, where the failure probability is above four fifths. Budget is
+the mean per-rung Δlog(1 − φ); leverage is the mean per-rung |Δlog δ − Δlog(α − δ)|.</figcaption>
+<details><summary>data</summary><div id="f4t"></div></details>
+</figure>
+
+<!-- ============ F5 ============ -->
+<figure>
+<p class="fnum">Figure 5 &middot; §5.8</p>
+<p class="ftitle">What survives the confound, and by how much</p>
+<p class="fclaim">Lag is the more robust statistic by a factor of six — not by the margin a figure of 100% suggests.</p>
+<div class="plot">
+  <div class="legend">
+    <span><i class="sw" style="background:var(--s1)"></i> timing statistic (lag)</span>
+    <span><i class="sw" style="background:var(--s2)"></i> magnitude statistic (deferral)</span>
+  </div>
+  <svg id="f5" viewBox="0 0 720 300" role="img" aria-label="Recovery rate of the intended ordering for the timing and magnitude statistics under three decay-rate regimes"></svg>
+</div>
+<figcaption>Share of drawn ladders in which each statistic recovers the ordering the design imposed,
+under three regimes for the decay rate. <b>The middle group is the honest comparison</b> — 66.2%
+against 11.5%, with δ drawn independently across classes. The right-hand group is where the GAAP ladder
+actually sits, and it is the one that motivated the registered test. The identification result does not,
+by itself, wreck a design ordered on lag; what wrecks it is that the model's lag statistic reads a
+physical series no filing reports.</figcaption>
+<details><summary>data</summary><div id="f5t"></div></details>
+</figure>
+
+<!-- ============ F6 ============ -->
+<figure>
+<p class="fnum">Figure 6 &middot; §9.3</p>
+<p class="ftitle">The gradient that was not there</p>
+<p class="fclaim">Registered before the data were touched, replicated in a sector declared in advance, powered at 0.95–1.00, and lost.</p>
+<div class="plot">
+  <div class="legend">
+    <span><i class="sw dot" style="background:var(--t0)"></i> tier 0 · property, plant &amp; equipment</span>
+    <span><i class="sw dot" style="background:var(--t1)"></i> tier 1 · finite-lived intangibles</span>
+    <span><i class="sw dot" style="background:var(--t2)"></i> tier 2 · indefinite-lived intangibles</span>
+    <span><i class="sw dot" style="background:var(--t3)"></i> tier 3 · goodwill</span>
+  </div>
+  <svg id="f6" viewBox="0 0 720 340" role="img" aria-label="Median recognition lag by GAAP tier in two sectors, flat against a predicted rising gradient"></svg>
+</div>
+<figcaption>Median recognition lag in quarters by GAAP asset class, with interquartile range, ordered
+left to right as the registration predicted them. The dashed line is the one-quarter-per-tier gradient
+the design was powered to detect. Tiers are drawn from an ordinal ramp rather than the categorical
+palette, because they are a ladder and not four unrelated categories. Both panels are flat and both
+Jonckheere–Terpstra statistics are <b>negative</b>: the point estimates ran opposite to the prediction in
+both universes. <b>Tier 2 carries the longest median lag in both</b>, with goodwill below it — the
+ladder is not merely non-monotone, it is wrong in a specific place.</figcaption>
+<details><summary>data</summary><div id="f6t"></div></details>
+</figure>
+
+<h2 class="secrule">Paper II &middot; <em>The base caps the region, the rate moves you within it</em></h2>
+
+<!-- ============ P1 ============ -->
+<figure>
+<p class="fnum">Figure 7 &middot; paper II §3.1</p>
+<p class="ftitle">Nested frontiers, not disjoint ones</p>
+<p class="fclaim">The flow base is not weaker per unit of budget. It is stronger, and it runs out.</p>
+<div class="plot">
+  <div class="legend">
+    <span><i class="sw" style="background:var(--s1)"></i> stock base</span>
+    <span><i class="sw" style="background:var(--s2)"></i> flow base (ρ = 1)</span>
+  </div>
+  <svg id="p1" viewBox="0 0 720 330" role="img" aria-label="Stationary Gini against the compressive budget for stock and flow bases; the flow curve lies below but stops at budget 0.10"></svg>
+</div>
+<figcaption>Stationary Gini against <b>κ</b>, the share of aggregate wealth actually moved per
+assessment. Two facts sit in one picture. <b>Per unit of budget the flow base compresses more, not
+less</b> — its curve lies below the stock curve everywhere the two overlap, and at a matched κ ≈ 0.10
+it reaches 0.125 against 0.222. And <b>the flow base runs out of budget</b>: a confiscatory rate of
+1.00 buys κ = 0.103, because a levy cannot rebate a loss, so E[η⁺] caps the base. The frontiers are
+therefore <b>nested</b> — stock 0.000, flow 0.125 — and not disjoint. That nesting is what falsified
+this paper's original, stronger prediction; §3.1 says so.</figcaption>
+<details><summary>data</summary><div id="p1t"></div></details>
+</figure>
+
+<!-- ============ P2 ============ -->
+<figure>
+<p class="fnum">Figure 8 &middot; paper II §3.2</p>
+<p class="ftitle">Realisation is the crux, and its first five per cent does a third of the work</p>
+<p class="fclaim">At zero realisation, a 100% levy on flow leaves the wealth vector exactly unchanged.</p>
+<div class="plot">
+  <svg id="p2" viewBox="0 0 720 330" role="img" aria-label="Stationary Gini against the realisation share under a confiscatory flow levy, collapsing steeply from 0.994 at zero realisation"></svg>
+</div>
+<figcaption>Stationary Gini under a <b>confiscatory</b> flow levy — rate 1.00 — as the realisation
+share ρ varies. At ρ = 0 the levy is still assessed and still collected, and the wealth vector is
+<b>exactly</b> what it would have been with no levy at all, agent by agent: the base at ρ = 0 is the
+wage, the wage is identical for everyone, and a uniform assessment with a uniform per-capita rebate is
+the identity. <b>The curve's shape is the second result</b>, and it is steep where it matters: the
+first five per cent of the realisation axis covers <b>32%</b> of the reachable range, and the first
+quarter covers <b>69%</b>. A rate is an intensity; realisation is an observability, and the
+observability binds first.</figcaption>
+<details><summary>data</summary><div id="p2t"></div></details>
+</figure>
+
+<!-- ============ P3 ============ -->
+<figure>
+<p class="fnum">Figure 9 &middot; paper II §3.1</p>
+<p class="ftitle">One statistic falls for both. The other does not.</p>
+<p class="fclaim">The stock base truncates the outcome. The flow base damps the generator. Only one measure can tell.</p>
+<div class="plot">
+  <svg id="p3" viewBox="0 0 720 320" role="img" aria-label="Two panels: Gini falls under both levies, but the variance of the log growth multiplier falls only under the flow levy"></svg>
+</div>
+<figcaption>Two levies matched at the same compressive budget, κ ≈ 0.10. <i>Left:</i> the Gini falls
+under both, which is the statistic normally reported. <i>Right:</i> <b>Var[log a]</b> — the variance
+of the per-period log multiplier, a property of the process that produces <i>next</i> period's
+distribution rather than of this one — is untouched by the stock levy (0.076536 against an unlevied
+0.076542, a change of 6 × 10⁻⁶) and falls by a third under the flow levy. <b>Two panels, never two
+axes:</b> the quantities have different scales and different units, so they get different plots. An
+outcome measure records that the distribution was compressed. It does not record whether the mechanism
+producing the next one was touched.</figcaption>
+<details><summary>data</summary><div id="p3t"></div></details>
+</figure>
+
+<footer>
+<p><strong>Visual language, stated once so it can be argued with.</strong> Two categorical hues only
+(blue #2a78d6, orange #eb6834), assigned by role and never cycled; asset-class tiers use an ordinal blue
+ramp because a ladder is not four categories. One y-axis per panel, always — where two quantities have
+different scales they get two panels, never two axes. Grid and axes recessive; direct labels on
+endpoints rather than a number on every mark; a legend only where there are two or more series.
+Colorblind separation was computed rather than judged: every palette on this page passes the
+lightness-band, chroma-floor, CVD-separation, normal-vision and contrast checks in both light and dark
+mode. Dark mode is a selected set of steps, not an inverted one.</p>
+<p>All figures regenerate from committed code in <code>jasoncbraatz/wealth-tensor</code>.</p>
+</footer>
+
+</div>
+<div class="tip" id="tip"></div>
+<script>
+(function(){
+const D = {"F1":{"alpha":0.05,"delta":0.02,"phi":0.6,"alpha_m":0.02,"delta_m":0.05,"phi_m":0.24,"maxdev":7.105427357601002e-14,"t":[0,4,8,12,16,20,24,28,32,36,40,44,48,52,56,60,64,68,72,76,80,84,88,92,96,100,104,108,112,116,120,124,128,132,136,140,144,148,152,156,160,164,168,172,176,180,184,188,192,196,200,204,208,212,216,220,224,228,232,236,240,244,248,252,256,260,264,268,272,276,280,284,288,292,296,300,304,308,312,316,320,324,328,332,336,340,344,348,352,356,360,364,368,372,376,380,384,388,392,396,400],"C":[100.0,95.113134,90.072105,84.987849,79.944333,75.004052,70.212469,65.601599,61.192892,56.999551,53.028394,49.281344,45.756618,42.449675,39.353969,36.461537,33.763472,31.250283,28.912177,26.739275,24.721778,22.850084,21.114882,19.507209,18.018498,16.640596,15.365786,14.186782,13.096733,12.089212,11.158199,10.298072,9.503586,8.769856,8.092334,7.466798,6.889326,6.356277,5.864279,5.410207,4.991166,4.604477,4.247662,3.918429,3.614658,3.334391,3.075817,2.837265,2.617189,2.414164,2.226872,2.054096,1.894715,1.747692,1.61207,1.486966,1.371567,1.265119,1.166929,1.076358,0.992814,0.915753,0.844672,0.779107,0.718631,0.662848,0.611394,0.563934,0.520158,0.47978,0.442536,0.408183,0.376496,0.347269,0.320311,0.295445,0.27251,0.251355,0.231842,0.213844,0.197243,0.181931,0.167808,0.154781,0.142765,0.131682,0.121459,0.11203,0.103333,0.095311,0.087912,0.081087,0.074792,0.068986,0.063631,0.058691,0.054135,0.049932,0.046056,0.04248,0.039183],"Cm":[100.0,95.113134,90.072105,84.987849,79.944333,75.004052,70.212469,65.601599,61.192892,56.999551,53.028394,49.281344,45.756618,42.449675,39.353969,36.461537,33.763472,31.250283,28.912177,26.739275,24.721778,22.850084,21.114882,19.507209,18.018498,16.640596,15.365786,14.186782,13.096733,12.089212,11.158199,10.298072,9.503586,8.769856,8.092334,7.466798,6.889326,6.356277,5.864279,5.410207,4.991166,4.604477,4.247662,3.918429,3.614658,3.334391,3.075817,2.837265,2.617189,2.414164,2.226872,2.054096,1.894715,1.747692,1.61207,1.486966,1.371567,1.265119,1.166929,1.076358,0.992814,0.915753,0.844672,0.779107,0.718631,0.662848,0.611394,0.563934,0.520158,0.47978,0.442536,0.408183,0.376496,0.347269,0.320311,0.295445,0.27251,0.251355,0.231842,0.213844,0.197243,0.181931,0.167808,0.154781,0.142765,0.131682,0.121459,0.11203,0.103333,0.095311,0.087912,0.081087,0.074792,0.068986,0.063631,0.058691,0.054135,0.049932,0.046056,0.04248,0.039183],"E":[100.0,92.2368,85.0763,78.4717,72.3798,66.7608,61.578,56.7976,52.3883,48.3213,44.57,41.11,37.9185,34.9749,32.2597,29.7553,27.4454,25.3147,23.3495,21.5368,19.8649,18.3227,16.9003,15.5883,14.3782,13.262,12.2324,11.2828,10.4069,9.59897,8.85379,8.16645,7.53247,6.94771,6.40835,5.91086,5.45199,5.02874,4.63835,4.27827,3.94614,3.63979,3.35723,3.0966,2.8562,2.63447,2.42995,2.24131,2.06731,1.90682,1.75879,1.62226,1.49632,1.38016,1.27301,1.17419,1.08303,0.998953,0.921403,0.849873,0.783895,0.72304,0.666909,0.615136,0.567382,0.523335,0.482707,0.445234,0.41067,0.378789,0.349383,0.322259,0.297242,0.274166,0.252882,0.233251,0.215143,0.198441,0.183036,0.168826,0.15572,0.143631,0.132481,0.122196,0.11271,0.10396,0.0958893,0.0884452,0.0815791,0.0752459,0.0694044,0.0640164,0.0590467,0.0544628,0.0502348,0.046335,0.0427379,0.0394201,0.0363598,0.0335371,0.0309336],"Em":[100.0,81.4506,66.342,54.036,44.0127,35.8486,29.1989,23.7827,19.3711,15.7779,12.8512,10.4674,8.52576,6.94428,5.65616,4.60698,3.75241,3.05636,2.48943,2.02765,1.65154,1.34519,1.09566,0.892425,0.726886,0.592053,0.482231,0.39278,0.319922,0.260578,0.212243,0.172873,0.140806,0.114687,0.0934136,0.076086,0.0619725,0.050477,0.0411138,0.0334875,0.0272758,0.0222163,0.0180953,0.0147387,0.0120048,0.00977798,0.00796422,0.00648691,0.00528363,0.00430355,0.00350527,0.00285506,0.00232547,0.00189411,0.00154276,0.00125659,0.0010235,0.000833647,0.00067901,0.000553058,0.000450469,0.00036691,0.000298851,0.000243416,0.000198264,0.000161487,0.000131532,0.000107134,8.72611e-05,7.10747e-05,5.78908e-05,4.71524e-05,3.84059e-05,3.12819e-05,2.54793e-05,2.0753e-05,1.69035e-05,1.3768e-05,1.12141e-05,9.13396e-06,7.43967e-06,6.05966e-06,4.93563e-06,4.0201e-06,3.2744e-06,2.66702e-06,2.1723e-06,1.76935e-06,1.44115e-06,1.17383e-06,9.56088e-07,7.7874e-07,6.34288e-07,5.16632e-07,4.208e-07,3.42744e-07,2.79167e-07,2.27383e-07,1.85205e-07,1.50851e-07,1.22869e-07],"E_end":0.030933586580571288,"Em_end":1.228689411151798e-07},"F3":{"tiers":[{"name":"Property, plant & equipment","phi":0.8,"delta":0.03,"R_cal":0.3,"R_meas":0.0159,"R_common":0.1333},{"name":"Finite-lived intangibles","phi":0.6,"delta":0.02,"R_cal":0.2667,"R_meas":0.0206,"R_common":0.2667},{"name":"Indefinite-lived intangibles","phi":0.4,"delta":0.01,"R_cal":0.15,"R_meas":0.0151,"R_common":0.4},{"name":"Goodwill","phi":0.2,"delta":0.002,"R_cal":0.0333,"R_meas":0.0039,"R_common":0.5333}],"alpha_cal":0.05,"alpha_meas":0.408,"common_delta":0.02},"F4":{"x":[0.2019,0.2153,0.2297,0.2449,0.2612,0.2786,0.2971,0.3169,0.338,0.3605,0.3845,0.41,0.4373,0.4664,0.4974,0.5305,0.5658,0.6035,0.6436,0.6864,0.7321,0.7808,0.8327,0.8881,0.9472,1.0102,1.0774,1.1491,1.2256,1.3071,1.394,1.4868,1.5857,1.6912,1.8037,1.9237,2.0516,2.1881,2.3337,2.489,2.6545,2.8311,3.0195,3.2204,3.4346,3.6631,3.9068,4.1667,4.4439,4.7395,5.0548,5.3911,5.7497,6.1322,6.5402,6.9753,7.4393,7.9342,8.4621,9.025],"p":[0.1484,0.1618,0.176,0.1913,0.2075,0.2247,0.243,0.2622,0.2823,0.3034,0.3253,0.348,0.3715,0.3955,0.4201,0.4451,0.4703,0.4957,0.5212,0.5465,0.5716,0.5963,0.6205,0.6442,0.6671,0.6893,0.7107,0.7312,0.7507,0.7693,0.7868,0.8034,0.819,0.8336,0.8472,0.8599,0.8717,0.8827,0.8928,0.9022,0.9108,0.9187,0.926,0.9327,0.9388,0.9444,0.9495,0.9542,0.9584,0.9623,0.9658,0.969,0.9719,0.9746,0.977,0.9792,0.9811,0.9829,0.9846,0.986],"cross":0.61,"ladder":2.58,"slope":1.58},"F5":[{"k":"\u03b4 common across classes","lag":100.0,"mag":100.0},{"k":"\u03b4 drawn independently","lag":66.2,"mag":11.5},{"k":"\u03b4 on the standards' falling ladder","lag":100.0,"mag":1.9}],"F6":{"pilot":{"sector":"Retail trade (SIC 5200\u20135999)","z":-0.29,"p":0.59,"tiers":[{"t":"PP&E","n":21,"med":5.0,"q1":3.0,"q3":9.0},{"t":"Finite-lived","n":34,"med":4.0,"q1":1.0,"q3":8.0},{"t":"Indefinite-lived","n":34,"med":5.5,"q1":1.2,"q3":9.0},{"t":"Goodwill","n":155,"med":5.0,"q1":1.0,"q3":9.0}]},"repl":{"sector":"Computer & data processing (SIC 7370\u20137379)","z":-0.095,"p":0.52,"tiers":[{"t":"PP&E","n":34,"med":5.0,"q1":1.2,"q3":9.8},{"t":"Finite-lived","n":102,"med":4.5,"q1":1.2,"q3":10.0},{"t":"Indefinite-lived","n":46,"med":6.0,"q1":2.2,"q3":11.0},{"t":"Goodwill","n":262,"med":5.0,"q1":1.0,"q3":10.0}]}}};
+const NS='http://www.w3.org/2000/svg';
+const cs = getComputedStyle(document.documentElement);
+const V = n => cs.getPropertyValue(n).trim();
+const tip = document.getElementById('tip');
+function el(p,n,a){const e=document.createElementNS(NS,n);for(const k in a)e.setAttribute(k,a[k]);p.appendChild(e);return e;}
+function txt(p,x,y,s,o){o=o||{};const t=el(p,'text',{x:x,y:y,'font-size':o.fs||12,
+  fill:o.fill||'var(--text-secondary)','text-anchor':o.ta||'middle',
+  'font-family':o.ff||"Inter, system-ui, sans-serif",'font-weight':o.fw||400,
+  'dominant-baseline':o.db||'auto'});t.textContent=s;if(o.cls)t.setAttribute('class',o.cls);return t;}
+function hover(node,html){
+  node.style.cursor='crosshair';
+  node.addEventListener('pointerenter',e=>{tip.innerHTML=html;tip.classList.add('on');});
+  node.addEventListener('pointermove',e=>{
+    const w=tip.offsetWidth,h=tip.offsetHeight;
+    let x=e.clientX+14,y=e.clientY-h-12;
+    if(x+w>innerWidth-8)x=e.clientX-w-14; if(y<8)y=e.clientY+16;
+    tip.style.left=x+'px';tip.style.top=y+'px';});
+  node.addEventListener('pointerleave',()=>tip.classList.remove('on'));
+}
+function table(id,head,rows){
+  const h='<table><thead><tr>'+head.map(h=>'<th>'+h+'</th>').join('')+'</tr></thead><tbody>'+
+    rows.map(r=>'<tr>'+r.map(c=>'<td>'+c+'</td>').join('')+'</tr>').join('')+'</tbody></table>';
+  document.getElementById(id).innerHTML=h;
+}
+function grid(g,x0,x1,ys,fmt,pad){
+  ys.forEach(y=>{
+    el(g,'line',{x1:x0,x2:x1,y1:y.p,y2:y.p,stroke:'var(--grid)','stroke-width':1});
+    txt(g,x0-9,y.p+4,fmt(y.v),{ta:'end',fs:11,fill:'var(--text-muted)'});
+  });
+}
+
+/* ---------------- F1 : the mirror pair ---------------- */
+(function(){
+  const s=document.getElementById('f1'),d=D.F1;
+  const L=64,R=676,T1=26,B1=190,T2=250,B2=386;
+  const xs=t=>L+(R-L)*t/400;
+  // top: C(t)
+  const g1=el(s,'g',{});
+  txt(g1,L,14,'reported series C(t) — what a reader sees',{ta:'start',fs:11.5,fw:600,fill:'var(--text-primary)'});
+  const ymax=105, y1=v=>B1-(B1-T1)*v/ymax;
+  grid(g1,L,R,[0,25,50,75,100].map(v=>({v:v,p:y1(v)})),v=>v);
+  el(g1,'line',{x1:L,x2:R,y1:B1,y2:B1,stroke:'var(--line)','stroke-width':1});
+  const p1=d.C.map((v,i)=>xs(d.t[i])+','+y1(v)).join(' ');
+  const p1m=d.Cm.map((v,i)=>xs(d.t[i])+','+y1(v)).join(' ');
+  el(g1,'polyline',{points:p1,fill:'none',stroke:'var(--s1)','stroke-width':5,'stroke-linecap':'round','stroke-linejoin':'round'});
+  el(g1,'polyline',{points:p1m,fill:'none',stroke:'var(--s2)','stroke-width':2,'stroke-linecap':'round','stroke-linejoin':'round','stroke-dasharray':'1 5'});
+  txt(g1,R-4,y1(28),'both worlds',{ta:'end',fs:12.5,fw:600,fill:'var(--text-primary)'});
+  txt(g1,R-4,y1(28)+15,'max separation 7 × 10⁻¹⁴',{ta:'end',fs:11,fill:'var(--text-muted)'});
+  el(g1,'line',{x1:R-70,x2:xs(345),y1:y1(21),y2:y1(4),stroke:'var(--text-muted)','stroke-width':1});
+  // bottom: E(t) log
+  const g2=el(s,'g',{});
+  txt(g2,L,T2-16,'physical stock E(t), log scale — what the reader is trying to learn about',{ta:'start',fs:11.5,fw:600,fill:'var(--text-primary)'});
+  const lo=-7.2,hi=2.1, y2=v=>B2-(B2-T2)*(Math.log10(Math.max(v,1e-8))-lo)/(hi-lo);
+  grid(g2,L,R,[2,0,-2,-4,-6].map(e=>({v:e,p:y2(Math.pow(10,e))})),e=>'10'+String(e).replace('-','⁻').replace(/[0-9]/g,c=>'⁰¹²³⁴⁵⁶⁷⁸⁹'[c]));
+  el(g2,'line',{x1:L,x2:R,y1:B2,y2:B2,stroke:'var(--line)','stroke-width':1});
+  el(g2,'polyline',{points:d.E.map((v,i)=>xs(d.t[i])+','+y2(v)).join(' '),fill:'none',stroke:'var(--s1)','stroke-width':2.4,'stroke-linecap':'round'});
+  el(g2,'polyline',{points:d.Em.map((v,i)=>xs(d.t[i])+','+y2(v)).join(' '),fill:'none',stroke:'var(--s2)','stroke-width':2.4,'stroke-linecap':'round'});
+  const ya=y2(d.E[d.E.length-1]), yb=y2(d.Em[d.Em.length-1]);
+  txt(g2,R-14,ya-11,'δ = 0.02',{ta:'end',fs:12,fw:600,fill:'var(--s1)'});
+  txt(g2,R-14,yb-12,'δ = 0.05',{ta:'end',fs:12,fw:600,fill:'var(--s2)'});
+  // bracket showing the ratio, hung off the right edge
+  const bx=R+2;
+  el(g2,'path',{d:'M'+(bx-5)+','+ya+' L'+bx+','+ya+' L'+bx+','+yb+' L'+(bx-5)+','+yb,
+    fill:'none',stroke:'var(--text-muted)','stroke-width':1.2});
+  const rl=el(g2,'text',{x:bx+13,y:(ya+yb)/2,'font-size':11.5,'font-weight':600,
+    fill:'var(--text-primary)','text-anchor':'middle','font-family':'Inter, system-ui, sans-serif',
+    transform:'rotate(90 '+(bx+13)+' '+((ya+yb)/2)+')'});
+  rl.textContent='250,000 ×';
+  [0,100,200,300,400].forEach(t=>txt(s,xs(t),B2+20,t,{fs:11,fill:'var(--text-muted)'}));
+  txt(s,(L+R)/2,B2+38,'period',{fs:11,fill:'var(--text-muted)'});
+  // hover band
+  for(let i=0;i<d.t.length;i++){
+    const r=el(s,'rect',{x:xs(d.t[i])-4,y:T1,width:8,height:B2-T1,fill:'transparent'});
+    hover(r,'<b>t = '+d.t[i]+'</b><br><span class="k">C(t), both</span> '+d.C[i].toFixed(4)+
+      '<br><span class="k">E(t), δ=0.02</span> '+d.E[i].toExponential(3)+
+      '<br><span class="k">E(t), δ=0.05</span> '+d.Em[i].toExponential(3));
+  }
+  table('f1t',['t','C(t) world A','C(t) mirror','E(t) world A','E(t) mirror'],
+    d.t.filter((_,i)=>i%10===0).map((t,j)=>{const i=j*10;
+      return [t,d.C[i].toFixed(6),d.Cm[i].toFixed(6),d.E[i].toExponential(3),d.Em[i].toExponential(3)];}));
+})();
+
+/* ---------------- F2 : the continuum ---------------- */
+(function(){
+  const s=document.getElementById('f2');
+  const L=64,R=666,T=44,B=228;
+  // truth: alpha=0.05, delta=0.02, phi=0.60, books open 15% above the asset
+  const A=0.05,DD=0.02,PH=0.60,B0=1.15;
+  const phi=c=>(A-(A-PH*DD)/c)/DD;          // = 2.5 - 1.9/c
+  const open=c=>B0/c-1;                      // share by which books open above the asset
+  const cOf=p=>(A-PH*DD)/(A-p*DD);           // inverse
+  const c0=cOf(0), c1=cOf(1);
+  const x=c=>L+(R-L)*(c-c0)/(c1-c0), y=p=>B-(B-T)*p;
+  grid(s,L,R,[0,0.25,0.5,0.75,1].map(v=>({v:v,p:y(v)})),v=>v.toFixed(2));
+  el(s,'line',{x1:L,x2:R,y1:B,y2:B,stroke:'var(--line)','stroke-width':1});
+  // retained region under a 10% bound on the opening position
+  const cLo=B0/1.10, pLo=phi(cLo);
+  el(s,'rect',{x:x(cLo),y:T,width:R-x(cLo),height:B-T,fill:'var(--s1)','fill-opacity':0.10});
+  el(s,'line',{x1:x(cLo),x2:x(cLo),y1:T,y2:B,stroke:'var(--s1)','stroke-width':1.5,'stroke-dasharray':'4 3'});
+  txt(s,x(cLo)+9,B-30,'books within ±10% of the asset',{ta:'start',fs:10.5,fw:600,fill:'var(--text-primary)'});
+  txt(s,x(cLo)+9,B-16,'still 31.7% of the unit interval — φ ∈ [0.68, 1.00]',{ta:'start',fs:10.5,fill:'var(--text-secondary)'});
+  // the curve
+  const pts=[];for(let i=0;i<=200;i++){const c=c0+(c1-c0)*i/200;pts.push(x(c)+','+y(phi(c)));}
+  el(s,'polyline',{points:pts.join(' '),fill:'none',stroke:'var(--s1)','stroke-width':2.8,'stroke-linecap':'round'});
+  // endpoints
+  el(s,'circle',{cx:x(c0),cy:y(0),r:4.5,fill:'var(--s1)',stroke:'var(--surface-1)','stroke-width':2});
+  el(s,'circle',{cx:x(c1),cy:y(1),r:4.5,fill:'var(--s1)',stroke:'var(--surface-1)','stroke-width':2});
+  txt(s,x(c0)+14,y(0.10),'φ = 0',{ta:'start',fs:12,fw:600,fill:'var(--text-primary)'});
+  txt(s,x(c0)+14,y(0.10)+14,'needs books opening 51% above the asset',{ta:'start',fs:10.5,fill:'var(--text-muted)'});
+  txt(s,x(c1)+2,y(1)-12,'φ = 1',{ta:'end',fs:12,fw:600,fill:'var(--text-primary)'});
+  // truth marker
+  el(s,'line',{x1:x(1),x2:x(1),y1:y(PH),y2:B,stroke:'var(--s2)','stroke-width':1,'stroke-dasharray':'3 3'});
+  el(s,'circle',{cx:x(1),cy:y(PH),r:5.5,fill:'var(--s2)',stroke:'var(--surface-1)','stroke-width':2});
+  txt(s,x(1)-10,y(PH)-16,'the generating truth',{ta:'end',fs:11.5,fw:600,fill:'var(--text-primary)'});
+  txt(s,x(1)-10,y(PH)-2,'φ = 0.60, scale 1.00',{ta:'end',fs:10.5,fill:'var(--text-muted)'});
+  [0.8,0.9,1.0,1.1,1.2].forEach(c=>txt(s,x(c),B+20,c.toFixed(1),{fs:11,fill:'var(--text-muted)'}));
+  txt(s,(L+R)/2,B+40,'assumed physical scale (truth = 1.00) — a factor of 1.67 end to end',{fs:11,fill:'var(--text-muted)'});
+  txt(s,L,T-24,'implied timeliness φ',{ta:'start',fs:11,fw:600,fill:'var(--text-secondary)'});
+  txt(s,L,T-10,'every point reproduces the same reported series to 2 × 10⁻¹⁶',{ta:'start',fs:10.5,fill:'var(--text-muted)'});
+  for(let i=0;i<=60;i++){const c=c0+(c1-c0)*i/60;
+    const r=el(s,'rect',{x:x(c)-6,y:T,width:12,height:B-T,fill:'transparent'});
+    const o=open(c);
+    hover(r,'<b>assumed scale '+c.toFixed(3)+'</b><br><span class="k">implied φ</span> '+phi(c).toFixed(3)+
+      '<br><span class="k">books open</span> '+(o>=0?'+':'')+(o*100).toFixed(1)+'% vs the asset'+
+      '<br><span class="k">series reproduced to</span> 2 × 10⁻¹⁶');}
+  table('f2t',['assumed scale','implied φ','books open vs asset','series error'],
+    [c0,0.85,0.95,1.00,cLo,1.15,c1].map(c=>[c.toFixed(3),phi(c).toFixed(3),
+      (open(c)>=0?'+':'')+(open(c)*100).toFixed(1)+'%','2 × 10⁻¹⁶']));
+})();
+
+/* ---------------- F3 : the inversion ---------------- */
+(function(){
+  const s=document.getElementById('f3'),d=D.F3,ramp=['var(--t0)','var(--t1)','var(--t2)','var(--t3)'];
+  const T=56,B=310,xa=268,xb=470;
+  const ymax=0.56, y=v=>B-(B-T)*v/ymax;
+  txt(s,xa,T-32,'δ common  ·  τ = +1',{fs:12,fw:600,fill:'var(--text-primary)'});
+  txt(s,xa,T-16,'what the design assumed',{fs:10.5,fill:'var(--text-muted)'});
+  txt(s,xb,T-32,"the standards' δ ladder  ·  τ = −1",{fs:12,fw:600,fill:'var(--text-primary)'});
+  txt(s,xb,T-16,'what a reader computes',{fs:10.5,fill:'var(--text-muted)'});
+  el(s,'line',{x1:xa,x2:xa,y1:T,y2:B,stroke:'var(--line)','stroke-width':1});
+  el(s,'line',{x1:xb,x2:xb,y1:T,y2:B,stroke:'var(--line)','stroke-width':1});
+  const short=['property, plant & equipment','finite-lived intangibles','indefinite-lived intangibles','goodwill'];
+  // de-collide label rows on each side
+  function place(vals){const MIN=30;const o=vals.map((v,i)=>({i:i,y:y(v)})).sort((p,q)=>p.y-q.y);
+    for(let k=1;k<o.length;k++) if(o[k].y-o[k-1].y<MIN) o[k].y=o[k-1].y+MIN;
+    const out=[];o.forEach(r=>out[r.i]=r.y);return out;}
+  const la=place(d.tiers.map(t=>t.R_common)), lb=place(d.tiers.map(t=>t.R_cal));
+  d.tiers.forEach((t,i)=>{
+    const ya=y(t.R_common), yb=y(t.R_cal), col=ramp[i];
+    const g=el(s,'g',{});
+    el(g,'line',{x1:xa,x2:xb,y1:ya,y2:yb,stroke:col,'stroke-width':2.6,'stroke-linecap':'round'});
+    el(g,'circle',{cx:xa,cy:ya,r:5,fill:col,stroke:'var(--surface-1)','stroke-width':2});
+    el(g,'circle',{cx:xb,cy:yb,r:5,fill:col,stroke:'var(--surface-1)','stroke-width':2});
+    // left: name over value, leader if displaced
+    if(Math.abs(la[i]-ya)>2) el(g,'line',{x1:xa-9,x2:xa-22,y1:ya,y2:la[i]-4,stroke:col,'stroke-width':1});
+    txt(g,xa-26,la[i]-4,short[i],{ta:'end',fs:11.5,fw:600,fill:'var(--text-primary)'});
+    txt(g,xa-26,la[i]+11,'R = '+t.R_common.toFixed(3),{ta:'end',fs:11,fill:'var(--text-muted)'});
+    if(Math.abs(lb[i]-yb)>2) el(g,'line',{x1:xb+9,x2:xb+22,y1:yb,y2:lb[i]-4,stroke:col,'stroke-width':1});
+    txt(g,xb+26,lb[i]-4,'R = '+t.R_cal.toFixed(3),{ta:'start',fs:11.5,fw:600,fill:'var(--text-primary)'});
+    txt(g,xb+26,lb[i]+11,'δ = '+t.delta.toFixed(3)+',  φ = '+t.phi.toFixed(2),{ta:'start',fs:11,fill:'var(--text-muted)'});
+    hover(g,'<b>'+t.name+'</b><br><span class="k">φ</span> '+t.phi+' &nbsp; <span class="k">δ</span> '+t.delta+
+      '<br><span class="k">R, δ common</span> '+t.R_common.toFixed(4)+
+      '<br><span class="k">R, standards\' ladder</span> '+t.R_cal.toFixed(4)+
+      '<br><span class="k">R at α̂ = 0.408</span> '+t.R_meas.toFixed(4));
+  });
+  txt(s,(xa+xb)/2,B+30,'deferral measure  R = (1 − φ) δ / (α − δ),  α = 0.05',{fs:11.5,fill:'var(--text-muted)'});
+  txt(s,(xa+xb)/2,B+50,'every line crosses',{fs:12.5,fw:600,fill:'var(--text-primary)'});
+  table('f3t',['asset class','φ','δ','R, δ common','R, ladder (α = 0.05)','R at α̂ = 0.408'],
+    d.tiers.map(t=>[t.name,t.phi,t.delta,t.R_common.toFixed(4),t.R_cal.toFixed(4),t.R_meas.toFixed(4)]));
+})();
+
+/* ---------------- F4 : the validity boundary ---------------- */
+(function(){
+  const s=document.getElementById('f4'),d=D.F4;
+  const L=64,R=690,T=30,B=258;
+  const lx0=Math.log(0.19),lx1=Math.log(9.5);
+  const x=v=>L+(R-L)*(Math.log(v)-lx0)/(lx1-lx0), y=p=>B-(B-T)*p;
+  grid(s,L,R,[0,0.25,0.5,0.75,1].map(v=>({v:v,p:y(v)})),v=>(v*100)+'%');
+  el(s,'line',{x1:L,x2:R,y1:B,y2:B,stroke:'var(--line)','stroke-width':1});
+  el(s,'line',{x1:L,x2:R,y1:y(0.5),y2:y(0.5),stroke:'var(--text-muted)','stroke-width':1,'stroke-dasharray':'3 4'});
+  el(s,'polyline',{points:d.x.map((v,i)=>x(v)+','+y(d.p[i])).join(' '),
+    fill:'none',stroke:'var(--s1)','stroke-width':2.8,'stroke-linecap':'round'});
+  // markers
+  function mark(v,lab,sub,col,side){
+    el(s,'line',{x1:x(v),x2:x(v),y1:T,y2:B,stroke:col,'stroke-width':1.6,'stroke-dasharray':'5 3'});
+    const p=1/(1+Math.exp(-d.slope*(Math.log(v)-Math.log(d.cross))));
+    el(s,'circle',{cx:x(v),cy:y(p),r:5.5,fill:col,stroke:'var(--surface-1)','stroke-width':2});
+    txt(s,x(v)+(side>0?10:-10),T+14,lab,{ta:side>0?'start':'end',fs:12,fw:600,fill:'var(--text-primary)'});
+    txt(s,x(v)+(side>0?10:-10),T+30,sub,{ta:side>0?'start':'end',fs:10.5,fill:'var(--text-muted)'});
+  }
+  mark(d.cross,'0.61','the crossing: even odds','var(--text-muted)',-1);
+  mark(d.ladder,'2.58','the GAAP ladder — 84% failure','var(--s2)',1);
+  [0.2,0.5,1,2,5,9].forEach(v=>txt(s,x(v),B+20,v<1?v.toFixed(1):v,{fs:11,fill:'var(--text-muted)'}));
+  txt(s,(L+R)/2,B+42,'per-rung δ leverage ÷ design budget   (log scale)',{fs:11.5,fill:'var(--text-muted)'});
+  txt(s,L,T-12,'probability the design fails to recover its own ordering',{ta:'start',fs:11,fw:600,fill:'var(--text-secondary)'});
+  d.x.forEach((v,i)=>{const r=el(s,'rect',{x:x(v)-5,y:T,width:10,height:B-T,fill:'transparent'});
+    hover(r,'<b>leverage / budget = '+v.toFixed(2)+'</b><br><span class="k">P(design fails)</span> '+(d.p[i]*100).toFixed(1)+'%');});
+  table('f4t',['leverage ÷ budget','P(fails to recover ordering)','note'],
+    [[0.20,'14.8%',''],[0.61,'50.0%','the crossing'],[1.00,'68.9%',''],[2.58,'84.4%','the tabulated GAAP ladder'],[5.00,'93.0%','']]
+      .map(r=>[r[0].toFixed?r[0].toFixed(2):r[0],r[1],r[2]]));
+})();
+
+/* ---------------- F5 : lag vs magnitude ---------------- */
+(function(){
+  const s=document.getElementById('f5'),d=D.F5;
+  const L=64,R=690,T=56,B=224, n=d.length, gw=(R-L)/n, bw=52, gap2=10;
+  const y=v=>B-(B-T)*v/100;
+  grid(s,L,R,[0,25,50,75,100].map(v=>({v:v,p:y(v)})),v=>v+'%');
+  el(s,'line',{x1:L,x2:R,y1:B,y2:B,stroke:'var(--line)','stroke-width':1});
+  d.forEach((row,i)=>{
+    const cx=L+gw*(i+0.5);
+    [['lag','var(--s1)',-1],['mag','var(--s2)',1]].forEach(([k,col,sd])=>{
+      const v=row[k], xx=cx+sd*(bw/2+gap2/2)-bw/2, h=B-y(v);
+      const g=el(s,'g',{});
+      el(g,'path',{d:'M'+xx+','+B+' L'+xx+','+(y(v)+4)+' Q'+xx+','+y(v)+' '+(xx+4)+','+y(v)+
+        ' L'+(xx+bw-4)+','+y(v)+' Q'+(xx+bw)+','+y(v)+' '+(xx+bw)+','+(y(v)+4)+' L'+(xx+bw)+','+B+' Z',fill:col});
+      txt(g,xx+bw/2,y(v)-8,v.toFixed(1)+'%',{fs:12.5,fw:600,fill:'var(--text-primary)'});
+      hover(g,'<b>'+row.k+'</b><br><span class="k">'+(k==='lag'?'timing statistic':'magnitude statistic')+
+        '</span> '+v.toFixed(1)+'% recovery');
+    });
+    const words=row.k.split(' ');const lines=[];let cur='';
+    words.forEach(w=>{if((cur+' '+w).trim().length>22){lines.push(cur);cur=w;}else cur=(cur+' '+w).trim();});
+    lines.push(cur);
+    lines.forEach((ln,j)=>txt(s,cx,B+22+j*15,ln,{fs:11.5,fill:'var(--text-secondary)'}));
+  });
+  txt(s,L,T-32,'share of drawn ladders recovering the intended ordering',{ta:'start',fs:11,fw:600,fill:'var(--text-secondary)'});
+  table('f5t',['δ regime','timing statistic','magnitude statistic'],
+    d.map(r=>[r.k,r.lag.toFixed(1)+'%',r.mag.toFixed(1)+'%']));
+})();
+
+/* ---------------- F6 : the null ---------------- */
+(function(){
+  const s=document.getElementById('f6'),d=D.F6,ramp=['var(--t0)','var(--t1)','var(--t2)','var(--t3)'];
+  const T=54,B=252, panels=[{d:d.pilot,x0:70,x1:352},{d:d.repl,x0:412,x1:694}];
+  const ymax=12, y=v=>B-(B-T)*v/ymax;
+  panels.forEach((P,pi)=>{
+    const {x0,x1}=P, step=(x1-x0)/4;
+    if(pi===0) grid(s,x0,x1,[0,3,6,9,12].map(v=>({v:v,p:y(v)})),v=>v);
+    else [0,3,6,9,12].forEach(v=>el(s,'line',{x1:x0,x2:x1,y1:y(v),y2:y(v),stroke:'var(--grid)','stroke-width':1}));
+    el(s,'line',{x1:x0,x2:x1,y1:B,y2:B,stroke:'var(--line)','stroke-width':1});
+    txt(s,(x0+x1)/2,T-30,P.d.sector,{fs:11.5,fw:600,fill:'var(--text-primary)'});
+    txt(s,(x0+x1)/2,T-14,'Jonckheere–Terpstra z = '+P.d.z+'  ·  p = '+P.d.p,{fs:10.5,fill:'var(--text-muted)'});
+    // predicted gradient reference
+    const p0=P.d.tiers[0].med;
+    el(s,'line',{x1:x0+step*0.5,x2:x0+step*3.5,y1:y(p0),y2:y(p0+3),
+      stroke:'var(--text-muted)','stroke-width':1.4,'stroke-dasharray':'5 4'});
+    if(pi===0) txt(s,x0+step*3.6,y(p0+3)-10,'predicted',{ta:'start',fs:10.5,fill:'var(--text-muted)'});
+    P.d.tiers.forEach((t,i)=>{
+      const cx=x0+step*(i+0.5), g=el(s,'g',{});
+      el(g,'line',{x1:cx,x2:cx,y1:y(t.q1),y2:y(t.q3),stroke:ramp[i],'stroke-width':7,
+        'stroke-linecap':'round','opacity':0.35});
+      el(g,'circle',{cx:cx,cy:y(t.med),r:6,fill:ramp[i],stroke:'var(--surface-1)','stroke-width':2.5});
+      txt(g,cx,B+22,'tier '+i,{fs:11,fw:600,fill:'var(--text-secondary)'});
+      txt(g,cx,B+36,'n = '+t.n,{fs:10,fill:'var(--text-muted)'});
+      hover(g,'<b>'+t.t+'</b><br><span class="k">median lag</span> '+t.med.toFixed(1)+' quarters'+
+        '<br><span class="k">IQR</span> '+t.q1.toFixed(1)+'–'+t.q3.toFixed(1)+
+        '<br><span class="k">events</span> '+t.n);
+    });
+  });
+  txt(s,70,T-46,'median recognition lag, quarters  (bar = interquartile range)',{ta:'start',fs:11,fw:600,fill:'var(--text-secondary)'});
+  txt(s,382,B+62,'tiers ordered left to right as the registration predicted them: shortest lag to longest',
+    {fs:11,fill:'var(--text-muted)'});
+  table('f6t',['sector','tier','n','median','IQR'],
+    [].concat(...[d.pilot,d.repl].map(u=>u.tiers.map(t=>[u.sector.split(' (')[0],t.t,t.n,t.med.toFixed(1),t.q1.toFixed(1)+'–'+t.q3.toFixed(1)]))));
+})();
+})();
+</script>
+<script>
+(function(){
+const P = {"stock":[{"r":0.01,"k":0.01,"g":0.6193,"t":0.5016},{"r":0.025,"k":0.025,"g":0.443,"t":0.3364},{"r":0.05,"k":0.05,"g":0.3206,"t":0.2472},{"r":0.1,"k":0.1,"g":0.2215,"t":0.1928},{"r":0.25,"k":0.25,"g":0.1225,"t":0.1477},{"r":0.5,"k":0.5,"g":0.0623,"t":0.1216},{"r":0.75,"k":0.75,"g":0.0278,"t":0.1093},{"r":1.0,"k":1.0,"g":0.0,"t":0.1}],"flow":[{"r":0.01,"k":0.001,"g":0.8914,"t":0.8606},{"r":0.025,"k":0.00253,"g":0.8118,"t":0.7339},{"r":0.05,"k":0.00509,"g":0.7205,"t":0.6178},{"r":0.1,"k":0.01024,"g":0.5956,"t":0.4811},{"r":0.25,"k":0.02564,"g":0.3948,"t":0.2982},{"r":0.5,"k":0.05131,"g":0.2476,"t":0.1978},{"r":0.75,"k":0.07696,"g":0.1714,"t":0.1592},{"r":1.0,"k":0.10261,"g":0.1252,"t":0.1382}],"none":{"g":0.9944,"t":1.0},"rho":[{"p":0.0,"g":0.9944,"t":1.0},{"p":0.05,"g":0.7205,"t":0.6178},{"p":0.1,"g":0.5956,"t":0.4811},{"p":0.15,"g":0.509,"t":0.3978},{"p":0.25,"g":0.3948,"t":0.2982},{"p":0.4,"g":0.2931,"t":0.2254},{"p":0.55,"g":0.2288,"t":0.1877},{"p":0.7,"g":0.1836,"t":0.1652},{"p":0.85,"g":0.1501,"t":0.1492},{"p":1.0,"g":0.1252,"t":0.1382}],"gen":[{"k":"no levy","gini":0.9944,"vla":0.076542},{"k":"stock levy at \u03ba = 0.100","gini":0.222,"vla":0.076536},{"k":"flow levy at \u03ba = 0.103","gini":0.125,"vla":0.051189}]};
+const NS='http://www.w3.org/2000/svg';
+const tip=document.getElementById('tip');
+function el(p,n,a){const e=document.createElementNS(NS,n);for(const k in a)e.setAttribute(k,a[k]);p.appendChild(e);return e;}
+function txt(p,x,y,s,o){o=o||{};const t=el(p,'text',{x:x,y:y,'font-size':o.fs||12,
+  fill:o.fill||'var(--text-secondary)','text-anchor':o.ta||'middle',
+  'font-family':"Inter, system-ui, sans-serif",'font-weight':o.fw||400});t.textContent=s;return t;}
+function hover(node,html){node.style.cursor='crosshair';
+  node.addEventListener('pointerenter',()=>{tip.innerHTML=html;tip.classList.add('on');});
+  node.addEventListener('pointermove',e=>{const w=tip.offsetWidth,h=tip.offsetHeight;
+    let x=e.clientX+14,y=e.clientY-h-12;
+    if(x+w>innerWidth-8)x=e.clientX-w-14; if(y<8)y=e.clientY+16;
+    tip.style.left=x+'px';tip.style.top=y+'px';});
+  node.addEventListener('pointerleave',()=>tip.classList.remove('on'));}
+function table(id,head,rows){document.getElementById(id).innerHTML=
+  '<table><thead><tr>'+head.map(h=>'<th>'+h+'</th>').join('')+'</tr></thead><tbody>'+
+  rows.map(r=>'<tr>'+r.map(c=>'<td>'+c+'</td>').join('')+'</tr>').join('')+'</tbody></table>';}
+function grid(g,x0,x1,ys,fmt){ys.forEach(y=>{
+  el(g,'line',{x1:x0,x2:x1,y1:y.p,y2:y.p,stroke:'var(--grid)','stroke-width':1});
+  txt(g,x0-9,y.p+4,fmt(y.v),{ta:'end',fs:11,fill:'var(--text-muted)'});});}
+
+/* ---- P1 : nested frontiers ---- */
+(function(){
+  const s=document.getElementById('p1'),L=64,R=640,T=52,B=248;
+  const l0=Math.log(0.0008),l1=Math.log(1.35);
+  const x=k=>L+(R-L)*(Math.log(k)-l0)/(l1-l0), y=g=>B-(B-T)*g;
+  grid(s,L,R,[0,0.25,0.5,0.75,1].map(v=>({v:v,p:y(v)})),v=>v.toFixed(2));
+  el(s,'line',{x1:L,x2:R,y1:B,y2:B,stroke:'var(--line)','stroke-width':1});
+  const fe=P.flow[P.flow.length-1], se=P.stock[P.stock.length-1];
+  const sm=P.stock.find(r=>Math.abs(r.k-0.1)<0.002);
+  // flow's budget ceiling
+  el(s,'rect',{x:x(fe.k),y:T,width:R-x(fe.k),height:B-T,fill:'var(--s2)','fill-opacity':0.06});
+  el(s,'line',{x1:x(fe.k),x2:x(fe.k),y1:T,y2:B,stroke:'var(--s2)','stroke-width':1.5,'stroke-dasharray':'4 3'});
+  txt(s,x(fe.k)+9,T+13,'no flow levy reaches past here',{ta:'start',fs:10.5,fw:600,fill:'var(--text-primary)'});
+  txt(s,x(fe.k)+9,T+27,'a confiscatory rate buys κ = 0.103;',{ta:'start',fs:10.5,fill:'var(--text-secondary)'});
+  txt(s,x(fe.k)+9,T+41,'E[η⁺] caps the base',{ta:'start',fs:10.5,fill:'var(--text-secondary)'});
+  // matched-budget connector
+  el(s,'line',{x1:x(sm.k),x2:x(fe.k),y1:y(sm.g),y2:y(fe.g),stroke:'var(--text-primary)','stroke-width':1.3});
+  txt(s,x(0.1),y(sm.g)-13,'same budget:  0.222  vs  0.125',{ta:'middle',fs:11,fw:600,fill:'var(--text-primary)'});
+  [['stock','var(--s1)'],['flow','var(--s2)']].forEach(([b2,col])=>{
+    const d=P[b2];
+    el(s,'polyline',{points:d.map(r=>x(r.k)+','+y(r.g)).join(' '),fill:'none',stroke:col,
+      'stroke-width':2.6,'stroke-linecap':'round','stroke-linejoin':'round'});
+    d.forEach(r=>{const c=el(s,'circle',{cx:x(r.k),cy:y(r.g),r:4.2,fill:col,stroke:'var(--surface-1)','stroke-width':1.8});
+      hover(c,'<b>'+b2+' base, rate '+r.r.toFixed(3)+'</b><br><span class="k">budget κ</span> '+r.k.toFixed(4)+
+        '<br><span class="k">stationary Gini</span> '+r.g.toFixed(4)+
+        '<br><span class="k">top decile</span> '+r.t.toFixed(3));});
+  });
+  el(s,'circle',{cx:x(fe.k),cy:y(fe.g),r:6.5,fill:'var(--s2)',stroke:'var(--surface-1)','stroke-width':2.5});
+  el(s,'circle',{cx:x(se.k),cy:y(se.g),r:6.5,fill:'var(--s1)',stroke:'var(--surface-1)','stroke-width':2.5});
+  txt(s,x(fe.k)-11,y(fe.g)+20,'flow frontier 0.125',{ta:'end',fs:11.5,fw:600,fill:'var(--s2)'});
+  txt(s,x(se.k),y(se.g)-30,'stock frontier',{ta:'middle',fs:11.5,fw:600,fill:'var(--s1)'});
+  txt(s,x(se.k),y(se.g)-16,'0.000',{ta:'middle',fs:11.5,fw:600,fill:'var(--s1)'});
+  [0.001,0.003,0.01,0.03,0.1,0.3,1.0].forEach(k=>txt(s,x(k),B+20,k<0.01?k.toFixed(3):(k<0.1?k.toFixed(2):k.toFixed(1)),{fs:11,fill:'var(--text-muted)'}));
+  txt(s,(L+R)/2,B+40,'κ — share of aggregate wealth moved per assessment   (log scale)',{fs:11,fill:'var(--text-muted)'});
+  txt(s,L,T-16,'stationary Gini',{ta:'start',fs:11,fw:600,fill:'var(--text-secondary)'});
+  table('p1t',['base','rate','κ','Gini','top decile'],
+    [].concat(...['stock','flow'].map(b2=>P[b2].map(r=>[b2,r.r.toFixed(3),r.k.toFixed(4),r.g.toFixed(4),r.t.toFixed(3)]))));
+})();
+
+/* ---- P2 : realisation ---- */
+(function(){
+  const s=document.getElementById('p2'),d=P.rho,L=64,R=666,T=46,B=252;
+  const x=p=>L+(R-L)*p, y=g=>B-(B-T)*g;
+  grid(s,L,R,[0,0.25,0.5,0.75,1].map(v=>({v:v,p:y(v)})),v=>v.toFixed(2));
+  el(s,'line',{x1:L,x2:R,y1:B,y2:B,stroke:'var(--line)','stroke-width':1});
+  // no-levy reference
+  el(s,'line',{x1:L,x2:R,y1:y(P.none.g),y2:y(P.none.g),stroke:'var(--s2)','stroke-width':1.4,'stroke-dasharray':'5 4'});
+  txt(s,R-4,y(P.none.g)-9,'no levy at all: Gini '+P.none.g.toFixed(3),{ta:'end',fs:11,fw:600,fill:'var(--s2)'});
+  // first-quarter shading
+  el(s,'rect',{x:x(0),y:T,width:x(0.25)-x(0),height:B-T,fill:'var(--s1)','fill-opacity':0.08});
+  txt(s,x(0.125),B-30,'first quarter of the axis',{fs:10.5,fw:600,fill:'var(--text-primary)'});
+  txt(s,x(0.125),B-16,'69% of the reachable range',{fs:10.5,fill:'var(--text-secondary)'});
+  el(s,'polyline',{points:d.map(r=>x(r.p)+','+y(r.g)).join(' '),fill:'none',stroke:'var(--s1)',
+    'stroke-width':2.8,'stroke-linecap':'round','stroke-linejoin':'round'});
+  const span=d[0].g-d[d.length-1].g;
+  d.forEach(r=>{const c=el(s,'circle',{cx:x(r.p),cy:y(r.g),r:4.2,fill:'var(--s1)',stroke:'var(--surface-1)','stroke-width':1.8});
+    hover(c,'<b>realisation ρ = '+r.p.toFixed(2)+'</b><br><span class="k">stationary Gini</span> '+r.g.toFixed(4)+
+      '<br><span class="k">top decile</span> '+r.t.toFixed(3)+
+      '<br><span class="k">share of range covered</span> '+((d[0].g-r.g)/span*100).toFixed(1)+'%');});
+  el(s,'circle',{cx:x(0),cy:y(d[0].g),r:7,fill:'var(--s2)',stroke:'var(--surface-1)','stroke-width':2.5});
+  txt(s,x(0)+16,y(d[0].g)+16,'ρ = 0: a 100% levy that changes nothing',{ta:'start',fs:11.5,fw:600,fill:'var(--text-primary)'});
+  txt(s,x(1)-6,y(d[d.length-1].g)-14,'ρ = 1: Gini 0.125',{ta:'end',fs:11,fw:600,fill:'var(--s1)'});
+  [0,0.25,0.5,0.75,1].forEach(p=>txt(s,x(p),B+20,p.toFixed(2),{fs:11,fill:'var(--text-muted)'}));
+  txt(s,(L+R)/2,B+40,'ρ — share of a period’s gain the base can observe   (flow base, rate 1.00)',{fs:11,fill:'var(--text-muted)'});
+  txt(s,L,T-14,'stationary Gini',{ta:'start',fs:11,fw:600,fill:'var(--text-secondary)'});
+  table('p2t',['ρ','Gini','top decile','share of reachable range'],
+    d.map(r=>[r.p.toFixed(2),r.g.toFixed(4),r.t.toFixed(3),((d[0].g-r.g)/span*100).toFixed(1)+'%']));
+})();
+
+/* ---- P3 : outcome vs generator ---- */
+(function(){
+  const s=document.getElementById('p3'),d=P.gen;
+  const T=64,B=224, cols=['var(--text-muted)','var(--s1)','var(--s2)'];
+  function panel(x0,x1,title,key,max,fmt){
+    const y=v=>B-(B-T)*v/max, bw=52, step=(x1-x0)/3;
+    [0,0.25,0.5,0.75,1].forEach(f=>{el(s,'line',{x1:x0,x2:x1,y1:y(max*f),y2:y(max*f),stroke:'var(--grid)','stroke-width':1});
+      txt(s,x0-9,y(max*f)+4,fmt(max*f),{ta:'end',fs:10.5,fill:'var(--text-muted)'});});
+    el(s,'line',{x1:x0,x2:x1,y1:B,y2:B,stroke:'var(--line)','stroke-width':1});
+    txt(s,(x0+x1)/2,T-24,title,{fs:12,fw:600,fill:'var(--text-primary)'});
+    d.forEach((r,i)=>{const cx=x0+step*(i+0.5), v=r[key], xx=cx-bw/2, g=el(s,'g',{});
+      el(g,'path',{d:'M'+xx+','+B+' L'+xx+','+(y(v)+4)+' Q'+xx+','+y(v)+' '+(xx+4)+','+y(v)+
+        ' L'+(xx+bw-4)+','+y(v)+' Q'+(xx+bw)+','+y(v)+' '+(xx+bw)+','+(y(v)+4)+' L'+(xx+bw)+','+B+' Z',fill:cols[i]});
+      txt(g,cx,y(v)-8,fmt(v),{fs:11.5,fw:600,fill:'var(--text-primary)'});
+      hover(g,'<b>'+r.k+'</b><br><span class="k">Gini</span> '+r.gini.toFixed(4)+
+        '<br><span class="k">Var[log a]</span> '+r.vla.toFixed(6));});
+  }
+  panel(70,352,'the outcome — Gini','gini',1.0,v=>v.toFixed(2));
+  panel(432,694,'the generator — Var[log a]','vla',0.08,v=>v.toFixed(3));
+  d.forEach((r,i)=>{
+    [70,432].forEach((x0,pi)=>{const x1=[352,694][pi], step=(x1-x0)/3, cx=x0+step*(i+0.5);
+      const w=r.k.split(' ');const lines=[];let cur='';
+      w.forEach(t=>{if((cur+' '+t).trim().length>13){lines.push(cur);cur=t;}else cur=(cur+' '+t).trim();});
+      lines.push(cur);
+      lines.forEach((ln,j)=>txt(s,cx,B+20+j*14,ln,{fs:10.5,fill:'var(--text-secondary)'}));});
+  });
+  txt(s,382,B+72,'both levies matched at the same compressive budget, κ ≈ 0.10',{fs:11,fill:'var(--text-muted)'});
+  txt(s,382,B+90,'two panels, never two axes',{fs:11.5,fw:600,fill:'var(--text-primary)'});
+  table('p3t',['economy','Gini','Var[log a]'],d.map(r=>[r.k,r.gini.toFixed(4),r.vla.toFixed(6)]));
+})();
+})();
+</script>
