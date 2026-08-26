@@ -38,10 +38,14 @@ PAPERS = ROOT / "docs" / "papers"
 
 # Every manuscript in the estate. A paper added here without a baseline fails
 # `test_the_baseline_exists_and_describes_this_manuscript` rather than being skipped.
+# The `-v1` entries are the paper-rebuild drafts; each carries its OWN per-stem baseline,
+# because two manuscripts now share a directory (see _baseline).
 MANUSCRIPTS = {
     "paper-I": PAPERS / "paper-I-price-formation" / "paper-I.md",
     "paper-II": PAPERS / "paper-II-redistribution" / "paper-II.md",
+    "paper-II-v1": PAPERS / "paper-II-redistribution" / "paper-II-v1.md",
     "paper-III": PAPERS / "paper-III-dual-tensor" / "paper-III.md",
+    "paper-III-v1": PAPERS / "paper-III-dual-tensor" / "paper-III-v1.md",
     "paper-IV": PAPERS / "paper-IV-composition" / "paper-IV.md",
 }
 
@@ -49,7 +53,22 @@ sys.path.insert(0, str(ROOT / "scripts"))
 
 
 def _baseline(md: Path) -> Path:
-    return md.parent / "DEFENSIVE-BASELINE.json"
+    """One baseline per MANUSCRIPT, not per directory.
+
+    `-108`: the v1 rebuild put a second manuscript in `paper-II-redistribution/` and in
+    `paper-III-dual-tensor/`, and a directory-keyed baseline silently makes two papers share
+    one committed count -- so a hedge added to the rebuild would have been measured against
+    the v0.x draft's baseline and passed. The per-stem name is the fix; the legacy
+    directory-keyed name is still honoured for the four manuscripts that already carry it,
+    because renaming a committed baseline would reset the very history it exists to hold.
+    """
+    per_stem = md.parent / ("DEFENSIVE-BASELINE-%s.json" % md.stem)
+    if per_stem.exists():
+        return per_stem
+    legacy = md.parent / "DEFENSIVE-BASELINE.json"
+    if legacy.exists() and md.stem in ("paper-I", "paper-II", "paper-III", "paper-IV"):
+        return legacy
+    return per_stem
 
 
 @pytest.fixture(scope="module")

@@ -1097,7 +1097,11 @@ test below ordered asset classes by expected timeliness. §5.2 shows a *magnitud
 ladder is inverted by the composite; §5.8 shows the *timing* reading — the one this registration used —
 is not. **So the identification result does not explain this failure, and it is not offered as though it
 did.** It bears on this section at one point: the model's lag is defined against a physical series no
-filing reports, so the instrument below measures a substitute.
+filing reports, so the instrument below measures a substitute. **"Severe" is Mayo's (1996) word and is used in her
+sense** — a test that would very probably have caught the prediction being wrong had it been
+wrong — and what makes this one severe rather than merely early is the registration discipline of
+Nosek, Ebersole, DeHaven and Mellor (2018): the prediction, the instrument and the falsifiers were
+committed and pushed before the data were touched.
 
 ### 9.1 · What was predicted, and when
 
@@ -1468,9 +1472,10 @@ physical-to-monetary reduction a naive reading of Appendix A's Λ proposes. That
 here. It is *adopted*: measuring the wedge between physical throughput and financial claims does not assert
 that energy determines value.
 
-**On stock-flow-consistent modelling.** The two-layer structure is not new as a structure; what is new is
-treating the wedge between the layers as an *information* quantity with a release rate, and proving what
-that structure does to identification.
+**On stock-flow-consistent modelling.** The two-layer structure is not new as a structure — it is
+Godley and Lavoie's (2007), where every flow has a source and every stock a counterpart and the
+accounting closes by construction. What is new is treating the wedge *between* the layers as an
+*information* quantity with a release rate, and proving what that structure does to identification.
 
 ---
 
@@ -1569,6 +1574,63 @@ written down before it was run, are recorded at `docs/RESULT-END-TO-END-001-E1.m
 
 ---
 
+## A.4 · The boundary on P3, and it is a fifty-year-old theorem
+
+P3 is the proposition a competent economist attacks, and the attack has a name. Sonnenschein (1972,
+1973), Mantel (1974) and Debreu (1974) proved that aggregate excess demand inherits from
+individually rational agents only continuity, homogeneity of degree zero and Walras's Law — not
+downward slope, not uniqueness, not stability. Aggregate demand can take essentially arbitrary
+shape. **The best-established result about aggregation in economics is that aggregation destroys
+structure**, and a proposition asserting that measured aggregates are folds over units owes it an
+answer rather than a citation.
+
+The answer is one distinction, and it is not a hedge.
+
+> **SMD is a theorem about maps. P3 is a claim about states.**
+
+What SMD constrains is the aggregate excess demand *function* — an object taking prices and
+returning quantities, assembled from individual demand functions — and what it establishes is that
+essentially nothing about the individual functions survives the assembly. What P3 asserts folds is
+the extensive **state**: how much physical stock is held, how much claim is recorded against it, and
+at what rate each moves. Summing steel is not summing preferences. The two claims are therefore not
+in tension. They are complementary halves of one statement, and the conjunction is sharper than
+either half alone:
+
+> **Aggregation preserves the extensive state and destroys the behavioural map.**
+
+SMD is the second clause, proved fifty years ago inside the mainstream. P3 is the first. What makes
+the pair worth having is that it sorts measurements by what they can carry. A discipline that
+aggregates in order to recover behaviour — a technology from a production function, a propensity
+from a consumption function, an elasticity from a demand curve — is estimating the object that does
+not survive the sum. The standard response has been to impose enough distributional structure on the
+population that the aggregate is well-behaved (Hildenbrand, 1994; Grandmont, 1992), which is a
+legitimate research strategy and is also an admission that the structure is imposed rather than
+inherited.
+
+**Three limits on that answer, and the third is this paper's own result.**
+
+1. **A state that folds is not thereby a state anyone can observe.** Folding is a property of the
+   object; observability is a property of the measuring layer — and §§2–9 are about a measuring layer
+   failing to see something, as is Paper II. This framework's own results are the reason to doubt
+   that the folded state is available to anyone.
+2. **"Extensive" is doing real work, and rates are not extensive.** δ, φ and α do not fold by
+   addition. They fold, where they fold at all, as weighted combinations whose weights are themselves
+   state — which is exactly why **§5's cross-class ladder reads the composite (1 − φ) ⊙ δ rather than
+   φ**, and why ranking by the parameter can invert the ordering rather than blur it. §5 is what P3
+   looks like when the rate is forgotten.
+3. **Diagonality across classes within a firm-quarter is assumed, and §9.5 rejects it.** The fold is
+   *degraded* at precisely the scale where the accounting is done — degraded rather than severed,
+   because what was rejected is a property of the reporting filter and not of the extensive state,
+   and because the departure is now a measured quantity rather than an open exposure. What is not
+   available is its cause: the design cannot say whether the coupling is economic or an artefact of
+   the order the standards impose on the tests.
+
+*This section is the surviving argument of a fourth manuscript, written and not carried forward;
+`docs/papers/README-v1.md` records why, and `docs/papers/paper-IV-composition/paper-IV.md` carries
+its own header saying where each of its three surviving parts went.*
+
+---
+
 # Supplementary material
 
 The following are in the repository rather than in this paper, because each is a record a reader may want
@@ -1601,8 +1663,8 @@ direction — `consulted/published`.**
 
 *Each entry carries a mark recording how far verification reached, because a bibliographic record
 and a text are different objects: a work can exist exactly as cited and still not contain the
-sentence attributed to it. Bibliographic verification was carried out on 2026-08-10, and the
-crash-risk entries were added on 2026-08-11. Per-entry findings are in the note attached to the
+sentence attributed to it. Bibliographic verification was carried out on 2026-08-10;
+the six aggregation entries §A.4 rests on were verified on 2026-08-26. Per-entry findings are in the note attached to the
 entry they describe.*
 
 **✓** — checked against a publisher page, a library-catalogue record, a Crossref record or the
@@ -1615,15 +1677,6 @@ is verified and the **text was not read**; the characterisation rests on named s
 and the entry says so in its own note. Three entries carry it. Two entries carry **no mark at
 all**, each stating in its own note why it is unmarked, and those two are the only unmarked entries
 in the list.
-
-Andreou, P. C., Lambertides, N., & Magidou, M. (2023). A critique of the agency theory viewpoint of
-stock price crash risk: the opacity and overinvestment channels. *British Journal of Management*,
-34(4), 2158–2185. ✓ *(Open access. The copy consulted is the publisher's own typesetting, deposited
-by the authors' institution, whose EarlyView pagination runs 1–28 and therefore does not match the
-issue pagination given here; quotations from it are cited without page numbers for that reason. §12
-takes both the 5.5%→27% figure and the universe split from it directly: the 27% is the
-CRSP–Compustat–Execucomp sample and the CRSP-wide figure is 23%, a distinction the abstract does not
-make and the body does.)*
 
 Basu, S. (1997). The conservatism principle and the asymmetric timeliness of earnings. *Journal of
 Accounting and Economics*, 24(1), 3–37. ✓ *(Cited for the asymmetric-timeliness result its title carries verbatim — *the asymmetric
@@ -1693,17 +1746,9 @@ volatility result nineteen years earlier.)*
 Bushman, R. M., & Williams, C. D. (2015). Delayed expected loss recognition and the risk profile of
 banks. *Journal of Accounting Research*, 53(3), 511–553. ✓
 
-Elbers, C., & Ridder, G. (1982). True and spurious duration dependence: the identifiability of the
-proportional hazard model. *The Review of Economic Studies*, 49(3), 403–409. ✓ *(§8.4 cites it
-for what identification of a hazard's shape costs elsewhere in the literature: a regressor with
-variation, a proportionality restriction and a moment condition on the mixing distribution. **The
-text was not consulted.** The bibliographic record is verified; the characterisation is taken from
-two independent secondary sources that state it identically, and the entry claims nothing beyond
-it. The point §8.4 draws is that a single reported series supplies none of the three, which is
-why that section measures rather than cites.)*
-
-Fama, E. F. (1970). Efficient capital markets: a review of theory and empirical work. *Journal of
-Finance*, 25(2), 383–417. ✓
+Debreu, G. (1974). Excess demand functions. *Journal of Mathematical Economics*, 1(1), 15–21. ✓
+*(§A.4 cites it as one of the three SMD papers, for the theorem and not for a passage. Crossref
+record verified; nothing is quoted.)*
 
 Financial Accounting Standards Board. *Accounting Standards Codification*, Topic 350 — *Intangibles —
 Goodwill and Other*; Topic 360 — *Property, Plant, and Equipment*; Topic 280 — *Segment Reporting*. ✓
@@ -1719,11 +1764,20 @@ Georgescu-Roegen, N. (1971). *The Entropy Law and the Economic Process*. Harvard
 *(The copy consulted is the Harvard Paperback second printing, 1974, ISBN 0-674-25781-2; a printing is
 not an edition, so no dual date.)*
 
+Grandmont, J.-M. (1992). Transformations of the commodity space, behavioral heterogeneity, and the
+aggregation problem. *Journal of Economic Theory*, 57(1), 1–35. ✓ *(§A.4 cites it, with
+Hildenbrand (1994), for the strategy of restoring aggregate regularity by restricting the
+population's heterogeneity. Crossref record verified; the **text was not read**, and the
+characterisation claims no more than the title states.)*
+
 Godley, W., & Lavoie, M. (2007). *Monetary Economics: An Integrated Approach to Credit, Money, Income,
 Production and Wealth*. Palgrave Macmillan. ✓✎ *(Copy consulted confirms first published 2007, ISBN
 978-0-230-50055-6.)*
 
-Hayek, F. A. (1945). The use of knowledge in society. *American Economic Review*, 35(4), 519–530. ✓
+Hildenbrand, W. (1994). *Market Demand: Theory and Empirical Evidence*. Princeton University Press.
+✓ *(Frontiers of Economic Research series; verified against the publisher's own page. §A.4 cites it
+for the dispersion-of-characteristics route to a well-behaved aggregate. The **text was not
+read**.)*
 
 Khan, M., & Watts, R. L. (2009). Estimation and empirical properties of a firm-year measure of
 accounting conservatism. *Journal of Accounting and Economics*, 48(2–3), 132–150. ✓ *(§6 cites it
@@ -1750,7 +1804,7 @@ published article is verified bibliographically and has **not** been checked aga
 paper's.)*
 
 Fisher, F. M., & McGowan, J. J. (1983). On the misuse of accounting rates of return to infer
-monopoly profits. *American Economic Review*, 73(1), 82–97. ⧗ *(Cited in §5.2 for the shape of its
+monopoly profits. *American Economic Review*, 73(1), 82–97. ⧗ *(Cited in §6 for the shape of its
 confound — a reporting-rule parameter against an asset-life parameter inside a published ratio — and
 for the fate of the inference drawn from it. **Not read**; the record is verified and the
 characterisation rests on the Long and Ravenscraft comment below, whose working-paper version was
@@ -1779,13 +1833,6 @@ NIST Statistical Reference Datasets documentation of the same example, and every
 from it is drawn through Varah (1982), which quotes it with page citations. Nothing here rests on
 it alone.)*
 
-Little, J. D. C. (1961). A proof for the queuing formula: L = λW. *Operations Research*, 9(3),
-383–387. ✓ *(§8 cites it for the distribution-free stationary identity — average number in system
-equals arrival rate times average time in system — and, more to the point, for what that identity
-requires: a constant arrival rate. This model never has one, which is why its deferral measure is a
-transform of the lag rather than its mean. Characterised from the result its title carries — *L = λW*;
-nothing is quoted.)*
-
 Marshall, A. W., & Proschan, F. (1972). Classes of distributions applicable in replacement with
 renewal theory implications. In *Proceedings of the Sixth Berkeley Symposium on Mathematical
 Statistics and Probability*, Volume I. Berkeley: University of California Press. *(§8 cites it for
@@ -1795,6 +1842,9 @@ moment generating function is dominated by that of the exponential with the same
 omitted rather than guessed; the attribution is taken from the reliability literature that rests on
 it. §8 does not depend on the citation, since the direction it predicts is also measured
 directly — but the reasoning that produced the prediction is this lemma's and is credited as such.)*
+
+Mantel, R. R. (1974). On the characterization of aggregate excess demand. *Journal of Economic
+Theory*, 7(3), 348–353. ✓ *(§A.4; Crossref record verified, nothing quoted.)*
 
 Nakagawa, T., & Osaki, S. (1975). The discrete Weibull distribution. *IEEE Transactions on
 Reliability*, R-24(5), 300–301. ✓ *(§9.4's fitted lag distribution is this one, in the survival
@@ -1812,17 +1862,17 @@ rather than the typeset article, hence ✓⧗; the end page could not be confirm
 and is omitted rather than guessed.)*
 
 Kay, J. A. (1976). Accountants, too, could be happy in a golden age: The accountant's rate of profit
-and the internal rate of return. *Oxford Economic Papers*, 28(3), 447–460. ⧗ *(Cited in §5.2 for the
+and the internal rate of return. *Oxford Economic Papers*, 28(3), 447–460. ⧗ *(Cited in §6 for the
 analytical result that precedes Fisher and McGowan's numerical demonstration. **Not read**; record
 verified, characterisation from secondary sources.)*
 
 Long, W. F., & Ravenscraft, D. J. (1984). The misuse of accounting rates of return: Comment.
-*American Economic Review*, 74(3), 494–500. ✓⧗ *(Cited in §5.2 for the rebuttal. The **text**
+*American Economic Review*, 74(3), 494–500. ✓⧗ *(Cited in §6 for the rebuttal. The **text**
 consulted is the open FTC Bureau of Economics Working Paper No. 94, June 1983, read in full; the
 published comment is verified bibliographically and has not been read. Nothing is quoted.)*
 
 Ryan, S. G. (1995). A model of accrual measurement with implications for the evolution of the
-book-to-market ratio. *Journal of Accounting Research*, 33(1), 95–112. ✓ *(Cited in §7 for the
+book-to-market ratio. *Journal of Accounting Research*, 33(1), 95–112. ✓ *(Cited in §7.3 for the
 regression Beaver and Ryan (2000) adopt. **Read at source**, with the Autumn 1995 erratum at 33(2),
 417, which corrects two typesetting errors in equation (5) — a "+" printed for the "=", and
 ΔMV_{i,t−10} printed for BV_{i,t−10} — and changes no coefficient, hypothesis or result. The
@@ -1864,45 +1914,19 @@ here — symmetry of every systematic coefficient in β ↔ γ, asymmetry of the
 derived and checked in this repository (`scripts/wt085_returns_conditioning.py`, E7) rather than
 taken from Nerlove's text, and the entry claims nothing beyond the model's structure.)*
 
-Hutton, A. P., Marcus, A. J., & Tehranian, H. (2009). Opaque financial reports, R², and crash risk.
-*Journal of Financial Economics*, 94(1), 67–86. ✓ *(Nothing is quoted from the body, which was read
-as full text rather than as the typeset article. The post-SOX dissipation §12 attributes to them is
-from the published abstract, checked at source.)*
-
 International Energy Agency & United Nations Statistics Division. *SDG Indicator 7.3.1 — Energy
 intensity measured in terms of primary energy and GDP.* Reported as World Bank series
 `EG.EGY.PRIM.PP.KD`, *Energy intensity level of primary energy*, compiled for *Tracking SDG 7: The
 Energy Progress Report* by the IEA, IRENA, UNSD, the World Bank and the WHO. ✓
 
-Jin, L., & Myers, S. C. (2006). R² around the world: New theory and new tests. *Journal of
-Financial Economics*, 79(2), 257–292. ✓ *(**Read at source**, typeset article. The sentence §12 quotes for the no-physical-layer reading —
-"For simplicity, we ignore depreciation and reinvestment" — is verified in the published text at
-**p. 262**, character for character, and unchanged from NBER Working Paper 10453. §12 quotes the sentence because it is what establishes that the model has no physical layer,
-and a reader entitled to doubt that on a paraphrase should be able to see the words. Its footnote 3
-is worth reading beside §5: the authors set aside depreciation "according to a pre-defined schedule"
-as an easy extension, and it is the interaction of exactly that schedule with recognition timeliness
-that §3.2 shows a reported series cannot resolve.)*
-
 Jonckheere, A. R. (1954). A distribution-free k-sample test against ordered alternatives. *Biometrika*,
 41(1–2), 133–145. ✓
-
-Mann, H. B., & Whitney, D. R. (1947). On a test of whether one of two random variables is stochastically
-larger than the other. *Annals of Mathematical Statistics*, 18(1), 50–60. ✓
 
 Mayo, D. G. (1996). *Error and the Growth of Experimental Knowledge*. University of Chicago Press. ✓✎
 *(The copy consulted is the University of Chicago Press edition of 1996, which uses* severity *374 times
 and* severe test *232 times and is where the severity requirement is introduced. Mayo (2018),* Statistical Inference as Severe Testing *— a later restatement — has not been
 read. Both the edition-consulted rule and the first-appearance rule select 1996, and they agree
 here because the book he read is also the origin.)*
-
-Mayo, D. G., & Spanos, A. (Eds.). (2010). *Error and Inference: Recent Exchanges on Experimental
-Reasoning, Reliability, and the Objectivity and Rationality of Science*. Cambridge University Press. ✓✎
-*(Copy consulted gives © Cambridge University Press 2010, first published in print 2009.)*
-
-Mises, L. von (1949/1998). *Human Action: A Treatise on Economics* (Scholar's ed.). Ludwig von Mises
-Institute. ✓✎ *(The copy consulted is the Scholar's Edition, ISBN 0-945466-24-2, whose own front matter
-states that it reissues* the first edition *— load-bearing, because the 1963 and 1966 editions differ
-from 1949. Original work published by Yale University Press, 1949.)*
 
 Nosek, B. A., Ebersole, C. R., DeHaven, A. C., & Mellor, D. T. (2018). The preregistration revolution.
 *Proceedings of the National Academy of Sciences*, 115(11), 2600–2606. ✓
@@ -1911,16 +1935,6 @@ Odum, H. T. (1996). *Environmental Accounting: Emergy and Environmental Decision
 Sons. ✓✎ *(Copy consulted gives © 1996 John Wiley & Sons, Inc., New York, ISBN 0-471-11442-1. This entry
 was re-pointed away to* Environment, Power, and Society *(Columbia, 2007) when the first library sweep
 did not find the 1996 book, then restored when it did. The sweep, not the citation, was wrong.)*
-
-Piketty, T. (2013/2014). *Capital in the Twenty-First Century* (A. Goldhammer, Trans.). Belknap Press of
-Harvard University Press. ✓ *(Original work published as* Le Capital au XXIe siècle*, Éditions du Seuil,
-2013. §12's relocation argument is about work that existed a year before the English text cited here.)*
-
-Popper, K. R. (1935/2002). *The Logic of Scientific Discovery*. Routledge Classics. ✓✎ *(The copy
-consulted is the Routledge Classics edition of 2002. Its own colophon gives the chain:* Logik der
-Forschung *first published 1935, Vienna — its preface dated 1934 — first English edition Hutchinson &
-Co., 1959, Routledge from 1992. §12 cites Popper for the demarcation criterion, which is 1935's, not
-1959's, so the original date is load-bearing and the entry is dual-dated.)*
 
 Quine, W. V. O. (1951). Two dogmas of empiricism. *Philosophical Review*, 60(1), 20–43. ✓
 
@@ -1935,13 +1949,12 @@ support; Soddy's own footnote points back to* Cartesian Economics *(Hendersons, 
 the subject, and whether the term itself originates there has NOT been checked — the 1922 pamphlet is
 not in the author's library. No claim of priority is made in the text, so none is made here.)*
 
+Sonnenschein, H. (1972). Market excess demand functions. *Econometrica*, 40(3), 549–563. ✓
+*(§A.4; Crossref record verified, nothing quoted.)*
+
+Sonnenschein, H. (1973). Do Walras' identity and continuity characterize the class of community
+excess demand functions? *Journal of Economic Theory*, 6(4), 345–354. ✓ *(§A.4; Crossref record
+verified, nothing quoted.)*
+
 Terpstra, T. J. (1952). The asymptotic normality and consistency of Kendall's test against trend, when
 ties are present in one ranking. *Indagationes Mathematicae*, 14, 327–333. ✓
-
-Zhu, W. (2016). Accruals and price crashes. *Review of Accounting Studies*, 21(2), 349–399. ✓
-*(Cited in §12 against §2. **Read at source**, typeset article. High accruals predict firm-level
-weekly price crashes; the relation concentrates in the components Richardson, Sloan, Soliman and
-Tuna rank least reliable, including non-current operating asset accruals, and strengthens with CFO
-option incentives and weaker monitoring. The negative loading on current operating liability
-accruals is reported by Zhu as unexplained by his own mechanism, and is noted here for the same
-reason. Nothing is quoted.)*
