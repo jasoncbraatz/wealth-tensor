@@ -2,7 +2,7 @@
 project: wealth-tensor
 gh_repo: jasoncbraatz/wealth-tensor
 branch: main
-gh_sha: d6e86d255c2ce51947e297e989681719473e0893
+gh_sha: f16ec4da7699ac73541718f145794a083fc7795b
 updated: 2026-08-25
 session: wealthTensor-106
 session_n: 106
@@ -414,15 +414,42 @@ fifty-three soft apparatus references left unglossed on purpose, the one structu
 that is yours to overrule, and the fact that **the framework has no confirmed empirical claim** —
 which paper-III § 6.1 states at full length and which nothing in the review apparatus softens.
 
-**Then start writing, in any of the three.** The voice is deliberately NOT harmonised. Ten sites
-where two sections read as if written by two people are located in `docs/REVIEW-040.md` § 2, with
-**no repair proposed for any of them**, because re-voicing is your pass and a session that does it
-has spent your hours for you and probably lost something. Two of the ten are good writing in their
-own register and are flagged because they *differ*, not because they are wrong.
+**Then start writing, in any of the three.** The voice is deliberately NOT harmonised. **Seven
+sites carrying FIVE decisions** are in `docs/REVIEW-040.md` § 2, each one naming what the two
+registers are and naming no winner — **no repair is proposed for any of them**, because re-voicing
+is your pass and a session that does it has spent your hours for you and probably lost something.
+
+**The list arrived at ten and the triage that produced seven was itself audited**: a verifier
+overturned six of ten verdicts, three flags came off with controls that were checked rather than
+asserted, and **two of the seven are sites nobody had seen** — one of them because this pass
+flattened one half of a matched pair of appendix headnotes and never looked at the other.
+**Decision A is the one to take first**: it is a single second-person tic at two sites, in two
+different papers, and settling it once settles both.
 
 ---
 
 ## 🧾 WHAT PASS D ACTUALLY DID, IN FIVE LINES
+
+
+## 🩹 ONE CORRECTION LANDED AFTER THE FIRST TAG, AND IT IS THE MOST INSTRUCTIVE THING HERE
+
+**The corpus shipped with a broken sentence in it.** paper-IV § 3 read *"a confiscatory levy on
+flow **is / leaves** the wealth vector exactly unchanged"* — a stranded copula, left behind when a
+late correction replaced the predicate and not the verb before it.
+
+**It passed 1,168 tests, thirty green guards, forty-one re-run claims, a page-for-page layout
+reproduction, and two adversarial verifiers.** A third verifier, reading for something else
+entirely, happened on it.
+
+**THE GAP IS NOT THAT THE APPARATUS IS WEAK — IT IS THAT A LATE CORRECTION ROUND INHERITS NONE OF
+THE VERIFICATION OF THE ROUND IT CORRECTS.** Both adversarial sweeps and the mechanical stitch
+check were run over the first 166 repairs and none over the corrections that followed them. If you
+take one process lesson from this session, take that one: **the last edits are the least checked
+edits, and they are the ones that ship.**
+
+Repaired at `wt220`, with a second milder instance beside it; the tag was moved onto the repair and
+the move is recorded in the tag's own message. `SHIP-STATEMENT.md` § 6.6 carries it as the sharpest
+instance of **nothing in this repository reads English**.
 
 * **149 C-class repairs** landed across the three manuscripts — 129 scaffolding voice, 15 hard
   apparatus leaks at 9 sites, 4 antithesis residues, and 7 S1s found and repaired in-pass.
