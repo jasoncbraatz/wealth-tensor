@@ -2,7 +2,7 @@
 
 > ## STOOD DOWN — do not cite, do not edit. This paper is not carried forward.
 >
-> **Decided at wealthTensor-107, executed at wealthTensor-108 (2026-08-26).** This manuscript's
+> **Decided and executed in the `paper-rebuild` pass of 2026-08-26.** This manuscript's
 > thesis is that the three scales are one structure — its own phrase for it is *"a chain rather
 > than three analogies"*. The corpus's own end-to-end check,
 > `docs/RESULT-END-TO-END-001-E1.md`, put that assertion under test and **failed it at leg `E1a`**: *"ρ and φ are not the same kind of object, so the join between Papers II and III is vocabulary at the sovereign scale."* The
