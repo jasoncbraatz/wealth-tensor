@@ -72,6 +72,8 @@ TAGS = {
     "FONT-SHA-DISAGREES": "a font's sha differs between the manifest and FONTS.tsv",
     "MANUSCRIPT-NOT-ON-DISK": "the manifest lists a manuscript that is not on disk",
     "MANUSCRIPT-MISSING-FROM-MANIFEST": "a manuscript on disk is not in the manifest",
+    "MANUSCRIPT-DECLARED-BUT-CAPTURED": "NOT-IN-CAPTURE.tsv declares a manuscript the manifest lists anyway",
+    "CAPTURE-DECLARATION-STALE": "NOT-IN-CAPTURE.tsv declares a manuscript that is not on disk",
     "BAD-COMMIT-SHA": "source_commit is not a 40-character lowercase hex sha",
     "COMMIT-SHORT-DISAGREES": "source_commit_short is not a prefix of source_commit",
     "COMMIT-MISSING": "source_commit is not a commit object in this clone",
@@ -273,21 +275,53 @@ def check_fonts(m, fonts_tsv):
     return out
 
 
-def check_manuscripts(m, root, papers):
-    """Exactly the manuscripts on disk -- both directions, so neither a deletion nor an
-    addition can pass. A new paper turns this red until the capture is regenerated, which
-    is the correct answer: the manifest describes a PDF that does not contain it."""
+def declared_out_of_capture(deliverable):
+    """Manuscripts on disk that are deliberately NOT in the built capture.
+
+    `-108`: the manifest describes a PDF, and a PDF cannot contain a manuscript written
+    after it was built. Before this ledger the guard could only say "you forgot to rebuild",
+    which is false of a draft branch and made the check permanently red there. A row is a
+    CLAIM, and deleting one turns the guard red again -- which is how the file is audited
+    rather than trusted. Declaring nothing is the old behaviour exactly.
+    """
+    out = {}
+    path = Path(deliverable) / "NOT-IN-CAPTURE.tsv"
+    if not path.exists():
+        return out
+    for line in path.read_text(encoding="utf-8").split("\n"):
+        if not line.strip() or line.lstrip().startswith("#"):
+            continue
+        f = line.split("\t")
+        if len(f) >= 2 and f[0].strip() and f[1].strip():
+            out[f[0].strip()] = f[1].strip()
+    return out
+
+
+def check_manuscripts(m, root, papers, deliverable=None):
+    """Exactly the manuscripts the CAPTURE was built from -- both directions, so neither a
+    deletion nor an addition can pass. A new paper turns this red until it is either
+    captured or declared in NOT-IN-CAPTURE.tsv with a reason; silence is still red."""
     out = []
     listed = m.get("manuscripts")
     if not isinstance(listed, dict):
         return out
     on_disk = {str(p.relative_to(root)) for p in sorted(Path(papers).glob("*/paper-*.md"))}
+    declared = declared_out_of_capture(deliverable if deliverable
+                                       else Path(root) / "docs/deliverable")
+    for path in sorted(set(declared) - on_disk):
+        out.append(_tag("CAPTURE-DECLARATION-STALE",
+                        "NOT-IN-CAPTURE.tsv declares %s and it is not on disk" % path))
+    for path in sorted(set(declared) & set(listed)):
+        out.append(_tag("MANUSCRIPT-DECLARED-BUT-CAPTURED",
+                        "NOT-IN-CAPTURE.tsv declares %s is outside the capture and the "
+                        "manifest lists it anyway" % path))
     for path in sorted(set(listed) - on_disk):
         out.append(_tag("MANUSCRIPT-NOT-ON-DISK",
                         "the manifest lists %s and it is not there" % path))
-    for path in sorted(on_disk - set(listed)):
+    for path in sorted(on_disk - set(listed) - set(declared)):
         out.append(_tag("MANUSCRIPT-MISSING-FROM-MANIFEST",
-                        "%s is on disk and the manifest does not list it" % path))
+                        "%s is on disk, the manifest does not list it, and "
+                        "NOT-IN-CAPTURE.tsv does not declare it" % path))
     return out
 
 
@@ -372,7 +406,8 @@ CHECKS = (
     ("page-entries", lambda c: check_page_entries(c["m"])),
     ("scalar-shas", lambda c: check_scalar_shas(c["m"])),
     ("fonts", lambda c: check_fonts(c["m"], c["fonts_tsv"])),
-    ("manuscripts", lambda c: check_manuscripts(c["m"], c["root"], c["papers"])),
+    ("manuscripts", lambda c: check_manuscripts(c["m"], c["root"], c["papers"],
+                                                c["deliverable"])),
     ("commit", lambda c: check_commit(c["m"], c["git_root"])),
     ("pdf", lambda c: check_pdf(c["m"], c["deliverable"])),
     ("silent-wrongness", lambda c: check_silent_wrongness(c["m"])),

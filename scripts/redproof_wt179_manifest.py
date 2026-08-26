@@ -63,6 +63,38 @@ def probe(name, tag, mutate=None, **kw):
     return fired and control
 
 
+def _capture_declaration_probes():
+    """NOT-IN-CAPTURE.tsv, both of its failure modes, on a real tree."""
+    import tempfile
+    m = fresh()
+    listed = sorted(m["manuscripts"])
+    with tempfile.TemporaryDirectory() as td:
+        deliv = Path(td) / "deliverable"
+        deliv.mkdir()
+
+        # (1) declaring a manuscript the manifest captured anyway
+        (deliv / "NOT-IN-CAPTURE.tsv").write_text(
+            "# probe\n%s\tdeclared out while the manifest still lists it\n" % listed[0],
+            encoding="utf-8")
+        findings, _ = G.check_all(fresh(), deliverable=deliv)
+        got = tags_of(findings)
+        record("a manuscript declared out of the capture that the manifest lists anyway",
+               "MANUSCRIPT-DECLARED-BUT-CAPTURED",
+               "MANUSCRIPT-DECLARED-BUT-CAPTURED" in got
+               and "MANUSCRIPT-DECLARED-BUT-CAPTURED" not in BASELINE_TAGS)
+
+        # (2) a declaration for a file that is not on disk
+        (deliv / "NOT-IN-CAPTURE.tsv").write_text(
+            "# probe\ndocs/papers/paper-IX-ghost/paper-IX.md\tnever existed\n",
+            encoding="utf-8")
+        findings, _ = G.check_all(fresh(), deliverable=deliv)
+        got = tags_of(findings)
+        record("a declaration for a manuscript that is not on disk",
+               "CAPTURE-DECLARATION-STALE",
+               "CAPTURE-DECLARATION-STALE" in got
+               and "CAPTURE-DECLARATION-STALE" not in BASELINE_TAGS)
+
+
 def record(name, tag, ok, note=""):
     RESULTS.append((name, tag, ok, [tag] if ok else [], note))
     return ok
@@ -137,6 +169,10 @@ def main() -> int:
                                                  "c" * 64))
     probe("a manuscript on disk the manifest forgot", "MANUSCRIPT-MISSING-FROM-MANIFEST",
           lambda m: m["manuscripts"].pop(sorted(m["manuscripts"])[0]))
+
+    # -108: the two ways to be wrong about NOT-IN-CAPTURE.tsv. Both drive the REAL reader
+    # against a real temp tree, because a probe that mocks the reader proves the mock.
+    _capture_declaration_probes()
 
     # ---------------------------------------------------------------- the capture commit
     probe("source_commit that is not a sha", "BAD-COMMIT-SHA",

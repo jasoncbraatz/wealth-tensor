@@ -1,0 +1,15 @@
+# wt179 · MANUSCRIPTS DELIBERATELY OUTSIDE THE CAPTURE
+#
+# One row per docs/papers/*/paper-*.md that is on disk and is NOT in the built deliverable the
+# manifest describes. A row is a CLAIM: that this manuscript is deliberately outside the PDF, and
+# why. Delete a row and wt179 goes red on the next run, which is how this file is audited rather
+# than trusted.
+#
+# WHAT THIS FILE DOES NOT BUY YOU. A new manuscript that nobody declares still turns the guard red
+# — that property is why the disk glob was there and it is preserved. This file is the difference
+# between "you forgot to rebuild" and "this is a draft and the capture is not supposed to hold it",
+# which the guard previously could not say, so it said the wrong one forever on a draft branch.
+#
+# path<TAB>why
+docs/papers/paper-II-redistribution/paper-II-v1.md	Draft on branch paper-rebuild (wealthTensor-107). The deliverable captures the v0.x corpus; which drafts become v1.0 is the open question this branch exists to answer, and the capture follows that decision rather than anticipating it. See docs/papers/README-v1.md.
+docs/papers/paper-III-dual-tensor/paper-III-v1.md	Draft on branch paper-rebuild (wealthTensor-107). Same reason as the row above; the two are one decision.

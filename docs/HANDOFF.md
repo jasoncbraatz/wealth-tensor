@@ -73,10 +73,10 @@ claims:
   - id: verify-layout.sh
     cmd: bash docs/deliverable/verify-layout.sh
     rc: 0
-    count: 145
+    count: 147
     count_re: wt176: ([0-9]+) pages compared
     slow: true
-    note: needs lualatex, pandoc and a worktree. The count is wt176's, printed un-piped inside this run and DERIVED from the freshly built PDF; the script cross-checks it against a second, independent pypdf read and dies if they disagree
+    note: needs lualatex, pandoc and a worktree. The count is wt176's, printed un-piped inside this run and DERIVED from the freshly built PDF; the script cross-checks it against a second, independent pypdf read and dies if they disagree. RAISED 145 -> 147 at wealthTensor-108 on branch paper-rebuild, where paper-IV.md gained its STOOD DOWN header block and the capture was rebuilt from source (BUILD OK, 0 overfull, 0 missing characters, all 147 per-page text hashes reproducing). On main and at tag v1.0-preprint the count is still 145 and this line does not apply there
   - id: redproof-layout.sh
     cmd: bash docs/deliverable/redproof-layout.sh
     rc: 0

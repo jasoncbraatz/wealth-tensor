@@ -1,4 +1,6 @@
-> ## ⛔ STOOD DOWN — do not cite, do not edit. This paper is not carried forward.
+# The tensor composes, the behaviour does not: one atomic unit at the household, firm and sovereign scales
+
+> ## STOOD DOWN — do not cite, do not edit. This paper is not carried forward.
 >
 > **Decided at wealthTensor-107, executed at wealthTensor-108 (2026-08-26).** This manuscript's
 > thesis is that the three scales are one structure — its own phrase for it is *"a chain rather
@@ -21,8 +23,6 @@
 > and do not correspond to Paper III's post-rebuild numbering.
 
 ---
-
-# The tensor composes, the behaviour does not: one atomic unit at the household, firm and sovereign scales
 
 **Jason C. Braatz**
 *Independent researcher*

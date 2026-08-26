@@ -90,7 +90,12 @@ def test_it_needs_no_toolchain_and_is_cheap_enough_to_always_run() -> None:
     # in the same session when the section 4.4 known-limitations note was added to each paper,
     # which is the only prose Pass D ADDED and the only page it put back.
     # The fonts and manuscripts should not drift quietly.
-    assert (report["pages"], report["fonts"], report["manuscripts"]) == (145, 16, 4)
+    # 145 -> 147 at wealthTensor-108 on branch paper-rebuild: paper-IV.md was stood down and
+    # gained a header block saying where its three surviving parts went, and the capture was
+    # rebuilt from source (BUILD OK, 0 overfull, 0 missing characters, all 147 per-page text
+    # hashes reproducing). The manuscript COUNT is still 4 -- the two v1 drafts are declared
+    # in docs/deliverable/NOT-IN-CAPTURE.tsv and are deliberately outside the capture.
+    assert (report["pages"], report["fonts"], report["manuscripts"]) == (147, 16, 4)
 
 
 def test_every_declared_failure_has_been_seen_red() -> None:
