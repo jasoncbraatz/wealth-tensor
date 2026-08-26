@@ -4,27 +4,27 @@
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --page:#f7f6f3; --surface-1:#fcfcfb; --line:#e3e1db; --grid:#eceae4;
-  --text-primary:#0b0b0b; --text-secondary:#52514e; --text-muted:#807e79;
+  --page:#f4f6f8; --surface-1:#fcfdfe; --line:#dfe3e8; --grid:#e9edf1;
+  --text-primary:#0b0e11; --text-secondary:#4d545c; --text-muted:#7b838c;
   --s1:#2a78d6; --s2:#eb6834;
   --t0:#86b6ef; --t1:#3987e5; --t2:#256abf; --t3:#104281;
-  --rule:#c9c6be; --accent:#2a78d6;
+  --rule:#c4cbd3; --accent:#2a78d6;
 }
 @media (prefers-color-scheme:dark){
   :root:where(:not([data-theme="light"])){
-    --page:#131312; --surface-1:#1a1a19; --line:#33322f; --grid:#2a2a27;
-    --text-primary:#ffffff; --text-secondary:#c3c2b7; --text-muted:#8d8b82;
+    --page:#101317; --surface-1:#181c21; --line:#2e343b; --grid:#252b31;
+    --text-primary:#ffffff; --text-secondary:#bcc4cd; --text-muted:#858d96;
     --s1:#3987e5; --s2:#d95926;
     --t0:#cde2fb; --t1:#9ec5f4; --t2:#5598e7; --t3:#184f95;
-    --rule:#4a4945; --accent:#3987e5;
+    --rule:#414951; --accent:#3987e5;
   }
 }
 :root[data-theme="dark"]{
-  --page:#131312; --surface-1:#1a1a19; --line:#33322f; --grid:#2a2a27;
-  --text-primary:#ffffff; --text-secondary:#c3c2b7; --text-muted:#8d8b82;
+  --page:#101317; --surface-1:#181c21; --line:#2e343b; --grid:#252b31;
+  --text-primary:#ffffff; --text-secondary:#bcc4cd; --text-muted:#858d96;
   --s1:#3987e5; --s2:#d95926;
   --t0:#cde2fb; --t1:#9ec5f4; --t2:#5598e7; --t3:#184f95;
-  --rule:#4a4945; --accent:#3987e5;
+  --rule:#414951; --accent:#3987e5;
 }
 *{box-sizing:border-box}
 body{background:var(--page);color:var(--text-primary);
@@ -80,6 +80,10 @@ th{color:var(--text-muted);font-weight:500;font-size:.72rem;letter-spacing:.05em
 .tip .k{color:var(--text-muted);font-weight:400}
 footer{margin-top:96px;padding-top:30px;border-top:1px solid var(--rule);
   font-family:Inter,system-ui,sans-serif;font-size:.8rem;color:var(--text-muted);line-height:1.7}
+summary:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+details>div{overflow-x:auto}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+@media print{.tip{display:none}details{display:none}body{background:#fff}}
 @media (max-width:640px){.wrap{padding:40px 16px 80px}h1{font-size:1.6rem}}
 </style>
 <div class="wrap">
@@ -90,11 +94,12 @@ footer{margin-top:96px;padding-top:30px;border-top:1px solid var(--rule);
 <p class="meta">Jason C. Braatz &middot; drafts v1.0 &middot; 26 August 2026</p>
 </header>
 
-<div class="note"><strong>What this page is for.</strong> These six figures carry the paper's argument
-end to end. Every one is drawn from the same palette, the same mark specs, and the same grid weight, so
-that a decision made here about <em>one</em> chart is a decision about all of them. Hover any mark for
-its value; each figure carries its own data table. Nothing here is final — the point is to have
-something specific to disagree with.</div>
+<div class="note"><strong>What this page is for.</strong> These nine figures carry both papers'
+arguments end to end. Every one is drawn from the same palette, the same mark specs and the same grid
+weight, so that a decision made here about <em>one</em> chart is a decision about all of them. Each
+figure's eyebrow names the section it belongs in. Hover any mark for its value; every figure carries its
+own data table. <strong>Nothing here is final</strong> — the point is to have something specific enough
+to disagree with.</div>
 
 <h2 class="secrule">Paper III &middot; <em>Two firms file the same numbers</em></h2>
 
@@ -289,8 +294,9 @@ ramp because a ladder is not four categories. One y-axis per panel, always — w
 different scales they get two panels, never two axes. Grid and axes recessive; direct labels on
 endpoints rather than a number on every mark; a legend only where there are two or more series.
 Colorblind separation was computed rather than judged: every palette on this page passes the
-lightness-band, chroma-floor, CVD-separation, normal-vision and contrast checks in both light and dark
-mode. Dark mode is a selected set of steps, not an inverted one.</p>
+lightness-band, chroma-floor, CVD-separation, normal-vision and contrast checks against the actual
+surfaces used, in both light and dark mode. Dark mode is a selected set of steps, not an inverted one.
+The neutrals carry a slight bias toward the accent hue rather than sitting on pure grey.</p>
 <p>All figures regenerate from committed code in <code>jasoncbraatz/wealth-tensor</code>.</p>
 </footer>
 
@@ -606,7 +612,10 @@ function grid(g,x0,x1,ys,fmt){ys.forEach(y=>{
   txt(s,x(fe.k)+9,T+41,'E[η⁺] caps the base',{ta:'start',fs:10.5,fill:'var(--text-secondary)'});
   // matched-budget connector
   el(s,'line',{x1:x(sm.k),x2:x(fe.k),y1:y(sm.g),y2:y(fe.g),stroke:'var(--text-primary)','stroke-width':1.3});
-  txt(s,x(0.1),y(sm.g)-13,'same budget:  0.222  vs  0.125',{ta:'middle',fs:11,fw:600,fill:'var(--text-primary)'});
+  const mx=x(0.0035), my=y(0.14);
+  el(s,'line',{x1:mx+118,x2:x(0.1)-4,y1:my-4,y2:(y(sm.g)+y(fe.g))/2,stroke:'var(--text-muted)','stroke-width':1});
+  txt(s,mx,my-6,'the same budget, spent on',{ta:'start',fs:11,fw:600,fill:'var(--text-primary)'});
+  txt(s,mx,my+8,'different objects: 0.222 vs 0.125',{ta:'start',fs:11,fw:600,fill:'var(--text-primary)'});
   [['stock','var(--s1)'],['flow','var(--s2)']].forEach(([b2,col])=>{
     const d=P[b2];
     el(s,'polyline',{points:d.map(r=>x(r.k)+','+y(r.g)).join(' '),fill:'none',stroke:col,
