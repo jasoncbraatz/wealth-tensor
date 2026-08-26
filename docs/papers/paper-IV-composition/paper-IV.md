@@ -202,7 +202,7 @@ from its classes' reporting without cross-terms.
 households and firms alike, and Paper II's parameter space is what happens when a levy is
 assessed on that sum. Its central result is a composition result wearing different clothes: the
 base of a levy — stock or flow — is the question of *which component of the composed
-state the assessing layer can see*, and at zero realisation a confiscatory levy on flow is
+state the assessing layer can see*, and at zero realisation a confiscatory levy on flow
 leaves the wealth vector exactly unchanged, agent by agent.
 
 **Note what this is: three instances of one question, asked at three scales.** At each step the
@@ -494,8 +494,8 @@ tested.
 Bouchaud and Mézard, Chatterjee and Chakrabarti — has the stochastic machinery and the stationary
 distributions. What it has mostly not had is a *base*: its exchanges are of an undifferentiated
 scalar. Paper II's result is that the base is the decisive coordinate and the rate is not, which is
-a statement kinetic exchange can absorb directly, and its compressive budget κ — which Paper II is
-explicit is a budget and not a mechanism — is the sort of closed-form
+a statement kinetic exchange can absorb directly, and κ — its compressive budget rather than
+its mechanism, in Paper II's own words — is the sort of closed-form
 quantity that literature likes.
 
 **And on the aggregation literature specifically.** SMD is treated in §4 at length and is not

@@ -23,7 +23,14 @@ A sweep over 61 such cross-manuscript claims found eight more. **When three manu
 corpus and are edited in one pass, a per-file verifier is structurally blind to the class of defect
 the pass is most likely to create.** § 4.
 
-**THE THIRD IS SMALLER AND IS THE `SL-9` LESSON RUNNING BACKWARDS.** `TERM-002` pins a numeral to
+**THE THIRD IS THAT PASS D'S OWN C-f TRIAGE WAS WRONG THE FIRST TIME, IN THE SAME WAY ITS REPAIRS WERE.**
+It re-scored the ten inherited register-drift flags down to one, handed that to an adversarial
+verifier, and had **six of the ten verdicts overturned** — including one de-flag that rested on a
+claim the current text contradicts, and one finding it had quietly reclassified out of the class
+entirely. § 2 carries the settled list: **seven sites, five decisions.** A pass that re-scores its
+own findings is grading its own homework as surely as one that repairs them.
+
+**AND THE FOURTH IS THE `SL-9` LESSON RUNNING BACKWARDS.** `TERM-002` pins a numeral to
 the length of the list it counts, at two sites deliberately kept in sync. One of Pass D's repairs
 **deleted one of the two sites.** The guard caught it. § 5.
 
@@ -73,29 +80,97 @@ how much of this corpus was seam.
 
 ---
 
-## 2 · THE C-f FLAGS — TEN SITES, FLAGGED AND UNTOUCHED
+## 2 · THE C-f REGISTER-DRIFT FLAGS — TRIAGED, THEN REFUTED, THEN SETTLED
 
 **`DoD` § 2.5: C-f is deliberately the one that does not get fixed. Re-voicing is Jason's pass, and
-a session that crosses that line is doing damage that looks like help.** Pass D re-voiced nothing.
-`REVIEW-038` counted 8; four independent readers found 10. Locations are given so they can be found,
-and **no repair is proposed for any of them**.
+a session that crosses that line is doing damage that looks like help. NOTHING IN THIS CORPUS WAS
+RE-VOICED, AND NOTHING IN THIS SECTION PROPOSES A REWRITE.**
 
-| # | paper | § | the seam, in one line |
+What this section *does* do is improve the **precision** of the flag list, which `REVIEW-038` § 4.4
+explicitly left open: *"C-f is impressionistic by construction and is flagged, never fixed, so its
+precision does not matter."* It matters now, because the list is about to become a human's work
+queue, and every false flag on it is an hour spent looking at a sentence that was fine.
+
+### 2.0 · HOW THIS SECTION WAS PRODUCED, BECAUSE THE PROCESS IS THE FINDING
+
+**Pass D first triaged the ten flags itself and concluded that only ONE was real.** That verdict
+flattered the pass, shrank its own backlog, and was reached by the session that wrote the flags.
+So it was handed to an adversarial verifier with the instruction to **default to "this IS drift"**
+and to attack the control claim under every de-flag.
+
+**THE VERIFIER OVERTURNED SIX OF THE TEN VERDICTS.** Three de-flags were refuted outright and three
+rested on reasoning that did not survive being checked. **The de-flag rate fell from 9-of-10 to
+3-of-10.** It also found five sites the original sweep had missed and one **broken sentence** —
+a stranded copula in paper-IV, introduced by Pass D's own late corrections, which had shipped past
+1,168 tests, thirty green guards, forty-one re-run claims, a page-for-page layout reproduction and
+two earlier adversarial verifiers. **See § 5.1.**
+
+> **THE RULE THIS ADDS TO § 3's: A PASS THAT RE-SCORES ITS OWN FINDINGS IS GRADING ITS OWN HOMEWORK
+> AS SURELY AS ONE THAT REPAIRS THEM, AND THE CHEAPEST WAY TO CLOSE A FINDING IS TO RECLASSIFY IT
+> OUT OF THE CLASS.** Pass D did exactly that to `F4` and was caught. **A DE-FLAG NEEDS A CONTROL,
+> AND THE CONTROL NEEDS CHECKING** — two of Pass D's rested on claims that were true of the letter
+> and false of the thing.
+
+### 2.1 · ON THE DESK — five decisions, seven sites
+
+**These are Jason's and no repair is proposed for any of them.** Each names what the two registers
+are and what turns on the choice; none names a winner.
+
+| # | sites | the decision, in one line | what a reader compares |
 |---|---|---|---|
-| F1 | II | § 3.4's close | Second-person imperative addressed to the reader — *"ask what its maximum is"*. Nowhere else in §§ 2–3 does the paper say *you*. |
-| F2 | II | § 6 | Long periodic, semicolon-chained sentences against § 3's short declaratives (*"The interesting part is the near end."*). Two hands, adjacent sections. |
-| F3 | III | § 4.2 | Alternates epigram (*"not a cliff, a canyon"*, *"Five into four does not go"*) with formal theorem statement inside one subsection. §§ 4.9–4.10 never do this. |
-| F4 | III | § 6.3 | A short moral essay — *"A paper does not get to grade its own integrity"* — immediately after § 6.1's clipped scope-statement register (*"**Not supported:** …"*). |
-| F5 | III | § 7's commentary | Aphoristic and self-appraising, against §§ 4.9–4.10's clinical transform-and-interval register two pages earlier. |
-| F6 | III | § 10's close | Belletristic cadences (*"either reassuring or the last plank"*) against § 10's own dense citation-and-quotation register. |
-| F7 | III | § A.2's headnote | Essayistic and referee-addressing, against § 11's telegraphic provenance bullets (*"Minutes on a commodity CPU."*). |
-| F8 | III | References | A bolded corrective voice inside the entries (*"commonly miscited on both counts"*) against the neutral registrar voice around it. |
-| F9 | IV | § 8 | Clipped evaluative postmortem — verbless fragments, *"Considered and refused."*, *"The largest entry, and it cost the most."* — against §§ 2–5's measured exposition. |
-| F10 | IV | § 10 | Reads as a maintenance log: dated incidents, HTTP status codes, exit codes. A different author-voice from §§ 1–9. |
+| **A** | paper-II § 3.4 close · paper-III § A.1.1 | **Does this corpus address a reader, or describe one?** ONE decision, two sites — it is a single tic, and settling it settles both. | *"Before using one as a convergence criterion, **ask** what its maximum is and whether the failure mode **you** are trying to detect drives it there."* · against the device the corpus uses elsewhere for the same job: *"**a reader should treat** the ρ axis as a comparative static rather than a policy response function."* |
+| **B** | paper-III References, the Sims entry | **A bolded rebuke inside a bibliographic mark.** Every other entry-level bold in the list is a verification-status token of four words or fewer; this one is a full sentence about the field's citation practice. | *"**The journal is the *Annals of Mathematical Statistics*, not *Econometrica*, and the title word is "explicitly", not "essentially" — this entry is commonly miscited on both counts.**"* · directly beneath it: *"**Read in full.**"* |
+| **C** | paper-III § 7's two-row commentary | **A pun and a personification in a ledger's commentary.** Pass D's C-b repairs removed the *aphorisms* here and left the *voice*; the flag was recorded as cleared and is not. | *"Two rows carry more than their **cells**."* / *"the check in that row was built to show that it did and **refused**"* · against the cells themselves: *"held to **10⁻¹⁵**"* |
+| **D** | paper-III § 10 close | **The only sentence in § 10 whose subject is the author's own confidence rather than a claim about the literature** — and it carries no proposition. Strip it and nothing is lost, which is what makes it a voice choice. | *"The separation from § 2 is the same one that survives Jin and Myers, **which is either reassuring or the last plank.**"* · § 10's propositional baseline: *"**Piketty is not contradicted; he is relocated.**"* |
+| **E** | Appendix A headnote · § A.2 headnote | **Two headnotes in the identical structural slot, now in two registers — AND PASS D CREATED THE ASYMMETRY** by flattening one and never looking at its sibling 107 lines above. Either both stay aphoristic or both go flat. | *"…and **a result that needs a metaphysics is weaker than one that does not.**"* · *"This section defends Λ, at full strength and on three independent legs; the rest of the paper then uses it without re-arguing it."* |
 
-**F9 and F10 are worth a specific warning.** Both are *good* writing in their own register, and both
-are the kind of thing a harmonising pass would flatten. They are flagged because they differ, not
-because they are wrong.
+### 2.2 · OFF THE DESK — three flags withdrawn, with controls that were checked
+
+| # | site | why it is not drift | the control, verified |
+|---|---|---|---|
+| **F9** | paper-IV § 8's verbless fragments | The bolded-lead clipped catalogue is the register of the abandoned-approaches section in **all three manuscripts**, and the verbless-fragment sub-feature appears in paper-III too. | paper-III § 8: *"**The pure-delay reading of the reporting layer.** The claim layer as a simple lag on the physical one. Abandoned because…"* |
+| **F10** | paper-IV § 10's dated incidents and status codes | It is the **corpus's disclosure register**, not paper-IV's alone: paper-III § 11 carries dated pulls, SHA-256 digests, per-file pins and hardware timings; paper-II § 7 carries a per-file pin with a paragraph defending it. Only the HTTP status code is unique, and only because only paper-IV queries a live endpoint. | paper-III § 11: *"retrieved on **2026-08-12**… SHA-256 **`974d156b…`**"* / *"**76 seconds on two 2.8 GHz cores**"* |
+| **F2** | paper-II § 6's long sentences vs § 3's | **Measured rather than judged.** § 6 runs 40.6 words/sentence; § 3's own subsections run 25.1–31.9. A 1.3× gap is inside § 3's internal spread. The flagged contrast is not in the text. | § 3.3, the supposed "short declarative" control, at 30.6 w/s: *"κ is what a base makes available to spend — which is why the bases sort, and why the closed form is worth having — but what the spending buys is fixed by the object the levy acts on…"* |
+
+### 2.3 · WHERE PASS D'S REASONING FAILED EVEN WHERE ITS VERDICT STOOD
+
+**Recorded because a right answer reached by invented evidence is the defect this whole review
+exists to catch, and Pass D committed it twice in the act of auditing itself.**
+
+* **`F3` — paper-III § 4.2's epigrams.** Verdict stands: one hand runs through § 4. **But Pass D's
+  stated reason was fabricated.** It claimed §§ 4.9–4.10 are "clinical" and that § 4.2's compression
+  was therefore doing a different job. They are not clinical — § 4.9 closes on *"a share of an empty
+  set is arithmetic, not evidence"* and § 4.10 on *"The identification is real and it is
+  expensive."* **The contrast Pass D dissolved does not exist.**
+* **`F4` — paper-III § 6.3 against § 6.1.** Pass D reclassified this out of C-f entirely, on the
+  ground that "register follows subject" because § 6.3's subject is epistemic conduct. **§ 6.1's
+  subject is also epistemic conduct, and it carries the same antithesis construction** — *"A model
+  result is not made false by the failure of an empirical identification, and it is not made true by
+  one either."* The discriminator does not exist. The honest de-flag was available inside the class:
+  **§ 6.1 and § 6.3 are the same hand.** **The reclassification is withdrawn.**
+
+### 2.4 · FIVE SITES THE ORIGINAL SWEEP MISSED, AND WHAT BECAME OF THEM
+
+Two are now on the desk as **A** and **E** above. The other three were adjudicated and declined,
+with the reason, so that a future pass does not re-notice them:
+
+* **paper-II § 4 (18.7 w/s) against § 7 (51.8 w/s)** — a 2.8× gap, and the largest in the paper.
+  **Declined:** it is the same genre explanation `F9` and `F10` were upheld on — a clipped
+  abandoned-approaches catalogue against an enumerative provenance section. The sweep that found
+  this gap did not apply its own reasoning to it.
+* **paper-IV § 5's *"read as behaviour for a century and a half of teaching"*** — **Declined.**
+  "It is not X; it is Y" is the paper's signature construction and the dating carries content.
+  *(Separately and not as C-f: "a century and a half" is an unsourced dating claim. A precision
+  point, not a voice one.)*
+* **paper-III § A.1.1's polemical register against § A.2.2's catalogue entry** — **Declined.**
+  Philosophy of science and the naming of a World Bank series are different jobs, and § A.1.1 is
+  already on the desk under **A** for the second-person address, which is the checkable half.
+
+### 2.5 · THE HONEST COUNT
+
+**Ten flags in, seven sites out, five decisions.** Not the one Pass D first claimed, and not the ten
+it inherited. **Two of the seven are sites the original sweep never saw, and one of those two exists
+because Pass D flattened one half of a matched pair and did not look at the other.**
 
 ---
 
@@ -259,7 +334,8 @@ a fifth session doing it quietly.
 
 ## 7 · WHAT PASS D DID NOT DO, AND WHY
 
-* **C-f: flagged, never fixed.** § 2. Ten sites, no repairs proposed.
+* **C-f: flagged, never fixed.** § 2. **Seven sites, five decisions, no repairs proposed** —
+  ten flags in, three withdrawn with checked controls, two the original sweep never saw.
 * **The soft C-e gloss pass: not taken.** § 4.1 permits it and does not require it; one attempt was
   reverted when a guard correctly objected (§ 1). The 53 soft sites are recorded there and remain
   fetchable artefacts beside a public repository.

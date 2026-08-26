@@ -126,11 +126,14 @@ manuscripts themselves as well as recorded here.
 requires. And § 1's characterisation of zakat has no primary source; the paper says so, and says
 its argument does not depend on it. **Both are now in paper-II's own § 4.4 note, not only here.**
 
-**6.2 · Register drift is flagged and not fixed, at ten sites.** `REVIEW-040` § 2 locates each one.
-**This is a deliberate refusal**: re-voicing is the author's pass, and a session that harmonises
-the voice has spent his hours for him and probably lost something. Two of the ten (paper-IV § 8 and
-§ 10) are good writing in their own register and are flagged because they *differ*, not because
-they are wrong.
+**6.2 · Register drift is flagged and not fixed, at seven sites carrying five decisions.**
+`REVIEW-040` § 2 locates each one, names what the two registers are, and names no winner. **This is
+a deliberate refusal**: re-voicing is the author's pass, and a session that harmonises the voice has
+spent his hours for him and probably lost something. The list arrived at ten, and the triage that
+produced seven was itself audited: **an adversarial verifier overturned six of the ten verdicts**,
+three flags were withdrawn with controls that were checked, and two of the seven are sites the
+original sweep never saw — one of which exists because Pass D flattened one half of a matched pair
+of headnotes and never looked at the other.
 
 **6.3 · Fifty-three soft apparatus references are named without a gloss.** A `scripts/wt###.py` or
 a `REG-0NN` code in a data-and-code section is a committed, fetchable artefact beside a public
@@ -152,12 +155,22 @@ length in the body and in the abstract, not filed under abandonments.** It is th
 important thing in this corpus for a reader to know, and no part of the review apparatus makes it
 smaller.
 
-**6.6 · What no instrument here measures.** Nothing in this repository measures where a reader
-**first meets** a value — Pass C discovered that a fold repaired a hundred lines below the table
-that introduces the term leaves the fold, with every checker green. Nothing measures cross-manuscript
-consistency either; Pass D found nine such defects by reading, and the sweep that found them was a
-one-off, not an instrument. **Both are named in `POST-SHIP.md` as instruments worth building, and
-both are blocked by § 1.1 until the corpus has shipped — which, as of this file, it has.**
+**6.6 · What no instrument here measures, and the sharpest instance of it.** Nothing in this
+repository measures where a reader **first meets** a value — Pass C discovered that a fold repaired a
+hundred lines below the table that introduces the term leaves the fold, with every checker green.
+Nothing measures cross-manuscript consistency either; Pass D found nine such defects by reading.
+
+**AND NOTHING IN THIS REPOSITORY READS ENGLISH.** A late Pass D correction replaced a predicate and
+left the old copula standing — *"a confiscatory levy on flow **is / leaves** the wealth vector
+exactly unchanged"* — and that sentence passed 1,168 tests, thirty green guards, forty-one re-run
+claims, a page-for-page layout reproduction and two adversarial verifiers before a third one reading
+for something else entirely happened on it. **The gap it exposes is not that the apparatus is weak;
+it is that a LATE CORRECTION ROUND INHERITS NONE OF THE VERIFICATION OF THE ROUND IT CORRECTS.**
+Both sweeps and the grammar check had been run over the first batch of repairs and none over the
+corrections. Repaired at `wt220`, with a second, milder instance of the same shape beside it.
+
+**All three are named in `POST-SHIP.md` as instruments worth building, and all three were blocked by
+§ 1.1 until the corpus had shipped — which, as of this file, it has.**
 
 ---
 
