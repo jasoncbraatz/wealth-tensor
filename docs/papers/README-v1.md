@@ -37,8 +37,8 @@ written for, and paper II §7 already says so in the manuscript of record.
 
 ## What else wealthTensor-108 repaired on this branch
 
-The v1 rebuild landed with five red guards. Four are fixed here; the fifth is a stale deliverable
-and is teed up rather than faked.
+The v1 rebuild landed with five red guards. All five are settled here — four repaired, and the
+fifth **declared** rather than faked.
 
 - **Sixteen orphan reference entries in `paper-III-v1.md`.** The rebuild cut 788 lines of paper III
   and the reference entries those sections carried stayed behind. Thirteen were deleted (the
@@ -55,7 +55,14 @@ and is teed up rather than faked.
   paper III v0.x's Appendix A extracted verbatim, with its own provenance header.
 - **Two class-A cross-reference false positives** recorded in `docs/crossref-dismissed.tsv`, which
   keys on the manuscript stem and therefore did not carry over to the `-v1` files.
-- **Still red, honestly:** `docs/deliverable/LAYOUT-MANIFEST.json` does not list the two `-v1`
-  manuscripts, and the guard is *right* — the manifest describes a built 145-page PDF that predates
-  them. Regenerating it needs the deliverable build, which is its own at-bat. Do not add the hashes
-  by hand; that would make the manifest lie about what the PDF contains.
+- **Declared outside the capture, and therefore green.** `docs/deliverable/LAYOUT-MANIFEST.json`
+  describes only the v0.x corpus — the four `paper-*.md` files, 147 pages — and that is now a
+  *stated* fact rather than a standing red. `docs/deliverable/NOT-IN-CAPTURE.tsv` carries one row
+  per `-v1` draft saying it is deliberately outside the built PDF and why, so
+  `scripts/wt179_manifest_guard.py` reports **10 checks, 0 findings** instead of a permanent "you
+  forgot to rebuild" about a manuscript that could not possibly be in the capture. Delete a row and
+  the guard goes red on the next run, which is how that file is audited rather than trusted.
+  **Still true, and the reason the row is a declaration and not a hash:** never add `-v1` hashes by
+  hand. When a draft becomes v1.0 its row comes out and the deliverable is rebuilt **from a clean
+  tree** — `build.sh` stamps `source_commit` from HEAD, so a dirty build makes the manifest name a
+  commit it was not built from, and only `verify-layout.sh` can see that.
