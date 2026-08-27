@@ -1791,8 +1791,6 @@ theorem is a framing that will be argued about instead of the theorem.**
    and must make the residue accumulate. This construction satisfies those conditions; it is not
    argued to be the only one that does.
 
----
-
 9. **The diagonality of the reporting layer is an assumption, it was testable, and it is
    false.** §4.1 writes the reporting layer as a Hadamard product, which asserts that recognition
    in one asset class does not force recognition in another. Real practice couples them: a
