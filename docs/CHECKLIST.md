@@ -34,9 +34,9 @@ never asked. The 61 probes already built are an asset; they are not a destinatio
 | **P3** | corpus | 🧍 PENDING-HUMAN | 0/1 |
 | **P4** | corpus | ✅ CLOSED | 1/1 |
 | **P5** | corpus | 🧍 PENDING-HUMAN | 0/1 |
-| **P6** | corpus | 🧍 PENDING-HUMAN | 0/1 |
+| **P6** | corpus | ✅ CLOSED | 1/1 |
 | **P7** | corpus | ✅ CLOSED | 1/1 |
-| **P11** | corpus | 🧍 PENDING-HUMAN | 0/1 |
+| **P11** | corpus | ✅ CLOSED | 1/1 |
 | **P11a** | corpus | ✅ CLOSED | 1/1 |
 | **P11b** | corpus | ✅ CLOSED | 1/1 |
 | **P11c** | corpus | ✅ CLOSED | 1/1 |
@@ -103,9 +103,9 @@ never asked. The 61 probes already built are an asset; they are not a destinatio
 - [ ] P3 · Paper II re-measured against the same two lists, gaps closed, ready to submit — **PENDING-HUMAN** _(P3a-P3n are the SAME twelve legs as P1x/P5x, emitted from one template by scripts/gen_apparatus_rows.py rather than hand-cloned (wealthTensor-54), plus P3n. Twelve are green and P3m is deferred by design. Stays manual for P2's reason -- the session that closed the gaps should not also score whether the paper is ready. P7's fresh eyes and P8 are the judges.)_
 - [x] P4 · Paper IV exists as a full draft (own charter + Paper I's surviving subsection + Abandoned Approaches) — **MET** _(check passed)_
 - [ ] P5 · Paper IV ready to submit (same two lists, same bar) — **PENDING-HUMAN** _(P5a-P5m are Paper III's measured apparatus bar repointed at paper-IV.md (wealthTensor-53); eleven are green and P5m is deferred by design. Stays manual for P2's reason -- the session that drafted the paper should not also score whether it is ready. P7's fresh eyes and P8 are the judges.)_
-- [ ] P6 · Every number in every paper regenerates from a COMMITTED script at the pinned SHA, re-run at close — **PENDING-HUMAN** _(upgrade to cmd: rows per paper as the regen scripts are enumerated (WT-027 lesson: a number without a script is a number nobody has checked). FIRST ONE LANDED: P3n derives Paper II's '18 tests' from pytest --collect-only instead of trusting the constant. Two papers to go.)_
+- [x] P6 · Every number in every paper regenerates from a COMMITTED script at the pinned SHA, re-run at close — **MET** _(check passed)_
 - [x] P7 · Ship the corpus per docs/DEFINITION-OF-DONE-SHIP.md: STRUCTURALLY FINAL manuscripts Jason can rewrite from -- zero OPEN S1, zero OPEN S2, zero open C-class — **MET** _(check passed)_
-- [ ] P11 · The corpus audited AS A WHOLE — ADR-001 addendum 6's end-to-end test, designed and run: what would it mean for the three papers to fail AS A SYSTEM, as opposed to one of them failing — **PENDING-HUMAN** _(UNCLAIMED SINCE 2026-08-11 and now load-bearing, because Jason's own-hand pass (P8) waits on it. ADR-001's batch ruling says the conjunction gets exactly ONE first end-to-end pass and shipping early spends it, so this is the pass. Stays manual because designing the test AFTER the three results are known is not a severe test -- the design has to be written down and defensible before it is run, and a session that designs and passes it in one sitting has done neither.)_
+- [x] P11 · The corpus audited AS A WHOLE — ADR-001 addendum 6's end-to-end test, designed and run: what would it mean for the three papers to fail AS A SYSTEM, as opposed to one of them failing — **MET** _(check passed)_
 - [x] P11a · END-TO-END-001 leg E1 is RUN and its verdict is recorded — the shared degeneracy — is the II<->III join load-bearing or vocabulary? — **MET** _(check passed)_
 - [x] P11b · END-TO-END-001 leg E2 is RUN and its verdict is recorded — the unowned claim — does the conjunction assert something no paper defends? — **MET** _(check passed)_
 - [x] P11c · END-TO-END-001 leg E3 is RUN and its verdict is recorded — the containment matrix — is ADR-001's promise about failure true? — **MET** _(check passed)_
