@@ -84,10 +84,33 @@ local function code_to_texttt(el)
   return pandoc.RawInline("latex", "\\texttt{" .. texttt_escape(el.text) .. "}")
 end
 
+-- A snake_case IDENTIFIER is a different typographic object from a URL or a SHA, and
+-- wealthTensor-109b is where that stopped being a distinction without a difference. Both were
+-- routed to \url; xurl then broke both at any character, so an identifier was cut mid-word
+-- sixteen times across the capture. An identifier has seams -- its underscores -- and a reader
+-- expects the break there. A URL's slashes and a SHA's undifferentiated hex do not, which is
+-- why those keep the break-anywhere behaviour that fixed -94's two measured overflows.
+-- The test is SEAM PRESENCE, not shape. The first version of this asked whether the token was
+-- `^[%w_]+$` with an underscore, which is true of a bare identifier and false of the same
+-- identifier inside a path -- so `scripts/wt083_tier_ladder_antialignment.py` fell through to
+-- \url and was still cut at `wt083_ti`. Measured: that narrow test fixed 9 of 16 mid-word
+-- breaks and left 7, every one of them a path. A path's seams are `/` and `.` where an
+-- identifier's are `_`; both are places a reader's eye accepts a break. Only a token carrying
+-- no seam whatsoever -- a 64-character hex SHA -- has nowhere to break and still needs xurl's
+-- break-anywhere rule, which is the case -94 added xurl for in the first place.
+local function has_seam(s)
+  return s:find("[_/%.%-:]") ~= nil
+end
+
+local function code_span(tok)
+  if has_seam(tok) then return "\\wtident{" .. tok .. "}" end
+  return "\\url{" .. tok .. "}"
+end
+
 local function code_inline(el)
-  -- Whitespace-free spans are identifiers and go straight to \url (step 13).
+  -- Whitespace-free spans are identifiers or URLs; code_span decides which (step 13).
   if not el.text:find("%s") then
-    return pandoc.RawInline("latex", "\\url{" .. el.text .. "}")
+    return pandoc.RawInline("latex", code_span(el.text))
   end
   -- A span WITH whitespace is a command line, and "it can break at its spaces" is not
   -- enough: measured on the real build, `python3 scripts/wt089_recognition_and_offdiagonal.py`
@@ -99,7 +122,7 @@ local function code_inline(el)
   -- \url carries %, #, &, ~, < and > safely; it cannot carry a brace or a backslash, and
   -- MEASURED over the four manuscripts no code span contains either.
   local parts = {}
-  for tok in el.text:gmatch("%S+") do parts[#parts + 1] = "\\url{" .. tok .. "}" end
+  for tok in el.text:gmatch("%S+") do parts[#parts + 1] = code_span(tok) end
   return pandoc.RawInline("latex", "{\\ttfamily " .. table.concat(parts, " ") .. "}")
 end
 

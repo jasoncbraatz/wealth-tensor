@@ -47,9 +47,12 @@ become v1.0. `P5` is Jason's for a reason recorded below.
 110 dpi and looked at (title, a body page of §4.7, a references page, the §9/§10 boundary), plus two
 mechanical sweeps over all 147 pages.
 
-- **Verdict: P13g NOT MET** — two defects, both specific, both reproducible, one now repaired.
+- **Verdict: P13g MET** — two defects were found; **both are repaired and re-measured in this
+  same pass**, and the verdict is recorded at the state of the capture built from `RECIPE.md` as
+  amended at `-109b`. The account of each defect is kept below in full rather than rewritten,
+  because how a defect was found is worth more to the next pass than the fact that it is gone.
 
-**Defect 1 — sixteen mid-word line breaks inside monospace identifiers. OPEN.**
+**Defect 1 — sixteen mid-word line breaks inside monospace identifiers. REPAIRED at `-109b`.**
 
 Measured against the four manuscripts as ground truth (not against the PDF's own text, which joins
 the breaks back together and hides them — the first attempt at this sweep read fragments against
@@ -74,7 +77,18 @@ opportunity at **every character**. It fixed the overflow and silently discarded
 rule for identifiers. Step 13's *stated* reason survives (copy-paste still works); its *readability*
 did not, and nothing re-examined it.
 
-**The remedy is not to drop `xurl`** — that reintroduces two measured overflows. It is to separate
+**The repair, and what it cost.** `\DeclareUrlCommand\wtident` breaks at every seam a reader
+recognises — `_` `/` `.` `-` `:` — and `wt175_md2tex.lua` routes a token carrying any seam to it,
+leaving only a genuinely seamless token (a bare 64-character hex SHA) on `\url`'s break-anywhere
+rule, which is the case `-94` added `xurl` for. Measured in two passes because the first was too
+narrow and the number said so: restricting the routing to *bare* identifiers took mid-word breaks
+**16 → 7**, and every survivor was an identifier living inside a path; routing on seam presence
+takes them to **0**, with 19 breaks all at seams. Zero overfull boxes and zero missing characters
+throughout, 147 pages. The price is looseness rather than wrongness — underfull boxes rise 8 → 20,
+and `build.sh` is explicit that an underfull box is loose while a mid-word break is wrong.
+
+*The original reasoning, kept because the remedy is only obvious after it:* the remedy was not to
+drop `xurl` — that reintroduces two measured overflows. It is to separate
 the two populations `wt175_md2tex.lua` currently routes to one macro: snake_case identifiers (break
 at `_` only) and URLs/SHAs (break anywhere, as now). Two macros, two behaviours, each matched to its
 content. That is a change to `wt175_md2tex.lua`, `preamble.tex` and `RECIPE.md` step 13, plus a

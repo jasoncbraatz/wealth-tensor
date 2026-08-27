@@ -109,6 +109,29 @@
 % the PDF still runs -- so it satisfies the step's stated reason rather than only its letter.
 % It is also the package pandoc's own generated preamble reaches for, for this exact reason.
 \usepackage{xurl}
+% AMENDED AT wealthTensor-109b, FROM THE RENDERED PAGE, and RECIPE.md step 13 carries the same
+% amendment. xurl fixed the two overflows -94 measured and, in doing so, silently discarded the
+% underscore-only rule this step was written around: it grants a break opportunity at EVERY
+% character, so `wt083_tier_ladder_antialignment` was set as `wt083_ti` / `er_ladder_anti...`.
+% Measured on the built capture against the four manuscripts as ground truth: sixteen MID-WORD
+% breaks against ten at underscores. Step 13's stated reason survived that change -- nothing is
+% inserted, so what a reader copies still runs -- and its READABILITY did not, which is why the
+% defect sat through every pass that read step 13 rather than the page.
+%
+% The repair is not to drop xurl: the 47-character repository URL and the 64-character SHA have
+% no underscore between them and genuinely need breaks anywhere. It is that the two populations
+% were never the same population. \url keeps xurl's behaviour and carries URLs and SHAs;
+% \wtident carries snake_case identifiers and breaks ONLY at underscores, which is where a
+% reader's eye expects the seam. \DeclareUrlCommand scopes \UrlBreaks to the command, so this
+% cannot leak back into \url. wt175_md2tex.lua decides which span gets which.
+% THE SEAM SET, widened once at authoring time after measuring the first attempt. Restricting
+% \wtident to `\do\_` alone fixed 9 of the 16 mid-word breaks and left 7, all of them an
+% identifier living INSIDE a path -- `scripts/wt083_tier_ladder_antialignment.py` is not
+% `^[%w_]+$`, so it fell through to \url and was cut at `wt083_ti`. A path has seams too; they
+% are just spelt `/` and `.` rather than `_`. So the command breaks at every seam a reader
+% recognises, and only a token with NO seam at all -- a bare 64-character SHA -- still needs
+% xurl's break-anywhere rule, which is exactly the case -94 added it for.
+\DeclareUrlCommand\wtident{\urlstyle{tt}\def\UrlBreaks{\do\_\do\/\do\.\do\-\do\:}}
 
 % ---- RECIPE step 14 · tables ----------------------------------------------------------
 % booktabs only: \toprule, \midrule, \bottomrule. No vertical rules and no \hline.

@@ -210,6 +210,40 @@ wrong, and the second one cannot be fixed by choosing differently.**
     the object changed: **a rule written for one kind of object silently claims the kinds
     it never met.**
 
+    **Amended again at wealthTensor-109b, from the rendered page — and the amendment above
+    is what needed amending.** `xurl` grants a break opportunity at **every character**, so
+    in fixing the URL and the SHA it silently discarded the underscore rule for the
+    identifiers the step was written around. Measured on the built capture, against the four
+    manuscripts as ground truth: **sixteen MID-WORD breaks against ten at underscores** —
+    `wt083_ti` / `er_ladder_antialignment`, `wt084_identificati` / `on_closed_form`,
+    `test_excess_demand_is_monotone_h` / `ere_so_this_is_not_an_SMD_result`. The step's
+    *stated* reason survived that change — nothing is inserted, so what a reader copies still
+    runs — and its **readability** did not, which is why the defect sat through every pass
+    that read this step instead of the page. **The measurement had to be taken against the
+    manuscripts:** a sweep run against the PDF's own extracted text reads the fragments back
+    as whole identifiers and reports zero.
+
+    The repair is **not** to drop `xurl`. It is that the two populations were never one
+    population, and both were being sent to `\url`:
+
+    ```latex
+    \DeclareUrlCommand\wtident{\urlstyle{tt}\def\UrlBreaks{\do\_\do\/\do\.\do\-\do\:}}
+    ```
+
+    `wt175_md2tex.lua` routes a token carrying **any seam** — `_` `/` `.` `-` `:` — to
+    `\wtident`, and only a token with no seam at all (a bare 64-character hex SHA) to `\url`,
+    which is precisely the case `xurl` was added for. `\DeclareUrlCommand` scopes `\UrlBreaks`
+    to the command, so it cannot leak back.
+
+    **Measured in two passes, because the first was too narrow and the number says so.**
+    Restricting the routing to bare identifiers (`^[%w_]+$` with an underscore) took mid-word
+    breaks 16 → **7**, and all seven survivors were an identifier living inside a *path*, which
+    is not `^[%w_]+$`. Routing on seam presence instead takes them to **0** — 19 breaks, every
+    one at a seam. Zero overfull boxes and zero missing characters throughout, at 147 pages.
+    The price is paid in looseness, not in wrongness: underfull boxes rise 8 → **20**, and
+    `build.sh` is explicit that an underfull box is loose rather than wrong while a mid-word
+    break in an identifier is simply wrong.
+
 14. **Tables:** `booktabs` only — `\toprule`, `\midrule`, `\bottomrule`. No vertical rules and
     no `\hline`. Table and figure spacing is the class default, confirmed by the build:
     `\floatsep` 12.0pt plus 2.0pt minus 2.0pt, `\textfloatsep` 20.0pt plus 2.0pt minus 4.0pt,
