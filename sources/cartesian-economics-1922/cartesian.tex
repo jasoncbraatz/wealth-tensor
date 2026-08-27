@@ -1,0 +1,1381 @@
+% ---------------------------------------------------------------
+%  Frederick Soddy, CARTESIAN ECONOMICS (Hendersons, London, 1922)
+%  A reset of the 1922 edition from the Harvard/Widener scan
+%  (barcode 32044010374809).  Pagination follows the original.
+%  Set in MFB Oldstyle = Century Oldstyle (M. F. Benton, ATF 1909).
+% ---------------------------------------------------------------
+\documentclass[10.5pt,twoside]{book}
+
+\usepackage{fontspec}
+\usepackage[
+  paperwidth=6in, paperheight=9in,
+  inner=1.00in, outer=0.82in,
+  top=0.72in, bottom=0.80in,
+  headsep=15pt, footskip=22pt
+]{geometry}
+\usepackage{microtype}
+\usepackage{lettrine}
+\usepackage{fancyhdr}
+\usepackage[hidelinks,pdfusetitle]{hyperref}
+\hypersetup{
+  pdftitle={Cartesian Economics: The Bearing of Physical Science upon State Stewardship},
+  pdfauthor={Frederick Soddy},
+  pdfsubject={Two lectures, Birkbeck College and the London School of Economics, November 1921},
+  pdfkeywords={Soddy, thermodynamics, economics, wealth, debt, energy, 1922, Hendersons}}
+\usepackage{ragged2e}
+\usepackage[normalem]{ulem}
+
+\setmainfont{MFBOldstyle}[
+  Extension      = .otf,
+  UprightFont    = *-Regular,
+  ItalicFont     = *-Italic,
+  BoldFont       = *-Bold,
+  Ligatures      = TeX,
+  Numbers        = OldStyle
+]
+\newfontfamily\liningfont{MFBOldstyle}[
+  Extension=.otf, UprightFont=*-Regular, ItalicFont=*-Italic,
+  BoldFont=*-Bold, Ligatures=TeX, Numbers=Lining]
+
+\linespread{1.06}
+\setlength{\parindent}{1.4em}
+\raggedbottom
+\frenchspacing
+\hyphenpenalty=150
+\tolerance=2500
+\emergencystretch=1.5em
+\clubpenalty=3000
+\widowpenalty=3000
+
+% --- letterspaced caps, the way a 1922 comp would have done it ----
+\newcommand{\lsp}[2]{{\addfontfeature{LetterSpace=#1}\MakeUppercase{#2}}}
+\newcommand{\scaps}[1]{{\addfontfeature{LetterSpace=4}\textsc{#1}}}
+
+% --- running heads: folio outside, title centred --------------------
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyhead[LE]{\normalsize\thepage\hfill}
+\fancyhead[RO]{\hfill\normalsize\thepage}
+\fancyhead[C]{{\addfontfeature{LetterSpace=8}\normalsize CARTESIAN ECONOMICS.}}
+\fancypagestyle{plain}{\fancyhf{}\renewcommand{\headrulewidth}{0pt}}
+
+% --- block quotations: smaller, indented both sides -----------------
+\newenvironment{extract}
+  {\par\addvspace{7pt}\begingroup\small\linespread{1.02}\selectfont
+   \leftskip=1.9em \rightskip=1.2em \parindent=1.2em \noindent\ignorespaces}
+  {\par\endgroup\addvspace{7pt}}
+
+% --- forced original page breaks -----------------------------------
+\newcommand{\origpage}[1]{\clearpage\setcounter{page}{#1}}
+
+% --- footnote styling ----------------------------------------------
+\usepackage[flushmargin]{footmisc}
+\renewcommand{\thefootnote}{*}
+\renewcommand{\footnotelayout}{\footnotesize}
+\setlength{\skip\footins}{14pt plus 3pt}
+\renewcommand{\footnoterule}{\vspace*{-3pt}\rule{6em}{0.4pt}\vspace*{2.5pt}}
+
+\begin{document}
+\frontmatter
+\pagestyle{empty}
+
+% ================= HALF TITLE =================
+\vspace*{2.1in}
+\begin{center}
+  {\addfontfeature{LetterSpace=14}\large CARTESIAN ECONOMICS}
+\end{center}
+\clearpage\null\clearpage
+
+% ================= TITLE PAGE =================
+\vspace*{1.45in}
+\begin{center}
+  {\addfontfeature{LetterSpace=10}\fontsize{21}{25}\selectfont Cartesian Economics}\\[26pt]
+  {\fontsize{12.5}{17}\selectfont\itshape The Bearing of Physical Science\\
+   upon State Stewardship.\ \ By\\[3pt]
+   Frederick Soddy, M.A., F.R.S.}\\[16pt]
+  \rule{1.5in}{0.5pt}\\[2.30in]
+  {\addfontfeature{LetterSpace=16}\footnotesize LONDON:}\\[7pt]
+  {\addfontfeature{LetterSpace=14}\fontsize{15}{18}\selectfont HENDERSONS}\\[5pt]
+  {\addfontfeature{LetterSpace=10}\footnotesize 66 CHARING CROSS ROAD}\\[12pt]
+\end{center}
+\clearpage
+
+% ================= IMPRINT =================
+\null\vfill
+\begin{center}
+  {\footnotesize First published, May, 1922}\\[4pt]
+  {\footnotesize Reprinted, October, 1922}
+\end{center}
+\vspace*{1.4in}
+\clearpage
+
+% ================= TEXT =================
+\mainmatter
+\pagestyle{fancy}
+\setcounter{page}{3}
+\thispagestyle{plain}
+
+\begin{center}
+  {\addfontfeature{LetterSpace=8}\fontsize{16}{20}\selectfont Cartesian Economics.}\\[13pt]
+  {\addfontfeature{LetterSpace=6}\footnotesize THE BEARING OF PHYSICAL SCIENCE UPON STATE\\[2pt]
+   STEWARDSHIP.}\\[13pt]
+  {\footnotesize\itshape Two Lectures to the Student Unions of Birkbeck College and\\
+   The London School of Economics, November 10th and 17th,\\
+   1921.\footnotemark}\\[9pt]
+  {\footnotesize By Frederick Soddy, M.A., F.R.S.}\\[16pt]
+  {\addfontfeature{LetterSpace=6}\footnotesize FIRST LECTURE.\,---\,Chairman, Sir Richard Gregory.}\\[10pt]
+\end{center}
+\footnotetext{These lectures owe much to a long controversial correspondence
+carried on with Dr.\ H. Lyster Jameson, whose sad death is just reported in
+the papers. Dr.\ Jameson upheld the neo-Marxian or proletarian view in
+economics and the determinist or, as I style it, the ``ultra-materialistic,''
+philosophy, and from the controversy my own views gained in definiteness and
+clearness.\par\vspace{2pt}\hfill\textit{March 3rd, 1922.}\quad F. S.}
+
+\lettrine[lines=2,findent=2pt,nindent=0pt,slope=0pt]{I}{T} is my intention to
+try to bring the existing knowledge of the physical sciences to bear upon the
+question ``How do men live?'' This question ought to be the first the
+economist should try to answer. I am by no means the first to essay this task,
+but the modern economist seems to have forgotten that there is such a
+question, whilst the earlier ones lived at a stage of the development of
+scientific knowledge when no exact answer was forthcoming.
+
+My own point of departure could not be better illustrated than by a quotation
+from Descartes, and the aspects I propose to examine might well be called
+``Cartesian Economics.''
+
+\begin{extract}
+``Starting from the forms of knowledge most useful to life, instead of from
+that speculative philosophy taught in our schools, and knowing the force and
+processes of fire, the air, the stars and all the other bodies which surround
+us as distinctly as we know the different occupations of our own workmen, we
+shall be able to employ them in the same fashion and so render ourselves as
+the masters and possessors of nature and contribute to the perfection of the
+human life.''
+\end{extract}
+
+\origpage{4}
+
+The enormous progress made in the mastery of man over nature and the meagre
+contribution to the perfection of the human life is a contrast that can only
+be accounted for by some such enquiry as that which I propose to essay. But in
+language more homely than that of Descartes I may illustrate my starting point
+by means of a story. An expert organist, drawing enthusiastic applause from
+his audience, was surprised and annoyed by the blower coming to the front of
+the screen and remarking to him, ``Yes! we played that piece very well.'' The
+blower not being encouraged in well-doing, in the next piece the divine music
+rose majestically to its climax and then petered out in a dismal wail, whilst
+a head appeared round the screen and remarked, ``Now! is it we?'' Nor is it
+without significance to note that, since the occurrence, the human labour upon
+which the organist relied has been replaced so completely by electric power.
+Power, rather than any qualifying adjective, human, mechanical or electrical,
+is the starting point of Cartesian economics.
+
+At the risk of being redundant, let me illustrate what I mean by the question,
+``How do men live?'' by asking what makes a railway train go. In one sense or
+another the credit for the achievement may be claimed by the so-called
+``engine-driver,'' the guard, the signalman, the manager, the capitalist, or
+the share-holder,---or, again, by the scientific pioneers who discovered the
+nature of fire, by the inventors who harnessed it, by Labour which built the
+railway and the train. The fact remains that all of them by their united
+efforts could not drive the train. The real engine-driver is the coal. So, in
+the present state of science, the answer to the question how men live, or how
+anything lives, or how inanimate nature lives, in the sense in which we speak
+of the life of a waterfall or of any other manifestation of continued
+liveliness, is, with few and unimportant exceptions, ``By sunshine.'' Switch
+off the sun and a world would result lifeless, not only in the sense of
+animate life, but also in respect of by far the greater part of the life of
+inanimate nature. The volcanoes, as now, might occasionally erupt, the tides
+would ebb and flow on an otherwise stagnant ocean, and the newly discovered
+phenomena of radioactivity would persist. But it is sunshine which provides
+the power not only of the winds and waters but also of every form of life yet
+known. The starting point of Cartesian economics is thus the well-known laws
+of the conservation and transformation of
+
+\origpage{5}
+
+\noindent energy, usually referred to as the first and second laws of
+thermodynamics.
+
+But let us, before starting on this quest, go to the other extreme and try to
+obtain a consistent mental picture of the whole of knowledge and the
+inter-relationship of the sciences, if only to rebut two, in my opinion,
+errors, caricatured rather than described by the terms ``Mechanistic'' and
+``Vitalistic'' in philosophy. In any classification of the sciences it is
+customary to distinguish three great groups, (1) the Mechanical,
+Physico-Chemical and Mathematical; (2) the Biological; and (3) the Mental,
+inter-related much as in the order enumerated, like the links of a chain, two
+end links and a middle link, and the latter, the great division of animal and
+vegetable life, alone in direct relation to the two ends.
+
+Without perhaps any more quantitative notion than that the subjects enumerated
+in the list are in order of cognateness, one may regard the first link of the
+chain as commencing with the present ultimate realities of
+physics---Electricity, Energy, Ether, and Matter in increasing complexity from
+the element to the complex colloid, actuated by the liveliest Brownian
+movement under the microscope, and yet not alive. The second link begins with
+the simplest unicellular form of life and stretches in ever-increasing
+complexity from amoeba to man. The third begins with rudimentary forms of
+instinctive behaviour closely allied to those produced by purely physical
+stimuli in simple creatures, through free-will and the deliberate choice of
+action to secure predetermined ends, up to the human reason and the highest
+intellectual, aesthetic, ethical, moral and spiritual perceptions of humanity.
+
+My own philosophy can be expressed by a line of Kipling---``East is East and
+West is West and never the twain shall meet.'' One thousand years hence it is
+certain, if civilisation lasts as long, that men will still be examining into
+the fundamental realities of the physical world, far beyond the world of atoms
+and energy which marks its present boundary. Equally, we may believe that they
+may in psychological enquiry and in spiritual perceptions be much advanced
+from our time. In each direction possibilities of further knowledge extend
+\textit{ad infinitum}, but in each direction diametrically away from and not
+towards the problems of life. It is in this middle field that economics lies,
+unaffected whether by the ultimate philosophy of the
+
+\origpage{6}
+
+\noindent electron or of the soul, and concerned rather with the interaction
+with the middle world of life of these two end worlds of physics and mind in
+their commonest everyday aspects, matter and energy on the one hand, obeying
+the laws of mathematical probability or chance as exhibited in the inanimate
+universe, and, on the other, with the guidance, direction and willing of these
+blind forces and processes to predetermined ends. The physicist claims that
+his world of matter and energy exists as a reality independent of life, and
+points to the laws of conservation to show that it is eternal, without
+beginning and without end, and to the record of the rocks to show that it is
+life, rather than the universe of nature, which began. The theologian and
+religious philosopher claims under the name of Deity the independent and
+eternal existence of the qualities of guidance, will and direction outside of
+life, and points to this to account for the ascending scale of evolution and
+the appearance of perceptions above the level of animal. I have no claim or
+call to express an opinion on the reality of the existence of intelligence
+apart from and outside of life. But that life is the expression of the
+interaction of two totally distinct things represented by probability and
+free-will is to me self-evident, though the ultimate nature of those two
+different things will probably remain, a thousand years hence, as far off as
+ever.
+
+It is simple now to indicate what to my mind are the two errors that hinder
+progress. Both are monistic obsessions due to the mind in its innate desire to
+reduce everything to its simplest terms ending by trying to reduce everything
+to its simplest term. The first links up the two ends of the chain running in
+diametrically opposite directions into a grand circle, and so gets the
+sublimated conceptions of the mental world inextricably mixed up with the
+physical. The oriental philosophies and religions seem to have been freer from
+the cruder forms of this confusion than our own. In the early forms deities
+were given physical powers analogous to those of trinitrotoluene, as for
+example the hammer of Thor and the thunderbolt of Jove. The idea that the
+physical universe must, like life, have had a beginning and therefore a
+creator still survives. Heaven to the ordinary man is at once the abode of
+disembodied souls and of constellations which perform their evolutions with
+such mathematical accuracy that events therein can be accurately predicted in
+advance. Its most recent phase is the theosophistical enquiry by occult powers
+into the internal
+
+\origpage{7}
+
+\noindent structure of the atom and the prevalent belief that the discovery of
+wireless telegraphy lends strong support to the reality of telepathy.
+
+The second error is perhaps more common in the sphere of economics. It may be
+called ``Ultra-Materialism'' and is the attempt to derive the whole of the
+phenomena of life by continuous evolution from the inanimate world. We begin
+with a nebula of primordial material condensing into ever more complex forms,
+first to the light and then the heavy elements, then to chemical compounds up
+to the complex colloid. By a continuation of the same processes such a complex
+results that it is continually decomposing and as continually regenerating
+itself. The inanimate molecules begin to live and life then runs through its
+course of evolution up to man. This may satisfy a biologist, but it fails to
+satisfy me as a chemist. I cannot conceive of inanimate mechanism, obeying the
+laws of probability, by any continued series of successive steps developing
+the powers of choice and reproduction any more than I can envisage any
+increase in the complexity of an engine resulting in the production of the
+``engine-driver'' and the power of its reproducing itself. I shall be told
+that this is a pontifical expression of personal opinion. Unfortunately,
+however, for this argument, inanimate mechanism happens to be my special study
+rather than that of the biologist. It is the invariable characteristic of all
+shallow and pretentious philosophy to seek the explanation of insoluble
+problems in some other field than that of which the philosopher has first-hand
+acquaintance. The biologist has first-hand knowledge of animate mechanism and
+seeks the origin of it in colloid chemistry. The test of the hypothesis is not
+so much what the biologist as what the chemist has to say about it. The
+difference to my mind between dead and living matter is much that between
+Niagara Falls thirty years ago and now, and is not to be explained by the laws
+which Niagara formerly obeyed, by the laws of pure probability, but by their
+opposite, the operations of intelligence, as typified in their most
+rudimentary form by Clerk-Maxwell's conception of the ``sorting-demon.''
+
+Life, or animate mechanism, is essentially to my mind a dualism, and any
+attempt to subordinate either partner is fatal. But the economist is
+peculiarly liable to mistake for laws of nature the laws of human nature and
+to dignify this complex of
+
+\origpage{8}
+
+\noindent thermodynamical and social phenomena with the term ``inexorable
+economic law.''
+
+Is it any wonder that such crude confusions, such triumphs of mental instincts
+over reason, experience and common sense, have produced a general sterility of
+constructive thought? I cannot do better to illustrate this than to quote
+Stephen Leacock in his most serious mood, and if it be objected that he is a
+humorist, I can only retort that he is a professor of economics. It is rather
+the avowal of the combination that is uncommon.
+
+\begin{extract}
+``Our studies consist only in the long-drawn proof of the futility of our
+search after knowledge effected by exposing the errors of the past. Philosophy
+is the science which proves that we can know nothing of the soul. Medicine is
+the science which tells us that we know nothing of the body. Political Economy
+is that which teaches that we know nothing of the laws of Wealth, and Theology
+is the critical history of those errors from which we deduce our ignorance of
+God.
+
+``When I sit and warm my hands, as best I may, at the little heap of embers
+that is now Political Economy, I cannot but contrast its dying glow with the
+vainglorious and triumphant science that once it was.''
+\end{extract}
+
+Against this I would put the paradoxical words of Poincar\'e discussing the
+doctrine of mathematical probability, which dominates the inanimate world.
+
+\begin{extract}
+``You wish me to tell you about these complex phenomena. If by ill luck I
+happened to know the laws which govern them I should be helpless. I should be
+lost in endless calculations and could never supply you with an answer to your
+questions. Fortunately for both of us I am completely ignorant about the
+matter. I can therefore supply you with an answer at once. This may seem odd.
+But there is something odder still, namely, that my answer will be right.''
+\end{extract}
+
+It is perhaps fortunate that we know nothing about the ultimate nature of the
+fundamentals of either the physical or mental worlds. We have pursued each so
+far as to know that both alike lead away from rather than toward the solution
+of the problems of life. The sublimated theoretical concepts in either case
+have long ceased to possess actuality. We have rather to find the interaction
+between their commonest forms, matter and energy on the one hand and will and
+direction on the other.
+
+\origpage{9}
+
+Let us now leave generalities and concentrate upon the question as to what
+precisely humdrum mechanical science can contribute to economics. It insists
+primarily on the fact that life derives the whole of its physical energy or
+power, not from anything self-contained in living matter, and still less from
+an external deity, but solely from the inanimate world. It is dependent for
+all the necessities of its physical continuance primarily upon the principles
+of the steam-engine. The principles and ethics of human law and convention
+must not run counter to those of thermodynamics. For men, no different from
+any other form of heat engine, the physical problems of life are energy
+problems. You have to consider the source, the sunshine. It supplies a
+continuous revenue of energy which is consumed by the living engine in its
+life. Consumption here does not mean destruction, for destruction, like
+creation in the world of which we speak is an absurdity, but merely the
+rendering unfit for further use. All the radiant energy received from the sun
+sooner or later finds its way into the great energy sink, the ocean of heat
+energy of temperature uniform with the surroundings, and is incapable of any
+further transformation. This is the form we know most about. It is the energy
+of the perpetual thermal agitation of the molecules of which Poincar\'e spoke,
+and of which we know nothing (of any individual molecule's motion) and yet
+know everything (of the statistics of the motion as a whole). And, it is
+useless.
+
+We have next to consider the transformation of the form in which nature
+supplies the energy into the form men can utilise and assimilate. In general,
+transformation of energy can proceed only in the one direction, much as water
+only runs downhill. The water may do useful work on the way turning
+water-wheels, or it may not, but may reach the ocean level quite unutilised.
+So of the revenue of sunshine which ultimately warms imperceptibly the whole
+mass of the globe, it may en route energise a man, or, again, it may not.
+
+As regards the utilisation you have to distinguish very carefully in Cartesian
+economics two uses. First, there is the fundamental metabolic use in the body
+for the life process, which I shall for brevity term life-use. Secondly, there
+is a use in lieu of the first for the doing of external work or labour, better
+done directly by inanimate energy. This I shall term the labour-use.
+
+Physically, the life-problem is the reversal of winding a clock. Before any
+man can confer the animation of his body
+
+\origpage{10}
+
+\noindent upon a mechanism as in clockwinding, the animation of nature's
+mechanism has first to be conferred upon him. History could be rewritten from
+the standpoint of how this has been done. At first it was done blindly and
+intuitively by trial and error, the survival of the fittest and the
+extravagantly wasteful methods that only the unconquerable resurgence of life
+can afford. Even now the process is so indirect, being only possible through
+the agency of vegetable life, that few realise the terms on which they exist
+or the supreme importance of the original sources and amounts of energy
+available.
+
+But the labour-use of natural energy has always been a matter of consciously
+directed effort and development, since the use of the wind in navigation, and
+had proceeded far before the formulation of the principles of energetics. But
+in neither case is the sudden break in the continuity of history, which marked
+the age of steam, explained by these developments. The key is to be found in
+this. Pre-nineteenth century man lived on revenue. Present day man augments
+the revenue within certain well-defined limitations out of capital.
+
+All forms of energy previously utilised by life, with one or two minor
+exceptions, as tidal energy and that of hot springs, were forms of the solar
+revenue. Wind-power, water-power and wood fuel are parts of the year-to-year
+revenue of sunshine no less than cereals and other animal foods. But when coal
+became king, the sunlight of a hundred million years ago added itself to that
+of to-day and by it was built a civilisation such as the world had never seen.
+
+The fundamental fact underlying this civilisation is that whilst men can
+lighten their external labours by the aid of fuel-fed machinery, they can only
+feed their internal fires with new sunshine and then only through the good
+offices of the plant. The vegetable world alone can transform the original
+flow of inanimate energy into vital energy. The animal, as yet, is
+constitutionally incapable of effecting this transformation.
+
+The technical features of this subject are not without significance. Whatever
+the origin of the energy, the penultimate step must always be its storage by
+the plant precedent to its use by animals for food. It is possible to draw
+upon the energy of a water-fall and to store it up in various chemical
+compounds by electro-chemical methods, and in this form to supply it as a
+fertiliser to the plant. Increased crops are so produced supporting an
+increased population. The reversal of clock-
+
+\origpage{11}
+
+\noindent winding has been consciously achieved. The falling weight of
+Niagara's waters work the man. There is no technical objection to utilising
+the energy of coal in the same way, other than that of prime cost. But for
+practical purposes it is true that the great capital store of energy in fuel
+is not yet utilised for the life-use, but only primarily for the labour-use of
+energy by life. The life-use demands the intermediary of the plant, and though
+coal was once alive it is long since dead. The laborious and wasteful travail,
+through farming and agriculture, has once again to be gone through. In spite
+of the striking advances of the past century, the agriculturalist, peasant and
+farm-labourer form the dominant economic class, and will remain so until some
+new discovery of science deposes them. To my mind this is one of the least
+obvious and yet most fundamental facts of economics and social science at the
+present time.
+
+It certainly has not been sufficiently realised by economists, particularly in
+this country. In the flamboyant period of the utilisation of the capital store
+of energy in fuel which is now closing, so far at least as this country is
+concerned, we could and did by machinofacture make almost every sort of
+commodity and all sorts of labour-saving machinery in exchange for the food
+which we could not so make and did not make. The population of Great Britain
+rose on account of this exchange of capital for revenue, of factory products
+for food, from 10\textperiodcentered5 millions in 1801 to
+40\textperiodcentered9 millions in 1911. Whereas in Ireland, which has not
+coal, it fell from 5 to 4\textperiodcentered3 millions over the same period.
+Cartesian economics is capable of diagnosing instantly the root of the Irish
+trouble, as Sir Leo Chiozza Money has pointed out.
+
+By this process of exchange of factory products the whole world gradually drew
+more and more for its labour-use upon the capital energy of fuel, and used it
+to widen the area under cultivation and to transport the harvests from the
+most distant regions of the globe and so indirectly augmented the revenue of
+sunshine upon which it is still entirely dependent for its life-use.
+
+But this is a very passing phase. New countries grow old. Their populations
+tend to expand to the limit of their food supply, and their industries and
+manufactures become developed by the aid of their own resources. For a double
+reason, therefore, the flamboyant period of prosperity through which
+
+\origpage{12}
+
+\noindent Great Britain has passed is destined to be short-lived.
+``Imperialism'' marks its final bid for survival.
+
+Coal is the real capital, out of the consumption of which the capitalist
+civilisation has been built up, but, as regards the means of livelihood of the
+swollen population that has accompanied its exploitation, its use in this
+respect has been indirect and will cease. This is the great paradox of
+Capitalism. It is capitalistic as regards the accessories, conveniences and
+luxuries of existence. As regards its necessities it is still, to coin a word,
+revenual. Even Adam Smith could say, ``When food is provided it is easy to
+find the necessary clothing and lodging.'' To-day, by the development of
+mechanical power, it is vastly easier than then. But, once this has done all
+it can to develop new countries and increase the food supply, it can meet the
+demand for bread only by offering a stone. True, by the advances of chemical
+and biological science, by the development of agricultural chemistry and the
+breeding of better brands of wheat, much may be done, but scarcely as much as
+will provide for the requirements of a four or five-fold increase of
+population.
+
+The industrialised countries are, with an enthusiasm reminiscent of a lunatic
+asylum, turning out an ever-increasing plethora of mere factory products and
+sending them forth to compete in ever-shrinking markets in exchange for food,
+and are pouring forth an ever-increasing stream of armaments to fight amongst
+themselves for markets. The only goal in sight is war and yet war, the blowing
+up of the plethora and the permanent devitiation of the stock of the white
+race, at the time, too, when, by reason of failing fecundity, the prospect of
+its having to fight about something other than markets is becoming evident.
+
+Physical science thus answers precisely, and, I think for the first time, the
+problem of political economy, or, as one Marxian writer puts it, ``What are
+the sources of our society's wealth, that is, the means of subsistence and
+comforts of the individuals comprising it?'' The means of subsistence are
+derived from the daily revenue of solar energy, through the operations of
+agriculture. The accessories of life, clothes, houses and fuel, as well as its
+comforts and luxuries, are derived in great part by the augmentation of this
+revenue out of a capital store of energy preserved from bygone geological
+times. Life depends from instant to instant on a continuous flow of energy,
+and
+
+\origpage{13}
+
+\noindent hence wealth, the enabling requisites of life, partakes of the
+character of a flow rather than a store.\footnote{Had Karl Marx lived after
+instead of before the establishment of the modern doctrine of energy there can
+be little doubt that his acute and erudite mind would easily have grasped its
+significance in the social sciences. As it was, in fairness to him it must be
+said that he did not attempt to solve the real nature of wealth, but
+concentrated entirely upon the problem of its monetary equivalent, that is,
+upon exchange-value rather than use-value.\par\medskip
+Lest I be misunderstood I may emphasise here that I am using the term energy
+throughout these lectures in the strictest scientific sense, for potential or
+kinetic energy as understood by the physical scientist and engineer, and never
+in the vague and misleading sense of ``mental energy'' which I have rather
+termed the guidance and direction of physical energy. In this strict sense of
+the word it cannot be maintained that wealth wholly originates in human
+labour, for there is no real distinction in physical science between animate
+and inanimate energy. But since wealth is not available energy merely, but
+rather available energy usefully directed, or some embodiment of it, human
+labour (that is, some form of intelligent human activity which may need only a
+minimum of physical energy) is usually, though not necessarily, an essential
+factor in its creation.}
+
+This answer, though of fundamental importance to social science and to
+political philosophy, has little application to present economical systems,
+because these are founded upon a simple confusion between wealth and debt, or,
+to put it another way, between the wealth of the community and the wealth of
+the individual member of the community.
+
+The wealth of the community is its revenue, which, in the last analysis, is a
+revenue of energy available for the purposes of life. That being given, in
+sufficient amount and in form capable of being utilised by the existing
+knowledge of the time, everything requisite for the life of the society can be
+maintained. It is impossible to save or store this flow to any appreciable
+extent. True, you can dam a river, at great expense, and make a reservoir.
+But, even if not used, the accumulated waters evaporate and leak away. You can
+under the same, but even more unfavourable terms, store electric energy. But
+to contemplate storing wealth on a national scale for even a day is something
+like contemplating a storage battery large enough to satisfy the demand of the
+world for electric power for one day. True, nature has stored it in coal by
+processes requiring geological epochs, but what we do is to unstore it, an
+easier matter, and to convert it into a flow before it is of the least
+possible use to us. Again, for short periods, the flow may be embodied in
+
+\origpage{14}
+
+\noindent some concrete commodity, in food which rots, in houses which fall
+into desuetude if not kept perpetually under repair, and in all the tangible
+assets of our civilisation, in railroads, roads, and public works, factories,
+wharves, shipping and the like. All alike are subject to a process of compound
+decrement, needing ever larger annual expenditure of new wealth to maintain
+them in order, and even then rapidly, with each fresh advance of science,
+becoming out of date. Such accumulated assets, at best, are classified not as
+accumulated wealth, but as aids and accessories in the maintenance and
+increase of wealth out of the available revenue of energy. The wealth is the
+revenue, and it cannot be saved.
+
+The wealth of an individual, on the other hand, is something totally
+different. The ordinary modern individual member of the community in the vast
+majority of cases does not possess enough wealth to keep him alive for a week.
+By means of a token, legalised as a form of currency, whether a cowrie stone
+or a metal counter, but now, more and more exclusively, a simple paper note,
+the community acknowledges its indebtedness to the holder of the token, and
+empowers the individual to indent upon the revenue of real wealth flowing
+through the markets at any time. Even at this stage we see the interests of
+the community opposed diametrically to those of the individual members. As
+Ruskin puts it, it is the rule and root of all economy that what one person
+has, another person cannot have, and the more the private individual is able
+to indent upon the revenue the less is left for public services and the
+carrying on of enterprises designed to increase the revenue for the general
+benefit rather than private profit. The concern of the scientific man is with
+the revenue and with how it may be increased in the directions most essential
+for the general well-being. If and in so far as political economy can claim to
+be a science, that, also, should be its first concern. The individual, on the
+other hand, is concerned only to obtain a larger share of the revenue for his
+own private use. In so far as he can only do so by increasing, or aiding in
+increasing, the real revenue of wealth for the purpose of use rather than of
+usury the community gains. A very real complaint that the worker has with the
+existing system is that it provides much more easy and lucrative means of
+making money without any contribution to the general wealth, and sometimes
+actually by destroying it, by individuals possessed of sufficient of the power
+conferred by money to hold up the revenue for usury.
+
+\origpage{15}
+
+Ruskin appears to have had a very much clearer conception of the real nature
+of wealth than either earlier or later economists. He pointed out, and his
+view would now be understood by anyone who has suffered from the dearth of
+servants on account of the war, that the art of becoming rich was to get more
+relatively than other people, so that those with less may be available as the
+servants and employees of those with more. In this acute and original analysis
+of the real nature of the individual's wealth---power over the lives and the
+labour of others---Ruskin disclosed probably the most important difference
+between the interests of the individual and the interest of the State, and the
+main reason why the mastery of man over nature has hitherto resulted in so
+meagre a contribution to the perfection of human life. For this reason the
+community in its struggle with nature resembles an army officered almost
+entirely by the enemy. Of what use are the discoveries of scientific men into
+new modes and more ample ways of living so long as the laws of human nature
+turn all the difficultly won wealth into increased power of the few over the
+lives and labours of the many?
+
+In another respect Ruskin was vastly ahead of his own, not to say our own,
+time. He and Marx both fully appreciated the main contention of present day
+exponents of economics from the point of view of the creator and producer of
+wealth rather than that of the financier or merchant. The wealth of a
+community can only be increased by production and discovery, not by
+acquisition and exchange. In commerce and exchange ``for every plus there is a
+precisely equal minus.'' But the pluses wax magnificent and the minuses
+``retire into back streets or underground,'' which renders the algebra of the
+science peculiar.\footnote{``Unto This Last,'' John Ruskin, 1877.}
+
+This, then, is my main quarrel with orthodox economics, that it confuses the
+substance and the shadow. It mistakes debt for wealth and is guilty of the
+same mistake as the old lady, who, when remonstrated with for overdrawing her
+account, promptly sent her banker a cheque for the amount.
+
+The confusion enters even into the attempt of the earlier economists to define
+the main subject matter of their studies---``Wealth,'' though the modern
+economist seems to be far too wary a bird to define even that. Thus we find
+that wealth consists, let us say, of the enabling requisites of life, or some-
+
+\origpage{16}
+
+\noindent thing equally unequivocal and acceptable, but, if it is to be had in
+unlimited abundance, like sunshine or oxygen or water, then it is not any
+longer wealth in the economic sense, though without either of these requisites
+life would be impossible.
+
+Now it is the object of science to render the enabling requisites of life,
+such as food, warmth and other forms or embodiments of energy necessary for a
+decent existence, so abundant that they shall cease to be wealth in the sense
+of the economist. By increasing a real quantity you do not diminish it, nor by
+increasing it without limit do you destroy it. The object of science is to
+destroy wealth in the economist's sense of debt altogether by increasing real
+wealth without limit.
+
+At the first blush and before they have had time to think, most youthful
+students of economics will probably tell me that I am playing with words by
+using the word wealth in two senses equally well understood by the economist.
+The fact is that the economist, ignorant of the scientific laws of life, has
+not arrived at any conception of wealth, apart from the elaborate code of
+enactments and legal conventions which give to the individual in actual
+non-possession of wealth the right to acquire it, whereas I, from the
+application of the laws of energy to the problem of how men live, have arrived
+at such a conception.
+
+In conclusion, I may devote my attention to the commonest form of debt, money,
+because I believe that until correct views are more widely diffused about this
+convention, and the purchasing power of money is fixed as definitely as are
+the standards of weights and measures, there can be no peace in society and
+the whole elaborate political and social system will remain merely a dreary
+and elaborate make-believe.
+
+Once more owing to the war, the real nature of money can be apprehended by
+anybody. It ought to bear precisely the same relation to the revenue of wealth
+as a food ticket bears to the food supply or a theatre ticket to a theatrical
+performance. Whereas, as a matter of fact, at present there is no more
+connection between the currency and the revenue than there is between the
+birth-rate and the barometer. The revenue depends upon the chances of the
+harvest, and all the causes such as the prevalence or absence of disease,
+tempests, drought and sunshine which affect the productivity of nature. The
+currency is, or was, left to the luck of the gold prospector, and his
+spasmodic discoveries, to the state of knowledge of extracting the precious
+metals in which a single innovation, such as
+
+\origpage{17}
+
+\noindent cyaniding, may enormously increase the supply, the invention of such
+a system as that of cheques, the solemn carting around of gold from one
+capital to another to concertina the prices up and down to suit the hierarchy
+who have made of money a mystery and of the currency a never-failing
+confidence trick.
+
+Whereas, if money is to fulfil its function as a measure of value, it is clear
+that the currency must be regulated \textit{pari passu} with the changing
+revenue, issued as the latter expands and destroyed as the latter contracts.
+Since it would neither be given away in the first nor taken away in the second
+event, but used to buy back old, or taken in exchange for new State loans, the
+community as a whole would share the prosperity of good times as well as the
+stringency of bad ones, instead of only the latter as under the existing
+system.
+
+I remember reading as a young man, in some book on economics which I have not
+since been able to trace, of the almost mystical virtues of gold in human
+welfare and how each successive discovery of that metal in California, South
+Africa and Australia was followed by a boom of trade and increased national
+prosperity. To a chemist the mystical virtues of any metal, even gold, seemed
+a wholly chimerical illusion, but I waited twenty years before the real
+explanation became obvious.
+
+Last century was a time, when, wholly beyond the understanding of those who
+lived in it, science was increasing the revenue of the world by leaps and
+bounds by the consumption of the store of energy preserved in coal. If the
+food supply is increased without a corresponding issue of new food tickets,
+every holder of an old ticket gets proportionately more. Whereas if the ticket
+issue is increased \textit{pari passu} with the food supply, the old ticket
+holders get the same as before and fresh people get the surplus of food. Hence
+every increase of currency in that flamboyant era of prosperity, whether it
+resulted from the discovery of gold-mines or the invention of cheques, meant
+that the increased prosperity did not go to the community's creditors, but a
+part corresponding with the increase of currency went to fresh people and
+general prosperity was the result. How much easier it would have been simply
+to print the money and use the issue to repay the National Debt. But the
+opportunity passed and the like may not occur again.
+
+I shall be asked by those who are unaware of the proposals made by Gesell on
+the Continent and by Kitson in this country how is it possible to fix the
+purchasing power of money. The
+
+\origpage{18}
+
+\noindent answer is simple enough. By fixing it, that is, by printing more as
+average prices, determined by index numbers, tend to fall and by withdrawing
+it from circulation as they tend to rise. As it is, these matters, which are
+the most vital factors of all that enter into the economic welfare of the
+community, are left to the oddest combination of natural luck and human
+cunning to which, surely, any race ever entrusted its destinies.
+
+Money, I shall be told, must function not merely as a measure of value, but as
+a medium of exchange and as a store of value.
+
+As regards the latter, humanity is crying for the moon. Wealth is a flow, not
+a store. After the search-light of the war, I can conceive no nation so
+barbaric as to regard gold as a store of value. Demonetise it and where is its
+value? Not a gold mine would be at work on the morrow. The world has enough
+gold to stop its teeth and gild the inside of its tea-spoons for hundreds of
+years. Nor, as a medium of exchange, can anyone, after the experience of the
+war, really find any fault with paper, provided of course its issue were
+directed to the end of maintaining average prices constant from century to
+century.
+
+Civilised nations maintain at great expense elaborate testing institutions to
+fix with meticulous accuracy and disseminate replicas of all quantities that
+enter into one side of every commercial transaction involving buying and
+selling. They maintain an army of officials and inspectors to suppress the
+hollow pound weight, the elastic yard-wand and the telescopic quart pot. What
+an elaborate fraud upon the public all this one-sided passion for accuracy is!
+The public are not interested in the absolute magnitude of weights and
+measures. What is solely of practical importance is the relative measure, not
+merely how much coal there is in the sack or how much beer in the mug, but how
+much coal and how much beer for how much money.
+
+Do we keep a National Economic Bureau to stabilise the purchasing power of
+money and an elaborate organisation of inspectors, the counterpart of those
+who suppress petty fraud, to deal with organisations to concertina the pound
+sterling? Our system is precisely analogous to sealing up only one arm of a
+balance and making an imposing parade of protecting it from the wind and
+tamperers, while leaving the calibrating arrangements of the other arm to the
+manipulation of a class of persons deriving their livelihood from the
+business. It is
+
+\origpage{19}
+
+\noindent on record that a group of American financiers on one occasion,
+having sold British and bought American securities in advance, removed
+\pounds11,000,000 from the Bank of England and put it into circulation in
+America, with the result that the prices of the securities they had sold fell
+greatly in value and those they had bought rose correspondingly. Since gold
+never constitutes more than a few per cent.\ of the total currency, a
+reduction or increase of the gold basis in a country is followed by an
+enormously larger total fall or rise of values, and financiers in the position
+to cart about a few millions of the ``precious'' metal at their will can very
+easily and certainly acquire other people's wealth.
+
+No doubt the instance quoted is an extreme one, but when one enquires further
+as to who is in charge of the calibration arrangements that fix the purchasing
+power of money, much that has hitherto seemed inexplicable about our time
+becomes clear. These powers are wielded, by private banks, like the Bank of
+England, in the steadfast interests not of the community but of the creditors
+of the community. Whereas no changes of revenue, so long as the currency
+remains constant, affect the relative proportion of the whole revenue secured
+by the creditors, any increase of currency diminishes their relative share and
+hence is known as inflation, while any decrease increases their relative
+share, and hence is called sound finance.
+
+Even so far as we have yet got in disentangling current misconceptions of
+wealth from reality, it is not difficult to understand why the blessings
+conferred by science have been of so limited incidence. Civilisation has been,
+in its most vital interests, not in the hands of those who have contributed
+most to its wealth, but of those to whom in a very literal sense it is
+indebted, and is likely, under this system, to become ever more indebted. This
+gives a short practical remedy for the most obvious of the ills that
+civilisation is heir to. Institute a complete organisation for ascertaining,
+on every public proposal, the feeling of the City, and the views of the
+captains of finance and banking, but act in precisely the opposite direction.
+From the point of view of the welfare of the community rather than of its
+creditors, you could hardly fail to be right every time.
+
+\origpage{20}
+
+\vspace*{4pt}
+\begin{center}
+  {\addfontfeature{LetterSpace=6}\footnotesize SECOND LECTURE.\,---\,Chairman, Principal Senter.}
+\end{center}
+\vspace*{6pt}
+
+\lettrine[lines=2,findent=2pt,nindent=0pt,slope=0pt]{S}{OME} questions I was
+asked at the end of last lecture seem to indicate the necessity of first
+clearing away some misconceptions, partly, perhaps, due to my citing Ruskin as
+an economist. Although my views are very similar in some respects to those
+arrived at long ago by Ruskin, I may be permitted to remark that I have
+deduced them, without at the time being aware of Ruskin's writings on this
+subject, from the principles of the heat-engine, rather than from those of
+ethics. I know it is a burning question whether economics ought to concern
+itself with ethics at all, but of its obligation to understand the engineering
+of life I do not think there can be two minds. If it is a science at all, it
+is, in Huxley's words, concerned with truth as ``veracity of thought and
+action, and the resolute facing of the world as it is when the garment of
+make-believe with which pious hands have hidden its uglier features has been
+stripped off.'' Neither the ethical nor statistical sides of make-believe are
+to-day of any very great interest, but economics has still to achieve the
+emancipation which, in Huxley's day, the biological sciences accomplished. It
+is just because the application of the every-day principles of engineering to
+the living engine offers such a powerful corrective to the make-believes of
+the economic systems of society that I have ventured to address you on the
+subject.
+
+On the strength of a quotation from Ruskin, that there was no profit in
+exchange, Ruskin was condemned by one distinguished economist, I think
+unfairly. I am well aware that it is the fashion to regard Ruskin as
+out-of-date as an economist, though as a matter of fact the times are even yet
+hardly ripe for a judgment on this point. But on the actual statement that
+there can be no profit in exchange there can surely be merely a difference of
+meaning to be attached to the word profit.
+
+There is much making of money but no making of wealth by exchange, much
+advantage to Society for which the merchant is highly remunerated, much
+acquisition by the merchant of wealth, but no profit, for the sum total of
+wealth is unaffected by exchange and against the merchant's plus there is a
+precisely equal minus.
+
+The word economics was coined by Aristotle as signifying household management
+in contradistinction to money and trade (chrematistics). What Aristotle meant
+2,250 years ago,
+
+\origpage{21}
+
+\noindent I pointed out again last lecture when I charged ``economists'' with
+confounding debt for wealth. A ham merchant working on what he is pleased to
+call a 10 per cent.\ basis of profit, may buy ten hams for the same sum as he
+sells nine. He may be pleased to think he has made a profit of one ham, but he
+certainly has not made a ham. There were and remain ten, whereas if anyone had
+made a profit of one ham, there should now be eleven. These hams represent the
+life-time profit of a certain number---2 to be precise---of pigs, fed,
+according to nursery tradition, on the skins of potatoes, which in turn
+derived their feeding value from the sunshine. Wealth being some form of
+embodied useful energy, the law of the conservation of energy applies to
+wealth in that for every plus there is a minus. But fortunately in this case
+the earth is credited with the plus while the sun is debited with the minus,
+and that is as good as an actual creation of wealth from the terrestrial point
+of view. Nearer than that the laws of matter and energy do not allow.
+
+The opposite (for every minus there is a plus) is not true of wealth, because
+we are dealing with the availability of energy rather than with its total
+amount, and because of the natural tendency of all available or wealth-forming
+energy to pass, more or less quickly, into the waste heat of uniform
+temperature of the surroundings.
+
+The exposure of the shams of economic systems is a time-consuming task, and,
+as we have still to consider the nature of capital and usury, it is as well
+first to say something about the realities. How is wealth produced and what,
+if any, are the limitations to the wealth of an intelligently directed
+community?
+
+The first factor, a continuous flow of energy of an available form, has so far
+only been considered. If that were unlimited in amount and under human control
+in the same way as the energy of fuel now is, this factor would impose no
+limit on the production of wealth. Even the distinction which it is at present
+so necessary to make, between the life-use and the labour-use of energy, would
+be of less importance, for it is not so much that the synthetic production of
+food-stuffs, except by the aid of the plant, is impossible as that it is
+impracticable with energy at its present value. Last century it must have
+appeared, to any one following the line of thought we are pursuing, that the
+limitations of this first factor of wealth must
+
+\origpage{22}
+
+\noindent always limit human ambition and expansion. But now we know that it
+is not so. The extraordinary developments since the beginning of the century
+in the study of radioactivity and of the internal structure of the atom have
+proved that there is resident in ordinary materials amounts of energy of the
+order of a million times that which can be obtained from fuel during
+combustion, but that to liberate this store the transmutation of the elements
+one into another must first be made possible. The radioactive elements are in
+course of a natural transmutation, which, while it is impossible to stop, is
+likewise impossible to imitate. The energy of radium, the element which for
+thousands of years emits as much heat every two days as its own weight of fuel
+in burning, is derived from this hitherto unsuspected store of energy in the
+structure of the radium atom in its change into atoms of lead and helium.
+
+No! it is the second factor in the production of wealth that now limits, and
+probably will always limit, human prosperity. It is knowledge, or rather
+ignorance. For untold years men froze on the site of what now are coal mines,
+and starved within sound of the Niagara that is now at work providing food.
+Every single factor in wealth production existed prior to the phenomenal
+expansion of the last century except one, the knowledge how to control and
+utilise for life the capital store of sunlight preserved in fuel. It is
+precisely the same to-day. We are as far from utilising the stores of energy,
+which we know exist all round us in unlimited abundance, as savage men, who
+had not yet learned how to kindle a fire, were from utilising the power which
+has made our own age great. The whole matter could not compete in public
+interest with a ball game or a prize-fight, and, as has been recently said,
+civilisation depends for its future on the long vacations when the scientific
+men in the Universities get the opportunity for a few weeks' uninterrupted and
+continuous research.
+
+Although it is far from my own view of the matter to divide, as is sometimes
+done, the winning of knowledge into two water-tight compartments, pure and
+applied, academic and technical, or discovery and invention, and to elevate
+the former upon a pinnacle attainable only by the few and to depress the
+latter to a level only a little above the capacity of the ordinary efficient
+routine worker, it is undeniable that in point of time at least, pure
+scientific knowledge, acquired for the sake of knowledge only and with no
+definite utilitarian end
+
+\origpage{23}
+
+\noindent in view, must invariably precede any great advance in technology and
+invention. But in both fields the qualities of mind and temperament required
+are much alike, and in both, in their highest expressions, attain that
+undefinable and elusive quality we characterise as genius. All genius in this
+respect is alike---it creates, and in all creation the whole is invariably
+incomparably greater than the sum of the component parts.
+
+Those whose philosophy consists in passing by little steps, each almost
+trivial apparently, from the electron to the soul, try also to pass from the
+humblest beginnings of intelligence above the animal level to the present
+heights of intellectual achievement attained in the exact sciences. Genius to
+such is ``only'' the cumulative sum of infinitely little steps in intellectual
+progress which began with man himself. To my mind you might as well describe
+an old master as a cumulative effect of infinitely little daubs of paint, or a
+symphony of an accumulation of sound vibrations. The whole is greater than the
+parts, but even so, that is not the chief point that is missed. Everyone knows
+the difference between reading or translating a foreign language and speaking
+it. Some of us, who are being required now to spend a year of research work
+before taking the degree may realise the difference between knowing all about
+every important advance ever made in the subject of our study as well as or
+better than those who actually made these discoveries, and achieving the most
+infinitesimal advance therein ourselves.
+
+Just as I am constrained to put a barrier between life and mechanism in the
+sense that there is no continuous chain of evolution from the atom to life, so
+I put a barrier between the assimilation and the creation of knowledge. Each
+one of these infinitesimal steps of intellectual progress which look so small
+in retrospect, once had a different character. Otherwise why, for example, was
+it left for Newton to discover the law of gravitation or Benjamin Franklin the
+nature of lightning?
+
+We have here a rather remarkable peculiarity of the human mind. Every teacher
+knows how apt his best pupils are to acquire and follow the achievements of
+the past and present, so that at the age of twenty they often may have a
+vaster range of knowledge than any of the pioneers who contributed to the
+subject. Yet how rare, so far at least, is it to find these uniquely equipped
+and finished repositories of knowledge capable of making a single step
+forward, that is not merely imitative, and
+
+\origpage{24}
+
+\noindent which a hundred years hence will survive to the honour of appearing
+trivial? Possibly we are on the eve of understanding something about the
+nature of intellectual creation as distinct from mimicry. But until we do, the
+wealth of the world, material no less than spiritual, has, ultimately, to be
+ascribed to the work of singularly few minds.
+
+After energy and genius we come to Labour, the one factor in wealth production
+which hitherto has been adequately recognised. So far at least this factor has
+not limited the expansion of wealth, but rather expands \textit{pari passu}
+with it, though, in this respect, in all the European countries and also
+Australia, the increase of population appears definitely to have been checked.
+It is probable, at least of our own day, that any definite retrogression, as
+regards knowledge once attained, is unlikely, and even if civilisation has to
+pass through a time in the future analogous to the Dark Ages of the past, the
+intellectual achievements of the present day will remain preserved. Granted a
+certain stage in the technology of wealth production, it is probable that
+this, without any further aid from what I regard as the essentially creative
+type of mind, can be maintained from generation to generation by Labour in its
+widest sense, including in that term every kind and grade of routine and
+imitative worker, whether by hand or brain.
+
+Thus we have three factors, two of the character of a continuous never-ending
+contribution, a flow of energy and the unremitting attention, whether physical
+or mental, required for its utilisation, and one, the creation of knowledge,
+of the character of a definite step forward made once and ever afterwards
+available for all time. The latter factor limits the rate of expansion of
+wealth but, strictly speaking, contributes nothing to its actual production.
+It will ever be the prerogative of genius to endow posterity rather than its
+own day.
+
+More and more as time goes on, this character of wealth, essentially as a flow
+rather than something that can be stored, forces itself upon our attention as
+we grow out of the merely subjective views we derive from our own means of
+livelihood and bank balance. The time is fully ripe that the world should
+reconsider from a scientific basis the conventions by which it empowers
+individuals to ``save'' and amass ``riches.'' Broadly, the object of such
+conventions should be definitely directed to provide for the period of
+childhood, adolescence and old age, for genius and for the dissemination and
+diffusion
+
+\origpage{25}
+
+\noindent of its results and for similar work of a publicly beneficial
+character. These must be charges on the revenue rather than debts handed on by
+private individuals to their heirs and successors and swollen by the
+ridiculous pretensions of the usurer to an absurdity.
+
+With the growing appreciation of the general public, made wise because of the
+war, of the real nature of money, the much vexed question of what is usually
+called capital should not give us much difficulty. Just as money is a paper
+indent upon the revenue, capital is the paper receipt for the expenditure of
+wealth. Economists brought up on the mythical origin of man, as recorded in
+the book of Genesis, used to be fond of inventing, to explain the origin of
+capital, a mythical Robinson Crusoe, of exceptional industry and acumen, as
+the primitive capitalist. With the advance of knowledge the real Adam has
+turned out to be an animal, and now the original capitalist proves to have
+been a plant!
+
+The material and scientific greatness of our day is due to the primitive
+accumulation of the solar energy of the forests of the carboniferous era, and
+preserved to this day as coal. The plant accumulated, we spend.
+
+When coal is burnt it is burnt. You cannot both burn it and keep it in the
+cellar, and still less can you go on drawing interest from it for ever at so
+much per cent., as is the case with the so-called capital of the economist and
+the business world. Here again the economist is mistaking our old friend debt
+for wealth. The wealth has been spent, not saved, and exchanged for some form
+of receipt, giving the holder a purely conventional right to so much per cent.
+per annum until the debt is repaid.
+
+The capitalist wishes to have it both ways, to be regarded as a public
+benefactor because he spends his wealth, not in drinking himself to death, but
+in enterprises designed to increase the revenue. If he did this he would
+indeed be a public benefactor. But the community having spent his wealth, as
+regards himself he expects it all back in due course with interest on the
+loan. The consequences of his abstinence are that civilisation has got
+inextricably ``into the hands of the Jews.'' Compared with this, the wildest
+profligacy on the part of the original capitalist would have been a relatively
+minor evil.
+
+It is of course a colossally hard task wisely to expend
+
+\origpage{26}
+
+\noindent wealth so as to increase the revenue. All honour is due to the
+business energy and enterprise of the commercial and technical managers and
+the workers who effect the conversion of capital wealth into increased
+revenue. But as regards the people who merely lend the wealth spent, the
+ordinary dividend holder of a joint-stock company for example, he is of course
+simply that peculiar type of benefactor which used to be termed a usurer. We
+are all in it now, ever since it became possible to buy a \pounds1 War Saving
+Certificate bearing compound interest for 15s.\ 6d. The extraordinary changes
+of legal and social conventions with respect to interest and usury, recorded
+in history, make it quite clear that political economy, which depends upon
+such factors quite as much as upon the laws of energy, can never be a science
+in the same exact sense as physics or chemistry. To Aristotle a usurer was a
+person beneath contempt. To-day, even the Vice-Chancellors of the ancient
+Universities, which purport to hold up to reverence Greek thought and culture,
+are as enamoured as anyone of the excellence of compound interest.
+
+Of all hard critics of the usurer, Martin Luther is easily first, and in his
+vigorous denunciation there is a certain perspicuity which we moderns seem to
+lack. Otherwise few could tolerate the economics of an ordinary daily
+newspaper or social club.
+
+\begin{extract}
+``The heathen were able by the light of reason to conclude that a usurer is a
+double-dyed thief and murderer. We Christians, however, hold them in such
+honour that we fairly worship them for the sake of their money.
+
+``Usury is a great huge monster, like a were-wolf, who lays waste all, more
+than any Cacus.\ .\ .\ .\ For Cacus means the villain that is a pious usurer
+and steals and robs and eats everything. And will not own that he has done it
+and thinks no one will find him out, because the oxen drawn backwards into his
+den make it seem from their footsteps that they have been let out. So the
+usurer would deceive the world as though he were of use and gave the world
+oxen while he however rends and eats all alone.''
+\end{extract}
+
+One must admit that it would be difficult to find a better description of
+usury than is given here, ``Oxen drawn back into the den which, from their
+footsteps appear to have been let out.'' Current orthodox economics gives the
+credit that
+
+\origpage{27}
+
+\noindent rightly belongs to the scientific discoverer, the expander of
+wealth, to the usurer, the expander of debt.
+
+I shall be told that there is something to show for capital expenditure and
+that against the paper receipts there are tangible assets. Thus, if a railway
+is taken as an example, there are the rolling stock and the rails. But
+admittedly these would have but a scrap metal value if railways ceased to pay
+and the shareholders wanted their money back. As the world gets older all this
+initial expenditure has to be periodically renewed to make good depreciation,
+and, further, the plant and the methods of operation become, with the advance
+of knowledge, out of date. The indebtedness to the original shareholders does
+not, however, usually cease on that account. Railways continue to pay
+dividends on all capital expended, though, as in the case of the canal systems
+purchased, much of it altogether ceases to bring in revenue. It seems to me to
+be merely a matter of time before this happens with every form of capital
+expenditure. The normal old-age form of capital is simple debt, a permanent
+lien upon the future revenue of wealth. The assets are much overrated. If the
+world worked as hard on construction as it did during the war on destruction,
+and was permitted by the usurer to do so, all civilisation could probably be
+rebuilt upon an up-to-date plan and the Augean stable of a modern
+industrialised community cleaned up in less time than the war took.
+
+The vast heritage of wealth which science made available at the commencement
+of the 19th century, in so far as it has been spent, has been replaced by
+paper receipts for the expenditure which bear interest in perpetuity. Capital
+merely means unearned income divided by the rate of interest and multiplied by
+100. If I invent a process bringing in \pounds1,000 a year revenue, its
+capital value is \pounds20,000 if the rate of interest is 5 per cent., and I
+can sell it for some such sum. The capital of the world in this sense to-day
+aggregates to an altogether inconceivable sum. There never has existed at one
+time such an amount of wealth. It represents the accumulated capital
+expenditure of generations of men. During the war the capital of the country
+was increased by some \pounds7,000,000,000, which brings in \pounds350,000,000
+a year permanent interest. I may be told that everyone will admit that this is
+debt, whereas it is in fact, in this respect, precisely on the same footing as
+so-called productive capital expenditure, a private lien upon
+
+\origpage{28}
+
+\noindent the revenue, wealth to the individual owner and debt to the
+community. As regards the national accounts this \pounds350,000,000 a year is
+a simple transference, rather than an item of expenditure. The sum is
+collected from the taxpayer, and paid to the holders of War securities. It
+amounts to \pounds8 13s.\ 4d.\ per head of population, and includes the small
+item of 10s.\ per head in respect of the Napoleonic wars. There can be only
+one possible end to this process. Though for a time the advances of science
+may so increase the revenue from year to year as to render these payments by
+way of interest possible, in the end the whole of the revenue must be in the
+control of the usurer. A small part of the population will get into the
+position of a great rentier class living on interest, and most of the rest
+will be reduced to starvation in so far as they are not kept alive by State
+doles. How far this process has already gone in this country is obvious, since
+something like a quarter of the population at the present time is unemployed
+and the expenditure on national education is only about a quarter as much as
+that upon the holders of war securities.
+
+Wealth is a flow and it cannot be saved. Spent it must be as it accrues,
+whether on consumption or on capital outlay designed to produce future wealth.
+As regards the first, life is consumption from the cradle to the grave,
+consumption of that pristine flow of energy we owe to the sun. The efforts of
+the financier and monied person to make life a balance-sheet with the debit
+and credit sides in agreement are untrue to nature. Life is a continuous
+expenditure of wealth and in this point again Ruskin, rather than the modern
+chrematist, was absolutely in agreement with science. And, as regards the
+second, capital expenditure, even though it is designed to increase the flow
+of wealth, and admittedly, over a certain natural period which is not
+infinite, it does achieve this object, it is expenditure as much as the other.
+The river of wealth is thus divided, but a part is metered carefully and
+recorded as an accumulation of capital indebtedness against the community.
+Scientific men, in the innocence of their hearts and the benevolence of their
+souls, fondly imagine that by increasing the revenue available for life they
+benefit the community. But do they? The larger the revenue, and the greater
+the flow above that required for immediate consumption, the greater the debts
+incurred by the community and the impossibility of their ever being repaid.
+Meantime, though real
+
+\origpage{29}
+
+\noindent wealth rots if stored, the meter readings spontaneously bear
+interest and increase \textit{ad infinitum}. The principles and ethics of
+human conduct and convention have their own code and standards, but whatever
+they may be, they must conform to and not run counter to the principles of
+thermodynamics. A chauffeur may have a soul above the mechanism of his car,
+but if it led him to try to run it on already consumed petrol, none the less
+he would be considered a great ass.
+
+The usurer in Martin Luther's time had not achieved the colossal success in
+``deceiving the world as though he were of use and gave to the world oxen''
+that he can claim to-day. The professional economist seems to be an easy
+conquest. Thus Mr.\ J. M. Keynes, in his ``Economic Consequences of the
+Peace,'' seriously seems to think that the law of compound interest is the law
+of increment of wealth rather than that of debt, and offsets it against the
+Malthusian law of increase of population! ``One geometrical ratio might cancel
+another and the 19th century was able to forget the fertility of the species
+in a contemplation of the dizzy virtues of compound interest.'' To him capital
+is a vast accumulation of fixed wealth, in danger of being prematurely
+consumed in war. He likens it to a cake, which one day, owing to the dizzy
+virtues of usury, may be large enough to go round. ``In that day overwork,
+overcrowding and underfeeding would come to an end, and men secure of the
+comforts and necessities of the body could proceed to the nobler exercise of
+their faculties.'' Cake happens to be the one material of which it has been
+well said that you cannot eat it and have it too, and I would suggest that
+this is the real reason for Mr.\ Keynes's somewhat mystical references to a
+peculiarity of capital considered as accumulated cake, that this ``is only in
+theory---the virtue of the cake was that it was never to be consumed.'' In a
+similar vein we have Major Douglas and Mr.\ Orage advocating the salvation of
+the economic system by the bringing of the dizzy virtues of dividends within
+the reach of the many rather than of the few. I do not mean to imply that
+their system might not be a great improvement upon the present one. Indeed,
+any system almost must be an improvement upon one that is administered solely
+in the interests of the creditors, rather than the creators and consumers of
+the community's wealth. But my analysis would lead me to class their
+suggestion rather as a temporary palliative, for no system founded upon usury
+can be stable.
+
+\origpage{30}
+
+It is wonderful how people, who never come up against reality from the cradle
+to the grave, and live all their lives a purely artificial existence in some
+city divorced from all contact with primitive nature, get into the habit of
+supposing that the conventions which regulate their businesses and livelihoods
+can be applied to the economy of the world at large. It would be quite
+impossible for any member of the agricultural community, for example,
+accustomed to the ways in which wealth is really produced, to fall down and
+worship the institution of usury in such a naive fashion, or for a Labour
+Government, to be guilty of the confusions between wealth and debt which are
+characteristic of orthodox politicians at the present time. We have in the
+hitherto association of the function of Government almost entirely with those
+who live by rent, interest and profit, and thus take from rather than
+contribute to the revenue of the wealth of the community, a further
+justification for the view already expressed, that the community in its
+struggle for existence resembles an army officered almost entirely by the
+enemy.
+
+You cannot permanently pit an absurd human convention, such as the spontaneous
+increment of debt, against the natural law of the spontaneous decrement of
+wealth. This applies whether it is simple or compound interest which regulates
+the increment of debt. For obvious reasons the law of compound interest over
+great periods of time rarely as yet has fully operated. But the significant
+and distressing fact is that this absurd law, with the concentration of money
+in the hands of trusts and combines of financiers, now tends to operate more
+and more fully every day. Some of you may have heard of the story of the
+reward asked of the Emperor of China by the man who taught him chess. It
+looked modest enough. He wanted one grain of corn for the first square of the
+chess-board, two for the second, four for the third, eight for the fourth, and
+so on in a geometrical progression to the 64th square. The story goes that the
+first half of the board was easily accounted for, but before three-quarters
+had been so dealt with, the Emperor had to cry off, as his couriers came back
+to him reporting that there was not such a quantity of corn (actually 23
+million tons) in the Empire. If the matter had been pushed to the bitter end,
+at the 64th square, the number of grains would have been one less than
+2\textsuperscript{64}---just about one million million tons---more than the
+present popu-
+
+\origpage{31}
+
+\noindent lation of the world could consume in a period of time longer than
+that covered by the records of history. This is the law of compound interest.
+To-day \pounds1 of debt doubles itself in about 12\textperiodcentered5 years,
+and becomes \pounds1,024 in 125 years and over a million in 250 years at
+5\textperiodcentered5 per cent.\ compound interest. If this is to be the
+inevitable consequence of scientific men increasing the wealth of the world,
+enthusiasm in well-doing may well dry up. Nevertheless, on no other terms than
+a perpetual increase of the revenue by scientific discovery can such a system
+of ``economics'' be maintained, and, even so, if were the 20th century as
+prolific in discovery as the 19th, there is no escape for it from ruin under
+the law of usury and the rule of the usurer.
+
+Let us, in conclusion, put in the light of the analysis of wealth and wealth
+production which has been attempted, the aspect of this mad system which is
+now uppermost in the minds of many thoughtful people, its inevitable end in
+world-war. Remember that it is impossible to save. The revenue of wealth must
+be spent as it accrues either in consumption or in capital expenditure. The
+latter is for the purpose of securing a lien on the future revenue, by
+producing more goods or services out of which a profit can be made. But as the
+masses do not receive the profit, they cannot buy this increased production.
+It was the discovery of the classical economists that wages are the purchasing
+power necessary to maintain a supply of labour, that is to provide food and
+shelter for the labourer and his family in the particular condition of life
+necessary and customary for that kind of labour. Man-power is now cheapened by
+being pitted against the infinitely greater and more docile power of inanimate
+nature. For a brief period, which is now closing, though only after terrible
+hardship and suffering, the displaced labour found an outlet ultimately by
+reason of the increased fraction of the revenue devoted to capital
+expenditure. But the world fills up. Its markets, at first open to the excess
+production of the industrialised nations in exchange for food, tend to close
+as time goes on. The fiercest international rivalry for markets ensues, and to
+industrialised nations armaments are, as products of machino-facture, the one
+thing that can be turned out in almost limitless abundance. But armaments and
+war do not produce food. They merely determine the distribution as between
+competing nations, and tend to destroy food-producing power to an extent that
+makes
+
+\origpage{32}
+
+\noindent even the victors actual losers. In this Ruskin was again far ahead
+of his own times. He alone seems to have had sufficient veracity of thought
+and power of penetrating below the conventions of society to realise that, in
+the frenzied pursuit of gain, the objective was illusory in a physical sense.
+
+\begin{extract}
+``Capital is a root which does not enter into the vital function till it
+produces fruit. Capital producing nothing but capital is root producing root,
+bulb issuing in bulb, never in tulip. The Political Economy of Europe has
+hitherto devoted itself to the multiplication of bulbs. It never saw nor
+conceived such a thing as a tulip. Nay! boiled bulbs they might have been,
+glass bulbs---Prince Rupert's drops consummated in powder---well if it were
+glass powder and not gunpowder.''
+\end{extract}
+
+I do not pretend to be able to have got further in my own conclusions than
+this, that the rule of the usurer in political and social affairs has become
+impossible and that he has to go. During a time of expanding revenue, or
+before the burden of interest charges on the revenue from accumulated debts
+equals the annual expansion, he may be an efficient, if brutal, task-master,
+and the lure of private interest and gain may be a safe principle in place of
+government. But at a time like the present, when the usurers of the world, if
+cheated of their expectations, like Shylock are bent on a pound of flesh next
+to the heart, their pretentiousness and futility is obvious, and some form of
+government according to economic, rather than chrematistic, principles will
+have to be resumed. The laws of energy under which men live furnish an
+intellectual foundation for sociology and economics, and make crystal clear
+some of the chief causes of failure not only of our own but, I think also, of
+every preceding great civilisation. They do not give the whole truth, but, in
+so far as they are correct to physics and chemistry, they cannot possibly be
+false. I think with but little amplification and modification they might
+furnish a common scientific starting point from which all men concerned with
+the public rather than with their own private interests might start to rebuild
+the world more in conformity with the great intellectual achievements which
+have distinguished the present age. The first step towards such a scientific
+Utopia would be the due delimitation of the rights of the community's
+creditors---the curbing of the demon of debt which masquerades among the
+ignorant as wealth.
+
+% ================= COLOPHON =================
+\clearpage
+\pagestyle{empty}
+\null\vfill
+\begin{center}
+{\addfontfeature{LetterSpace=10}\footnotesize NOTE ON THIS SETTING}
+\end{center}
+\vspace{10pt}
+{\footnotesize\linespread{1.05}\selectfont
+\noindent This is a fresh setting of \textit{Cartesian Economics}, first
+published by Hendersons of 66 Charing Cross Road in May 1922 and reprinted in
+the October of that year. The copy behind it is the Harvard College Library
+(Widener) exemplar, barcode 32044010374809, from the bequest of George
+Hayward, M.D., accessioned 16 July 1925; the text was recovered from the
+optical transcription of that scan and collated line by line against it.\par
+\medskip
+The folios follow the 1922 printing exactly: what stands on page 12 here stood
+on page 12 there, so a citation taken from these pages will answer to the
+original. Obvious transcription damage has been mended silently---broken
+word-endings at the scanned margin, hyphens carried over from the compositor's
+line-breaks, and inverted commas. Two readings remain doubtful and are left as
+they were found: \textit{devitiation} (p.\ 12) and the figure of \textit{23
+million tons} (p.\ 30). Decimal quantities are set with the mid-point, as a
+British house of the period would have set them. The two notes on page 13 are
+gathered under a single mark, as the page gives no second reference.\par
+\medskip
+The text is set in MFB Oldstyle, a digitisation of Century Oldstyle, cut by
+Morris Fuller Benton for the American Type Founders Company in 1909 and in
+common use for book work on both sides of the Atlantic when these lectures
+were given.\par
+\medskip
+Soddy's language is that of 1921 and is reproduced without alteration,
+including the passage on page 25 and the reference to racial stock on page 12,
+which the modern reader will want to weigh as evidence of the period rather
+than pass over.}
+\vfill
+\clearpage
+
+\end{document}
