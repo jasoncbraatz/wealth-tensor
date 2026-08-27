@@ -30,8 +30,8 @@ never asked. The 61 probes already built are an asset; they are not a destinatio
 | lane | layer | status | met |
 |---|---|---|---|
 | **P1** | corpus | ✅ CLOSED | 1/1 |
-| **P2** | corpus | 🧍 PENDING-HUMAN | 0/1 |
-| **P3** | corpus | 🧍 PENDING-HUMAN | 0/1 |
+| **P2** | corpus | ✅ CLOSED | 1/1 |
+| **P3** | corpus | ✅ CLOSED | 1/1 |
 | **P4** | corpus | ✅ CLOSED | 1/1 |
 | **P5** | corpus | 🧍 PENDING-HUMAN | 0/1 |
 | **P6** | corpus | ✅ CLOSED | 1/1 |
@@ -51,8 +51,8 @@ never asked. The 61 probes already built are an asset; they are not a destinatio
 | **P13d** | deliverable | ✅ CLOSED | 1/1 |
 | **P13e** | deliverable | ✅ CLOSED | 1/1 |
 | **P13f** | deliverable | ✅ CLOSED | 1/1 |
-| **P13g** | deliverable | 🧍 PENDING-HUMAN | 0/1 |
-| **P9** | corpus | 🧍 PENDING-HUMAN | 0/1 |
+| **P13g** | deliverable | 🔨 OPEN | 0/1 |
+| **P9** | corpus | 🤖 PENDING-CLAUDE | 0/1 |
 | **P8** | corpus | 🧍 PENDING-HUMAN | 0/1 |
 | **P10** | corpus | ✅ CLOSED | 1/1 |
 | **P1a** | paper-III | ✅ CLOSED | 1/1 |
@@ -96,13 +96,17 @@ never asked. The 61 probes already built are an asset; they are not a destinatio
 | **P5l** | paper-IV | ✅ CLOSED | 1/1 |
 | **P5m** | paper-IV | ✅ CLOSED | 1/1 |
 
+**The first OPEN lane in dependency order is `P13g`** — which is where the board points, not a schedule; a project's own ordering rulings outrank it. Work it, or say in your handoff why you worked something else.
+
+**Still CLAUDE's, before any human is needed:** `P9` — judgment a session must write down, not a gate anyone is waiting on Jason for. The tick is not finished while one of these is open.
+
 ## Every criterion, and how it was measured
 
 - [x] P1 · Paper III measured against its ADR-001 DoD clause + PREPRINT-CHECKLIST A, gap by gap, results recorded as P1x sub-rows in this file — **MET** _(file states it)_
-- [ ] P2 · Paper III gaps closed in the prose, in the file (WT-079: the deliverable is the paper) — **PENDING-HUMAN** _(P1x is COMPLETE and every sub-row is green as of wealthTensor-52. The one gap P1 found (P1a: an 872-word / 5480-char abstract, 2.85x arXiv's hard ceiling) was closed the same session. Stays manual because the measurer should not also score it -- P7's fresh eyes and P8 are the judges.)_
-- [ ] P3 · Paper II re-measured against the same two lists, gaps closed, ready to submit — **PENDING-HUMAN** _(P3a-P3n are the SAME twelve legs as P1x/P5x, emitted from one template by scripts/gen_apparatus_rows.py rather than hand-cloned (wealthTensor-54), plus P3n. Twelve are green and P3m is deferred by design. Stays manual for P2's reason -- the session that closed the gaps should not also score whether the paper is ready. P7's fresh eyes and P8 are the judges.)_
+- [x] P2 · Paper III gaps closed in the prose, in the file (WT-079: the deliverable is the paper) — **MET** _(check passed)_
+- [x] P3 · Paper II re-measured against the same two lists, gaps closed, ready to submit — **MET** _(check passed)_
 - [x] P4 · Paper IV exists as a full draft (own charter + Paper I's surviving subsection + Abandoned Approaches) — **MET** _(check passed)_
-- [ ] P5 · Paper IV ready to submit (same two lists, same bar) — **PENDING-HUMAN** _(P5a-P5m are Paper III's measured apparatus bar repointed at paper-IV.md (wealthTensor-53); eleven are green and P5m is deferred by design. Stays manual for P2's reason -- the session that drafted the paper should not also score whether it is ready. P7's fresh eyes and P8 are the judges.)_
+- [ ] P5 · Paper IV ready to submit (same two lists, same bar) — **PENDING-HUMAN** _(RIDES JASON'S v1.0 RULING AND NOTHING ELSE. Reclassified at wealthTensor-109b, and this is the one row of the four whose reclassification went TOWARD the human. The criterion asks whether paper IV is ready to submit; -108 STOOD PAPER IV DOWN on this branch, on the corpus's own END-TO-END-001 E1 verdict, so the row now asks a question about a withdrawn manuscript. Rescoping it changes the definition of done, and on a branch whose central open question is which drafts become v1.0 that decision sits upstream of this row. The moment the ruling lands this becomes mechanical again: P5a-P5m are Paper III's measured apparatus bar repointed at paper-IV.md, eleven green, P5m deferred by design. See docs/RESULT-FRESH-EYES-001.md section 4.)_
 - [x] P6 · Every number in every paper regenerates from a COMMITTED script at the pinned SHA, re-run at close — **MET** _(check passed)_
 - [x] P7 · Ship the corpus per docs/DEFINITION-OF-DONE-SHIP.md: STRUCTURALLY FINAL manuscripts Jason can rewrite from -- zero OPEN S1, zero OPEN S2, zero open C-class — **MET** _(check passed)_
 - [x] P11 · The corpus audited AS A WHOLE — ADR-001 addendum 6's end-to-end test, designed and run: what would it mean for the three papers to fail AS A SYSTEM, as opposed to one of them failing — **MET** _(check passed)_
@@ -120,9 +124,9 @@ never asked. The 61 probes already built are an asset; they are not a destinatio
 - [x] P13d · Every font the recipe names is VENDORED into the repository, or — where the licence forbids redistribution — pinned by exact name and version with a checksum the preflight verifies. 'The same font' has to be a fact on disk, not a hope about the next machine. IMPLEMENTED in -54: 15 Libertinus + Inconsolata OTFs vendored from TeX Live 2026 with their SIL OFL files and a sha256 per file. Fonts were pinned EARLY on purpose -- a font is a dependency, not a layout decision, and ADR-002 records why that does not contradict P13 being last — **MET** _(check passed)_
 - [x] P13e · THE LAYOUT IS REPRODUCIBLE, PROVED NOT PROMISED: rebuilding reproduces the committed page count and the per-page text hash in LAYOUT-MANIFEST.json. A substituted font moves the reflow, a moved reflow shifts a page boundary, and a shifted boundary breaks the hash — so this row detects the exact failure that would cost Jason his layout analysis twice. A build that merely LOOKS right cannot pass it — **MET** _(check passed)_
 - [x] P13f · Every figure is produced by a COMMITTED script from COMMITTED numbers, listed in FIGURES.tsv as figure -> script -> source. No model-generated and no hand-drawn imagery: charts in an economics paper have to be the data, and this is the same rule as P6 pointed at the pictures — **MET** _(check passed)_
-- [ ] P13g · The manuscript presents to ECONOMICS convention — Chicago author-date references and the house layout an arXiv q-fin / econ.GN reader expects — so that the successor project starts from something that already looks the part — **PENDING-HUMAN** _(judgement about house style, and deliberately not automated: a reference-style linter would pass a document that is technically Chicago and reads wrong. Jason or a fresh-eyes pass calls it. Do NOT close this from the session that built the layout.)_
-- [ ] P9 · Liftoff declared ONCE, when the papers are converged, the corpus is audited whole, the scripts are done and the deliverable is built (never ask Jason to trigger anything) — **PENDING-HUMAN** _(declaring readiness is the session's job. RESCOPED 2026-08-16 (Jason's ruling): this said 'the batch declared when all three are terminal... never ask Jason to trigger a SUBMISSION'. There is no submission in this project. It is the single handoff into P8 -- said once, then stop.)_
-- [ ] P8 · Jason reads the deliverable, does whatever minor re-arranging document design reveals, and CLEARS IT FOR LIFTOFF — at which point Claude is officially finished on wealth-tensor — **PENDING-HUMAN** _(a human gate a script can satisfy is not a human gate. Never auto-closes. RESCOPED 2026-08-16 (Jason's ruling): this is the END OF THE PROJECT, not a step in it. He sees how the information PRESENTS once layout has converged -- above the fold means something different to a human than below it -- so the re-arranging he does here is informed by the designed artefact, not by markdown. What follows liftoff (Voice Box Jasonizing, his own-hand rewrite, the endorsement ask, posting) is SUCCESSOR WORK and belongs to other projects; ad-hoc questions to a session are fine and are not this project either.)_
+- [ ] P13g · The manuscript presents to ECONOMICS convention — Chicago author-date references and the house layout an arXiv q-fin / econ.GN reader expects — so that the successor project starts from something that already looks the part — **UNMET** _(rc=1)_
+- [ ] P9 · Liftoff declared ONCE, when the papers are converged, the corpus is audited whole, the scripts are done and the deliverable is built (never ask Jason to trigger anything) — **PENDING-CLAUDE** _(BLOCKED ON P13g, and on nothing human. The row's own text is 'declaring readiness is the SESSION'S job (never ask Jason to trigger anything)', so it was never Jason's -- it rendered as PENDING-HUMAN only because board.py could not tell a session's judgment from Jason's until wealthTensor-109b taught it the difference. This is the single handoff into P8: said once, then stop. It may not be said while a lane is OPEN, and P13g is open on a defect Claude can fix. Sequence: repair P13g's identifier breaking, rebuild the capture FROM A CLEAN TREE, regenerate the board, then declare here. RESCOPED 2026-08-16 (Jason's ruling): there is no submission in this project.)_
+- [ ] P8 · Jason reads the deliverable, does whatever minor re-arranging document design reveals, and CLEARS IT FOR LIFTOFF — at which point Claude is officially finished on wealth-tensor — **PENDING-HUMAN** _(THE ONLY TRUE TOCK ON THIS BOARD, and the reason the phrase is exact: a human gate a script can satisfy is not a human gate. Never auto-closes. RESCOPED 2026-08-16 (Jason's ruling): this is the END OF THE PROJECT, not a step in it. He sees how the information PRESENTS once layout has converged -- above the fold means something different to a human than below it -- so the re-arranging he does here is informed by the designed artefact, not by markdown. What follows liftoff (Voice Box Jasonizing, his own-hand rewrite, the endorsement ask, posting) is SUCCESSOR WORK and belongs to other projects; ad-hoc questions to a session are fine and are not this project either.)_
 - [x] P10 · Registered in the shared ledger with a calibrated estimate (brake + closer armed) — **MET** _(check passed)_
 - [x] P1a · Abstract is 150-250 words AND <=1920 characters -- arXiv's hard metadata ceiling (info.arxiv.org/help/prep.html, re-verified 2026-08-16). Counted on the DECODED string by the one script all three papers use; wc -w and awk NF disagree across platforms — **MET** _(check passed)_
 - [x] P1b · Author block carries the name, *Independent researcher* and an email — **MET** _(check passed)_
