@@ -209,6 +209,29 @@ return {
   { Code = code_inline,
     Str  = str_marks,
 
+    -- A PARAGRAPH THAT IS NOTHING BUT A PICTURE. wealthTensor-110.
+    --
+    -- pandoc's default for a lone image with a non-empty alt text is an IMPLICIT FIGURE: a
+    -- LaTeX float, with the alt text as its caption. Both halves of that are wrong here.
+    -- Every figure in these manuscripts is followed by a blockquote that already reads
+    -- "Figure N -- ..." and is the caption the author wrote; a second, floated caption would
+    -- duplicate it, and the float would carry the picture off to another page and leave the
+    -- real caption behind pointing at nothing.
+    --
+    -- So the embeds are written with EMPTY alt text (`![](fig-01-....pdf)`), which keeps
+    -- pandoc from making a figure of them, and this rule sets them with \wtfig --
+    -- centred, in place, clamped to the measure. See preamble.tex, block "figures".
+    Para = function(el)
+      if #el.content ~= 1 or el.content[1].t ~= "Image" then return nil end
+      local img = el.content[1]
+      if #img.caption > 0 then
+        error("wt175: figure embed " .. img.src .. " carries alt text, which pandoc would "
+              .. "turn into a SECOND caption on a float. Write the embed as ![](" .. img.src
+              .. ") and let the blockquote under it be the caption.")
+      end
+      return pandoc.RawBlock("latex", "\\wtfig{" .. img.src .. "}")
+    end,
+
     -- Every table is wrapped in \begin{wttable}{<id>}, which gives it ITS OWN measure --
     -- defaulting to the body measure and widened only where the build proved it necessary,
     -- from the committed docs/deliverable/TABLE-WIDTHS.tsv. Six of the corpus's thirty

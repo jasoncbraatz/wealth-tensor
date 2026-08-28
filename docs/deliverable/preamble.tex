@@ -133,6 +133,50 @@
 % xurl's break-anywhere rule, which is exactly the case -94 added it for.
 \DeclareUrlCommand\wtident{\urlstyle{tt}\def\UrlBreaks{\do\_\do\/\do\.\do\-\do\:}}
 
+% ---- figures ---------------------------------------------------------------------------
+% wealthTensor-110. The corpus carried ZERO figures until now, and this preamble did not even
+% load graphicx -- FIGURES.tsv says so in its own header, and P13f's @zero-figures sentinel is
+% the claim that made that absence checkable rather than merely true. The v2 review pair is
+% the first document here with pictures in it, so the ability to set one arrives here.
+%
+% NOT A FLOAT, deliberately. Every figure in these manuscripts is followed IMMEDIATELY by a
+% blockquote that reads "Figure N -- ..." and IS the caption. A LaTeX float would carry the
+% picture to the top of some later page and leave its caption behind, pointing at nothing --
+% the orphan defect this corpus already has a name for. So the picture sets exactly where the
+% author put it, and the caption stays under it by construction rather than by hope.
+\usepackage{graphicx}
+% THE FIGURES GET THEIR OWN MEASURE, exactly as the wide tables do, and for the same reason.
+% The body measure is 289.08pt inside 162.6pt margins -- a narrow scholarly block. The nine
+% charts are drawn 540bp wide, so setting them to the body measure scales them to 0.53 and
+% takes their axis labels down to about six points: legible under a loupe, not on paper. The
+% first cut did exactly that and the proof page showed it.
+%
+% 460pt leaves 77pt of paper on each side (the ink check demands 18bp, so this clears it four
+% times over) and lands the charts at 0.85 -- large enough to read, still visibly a figure set
+% into a narrow column rather than a poster.
+\newlength{\wtfigmeasure}\setlength{\wtfigmeasure}{460.0pt}
+% NOT A FLOAT, deliberately. Every figure here is followed IMMEDIATELY by a blockquote that
+% reads "Figure N -- ..." and IS the caption. A LaTeX float would carry the picture to the top
+% of some later page and leave its caption behind pointing at nothing -- the orphan defect this
+% corpus already has a name for. So the picture sets where the author put it, and the caption
+% stays under it by construction rather than by hope.
+%
+% The width is CLAMPED rather than trusted: anything wider than the figure measure would be an
+% overfull box, which build.sh promotes to fatal.
+\newcommand{\wtfig}[1]{%
+  \par\addvspace{11.0pt}%
+  \setbox0=\hbox{\includegraphics{#1}}%
+  \ifdim\wd0>\wtfigmeasure
+    \setbox0=\hbox{\includegraphics[width=\wtfigmeasure]{#1}}%
+  \fi
+  % \hss on BOTH sides, and that is the whole trick. A box wider than the measure, set with
+  % \hspace* and \makebox, is an OVERFULL BOX by exactly its overhang -- and build.sh promotes
+  % an overfull box to fatal, so the first cut of this command refused its own build nine
+  % times over, once per figure. \hss shrinks infinitely, so the enclosing box meets \hsize
+  % honestly while the picture hangs equally into both margins.
+  \hbox to\hsize{\hss\box0\hss}%
+  \par\addvspace{2.0pt}}
+
 % ---- RECIPE step 14 · tables ----------------------------------------------------------
 % booktabs only: \toprule, \midrule, \bottomrule. No vertical rules and no \hline.
 \usepackage{booktabs}
@@ -217,6 +261,12 @@
 \makeatother
 
 % ---- P13a · the stamp values, written by build.sh, never by hand ----------------------
+% \wtdoclabel names WHICH document this is, in the footer of every page. It exists
+% because a review build produced from a different manuscript set is byte-for-byte
+% plausible as the canonical capture -- same fonts, same measure, same stamp shape --
+% and the only thing standing between a reader and that confusion is this string.
+% build.sh sets it from WT_DOCLABEL; the default is the canonical capture.
+\providecommand{\wtdoclabel}{wealth-tensor capture}
 % build.sh generates wt-stamp.tex containing \wtcommit and \wtbuilt. \wtbuilt is the
 % COMMIT's date, not the wall clock: a build timestamp would change the footer on every
 % page on every rebuild, which would change every per-page text hash, which would make
@@ -236,7 +286,7 @@
 \makeatletter
 \newcommand{\wt@footline}{%
   \parbox{\textwidth}{\centering\normalfont\fontsize{8.0}{10.0}\selectfont
-    wealth-tensor capture\quad\textbullet\quad\texttt{\wtcommit}%
+    \wtdoclabel\quad\textbullet\quad\texttt{\wtcommit}%
     \quad\textbullet\quad\wtbuilt\quad\textbullet\quad\thepage}}
 \newcommand{\ps@wtcapture}{%
   \renewcommand{\@oddhead}{}\renewcommand{\@evenhead}{}%

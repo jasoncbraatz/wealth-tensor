@@ -20,3 +20,4 @@ data/.universes/
 # The deliverable's build directory. Generated .tex, .aux and the engine log; the PDF that
 # matters is copied out to docs/deliverable/wealth-tensor-capture.pdf and committed there.
 docs/deliverable/build/
+docs/deliverable/build-v2/
