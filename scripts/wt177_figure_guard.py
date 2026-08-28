@@ -107,7 +107,13 @@ PATTERNS = [
     ("figure-env", re.compile(r"\\begin\{figure\*?\}")),
     ("tikz", re.compile(r"\\begin\{tikzpicture\}")),
     ("pgfplots-axis", re.compile(r"\\begin\{axis\}")),
-    ("caption-line", re.compile(r"^\s*(?:\*\*|__)?(?:Figure|Fig\.)\s*[0-9]")),
+    # THE BLOCKQUOTE PREFIX IS NOT COSMETIC. Every figure caption this corpus writes lives
+    # inside a blockquote -- `> **Figure 3 -- ...**` -- and the first cut of this pattern was
+    # anchored at ^\s*, so it could not match ONE caption in the house style. It reported
+    # zero, and zero read as absence. Measured against the canonical four before widening:
+    # still zero, so this changes no verdict today and changes every verdict on the day a
+    # caption lands in one of them.
+    ("caption-line", re.compile(r"^\s*(?:>\s*)*(?:\*\*|__)?(?:Figure|Fig\.)\s*[0-9]")),
 ]
 
 
@@ -127,6 +133,44 @@ def papers_from_build_sh(build_sh=None):
         return None, f'no PAPERS="..." block in {b}'
     rels = [ln.strip() for ln in m.group(1).split("\n") if ln.strip()]
     return [ROOT / "docs" / "papers" / r for r in rels], None
+
+
+def out_of_corpus_census(corpus: list[pathlib.Path]) -> list[dict]:
+    """Manuscripts OUTSIDE the corpus that carry figure references, and whether their
+    figure files exist.
+
+    THIS IS BLIND SPOT #1, PROMOTED FROM A SENTENCE TO A NUMBER. The guard scopes itself to
+    `PAPERS=` in build.sh, which is correct -- P13f is a claim about the DELIVERABLE -- and
+    from the day it was written it printed "documents outside the PAPERS= list are not seen"
+    as an honest disclaimer. wealthTensor-110 then put nine figures into docs/papers-v2/,
+    and the disclaimer stopped being hypothetical.
+
+    A sentence naming a blind spot ages into wallpaper. A COUNT does not: it moves, and a
+    number that moves is one somebody reads. So the guard now walks every manuscript under
+    docs/papers*/ that is not in the corpus and says what it found. This is INFORMATIONAL and
+    deliberately declares no new failure tag -- an out-of-corpus figure is not a P13f defect,
+    it is a fact P13f is silent about, and the difference matters. What it buys is that the
+    day one of those manuscripts is promoted INTO the corpus, whoever does it can already see
+    what they are promoting.
+    """
+    seen = {c.resolve() for c in corpus}
+    rows = []
+    for d in sorted(ROOT.glob("docs/papers*")):
+        if not d.is_dir():
+            continue
+        for md in sorted(d.rglob("*.md")):
+            if md.resolve() in seen or ".bak" in md.name:
+                continue
+            hits = scan(md, ROOT)
+            if not hits:
+                continue
+            targets = sorted({h["key"] for h in hits if "@" not in h["key"]})
+            missing = [t for t in targets
+                       if not (ROOT / "docs" / "figures" / pathlib.Path(t).name).is_file()
+                       and not (md.parent / t).is_file() and not (ROOT / t).is_file()]
+            rows.append({"path": str(md.relative_to(ROOT)), "references": len(hits),
+                         "targets": len(targets), "missing_files": missing})
+    return rows
 
 
 def scan(paper: pathlib.Path, root: pathlib.Path):
@@ -234,7 +278,7 @@ def measure(papers, manifest_path, pdf_path):
                 "image_xobjects": n_pdf, "observed_by": how},
         "patterns": [k for k, _ in PATTERNS],
         "blind_to": [
-            "documents outside the PAPERS= list (review docs, ADRs)",
+            "documents outside the PAPERS= list (review docs, ADRs) — but see OUT OF SCOPE above, which now counts the manuscripts among them",
             "figures injected by wt175_md2tex.lua or preamble.tex macros",
             "images inside a compressed /ObjStm when pdfimages is unavailable",
             "vector art drawn with PDF operators rather than an image XObject",
@@ -342,6 +386,16 @@ def main() -> int:
     print(f"  references  : {len(refs)}  (patterns: {', '.join(k for k, _ in PATTERNS)})")
     print(f"  pdf images  : {n_pdf}  ({m['pdf']['observed_by']})")
     print(f"  manifest    : {len(data_rows)} figure row(s), {len(sentinels)} sentinel")
+    oob = out_of_corpus_census(papers)
+    if oob:
+        n = sum(r["references"] for r in oob)
+        print(f"  OUT OF SCOPE: {n} figure reference(s) in {len(oob)} manuscript(s) outside "
+              f"PAPERS= — measured, not a P13f defect, and not covered by the verdict below:")
+        for r in oob:
+            miss = ("  MISSING FILE: " + ", ".join(r["missing_files"])) if r["missing_files"] else ""
+            print(f"                {r['references']:>3}  {r['path']}{miss}")
+    else:
+        print("  OUT OF SCOPE: no manuscript outside PAPERS= carries a figure reference")
     print("  BLIND TO    : " + "; ".join(m["blind_to"]))
 
     for tag, _ in list(fails):

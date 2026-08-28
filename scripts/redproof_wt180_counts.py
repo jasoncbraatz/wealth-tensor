@@ -158,7 +158,14 @@ def tally_says(n):
     return r.returncode, (r.stdout or "") + (r.stderr or "")
 
 
+# BOTH probe functions are stubbed. redproof-layout.sh grew a second one (probe_verifier,
+# wealthTensor-110) that drives verify-layout.sh rather than build.sh, and stubbing only the
+# first left the wiring proof running REAL lualatex builds inside the test suite -- slow, and
+# counting verdicts the stub was supposed to be manufacturing.
 STUB = ('probe() {\n'
+        '  say "ok" "$1 -- STUBBED by redproof_wt180_counts.py; no build was run"\n'
+        '}\n'
+        'probe_verifier() {\n'
         '  say "ok" "$1 -- STUBBED by redproof_wt180_counts.py; no build was run"\n'
         '}\n')
 
@@ -171,12 +178,18 @@ def stub_probe_run(drop_probes=0):
     only the four lualatex builds are gone. Drop a call site and the number has to drop with
     it -- a corpus with one fewer member, on the actual script, in under a second."""
     src = (ROOT / "docs" / "deliverable" / "redproof-layout.sh").read_text()
-    head = src.index("probe() {")
-    tail = src.index("\n}\n", head) + len("\n}\n")
-    stubbed = src[:head] + STUB + src[tail:]
+    stubbed = src
+    for fn in ("probe() {", "probe_verifier() {"):
+        head = stubbed.index(fn)
+        tail = stubbed.index("\n}\n", head) + len("\n}\n")
+        stubbed = stubbed[:head] + stubbed[tail:]
+    # both bodies are gone; put the two stubs where the first one stood
+    anchor = stubbed.index("echo \"== red-proofing")
+    stubbed = stubbed[:anchor] + STUB + stubbed[anchor:]
     for _ in range(drop_probes):
         lines = stubbed.split("\n")
-        last = max(i for i, ln in enumerate(lines) if ln.startswith("probe "))
+        last = max(i for i, ln in enumerate(lines)
+                   if ln.startswith("probe ") or ln.startswith("probe_verifier "))
         del lines[last]
         stubbed = "\n".join(lines)
     # It must live beside its siblings: the script resolves everything from `dirname $0`.

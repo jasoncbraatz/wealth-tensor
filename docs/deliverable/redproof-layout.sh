@@ -112,11 +112,74 @@ open(p,'w').write(s[:i] + 'x' + s[i:])
 }
 
 echo "== red-proofing the layout verifier against ${COMMIT:0:12}"
-echo "   (four full builds; budget several minutes)"
+echo "   (up to ten full builds; budget several minutes)"
 probe "CONTROL " pass ":"
 probe "RP1a fnt" bite "$(subst LibertinusSerifDisplay-Regular.otf)"
 probe "RP1b fnt" bite "$(subst LibertinusSerif-Semibold.otf)"
 probe "RP2 char" bite "$(onechar)"
+
+# ---- RP3 · THE LEG THAT TESTS THE OTHER HALF OF THE VERIFIER ---------------------------
+# The three probes above drive build.sh and wt176 --verify directly. They never run
+# verify-layout.sh, so they can say nothing about the ONE THING that script does on its own:
+# decide WHICH TREE to hold the manifest against.
+#
+# Until wealthTensor-110 the answer was "the manifest's own commit, always", which means a
+# session that edited preamble.tex and ran verify-layout.sh got a PASS about a checkout that
+# predated its edit. RP3 is the probe for the leg that closed that.
+#
+# Each run materialises a worktree at the manifest commit, drops the CURRENT verify-layout.sh
+# into it (the point is to test today's verifier, not the one frozen at that commit), and
+# runs it there.
+probe_verifier() {   # $1 label  $2 pass|bite|blind  $3 current|historic  $4 mutation
+  # THE WORKTREE IS AT HEAD, NOT AT THE MANIFEST COMMIT, and that is the whole design.
+  # The first cut put it at $COMMIT and the control failed for a reason that had nothing to
+  # do with the leg under test: a worktree at $COMMIT carries the LAYOUT-MANIFEST.json AS IT
+  # WAS THEN, which names an EARLIER commit, so P13e-b dutifully found real drift and tried
+  # to rebuild -- with that commit's build.sh, which had no WT_CAPTURE override yet. A probe
+  # whose control fails for an unrelated reason proves nothing in either direction.
+  # HEAD is the tree the leg is actually meant to police, so HEAD is where it is tested.
+  local label="$1" expect="$2" which="$3" mutate="$4" wt rc
+  wt="$(mktemp -d "${TMPDIR:-/tmp}/wt-rp3.XXXXXX")"
+  git -C "$REPO" worktree add --detach "$wt/src" HEAD >/dev/null 2>&1 \
+    || { say FAIL "$label — could not materialise a worktree at HEAD"; FAIL=1; return; }
+  if [ "$which" = "historic" ]; then
+    git -C "$REPO" show "$COMMIT:docs/deliverable/verify-layout.sh" \
+      > "$wt/src/docs/deliverable/verify-layout.sh" 2>/dev/null \
+      || { say FAIL "$label — no verify-layout.sh at ${COMMIT:0:12}"; FAIL=1
+           git -C "$REPO" worktree remove --force "$wt/src" >/dev/null 2>&1; rm -rf "$wt"; return; }
+    # Once the manifest is re-emitted at a commit that already carries P13e-b there is no
+    # blindness left to demonstrate. Say so and spend no builds on it -- but say it HERE, from
+    # inside the one call site, so the verdict count does not depend on which branch ran.
+    if grep -q "P13e-b" "$wt/src/docs/deliverable/verify-layout.sh"; then
+      say "ok" "$label — the ${COMMIT:0:12} verifier already carries P13e-b; nothing left to show"
+      git -C "$REPO" worktree remove --force "$wt/src" >/dev/null 2>&1; rm -rf "$wt"; return
+    fi
+  fi
+  ( cd "$wt/src/docs/deliverable" && eval "$mutate" ) >/dev/null 2>&1
+  bash "$wt/src/docs/deliverable/verify-layout.sh" > "$wt/v.log" 2>&1; rc=$?
+  if [ "$expect" = "pass" ] && [ $rc -eq 0 ]; then
+    say "ok" "$label — passes on an untouched HEAD, as it must"
+  elif [ "$expect" = "bite" ] && [ $rc -ne 0 ]; then
+    say "ok" "$label — CAUGHT: $(grep -m1 'VERIFY FAILED' "$wt/v.log" | cut -c1-66)"
+  elif [ "$expect" = "blind" ] && [ $rc -eq 0 ]; then
+    say "ok" "$label — the ${COMMIT:0:12} verifier passed a tree it never looked at (the hole)"
+  else
+    say FAIL "$label — expected $expect, got rc=$rc"; tail -8 "$wt/v.log" | sed "s/^/           /"; FAIL=1
+  fi
+  git -C "$REPO" worktree remove --force "$wt/src" >/dev/null 2>&1; rm -rf "$wt"
+}
+
+# a two-point change to the measure: small enough that the build stays happy, large enough
+# that the page boundaries move. The SAME mutation is put to both verifiers.
+WIDEN="sed -i '' 's/textwidth=289.08pt/textwidth=287.08pt/' preamble.tex"
+
+probe_verifier "RP3 ctl " pass  current  ":"
+probe_verifier "RP3 tree" bite  current  "$WIDEN"
+# ...and the same mutation put to the verifier AS IT STOOD at the manifest commit. ONE CALL
+# SITE, unconditionally: the "already carries the leg" case is handled INSIDE probe_verifier,
+# because a say() reached down a branch that has no `probe` line behind it is a verdict the
+# tally counts and test_the_three_counts_are_derived cannot account for. One call, one verdict.
+probe_verifier "RP3 hist" blind historic "$WIDEN"
 
 echo
 tally_line "redproof-layout" || FAIL=1

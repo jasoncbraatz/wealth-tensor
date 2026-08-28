@@ -80,10 +80,10 @@ claims:
   - id: redproof-layout.sh
     cmd: bash docs/deliverable/redproof-layout.sh
     rc: 0
-    count: 4
+    count: 7
     count_re: redproof-layout: ([0-9]+) probes reported
     slow: true
-    note: 5-8 minutes, four probes. The count is verdicts REPORTED, tallied in say(), so a probe that dies before reporting LOWERS it -- there is deliberately no declared total to print back
+    note: 8-14 minutes, seven probes -- four over build.sh and the hash, three (RP3) over verify-layout.sh itself, which is the only thing that can test WHICH TREE the verifier holds the manifest against. The count is verdicts REPORTED, tallied in say(), so a probe that dies before reporting LOWERS it -- there is deliberately no declared total to print back
   - id: wt177_figure_guard.py
     cmd: python3 scripts/wt177_figure_guard.py
     rc: 0
