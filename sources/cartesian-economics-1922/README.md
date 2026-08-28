@@ -49,7 +49,7 @@ antisemitic idiom on p. 25 and the reference to racial stock on p. 12.
 
 ## The bat behind this
 
-Built with [`books.reset`](https://github.com/jasoncbraatz/book-reset) — the Bat Rack
+Built with [`books.typeset`](https://github.com/jasoncbraatz/book-typeset) — the Bat Rack
 capability for turning OCR remnants back into readable, citable books. That repo carries
 the method (`BAT-HANDLE.md`), the period-typeface table, a `triage.py` that finds the
 duplicate passes / provenance / folio offset in one pass, and the generalised `proof.py`.
