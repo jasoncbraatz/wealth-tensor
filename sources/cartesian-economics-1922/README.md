@@ -47,6 +47,14 @@ which made them useful for cross-checking. The canonical run is
 Soddy's language is 1921's and is reproduced unaltered, including the
 antisemitic idiom on p. 25 and the reference to racial stock on p. 12.
 
+## The bat behind this
+
+Built with [`books.reset`](https://github.com/jasoncbraatz/book-reset) — the Bat Rack
+capability for turning OCR remnants back into readable, citable books. That repo carries
+the method (`BAT-HANDLE.md`), the period-typeface table, a `triage.py` that finds the
+duplicate passes / provenance / folio offset in one pass, and the generalised `proof.py`.
+This setting is its first swing and its worked example.
+
 ## Verifying the text
 
     python3 proof.py
