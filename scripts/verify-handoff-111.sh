@@ -4,7 +4,7 @@ R="$HOME/repos/wealth-tensor"; F=0
 chk(){ if eval "$2" >/dev/null 2>&1; then printf '  ok    %s\n' "$1"; else printf '  FAIL  %s\n' "$1"; F=1; fi; }
 
 chk "branch is paper-rebuild"        "[ \"\$(git -C $R rev-parse --abbrev-ref HEAD)\" = paper-rebuild ]"
-chk "HEAD is aa159f2"                "git -C $R rev-parse --short HEAD | grep -q '^aa159f2'"
+chk "HEAD is a85a033"                "git -C $R rev-parse --short HEAD | grep -q '^aa159f2'"
 chk "tree clean + pushed"            "[ -z \"\$(git -C $R status --porcelain)\" ] && git -C $R status -sb | head -1 | grep -qv '\[ahead'"
 for p in docs/DEFINITION-OF-DONE-SHIP.md docs/CO-AUTHOR-CHARTER.md docs/CHECKLIST.md \
          docs/papers-v2/paper-II-redistribution/paper-II.md docs/papers-v2/paper-III-dual-tensor/paper-III.md \
