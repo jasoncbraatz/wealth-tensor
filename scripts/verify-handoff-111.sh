@@ -4,7 +4,13 @@ R="$HOME/repos/wealth-tensor"; F=0
 chk(){ if eval "$2" >/dev/null 2>&1; then printf '  ok    %s\n' "$1"; else printf '  FAIL  %s\n' "$1"; F=1; fi; }
 
 chk "branch is paper-rebuild"        "[ \"\$(git -C $R rev-parse --abbrev-ref HEAD)\" = paper-rebuild ]"
-chk "HEAD is a85a033"                "git -C $R rev-parse --short HEAD | grep -q '^aa159f2'"
+# NO LITERAL SHA HERE, and the reason is funny enough to write down: the first cut asserted
+# a HEAD, and then COMMITTING THIS SCRIPT MOVED HEAD, so the verifier invalidated itself by
+# landing. Same shape as the P13e finding one commit earlier -- a check that names a ref has
+# to name a ref it is not itself moving. What actually matters to the next session is that
+# the tree is clean and in step with origin; a HEAD ahead of the handoff just means a
+# sibling committed, which is a thing to read, not a thing to fail on.
+chk "in step with origin (no ahead/behind)" "git -C $R status -sb | head -1 | grep -qv '\['"
 chk "tree clean + pushed"            "[ -z \"\$(git -C $R status --porcelain)\" ] && git -C $R status -sb | head -1 | grep -qv '\[ahead'"
 for p in docs/DEFINITION-OF-DONE-SHIP.md docs/CO-AUTHOR-CHARTER.md docs/CHECKLIST.md \
          docs/papers-v2/paper-II-redistribution/paper-II.md docs/papers-v2/paper-III-dual-tensor/paper-III.md \
