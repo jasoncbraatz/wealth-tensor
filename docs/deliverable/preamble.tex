@@ -284,10 +284,19 @@
 % longtable's first page all issue \thispagestyle{plain}, and a page that escaped the stamp
 % would be exactly the ambiguity this row exists to prevent.
 \makeatletter
+\def\wt@off{off}
+% build.sh sets \wtfooterstamp from WT_FOOTER_STAMP; the default is on, so the canonical
+% capture's footer is unchanged. A PUBLIC preprint sets it off: a reader of a posted paper is
+% not served by a build hash on every sheet, and the label alone still says what the document is.
+\providecommand{\wtfooterstamp}{on}
 \newcommand{\wt@footline}{%
   \parbox{\textwidth}{\centering\normalfont\fontsize{8.0}{10.0}\selectfont
-    \wtdoclabel\quad\textbullet\quad\texttt{\wtcommit}%
-    \quad\textbullet\quad\wtbuilt\quad\textbullet\quad\thepage}}
+    \ifx\wtfooterstamp\wt@off
+      \wtdoclabel\quad\textbullet\quad\thepage
+    \else
+      \wtdoclabel\quad\textbullet\quad\texttt{\wtcommit}%
+      \quad\textbullet\quad\wtbuilt\quad\textbullet\quad\thepage
+    \fi}}
 \newcommand{\ps@wtcapture}{%
   \renewcommand{\@oddhead}{}\renewcommand{\@evenhead}{}%
   \renewcommand{\@oddfoot}{\wt@footline}\renewcommand{\@evenfoot}{\wt@footline}}
