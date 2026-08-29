@@ -21,3 +21,12 @@ data/.universes/
 # matters is copied out to docs/deliverable/wealth-tensor-capture.pdf and committed there.
 docs/deliverable/build/
 docs/deliverable/build-v2/
+
+# Public preprint PDFs are BUILD OUTPUT of docs/deliverable/build-public.sh, regenerable
+# from the committed manuscripts in one command. The copies that are actually served live
+# in the miniblog repo at public/papers/, which is where the website deploys from --
+# committing them here too would put the same 600KB under two SSOTs and guarantee they
+# drift. The build directories were already transient; this makes the artefact match.
+docs/deliverable/public/
+docs/deliverable/build-public-*/
+docs/deliverable/build-v2/
