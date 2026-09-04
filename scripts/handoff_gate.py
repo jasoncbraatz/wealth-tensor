@@ -16,6 +16,9 @@ explicit that the file half must not be adopted without it.
             re-runs a disagreement before reporting it. --claims-all includes the
             slow ones. See the G-CLAIMS section for why each of those words is load-
             bearing.
+  --sections  G-SEC. A section number the handoff NAMES must EXIST in the paper it
+            names (SM 1217564707330383). Lives in scripts/wt_handoff_sections.py;
+            --sections-selftest runs its controls, including the negative one.
 
 Correct wrap sequence -- --emit does NOT stamp, and running it on an unstamped file was
 a silent-green failure until 2026-08-05 (see below):
@@ -245,6 +248,13 @@ ANCHOR_PRECEDENCE = "THE CHARTER WINS"
 
 PAPERS = sorted((ROOT / "docs" / "papers").glob("*/paper-*.md"))
 
+# G-SEC (SM 1217564707330383, smDrainHandoff-12). Kept in its own module because its
+# controls are hermetic and want to be runnable without a repo state: `python3
+# scripts/wt_handoff_sections.py --selftest`. Imported rather than re-implemented so
+# there is exactly one definition of what a section reference IS.
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from wt_handoff_sections import sections_leg, selftest as sections_selftest  # noqa: E402
+
 # Sentences that open by conceding rather than by claiming. Counted, not banned: one is
 # candour, thirty is a paper apologising for existing. The list is deliberately short and
 # literal -- a clever regex here would be a guard that cannot fail.
@@ -371,6 +381,7 @@ def emit():
     problems += placeholders_left(body)
     problems += anchors()
     problems += claims_static()
+    problems += sections_leg()
     print("\ncoach metrics (G-COACH-2, G-COACH-3):")
     _, coach_problems = coach()
     problems += coach_problems
@@ -866,5 +877,7 @@ if __name__ == "__main__":
     sys.exit({"--check": check, "--emit": emit, "--stamp": stamp,
               "--claims": lambda: claims_leg(run_slow=False),
               "--claims-all": lambda: claims_leg(run_slow=True),
+              "--sections": lambda: (1 if sections_leg() else 0),
+              "--sections-selftest": sections_selftest,
               "--coach": lambda: coach()[0],
               "--coach-refresh": lambda: coach(write_baseline=True)[0]}.get(arg, check)())
