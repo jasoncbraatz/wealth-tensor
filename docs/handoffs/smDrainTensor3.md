@@ -1,91 +1,105 @@
 ---
 project: "smDrainTensor3"
-session_n: 0
+session_n: 1
 gh_repo: "jasoncbraatz/wealth-tensor"
-branch: "main"
-gh_sha: "651f1a4557d4a0d52756b06d491f8703b055c353"
+branch: "public-cut"
+gh_sha: "4e9eb7d"
 updated: "2026-09-05"
 definition_of_done: "Every one of the 2 card(s) in the frozen manifest lane-tensor3.json is closed on the State Machine with a bb-close.py receipt (or PARKED by a CEO ruling via smdrain-lane.py park), and `bash /Users/jasoncbraatz/repos/claude-blackbook/scripts/verify-smdrain.sh tensor3` exits 0."
 verify_cmd: "bash /Users/jasoncbraatz/repos/claude-blackbook/scripts/verify-smdrain.sh tensor3"
 ruler_files: ["/Users/jasoncbraatz/repos/claude-blackbook/state/smdrain/lane-tensor3.json", "/Users/jasoncbraatz/repos/claude-blackbook/scripts/verify-smdrain.sh", "/Users/jasoncbraatz/repos/claude-blackbook/scripts/smdrain-lane.py"]
 lessons_consulted: ["2026-09-03-fraction-target-work-board-unreachable-only", "2026-09-04-freezing-acceptance-command-freezing-acceptance-criteria", "2026-09-04-rewriting-handoff-every-inning-can-silently", "2026-09-04-roster-claim-authorship-roster-brake-s", "2026-09-02-state-machine-backlog-precedence-jason-s"]
-live_theme: "session 0: lane armed by the CEO desk from the 2026-09-05 freeze; no work yet."
-phase: "0/2 closed. RULER RED (expected before any work)."
-gate_passed: false
-next_at_bat: "Run the verify_cmd; take the first OPEN gid in the table below; read the card on Asana (the body carries prior sessions' measurements), fix it reversibly, verify it yourself, bb-close.py with a receipt. One card per inning is fine; two is better; a card you cannot close is a finding (park needs a ruling \u2014 open a decision)."
+lessons_banked: ["2026-09-05-ceo-desk-brief-citing-section-line"]
+live_theme: "session 1: BOTH cards closed. RULER GREEN. Ask: is this phase DONE?"
+phase: "2/2 closed. RULER GREEN — verify_cmd exits 0."
+gate_passed: true
+next_at_bat: "None on this manifest — DONE, pending confirmation this phase is over. If re-armed, re-run verify_cmd first; it should stay green unless the manifest is amended by a CEO ruling."
 blockers: []
-drift_flags: []
+drift_flags: ["card 1217501628088122's brief cited §5.3/line~1252; the actual anchor (found by grepping the quoted phrase) is §9.3, same line number — the repo wins per this handoff's own rule, and this drift is noted on the card + in the commit message + banked as a lesson."]
 parking_lot: []
 ---
 
 # smDrainTensor3 — LIVING HANDOFF
 
-## Read first
-Run the `verify_cmd` in the frontmatter above FIRST. Its OPEN lines are the at-bat and its
-closed lines are the guard rails. Then `docs/NORTH-STAR.md` if this repo has one.
+## Is this phase DONE?
 
-## What this lane is
+**Yes, as far as this lane's manifest goes.** Both cards in the frozen `lane-tensor3.json` are
+closed with `bb-close.py` receipts, and `verify_cmd` exits 0 (RULER GREEN, 2/2 closed). This
+session ran `rail.py complete` immediately after this handoff was written and pushed — see the
+commit/push history on `wealth-tensor:public-cut` for the receipts (`c345674`, `4e9eb7d`) and
+`rail_log` for the `complete` row. If a NEXT session is reading this because the project was
+re-armed, that means either the manifest was amended by a CEO ruling (check
+`state/smdrain/lane-tensor3.json`'s `amendments` array) or something regressed — re-run
+`verify_cmd` first and trust what it says over this paragraph.
 
-Jason asked the CEO desk to attack the State Machine backlog (target: 95% of the frozen workable
-board). The board was FROZEN at **2026-09-05T08:15:12+00:00** (rule 1 of the `backlog.work` bat: never
-count against a live board — an honest session FILES cards, so a live denominator makes good work
-look like failure). 81 cards were workable at the freeze (NOW+NEXT; SOMEDAY is memory, not debt).
+## What happened this session (session 1)
 
-This lane is ONE CLUSTER of that freeze — **wealth-tensor: wealth-tensor: a v1.0 preprint is tagged and Jason is its successor — every edit here is a NON-DESTRUCTIVE copy beside the shipped one** — because a cluster is
-one system, which is one repo, which is one claim. The cards were scoped by the repo they are
-CLOSED IN, not the topic they share.
+Two cards, closed in order:
 
-## The ruler is DECLARED, not shimmed
+**1217542940968749 (wealth-tensor · Paper II has no reference entries for its companion papers)**
+— Both Paper II and Paper III already name each other in prose (Paper II §3.3's cross-scale check;
+Paper III §A.4's companion result) but neither carried a bibliography entry for the other. Fixed in
+`scripts/wt226_public_cut.py` — the public-cut build now splices a companion-reference entry into
+each paper's References section when it generates `docs/papers-public/`, with a REFUSE-on-missing-
+anchor guard (same discipline the rest of that script uses). **`docs/papers-v2` is untouched** — the
+new entries only ever land in the generated `docs/papers-public/` output. Verified: the script runs
+clean (both anchors found, section numbers `§7`/`§13` derived correctly, not hardcoded), and the
+full suite (`python3 -m pytest tests/ -q`) is 1188 passed / 2 failed, with the 2 failures
+(`test_board_is_not_stale`, `test_preflight_refuses_an_unpinned_tex_live_year`) confirmed
+pre-existing by reproducing identically on the pre-change tree (`git stash` and re-run). Commit
+`c345674`, pushed to `public-cut`. Closed `--played` (the card's own next-at-bat line said exactly
+this fix, and it landed).
 
-`verify_cmd` is the blackbook verifier and `ruler_files:` in the frontmatter names the manifest,
-the verifier and its engine. rail.py (ff86a5b, `ruler_files:` DECLARED never inferred) digests
-every one of them at rail-on, so narrowing the manifest is a LOUD `RULER MOVED` (exit 2), not a
-silent pass — the smDrainWisdom false complete (48327fb1) cannot recur here.
+**1217501628088122 (paper III · SCOUT-001 T2 — the elected annual test date needs a fresh
+registration, not a re-run)** — Part 1 ONLY, as the card required (Part 2 is BARRED by PRE-002 §5's
+stopping rule, which forbids a third instrument on this data — nothing here retests the tier
+gradient). Created `docs/papers-v3/paper-III-dual-tensor/paper-III.md` as a v3 copy beside v2
+(`docs/papers-v2` untouched, frozen for Jason). In the copy, replaced §9.3's first power
+qualification — the hand-wave "attenuates … by an unquantified amount" — with the ASC 350-20-35-28
+elected-annual-test-date mechanism and `docs/scouting/probes/annual_test_date.py`'s measured
+modal-quarter shares: **0.72–0.75 (pilot) / 0.58–0.67 (replication) against a ~0.49–0.60 null at
+every firm-count threshold, p < 0.0001 throughout.** The diff against v2 is exactly the v3
+front-matter note plus that one paragraph — verified with `diff` directly. **Whether v3 ships,
+supersedes v2, or is discarded is Jason's call**, noted both in the v3 file's own front matter and
+on the card. Commit `4e9eb7d`, pushed to `public-cut`.
 
-**You may not edit the manifest.** A card you cannot close is a FINDING, not a failure:
-open a decision (`python3 ~/repos/auto-bridge/abridge.py decision open --proj smDrainTensor3 --needs-ceo -q "..."`),
-say so on the card, move on. After the CEO rules, the park is
-`python3 /Users/jasoncbraatz/repos/claude-blackbook/scripts/smdrain-lane.py park --lane tensor3 --gid G --why "<cite the ruling>"`
-— it appends to a sibling file and never touches the ruler. Commit `state/smdrain/parked-tensor3.json`
-in claude-blackbook by pathspec (that repo is NOT this lane's claim — commit only that file, say so in the message).
+**Drift worth flagging explicitly:** the card's brief cited "§5.3 … line ~1252" for the edit. The
+actual anchor — found by grepping the *exact quoted phrase* ("attenuates … by an unquantified
+amount") rather than trusting the section number — is **§9.3** ("The severe test: registered, run
+twice, and lost"), same line number, different section. Per this handoff's own rule ("if the card
+or the repo disagree with the brief, the repo wins — say so"), I used §9.3, said so on the card, in
+the commit message, and banked it as a lesson
+(`2026-09-05-ceo-desk-brief-citing-section-line`) — a brief's own section citation can be stale
+even when the line number and quoted text are still exactly right.
 
-## The cards (FROZEN — do not add, do not remove)
+## Repo/branch note for the next worker
 
-BRIEF is the CEO desk's measured fix surface from the campfire (read on 2026-09-05 with the repo open).
-It is a head start, not an order: if the card or the repo disagree with the brief, the repo wins — say so.
+This repo has **no `rail/smDrainTensor3` branch** — the working checkout (repo: == worktree: per
+the claim header) was on `public-cut` at session start (a long-lived branch, diverged hugely from
+`main`; the previous session's stamp commit was already there). Both commits this session landed
+directly on `public-cut` and were pushed there — this is the "shared checkout, old way" case the
+local playbook describes (§6's merge-into-main step is a no-op when there's no separate lane
+branch). If a future session expects a `rail/smDrainTensor3` → `main` merge, there isn't one to do;
+just commit + push on whatever branch is checked out, same as this session and the one before it.
 
-| gid | bin | card | BRIEF (fix surface · Q1 done? · who) |
-|---|---|---|---|
-| `1217501628088122` | NOW | paper III · SCOUT-001 T2 — the elected annual test date (ASC 350-20-35-28) needs a fresh r | Part 1 ONLY: in a v3 COPY of paper-III.md beside v2 (docs/papers-v3/… — create it; never edit papers-v2 or papers-public), replace §5.3 qualification 1's 'attenuates … by an unquantified amount' (line ~1252) with the ASC 350-20-35-28 elected-annual-test-date mechanism and the probe's measured modal-quarter shares (docs/scouting/probes/annual_test_date.py); narrowing, not lengthening; G-COACH/prosody unchanged. Part 2 is BARRED (PRE-002 §5) — say so. Whether v3 ships is Jason's: note it on the card and close on the copy. CLAUDE S-M. |
-| `1217542940968749` | NEXT | wealth-tensor · Paper II has no reference entries for its companion papers, against the co | Reciprocal reference entries for the companion preprint in Papers II and III in the public-cut build (scripts/wt226_public_cut.py, last 9cb4c30 — READ its output first: it may already emit citations) or in the v3 copies; superseded Paper I gets no entry; the §7 guard sentence says only what the test constrains. Do NOT overwrite docs/papers-v2. Close. CLAUDE S-M. |
+Also: a **roster-brake** pre-commit hook fired on both commits (`ROSTER CONTENTION — wealth-tensor
+is ALSO claimed by: fable-smDrainDesk-03`). It only warns (does not block) for a pathspec commit; I
+used `ROSTER_BRAKE_OWN=3` to assert authorship since I wrote every byte in both commits myself this
+inning. Worth a `roster who` check before editing if you see this again.
 
-## How to close one
+## How to close one (unchanged from session 0 — kept for the next re-arm)
 
-1. **Read the card first** — several carry a prior session's measurements in the body. That is
-   free context you would otherwise pay to rediscover.
+1. **Read the card first.**
 2. **The undo comes FIRST.** `.bak`, a commit, or a tag, before the edit.
-3. Fix it, then **verify it yourself** — run the thing, read the log, hit the route. A green
-   claim you did not witness is what MANAGEMENT BY WALKING AROUND exists for.
-4. `python3 ~/Scripts/bb-close.py --gid G --reason "<what you did, what proves it, how to undo>"`
-   — the reason is the receipt a stranger reads in a fortnight; ≥20 chars, name the commit sha.
-5. **Cheap kills are legitimate work** (divide ADR Q1/Q2): a card that is already done, or no
-   longer necessary, closes on MEASURED evidence — cite the sha / the grep / the date in the reason.
-6. **THE DOOR (Rule of One):** a finding that is one repo + ≤3 files + no missing secret + a commit
-   undoes it is FIXED THIS INNING, not carded. File a card ONLY via `~/Scripts/sm-file file --repo R --kind K --reason CODE`.
-7. **A card you cannot close is a finding.** Open a decision (`--needs-ceo` if it needs the desk),
-   say so on the card, move on. Do NOT grind. The desk rules promptly.
-8. **If a card is MISFILED — the fix surface is not this repo — say so and open a decision.**
-   If a lane says a card is misfiled it is probably right; the desk will rule it promptly.
-9. **The card you route away from must say where the work went** (smDrainDesk-02, 2026-09-05):
-   "routed" and "abandoned" look identical from the source gid. Comment on THIS gid before you leave it.
-10. **Commit + push by pathspec every inning** (`git add <exact paths>`; never `-A`). If a fix lands
-    in a SIBLING repo, claim it on the roster first (`~/Scripts/roster claim --repo R --why ...`).
-
-## Lane-specific notes from the desk
-
-Jason reads docs/papers-v2 — it is frozen for him. All work in copies. The repo's own build (docs/deliverable/) is the paper-build kit a future card wants extracted; do not restructure it.
-
-CONTAINER CARD 1218065539722208 (owned by kills3, NOT in your manifest): CONTAINER owned by kills3 — kills3 does item (12) here with a sibling claim; coordinate: if you see docs/HANDOFF.md already re-stamped when you arrive, leave it. Nothing else of yours on that card.
+3. Fix it, then verify it yourself.
+4. `python3 ~/Scripts/bb-close.py --gid G --reason "..."` — ≥20 chars, name the commit sha.
+5. Cheap kills are legitimate work.
+6. **THE DOOR (Rule of One):** file a card ONLY via `~/Scripts/sm-file`, never carry a fixable
+   finding forward.
+7. A card you cannot close is a finding — open a decision, don't grind.
+8. If a card is misfiled, say so and open a decision.
+9. Comment on a routed-away gid before leaving it.
+10. Commit + push by pathspec every inning.
 
 ## Definition of done
 Every one of the 2 card(s) in the frozen manifest lane-tensor3.json is closed on the State Machine with a bb-close.py receipt (or PARKED by a CEO ruling via smdrain-lane.py park), and `bash /Users/jasoncbraatz/repos/claude-blackbook/scripts/verify-smdrain.sh tensor3` exits 0.
