@@ -3,7 +3,7 @@ project: "smDrainTensor3"
 session_n: 1
 gh_repo: "jasoncbraatz/wealth-tensor"
 branch: "public-cut"
-gh_sha: "4e9eb7d"
+gh_sha: "1eb0a3a49a411c3fa0d8feff4126f871e277f5de"
 updated: "2026-09-05"
 definition_of_done: "Every one of the 2 card(s) in the frozen manifest lane-tensor3.json is closed on the State Machine with a bb-close.py receipt (or PARKED by a CEO ruling via smdrain-lane.py park), and `bash /Users/jasoncbraatz/repos/claude-blackbook/scripts/verify-smdrain.sh tensor3` exits 0."
 verify_cmd: "bash /Users/jasoncbraatz/repos/claude-blackbook/scripts/verify-smdrain.sh tensor3"
@@ -25,12 +25,14 @@ parking_lot: []
 
 **Yes, as far as this lane's manifest goes.** Both cards in the frozen `lane-tensor3.json` are
 closed with `bb-close.py` receipts, and `verify_cmd` exits 0 (RULER GREEN, 2/2 closed). This
-session ran `rail.py complete` immediately after this handoff was written and pushed — see the
-commit/push history on `wealth-tensor:public-cut` for the receipts (`c345674`, `4e9eb7d`) and
-`rail_log` for the `complete` row. If a NEXT session is reading this because the project was
-re-armed, that means either the manifest was amended by a CEO ruling (check
-`state/smdrain/lane-tensor3.json`'s `amendments` array) or something regressed — re-run
-`verify_cmd` first and trust what it says over this paragraph.
+session's plan is to run `rail.py complete` right after this handoff is committed, stamped and
+pushed — check `rail_log` for a `complete` row against this project/fence to see whether that
+step actually ran; if there is no such row, it didn't, and someone needs to run it (or find out
+why it failed) before trusting the DoD is fully closed out on the rail's own ledger. See the
+commit/push history on `wealth-tensor:public-cut` for the work receipts (`c345674`, `4e9eb7d`). If
+a NEXT session is reading this because the project was re-armed, that means either the manifest
+was amended by a CEO ruling (check `state/smdrain/lane-tensor3.json`'s `amendments` array) or
+something regressed — re-run `verify_cmd` first and trust what it says over this paragraph.
 
 ## What happened this session (session 1)
 
