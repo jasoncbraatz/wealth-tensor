@@ -105,3 +105,5 @@ inning. Worth a `roster who` check before editing if you see this again.
 
 ## Definition of done
 Every one of the 2 card(s) in the frozen manifest lane-tensor3.json is closed on the State Machine with a bb-close.py receipt (or PARKED by a CEO ruling via smdrain-lane.py park), and `bash /Users/jasoncbraatz/repos/claude-blackbook/scripts/verify-smdrain.sh tensor3` exits 0.
+
+_Reconcile (t-drill-1 2026-09-05T17:54:28Z): cites 42 "the task" — now CLOSED: NO-AAR: the fix shipped in commit abc123 and the drill is green_
