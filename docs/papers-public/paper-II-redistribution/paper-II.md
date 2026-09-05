@@ -658,6 +658,10 @@ shareholder income. *National Tax Journal*, 69(3), 701–731.
 Lucas, R. E. (1976). Econometric policy evaluation: a critique. *Carnegie-Rochester Conference
 Series on Public Policy*, 1, 19–46.
 
+**Companion work in this programme**
+
+Braatz, J. C. (2026). Two firms file the same numbers: timeliness and durability are not separately identified from a reported series. Working paper, this programme, hosted in the repository named in §7. ✓✎ *(Companion to §3.3's cross-scale check, which identifies and then withdraws a stronger reading against this paper's own mechanism; the check is recorded at `docs/RESULT-END-TO-END-001-E1.md`. Checked against the author's own copy.)*
+
 ---
 
 *§1's characterisation of zakat (a levy assessed on stock held above a threshold across a full

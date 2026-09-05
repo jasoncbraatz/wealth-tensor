@@ -1773,6 +1773,8 @@ page (vol. 45 no. 2, May 2007, DOI 10.1111/j.1475-679X.2007.00231.x) so it is th
 and not a pre-publication version. §2 and §12 both cite it against this paper: it states §2's
 volatility result nineteen years earlier.)*
 
+Braatz, J. C. (2026). A levy cannot tax what its base cannot see: the base caps the region, the rate moves you within it — redistribution as a parameter space. Working paper, this programme, hosted in the repository named in §13. ✓✎ *(Cited in §A.4 as **Paper II** of this programme, for the companion result that a levy whose base cannot observe an accrual is inert regardless of rate; the identification with this paper's own mechanism is tested and withdrawn there, not asserted — see `docs/RESULT-END-TO-END-001-E1.md`. Checked against the author's own copy.)*
+
 Bushman, R. M., & Williams, C. D. (2015). Delayed expected loss recognition and the risk profile of
 banks. *Journal of Accounting Research*, 53(3), 511–553. ✓
 

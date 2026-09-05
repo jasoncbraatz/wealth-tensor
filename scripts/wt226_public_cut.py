@@ -28,6 +28,14 @@ scholarship, not leakage. So the repo paths STAY. Four things go:
 and one thing is added: a rights line, because the manuscripts carry none (LICENSE is MIT and
 covers the software, which is not the prose).
 
+ALSO ADDED, 2026-09-05 (SM 1217542940968749): each paper's own References list gets one new
+entry for its companion — Paper II gains an entry for Paper III and vice versa. Both papers
+already NAME each other in prose (§3.3's cross-scale check in Paper II, §A.4's companion result
+in Paper III) but neither carried a bibliography entry for the other, against this project's own
+convention (REFERENCE-POLICY §7: every work a paper characterises gets a checkable entry). This
+project's superseded price-formation manuscript is NOT given an entry here — it is withdrawn and
+uncirculated, and Paper II's §7 guard-test sentence about it is left exactly as written.
+
 THE SECTION NUMBER IS DERIVED, NOT TYPED. The disclaimer ends "...the repository named in
 SS7." In paper III that number was wrong -- it said SS11 while Data-and-code is SS13, a stale
 pointer inherited from the canonical cut where it genuinely was SS11. Hardcoding the fix
@@ -54,6 +62,40 @@ OLD_EMAIL = "jason@braatzresearch.com"
 NEW_EMAIL = "jason@braatz.ai"
 
 POSTED = "2026-08-29"
+
+# ---- companion-reference entries (SM 1217542940968749) ---------------------------------
+# Each paper already NAMES the other in prose but carries no bibliography entry for it.
+# The anchor is the exact tail of the entry the new one is spliced after; a missing anchor
+# REFUSES the cut rather than silently skipping the splice (same discipline as the rest of
+# this file).
+PAPER_II_REL = "paper-II-redistribution/paper-II.md"
+PAPER_III_REL = "paper-III-dual-tensor/paper-III.md"
+
+PAPER_II_ANCHOR = (
+    "Lucas, R. E. (1976). Econometric policy evaluation: a critique. *Carnegie-Rochester Conference\n"
+    "Series on Public Policy*, 1, 19–46.\n\n"
+)
+PAPER_II_INSERT = (
+    "**Companion work in this programme**\n\n"
+    "Braatz, J. C. (2026). Two firms file the same numbers: timeliness and durability are not "
+    "separately identified from a reported series. Working paper, this programme, hosted in the "
+    "repository named in §{n}. ✓✎ *(Companion to §3.3's cross-scale check, which identifies and then "
+    "withdraws a stronger reading against this paper's own mechanism; the check is recorded at "
+    "`docs/RESULT-END-TO-END-001-E1.md`. Checked against the author's own copy.)*\n\n"
+)
+
+PAPER_III_ANCHOR = (
+    "and not a pre-publication version. §2 and §12 both cite it against this paper: it states §2's\n"
+    "volatility result nineteen years earlier.)*\n\n"
+)
+PAPER_III_INSERT = (
+    "Braatz, J. C. (2026). A levy cannot tax what its base cannot see: the base caps the region, the "
+    "rate moves you within it — redistribution as a parameter space. Working paper, this programme, "
+    "hosted in the repository named in §{n}. ✓✎ *(Cited in §A.4 as **Paper II** of this programme, for "
+    "the companion result that a levy whose base cannot observe an accrual is inert regardless of "
+    "rate; the identification with this paper's own mechanism is tested and withdrawn there, not "
+    "asserted — see `docs/RESULT-END-TO-END-001-E1.md`. Checked against the author's own copy.)*\n\n"
+)
 
 RIGHTS = (
     "*© 2026 Jason C Braatz. All rights reserved. This manuscript is made available for "
@@ -185,6 +227,16 @@ def cut(rel):
         body_text = body_text.replace(stale, "are to be re-checked at submission.")
     elif "PREPRINT-CHECKLIST" in body_text:
         die(who + ": PREPRINT-CHECKLIST is present but not in the shape this pass knows how to rewrite")
+
+    # ---- 5. the companion-reference entry (SM 1217542940968749) ------------------------
+    if rel == PAPER_II_REL:
+        if PAPER_II_ANCHOR not in body_text:
+            die(who + ": companion-reference anchor (Lucas 1976 entry) not found")
+        body_text = body_text.replace(PAPER_II_ANCHOR, PAPER_II_ANCHOR + PAPER_II_INSERT.format(n=n), 1)
+    elif rel == PAPER_III_REL:
+        if PAPER_III_ANCHOR not in body_text:
+            die(who + ": companion-reference anchor (Bleck & Liu 2007 entry) not found")
+        body_text = body_text.replace(PAPER_III_ANCHOR, PAPER_III_ANCHOR + PAPER_III_INSERT.format(n=n), 1)
 
     front = reflow_front(front, who)
     out = "\n".join(front).rstrip() + "\n\n" + body_text.rstrip() + "\n"
