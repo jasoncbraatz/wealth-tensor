@@ -3,7 +3,7 @@ project: "smDrainTensor3"
 session_n: 0
 gh_repo: "jasoncbraatz/wealth-tensor"
 branch: "main"
-gh_sha: ""
+gh_sha: "651f1a4557d4a0d52756b06d491f8703b055c353"
 updated: "2026-09-05"
 definition_of_done: "Every one of the 2 card(s) in the frozen manifest lane-tensor3.json is closed on the State Machine with a bb-close.py receipt (or PARKED by a CEO ruling via smdrain-lane.py park), and `bash /Users/jasoncbraatz/repos/claude-blackbook/scripts/verify-smdrain.sh tensor3` exits 0."
 verify_cmd: "bash /Users/jasoncbraatz/repos/claude-blackbook/scripts/verify-smdrain.sh tensor3"
