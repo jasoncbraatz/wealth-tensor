@@ -597,3 +597,38 @@ commit → `GATE_ROSTER_WHO=<you> bash ~/Scripts/gate-selfcheck.sh` → `--claim
 **AFTER** your last mutation) → `gate_passed: true` → `--stamp` → commit ONLY `docs/HANDOFF.md` →
 push → `charter-read.sh <you>` → gate → `--emit` → `roster leave --who`.
 ⚠ `--stamp` BEFORE the final commit means `gh_sha` lags; `--check` returns RC 1 until you stamp.
+
+---
+
+## 📌 ADDENDUM (2026-09-05, smDrainWisdom3 inning 16, decision #168)
+
+**HEAD has moved since this file's own `gh_sha` (`b4744c4`), and this note says how, without
+touching session 106's fields above** — per CEO ruling #168 (smKondo item 12): restamping
+`gh_sha`/`updated` would misattribute that later work to session 106's own closing narrative,
+and leaving the drift unremarked would hide that it happened. Neither is right; this is the
+addendum instead.
+
+The correction to the ruling's own premise: the 36 commits between `b4744c4` and current HEAD
+(`72f8328`) are **not only** sibling smDrain rail stamps. Real wealth-tensor session work
+happened after 106 shipped the corpus — `wealthTensor-108` (paper-IV stood down, its three
+surviving parts redistributed) and `wealthTensor-109`/`-110`/`-111` (the v2 review pair, the
+P13e rebuild-provenance fix, `verify-handoff-111.sh`'s 38 self-checks, the public preprint cut
+at `5d60383`) — none of which restamped this file's frontmatter, because each was Jason's own
+pass per 106's "successor is JASON" handoff, not a new AI session continuing this document.
+Only the *last three* commits (`651f1a4`, `80f2b1b`, `72f8328`) are sibling rail: `smDrainTensor3`
+opening and stamping its own lane, unrelated to the corpus's content.
+106's closing claims (the corpus shipped, P7 closed, 1168 tests, 145-page layout) describe the
+tree **as of 106**, not the tree today, and are otherwise unchanged by this note.
+
+**And the smKondo item's other ask — "correct the `METHOD-002:91` figure"**: verified against
+the committed record (`docs/preregistration/RESULT-REG-013-run.log`/`.json`), the two true-audience
+numbers `METHOD-002-citation-whitespace.md` §4 quotes (7 801, 43 048) do **not** appear in either
+committed run artifact — `scripts/reg013_citation_whitespace.py` stops retrieving at its `N_MAX`
+cap and never queries or prints an uncapped total. Both numbers exist only in
+`RESULT-REG-013.md` §2's hand-written drop-accounting table, which METHOD-002 already cites as
+their source. No number here is demonstrably *wrong* — nothing contradicts them — but neither
+is reproducible from a committed command, and METHOD-002 §4 said only that §5's reproduction
+command "does not regenerate" them, which understates the gap. Corrected there directly (this
+repo, one file, one sentence) rather than in this addendum: it names the actual limitation
+(recorded once, by an uncommitted query, never re-run) instead of implying the committed
+instrument merely omits printing a number it could otherwise verify.

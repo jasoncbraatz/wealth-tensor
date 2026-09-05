@@ -94,7 +94,11 @@ cap is tighter still — 4 000 of 43 048, 9.3 per cent — and it does the oppos
 cap can only remove intersections, so the measured floor is a lower bound on the true one, and a
 floor of exactly zero is the strictest value available. Both true-audience sizes are
 `RESULT-REG-013` §2's. The instrument stops retrieving at the cap and does not print them, which
-makes them the two numbers here that §5's command does not regenerate.
+makes them the two numbers here that §5's command does not regenerate — and neither
+`RESULT-REG-013-run.log` nor `RESULT-REG-013-run.json` contains them either, so no committed
+artifact reproduces them: they were recorded once, by an uncapped count taken outside the
+committed instrument at run time, into `RESULT-REG-013.md` §2's table, and never re-run. Neither
+number is known to be wrong, only unreproducible by anything checked into this repository.
 
 **And what the measurement does not establish, stated in `REG-013` before the numbers existed:** an
 unoccupied intersection is not thereby a fertile one. This instrument establishes that literatures
