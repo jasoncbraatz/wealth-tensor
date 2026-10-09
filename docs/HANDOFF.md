@@ -634,3 +634,5 @@ repo, one file, one sentence) rather than in this addendum: it names the actual 
 instrument merely omits printing a number it could otherwise verify.
 
 _Reconcile (fable-smBones-01 2026-10-09T21:22:22Z): cites 1217630566080626 "wealth-tensor · wt148's sha pattern mis-parses an arXiv identifier as a commit" — now CLOSED: NO-AAR: FIXED wealth-tensor 7f87de0 (main): the wt148 sha rule now refuses a hex run after a slash, i.e. the numeric half of an arXiv id. Proof: the arXiv sentence emits [], and the real sha 3b11f23 s_
+
+_Reconcile (fable-smBones-01 2026-10-09T21:22:49Z): cites 1217603625863293 "wealth-tensor: RESULT-001-wt026.md summary line says 320 where its own component" — now CLOSED: NO-AAR: DONE wealth-tensor 7f87de0 (main), ANNOTATE-ONLY: dated CORRECTION addenda appended, never in-place edits, and no registered constant touched. RESULT-001: 320 -> 322 events (120 + 202), and fo_
