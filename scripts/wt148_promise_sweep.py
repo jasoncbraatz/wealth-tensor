@@ -67,7 +67,9 @@ ARTEFACT_PATTERNS = [
     # Bare tool tags: `wt091`, `wt026`. Named without an extension, so the file/path rules miss
     # them -- and paper III names one exactly that way ("before `wt091` existed").
     ("tag", re.compile(r"\bwt\d{2,3}\b")),
-    ("sha", re.compile(r"(?<![\w.])(?=[0-9a-f]{7,40}(?![0-9a-f]))(?=[0-9a-f]*\d)[0-9a-f]{7,40}")),
+    # A hex run right after "/" is the numeric half of an arXiv id (`cond-mat/0002374`), never a commit: wt148
+    # emitted a promise for a commit that does not exist (SM 1217630566080626, row 54c1c5fb27 retired with this change).
+    ("sha", re.compile(r"(?<![\w./])(?=[0-9a-f]{7,40}(?![0-9a-f]))(?=[0-9a-f]*\d)[0-9a-f]{7,40}")),
 ]
 
 

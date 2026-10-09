@@ -158,3 +158,10 @@ difference, and it is not a consolation prize.
 python3 scripts/wt026_severe_test.py --universe pilot       --onset peak   # 244 events, z = -0.290
 python3 scripts/wt026_severe_test.py --universe replication --onset peak   # 444 events, z = -0.095
 ```
+
+---
+
+**CORRECTION addendum, 2026-10-09** (appended, not edited in place). §1, "Four registered sensitivities per universe",
+should read **three**: (a) annual-attributed charges excluded, (b) right-censored events excluded, (c) one event per firm
+(largest charge). These are exactly the three `scripts/wt026_severe_test.py` runs and the run logs carry. The verdict is
+unchanged.

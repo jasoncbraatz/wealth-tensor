@@ -137,3 +137,15 @@ placed one, and it is the better of the two.
 python3 scripts/wt026_severe_test.py --universe pilot        # 120 events, JT z = -0.177
 python3 scripts/wt026_severe_test.py --universe replication  # 202 events, JT z = +0.634
 ```
+
+---
+
+**CORRECTION addendum, 2026-10-09** (appended, not edited in place, because registered artefacts are never amended by
+stealth; flagged by REVIEW-023 §5 and the 2026-09-01 audit). Two arithmetic and count slips in this document's own
+prose. No registered constant, verdict, or number in the run logs changes:
+
+- **§ post-hoc, "Zero censoring in 320 events across two universes"** should read **322**: §1's 120 pilot events plus §2's
+  202 replication events. Paper III §5.2 and §5.3 already print 322.
+- **§2, "All four registered sensitivities"** should read **three**. `scripts/wt026_severe_test.py` runs exactly three,
+  and each run log carries exactly three `SENSITIVITY ·` blocks: (a) annual-attributed charges excluded, (b) right-censored
+  events excluded, (c) one event per firm (largest charge). None reverses the verdict, as stated.
