@@ -632,3 +632,5 @@ command "does not regenerate" them, which understates the gap. Corrected there d
 repo, one file, one sentence) rather than in this addendum: it names the actual limitation
 (recorded once, by an uncommitted query, never re-run) instead of implying the committed
 instrument merely omits printing a number it could otherwise verify.
+
+_Reconcile (fable-smBones-01 2026-10-09T21:22:22Z): cites 1217630566080626 "wealth-tensor · wt148's sha pattern mis-parses an arXiv identifier as a commit" — now CLOSED: NO-AAR: FIXED wealth-tensor 7f87de0 (main): the wt148 sha rule now refuses a hex run after a slash, i.e. the numeric half of an arXiv id. Proof: the arXiv sentence emits [], and the real sha 3b11f23 s_
